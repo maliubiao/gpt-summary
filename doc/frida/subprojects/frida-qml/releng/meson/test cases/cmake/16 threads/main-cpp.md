@@ -154,7 +154,7 @@ Essentially, the process involves: understanding the code, placing it within its
 
 总而言之，这个 `main.cpp` 文件是一个简单的多线程测试用例，其目的是验证 Frida 在处理异步操作和多线程环境时的能力。通过分析这个文件，我们可以理解 Frida 在逆向工程中的应用，并联想到相关的底层知识和常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/16 threads/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <cstdlib>
@@ -173,7 +175,4 @@ int main() {
   cc.asyncIncrement();
   return cc.getNum() == 1 ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

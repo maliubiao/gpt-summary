@@ -96,7 +96,7 @@ This is the first part of the request, so the focus should be on summarizing the
 
 这就是用户操作一步步导致 `VTTCue` 对象被创建、解析、计算和最终渲染到屏幕上的一个流程。这个 `vtt_cue.cc` 文件就是这个流程中至关重要的一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/vtt/vtt_cue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Opera Software ASA. All rights reserved.
  *
@@ -999,7 +1001,4 @@ void VTTCue::ParseSettings(const VTTRegionMap* region_map,
         //
         //    If parse a percentage string from linepos doesn't fail, let
         //    n
-"""
-
-
 ```

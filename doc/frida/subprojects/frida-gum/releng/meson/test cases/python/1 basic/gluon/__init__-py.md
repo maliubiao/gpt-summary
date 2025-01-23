@@ -118,7 +118,7 @@ Frida 本身就是一个与底层系统交互密切的工具。即使这个 `__i
 
 作为调试线索，如果用户报告了与 `gluon` 包相关的错误或问题，查看这个目录下的其他测试文件 (如果存在) 以及相关的 Frida 代码是更重要的步骤。这个空的 `__init__.py` 文件本身通常不会是问题的根源，但它的存在表明了 `gluon` 包在 Frida 项目中的规划位置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/python/1 basic/gluon/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,9 +126,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

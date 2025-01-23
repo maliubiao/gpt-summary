@@ -158,7 +158,7 @@ if (Process.platform === 'linux') {
 
 总而言之，虽然 `lib.c` 文件本身的功能非常简单，但它在 Frida 的测试框架中扮演着重要的角色，可以帮助验证 Frida 的基本 hook 功能是否正常工作，同时也为理解 Frida 的内部机制提供了一个简单的入口。 它的存在也间接涉及到逆向工程、二进制底层、操作系统等方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/manual tests/5 rpm/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,15 +166,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"lib.h"
 
 char *meson_print(void)
 {
   return "Hello, world!";
 }
-
-"""
-
 ```

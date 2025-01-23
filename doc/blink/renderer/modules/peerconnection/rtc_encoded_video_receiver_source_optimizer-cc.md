@@ -123,15 +123,17 @@ This systematic approach, starting with understanding the code's purpose and the
 
 总而言之，`rtc_encoded_video_receiver_source_optimizer.cc` 负责在 Blink 内部动态地优化 WebRTC 视频接收的底层机制，以提高性能和资源效率。它与 JavaScript 的 WebRTC API 紧密相关，是实现 WebRTC 功能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_video_receiver_source_optimizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -168,7 +170,4 @@ RtcEncodedVideoReceiverSourceOptimizer::PerformInProcessOptimization(
 }
 
 }  // namespace blink
-
-"""
-
 ```

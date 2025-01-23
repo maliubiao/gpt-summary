@@ -180,7 +180,7 @@ func main() {
 
 总而言之，这段代码是 `go/types` 包中用于测试类型字符串表示功能的重要组成部分，它确保了 Go 语言能够准确且灵活地将类型信息转换为字符串，这对于编译、调试和代码生成等多个方面都至关重要。理解 `String()` 和 `TypeString` 的区别以及 `Qualifier` 函数的作用是正确使用这些功能的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/typestring_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -357,9 +359,4 @@ func TestQualifiedTypeString(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

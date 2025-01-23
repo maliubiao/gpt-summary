@@ -199,7 +199,7 @@ func main() {
 
 总结来说，`go/src/internal/poll/sendfile.go` 中的 `TestHookDidSendFile` 是一个用于 Go 语言内部测试和调试 `sendfile` 相关操作的钩子，普通开发者不应该直接使用它。  它反映了 Go 在内部可能使用 `sendfile` 系统调用来优化某些文件或网络数据传输的场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/sendfile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -216,9 +218,4 @@ Prompt:
 package poll
 
 var TestHookDidSendFile = func(dstFD *FD, src int, written int64, err error, handled bool) {}
-
-"""
-
-
-
 ```

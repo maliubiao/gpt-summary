@@ -154,15 +154,17 @@ LayoutBlock (p)
 
 总而言之，`blink/renderer/core/paint/url_metadata_utils.cc` 是 Blink 渲染引擎中一个关键的组件，负责收集内联元素中 URL 的位置信息，这对于浏览器的各种功能（如无障碍、链接高亮和点击测试）至关重要。理解其工作原理以及与 HTML、CSS 和 JavaScript 的交互，有助于开发者更好地理解浏览器的渲染过程，并避免一些潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/url_metadata_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ void AddURLRectsForInlineChildrenRecursively(
 }
 
 }  // namespace blink
-
-"""
-
 ```

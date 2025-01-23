@@ -169,7 +169,7 @@ EXPORTS
 
 总而言之，这个简单的 Python 脚本是 Frida 构建和测试流程中的一个环节，用于生成一个基本的 Windows 模块定义文件，以便在特定的测试场景中使用。它的存在反映了 Frida 需要处理和分析 Windows DLL 的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/10 vs module defs generated custom target/subdir/make_def.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,15 +177,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     print('EXPORTS', file=f)
     print('        somedllfunc', file=f)
-
-"""
-
 ```

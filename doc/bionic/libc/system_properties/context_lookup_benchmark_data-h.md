@@ -143,7 +143,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 总而言之，`bionic/libc/system_properties/context_lookup_benchmark_data.handroid` 文件是一个存储系统属性到 SELinux 安全上下文映射关系的静态数据文件。它主要用于在 Android 系统中进行系统属性查找时的安全上下文确定，并可能被用于性能基准测试。文件中包含了针对不同 Android 版本（如 Oreo 和 AOSP S）的映射数据。虽然这个文件本身不包含 libc 函数调用或 dynamic linker 的操作，但其数据对于系统属性相关功能的正常运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/system_properties/context_lookup_benchmark_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -155,8 +155,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -738,7 +740,4 @@ ro.oem_unlock_supported u:object_r:oem_unlock_prop:s0 exact int
 ro.rebootescrow.device u:object_r:rebootescrow_hal_prop:s0 exact string
 
 ro.storage_manager.enabled u:object_r:sto
-"""
-
-
 ```

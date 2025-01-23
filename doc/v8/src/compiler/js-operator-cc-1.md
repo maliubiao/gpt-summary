@@ -270,7 +270,7 @@ After drafting the initial response, review it for clarity, accuracy, and comple
 
 `v8/src/compiler/js-operator.cc` 是 V8 编译器中至关重要的组成部分，它定义了用于表示各种 JavaScript 语言构造和操作的底层操作符。`JSOperatorBuilder` 提供了一种结构化的方式来创建这些操作符，每个操作符都封装了执行特定 JavaScript 功能所需的信息。 这些操作符是 V8 编译器将高级 JavaScript 代码转换为高效机器码的关键中间步骤，并且它们的设计直接反映了 JavaScript 语言的语义和潜在的运行时错误。 理解这些操作符有助于深入了解 V8 引擎的工作原理以及 JavaScript 代码的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -278,8 +278,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ",                                    // name
       parameters.arity(), 1, 1, 1, 1, 2,                        // counts
       parameters);                                              // parameter
@@ -923,8 +925,4 @@ std::ostream& operator<<(std::ostream& os, ScopeInfoRef ref) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

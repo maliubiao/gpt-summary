@@ -169,7 +169,7 @@ ret was 0 instead of 1
 
 总而言之，这个简单的 `main.c` 文件虽然代码量不多，但它触及了动态链接的关键概念，对于理解 Linux 系统上的库加载机制以及 Frida 的工作原理都非常有帮助。对于 Frida 的开发者和用户来说，它是一个重要的测试用例和调试参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/linuxlike/11 runpath rpath ldlibrarypath/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int some_symbol (void);
@@ -190,7 +192,4 @@ int main (void) {
   fprintf (stderr, "ret was %i instead of 1\n", ret);
   return -1;
 }
-
-"""
-
 ```

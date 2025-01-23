@@ -155,11 +155,13 @@ By following this structured approach, we can effectively analyze the C++ code a
 
 `v8/src/execution/thread-local-top.cc` 文件定义的 `ThreadLocalTop` 类是 V8 引擎内部一个非常重要的组成部分，它为每个执行 JavaScript 代码的线程维护着关键的上下文和状态信息。这些信息对于 JavaScript 的异常处理、作用域管理、异步操作以及与 C++ 代码的交互至关重要。虽然开发者通常不会直接操作这个类，但它的存在和功能是 JavaScript 能够高效、安全运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/thread-local-top.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ void ThreadLocalTop::StoreCurrentStackPosition() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -111,15 +111,17 @@ func main() {
 
 这段 Go 代码定义了两个简单的函数，展示了基本的函数定义、调用以及 `switch` 语句的用法。 虽然 `p` 函数声明了可以接收可变数量的字符串参数，但在当前的实现中并没有利用这些参数。  理解这两个函数的行为以及参数的实际作用可以避免使用上的误解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue32922.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -138,9 +140,4 @@ func p(which string, args ...string) int {
 		return 2
 	}
 }
-
-"""
-
-
-
 ```

@@ -165,15 +165,17 @@ net::device_bound_sessions::SessionParams params(
 
 总而言之，`net/device_bound_sessions/session_params.cc` 负责定义用于存储设备绑定会话参数的数据结构，它本身不直接与 JavaScript 交互，但为处理来自 JavaScript 发起的、需要设备绑定会话的网络请求提供了基础的数据模型。 理解其功能有助于调试与设备绑定会话相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/session_params.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ SessionParams::Scope& SessionParams::Scope::operator=(
 SessionParams::Scope::~Scope() = default;
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

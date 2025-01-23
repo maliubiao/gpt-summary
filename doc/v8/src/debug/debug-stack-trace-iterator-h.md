@@ -227,15 +227,17 @@ Let's assume a simple JavaScript call stack: `global -> functionA -> functionB`.
 
 In summary, `v8/src/debug/debug-stack-trace-iterator.h` defines a crucial component for V8's debugging infrastructure, providing a structured way to examine the call stack and enabling developers to understand the execution flow and identify the root causes of errors in their JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-stack-trace-iterator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-stack-trace-iterator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ class DebugStackTraceIterator final : public debug::StackTraceIterator {
 }  // namespace v8
 
 #endif  // V8_DEBUG_DEBUG_STACK_TRACE_ITERATOR_H_
-
-"""
-
 ```

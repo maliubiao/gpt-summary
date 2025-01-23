@@ -107,11 +107,13 @@ let largeSum = d + 1; // 可能会涉及 Smi 到非 Smi 的转换
 
 总而言之，`smi-tagging-unittest.cc` 是 V8 引擎中一个非常底层的测试文件，它验证了 V8 内部用于优化小整数表示的关键机制的正确性，而这种机制直接影响着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/smi-tagging-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ TEST(SmiTaggingTest, AssertCornerCases) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

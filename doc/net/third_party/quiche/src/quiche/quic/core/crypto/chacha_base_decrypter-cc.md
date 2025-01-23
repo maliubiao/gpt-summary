@@ -143,15 +143,17 @@ fetch('https://example.com/data')
 
 通过跟踪用户操作的步骤和分析相关的代码，开发者可以更好地理解 `ChaChaBaseDecrypter` 在 QUIC 连接中的作用，并定位可能存在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/chacha_base_decrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ std::string ChaChaBaseDecrypter::GenerateHeaderProtectionMask(
 }
 
 }  // namespace quic
-
-"""
-
 ```

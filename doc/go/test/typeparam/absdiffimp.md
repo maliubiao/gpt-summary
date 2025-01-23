@@ -240,15 +240,17 @@ Since the provided snippet is very basic, there aren't many obvious ways a user 
 
 The `go/test/typeparam/absdiffimp.go` file likely serves as a simple demonstration or test case for Go's type parameters, specifically showcasing how to implement a generic function to calculate the absolute difference between ordered values. It's probably designed to be run within the Go testing framework and doesn't involve complex command-line argument handling in its simplest form.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/absdiffimp.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -256,9 +258,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

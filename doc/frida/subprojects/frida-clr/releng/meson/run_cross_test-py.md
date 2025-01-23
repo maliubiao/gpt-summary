@@ -215,7 +215,7 @@ python3 run_project_tests.py --backend ninja --failfast --only core java --cross
 
 `run_cross_test.py` 是 Frida 项目中用于自动化交叉编译测试的关键脚本。它通过读取配置文件，构建并执行测试命令，确保 Frida 在不同目标平台上的功能正确性。理解这个脚本的功能有助于开发人员进行 Frida 的交叉编译开发和调试。对于逆向工程师而言，了解 Frida 的构建和测试流程也能更好地理解其在目标设备上的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/run_cross_test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -223,8 +223,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2016 The Meson development team
@@ -276,7 +278,4 @@ def main():
 if __name__ == '__main__':
     print('Meson build system', meson_version, 'Cross Tests')
     raise SystemExit(main())
-
-"""
-
 ```

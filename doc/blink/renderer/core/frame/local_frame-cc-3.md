@@ -132,15 +132,17 @@ By following these steps, I could systematically break down the code snippet, un
 
 `LocalFrame` 的这段代码负责管理渲染引擎中一个本地框架的诸多关键方面，包括其视图状态、生命周期、与父框架的关系、资源加载、性能指标以及用户交互状态。它在 Blink 引擎中扮演着核心角色，并与 JavaScript、HTML 和 CSS 的功能紧密结合，共同构建了 Web 页面的渲染和交互体验。理解 `LocalFrame` 的功能对于深入理解浏览器的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 jom::blink::FrameOcclusionState::kPossiblyOccluded) {
     return;
   }
@@ -1026,7 +1028,4 @@ void LocalFrame::CountUseIfFeatureWouldBeBlockedByPermissionsPolicy(
   // Get the origin of the top-level document
   const SecurityOrigin* topOrigin =
       Tree().Top().GetSecur
-"""
-
-
 ```

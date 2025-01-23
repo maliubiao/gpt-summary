@@ -154,15 +154,17 @@ By following these steps, focusing on the code itself, and iteratively refining 
 
 `NullDecrypter` 是 QUIC 协议栈中一个特殊的解密器，它不执行真正的解密操作，而是通过简单的哈希校验来“验证”数据。它的主要用途可能是在测试环境或不需要加密的特定场景中。理解其工作原理和限制对于调试 QUIC 连接问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/null_decrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ absl::uint128 NullDecrypter::ComputeHash(const absl::string_view data1,
 }
 
 }  // namespace quic
-
-"""
-
 ```

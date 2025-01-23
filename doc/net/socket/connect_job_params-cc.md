@@ -168,15 +168,17 @@ ConnectJobParams {
 
 总而言之，`net/socket/connect_job_params.cc` 中定义的 `ConnectJobParams` 类虽然不直接与 JavaScript 交互，但它是 Chromium 网络栈中一个关键的数据结构，负责携带创建网络连接所需的各种参数，是浏览器处理网络请求的基础。理解它的功能有助于理解浏览器网络工作的原理，并为调试网络问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/connect_job_params.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ ConnectJobParams::ConnectJobParams(ConnectJobParams&&) = default;
 ConnectJobParams& ConnectJobParams::operator=(ConnectJobParams&&) = default;
 
 }  // namespace net
-
-"""
-
 ```

@@ -271,7 +271,7 @@ if (Java.available) {
 
 这个 Frida 示例可以帮助你了解在实际运行的 Android 应用中，何时以及如何调用 `__set_errno_internal`，以及传递的错误代码是什么。通过 hook 这个函数，可以深入了解 Android 应用程序的底层错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/__set_errno.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -282,8 +282,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -332,7 +334,4 @@ extern "C" __LIBC_HIDDEN__ long __set_errno_internal(int n) {
   errno = n;
   return -1;
 }
-
-"""
-
 ```

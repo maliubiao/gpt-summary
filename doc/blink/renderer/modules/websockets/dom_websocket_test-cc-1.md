@@ -207,7 +207,7 @@ By following these steps, I can systematically analyze the C++ test file and pro
 
 总而言之，`dom_websocket_test.cc` 的这部分着重于测试 `DOMWebSocket` 接口中关于二进制数据类型设置、连接关闭的正确性（包括有效和无效的关闭码处理），以及在特定生命周期场景下的垃圾回收行为。 这些测试确保了 Blink 引擎实现的 WebSocket 功能符合规范，并且能够健壮地处理各种用户操作和异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/websockets/dom_websocket_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -215,9 +215,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-     Connect(KURL("ws://example.com/"), String()))
+### 源代码
+```cpp
+Connect(KURL("ws://example.com/"), String()))
         .WillOnce(Return(true));
     EXPECT_CALL(websocket_scope.Channel(), Send(std::string("hello"), _));
   }
@@ -362,8 +364,4 @@ TEST(DOMWebSocketTest, GCWhileEventsPending) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

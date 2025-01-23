@@ -129,7 +129,7 @@ Initially, I might have focused too much on the *potential* for binary manipulat
 
 总而言之，`converter.py` 是一个简单但实用的文件复制工具，在 Frida Swift 的测试流程中可能用于生成或处理测试所需的文件。了解其功能和潜在的错误可以帮助开发者更好地理解和调试相关的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/110 allgenerate/converter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -147,7 +149,4 @@ ifile = sys.argv[1]
 ofile = sys.argv[2]
 
 open(ofile, 'w').write(open(ifile).read())
-
-"""
-
 ```

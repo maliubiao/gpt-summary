@@ -180,15 +180,17 @@ result = stream.WriteAsciiChunk(data + 10, 5); // 写入 "klm"，abort_countdown
 
 总而言之，`v8/test/cctest/jsonstream-helper.h` 提供了一组工具，用于在 V8 的 C++ 测试环境中模拟和检查 JSON 数据流的输入和输出，帮助确保 V8 在处理 JSON 相关操作时的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/jsonstream-helper.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/jsonstream-helper.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ class OneByteResource : public v8::String::ExternalOneByteStringResource {
 }  // namespace v8
 
 #endif  // V8_CCTEST_JSONTREAM_HELPER_H_
-
-"""
-
 ```

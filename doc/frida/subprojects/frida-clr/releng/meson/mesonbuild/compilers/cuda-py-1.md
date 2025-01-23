@@ -86,7 +86,7 @@ By following these steps, I can systematically analyze the code and generate a w
 
 `frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/cuda.py` 的核心功能是作为 Frida 构建系统 (Meson) 中用于编译 CUDA 代码的桥梁。它封装了与 NVIDIA CUDA 编译器 `nvcc` 的交互，负责管理 CUDA 特定的编译选项，处理与主机编译器的集成，并生成正确的编译和链接参数。这使得 Frida 能够构建包含 CUDA 代码的组件，从而实现对 GPU 加速应用程序的动态 instrumentation 和逆向分析能力。该文件还考虑了跨平台兼容性（例如 Windows 的特殊处理），并处理了一些常见的配置错误和构建特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,8 +95,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 id) {{
             return 0;
         }}'''
@@ -281,8 +283,4 @@ id) {{
 
     def get_assert_args(self, disable: bool) -> T.List[str]:
         return self.host_compiler.get_assert_args(disable)
-
-"""
-
-
 ```

@@ -143,15 +143,17 @@ Let's break down the thought process to analyze the `decompression_stream.cc` fi
 
 总而言之，`decompression_stream.cc` 文件是 Chromium Blink 引擎中处理数据解压缩的关键组件，它与 JavaScript 的 Compression Streams API 紧密相关，并在浏览器处理压缩网络资源时发挥着重要作用。理解其功能和使用场景有助于我们理解浏览器如何高效地处理网络数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/compression/decompression_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ DecompressionStream::DecompressionStream(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -118,7 +118,7 @@ By following these steps, I can generate a comprehensive and accurate answer to 
 
 **请注意：** 这个单元测试主要关注 V8 内部的正确性，而不是直接针对用户的编程错误。但是，通过理解测试用例覆盖的场景，我们可以更好地理解 V8 的工作原理，并避免一些可能导致性能问题的 JavaScript 编程模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/logging/log-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/logging/log-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r_t> map_create_addresses =
       logger->ExtractLogAddresses("map-create", 2, true);
   std::unordered_set<uintptr_t> map_details_addresses =
@@ -459,8 +461,4 @@ TEST_F(LogTest, BuiltinsNotLoggedAsLazyCompile) {
   }
 }
 }  // namespace v8
-
-"""
-
-
 ```

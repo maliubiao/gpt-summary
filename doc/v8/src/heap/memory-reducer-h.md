@@ -167,15 +167,17 @@ for (let i = 0; i < 100; i++) {
 
 `v8/src/heap/memory-reducer.h` 文件以 `.h` 结尾，这表明它是一个标准的 C++ 头文件。如果文件名以 `.tq` 结尾，那么它才是一个 V8 Torque 源代码文件。Torque 是一种 V8 自定义的类型安全语言，用于生成高效的 C++ 代码，通常用于实现 V8 的内置函数和运行时代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/memory-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -392,7 +394,4 @@ class V8_EXPORT_PRIVATE MemoryReducer {
 }  // namespace v8
 
 #endif  // V8_HEAP_MEMORY_REDUCER_H_
-
-"""
-
 ```

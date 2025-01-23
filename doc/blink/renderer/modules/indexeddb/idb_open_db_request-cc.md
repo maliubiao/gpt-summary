@@ -219,15 +219,17 @@ This iterative process of scanning, identifying, connecting, reasoning, and refi
 
 总而言之，`idb_open_db_request.cc` 文件是 Blink 引擎中处理 IndexedDB 数据库打开和删除请求的关键部分，它连接了 JavaScript API 和底层的 IndexedDB 实现，负责管理请求的生命周期，处理各种状态和错误，并最终将结果反馈给 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_open_db_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -486,7 +488,4 @@ DispatchEventResult IDBOpenDBRequest::DispatchEventInternal(Event& event) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

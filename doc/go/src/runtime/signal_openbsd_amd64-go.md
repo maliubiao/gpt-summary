@@ -299,7 +299,7 @@ type guintptr uintptr
 
 总而言之，这段代码是 Go 语言运行时处理信号的底层基础设施，提供了访问和修改信号上下文的能力。虽然功能强大，但也需要谨慎使用，因为它涉及到直接操作硬件状态，容易出错且具有平台依赖性。通常情况下，开发者应该使用 Go 提供的更高级别的信号处理 API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_openbsd_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -307,8 +307,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -364,9 +366,4 @@ func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) {
 	*(*uint64)(add(unsafe.Pointer(c.info), 16)) = x
 }
-
-"""
-
-
-
 ```

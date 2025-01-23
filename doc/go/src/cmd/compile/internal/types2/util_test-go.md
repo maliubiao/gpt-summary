@@ -154,15 +154,17 @@ func ExampleObjectScopePos() {
 
 `go/src/cmd/compile/internal/types2/util_test.go` 的作用是为了方便对 `types2` 包内部 `util.go` 文件中的一些私有功能进行测试，它通过定义一些简单的包装函数来暴露这些内部实现细节。这是一种常见的 Go 语言测试技巧，用于提高代码的测试覆盖率和质量。外部使用者应该避免直接使用这些测试辅助函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/util_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ func CmpPos(p, q syntax.Pos) int { return cmpPos(p, q) }
 
 func ScopeComment(s *Scope) string         { return s.comment }
 func ObjectScopePos(obj Object) syntax.Pos { return obj.scopePos() }
-
-"""
-
-
-
 ```

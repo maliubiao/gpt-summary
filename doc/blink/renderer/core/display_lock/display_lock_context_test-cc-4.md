@@ -351,15 +351,17 @@ TEST_F(DisplayLockContextTest, ShouldForceUnlockObjectWithFallbackContent) {
 
 作为第 5 部分，这个 `display_lock_context_test.cc` 文件主要用于测试 Blink 引擎中 `DisplayLockContext` 类的功能。`DisplayLockContext` 似乎是用于优化渲染性能的关键组件，它与 CSS 的 `content-visibility` 属性密切相关。 通过一系列的单元测试，该文件验证了 `DisplayLockContext` 在不同场景下的正确行为，包括基本创建、嵌套情况、与 `display: none` 的交互、以及在需要重新附加布局树时的状态管理。 总体而言，这个测试文件确保了 Blink 引擎能够正确高效地处理带有 `content-visibility` 属性的元素的渲染和更新。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/display_lock/display_lock_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ked>
         <div id=child>
           <div id=grandchild></div>
@@ -469,8 +471,4 @@ TEST_F(DisplayLockContextTest, ShouldForceUnlockObjectWithFallbackContent) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -174,7 +174,7 @@ fetch('https://secure.example.com/api/data')
 
 总而言之，这段代码是 `SSLConnectJob` 单元测试的一部分，专注于验证在涉及 ECH 重试和传统加密回退的复杂场景下，SSL 连接建立逻辑的正确性。它确保了 Chromium 能够尽可能成功地建立安全的 HTTPS 连接，即使在遇到初始协商失败的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tJob> ssl_connect_job =
       CreateConnectJob(&test_delegate, ProxyChain::Direct(), MEDIUM);
   EXPECT_THAT(ssl_connect_job->Connect(), test::IsError(ERR_IO_PENDING));
@@ -270,8 +272,4 @@ TEST_F(SSLConnectJobTest, LegacyCryptoThenECHRecovery) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

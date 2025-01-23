@@ -125,15 +125,17 @@ Looking at the code, it primarily focuses on testing how `ResourceRequestSender`
 
 这部分代码主要功能是 **验证 `ResourceRequestSender` 在处理 JavaScript 代码缓存时的各种场景和逻辑**。它覆盖了代码缓存的加载、有效性检查、与网络响应的交互、在特定状态下的行为以及与 Service Worker 的协同工作，确保 Blink 引擎能够正确且高效地利用代码缓存来提升 JavaScript 的加载性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/resource_request_sender_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ient>();
 
   std::unique_ptr<network::ResourceRequest> request = CreateResourceRequest();
@@ -964,7 +966,4 @@ TEST_F(ResourceRequestSenderTest,
           network::mojom::URLResponseHeadPtr head,
           ResourceRequestClient::FollowRedirectCallback callback) {
         EXPECT_EQ(
-"""
-
-
 ```

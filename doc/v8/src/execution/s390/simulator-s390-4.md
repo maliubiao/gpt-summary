@@ -87,12 +87,14 @@ When this JavaScript code is compiled by V8 for an s390 architecture, it might b
 
 **In essence, this C++ code acts as a software implementation of the s390 architecture's instruction set, allowing V8 to execute JavaScript code on s390 systems without needing the actual hardware for testing or in environments where direct execution is not possible.** The "part 5 of 5" indicates that this is the final segment covering a significant portion of the s390 instruction set supported by the simulator.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 CODE_RRF_A_INSTRUCTION(r1, r2, r3);
   // 64-bit Non-clobbering arithmetics / bitwise ops.
   int64_t r2_val = get_register(r2);
@@ -2433,8 +2435,4 @@ EVALUATE(CXZT) {
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

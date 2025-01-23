@@ -199,7 +199,7 @@ tcp 协议的协议号: 6
 
 5. **忽略 CGO 的影响：** 代码中可以看到，某些查找操作可以选择使用 CGO 调用系统底层的解析器。如果 CGO 不可用或者配置不当，可能会导致某些查找功能出现问题。虽然这不是直接的代码错误，但了解 CGO 的作用对于排查问题很重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/lookup_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -330,9 +332,4 @@ func (r *Resolver) lookupAddr(ctx context.Context, addr string) ([]string, error
 	}
 	return r.goLookupPTR(ctx, addr, order, conf)
 }
-
-"""
-
-
-
 ```

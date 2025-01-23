@@ -118,15 +118,17 @@ Let's break down the thought process for analyzing the `scrollable_area_test.cc`
 
 总而言之，`scrollable_area_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中滚动功能的正确性和稳定性，涵盖了从基本的滚动操作到复杂的滚动动画和 CSS 属性处理等多个方面。理解这个文件的内容可以帮助开发者更好地理解 Blink 的滚动机制，并有效地调试与滚动相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollable_area_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -674,7 +676,4 @@ TEST_P(ScrollableAreaTest, FilterIncomingScrollDuringSmoothUserScroll) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

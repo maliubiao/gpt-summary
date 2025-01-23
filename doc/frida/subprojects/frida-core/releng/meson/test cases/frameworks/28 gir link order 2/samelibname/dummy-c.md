@@ -132,7 +132,7 @@ Initially, I might focus too much on the C code itself. However, realizing it's 
 
 `frida/subprojects/frida-core/releng/meson/test cases/frameworks/28 gir link order 2/samelibname/dummy.c` 这个文件本身的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色。它作为一个简单的示例库，用于测试 Frida 在处理具有相同名称的库时的链接顺序和 Hook 功能。通过分析这个文件及其所在的目录结构，我们可以了解 Frida 的内部工作原理，以及它如何处理复杂的动态链接场景。这对于理解 Frida 的设计和调试与库加载相关的 Bug 非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/28 gir link order 2/samelibname/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,9 +140,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

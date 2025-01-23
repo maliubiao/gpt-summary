@@ -118,14 +118,16 @@ Finally, I organized the findings into logical sections: Functionality, Relation
 
 `identifiability_internal_templates_unittest.cc` 是 Blink 引擎中用于测试与隐私预算和用户身份识别相关的底层工具函数的测试文件。它测试了类型是否具有唯一的对象表示以及如何计算对象的内存表示摘要。虽然不直接操作 JavaScript, HTML, CSS，但其测试的功能支持着浏览器处理用户隐私的机制，这些机制会影响 Web API 的行为。理解这些底层的概念有助于开发者更好地理解浏览器如何保护用户隐私，并避免在相关领域犯一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_internal_templates_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST(IdentifiabilityInternalTemplatesTest,
 
 }  // namespace internal
 }  // namespace blink
-
-"""
-
 ```

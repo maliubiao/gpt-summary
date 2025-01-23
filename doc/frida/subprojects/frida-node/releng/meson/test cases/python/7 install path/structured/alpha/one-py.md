@@ -125,7 +125,7 @@ The final step is to organize the thoughts into a clear and structured answer, c
 
 总而言之，尽管 `one.py` 文件本身是空的，但它在 Frida 的测试框架中具有潜在的意义，与 Frida 的安装路径测试和结构化测试相关。用户可能会在调试安装问题时，作为追溯线索的一部分，最终查看这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python/7 install path/structured/alpha/one.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,9 +133,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

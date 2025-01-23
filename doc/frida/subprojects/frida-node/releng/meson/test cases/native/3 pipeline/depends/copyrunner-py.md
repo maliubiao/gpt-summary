@@ -190,7 +190,7 @@ Typically, a user (likely a Frida developer or someone contributing to the Frida
 
 In summary, `copyrunner.py` is a simple but essential utility within the Frida Node.js testing framework. It provides a standardized way to execute native programs with input and output files, facilitating automated testing and providing a controlled environment for analysis, which can be relevant in reverse engineering scenarios within the Frida ecosystem.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/native/3 pipeline/depends/copyrunner.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, subprocess
@@ -207,7 +209,4 @@ import sys, subprocess
 prog, infile, outfile = sys.argv[1:]
 
 subprocess.check_call([prog, infile, outfile])
-
-"""
-
 ```

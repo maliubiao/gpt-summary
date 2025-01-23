@@ -114,7 +114,7 @@ This file seems to be responsible for:
 
 总而言之，`ax_node_object.cc` 的这部分代码是 Blink 渲染引擎中辅助功能实现的核心组成部分，负责将 DOM 树转换为辅助功能树，并处理与辅助功能相关的用户交互。它与 HTML 的结构、CSS 的渲染以及 JavaScript 的动态行为紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012, Google Inc. All rights reserved.
  *
@@ -876,8 +878,4 @@ AXObjectInclusion AXNodeObject::ShouldIncludeBasedOnSemantics(
 
     // If setting enabled, do not ignore SVG grouping (<g>) elements.
     if (IsA<SVGGElement>(node)) {
-      
-"""
-
-
 ```

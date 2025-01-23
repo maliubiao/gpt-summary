@@ -178,7 +178,7 @@ By following this structured thought process, considering the context, and makin
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/vala/7 shared library/lib/source.py` 很可能是一个用于测试 Frida 对 Vala 共享库插桩功能的 Python 脚本。理解其功能需要一定的逆向工程、底层知识以及对 Frida 工具的了解。通过分析这个测试用例，可以帮助开发者验证 Frida 的功能，同时也为逆向工程师提供了学习和使用 Frida 的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/vala/7 shared library/lib/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,9 +186,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

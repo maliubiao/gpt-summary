@@ -192,7 +192,7 @@ int func7() {
 
 总而言之，即使是一个简单的函数，放在 Frida 动态插桩的背景下，也成为了理解程序行为、进行逆向分析的重要组成部分。它既可以作为测试用例，也可以作为实际逆向分析中的一个环节，帮助我们理解程序的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/66 static link/lib/func8.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,15 +200,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func7();
 
 int func8()
 {
   return func7() + 1;
 }
-
-"""
-
 ```

@@ -200,7 +200,7 @@ Modified message by Frida!
 
 总而言之，`Simple.java` 是一个简单的 Java 应用程序，其主要目的是作为 Frida 的一个测试目标，用于验证 Frida 对 Java 程序进行动态 Instrumentation 的能力。通过分析这个文件及其上下文，我们可以了解 Frida 的一些核心功能和使用场景，以及在进行逆向工程时可能涉及到的底层技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/java/5 includedirs/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -218,7 +220,4 @@ class Simple {
         t.print();
     }
 }
-
-"""
-
 ```

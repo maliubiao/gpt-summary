@@ -203,15 +203,17 @@ func (mc *MilesCounter) Increment(miles int) {
 
 总之，`go/test/alias2.go` 是 Go 语言自身测试套件的一部分，用于确保类型别名功能按照设计规范正确实现，并且能够捕获不符合规范的用法。它通过预期错误注释的方式进行断言，是 Go 语言编译器质量保证的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/alias2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -316,9 +318,4 @@ type B1 = struct{}
 func (B1) m() {} // ERROR "invalid receiver type"
 
 // TODO(gri) expand
-
-"""
-
-
-
 ```

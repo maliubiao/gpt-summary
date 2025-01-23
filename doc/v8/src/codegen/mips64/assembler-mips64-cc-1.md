@@ -118,7 +118,7 @@ end_of_if:
 
 这个代码片段是 V8 引擎中 MIPS64 架构汇编器的核心部分，负责 **管理代码标签、生成和发射 MIPS64 机器指令 (包括普通指令和 MSA 指令)、处理分支和跳转逻辑、以及实现长跳转的 trampoline 机制**。它是将 JavaScript 代码转换为可执行机器码的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 intF("unused label\n");
   } else if (L->is_bound()) {
     PrintF("bound label to %d\n", L->pos());
@@ -1114,7 +1116,4 @@ void Assembler::srlv(Register rd, Register rt, Register rs) {
 
 void Assembler::sra(Register rd, Register rt, uint16_t sa) {
   GenInstrReg
-"""
-
-
 ```

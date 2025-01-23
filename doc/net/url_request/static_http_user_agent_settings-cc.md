@@ -107,15 +107,17 @@ By following these steps, combining technical understanding with an awareness of
 
 总而言之，`net/url_request/static_http_user_agent_settings.cc` 这个文件定义了一个简单的类，用于存储 Chromium 网络栈中用于所有网络请求的静态 `Accept-Language` 和 `User-Agent` HTTP 头信息。 它在网络请求的初始阶段被配置，并影响着浏览器与服务器之间的语言协商和客户端识别。虽然它本身不与 JavaScript 直接交互，但其存储的值会间接地影响 JavaScript 代码的行为和信息获取。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/static_http_user_agent_settings.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -142,7 +144,4 @@ std::string StaticHttpUserAgentSettings::GetUserAgent() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

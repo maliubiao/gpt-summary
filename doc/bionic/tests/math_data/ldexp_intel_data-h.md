@@ -247,7 +247,7 @@ Interceptor.attach(Module.findExportByName("libm.so", "ldexp"), {
 
 总而言之，`bionic/tests/math_data/ldexp_intel_data.handroid` 这个文件的核心功能是**提供了一组精心设计的测试用例，用于验证 Android Bionic Libc 中 `ldexp` 函数在 Intel 架构上的实现是否正确**。这些测试数据覆盖了各种输入值和指数，包括边界情况和特殊值，旨在确保 `ldexp` 函数的稳定性和可靠性，从而保证 Android 系统及应用程序中涉及浮点数乘幂运算的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/ldexp_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -2186,7 +2188,4 @@ static data_1_2_t<double, double, int> g_ldexp_intel_data[] = {
   { // Entry 381
     0x1.1745d1745d1770p-8,
     0x1.1745d1745d177p
-"""
-
-
 ```

@@ -213,14 +213,16 @@ Now I can generate the response based on these insights.
 
 总而言之，这个单元测试文件的目的是为了验证 Blink 引擎中任务调度器的正确性和健壮性，通过模拟各种可能的场景，包括与 JavaScript、HTML、CSS 功能相关的操作，来确保任务能够按照预期的方式执行，并防止潜在的错误和 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/fuzzer/sequence_manager_fuzzer_processor_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1717,7 +1719,4 @@ TEST(SequenceManagerFuzzerProcessorTest, CrossThreadPostFromChildThreads) {
 
 }  // namespace sequence_manager
 }  // namespace base
-
-"""
-
 ```

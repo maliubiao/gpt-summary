@@ -172,7 +172,7 @@ By following this structured approach, I can effectively analyze the provided C+
 
 这部分代码主要负责实现 WebGL2 中关于**查询对象 (Queries)**，**采样器对象 (Samplers)**，**同步对象 (Sync Objects)** 和 **转换反馈 (Transform Feedback)** 的核心功能。它处理了这些 WebGL2 特性的创建、删除、绑定、参数设置和状态管理，并负责在用户代码出现错误时生成相应的 OpenGL 错误，为开发者提供了使用这些高级功能的底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl2_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TIVE: {
       if (current_boolean_occlusion_query_ &&
           current_boolean_occlusion_query_->GetTarget() == target) {
@@ -1149,7 +1151,4 @@ bool WebGL2RenderingContextBase::ValidateUniformBlockIndex(
   if (!program->LinkStatus(this)) {
     SynthesizeGLError(GL_INVALID_OPERATION, function_name,
                       "program not linked
-"""
-
-
 ```

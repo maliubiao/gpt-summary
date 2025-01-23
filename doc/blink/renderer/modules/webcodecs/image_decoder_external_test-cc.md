@@ -88,7 +88,7 @@ The user wants a summary of the functionality of the provided C++ code file. I n
 
 提供的代码片段展示了 `blink::ImageDecoderExternal` 类的单元测试，涵盖了其基本功能，包括图像类型支持检测、基本解码流程、错误处理（例如空数据、不支持的类型、数据转移）、生命周期管理（重置、关闭）以及与 `ReadableStream` 的集成。这些测试确保了 `ImageDecoderExternal` 能够按照 WebCodecs 规范正确地解码各种图像格式，并在各种异常情况下提供合理的行为，从而保证了 Web 平台上图像处理功能的稳定性和可靠性。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/image_decoder_external_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -950,7 +952,4 @@ TEST_F(ImageDecoderTest, DecodeClosedDuringReadableStream) {
   v8::Local<v8::Value> v8_data_array = ToV8Traits<DOMUint8Array>::ToV8(
       v8_scope.GetScriptState(),
       DOMUint8Array::Create(data_span.first(data.size() / 2)
-"""
-
-
 ```

@@ -125,12 +125,13 @@ vse32.v v10, (a3)                # 将向量寄存器 v10 的结果存储到 res
 
 总而言之，`extension-riscv-v.cc` 是 V8 引擎中一个关键的底层组件，它使得 V8 能够利用 RISC-V 向量扩展的强大功能，从而显著提升 JavaScript 代码在特定硬件上的性能。它定义了 C++ 接口，让 V8 能够“说”RISC-V 向量指令这种“语言”。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-v.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
-
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1024,7 +1025,4 @@ LoadStoreLaneParams::LoadStoreLaneParams(MachineRepresentation rep,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

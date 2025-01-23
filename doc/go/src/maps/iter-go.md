@@ -282,15 +282,17 @@ Inserted Map: map[apple:1 banana:20 cherry:3 orange:6]
 
 总而言之，这段代码提供了一种更抽象和可组合的方式来处理 Go 语言的 map，特别是对于需要进行复杂迭代和转换的场景。但使用者需要注意 map 的无序性，以及 `yield` 函数在迭代控制中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/maps/iter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -353,9 +355,4 @@ func Collect[K comparable, V any](seq iter.Seq2[K, V]) map[K]V {
 	Insert(m, seq)
 	return m
 }
-
-"""
-
-
-
 ```

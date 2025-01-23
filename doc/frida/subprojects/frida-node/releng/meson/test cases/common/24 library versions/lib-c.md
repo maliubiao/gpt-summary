@@ -167,7 +167,7 @@ myFunc return value was modified to: {"type":"int","value":100}
 
 因此，查看 `frida/subprojects/frida-node/releng/meson/test cases/common/24 library versions/lib.c` 这个文件可能是用户在调试 Frida hook 问题时，为了理解符号导出和 Frida 如何定位函数而进行的一个步骤。路径中的 "test cases" 和 "library versions" 也暗示了这是 Frida 官方测试用例的一部分，用户可能在参考这些用例来学习如何正确使用 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/24 library versions/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -191,7 +193,4 @@ Prompt:
 int DLL_PUBLIC myFunc(void) {
     return 55;
 }
-
-"""
-
 ```

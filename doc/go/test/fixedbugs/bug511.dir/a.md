@@ -188,15 +188,17 @@ func main() {
 
 这段代码展示了 `S` 类型也实现了接口 `I`，尽管方法 `M` 是定义在它的别名 `A` 上的。这说明了类型别名在接口实现方面与原始类型是等价的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug511.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -208,9 +210,4 @@ type S struct{}
 type A = S
 
 func (A) M() {}
-
-"""
-
-
-
 ```

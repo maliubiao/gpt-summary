@@ -66,7 +66,7 @@ Response:
 ### 总结
 
 这段代码的主要功能是定义和描述 PPC64 架构中的 VSX 和 DFP 指令集，包括指令的操作码、掩码、值以及操作数字段。它为汇编器和反汇编器提供了必要的信息，以便正确解析和生成 PPC64 指令。
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/ppc64/ppc64asm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -75,8 +75,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 P, 0xfc0007f800000000, 0xf00001c000000000, 0x0, // VSX Scalar Divide Double-Precision XX3-form (xsdivdp XT,XA,XB)
 		[6]*argField{ap_VecSReg_31_31_6_10, ap_VecSReg_29_29_11_15, ap_VecSReg_30_30_16_20}},
 	{XSMADDADP, 0xfc0007f800000000, 0xf000010800000000, 0x0, // VSX Scalar Multiply-Add Type-A Double-Precision XX3-form (xsmaddadp XT,XA,XB)
@@ -721,9 +723,4 @@ P, 0xfc0007f800000000, 0xf00001c000000000, 0x0, // VSX Scalar Divide Double-Prec
 		[6]*argField{ap_VecReg_6_10, ap_VecReg_11_15, ap_VecReg_16_20, ap_VecReg_21_25}},
 	{VMSUMUBM, 0xfc00003f00000000, 0x1000002400000000, 0x0, // Vector Multiply-Sum Unsigned Byte Modulo VA-form (vmsumubm VRT,VRA,VRB,VRC)
 		[6]*argFi
-"""
-
-
-
-
 ```

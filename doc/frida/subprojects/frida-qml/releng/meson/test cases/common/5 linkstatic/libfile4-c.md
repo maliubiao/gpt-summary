@@ -158,7 +158,7 @@ int func4(void) {
 
 总而言之，尽管 `libfile4.c` 中的代码非常简单，但在 Frida 动态插桩和逆向工程的背景下，它仍然可以作为一个有意义的分析目标，帮助理解程序结构、测试程序行为、或者作为 Frida 工具自身测试的一部分。用户操作到达这里通常是因为他们正在进行动态分析或调试与 Frida 相关的任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/5 linkstatic/libfile4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,12 +166,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func4(void) {
     return 4;
 }
-
-"""
-
 ```

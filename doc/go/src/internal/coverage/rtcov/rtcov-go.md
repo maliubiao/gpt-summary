@@ -161,7 +161,7 @@ mypkg/mypkg.go:9.9,9.16 0
 
 总而言之，这段 `rtcov.go` 代码是 Go 语言代码覆盖率功能的核心运行时组件，负责管理被插桩代码的元数据，为后续的覆盖率数据收集和报告生成提供基础。理解其功能有助于更深入地理解 Go 语言的测试和代码质量保障机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/rtcov/rtcov.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -259,9 +261,4 @@ func AddMeta(p unsafe.Pointer, dlen uint32, hash [16]byte, pkgpath string, pkgid
 	// ID zero is reserved as invalid.
 	return uint32(slot + 1)
 }
-
-"""
-
-
-
 ```

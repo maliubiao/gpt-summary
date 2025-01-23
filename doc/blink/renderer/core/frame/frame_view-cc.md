@@ -167,14 +167,16 @@ By following these steps, combining code analysis with an understanding of web t
 
 总而言之，`blink/renderer/core/frame/frame_view.cc` 文件中的 `FrameView` 类是 Blink 渲染引擎中管理和优化 HTML frame 显示的核心组件，它与 HTML 结构、CSS 样式以及 JavaScript 的交互方式密切相关，特别是与 Intersection Observer API 的实现紧密结合。理解其功能对于开发高性能和可靠的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -549,7 +551,4 @@ bool FrameView::RectInParentIsStableForIOv2(
   return parent->RectInParentIsStableForIOv2(event_timestamp);
 }
 }  // namespace blink
-
-"""
-
 ```

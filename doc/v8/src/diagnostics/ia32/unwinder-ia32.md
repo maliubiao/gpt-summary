@@ -114,11 +114,13 @@ try {
 
 `v8/src/diagnostics/ia32/unwinder-ia32.cc` 文件定义了在 IA-32 架构下进行栈回溯的功能。虽然提供的代码片段中的函数体为空，但其目的是为了从给定的帧指针处获取被调用者保存的寄存器状态。这个功能直接支持了 JavaScript 的错误处理、调试和性能分析等特性，使得开发者能够更好地理解和维护 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ia32/unwinder-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -133,7 +135,4 @@ void GetCalleeSavedRegistersFromEntryFrame(void* fp,
                                            RegisterState* register_state) {}
 
 }  // namespace v8
-
-"""
-
 ```

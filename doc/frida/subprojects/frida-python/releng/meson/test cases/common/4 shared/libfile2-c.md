@@ -178,7 +178,7 @@ if (libfile2) {
 
 总而言之，`libfile2.c` 作为一个 Frida 测试用例，它的存在是为了验证 Frida 在处理共享库时的功能。代码中的预处理器指令和简单的函数定义都是为了创建一个可控的测试环境，以便 Frida 的开发者能够确保其工具的正确性和可靠性。 调试时查看这个文件，通常是因为在 Frida 的测试或使用过程中遇到了与共享库 Hook 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/4 shared/libfile2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -210,7 +212,4 @@ Prompt:
 int DLL_PUBLIC libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

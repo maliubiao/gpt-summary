@@ -118,14 +118,16 @@ By following this systematic approach, we can thoroughly analyze the given sourc
 
 `fence_test.cc` 文件是 Blink 引擎中用于测试 `Fence` 类功能的重要组成部分。它通过模拟不同的场景，验证了 `Fence` 类在处理 Private Aggregation 事件和保留事件时的行为。这些测试用例有助于确保 Fenced Frames 功能的正确性和稳定性，并能帮助开发者避免常见的编程错误。 该文件与 JavaScript 和 HTML 关系密切，因为它测试的功能最终会通过 JavaScript API 暴露给开发者，并应用于 HTML 中的 `<fencedframe>` 元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/fenced_frame/fence_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ TEST_F(FenceTest, ReportReservedEvent) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

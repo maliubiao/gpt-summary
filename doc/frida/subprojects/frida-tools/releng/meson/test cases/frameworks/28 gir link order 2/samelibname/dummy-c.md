@@ -124,7 +124,7 @@ void dummy_function() {
 
 总而言之，`dummy.c` 作为一个测试用例的源文件，其功能是提供一个简单的共享库，用于测试 Frida 在处理同名库和 GIR 信息时的行为。它反映了逆向工程中可能遇到的实际问题，并帮助确保 Frida 能够可靠地处理这些复杂场景。用户在调试 Frida 脚本时遇到的与同名库相关的问题，其根源可能就与此类测试用例所验证的 Frida 内部机制有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/28 gir link order 2/samelibname/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,9 +132,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

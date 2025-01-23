@@ -162,14 +162,16 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`socket_client_impl.cc` 是 Blink 引擎中 P2P 通信的核心组件，它负责底层的 socket 管理和数据传输，并为上层的 WebRTC API 提供了基础的网络能力。正确使用和理解这个类对于构建可靠的 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/socket_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ void P2PSocketClientImpl::OnConnectionError() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -138,14 +138,16 @@ console.log(typedArray.at(2.5)); // 输出: 30 (索引被转换为整数 2)
 
 总而言之，这段 Torque 代码为 JavaScript 的 `TypedArray.prototype.at()` 方法提供了底层的实现，使得能够方便地通过正向或负向索引访问 Typed Array 中的元素，并处理了越界的情况。理解这段代码有助于深入理解 JavaScript 中 Typed Array 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-at.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ transitioning javascript builtin TypedArrayPrototypeAt(
   return GetProperty(receiver, k);
 }
 }
-
-"""
-
 ```

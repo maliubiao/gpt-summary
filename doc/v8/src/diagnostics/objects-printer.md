@@ -56,12 +56,14 @@ function myFunction(arg) {
 
 **总结来说，`objects-printer.cc` 的功能是提供一个详细查看 V8 引擎内部对象状态的 C++ 工具，这对于理解 JavaScript 代码在 V8 中的运行时表示至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1977,7 +1979,4 @@ void JSCollectionIterator::JSCollectionIteratorPrint(std::ostream& os,
 }
 
 void JSSetIterator::JS
-"""
-
-
 ```

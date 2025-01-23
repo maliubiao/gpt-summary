@@ -147,15 +147,17 @@ Operation: NumberAdd  // 使用更具体的数字加法操作
 
 `v8/src/compiler/turboshaft/typed-optimizations-phase.cc` 是 Turboshaft 编译器中一个关键的优化阶段，它利用类型信息来改进生成的代码效率。它与 JavaScript 的性能密切相关，并且其优化效果会受到用户编写代码的方式影响。虽然它本身不是一个 Torque 文件，但它与使用 Torque 定义的优化规则可能存在关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/typed-optimizations-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/typed-optimizations-phase.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ void TypedOptimizationsPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

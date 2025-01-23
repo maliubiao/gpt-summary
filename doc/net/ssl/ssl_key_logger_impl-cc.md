@@ -151,15 +151,17 @@ MASTER_SECRET fedcba0987654321...
 
 通过理解这些步骤，当用户报告 SSL 密钥日志没有生成或者内容不完整时，开发者可以沿着这些步骤进行排查，例如检查命令行参数是否正确设置，文件路径是否可写，以及是否存在写入速度过慢的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_key_logger_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ void SSLKeyLoggerImpl::WriteLine(const std::string& line) {
 }
 
 }  // namespace net
-
-"""
-
 ```

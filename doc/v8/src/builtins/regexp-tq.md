@@ -192,14 +192,16 @@ console.log(IsRegExp(nonRegExp)); // 根据内部逻辑，这里会返回 true�
 
 总而言之，`v8/src/builtins/regexp.tq` 文件是 V8 引擎中实现正则表达式功能的核心部分，它直接关联到 JavaScript 中 `RegExp` 对象的行为和规范。理解这个文件有助于深入了解 JavaScript 正则表达式的内部工作原理和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/regexp.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -654,7 +656,4 @@ transitioning macro RegExpCreate(
   return RegExpInitializeAndCompile(context, regexp, pattern, flags);
 }
 }
-
-"""
-
 ```

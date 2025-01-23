@@ -190,15 +190,17 @@ fetch('/upload', {
 
 `net/base/chunked_upload_data_stream_unittest.cc` 是一个至关重要的测试文件，它确保了 `ChunkedUploadDataStream` 类的可靠性，而这个类是 Chromium 网络栈处理大文件上传等场景的关键组件。理解这个文件可以帮助开发者深入了解网络请求的底层实现，并有助于排查与文件上传相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/chunked_upload_data_stream_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -575,7 +577,4 @@ TEST(ChunkedUploadDataStreamTest, ChunkedUploadDataStreamWriter) {
 }
 
 }  // namespace net
-
-"""
-
 ```

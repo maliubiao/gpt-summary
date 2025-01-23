@@ -160,15 +160,17 @@ request.onsuccess = function(event) {
 
 总而言之，`IDBAny.cc` 中定义的 `IDBAny` 类是 Blink 引擎中 IndexedDB 实现的关键组成部分，它充当着 C++ 和 JavaScript 之间数据传递的桥梁，并提供了类型安全的数据封装机制。理解其功能有助于深入理解 IndexedDB 的内部工作原理，并为调试相关问题提供重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_any.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -328,7 +330,4 @@ void IDBAny::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -140,7 +140,7 @@ Here's a breakdown of how to approach the request:
 
 总而言之，这段代码是 Chromium Blink 引擎中负责空间导航核心逻辑的一部分，它精确地计算了空间导航的起始位置，并考虑了各种复杂的 HTML 和 CSS 布局情况，以确保用户能够通过键盘在页面元素之间流畅地导航。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/spatial_navigation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 k
   // snav-stay-in-overflow-div.html where the link's inline box doesn't fill
   // the entire line box vertically.
@@ -260,8 +262,4 @@ PhysicalRect SearchOrigin(const PhysicalRect& viewport_rect_of_root_frame,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

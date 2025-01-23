@@ -150,15 +150,17 @@ By following these steps, I can dissect the provided code snippet and provide a 
 
 总而言之，`CSSFlipRevertValue` 是 Blink 引擎内部用于处理特定 CSS `revert` 行为的一个关键组件，它确保了在需要根据上下文进行翻转的情况下，`revert` 关键字能够正确地工作。 虽然开发者不能直接操作它，但理解它的作用有助于理解浏览器如何处理 CSS 样式，特别是涉及到 `revert` 和国际化 (如双向文本) 的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_flip_revert_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ String CSSFlipRevertValue::CustomCSSText() const {
 }
 
 }  // namespace blink::cssvalue
-
-"""
-
 ```

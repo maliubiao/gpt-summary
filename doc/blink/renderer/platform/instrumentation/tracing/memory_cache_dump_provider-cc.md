@@ -103,14 +103,16 @@ Let's break down the thought process to arrive at the comprehensive analysis of 
 
 `memory_cache_dump_provider.cc` 文件是 Blink 渲染引擎中一个关键的组成部分，它桥接了 Blink 内部的内存缓存状态和外部的系统级内存追踪机制。虽然它不直接操作 JavaScript, HTML 或 CSS，但它提供的关于缓存内存使用的信息对于理解和优化与这些技术相关的性能至关重要。它的正确运行依赖于正确设置 `MemoryCacheDumpClient` 以及 `MemoryCacheDumpClient` 实现的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/tracing/memory_cache_dump_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ MemoryCacheDumpProvider::MemoryCacheDumpProvider() = default;
 MemoryCacheDumpProvider::~MemoryCacheDumpProvider() = default;
 
 }  // namespace blink
-
-"""
-
 ```

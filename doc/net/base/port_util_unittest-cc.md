@@ -127,15 +127,17 @@ fetch('http://example.com:8080/data.json')
 
 总而言之，`net/base/port_util_unittest.cc` 这个文件虽然只是一个测试文件，但它揭示了 Chromium 网络栈中关于端口管理的重要机制。理解它的功能有助于开发者理解浏览器如何控制 JavaScript 的网络请求，以及在遇到端口相关的网络问题时如何进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/port_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ TEST(NetUtilTest, SetExplicitlyAllowedPortsTest) {
 }
 
 }  // namespace net
-
-"""
-
 ```

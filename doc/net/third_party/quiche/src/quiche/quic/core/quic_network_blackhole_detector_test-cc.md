@@ -150,15 +150,17 @@ This systematic approach, moving from the general to the specific, and consideri
 
 总而言之，`quic_network_blackhole_detector_test.cc` 这个文件是 QUIC 协议中关键的网络健康检测机制的单元测试，它确保了在复杂的网络环境下，QUIC 能够有效地识别并应对网络黑洞和其他网络问题，从而提高网络连接的可靠性和用户体验。虽然 JavaScript 代码本身不直接涉及这个文件的编译和执行，但其网络请求的可靠性会受到 `QuicNetworkBlackholeDetector` 功能的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_network_blackhole_detector_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ TEST_F(QuicNetworkBlackholeDetectorTest, PathDegradingFiresAndRestart) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

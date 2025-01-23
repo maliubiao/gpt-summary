@@ -173,15 +173,17 @@ By following these steps, you can systematically analyze the code and extract it
 
 总而言之，`RadioNodeList.cc` 中定义的 `RadioNodeList` 类是 Blink 引擎中用于管理和操作 HTML 表单中具有相同 `name` 属性的单选按钮或特定图像元素的关键组件。它确保了单选按钮组的行为符合 HTML 规范，并为 Javascript 提供了方便的接口来与这些元素进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/radio_node_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2012 Motorola Mobility, Inc. All rights reserved.
  *
@@ -315,7 +317,4 @@ bool RadioNodeList::ElementMatches(const Element& element) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

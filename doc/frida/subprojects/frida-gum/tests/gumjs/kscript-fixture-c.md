@@ -215,7 +215,7 @@ By following these steps, I was able to decompose the C code, understand its pur
 
 总而言之，`kscript-fixture.c` 是一个关键的测试基础设施，它允许 Frida 的开发者验证 GumJS 和 KScript 功能的正确性，并帮助用户理解和调试他们自己的 Frida 脚本。它通过提供加载脚本、模拟消息传递和进行断言的功能，有效地将动态插桩的测试过程自动化和结构化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/kscript-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -223,8 +223,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -532,8 +534,4 @@ test_kscript_fixture_expect_error_message_with (TestScriptFixture * fixture,
   g_assert_cmpstr (actual_description, ==, description);
   test_kscript_message_item_free (item);
 }
-
-
-"""
-
 ```

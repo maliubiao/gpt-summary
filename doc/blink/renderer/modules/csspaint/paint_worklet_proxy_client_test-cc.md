@@ -153,15 +153,17 @@ Let's trace how a user's action might lead to this code being relevant for debug
 
 In summary, `paint_worklet_proxy_client_test.cc` is a vital part of ensuring the correct and consistent behavior of CSS Paint Worklets in the Chromium browser. It tests the core intermediary class responsible for managing communication and ensuring the integrity of paint function definitions between the main rendering thread and the worklet thread.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/paint_worklet_proxy_client_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -553,7 +555,4 @@ TEST_F(PaintWorkletProxyClientTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

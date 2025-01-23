@@ -279,7 +279,7 @@ sys.stdin.read()
 
 这个头文件本身非常简单，但它揭示了 Android 系统如何通过标准 Linux 内核接口与硬件和虚拟设备进行交互。理解这些基础的定义有助于我们深入理解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/can/vxcan.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -307,7 +309,4 @@ enum {
 #define VXCAN_INFO_MAX (__VXCAN_INFO_MAX - 1)
 };
 #endif
-
-"""
-
 ```

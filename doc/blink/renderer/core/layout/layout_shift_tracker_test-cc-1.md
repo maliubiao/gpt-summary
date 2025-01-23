@@ -121,15 +121,17 @@ To fulfill the request, I need to:
 
 总而言之，这部分测试用例深入验证了 `LayoutShiftTracker` 在处理各种复杂的布局场景下的准确性和鲁棒性，涵盖了现代 Web 开发中常见的 CSS 属性和用户交互模式。理解这些测试用例有助于开发者更好地理解布局偏移的原理，并避免在实际开发中引入不必要的布局偏移，从而提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_shift_tracker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 esForTest();
   EXPECT_FLOAT_EQ(0, GetLayoutShiftTracker().Score());
   EXPECT_EQ(PhysicalSize(100, 1), target->Size());
@@ -503,8 +505,4 @@ TEST_F(LayoutShiftTrackerTest, AnimatingTransformCreatesLayoutShiftRoot) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

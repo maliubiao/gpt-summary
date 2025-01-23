@@ -193,7 +193,7 @@ func main() {
 
 `go/src/runtime/preempt.go` 是 Go 语言抢占式调度的核心实现，它通过同步和异步两种方式将运行中的 Goroutine 暂停到安全点，以便调度器可以切换到其他 Goroutine，从而保证 Go 程序的并发性和响应性。理解这段代码的功能有助于理解 Go 语言的调度机制，虽然开发者通常不需要直接与其交互，但了解其原理对于编写高效的并发程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/preempt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -651,9 +653,4 @@ func isAsyncSafePoint(gp *g, pc, sp, lr uintptr) (bool, uintptr) {
 	}
 	return true, pc
 }
-
-"""
-
-
-
 ```

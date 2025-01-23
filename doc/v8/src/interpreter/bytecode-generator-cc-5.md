@@ -180,7 +180,7 @@ StoreInArrayLiteral R0, 1  // 将 2 存储到数组 R0 的索引 1
 
 总而言之，`v8/src/interpreter/bytecode-generator.cc` 的这段代码是 V8 引擎将 JavaScript 代码转化为可执行字节码的关键组成部分，它精确地控制着各种 JavaScript 结构如何被翻译成底层的指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -188,8 +188,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t element, which comes from the first spread.
       builder()
           ->LoadLiteral(Smi::FromInt(array_index))
@@ -984,7 +986,4 @@ Expression* BytecodeGenerator::GetDestructuringDefaultValue(
     Expression** target) {
   Expression* default_value = nullptr;
   if ((*target)->IsAssignment()) {
-"""
-
-
 ```

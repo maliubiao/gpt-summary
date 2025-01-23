@@ -194,7 +194,7 @@ func Xadd64(addr *uint64, delta int64) (new uint64) {
 
 总而言之，`atomic_mipsx.go` 是 Go 语言在 MIPS 架构下实现并发安全的重要组成部分，它提供了高效且底层的原子操作，是构建更高级并发工具的基础。 理解其功能和潜在的错误可以帮助开发者编写更健壮的并发程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/atomic/atomic_mipsx.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -202,8 +202,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -400,9 +402,4 @@ func StoreReluintptr(ptr *uintptr, val uintptr)
 
 //go:noescape
 func CasRel(addr *uint32, old, new uint32) bool
-
-"""
-
-
-
 ```

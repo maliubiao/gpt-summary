@@ -122,14 +122,16 @@ bool opaque_tld_plus_one = false;
 
 `storage_key_proto_fuzzer.cc` 是一个关键的测试工具，用于确保 Chromium Blink 引擎中 `StorageKey` 对象的序列化和反序列化过程的健壮性和安全性。它通过模糊测试来发现潜在的 bug，这些 bug 可能与 JavaScript 存储 API 的行为、HTML 嵌入内容的隔离以及开发者在使用存储相关功能时可能犯的错误有关。它的核心目标是保证浏览器能够正确地管理和隔离不同源的存储，从而维护用户的隐私和安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/storage_key/storage_key_proto_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ DEFINE_PROTO_FUZZER(const storage_key_proto::StorageKey& storage_key_proto) {
     assert(storage_key == maybe_storage_key.value());
   }
 }
-
-"""
-
 ```

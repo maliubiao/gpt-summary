@@ -94,11 +94,13 @@ onmessage = function(event) {
 
 `shared-object-conveyor-handles.cc` 文件提供了一个 V8 内部的关键机制，用于管理和持久化跨 Isolate 共享的 JavaScript 对象。它通过创建持久句柄并分配唯一 ID 的方式，确保这些共享对象在多个 JavaScript 执行上下文中能够被安全地访问和管理，这对于实现像 `SharedArrayBuffer` 这样的共享内存特性至关重要。 开发者通常不需要直接与这段 C++ 代码交互，但理解其功能有助于理解 V8 引擎如何支持 JavaScript 的高级特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/shared-object-conveyor-handles.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ uint32_t SharedObjectConveyorHandles::Persist(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

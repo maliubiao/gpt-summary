@@ -134,7 +134,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 因此，到达这个 `app.c` 文件，通常是 Frida 开发人员或测试人员为了验证 Frida 在处理动态链接依赖关系时的正确性而创建的一个最小化的可执行示例。它作为一个测试用例，用于确保 Frida 能够正确地识别和 hook 外部库中的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/29 guessed linker dependencies/exe/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,15 +142,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func();
 
 int main(void) {
     liba_func();
     return 0;
 }
-
-"""
-
 ```

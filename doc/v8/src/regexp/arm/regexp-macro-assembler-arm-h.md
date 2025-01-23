@@ -195,15 +195,17 @@ ADD  current_input_offset(), current_input_offset(), #by * char_size()
 
 In summary, `RegExpMacroAssemblerARM` is a fundamental building block in V8's regular expression engine, responsible for translating the abstract operations of regex matching into concrete ARM assembly instructions for efficient execution. It directly enables the functionality of JavaScript's `RegExp` object.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/arm/regexp-macro-assembler-arm.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/arm/regexp-macro-assembler-arm.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -445,7 +447,4 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerARM
 }  // namespace v8
 
 #endif  // V8_REGEXP_ARM_REGEXP_MACRO_ASSEMBLER_ARM_H_
-
-"""
-
 ```

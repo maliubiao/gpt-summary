@@ -186,7 +186,7 @@ While a user won't directly interact with this C++ test file, their actions can 
 
 This part of the test file focuses on verifying the caching behavior of the `:has()` CSS pseudo-class when used with the **sibling combinator (`~`)** and the **descendant combinator (space)**. It checks various scenarios, including cases where the `:has()` selector matches, doesn't match, and how the cache states of different elements are updated during these evaluations. The tests ensure that the engine correctly caches and reuses the results of `:has()` queries to optimize performance, particularly when dealing with complex selectors and nested HTML structures.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/check_pseudo_has_cache_scope_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hed, kAlreadyNotMatched},
        {"#div24234", kCheckPseudoHasResultNotCached, kAlreadyNotMatched},
        {"#div2424", kCheckPseudoHasResultNotCached, kAlreadyNotMatched},
@@ -910,7 +912,4 @@ TEST_F(CheckPseudoHasCacheScopeContextTest,
        {"#div13",
         kCheckPseudoHasResultChecked |
             kCheckPseudoHasResultAllDescendantsOrNext
-"""
-
-
 ```

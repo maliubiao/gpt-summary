@@ -116,7 +116,7 @@ Here's a breakdown of the thought process:
 
 这个代码片段是 Android Bionic 库中用于测试 `fmaf` 函数正确性的测试数据。它定义了大量的输入和期望输出，用于验证 `fmaf` 在各种场景下的行为是否符合预期，从而确保 Android 系统底层数学运算的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmaf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -128,9 +128,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
- -HUGE_VALF
+### 源代码
+```c
+-HUGE_VALF
   },
   { // Entry 1383
     0x1.fffffdffffffffffffffffffffffffffp127,
@@ -2163,7 +2165,4 @@ Prompt:
   { // Entry 1721
     HUGE_VALF,
     -0x1.p-14
-"""
-
-
 ```

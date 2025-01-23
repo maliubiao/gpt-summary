@@ -186,7 +186,7 @@ if (f_address) {
 
 总而言之，虽然 `lib.c` 的代码非常简单，但它在一个特定的 Frida 测试场景中扮演着关键的角色。理解其功能以及它在 Frida 的动态 instrumentation 上下文中的作用，可以帮助开发者理解测试用例的目的，并排查其失败的原因。 "failing" 和目录名提供了重要的上下文信息，暗示了问题可能与构建依赖管理有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/123 targets before add_project_dependency/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,12 +194,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "lib.h"
 void f() {puts("hello");}
-
-"""
-
 ```

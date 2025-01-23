@@ -94,7 +94,7 @@ Now, I need to synthesize this information into a concise summary.
 
 这段代码的核心功能是实现了 Go 语言的**堆内存分配器**。它负责响应内存分配请求，并根据对象的大小和类型，选择合适的策略从堆上分配内存。同时，它还集成了对大页的支持、快速空闲对象查找、垃圾回收辅助以及内存性能分析等功能，是 Go 运行时系统中至关重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/malloc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -103,8 +103,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 fe.Pointer, uintptr) {
 	if isSbrkPlatform {
 		if v != nil {
@@ -1123,9 +1125,4 @@ func fastexprand(mean int) int32 {
 	// -log_e(q)/mean = x
 	// x = -log_e(q) * mean
 	// x = log_2(q) * (-log_e(2)) * mean    ; Using log_2 for effic
-"""
-
-
-
-
 ```

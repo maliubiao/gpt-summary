@@ -212,15 +212,17 @@ func main() {
 
 `go/src/cmd/internal/sys/arch_test.go` 文件主要用于测试 `sys` 包中判断架构是否属于某个家族的功能。它通过编写测试用例来验证 `InFamily` 方法的正确性。 作为内部包，普通开发者应该避免直接使用其中的类型和方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/sys/arch_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ func TestArchInFamily(t *testing.T) {
 		t.Errorf("Got ArchPPC64LE.InFamily(AMD64, PPC64) = %v, want %v", got, want)
 	}
 }
-
-"""
-
-
-
 ```

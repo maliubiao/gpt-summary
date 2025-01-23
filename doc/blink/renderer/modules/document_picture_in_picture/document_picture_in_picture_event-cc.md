@@ -163,15 +163,17 @@ By following this systematic approach, I can effectively analyze the code snippe
 
 总而言之，`document_picture_in_picture_event.cc` 文件是实现 Document Picture-in-Picture 功能的关键组成部分，它定义了用于在 Blink 内部和与 JavaScript 之间传递画中画窗口状态信息的事件对象。理解这个文件有助于深入了解 Document Picture-in-Picture API 的底层实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/document_picture_in_picture/document_picture_in_picture_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ void DocumentPictureInPictureEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

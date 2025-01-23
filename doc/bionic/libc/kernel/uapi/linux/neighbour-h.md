@@ -298,7 +298,7 @@ Java.perform(function() {
 
 通过这些 Frida Hook，你可以观察到 Android 应用在进行网络通信时，底层是如何调用系统调用，以及系统调用中涉及到的目标地址信息，从而间接地了解邻居子系统的工作过程。虽然不能直接 Hook 到使用 `neighbour.h` 数据结构的内核代码，但可以观察到用户空间与内核交互的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/neighbour.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -309,8 +309,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -456,7 +458,4 @@ enum {
 };
 #define NFEA_MAX (__NFEA_MAX - 1)
 #endif
-
-"""
-
 ```

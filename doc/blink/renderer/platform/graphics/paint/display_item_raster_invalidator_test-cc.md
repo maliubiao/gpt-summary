@@ -87,15 +87,17 @@ My thought process for analyzing the code and generating the summary goes like t
 
 这部分代码的核心功能是 **对 `DisplayItemRasterInvalidator` 类进行全面的单元测试，以确保它能够正确地跟踪和记录各种场景下发生的渲染失效。** 这些测试覆盖了布局变化、元素增删、层叠顺序改变以及增量更新等多种情况，验证了该类在识别需要重新绘制的区域和原因方面的准确性。这对于保证浏览器的渲染效率和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/display_item_raster_invalidator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -779,7 +781,4 @@ TEST_P(DisplayItemRasterInvalidatorTest, SwapOrderCrossingChunks) {
       *MakeGarbageCollected<FakeDisplayItemClient>("container1");
   FakeDisplayItemClient& content1 =
       *MakeGarbageCollec
-"""
-
-
 ```

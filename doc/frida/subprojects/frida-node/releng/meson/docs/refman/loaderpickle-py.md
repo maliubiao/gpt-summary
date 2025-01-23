@@ -150,7 +150,7 @@ By following this structured analysis, I could systematically break down the cod
 
 总而言之，`loaderpickle.py` 负责从 pickle 文件中加载 Frida API 的参考手册数据，这在 Frida 的构建和文档生成流程中扮演着重要的角色。理解 `pickle` 的工作原理和潜在的错误场景对于调试相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/docs/refman/loaderpickle.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -182,7 +184,4 @@ class LoaderPickle(LoaderBase):
     # Assume that the pickled data is OK and skip validation
     def load(self) -> ReferenceManual:
         return self.load_impl()
-
-"""
-
 ```

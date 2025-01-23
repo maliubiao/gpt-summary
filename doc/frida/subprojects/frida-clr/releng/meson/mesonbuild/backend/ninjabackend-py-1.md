@@ -111,7 +111,7 @@ generated_sources = []
 
 这段代码是 Frida 工具的 Ninja 构建后端的一部分，其核心功能是为构建目标创建和维护详细的源代码内省信息。它记录了每个目标的编译语言、使用的编译器及其参数，以及参与构建的源代码文件（包括原始的和生成的）。 这些信息对于理解构建过程、调试和进行逆向工程至关重要。 通过分析这些内省数据，可以追踪源代码、了解编译选项和链接过程，从而更好地理解目标二进制文件的结构和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,9 +120,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      Adds the source file introspection information for a language of a target
+### 源代码
+```python
+Adds the source file introspection information for a language of a target
 
         Internal introspection storage format:
         self.introspection_data = {
@@ -798,8 +800,4 @@ Prompt:
                 ofilename = os.path.join(self.get_target_private_dir(target), ofilebase)
                 elem = NinjaBuildElement(self.all_outputs, ofilename, "CUSTOM_COMMAND", rel_sourcefile)
                 elem.add_item('COMMAND', ['resgen', rel_sourcefile, ofilename])
-       
-"""
-
-
 ```

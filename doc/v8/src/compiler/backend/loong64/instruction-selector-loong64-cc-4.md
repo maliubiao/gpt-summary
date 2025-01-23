@@ -166,7 +166,7 @@ console.log(addWithOverflow()); // 在 JavaScript 中，结果可能不是期望
 
 总而言之，这部分代码深入到指令选择的细节，涵盖了比较、条件分支、溢出处理、`switch` 语句以及一些高级特性（如原子操作和 SIMD），是 `instruction-selector-loong64.cc` 中至关重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-selector-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/instruction-selector-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,11 +174,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-
-          case RegisterRepresentation::Float64():
+### 源代码
+```cpp
+case RegisterRepresentation::Float64():
             switch (comparison->kind) {
               case ComparisonOp::Kind::kEqual:
                 cont->OverwriteAndNegateIfEqual(kEqual);
@@ -1009,7 +1009,4 @@ void InstructionSelectorT<Adapter>::VisitInt64AbsWithOverflow(node_t node) {
   V(I32x4Abs, kLoong64I32x4Abs)                                       \
   V(I32x4BitMask, kLoong64I32x4BitMask)                               \
   V(I32x4Trunc
-"""
-
-
 ```

@@ -167,15 +167,17 @@ While you wouldn't typically directly implement `AllocationObserver` in your Jav
 
 In summary, `v8/src/heap/allocation-observer.h` provides a crucial mechanism for V8's internal memory management and observation. It allows different parts of the engine to track and react to memory allocation events, enabling features like garbage collection, profiling, and performance optimization. While not directly exposed to typical JavaScript developers, understanding its purpose helps to understand the underlying workings of the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/allocation-observer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/allocation-observer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ class V8_EXPORT_PRIVATE V8_NODISCARD PauseAllocationObserversScope {
 }  // namespace v8
 
 #endif  // V8_HEAP_ALLOCATION_OBSERVER_H_
-
-"""
-
 ```

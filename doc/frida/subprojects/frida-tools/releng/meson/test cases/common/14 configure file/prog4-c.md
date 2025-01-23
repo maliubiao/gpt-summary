@@ -163,7 +163,7 @@ By following these steps, we can systematically analyze the provided C code with
 
 总而言之，`prog4.c` 作为一个简单的测试用例，其目的是验证构建系统和配置文件的处理。然而，即使是这样简单的程序，也可以作为逆向工程学习和实践的起点，并涉及到对二进制底层和操作系统交互的理解。用户通过一系列操作，从编写代码到编译运行，最终可以使用 Frida 这样的工具来深入了解程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/14 configure file/prog4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,15 +171,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <config4a.h>
 #include <config4b.h>
 
 int main(void) {
     return RESULTA + RESULTB;
 }
-
-"""
-
 ```

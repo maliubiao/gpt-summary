@@ -197,7 +197,7 @@ void test() {
 
 `v8/src/objects/tagged.h` 定义了 V8 引擎中用于类型安全地管理堆上对象指针的核心抽象 `Tagged<T>`。它通过封装原始指针，提供了类型安全、空指针处理、简化的指针操作以及与 V8 内部类型系统的集成。`Tagged` 是 V8 表示 JavaScript 值的基础，使得引擎能够区分不同类型的值并安全地进行内存管理。`RemoveTagged` 允许移除 `Tagged` 包装，获取原始类型。`std::common_type` 的特化确保了在类型比较中的一致性。理解 `Tagged` 的作用对于深入理解 V8 的对象模型和内存管理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/tagged.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/tagged.h以.tq结尾，那它是个v8 torque源代码，
@@ -205,9 +205,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- object) -> Tagged<T>;
+### 源代码
+```c
+object) -> Tagged<T>;
 template <class T>
 Tagged(T* object) -> Tagged<T>;
 
@@ -243,8 +245,4 @@ struct common_type<T, i::Object> {
 }  // namespace std
 
 #endif  // V8_OBJECTS_TAGGED_H_
-
-"""
-
-
 ```

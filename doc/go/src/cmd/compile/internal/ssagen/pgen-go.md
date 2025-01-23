@@ -208,15 +208,17 @@ go build -gcflags="-d=m=2" your_program.go
 
 `go/src/cmd/compile/internal/ssagen/pgen.go` 是 Go 语言编译器中负责将 SSA 中间表示转换为目标机器汇编代码的关键组件。它处理栈帧分配、局部变量布局、并进行一些优化以提高性能和 GC 效率。 理解其功能有助于理解 Go 程序的底层执行机制，尽管开发者通常不需要直接与其交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/pgen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -667,9 +669,4 @@ func CheckLargeStacks() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

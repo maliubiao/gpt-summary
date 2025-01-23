@@ -157,7 +157,7 @@ func main() {
 
 这段 `go/src/runtime/sys_openbsd1.go` 代码是 Go 运行时在 OpenBSD 上的底层支撑，它封装了操作系统的线程休眠、唤醒和让出 CPU 的系统调用。这些底层的机制是 Go 实现其高并发模型的基础，虽然开发者通常不直接使用它们，但理解它们有助于更好地理解和使用 Go 的并发特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sys_openbsd1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -213,9 +215,4 @@ func osyield_no_g() {
 //go:cgo_import_dynamic libc_sched_yield sched_yield "libc.so"
 
 //go:cgo_import_dynamic _ _ "libc.so"
-
-"""
-
-
-
 ```

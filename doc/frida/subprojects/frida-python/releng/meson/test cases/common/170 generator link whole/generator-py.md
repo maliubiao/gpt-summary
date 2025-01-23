@@ -245,7 +245,7 @@ python generator.py test_lib output_dir
 
 总而言之，这个 `generator.py` 脚本虽然功能简单，但它是 Frida 开发和测试流程中的一个环节，用于辅助生成用于测试和验证 Frida 功能的 C 代码片段。了解它的功能可以帮助理解 Frida 的构建过程和测试机制，并在遇到相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/170 generator link whole/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -253,8 +253,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -285,7 +287,4 @@ int {name}(void) {{
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

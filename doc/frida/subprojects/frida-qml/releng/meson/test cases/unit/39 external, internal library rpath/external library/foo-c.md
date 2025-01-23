@@ -178,7 +178,7 @@ Initially, I might have focused too much on the trivial nature of the C code its
 
 总而言之，`foo.c` 文件本身是一个非常简单的C代码片段，但在 Frida 的上下文中，它是作为一个测试用例的目标而存在，用于验证 Frida 在处理外部库和动态链接方面的能力。开发者通过编写和运行 Frida 脚本来与这个代码进行交互，进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/39 external, internal library rpath/external library/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,13 +186,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo_system_value (void)
 {
     return 42;
 }
-
-"""
-
 ```

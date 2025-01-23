@@ -251,7 +251,7 @@ By following this structured thought process, iteratively refining the informati
 
 总而言之，`bionic/libm/builtins.cpp` 是 Android 系统数学库的核心组成部分，它利用编译器内置功能提供了高效的数学运算实现，并被 Android 系统和应用程序广泛使用。理解其功能和背后的动态链接原理对于开发和调试 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/builtins.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -370,7 +372,4 @@ float truncf(float x) { return __builtin_truncf(x); }
 __weak_reference(trunc, truncl);
 #endif
 #endif
-
-"""
-
 ```

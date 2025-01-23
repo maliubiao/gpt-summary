@@ -141,7 +141,7 @@ Initially, I might have focused solely on the C code itself. However, recognizin
 
 `prog2.c` 作为一个简单的示例文件，展示了如何通过外部配置文件来控制程序的行为。它虽然简单，但涉及了逆向工程中分析常量、配置文件依赖、以及动态分析等概念。同时，它也体现了二进制底层、操作系统内核、以及构建系统等方面的知识。在调试过程中，了解用户如何配置构建环境、运行测试用例，可以帮助我们理解为什么会走到 `prog2.c` 这个特定的文件，并帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/14 configure file/prog2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,14 +149,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<config2.h>
 
 int main(void) {
     return ZERO_RESULT;
 }
-
-"""
-
 ```

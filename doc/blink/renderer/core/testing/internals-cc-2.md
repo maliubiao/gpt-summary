@@ -144,7 +144,7 @@ Strategizing complete. Proceeding with response generation.
 
 总而言之，`blink/renderer/core/testing/internals.cc` (特别是这部分) 提供了强大的测试工具，允许开发者深入 Blink 引擎内部进行功能验证。 它与 JavaScript, HTML, CSS 的关系在于，它提供的接口能够操作和检查这些 Web 技术最终呈现和运作的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/internals.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nge, underline_color_value, thickness_value, underline_style_value,
       text_color_value, background_color_value, exception_state,
       [&document_marker_controller, &suggestions, &suggestion_highlight_color](
@@ -1097,9 +1099,4 @@ Vector<String> Internals::shortcutIconURLs(Document* document) const {
       1 << static_cast<int>(mojom::blink::FaviconIconType::kFavicon);
   return IconURLs(document, icon_types_mask);
 }
-
-
-"""
-
-
 ```

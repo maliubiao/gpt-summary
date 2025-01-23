@@ -107,15 +107,17 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 第二部分的代码主要关注 `InspectorDOMSnapshotAgent` 的内存管理，通过 `Trace` 方法告诉垃圾回收器哪些内部数据结构（如节点映射、文档顺序映射、样式缓存等）是活跃的，需要被保留。这对于确保 DOM 快照功能的稳定性和正确性至关重要，防止关键数据被意外回收。它体现了 Chromium 引擎中内存管理的关键机制，保障了开发者工具功能的可靠运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_dom_snapshot_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ocument_order_map_);
   visitor->Trace(css_value_cache_);
   visitor->Trace(style_cache_);
@@ -123,8 +125,4 @@ ocument_order_map_);
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

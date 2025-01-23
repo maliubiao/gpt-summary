@@ -129,7 +129,7 @@ This iterative process of understanding the code, connecting it to the broader c
 
 总而言之，这个简单的 `libfile.c` 文件虽然功能简单，但它触及了动态链接、符号可见性、跨平台编译等多个与逆向工程和底层系统密切相关的概念。它作为 Frida 的一个测试用例，帮助验证 Frida 在不同平台下正确处理动态链接库符号的能力。理解这样的简单示例有助于用户更好地理解 Frida 的工作原理，并解决实际使用中遇到的符号查找和 hooking 问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/200 install name_prefix name_suffix/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -153,7 +155,4 @@ Prompt:
 int DLL_PUBLIC func(void) {
     return 0;
 }
-
-"""
-
 ```

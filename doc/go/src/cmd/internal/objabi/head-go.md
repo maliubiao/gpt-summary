@@ -164,15 +164,17 @@ GOOS=linux GOARCH=amd64 go build -o myprogram
 
 这样，`HeadType` 就会被正确设置为 `Hlinux`，生成的程序才能在 Linux 上运行。  另一个常见的错误是 `GOOS` 的拼写错误，这会导致 `HeadType.Set()` 返回错误，编译过程可能会失败或者生成不符合预期的结果。 例如，如果输入了 `GOOS=linu`，`Set` 方法会返回 "invalid headtype: "linu"" 的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/objabi/head.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/l.h and related files.
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/l.h
 //
@@ -287,9 +289,4 @@ func (h HeadType) String() string {
 	}
 	return fmt.Sprintf("HeadType(%d)", h)
 }
-
-"""
-
-
-
 ```

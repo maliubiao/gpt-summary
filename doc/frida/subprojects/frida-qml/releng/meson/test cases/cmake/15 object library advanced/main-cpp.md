@@ -136,7 +136,7 @@ This is libA  // 假设 getLibStr() 来自 libA
 
 总而言之，这个 `main.cpp` 文件虽然代码简洁，但在 Frida 项目中扮演着重要的角色，用于验证构建系统对动态链接库的处理能力，并为 Frida 的核心功能提供测试基础。理解它的功能和上下文有助于理解 Frida 的构建过程和一些底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/15 object library advanced/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "libA.hpp"
 #include "libB.hpp"
@@ -157,7 +159,4 @@ int main(void) {
   cout << getZlibVers() << endl;
   return EXIT_SUCCESS;
 }
-
-"""
-
 ```

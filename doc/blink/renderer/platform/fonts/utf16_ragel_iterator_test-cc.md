@@ -98,14 +98,16 @@ This systematic approach allows for a comprehensive understanding of the code an
 
 `utf16_ragel_iterator_test.cc` 通过多个测试用例全面验证了 `UTF16RagelIterator` 类的核心功能，包括字符分类、算术运算、对空迭代器的处理以及光标定位。这些功能对于 Blink 引擎正确处理和渲染包含复杂 Unicode 字符（特别是 emoji）的文本至关重要，直接影响到 JavaScript 代码对字符串的操作，HTML 文档的渲染以及 CSS 样式的应用。 这些测试用例也帮助开发者避免在使用 `UTF16RagelIterator` 时可能犯的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/utf16_ragel_iterator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ TEST(UTF16RagelIteratorTest, CursorPositioning) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

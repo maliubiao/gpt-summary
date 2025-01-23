@@ -114,14 +114,16 @@ Response: Here's a breakdown of the thinking process to analyze the provided C++
 
 这个模糊测试器的作用就是自动地生成大量各种各样的输入字符串（包括有效的、无效的和恶意的），并将它们传递给 `blink::ParseAdSizeString` 函数。通过监控函数的执行，模糊测试器可以发现那些会导致程序崩溃、断言失败、内存错误或其他异常行为的输入，从而帮助开发者修复潜在的 bug 和安全漏洞，提高代码的健壮性。它能覆盖开发者可能没有预想到的各种边缘情况和错误输入，确保 `ParseAdSizeString` 函数能够安全可靠地处理各种可能的广告尺寸字符串。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/ad_display_size_parser_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   blink::ParseAdSizeString(s);
   return 0;
 }
-
-"""
-
 ```

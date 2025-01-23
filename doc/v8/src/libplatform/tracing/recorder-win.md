@@ -109,11 +109,13 @@ myFunction();
 
 `recorder-win.cc` 文件是 V8 引擎在 Windows 平台上进行跟踪记录的关键组件。它利用 ETW 机制来捕获 V8 引擎内部的事件，这些事件直接反映了 JavaScript 代码的执行情况。通过分析这些跟踪信息，开发者可以深入了解 JavaScript 代码的性能瓶颈、内存使用情况以及其他运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/recorder-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ void Recorder::AddEvent(TraceObject* trace_event) {
 }  // namespace v8
 
 #endif  // V8_LIBPLATFORM_TRACING_RECORDER_WIN_H_
-
-"""
-
 ```

@@ -155,7 +155,7 @@ module_a.some_function()
 
 总而言之，这个 `__init__.py` 文件本身功能简单，但它是 Python 包结构的基石，在 Frida 的测试框架中扮演着重要的角色，确保测试代码能够被正确组织和加载。它的存在是 Frida 项目组织良好和遵循 Python 标准的体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/252 install data structured/pysrc/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,10 +163,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''init for mod'''
-
-"""
-
 ```

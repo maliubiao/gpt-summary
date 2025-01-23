@@ -148,7 +148,7 @@ This systematic approach ensures I cover the essential aspects of the code and p
 
 这些用户操作都会触发 Blink 渲染引擎中的相应代码执行，而 `document_test.cc` 中的测试就是为了验证这些代码路径的正确性。当开发者遇到与这些功能相关的问题时，可以通过查看 `document_test.cc` 中的测试用例，了解 Blink 引擎的预期行为，从而更好地进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,9 +156,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- WTF::Unretained(&answerer)));
+### 源代码
+```cpp
+WTF::Unretained(&answerer)));
 
   ScriptState* script_state = scope.GetScriptState();
   ExceptionState exception_state(script_state->GetIsolate(),
@@ -1025,8 +1027,4 @@ TEST_F(DocumentTest, PaymentLinkHandling_MultiplePaymentLink) {
 #endif  // BUILDFLAG(IS_ANDROID)
 
 }  // namespace blink
-
-"""
-
-
 ```

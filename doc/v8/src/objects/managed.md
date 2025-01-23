@@ -153,11 +153,13 @@ global.gc(); // 强制执行垃圾回收 (通常不建议在生产环境中使�
 
 `v8/src/objects/managed.cc` 中定义的机制是 V8 内部用来安全地管理与 JavaScript 对象关联的 C++ 对象生命周期的关键部分。  它通过两阶段的垃圾回收终结器，确保在 JavaScript 对象被回收时，相应的 C++ 对象也能被正确地清理，避免资源泄漏。 在 Node.js Addons 中，虽然你可能不会直接操作 `Managed` 类型，但 V8 内部使用类似的原理来管理通过 N-API 暴露的外部 C++ 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/managed.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ void ManagedObjectFinalizer(const v8::WeakCallbackInfo<void>& data) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

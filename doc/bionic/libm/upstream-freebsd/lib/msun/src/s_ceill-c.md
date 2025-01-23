@@ -209,7 +209,7 @@ Section Headers
 
 希望以上详细的解释能够帮助你理解 `s_ceill.c` 文件在 Android Bionic 中的作用、实现方式以及相关概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_ceill.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -219,8 +219,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -317,7 +319,4 @@ ceill(long double x)
 	}
 	return (u.e);
 }
-
-"""
-
 ```

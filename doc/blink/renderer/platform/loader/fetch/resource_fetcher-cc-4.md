@@ -151,15 +151,17 @@ By following these steps, I can systematically analyze the code, connect it to r
 
 **总体而言，`blink/renderer/platform/loader/fetch/resource_fetcher.cc` 文件是 Blink 引擎中负责资源获取的核心组件。** 它负责发起、管理和优化网络资源的加载过程，包括处理各种类型的资源（HTML, CSS, JavaScript, 图片等），与缓存系统和 Service Worker 进行交互，并提供监控和分析工具。它在确保网页快速、高效加载方面起着至关重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ase::FeatureList::IsEnabled(features::kLCPPDeferUnusedPreload);
   if (!kDeferUnusedPreload && !defer_unused_preload_enabled_for_testing_) {
     return false;
@@ -506,8 +508,4 @@ void ResourceFetcher::ResourcePrepareHelper::RecordTrace() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

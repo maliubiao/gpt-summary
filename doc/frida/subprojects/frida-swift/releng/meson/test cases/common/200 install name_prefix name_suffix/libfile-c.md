@@ -170,7 +170,7 @@ input() # 防止脚本过早退出
 
 总而言之，`libfile.c` 虽然简单，但它在 Frida 的测试框架中扮演着重要的角色，帮助开发者验证 Frida 动态库加载和函数 hook 的基本功能。对于用户而言，理解这样的基础测试用例有助于他们更好地理解 Frida 的工作原理，并排查在使用 Frida 进行逆向分析时遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/200 install name_prefix name_suffix/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -194,7 +196,4 @@ Prompt:
 int DLL_PUBLIC func(void) {
     return 0;
 }
-
-"""
-
 ```

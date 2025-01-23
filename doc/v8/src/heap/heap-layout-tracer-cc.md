@@ -171,15 +171,17 @@ Before GC:N,collector_name:Scavenger
 
 `v8/src/heap/heap-layout-tracer.cc` 是一个用于跟踪和记录 V8 堆内存布局的工具，主要用于 V8 开发者调试和理解垃圾回收机制。它通过在 GC 的关键时刻打印堆的组织结构和内存块的详细信息，帮助分析内存使用情况。虽然不直接检测用户代码错误，但其输出可以帮助诊断与内存相关的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-layout-tracer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-layout-tracer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -278,7 +280,4 @@ void HeapLayoutTracer::PrintHeapLayout(std::ostream& os, Heap* heap) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

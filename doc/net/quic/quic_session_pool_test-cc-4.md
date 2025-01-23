@@ -115,7 +115,7 @@ fetch('https://example.com/data')
 
 作为 20 部分中的第 5 部分，这段代码专注于 **QUIC 连接迁移机制的详细单元测试**。它深入测试了在各种网络变化场景下，QUIC 连接池如何管理和迁移连接，以保证连接的稳定性和连续性。 这部分测试涵盖了成功迁移、迁移失败（超时）、处理不可迁移流以及迁移被禁用等多种情况，是确保 Chromium 浏览器 QUIC 实现健壮性的关键组成部分。它通过模拟各种网络条件和 QUIC 协议行为，验证了连接迁移逻辑的正确性，为后续更高级别的网络功能提供可靠的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tream->InitializeStream(true, DEFAULT_PRIORITY, net_log_,
                                          CompletionOnceCallback()));
 
@@ -851,7 +853,4 @@ void QuicSessionPoolTest::TestMigrationOnNetworkDisconnected(
   EXPECT_THAT(callback_.WaitForResult(), IsOk());
   std::unique_ptr<HttpStream> stream = CreateStream(&builder.request);
   EXPECT_TRUE
-"""
-
-
 ```

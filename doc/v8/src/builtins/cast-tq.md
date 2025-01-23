@@ -151,14 +151,16 @@ macro MyFunction(o: Object) {
 
 总而言之，`v8/src/builtins/cast.tq` 文件是 V8 引擎中一个关键的组成部分，它为 Torque 代码提供了强大的类型转换和断言机制，这对于确保 V8 引擎内部代码的类型安全和正确执行 JavaScript 代码至关重要。它与 JavaScript 的类型系统紧密相关，并且有助于防止和检测常见的 JavaScript 编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/cast.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1038,7 +1040,4 @@ Cast<Object>(o: Object): Object
 labels _CastError {
   return o;
 }
-
-"""
-
 ```

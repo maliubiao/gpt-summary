@@ -189,7 +189,7 @@ Let's break down the code snippet section by section and address each of these p
 
 此部分代码主要负责 `DocumentLoader` 对象的初始化、创建克隆文档的导航参数、管理与 Frame 的关系、处理预加载指令、观察 JavaScript 框架、以及处理同文档导航相关的 URL 和历史记录更新。它涵盖了文档加载过程中的关键初始化和上下文设置环节，并与 JavaScript、HTML 和 CSS 的特性紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/document_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -197,9 +197,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- }
+### 源代码
+```cpp
+}
 
   if (service_worker_network_provider_) {
     service_worker_initial_controller_mode_ =
@@ -973,7 +975,4 @@ void DocumentLoader::FinishedLoading(base::TimeTicks finish_time) {
   DCHECK(commit_reason_ == CommitReason::kInitialization ||
          !frame_->GetPage()->Paused() ||
          MainThreadDebugge
-"""
-
-
 ```

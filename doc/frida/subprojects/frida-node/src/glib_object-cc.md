@@ -153,7 +153,7 @@ By following this structured thought process, breaking down the problem, making 
 
 总而言之，`glib_object.cc` 是 Frida 连接 JavaScript 和 C++ 领域中 GLib 对象的关键组件，它使得逆向工程师能够方便地通过脚本化方式与目标应用程序中的 GLib 对象进行交互，从而实现动态分析和修改。理解这个文件的功能对于深入理解 Frida 的工作原理和进行基于 GLib 应用程序的逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/src/glib_object.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "glib_object.h"
 
 using v8::External;
@@ -188,7 +190,4 @@ Runtime* GLibObject::GetRuntimeFromConstructorArgs(
 }
 
 }
-
-"""
-
 ```

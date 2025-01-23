@@ -212,15 +212,17 @@ By following these steps, including hypothesizing, giving examples, and consider
 
 总结来说，`blink/renderer/core/css/properties/css_unresolved_property.cc` 定义的 `CSSUnresolvedProperty` 类是 Blink 渲染引擎处理 CSS 属性值解析延迟的关键机制，主要用于表示那些由于依赖其他信息（如 CSS 变量）或继承关系而无法立即确定的属性值。它在 CSS 变量、`inherit` 关键字等场景中扮演重要角色，并且其存在与否可以作为调试 CSS 问题的关键线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_unresolved_property.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ Prompt:
 #include "third_party/blink/renderer/core/css/properties/css_unresolved_property.h"
 
 #include "third_party/blink/renderer/core/css/properties/longhands/variable.h"
-
-"""
-
 ```

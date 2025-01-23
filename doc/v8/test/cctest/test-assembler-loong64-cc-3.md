@@ -109,7 +109,7 @@ By following these steps, we can generate a comprehensive and accurate summary o
 
 这是 V8 引擎中用于测试 LoongArch64 汇编器中浮点数和整数转换以及相关操作功能的一段 C++ 代码。它通过生成和执行包含特定汇编指令的代码片段，并断言其执行结果的正确性，来确保 V8 引擎在 LoongArch64 架构上能够正确地进行浮点数和整数之间的操作。这段代码是 V8 引擎质量保证的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -117,8 +117,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 st.ffint_d_l_in));
 
   test.ffint_s_w_in = std::numeric_limits<int32_t>::min();
@@ -1203,8 +1205,4 @@ TEST(jump_tables3) {
 #ifdef OBJECT_PRINT
   Print(*code);
 #endif
-  
-"""
-
-
 ```

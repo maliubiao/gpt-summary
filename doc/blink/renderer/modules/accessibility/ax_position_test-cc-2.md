@@ -100,7 +100,7 @@ Based on these observations, I can formulate a summary covering the core functio
 
 总而言之，这第三部分的功能是**对 `AXPosition` 类进行更深入、更细致的测试，特别是在与 CSS 生成内容和复杂表格结构交互时，以及在处理异常情况和进行精确的位置转换时，确保其功能的正确性和健壮性。** 这有助于保证 Chrome 浏览器在处理具有复杂样式和结构的网页时，能够提供准确可靠的可访问性信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_position_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::mojom::Role::kStaticText, ax_css_after->RoleValue());
 
   const auto ax_position_before =
@@ -554,8 +556,4 @@ TEST_F(AccessibilityTest, ToPositionWithAffinityWithMultipleInlineTextBoxes) {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
-
 ```

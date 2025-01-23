@@ -120,7 +120,7 @@ Let's imagine a scenario where a user encounters an error during the Frida build
 
 This `cs.py` file is a vital component of Frida's build system, specifically responsible for abstracting and managing the compilation of C# code. It handles the intricacies of different C# compilers, generates the necessary command-line arguments, and performs basic sanity checks. Its functionality is directly relevant to Frida's capabilities in dynamic instrumentation of applications using C#, particularly on platforms where C# is a significant part of the ecosystem. Understanding this file helps in debugging build issues related to C# compilation within the Frida project.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/cs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -266,7 +268,4 @@ class VisualStudioCsCompiler(CsCompiler):
 
     def rsp_file_syntax(self) -> 'RSPFileSyntax':
         return RSPFileSyntax.MSVC
-
-"""
-
 ```

@@ -167,15 +167,17 @@ My plan is to:
 
 该文件的主要功能是为 Blink 引擎中的 `KeyframeEffectModel` 类提供全面的单元测试。它测试了该模型在各种场景下的行为，包括基本的插值、不同的合成模式、缓动函数的应用、超出动画范围的情况、不同数量和位置的关键帧，以及处理多个属性动画的能力。这些测试旨在确保 `KeyframeEffectModel` 能够准确地模拟和计算 CSS 关键帧动画的效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/keyframe_effect_model_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -861,7 +863,4 @@ TEST_F(AnimationKeyframeEffectModel, ToKeyframeEffectModel) {
 }
 
 TEST_F(AnimationKeyframeEffectModel, CompositorSn
-"""
-
-
 ```

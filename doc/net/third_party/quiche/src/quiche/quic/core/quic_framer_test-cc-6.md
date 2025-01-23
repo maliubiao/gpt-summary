@@ -138,7 +138,7 @@ QUIC 协议是下一代 HTTP 协议 (HTTP/3) 的底层传输协议，而 HTTP/3 
 
 作为整个 `quic_framer_test.cc` 文件的一部分，这第 7 部分主要专注于 **测试 `QuicFramer` 构建和处理各种类型 QUIC 数据包和帧的能力，特别是针对 `STREAM` 帧、`CRYPTO` 帧以及各种 `ACK` 帧（包括带有接收时间戳的 ACK 帧）的构建和解析**。它涵盖了不同 QUIC 版本下的数据包结构，并验证了在不同场景下 `QuicFramer` 的正确行为，例如处理版本协商和带客户端连接 ID 的情况。 这部分测试对于确保 QUIC 协议实现的正确性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eamId, true, kStreamOffset,
                                absl::string_view("hello world!"));
 
@@ -1150,7 +1152,4 @@ TEST_P(QuicFramerTest,
       {kSmallLargestObserved - 7, CreationTimePlus((0x2995 << 3) + 1)},
       {kSmallLargestObserved - 6, CreationTimePlus((0x2995 << 3) + 2)},
       {kSmallLargestObserved - 3, Cre
-"""
-
-
 ```

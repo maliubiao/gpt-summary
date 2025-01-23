@@ -163,15 +163,17 @@ let longLivedObject = createLongLivedObject();
 
 总而言之，`v8/test/unittests/heap/page-promotion-unittest.cc` 是一个用于确保 V8 核心内存管理机制正常工作的关键测试文件，虽然其细节对 JavaScript 开发者是透明的，但理解其背后的原理有助于编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/page-promotion-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/page-promotion-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ TEST_F(PagePromotionTest, PagePromotion_NewToOld) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

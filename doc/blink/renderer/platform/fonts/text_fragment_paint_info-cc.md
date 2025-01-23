@@ -136,14 +136,16 @@ p.innerHTML = "This is <span class='highlight'>important</span> text.";
 
 `TextFragmentPaintInfo` 是 Blink 渲染引擎中用于管理和操作文本片段绘制信息的一个重要结构体。它存储了文本内容、起始和结束偏移量以及文本塑形结果。虽然前端开发者不直接与之交互，但它在幕后处理着网页文本的渲染，与 HTML、CSS 和 JavaScript 的交互息息相关。理解其功能有助于理解浏览器如何渲染网页上的文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/text_fragment_paint_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ TextFragmentPaintInfo TextFragmentPaintInfo::WithEndOffset(
 }
 
 }  // namespace blink
-
-"""
-
 ```

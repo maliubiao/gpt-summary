@@ -178,15 +178,17 @@ b4:                                         // L2
 
 `go/src/cmd/compile/internal/ssa/trim.go` 实现了一个 SSA 优化步骤，用于移除控制流图中为了消除临界边而引入的空基本块。 这有助于简化中间表示，提高编译器的效率。 普通 Go 开发者不需要直接与此代码交互，但了解其功能有助于理解 Go 编译器的优化过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/trim.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -359,9 +361,4 @@ func mergePhi(v *Value, i int, b *Block) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

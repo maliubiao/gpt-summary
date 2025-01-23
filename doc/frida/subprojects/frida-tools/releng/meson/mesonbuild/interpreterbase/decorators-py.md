@@ -160,7 +160,7 @@ process_files_instance.process_files('input.txt', 123)
 
 总而言之，这个文件的主要作用是为 Meson 构建系统的解释器对象的方法添加静态类型检查和其他约束，以提高构建脚本的健壮性和可维护性，并在早期捕获用户的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -858,7 +860,4 @@ class FeatureNew(FeatureCheckBase):
     @staticmethod
     def get_warning_str_prefix(tv: str) -> str:
         retur
-"""
-
-
 ```

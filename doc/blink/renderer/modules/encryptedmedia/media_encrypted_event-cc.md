@@ -201,15 +201,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`media_encrypted_event.cc` 定义了用于表示加密媒体事件的 C++ 类，它是浏览器处理加密媒体播放的关键组成部分，连接了底层的媒体管道和上层的 JavaScript 代码，使得网页能够处理需要解密的媒体内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encryptedmedia/media_encrypted_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc.  All rights reserved.
  *
@@ -260,7 +262,4 @@ void MediaEncryptedEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

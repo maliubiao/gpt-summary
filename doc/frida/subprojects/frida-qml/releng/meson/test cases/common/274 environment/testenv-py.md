@@ -162,7 +162,7 @@ python3 testenv.py DEBUG_MODE 1
 
 因此，`testenv.py` 的错误信息可以作为调试的重要线索，帮助开发者定位和解决环境配置问题，确保测试环境的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/274 environment/testenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -184,7 +186,4 @@ if os.environ.get(key) == expected:
     sys.exit(0)
 
 sys.exit(f'Expected {expected!r}, was {os.environ.get(key)!r}')
-
-"""
-
 ```

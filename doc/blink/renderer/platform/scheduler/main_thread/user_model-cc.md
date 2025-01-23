@@ -136,14 +136,16 @@ By following these steps and constantly refining the understanding, I can arrive
 
 `UserModel` 是 Blink 渲染引擎中一个重要的组件，它通过跟踪和预测用户交互行为来优化主线程的任务调度。虽然开发者不直接操作它，但理解其功能有助于编写更高效、用户体验更好的 Web 应用。它与 JavaScript、HTML 和 CSS 的关系是间接的，主要通过影响浏览器对用户交互的响应速度和流畅度来体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/user_model.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ void UserModel::WriteIntoTrace(perfetto::TracedValue context) const {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

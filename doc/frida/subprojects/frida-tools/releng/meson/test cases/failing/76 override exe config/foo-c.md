@@ -104,7 +104,7 @@ By following this thought process, focusing on the contextual clues, and systema
 
 虽然 `config/foo.c` 的源代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于测试 Frida 在处理极端情况下（例如，非常简单、快速退出的目标程序）的行为，特别是关于配置覆盖的功能。这个测试用例的失败可以帮助 Frida 开发团队发现和修复潜在的 bug，确保 Frida 的健壮性和可靠性。对于 Frida 的用户来说，这个测试用例也间接反映了在使用 Frida 时可能遇到的边界情况和需要注意的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/76 override exe config/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,12 +112,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

@@ -119,15 +119,17 @@ console.log(data); // 当你在 DevTools 中检查 'data' 时
 
 `v8/src/inspector/v8-serialization-duplicate-tracker.h` 中定义的 `V8SerializationDuplicateTracker` 类是 V8 Inspector 中用于高效且正确地序列化 JavaScript 对象的关键组件。它通过跟踪已序列化的值来避免重复序列化，处理循环引用，并确保 Inspector 协议中数据的一致性。这对于提供可靠的 JavaScript 调试体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-serialization-duplicate-tracker.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-serialization-duplicate-tracker.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -168,7 +170,4 @@ class V8SerializationDuplicateTracker {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_SERIALIZATION_DUPLICATE_TRACKER_H_
-
-"""
-
 ```

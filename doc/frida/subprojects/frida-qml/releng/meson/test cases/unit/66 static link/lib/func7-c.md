@@ -120,7 +120,7 @@ int func7()
 
 总而言之，尽管 `func7.c` 中的代码非常简单，但它的存在反映了动态分析工具 Frida 在处理静态链接代码以及进行基础功能测试方面的考虑。用户查看这个文件，通常是为了理解 Frida 的工作原理、调试 Frida 本身，或者作为理解被 instrument 的应用程序行为的辅助手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/66 static link/lib/func7.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,13 +128,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func7()
 {
   return 1;
 }
-
-"""
-
 ```

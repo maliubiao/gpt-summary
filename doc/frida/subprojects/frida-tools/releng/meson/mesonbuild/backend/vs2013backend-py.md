@@ -144,7 +144,7 @@ Meson 构建过程会失败，并显示错误信息 "There is currently no suppo
 
 总而言之，`vs2013backend.py` 是 Frida 构建流程中一个关键的组成部分，它负责将 Meson 的构建描述转换为 Visual Studio 2013 可以理解的项目文件，从而使得在 Windows 平台上构建 Frida 成为可能。它的功能虽然不直接涉及逆向分析的具体操作，但为逆向工程师使用 Frida 提供了必要的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/vs2013backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -188,7 +190,4 @@ class Vs2013Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v120'
-
-"""
-
 ```

@@ -115,7 +115,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code and 
 
 在这个过程中，`spede.cpp` 文件作为应用程序的一部分，成为了 Frida 动态 instrumentation 的目标。开发者通过 Frida 提供的工具和 API，可以观察、修改和理解这段代码在运行时期的行为。目录结构 `frida/subprojects/frida-node/releng/meson/test cases/frameworks/14 doxygen/src/` 表明这个文件很可能是在 Frida 的自动化测试流程中被使用，用于验证 Frida 在处理带有 Doxygen 注释的代码时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/14 doxygen/src/spede.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<spede.h>
 
 /**
@@ -174,7 +176,4 @@ void Spede::slap_forehead() {
 }
 
 }
-
-"""
-
 ```

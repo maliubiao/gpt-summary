@@ -261,15 +261,17 @@ thread1();
 
 总之，`v8/src/base/platform/condition-variable.cc` 提供了 V8 引擎在不同操作系统上使用条件变量进行线程同步的基础设施。理解其功能和正确的使用方法对于编写并发安全的 C++ 代码至关重要。虽然 JavaScript 没有直接的条件变量概念，但其异步特性和 `Atomics` API 在一定程度上提供了类似的同步能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/condition-variable.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/condition-variable.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -473,7 +475,4 @@ bool ConditionVariable::WaitFor(Mutex* mutex, const TimeDelta& rel_time) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

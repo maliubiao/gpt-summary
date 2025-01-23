@@ -173,7 +173,7 @@ func main() {
 
 `go/src/internal/pkgbits/doc.go` 描述的 `pkgbits` 包是 Go 编译器实现包导出功能的底层基础设施。它定义了一种低级的、基于位流元素的格式来表示包的元数据和结构信息，并提供了编码和解码这些信息的 API。 虽然普通 Go 开发者不会直接使用这个包，但理解它的功能有助于深入了解 Go 语言的编译和链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/pkgbits/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -213,9 +215,4 @@ Prompt:
 // inlining requires re-reading the function body for each inlined
 // call, without needing to re-read the object-level details).
 package pkgbits
-
-"""
-
-
-
 ```

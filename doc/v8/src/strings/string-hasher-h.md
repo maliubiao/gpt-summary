@@ -192,15 +192,17 @@ console.log(str1 === str3); // 输出 true
 
 总而言之，`v8/src/strings/string-hasher.h` 定义了 V8 引擎中用于高效计算字符串哈希值的工具，这对于 JavaScript 引擎的性能至关重要，尤其是在处理对象属性查找、字符串比较以及 `Set` 和 `Map` 等数据结构时。理解其功能有助于我们更好地理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/string-hasher.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/string-hasher.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ struct StringEquals {
 }  // namespace v8
 
 #endif  // V8_STRINGS_STRING_HASHER_H_
-
-"""
-
 ```

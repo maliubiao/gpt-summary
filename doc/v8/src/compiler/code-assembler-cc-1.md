@@ -156,7 +156,7 @@ assembler->OptimizedStoreField(MachineRepresentation::kWord32, my_object, offset
 
 根据描述，如果 `v8/src/compiler/code-assembler.cc` 以 `.tq` 结尾，那么它才是 V8 Torque 源代码。由于它以 `.cc` 结尾，所以它是 **C++ 源代码**。Torque 是一种 V8 自研的类型化的中间语言，用于生成高效的汇编代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/code-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/code-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er_kind;
   switch (write_barrier) {
     case StoreToObjectWriteBarrier::kFull:
@@ -1014,7 +1016,4 @@ CodeAssemblerLabel::CodeAssemblerLabel(CodeAssembler* assembler,
 }
 
 CodeAssemblerLabel::~CodeAssemblerLabel() { label_->~R
-"""
-
-
 ```

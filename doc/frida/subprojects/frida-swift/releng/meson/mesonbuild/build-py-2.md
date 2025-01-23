@@ -124,7 +124,7 @@ executable('my_frida_tool', 'main.c', link_with: ['frida-core'])
 
 这段代码定义了 Frida 构建系统中处理构建目标之间链接关系的核心逻辑。它负责管理依赖关系、验证链接兼容性、处理预编译头文件、管理包含目录，并针对不同的编程语言和操作系统特性进行特殊处理，以确保构建过程的正确性和高效性。它还定义了用于描述自定义构建步骤和生成文件列表的类。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,9 +133,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- raise MesonException(textwrap.dedent('''\
+### 源代码
+```python
+raise MesonException(textwrap.dedent('''\
                         An external library was used in link_with keyword argument, which
                         is reserved for libraries built as part of this project. External
                         libraries must be passed using the dependencies keyword argument
@@ -809,7 +811,4 @@ class Executable(BuildTarget):
         return self.debug_filename
 
     def is_linkable_tar
-"""
-
-
 ```

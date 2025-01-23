@@ -120,14 +120,16 @@ By following these steps, the detailed explanation covering the functionality, r
 
 总而言之，`RecordingTaskTimeObserver` 是一个用于测试和调试的工具类，它通过记录任务的起止时间，帮助开发者理解 Blink 渲染引擎的调度行为，并分析与 JavaScript, HTML, CSS 相关的任务的执行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/recording_task_time_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ void RecordingTaskTimeObserver::DidProcessTask(base::TimeTicks start_time,
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

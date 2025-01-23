@@ -150,15 +150,17 @@ Finally, I organize the information logically, covering the requested points: fu
 
 `memory_usage_monitor_mac.cc` 是 Blink 渲染引擎在 macOS 平台上监控自身内存使用情况的关键组件。它通过系统 API 获取进程的内存占用信息，并为上层模块提供数据。虽然它不直接处理 JavaScript, HTML, CSS 的代码，但它所监控的指标直接反映了这些技术在浏览器中的内存消耗情况，是性能分析和调试的重要依据。用户的操作（打开网页、与网页交互）最终会影响到这里的内存监控数据，而开发者则可以利用这些数据来诊断和优化网页性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/memory_usage_monitor_mac.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ void MemoryUsageMonitorMac::GetProcessMemoryUsage(MemoryUsage& usage) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -123,14 +123,16 @@ By following these steps, you can systematically analyze a C++ test file and und
 
 总而言之，`canvas_resource_dispatcher_test.cc` 通过各种测试用例验证了 `CanvasResourceDispatcher` 在管理和调度 Canvas 资源时的正确性和健壮性，这些测试场景也间接地反映了开发者在使用 Canvas API 时可能遇到的问题和需要注意的地方。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_resource_dispatcher_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -446,7 +448,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          CanvasResourceDispatcherTest,
                          ValuesIn(kTestCases));
 }  // namespace blink
-
-"""
-
 ```

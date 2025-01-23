@@ -348,15 +348,17 @@ operator=(ThrottleEntry&& other) = default;
 
 总而言之，`ThrottlingURLLoader` 的第二部分专注于请求生命周期的管理、错误处理、请求干预（通过 throttle）以及与客户端的通信，是实现灵活和可控的 URL 加载过程的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/throttling_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 utionTimeHistogram("WillOnCompleteWithError", start);
       if (!HandleThrottleResult(throttle)) {
         return;
@@ -552,8 +554,4 @@ ThrottlingURLLoader::ThrottleEntry& ThrottlingURLLoader::ThrottleEntry::
 operator=(ThrottleEntry&& other) = default;
 
 }  // namespace blink
-
-"""
-
-
 ```

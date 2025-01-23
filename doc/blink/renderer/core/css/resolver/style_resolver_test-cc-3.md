@@ -144,7 +144,7 @@ I will structure the response by addressing each point in the user's request.
 
 这部分 `style_resolver_test.cc` 的功能是 **系统地测试 Blink 引擎中 `StyleResolver` 组件在处理一系列复杂和新兴 CSS 特性时的正确性和健壮性**。它通过编写各种具有特定 CSS 场景的 HTML 代码，并断言 `StyleResolver` 的输出（例如，计算样式、WebFeature 的使用计数）是否符合预期，来确保 Blink 能够正确地解释和应用这些 CSS 规则。 这对于保证浏览器的兼容性、稳定性和对新 Web 标准的支持至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,9 +152,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
- 3px;
+### 源代码
+```cpp
+3px;
           -webkit-transform-origin-x: 1px;
           -webkit-transform-origin-y: 2px;
           -webkit-transform-origin-z: 3px;
@@ -1214,7 +1216,4 @@ TEST_F(StyleResolverTest, PseudoCSSRulesForElementIncludeStartingStyle) {
   Element* target = GetDocument().getElementById(AtomicString("target"));
   EXPECT_EQ(target->GetComputedStyle(), nullptr);
   EXPECT_EQ(target->Ge
-"""
-
-
 ```

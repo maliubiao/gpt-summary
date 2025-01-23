@@ -197,7 +197,7 @@ func main() {
 
 总而言之，`go/src/internal/poll/splice_linux.go` 中的代码提供了一种在 Linux 系统上利用 `splice` 系统调用进行高效网络数据传输的机制，它是 Go 语言网络库底层优化的重要组成部分。使用者在直接或间接使用它时，需要理解其适用场景和潜在的错误点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/splice_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -452,9 +454,4 @@ func destroyPipe(p *splicePipe) {
 	CloseFunc(p.rfd)
 	CloseFunc(p.wfd)
 }
-
-"""
-
-
-
 ```

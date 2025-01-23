@@ -170,7 +170,7 @@ Initially, I might have focused too much on the triviality of the C code itself.
 
 总而言之，这个简单的 `main.c` 文件是 Frida 测试框架中的一个组成部分，用于验证 Frida 在处理共享库及其函数版本控制方面的能力。它本身的功能很简单，但其存在是为确保 Frida 能够在更复杂的逆向工程场景中正确工作。用户通常不会直接操作这个文件，而是通过使用 Frida 的 API 来与目标进程进行交互。理解这个测试用例的目的是帮助用户更好地理解 Frida 的内部工作原理和如何使用 Frida 进行逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/1 soname/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,14 +178,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int versioned_func (void);
 
 int main (void) {
   return versioned_func();
 }
-
-"""
-
 ```

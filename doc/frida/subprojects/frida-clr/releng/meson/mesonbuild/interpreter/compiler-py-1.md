@@ -127,7 +127,7 @@ By following this structured analysis, I can comprehensively understand the func
 
 总而言之，这段代码是 Frida 构建系统中连接 Meson 构建系统和实际编译器的桥梁，它提供了一组用于查询和利用编译器能力的接口，确保 Frida 能够根据目标环境正确地构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,9 +136,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- having it check this seems valuable
+### 源代码
+```python
+having it check this seems valuable
         has_header_kwargs: 'HeaderKW' = {
             'required': required,
             'args': kwargs['header_args'],
@@ -365,8 +367,4 @@ Prompt:
         # other targets, list outputs, etc.
         private_dir = os.path.relpath(self.interpreter.backend.get_target_private_dir(tg), self.interpreter.subdir)
         return [build.CustomTargetIndex(tg, os.path.join(private_dir, o)) for o in tg.outputs]
-
-"""
-
-
 ```

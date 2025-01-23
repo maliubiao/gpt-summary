@@ -231,7 +231,7 @@ is_active = true
 
 总而言之，`test_items.py` 是 `tomlkit` 库的核心测试文件，用于确保库的各个组成部分能够按照预期工作，这对于依赖 `tomlkit` 的 Frida 这样的工具的稳定性和可靠性至关重要。 当 Frida 用户在使用配置文件时遇到问题，或者 Frida 开发者需要确保对配置文件的处理是正确的时候，这些测试用例就成为了重要的参考和调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tests/test_items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -239,8 +239,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import copy
 import math
 import pickle
@@ -1212,7 +1214,4 @@ def test_custom_encoders():
 
     assert api.dumps({"foo": decimal.Decimal("1.23")}) == "foo = 1.23\n"
     api.unregister_encoder(encode_decimal)
-
-"""
-
 ```

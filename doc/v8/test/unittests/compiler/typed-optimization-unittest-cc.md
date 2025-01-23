@@ -145,15 +145,17 @@ By following these steps, you can systematically analyze C++ unit test code like
 
 `v8/test/unittests/compiler/typed-optimization-unittest.cc` 是 V8 编译器中至关重要的一个测试文件，它专注于验证类型优化功能的正确性。 通过模拟不同的输入类型和操作，确保 V8 能够在知道变量类型的情况下，生成更高效的 JavaScript 代码。 这些测试覆盖了诸如布尔转换和引用相等性检查等关键操作，并间接地提升了 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/typed-optimization-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/typed-optimization-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ TEST_F(TypedOptimizationTest, ReferenceEqualWithBooleanFalseConstant) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

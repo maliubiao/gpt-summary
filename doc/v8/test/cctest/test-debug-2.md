@@ -101,13 +101,15 @@ while (a < 3) {
 
 这部分 `test-debug.cc` 代码是 V8 引擎的调试功能测试套件的一部分，专门针对在各种循环结构和代码结构中设置和触发断点进行测试，确保 V8 的调试器能够正确地工作，为 JavaScript 开发者提供可靠的调试体验。它直接关联到开发者日常使用的 JavaScript 调试功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- {"",
+### 源代码
+```
+{"",
                                       "g()",
                                       "if (a == 0) { g() }",
                                       "if (a == 1) { g() }",
@@ -1958,7 +1960,4 @@ TEST(GetPrivateAutoAccessors) {
   values.clear();
   CHECK(v8::debug::GetPrivateMembers(context, object, accessor_filter, &names,
                                      &values))
-"""
-
-
 ```

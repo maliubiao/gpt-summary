@@ -164,7 +164,7 @@ Frida 是一个动态 instrumentation 工具，常用于逆向工程。Cython �
 
 总之，`cython.py` 文件是 Frida 构建过程中处理 Cython 代码的关键组件，它定义了与 Cython 编译器交互的方式，并影响着 Frida 中 Cython 代码的编译和最终运行。理解其功能有助于理解 Frida 的构建过程，并在遇到与 Cython 相关的错误时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/cython.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 Intel Corporation
 from __future__ import annotations
@@ -265,7 +267,4 @@ class CythonCompiler(Compiler):
         if lang.value == 'cpp':
             args.append('--cplus')
         return args
-
-"""
-
 ```

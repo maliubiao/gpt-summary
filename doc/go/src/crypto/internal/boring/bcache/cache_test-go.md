@@ -241,7 +241,7 @@ func main() {
 
 总而言之，`cache_test.go` 主要测试了 `bcache` 包中 `Cache` 类型的基本功能、并发安全性和与 Go 垃圾回收机制的交互。 从测试代码可以推断出 `Cache` 类型可能使用了 `runtime.SetFinalizer` 来实现注册缓存的自动清理功能。 使用者需要注意 finalizer 执行时机的不确定性，避免依赖 finalizer 进行关键的资源释放操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/bcache/cache_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -249,8 +249,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -373,9 +375,4 @@ func TestCache(t *testing.T) {
 		t.Errorf("lost %d entries", lost)
 	}
 }
-
-"""
-
-
-
 ```

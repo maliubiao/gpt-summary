@@ -608,7 +608,7 @@ TEST(DirectMemoryTest16BitWord32Immediate) {
         m.GotoIf(m.Word32Equal(masked, m.Int32Constant(0)), &bad);
       } else {
         m
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -616,8 +616,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 NumParams));
     AppendJSArrayCodeStubAssembler m(asm_tester.state(), kind);
     m.TestAppendJSArrayImpl(
@@ -1474,7 +1476,4 @@ TEST(NumberMinMax) {
            V8_INFINITY);
   CHECK(std::isnan(ft_max.CallChecked<HeapNumber>(nan, double_a)->value()));
   CHECK(std::isnan(ft_max.CallChecked<HeapNumber>(double_a, nan)->va
-"""
-
-
 ```

@@ -94,15 +94,17 @@ Now, let's break down the request and address each point:
 
 总而言之，`blink/renderer/core/intersection_observer/intersection_observer_test.cc` 这个文件通过各种单元测试，确保 Chromium Blink 引擎中的 `IntersectionObserver` API 的实现是正确、健壮和符合规范的。它涵盖了 API 的核心功能、配置选项、与浏览器渲染机制的交互以及各种边界情况。这些测试对于保证 Web 开发者能够可靠地使用 `IntersectionObserver` API 构建功能丰富的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -929,7 +931,4 @@ TEST_F(IntersectionObserverTest, RootIntersectionWithForceZeroLayoutHeight) {
   EXPECT_TRUE(observer_delegate->LastIntersectionRect().IsEmpty());
 
   GetDocument().View()->LayoutViewport()->SetScrollOf
-"""
-
-
 ```

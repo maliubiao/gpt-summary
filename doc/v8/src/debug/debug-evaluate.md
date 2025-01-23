@@ -153,11 +153,13 @@ arguments[0] + y;
 
 `debug-evaluate.cc` 是 V8 调试器核心组件之一，它使得在调试过程中与 JavaScript 代码进行交互成为可能，极大地提高了开发效率和问题排查能力。 它通过提供在不同作用域下动态执行 JavaScript 代码的能力，并结合副作用检查机制，为开发者提供了强大的调试工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-evaluate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1521,7 +1523,4 @@ void DebugEvaluate::ApplySideEffectChecks(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

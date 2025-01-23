@@ -152,7 +152,7 @@ int func2_in_obj(void) {
 
 尽管 `source2.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理独立编译对象文件时的能力。它触及了逆向工程中关于代码 hook、符号解析等关键概念，并与二进制底层、操作系统加载机制等知识相关。理解这类简单的测试用例有助于开发者更好地理解 Frida 的工作原理和排查使用中可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/121 object only target/source2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,12 +160,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

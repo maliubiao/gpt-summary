@@ -139,7 +139,7 @@ With these points in mind, the next step is to organize the information into a c
 
 总而言之，虽然 `simple.c` 的功能非常基础，但在 Frida 的测试上下文中，它扮演着测试构建系统或 Frida 某些功能（例如，处理特定构建配置）的受测对象角色。 开发者通过分析这个文件及其周围的上下文，可以理解测试用例的目的以及为什么它会失败。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/46 pkgconfig variables zero length/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,14 +147,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int simple_function() {
     return 42;
 }
-
-"""
-
 ```

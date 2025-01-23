@@ -112,12 +112,14 @@ simpleFunction();
 
 In summary, this first part of the `builtins-loong64.cc` file lays the groundwork for fundamental JavaScript operations on the LoongArch 64-bit architecture, handling function calls, object creation, asynchronous execution (generators), and the execution of unoptimized JavaScript code through the interpreter.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/loong64/builtins-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1893,8 +1895,4 @@ static void Generate_InterpreterEnterBytecode(MacroAssembler* masm) {
   __ Add_d(a1, kInterpreterBytecodeArrayRegister,
            kInterpreterBytecodeOffsetRegister);
   __ Ld_bu(a7, MemOperand(a1, 0));
-
-"""
-
-
 ```

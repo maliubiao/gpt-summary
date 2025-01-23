@@ -157,15 +157,17 @@ Goroutine Z (running) created at:
 
 总而言之，这段 `race.go` 文件是 Go 语言 Race Detector 在 Plan 9 操作系统上的桥梁，它通过调用 `runtime` 包中的函数来实现数据竞争的监控和报告。开发者需要通过 `-tags=race` (或简写 `-race`) 编译标志来激活这个功能，并在开发和测试阶段利用它来发现潜在的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/plan9/race.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -196,9 +198,4 @@ func raceReadRange(addr unsafe.Pointer, len int) {
 func raceWriteRange(addr unsafe.Pointer, len int) {
 	runtime.RaceWriteRange(addr, len)
 }
-
-"""
-
-
-
 ```

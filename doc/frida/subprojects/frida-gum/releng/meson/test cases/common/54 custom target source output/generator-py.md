@@ -155,7 +155,7 @@ int func(void) {
 
 因此，这个脚本可能作为用户在深入理解 Frida 构建系统和自定义代码集成流程时的一个**调试线索**或**学习案例**。  当涉及到构建错误、自定义代码加载失败等问题时，理解这种简单的代码生成脚本是如何工作的是排查更复杂问题的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/54 custom target source output/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -181,7 +183,4 @@ with open(os.path.join(odir, 'mylib.c'), 'w') as f:
     return 0;
 }
 ''')
-
-"""
-
 ```

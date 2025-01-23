@@ -96,12 +96,14 @@ My plan is to:
 
 总而言之，这个C++文件的核心功能是提供一种机制，用于在V8引擎的开发和调试过程中，对各种关键的内部对象进行健全性检查，从而提高引擎的稳定性和可靠性。它验证的对象直接对应着JavaScript语言的各种特性和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-debug.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 g(element)) {
     CHECK(v8_flags.shared_string_table);
     CHECK(HeapLayout::InWritableSharedSpace(Cast<ThinString>(element)));
@@ -1291,8 +1293,4 @@ bool TransitionsAccessor::IsConsistentWithBackPointers() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

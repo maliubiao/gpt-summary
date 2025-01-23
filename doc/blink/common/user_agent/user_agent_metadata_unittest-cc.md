@@ -166,14 +166,16 @@ By following these steps, a comprehensive understanding of the unittest file and
 
 总而言之，`user_agent_metadata_unittest.cc` 这个文件是 Chromium 浏览器为了确保其用户代理信息处理逻辑正确而进行的基础测试。它虽然是 C++ 代码，但其测试的功能直接影响到 Web 开发者在 JavaScript, HTML 和 CSS 中如何获取和利用用户设备和浏览器信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/user_agent/user_agent_metadata_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ TEST(UserAgentMetaDataTest, MojoTraits) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

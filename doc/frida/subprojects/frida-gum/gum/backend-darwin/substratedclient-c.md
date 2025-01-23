@@ -132,7 +132,7 @@ This systematic approach allows for a comprehensive understanding of the code's 
 
 总而言之，`substratedclient.c` 中的 `substrated_mark` 函数是 Frida 在 Darwin 平台上进行动态 instrumentation 的一个底层组件，它通过 Mach IPC 与高权限的 `substrated` 服务通信，实现对目标进程内存的标记操作，为 Frida 的代码注入、Hooking 等核心功能提供了基础支持。理解这个文件的功能和运作方式，有助于深入理解 Frida 的工作原理，并为逆向工程和安全分析提供更强大的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/substratedclient.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * IDENTIFICATION:
  * stub generated Tue Mar  5 16:43:27 2019
@@ -432,7 +434,4 @@ mig_external kern_return_t substrated_mark
 
 	return KERN_SUCCESS;
 }
-
-"""
-
 ```

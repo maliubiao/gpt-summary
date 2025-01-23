@@ -181,7 +181,7 @@ Remember that files created by custom scripts have not been removed.
 
 总而言之，`uninstall.py` 虽然是一个简单的 Python 脚本，但它在 Frida 的构建和维护流程中扮演着重要的角色，并且与底层的操作系统和文件系统操作紧密相关。理解其功能和潜在的错误情况有助于用户更好地管理 Frida 的安装和卸载。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/uninstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -232,7 +234,4 @@ def run(args: T.List[str]) -> int:
         return 0
     do_uninstall(logfile)
     return 0
-
-"""
-
 ```

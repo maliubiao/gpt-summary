@@ -92,7 +92,7 @@ Initially, one might focus too much on the *lack* of content and simply state "i
 
 虽然 `frida/subprojects/frida-core/releng/meson/docs/refman/__init__.py` 文件本身是一个空文件，但它在Python中扮演着重要的角色，将 `refman` 目录标记为一个包，为组织和导入其下的文档生成相关的模块提供了基础。它的存在间接地支持了Frida的逆向功能，因为它参与了构建Frida的参考文档，而这些文档对于逆向工程师理解和使用Frida至关重要。 调试过程中到达这里可能意味着开发者正在研究Frida的文档生成流程或项目结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/docs/refman/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,9 +100,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

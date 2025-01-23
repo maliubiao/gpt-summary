@@ -172,7 +172,7 @@ class MyClass {
 
 `v8/src/objects/shared-function-info-inl.h` 文件的主要功能是定义了 `SharedFunctionInfo` 对象及其相关子对象的内联访问和操作方法。`SharedFunctionInfo` 作为 V8 内部表示 JavaScript 函数元数据的核心结构，包含了函数的名称、作用域、代码、参数、优化状态等关键信息。该文件还涉及对函数预解析数据、未编译数据和解释器数据的管理。通过这些内联方法，V8 引擎能够高效地访问和操作函数元数据，为 JavaScript 代码的编译、优化和执行提供了基础。文件的存在和内容体现了 V8 引擎在性能和效率上的追求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/shared-function-info-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/shared-function-info-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1056,7 +1058,4 @@ bool SharedFunctionInfo::HasWasmResumeData() const {
 DEF_GETTER(SharedFunctionInfo, asm_wasm_data, Tagged<AsmWasmData>) {
   DCHECK(HasAsmWasmData());
   return Cast<AsmWasmData>(GetUntruste
-"""
-
-
 ```

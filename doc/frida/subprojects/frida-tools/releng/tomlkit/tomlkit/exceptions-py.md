@@ -175,7 +175,7 @@ owner = { name = "Tom Preston-Werner", dob = 1979-05-27T07:32:00Z }  # 缺少引
 
 当用户报告 Frida 脚本运行时出现 "解析配置文件时出错" 的提示，并且提供了具体的错误信息（例如 "Mixed types found in array at line 5 col 10"），这就是一个明确的调试线索。用户可以通过查看目标应用配置文件的第 5 行第 10 列，来定位并修复语法错误。这些异常信息直接帮助用户缩小了问题范围，提高了调试效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from typing import Collection
@@ -412,7 +414,4 @@ class InvalidStringError(ValueError, TOMLKitError):
             f"Invalid string: {delimiter}{repr_}{delimiter}. "
             f"The character sequences {invalid_sequences} are invalid."
         )
-
-"""
-
 ```

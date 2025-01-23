@@ -147,7 +147,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言 `hash/crc32` 包为了在 ARM64 架构上提供高性能 CRC32 计算而进行优化的底层实现。它通过检测硬件支持并利用硬件指令来加速计算过程。使用者通常不需要直接操作这些底层函数，而是使用 `hash/crc32` 包提供的更高级别的 API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/crc32/crc32_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -207,9 +209,4 @@ func archUpdateIEEE(crc uint32, p []byte) uint32 {
 
 	return ^ieeeUpdate(^crc, p)
 }
-
-"""
-
-
-
 ```

@@ -77,10 +77,13 @@ Based on this analysis, the main purpose of this code is to **unit test the pars
 
 总而言之，这部分代码定义了 V8 解析器的基础单元测试框架和一些核心的测试用例，涵盖了词法分析、语法分析、预解析以及一些特定的语言特性和边界情况的测试。 它是整个解析器测试套件的基础部分，为后续更复杂的测试用例提供了必要的工具和基础测试方法。
 
-Prompt: ```这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1829,6 +1832,4 @@ TEST_F(ParsingTest, ScopePositions) {
     int kSuffixByteLen = static_cast<int>(strlen(source_data[i].outer_suffix));
     int kProgramSize = kPrefixLen + kInnerLen + kSuffixLen;
     int kProgramByteSize = kPrefixByteLen + kInnerByteLen + kSu
-"""
-
 ```

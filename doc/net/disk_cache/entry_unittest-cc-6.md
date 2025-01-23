@@ -125,7 +125,7 @@ By following these steps and refining the analysis, a comprehensive and accurate
 
 这第七部分专注于预取功能的测试，特别是对比了 HTTP 缓存和 AppCache 在不同预取配置下的行为差异，并验证了相关性能指标的直方图统计。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/entry_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ySize,
               WriteData(entry, 1, 0, payload_.get(), kEntrySize, false));
 
@@ -478,8 +480,4 @@ TEST_F(DiskCacheSimpleAppCachePrefetchTest, LargeFullSmallSpeculative) {
   histogram_tester.ExpectUniqueSample("SimpleCache.App.SyncOpenPrefetchMode",
                                       disk_cache::OPEN_PREFETCH_FULL, 1);
 }
-
-"""
-
-
 ```

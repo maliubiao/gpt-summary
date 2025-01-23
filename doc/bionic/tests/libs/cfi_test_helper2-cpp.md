@@ -269,7 +269,7 @@ sys.stdin.read()
 
 总结来说，`cfi_test_helper2.cpp` 是一个用于验证 Android Bionic 中 CFI 机制的小型测试程序，它通过检查 `libcfi-test.so` 是否可以被加载来间接验证 CFI 的配置和功能。 理解其功能需要了解动态链接的基本原理和 CFI 的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/cfi_test_helper2.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -310,7 +312,4 @@ int main(void) {
   dlclose(handle);
   return 0;
 }
-
-"""
-
 ```

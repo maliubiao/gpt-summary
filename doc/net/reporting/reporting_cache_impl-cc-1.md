@@ -116,7 +116,7 @@ navigator.sendBeacon("/report_receiver", JSON.stringify({
 
 这部分 `ReportingCacheImpl` 的代码主要负责**内部管理 reporting endpoint 和 endpoint group 的信息**。它提供了用于**测试目的的访问和修改缓存状态的接口**，实现了**查找、添加、更新和删除缓存中 endpoint 和 endpoint group 的核心逻辑**，并包含了**用于确保缓存数据一致性的检查机制**。此外，它还定义了用于组织缓存数据的 `Client` 结构体，并实现了**根据策略限制缓存大小和清理过期/过时数据的机制**。这部分功能是 Reporting API 在浏览器内部正常运作的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_cache_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ableToken& reporting_source,
     const std::string& endpoint_name) const {
   DCHECK(!reporting_source.is_empty());
@@ -963,8 +965,5 @@ void ReportingCacheImpl::AddEndpointItToIndex(
 }
 
 void ReportingCacheImpl::RemoveEndpointItFromIndex(
-    EndpointMap::iterator 
-"""
-
-
+    EndpointMap::iterator
 ```

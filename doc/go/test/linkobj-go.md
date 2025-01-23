@@ -144,15 +144,17 @@ run("go", "tool", "compile", "-p=p1", pkg, "-D", ".", "-importcfg=importcfg", "-
 
 `go/test/linkobj.go` 这个测试用例的核心是验证 Go 编译器 `-linkobj` 标志的功能，即生成额外的链接对象文件，并确认这些文件可以在后续的链接步骤中使用。这可能与 Go 工具链的构建优化和更精细的构建控制有关。 虽然普通 Go 开发者不会直接使用 `-linkobj` 标志，但理解其背后的原理有助于更深入地理解 Go 的编译和链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkobj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 //go:build !nacl && !js && gc && !wasip1
@@ -317,9 +319,4 @@ func fatalf(format string, args ...interface{}) {
 	cleanup()
 	log.Fatalf(format, args...)
 }
-
-"""
-
-
-
 ```

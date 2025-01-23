@@ -152,15 +152,17 @@ Load(base, index'=original_index + large_offset, kind=Tagged, offset=0, element_
 
 总而言之，`v8/src/compiler/turboshaft/load-store-simplification-reducer.h` 是 V8 编译器中一个关键的组件，它负责优化内存访问操作，使其更符合目标架构的特性，从而提高 JavaScript 代码的执行效率。它处理了诸如偏移量、元素大小和带标签指针等与架构相关的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/load-store-simplification-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/load-store-simplification-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -374,7 +376,4 @@ class LoadStoreSimplificationReducer : public Next,
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_LOAD_STORE_SIMPLIFICATION_REDUCER_H_
-
-"""
-
 ```

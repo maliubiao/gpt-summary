@@ -126,15 +126,17 @@ Now I will consolidate these points into a structured answer.
 
 这部分 `kurl_test.cc` 涵盖了 `blink::KURL` 类在处理 URL 的引用、协议修改、无效 URL 转换、国际化域名、IPv6 地址以及端口号等方面的功能测试。这些测试确保了 `KURL` 类的健壮性和正确性，对于浏览器的安全性和正确地处理各种类型的 URL 至关重要。这些功能都与浏览器如何解析和处理来自 HTML、CSS 和 Javascript 的 URL 息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/kurl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erScheme) {
   const KURL example_http_url = KURL("http://example.com/");
   const KURL foobar_url = KURL("foobar://somepage/");
@@ -545,8 +547,4 @@ class KURLTestTraits {
 INSTANTIATE_TYPED_TEST_SUITE_P(KURL, AbstractUrlTest, KURLTestTraits);
 
 }  // namespace url
-
-"""
-
-
 ```

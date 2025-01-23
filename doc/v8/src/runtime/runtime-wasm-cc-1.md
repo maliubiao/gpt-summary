@@ -128,7 +128,7 @@ By following these steps and refining the approach along the way, I can generate
 
 总而言之，这部分 `runtime-wasm.cc` 文件是 V8 引擎中 WebAssembly 支持的关键组成部分，它提供了 Wasm 代码在运行时与 V8 引擎和 JavaScript 环境交互所需的底层功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-wasm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-wasm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 riggerTierUp) {
   ClearThreadInWasmScope clear_wasm_flag(isolate);
   SealHandleScope shs(isolate);
@@ -908,7 +910,4 @@ RUNTIME_FUNCTION(Runtime_WasmStringNewWtf16) {
   uint64_t mem_size = trusted_instance_data->memory_size(memory);
   if (size_in_codeunits > kMaxUInt32 / 2 ||
       !base::IsInBounds<uint64_t>(offset, size_in_co
-"""
-
-
 ```

@@ -91,7 +91,7 @@ test('my_tool_test', 'my_tool')
 
 当开发者在调试 Frida 的构建过程时，如果遇到了与构建目标或测试相关的错误，他们可能会查看这些 `Holder` 对象的属性和方法，以了解 Meson 是如何表示和处理这些构建元素的。例如，如果一个测试没有按预期运行，开发者可能会检查 `TestHolder` 对象的 `cmd_args` 和 `env` 属性，以确定测试是如何被执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreter/interpreterobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,9 +100,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   super().__init__()
+### 源代码
+```python
+super().__init__()
         self.name = name
         self.suite = listify(suite)
         self.project_name = project
@@ -447,8 +449,4 @@ class StructuredSourcesHolder(ObjectHolder[build.StructuredSources]):
 
     def __init__(self, sources: build.StructuredSources, interp: 'Interpreter'):
         super().__init__(sources, interp)
-
-"""
-
-
 ```

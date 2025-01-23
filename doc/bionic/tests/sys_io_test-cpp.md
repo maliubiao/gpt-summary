@@ -249,7 +249,7 @@ if (Process.arch === 'x64' || Process.arch === 'ia32') {
 
 `bionic/tests/sys_io_test.cpp` 是一个用于验证 Bionic libc 中 `iopl` 和 `ioperm` 函数行为的单元测试。这两个函数是与 x86/x86-64 架构的底层硬件 I/O 端口操作相关的系统调用接口。虽然普通 Android 应用程序不常用，但对于理解 Android 底层和系统调用机制至关重要。通过 Frida hook，我们可以动态地观察这些函数的执行过程，从而更好地理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_io_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -315,7 +317,4 @@ TEST(sys_io, ioperm) {
   GTEST_SKIP() << "ioperm requires x86/x86-64";
 #endif
 }
-
-"""
-
 ```

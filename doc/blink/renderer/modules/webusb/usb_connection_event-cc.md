@@ -171,15 +171,17 @@ Here's a breakdown of the thinking process to arrive at the comprehensive analys
 
 总而言之，`usb_connection_event.cc` 文件在 WebUSB API 的实现中扮演着关键的角色，它定义了用于传递 USB 设备连接和断开连接信息的事件对象，连接了底层的操作系统事件和上层的 JavaScript API。理解这个文件的功能有助于开发者更好地理解 WebUSB 的工作原理并进行问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webusb/usb_connection_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ void USBConnectionEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

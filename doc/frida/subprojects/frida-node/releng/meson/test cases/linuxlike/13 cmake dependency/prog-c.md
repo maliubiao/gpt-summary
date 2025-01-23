@@ -119,7 +119,7 @@ Here's a thinking process to arrive at the analysis of the provided C code:
 
 总而言之，这个简单的 C 程序虽然功能单一，但在 Frida 的测试框架中，它可以作为一个基本的 sanity check，用于确保 Frida 能够正确处理具有外部依赖的程序。对于逆向工程师而言，理解这类代码有助于深入了解程序与外部库的交互方式，以及动态链接的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/linuxlike/13 cmake dependency/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<zlib.h>
 
 int main(void) {
@@ -137,7 +139,4 @@ int main(void) {
         return 0;
     return 1;
 }
-
-"""
-
 ```

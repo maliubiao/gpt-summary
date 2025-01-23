@@ -217,15 +217,17 @@ My thinking process to analyze the `PresentationController.cc` file and answer t
 
 总而言之，`PresentationController` 是 Blink 中实现 Web Presentation API 的关键组件，它负责管理 presentation 会话的生命周期，与浏览器进程通信，并将底层状态变化反映到 JavaScript API 中，使得网页能够与外部显示设备进行交互。理解其功能和工作原理对于调试 Presentation API 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/presentation/presentation_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -407,7 +409,4 @@ ControllerPresentationConnection* PresentationController::FindConnection(
 }
 
 }  // namespace blink
-
-"""
-
 ```

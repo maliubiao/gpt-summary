@@ -181,15 +181,17 @@ While developers rarely interact directly with the new space in V8, understandin
 
 In summary, `v8/src/heap/new-spaces.h` is a crucial header file defining the low-level mechanisms for managing the young generation heap in V8. It implements different strategies for this management and is directly involved in the allocation of new JavaScript objects and the execution of the fast scavenging garbage collector. Understanding its concepts can provide valuable insights into V8's memory management and performance characteristics.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/new-spaces.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/new-spaces.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -950,7 +952,4 @@ class V8_EXPORT_PRIVATE PagedNewSpace final : public NewSpace {
 }  // namespace v8
 
 #endif  // V8_HEAP_NEW_SPACES_H_
-
-"""
-
 ```

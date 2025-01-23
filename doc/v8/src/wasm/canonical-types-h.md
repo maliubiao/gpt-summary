@@ -141,15 +141,17 @@ While developers don't directly interact with `canonical-types.h`, the concepts 
 
 In summary, `v8/src/wasm/canonical-types.h` is a crucial piece of V8's WebAssembly implementation, responsible for efficiently managing and comparing complex WebAssembly types. It enables correct type checking and interaction between JavaScript and WebAssembly, even in the presence of recursive type definitions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/canonical-types.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/canonical-types.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -560,7 +562,4 @@ V8_EXPORT_PRIVATE TypeCanonicalizer* GetTypeCanonicalizer();
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_CANONICAL_TYPES_H_
-
-"""
-
 ```

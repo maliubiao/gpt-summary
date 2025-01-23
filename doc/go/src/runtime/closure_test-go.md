@@ -230,7 +230,7 @@ func main() {
 
 总而言之，`closure_test.go` 的主要目的是通过基准测试来评估 Go 语言中不同闭包使用方式的性能，帮助 Go 语言的开发者了解闭包的性能特性，并可能用于 Go 语言运行时的优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/closure_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -238,8 +238,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -294,9 +296,4 @@ func BenchmarkCallClosure4(b *testing.B) {
 		_, ss = addr2()
 	}
 }
-
-"""
-
-
-
 ```

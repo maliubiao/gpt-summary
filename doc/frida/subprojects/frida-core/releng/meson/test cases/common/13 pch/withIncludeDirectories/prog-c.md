@@ -128,7 +128,7 @@ By following this structured thinking process, combining code analysis with doma
 
 `prog.c` 虽然是一个非常简单的 C 程序，但它巧妙地利用了预编译头 (PCH) 的机制。它的存在是为了测试在特定构建配置下，代码是否能够正确编译和运行。在逆向工程中，理解这种隐式的依赖关系非常重要。对于 Frida 开发者或用户来说，理解这个测试用例有助于调试与构建系统和预编译头相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/13 pch/withIncludeDirectories/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 void func(void) {
@@ -147,7 +149,4 @@ void func(void) {
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

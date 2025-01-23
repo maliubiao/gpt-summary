@@ -106,12 +106,14 @@ obj.c = 3;
 
 这段代码是 V8 引擎将高级 JavaScript 代码转化为可在 x64 架构上执行的低级机器码的关键组成部分。 它处理了各种不同的操作，从基本的算术运算到复杂的函数调用和内存管理，所有这些都是为了高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rLazyDeopt(instr);
       frame_access_state()->ClearSPDelta();
       break;
@@ -1894,7 +1896,4 @@ rLazyDeopt(instr);
       int stack_decrement = i.InputInt32(0);
       int slots = stack_decrement / kSystemPointerSize;
       // Whenever codegen uses pushq, we need to check if stack
-"""
-
-
 ```

@@ -118,7 +118,7 @@ do_nasty(buffer); // 这里将会发生内存越界写入
 
 这段简单的 `do_nasty` 函数虽然代码量很少，但它清晰地展示了一个经典的内存越界写入问题。在Frida的上下文中，它很可能是一个用于测试Frida内存检测功能的单元测试用例。理解这段代码的功能和潜在问题，有助于理解逆向工程中常见的漏洞类型，以及Frida在动态分析和漏洞检测方面的作用。用户通常不会直接操作这段代码，而是通过运行Frida的测试或调试Frida自身来间接地接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/2 testsetups/impl.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,14 +126,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Write past the end. */
 
 void do_nasty(char *ptr) {
     ptr[10] = 'n';
 }
-
-"""
-
 ```

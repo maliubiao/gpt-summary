@@ -190,7 +190,7 @@ By following these steps—from high-level overview to detailed function analysi
 
 总而言之，`gumx86reader.c` 是 Frida 进行 x86 平台动态分析和插桩的关键底层组件，它提供了读取、解析和理解机器码指令的能力，是实现 Frida 各种高级功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-x86/gumx86reader.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -335,7 +337,4 @@ gum_x86_reader_disassemble_instruction_at (gconstpointer address)
 
   return insn;
 }
-
-"""
-
 ```

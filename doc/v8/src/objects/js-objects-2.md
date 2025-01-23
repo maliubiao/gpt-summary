@@ -159,12 +159,14 @@ const instance = new MyClass();
 
 总而言之，`v8/src/objects/js-objects.cc` 的第 3 部分深入到 V8 引擎内部，实现了 JavaScript 对象属性管理的底层机制，确保了 JavaScript 语言的动态性和灵活性，并针对性能进行了优化。理解这部分代码有助于深入理解 JavaScript 对象的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 property_count);
   }
 
@@ -1825,8 +1827,4 @@ void JSObject::OptimizeAsPrototype(DirectHandle<JSObject> object,
         Tagged<JSFunction> object_function = context->object_function();
         if (!tuple.is_null()) {
           tuple->set_value1(object_function);
-       
-"""
-
-
 ```

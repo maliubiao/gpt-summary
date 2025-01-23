@@ -129,15 +129,17 @@ func main() {
 
 总结来说，这段代码简洁地展示了 Go 语言中结构体嵌入以及导出/未导出标识符的可见性规则，强调了外部包无法直接访问嵌入的未导出结构体的字段。理解这一点对于编写模块化且封装良好的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6789.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -152,9 +154,4 @@ type unexported struct {
 type Struct struct {
         unexported
 }
-
-"""
-
-
-
 ```

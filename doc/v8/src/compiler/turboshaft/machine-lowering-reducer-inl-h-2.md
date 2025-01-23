@@ -269,7 +269,7 @@ Now, let's formulate the response.
 
 总而言之，这段代码片段是 V8 Turboshaft 编译器中用于将高级操作转换为更底层的、接近机器级别的操作的关键部分。它定义了针对数组、数值、字符串和 BigInt 等数据类型的各种操作的降低（lowering）逻辑，并且考虑了性能优化和错误处理（如溢出反优化）。这些 `REDUCE` 函数是编译器将 JavaScript 代码翻译成高效机器码过程中的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -277,9 +277,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- ScopedVar<WordPtr> index(this, 0);
+### 源代码
+```c
+ScopedVar<WordPtr> index(this, 0);
 
     WHILE(__ UintPtrLessThan(index, length)) {
       __ StoreNonArrayBufferElement(array, access, index, the_hole_value);
@@ -1041,7 +1043,4 @@ Prompt:
   }
 
   V<Object> REDUCE(NewArgum
-"""
-
-
 ```

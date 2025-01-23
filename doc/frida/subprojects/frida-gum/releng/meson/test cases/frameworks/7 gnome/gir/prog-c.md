@@ -311,7 +311,7 @@ sample: unrecognized option '--unknown-option'
 
 因此，`prog.c` 文件作为 Frida 测试套件的一部分，其存在是为了验证 Frida 的功能。当 Frida 开发者在开发或维护 Frida 的 GObject Introspection 支持时，他们会直接与这个文件以及类似的测试用例进行交互，以确保 Frida 能够正确地 hook 和分析使用了 GObject 的程序。这个文件成为了一个具体的调试目标和参考案例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/7 gnome/gir/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -319,8 +319,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <girepository.h>
 
 #include "meson-sample.h"
@@ -356,7 +358,4 @@ main (gint   argc,
 
   return 0;
 }
-
-"""
-
 ```

@@ -120,15 +120,17 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总结来说，`ParkableStringImpl` 是 Blink 引擎中一个关键的内存优化组件，它通过智能地管理字符串的生命周期和存储方式，有效地降低了内存消耗，从而提升了浏览器的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/parkable_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1026,7 +1028,4 @@ void ParkableStringImpl::OnParkingCompleteOnMainThread(
   DCHECK(!metadata_->compressed_);
   if (compressed) {
     metadata_->compressed_ = s
-"""
-
-
 ```

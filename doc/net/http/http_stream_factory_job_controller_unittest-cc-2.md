@@ -100,7 +100,7 @@ By following these steps, I can construct a comprehensive and accurate answer to
 
 这部分单元测试主要专注于验证 `HttpStreamFactoryJobController` 在遇到各种连接错误时，能否正确地执行代理回退逻辑，确保在代理不可用时，仍然能够尝试其他可用的连接方式（包括直接连接），从而提高网络请求的成功率和用户体验。它覆盖了多种代理类型和常见的连接错误场景，是网络栈健壮性的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 roxyChain::Direct());
       ProxyConfig proxy_config = ProxyConfig::CreateForTesting(proxy_list);
 
@@ -857,7 +859,4 @@ TEST_P(HttpStreamFactoryJobControllerTest, OnStreamReadyWithNoAlternativeJob) {
 
 // Test we cancel Jobs correctly when the Request is explicitly canceled
 // before any Job is bound to Reques
-"""
-
-
 ```

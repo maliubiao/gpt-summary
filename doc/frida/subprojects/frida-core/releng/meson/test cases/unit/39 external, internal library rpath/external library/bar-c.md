@@ -148,7 +148,7 @@ Finally, organize the thoughts into a clear and structured answer, using heading
 
 这个 `bar.c` 文件作为 Frida 的测试用例，旨在验证 Frida 在处理这种“外部库存在未解析符号”的场景下的行为是否符合预期，例如能否成功 hook 函数、能否检测到符号缺失等。它帮助 Frida 的开发者确保工具的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/39 external, internal library rpath/external library/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,15 +156,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int some_undefined_func (void);
 
 int bar_system_value (void)
 {
   return some_undefined_func ();
 }
-
-"""
-
 ```

@@ -178,15 +178,17 @@ This iterative process of skimming, deep diving, analyzing individual components
 
 总而言之，`network_quality_estimator_test_util.cc` 提供了一种受控的环境来测试 Chromium 网络栈中负责估计网络质量的关键组件，对于保证网络相关功能的正确性和性能至关重要。它与 JavaScript 的网络性能 API 有着直接的联系，因为它的测试目标就是为这些 API 提供底层数据支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/network_quality_estimator_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -545,7 +547,4 @@ void TestNetworkQualityEstimator::SetStartTimeNullTransportRtt(
 }
 
 }  // namespace net
-
-"""
-
 ```

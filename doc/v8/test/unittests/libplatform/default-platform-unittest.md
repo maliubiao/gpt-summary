@@ -135,11 +135,13 @@ By following these steps and iterating, the comprehensive summary and illustrati
 
 `default-platform-unittest.cc` 这个文件通过各种单元测试用例，确保了 V8 引擎的 `DefaultPlatform` 类能够正确地管理和调度任务，处理延迟和空闲任务，以及在平台终止时进行正确的资源清理。这对于 V8 引擎的稳定性和性能至关重要，因为它直接关系到 JavaScript 代码在各种环境中的执行行为。理解这些测试用例有助于深入理解 V8 引擎的内部工作原理以及 JavaScript 的异步编程模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libplatform/default-platform-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ TEST(CustomDefaultPlatformTest, PostForegroundTaskAfterPlatformTermination) {
 }  // namespace default_platform_unittest
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

@@ -191,15 +191,17 @@ const largeArray = new Array(100000); // 创建一个可能导致底层分配较
 
 `v8/test/benchmarks/cpp/cppgc/allocation_perf.cc` 是一个重要的性能测试，用于评估 V8 中 C++ 垃圾回收器的对象分配效率。它通过基准测试不同大小对象的分配速度，帮助 V8 开发者优化内存管理性能，最终提升 JavaScript 代码的执行效率。它不是 Torque 代码，但与 JavaScript 的性能密切相关。 理解这类测试有助于开发者认识到垃圾回收的重要性以及避免手动内存管理中常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/benchmarks/cpp/cppgc/allocation_perf.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/benchmarks/cpp/cppgc/allocation_perf.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ BENCHMARK_F(Allocate, Large)(benchmark::State& st) {
 }  // namespace
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

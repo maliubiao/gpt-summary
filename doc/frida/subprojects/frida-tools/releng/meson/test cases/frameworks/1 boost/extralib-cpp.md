@@ -184,7 +184,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 总而言之，这个 `extralib.cpp` 文件本身功能简单，但它可以作为学习、测试、调试或构建更复杂系统的基础模块，尤其在与 Frida 动态插桩技术结合使用时，它可以作为一个很好的目标进行实验和验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/1 boost/extralib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include <iostream>
@@ -221,7 +223,4 @@ int main(int argc, char **argv) {
   BOOST_LOG_TRIVIAL(trace) << "SOMETHING";
   return 0;
 }
-
-"""
-
 ```

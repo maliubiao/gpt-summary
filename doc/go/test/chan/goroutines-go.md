@@ -175,15 +175,17 @@ func main() {
 
 这段代码简洁而有效地演示了 Go 语言并发编程的核心概念。通过构建 goroutine 链和使用 channel 进行通信，它展示了一种基本的并发模式，可以用于构建更复杂的并发应用。  同时，它也提醒开发者在使用 channel 时需要注意其阻塞特性以及正确理解 channel 的方向性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/goroutines.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -225,9 +227,4 @@ func main() {
 	go func(c chan int) { c <- 1 }(right)
 	<-leftmost
 }
-
-"""
-
-
-
 ```

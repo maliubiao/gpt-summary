@@ -196,7 +196,7 @@ My thinking process to answer the request goes like this:
 
 这部分代码主要定义了 **内存加载、存储、寄存器移动、浮点数操作、类型转换以及一些特殊的内存操作 (如 Duff's Device)** 的 SSA 操作码。 这些操作码是 MIPS 架构下，编译器将高级 Go 代码转换为低级指令的关键中间步骤。 此外，它还包含了函数调用和原子操作的定义。 值得注意的是，代码中开始出现 `ppc64` 的汇编指令 (`ppc64.AADD`)，这可能意味着该文件包含了针对多种架构的操作定义，或者在提供的代码片段中存在混淆。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,9 +205,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第24部分，共36部分，请归纳一下它的功能
+```
 
-"""
-       2,
+### 源代码
+```go
+2,
 		faultOnNilArg0: true,
 		symEffect:      SymRead,
 		asm:            mips.AMOVWU,
@@ -1236,9 +1238,4 @@ Prompt:
 			},
 			outputs: []outputInfo{
 				{0, 9223372032559808512}, // F0 F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F
-"""
-
-
-
-
 ```

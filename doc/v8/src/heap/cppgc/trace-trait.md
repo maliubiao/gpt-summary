@@ -97,11 +97,13 @@ let globalRef = obj2;
 
 虽然 JavaScript 开发者通常不需要直接关心这些底层的 C++ 实现，但理解其背后的原理有助于更好地理解 JavaScript 的内存管理和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/trace-trait.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -130,7 +132,4 @@ TraceDescriptor TraceTraitFromInnerAddressImpl::GetTraceDescriptor(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

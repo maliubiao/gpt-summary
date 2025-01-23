@@ -137,15 +137,17 @@ func main() {
 
 总结来说，这段代码是 Go 语言为了适应 Plan 9 操作系统独特的独占文件访问机制而实现的一个关键组件。它通过检查特定的错误字符串和使用指数退避策略来确保安全地获取文件的独占访问权。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/lockedfile/lockedfile_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -240,9 +242,4 @@ func openFile(name string, flag int, perm fs.FileMode) (*os.File, error) {
 func closeFile(f *os.File) error {
 	return f.Close()
 }
-
-"""
-
-
-
 ```

@@ -110,7 +110,7 @@ By following these steps, I could construct a comprehensive and accurate summary
 
 这部分单元测试主要集中在 `VideoTrackRecorder` 类在各种视频编码场景下的行为验证，特别是与底层 `MediaVideoEncoder` 的交互，以及在 "passthrough" 模式下的数据传递。此外，还包括对 `CodecEnumerator` 类的测试，确保了编码器选择逻辑的正确性。 这些测试覆盖了关键帧生成、时间戳处理、错误处理、硬件/软件编码器切换、透明度处理以及暂停/恢复等核心功能，为 `MediaRecorder` API 的视频录制功能提供了可靠的保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/video_track_recorder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 3u);
 
   auto origin = base::TimeTicks::Now();
@@ -823,8 +825,4 @@ TEST_F(CodecEnumeratorTest, FindSupportedVideoCodecProfileNoProfileH264VBR) {
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

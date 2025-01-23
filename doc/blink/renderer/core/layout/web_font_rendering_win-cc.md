@@ -155,14 +155,16 @@ By following these steps, you can effectively analyze the C++ code snippet and g
 
 总而言之，`web_font_rendering_win.cc` 文件是 Blink 引擎在 Windows 平台上控制字体渲染行为的关键部分，它通过与 Skia 字体管理器、字体预热器以及其他渲染设置的交互，最终影响着用户在浏览器中看到的网页文本的显示效果。虽然 JavaScript、HTML 和 CSS 不直接调用这些 C++ 函数，但它们通过声明字体样式，间接地依赖于这里配置的字体渲染机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/web_font_rendering_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ void WebFontRendering::SetLCDTextEnabled(bool enabled) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

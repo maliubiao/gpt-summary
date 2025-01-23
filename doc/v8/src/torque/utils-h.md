@@ -252,15 +252,17 @@ int poppedValue = myStack.Pop(); // poppedValue 为 3，myStack 变为 {1, 2}
 
 `v8/src/torque/utils.h` 提供了一组通用的实用工具，用于简化 Torque 编译器的开发，包括字符串处理、错误处理、命名约定检查、文件操作、数据结构和代码生成辅助功能。这些工具对于确保 Torque 编译器能够正确地将 Torque 代码转换为高效且符合 V8 规范的 C++ 代码至关重要。  虽然 JavaScript 开发者不会直接使用这些工具，但它们的存在和正确性直接影响着 V8 引擎的性能和稳定性，从而间接地影响 JavaScript 的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/utils.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/utils.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -799,7 +801,4 @@ std::vector<T> TransformVector(const std::vector<U>& v) {
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_UTILS_H_
-
-"""
-
 ```

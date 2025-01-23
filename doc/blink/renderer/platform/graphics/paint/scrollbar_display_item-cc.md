@@ -163,14 +163,16 @@ By following this systematic approach, focusing on the core class and its key me
 
 总而言之，`scrollbar_display_item.cc` 是 Chromium Blink 渲染引擎中一个关键的组件，负责将抽象的滚动条概念转化为屏幕上的视觉呈现，并与 HTML, CSS 和 Javascript 提供的上层接口协同工作，为用户提供流畅的滚动体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/scrollbar_display_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ void ScrollbarDisplayItem::Record(
 }
 
 }  // namespace blink
-
-"""
-
 ```

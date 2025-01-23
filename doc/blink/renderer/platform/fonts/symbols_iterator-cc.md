@@ -126,14 +126,16 @@ By following these steps, the detailed and informative explanation provided in t
 
 `symbols_iterator.cc` 中的 `SymbolsIterator` 类是 Blink 渲染引擎中一个重要的组件，负责将文本分解成用户感知的符号，特别是处理复杂的 emoji 表情符号。它通过识别 emoji 边界并提供字体回退优先级信息，确保网页能够正确地渲染包含 emoji 的文本，并为上层的文本处理逻辑提供准确的符号信息。虽然它不直接与 JavaScript, HTML, CSS 代码交互，但其功能对于这些 Web 技术在展示包含 emoji 的内容时至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/symbols_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ bool SymbolsIterator::Consume(unsigned* symbols_limit,
 }
 
 }  // namespace blink
-
-"""
-
 ```

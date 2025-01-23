@@ -181,7 +181,7 @@ g_object_set (sample, "Msg", "New Message", NULL);
 
 因此，`meson-sample.c` 文件是 Frida 测试框架的一部分，它提供了一个简单的 GObject 类作为 Instrumentation 的目标。逆向工程师可以通过 Frida 连接到运行这个代码的进程，并利用 Frida 的 Hook 功能来观察和修改程序的行为，从而进行逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/7 gnome/gir/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 struct _MesonSample
@@ -312,7 +314,4 @@ meson_sample_print_message (MesonSample *self, MesonDep1 *dep1, MesonDep2 *dep2)
   samedep = meson_dep1_just_return_it (dep1, dep2);
   g_print ("Message: %s\n", meson_dep2_return_message (samedep));
 }
-
-"""
-
 ```

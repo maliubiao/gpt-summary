@@ -112,11 +112,13 @@ console.log(execResult);
 
 `v8/src/objects/regexp-match-info.cc` 文件中的 `RegExpMatchInfo` 类是 V8 引擎中用于管理正则表达式匹配结果的关键组件。它负责存储捕获组信息以及其他相关的匹配状态，从而支持 JavaScript 中强大的正则表达式功能。JavaScript 开发者虽然不能直接操作 `RegExpMatchInfo` 对象，但它的存在和功能是 JavaScript 正则表达式正常运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/regexp-match-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ Handle<RegExpMatchInfo> RegExpMatchInfo::ReserveCaptures(
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

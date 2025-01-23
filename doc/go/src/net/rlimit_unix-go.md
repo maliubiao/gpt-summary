@@ -169,7 +169,7 @@ func main() {
 
 `go/src/net/rlimit_unix.go` 代码片段的核心作用是进行资源管理，特别是限制通过 Cgo 执行的并发 DNS 查询线程数量，以避免程序因耗尽文件描述符等系统资源而崩溃或产生不友好的错误。虽然用户不会直接调用这个函数，但它的存在提升了 `net` 包的健壮性和性能。 用户在使用 `net` 包进行大量并发 DNS 查询时，应该意识到系统资源的限制，并采取合适的并发控制措施，例如使用带缓冲的 channel 或者 worker pool 来限制并发度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/rlimit_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ func concurrentThreadsLimit() int {
 	}
 	return int(r)
 }
-
-"""
-
-
-
 ```

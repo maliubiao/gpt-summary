@@ -191,15 +191,17 @@ obj1 = null; // obj1 现在可以被垃圾回收了
 
 总结来说，`v8/src/heap/live-object-range.h` 定义了一个用于遍历 V8 堆中存活对象的内部机制。虽然 JavaScript 开发者不能直接使用它，但理解其功能有助于理解 V8 的内存管理和垃圾回收工作原理，从而避免一些常见的内存管理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/live-object-range.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/live-object-range.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ class LiveObjectRange final {
 }  // namespace v8::internal
 
 #endif  // V8_HEAP_LIVE_OBJECT_RANGE_H_
-
-"""
-
 ```

@@ -112,11 +112,13 @@ V8 可能会首先调用 `ParseAny` 来解析整个脚本 (顶层代码和函数
 
 `v8/src/parsing/parsing.cc` 文件中的代码是 V8 引擎中至关重要的组成部分，它负责将人类可读的 JavaScript 代码转换为机器可理解的结构化表示 (AST)。  无论是加载整个脚本还是定义一个函数，解析过程都是 V8 引擎执行 JavaScript 代码的第一步。这些 `ParseProgram`、`ParseFunction` 和 `ParseAny` 函数就像是 V8 的 "语言翻译器"，确保引擎能够正确地理解和执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parsing.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ bool ParseAny(ParseInfo* info, Handle<SharedFunctionInfo> shared_info,
 }  // namespace parsing
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

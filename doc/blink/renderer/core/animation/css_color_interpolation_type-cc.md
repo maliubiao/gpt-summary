@@ -241,14 +241,16 @@ By following these steps, I could systematically analyze the provided C++ code a
 
 总而言之，`css_color_interpolation_type.cc` 是 Blink 渲染引擎中一个至关重要的文件，它确保了 CSS 颜色属性的动画和过渡能够平滑、自然地进行，为用户提供良好的视觉体验。它深入到 CSS 规范的细节，并需要处理各种复杂的颜色表示和上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_color_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -643,7 +645,4 @@ void CSSColorInterpolationType::Composite(
 }
 
 }  // namespace blink
-
-"""
-
 ```

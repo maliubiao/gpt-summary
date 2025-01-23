@@ -148,15 +148,17 @@ HeapBase* not_found_heap = cppgc::internal::HeapRegistry::TryFromManagedPointer(
 
 `v8/src/heap/cppgc/process-heap.h` 定义了 V8 的 cppgc 垃圾回收器用于管理进程中多个堆的核心机制。它提供了注册、取消注册、查找堆以及获取已注册堆列表的功能，并使用互斥锁来保证线程安全。 虽然用户无法直接操作这些代码，但理解其功能有助于理解 V8 的内存管理机制以及可能出现的与之相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/process-heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/process-heap.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ HeapRegistry::Subscription::~Subscription() {
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_PROCESS_HEAP_H_
-
-"""
-
 ```

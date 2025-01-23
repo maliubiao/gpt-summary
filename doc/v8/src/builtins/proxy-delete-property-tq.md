@@ -171,14 +171,16 @@ console.log('target2:', target2); // 输出: {}
 
 总而言之，这段 Torque 代码是 V8 引擎处理 Proxy 对象 `delete` 操作的核心逻辑，它实现了 ECMAScript 规范中定义的行为，包括调用 `deleteProperty` 陷阱、处理陷阱的返回值以及进行必要的约束检查。理解这段代码有助于深入了解 JavaScript Proxy 的工作原理以及可能出现的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/proxy-delete-property.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ transitioning builtin ProxyDeleteProperty(
   }
 }
 }
-
-"""
-
 ```

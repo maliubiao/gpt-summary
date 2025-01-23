@@ -63,7 +63,7 @@ Android 系统内部广泛使用 UTF-8 编码来处理文本。Bionic 库提供�
 
 **需要注意的是，这只是第 1 部分的分析。  在第 2 部分中，可能会包含更多关于特定 libc 函数实现细节、动态链接、错误使用场景、以及 Android 框架/NDK 如何调用到这些函数的说明。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/wchar_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -75,8 +75,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1144,7 +1146,4 @@ TEST(wchar, wcwidth_non_spacing_and_enclosing_marks_and_format) {
   if (!have_dl()) return;
 
   EXPECT_EQ(0, wcwidth
-"""
-
-
 ```

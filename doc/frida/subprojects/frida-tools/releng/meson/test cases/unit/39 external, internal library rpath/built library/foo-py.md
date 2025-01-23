@@ -152,7 +152,7 @@ Frida 是一个强大的动态逆向工具。RPATH 的正确设置直接影响�
 
 `foo.py` 很可能是一个用于测试 Frida 构建过程中库的 RPATH 设置是否正确的单元测试脚本。它涉及到动态链接、二进制文件格式、操作系统底层机制等知识，并能帮助预防由于 RPATH 设置错误导致的 Frida 运行时加载库失败的问题，这直接关系到 Frida 作为逆向工具的可用性。用户通常不会直接操作这个脚本，而是作为 Frida 开发和调试过程的一部分间接参与。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/39 external, internal library rpath/built library/foo.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,9 +160,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

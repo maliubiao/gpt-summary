@@ -84,7 +84,7 @@ By following these steps, you can effectively analyze and understand the functio
 
 **总结来说，这段代码是 Go 语言 ARM 汇编器的核心组成部分，负责将高级的汇编指令翻译成底层的机器码，使得程序能够在 ARM 架构的处理器上执行。它涵盖了多种重要的 ARM 指令，并包含了一些针对性能的优化策略。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm/asm5.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -93,8 +93,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 = 0x1b << 20
 		case ALDREXB:
 			o1 = 0x1d << 20
@@ -808,10 +810,4 @@ func nocache(p *obj.Prog) {
 	}
 	p.To.Class = 0
 }
-
-"""
-
-
-
-
 ```

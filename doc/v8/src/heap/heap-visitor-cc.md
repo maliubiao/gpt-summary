@@ -180,15 +180,17 @@ registry.register(objectToTrack, "与对象关联的值");
 
 这些例子展示了用户在使用弱引用和终结器时可能犯的错误，理解 `v8/src/heap/heap-visitor.cc` 的功能有助于深入理解这些概念的底层实现和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-visitor.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -389,7 +391,4 @@ template Tagged<Object> VisitWeakList<JSFinalizationRegistry>(
     Heap* heap, Tagged<Object> list, WeakObjectRetainer* retainer);
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

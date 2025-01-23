@@ -150,15 +150,17 @@ myFunction(5, 10);
 
 `v8/src/debug/debug-frames.h` 定义了用于 V8 调试基础设施的关键类，特别是 `FrameInspector`，它提供了访问和检查 JavaScript 和 WebAssembly 代码执行期间调用栈帧信息的强大能力。这对于实现调试器功能和帮助开发者理解程序执行过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-frames.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-frames.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ class RedirectActiveFunctions : public ThreadVisitor {
 }  // namespace v8
 
 #endif  // V8_DEBUG_DEBUG_FRAMES_H_
-
-"""
-
 ```

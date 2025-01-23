@@ -97,11 +97,13 @@ case IrOpcode::kTypeGuard: {
 
 `escape-analysis-reducer.cc` 中的代码是 V8 编译器优化 JavaScript 代码的重要组成部分。它通过识别并优化未逃逸的对象，显著提高了代码的执行效率和内存利用率。虽然 JavaScript 开发者无法直接操作这些底层优化，但理解逃逸分析的原理可以帮助他们编写出更易于被 V8 引擎优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/escape-analysis-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -540,7 +542,4 @@ Node* NodeHashCache::Constructor::MutableNode() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

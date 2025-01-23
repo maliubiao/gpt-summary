@@ -167,14 +167,16 @@ By following these steps, we can systematically analyze the `history.cc` file an
 
 了解 `blink/renderer/core/frame/history.cc` 的功能对于理解浏览器如何管理浏览历史以及如何正确使用 `window.history` API 至关重要。 开发者需要注意潜在的安全风险和常见的编程错误，以确保网页的导航行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/history.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc.  All rights reserved.
  *
@@ -534,7 +536,4 @@ void History::StateObjectAdded(scoped_refptr<SerializedScriptValue> data,
 }
 
 }  // namespace blink
-
-"""
-
 ```

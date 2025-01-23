@@ -157,7 +157,7 @@ Frida 是一个强大的动态插桩工具，广泛应用于逆向工程。 这�
 
 虽然这个 `test.py` 文件看起来简单，只关注安装路径，但它对于确保 Frida Python 绑定的可用性和稳定性至关重要。它间接地关系到逆向工程的顺利进行，并涉及到操作系统底层的文件系统和共享库加载机制。通过分析这个测试用例，我们可以更好地理解 Frida Python 绑定的安装过程和潜在的错误来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python/7 install path/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,9 +165,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

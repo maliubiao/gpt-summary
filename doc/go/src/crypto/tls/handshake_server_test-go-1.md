@@ -273,7 +273,7 @@ command: []string{"openssl", "s_client", "-no_ticket", "-cipher", "AES128-SHA", 
 
 这段代码通过大量的测试用例，覆盖了 TLS 服务器握手过程中各种可能的情况，帮助确保 `crypto/tls` 包的稳定性和可靠性。作为开发者，理解这些测试用例所覆盖的场景，能够更好地使用 Go 语言的 TLS 功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_server_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -282,8 +282,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 {
 		cert := nameToCert[clientHello.ServerName]
 		return cert, nil
@@ -1308,9 +1310,4 @@ func TestHandshakeContextHierarchy(t *testing.T) {
 	clientErr := make(chan error, 1)
 	clientConfig := testConfig.Clone()
 	serverCo
-"""
-
-
-
-
 ```

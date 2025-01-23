@@ -161,7 +161,7 @@ By following this thought process, I can effectively analyze the C++ code snippe
 
 这是 `blink/renderer/core/css/resolver/style_cascade.cc` 文件的第一部分，它的主要功能是 **开始实现 CSS 级联算法的核心逻辑**。 这部分代码定义了 `StyleCascade` 类，并包含了初始化、添加匹配的 CSS 规则和声明、以及初步处理级联影响属性（如 `direction` 和 `writing-mode`）的逻辑。  它为后续更高优先级的样式应用和最终的样式计算奠定了基础。 这部分代码的关键在于 `ApplyCascadeAffecting` 方法，它处理了可能需要重新分析级联的属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_cascade.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1004,7 +1006,4 @@ void StyleCascade::LookupAndApplyDeclaration(const CSSProperty& property,
   DCHECK(priority->GetOrigin() < CascadeOrigin::kAnimation);
   CascadeOrigin origin = priority->GetOrigin();
   // Values at CascadeOrigin::kNone
-"""
-
-
 ```

@@ -562,7 +562,7 @@ void MacroAssembler::I16x8ReplaceLane(Simd128Register dst, Simd128Register src1,
 void MacroAssembler::I8x16ReplaceLane(Simd128Register dst, Simd128Register src1,
                                       Register src2, uint8_t imm_lane_idx,
                                       Simd128
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -570,9 +570,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
-                  Register scratch) {
+### 源代码
+```cpp
+Register scratch) {
 #ifdef V8_TARGET_BIG_ENDIAN
   LoadU16LE(dst, mem, scratch);
   extsh(dst, dst);
@@ -1425,7 +1427,4 @@ void MacroAssembler::I32x4UConvertI16x8Low(Simd128Register dst,
 void MacroAssembler::I32x4UConvertI16x8High(Simd128Register dst,
                                             Simd128Register src,
                                             R
-"""
-
-
 ```

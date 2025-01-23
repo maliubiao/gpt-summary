@@ -256,7 +256,7 @@ The output will be very close to `cos(0.1)`, with a small correction due to the 
 
 By following these steps, a developer can trace the execution flow from an Android application down to the low-level math functions like `__kernel_cos` and understand how the calculations are performed.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/k_cos.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,9 +266,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -343,7 +344,4 @@ __kernel_cos(double x, double y)
 	w  = one-hz;
 	return w + (((one-w)-hz) + (z*r-x*y));
 }
-
-"""
-
 ```

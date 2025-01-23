@@ -130,7 +130,7 @@ let subtractInstruction = generatePPCInstruction('float_subtract_double', { sour
 
 总而言之，这个头文件的这一部分涵盖了 PowerPC 架构中相当广泛的指令集，尤其是在内存管理、缓存控制、浮点运算和系统级操作方面。这些定义对于 V8 引擎在 PPC 架构上正确编译和执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/constants-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/constants-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -138,9 +138,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                      \
+### 源代码
+```c
+\
   /* Decimal Floating Subtract Quad */                                        \
   V(dsubq, DSUBQ, 0xFC000404)                                                 \
   /* Decimal Floating Test Exponent */                                        \
@@ -601,7 +603,4 @@ Prompt:
   V(stfd, STFD, 0xD8000000)                     \
   /* Store Floating-Point Double with Update */ \
   V(stfdu, STFDU, 0xDC
-"""
-
-
 ```

@@ -155,15 +155,17 @@ By following these steps, I can construct a comprehensive and accurate answer th
 
 `net/cert/merkle_audit_proof.cc` 文件是 Chromium 网络栈中处理 Certificate Transparency 审计证明的关键组成部分。它定义了用于表示审计证明的数据结构和计算审计路径长度的辅助函数。虽然与 JavaScript 没有直接的代码关联，但其功能影响着浏览器的安全行为，并可能通过间接方式影响 JavaScript 可访问的信息。理解这个文件的功能有助于开发者调试与 CT 相关的网络问题和安全策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/merkle_audit_proof.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ MerkleAuditProof::MerkleAuditProof(uint64_t leaf_index,
 MerkleAuditProof::~MerkleAuditProof() = default;
 
 }  // namespace net::ct
-
-"""
-
 ```

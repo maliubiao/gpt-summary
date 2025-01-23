@@ -100,14 +100,16 @@ My thought process for analyzing the `layout_quote_test.cc` file and generating 
 
 总而言之，`layout_quote_test.cc` 文件专注于测试 Blink 引擎在处理 `<q>` 元素及其语言属性时的核心逻辑，确保浏览器能够按照 W3C 规范正确地渲染和布局这些元素，从而为用户提供正确的引用展示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_quote_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ TEST_F(LayoutQuoteTest, Locale) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

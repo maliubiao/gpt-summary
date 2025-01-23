@@ -153,7 +153,7 @@ My thought process for analyzing the Python code snippet and generating the resp
 
 `_parse_table` 函数是 `tomlkit` 解析器中处理 TOML 表格（包括标准表格和数组表格）的核心逻辑。它负责识别表格的开始和结束，解析表格的名称，并递归地调用其他解析函数来处理表格内部的键值对和子表格。它还专门处理数组表格的解析，确保能够正确地将多个同名表格解析为列表。该函数通过状态管理和向前查看机制，能够处理复杂的嵌套表格结构和数组表格。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,9 +162,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    if is_aot and i == len(name_parts) - 2:
+### 源代码
+```python
+if is_aot and i == len(name_parts) - 2:
                     table.raw_append(_name, AoT([child], name=table.name, parsed=True))
                 else:
                     table.raw_append(_name, child)
@@ -316,8 +318,4 @@ Prompt:
                     value = None
 
             return value, extracted
-
-"""
-
-
 ```

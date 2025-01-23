@@ -123,7 +123,7 @@ By following these steps and incorporating self-correction, the generated respon
 
 作为 `blink/renderer/bindings/core/v8/script_streamer.cc` 文件的第三部分，这段代码的核心功能是 **完成 JavaScript 脚本的后台流式处理和代码缓存的应用**。 它负责接收后台编译和解码的结果，处理代码缓存的反序列化，并在完成后通知主线程。 这部分代码是 Blink 引擎优化 JavaScript 脚本加载和执行性能的关键组成部分，通过异步处理和利用代码缓存，可以显著减少页面加载时间，提升用户体验。  它确保了即使在脚本下载过程中，V8 引擎也能尽早开始解析和编译，并且能够重用之前编译的代码，避免重复工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_streamer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -131,9 +131,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-         std::move(source_stream), script_source_encoding);
+### 源代码
+```cpp
+std::move(source_stream), script_source_encoding);
 
   CHECK(compile_hints_);
   std::unique_ptr<v8::ScriptCompiler::ScriptStreamingTask>
@@ -386,8 +388,4 @@ void BackgroundResourceScriptStreamer::OnResult(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

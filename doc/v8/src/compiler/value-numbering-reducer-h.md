@@ -161,15 +161,17 @@ Node5:  Multiply(Node3, Node3) // Node4 被替换为 Node3
 
 `v8/src/compiler/value-numbering-reducer.h` 定义了 V8 编译器中的 `ValueNumberingReducer` 类，它负责实现值编号优化。这项优化技术通过识别和消除程序中冗余的计算，从而提高 JavaScript 代码的执行效率。它与用户编写的 JavaScript 代码直接相关，能够在底层优化常见的编程模式，减少不必要的计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/value-numbering-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/value-numbering-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ class V8_EXPORT_PRIVATE ValueNumberingReducer final
 }  // namespace v8
 
 #endif  // V8_COMPILER_VALUE_NUMBERING_REDUCER_H_
-
-"""
-
 ```

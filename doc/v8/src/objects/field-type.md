@@ -136,11 +136,13 @@ console.log(process({}));
 
 `v8/src/objects/field-type.cc` 中定义的 `FieldType` 类是 V8 引擎中用于描述对象属性类型的核心组件。它使得 V8 能够进行类型推断和优化，从而显著提升 JavaScript 代码的执行效率。虽然开发者不能直接在 JavaScript 代码中操作 `FieldType` 对象，但其背后的机制直接影响着 JavaScript 代码的性能表现。类型稳定性和一致性对于 V8 的优化至关重要，避免频繁改变对象属性的类型可以帮助 V8 更好地进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/field-type.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ bool FieldType::NowContains(Tagged<FieldType> type, Tagged<Object> value) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

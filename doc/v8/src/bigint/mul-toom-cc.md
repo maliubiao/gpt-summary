@@ -149,15 +149,17 @@ Let's consider a simplified scenario for `Toom3Main` with smaller inputs for eas
 
 The provided `mul-toom.cc` code is a carefully crafted and optimized implementation of the Toom-Cook 3-way algorithm within the V8 engine. It aims to provide efficient multiplication for large integers used by JavaScript's `BigInt` feature.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/mul-toom.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/bigint/mul-toom.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -381,7 +383,4 @@ void ProcessorImpl::MultiplyToomCook(RWDigits Z, Digits X, Digits Y) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

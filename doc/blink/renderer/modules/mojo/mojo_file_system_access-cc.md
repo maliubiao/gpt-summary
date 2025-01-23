@@ -141,15 +141,17 @@ CSS 负责美化 HTML 元素，例如上面的按钮。用户与这些元素交�
 
 `mojo_file_system_access.cc` 在 Chromium Blink 引擎中扮演着关键的角色，它确保了 File System Access API 能够在多进程架构下安全有效地工作。它不直接与 JavaScript, HTML, CSS 的语法打交道，而是处理 JavaScript 发起的 API 调用在底层跨进程通信的细节。理解这个文件有助于理解 Chromium 如何实现 Web API 的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mojo/mojo_file_system_access.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ MojoHandle* MojoFileSystemAccess::getFileSystemAccessTransferToken(
 }
 
 }  // namespace blink
-
-"""
-
 ```

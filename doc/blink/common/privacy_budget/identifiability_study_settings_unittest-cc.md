@@ -135,14 +135,16 @@ const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 
 总而言之，`identifiability_study_settings_unittest.cc` 文件通过一系列单元测试，确保 `IdentifiabilityStudySettings` 类能够按照预期工作，正确地管理和判断是否应该对可能用于用户识别的技术进行采样，这对于维护用户的隐私至关重要。虽然它本身是 C++ 代码，但其功能直接影响到浏览器如何处理和限制网页中与用户识别相关的 JavaScript API 和 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_study_settings_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ TEST(IdentifiabilityStudySettingsTest, StaticSetProvider) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

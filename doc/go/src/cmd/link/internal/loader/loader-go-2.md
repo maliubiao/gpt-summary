@@ -156,7 +156,7 @@ func goWrapper() // 注意这里没有函数体
 
 这是 `go/src/cmd/link/internal/loader/loader.go` 文件的最后一部分，它专注于符号的精细管理，包括克隆、复制、创建、重定位管理、文本符号排序、错误报告以及提供调试信息。 这部分代码对于链接器的核心功能至关重要，特别是对于处理复杂的链接场景，例如涉及 C 代码互操作或需要精确控制代码布局的情况。它也是 Go 语言中 `//go:linkname` 指令实现的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/loader/loader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 name reference is allowed. Here we haven't loaded all
 			// symbol definitions, so we don't yet know all the push linknames. So we add to a
 			// list and check later after all symbol defs are loaded. Linknamed vars are rare,
@@ -759,10 +761,4 @@ func (l *Loader) Dump() {
 		fmt.Println(i, pp.name, pp.ver, pp.kind)
 	}
 }
-
-"""
-
-
-
-
 ```

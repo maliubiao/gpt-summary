@@ -127,7 +127,7 @@ fetch('https://example.com/data')
 
 这部分代码的主要功能是为测试 `net::SSLServerSocket` 类提供基础设施。它定义了模拟网络通信的 `FakeDataChannel` 和 `FakeSocket` 类，并提供了创建和配置测试 SSL 上下文和 socket 的辅助方法。这为后续的单元测试用例奠定了基础，这些用例将验证 `SSLServerSocket` 在建立 TLS 连接、处理握手以及数据传输等方面的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_server_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1017,7 +1019,4 @@ TEST_F(SSLServerSocketTest, HandshakeWithClientCertRequiredNotSuppliedCached) {
 
   // Check that the authority name that arrived in the CertificateRequest
   // handshake message is as ex
-"""
-
-
 ```

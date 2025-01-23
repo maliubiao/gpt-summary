@@ -167,15 +167,17 @@ By following this step-by-step analysis, breaking down the code into manageable 
 
 总而言之，`idb_value_wrapping.cc` 是 Chromium Blink 引擎中 IndexedDB 模块的关键组成部分，它负责高效地存储和检索 JavaScript 数据，并通过压缩和包装等技术来优化性能和资源利用。 理解这个文件的功能有助于开发者更好地理解 IndexedDB 的内部工作原理，并能更好地进行调试和错误排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_value_wrapping.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -601,7 +603,4 @@ bool IDBValueUnwrapper::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

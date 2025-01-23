@@ -112,14 +112,16 @@ This systematic approach, moving from high-level understanding to specific examp
 
 总而言之，`scoped_scheduler_overrider.cc` 提供了一种强大的测试工具，允许开发者深入了解和验证 Blink 引擎在不同调度场景下的行为。但同时也需要谨慎使用，避免引入新的错误或过度依赖自定义的调度策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/scoped_scheduler_overrider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ ScopedSchedulerOverrider::ScopedSchedulerOverrider(
 ScopedSchedulerOverrider::~ScopedSchedulerOverrider() {}
 
 }  // namespace blink
-
-"""
-
 ```

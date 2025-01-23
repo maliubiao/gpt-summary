@@ -125,7 +125,7 @@ By following these steps, we can systematically analyze the code, understand its
 
 **作为调试线索:** 当开发者看到这个测试用例失败时，他们会知道问题很可能出在构建系统如何处理子项目参数上。他们会检查相关的 `meson.build` 文件，查看宏定义是如何设置和传递的，以及是否有任何逻辑错误导致了宏定义的不一致。  这个简单的测试用例能够快速地定位构建系统配置方面的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/115 subproject project arguments/subprojects/subexe/subexe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef PROJECT_OPTION
 #error
 #endif
@@ -162,7 +164,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

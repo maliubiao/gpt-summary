@@ -171,15 +171,17 @@ This iterative process of code examination, keyword analysis, dependency tracing
 
 总而言之，`blink/renderer/core/imagebitmap/image_bitmap_source.cc` 文件虽然在这个片段中 `CreateImageBitmap` 的实现是空的，但它仍然是 Blink 引擎中处理 `ImageBitmap` 创建的关键部分，负责最终完成 `ImageBitmap` 对象的创建并处理相关的选项和错误。它与 JavaScript 的 `createImageBitmap()` API 紧密相连，是实现 Web 平台图像处理功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/imagebitmap/image_bitmap_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ ScriptPromise<ImageBitmap> ImageBitmapSource::CreateImageBitmap(
 }
 
 }  // namespace blink
-
-"""
-
 ```

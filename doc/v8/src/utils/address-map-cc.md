@@ -161,15 +161,17 @@ delete ptr; // ptr 指向的内存被释放
 
 在 JavaScript 中，垃圾回收器负责回收不再被引用的内存，开发者通常不需要手动管理内存，因此不太会出现上述直接的悬挂指针或手动释放导致的 use-after-free 错误。`address-map.cc` 作为 V8 内部的一部分，正是为了支持这种自动的内存管理机制。它帮助 V8 跟踪根对象，确保垃圾回收的正确性，从而在更高的层次上避免了这些底层的内存管理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/address-map.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/address-map.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ bool RootIndexMap::Lookup(Address obj, RootIndex* out_root_list) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

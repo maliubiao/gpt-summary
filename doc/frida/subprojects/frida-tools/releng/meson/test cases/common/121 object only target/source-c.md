@@ -183,7 +183,7 @@ Finally, organize the findings into a coherent and comprehensive answer, address
 
 总而言之，这个简单的 `source.c` 文件是 Frida 测试框架的一部分，用于验证 Frida 对基本 C 函数的 hook 功能。它的简单性使其成为理解 Frida 工作原理和调试 Frida 脚本的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/121 object only target/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,12 +191,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

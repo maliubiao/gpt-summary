@@ -158,7 +158,7 @@ const regex6 = /\u0041/;   // 匹配 Unicode 字符 'A'
 
 总而言之，`v8/test/unittests/regexp/regexp-grammar.h` 是一个自动生成的 C++ 头文件，它定义了 V8 JavaScript 引擎中正则表达式的语法结构。这个语法被用于指导模糊测试工具生成大量的正则表达式测试用例，以确保 V8 的正则表达式引擎的健壮性和正确性。它反映了 JavaScript 中合法的正则表达式语法规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regexp/regexp-grammar.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/regexp/regexp-grammar.h以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1020,7 +1022,4 @@ class DecimalEscapeSubNode42 final
     : public Optional<kDecimalEscapeSubNode42, DecimalDigitsNode> {};
 class CharacterClassEscapeSubNode43 final
     : public TupleDomain<kCharacterClassEscapeSubNode43, CharSet1
-"""
-
-
 ```

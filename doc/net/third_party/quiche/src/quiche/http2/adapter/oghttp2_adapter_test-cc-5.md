@@ -266,7 +266,7 @@ OnFrameSent(GOAWAY, 0, _, 0x0, static_cast<int>(Http2ErrorCode::PROTOCOL_ERROR))
 
 总的来说，这部分测试更加深入地验证了 `OgHttp2Adapter` 对 HTTP/2 协议细节的处理能力以及其在各种异常情况下的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 G | END_HEADERS_FLAG, 0));
   EXPECT_CALL(visitor, OnBeforeFrameSent(HEADERS, stream_ids[3], _,
                                          END_STREAM_FLAG | END_HEADERS_FLAG));
@@ -1072,8 +1074,4 @@ TEST(OgHttp2AdapterTest, ServerReceivesMoreHeaderBytesThanConfigured) {
                      "the universe, and everything that the header setting is "
                      "too narrow to contain."}},
                    /*fin=*/true)
-        
-"""
-
-
 ```

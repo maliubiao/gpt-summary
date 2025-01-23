@@ -167,7 +167,7 @@ int get_st1_value(void) {
 
 总而言之，这个 `main.c` 文件是一个简洁的测试用例，用于验证在 Frida 环境下，程序调用不同库中函数时的行为。对于逆向工程师来说，理解这种测试用例有助于他们更好地理解 Frida 的工作原理，以及如何使用 Frida 来分析更复杂的真实程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/145 recursive linking/circular/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #include "../lib.h"
@@ -205,7 +207,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

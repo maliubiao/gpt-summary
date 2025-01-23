@@ -275,7 +275,7 @@ sys.stdin.read()
 
 这个例子虽然没有直接 Hook `posix_types.handroid` 文件的包含过程，但它展示了如何通过 Hook 使用了其中定义的类型的函数，来间接地观察其效果。要直接 Hook 头文件的包含过程比较复杂，因为这发生在编译时。Frida 主要用于运行时动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/posix_types.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -301,7 +303,4 @@ Prompt:
 #else
 #include <asm/posix_types_64.h>
 #endif
-
-"""
-
 ```

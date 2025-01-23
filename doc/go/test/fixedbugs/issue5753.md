@@ -155,15 +155,17 @@ In this example, `increment1` is bound to `counter1`, and `increment2` is bound 
 
 **In summary, the provided code snippet is a simplified example designed to test or demonstrate a specific aspect of Go's method values and how the compiler handles them, particularly concerning escape analysis of method thunks. It highlights the ability to treat methods as values and assign them to variables.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5753.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -193,9 +195,4 @@ func main() {
 	}
 	
 }
-
-"""
-
-
-
 ```

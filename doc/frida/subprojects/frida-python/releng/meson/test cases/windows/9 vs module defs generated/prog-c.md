@@ -156,7 +156,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 这个代码文件 `prog.c` 作为测试用例存在，很可能是为了验证 Frida 在处理带有模块定义文件生成的 DLL 时，能否正确地进行 instrumentation和 hook。调试线索会涉及到检查 DLL 是否正确生成和导出函数，以及 Frida 脚本是否正确地定位和操作了目标函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/9 vs module defs generated/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int somedllfunc(void);
 
 int exefunc(void) {
@@ -175,7 +177,4 @@ int exefunc(void) {
 int main(void) {
     return somedllfunc() == exefunc() ? 0 : 1;
 }
-
-"""
-
 ```

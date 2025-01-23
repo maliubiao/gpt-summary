@@ -222,15 +222,17 @@ func main() {
 
 尽管 `square` 函数非常小，但由于它在循环中被频繁调用，编译器可能会选择不内联它，或者只在某些迭代中内联，以避免代码膨胀。开发者可能会因为 `square` 函数没有被内联而感到困惑，这正是理解 `callsite.go` 和内联机制的重要性所在。编译器需要权衡内联带来的收益和潜在的成本（例如代码大小增加）。 `callsite.go` 收集的信息就是用于做出这些权衡决策的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/inline/inlheur/callsite.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -380,9 +382,4 @@ func dumpCallSiteComments(w io.Writer, tab CallSiteTab, ecst encodedCallSiteTab)
 	}
 	fmt.Fprintf(w, "// %s\n", csDelimiter)
 }
-
-"""
-
-
-
 ```

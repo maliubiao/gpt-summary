@@ -91,7 +91,7 @@ Here's a plan to address the user's request:
 
 总结来说，`interpreterobjects.py` 定义了 Meson 构建系统在解释构建脚本时使用的各种核心对象的 Python 表示和操作方式，它间接地与逆向工程相关，因为它提供了访问构建环境信息的途径，这些信息对于理解和分析目标软件非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreter/interpreterobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 import os
 import shlex
@@ -853,8 +855,4 @@ class Test(MesonInterpreterObject):
                  env: mesonlib.EnvironmentVariables,
                  should_fail: bool, timeout: int, workdir: T.Optional[str], protocol: str,
                  priority: int, verbose: bool):
-     
-"""
-
-
 ```

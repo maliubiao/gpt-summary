@@ -169,15 +169,17 @@ console.log(view1[0]); // 输出: 456
 
 总而言之，`v8/src/objects/js-shared-array-inl.h` 是 V8 引擎中关于 `JSSharedArray` 对象的底层实现细节，它通过内联函数提供了高效的操作，并且与 JavaScript 的 `SharedArrayBuffer` 功能密切相关。理解其作用有助于深入了解 V8 引擎的内部工作原理以及 `SharedArrayBuffer` 的实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-shared-array-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-shared-array-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ TQ_OBJECT_CONSTRUCTORS_IMPL(JSSharedArray)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_SHARED_ARRAY_INL_H_
-
-"""
-
 ```

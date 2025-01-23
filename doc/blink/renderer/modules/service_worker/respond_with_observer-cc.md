@@ -197,15 +197,17 @@ This step-by-step breakdown allows for a comprehensive analysis of the code's fu
 
 总而言之，`RespondWithObserver` 是 Blink 引擎中负责管理 Service Worker `respondWith()` 调用的关键组件，它确保了该 API 的正确使用，并处理了各种可能的执行场景。了解它的功能有助于理解 Service Worker 如何拦截和响应网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/respond_with_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -299,7 +301,4 @@ ScriptPromise<IDLAny> RespondWithObserver::RespondWithReject::React(
 }
 
 }  // namespace blink
-
-"""
-
 ```

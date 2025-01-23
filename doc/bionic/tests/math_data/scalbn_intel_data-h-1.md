@@ -20,7 +20,7 @@ Therefore, the functionality of this data file is to provide a comprehensive set
 
 **结合第一部分和第三部分，这个文件完整的功能是为 `scalbn` 函数提供一套全面的测试用例，涵盖了不同的输入值和指数，以确保该函数在 Android 系统的 bionic 库中能够正确地运行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/scalbn_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -32,9 +32,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- 381
+### 源代码
+```c
+381
     0x1.1745d1745d1770p-5,
     0x1.1745d1745d177p-1,
     (int)-4
@@ -2107,7 +2109,4 @@ Prompt:
   { // Entry 795
     0x1.ffffffffffffe0p-904,
     0x1.ffffffff
-"""
-
-
 ```

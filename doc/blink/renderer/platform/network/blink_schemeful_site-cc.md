@@ -128,14 +128,16 @@ By following this structured thinking process, we can generate a comprehensive a
 
 总而言之，`BlinkSchemefulSite` 在 Blink 渲染引擎中扮演着关键的角色，它抽象并管理了 "schemeful site" 的概念，这对于理解和实现浏览器的安全策略至关重要。 它的行为直接影响着 JavaScript、HTML 和 CSS 的行为方式，特别是在涉及到跨域或跨站交互时。 理解 `BlinkSchemefulSite` 的功能有助于开发者更好地理解浏览器的安全模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/blink_schemeful_site.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ bool BlinkSchemefulSite::FromWire(const url::Origin& site_as_origin,
 }
 
 }  // namespace blink
-
-"""
-
 ```

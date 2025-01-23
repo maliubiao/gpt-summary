@@ -197,7 +197,7 @@ void libb_mul(int factor) {
 
 总而言之，这个 `app.c` 文件虽然简单，但它是动态分析和逆向工程的一个很好的起点，它可以用来演示 Frida 的基本功能，并帮助理解程序在运行时的行为。文件路径的上下文也暗示了这个测试用例的特定目的，即验证 Frida 在处理重复符号时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/55 dedup compiler libs/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <liba.h>
 #include <libb.h>
@@ -220,7 +222,4 @@ main(void)
   printf("end value = %d\n", liba_get());
   return 0;
 }
-
-"""
-
 ```

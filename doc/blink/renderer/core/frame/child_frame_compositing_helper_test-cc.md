@@ -109,14 +109,16 @@ By following these steps, you can systematically analyze a C++ test file like th
 
 `child_frame_compositing_helper_test.cc` 文件通过单元测试验证了 `ChildFrameCompositingHelper` 类的关键功能，包括在子框架消失时清除回退 `SurfaceId` 以及在 paint holding 超时后清理旧的 `SurfaceId`。 这些功能对于确保 `<iframe>` 元素的正确渲染和避免用户界面问题至关重要，并间接地与 JavaScript, HTML, CSS 的行为相互作用。 开发者理解这些底层机制可以帮助他们更好地处理与 `<iframe>` 相关的开发任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/child_frame_compositing_helper_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ TEST_F(ChildFrameCompositingHelperTest, PaintHoldingTimeout) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

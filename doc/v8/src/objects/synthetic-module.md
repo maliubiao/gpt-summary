@@ -122,11 +122,13 @@ module.evaluate().then(() => {
 
 `synthetic-module.cc` 负责实现 V8 引擎中合成模块的核心行为，包括管理导出、解析导出、实例化和求值。它与 JavaScript 的 `Module` 构造函数以及 `module.setExport()` 和 `module.evaluate()` 等方法紧密相关，使得 JavaScript 代码能够动态地创建和管理模块，为构建更灵活和强大的模块系统提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/synthetic-module.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ MaybeHandle<Object> SyntheticModule::Evaluate(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -214,7 +214,7 @@ if (Process.platform === 'android') {
 
 总而言之，这份代码片段是 Android Bionic 库中用于测试 `log1p` 函数在 Intel 架构上实现质量的重要组成部分。它通过提供一系列精心设计的测试用例，确保了该数学函数在各种场景下的正确性和精度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/log1p_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ffffffffffffcp-1023
   },
   { // Entry 360
@@ -259,8 +261,4 @@ ffffffffffffcp-1023
     -0.0
   }
 };
-
-"""
-
-
 ```

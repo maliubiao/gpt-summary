@@ -162,15 +162,17 @@ func main() {
 
 `go/src/cmd/internal/obj/line.go` 文件是 Go 编译器工具链中负责管理包导入依赖和处理源代码位置信息（特别是受 `//line` 指令影响的位置）的关键组成部分。它为链接器和调试器提供了必要的数据，确保编译过程的正确性和调试体验的准确性。普通 Go 开发者虽然不会直接使用这个文件中的函数，但理解其功能有助于更好地理解 Go 编译链接过程和调试机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/line.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ func (ctxt *Link) getFileIndexAndLine(xpos src.XPos) (int, int32) {
 	}
 	return pos.FileIndex(), int32(pos.RelLine())
 }
-
-"""
-
-
-
 ```

@@ -111,16 +111,18 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，这部分代码继续完善了 `Resource` 类的核心功能，涵盖了资源生命周期的重要方面，包括缓存控制、重验证、预加载、优先级管理以及与浏览器缓存和网络请求的交互。它在 Chromium 的资源加载和管理机制中扮演着关键角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- std::sort(client_names.begin(), client_names.end(),
+### 源代码
+```cpp
+std::sort(client_names.begin(), client_names.end(),
               WTF::CodeUnitCompareLessThan);
 
     StringBuilder builder;
@@ -489,8 +491,4 @@ Resource::MaybeCreateBackgroundResponseProcessorFactory() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

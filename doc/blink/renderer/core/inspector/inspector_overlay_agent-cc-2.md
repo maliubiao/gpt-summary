@@ -105,16 +105,18 @@ This part of `inspector_overlay_agent.cc` focuses on converting DevTools protoco
 
 这段代码是 `InspectorOverlayAgent` 的一部分，专门负责将从 Chrome DevTools 协议接收到的各种元素高亮配置（针对 Flexbox, Grid, Scroll Snap, Container Queries 和通用元素样式）转换为 Blink 引擎内部使用的 C++ 对象。这些转换后的对象最终会被用于在页面上绘制高亮 overlay，帮助开发者在调试过程中直观地理解页面元素的布局和样式信息。 这部分代码体现了 DevTools 前后端分离的设计思想，协议层负责数据传输和定义，而渲染引擎则负责具体的视觉呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_overlay_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- std::make_unique<InspectorFlexContainerHighlightConfig>();
+### 源代码
+```cpp
+std::make_unique<InspectorFlexContainerHighlightConfig>();
   highlight_config->container_border =
       InspectorOverlayAgent::ToLineStyle(config->getContainerBorder(nullptr));
   highlight_config->line_separator =
@@ -323,8 +325,4 @@ void InspectorOverlayAgent::SetNeedsUnbufferedInput(bool unbuffered) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

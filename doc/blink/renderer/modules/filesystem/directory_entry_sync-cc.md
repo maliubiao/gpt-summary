@@ -215,15 +215,17 @@ HTML 和 CSS 本身不直接与 `DirectoryEntrySync` 交互。 但是，用户�
 
 总结来说，`DirectoryEntrySync.cc` 是 Blink 渲染引擎中处理同步目录操作的关键组件，它直接服务于 JavaScript 的 File System API，使得网页能够在用户的允许下，同步地与本地文件系统进行交互。理解这个文件的功能对于理解浏览器如何处理文件系统操作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/directory_entry_sync.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -330,7 +332,4 @@ void DirectoryEntrySync::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -104,11 +104,13 @@ console.log(getField(myStruct)); // 输出 10
 
 总而言之，`wasm-gc-typed-optimization-reducer.cc` 中的 `WasmGCTypeAnalyzer` 就像一个侦探，它在编译 WebAssembly GC 代码时，努力挖掘和理解各种变量和表达式的类型信息，以便 V8 引擎能够生成更快速、更高效的机器码，最终提升 WebAssembly GC 代码在 JavaScript 环境中的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-gc-typed-optimization-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -696,7 +698,4 @@ wasm::ValueType WasmGCTypeAnalyzer::GetResolvedType(OpIndex object) const {
 #undef TRACE
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

@@ -182,7 +182,7 @@ func main() {
 
 这段 `signal_linux_loong64.go` 代码是 Go runtime 处理信号的关键组成部分，它提供了访问和修改发生信号时的程序上下文的能力。虽然功能强大，但同时也非常底层，普通 Go 开发者不应该直接操作这些结构体，而是应该依赖 Go 语言提供的更高级的错误处理和并发机制。直接操作这些底层结构体容易引入难以调试的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_linux_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -190,8 +190,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -267,9 +269,4 @@ func (c *sigctxt) set_sigcode(x uint32) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) {
 	*(*uintptr)(add(unsafe.Pointer(c.info), 2*goarch.PtrSize)) = uintptr(x)
 }
-
-"""
-
-
-
 ```

@@ -117,15 +117,17 @@ By following this structured approach, I could dissect the code snippet, underst
 
 这段 C++ 代码是 Chromium Blink 引擎中负责计算绝对定位元素在块轴方向上的尺寸、外边距和内边距的关键部分。它根据 CSS 样式属性、包含块的约束以及可能的锚点信息，精确地确定绝对定位元素在垂直方向上的大小和位置，为最终的页面渲染奠定基础。它处理了 `auto` 尺寸、明确指定的尺寸以及 `auto` 外边距等多种情况，确保了布局的灵活性和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/absolute_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _sizes =
         ComputeInitialMinMaxBlockSizes(space, node, border_padding);
     block_size = min_max_block_sizes.ClampSizeToMinAndMax(main_block_size);
@@ -203,8 +205,4 @@ _sizes =
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

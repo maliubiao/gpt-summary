@@ -144,7 +144,7 @@ func main() {
 
 这段代码是 Go 语言运行时在特定平台上的底层实现，负责与操作系统和硬件进行交互，为 Go 程序提供必要的运行环境和基本功能，例如获取硬件信息、处理信号和提供基本的性能分析支持。它体现了 Go 语言运行时为了实现跨平台兼容性，需要在不同操作系统和架构上进行定制化的实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_linux_mips64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -152,8 +152,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -205,9 +207,4 @@ func sigdelset(mask *sigset, i int) {
 func sigfillset(mask *[2]uint64) {
 	(*mask)[0], (*mask)[1] = ^uint64(0), ^uint64(0)
 }
-
-"""
-
-
-
 ```

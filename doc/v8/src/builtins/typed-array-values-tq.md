@@ -119,14 +119,16 @@ console.log(iterator.next()); // 输出: { value: undefined, done: true }
 
 `v8/src/builtins/typed-array-values.tq` 文件中的代码实现了 JavaScript 中 `TypedArray.prototype.values()` 方法的核心逻辑，包括类型检查、连接状态检查以及创建用于遍历 TypedArray 元素值的迭代器。理解这段代码有助于理解 V8 引擎是如何实现 JavaScript 中关于 TypedArray 迭代的功能的，并能帮助开发者避免在 TypedArray 上使用 `values()` 方法时可能遇到的类型错误和分离错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-values.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ transitioning javascript builtin TypedArrayPrototypeValues(
   }
 }
 }
-
-"""
-
 ```

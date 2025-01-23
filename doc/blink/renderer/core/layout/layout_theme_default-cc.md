@@ -158,14 +158,16 @@ button {
 
 总而言之，`blink/renderer/core/layout/layout_theme_default.cc` 文件是 Blink 渲染引擎中负责提供 UI 元素默认外观和行为的关键组件。它与 HTML、CSS 紧密相关，为网页的渲染奠定了基础，并在没有显式样式定义时提供fallback。 开发者应该理解其作用，并在需要时通过 CSS 进行定制，同时也要注意跨平台差异和暗黑模式适配等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_theme_default.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc.
  * Copyright (C) 2007 Alp Toker <alp@atoker.com>
@@ -463,7 +465,4 @@ int LayoutThemeDefault::MenuListInternalPadding(const ComputedStyle& style,
 }
 
 }  // namespace blink
-
-"""
-
 ```

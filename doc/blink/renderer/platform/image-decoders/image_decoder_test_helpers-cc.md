@@ -134,14 +134,16 @@ By addressing these points, I can create a comprehensive and accurate explanatio
 
 总而言之，`image_decoder_test_helpers.cc` 是一个关键的测试基础设施文件，它提供了一套全面的工具，用于验证 Chromium Blink 引擎中图像解码器的正确性和健壮性，确保浏览器能够正确处理各种图像格式和解码场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/image_decoder_test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -694,7 +696,4 @@ void TestBppHistogram(DecoderCreator create_decoder,
 }
 
 }  // namespace blink
-
-"""
-
 ```

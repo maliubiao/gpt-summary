@@ -145,7 +145,7 @@ By following these steps of code examination, connecting to broader concepts (li
 
 总而言之，`pathprog.cpp` 作为一个测试用例，其目的是验证 Frida Python 绑定在处理使用了特定 Protobuf 结构的应用时的正确性。调试人员会通过阅读代码、查看构建配置、运行测试、使用调试器等一系列步骤来理解和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/5 protocol buffers/withpath/pathprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"com/mesonbuild/simple.pb.h"
 #include"com/mesonbuild/subsite/complex.pb.h"
 
@@ -171,7 +173,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

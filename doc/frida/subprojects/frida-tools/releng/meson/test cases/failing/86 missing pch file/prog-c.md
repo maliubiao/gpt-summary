@@ -89,7 +89,7 @@ Here's a thinking process to arrive at the comprehensive analysis of the `prog.c
 
 总而言之，这个 `prog.c` 文件本身的功能很小，但它的存在是为了测试 Frida 构建系统对特定错误情况的处理能力。理解其上下文是理解其意义的关键。对于用户来说，遇到这个错误通常意味着构建环境配置存在问题，需要检查构建配置和依赖。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/86 missing pch file/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -97,12 +97,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

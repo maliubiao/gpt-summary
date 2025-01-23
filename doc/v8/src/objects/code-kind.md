@@ -106,11 +106,13 @@ Response: Let's break down the thought process for analyzing the C++ code snippe
 
 `v8/src/objects/code-kind.cc` 文件定义了 V8 引擎中代码类型的管理机制，通过 `CodeKind` 枚举及其相关的转换函数，使得 V8 内部能够清晰地识别和处理不同优化级别的 JavaScript 代码。这对于理解 V8 的执行流程和性能优化至关重要。虽然 JavaScript 开发者通常不需要直接操作 `CodeKind`，但了解这些概念有助于理解 V8 如何执行和优化我们的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/code-kind.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ const char* CodeKindToMarker(CodeKind kind) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

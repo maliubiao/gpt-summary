@@ -245,7 +245,7 @@ V<Boolean> result = StringLessThan(left_string, right_string);
 
 由于这是第 7 部分，可以推断出之前的阶段可能负责语法分析、语义分析以及初步的类型推断，而后续的阶段将会利用这里构建的 IR 进行优化和代码生成。这个阶段的关键作用是将高级语言结构转换为编译器可以进一步处理的中间表示形式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -253,8 +253,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ngConcat(V<Smi> length, V<String> left, V<String> right) {
     return ReduceIfReachableStringConcat(length, left, right);
   }
@@ -1030,7 +1032,4 @@ class Assembler : public AssemblerData,
 #endif
 
   // ReduceProjection elimin
-"""
-
-
 ```

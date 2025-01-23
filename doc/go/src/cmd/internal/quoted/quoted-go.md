@@ -286,15 +286,17 @@ Parsed flags: [hello world another string and more]
 
 总而言之，`quoted.go` 提供了一组实用的字符串处理工具，特别是在需要解析和生成包含带引号元素的字符串时，例如处理命令行参数或配置文件。它的 `Flag` 类型使得在 Go 程序的命令行参数解析中集成这种功能变得非常方便。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/quoted/quoted.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -424,9 +426,4 @@ func (f *Flag) String() string {
 	}
 	return s
 }
-
-"""
-
-
-
 ```

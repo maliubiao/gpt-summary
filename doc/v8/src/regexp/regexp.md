@@ -142,11 +142,13 @@ console.log(regex1.toString()); // 输出: /abc/i
 
 `regexp.cc` 是 V8 引擎中处理正则表达式的核心 C++ 代码，它负责将 JavaScript 中的正则表达式字符串解析成内部表示，并通过不同的引擎和优化策略将其编译成可执行的代码（字节码或机器码），最终执行匹配操作并返回结果。 JavaScript 中所有与正则表达式相关的操作，例如创建 `RegExp` 对象、使用 `exec`, `test`, `match`, `search`, `split`, `replace` 等方法，其底层实现都离不开 `regexp.cc` 中定义的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1580,7 +1582,4 @@ std::ostream& operator<<(std::ostream& os, RegExpFlags flags) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -145,15 +145,17 @@ This iterative process of examining the code, identifying key concepts, inferrin
 
 `HTMLPreloadScanner` 的主要功能是在 HTML 解析的早期阶段，通过快速扫描 HTML 标签的属性，**主动识别并请求加载关键的外部资源 (如脚本, 样式表, 图片等)**。 它通过分析特定的标签和属性（例如 `<script>` 的 `src`, `type`, `async`, `defer`, `integrity`； `<link>` 的 `href`, `rel`, `as`, `media`, `integrity`； `<img>` 的 `src`, `srcset`, `loading` 等），来判断哪些资源需要尽早加载以优化页面加载性能。 该扫描器还负责处理诸如媒体查询、子资源完整性、跨域请求和提取优先级等相关属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_preload_scanner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  * Copyright (C) 2009 Torch Mobile, Inc. http://www.torchmobile.com/
@@ -896,7 +898,4 @@ class TokenPreloadScanner::StartTagScanner {
 
         case ScriptLoader::ScriptTypeAtPrepare::kClassic:
         case ScriptLoader::Script
-"""
-
-
 ```

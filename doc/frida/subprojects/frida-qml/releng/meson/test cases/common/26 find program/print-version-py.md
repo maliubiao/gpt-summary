@@ -109,7 +109,7 @@ By following these steps, we can systematically analyze the script and address a
 
 `print-version.py` 是一个简单的 Python 脚本，用于模拟一个可以返回版本号的程序。它主要用于 Frida 项目的内部测试，以验证 Frida 在获取目标程序版本信息或执行外部程序时的功能。虽然用户不会直接操作这个脚本，但它可以作为理解 Frida 如何与目标程序交互以及如何进行自动化测试的一个很好的例子。 它的存在和位置提供了关于 Frida 内部机制和测试策略的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/26 find program/print-version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -127,7 +129,4 @@ if len(sys.argv) != 2 or sys.argv[1] != '--version':
     exit(1)
 
 print('1.0')
-
-"""
-
 ```

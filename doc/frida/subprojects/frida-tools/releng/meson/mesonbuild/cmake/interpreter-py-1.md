@@ -143,7 +143,7 @@ mylib_dep = declare_dependency(link_with: mylib, include_directories: mylib_inc)
 
 `CMakeInterpreter` 的第二部分主要负责将经过配置和分析的 CMake 项目信息转换成 Meson 构建系统可以理解的表示形式。它通过构建 Meson 的抽象语法树来实现这一点，模拟了 Meson 项目的定义，包括目标、源文件、依赖关系和构建选项。这使得 Frida 可以集成和构建基于 CMake 的外部项目或库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 mlog.bold(str(self.conflict_map)))
         mlog.log('  -- working_dir:  ', mlog.bold(str(self.working_dir)))
         mlog.log('  -- depends_raw:  ', mlog.bold(str(self.depends_raw)))
@@ -664,8 +666,4 @@ class CMakeInterpreter:
 
     def target_list(self) -> T.List[str]:
         return list(self.internal_name_map.keys())
-
-"""
-
-
 ```

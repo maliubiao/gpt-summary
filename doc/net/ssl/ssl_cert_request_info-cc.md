@@ -131,15 +131,17 @@ This systematic approach allows me to dissect the provided code snippet, underst
 
 总而言之，`ssl_cert_request_info.cc` 定义的 `SSLCertRequestInfo` 类是 Chromium 网络栈中处理客户端证书请求的关键数据结构，它存储了服务器的要求，并指导浏览器进行后续的证书选择和握手过程。理解它的功能有助于理解客户端证书认证的流程和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_cert_request_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ void SSLCertRequestInfo::Reset() {
 SSLCertRequestInfo::~SSLCertRequestInfo() = default;
 
 }  // namespace net
-
-"""
-
 ```

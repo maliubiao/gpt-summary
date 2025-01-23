@@ -222,7 +222,7 @@ libmei_client.so:
 
 总结来说，`bionic/libc/kernel/uapi/linux/uuid.handroid.h` 本身的功能是引入 MEI UUID 的定义。要理解其在 Android 中的作用，需要考察哪些组件使用了这些定义，并分析它们如何与 MEI 进行交互。  Frida Hook 的重点在于 hook 使用这些 UUID 的代码，而不是头文件本身。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/uuid.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -233,8 +233,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -242,7 +244,4 @@ Prompt:
  * for more information.
  */
 #include <linux/mei_uuid.h>
-
-"""
-
 ```

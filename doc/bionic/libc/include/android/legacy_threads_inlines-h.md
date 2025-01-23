@@ -291,7 +291,7 @@ except KeyboardInterrupt:
 
 总而言之，`legacy_threads_inlines.handroid` 是 Bionic 库为了保持向后兼容性而存在的一个小而重要的文件，它确保了旧版本的 Android 应用在较新的系统上也能正常编译和运行与线程相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/android/legacy_threads_inlines.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -302,8 +302,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -342,7 +344,4 @@ Prompt:
 #include <bits/threads_inlines.h>
 
 #endif
-
-"""
-
 ```

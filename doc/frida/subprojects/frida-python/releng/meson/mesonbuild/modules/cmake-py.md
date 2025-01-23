@@ -201,7 +201,7 @@ if cmake_syscall_monitor.found():
 
 如果在这些步骤中出现错误，例如指定了不存在的 CMake 目标，Meson 的错误消息可能会指向 `meson.build` 文件中调用 `cmake_proj.target()` 的位置。为了调试这类问题，开发者可能需要查看 `cmake.py` 的源代码，理解其内部逻辑，以及 Meson 如何与 CMake 进行交互。例如，他们可能会查看 `CMakeSubproject` 的 `target` 方法，了解它是如何查找和返回 CMake 构建目标的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/modules/cmake.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -653,7 +655,4 @@ class CmakeModule(ExtensionModule):
 
 def initialize(*args: T.Any, **kwargs: T.Any) -> CmakeModule:
     return CmakeModule(*args, **kwargs)
-
-"""
-
 ```

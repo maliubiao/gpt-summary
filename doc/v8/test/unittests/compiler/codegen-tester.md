@@ -150,11 +150,13 @@ for (let i = -2; i < num_int_inputs; i++) {
 
 总而言之，`codegen-tester.cc` 是 V8 内部用于确保其代码生成器对于各种整数二元运算的输入形式都能产生正确高效机器码的关键测试文件，这直接影响了 JavaScript 代码的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/codegen-tester.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ void Int32BinopInputShapeTester::RunRight(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

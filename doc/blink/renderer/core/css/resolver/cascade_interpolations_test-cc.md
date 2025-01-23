@@ -128,15 +128,17 @@ By following these steps, you can systematically analyze a piece of code, unders
 
 `cascade_interpolations_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎能够正确地管理 CSS 属性层叠过程中的插值信息。这对于实现平滑的动画、过渡效果以及正确的样式应用至关重要。虽然普通用户不会直接接触到这些底层代码，但其正确性直接影响着用户的浏览体验。开发者在使用 CSS 动画、过渡和复杂样式时，也会间接地依赖于这些底层机制的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/cascade_interpolations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ TEST(CascadeInterpolationsTest, EncodeDecodeIsPresentationAttribute) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

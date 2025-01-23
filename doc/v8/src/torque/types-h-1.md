@@ -154,7 +154,7 @@ Let's break down the thought process to arrive at the provided explanation of `v
 
 总而言之，`v8/src/torque/types.h` 为 Torque 提供了一个强大的类型系统，使得 Torque 编译器能够理解和处理 JavaScript 的各种数据类型，并生成高效且类型安全的代码。它在 V8 内部扮演着至关重要的角色，确保 JavaScript 代码能够正确地映射到 V8 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/types.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/types.h以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ;
 bool Is32BitIntegralType(const Type* type);
 
@@ -173,8 +175,4 @@ std::optional<NameAndType> ExtractSimpleFieldArraySize(
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_TYPES_H_
-
-"""
-
-
 ```

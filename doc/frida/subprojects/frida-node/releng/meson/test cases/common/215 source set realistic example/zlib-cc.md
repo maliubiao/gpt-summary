@@ -119,7 +119,7 @@ By following this structured analysis and refinement, we can generate a comprehe
 
 总之，`zlib.cc` 是一个简单的测试用例，用于验证 Frida 框架在处理依赖关系和条件执行方面的能力。它虽然简单，但可以帮助开发者理解 Frida 的内部机制和测试流程。 对于逆向工程师来说，理解这种模拟条件执行的代码有助于理解在实际逆向工作中如何利用 Frida 动态地修改条件，探索目标程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/zlib.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 
@@ -144,7 +146,4 @@ void ZLibDependency::initialize() {
 }
 
 ZLibDependency zlib;
-
-"""
-
 ```

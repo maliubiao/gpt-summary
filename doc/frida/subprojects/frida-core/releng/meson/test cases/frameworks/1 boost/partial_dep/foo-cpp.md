@@ -155,7 +155,7 @@ private:
 
 总而言之，`foo.cpp` 是 Frida 内部测试套件的一部分，用于验证 Frida 在特定场景下的行为。它本身的功能很简单，但其存在的位置和上下文揭示了 Frida 需要处理的复杂性，例如依赖管理和与底层系统的交互。对于用户来说，这个文件更多的是作为调试和理解 Frida 工作原理的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/1 boost/partial_dep/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -185,7 +187,4 @@ Prompt:
 vec Foo::vector() {
     return myvec;
 }
-
-"""
-
 ```

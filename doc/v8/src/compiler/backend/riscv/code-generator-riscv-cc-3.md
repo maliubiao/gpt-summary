@@ -164,7 +164,7 @@ console.log(result); // 输出可能是 SIMD 运算的结果
 
 作为第 4 部分，这个代码片段主要集中在为 RISC-V 架构生成 **向量 (SIMD) 指令** 的机器码，尤其是针对 WebAssembly 的支持。它还涵盖了一些基本的原子操作、断言以及 Tagged 和 Sandboxed 指针的处理。 核心功能是利用 RISC-V 的向量扩展指令集 (RVV) 来实现高效的并行计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/code-generator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/code-generator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -172,9 +172,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      i.InputRegister(2));                                      \
+### 源代码
+```cpp
+i.InputRegister(2));                                      \
     break;
       ATOMIC_BINOP_CASE(Add, Add32, Add64, amoadd_w)  // todo: delete 64
       ATOMIC_BINOP_CASE(Sub, Sub32, Sub64, Amosub_w)  // todo: delete 64
@@ -1042,8 +1044,4 @@ Prompt:
       __ VU.set(kScratchReg, E64, m1);
       __ vzext_vf2(i.OutputSimd128Register(), kSimd128ScratchReg);
       break;
-  
-"""
-
-
 ```

@@ -255,15 +255,17 @@ By following this structured thought process, we can arrive at a comprehensive a
 
 通过以上步骤，用户可以逐步排查自定义字体加载失败的原因，而 `css_font_face_rule.cc` 中定义的 `CSSFontFaceRule` 类在整个过程中扮演着关键的角色，它负责表示和提供对 `@font-face` 规则信息的访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_font_face_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * (C) 2002-2003 Dirk Mueller (mueller@kde.org)
@@ -337,7 +339,4 @@ void CSSFontFaceRule::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

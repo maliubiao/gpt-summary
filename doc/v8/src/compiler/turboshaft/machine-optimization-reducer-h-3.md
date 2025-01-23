@@ -156,7 +156,7 @@ By following this systematic process of scanning, categorizing, analyzing, conne
 
 `v8/src/compiler/turboshaft/machine-optimization-reducer.h` 定义了 `MachineOptimizationReducer` 类，它是 Turboshaft 编译管道中的一个关键组件。其核心职责是在机器码层面进行优化，通过分析和转换中间表示图中的操作，提高生成代码的效率。它涵盖了内存访问、类型转换、算术运算、逻辑运算以及常量折叠等多个方面的优化，旨在减少冗余计算，提升 V8 引擎的整体性能。 尽管提供的文件是 C++ 头文件，如果存在同名的 `.tq` 文件，那将是使用 Torque 语言实现的版本，用于更安全和可维护的 V8 内部代码开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/machine-optimization-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/machine-optimization-reducer.h以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ement_scale,
                                          &new_index)) {
       *index = __ IntPtrConstant(new_index);
@@ -639,8 +641,4 @@ ement_scale,
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_MACHINE_OPTIMIZATION_REDUCER_H_
-
-"""
-
-
 ```

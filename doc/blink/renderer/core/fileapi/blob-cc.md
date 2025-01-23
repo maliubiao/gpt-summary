@@ -196,14 +196,16 @@ const blob = new Blob([text], { type: 'text/plain', endings: 'native' });
 
 总而言之，`blink/renderer/core/fileapi/blob.cc` 是 Chromium Blink 引擎中实现 `Blob` 接口核心功能的关键文件，它处理 `Blob` 对象的创建、数据管理、切片和读取等操作，并与 JavaScript File API 紧密相连。理解其内部机制有助于更好地理解和使用 Web 平台的 `Blob` 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fileapi/blob.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -525,7 +527,4 @@ String Blob::NormalizeType(const String& type) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

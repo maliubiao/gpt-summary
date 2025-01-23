@@ -145,7 +145,7 @@ By following these steps, I can systematically analyze the code and answer the q
 
 总而言之，`linkers.py` 文件在 Frida 的构建系统中扮演着关键角色，它抽象了不同平台和编译器的链接过程，使得构建系统能够生成正确的链接命令，最终成功构建出 Frida 的各个组件。 理解这个文件的功能对于理解 Frida 的构建过程，以及在遇到链接问题时进行调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -827,8 +829,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

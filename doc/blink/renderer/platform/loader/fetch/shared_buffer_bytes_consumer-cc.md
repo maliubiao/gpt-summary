@@ -216,14 +216,16 @@ By following these steps, I aimed to provide a comprehensive and informative ans
 
 总之，`SharedBufferBytesConsumer` 是 Blink 引擎中用于高效读取共享内存数据的关键组件，它在浏览器加载和处理各种网络资源（包括 JavaScript, HTML, CSS）的过程中发挥着重要的作用。正确理解和使用它可以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/shared_buffer_bytes_consumer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -278,7 +280,4 @@ String SharedBufferBytesConsumer::DebugName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

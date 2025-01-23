@@ -108,15 +108,17 @@ By following these steps, we can dissect the provided C++ code and construct a c
 
 总而言之，`blink/renderer/extensions/chromeos/kiosk/cros_kiosk.cc` 文件在 Blink 渲染引擎中扮演着为 ChromeOS Kiosk 模式下的渲染上下文提供特定功能的角色。它本身不直接处理 JavaScript、HTML 或 CSS，但它提供的底层能力会影响到这些 Web 技术在 Kiosk 环境下的行为和可用的 API。理解其功能需要将其放在 Blink 引擎的架构和 ChromeOS Kiosk 模式的上下文中进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/extensions/chromeos/kiosk/cros_kiosk.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ void CrosKiosk::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

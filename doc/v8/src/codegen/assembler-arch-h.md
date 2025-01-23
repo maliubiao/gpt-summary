@@ -155,15 +155,17 @@ Builtin Add_Numbers_x64(Context, Object, Object): Object {
 
 总而言之，`v8/src/codegen/assembler-arch.h` 是 V8 代码生成过程中至关重要的一个头文件，它负责根据目标架构选择正确的汇编器实现，从而使得 V8 能够将 JavaScript 代码有效地编译成可在不同 CPU 架构上执行的机器码。如果它是 `.tq` 文件，则意味着它使用 Torque 语言定义了与架构相关的代码生成逻辑。理解这个文件的作用有助于深入理解 V8 的内部工作原理和 JavaScript 的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/assembler-arch.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/assembler-arch.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ Prompt:
 #endif
 
 #endif  // V8_CODEGEN_ASSEMBLER_ARCH_H_
-
-"""
-
 ```

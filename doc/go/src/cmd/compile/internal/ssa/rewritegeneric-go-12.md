@@ -212,7 +212,7 @@ Users don't directly interact with this code. It's part of the compiler's intern
 
 As the final part of the generic SSA rewriting rules, this file completes the set of transformations for various generic operations. It focuses on further simplifying and optimizing common integer operations like truncation, bitwise XOR (including recognizing rotations), and memory zeroing. These rewrites contribute to generating more efficient machine code by transforming the intermediate representation into a better form before architecture-specific optimizations are applied. The "generic" nature means these optimizations are applicable across different target architectures.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第13部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 result: x
 	for {
 		if v_0.Op != OpSignExt8to32 {
@@ -2800,10 +2802,4 @@ func rewriteBlockgeneric(b *Block) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

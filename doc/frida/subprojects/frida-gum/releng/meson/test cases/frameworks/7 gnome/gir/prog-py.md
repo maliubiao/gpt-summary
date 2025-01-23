@@ -186,7 +186,7 @@ sys.stdin.read()
 
 这个 `prog.py` 文件本身就是一个测试的终点，是测试的目标程序。开发人员通过 Frida 的 API 和工具来与这个程序进行交互，验证 Frida 的功能。调试线索可能包括 Frida 的日志输出、目标进程的崩溃信息、以及测试框架的报告等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/7 gnome/gir/prog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from gi.repository import Meson, MesonDep1, MesonDep2
 
@@ -207,7 +209,4 @@ if __name__ == "__main__":
 
     s2 = Meson.Sample2.new()
     s2.print_message()
-
-"""
-
 ```

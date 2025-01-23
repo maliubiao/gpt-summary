@@ -278,7 +278,7 @@ sys.stdin.read() # 保持脚本运行，直到手动停止
 
 通过 hook 这些函数，你可以观察在应用程序崩溃时，是否调用了 `linker` 提供的信号处理函数，以及传递了哪些信息。由于当前分析的文件是 stub 版本，你可能会发现 `debuggerd_handle_signal` 总是返回 `false`，并且没有进行实际的处理。在一个非 stub 的完整版本中，你会看到更复杂的逻辑和数据传递。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_debuggerd_stub.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -329,7 +331,4 @@ extern "C" bool debuggerd_handle_signal(int /* signal_number */, siginfo_t* /* i
                                         void* /* context */) {
   return false;
 }
-
-"""
-
 ```

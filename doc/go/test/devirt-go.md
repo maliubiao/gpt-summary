@@ -205,15 +205,17 @@ The `// errorcheck -0 -d=ssa/opt/debug=1` line is not about the program itself h
 
 In summary, the provided code snippet is a specific test case within the Go compiler's test suite designed to verify the functionality of interface devirtualization. It uses compiler directives to control optimization levels and enable debugging output to observe this optimization in action. Understanding interface devirtualization helps in writing more performant Go code, but it's important to recognize its limitations and not rely on it blindly.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/devirt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/opt/debug=1
 
 package main
@@ -252,9 +254,4 @@ func main() {
 		panic("not 12")
 	}
 }
-
-"""
-
-
-
 ```

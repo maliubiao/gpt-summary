@@ -70,7 +70,7 @@ The user wants to understand the functionality of the `quic_framer.cc` file in t
 
 这部分代码集中实现了 **IETF QUIC 协议中多种控制帧的处理逻辑**，包括流量控制、流控制和连接 ID 管理等关键方面。它负责将 C++ 对象表示的帧结构序列化为网络传输的字节流，以及将接收到的字节流反序列化为 C++ 对象，是 QUIC 协议栈中负责帧编码和解码的核心组件之一。它确保了 QUIC 连接的可靠性和有序性，并为上层应用提供了结构化的数据交互接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -78,8 +78,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rame* stop_sending_frame) {
   if (!ReadUint32FromVarint62(reader, IETF_STOP_SENDING,
                               &stop_sending_frame->stream_id)) {
@@ -943,7 +945,4 @@ bool QuicFramer::ParseServerVersionNegotiationProbeResponse(
   uint8_t type_byte = 0;
   if (!reader.ReadUInt8(&type_byte)) {
     *detailed_error = "Failed to read type
-"""
-
-
 ```

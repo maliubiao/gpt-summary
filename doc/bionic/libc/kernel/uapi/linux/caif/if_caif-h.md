@@ -215,7 +215,7 @@ setImmediate(main);
 
 `bionic/libc/kernel/uapi/linux/caif/if_caif.handroid` 头文件定义了与 Linux 内核 CAIF 协议族相关的常量，用于配置 CAIF 网络接口。它在 Android 中扮演着底层连接抽象的角色，被上层框架和服务间接使用，例如在蓝牙和 NFC 功能中。虽然这个头文件本身不涉及 libc 函数的实现或动态链接，但它定义的常量会被编译到使用 CAIF 相关功能的库中，并通过 `ioctl` 等系统调用与内核进行交互。使用 Frida 可以方便地 hook 相关的系统调用，观察 Android 系统如何一步步地使用这些底层接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/caif/if_caif.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -248,7 +250,4 @@ enum ifla_caif {
 };
 #define IFLA_CAIF_MAX (__IFLA_CAIF_MAX - 1)
 #endif
-
-"""
-
 ```

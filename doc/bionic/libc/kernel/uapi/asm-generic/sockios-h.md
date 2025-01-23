@@ -304,7 +304,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/libc/kernel/uapi/asm-generic/sockios.h` 文件定义了用于套接字 I/O 控制的架构无关的常量，这些常量被 libc 中的 `ioctl` 函数使用，最终通过系统调用与 Linux 内核的网络子系统交互，影响着 Android 应用程序的网络行为。理解这些常量及其用法对于进行 Android 网络编程和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/sockios.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,8 +315,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -333,7 +335,4 @@ Prompt:
 #define SIOCGSTAMP_OLD 0x8906
 #define SIOCGSTAMPNS_OLD 0x8907
 #endif
-
-"""
-
 ```

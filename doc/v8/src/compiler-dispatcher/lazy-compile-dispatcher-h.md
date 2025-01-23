@@ -145,15 +145,17 @@ console.log("第二次调用结果:", result2);
 
 `v8/src/compiler-dispatcher/lazy-compile-dispatcher.h` 定义了 V8 中负责管理延迟编译的核心组件。它通过协调主线程的空闲时间和后台线程，有效地平衡了启动速度和运行时性能。理解其工作原理有助于开发者更好地理解 JavaScript 引擎的优化策略，并避免一些与延迟编译相关的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler-dispatcher/lazy-compile-dispatcher.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler-dispatcher/lazy-compile-dispatcher.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -394,7 +396,4 @@ class V8_EXPORT_PRIVATE LazyCompileDispatcher {
 }  // namespace v8
 
 #endif  // V8_COMPILER_DISPATCHER_LAZY_COMPILE_DISPATCHER_H_
-
-"""
-
 ```

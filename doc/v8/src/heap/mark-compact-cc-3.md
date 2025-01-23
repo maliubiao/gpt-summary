@@ -162,7 +162,7 @@ By following these steps and considering the underlying principles of garbage co
 
 这段代码是 `MarkCompactCollector` 中负责 **清除（Clearing）阶段** 的关键部分。它在标记阶段之后执行，通过并行处理各种清理任务，回收未使用的内存，清理与已死亡对象相关的元数据和引用，包括字符串、弱引用、编译后的代码等，从而保证 V8 引擎的内存健康和性能。它涉及到许多与 Javascript 运行时息息相关的功能，例如弱引用的处理和代码的刷新。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/mark-compact.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cal_marking_worklists_.get()));
     VerifyEphemeronMarking();
   }
@@ -987,7 +989,4 @@ void MarkCompactCollector::FlushBytecodeFromSFI(
   if (!heap_->IsLargeObject(compiled_data)) {
     const int aligned_filler_offset =
         ALIGN_TO_ALLOCATION_ALIGNMENT(UncompiledDataWith
-"""
-
-
 ```

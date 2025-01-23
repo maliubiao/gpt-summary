@@ -179,15 +179,17 @@ console.log(result); // 输出 8
 
 总而言之，`simulator-loong64.h` 定义的模拟器是 V8 引擎支持 LoongISA 架构的关键组成部分，它使得在非 LoongISA 平台上进行开发、测试和调试成为可能，并有助于发现一些在真实硬件上可能不易察觉的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -927,7 +929,4 @@ class Simulator : public SimulatorBase {
 
 #endif  // defined(USE_SIMULATOR)
 #endif  // V8_EXECUTION_LOONG64_SIMULATOR_LOONG64_H_
-
-"""
-
 ```

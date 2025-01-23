@@ -169,15 +169,17 @@ Also, when considering "common errors," it's important to think beyond just comp
 
 **`text_track_list_test.cc` 的作用就在于确保 Blink 引擎在上述过程中，正确地管理和维护 `TextTrackList` 中的文本轨道，特别是当轨道的数量发生变化时，能够正确地更新索引，从而保证 JavaScript API 和用户界面的行为符合预期。**  这个测试文件模拟了创建、添加、删除文本轨道的过程，并验证了关键的索引更新逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/text_track_list_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ TEST(TextTrackListTest, InvalidateTrackIndexes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

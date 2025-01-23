@@ -201,7 +201,7 @@ TEST_F(ClientSocketPoolBaseTest, BackupSocketUsedIfPrimaryFailsFirst) {
 
 总而言之，这部分代码的功能是全面测试 Chromium 网络栈中 `ClientSocketPoolBase` 类的各种功能和边界情况，确保其能够正确地管理和复用客户端套接字连接，处理各种连接状态、错误和网络事件，从而保证浏览器网络请求的效率和稳定性。 这部分测试特别关注连接状态的获取、错误处理、连接复用、连接限制以及备用连接的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/client_socket_pool_base_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 v, IsError(ERR_IO_PENDING));
   client_socket_factory_.SetJobLoadState(1, LOAD_STATE_RESOLVING_HOST);
 
@@ -979,7 +981,4 @@ TEST_F(ClientSocketPoolBaseTest, BackupSocketCancelAtMaxSockets) {
   // timer.
   connect_job_factory_->set_job_type(TestConnectJob::kMockWaitingJob);
   Clien
-"""
-
-
 ```

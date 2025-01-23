@@ -195,7 +195,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 总而言之，这个名为 `asinh_intel_data.handroid` 的源代码文件在 Android Bionic 库中扮演着**质量保证**的角色。它的核心功能是**存储了一组用于测试 `asinh` (反双曲正弦) 函数实现的预定义输入和预期输出数据**。这些数据在 Bionic 库的测试框架中被使用，以验证 `asinh` 函数在各种输入场景下的计算结果是否准确，从而确保 Android 系统提供的数学函数的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/asinh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -207,9 +207,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   -0x1.0499e40c65ff48fb04213eab32faa345p-1,
+### 源代码
+```c
+-0x1.0499e40c65ff48fb04213eab32faa345p-1,
     -0x1.1p-1
   },
   { // Entry 363
@@ -785,8 +787,4 @@ Prompt:
     -0.0
   }
 };
-
-"""
-
-
 ```

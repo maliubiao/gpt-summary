@@ -104,7 +104,7 @@ if __name__ == "__main__":
 ### 总结
 
 `linux-host-session.vala` 文件实现了 Frida 在 Linux 系统上的核心功能，包括线程管理、崩溃监控、参数解析等。通过深入理解该文件的实现，用户可以更好地利用 Frida 进行动态插桩和调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/linux-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 essage);
 			}
 			string? name;
@@ -798,8 +800,4 @@ essage);
 	}
 #endif
 }
-
-"""
-
-
 ```

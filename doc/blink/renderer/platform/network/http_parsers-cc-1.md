@@ -80,15 +80,17 @@ Based on the function names and the `net::HttpUtil` calls, the code is clearly i
 
 理解这些解析器的功能对于理解Blink引擎如何处理网络请求和执行Web标准至关重要。它们是将HTTP协议转化为浏览器内部可操作数据结构的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/http_parsers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 header_fields->size());
 
   size_t headers_end_pos =
@@ -266,8 +268,4 @@ String GetNoVarySearchHintConsoleMessage(
       network::GetNoVarySearchHintConsoleMessage(error));
 }
 }  // namespace blink
-
-"""
-
-
 ```

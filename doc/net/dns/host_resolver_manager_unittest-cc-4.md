@@ -123,7 +123,7 @@ EXPECT_THAT(response.request()->GetTextResults(),
 
 这个文件 (`host_resolver_manager_unittest.cc`) 的这部分主要专注于 **测试 `HostResolverManager` 组件处理 Multicast DNS (mDNS) 协议的能力**。它通过模拟发送和接收 mDNS 消息，验证了 `HostResolverManager` 对于不同类型的 DNS 记录 (A, AAAA, TXT, PTR, SRV, NSEC) 的解析、超时处理、错误处理以及监听功能是否正确。  作为单元测试的一部分，它的目的是确保网络栈的 mDNS 功能能够可靠地工作，为浏览器中依赖 mDNS 的功能提供基础保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,9 +131,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共21部分，请归纳一下它的功能
+```
 
-"""
-   0x00, 0x00, 0x00, 0x10,  // TTL is 16 (seconds)
+### 源代码
+```cpp
+0x00, 0x00, 0x00, 0x10,  // TTL is 16 (seconds)
     0x00, 0x04,              // RDLENGTH is 4 bytes.
     0x01, 0x02, 0x03, 0x04,  // 1.2.3.4
 };
@@ -922,7 +924,4 @@ TEST_F(HostResolverManagerTest, MdnsListener) {
 
   socket_factory->SimulateReceive(kMdnsResponseA, sizeof(kMdnsResponseA));
   socket_factory->
-"""
-
-
 ```

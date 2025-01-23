@@ -101,7 +101,7 @@ Here's a breakdown of the thinking process to analyze the provided Python code:
 
 总而言之，`generatorpickle.py` 虽然代码简洁，但在 Frida 的构建和文档生成流程中扮演着重要的角色，它负责将复杂的程序信息以结构化的形式保存下来，供后续工具使用，这在逆向工程的自动化和工具链构建中是非常有用的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/docs/refman/generatorpickle.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -126,7 +128,4 @@ class GeneratorPickle(GeneratorBase):
 
     def generate(self) -> None:
         self.out.write_bytes(pickle.dumps(self.manual))
-
-"""
-
 ```

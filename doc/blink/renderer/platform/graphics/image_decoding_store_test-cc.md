@@ -130,14 +130,16 @@ By following these steps and engaging in some self-correction, we can arrive at 
 
 总而言之，`image_decoding_store_test.cc` 这个文件通过一系列单元测试，确保了 `ImageDecodingStore` 作为一个高效的图像解码缓存，能够正确地存储、检索和管理解码后的图像数据，从而提升 Chromium 浏览器的渲染性能，最终惠及用户浏览网页的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/image_decoding_store_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -400,7 +402,4 @@ TEST_F(ImageDecodingStoreTest, OnMemoryPressure) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

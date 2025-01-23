@@ -138,7 +138,7 @@ if __name__ == '__main__':
 
 总而言之，`my_compiler.py` 作为一个简单的测试工具，它的存在是为了验证 Frida 项目中某个关于捕获自定义目标输出的功能是否正常工作。当相关的测试失败时，这个脚本的执行和输出可以作为调试的线索，帮助开发者定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/109 custom target capture/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -162,7 +164,4 @@ if __name__ == '__main__':
         print('Malformed input')
         sys.exit(1)
     print('This is a binary output file.')
-
-"""
-
 ```

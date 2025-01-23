@@ -156,15 +156,17 @@ func main() {
 
 总结来说， `go/test/fixedbugs/issue7648.go` 的功能是作为一个回归测试用例，确保 Go 编译器能够正确处理复数常量的取负操作，不再出现 "bad negated constant" 的错误。 它通过简单的存在和能够被成功编译来验证该问题的修复。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7648.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -174,9 +176,4 @@ Prompt:
 // Issue 7648: spurious "bad negated constant" for complex constants.
 
 package ignored
-
-"""
-
-
-
 ```

@@ -187,14 +187,16 @@ const inputIterable2 = [promiseD, promiseE, promiseF];
 
 总之，`v8/src/builtins/promise-race.tq` 中的 Torque 代码实现了 `Promise.race()` 的核心逻辑，即监听一组 Promise，并以第一个 settled 的 Promise 的状态和值来决定最终 Promise 的状态和值。理解其工作原理有助于避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-race.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ transitioning javascript builtin PromiseRace(
   unreachable;
 }
 }
-
-"""
-
 ```

@@ -125,7 +125,7 @@ By following this structured approach, breaking down the code, and explicitly co
 
 总而言之，`frida/releng/meson/setup.py` 是 Meson 构建系统的安装脚本，虽然它不包含 Frida 的核心代码，但对于理解 Frida 的构建过程、依赖关系以及潜在的安装问题至关重要。它涉及到 Python 打包、操作系统文件系统结构、权限管理等方面的知识，并且在安装过程中可能会遇到一些常见的用户错误。 理解这个文件及其作用是成功构建和使用 Frida 的基础之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/setup.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -155,7 +157,4 @@ if sys.platform != 'win32':
                   ('share/polkit-1/actions', ['data/com.mesonbuild.install.policy'])]
 
 setup(data_files=data_files,)
-
-"""
-
 ```

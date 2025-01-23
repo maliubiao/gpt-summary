@@ -266,7 +266,7 @@ Time taken for this range: 0.012 seconds
 
 希望以上详细的分析能够帮助你理解 `bionic/benchmarks/sincosf_input.cpp` 文件的功能和它在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/sincosf_input.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0x1.8c8c2ep+124,
   0x1.a06c4cp+127,
   0x1.461f2ep+126,
@@ -691,8 +693,4 @@ static const std::vector<sincosf_range> sincosf_input = {
   {"1e6 <= x < 1e32", sincosf_input6},
   {"1e32 <= x < inf", sincosf_input7},
 };
-
-"""
-
-
 ```

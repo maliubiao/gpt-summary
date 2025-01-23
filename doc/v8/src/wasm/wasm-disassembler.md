@@ -118,11 +118,13 @@ loadAndDisassembleWasm();
 
 `v8/src/wasm/wasm-disassembler.cc` 是 V8 引擎中用于将 WebAssembly 二进制代码转换为人类可读文本格式的关键组件。虽然 JavaScript 代码不能直接调用它，但它的功能通过浏览器或 Node.js 的开发者工具间接地为 JavaScript 开发者提供了强大的 Wasm 代码查看和调试能力。  当 JavaScript 加载和执行 Wasm 模块时，这个 C++ 文件在幕后帮助开发者理解 Wasm 代码的内部运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-disassembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1365,7 +1367,4 @@ void ModuleDisassembler::LineBreakOrSpace(bool break_lines,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

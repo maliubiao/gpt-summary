@@ -186,7 +186,7 @@ try {
 
 这部分 `v8/src/execution/isolate.h` 代码主要定义了 `v8::internal::Isolate` 类中用于**管理 V8 引擎的并发、编译优化、性能监控、模块加载、事件回调、性能模式以及与外部环境交互**的关键方法。这些功能是 V8 引擎高效、稳定运行的基础，同时也为宿主环境提供了定制和扩展 V8 功能的接口。  虽然开发者通常不直接操作这些 C++ 接口，但理解它们有助于深入了解 V8 的内部工作原理以及 JavaScript 的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.h以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ULL(maglev_concurrent_dispatcher_);
     return maglev_concurrent_dispatcher_;
   }
@@ -1092,7 +1094,4 @@ ULL(maglev_concurrent_dispatcher_);
   bool is_short_builtin_calls_enabled_ = false;
 
   // The isolate current's priority. This flag is used
-"""
-
-
 ```

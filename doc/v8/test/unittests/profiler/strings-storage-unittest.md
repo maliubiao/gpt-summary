@@ -125,11 +125,13 @@ myFunction("World", 123);
 
 总之，`StringsStorage` 是 V8 引擎中一个用于高效管理字符串的内部组件，尤其在性能分析等需要处理大量字符串信息的场景下非常重要。它通过去重等技术来优化内存使用，而这些字符串最终反映了 JavaScript 代码的结构和执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/profiler/strings-storage-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ TEST_F(StringsStorageWithIsolate, CopyAndConsShareStorage) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

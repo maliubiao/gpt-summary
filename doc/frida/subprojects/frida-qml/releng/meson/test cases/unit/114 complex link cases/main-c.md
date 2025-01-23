@@ -148,7 +148,7 @@ Let's assume the `s3` function, defined in a separate linked library, does the f
 
 In summary, this seemingly simple `main.c` file in Frida's test suite serves as a crucial element for verifying the correct handling of complex linking scenarios, which is a fundamental aspect of dynamic instrumentation and reverse engineering. It highlights the interplay between compiled code, shared libraries, and the dynamic linker, and provides a target for testing Frida's ability to intercept and manipulate function calls.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/114 complex link cases/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,15 +156,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s3(void);
 
 int main(int argc, char *argv[])
 {
     return s3();
 }
-
-"""
-
 ```

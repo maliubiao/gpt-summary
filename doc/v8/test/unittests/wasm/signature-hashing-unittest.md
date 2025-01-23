@@ -48,9 +48,12 @@ By following these steps, I can break down the code into manageable parts, under
 
 **总结来说，`signature-hashing-unittest.cc` 的主要功能是确保 `SignatureHasher::Hash()` 函数能够为不同的 WebAssembly 函数签名生成唯一的哈希值。这对于 V8 引擎在处理和优化 Wasm 代码时非常重要，例如用于快速查找函数签名、进行函数调用优化等。避免哈希碰撞是这个单元测试的核心目标。**
 
-Prompt: ```这是目录为v8/test/unittests/wasm/signature-hashing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/signature-hashing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -130,6 +133,4 @@ TEST_F(WasmSignatureHashingTest, SignatureHashing) {
 #endif  // V8_ENABLE_SANDBOX
 
 }  // namespace v8::internal::wasm::signature_hashing_unittest
-
-"""
 ```

@@ -219,14 +219,16 @@ const customIterable = {
 
 这个 Torque 代码文件展示了 V8 引擎内部是如何高效且符合规范地实现 `Iterator.from` 这个有用的迭代器工具的。它处理了不同类型的输入，并确保返回一个行为正确的迭代器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/iterator-from.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ transitioning javascript builtin WrapForValidIteratorPrototypeReturn(
 }
 
 }  // namespace iterator
-
-"""
-
 ```

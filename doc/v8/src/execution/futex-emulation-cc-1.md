@@ -42,7 +42,7 @@ Based on these functions, the main purpose of this code snippet is to manage the
 
 由于这是第二部分，它主要关注异步 futex 等待的管理和清理，特别是涉及到 Isolate 的生命周期管理。第一部分可能更侧重于 futex 等待的注册和基本的唤醒机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/futex-emulation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/futex-emulation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -50,8 +50,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Emulation::ResolveAsyncWaiterPromises(Isolate* isolate) {
   // This function must run in the main thread of isolate.
 
@@ -252,8 +254,4 @@ bool FutexWaitList::NodeIsOnList(FutexWaitListNode* node,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

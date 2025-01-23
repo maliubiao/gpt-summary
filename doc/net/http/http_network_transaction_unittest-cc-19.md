@@ -139,7 +139,7 @@ Essentially, my approach involved understanding the context of the code (unit te
 
 总而言之，这部分 `http_network_transaction_unittest.cc` 代码的主要功能是 **全面测试 `HttpNetworkTransaction` 类在各种代理配置和连接场景下的行为，包括连接分组、错误处理、认证流程以及对 Alt-Svc 等特性的支持**。这些测试对于确保 Chromium 网络栈在复杂的网络环境中稳定可靠地工作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第20部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 stPort(url::kHttpsScheme, "www.example.org", 443),
               PrivacyMode::PRIVACY_MODE_DISABLED, NetworkAnonymizationKey(),
               SecureDnsPolicy::kAllow, /*disable_cert_network_fetches=*/false),
@@ -1018,7 +1020,4 @@ TEST_P(HttpNetworkTransactionTest,
 
   AlternativeServiceInfoVector alternative_service_info_vector =
       http_server_pr
-"""
-
-
 ```

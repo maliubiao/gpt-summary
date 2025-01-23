@@ -156,15 +156,17 @@ By following these steps, one can systematically analyze the C++ test file and u
 
 `media_session_test.cc` 是一个关键的测试文件，它通过模拟 JavaScript 的调用和验证与底层服务的交互，确保了 `MediaSession` 模块功能的正确性。它涵盖了播放状态、位置状态的管理，以及异常处理等关键方面。 理解这个文件有助于理解 Blink 引擎中媒体会话功能的实现和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasession/media_session_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -537,7 +539,4 @@ TEST_F(MediaSessionTest, PositionPlaybackState_Playing) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

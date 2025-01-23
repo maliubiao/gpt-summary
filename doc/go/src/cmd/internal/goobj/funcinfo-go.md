@@ -197,15 +197,17 @@ StartLine: 5
 
 总而言之，`funcinfo.go` 定义了 Go 编译器用于存储和处理函数元数据的重要结构体和方法，这些元数据对于链接、调试以及其他工具理解 Go 代码的结构至关重要，特别是对于处理函数内联的情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/goobj/funcinfo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -351,9 +353,4 @@ func (inl *InlTreeNode) Read(b []byte) []byte {
 	inl.ParentPC = int32(readUint32())
 	return b
 }
-
-"""
-
-
-
 ```

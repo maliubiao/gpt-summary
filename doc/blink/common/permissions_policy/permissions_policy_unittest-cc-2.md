@@ -81,15 +81,17 @@ By following these steps, we can generate a detailed and accurate summary of the
 
 总而言之，这部分测试代码专注于验证 Chromium Blink 引擎中权限策略在复杂场景下的行为，特别是针对跨域 iframe 和新的策略提案。它涵盖了策略的继承、传播、以及针对特定类型内容（如 Fenced Frames）的策略创建，并关注了如何通过功能标志控制特定功能的默认行为。 这些测试确保了权限策略能够有效地限制 Web 功能的使用，从而提高 Web 安全性和用户隐私。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 EST_F(PermissionsPolicyTest, ProposedTestAllowedCrossOriginChildPolicy) {
   // +---------------------------------------------------+
   // |(1)Origin A                                        |
@@ -771,8 +773,4 @@ TEST_F(PermissionsPolicyTest,
   }
 }
 }  // namespace blink
-
-"""
-
-
 ```

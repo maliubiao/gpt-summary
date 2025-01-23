@@ -107,14 +107,16 @@ The user wants to understand the functionality of the `html_dimension.cc` file i
 
 `html_dimension.cc` 是 Blink 引擎中一个重要的文件，它负责将 HTML 中表示尺寸的字符串转化为内部可以理解和使用的数值和类型。这对于正确渲染网页至关重要，并影响到 JavaScript 如何操作页面元素的尺寸。理解这个文件的功能有助于开发者更好地理解浏览器如何处理 HTML 中的尺寸信息，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_dimension.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -323,7 +325,4 @@ bool ParseDimensionValue(const String& input, HTMLDimension& dimension) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

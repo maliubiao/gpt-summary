@@ -124,15 +124,17 @@ Merge(IfTrue(Branch(CompareOperation)), IfFalse(Branch(CompareOperation)))
 
 `v8/src/compiler/node-matchers.cc` 提供了一组用于识别 V8 编译器中间表示中特定模式的工具，例如分支和 `if-else` 结构。这些 matcher 对于编译器的优化和分析阶段至关重要。理解这些 matcher 的工作原理可以帮助我们更好地理解 V8 编译器如何处理 JavaScript 代码中的控制流结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-matchers.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/node-matchers.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ DiamondMatcher::DiamondMatcher(Node* merge)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -133,11 +133,13 @@ for (let i = 0; i < 100000; i++) {
 
 `v8/src/heap/heap-allocator.cc` 文件中的 `HeapAllocator` 类是 V8 引擎内存管理的核心。它负责为 JavaScript 代码运行时产生的各种对象分配内存，并参与管理不同类型的内存区域以及触发垃圾回收过程，从而保证 JavaScript 代码能够正常运行。你写的每一行创建对象的 JavaScript 代码，背后都有 `HeapAllocator` 在默默地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -560,7 +562,4 @@ bool HeapAllocator::ReachedAllocationTimeout() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

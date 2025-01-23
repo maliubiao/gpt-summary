@@ -155,7 +155,7 @@ By following this breakdown, we can systematically analyze even a seemingly triv
 
 通过分析这个简单的测试用例，用户可以更好地理解 Frida 如何与使用了 Protocol Buffers 的应用程序交互，并找出他们在实际逆向过程中遇到的问题的根源。这个测试用例就像一个最小可复现的例子，帮助用户隔离和理解特定技术点的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/5 protocol buffers/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "defs.pb.h"
 
 int main(int argc, char **argv) {
@@ -174,7 +176,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

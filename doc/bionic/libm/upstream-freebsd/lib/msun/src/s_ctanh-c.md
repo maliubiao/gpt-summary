@@ -232,7 +232,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 这个 Frida hook 示例可以帮助开发者理解在 Android 系统中 `ctanh` 函数是如何被调用和执行的，以及其输入和输出值。通过类似的 hook 方式，可以调试和分析其他与数学运算相关的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_ctanh.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -391,7 +393,4 @@ ctan(double complex z)
 	z = ctanh(CMPLX(cimag(z), creal(z)));
 	return (CMPLX(cimag(z), creal(z)));
 }
-
-"""
-
 ```

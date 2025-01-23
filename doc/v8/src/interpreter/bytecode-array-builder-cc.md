@@ -372,7 +372,7 @@ BytecodeArray {
 
 总而言之，`v8/src/interpreter/bytecode-array-builder.cc` 的核心功能是 **作为 V8 解释器 Ignition 的代码生成器，负责将高级的中间表示形式转换为可执行的字节码数组。** 它管理字节码指令的生成、常量池、异常处理信息、寄存器分配以及源代码位置信息的记录，是 JavaScript 代码在 V8 中执行的关键环节。 它通过提供一系列 `Output...` 方法，允许 V8 的编译器将 JavaScript 的各种语法结构和操作转化为底层的字节码指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-array-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-array-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -380,8 +380,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1365,8 +1367,4 @@ BytecodeArrayBuilder& BytecodeArrayBuilder::SetKeyedProperty(
   // Ensure that language mode is in sync with the IC slot kind.
   DCHECK_EQ(GetLanguageModeFromSlotKind(feedback_vector_spec()->GetKind(
                 FeedbackVector::ToSlot(feedback_slot))),
-  
-"""
-
-
 ```

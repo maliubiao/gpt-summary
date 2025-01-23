@@ -179,15 +179,17 @@ A common mistake when using `defer` is misunderstanding when and how variables a
 
 The provided code is specifically designed to test a more nuanced aspect related to function calling conventions and register usage, which is less of a typical user error but more about ensuring the correctness of the Go runtime. The `//go:registerparams` directive suggests that the test is verifying that even when arguments are passed in registers (an optimization), the `defer` mechanism correctly captures and uses those values.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/abi/defer_aggregate.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -236,9 +238,4 @@ func callee(p0 string, p1 uint64, p2 uint64, p3 uint64, p4 uint64) {
 func main() {
 	callee(p0exp, p1exp, p2exp, p3exp, p4exp)
 }
-
-"""
-
-
-
 ```

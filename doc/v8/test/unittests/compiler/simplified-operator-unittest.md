@@ -132,11 +132,13 @@ obj.name = "Jane"; // 对应 StoreElement (在某些情况下)
 
 `simplified-operator-unittest.cc` 中测试的简化操作符是 JavaScript 代码执行的基础构建块。 它们是 V8 编译器理解和优化 JavaScript 代码的关键。 通过编写单元测试来验证这些操作符的正确性，V8 团队确保了 JavaScript 代码在引擎内部能够被准确地表示和高效地执行。 开发者编写的 JavaScript 代码最终会被转换为这些底层的简化操作符，因此理解这些操作符有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/simplified-operator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -359,7 +361,4 @@ INSTANTIATE_TEST_SUITE_P(SimplifiedOperatorTest,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

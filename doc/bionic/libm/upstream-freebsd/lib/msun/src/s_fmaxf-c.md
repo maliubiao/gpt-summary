@@ -229,7 +229,7 @@ Section Headers: 描述了各个段的信息（如名称、大小、偏移）。
 
 `s_fmaxf.c` 文件实现了单精度浮点数的最大值计算功能，是 Android 系统中基础且重要的组成部分。理解其实现方式，特别是对 NaN 和带符号零的处理，对于编写健壮的数值计算代码至关重要。同时，了解 Dynamic Linker 的工作原理有助于理解库函数的加载和链接过程，这对于调试和优化 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_fmaxf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -239,8 +239,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -301,7 +303,4 @@ fmaxf(float x, float y)
 	return (x > y ? x : y);
 }
 #endif
-
-"""
-
 ```

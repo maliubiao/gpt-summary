@@ -219,15 +219,17 @@ namespace my_math {
 
 `v8/src/torque/torque-compiler.cc` 是 V8 引擎中 Torque 语言的编译器，负责将 `.tq` 文件中的 Torque 源代码编译成 C++ 代码，这些 C++ 代码最终会成为 V8 引擎的一部分，用于实现高性能的底层功能。Torque 的编译过程包括解析、预声明、声明处理、类型解析和实现生成等多个阶段。通过使用 Torque，V8 开发者可以更高效地编写和维护对性能至关重要的 JavaScript 引擎内部代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/torque-compiler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ TorqueCompilerResult CompileTorqueForKythe(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

@@ -92,7 +92,7 @@ This systematic approach, moving from understanding the request to analyzing the
 
 总而言之，虽然 `arm.cc` 中的代码非常简洁，但它在 Frida 动态 Instrumentation 工具中扮演着识别目标 ARM 架构的关键角色，这对于 Frida 正确地与目标进程进行交互至关重要。它与逆向工程方法、底层二进制知识、操作系统原理以及用户使用场景都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/215 source set realistic example/boards/arm/arm.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "arm.h"
 
 const char *ARMBoard::target()
@@ -112,7 +114,4 @@ const char *ARMBoard::target()
 void ARMBoard::some_arm_thing()
 {
 }
-
-"""
-
 ```

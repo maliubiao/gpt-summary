@@ -156,7 +156,7 @@ Here's a breakdown of the thinking process to analyze the C code and fulfill the
 
 总而言之，`buggy.c` 是一个设计简洁的测试用例，用于演示和验证 Frida 在动态插桩方面的能力，特别是针对依赖环境变量和可能存在内存操作问题的程序。逆向工程师和安全研究人员可以通过类似的方式，使用 Frida 分析更复杂的、实际的程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/2 testsetups/buggy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -180,7 +182,4 @@ int main(int argc, char **argv) {
     free(ten);
     return 0;
 }
-
-"""
-
 ```

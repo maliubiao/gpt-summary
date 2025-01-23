@@ -91,7 +91,7 @@ int meson_test_main_foo(void) { return 10; }
 
 `frida/subprojects/frida-tools/releng/meson/test cases/common/181 same target name flat layout/foo.c` 是 Frida 构建系统测试套件中的一个简单 C 源代码文件。它的主要功能是定义一个返回固定值的函数，用于验证 Meson 构建系统在处理具有相同目标名称但在扁平目录结构中的源文件时的行为是否正确。虽然代码本身很简单，但它在确保 Frida 工具链的健壮性和可靠性方面起着重要的作用，间接支持了 Frida 的逆向分析能力。普通用户通常不会直接接触到这个文件，它主要是 Frida 开发者和贡献者用于开发和维护 Frida 项目的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/181 same target name flat layout/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -99,10 +99,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int meson_test_main_foo(void) { return 10; }
-
-"""
-
 ```

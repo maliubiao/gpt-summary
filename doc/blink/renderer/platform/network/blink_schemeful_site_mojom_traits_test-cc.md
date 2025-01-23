@@ -91,14 +91,16 @@ By following this methodical approach, you can effectively analyze a C++ source 
 
 总而言之，`blink_schemeful_site_mojom_traits_test.cc` 是一个重要的测试文件，它确保了 Blink 引擎中表示网站源信息的关键数据结构能够正确地在不同组件之间传递，这对于维护 Web 安全和隔离至关重要。虽然普通用户和前端开发者不会直接接触到这些代码，但它所测试的功能直接影响着 JavaScript, HTML, CSS 的安全运行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/blink_schemeful_site_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ TEST(BlinkSchemefulSiteMojomTraitsTest, DeserializeFailure) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

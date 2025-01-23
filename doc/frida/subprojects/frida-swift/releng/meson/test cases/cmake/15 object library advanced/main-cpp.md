@@ -164,7 +164,7 @@ zlib version 1.2.11
 
 总而言之，这个简单的 `main.cpp` 文件在一个更大的 Frida 测试框架中扮演着重要的角色，用于验证 Frida 的功能，并帮助开发者理解和解决在实际应用中可能遇到的问题。对于逆向工程师来说，理解这种测试用例的结构和目的，可以帮助他们更好地利用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/15 object library advanced/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "libA.hpp"
 #include "libB.hpp"
@@ -185,7 +187,4 @@ int main(void) {
   cout << getZlibVers() << endl;
   return EXIT_SUCCESS;
 }
-
-"""
-
 ```

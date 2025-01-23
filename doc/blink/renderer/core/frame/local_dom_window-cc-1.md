@@ -154,15 +154,17 @@ Read through the generated summary to ensure accuracy, clarity, and completeness
 
 这段 `LocalDOMWindow.cc` 的代码片段主要负责 **管理和协调与页面生命周期、事件处理、跨域通信以及与浏览器交互相关的底层操作**。它扮演着连接 Blink 渲染引擎和 JavaScript 环境的关键角色，确保各种 Web 技术能够协同工作，并提供必要的安全性和功能保障。它处理了很多用户不可见的幕后工作，使得 JavaScript 能够控制浏览器行为，响应用户操作，并与其他页面或服务进行通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_dom_window.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tFrame()) {
     GetFrame()->GetPage()->GetInspectorIssueStorage().AddInspectorIssue(
         this, std::move(issue));
@@ -1121,7 +1123,4 @@ void LocalDOMWindow::setDefaultStatus(const String& string) {
 }
 
 String LocalDOMWindow::origin() cons
-"""
-
-
 ```

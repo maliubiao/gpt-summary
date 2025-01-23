@@ -161,15 +161,17 @@ func main() {
 
 这个测试文件通过大量的用例覆盖了 Windows 平台上 `file://` URL 的各种情况，旨在确保相关函数能够正确地进行转换和校验，避免使用者常犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/web/url_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -264,9 +266,4 @@ var urlTests = []struct {
 		wantErr: "file URL missing drive letter",
 	},
 }
-
-"""
-
-
-
 ```

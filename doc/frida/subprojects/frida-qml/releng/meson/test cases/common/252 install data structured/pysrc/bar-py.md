@@ -120,7 +120,7 @@ script.load()
 
 总而言之，`bar.py` 虽然自身功能很简单，但在 Frida 的测试框架中扮演着验证其处理简单 Python 模块能力的角色。它与逆向方法的联系在于它模拟了目标程序可能存在的模块化结构，并用于测试 Frida 在这种场景下的工作情况。用户通常在调试 Frida 自身或深入理解其内部机制时才会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/252 install data structured/pysrc/bar.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,10 +128,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.bar module'''
-
-"""
-
 ```

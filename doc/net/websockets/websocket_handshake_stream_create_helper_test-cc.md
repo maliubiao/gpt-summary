@@ -144,15 +144,17 @@ websocket.onmessage = function(event) {
 
 在调试 WebSocket 连接问题时，如果怀疑握手阶段有问题，可以关注网络请求，查看握手请求和响应的头信息。Chromium 的 `net-internals` 工具 (可以通过在浏览器地址栏输入 `chrome://net-internals/#/events` 打开) 可以提供非常详细的网络事件日志，包括 WebSocket 握手的过程，这对于定位问题非常有帮助。 开发者工具的网络面板通常也能显示 WebSocket 连接的握手信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_handshake_stream_create_helper_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -791,7 +793,4 @@ TEST_P(WebSocketHandshakeStreamCreateHelperTest, ExtensionParameters) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

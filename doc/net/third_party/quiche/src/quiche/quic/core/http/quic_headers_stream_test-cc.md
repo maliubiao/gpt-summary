@@ -69,7 +69,7 @@ Here's a plan to address each of these points:
 
 总而言之， `quic_headers_stream_test.cc` 是确保 Chromium QUIC 协议栈中负责处理 HTTP 首部信息的关键组件 `QuicHeadersStream` 能够正确、可靠地工作的重要组成部分。 它通过大量的单元测试来验证各种场景下的行为，帮助开发者预防和修复与首部处理相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_headers_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -77,8 +77,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -878,7 +880,4 @@ TEST_P(QuicHeadersStreamTest, FrameContainsMultipleHeaders) {
   EXPECT_CALL(*ack_listener3, OnPacketAcked(7, _));
   EXPECT_TRUE(headers_stream_->OnStreamFrameAcked(
       30,
-"""
-
-
 ```

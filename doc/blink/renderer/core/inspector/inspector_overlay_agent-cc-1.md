@@ -128,15 +128,17 @@ Here's a breakdown of the thought process:
 
 总而言之，这部分代码深入实现了 Inspector 覆盖层的核心功能，包括各种类型的元素高亮、与覆盖层页面的通信、以及处理用户交互，是 Inspector 功能实现的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_overlay_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 figs) {
   if (!persistent_tool_) {
     persistent_tool_ =
@@ -1024,8 +1026,4 @@ InspectorOverlayAgent::ToFlexContainerHighlightConfig(
     return nullptr;
   }
   std::unique_ptr<InspectorFlexContainerHighlightConfig> highlight_config =
-     
-"""
-
-
 ```

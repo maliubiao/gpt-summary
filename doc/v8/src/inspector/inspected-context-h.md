@@ -156,15 +156,17 @@ console.log("Result:", result);
 
 总而言之，`v8/src/inspector/inspected-context.h` 定义的 `InspectedContext` 类是 V8 Inspector 模块的关键组成部分，它负责管理被调试的 JavaScript 执行上下文，维护其状态和元数据，并为调试器提供访问和操作上下文的接口，从而支持各种 JavaScript 调试功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/inspected-context.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/inspected-context.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ class InspectedContext {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_INSPECTED_CONTEXT_H_
-
-"""
-
 ```

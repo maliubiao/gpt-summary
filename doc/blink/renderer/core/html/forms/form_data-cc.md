@@ -163,14 +163,16 @@ This systematic approach ensures that all aspects of the request are addressed c
 
 总而言之，`FormData.cc` 文件是 Blink 引擎中处理 HTML 表单数据的核心组件，它连接了 JavaScript API 和底层的表单数据表示和编码逻辑，使得浏览器能够有效地管理和传输表单数据。理解这个文件的功能有助于我们更好地理解浏览器如何处理表单提交以及如何在 JavaScript 中操作表单数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/form_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -615,7 +617,4 @@ FormData* FormData::CreateFromControlState(ExecutionContext& execution_context,
 }
 
 }  // namespace blink
-
-"""
-
 ```

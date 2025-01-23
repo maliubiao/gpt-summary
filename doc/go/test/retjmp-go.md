@@ -134,15 +134,17 @@ While the provided snippet is a test case and not something typical users would 
 
 In summary, `go/test/retjmp.go` is a test case specifically designed to verify the correctness of return jumps implemented using `JMP` instructions in assembly code within a Go program. It ensures the Go runtime can handle such non-standard return mechanisms correctly.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/retjmp.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // buildrundir
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -152,9 +154,4 @@ Prompt:
 // Test that return jump works correctly in assembly code.
 
 package ignored
-
-"""
-
-
-
 ```

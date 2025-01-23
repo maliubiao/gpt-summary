@@ -178,15 +178,17 @@ func storeLocalAddress() {
 
 **正确的做法是理解逃逸分析，并确保需要全局访问或长期存在的变量分配在堆上，或者使用适当的同步机制来管理其生命周期。** 在 `sync/atomic` 的场景中，被原子操作引用的变量通常会被编译器识别为需要逃逸到堆上，以保证其在并发访问中的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_sync_atomic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -225,9 +227,4 @@ func CompareAndSwapPointer() {
 	var y int // ERROR "moved to heap: y"
 	atomic.CompareAndSwapPointer(&ptr, unsafe.Pointer(&x), unsafe.Pointer(&y))
 }
-
-"""
-
-
-
 ```

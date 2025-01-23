@@ -202,7 +202,7 @@ By following this systematic approach, breaking down the code, connecting it to 
 
 这个流程就是用户操作如何逐步执行到代码的不同部分。当需要调试时，可以使用 Frida 在程序的运行过程中注入代码，例如在 `SDL_CreateWindow` 或 `SDL_FillRect` 等关键函数处设置断点或者打印信息，来观察程序的行为，分析问题所在。  目录结构 `frida/subprojects/frida-clr/releng/meson/manual tests/4 standalone binaries/myapp.cpp` 表明这个代码很可能是 Frida 项目的一部分，用于测试 Frida 在动态插桩 C++ 二进制文件时的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/manual tests/4 standalone binaries/myapp.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<SDL.h>
 #include<memory>
 #include<iostream>
@@ -251,7 +253,4 @@ int main(void) {
 
   return 0;
 }
-
-"""
-
 ```

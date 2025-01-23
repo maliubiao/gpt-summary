@@ -242,7 +242,7 @@ except Exception as e:
 
 总而言之，`bionic/libc/kernel/uapi/asm-x86/asm/ipcbuf.handroid` 是 Android 系统中一个重要的底层头文件，它为进程间通信提供了必要的缓冲区结构定义。虽然它自身不实现任何功能，但它被 libc 库中与 IPC 相关的函数所使用，并对 Android 系统的稳定运行至关重要。 通过理解其作用，我们可以更好地理解 Android 的进程间通信机制以及如何使用 NDK 进行相关的开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/ipcbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -262,7 +264,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/ipcbuf.h>
-
-"""
-
 ```

@@ -187,14 +187,16 @@ This iterative process of understanding the code, connecting it to the broader c
 
 总而言之，`dark_mode_color_classifier.cc` 文件是 Chromium 实现暗黑模式颜色自适应的核心组件，它通过分析颜色的亮度并根据预设的阈值来决定是否进行反转，从而提升暗黑模式下的用户体验。理解其工作原理有助于开发者更好地理解和调试暗黑模式相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_color_classifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ DarkModeColorClassifier::MakeBackgroundColorClassifier(
 DarkModeColorClassifier::~DarkModeColorClassifier() {}
 
 }  // namespace blink
-
-"""
-
 ```

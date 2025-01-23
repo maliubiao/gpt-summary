@@ -265,15 +265,17 @@ Finish
 
 这段代码的核心在于提供了一种结构化的方式来读取和遍历复杂的覆盖率数据，并通过访问者模式将数据处理的逻辑解耦，使得不同的分析、合并、报告等工具可以复用这个读取框架。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/cov/readcovdata.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -556,9 +558,4 @@ func (r *CovDataReader) processPackage(mfname string, pd *decodemeta.CoverageMet
 	r.vis.EndPackage(pd, pkgIdx)
 	return nil
 }
-
-"""
-
-
-
 ```

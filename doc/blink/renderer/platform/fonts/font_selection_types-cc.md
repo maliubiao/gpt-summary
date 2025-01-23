@@ -146,14 +146,16 @@ By following these steps, we can systematically analyze the C++ code and generat
 
 总而言之，`font_selection_types.cc` 文件定义了 Blink 引擎中用于表示和操作字体选择关键信息的数据结构，这些结构体在解析 CSS 和处理字体渲染请求的过程中扮演着核心角色，确保浏览器能够根据网页的样式规则正确地选择和渲染字体。虽然前端开发者不直接操作这些 C++ 类型，但他们使用的 HTML、CSS 和 JavaScript 最终会通过这些底层的机制来影响网页的呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_selection_types.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 Apple Inc. All rights reserved.
  *
@@ -218,7 +220,4 @@ String FontSelectionRequest::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -116,14 +116,16 @@ Permissions Policy 是一种 Web 平台特性，允许开发者控制哪些 Web 
 
 总而言之，`blink/common/permissions_policy/permissions_policy_mojom_traits.cc` 是 Chromium Blink 引擎中一个关键的文件，负责处理 Permissions Policy 相关数据在不同进程之间的序列化和反序列化，这对于实现 Permissions Policy 的功能至关重要，并直接影响到 Web 开发者如何控制其网站的特性访问权限。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ bool StructTraits<blink::mojom::ParsedPermissionsPolicyDeclarationDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

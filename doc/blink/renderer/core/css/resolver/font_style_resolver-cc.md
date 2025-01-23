@@ -151,15 +151,17 @@ By following this structured analysis, we can effectively understand the functio
 
 总而言之，`font_style_resolver.cc` 在 Chromium Blink 引擎中扮演着关键的角色，它连接了 CSS 样式定义和最终的字体渲染，确保浏览器能够正确地按照网页作者的意图显示文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/font_style_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ FontDescription FontStyleResolver::ComputeFont(
 }
 
 }  // namespace blink
-
-"""
-
 ```

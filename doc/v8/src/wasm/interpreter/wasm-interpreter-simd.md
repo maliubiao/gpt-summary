@@ -101,11 +101,13 @@ console.log(result); // 输出类似： Int32x4 { 6, 8, 10, 12 }
 
 **简单来说，`wasm-interpreter-simd.cc` 是 V8 引擎理解和执行 WebAssembly 中 SIMD 指令的关键部分，使得 JavaScript 能够利用 WebAssembly 提供的 SIMD 并行计算能力。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -467,7 +469,4 @@ bool WasmBytecodeGenerator::DecodeSimdOp(WasmOpcode opcode,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

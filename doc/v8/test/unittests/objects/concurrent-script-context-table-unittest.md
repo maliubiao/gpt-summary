@@ -109,9 +109,12 @@ onmessage = function(event) {
 
 `concurrent-script-context-table-unittest.cc` 这个 C++ 文件是 V8 引擎内部用于测试关键数据结构 `ScriptContextTable` 在并发环境下行为的单元测试。 `ScriptContextTable` 负责管理 JavaScript 的执行上下文，而并发安全性对于支持诸如 Web Workers 等并发 JavaScript 特性至关重要。 虽然 JavaScript 代码无法直接操作 `ScriptContextTable`，但通过理解 JavaScript 中创建不同执行上下文的方式（例如 `eval()` 和 Web Workers），可以更好地理解 `ScriptContextTable` 在 V8 中的作用和重要性。
 
-Prompt: ```这是目录为v8/test/unittests/objects/concurrent-script-context-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/concurrent-script-context-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,6 +321,4 @@ TEST_F(ConcurrentScriptContextTableTest,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

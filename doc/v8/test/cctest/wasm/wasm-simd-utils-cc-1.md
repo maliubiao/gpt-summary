@@ -108,7 +108,7 @@ testWasmSimdAdd();
 
 这段 C++ 代码片段是 V8 引擎中用于测试 WebAssembly SIMD 指令功能正确性的测试代码。它定义了一系列测试函数，针对不同数据类型 (例如 `float64x2`, `int8x32`) 和操作类型 (例如二元运算、比较运算、移位运算) 的 SIMD 指令进行测试。这些测试通过创建 WebAssembly 模块，执行 SIMD 操作，并将结果与预期值进行比较来验证 V8 引擎中 SIMD 指令的实现是否正确。 特别地，带有 "Revec" 的测试函数专注于测试在启用向量化优化 (例如 AVX2) 的情况下，SIMD 指令的执行是否符合预期。虽然这段代码是 C++ 编写的，但它直接关系到 JavaScript 中 WebAssembly SIMD API 的功能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/wasm-simd-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/wasm-simd-utils.cc以.tq结尾，那它是个v8 torque源代码，
@@ -116,8 +116,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 AT64_INPUTS(y) {
       if (!PlatformCanRepresent(x)) continue;
       if (ShouldSkipTestingConstants(opcode, x, y)) continue;
@@ -932,7 +934,4 @@ void RunF64x4BinOpRevecTest(WasmOpcode opcode, DoubleBinOp expected_op,
   }
   FOR_FLOAT64_INPUTS(x) {
     if (!PlatformCanRepresent(x)) continue;
-"""
-
-
 ```

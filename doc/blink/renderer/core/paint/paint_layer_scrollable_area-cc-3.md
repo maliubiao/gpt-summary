@@ -121,7 +121,7 @@ By following these steps, I could dissect the code snippet and extract the core 
 
 这部分代码主要负责 **动态管理和绘制页面的滚动区域，特别是滚动条的生命周期和视觉更新**。它根据内容的溢出状态来决定是否需要显示滚动条，并在需要时创建和管理滚动条对象。同时，它也处理与合成线程的交互，以实现更流畅的滚动体验。此外，还包含了处理 CSS 滚动捕捉以及一些内部优化机制的代码。 简单来说，**这部分代码是 Blink 引擎中负责让用户“看到”和“使用”滚动条的关键组成部分。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_layer_scrollable_area.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 AlwaysOff)
       has_overflow = false;
   }
@@ -1032,7 +1034,4 @@ void PaintLayerScrollableArea::UpdateScrollMarkers() {
       auto* group_before = DynamicTo<ScrollMarkerGroupPseudoElement>(before);
       group_before->UpdateSelectedScrollMarker(scroll_offset);
     } else if (PseudoElement* a
-"""
-
-
 ```

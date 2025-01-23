@@ -161,15 +161,17 @@ Entering high allocation throughput section.
 
 **In summary, `HighAllocationThroughputScope` is a V8 internal tool for notifying the embedder about periods of intense memory allocation and deallocation. It helps the embedder understand and potentially react to the performance characteristics of the executing JavaScript code. JavaScript developers indirectly influence the activation of these scopes through their coding patterns.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/high-allocation-throughput-scope.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/high-allocation-throughput-scope.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ class HighAllocationThroughputScope final {
 }  // namespace v8
 
 #endif  // V8_COMMON_HIGH_ALLOCATION_THROUGHPUT_SCOPE_H_
-
-"""
-
 ```

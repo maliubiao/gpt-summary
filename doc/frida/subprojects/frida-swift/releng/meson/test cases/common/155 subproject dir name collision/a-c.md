@@ -260,7 +260,7 @@ if (Java.available) {
 
 总而言之，这个 `a.c` 文件很可能是一个Frida构建系统测试用例的一部分，用于验证Meson在处理具有相同名称的子目录时的行为。它的简单逻辑是为了方便快速验证构建结果，而不是一个复杂的业务逻辑单元。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/155 subproject dir name collision/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -268,8 +268,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -283,7 +285,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

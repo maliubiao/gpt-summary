@@ -219,7 +219,7 @@ int main() {
 
 `meson-subsample.c` 是一个用于测试 Frida 对 GLib 对象插桩能力的简单 C 代码文件。它定义了一个包含字符串属性的简单对象，并提供了基本的创建、访问和打印功能。理解这个文件的功能有助于理解 Frida 如何与基于 GLib 的应用程序进行交互，对于逆向工程、安全分析以及 Frida 本身的开发和调试都具有重要意义。 文件路径和内容都强烈暗示了其作为 Frida 测试用例的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/34 gir static lib/subdir/gir/meson-subsample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -227,8 +227,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 struct _MesonSubSample
@@ -353,7 +355,4 @@ meson_sub_sample_print_message (MesonSubSample *self)
 
   g_print ("Message: %s\n", self->msg);
 }
-
-"""
-
 ```

@@ -170,15 +170,17 @@ This code aims to *prevent* common programming errors related to memory corrupti
 
 In summary, `v8/src/common/code-memory-access-inl.h` is a foundational piece of V8's JIT compilation infrastructure, providing mechanisms for safely managing and accessing memory used to store generated machine code. It plays a crucial role in performance, security, and stability.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/code-memory-access-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/code-memory-access-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -546,7 +548,4 @@ void RwxMemoryWriteScope::SetExecutable() {}
 }  // namespace v8
 
 #endif  // V8_COMMON_CODE_MEMORY_ACCESS_INL_H_
-
-"""
-
 ```

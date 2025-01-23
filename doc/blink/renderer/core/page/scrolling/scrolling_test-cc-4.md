@@ -74,7 +74,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 `blink/renderer/core/page/scrolling/scrolling_test.cc`  文件是 Blink 引擎中用于测试页面滚动功能的关键组成部分。它通过模拟各种用户滚动操作和场景，验证了 Web Animations API 与滚动位置的集成、滚动事件的处理、布局的触发以及硬件加速 canvas 的触摸行为等关键功能是否按预期工作。这些测试对于确保 Blink 引擎滚动功能的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/scrolling_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cc::ElementId element_id = cc_animation->element_id();
 
   gfx::KeyframeModel* keyframe_model_main =
@@ -294,8 +296,4 @@ TEST_P(ScrollingTestWithAcceleratedContext, CanvasTouchActionRects) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

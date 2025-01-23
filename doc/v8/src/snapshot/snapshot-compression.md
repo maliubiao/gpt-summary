@@ -136,11 +136,13 @@ console.timeEnd("Warm Start (Simulated Snapshot)");
 
 总结来说，`snapshot-compression.cc` 文件在 V8 引擎的启动优化中扮演着关键角色，通过压缩快照数据来减小文件大小，并通过解压缩来快速恢复 V8 的运行状态，从而提升 JavaScript 应用的启动速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-compression.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ SnapshotData SnapshotCompression::Decompress(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -196,7 +196,7 @@ This detailed breakdown combines code analysis, domain knowledge (Frida, reverse
 
 总而言之，`cmMod.cpp` 是一个用于演示目的的简单 C++ 模块，它展示了字符串操作和条件编译的特性。在 Frida 的上下文中，它可以作为逆向分析和动态插桩的目标，帮助用户理解 Frida 的工作原理和应用程序的内部行为。理解这个文件的功能和潜在问题，有助于逆向工程师有效地使用 Frida 进行调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/2 advanced/subprojects/cmMod/lib/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include <zlib.h>
 #include "config.h"
@@ -232,7 +234,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

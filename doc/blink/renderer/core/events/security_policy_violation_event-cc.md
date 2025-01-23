@@ -210,14 +210,16 @@ By following these steps, the comprehensive and informative explanation can be g
 
 `security_policy_violation_event.cc` 文件定义了 Blink 中用于表示安全策略违规事件的核心类。这个类承载了关于违规的详细信息，并作为浏览器向 JavaScript 代码报告安全策略问题的桥梁，对于理解和调试 Web 安全策略至关重要。 开发者需要理解这些事件的含义和触发条件，以确保其 Web 应用的安全性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/security_policy_violation_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 Google Inc. All rights reserved.
  *
@@ -303,7 +305,4 @@ SecurityPolicyViolationEvent::disposition() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

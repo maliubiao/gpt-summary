@@ -198,15 +198,17 @@ Here's a breakdown of its functionalities and connections:
 
 In essence, this C++ file is a crucial part of the Chromium rendering engine responsible for ensuring the correct and expected behavior of HTML radio buttons, bridging the gap between the HTML markup and the user's interactions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/radio_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2010 Google Inc. All rights reserved.
@@ -542,7 +544,4 @@ void RadioInputType::WillUpdateCheckedness(bool new_checked) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

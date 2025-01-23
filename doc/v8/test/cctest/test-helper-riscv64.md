@@ -108,11 +108,13 @@ TEST(AddTwoIntegers) {
 
 `test-helper-riscv64.cc` 作为一个测试辅助工具，允许 V8 开发者针对 RISC-V 64 架构编写低级别的汇编代码测试。这些测试对于确保 V8 正确地将 JavaScript 代码编译成高效且正确的机器码至关重要。它并不直接运行 JavaScript 代码，而是用于验证 V8 生成的机器码的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-helper-riscv64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ Handle<Code> AssembleCodeImpl(Isolate* isolate, Func assemble) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

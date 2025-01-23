@@ -135,11 +135,13 @@ let result = add(5, 3);
 
 `frame-elider.cc` 是 V8 编译器后端的一个关键优化步骤，它通过精细地分析代码，判断哪些地方真正需要栈帧，并消除不必要的栈帧创建和销毁，从而显著提升 JavaScript 代码的执行效率。它属于编译器优化的一部分，对开发者是透明的，但对提升 JavaScript 引擎的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/frame-elider.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -340,7 +342,4 @@ Instruction* FrameElider::InstructionAt(int index) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

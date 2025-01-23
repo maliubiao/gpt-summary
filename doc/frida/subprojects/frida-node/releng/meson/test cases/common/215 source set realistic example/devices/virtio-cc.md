@@ -145,7 +145,7 @@ Initially, I might have focused too much on what the *code itself does*. The key
 
 总而言之，虽然 `virtio.cc` 文件本身的代码很简单，但在 Frida 动态插桩的上下文中，它成为了一个可以被观察、修改和分析的关键点，可以帮助理解和调试更复杂的系统行为，尤其是在涉及虚拟化和底层系统交互的场景中。它也体现了 Frida 作为动态分析工具的强大能力，即使面对空函数，也能通过插桩赋予其新的意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/devices/virtio.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,15 +153,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
 
 void VirtioDevice::some_virtio_thing() {
 }
-
-"""
-
 ```

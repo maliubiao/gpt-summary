@@ -119,7 +119,7 @@ Now, I need to connect these functionalities to the specific requests about reve
 
 总而言之，这个文件是 Frida 构建系统测试套件的关键组成部分，用于确保 Frida 在类 Linux 环境下的构建质量和稳定性。理解其功能有助于开发者调试构建问题，验证新功能，并维护 Frida 项目的健康发展。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf):
         testdir = os.path.join(self.unit_test_dir, '51 ldflagdedup')
         if is_cygwin() or is_osx():
@@ -508,8 +510,4 @@ lf):
         self.assertIn('build t9-e1: c_LINKER t9-e1.p/main.c.o | libt9-s1.a libt9-s2.a libt9-s3.a\n', content)
         self.assertIn('build t12-e1: c_LINKER t12-e1.p/main.c.o | libt12-s1.a libt12-s2.a libt12-s3.a\n', content)
         self.assertIn('build t13-e1: c_LINKER t13-e1.p/main.c.o | libt12-s1.a libt13-s3.a\n', content)
-
-"""
-
-
 ```

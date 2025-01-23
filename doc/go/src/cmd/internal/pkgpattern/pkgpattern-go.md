@@ -170,15 +170,17 @@ By following this systematic approach, you can effectively analyze and explain t
 
 总而言之，`go/src/cmd/internal/pkgpattern/pkgpattern.go` 提供了一套灵活且高效的机制，用于根据模式匹配 Go 包路径，是 Go 工具链中不可或缺的一部分。理解其功能和特殊规则对于正确使用 Go 命令至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/pkgpattern/pkgpattern.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -316,9 +318,4 @@ func replaceVendor(x, repl string) string {
 	}
 	return strings.Join(elem, "/")
 }
-
-"""
-
-
-
 ```

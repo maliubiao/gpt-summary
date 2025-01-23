@@ -199,7 +199,7 @@ sys.stdin.read()
 
 总而言之，`namespaces_public_internal.cpp` 虽然只是一个简单的测试文件，但它体现了 Android 系统中至关重要的共享库命名空间和符号可见性管理机制，这对于构建模块化、稳定和安全的系统至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/namespaces_public_internal.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -210,8 +210,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -233,7 +235,4 @@ static const char* g_internal_extern_string = "This string is from a library a s
 extern "C" const char* internal_extern_string() {
   return g_internal_extern_string;
 }
-
-"""
-
 ```

@@ -109,11 +109,13 @@ myDiv.customData = { importantInfo: 'some value' };
 
 `context-serializer.cc` 是 V8 引擎中负责将 JavaScript 执行环境的核心——Context 对象序列化到快照的关键组件。 它与 JavaScript 的功能紧密相连，因为它保存了 JavaScript 代码运行所需的所有关键状态，包括全局对象、内置对象、作用域信息以及可能的嵌入器特定数据。  通过序列化 Context，V8 可以实现更快的启动和隔离的执行环境创建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/context-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -525,7 +527,4 @@ void ContextSerializer::CheckRehashability(Tagged<HeapObject> obj) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

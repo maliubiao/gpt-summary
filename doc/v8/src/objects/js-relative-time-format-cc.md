@@ -177,15 +177,17 @@ const formattedString = rtf.format(-1, 'week');
 
 总而言之，`v8/src/objects/js-relative-time-format.cc` 是 V8 引擎中实现 `Intl.RelativeTimeFormat` 功能的关键 C++ 代码，它依赖于 ICU 库来提供国际化的相对时间格式化能力。理解这个文件有助于深入了解 JavaScript 国际化 API 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-relative-time-format.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-relative-time-format.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -701,7 +703,4 @@ const std::set<std::string>& JSRelativeTimeFormat::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

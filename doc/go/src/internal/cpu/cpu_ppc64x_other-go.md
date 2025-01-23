@@ -115,7 +115,7 @@ const _HWCAP_POWER8 = 0x10000000
 
 `cpu_ppc64x_other.go` 的 `osinit` 函数在特定的 PowerPC 64 位架构（非 AIX 和 Linux）的操作系统上，通过一个空的函数体来告知 Go 运行时环境，它无法自动检测 CPU 特性。这体现了 Go 语言对不同平台差异的处理方式，并依赖于条件编译来选择合适的实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_ppc64x_other.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -123,8 +123,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -138,9 +140,4 @@ func osinit() {
 	// reading privileged system registers or sysctl in user space to detect CPU
 	// features at runtime.
 }
-
-"""
-
-
-
 ```

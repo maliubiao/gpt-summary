@@ -107,12 +107,14 @@ const promise = new Promise((resolve, reject) => {
 
 作为 `v8/src/heap/factory.cc` 的一部分，这段代码集中展示了 `Factory` 类创建各种 JavaScript 对象和相关内部对象的能力。它涵盖了创建普通对象、数组、集合类型、模块、缓冲区、函数、Proxy、全局对象代理、错误对象、类型化数组、Promise 和共享对象等功能。这些都是构成 JavaScript 语言基础的核心组成部分，这段代码是 V8 引擎实现这些功能的重要基础。 考虑到这是第 3 部分，可以推断前后的部分可能涉及更基础的对象创建机制 (例如，分配内存和创建 `Map` 对象) 以及一些更高级的对象创建或优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 HasDictionaryElements() || js_obj->HasSharedArrayElements());
   return handle(js_obj, isolate());
 }
@@ -1720,7 +1722,4 @@ Handle<JSFunction> Factory::JSFunctionBuilder::BuildRaw(
   function->set_shared(*sfi_, mode);
   function->set_context(*context_, kReleaseStore, mode);
   function->set_raw_feedback_cell(*feedback_cell, mode)
-"""
-
-
 ```

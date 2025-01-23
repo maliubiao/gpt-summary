@@ -135,7 +135,7 @@ func main() {
 
 `fe_amd64_noasm.go` 文件在 `crypto/internal/fips140/edwards25519/field` 包中扮演着一个重要的角色，它提供了字段元素乘法和平方运算的通用 Go 语言实现，作为在非 AMD64 架构或使用 `purego` 构建标签时的回退方案。理解构建标签对于理解这段代码的作用至关重要。使用者应该意识到这是底层实现，并尽可能使用更高级别的 API 来进行密码学操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/field/fe_amd64_noasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -156,9 +158,4 @@ package field
 func feMul(v, x, y *Element) { feMulGeneric(v, x, y) }
 
 func feSquare(v, x *Element) { feSquareGeneric(v, x) }
-
-"""
-
-
-
 ```

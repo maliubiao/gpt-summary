@@ -147,7 +147,7 @@ Atomics.add(ia, 0, 5); // 可能对应 Word32AtomicAdd 操作
 
 这段 `v8/src/compiler/machine-operator.cc` 代码定义了 V8 编译器在生成机器代码时使用的 **核心机器操作集合**。它涵盖了基本的算术运算、内存访问（加载和存储）、位运算以及原子操作。这些操作是 V8 将高级 JavaScript 代码转换为可在计算机硬件上执行的低级指令的关键组成部分。 这些定义为编译器优化和代码生成提供了基础，确保了 JavaScript 代码的高效执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,9 +155,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    IrOpcode::kStackSlot, Operator::kNoDeopt | Operator::kNoThrow,
+### 源代码
+```cpp
+IrOpcode::kStackSlot, Operator::kNoDeopt | Operator::kNoThrow,
             "StackSlot", 0, 0, 0, 1, 0, 0,
             StackSlotRepresentation(size, alignment, is_tagged)) {}
 };
@@ -694,8 +696,4 @@ struct MachineOperatorGlobalCache {
   Word32SeqCstPairLoadOperator kWord32SeqCstPairLoad;
 
   struct Word32SeqCstPairStoreOperator : public Operator1<AtomicMemoryOrder> {
-  
-"""
-
-
 ```

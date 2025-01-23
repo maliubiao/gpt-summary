@@ -183,15 +183,17 @@ let result = add(5, 6);
 
 `v8/src/compiler/all-nodes.cc` 文件定义了一个用于追踪图中可达节点的关键工具类。它在 V8 编译器的优化和分析阶段扮演着重要角色，帮助理解代码结构并进行各种图相关的操作。虽然用户不直接编写或调用这个文件中的代码，但其功能与理解代码执行流程、死代码检测以及潜在的逻辑错误密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/all-nodes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/all-nodes.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ void AllNodes::Mark(Zone* local_zone, Node* end, const Graph* graph) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

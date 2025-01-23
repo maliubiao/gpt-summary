@@ -132,7 +132,7 @@ Here's a breakdown of the thinking process to generate the detailed analysis of 
 
 `prog.c` 是一个非常基础的 C 程序，其主要目的是作为 Frida 框架测试外部库交互能力的简单用例。它通过链接 `zlib` 库并获取 `deflate` 函数的地址，验证了 Frida 在动态分析和逆向工程中操作动态链接库函数地址的能力。 这个简单的例子背后涉及到对二进制底层、操作系统 (Linux/Android) 的共享库和动态链接机制的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/linuxlike/2 external library/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<zlib.h>
 
 int main(void) {
@@ -150,7 +152,4 @@ int main(void) {
         return 0;
     return 1;
 }
-
-"""
-
 ```

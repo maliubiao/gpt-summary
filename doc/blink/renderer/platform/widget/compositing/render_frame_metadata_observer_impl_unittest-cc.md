@@ -163,14 +163,16 @@ By following this step-by-step process, analyzing the code structure, dependenci
 
 `render_frame_metadata_observer_impl_unittest.cc` 通过一系列单元测试，详细验证了 `RenderFrameMetadataObserverImpl` 类在处理渲染帧元数据时的各种场景和行为，确保了该类能够正确地传递帧令牌、渲染帧元数据以及处理平台特定的优化策略，这对于 Blink 引擎的正确渲染和性能至关重要。这些元数据最终会影响到 JavaScript、HTML 和 CSS 的行为和渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/render_frame_metadata_observer_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -681,7 +683,4 @@ TEST_F(RenderFrameMetadataObserverImplTest, ForceSendMetadata) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

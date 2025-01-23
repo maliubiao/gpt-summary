@@ -17,7 +17,7 @@ To summarize, I need to identify the primary function of this code and list the 
 
 这段代码负责将多种 s390x 架构的汇编指令翻译成对应的机器码。它针对不同的指令类型，例如算术运算、逻辑运算、数据移动、分支跳转、浮点运算、向量运算等，使用不同的编码方式和辅助函数 (`zRX`, `zRXY`, `zRI`, `zRIL` 等) 来生成正确的机器码字节序列。 这段代码是 Go 编译器中将架构无关的汇编指令转化为特定架构机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/asmz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -26,9 +26,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-		case AADDW:
+### 源代码
+```go
+case AADDW:
 			opx = op_A
 			opxy = op_AY
 		case AMULLW:
@@ -1310,9 +1312,4 @@ Prompt:
 			v3 = p.To.Reg
 		}
 		zVRRc(op, uint32(p.To.Reg), uint32(p.From.Reg), uint32(v3), m6, m5, m4,
-"""
-
-
-
-
 ```

@@ -169,14 +169,16 @@ By following these steps, we can generate a comprehensive and informative answer
 
 总而言之，`blink/renderer/platform/fonts/opentype/font_format_check.cc` 文件是 Chromium 浏览器引擎中负责解析和理解 OpenType 字体格式的关键组件。它通过检查字体文件中存在的各种表，为浏览器提供了关于字体类型和特性的信息，从而确保网页上的字体能够被正确地渲染。这直接影响了 CSS 样式的应用和 JavaScript 对字体的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/font_format_check.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -299,7 +301,4 @@ FontFormatCheck::VariableFontSubType FontFormatCheck::ProbeVariableFont(
 }
 
 }  // namespace blink
-
-"""
-
 ```

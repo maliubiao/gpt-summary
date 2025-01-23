@@ -187,15 +187,17 @@ func main() {
 
 这段 `instantiate.go` 代码是 Go 语言泛型实现的关键部分，负责将泛型类型与具体的类型实参结合，生成实际可用的类型。它涉及到类型校验、实例缓存等重要机制，确保泛型代码的正确性和性能。理解这段代码的功能有助于深入理解 Go 语言泛型的运作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/instantiate.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -589,9 +591,4 @@ func mentions(T, typ Type) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

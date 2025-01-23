@@ -210,7 +210,7 @@ A user typically interacts with this code indirectly through the Frida API in th
 
 If the user encounters an error (e.g., compilation failure, accessing an undefined symbol), the execution path within `gumv8cmodule.cpp` might take different branches, potentially throwing exceptions that are then caught and reported back to the user in the Frida console. Debugging would involve looking at Frida's logs and potentially using a debugger to step through the C++ code in `gumv8cmodule.cpp` and the underlying Frida core libraries.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8cmodule.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -636,7 +638,4 @@ gum_cmodule_entry_on_weak_notify (
   auto self = info.GetParameter ();
   g_hash_table_remove (self->module->cmodules, self);
 }
-
-"""
-
 ```

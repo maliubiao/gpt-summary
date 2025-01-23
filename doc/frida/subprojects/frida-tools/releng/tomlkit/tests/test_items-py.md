@@ -108,7 +108,7 @@ The user wants to understand the functionality of the Python code provided. I ne
 
 总而言之，`test_items.py` 是 `tomlkit` 库的核心测试文件，它详细地测试了各种 TOML 数据项的表示和操作，对于理解 `tomlkit` 库的功能和调试相关问题至关重要。虽然它本身不直接涉及逆向的二进制层面，但 `tomlkit` 作为配置文件解析库，在逆向工程中处理 TOML 格式的配置文件时是有应用价值的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tests/test_items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import copy
 import math
 import pickle
@@ -1089,7 +1091,4 @@ def test_custom_encoders():
 
     assert api.dumps({"foo": decimal.Decimal("1.23")}) == "foo = 1.23\n"
     api.unregister_encoder(encode_decimal)
-
-"""
-
 ```

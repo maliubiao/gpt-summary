@@ -91,14 +91,16 @@ Response: The user wants to understand the functionality of the C++ unit test fi
 
 总而言之，`video_decode_stats_reporter_unittest.cc` 是一个重要的测试文件，它确保了 `VideoDecodeStatsReporter` 能够可靠地收集和报告视频解码统计信息，这对于理解和优化 Web 上的视频播放体验至关重要。这些统计信息最终会帮助开发者提供更流畅、更高效的视频播放体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/video_decode_stats_reporter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1033,7 +1035,4 @@ TEST_F(VideoDecodeStatsReporterTest, SanitizeFrameCounts) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -119,7 +119,7 @@ By following this process, we can systematically analyze the C++ code and genera
 
 总而言之，`v8/src/heap/cppgc/sweeper.cc` 的主要功能是 **实现 cppgc 垃圾回收的清除阶段**。它负责识别和回收不可达对象占用的内存，管理空闲列表，并处理对象的终结操作。该文件定义了多个关键的类和数据结构，用于管理清除任务的优先级、截止时间、不同模式，并支持并发清除。它与 JavaScript 的内存管理密切相关，负责回收不再使用的 JavaScript 对象所占用的内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/sweeper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/sweeper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1065,7 +1067,4 @@ class PrepareForSweepVisitor final
     for (BasePage* page : space_pages) {
 #ifdef DEBUG
       const auto* header = LargePage:
-"""
-
-
 ```

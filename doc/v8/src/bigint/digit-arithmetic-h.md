@@ -142,15 +142,17 @@ console.timeEnd('BigInt 乘法');
 
 总而言之，`v8/src/bigint/digit-arithmetic.h` 是 V8 引擎实现 `BigInt` 算术运算的关键底层组件，它定义了处理 `BigInt` 内部表示中单个 "digit" 的基本算术操作。理解这些函数的功能有助于深入了解 `BigInt` 的工作原理和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/digit-arithmetic.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/bigint/digit-arithmetic.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -348,7 +350,4 @@ static inline digit_t digit_div(digit_t high, digit_t low, digit_t divisor,
 }  // namespace v8
 
 #endif  // V8_BIGINT_DIGIT_ARITHMETIC_H_
-
-"""
-
 ```

@@ -129,7 +129,7 @@ Here's a breakdown of the thinking process to arrive at the comprehensive analys
 
 总而言之，用户通常会先通过动态分析 (使用 Frida) 来观察程序的行为，当需要更深入理解代码逻辑时，才会查阅源代码。提供的文件路径可以作为调试过程中定位源代码的一个线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/55 dedup compiler libs/libb/libb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <liba.h>
 #include "libb.h"
 
@@ -146,7 +148,4 @@ void libb_mul(int x)
 {
   liba_add(liba_get() * (x - 1));
 }
-
-"""
-
 ```

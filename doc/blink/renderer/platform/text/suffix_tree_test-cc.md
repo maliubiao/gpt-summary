@@ -119,14 +119,16 @@ By following these steps and refining the analysis along the way, we arrive at t
 
 总而言之，`suffix_tree_test.cc` 是为了确保 `SuffixTree` 这个用于高效字符串匹配的底层工具能够正确工作。虽然普通用户不会直接接触到它，但它所提供的能力对于提升浏览器在处理文本相关的任务时的性能至关重要，从而间接地影响 JavaScript 执行效率、HTML 内容搜索等用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/suffix_tree_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ TEST(SuffixTreeTest, NormalString) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

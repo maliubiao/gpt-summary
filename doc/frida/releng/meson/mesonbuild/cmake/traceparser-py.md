@@ -107,7 +107,7 @@ Here's a plan:
 
 `frida/releng/meson/mesonbuild/cmake/traceparser.py` 文件的第 1 部分的主要功能是**初始化 `CMakeTraceParser` 类，定义用于表示 CMake 跟踪信息的各种数据结构 (如 `CMakeTraceLine`, `CMakeTarget`)，并实现了读取和初步解析 CMake 跟踪文件的核心逻辑**。  它定义了如何读取不同格式的跟踪文件，并为处理各种常见的 CMake 命令 (如 `set`, `add_executable`, `add_library` 等) 建立了基础框架。 这一部分的代码主要关注于将原始的跟踪数据转换成 Python 对象，以便后续进行更深入的分析和利用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/cmake/traceparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -914,7 +916,4 @@ class CMakeTraceParser:
                 # File detected
                 curr_str = f'{curr_str} {i}'
                 fixed_list +=
-"""
-
-
 ```

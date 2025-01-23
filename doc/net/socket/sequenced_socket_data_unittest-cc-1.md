@@ -65,7 +65,7 @@ By following this structured analysis and incorporating self-correction, a compr
 
 这些测试用例旨在验证 `SequencedSocketData` 类的健壮性和正确性，特别是在处理复杂的异步网络操作序列时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/sequenced_socket_data_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ASSERT_FALSE(read_callback_.have_result());
   ASSERT_EQ(kLen2, read_callback_.WaitForResult());
   AssertReadBufferEquals(kMsg2, kLen2);
@@ -339,8 +341,4 @@ TEST_F(SequencedSocketDataTest, PauseAndResume_ReadPauseWrite) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

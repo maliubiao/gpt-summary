@@ -93,7 +93,7 @@ The user wants to understand the functionality of the Python code provided, whic
 
 总而言之，这部分代码负责生成和管理用于动态跟踪的处理脚本，并提供了文件仓库机制方便用户编辑和管理这些脚本。理解这部分代码的功能对于理解 Frida Tracer 工具的工作原理以及排查相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/frida_tools/tracer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 c_arg(m):
             index = state["index"]
             r = ":${args[%d]} " % index
@@ -520,8 +522,4 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         pass
-
-"""
-
-
 ```

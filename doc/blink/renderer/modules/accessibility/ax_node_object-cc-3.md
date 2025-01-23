@@ -780,7 +780,7 @@ ax::mojom::blink::ListStyle AXNodeObject::GetListStyle() const {
       const AtomicString& counter_style_name =
           computed_style->ListStyleType()->GetCounterStyleName();
       if (counter_style_name == keywords
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -788,8 +788,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 This can
   // only occur if line breaks are preserved and a newline character is present
   // in their collapsed text. Text collapsing removes all whitespace found in
@@ -1740,7 +1742,4 @@ ax::mojom::blink::WritingDirection AXNodeObject::GetTextDirection() const {
   switch (style->GetWritingDirection().InlineEnd()) {
     case PhysicalDirection::kRight:
       return ax::mojo
-"""
-
-
 ```

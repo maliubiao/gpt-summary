@@ -135,7 +135,7 @@ By following this methodical approach, breaking down the code into manageable pa
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/cmake/executor.py` 文件是 Frida 构建系统中用于管理和执行 CMake 命令的关键组件。它封装了与 CMake 交互的复杂性，并提供了必要的错误处理和配置机制，确保 Frida 的 Swift 绑定能够成功构建。理解这个文件的功能对于调试 Frida 构建过程中与 CMake 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/cmake/executor.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -386,7 +388,4 @@ class CMakeExecutor:
 
     def machine_choice(self) -> MachineChoice:
         return self.for_machine
-
-"""
-
 ```

@@ -119,11 +119,13 @@ function calculate(x) {
 
 `bytecode-analysis.cc` 是 V8 编译器中的一个关键组成部分，负责对 JavaScript 字节码进行静态分析。通过识别循环、跟踪变量赋值以及进行活跃性分析，它为后续的编译器优化提供了必要的信息，从而显著提升 JavaScript 代码的执行效率。它与 JavaScript 的循环、生成器函数、异步函数以及变量的使用方式都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-analysis.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1306,7 +1308,4 @@ BytecodeAnalysis::BytecodeAnalysis(Handle<BytecodeArray> bytecode_array,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

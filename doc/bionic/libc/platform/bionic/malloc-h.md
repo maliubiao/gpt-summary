@@ -187,7 +187,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "android_mallopt"), {
 
 这些 Frida 脚本可以帮助你观察 `android_mallopt` 的调用时机、参数和返回值，从而理解 Android 系统如何在底层进行内存管理和调试。请注意，修改内存管理相关的参数可能会导致系统不稳定，请谨慎操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/platform/bionic/malloc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -198,8 +198,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -388,7 +390,4 @@ typedef struct {
 //
 // On success, returns true. On failure, returns false and sets errno.
 extern "C" bool android_mallopt(int opcode, void* _Nullable arg, size_t arg_size);
-
-"""
-
 ```

@@ -100,11 +100,13 @@ transition MyArrayPush(implicit context: Context)(
 
 总而言之，`source-positions.cc` 在 Torque 编译器的生命周期中扮演着至关重要的角色，它负责维护源文件的上下文信息，这对于错误报告、潜在的源码映射以及理解 V8 引擎内部实现都至关重要，尽管其影响对普通的 JavaScript 开发者来说是间接的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/source-positions.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ bool SourceFileMap::FileRelativeToV8RootExists(const std::string& path) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

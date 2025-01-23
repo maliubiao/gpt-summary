@@ -113,7 +113,7 @@ Now, I need to categorize these functionalities according to the user's specific
 
 这个代码片段主要功能是 **验证 `meson` 构建系统在处理各种构建选项、子项目管理、以及错误和警告报告等方面的功能是否正常**。 它通过模拟各种用户操作和构建场景，确保 `frida` 的构建过程的稳定性和正确性。  这些测试覆盖了从基本的选项设置到更复杂的子项目管理和错误处理等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,9 +122,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-      if x.get('name') == 'list':
+### 源代码
+```python
+if x.get('name') == 'list':
                     return x
             raise Exception(opts)
 
@@ -803,7 +805,4 @@ Prompt:
         # Subprojects warn correctly
         self.assertRegex(out, r"foo\| .*WARNING: Project targets '>=0.40'.*'0.44.0': disabler")
         self.assertRegex(out, r"baz\
-"""
-
-
 ```

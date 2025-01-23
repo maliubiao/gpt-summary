@@ -219,15 +219,17 @@ function add(a, b) {
 
 `v8/src/compiler/js-graph.cc` 是 V8 编译器中至关重要的文件，它定义了 `JSGraph` 类，负责创建和管理表示 JavaScript 值的图节点。这个图是编译器进行优化和代码生成的基础。虽然它不是 Torque 文件，但它与 JavaScript 的语义和特性紧密相关，确保了编译器能够正确理解和处理各种 JavaScript 值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-graph.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-graph.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -527,7 +529,4 @@ DEFINE_GETTER(ExternalObjectMapConstant, Map,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

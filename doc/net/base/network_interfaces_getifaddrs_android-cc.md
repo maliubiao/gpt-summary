@@ -152,15 +152,17 @@ By following this structured approach and refining the answers along the way, we
 
 通过以上分析，可以了解 `net/base/network_interfaces_getifaddrs_android.cc` 文件在 Chromium 网络栈中的作用，以及如何通过用户操作触发该代码的执行，从而为调试网络相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/network_interfaces_getifaddrs_android.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -408,7 +410,4 @@ void Freeifaddrs(struct ifaddrs* addrs) {
 }  // namespace net::internal
 
 #endif  // BUILDFLAG(IS_ANDROID)
-
-"""
-
 ```

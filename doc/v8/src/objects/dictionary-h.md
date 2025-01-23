@@ -150,15 +150,17 @@ for (const key in obj) {
 
 `v8/src/objects/dictionary.h` 是 V8 引擎中至关重要的头文件，它定义了用于实现 JavaScript 对象属性存储的各种字典类。理解这些字典的工作原理有助于我们更好地理解 JavaScript 对象的内部结构和性能特性。虽然开发者不会直接操作这些类，但了解它们可以帮助我们避免一些常见的编程错误和性能陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/dictionary.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/dictionary.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -601,7 +603,4 @@ struct EnumIndexComparator {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_DICTIONARY_H_
-
-"""
-
 ```

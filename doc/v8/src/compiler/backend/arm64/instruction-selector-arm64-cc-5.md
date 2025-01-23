@@ -195,7 +195,7 @@ lsr    output_reg, temp_reg, #32         // 将结果右移 32 位，获取高 3
 
 总的来说，这部分代码负责将一些重要的中间表示操作转换为高效的 ARM64 机器指令，是 V8 代码生成过程中的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/instruction-selector-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm64/instruction-selector-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -203,8 +203,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e_t node) {
   return VisitRRR(this, kArm64Smulh, node);
 }
@@ -1076,8 +1078,4 @@ void VisitWordCompare(InstructionSelectorT<Adapter>* selector,
     if (g.IsIntegerConstant(constant)) {
       if (TryEmitCbzOrTbz<Adapter, 64>(selector, left,
                                        g.GetIntegerConstantValue(constant),
-        
-"""
-
-
 ```

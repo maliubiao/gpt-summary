@@ -161,7 +161,7 @@ paddd dst_register, rhs_register
 
 这部分代码主要定义了 `LiftoffAssembler` 类中用于生成 x64 汇编代码的内联函数，专注于实现 WebAssembly SIMD 指令集的各种操作。这些操作涵盖了整数和浮点数的算术运算、类型转换、位操作以及通道操作。它使得 Liftoff 编译器能够将 WebAssembly 的 SIMD 指令高效地翻译成底层的 x64 机器码，从而提升 WebAssembly 在 V8 引擎中的执行性能。该文件是 V8 引擎支持 WebAssembly SIMD 功能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/x64/liftoff-assembler-x64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/x64/liftoff-assembler-x64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 chDoubleReg, low, is_signed);
   } else {
     // dst == src2
@@ -966,7 +968,4 @@ bool LiftoffAssembler::emit_f16x8_ceil(LiftoffRegister dst,
 }
 
 bool LiftoffAssembler::emit_f16x8_floor(LiftoffRegister ds
-"""
-
-
 ```

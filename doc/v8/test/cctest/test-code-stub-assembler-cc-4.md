@@ -121,7 +121,7 @@ const wasmInstance = new WebAssembly.Instance(wasmModule);
 
 总而言之，这部分 `test-code-stub-assembler.cc` 文件专注于测试 `CodeStubAssembler` 的核心功能，这些功能是 V8 引擎执行 JavaScript 代码和集成 WebAssembly 的基础。通过这些细致的单元测试，可以确保 V8 引擎的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -129,8 +129,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lue()));
 
   // Mixed smi/double values.
@@ -985,7 +987,4 @@ TEST(PopCount) {
 
   for (std::pair<uint32_t, int> test_case : test_cases) {
     uint32_t value3
-"""
-
-
 ```

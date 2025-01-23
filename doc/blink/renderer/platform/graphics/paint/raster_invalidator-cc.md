@@ -140,14 +140,16 @@ Essentially, my process involved a combination of code analysis, understanding o
 
 总结来说，`raster_invalidator.cc` 是 Blink 渲染引擎中负责跟踪和生成渲染无效化的核心组件。它通过比较新旧渲染状态，识别出需要重绘的区域和原因，从而指导后续的渲染流程。它的工作与 JavaScript, HTML, CSS 的动态变化紧密相关，任何影响页面视觉呈现的修改都会触发它的工作。理解它的功能有助于开发者编写更高效的 web 应用，避免不必要的重绘操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/raster_invalidator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -545,7 +547,4 @@ void RasterInvalidator::ClearOldStates() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

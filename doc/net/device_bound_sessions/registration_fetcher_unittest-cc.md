@@ -102,7 +102,7 @@ The primary function of `registration_fetcher_unittest.cc` is to **thoroughly te
 
 如果在调试过程中发现设备绑定会话无法正常工作，开发者可能会查看网络日志，确认注册请求是否成功，以及服务器返回的响应内容是否正确。如果怀疑是客户端解析响应的问题，就可能会查看 `RegistrationFetcher` 相关的代码和日志。`registration_fetcher_unittest.cc` 中的测试用例可以帮助开发者理解 `RegistrationFetcher` 在各种情况下的预期行为，从而更容易定位问题。 例如，如果服务器返回的 JSON 结构发生了变化，导致与客户端的解析逻辑不匹配，那么开发者可能会参考测试用例来更新解析代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/registration_fetcher_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1030,7 +1032,4 @@ TEST_F(RegistrationTest, FetchRegitrationAndChallengeRequired) {
   EXPECT_TRUE(out_params->params.scope.include_site);
   EXPECT_THAT(out_params->params.scope.specifications,
               ElementsA
-"""
-
-
 ```

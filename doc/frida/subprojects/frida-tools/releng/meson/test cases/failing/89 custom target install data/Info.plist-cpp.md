@@ -115,7 +115,7 @@ Here's a breakdown of the thinking process to analyze the given Frida source cod
 
 总而言之，这个 `Info.plist.cpp` 文件虽然看起来简单，但在 Frida 工具链的开发和测试流程中扮演着重要的角色，用于确保构建系统能够正确处理自定义目标的数据安装，并暴露潜在的错误和问题。 它也反映了逆向工程中 `Info.plist` 文件的重要性以及可能出现的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/89 custom target install data/Info.plist.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,10 +123,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 Some data which gets processed before installation
-
-"""
-
 ```

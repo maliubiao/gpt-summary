@@ -325,7 +325,7 @@ if __name__ == "__main__":
 
 通过修改 Frida 脚本，你可以 hook 不同的系统调用，例如 `recvfrom` 来查看内核返回的 TIPC 配置信息，或者 hook 与 Netlink 消息构造相关的函数。这可以帮助你理解 Android Framework 如何与底层的 TIPC 内核模块进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tipc_config.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -336,8 +336,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -484,7 +486,4 @@ struct tipc_cfg_msg_hdr {
 #define TCM_SPACE(datalen) (TCM_ALIGN(TCM_LENGTH(datalen)))
 #define TCM_DATA(tcm_hdr) ((void *) ((char *) (tcm_hdr) + TCM_LENGTH(0)))
 #endif
-
-"""
-
 ```

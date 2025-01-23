@@ -106,7 +106,7 @@ You decide to go inside.
 
 `patron.c` 本身是一个非常简单的 C 程序，其核心在于调用了外部函数 `alexandria_visit()`。它的主要作用是作为 Frida 动态 instrumentation 工具的一个简单测试目标，用于演示和验证 Frida 的 Hooking 功能。开发者或逆向工程师可能会在开发、学习、调试 Frida 或分析其内部实现时接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/17 prebuilt shared/patron.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<alexandria.h>
 #include<stdio.h>
 
@@ -125,7 +127,4 @@ int main(int argc, char **argv) {
     alexandria_visit();
     return 0;
 }
-
-"""
-
 ```

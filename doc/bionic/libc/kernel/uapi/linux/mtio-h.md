@@ -288,7 +288,7 @@ if __name__ == "__main__":
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/kernel/uapi/linux/mtio.h` 文件的功能以及它在 Android 中的地位。 尽管磁带驱动器在现代 Android 设备中不常见，但了解这些底层的内核接口对于理解操作系统的原理以及处理特殊应用场景仍然是有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/mtio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -436,7 +438,4 @@ struct mtpos {
 #define MT_ST_DEF_DRVBUFFER (MT_ST_DEF_OPTIONS | 0x300000)
 #define MT_ST_HPLOADER_OFFSET 10000
 #endif
-
-"""
-
 ```

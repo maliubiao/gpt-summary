@@ -117,7 +117,7 @@ In the first `if` statement, JavaScript performs type coercion before comparison
 
 As the 6th part of a larger instruction selection process, this specific section of `instruction-selector-x64.cc` focuses on the crucial task of **optimizing comparison operations** for the x64 architecture. It analyzes operand types, existing operations, and target instruction characteristics to select the most efficient x64 instructions for comparing values. This includes using narrower instructions when possible, removing redundant operations, and handling comparisons against specific values like zero and root handles. This optimization directly contributes to the overall performance of executed JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,8 +125,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 entations don't match, both operands will be
     // zero/sign-extended to 32bit.
     left_type = MachineTypeForNarrow(selector, left, right);
@@ -894,8 +896,4 @@ void InstructionSelectorT<TurbofanAdapter>::VisitWordCompareZero(
               case IrOpcode::kInt32SubWithOverflow:
                 cont->OverwriteAndNegateIfEqual(kOverflow);
                 return VisitBinop(this, node, kX64Sub32, cont);
-
-"""
-
-
 ```

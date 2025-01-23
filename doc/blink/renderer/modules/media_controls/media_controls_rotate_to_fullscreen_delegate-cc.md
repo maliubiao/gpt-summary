@@ -215,15 +215,17 @@ This iterative process of code analysis, mental simulation, and connecting the c
 
 通过以上步骤，可以逐步追踪用户操作如何触发相关的代码逻辑，并使用调试工具和断点来定位问题。 重点关注事件监听、条件判断以及状态变化，可以有效地诊断自动旋转全屏功能是否按预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/media_controls_rotate_to_fullscreen_delegate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -523,7 +525,4 @@ void MediaControlsRotateToFullscreenDelegate::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

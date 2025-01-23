@@ -87,7 +87,7 @@ Therefore, the core function of this code is to provide a low-level abstraction 
 
 由于这是第 1 部分，后续的代码可能会提供更多上下文信息，帮助我们更全面地理解其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -96,8 +96,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1371,9 +1373,4 @@ func (fd *FD) WriteMsg(p []byte, oob []byte, sa syscall.Sockaddr) (int, int, err
 		}
 		len, err := sockaddrToRaw(o.rsa, sa)
 		if err !
-"""
-
-
-
-
 ```

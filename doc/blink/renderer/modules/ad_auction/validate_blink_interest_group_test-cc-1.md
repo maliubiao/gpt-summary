@@ -168,7 +168,7 @@ By going through these steps, the comprehensive summary can be generated.
 
 这部分测试文件专注于验证 `blink::InterestGroup` 对象的 **大小限制** 和 **内容有效性**。它涵盖了各种字段，包括用于描述广告尺寸、尺寸组、广告内容、以及用于负向定位和受信任信号的字段。 这些测试确保了 Blink 引擎能够正确地处理和拒绝不符合规范的兴趣组数据，从而保证了 FLEDGE API 的稳定性和安全性。  它与 JavaScript API 密切相关，因为这些验证直接影响了开发者通过 JavaScript 创建和管理的兴趣组是否有效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/validate_blink_interest_group_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e value for each origin -- 8 bytes for the
     // "https://", 5 bytes for the ".test" suffix, 4 bytes for the flags, and
     // 100 - 8 - 5 - 4 = 83 bytes of numerical characters.
@@ -734,8 +736,4 @@ TEST_F(ValidateBlinkInterestGroupTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

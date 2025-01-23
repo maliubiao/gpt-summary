@@ -133,15 +133,17 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 通过理解这个文件的功能和它在整个渲染流程中的位置，开发者可以更好地定位和解决与 SVG 路径相关的渲染和交互问题。  调试时，关注传递给 `SVGPathQuery` 的路径数据是否正确，以及 `GetTotalLength()` 和 `GetPointAtLength()` 的输入参数是否符合预期是关键的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_path_query.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008 Nikolas Zimmermann
  * <zimmermann@kde.org>
@@ -263,7 +265,4 @@ gfx::PointF SVGPathQuery::GetPointAtLength(float length) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

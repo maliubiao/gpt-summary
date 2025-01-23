@@ -124,15 +124,17 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`net/http/http_auth_challenge_tokenizer_fuzzer.cc` 这个文件通过模糊测试，旨在提高 Chromium 浏览器处理 HTTP 身份验证挑战头部的健壮性和安全性，确保即使面对格式不规范或恶意构造的头部，浏览器也能正常运行，避免安全漏洞。它虽然不直接与 JavaScript 交互，但其正确性直接影响到基于 JavaScript 的 Web 应用处理身份验证的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_auth_challenge_tokenizer_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   tokenizer.base64_param();
   return 0;
 }
-
-"""
-
 ```

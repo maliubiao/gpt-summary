@@ -165,15 +165,17 @@ console.log(floatValue); // 输出 3.14
 
 总而言之，`v8/src/builtins/builtins-wasm-gen.h` 定义了一个关键的汇编器类，用于生成 WebAssembly 内置函数的代码，并且其中包含的方法直接支持 WebAssembly 与 JavaScript 之间的互操作和类型安全。了解这些功能有助于理解 V8 如何执行 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-wasm-gen.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-wasm-gen.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ class WasmBuiltinsAssembler : public CodeStubAssembler {
 }  // namespace v8
 
 #endif  // V8_BUILTINS_BUILTINS_WASM_GEN_H_
-
-"""
-
 ```

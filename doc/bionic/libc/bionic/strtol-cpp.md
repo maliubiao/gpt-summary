@@ -431,7 +431,7 @@ __attribute__((always_inline)) T StrToI(const CharT* s, CharT** end_ptr, int bas
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/bionic/strtol.cpp` 文件的功能和在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/strtol.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -442,8 +442,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 1992 The Regents of the University of California.
  * All rights reserved.
@@ -632,7 +634,4 @@ uintmax_t strtoumax(const char* s, char** end, int base) {
 uintmax_t wcstoumax(const wchar_t* s, wchar_t** end, int base) {
   return StrToI<uintmax_t, 0, UINTMAX_MAX, wchar_t>(s, end, base);
 }
-
-"""
-
 ```

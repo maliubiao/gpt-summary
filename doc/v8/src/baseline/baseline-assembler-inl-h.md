@@ -221,15 +221,17 @@ void BaselineAssembler::LoadPrototype(Register prototype, Register object) {
 
 了解 `BaselineAssembler` 的工作原理有助于理解 V8 是如何执行 JavaScript 代码的，并可以指导我们编写更高效的 JavaScript 代码，以便 V8 能够生成更优化的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-assembler-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/baseline-assembler-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -405,7 +407,4 @@ EnsureAccumulatorPreservedScope::~EnsureAccumulatorPreservedScope() {
 }  // namespace v8
 
 #endif  // V8_BASELINE_BASELINE_ASSEMBLER_INL_H_
-
-"""
-
 ```

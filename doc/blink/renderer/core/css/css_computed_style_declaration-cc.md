@@ -218,15 +218,17 @@ Let's break down the thought process for analyzing the `CSSComputedStyleDeclarat
 
 通过理解 `CSSComputedStyleDeclaration` 的功能和工作原理，可以更好地理解浏览器如何处理 CSS 样式，以及如何有效地使用 JavaScript 获取和操作元素的样式信息。这个文件是 Blink 引擎中 CSS 模块的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_computed_style_declaration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004 Zack Rusin <zack@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 Apple Inc.
@@ -832,7 +834,4 @@ CSSComputedStyleDeclaration::ScopedCleanStyleForAllProperties::
 }
 
 }  // namespace blink
-
-"""
-
 ```

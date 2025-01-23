@@ -177,7 +177,7 @@ error: errors.New("invalid PrintableString")
 
 总而言之，这段 `parser.go` 代码的主要功能是**提供了一系列底层的函数，用于将 X.509 证书及其组成部分的 ASN.1 编码数据解析成 Go 语言可以操作的数据结构**。它专注于处理证书的各个字段（如版本号、序列号、颁发者、主题、有效期、公钥信息）以及各种标准扩展项。这段代码是 `crypto/x509` 包实现证书解析功能的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/parser.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1218,10 +1220,5 @@ func parseCertificate(der []byte) (*Certificate, error) {
 				return nil, errors.New("x509: malformed extensions")
 			}
 			if present {
-				seenExts := 
-"""
-
-
-
-
+				seenExts :=
 ```

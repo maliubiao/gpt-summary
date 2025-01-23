@@ -124,11 +124,13 @@ maybeNumberOrString("hello"); // 第二次调用，类型变化，可能触发�
 
 总而言之， `test-instruction-scheduler.cc` 文件是 V8 引擎内部用于确保其编译器中指令调度器功能正确性的一个测试文件。 虽然它不是直接编写 JavaScript 代码的一部分，但它的正确性对于提高 JavaScript 代码的执行效率至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-instruction-scheduler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ TEST(DeoptInMiddleOfBasicBlock) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

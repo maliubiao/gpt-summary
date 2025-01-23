@@ -98,14 +98,16 @@ This iterative process of examining the code, understanding its purpose, identif
 
 总而言之，`html_form_control_element_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中处理 HTML 表单控件的核心逻辑的正确性，这直接影响到网页的交互性和用户体验。它涵盖了验证、类型识别以及与渲染引擎的交互等方面，并间接反映了 JavaScript 和 CSS 如何与这些底层功能协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_form_control_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -333,7 +335,4 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple("textarea", "", FormControlType::kTextArea)));
 
 }  // namespace blink
-
-"""
-
 ```

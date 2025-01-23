@@ -198,15 +198,17 @@ By following these steps, you can systematically analyze the code and generate a
 
 总而言之，`capsule.cc` 文件在 Chromium 的 WebTransport 实现中扮演着至关重要的角色，它定义了 WebTransport 消息的格式，并提供了序列化和反序列化的机制，使得 JavaScript 可以方便地通过网络进行双向数据传输。理解这个文件的功能对于调试 WebTransport 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/capsule.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -955,7 +957,4 @@ bool WebTransportMaxStreamsCapsule::operator==(
 }
 
 }  // namespace quiche
-
-"""
-
 ```

@@ -156,7 +156,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 总而言之，`foo.cpp` 虽然是一个非常简单的 C++ 文件，但它作为 Frida 测试套件的一部分，可以用于验证 Frida 的各种功能，并帮助开发者理解 Frida 在动态 Instrumentation 方面的能力。逆向工程师可以利用 Frida 的这些能力来分析和理解目标程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/223 persubproject options/subprojects/sub2/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <memory>
 
 class Dummy {
@@ -176,7 +178,4 @@ int foo() {
   auto obj = std::make_unique<Dummy>();
   return 0;
 }
-
-"""
-
 ```

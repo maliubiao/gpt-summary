@@ -129,7 +129,7 @@ fetch('https://www.example.org/data2.json')
 
 根据文件名和代码内容推断，这个 `spdy_network_transaction_unittest.cc` 文件很可能包含了一系列针对 `SpdyNetworkTransaction` 类的单元测试。 **这第4部分主要关注的是 `SpdyNetworkTransaction` 的连接池管理功能，验证在各种场景下（例如基本重用、代理、不同配置、SocketTag、DNS别名、会话关闭等）SPDY会话的重用和创建逻辑是否正确。** 这一部分测试确保了网络栈能够有效地利用已建立的SPDY连接，减少连接建立的开销，提高网络性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mizationKey(), SecureDnsPolicy::kAllow,
       /*disable_cert_verification_network_fetches=*/false);
   base::WeakPtr<SpdySession> session1 =
@@ -872,7 +874,4 @@ TEST_P(SpdyNetworkTransactionTest,
   // Clear host resolver rules to ensure that cached values for DNS aliases
   // are used.
   helper.session_deps()->host_resolver->rule
-"""
-
-
 ```

@@ -252,7 +252,7 @@ func main() {
 
 总的来说，这段代码是 Go 语言运行时系统中一个非常重要的组成部分，它为开发者提供了一种强大的工具来诊断和理解程序的内存使用情况。但使用者需要了解其工作原理和潜在的影响，才能正确有效地使用它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/heapdump.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -260,8 +260,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1011,9 +1013,4 @@ func makeheapobjbv(p uintptr, size uintptr) bitvector {
 	}
 	return bitvector{int32(nptr), &tmpbuf[0]}
 }
-
-"""
-
-
-
 ```

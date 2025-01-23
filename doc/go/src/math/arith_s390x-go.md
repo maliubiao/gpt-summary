@@ -137,7 +137,7 @@ math.Exp(2.000000) = 7.389056
 
 `go/src/math/arith_s390x.go` 是 Go 语言 `math` 包中为 `s390x` 架构提供的优化实现，它通过汇编语言提供了高性能的数学函数，并利用 `internal/cpu` 包来检测 CPU 特性。这体现了 Go 语言在提供跨平台能力的同时，也注重利用特定硬件进行性能优化的设计理念。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/arith_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -317,9 +319,4 @@ func archRemainder(x, y float64) float64 {
 // hasVX reports whether the machine has the z/Architecture
 // vector facility installed and enabled.
 var hasVX = cpu.S390X.HasVX
-
-"""
-
-
-
 ```

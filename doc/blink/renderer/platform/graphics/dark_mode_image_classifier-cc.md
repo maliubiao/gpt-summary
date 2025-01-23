@@ -197,14 +197,16 @@ Finally, I organized the information logically:
 
 总而言之，`dark_mode_image_classifier.cc` 是 Chromium Blink 引擎中一个重要的组成部分，它负责智能地判断图片是否适合应用暗黑模式滤镜，从而提升用户在开启暗黑模式时的浏览体验。它的工作依赖于对图片像素信息的深入分析和预定义的分类策略或机器学习模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_image_classifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -494,7 +496,4 @@ DarkModeResult DarkModeImageClassifier::ClassifyUsingDecisionTree(
 }
 
 }  // namespace blink
-
-"""
-
 ```

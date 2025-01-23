@@ -221,14 +221,16 @@ console.log(paragraphs.length); // 输出 3 (由于 HTMLCollection 是动态的)
 
 总而言之，`HTMLCollection.cc` 文件是 Blink 引擎中实现动态 HTML 元素集合的核心部分，它连接了 JavaScript 代码和 HTML 文档结构，使得开发者能够方便地操作和管理网页中的元素。理解其动态性和行为对于编写健壮的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -805,7 +807,4 @@ void HTMLCollection::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

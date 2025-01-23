@@ -148,14 +148,16 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`blink/renderer/platform/wtf/text/string_view.cc` 中定义的 `StringView` 是 Blink 引擎中一个重要的性能优化工具，它提供了一种高效的方式来操作字符串，避免了不必要的内存分配和复制，并在处理与 JavaScript、HTML 和 CSS 相关的字符串时发挥着关键作用。但同时也需要开发者注意其非拥有特性带来的潜在生命周期问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -515,7 +517,4 @@ std::ostream& operator<<(std::ostream& out, const StringView& string) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

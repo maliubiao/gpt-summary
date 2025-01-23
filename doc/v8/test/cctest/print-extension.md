@@ -68,11 +68,13 @@ Print({name: "John", age: 30}); // 控制台输出: [object Object]
 
 `print-extension.cc` 文件实现了一个简单的自定义打印功能，用于 V8 的测试环境中。它通过 C++ 扩展的方式向 JavaScript 环境暴露了一个名为 `Print` 的全局函数，使得在 JavaScript 代码中可以方便地打印信息到控制台，类似于 `console.log()` 的作用，但功能较为简化。 这对于在 V8 的测试用例中输出信息、调试代码非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/print-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -125,7 +127,4 @@ void PrintExtension::Print(const v8::FunctionCallbackInfo<v8::Value>& info) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

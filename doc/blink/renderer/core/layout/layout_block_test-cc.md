@@ -122,14 +122,16 @@ By following these steps, I can systematically analyze the test file and extract
 
 总而言之，`layout_block_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中负责块级元素布局的核心逻辑的正确性。它通过模拟各种 HTML 结构和 CSS 样式，验证了布局引擎的行为是否符合预期，从而保证了网页在浏览器中的正确渲染。这些测试用例也间接反映了开发者在使用 HTML, CSS 和 JavaScript 构建网页时需要注意的一些关键点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_block_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ TEST_F(LayoutBlockTest, ContainmentStyleChange) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

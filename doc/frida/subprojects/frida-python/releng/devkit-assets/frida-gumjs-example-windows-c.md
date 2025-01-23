@@ -159,7 +159,7 @@ Initially, I might have just listed the features without fully explaining *why* 
 
 这个过程体现了使用 Frida 进行动态分析的基本流程：准备环境 -> 编写 Instrumentation 脚本 -> 加载脚本到目标进程 -> 观察和分析结果。对于调试来说，这些日志信息可以帮助用户理解程序的执行流程，定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/devkit-assets/frida-gumjs-example-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * To build, set up your Release configuration like this:
  *
@@ -260,7 +262,4 @@ on_message (const gchar * message,
 
   g_object_unref (parser);
 }
-
-"""
-
 ```

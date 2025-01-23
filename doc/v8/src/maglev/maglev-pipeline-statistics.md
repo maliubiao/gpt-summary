@@ -100,11 +100,13 @@ for (let i = 0; i < 10000; i++) {
 
 `v8/src/maglev/maglev-pipeline-statistics.cc` 文件是 V8 引擎内部用于监控和分析 Maglev 编译器性能的关键组件。它通过记录编译管道各个阶段的开始、结束时间和统计数据，帮助 V8 开发者理解 Maglev 的工作原理，发现性能瓶颈并进行优化，从而最终提升 JavaScript 代码的执行效率。尽管它本身不是 JavaScript 代码，但它所做的工作直接影响着 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-pipeline-statistics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ void MaglevPipelineStatistics::EndPhase() {
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

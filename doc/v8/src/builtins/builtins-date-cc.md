@@ -230,7 +230,7 @@ const localString = date.toLocaleString();
 
 总而言之，`v8/src/builtins/builtins-date.cc` 是 V8 引擎中至关重要的一个文件，它实现了 JavaScript `Date` 对象的全部核心功能，包括构造、静态方法和原型方法，使得 JavaScript 开发者能够方便地进行日期和时间的操作。理解这个文件的功能有助于深入了解 JavaScript 日期对象的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-date.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-date.cc以.tq结尾，那它是个v8 torque源代码，
@@ -238,8 +238,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1014,7 +1016,4 @@ BUILTIN(DatePrototypeToLocaleTimeString) {
                    args.atOrUndefined(isolate, 1),           // locales
                    args.atOrUndefined(isolate, 2),           // options
                    JSDateTimeFormat::RequiredOption::kTime,  /
-"""
-
-
 ```

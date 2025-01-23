@@ -188,7 +188,7 @@ func main() {
 
 总而言之，这部分 `fs_test.go` 的代码深入测试了 `net/http` 包中文件服务功能的各种边界情况、错误处理、性能优化和特定场景下的行为。它确保了 `FileServer` 和 `ServeFile` 能够在复杂的 HTTP 交互中正确、可靠地工作，并涵盖了条件请求、范围请求、错误处理、平台特定的优化以及与 `FileSystem` 接口的集成等关键方面。 这部分测试也揭示了一些开发者在使用这些功能时可能遇到的陷阱和需要注意的点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/fs_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -197,8 +197,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 us:      200,
 			wantContentType: "text/css; charset=utf-8",
 			wantLastMod:     htmlModTime.UTC().Format(TimeFormat),
@@ -870,10 +872,4 @@ func testServeContentHeadersWithError(t *testing.T, keepHeaders bool) {
 		t.Errorf("got other-header = %q, want %q", g, e)
 	}
 }
-
-"""
-
-
-
-
 ```

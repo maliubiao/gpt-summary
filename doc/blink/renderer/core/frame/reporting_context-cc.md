@@ -153,14 +153,16 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`ReportingContext` 是 Blink 引擎中一个至关重要的组件，它为开发者提供了一种标准化的方式来了解和处理网页运行过程中发生的各种问题和事件，从而帮助开发者提升网页的安全性和质量。 理解其功能和与 Web 技术的联系，以及避免常见的使用错误，对于开发健壮的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/reporting_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -396,7 +398,4 @@ void ReportingContext::SendToReportingAPI(Report* report,
 }
 
 }  // namespace blink
-
-"""
-
 ```

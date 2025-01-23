@@ -164,11 +164,13 @@ function greet(personName) {
 
 `v8/src/debug/liveedit-diff.cc` 文件中的 C++ 代码是 V8 引擎实现 JavaScript 代码实时编辑功能的核心组件。它使用 Myer's 差异算法来精确地计算代码修改前后的差异，并将这些差异以结构化的方式表示，以便 V8 可以高效地更新内部表示和执行代码，从而提供流畅的开发体验。虽然直接操作的是 C++ 代码，但它的目的是服务于 JavaScript 开发的调试和热重载场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/liveedit-diff.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -581,7 +583,4 @@ void Comparator::CalculateDifference(Comparator::Input* input,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

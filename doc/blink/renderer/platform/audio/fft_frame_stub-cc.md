@@ -98,14 +98,16 @@ draw();
 
 `fft_frame_stub.cc` 是一个在特定编译配置下使用的占位符，它允许代码编译通过，但并不提供实际的 FFT 功能。当这个桩实现被激活时，依赖于 `FFTFrame` 实际功能的代码将无法正常工作。开发者需要理解构建配置的影响，并确保在需要 FFT 功能的场景下，使用的是包含完整 `FFTFrame` 实现的构建版本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/fft_frame_stub.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -178,7 +180,4 @@ void FFTFrame::Cleanup() {
 }  // namespace blink
 
 #endif  // !BUILDFLAG(IS_MAC) && !defined(WTF_USE_WEBAUDIO_PFFFT)
-
-"""
-
 ```

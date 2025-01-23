@@ -270,7 +270,7 @@ Section Headers:
 
 通过这些方法，开发者可以深入了解 `tanl` 的调用链，确认 `__kernel_tanl` 是否被调用，以及输入参数的值，从而诊断与数学函数相关的精度或逻辑问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/k_tanl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright 2004 Sun Microsystems, Inc.  All Rights Reserved.
@@ -396,7 +398,4 @@ __kernel_tanl(long double x, long double y, int iy) {
 		return t + a * (s + t * v);
 	}
 }
-
-"""
-
 ```

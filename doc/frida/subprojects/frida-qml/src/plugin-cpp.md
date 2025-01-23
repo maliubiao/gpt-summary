@@ -123,7 +123,7 @@ Frida 本身就是一个强大的动态逆向工程工具。这个 QML 插件的
 
 总而言之，`frida/subprojects/frida-qml/src/plugin.cpp` 文件是 Frida 与 QML 框架之间的桥梁，它负责将 Frida 的核心能力暴露给 QML 环境，使得开发者能够使用 QML 构建 Frida 的用户界面。理解这个文件的作用有助于理解 Frida GUI 应用的架构以及在出现问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/plugin.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <frida-core.h>
 
 #include "plugin.h"
@@ -177,7 +179,4 @@ void FridaQmlPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
 
     engine->addImageProvider("frida", IconProvider::instance());
 }
-
-"""
-
 ```

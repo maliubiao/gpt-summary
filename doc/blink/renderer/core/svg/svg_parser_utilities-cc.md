@@ -131,15 +131,17 @@ This structured approach helps ensure comprehensive analysis of the code and its
 
 总而言之，`blink/renderer/core/svg/svg_parser_utilities.cc` 是 Blink 引擎中负责将 SVG 属性字符串转换为数值的关键组成部分，它确保了浏览器能够正确理解和渲染 SVG 图形。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_parser_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2002, 2003 The Karbon Developers
  * Copyright (C) 2006 Alexander Kellett <lypanov@kde.org>
@@ -333,7 +335,4 @@ bool ParseNumberOptionalNumber(const String& string, float& x, float& y) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

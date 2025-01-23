@@ -226,7 +226,7 @@ This methodical approach, starting with a high-level understanding and gradually
 
 这段测试代码专注于验证 Go 语言运行时系统在处理 `panic` 时，能够正确地打印出基于可直接打印的底层类型的自定义类型的值。它通过运行一个独立的程序并检查其 panic 输出的前缀来实现这一目标。 这有助于确保开发者在调试 panic 相关的错误时，能够获得有用的信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/panic_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -234,8 +234,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -284,9 +286,4 @@ func TestPanicWithDirectlyPrintableCustomTypes(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

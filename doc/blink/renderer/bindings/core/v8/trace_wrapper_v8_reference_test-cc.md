@@ -100,15 +100,17 @@ By following these steps, you can systematically analyze a C++ test file and ext
 
 总而言之，`trace_wrapper_v8_reference_test.cc` 是确保 `TraceWrapperV8Reference` 这一关键组件正确运行的重要组成部分，它直接关系到 Blink 引擎如何安全有效地管理 JavaScript 对象的生命周期，从而保证浏览器的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/trace_wrapper_v8_reference_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ TEST_F(TraceWrapperV8ReferenceTest, Ephemeron) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

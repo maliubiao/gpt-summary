@@ -98,7 +98,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `system.vala` 文件实现了 Frida 工具与操作系统交互的核心功能，包括进程管理、文件系统操作等。通过 LLDB 调试工具，可以深入分析这些功能的实现细节，并解决常见的用户使用错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/system.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	namespace System {
 		public extern static Frida.HostApplicationInfo get_frontmost_application (FrontmostQueryOptions options) throws Error;
@@ -442,7 +444,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

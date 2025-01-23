@@ -277,7 +277,7 @@ sys.stdin.read()
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/upstream-openbsd/lib/libc/stdio/vswprintf.c` 文件的功能、实现以及在 Android 中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdio/vswprintf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: vswprintf.c,v 1.7 2019/01/25 00:19:25 millert Exp $	*/
 /*	$NetBSD: vswprintf.c,v 1.1 2005/05/14 23:51:02 christos Exp $	*/
 
@@ -387,7 +389,4 @@ vswprintf(wchar_t * __restrict s, size_t n, const wchar_t * __restrict fmt,
 	return (ret);
 }
 DEF_STRONG(vswprintf);
-
-"""
-
 ```

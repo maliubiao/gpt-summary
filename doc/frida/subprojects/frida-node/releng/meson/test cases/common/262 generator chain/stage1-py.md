@@ -131,7 +131,7 @@ This script is typically not executed directly by an end-user during normal Frid
 
 While a simple script, `stage1.py` plays a crucial role in ensuring the reliability of the Frida dynamic instrumentation tool. It's a building block in a multi-stage test, verifying input and generating specific output for subsequent steps. Understanding its function helps grasp the importance of testing and automation in software development, especially for complex tools like Frida used in sensitive areas like reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/262 generator chain/stage1.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,15 +139,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
 
 assert(Path(sys.argv[1]).read_text() == 'stage1\n')
 Path(sys.argv[2]).write_text('stage2\n')
-
-"""
-
 ```

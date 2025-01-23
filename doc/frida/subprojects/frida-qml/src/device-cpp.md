@@ -187,7 +187,7 @@ By following this structured approach, I can effectively analyze the `device.cpp
 
 因此，当开发者在 QML 界面上执行注入操作时，会逐步触发 `device.cpp` 中的代码执行，并通过与 Frida Core 的交互，最终完成在目标设备上注入和运行脚本的目标。调试时，可以在 `device.cpp` 中的关键函数 (例如 `inject`, `performSpawn`, `performInject`, `performLoad`) 设置断点，观察变量的值和执行流程，从而追踪问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/device.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <frida-core.h>
 
 #include "device.h"
@@ -891,7 +893,4 @@ void ScriptEntry::onMessage(ScriptEntry *self, const gchar *message, GBytes *dat
             Q_ARG(QVariant, dataValue));
     }
 }
-
-"""
-
 ```

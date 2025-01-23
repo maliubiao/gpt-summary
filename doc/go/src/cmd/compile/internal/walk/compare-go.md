@@ -229,15 +229,17 @@ func main() {
 
 在这个例子中，直接比较结构体 `s1` 和 `s2` 会得到 `true`，因为它们的值相等。但是比较结构体指针 `s3` 和 `s4` 会得到 `false`，因为它们指向不同的内存地址。接口的比较也是类似的，需要同时考虑动态类型和动态值。理解编译器如何处理这些比较可以避免在使用过程中产生误解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/walk/compare.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -762,9 +764,4 @@ func tracecmpArg(n ir.Node, t *types.Type, init *ir.Nodes) ir.Node {
 
 	return typecheck.Conv(n, t)
 }
-
-"""
-
-
-
 ```

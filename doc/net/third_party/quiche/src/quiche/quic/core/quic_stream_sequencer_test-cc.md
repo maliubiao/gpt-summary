@@ -143,15 +143,17 @@ By following this systematic approach, you can effectively analyze the C++ test 
 
 通过分析 `quic_stream_sequencer_test.cc` 中的测试用例，开发者可以更好地理解 `QuicStreamSequencer` 的行为，并据此排查和修复网络连接问题。例如，如果某个测试用例失败，可能意味着 `QuicStreamSequencer` 在特定场景下的数据排序或错误处理逻辑存在缺陷，这有助于定位实际用户场景中遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream_sequencer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -934,7 +936,4 @@ TEST_F(QuicStreamSequencerTest, ReceiveFinLessThanHighestOffset) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

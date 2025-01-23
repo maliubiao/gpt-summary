@@ -138,14 +138,16 @@ Let's break down the thought process for analyzing the `security_context.cc` fil
 
 `SecurityContext` 是 Blink 渲染引擎中一个至关重要的组件，它负责管理与网页安全相关的各种策略和状态。它直接影响着 JavaScript、HTML 和 CSS 的行为，控制着跨域访问、沙箱环境、API 的可用性以及其他安全特性。理解 `SecurityContext` 的功能对于理解浏览器安全模型至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/execution_context/security_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All Rights Reserved.
  *
@@ -361,7 +363,4 @@ SecurityContext::FeatureStatus SecurityContext::IsFeatureEnabled(
 }
 
 }  // namespace blink
-
-"""
-
 ```

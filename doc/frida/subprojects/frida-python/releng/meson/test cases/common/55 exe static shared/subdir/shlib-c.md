@@ -144,7 +144,7 @@ Finally, I organize the information into logical sections, using headings and bu
 
 总而言之，`frida/subprojects/frida-python/releng/meson/test cases/common/55 exe static shared/subdir/shlib.c` 这个文件是一个非常基础但重要的测试用例，用于验证 Frida 与动态链接共享库的交互能力。通过分析这个简单的例子，用户可以更好地理解 Frida 的工作原理，学习如何编写 Frida 脚本来 hook 共享库中的函数，并为调试更复杂的逆向分析任务打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/55 exe static shared/subdir/shlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,14 +152,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "exports.h"
 
 int DLL_PUBLIC shlibfunc(void) {
     return 42;
 }
-
-"""
-
 ```

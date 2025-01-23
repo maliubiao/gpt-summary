@@ -200,7 +200,7 @@ enabled = false
 
 如果在 Frida 脚本执行过程中，涉及到读取或写入 TOML 配置文件时出现问题，例如无法找到文件、解析错误或写入失败，那么可以查看 Frida 的日志或使用调试工具来跟踪执行流程。如果堆栈信息指向 `toml_file.py` 文件中的 `read()` 或 `write()` 方法，那么就可以确定问题可能出在 TOML 文件的读取、解析或写入过程中。例如，如果抛出 `FileNotFoundError`，那么说明提供的文件路径不正确；如果抛出 `tomlkit.exceptions.ParseError`，则说明 TOML 文件内容格式有误。理解 `toml_file.py` 的功能和潜在的错误点，可以帮助开发者更快地定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tomlkit/toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 import re
 
@@ -268,7 +270,4 @@ class TOMLFile:
 
         with open(self._path, "w", encoding="utf-8", newline="") as f:
             f.write(content)
-
-"""
-
 ```

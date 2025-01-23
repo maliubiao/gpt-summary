@@ -155,15 +155,17 @@ By following these steps and continuously refining the analysis, we can arrive a
 
 总而言之，`ax_media_element.cc` 在 Blink 渲染引擎中扮演着关键的角色，确保 HTML 媒体元素对使用辅助技术的用户是可访问的。它通过提供文本替代方案、指示元素状态和提供限制信息来实现这一目标。理解其功能有助于开发者创建更加无障碍的网络内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_media_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ bool AccessibilityMediaElement::IsUnplayable() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

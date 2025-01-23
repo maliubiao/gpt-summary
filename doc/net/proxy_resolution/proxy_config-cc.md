@@ -183,15 +183,17 @@ By following these steps, the comprehensive answer addressing all aspects of the
 
 总而言之，`net/proxy_resolution/proxy_config.cc` 是 Chromium 网络栈中负责管理代理配置的核心文件。它定义了表示代理配置的数据结构和操作方法，并与 JavaScript 用户界面紧密合作，处理用户的代理设置，并最终决定网络请求是否以及如何通过代理服务器发送。 理解这个文件的功能和内部逻辑对于调试网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_config.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -516,7 +518,4 @@ base::Value ProxyConfig::ToValue() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -88,7 +88,7 @@ parameter_id_for_initial_max_data: length_for_initial_max_data, initial_max_data
 
 该文件是 Chromium QUIC 实现中负责处理连接的传输参数的关键组件。它提供了解析、序列化和清理传输参数的功能，确保客户端和服务器能够正确协商和理解彼此的连接配置。这对于 QUIC 连接的建立、安全性和性能至关重要。特别地，它还支持会话恢复功能，通过序列化部分传输参数到 Session Ticket 中，加速后续连接的建立。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/transport_parameters.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 !value_reader.IsDoneReading()) {
           QuicTag connection_option;
           if (!value_reader.ReadTag(&connection_option)) {
@@ -309,8 +311,4 @@ void DegreaseTransportParameters(TransportParameters& parameters) {
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

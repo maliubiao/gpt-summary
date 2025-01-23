@@ -147,15 +147,17 @@ console.log(result);
 
 `v8/test/unittests/diagnostics/gdb-jit-unittest.cc` 是一个关键的单元测试，用于验证 V8 引擎的 GDB JIT 接口的正确性。它专注于测试代码区域的管理和重叠检测，这对于支持外部调试器理解和调试 V8 的 JIT 代码至关重要。虽然它是 C++ 代码，但其功能直接服务于 JavaScript 的调试，并间接地帮助开发者避免和诊断与内存管理和代码生成相关的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/diagnostics/gdb-jit-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/diagnostics/gdb-jit-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ TEST(GDBJITTest, OverlapEntries) {
 }  // namespace GDBJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

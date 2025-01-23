@@ -106,7 +106,7 @@ I will structure the summary to cover these aspects and synthesize a high-level 
 
 总而言之，这部分代码负责处理 MoQT 会话中与媒体发布和订阅相关的核心逻辑，包括控制消息的处理、接收和发送媒体数据流的管理，以及维护订阅状态。它是实现 MoQT 协议的关键组成部分，并直接影响到基于 WebTransport 的实时媒体传输的效率和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 colViolation,
                     "Received ANNOUNCE from Subscriber");
     return;
@@ -681,8 +683,4 @@ void MoqtSession::OutgoingDataStream::UpdateSendOrder(
 }
 
 }  // namespace moqt
-
-"""
-
-
 ```

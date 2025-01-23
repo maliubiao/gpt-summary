@@ -234,7 +234,7 @@ sys.stdin.read()
 
 **注意:**  由于 `HASH_ALGO_SHA256` 是一个枚举常量，它通常在编译时就被确定下来，因此很难直接通过运行时 hook 观察到它的使用。  上面的 Frida 示例旨在观察 *使用了 SHA256 算法的函数* 的调用，从而间接地了解 `hash_info.h` 中相关常量的作用。 要更直接地观察常量的值，可能需要在编译时进行修改或使用更底层的调试技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hash_info.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -282,7 +284,4 @@ enum hash_algo {
   HASH_ALGO__LAST
 };
 #endif
-
-"""
-
 ```

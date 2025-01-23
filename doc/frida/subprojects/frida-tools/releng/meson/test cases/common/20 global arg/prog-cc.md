@@ -135,7 +135,7 @@ By following these steps, we can effectively analyze even a simple piece of code
 
 `prog.cc` 文件本身是一个简单的测试用例，用于验证 Frida 构建过程中全局编译器参数的传递是否正确。它通过预处理器指令进行静态检查，如果全局参数设置不符合预期，就会导致编译失败，从而为开发者提供调试线索。用户通常不会直接操作这个文件，而是在 Frida 构建失败时，通过查看构建日志中的错误信息和文件路径来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/20 global arg/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef MYTHING
 #error "Wrong global argument set"
 #endif
@@ -160,7 +162,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

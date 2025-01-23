@@ -119,15 +119,17 @@ go test -gcflags=-m ./test/fixedbugs/issue56280.dir
 
 这段代码是一个 Go 语言的测试用例，用于验证 Go 编译器在特定情况下是否会进行函数内联。它依赖于 `// ERROR` 注释来断言编译器的行为，而不是期望代码在运行时产生错误。理解这种测试机制对于阅读和编写 Go 语言的测试代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue56280.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -139,9 +141,4 @@ import "test/a"
 func main() { // ERROR "can inline main"
 	a.F() // ERROR "inlining call to a.F" "inlining call to a.g\[go.shape.int\]"
 }
-
-"""
-
-
-
 ```

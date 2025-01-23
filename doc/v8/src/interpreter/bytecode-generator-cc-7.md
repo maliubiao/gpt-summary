@@ -234,7 +234,7 @@ CallRuntime [InlineGeneratorGetResumeMode]
 
 请注意，这只是字节码生成器的一部分功能，整个文件和相关的模块还负责处理其他各种 JavaScript 语法结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -242,8 +242,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on.
         BuildAwait(expr->position());
       }
@@ -1036,8 +1038,5 @@ void BytecodeGenerator::VisitCallSuper(Call* expr) {
 }
 
 void BytecodeGenerator::BuildInstanceInitializationAfterSuperCall(
-    Register this_function, Register 
-"""
-
-
+    Register this_function, Register
 ```

@@ -153,7 +153,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 希望以上归纳和解释能够帮助你理解 `EventHandler.cc` 的功能和作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/event_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,9 +161,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    mouse_event_manager_->LastKnownMousePositionInViewport()));
+### 源代码
+```cpp
+mouse_event_manager_->LastKnownMousePositionInViewport()));
       HitTestResult result(request, location);
       layout_object->HitTest(location, result);
       frame_->GetDocument()->UpdateHoverActiveState(
@@ -439,8 +441,4 @@ void EventHandler::ResetLastMousePositionForWebTest() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

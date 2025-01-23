@@ -143,7 +143,7 @@ By following these steps, and iteratively refining your understanding, you can a
 
 `frida/releng/meson/mesonbuild/interpreterbase/decorators.py` 文件是 Frida 构建系统解释器中至关重要的组成部分。它通过定义一系列装饰器，实现了对函数参数、返回值和功能版本的严格控制和管理，提高了 Frida 代码的质量、可维护性和用户体验。虽然用户不会直接与此文件交互，但它在幕后默默地保障了 Frida 内部函数调用的正确性和版本兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -841,7 +843,4 @@ class FeatureNew(FeatureCheckBase):
     @staticmethod
     def get_warning_str_prefix(tv: str) -> str:
         retur
-"""
-
-
 ```

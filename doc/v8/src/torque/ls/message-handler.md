@@ -160,11 +160,13 @@ Initially, one might focus too much on the low-level details of JSON parsing and
 
 `message-handler.cc` 是 Torque 语言服务器的核心组件，负责处理与代码编辑器的通信，并提供诸如跳转到定义、显示文档符号等功能。由于 Torque 用于定义 V8 引擎的内置 JavaScript 功能，因此这个文件在幕后支持着 JavaScript 开发的许多高级特性，例如代码导航和智能提示。它本身不直接执行 JavaScript 代码，而是为开发和理解 V8 内部 JavaScript 实现提供了重要的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/message-handler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -553,7 +555,4 @@ void HandleMessage(JsonValue raw_message, MessageWriter writer) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

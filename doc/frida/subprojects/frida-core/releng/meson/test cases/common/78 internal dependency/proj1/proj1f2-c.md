@@ -180,7 +180,7 @@ if (proj1Func2Address) {
 
 总而言之，虽然 `proj1f2.c` 的代码本身很简单，但它在 Frida 动态插桩的场景下扮演着重要的角色，成为了逆向分析和动态调试的一个目标。理解这个文件的功能以及它与 Frida 的交互，有助于我们更有效地使用 Frida 进行程序分析和安全研究。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/78 internal dependency/proj1/proj1f2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,15 +188,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<proj1.h>
 #include<stdio.h>
 
 void proj1_func2(void) {
     printf("In proj1_func2.\n");
 }
-
-"""
-
 ```

@@ -96,14 +96,16 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`font_width_variant.cc` 虽然是一个底层的 C++ 文件，但它所定义的字体宽度变体概念是 Web 页面中字体渲染的重要组成部分，并通过 CSS 的 `font-stretch` 属性与前端技术间接相关联。理解其功能有助于理解浏览器引擎如何处理不同的字体宽度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_width_variant.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ String ToString(FontWidthVariant variant) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

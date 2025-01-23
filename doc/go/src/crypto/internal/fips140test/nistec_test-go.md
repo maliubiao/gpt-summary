@@ -235,7 +235,7 @@ go test -v -run TestNISTECAllocations ./go/src/crypto/internal/fips140test/niste
 
 总而言之，这段测试代码验证了 `crypto/internal/fips140/nistec` 包中 NIST 椭圆曲线实现的正确性和效率，并暗示了该包提供了一组用于创建、操作和序列化椭圆曲线点的函数。使用者需要注意字节表示的格式和长度，以及标量的取值范围。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140test/nistec_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -243,8 +243,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -505,9 +507,4 @@ func fatalIfErr(t *testing.T, err error) {
 		t.Fatal(err)
 	}
 }
-
-"""
-
-
-
 ```

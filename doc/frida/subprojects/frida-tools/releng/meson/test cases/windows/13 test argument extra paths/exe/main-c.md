@@ -108,7 +108,7 @@ By following this thought process, systematically analyzing the code within its 
 
 总而言之，这个 `main.c` 文件虽然简单，但它在一个特定的上下文中扮演着重要的角色，即作为 Frida 动态插桩工具的一个测试目标，用于验证 Frida 在处理包含额外路径的命令行参数时的正确性。 它的存在是为了确保 Frida 能够在各种复杂的场景下可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/windows/13 test argument extra paths/exe/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,14 +116,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <foo.h>
 
 int main(void) {
   return foo_process();
 }
-
-"""
-
 ```

@@ -139,7 +139,7 @@ By following this systematic approach, moving from high-level understanding to d
 
 作为第 6 部分，它很可能位于 Wasm 编译流程中 **将 Wasm 字节码初步转换为中间表示的关键阶段**。之前的阶段可能负责解析 Wasm 字节码，而后续阶段则会进行更深入的优化和最终的代码生成。这段代码确保了从 Wasm 语义到机器指令转换的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -147,8 +147,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 S) {
       // Parameters coming from JavaScript are always tagged values. Especially
       // when the signature says that it's an I64 value, then a BigInt object is
@@ -798,7 +800,4 @@ Node* WasmGraphBuilder::SimdOp(wasm::WasmOpcode opcode, Node* const* inputs) {
       return graph()->NewNode(mcgraph()->machine()->S128Xor(), inputs[0],
                               inputs[1]);
     case wasm::kExprS128Not:
-"""
-
-
 ```

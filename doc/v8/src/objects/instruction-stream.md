@@ -145,11 +145,13 @@ console.log(result); // 输出 8
 
 `instruction-stream.cc` 中定义的 `InstructionStream` 类以及相关的重定位功能是 V8 引擎将 JavaScript 代码转化为可执行机器码并进行有效内存管理的关键组成部分。它确保了编译后的代码能够正确地访问内存中的对象和其他代码，并且与垃圾回收器协同工作，保证了 JavaScript 程序的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/instruction-stream.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ InstructionStream::WriteBarrierPromise::~WriteBarrierPromise() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -156,15 +156,17 @@ By following this methodical approach, we can gain a comprehensive understanding
 
 总而言之，`id_target_observer_registry.cc` 是 Blink 渲染引擎中一个关键的组件，它负责管理和通知对元素 `id` 属性变化感兴趣的观察者，这对于实现某些高级的 Web 功能和框架至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/id_target_observer_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All Rights Reserved.
  *
@@ -257,7 +259,4 @@ bool IdTargetObserverRegistry::HasObservers(const AtomicString& id) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -132,7 +132,7 @@ By following this detailed analysis and refinement process, I can generate a com
 
 总而言之，`blink/renderer/core/page/print_context_test.cc` 是一个至关重要的测试文件，它专注于验证 Blink 渲染引擎中负责网页打印的核心组件 `PrintContext` 的正确性。 它通过构建各种包含 HTML、CSS 结构的测试用例，模拟打印过程，并检查链接等关键元素的渲染和元数据生成是否符合预期，从而保证了 Chromium 浏览器打印功能的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/print_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -937,7 +939,4 @@ TEST_P(PrintContextTest, SvgMarkersOnMultiplePages) {
     </style>
     <svg style="break-after: page">
       <marker id="m1" markerUnits=
-"""
-
-
 ```

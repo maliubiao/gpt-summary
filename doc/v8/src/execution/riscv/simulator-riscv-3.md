@@ -58,12 +58,14 @@ console.log(result);
 
 总而言之，这部分代码是 V8 引擎在非 RISC-V 硬件上运行 RISC-V 代码的关键组成部分，它通过软件模拟实现了 RISC-V 指令集的行为，使得 V8 能够执行编译成 RISC-V 机器码的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 & ~sreg_t(1);
       set_pc(next_pc);
       if (v8_flags.trace_sim) {
@@ -2312,8 +2314,4 @@ void Simulator::DecodeRvvFVV() {
                 int64_t& vd_i = Rvvelt<int64_t>(rvv_vd_reg(), i, true);
                 vd_i = FclassHelper(vs2);
                 USE(fs1);
-                
-"""
-
-
 ```

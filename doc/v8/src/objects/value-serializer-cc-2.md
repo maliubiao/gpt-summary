@@ -149,7 +149,7 @@ console.log(cloned.regex instanceof RegExp); // 输出: true
 
 `v8/src/objects/value-serializer.cc` 的第 3 部分的核心功能是 **反序列化多种核心的 JavaScript 值和对象**。它负责将序列化后的字节流转换回 JavaScript 引擎可以理解和使用的对象，包括基本类型、集合类型、错误对象、以及与 WebAssembly 相关的对象。这部分代码是 V8 引擎实现诸如 `structuredClone` 等功能的关键组成部分。它还管理着已反序列化对象的 ID 映射，以处理循环引用并确保反序列化的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/value-serializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/value-serializer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ecurse.
   STACK_CHECK(isolate_, MaybeHandle<JSArray>());
 
@@ -1068,7 +1070,4 @@ ValueDeserializer::ReadObjectUsingEntireBufferForLegacyFormat() {
             stack.size() - 2 * static_cast<size_t>(num_properties);
         Handle<JSObject> js_object =
             isolate_->factory()->New
-"""
-
-
 ```

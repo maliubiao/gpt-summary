@@ -175,15 +175,17 @@ const ws = new WebSocket('wss://example.com', ['chat', 'v1.0']);
 
 总而言之，`websocket_handshake_stream_base.cc` 是 Chromium 处理 WebSocket 握手的核心组件，负责构建和验证握手过程中关键的 HTTP 头部信息，确保客户端和服务器能够正确协商连接参数。 它与 JavaScript 的 WebSocket API 密切相关，直接影响着 WebSocket 连接的建立和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_handshake_stream_base.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ void WebSocketHandshakeStreamBase::RecordHandshakeResult(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -149,15 +149,17 @@ func main() {
 
 `go/src/cmd/internal/obj/s390x/listz.go` 的主要功能是为 Go 编译器提供处理 s390x 架构指令和寄存器所需的工具，包括将内部表示转换为人类可读的字符串形式，这对于生成汇编代码、调试和错误报告非常重要。 它属于编译器内部实现细节，普通 Go 开发者无需直接关注。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/listz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Based on cmd/internal/obj/ppc64/list9.go.
 //
 //	Copyright © 1994-1999 Lucent Technologies Inc.  All rights reserved.
@@ -231,9 +233,4 @@ func DRconv(a int) string {
 	fp += s
 	return fp
 }
-
-"""
-
-
-
 ```

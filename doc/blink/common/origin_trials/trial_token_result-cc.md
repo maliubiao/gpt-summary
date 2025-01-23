@@ -134,14 +134,16 @@ Let's break down the thought process for analyzing this C++ file and generating 
 
 总而言之，`blink::TrialTokenResult` 是 Blink 引擎中用于处理 Origin Trial Token 的核心组件，它负责封装 Token 的解析和验证结果，为浏览器后续是否启用实验性功能提供关键信息。虽然开发者不会直接操作这个 C++ 类，但他们提供的 Token 的正确性直接影响着这个类的状态和最终的 Web 平台行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/trial_token_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ TrialTokenResult::TrialTokenResult(OriginTrialTokenStatus status,
 }
 
 }  // namespace blink
-
-"""
-
 ```

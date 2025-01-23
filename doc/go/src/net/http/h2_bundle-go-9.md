@@ -290,7 +290,7 @@ My plan is to:
 
 这段代码主要负责 **处理单个 HTTP/2 请求的生命周期**，从创建流、发送请求头和体、等待响应头、处理响应体，到最后的清理工作。它涉及到请求的构建、发送、流的管理、错误处理以及与连接的交互。 核心功能是 `RoundTrip` 方法及其调用的其他辅助方法，这些方法共同完成了发送和接收 HTTP/2 请求的全过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -299,8 +299,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rsally supported anyway.
 		// See: https://zlib.net/zlib_faq.html#faq39
 		//
@@ -1471,10 +1473,4 @@ func (rl *http2clientConnReadLoop) run() error {
 		case *http2RSTStreamFrame:
 			err = rl.processResetStream(f)
 		case *http2SettingsFrame:
-			
-"""
-
-
-
-
 ```

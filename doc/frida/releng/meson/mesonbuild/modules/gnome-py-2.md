@@ -127,7 +127,7 @@ The user wants a summary of the functionalities of the provided Python code, whi
 
 总而言之，`frida/releng/meson/mesonbuild/modules/gnome.py` 模块的功能是 **在 Frida 的构建过程中集成和调用各种 GNOME 开发工具，以生成帮助文档、API 文档、D-Bus 代码、枚举类型定义和 GObject marshaller 代码。**  这使得 Frida 能够利用 GNOME 生态系统中成熟的工具链来完成构建任务，并确保生成的代码能够与 GNOME 和基于 GObject 的库进行交互。由于 Frida 常常用于分析使用了这些库的应用程序，因此这个模块的功能对于 Frida 的正常构建和使用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,9 +136,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-       l_data = build.Data([m_file], m_install_dir, m_install_dir,
+### 源代码
+```python
+l_data = build.Data([m_file], m_install_dir, m_install_dir,
                                         mesonlib.FileMode(), state.subproject, install_tag='doc')
                 targets.append(l_data)
 
@@ -864,7 +866,4 @@ Prompt:
         return ModuleReturnValue(rv, rv)
 
     def _extract_vapi_packages(self, state: 'ModuleState', packages: T.List[T.Union[InternalDependen
-"""
-
-
 ```

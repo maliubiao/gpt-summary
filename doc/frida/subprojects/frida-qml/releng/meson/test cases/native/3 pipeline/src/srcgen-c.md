@@ -152,7 +152,7 @@ By following these steps, starting with the basic code understanding and progres
 
 总而言之，`srcgen.c` 是 Frida 测试框架中的一个辅助工具，用于生成小的测试用例输入文件，它与逆向方法紧密相关，因为它提供了构造特定输入的能力，这对于分析程序行为至关重要。它也涉及到一些底层的操作系统概念，如文件 I/O 和内存管理。理解这个程序的功能和使用场景有助于理解 Frida 测试流程以及逆向工程中的一些基本技巧。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/native/3 pipeline/src/srcgen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<assert.h>
 
@@ -202,7 +204,4 @@ int main(int argc, char **argv) {
     fclose(ofile);
     return 0;
 }
-
-"""
-
 ```

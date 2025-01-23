@@ -161,15 +161,17 @@ EOF
 
 总而言之，`css_property_parser.cc` 是 Blink 渲染引擎中负责理解和解释 CSS 样式规则的关键组件，它连接了 CSS 文本和浏览器内部的样式表示，对网页的最终呈现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_property_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -656,7 +658,4 @@ bool CSSPropertyParser::ParseFontFaceDescriptor(
 }
 
 }  // namespace blink
-
-"""
-
 ```

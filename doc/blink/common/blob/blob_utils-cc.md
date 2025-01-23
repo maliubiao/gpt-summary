@@ -127,14 +127,16 @@ Blob 对象是 JavaScript 中一个核心的概念，用于处理二进制数据
 
 总而言之，`blink/common/blob/blob_utils.cc` 通过配置数据管道的容量和块大小，在 Blink 引擎的底层实现了对 Blob 数据的高效管理和传输，这直接影响着 JavaScript 中 Blob API 的性能和行为，并间接关联到 HTML 中文件上传和 CSS 中 Blob URL 的使用。理解这些底层机制有助于开发者更好地理解和使用 Web 平台的 Blob 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/blob/blob_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ uint32_t BlobUtils::GetDataPipeChunkSize() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

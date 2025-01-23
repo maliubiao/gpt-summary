@@ -163,14 +163,16 @@ Let's break down the thought process for analyzing this C++ source code file and
 
 总而言之，`clipboard_event.cc` 文件在 Blink 渲染引擎中扮演着关键角色，它定义了表示剪贴板事件的对象，并负责存储与这些事件相关的数据，从而为浏览器提供处理复制、剪切和粘贴操作的基础。JavaScript 通过浏览器提供的 API 与这些底层的事件机制进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/clipboard_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2001 Peter Kelly (pmk@post.com)
  * Copyright (C) 2001 Tobias Anton (anton@stud.fbi.fh-darmstadt.de)
@@ -225,7 +227,4 @@ void ClipboardEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

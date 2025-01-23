@@ -128,15 +128,17 @@ Let's break down the thought process for analyzing this code snippet and answeri
 
 总而言之， `fake_webrtc_data_channel.cc` 是 Blink 引擎中用于测试 WebRTC 数据通道功能的重要组成部分，它通过模拟真实数据通道的行为，使得单元测试可以独立运行，并更容易验证相关功能的正确性。普通用户不会直接接触到它，但对于 Chromium 开发者和 WebRTC 功能的测试人员来说，它是理解和调试相关功能的关键代码之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/testing/fake_webrtc_data_channel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ void FakeWebRTCDataChannel::Close() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

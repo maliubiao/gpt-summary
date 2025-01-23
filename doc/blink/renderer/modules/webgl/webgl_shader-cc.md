@@ -176,15 +176,17 @@ const shader = gl.createShader(gl.FRAGMENT_SHADER);
 
 总而言之，`webgl_shader.cc` 是 WebGL 功能实现的关键部分，它桥接了 JavaScript WebGL API 和底层的 OpenGL ES 图形库，负责管理着色器的生命周期。理解这个文件的功能有助于深入理解 WebGL 的工作原理和进行相关的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_shader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -230,7 +232,4 @@ void WebGLShader::DeleteObjectImpl(gpu::gles2::GLES2Interface* gl) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

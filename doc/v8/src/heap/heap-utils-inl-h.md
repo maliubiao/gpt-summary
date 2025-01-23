@@ -132,15 +132,17 @@ const myObject = { name: "example", value: 10 };
 
 `v8/src/heap/heap-utils-inl.h` 中的 `HeapUtils::GetOwnerHeap` 函数是一个 V8 内部用于获取对象所属堆的关键工具。它不直接是 Torque 代码，但对于理解 V8 如何管理 JavaScript 对象的内存至关重要。虽然用户无法直接调用此函数，但理解其背后的概念有助于更好地理解 JavaScript 的内存管理和避免潜在的内存相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-utils-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-utils-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ Heap* HeapUtils::GetOwnerHeap(Tagged<HeapObject> object) {
 }  // namespace v8::internal
 
 #endif  // V8_HEAP_HEAP_UTILS_INL_H_
-
-"""
-
 ```

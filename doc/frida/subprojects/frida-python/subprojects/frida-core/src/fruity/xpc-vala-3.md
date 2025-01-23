@@ -93,7 +93,7 @@ var message = builder.build();
 ### 总结
 
 该文件实现了Frida工具中XPC消息的构建、传输、接收和解析功能，支持多种数据类型的处理，并提供了密钥生成和UUID生成的工具函数。通过LLDB调试工具，可以方便地调试这些功能的实现。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/xpc.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -103,11 +103,11 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-
-				cancellable.set_error_if_cancelled ();
+### 源代码
+```
+cancellable.set_error_if_cancelled ();
 
 				if (op.state == ERROR)
 					throw new Error.TRANSPORT ("%s", NGHttp2.strerror (op.error_code));
@@ -853,8 +853,4 @@ Prompt:
 		return uuid;
 	}
 }
-
-"""
-
-
 ```

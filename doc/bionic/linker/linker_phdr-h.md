@@ -299,7 +299,7 @@ if (Process.arch === 'arm64') {
 
 通过 hook 这些关键函数，开发者可以深入了解 Android 动态链接器的运作方式，调试与库加载相关的问题。需要根据目标进程的架构 (32位或64位) 调整 Frida 脚本中查找导出函数名称的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_phdr.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -516,7 +518,4 @@ void protect_memtag_globals_ro_segments(const ElfW(Phdr) * phdr_table, size_t ph
 void name_memtag_globals_segments(const ElfW(Phdr) * phdr_table, size_t phdr_count,
                                   ElfW(Addr) load_bias, const char* soname,
                                   std::list<std::string>* vma_names);
-
-"""
-
 ```

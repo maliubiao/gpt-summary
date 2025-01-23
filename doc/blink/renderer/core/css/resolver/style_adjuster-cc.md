@@ -124,7 +124,7 @@ By following this structured approach, I can effectively analyze the provided co
 
 `blink/renderer/core/css/resolver/style_adjuster.cc` 的主要功能是在 Blink 引擎的 CSS 样式解析过程中，对计算后的样式进行一系列基于 HTML 元素类型和特定 CSS 属性值的调整和修正。它确保了渲染结果的一致性和符合浏览器预期的行为，并处理了一些 CSS 规范中未明确定义或浏览器实现存在差异的情况。 这部分代码主要关注各种 HTML 元素，并对其 `display`, `overflow` 等属性进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_adjuster.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2004-2005 Allan Sandfeld Jensen (kde@carewolf.com)
@@ -923,7 +925,4 @@ bool StyleAdjuster::IsEditableElement(Element* element,
   }
 
   if (auto* textarea = DynamicTo<HTMLTextAreaEleme
-"""
-
-
 ```

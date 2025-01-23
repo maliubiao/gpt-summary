@@ -144,15 +144,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 `blink/renderer/controller/javascript_call_stack_generator.cc` 是 Blink 渲染引擎中一个关键的组件，负责提供 JavaScript 调用栈信息。它通过异步的方式工作，使用 `JavaScriptCallStackCollector` 来执行实际的收集工作，并利用 Mojo 与其他 Blink 组件通信。虽然普通用户不会直接与它交互，但它在错误报告、调试和性能分析等幕后工作中发挥着重要作用，与 JavaScript, HTML 有着直接联系，并通过 JavaScript 的执行上下文间接地与 CSS 产生关联。 理解这个组件的功能有助于深入理解浏览器的工作原理和调试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/javascript_call_stack_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ void JavaScriptCallStackGenerator::Bind(
 }
 
 }  // namespace blink
-
-"""
-
 ```

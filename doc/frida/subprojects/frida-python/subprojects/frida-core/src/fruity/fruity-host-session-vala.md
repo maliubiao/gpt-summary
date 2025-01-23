@@ -121,7 +121,7 @@ if __name__ == "__main__":
    - 调试会话关闭，相关资源被清理。
 
 通过以上步骤，用户可以逐步完成对 iOS 设备的调试操作，并通过调试线索定位和解决问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/fruity-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class FruityHostSessionBackend : Object, HostSessionBackend {
 		private Fruity.DeviceMonitor device_monitor = new Fruity.DeviceMonitor ();
@@ -1095,7 +1097,4 @@ namespace Frida {
 				remote_session_id = yield server.session.attach (pid, options, cancellable);
 			} catch (GLib.Error e) {
 				throw_dbus
-"""
-
-
 ```

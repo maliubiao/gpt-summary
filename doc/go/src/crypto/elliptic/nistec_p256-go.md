@@ -140,7 +140,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言 `crypto/elliptic` 包中用于高效计算 P-256 椭圆曲线标量的模逆的关键部分，它依赖于底层优化的 `nistec` 包，并且在内部使用，使用者通常无需直接调用，而是通过更高层次的椭圆曲线操作来间接使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/elliptic/nistec_p256.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ func (c p256Curve) Inverse(k *big.Int) *big.Int {
 	}
 	return new(big.Int).SetBytes(inverse)
 }
-
-"""
-
-
-
 ```

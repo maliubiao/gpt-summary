@@ -132,7 +132,7 @@ By following this structured thought process, considering the file path, the pur
 
 总而言之，`c_test_two.c` 虽然自身功能简单，但它是 Frida 确保其在处理 Vala 和 C 混合编程场景时正确性的基石。对于普通用户而言，他们不太可能直接接触到这个文件，但 Frida 的稳定性和功能正确性直接影响着他们的使用体验。对于 Frida 开发者来说，这样的测试用例是重要的调试和验证工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/vala/20 genie multiple mixed sources/c_test_two.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,14 +140,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 gboolean c_test_two_is_true (void) {
     return TRUE;
 }
-
-"""
-
 ```

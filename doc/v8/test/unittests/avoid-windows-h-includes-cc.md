@@ -141,15 +141,17 @@ doSomething();
 
 `avoid-windows-h-includes.cc` 这样的测试是 V8 项目为了维护代码质量和平台独立性而采取的一种预防措施，避免在内部引入类似的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/avoid-windows-h-includes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/avoid-windows-h-includes.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ Prompt:
 // See base/win/windows_h_disallowed.h for details.
 #error Windows.h was included unexpectedly.
 #endif  // defined(_WINDOWS_)
-
-"""
-
 ```

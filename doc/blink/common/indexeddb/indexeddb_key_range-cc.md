@@ -140,14 +140,16 @@ request.onsuccess = function(event) {
 
 总而言之，`blink/common/indexeddb/indexeddb_key_range.cc` 文件是 IndexedDB 键范围的核心实现，它直接支撑了 JavaScript 中 `IDBKeyRange` API 的功能，使得开发者能够在客户端数据库中进行灵活的数据查询和操作。理解其功能有助于开发者更准确地使用 IndexedDB API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/indexeddb/indexeddb_key_range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ bool IndexedDBKeyRange::IsEmpty() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -187,14 +187,16 @@ By following these steps and iteratively refining the explanation, I can produce
 
 总而言之，`resource_progress_event.cc` 文件定义了 Blink 引擎中用于表示资源加载进度的核心数据结构，它直接关联着 Web 标准中的 `ProgressEvent` 接口，并在 JavaScript 中被广泛使用来监控和展示资源加载状态。理解其背后的机制有助于开发者更有效地处理资源加载相关的用户体验和错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/resource_progress_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -247,7 +249,4 @@ void ResourceProgressEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

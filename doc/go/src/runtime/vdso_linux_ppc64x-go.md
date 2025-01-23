@@ -111,7 +111,7 @@ func main() {
 
 总而言之，这段代码是 Go 运行时为了提高在 Linux ppc64x 平台上运行的 Go 程序的性能而做的优化，它通过利用 VDSO 减少了常用系统调用的开销。作为 Go 语言的使用者，你通常不需要关心这些底层的实现细节，但了解这些机制有助于更好地理解 Go 程序的运行原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_linux_ppc64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -119,8 +119,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -146,9 +148,4 @@ var (
 	vdsoClockgettimeSym uintptr
 	vdsoGetrandomSym    uintptr
 )
-
-"""
-
-
-
 ```

@@ -54,11 +54,13 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，`maglev-concurrent-dispatcher.cc` 负责 Maglev 编译器的并发执行，这是 V8 引擎优化 JavaScript 代码执行效率的一个关键组成部分，直接影响着 JavaScript 应用的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-concurrent-dispatcher.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -492,7 +494,4 @@ void MaglevConcurrentDispatcher::Flush(BlockingBehavior behavior) {
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

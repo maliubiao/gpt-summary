@@ -187,14 +187,16 @@ InlineItemResult kLayoutInline world (或其他 `LayoutObject` 的描述)
 
 总而言之，`InlineItemResult.cc` 中定义的 `InlineItemResult` 类是 Blink 渲染引擎内联布局过程中至关重要的数据结构，它连接了 HTML 结构、CSS 样式和最终的屏幕渲染，并为后续的排版和布局计算提供了必要的信息。 理解这个类的功能有助于深入理解浏览器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_item_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ String InlineItemResult::ToString(const String& ifc_text_content,
 }
 
 }  // namespace blink
-
-"""
-
 ```

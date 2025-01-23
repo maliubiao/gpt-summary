@@ -131,14 +131,16 @@ bool MySecurityCheck(v8::Local<v8::Context> accessing_context,
 
 总而言之，`binding_security_for_platform.cc` 提供了一个关键的扩展点，允许 Chromium 的嵌入平台根据自身的安全需求定制跨 V8 上下文的访问控制策略，这对于确保 Web 内容的隔离和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/binding_security_for_platform.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ void BindingSecurityForPlatform::SetShouldAllowAccessToV8Context(
 }
 
 }  // namespace blink
-
-"""
-
 ```

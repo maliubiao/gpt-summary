@@ -147,12 +147,14 @@ console.log(rangeParts); // Output: [ { type: 'month', value: 'Oct' }, ... ]
 
 总而言之，这第二部分的代码专注于 `Intl.DateTimeFormat` 的核心构建块和复杂的格式化逻辑，特别是处理时区、日历以及各种格式化选项，并将其转换为 ICU 库能够理解和执行的操作，最终将日期和时间信息以用户期望的格式呈现出来。它也体现了 V8 为了性能所做的缓存优化以及对新的 JavaScript 特性（如 Temporal）的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-date-time-format.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 f);
 }
 
@@ -1682,8 +1684,4 @@ MaybeHandle<JSArray> JSDateTimeFormat::FormatRangeToParts(
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

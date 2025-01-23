@@ -273,7 +273,7 @@ function ntohs(value) {
 
 `bionic/libc/include/arpa/tftp.h` 是 Android Bionic C 库中定义 TFTP 协议的头文件，它定义了数据包结构、类型和错误码等，为实现 TFTP 功能提供了基础。虽然现代 Android 系统中 TFTP 的使用场景较少，但了解其定义对于理解网络协议和可能的底层系统行为仍然有帮助。要调试使用了这些定义的代码，需要 hook 实际的函数调用，而不是直接 hook 头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/arpa/tftp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (c) 1983, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -367,7 +369,4 @@ struct tftphdr {
 #define	EOPTNEG		8		/* option negotiation failed */
 
 #endif /* !_TFTP_H_ */
-
-"""
-
 ```

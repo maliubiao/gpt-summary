@@ -124,7 +124,7 @@ By following this thought process, considering the different aspects of the ques
 
 `libfile2.c` 虽然代码简单，但在 Frida 的开发和测试流程中扮演着重要的角色，用于验证 Frida 核心的动态库加载和函数调用能力。它通过简单的功能和明确的条件编译，帮助开发者确保 Frida 的基础功能正常运作。用户通常不会直接操作这个文件，但在调试 Frida 框架本身或编写涉及到共享库操作的 Frida 脚本时，可能会间接地接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/4 shared/libfile2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -156,7 +158,4 @@ Prompt:
 int DLL_PUBLIC libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

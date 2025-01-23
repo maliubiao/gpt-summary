@@ -196,15 +196,17 @@ By following these steps and refining the thinking process, we can generate a co
 
 总而言之，`service_worker_event_queue_test.cc` 是一个至关重要的测试文件，它确保了 Service Worker 事件队列的稳定性和正确性，这对于 Service Worker 功能的可靠运行至关重要，并直接影响到用户与 web 应用的交互体验。通过理解这些测试用例，开发者可以更好地理解 Service Worker 的内部机制，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/service_worker_event_queue_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -915,7 +917,4 @@ TEST_F(ServiceWorkerEventQueueTest, TimeoutNotStartedEvent) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

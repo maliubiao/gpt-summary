@@ -156,15 +156,17 @@ Item 2 的布局信息: { top: 60px, height: 50px }
 
 这段代码的主要功能是 **遍历和布局块级容器的子元素**，它根据 HTML 结构和 CSS 样式规则，确定每个子元素在容器内的位置和尺寸。它处理了行钳制、分页符、margin 折叠等复杂的布局情况，并为不同类型的子元素（如浮动元素、绝对定位元素、列跨越元素等）提供了相应的处理逻辑。这是浏览器引擎渲染网页内容的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 zes.max_size - BorderScrollbarPadding().block_end)
                   .ClampNegativeToZero();
         }
@@ -854,7 +856,4 @@ bool BlockLayoutAlgorithm::TryReuseFragmentsFromCache(
 
   const auto& children = container_builder_.Children();
   const
-"""
-
-
 ```

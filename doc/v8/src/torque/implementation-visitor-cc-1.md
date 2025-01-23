@@ -89,7 +89,7 @@ Here's a plan to address the request:
 
 总而言之，这部分代码是 Torque 编译器中至关重要的一部分，它负责将高级的 Torque 语法转换为可以在 V8 虚拟机中执行的低级指令，并且在转换过程中进行类型检查和错误报告，确保生成的代码的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -97,8 +97,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 itResult ImplementationVisitor::Visit(ConditionalExpression* expr) {
   Block* true_block = assembler().NewBlock(assembler().CurrentStack());
   Block* false_block = assembler().NewBlock(assembler().CurrentStack());
@@ -961,7 +963,4 @@ VisitResult ImplementationVisitor::Visit(NewExpression* expr) {
   if (!class_type->AllowInstantiation()) {
     // Classes that are only used for testing should never be instantiated.
     ReportError(*c
-"""
-
-
 ```

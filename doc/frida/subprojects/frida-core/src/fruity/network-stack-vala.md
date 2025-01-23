@@ -122,7 +122,7 @@ try {
 ### 总结
 
 `network-stack.vala` 文件实现了 Frida 工具中的网络通信功能，支持 TCP 和 UDP 协议，提供了异步操作、超时处理、错误处理等功能。通过 LLDB 调试工具，用户可以深入分析网络栈的执行过程，排查潜在问题。用户在使用时需要注意处理取消操作、超时和异常，以确保程序的稳定性和可靠性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/network-stack.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public interface NetworkStack : Object {
@@ -1384,7 +1386,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

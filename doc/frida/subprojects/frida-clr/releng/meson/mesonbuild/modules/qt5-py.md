@@ -151,7 +151,7 @@ By following these steps,  combining code analysis with knowledge of Frida, buil
 
 总而言之，`qt5.py` 虽然代码简洁，但它是 Frida 构建过程中处理 Qt 5 依赖的关键部分，确保了 Frida 能够正确地构建并具备 hook 和分析 Qt 5 应用程序的能力。 理解它的作用有助于排查与 Qt 相关的 Frida 构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/qt5.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -184,7 +186,4 @@ class Qt5Module(QtBaseModule):
 
 def initialize(interp: Interpreter) -> Qt5Module:
     return Qt5Module(interp)
-
-"""
-
 ```

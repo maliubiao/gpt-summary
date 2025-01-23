@@ -126,7 +126,7 @@ go tool pprof http://localhost:6060/debug/pprof/profile?seconds=5
 
 `go/src/runtime/os_openbsd_mips64.go` 中的 `cputicks()` 函数是 Go 语言运行时库为 OpenBSD 操作系统上的 MIPS64 架构提供的获取（近似）CPU 时钟周期的功能。它主要用于性能分析，尽管其精度受到 `nanotime()` 的限制。理解其作为性能分析工具的一部分以及其平台依赖性是正确使用它的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_openbsd_mips64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -134,8 +134,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -147,9 +149,4 @@ func cputicks() int64 {
 	// runtime·nanotime() is a poor approximation of CPU ticks that is enough for the profiler.
 	return nanotime()
 }
-
-"""
-
-
-
 ```

@@ -219,7 +219,7 @@ if __name__ == "__main__":
 
 总而言之，`in_route.h` 定义了影响 Android 系统底层网络行为的关键常量。虽然开发者通常不会直接操作这个文件，但理解其内容有助于深入理解 Android 的网络机制。使用 Frida 等工具可以帮助观察 Android Framework 和 NDK 如何在底层使用这些概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/in_route.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -260,7 +262,4 @@ Prompt:
 #define RTCF_NAT (RTCF_DNAT | RTCF_SNAT)
 #define RT_TOS(tos) ((tos) & IPTOS_TOS_MASK)
 #endif
-
-"""
-
 ```

@@ -152,7 +152,7 @@ const moduleName = "extra_dep_1.so"; // 错误的模块名
 
 总而言之，这个简单的 `lib.c` 文件在一个复杂的测试环境中扮演着关键的角色，用于验证 Frida 动态Instrumentation工具在跨语言场景下的 hook 能力。它看似简单，但其存在是为了确保 Frida 能够正确地处理更复杂的逆向工程任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/rust/22 cargo subproject/subprojects/extra-dep-1-rs/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,13 +160,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int extra_func(void)
 {
     return 0;
 }
-
-"""
-
 ```

@@ -125,11 +125,13 @@ Initially, one might focus too much on the specifics of the test cases. The key 
 
 因此，虽然没有直接的 JavaScript 等价物，但 `span` 的功能和解决的问题与 JavaScript 在处理二进制数据和字符串的底层操作时面临的需求是相关的。它是一种在 C++ 中高效处理连续数据序列的常见模式，在 V8 这样的高性能 JavaScript 引擎中被广泛使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/span_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ TEST(SpanComparisons, ByteWiseLexicographicalOrder) {
   EXPECT_FALSE(SpanEquals(SpanFrom(msg), SpanFrom(lesser_msg)));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

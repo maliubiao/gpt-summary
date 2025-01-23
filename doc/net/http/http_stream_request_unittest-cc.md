@@ -110,15 +110,17 @@ fetch('https://www.example.com/image.jpg', { priority: 'high' })
 
 总而言之，`net/http/http_stream_request_unittest.cc` 这个文件通过单元测试确保了 `HttpStreamRequest` 能够正确地传递和管理网络请求的优先级，这对于保证用户在使用浏览器时的良好体验至关重要，尽管用户和 JavaScript 代码不会直接接触到这个 C++ 类。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ TEST(HttpStreamRequestTest, SetPriority) {
 }
 
 }  // namespace net
-
-"""
-
 ```

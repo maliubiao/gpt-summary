@@ -107,7 +107,7 @@ By following these steps, you can systematically analyze the provided code and g
 
 虽然 `clash.c` 代码本身非常简单，但在 Frida 的测试框架中，它扮演着一个关键的角色，用于模拟和验证 Frida 在处理潜在目标冲突时的行为。理解这个文件的上下文需要了解 Frida 的基本原理和测试流程。用户通常不会直接与这个文件交互，但它可能是 Frida 开发和调试过程中的一个重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/19 target clash/clash.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,15 +115,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("Clash 2.\n");
     return 0;
 }
-
-"""
-
 ```

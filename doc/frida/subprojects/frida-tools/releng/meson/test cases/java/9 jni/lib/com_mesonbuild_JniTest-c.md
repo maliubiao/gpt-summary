@@ -140,7 +140,7 @@ Initially, I might have focused too much on the `0xdeadbeef` value without expla
 
 因此，这个文件很可能作为 Frida 工具的测试或示例代码存在，供开发者学习和测试 Frida 的 JNI hook 功能。逆向工程师也可能在分析使用 JNI 的应用程序时遇到类似的代码结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/java/9 jni/lib/com_mesonbuild_JniTest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <jni.h>
 
 #include "com_mesonbuild_JniTest.h"
@@ -159,7 +161,4 @@ JNIEXPORT jint JNICALL Java_com_mesonbuild_JniTest_jni_1test
 {
     return (jint)0xdeadbeef;
 }
-
-"""
-
 ```

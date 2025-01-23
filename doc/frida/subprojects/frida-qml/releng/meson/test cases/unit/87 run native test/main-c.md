@@ -142,7 +142,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，这个简单的 `main.c` 文件虽然功能单一，但它可以作为理解 Frida 如何与原生代码交互的一个基础示例，并且涵盖了逆向工程、底层知识和常见编程实践中的一些基本概念。  在 Frida 的测试框架中，这样的简单程序被用来验证 Frida 的功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/87 run native test/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main (int argc, char * argv[])
@@ -169,7 +171,4 @@ int main (int argc, char * argv[])
   }
   return 0;
 }
-
-"""
-
 ```

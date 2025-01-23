@@ -105,11 +105,13 @@ for (const key in anotherObj) {
 
 `direct-handles-unittest.cc` 这个文件主要测试 V8 引擎内部的 Direct Handles 机制的正确性和稳定性。Direct Handles 是一种 V8 内部的优化手段，旨在更高效地管理和访问堆中的 JavaScript 对象。虽然 JavaScript 代码本身不直接涉及 Direct Handles，但这项技术对 V8 执行 JavaScript 代码的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/direct-handles-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -343,7 +345,4 @@ TEST_F(DirectHandlesSharedTest, DirectHandleInParkedClientBackgroundThread) {
 #endif  // DEBUG && V8_ENABLE_DIRECT_HANDLE
 
 }  // namespace v8
-
-"""
-
 ```

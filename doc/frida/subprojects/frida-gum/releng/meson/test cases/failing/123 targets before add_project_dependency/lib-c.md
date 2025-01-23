@@ -198,7 +198,7 @@ gcc main.c -o main -L. -lmylib
 
 总而言之，虽然 `lib.c` 的代码非常简单，但在 Frida 这样的动态插桩工具的上下文中，它成为了一个可以被观察、修改和分析的目标，涉及到逆向工程、二进制底层、操作系统原理以及常见的编程错误等多个方面。而它在 "failing" 测试用例目录中的存在，则暗示了其在构建系统测试中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/123 targets before add_project_dependency/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,12 +206,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "lib.h"
 void f() {puts("hello");}
-
-"""
-
 ```

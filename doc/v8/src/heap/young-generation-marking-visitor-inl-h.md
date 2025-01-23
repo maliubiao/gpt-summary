@@ -207,15 +207,17 @@ V8_INLINE bool YoungGenerationMarkingVisitor<marking_mode>::VisitObjectViaSlot(
 
 理解 `YoungGenerationMarkingVisitor` 的作用有助于开发者编写更高效、内存友好的 JavaScript 代码，避免因不当的内存管理而导致性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/young-generation-marking-visitor-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/young-generation-marking-visitor-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -508,7 +510,4 @@ YoungGenerationMarkingVisitor<marking_mode>::IncrementLiveBytesCached(
 }  // namespace v8
 
 #endif  // V8_HEAP_YOUNG_GENERATION_MARKING_VISITOR_INL_H_
-
-"""
-
 ```

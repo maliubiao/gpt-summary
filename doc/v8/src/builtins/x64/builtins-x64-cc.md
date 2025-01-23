@@ -92,7 +92,7 @@ console.log(correctPerson.name); // 输出 "Bob"
 
 总结来说，`v8/src/builtins/x64/builtins-x64.cc` 的第一部分定义了 x64 架构下 V8 引擎中一些核心的内置函数实现，涵盖了函数调用、对象构造、去优化支持、JavaScript 代码入口、Baseline 代码处理以及生成器函数的恢复等关键功能。这些底层实现对于 V8 引擎执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/x64/builtins-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -100,8 +100,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -956,7 +958,4 @@ void Builtins::Generate_ResumeGeneratorTrampoline(MacroAssembler* masm) {
     // actual arguments count should be set accordingly.
     static_assert(kDontAdaptArgumentsSentinel < JSParameterCount(0));
     __ cmpl(argc, Immediate(JSPara
-"""
-
-
 ```

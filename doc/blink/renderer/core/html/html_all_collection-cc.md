@@ -198,14 +198,16 @@ const all = document.all;
 
 总而言之，`html_all_collection.cc` 实现了 `document.all` 的核心逻辑，使得 JavaScript 可以通过索引或名称（`id` 或 `name` 属性）访问文档中的所有 HTML 元素。理解其行为和局限性对于编写兼容性好且符合标准的 Web 代码至关重要。 虽然 `document.all` 仍然存在，但建议开发者尽量使用更标准的 DOM API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_all_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009, 2011, 2012 Apple Inc. All rights reserved.
  *
@@ -287,7 +289,4 @@ V8UnionElementOrHTMLCollection* HTMLAllCollection::NamedGetter(
 }
 
 }  // namespace blink
-
-"""
-
 ```

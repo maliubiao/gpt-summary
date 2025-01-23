@@ -183,15 +183,17 @@ By following these steps, I can generate a comprehensive and accurate summary th
 
 总而言之，这部分 `HTMLInputElement.cc` 代码主要负责实现 `<input>` 元素的高级功能，包括与 `<datalist>` 的集成、属性和状态管理、滚动处理、占位符管理、工具提示、单选按钮组的管理、文本范围操作、日期/时间选择器的配置、`showPicker()` 方法的实现，以及处理一些内置命令。它提供了丰富的接口和逻辑，使得 `<input>` 元素能够提供更复杂和用户友好的交互体验。这部分代码是 Blink 引擎中处理 HTML 表单元素交互逻辑的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_input_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hadow_tree_ = true;
       GetDocument().ScheduleShadowTreeCreation(*this);
     }
@@ -886,8 +888,4 @@ void HTMLInputElement::SetFocused(bool is_focused,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

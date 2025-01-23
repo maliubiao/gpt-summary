@@ -164,15 +164,17 @@ Now I can start organizing the information and generating the response.
 
 总而言之，`v8/src/builtins/base.tq` 的第二部分继续为 V8 引擎的内置函数提供了重要的基础工具，涵盖了类型处理、索引操作、方法获取、数组优化等多个方面，并帮助引擎更安全、高效地执行 JavaScript 代码。它间接地帮助开发者避免了一些常见的编程错误，并在底层提供了更强的类型安全和错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/base.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 it context: Context)(value: JSAny, name: constexpr string): JSAny {
   if (IsNullOrUndefined(value)) {
     ThrowTypeError(MessageTemplate::kCalledOnNullOrUndefined, name);
@@ -724,8 +726,4 @@ extern macro LoadSimd128(intptr): Simd128;
 extern macro I8x16BitMask(I8X16): int32;
 extern macro I8x16Eq(I8X16, I8X16): I8X16;
 extern macro I8x16Splat(int32): I8X16;
-
-"""
-
-
 ```

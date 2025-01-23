@@ -176,15 +176,17 @@ func main() {
 
 在这个例子中，`MyReader` 的 `Read` 方法没有返回值，而 `AnotherReader` 的 `Read` 方法返回 `error`。即使方法名相同，这两个接口也是不兼容的，因此从 `MyReader` 断言到 `AnotherReader` 永远不会成功。`ifaceassert` 分析器会帮助开发者发现这种潜在的逻辑错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/ifaceassert/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ Prompt:
 // The Read method in v has a different signature than the Read method in
 // io.Reader, so this assertion cannot succeed.
 package ifaceassert
-
-"""
-
-
-
 ```

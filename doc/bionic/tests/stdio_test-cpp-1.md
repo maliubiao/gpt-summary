@@ -87,7 +87,7 @@ The overall goal of this section of the test is to ensure the correct behavior a
 
 总而言之，这段代码系统地测试了 C 标准库中与输入输出相关的核心功能，并覆盖了多种使用场景和潜在的错误情况，确保了 Android Bionic 库中这些函数的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stdio_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -99,8 +99,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e_1) {
   FILE* fp = popen("false", "r");
   ASSERT_TRUE(fp != nullptr);
@@ -1078,7 +1080,4 @@ TEST(STDIO_TEST, fdopen_add_CLOEXEC) {
   ASSERT_FALSE(CloseOnExec(fd));
   // ...but the new one does.
   FI
-"""
-
-
 ```

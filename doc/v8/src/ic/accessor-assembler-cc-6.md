@@ -186,7 +186,7 @@ This detailed thought process allows for a systematic analysis of the code, conn
 
 总而言之，`accessor-assembler.cc` 的目标是 **让 JavaScript 中常见的属性访问操作尽可能地快速**，它通过内联缓存和代码生成技术，根据实际的运行时类型信息进行动态优化。理解这个文件的工作原理有助于开发者编写更易于 V8 引擎优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/accessor-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 or::kName);
   auto value = Parameter<Object>(Descriptor::kValue);
   auto flags = Parameter<Smi>(Descriptor::kFlags);
@@ -577,8 +579,4 @@ void AccessorAssembler::BranchIfPrototypesHaveNoElements(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

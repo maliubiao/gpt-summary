@@ -283,15 +283,17 @@ By following this structured thought process, I was able to accurately analyze t
 
 总而言之，`v8/src/runtime/runtime-proxy.cc` 文件是 V8 引擎中实现 JavaScript Proxy 对象核心功能的关键部分，它包含了用于检查 Proxy 类型、访问其内部属性以及验证 Proxy 陷阱行为的运行时函数。了解这些运行时函数有助于深入理解 JavaScript Proxy 在 V8 引擎中的实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-proxy.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-proxy.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ RUNTIME_FUNCTION(Runtime_CheckProxyDeleteTrapResult) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

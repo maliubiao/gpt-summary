@@ -156,14 +156,16 @@ This systematic approach allows for a comprehensive and accurate answer to the u
 
 总而言之，`blink/renderer/core/layout/inline/hyphen_result.cc` 负责 Blink 渲染引擎中连字符的塑形工作，确保在进行自动或手动断字时，连字符能够以正确的形状和尺寸进行渲染。它与 CSS 的 `hyphens` 属性、字体设置以及文本方向密切相关，并在 HTML 内容需要断字时发挥作用。虽然用户不会直接操作这个文件，但理解其背后的原理有助于更好地理解和使用与文本断字相关的 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/hyphen_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ void HyphenResult::Shape(const ComputedStyle& style) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

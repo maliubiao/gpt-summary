@@ -134,7 +134,7 @@ The key takeaway is that this file contains low-level, architecture-specific imp
 
 这部分代码主要负责定义和实现 V8 JavaScript 引擎在 MIPS64 架构下的基础内置函数，涵盖了函数调用、对象构造、生成器处理、栈管理等核心功能。它提供了 JavaScript 代码执行的关键底层支持，并包含了对常见运行时错误的检查和处理机制。 这段代码是性能关键型的，因为它直接参与了 JavaScript 代码的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/mips64/builtins-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -142,8 +142,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1046,7 +1048,4 @@ void ResetSharedFunctionInfoAge(MacroAssembler* masm, Register sfi) {
 }
 
 void ResetJSFunctionAg
-"""
-
-
 ```

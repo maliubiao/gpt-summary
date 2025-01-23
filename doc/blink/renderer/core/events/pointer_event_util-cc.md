@@ -126,14 +126,16 @@ By following these steps systematically, we can create a comprehensive and accur
 
 `pointer_event_util.cc` 文件中的函数提供了一组用于处理指针事件中与角度相关的实用工具。它们在 Blink 引擎内部负责转换和规范化来自不同输入设备的倾斜角度信息，并最终影响通过 Pointer Events API 暴露给 JavaScript 的 `azimuthAngle` 和 `altitudeAngle` 属性。这使得 Web 开发者能够利用这些信息创建更丰富和精细的交互体验，特别是在使用触控笔等设备时。 开发者需要注意 Pointer Events API 中相关属性的取值范围，以避免出现非预期的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/pointer_event_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ double PointerEventUtil::TransformToAltitudeInValidRange(
   return altitude_radians;
 }
 }  // namespace blink
-
-"""
-
 ```

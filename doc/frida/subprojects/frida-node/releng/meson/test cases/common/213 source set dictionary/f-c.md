@@ -180,7 +180,7 @@ Initially, I might have focused too much on the specifics of the C code without 
 
 总而言之，这个 `f.c` 文件是一个精心设计的、非常简单的 C 代码片段，用于测试 Frida 的核心功能，特别是与内存访问和函数 Hooking相关的能力。它的简洁性使得测试过程更加可控和易于理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/213 source set dictionary/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = (void *)0x1234ABCD;
@@ -197,7 +199,4 @@ void (*p)(void) = (void *)0x1234ABCD;
 void f(void)
 {
 }
-
-"""
-
 ```

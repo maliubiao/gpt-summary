@@ -140,15 +140,17 @@ By following these steps, I can systematically analyze the C++ code and provide 
 
 `predefined_color_space.cc` 文件是 Blink 引擎中处理 HTML Canvas 颜色空间的关键部分。它负责将 Web 开发者的意图（通过 JavaScript API 表达）转换为 Blink 内部可以理解和使用的形式，并确保在处理 HDR Canvas 时进行必要的验证和选项解析。它直接关联到 HTML Canvas API 的 `getContext` 方法及其 `colorSpace` 和 `highDynamicRange` 选项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/predefined_color_space.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ void ParseCanvasHighDynamicRangeOptions(
 }
 
 }  // namespace blink
-
-"""
-
 ```

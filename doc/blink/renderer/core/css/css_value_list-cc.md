@@ -189,15 +189,17 @@ By following these steps, you can systematically analyze the code and provide a 
 
 总之，`css_value_list.cc` 文件定义了一个核心的数据结构，用于表示 CSS 中的列表值。理解它的功能以及它与 CSS、JavaScript 和 HTML 的关系，对于理解 Blink 渲染引擎如何处理 CSS 样式至关重要，并且可以作为调试 CSS 相关问题的关键线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_value_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2010 Apple Inc. All rights reserved.
@@ -430,7 +432,4 @@ void CSSValueList::TraceAfterDispatch(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

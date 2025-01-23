@@ -167,7 +167,7 @@ console.log(Object.getOwnPropertyDescriptor(obj, 'a'));
 
 这段代码是 V8 引擎中实现 JavaScript `Object` 对象相关内置函数的关键部分。它包含了获取对象属性（键和值）、判断原型链关系、获取对象字符串表示、创建新对象以及获取属性描述符的底层实现。这些功能是 JavaScript 语言核心特性的基础，并被广泛应用于各种 JavaScript 编程场景中。这段代码的实现考虑了性能优化，例如 `GetOwnPropertyKeys` 中的快速路径和慢速路径处理，以及 `ObjectCreate` 中对原型信息的利用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-object-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-object-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Map> array_map =
         LoadJSArrayElementsMap(PACKED_ELEMENTS, native_context);
     TNode<IntPtrT> object_enum_length_intptr = Signed(object_enum_length);
@@ -1028,7 +1030,4 @@ TNode<JSObject> ObjectBuiltinsAssembler::FromPropertyDescriptor(
         js_desc, properties, factory->enumerable_string(),
         SelectBooleanConstant(
             IsSetWord32<PropertyDescriptorObject::IsEnumerableBit>(flag
-"""
-
-
 ```

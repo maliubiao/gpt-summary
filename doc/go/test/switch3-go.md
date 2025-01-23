@@ -309,15 +309,17 @@ go/test/switch3.go:17:7: incompatible types: string and I
 
 总而言之，`go/test/switch3.go` 这段代码是 Go 编译器进行静态类型检查的一个测试用例，它通过故意编写错误的 `switch` 语句来验证编译器是否能够正确地识别并报告这些错误，从而确保 Go 语言的类型安全。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/switch3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -390,9 +392,4 @@ func good() {
 	case i:
 	}
 }
-
-"""
-
-
-
 ```

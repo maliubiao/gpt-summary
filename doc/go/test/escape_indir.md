@@ -218,15 +218,17 @@ go test -run=EscapeIndir -gcflags='-N -l -m' ./test  # 可能需要根据实际�
 
 理解这些常见的错误模式，并结合编译器的逃逸分析信息（可以通过 `go build -gcflags=-m` 或 `go test -gcflags=-m` 查看），可以帮助开发者编写更高效的Go代码。这段测试代码正是用来验证编译器在各种复杂场景下进行逃逸分析的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_indir.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -387,9 +389,4 @@ func f() {
 	var x byte // ERROR "moved to heap: x"
 	global = &*&x
 }
-
-"""
-
-
-
 ```

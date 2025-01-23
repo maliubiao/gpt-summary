@@ -149,7 +149,7 @@ The user wants a summary of the functionalities of the provided C++ code for tes
 
 作为第 4 部分，该文件（`base_rendering_context_2d_test.cc`）的功能是 **全面测试 Chromium Blink 引擎中 `BaseRenderingContext2D` 类的各种功能和行为，确保 Canvas 2D API 的实现符合规范且稳定可靠。**  它通过一系列细致的单元测试，覆盖了全局状态管理、图层功能、状态保存与恢复、状态重置、方法调用顺序以及网格绘制等关键方面，旨在预防潜在的编程错误和用户误用，并保证 Canvas API 在不同场景下的正确运行。 此外，它也测试了与 HTML 和 CSS 相关的特定功能，例如滤镜效果的应用和解析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ),
                          PaintOpEq<RestoreOp>(), PaintOpEq<RestoreOp>())));
 }
@@ -851,8 +853,4 @@ TEST(BaseRenderingContextMeshTests, DrawMesh) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

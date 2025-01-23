@@ -354,7 +354,7 @@ func main() {
 
 `go/src/io/ioutil/ioutil.go` 提供的功能都是一些常用的 I/O 操作的便捷封装，但现在已经被认为是不推荐使用的方法。在新的Go代码中，应该使用 `io` 和 `os` 包中提供的功能，它们提供了更灵活和高效的实现。了解 `ioutil` 的功能有助于理解历史代码，但在新项目中应当避免使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/io/ioutil/ioutil.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -362,8 +362,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -462,9 +464,4 @@ func NopCloser(r io.Reader) io.ReadCloser {
 //
 // Deprecated: As of Go 1.16, this value is simply [io.Discard].
 var Discard io.Writer = io.Discard
-
-"""
-
-
-
 ```

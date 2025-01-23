@@ -192,7 +192,7 @@ build my_rust_agent.so: rust_COMPILER src/lib.rs | some_other_target another_dep
 
 这个 `ninjabackend.py` 文件的这一部分主要负责将 Meson 定义的 **Rust 和 Swift 构建目标** 以及 **通用静态和动态链接规则** 转换为 Ninja 构建系统能够理解的指令。它还处理了多种编程语言的 **编译规则**，特别是为 Rust 和 Swift 目标生成了详细的编译和链接步骤，包括依赖管理、RPath 设置、符号表生成等。此外，它还涉及了 **自定义命令和生成器** 的处理，以及 **Fortran 模块依赖** 的特殊处理，并为 LLVM IR 编译提供了支持。 简而言之，这部分代码是 Meson Ninja 后端的核心组成部分，专注于生成编译和链接特定类型目标的构建规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,9 +201,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                     target.build_rpath,
+### 源代码
+```python
+target.build_rpath,
                                        target.install_rpath))
             # ... but then add rustc's sysroot to account for rustup
             # installations
@@ -867,8 +869,5 @@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=47485'''))
         #
         # PDB files also lead to filename collisions. A target foo.exe
         # has a corresponding foo.pdb. A shared library foo.dll _also_
-        # has pdb 
-"""
-
-
+        # has pdb
 ```

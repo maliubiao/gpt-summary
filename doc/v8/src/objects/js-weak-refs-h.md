@@ -216,15 +216,17 @@ target = null; // 让 target 对象可以被垃圾回收
 
 总之，`v8/src/objects/js-weak-refs.h` 定义了 V8 内部用于支持 JavaScript 弱引用相关功能的关键数据结构和方法。理解这些内部结构有助于更深入地了解 JavaScript 的内存管理和垃圾回收机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-weak-refs.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-weak-refs.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ class JSWeakRef : public TorqueGeneratedJSWeakRef<JSWeakRef, JSObject> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_WEAK_REFS_H_
-
-"""
-
 ```

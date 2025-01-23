@@ -99,7 +99,7 @@ The user wants a summary of the Python code provided, focusing on its functional
 
 总而言之，`rewriter.py` 脚本是一个用于自动化修改 Frida QML 项目 `meson.build` 文件的命令行工具。它提供了增、删、改项目构建目标、源文件、关键字参数和默认选项的功能，方便开发者在不手动编辑 `meson.build` 文件的情况下调整项目的构建配置。这对于逆向工程师来说，可以便捷地向目标添加调试代码或修改构建选项以进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -918,7 +920,4 @@ class Rewriter:
                     self.modified_nodes += [root]
 
         elif cmd
-"""
-
-
 ```

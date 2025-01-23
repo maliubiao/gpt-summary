@@ -215,15 +215,17 @@ By following these steps, we can arrive at a comprehensive and informative expla
 
 `v8/src/objects/megadom-handler.tq` 定义了一个名为 `MegaDomHandler` 的 V8 内部类，它很可能用于优化与大型或复杂的 DOM 结构相关的操作。虽然我们不能直接从这个 `.tq` 文件中看到 JavaScript 代码，但理解它的作用可以帮助我们更好地理解 V8 如何高效地执行 JavaScript 中的 DOM 操作。 避免用户常见的 DOM 操作错误也有助于 V8 更好地发挥其优化能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/megadom-handler.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/megadom-handler.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ extern class MegaDomHandler extends HeapObject {
   accessor: MaybeObject;
   context: MaybeObject;
 }
-
-"""
-
 ```

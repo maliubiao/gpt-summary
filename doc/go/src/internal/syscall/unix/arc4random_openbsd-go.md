@@ -148,7 +148,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言在 OpenBSD 系统上实现安全随机数生成的核心部分，它通过 Cgo 桥接了操作系统的底层功能。 普通 Go 开发者应该使用 `crypto/rand` 包来利用这一功能，而不是直接操作 `internal` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/arc4random_openbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,8 +156,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -181,9 +183,4 @@ func ARC4Random(p []byte) {
 	syscall_syscall(abi.FuncPCABI0(libc_arc4random_buf_trampoline),
 		uintptr(unsafe.Pointer(unsafe.SliceData(p))), uintptr(len(p)), 0)
 }
-
-"""
-
-
-
 ```

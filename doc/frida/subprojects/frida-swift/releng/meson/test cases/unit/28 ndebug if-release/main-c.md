@@ -120,7 +120,7 @@ Here's a breakdown of the thinking process used to analyze the C code snippet an
 
 总而言之，这个简单的 C 程序是 Frida 测试套件的一部分，用于验证在不同的构建配置下，`NDEBUG` 宏是否被正确设置。这对于确保 Frida 在 Release 版本中能够正常工作，并且避免包含不必要的调试信息至关重要。理解这个测试用例有助于理解 Frida 的构建过程以及逆向工程中关于 Debug 和 Release 版本的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/28 ndebug if-release/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -141,7 +143,4 @@ int main(void) {
 #endif
     return 0;
 }
-
-"""
-
 ```

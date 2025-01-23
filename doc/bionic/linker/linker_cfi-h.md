@@ -239,7 +239,7 @@ Interceptor.attach(Module.findExportByName("linker64", "_ZN15CFIShadowWriter7Cfi
 
 `bionic/linker/linker_cfi.handroid` 是 Android Bionic 库中动态链接器为了实现控制流完整性而设计的一个关键组件。它负责维护 CFI shadow 内存，记录函数指针的合法跳转目标，并在库的加载和卸载过程中更新 shadow。这对于增强 Android 平台的安全性，防御各种控制流劫持攻击至关重要。 虽然这个文件本身不实现 libc 函数，但它与动态链接过程紧密相关，影响着 `dlopen` 和 `dlclose` 等函数的行为。 通过 Frida 可以方便地 hook 相关的函数，深入了解其内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_cfi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -356,7 +358,4 @@ class CFIShadowWriter : private CFIShadow {
 };
 
 CFIShadowWriter* get_cfi_shadow();
-
-"""
-
 ```

@@ -181,7 +181,7 @@ func main() {
 
 在这个错误的示例中，如果程序因为某种原因崩溃或提前退出，`trace.Stop()` 没有被调用，那么跟踪数据可能不会被完整地写入文件。同样，如果忘记关闭文件，可能会导致数据丢失。  **正确的做法是使用 `defer` 来确保 `trace.Stop()` 和文件关闭操作一定会被执行。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/traceevent.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -364,9 +366,4 @@ func (tl traceLocker) uniqueString(s string) traceArg {
 func (tl traceLocker) rtype(typ *abi.Type) traceArg {
 	return traceArg(trace.typeTab[tl.gen%2].put(typ))
 }
-
-"""
-
-
-
 ```

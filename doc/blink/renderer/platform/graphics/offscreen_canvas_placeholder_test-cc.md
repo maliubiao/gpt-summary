@@ -182,14 +182,16 @@ This detailed breakdown illustrates a common approach to understanding unfamilia
 
 总而言之，`offscreen_canvas_placeholder_test.cc` 文件通过一系列单元测试，细致地验证了 `OffscreenCanvasPlaceholder` 这一核心组件在 Blink 渲染引擎中管理 `OffscreenCanvas` 渲染帧的行为，确保了 `OffscreenCanvas` API 功能的正确性和性能。理解这些测试有助于我们更好地理解 `OffscreenCanvas` 的工作原理以及在使用过程中可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/offscreen_canvas_placeholder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -389,7 +391,4 @@ TEST_F(OffscreenCanvasPlaceholderTest, OldFrameNotReclaimedUntilUnref) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

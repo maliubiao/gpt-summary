@@ -176,7 +176,7 @@ python mkfatmacho.py output.dylib arm64e_old.dylib arm64e_new.dylib
 
 总而言之，`mkfatmacho.py` 是一个专门为解决特定场景下的 Mach-O 文件合并问题的工具，它在 Frida 的逆向工程工作流中扮演着重要的角色，尤其是在需要处理多架构或特殊 ABI 情况时。理解其功能和涉及的底层知识，有助于更好地利用 Frida 进行逆向分析和动态插桩。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/mkfatmacho.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -240,7 +242,4 @@ if __name__ == '__main__':
     output_path = sys.argv[1]
     input_paths = sys.argv[2:]
     make_fat_macho(output_path, input_paths)
-
-"""
-
 ```

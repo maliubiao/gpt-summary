@@ -148,15 +148,17 @@ A conceptual error related to the idea of marking nodes could be:
 
 `v8/src/compiler/node-marker.h` defines a crucial utility for V8's compiler infrastructure. It enables efficient and type-safe association of temporary state information with nodes in the compiler graph, facilitating various optimization passes. While not directly exposed to JavaScript developers, its functionality underpins the performance of the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-marker.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/node-marker.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ class NodeMarker : public NodeMarkerBase {
 }  // namespace v8
 
 #endif  // V8_COMPILER_NODE_MARKER_H_
-
-"""
-
 ```

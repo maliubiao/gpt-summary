@@ -167,7 +167,7 @@ message('This is a string  # 缺少单引号
 
 总而言之，`prism-meson.min.js` 是一个幕后英雄，它通过提供 Meson 语言的语法高亮，使得开发者和逆向工程师能够更方便地阅读和理解 Meson 构建脚本，从而更好地进行软件开发、分析和调试工作。它虽然不直接参与底层操作，但它增强了用户与构建系统交互的体验，而理解构建系统对于理解和操作底层软件至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/docs/theme/extra/prism_components/prism-meson.min.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,9 +175,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 Prism.languages.meson={"triple-quoted-string":{pattern:/'''[\s\S]*?'''/,alias:"string"},comment:/#.*/,string:/'(?:\\'|[^'])*'/,number:/\b\d+(?:\.\d+)?\b/,keyword:/\b(?:if|else|elif|endif|foreach|endforeach)\b/,"function":/(?=\.|\b)[a-zA-Z_]+\s*(?=\()/,"boolean":/\b(?:true|false)\b/,builtin:/\b(?:meson|host_machine|target_machine|build_machine)(?=\.)/,operator:/(?:[<>=*+\-\/!]?=|%|\/|\*|-|\+|\b(?:or|and|not)\b)/,punctuation:/[(),[\]]/};
-"""
-
 ```

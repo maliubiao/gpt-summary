@@ -195,15 +195,17 @@ gtest-support_test.cc:AA: i = 2  // 第二次迭代的跟踪信息
 
 总而言之，`v8/testing/gtest-support.h` 提供了一组用于增强 V8 单元测试的工具，它们使得测试代码更简洁，并且在测试失败时提供更详细的调试信息，这对于确保 V8 的正确性和稳定性至关重要。虽然普通用户不会直接使用这些宏，但理解它们的功能可以帮助更好地理解 V8 的测试机制以及 V8 对 JavaScript 行为的预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gtest-support.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/testing/gtest-support.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ GET_TYPE_NAME(double)
 }  // namespace testing
 
 #endif  // V8_TESTING_GTEST_SUPPORT_H_
-
-"""
-
 ```

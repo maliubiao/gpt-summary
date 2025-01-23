@@ -183,7 +183,7 @@ Wasm 模块的 `processString` 函数可能会调用一个导入的函数，该�
 
 总而言之，`v8/src/runtime/runtime-wasm.cc` 的这部分代码是 V8 引擎中处理 WebAssembly 字符串和内存操作的关键组成部分。它定义了允许 Wasm 代码与 JavaScript 字符串进行高效交互的底层运行时函数，并包含了必要的错误检查和类型转换逻辑，以确保安全和正确的执行。它处理了从 Wasm 内存创建字符串、将 JavaScript 字符串编码到 Wasm 内存、以及进行各种字符串操作等核心任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-wasm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-wasm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -191,8 +191,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 deunits * 2, mem_size)) {
     return ThrowWasmError(isolate, MessageTemplate::kWasmTrapMemOutOfBounds);
   }
@@ -723,8 +725,4 @@ RUNTIME_FUNCTION(Runtime_WasmStringHash) {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

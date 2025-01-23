@@ -147,7 +147,7 @@ int faa_system_value (void) {
 
 总而言之，`bar.c` 文件本身是一个非常简单的 C 代码片段，但它的存在是为了测试 Frida 在处理依赖于外部库的代码时的能力。它为 Frida 的开发者提供了一个测试点，以验证 Frida 的动态 instrumentation 功能在特定场景下的正确性和稳定性。对于逆向工程师来说，理解这种测试用例的结构和目的，有助于更好地理解 Frida 的工作原理和如何使用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/39 external, internal library rpath/built library/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo_system_value (void);
 int faa_system_value (void);
 
@@ -164,7 +166,4 @@ int bar_built_value (int in)
 {
     return faa_system_value() + foo_system_value() + in;
 }
-
-"""
-
 ```

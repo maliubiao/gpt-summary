@@ -133,7 +133,7 @@ fetch('https://example.com/data')
 
 总而言之， 这部分代码是 `SSLClientSocket` 单元测试中至关重要的一部分， 它确保了在各种复杂的网络环境下， `SSLClientSocket` 能够可靠地读取数据， 并为构建安全的网络连接提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 back.GetResult(sock->Connect(callback.callback()));
   ASSERT_THAT(rv, IsOk());
   ASSERT_TRUE(sock->IsConnected());
@@ -911,8 +913,4 @@ TEST_P(SSLClientSocketVersionTest, VerifyReturnChainProperlyOrdered) {
   // We will expect SSLInfo to ultimately contain this chain.
   CertificateList certs =
       CreateCertificateListFromFile(GetTestCertsDirectory(),
-     
-"""
-
-
 ```

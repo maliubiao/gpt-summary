@@ -130,7 +130,7 @@ console.log(result);
 
 当 V8 执行这段 JavaScript 代码时，它会被编译成 ARM64 机器码。  在模拟器中运行这段代码，并在执行前输入 `trace` 命令，模拟器会打印出执行 `add` 函数时每条 ARM64 指令的反汇编、寄存器状态和内存变化。这能帮助理解 JavaScript 的加法操作是如何在底层实现的。例如，你可能会看到加载参数到寄存器、执行加法指令、将结果存储回内存等操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tF("%s unrecognized\n", arg1);
         return false;
       }
@@ -1318,7 +1320,4 @@ void Simulator::VisitNEONByIndexedElement(Instruction* instr) {
       }
 
       vf = nfd.Ge
-"""
-
-
 ```

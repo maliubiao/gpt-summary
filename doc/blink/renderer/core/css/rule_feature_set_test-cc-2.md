@@ -113,7 +113,7 @@ By following these steps, I can effectively analyze the code and generate a comp
 
 这部分主要通过大量的单元测试，详细验证了 `RuleFeatureSet` 类在处理各种复杂 CSS 选择器（尤其是涉及到 `:is()`, `:not()`, `:has()`, 和 Shadow DOM）以及 `@scope` 规则时的特征收集和比较的正确性。这些测试用例覆盖了等价性和不等价性的场景，旨在确保 Blink 引擎能够准确地识别 CSS 规则的特征，为后续的样式计算和失效流程提供可靠的基础。 此外，也测试了媒体查询相关特征的存储和比较。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_feature_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on_lists.siblings));
   }
 }
@@ -985,7 +987,4 @@ TEST_F(RuleFeatureSetTest, isPseudoContainingComplexInsideHas8) {
     InvalidationLists invalidation_lists;
     CollectInvalidationSetsForClass(invalidation_lists, "c");
     EXPECT_TRUE(HasClassInvalidation("a"
-"""
-
-
 ```

@@ -161,14 +161,16 @@ By following these steps, systematically analyzing the code and considering its 
 
 总而言之，`html_field_set_element.cc` 文件是 Blink 渲染引擎中处理 HTML `<fieldset>` 元素的核心组件，负责管理其状态、子元素、布局和与 JavaScript、CSS 的交互。理解这个文件的功能有助于开发者更好地理解 `<fieldset>` 元素在浏览器中的行为以及如何正确使用它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_field_set_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -394,7 +396,4 @@ bool HTMLFieldSetElement::MatchesEnabledPseudoClass() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

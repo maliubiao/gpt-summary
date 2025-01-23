@@ -108,7 +108,7 @@ The user wants a summary of the functionality of the `typing_command.cc` file in
 
 `typing_command.cc` 中定义的 `TypingCommand` 类是 Blink 引擎中处理用户文本输入的核心组件。它负责接收用户的输入，将其转化为对 DOM 树的修改，并管理撤销/重做以及与 Javascript 的交互。理解 `TypingCommand` 的工作原理对于调试与文本编辑相关的 Bug 非常重要。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/typing_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2007, 2008 Apple Inc.  All rights reserved.
  *
@@ -939,7 +941,4 @@ bool TypingCommand::MakeEditableRootEmpty(EditingState* editing_state) {
     const SelectionInDOMTree& new_selection =
         SelectionInDOMTree::Builder()
             .Colla
-"""
-
-
 ```

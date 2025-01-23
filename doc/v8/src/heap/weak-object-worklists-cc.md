@@ -234,15 +234,17 @@ if (dereferenced) {
 
 `v8/src/heap/weak-object-worklists.cc` 是 V8 引擎中负责管理和更新弱引用的核心组件。它维护着多种类型的弱引用工作列表，并在垃圾回收过程中使用这些列表来确保弱引用能够正确地反映对象的状态。理解这个文件的功能对于深入了解 V8 的内存管理和垃圾回收机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/weak-object-worklists.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/weak-object-worklists.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -487,7 +489,4 @@ bool WeakObjects::ContainsYoungObjects(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

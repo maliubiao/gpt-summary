@@ -142,7 +142,7 @@ types.Func {
 
 `go/src/go/internal/gcimporter/ureader.go` 是 Go 编译器中一个至关重要的组件，它负责将已编译包的元数据从高效的二进制格式加载到编译器可以理解的 `go/types` 数据结构中。这使得 Go 编译器能够高效地处理 `import` 语句，并进行跨包的类型检查和代码生成。 它涉及到对 Unified IR 格式的解析、`go/types` 包的使用，以及对泛型等复杂语言特性的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/internal/gcimporter/ureader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -841,9 +843,4 @@ func newAliasTypeName(pos token.Pos, pkg *types.Package, name string, rhs types.
 	assert(len(tparams) == 0)
 	return types.NewTypeName(pos, pkg, name, rhs)
 }
-
-"""
-
-
-
 ```

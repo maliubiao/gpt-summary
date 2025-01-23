@@ -166,7 +166,7 @@ int main(void)
 
 `nothing.c` 作为一个极其简单的 C 程序，其主要功能是作为 Frida 项目的基础测试用例。它验证了 Frida 在最简环境下的基本功能，有助于确保 Frida 的健壮性和正确性。 虽然它本身不执行任何逆向操作或涉及复杂的底层知识，但它的存在和作用是 Frida 作为一个强大的动态 instrumentation 工具的基础。 当 Frida 的行为出现异常时，查看像 `nothing.c` 这样的基本测试用例可以帮助开发者定位问题，排除复杂因素的干扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/196 subproject with features/nothing.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,13 +174,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void)
 {
     return 0;
 }
-
-"""
-
 ```

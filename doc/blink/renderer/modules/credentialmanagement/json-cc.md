@@ -218,15 +218,17 @@ navigator.credentials.create(options);
 
 总而言之，`blink/renderer/modules/credentialmanagement/json.cc` 是 Blink 渲染引擎中处理 WebAuthn API 数据转换的关键组件，它确保了 JavaScript 和 C++ 代码之间能够正确地交换结构化的 credential 相关信息。理解它的功能对于调试 WebAuthn 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/json.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/modules/credentialmanagement/json.h"
 
 #include "base/containers/span.h"
@@ -647,7 +649,4 @@ PublicKeyCredentialRequestOptions* PublicKeyCredentialRequestOptionsFromJSON(
 }
 
 }  // namespace blink
-
-"""
-
 ```

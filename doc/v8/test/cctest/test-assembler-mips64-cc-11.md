@@ -255,7 +255,7 @@ By following this systematic approach, analyzing the code snippets for key patte
   V(hadd_u_w, HADD_DF, uint32_t, uint16_t, kMSALanesWord)         \
   V(hadd_u_d, HADD_DF, uint64_t, uint32_t, kMSALanesDword)        \
   V(hsub_s_h, HSUB_DF, int16
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -263,9 +263,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第12部分，共13部分，请归纳一下它的功能
+```
 
-"""
- uint64_t, kMSALanesDword, UINT64_MAX)          \
+### 源代码
+```cpp
+uint64_t, kMSALanesDword, UINT64_MAX)          \
   V(bclr_b, BCRL_DF, uint8_t, kMSALanesByte, UINT8_MAX)           \
   V(bclr_h, BCRL_DF, uint16_t, kMSALanesHalf, UINT16_MAX)         \
   V(bclr_w, BCRL_DF, uint32_t, kMSALanesWord, UINT32_MAX)         \
@@ -939,7 +941,4 @@ TEST(MSA_fmin_fmin_a_fmax_fmax_a) {
     TEST_FP_MIN_MAX_W(fmax_w, &tc_w[i], &exp_res_fmax_w[i])
     TEST_FP_MIN_MAX_W(fmax_a_w, &tc_w[i], &exp_res_fmax_a_w[i])
     TEST_FP_MIN_MAX_W(fmin_w, &tc_w[
-"""
-
-
 ```

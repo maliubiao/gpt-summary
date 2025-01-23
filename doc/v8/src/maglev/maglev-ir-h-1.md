@@ -162,7 +162,7 @@ if (MyOperationProperties().can_throw()) {
 
 这段代码定义了 Maglev IR 的核心组件，用于表示程序的基本结构、操作的属性以及反优化所需的信息。 它与 JavaScript 的执行紧密相关，特别是通过反优化机制来保证在优化假设失效时程序的正确性。 理解这些数据结构和类的功能对于理解 Maglev 编译器的内部工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.h以.tq结尾，那它是个v8 torque源代码，
@@ -170,9 +170,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共12部分，请归纳一下它的功能
+```
 
-"""
- BasicBlock pointers.
+### 源代码
+```c
+BasicBlock pointers.
 class BasicBlockRef {
   struct BasicBlockRefBuilder;
 
@@ -1085,8 +1087,5 @@ class NodeBase : public ZoneObject {
     return node;
   }
 
-  // Inputs must be initialized 
-"""
-
-
+  // Inputs must be initialized
 ```

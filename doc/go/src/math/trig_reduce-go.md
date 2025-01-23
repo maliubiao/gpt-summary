@@ -186,7 +186,7 @@ Go 标准库的 sin(1e+16) 结果: 0.899642
 
 总而言之，`go/src/math/trig_reduce.go` 中实现的 `trigReduce` 函数是 Go 语言 `math` 包中处理大角度三角函数计算的关键组件，它通过 Payne-Hanek 范围归约算法将大角度缩小到易于计算的范围内，并返回用于后续计算的整数部分和有效的小数部分。 理解其输出的含义和正确使用方式对于开发者至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/trig_reduce.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -298,9 +300,4 @@ var mPi4 = [...]uint64{
 	0xd7f6bf623f1aba10,
 	0xac06608df8f6d757,
 }
-
-"""
-
-
-
 ```

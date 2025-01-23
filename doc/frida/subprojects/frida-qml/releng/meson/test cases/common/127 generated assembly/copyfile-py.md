@@ -96,7 +96,7 @@ By following these steps, we can thoroughly analyze the seemingly simple Python 
 
 尽管 `copyfile.py` 本身非常简单，但它在 Frida 项目的特定上下文中扮演着重要的角色，特别是在处理生成的汇编代码方面。它为逆向工程师提供了一种便捷的方式来管理和分析这些底层的代码表示，并且是自动化测试和构建流程的组成部分。了解这个脚本的功能可以帮助理解 Frida 项目中与代码生成和分析相关的步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/127 generated assembly/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,15 +104,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import shutil
 
 shutil.copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

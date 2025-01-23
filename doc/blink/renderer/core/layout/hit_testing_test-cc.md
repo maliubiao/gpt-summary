@@ -139,14 +139,16 @@ By following these steps, I can generate a comprehensive answer that addresses a
 
 总而言之，`hit_testing_test.cc` 文件通过各种测试用例，确保 Blink 引擎的命中测试功能能够正确地处理各种布局和样式情况，这对于网页的交互性和事件处理至关重要。 这些测试覆盖了开发者在实际开发中可能遇到的各种场景，帮助保证浏览器行为的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/hit_testing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ line9</div>
 }
 
 }  // namespace blink
-
-"""
-
 ```

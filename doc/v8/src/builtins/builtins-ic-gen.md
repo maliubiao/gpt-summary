@@ -146,11 +146,13 @@ typeof someUndeclaredVariable; // 使用 typeof (可能涉及 LoadGlobalICInside
 
 `builtins-ic-gen.cc` 文件是 V8 引擎中至关重要的组成部分，它负责生成用于优化 JavaScript 属性访问的核心内建函数。通过针对不同的访问模式和场景生成特定的 IC 代码，V8 能够显著提高 JavaScript 代码的执行效率。`AccessorAssembler` 类是用于生成这些底层汇编代码的关键工具。 这些生成的内建函数直接服务于我们日常编写的 JavaScript 代码，使得属性访问等操作更加快速。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-ic-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -501,7 +503,4 @@ void Builtins::Generate_LookupScriptContextInsideTypeofBaseline(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

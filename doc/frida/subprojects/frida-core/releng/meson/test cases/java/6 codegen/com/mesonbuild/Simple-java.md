@@ -192,7 +192,7 @@ By following these steps, we can arrive at a comprehensive and accurate analysis
 
 总而言之，`Simple.java` 是一个用于演示基本 Java 代码行为和 Frida 动态插桩能力的简单示例，它涉及到条件执行、对象创建和方法调用等基本概念，并且可以作为逆向工程和动态分析的入门级目标。用户到达这里通常是因为他们在使用 Frida 对 Java 应用进行分析和调试，或者在研究 Frida 项目本身。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/java/6 codegen/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 import com.mesonbuild.Config;
@@ -214,7 +216,4 @@ class Simple {
         }
     }
 }
-
-"""
-
 ```

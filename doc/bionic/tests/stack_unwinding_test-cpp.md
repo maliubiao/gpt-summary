@@ -363,7 +363,7 @@ except Exception as e:
 7. **打印信息:** 将拦截到的信息打印到控制台。
 
 运行这个 Frida 脚本后，当你的应用执行到 `_Unwind_Backtrace` 时，你将在 Frida 的控制台中看到相关的调用信息，包括 `FrameCounter` 的调用和每个栈帧的 IP 地址及其对应的符号。这可以
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stack_unwinding_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -374,8 +374,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -515,7 +517,4 @@ TEST(stack_unwinding, unwind_through_signal_frame_SA_SIGINFO) {
 
   SignalUnwindTest();
 }
-
-"""
-
 ```

@@ -178,15 +178,17 @@ console.log(sum); // 输出: [6, 8, 10, 12]
 
 这些测试用例帮助 V8 开发者确保其代码生成器不会产生上述错误，并且能够正确有效地利用 ARM 架构的 SIMD 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -524,7 +526,4 @@ TEST(DeoptExitSizeIsFixed) {
 }  // namespace test_macro_assembler_arm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

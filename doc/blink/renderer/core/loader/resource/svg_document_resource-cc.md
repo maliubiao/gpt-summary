@@ -171,15 +171,17 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`svg_document_resource.cc` 是 Blink 引擎中处理 SVG 文档的核心模块，它负责从网络加载 SVG 资源，验证其类型，解析其内容，并在加载或解析过程中发生错误时进行处理，最终将 SVG 数据提供给渲染引擎进行显示。它与 HTML, CSS 和 JavaScript 的交互都围绕着加载和使用 SVG 资源这一核心功能展开。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource/svg_document_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ void SVGDocumentResource::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

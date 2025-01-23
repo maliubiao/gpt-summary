@@ -128,7 +128,7 @@ func dummyFunc() {
 
 这段 `goarch_loong64.go` 文件定义了 Go 运行时在 LoongArch 64 位架构上运行所需的关键底层参数。这些参数影响着内存管理、调度、栈管理等核心功能。虽然普通 Go 开发者不需要直接操作它们，但理解它们背后的概念有助于更深入地理解 Go 运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goarch/goarch_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -153,9 +155,4 @@ const (
 	_MinFrameSize        = 8
 	_StackAlign          = PtrSize
 )
-
-"""
-
-
-
 ```

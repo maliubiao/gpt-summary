@@ -128,14 +128,16 @@ By following these steps, including the iterative refinement, you can generate a
 
 总而言之，`layer_tree_settings.cc` 是 Blink 渲染引擎中合成器的核心配置中心。它通过 Feature Flags、命令行参数和平台特性来灵活地控制合成器的行为，从而直接影响网页的渲染性能和用户体验，并与 Javascript, HTML, CSS 的功能紧密相关。 开发者理解这些设置对于优化网页性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/layer_tree_settings.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -742,7 +744,4 @@ cc::LayerTreeSettings GenerateLayerTreeSettings(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -180,7 +180,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言 `crypto/sha3` 包中为了提高 AMD64 架构下 SHA-3 哈希计算性能而做的底层优化。它通过实现核心的 Keccak-f[1600] 置换函数，并覆盖 `Digest` 结构体的方法，使得上层可以使用优化的汇编代码进行哈希计算。用户在使用 `crypto/sha3` 包时需要注意正确初始化 `Hash` 对象，理解 `Sum` 方法的行为，避免重复使用同一个 `Hash` 对象计算不同数据的哈希值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha3/sha3_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -210,9 +212,4 @@ func (d *Digest) read(out []byte) (n int, err error) {
 func (d *Digest) sum(b []byte) []byte {
 	return d.sumGeneric(b)
 }
-
-"""
-
-
-
 ```

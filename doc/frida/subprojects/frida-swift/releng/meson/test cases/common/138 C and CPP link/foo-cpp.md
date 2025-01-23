@@ -135,7 +135,7 @@ frida -l hook_six_one.js com.example.targetapp
 
 通过这样的步骤，逆向工程师可以利用 Frida 强大的动态分析能力，深入了解目标程序的内部工作原理，即使是在涉及 C 和 C++ 混合编程的情况下。 这段 `foo.cpp` 代码作为一个简单的测试用例，帮助验证 Frida 在处理 C/C++ 链接方面的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/138 C and CPP link/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -179,7 +181,4 @@ namespace {
 extern "C" int six_one(void) {
     return numbers[get_number_index ()];
 }
-
-"""
-
 ```

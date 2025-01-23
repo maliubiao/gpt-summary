@@ -169,15 +169,17 @@ MyStruct alignment: 8 // 或者 4，取决于字段的对齐方式和顺序
 
 总而言之，`go/test/typeparam/issue53390.go` 中的这段代码片段展示了如何使用泛型和 `unsafe.Alignof` 来获取 Go 语言中任意类型的对齐值。它通过一种略微复杂的方式来绕过 `unsafe.Alignof` 只能接收值的限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue53390.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // compile
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -198,9 +200,4 @@ func F[T any](v T) uintptr {
 func f() {
 	F(0)
 }
-
-"""
-
-
-
 ```

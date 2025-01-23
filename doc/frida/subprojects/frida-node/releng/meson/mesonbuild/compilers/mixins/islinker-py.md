@@ -133,7 +133,7 @@ Initially, I might focus too much on the specific details of each linker flag. H
 
 总而言之，`islinker.py` 这个文件在 Frida 的构建系统中扮演着一个关键的角色，它定义了一种处理特殊类型编译器的方式，并为理解这些编译器的链接能力提供了基础。对于逆向工程师来说，理解这种机制可以帮助他们更好地理解由这些编译器构建的目标文件的特性和局限性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/mixins/islinker.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -263,7 +265,4 @@ class BasicLinkerIsCompilerMixin(Compiler):
 
     def thread_link_flags(self, env: 'Environment') -> T.List[str]:
         return []
-
-"""
-
 ```

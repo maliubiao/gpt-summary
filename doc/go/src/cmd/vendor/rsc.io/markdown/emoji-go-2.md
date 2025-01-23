@@ -101,7 +101,7 @@ Emoji 'nonexistent_emoji' not found.
 
 总而言之，`go/src/cmd/vendor/rsc.io/markdown/emoji.go` 文件的第三部分定义了一个 Go 语言的 `map` 常量 `emojiMap`，**它的核心功能是提供了一个 emoji 名称（短代码）到实际 Unicode emoji 字符的映射关系**，为程序中处理和渲染 emoji 提供了基础数据。  它是构建 emoji 处理功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/emoji.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -110,9 +110,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                      "\U0001f4f0",
+### 源代码
+```go
+"\U0001f4f0",
 	"newspaper_roll":                       "\U0001f5de\ufe0f",
 	"next_track_button":                    "\u23ed\ufe0f",
 	"ng":                                   "\U0001f196",
@@ -673,10 +675,5 @@ Prompt:
 	"top":                                  "\U0001f51d",
 	"tophat":                               "\U0001f3a9",
 	"tornado":                              "\U0001f32a\ufe0f",
-	"tr":                   
-"""
-
-
-
-
+	"tr":
 ```

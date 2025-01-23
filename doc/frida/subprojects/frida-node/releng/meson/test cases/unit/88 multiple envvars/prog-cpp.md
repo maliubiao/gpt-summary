@@ -162,7 +162,7 @@ g++ -DCPPFLAG -DCXXFLAG prog.cpp -o prog
 
 总而言之，虽然 `prog.cpp` 代码本身很简单，但它在 Frida 的构建和测试框架中扮演着验证构建环境是否正确的角色，尤其是在处理环境变量方面。理解其功能以及它在构建过程中的位置有助于调试相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/88 multiple envvars/prog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 #ifndef CPPFLAG
@@ -190,7 +192,4 @@ int main(int argc, char **argv) {
     printf("%d %s\n", argc, argv[0]);
     return 0;
 }
-
-"""
-
 ```

@@ -152,15 +152,17 @@ Hello from one.F()
 
 `two.go` 这段代码的核心功能是演示和测试 Go 语言中跨包的函数内联以及由此带来的类型检查。 它通过在一个包 (`two`) 中调用另一个包 (`one`) 中定义的类型和方法来实现这一目的。  理解这段代码需要对 Go 的包机制和编译器优化有所了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug407.dir/two.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -176,9 +178,4 @@ func use() {
 	var r one.T
 	r.F()
 }
-
-"""
-
-
-
 ```

@@ -309,7 +309,7 @@ soinfo_alloc returned: [object Object]
 
 这个例子展示了如何使用 Frida 拦截 `linker_main.cpp` 中的关键函数调用，帮助你理解动态链接器的行为和调试相关问题。 你可以根据需要 hook 其他函数，例如 `link_image`, `find_library`, `relocate_linker` 等，以更深入地了解链接过程的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_main.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -1159,7 +1161,4 @@ __linker_init_post_relocation(KernelArgumentBlock& args, soinfo& tmp_linker_so) 
   // Return the address that the calling assembly stub should jump to.
   return start_address;
 }
-
-"""
-
 ```

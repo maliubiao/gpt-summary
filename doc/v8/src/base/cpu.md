@@ -92,11 +92,13 @@ for (let i = 0; i < a.length; i++) {
 
 `cpu.cc` 文件是 V8 引擎智能感知底层硬件的关键。通过检测 CPU 的特性，V8 能够做出更明智的编译和优化决策，最终提升 JavaScript 代码的执行性能，使其在各种不同的硬件平台上都能高效运行。 这对于提供流畅的网络应用体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/cpu.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1110,7 +1112,4 @@ CPU::CPU()
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

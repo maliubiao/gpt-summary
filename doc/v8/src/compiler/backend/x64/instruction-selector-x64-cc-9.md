@@ -154,7 +154,7 @@ void InstructionSelectorT<Adapter>::VisitI32x4Xor(node_t node) {
 
 作为编译器代码生成流程的最后阶段之一，`v8/src/compiler/backend/x64/instruction-selector-x64.cc` 的核心功能是将高级的、与架构无关的中间表示 (IR) 转换为底层的、特定于 x64 架构的机器指令。它充当了编译器理解的语言和 CPU 硬件之间的桥梁。这个文件特别关注于利用 x64 架构提供的各种指令集扩展 (尤其是 SIMD 指令集)，以最大程度地优化 JavaScript 和 WebAssembly 代码的执行效率。它需要根据目标 CPU 的能力选择最佳的指令序列，并处理各种数据类型和操作，确保生成的代码既正确又高效。因此，它是 V8 引擎实现高性能的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,10 +162,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共10部分，请归纳一下它的功能
+```
 
-"""
-
-  X64OperandGeneratorT<Adapter> g(this);
+### 源代码
+```cpp
+X64OperandGeneratorT<Adapter> g(this);
   DCHECK_EQ(this->value_input_count(node), 1);
   InstructionOperand dst = CpuFeatures::IsSupported(AVX)
                                ? g.DefineAsRegister(node)
@@ -569,8 +570,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

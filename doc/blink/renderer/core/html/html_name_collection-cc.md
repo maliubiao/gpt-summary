@@ -213,14 +213,16 @@ This systematic approach, combining code analysis, domain knowledge of web techn
 
 理解 `HTMLNameCollection` 的功能和它与 Web 技术的关系对于理解 Blink 引擎如何处理 HTML 元素查找以及 JavaScript 如何与 DOM 交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_name_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -261,7 +263,4 @@ HTMLNameCollection::~HTMLNameCollection() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -155,15 +155,17 @@ Instruction 2:  return v2       // 返回 v2 的值
 
 总之，`v8/src/compiler/backend/register-allocator-verifier.h` 中定义的 `RegisterAllocatorVerifier` 是 V8 编译器中一个重要的组成部分，它通过细致的检查来保证寄存器分配过程的正确性，从而确保生成的机器码能够正确高效地执行 JavaScript 代码。它不是直接供 JavaScript 开发者使用的 API，而是在 V8 引擎内部发挥着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator-verifier.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator-verifier.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -476,7 +478,4 @@ class RegisterAllocatorVerifier final : public ZoneObject {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_REGISTER_ALLOCATOR_VERIFIER_H_
-
-"""
-
 ```

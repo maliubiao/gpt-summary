@@ -348,7 +348,7 @@ sys.stdin.read()
 
 通过分析 Frida 的输出，你可以了解 Android Framework 或 NDK 层是如何构造和传递 OSD 命令的，从而帮助你调试 OSD 相关的问题。需要注意的是，`OSD_SEND_CMD` 的具体数值需要根据你的系统和内核头文件进行确认。你可以通过查看 `/usr/include/linux/dvb/osd.h` 或类似的路径找到确切的值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dvb/osd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -359,8 +359,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -433,7 +435,4 @@ typedef struct osd_cap_s {
 #define OSD_SEND_CMD _IOW('o', 160, osd_cmd_t)
 #define OSD_GET_CAPABILITY _IOR('o', 161, osd_cap_t)
 #endif
-
-"""
-
 ```

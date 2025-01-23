@@ -266,15 +266,17 @@ By following this structured approach of skimming, identifying relationships, de
 
 总而言之，这部分代码专注于测试 CSS 动画和过渡的核心行为，尤其是在硬件加速 (compositor) 场景下的正确性，以及与 CSS 属性和 HTML 结构的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1118,9 +1120,4 @@ INSTANTIATE_PAINT_TEST_SUITE_P(CSSAnimationsCompositorSyncTest);
 TEST_P(CSSAnimationsCompositorSyncTest, UpdatePlaybackRate) {
   Animation* animation = GetAnimation();
   int compositor_group = animation->CompositorGroup();
-
-  
-"""
-
-
 ```

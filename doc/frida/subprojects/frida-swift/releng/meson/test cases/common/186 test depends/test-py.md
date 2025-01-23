@@ -156,7 +156,7 @@ By following this detailed thinking process, which involves understanding the co
 
 这个简单的 Python 脚本在 Frida 的开发和测试流程中扮演着一个小但重要的角色，用于确保必要的依赖项存在。虽然它本身不涉及复杂的逆向技术，但它的存在是为了支持 Frida 这样一个强大的动态 instrumentation 工具，而 Frida 的应用领域与逆向工程、安全分析等紧密相关。 理解这个脚本的功能以及它在整个项目中的位置，有助于理解 Frida 的构建和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/186 test depends/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -186,7 +188,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

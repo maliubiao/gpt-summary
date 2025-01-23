@@ -134,7 +134,7 @@ console.log($0); // 输出: 你检查的那个 div 元素
   console.log($0 === myButton); // 这可能为 false，因为 $0 指的是你在 Inspector 中检查的元素，而不是代码中的 myButton 变量
   ```
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-console.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-console.cc以.tq结尾，那它是个v8 torque源代码，
@@ -142,8 +142,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ionImpl::kInspectedObjectBufferSize, num);
   v8::debug::ConsoleCallArguments args(info);
   ConsoleHelper helper(args, v8::debug::ConsoleContext(), m_inspector);
@@ -403,8 +405,4 @@ V8Console::CommandLineAPIScope::~CommandLineAPIScope() {
 }
 
 }  // namespace v8_inspector
-
-"""
-
-
 ```

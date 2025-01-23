@@ -103,14 +103,16 @@ This detailed breakdown shows the systematic approach to understanding and expla
 
 `html_entity_parser_test.cc` 文件是 Blink 引擎中用于测试 HTML 实体解析器核心功能的单元测试文件。它通过测试 `ConsumeHTMLEntity` 函数处理不完整 HTML 实体的能力，确保了浏览器在解析 HTML 内容时能够正确地将实体转换为对应的字符，这对于正确渲染网页内容和执行 JavaScript 代码至关重要。 理解 HTML 实体的规则和潜在的错误用法，有助于开发者编写更健壮和安全的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_entity_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -139,7 +141,4 @@ TEST(HTMLEntityParserTest, ConsumeHTMLEntityIncomplete) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

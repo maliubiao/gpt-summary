@@ -105,11 +105,13 @@ for (let i = 0; i < 100000; i++) {
 
 `v8/src/heap/scavenger.cc` 文件定义了 V8 引擎中负责高效回收新生代垃圾的关键组件。它的工作对 JavaScript 程序员来说是无感的，但它是实现 JavaScript 自动内存管理和保证程序运行效率的重要基石。通过复制、晋升、并行处理和弱引用处理等技术，Scavenger 能够有效地管理新生代内存，并与老年代垃圾回收器协同工作，确保整个 JavaScript 堆的健康运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/scavenger.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1144,7 +1146,4 @@ ScavengeVisitor::ScavengeVisitor(Scavenger* scavenger)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

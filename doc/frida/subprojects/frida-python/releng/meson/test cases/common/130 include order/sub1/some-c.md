@@ -145,7 +145,7 @@ By following this structured thinking process, even a simple piece of code can b
 
 总而言之，`frida/subprojects/frida-python/releng/meson/test cases/common/130 include order/sub1/some.c` 这个简单的 C 源代码文件，虽然功能单一，但在 Frida 的测试框架中扮演着验证基础功能（例如函数导出和 Hook）的角色。对于 Frida 的开发者和用户来说，理解这类简单的测试用例是理解 Frida 工作原理和排查问题的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/130 include order/sub1/some.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,15 +153,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   __declspec(dllexport)
 #endif
 int somefunc(void) {
   return 1984;
 }
-
-"""
-
 ```

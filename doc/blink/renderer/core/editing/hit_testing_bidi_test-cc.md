@@ -66,7 +66,7 @@ Based on this analysis, I can now formulate the response.
 
 这部分代码的主要功能是 **针对各种简单的双向文本布局场景，测试 `Document::caretRangeFromPoint` 方法在 LTR (从左到右) 和 RTL (从右到左) 容器中进行命中测试时的光标定位是否正确。**  它包含了多个独立的测试用例，每个用例都设置了特定的 HTML 结构（包含 `<bdo>` 元素来模拟不同的文本方向）和点击坐标，并验证了在这些坐标下，光标是否被正确地放置在预期的位置。 这些测试用例是记录行为的，可能不一定反映最终期望的行为，但它们是理解 Blink 引擎如何处理双向文本命中测试的重要基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/hit_testing_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -74,8 +74,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -884,8 +886,5 @@ TEST_F(HitTestingBidiTest,
   // Visual:  F E D|a b c I H G
   // Bidi:    1 1 1 2 2 2 1 1 1
   LoadAhem();
-  InsertStyleElement("div {font: 
-"""
-
-
+  InsertStyleElement("div {font:
 ```

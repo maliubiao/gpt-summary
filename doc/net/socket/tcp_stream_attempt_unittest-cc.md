@@ -177,15 +177,17 @@ fetch('https://example.com');
 
 总而言之，`tcp_stream_attempt_unittest.cc` 这个文件本身并不直接与用户的日常操作交互。它是 Chromium 开发者用来保证 `TcpStreamAttempt` 类正确性的工具。当用户在浏览器中进行网络操作时，底层的 `TcpStreamAttempt` 类可能会被调用，而这个单元测试的存在保证了该类在各种情况下都能正常工作。 开发者可以通过网络日志等工具观察到 `TcpStreamAttempt` 的行为痕迹。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tcp_stream_attempt_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -440,7 +442,4 @@ TEST_F(TcpStreamAttemptTest, SocketPerformanceWatcher) {
 }
 
 }  // namespace net
-
-"""
-
 ```

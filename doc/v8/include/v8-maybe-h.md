@@ -294,15 +294,17 @@ int main() {
 
 总之，`v8/include/v8-maybe.h` 中定义的 `Maybe` 类型是 V8 C++ API 中处理可能失败操作的一种优雅方式，它鼓励开发者显式地处理值可能不存在的情况，从而提高代码的健壮性。理解其使用方法和潜在的陷阱对于编写可靠的 V8 扩展或集成代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-maybe.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-maybe.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -463,7 +465,4 @@ inline Maybe<void> JustVoid() { return Maybe<void>(Maybe<void>::JustTag()); }
 }  // namespace v8
 
 #endif  // INCLUDE_V8_MAYBE_H_
-
-"""
-
 ```

@@ -160,7 +160,7 @@ func main() {
 
 总结来说，`go/src/runtime/signal_darwin.go` 中定义的 `sigtable` 是 Go 语言处理操作系统信号的关键部分，它定义了各种信号的默认行为，并为 `os/signal` 包提供了基础，使得 Go 程序能够优雅地响应操作系统事件。理解这个机制对于编写健壮和可靠的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -210,9 +212,4 @@ var sigtable = [...]sigTabT{
 	/* 30 */ {_SigNotify, "SIGUSR1: user-defined signal 1"},
 	/* 31 */ {_SigNotify, "SIGUSR2: user-defined signal 2"},
 }
-
-"""
-
-
-
 ```

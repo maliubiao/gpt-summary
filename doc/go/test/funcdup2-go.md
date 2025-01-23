@@ -127,15 +127,17 @@ func processData(input string) (output string, err error) {
 
 虽然现代编辑器和 IDE 通常会高亮显示重复的命名，但了解这个规则仍然有助于避免潜在的错误。`funcdup2.go` 这样的测试文件确保了 Go 编译器能够有效地捕获这类错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/funcdup2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -153,9 +155,4 @@ var T interface {
 var T1 func(i, i int) // ERROR "duplicate argument i|redefinition|previous|redeclared"
 var T2 func(i int) (i int) // ERROR "duplicate argument i|redefinition|previous|redeclared"
 var T3 func() (i, i int) // ERROR "duplicate argument i|redefinition|previous|redeclared"
-
-"""
-
-
-
 ```

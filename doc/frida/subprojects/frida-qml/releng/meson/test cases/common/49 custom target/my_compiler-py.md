@@ -138,7 +138,7 @@ Here's a thinking process to arrive at the analysis of the `my_compiler.py` scri
 
 总而言之，`my_compiler.py` 是 Frida 测试套件中一个用于验证自定义构建目标功能的简单脚本。它模拟了一个编译过程，但实际上只进行了一些基本的输入验证和固定的输出写入操作。理解其功能有助于理解 Frida 的构建流程以及如何使用 Meson 构建系统定义自定义的构建步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/49 custom target/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -170,7 +172,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(args[2].split('=')[1], 'w') as ofile:
         ofile.write('This is a binary output file.\n')
-
-"""
-
 ```

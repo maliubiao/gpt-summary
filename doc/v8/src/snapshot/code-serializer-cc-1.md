@@ -160,7 +160,7 @@ myModuleAgain.someFunction();
 
 总而言之，`v8/src/snapshot/code-serializer.cc` 的代码是 V8 引擎为了提高 JavaScript 执行效率而实现代码缓存的关键组成部分。它通过序列化和反序列化编译后的代码，并进行严格的完整性检查，来优化代码的加载速度，但同时也需要开发者了解其工作原理，以避免因缓存失效而导致的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/code-serializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/code-serializer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,8 +168,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Ownership();
   owns_data_ = false;
   data_ = nullptr;
@@ -248,8 +250,4 @@ SerializedCodeData SerializedCodeData::FromPartiallySanityCheckedCachedData(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

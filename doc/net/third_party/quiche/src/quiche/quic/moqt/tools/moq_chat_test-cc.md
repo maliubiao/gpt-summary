@@ -150,15 +150,17 @@ if (username) {
 
 总之，`moq_chat_test.cc` 是确保 MOQT 聊天功能中关键字符串处理逻辑正确性的重要组成部分，它直接影响到客户端和服务器之间如何识别和路由媒体流和控制信息。理解这个测试文件可以帮助开发者更好地理解 MOQT 的工作原理，并有效地调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/tools/moq_chat_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ TEST_F(MoqChatStringsTest, GetCatalogName) {
 
 }  // namespace
 }  // namespace moqt
-
-"""
-
 ```

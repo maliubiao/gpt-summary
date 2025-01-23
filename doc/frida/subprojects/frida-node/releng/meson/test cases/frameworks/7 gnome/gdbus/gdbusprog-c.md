@@ -132,7 +132,7 @@ Interceptor.attach(Module.findExportByName(null, 'sample_com_example_call_do_som
 
 `gdbusprog.c` 是 Frida 中一个用于测试 GDBus hook 功能的简单测试程序。它创建了一个基本的 GDBus 服务端骨架，为 Frida 提供了可以 hook 的目标。理解这个程序的功能和相关技术，可以帮助逆向工程师更好地利用 Frida 来分析基于 GDBus 的应用程序的通信行为，并排查相关问题。开发者可能会在调试 Frida 自身的功能或者分析使用 GDBus 的应用程序时接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/7 gnome/gdbus/gdbusprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"generated-gdbus.h"
 
 int main(int argc, char **argv) {
@@ -150,7 +152,4 @@ int main(int argc, char **argv) {
     g_object_unref(s);
     return 0;
 }
-
-"""
-
 ```

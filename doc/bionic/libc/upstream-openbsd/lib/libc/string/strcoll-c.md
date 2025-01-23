@@ -302,7 +302,7 @@ Java.perform(function() {
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/upstream-openbsd/lib/libc/string/strcoll.c` 文件的功能、与 Android 的关系以及如何进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/string/strcoll.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: strcoll.c,v 1.6 2015/08/31 02:53:57 guenther Exp $ */
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
@@ -360,7 +362,4 @@ strcoll(const char *s1, const char *s2)
 	return (strcmp(s1, s2));
 }
 DEF_STRONG(strcoll);
-
-"""
-
 ```

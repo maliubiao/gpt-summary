@@ -142,7 +142,7 @@ func main() {
 
 在标准的 Go 中，访问不存在的键会返回零值，但这并不总是清晰地表明键不存在。因此，使用 comma ok 惯用法 (`value, ok := m[key]`) 是更安全和推荐的做法，可以显式地检查键是否存在。这段代码的存在（以及其在特定构建条件下的行为）暗示了 Go 语言在 `map` 的实现上可能进行过不同的尝试和优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/maps/runtime_noswiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -169,9 +171,4 @@ import (
 func mapKeyError(typ *abi.SwissMapType, p unsafe.Pointer) error {
 	return nil
 }
-
-"""
-
-
-
 ```

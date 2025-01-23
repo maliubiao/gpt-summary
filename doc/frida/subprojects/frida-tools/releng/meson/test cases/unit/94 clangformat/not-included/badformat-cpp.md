@@ -107,7 +107,7 @@ class {
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/test cases/unit/94 clangformat/not-included/badformat.cpp` 文件本身的功能是作为一个简单的反例，用于测试 Frida 构建系统中代码格式化工具的配置是否正确，确保那些被明确排除在格式化之外的文件不会被 ClangFormat 影响。虽然它不直接涉及逆向方法或底层系统知识，但它保证了 Frida 代码库的质量，间接地支持了 Frida 作为逆向工具的可靠性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/94 clangformat/not-included/badformat.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,11 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 class {
 };
-
-"""
-
 ```

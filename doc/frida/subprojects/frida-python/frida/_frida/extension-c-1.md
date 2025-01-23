@@ -137,7 +137,7 @@ This section of the `extension.c` file defines the Python interface for several 
 
 这段代码片段的核心功能是 **定义了 Frida Python 绑定的接口，将 Frida C 库中的各种功能以 Python 对象和方法的形式暴露给 Python 开发者使用**。 它详细描述了 `PortalService`, `Compiler`, `FileMonitor`, `IOStream`, 和 `Cancellable` 等关键 Frida 对象的 Python 接口，包括它们可以执行的操作和可以访问的属性。  这是 Frida Python 绑定实现的关键部分，使得 Python 程序员能够方便地利用 Frida 的强大功能进行动态 instrumentation 和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/frida/_frida/extension.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ) PyPortalService_start, METH_NOARGS, "Start listening for incoming connections." },
   { "stop", (PyCFunction) PyPortalService_stop, METH_NOARGS, "Stop listening for incoming connections, and kick any connected clients." },
   { "kick", (PyCFunction) PyPortalService_kick, METH_VARARGS, "Kick out a specific connection." },
@@ -1408,8 +1410,4 @@ PyGObject_marshal_socket_address (GSocketAddress * address)
         break;
       }
       default:
-  
-"""
-
-
 ```

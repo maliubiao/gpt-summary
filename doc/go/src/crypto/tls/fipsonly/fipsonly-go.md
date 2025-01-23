@@ -200,7 +200,7 @@ GOEXPERIMENT=boringcrypto go build main.go
 
 总而言之，`crypto/tls/fipsonly` 包是一个通过导入产生副作用的 Go 包，它在 `boringcrypto` 构建环境下，通过修改内部 TLS 和签名相关的配置，强制程序中的所有 TLS 连接都遵循 FIPS 140 标准。 使用者需要特别注意编译时的 `GOEXPERIMENT` 设置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/fipsonly/fipsonly.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -239,9 +241,4 @@ func init() {
 	fips140tls.Force()
 	sig.FIPSOnly()
 }
-
-"""
-
-
-
 ```

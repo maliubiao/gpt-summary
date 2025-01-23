@@ -162,15 +162,17 @@ console.log(x, y); // 输出 20, 10
 
 虽然这些编程模式本身不一定是“错误”，但在性能关键的代码中，了解编译器在底层如何处理这些操作，可以帮助开发者编写更高效的代码。`GapResolver` 的工作就是尽可能高效地处理这些底层的移动操作，即使在面对程序员可能写出的各种代码模式时也能保证正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/gap-resolver.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/gap-resolver.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ MoveOperands* GapResolver::PerformMoveHelper(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -289,7 +289,7 @@ Values: [1 2 3]
 
 这部分 `map_noswiss.go` 的代码是 Go 语言 map 数据结构的核心实现，涵盖了 map 的迭代、清空、扩容、元素迁移、克隆以及反射支持等关键功能。它提供了在没有某些特定优化情况下的 map 基础操作逻辑。理解这部分代码有助于深入了解 Go 语言 map 的内部机制，并避免在使用 map 时可能遇到的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/map_noswiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -298,8 +298,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 their low bit.
 				if checkBucket>>(it.B-1) != uintptr(b.tophash[offi]&1) {
 					continue
@@ -1169,10 +1171,4 @@ func copyValues(t *maptype, h *hmap, b *bmap, s *slice, offset uint8) {
 		b = b.overflow(t)
 	}
 }
-
-"""
-
-
-
-
 ```

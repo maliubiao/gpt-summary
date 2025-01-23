@@ -124,7 +124,7 @@ def print_array_elements(ptr, element_type, count):
 ---
 
 该模块是Frida Java Bridge的核心类型系统，通过JNI类型签名到JavaScript类型的双向映射，实现了Java与JavaScript的无缝互操作。开发时需特别注意类型签名的正确性和引用管理，调试时可重点关注类型解析过程与内存操作边界。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/types.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 const Env = require('./env');
 
 const JNILocalRefType = 1;
@@ -945,7 +947,4 @@ module.exports = {
   getArrayType,
   makeJniObjectTypeName
 };
-
-"""
-
 ```

@@ -164,14 +164,16 @@ Finally, the information needs to be organized clearly, with distinct sections f
 
 总而言之，`blink/renderer/core/layout/inline/line_truncator.cc` 是 Blink 渲染引擎中负责实现 `text-overflow: ellipsis;` 这一重要 CSS 特性的关键组件，它深入处理文本布局和渲染的细节，确保在各种情况下都能正确地截断文本并显示省略号。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_truncator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -719,7 +721,4 @@ LogicalLineItem LineTruncator::TruncateText(const LogicalLineItem& item,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -123,7 +123,7 @@ websocket.onmessage = function(event) {
 
 考虑到这是测试套件的第 12 部分，并且总共有 13 部分，可以推断出这部分测试主要集中在 **`HttpNetworkTransaction` 与 QUIC 协议的复杂交互场景和错误处理**。前面的部分可能已经涵盖了更基础的 QUIC 连接和请求处理，而这一部分深入探讨了诸如协议回退、错误帧处理、与 WebSocket 的交互等更高级或边界情况。这部分测试的目标是确保 `HttpNetworkTransaction` 在各种复杂的 QUIC 使用场景下都能表现出正确的行为，包括优雅地处理错误和与其他网络协议的协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ataProvider(&ssl_data_);
   SSLSocketDataProvider ssl_data2(ASYNC, OK);
   socket_factory_.AddSSLSocketDataProvider(&ssl_data2);
@@ -888,7 +890,4 @@ TEST_P(QuicNetworkTransactionTest,
   ASSERT_THAT(rv, IsOk());
 
   const HttpResponseInfo* response = tr
-"""
-
-
 ```

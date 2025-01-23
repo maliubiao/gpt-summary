@@ -161,15 +161,17 @@ func main() {
 
 总而言之，`double_nested_addressed_struct.go` 是一个细致的测试用例，旨在确保 Go 编译器在处理特定类型的结构体传递和取地址操作时行为正确，尤其是在启用寄存器参数传递优化的情况下。它帮助验证 Go 语言底层实现的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/abi/double_nested_addressed_struct.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 //go:build !wasm
@@ -231,9 +233,4 @@ func gotVsWant(got, want string) {
 		fmt.Printf("FAIL, got %s, wanted %s\n", got, want)
 	}
 }
-
-"""
-
-
-
 ```

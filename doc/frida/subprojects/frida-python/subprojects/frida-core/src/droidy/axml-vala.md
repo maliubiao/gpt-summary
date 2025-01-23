@@ -93,7 +93,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `axml.vala` 文件是 Frida 工具中用于解析 Android 二进制 XML 文件的关键模块。它通过处理二进制数据，构建 XML 树结构，并支持多种资源类型的解析。用户在使用过程中可能会遇到文件格式错误或命名空间不匹配等问题，可以通过调试工具逐步排查问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/droidy/axml.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaAXML", gir_version = "1.0")]
 namespace Frida.AXML {
 	public static ElementTree read (InputStream stream) throws Error {
@@ -440,7 +442,4 @@ namespace Frida.AXML {
 
 	private const uint32 FLAG_UTF8 = 1 << 8;
 }
-
-"""
-
 ```

@@ -159,7 +159,7 @@ workerFunc(); // 主线程也尝试修改
 
 这段代码主要负责实现 WebAssembly 在 s390 架构上的**原子内存操作**、**栈帧的管理和数据的存取**、**基本的内存操作**、**寄存器数据的移动**、**栈数据的溢出和填充**，以及大量的**一元和二元运算操作 (包括整数和浮点数运算)** 和**类型转换**。这些功能是 Liftoff 编译器生成正确且高效的机器代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/s390/liftoff-assembler-s390-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/s390/liftoff-assembler-s390-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 gister tmp1 = GetUnusedRegister(kGpReg, pinned).gp();
   pinned.set(tmp1);
   Register tmp2 = GetUnusedRegister(kGpReg, pinned).gp();
@@ -1103,8 +1105,4 @@ bool LiftoffAssembler::emit_type_conversion(WasmOpcode opcode,
       b(Condition(1), trap);
       return true;
     }
-    
-"""
-
-
 ```

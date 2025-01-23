@@ -122,14 +122,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `webgl_image_conversion_test.cc` 是 Blink 渲染引擎中一个重要的测试文件，它专注于验证 WebGL 图像格式转换功能的正确性。虽然它本身是用 C++ 编写的，但它直接关系到 JavaScript 开发者如何使用 WebGL API，以及最终用户在浏览器中看到的 WebGL 内容的正确渲染。通过详尽的单元测试，它确保了 Blink 引擎能够可靠地处理各种 WebGL 图像格式转换场景，从而提升了 WebGL 应用的稳定性和兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgl_image_conversion_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ TEST_F(WebGLImageConversionTest, ConvertRGBA8ToRGB565) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

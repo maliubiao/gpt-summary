@@ -214,7 +214,7 @@ if (openPtr) {
 
 总结来说，`gen_syscall_nrs_x86_64.cpp` 是 Android Bionic 库中一个关键的编译时组件，它生成了系统调用号的定义，为 seccomp 策略的实施和底层系统调用的发起提供了基础数据。理解它的作用有助于理解 Android 的安全机制和系统调用的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/seccomp/gen_syscall_nrs_x86_64.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -225,10 +225,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 #include <asm/unistd_64.h>
-
-"""
-
 ```

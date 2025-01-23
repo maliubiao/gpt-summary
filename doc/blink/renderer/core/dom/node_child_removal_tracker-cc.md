@@ -202,15 +202,17 @@ NodeChildRemovalTracker* NodeChildRemovalTracker::last_;
 
 尽管我们不能仅凭 `.cc` 文件断定 `NodeChildRemovalTracker` 的全部功能，但可以推断它是一个用于跟踪 DOM 节点子节点移除操作的类，很可能维护了一个静态的指针用于记录相关信息。它的工作与 JavaScript 的 DOM 操作紧密相关，并且是浏览器渲染引擎处理 DOM 变化的关键组成部分。理解这类底层机制有助于开发者更好地调试和理解 Web 页面的行为。要了解其确切的实现细节，需要查看 `node_child_removal_tracker.h` 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node_child_removal_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -244,7 +246,4 @@ namespace blink {
 NodeChildRemovalTracker* NodeChildRemovalTracker::last_;
 
 }  // namespace
-
-"""
-
 ```

@@ -187,14 +187,16 @@ blink::mojom::ManifestImageResource_Purpose purpose = blink::mojom::ManifestImag
 
 `manifest_icon_selector.cc` 是 Blink 引擎中一个关键的组件，它负责根据 Web App Manifest 中的图标信息，智能地选择最合适的图标。理解其工作原理以及可能出现的错误，对于 Web 开发者创建高质量的 PWA 至关重要。它与 HTML (Manifest 文件) 紧密相关，并间接影响 JavaScript 和 CSS 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/manifest/manifest_icon_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ BLINK_COMMON_EXPORT GURL ManifestIconSelector::FindBestMatchingIcon(
 }
 
 }  // namespace blink
-
-"""
-
 ```

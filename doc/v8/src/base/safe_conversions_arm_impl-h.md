@@ -159,15 +159,17 @@ int8_t small_int = static_cast<int8_t>(large_value);
 
 `v8/src/base/safe_conversions_arm_impl.h` 提供了一种在 ARM 架构上高效进行饱和转换的机制。这种机制在 V8 引擎内部用于处理数值类型转换，尤其是在需要避免溢出和截断的情况下。虽然它对 JavaScript 开发者是透明的，但其行为影响着 JavaScript 中数值类型转换的结果。理解饱和转换有助于理解 V8 引擎的底层工作原理，并有助于避免由于类型转换导致的潜在错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/safe_conversions_arm_impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/safe_conversions_arm_impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ struct SaturateFastAsmOp {
 }  // namespace v8::base::internal
 
 #endif  // V8_BASE_SAFE_CONVERSIONS_ARM_IMPL_H_
-
-"""
-
 ```

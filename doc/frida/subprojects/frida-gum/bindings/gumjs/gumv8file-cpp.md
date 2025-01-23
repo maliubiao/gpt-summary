@@ -141,7 +141,7 @@ By following this structured thought process, combining code analysis with an un
 
 `gumv8file.cpp` 是 Frida 提供的文件操作功能的底层实现。它将标准 C 的文件操作接口暴露给 JavaScript 环境，使得逆向工程师可以在 Frida 脚本中方便地与目标进程的文件系统进行交互，进行文件读取、写入等操作，这对于分析目标进程的行为、提取信息或进行修改非常有用。理解这个文件的功能有助于理解 Frida 如何在底层实现这些 JavaScript API，以及如何利用这些 API 进行更深入的逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8file.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -679,7 +681,4 @@ gum_file_on_weak_notify (const WeakCallbackInfo<GumFile> & info)
   auto self = info.GetParameter ();
   g_hash_table_remove (self->module->files, self);
 }
-
-"""
-
 ```

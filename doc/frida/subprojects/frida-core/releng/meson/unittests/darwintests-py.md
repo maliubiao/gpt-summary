@@ -143,7 +143,7 @@ By following these steps and continuously refining my understanding, I can gener
 
 总而言之，`darwintests.py` 是 Frida Core 在 macOS 平台上的一个重要的质量保证文件，它通过一系列自动化测试来确保构建系统的正确性，涵盖了编译、链接、版本控制等多个关键方面，对于理解 Frida 在 macOS 上的构建过程和排查相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/darwintests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -297,7 +299,4 @@ class DarwinTests(BasePlatformTests):
         from mesonbuild.mesonlib import darwin_get_object_archs
         archs = darwin_get_object_archs('/bin/cat')
         self.assertEqual(archs, ['x86_64', 'aarch64'])
-
-"""
-
 ```

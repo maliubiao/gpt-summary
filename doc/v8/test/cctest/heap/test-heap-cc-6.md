@@ -212,7 +212,7 @@ This seventh part of the `test-heap.cc` file focuses on rigorous testing of V8's
 
 作为 `test-heap.cc` 文件的一部分，这第七部分的功能是**对 V8 堆的健壮性和正确性进行更深入和细致的测试**。它涵盖了垃圾回收的关键方面，包括增量标记的正确性、内存分配的准确性、以及在特定场景下（例如操作弱引用、修改原型链、处理异常等）堆的行为是否符合预期。这些测试通常会模拟一些复杂的场景和边缘情况，以确保 V8 的堆管理机制在各种条件下都能稳定可靠地运行，从而保障 JavaScript 代码的执行效率和稳定性。 这部分测试更偏向于底层和细节，用于发现潜在的、不容易被普通功能测试发现的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -220,8 +220,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mentally mark the backing store.
   DirectHandle<JSReceiver> obj =
       v8::Utils::OpenDirectHandle(*v8::Local<v8::Object>::Cast(result));
@@ -1101,7 +1103,4 @@ TEST(ContinuousRightTrimFixedArrayInBlackArea) {
   Address end_address = start_address + array->Size();
   PageMetadata* page = PageMetadata::FromAddress(start_address);
   NonAtomicMarkingState* ma
-"""
-
-
 ```

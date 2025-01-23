@@ -128,14 +128,16 @@ This iterative process of examining the code, understanding its purpose within t
 
 总而言之，`open_type_caps_support_mpl.cc` 这个文件在 Blink 引擎中扮演着关键的角色，它负责判断字体是否具备渲染特定大小写相关 OpenType 特性的能力，这直接影响了 Web 开发者使用 CSS 控制字体排版的能力，并最终决定了用户在网页上看到的文本呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_caps_support_mpl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /* ***** BEGIN LICENSE BLOCK *****
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -188,7 +190,4 @@ bool OpenTypeCapsSupport::SupportsOpenTypeFeature(hb_script_t script,
 }
 
 }  // namespace blink
-
-"""
-
 ```

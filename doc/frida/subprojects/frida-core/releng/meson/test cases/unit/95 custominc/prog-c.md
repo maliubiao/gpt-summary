@@ -169,7 +169,7 @@ By following this structured approach, combining code analysis with contextual k
 
 因此，查看 `frida/subprojects/frida-core/releng/meson/test cases/unit/95 custominc/prog.c` 这个文件的用户很可能是 Frida 的开发者或贡献者，他们正在编写、测试或调试 Frida 的核心功能，特别是代码注入和执行相关的部分。他们通过定义这样一个简单的测试用例，可以有效地验证 Frida 在基本场景下的行为是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/95 custominc/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 
 int func(void);
@@ -188,7 +190,4 @@ int main(int argc, char **argv) {
     (void)(argv);
     return func();
 }
-
-"""
-
 ```

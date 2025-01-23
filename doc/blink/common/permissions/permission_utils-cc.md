@@ -125,14 +125,16 @@ Response: Let's break down the thought process for analyzing this C++ code snipp
 
 总而言之，`permission_utils.cc` 是 Blink 引擎中处理权限的核心组成部分，它负责权限类型的定义、状态转换以及与 Web 平台权限机制的集成。理解这个文件的功能对于理解浏览器如何管理和控制各种 Web 功能的访问权限至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions/permission_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -447,7 +449,4 @@ std::optional<PermissionType> PermissionDescriptorInfoToPermissionType(
 }
 
 }  // namespace blink
-
-"""
-
 ```

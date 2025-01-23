@@ -163,14 +163,16 @@ By following this structured approach, combining code reading with knowledge of 
 
 总而言之，`html_script_element.cc` 文件是 Blink 引擎中处理 `<script>` 标签的核心，负责管理其属性、控制脚本的加载和执行方式，并与浏览器的其他组件（如 JavaScript 引擎、网络模块、安全策略等）进行交互。理解这个文件的功能对于理解浏览器如何处理 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_script_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -572,7 +574,4 @@ void HTMLScriptElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

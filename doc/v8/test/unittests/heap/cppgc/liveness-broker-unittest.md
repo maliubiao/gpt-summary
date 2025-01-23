@@ -91,11 +91,13 @@ globalObject = null; // 解除 globalObject 的引用
 
 `liveness-broker-unittest.cc` 这个 C++ 文件是 V8 引擎内部垃圾回收机制的一个单元测试，它专门测试了 `LivenessBroker` 组件判断 C++ 对象是否存活的功能。虽然 JavaScript 开发者无法直接接触 `LivenessBroker`，但它的工作原理直接影响着 JavaScript 对象的内存管理和生命周期。 它可以确保垃圾回收器能够正确识别不再被使用的对象，并释放它们占用的内存，从而保证 JavaScript 程序的性能和资源效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/liveness-broker-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ TEST_F(LivenessBrokerTest, IsHeapObjectAliveNullptr) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

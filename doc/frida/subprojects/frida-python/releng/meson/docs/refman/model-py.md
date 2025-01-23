@@ -151,7 +151,7 @@ By following this thought process, systematically breaking down the code and con
 
 总而言之，`frida/subprojects/frida-python/releng/meson/docs/refman/model.py` 是 Frida Python API 文档生成的核心组成部分，它定义了用于描述 API 元素的结构化数据模型，对于生成准确且易于理解的参考手册至关重要，这最终也服务于使用 Frida 进行动态 instrumentation 和逆向分析的用户。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/refman/model.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -264,7 +266,4 @@ class Object(NamedObject, FetureCheck):
 class ReferenceManual:
     functions: T.List[Function]
     objects: T.List[Object]
-
-"""
-
 ```

@@ -105,14 +105,16 @@ Essentially, I'm trying to "reverse-engineer" the purpose and implications of th
 
 总而言之， `string_impl_test.cc` 通过各种测试用例，确保了 `StringImpl` 类在字符串创建、大小写转换、大小写折叠和比较等核心功能上的正确性，这对于 Blink 引擎正确处理和渲染 web 内容至关重要。 开发者在使用 Blink 提供的字符串处理接口时，需要理解其限制和适用范围，避免上述常见的使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Apple Inc. All rights reserved.
  *
@@ -313,7 +315,4 @@ TEST(StringImplTest, UpperASCII) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

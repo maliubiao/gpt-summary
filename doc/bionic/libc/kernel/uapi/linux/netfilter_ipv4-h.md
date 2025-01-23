@@ -265,7 +265,7 @@ session.detach()
 
 要调试 Netfilter hook 函数本身，则需要更底层的 Frida 技巧，可能需要 Hook 内核空间的函数，这通常更复杂，并且可能需要 root 权限。例如，可以使用 `frida-tools` 中的 `frida-ps` 找到内核进程，然后使用 `frida.attach()` 连接到内核，并 Hook 相关的内核函数。但这超出了通常的应用程序调试范围。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_ipv4.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -276,8 +276,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -313,7 +315,4 @@ enum nf_ip_hook_priorities {
 };
 #define SO_ORIGINAL_DST 80
 #endif
-
-"""
-
 ```

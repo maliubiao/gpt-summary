@@ -108,11 +108,13 @@ greeting:        // greeting 变量的标签
 
 `platform-embedded-file-writer-aix.cc` 的核心功能是为 AIX 上的嵌入式 V8 生成平台特定的汇编代码，这些代码是 V8 快照的一部分。快照包含了预编译的 JavaScript 代码和数据，从而加速 V8 的启动过程。因此，虽然这个 C++ 文件不直接执行 JavaScript 代码，但它对于 V8 引擎高效地运行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-aix.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ DataDirective PlatformEmbeddedFileWriterAIX::ByteChunkDataDirective() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

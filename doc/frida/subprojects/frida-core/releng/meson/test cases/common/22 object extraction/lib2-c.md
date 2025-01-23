@@ -142,7 +142,7 @@ By keeping the Frida context in mind, the analysis becomes much more relevant an
 
 总而言之，`lib2.c` 中的 `retval` 函数虽然简单，但作为 Frida 测试用例的一部分，它可以用来验证 Frida 的核心功能，并帮助开发者理解动态分析的基本原理。对于逆向工程师来说，分析这样简单的函数是理解更复杂代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/22 object extraction/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,12 +150,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int retval(void) {
   return 43;
 }
-
-"""
-
 ```

@@ -128,7 +128,7 @@ exit status 2
 
 这部分 `go/src/runtime/traceback.go` 代码实现了 Go 语言运行时环境中的核心堆栈回溯机制。它能够遍历程序的调用栈，并考虑到不同架构、CGO 调用以及错误处理等情况，为开发者提供程序执行过程中的关键信息，主要用于错误诊断和调试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/traceback.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -137,8 +137,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1043,10 +1045,5 @@ func traceback1(pc, sp, lr uintptr, gp *g, flags unwindFlags) {
 		u.initAt(pc, sp, lr, gp, flags)
 		n, lastN := traceback2(&u, showRuntime, 0, tracebackInnerFrames)
 		if n < tracebackInnerFrames {
-			// 
-"""
-
-
-
-
+			//
 ```

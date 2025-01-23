@@ -118,15 +118,17 @@ This thought process enables the generation of a comprehensive and accurate summ
 
 总而言之，该代码片段是 Chromium Blink 引擎中处理 Attribution Reporting API 的关键组成部分，负责解析 HTTP 响应头中的注册信息，并将其传递给浏览器进程进行进一步处理，从而实现来源和触发器的注册功能。它与 HTML 的 `attributionsrc` 属性紧密相关，并能通过 JavaScript 代码间接触发。编写不符合规范的注册头信息是常见的错误使用方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/attribution_src_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 data_host),
       support);
   client->HandleResponseHeaders(std::move(reporting_origin), headers,
@@ -494,8 +496,4 @@ void AttributionSrcLoader::ResourceClient::
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

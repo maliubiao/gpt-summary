@@ -100,7 +100,7 @@ To achieve this, I need to:
 
 总之，这个测试文件通过各种场景验证了 `WebSocketChannelImpl` 接收消息、处理连接关闭和管理连接限制的正确性，这些功能直接影响了 JavaScript `WebSocket` API 的行为和开发者在使用 WebSocket 进行实时通信的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/websockets/websocket_channel_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mojom::blink::WebSocketClient> client;
   auto websocket = Connect(4 * 1024, &writable, &readable, &client);
   ASSERT_TRUE(websocket);
@@ -1019,8 +1021,4 @@ TEST_F(WebSocketChannelImplMultipleTest, ConnectionLimit) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

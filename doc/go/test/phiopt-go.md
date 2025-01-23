@@ -340,15 +340,17 @@ func myFunc(b bool) bool {
 
 And might be surprised to find that the compiled code is essentially just returning `b` directly, as the compiler performs the `OpPhi` to Copy optimization. Understanding this can lead to writing more concise and idiomatic Go code.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/phiopt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/phiopt/debug=3
 
 //go:build amd64 || s390x || arm64
@@ -482,9 +484,4 @@ func f9(a, b int) bool {
 
 func main() {
 }
-
-"""
-
-
-
 ```

@@ -200,7 +200,7 @@ By following this structured analysis, combining code examination with an unders
 
 总而言之，`v8/src/compiler/turboshaft/operations.h` 是 Turboshaft 编译器的核心组成部分，它定义了编译器用于表示和操作代码的关键指令集，直接反映了 JavaScript 语言的各种特性和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.h以.tq结尾，那它是个v8 torque源代码，
@@ -208,8 +208,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 nt() const { return input<Word32>(0); }
 
   base::Vector<const OpIndex> return_values() const {
@@ -1140,7 +1142,4 @@ struct LoadFieldByIndexOp : FixedArityOperationT<2, LoadFieldByIndexOp> {
   // optimized for quick access. If the property is inline, the index is
   // positive. If it's out-of-line, the encoded index is -raw_index - 1 to
   // disambiguate the zero out-of-line index fro
-"""
-
-
 ```

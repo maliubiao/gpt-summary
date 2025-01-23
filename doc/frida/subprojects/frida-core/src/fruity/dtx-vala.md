@@ -99,7 +99,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 用户完成操作后，调用 `close_all` 方法关闭所有连接，释放资源。
 
 通过以上步骤，用户可以逐步完成与 iOS 设备的通信和调试操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/dtx.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class DeviceInfoService : Object, AsyncInitable {
@@ -1278,7 +1280,4 @@ namespace Frida.Fruity {
 		private PrimitiveBuilder blob = new PrimitiveBuilder ();
 
 		pu
-"""
-
-
 ```

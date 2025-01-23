@@ -108,7 +108,7 @@ Report-To: {"group":"errors","max-age":86400,"endpoints":[{"url":"https://endpoi
 
 总而言之，这个单元测试文件全面地测试了 `SQLitePersistentReportingAndNelStore` 类的持久化功能，涵盖了添加、更新、删除和加载 Reporting API 和 NEL 相关数据的各种场景，以及对唯一性约束和操作合并的测试。这对于确保网络栈的 Reporting 和 NEL 功能的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_reporting_and_nel_store_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 test"));
 
   CreateStore();
@@ -879,8 +881,4 @@ TEST_F(SQLitePersistentReportingAndNelStoreTest,
 }
 
 }  // namespace net
-
-"""
-
-
 ```

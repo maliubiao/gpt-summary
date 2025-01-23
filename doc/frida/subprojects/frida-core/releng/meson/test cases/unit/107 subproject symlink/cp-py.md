@@ -119,7 +119,7 @@ By following these steps, the comprehensive analysis provided earlier can be gen
 
 因此，开发者到达这个脚本的上下文很可能是因为他们正在 **调试 frida 中与子项目和符号链接处理相关的单元测试**，而这个脚本是该测试流程中的一个环节，用于进行必要的文件复制操作。 脚本的简单性也意味着在调试与文件复制相关的错误时，可以相对容易地排除脚本本身的问题，而将注意力集中在调用该脚本的测试逻辑或底层的 frida 代码上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/107 subproject symlink/cp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from sys import argv
 from shutil import copy
 
 copy(argv[1], argv[2])
-
-"""
-
 ```

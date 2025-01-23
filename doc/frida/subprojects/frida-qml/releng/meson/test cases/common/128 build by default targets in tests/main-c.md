@@ -114,7 +114,7 @@ Initially, one might focus on the `main.c` and try to find a hidden complexity. 
 
 尽管 `tests/main.c` 的代码内容极其简单，但它在 Frida 的开发和测试流程中扮演着一个基础但重要的角色，用于验证构建环境的健康性和默认构建目标的正确性。 它的成功构建是 Frida 能够正常工作的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/128 build by default targets in tests/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,12 +122,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

@@ -138,7 +138,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，`paint_property_tree_builder_test.cc` 的第 5 部分专注于测试 Blink 渲染引擎中 Paint Property Tree Builder 在处理 **transform、perspective、渲染上下文、属性缓存、overflow、clip 和 replaced content** 等关键 CSS 属性时的正确性。这些测试用例通过模拟不同的 HTML 和 CSS 场景，验证了 Paint Property Tree 的构建逻辑是否符合预期，确保了网页渲染的正确性和性能。这部分测试对于理解 Blink 渲染引擎的工作原理以及排查渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -146,9 +146,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
-     }
+### 源代码
+```cpp
+}
       #b {
         transform: translateZ(0);
         width: 10px;
@@ -959,7 +961,4 @@ TEST_P(PaintPropertyTreeBuilderTest, NestedScrollProperties) {
   EXPECT_EQ(gfx::Vector2dF(0, -37), scroll_a_translation->Get2dTranslation());
   EXPECT_EQ(gfx::Rect(0, 0, 5, 3), overflow_a_scroll_node->ContainerRect());
   // 107 i
-"""
-
-
 ```

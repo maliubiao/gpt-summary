@@ -156,7 +156,7 @@ console.log(globalVar.value); // 假设全局变量有一个 value 属性
 
 `WasmLoweringReducer` 是 Turboshaft 编译器中负责将高级 WebAssembly 操作转换为更底层的、更易于执行的形式的关键组件。它专注于处理与引用类型相关的操作（如类型转换、i31 引用）以及全局变量的访问。通过执行类型检查、内存访问等底层操作，`WasmLoweringReducer` 确保了 Wasm 代码在 V8 中的正确和高效执行。它在 Wasm 代码编译的优化阶段起着至关重要的作用，使得最终生成的机器码能够更好地在目标架构上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-lowering-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-lowering-reducer.h以.tq结尾，那它是个v8 torque源代码，
@@ -164,10 +164,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-    DCHECK(rtt.has_value());
+### 源代码
+```c
+DCHECK(rtt.has_value());
     int rtt_depth = wasm::GetSubtypingDepth(module_, config.to.ref_index());
     bool object_can_be_null = config.from.is_nullable();
     bool object_can_be_i31 =
@@ -358,8 +359,4 @@ Prompt:
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_WASM_LOWERING_REDUCER_H_
-
-"""
-
-
 ```

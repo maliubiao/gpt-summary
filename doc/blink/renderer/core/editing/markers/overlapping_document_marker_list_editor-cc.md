@@ -172,15 +172,17 @@ By following these steps, I can generate a comprehensive and accurate answer to 
 
 总而言之，`OverlappingDocumentMarkerListEditor.cc` 是 Blink 引擎中一个核心的组件，负责维护文档中可以重叠的标记信息，确保这些标记在文档内容变化时保持同步和准确。它与用户在网页上的交互以及各种浏览器功能（如拼写检查）紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/overlapping_document_marker_list_editor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -322,7 +324,4 @@ OverlappingDocumentMarkerListEditor::MarkersIntersectingRange(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -92,7 +92,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 这段代码是 Go 运行时系统中至关重要的一部分，它负责**拦截、管理和响应 Unix 系统信号**。它允许 Go 程序优雅地处理各种系统事件，包括错误、用户交互和性能分析请求。  它还实现了 Go 调度器的非协作抢占机制。这段代码区分了 Go 线程和非 Go 线程上的信号处理，并提供了灵活的机制来决定如何处理不同的信号。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -101,8 +101,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1148,9 +1150,4 @@ func raisebadsignal(sig uint32, c *sigctxt) {
 	usleep(1000)
 
 	// If the sign
-"""
-
-
-
-
 ```

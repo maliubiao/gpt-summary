@@ -136,7 +136,7 @@ By following this thought process, I can systematically analyze the code, unders
 
 这部分 `HttpProxyConnectJob` 的代码专注于处理 HTTP 代理连接建立过程中的关键事件和后续操作，包括连接关闭、优先级调整、超时处理、身份验证挑战以及 SPDY 会话密钥的创建和连接延迟的监控。它确保了在通过 HTTP 代理建立连接时，能够正确处理各种情况，并为上层网络请求的顺利进行奠定基础。这部分功能对于维护网络连接的稳定性和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_proxy_connect_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,9 +144,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  if (reconnect) {
+### 源代码
+```cpp
+if (reconnect) {
     // Attempt to create a new one.
     transport_socket_.reset();
     next_state_ = STATE_BEGIN_CONNECT;
@@ -290,8 +292,4 @@ void HttpProxyConnectJob::EmitConnectLatency(NextProto http_version,
 }
 
 }  // namespace net
-
-"""
-
-
 ```

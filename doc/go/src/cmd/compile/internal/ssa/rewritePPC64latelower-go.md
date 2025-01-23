@@ -165,15 +165,17 @@ func optimizedBitMask(x int64) int64 {
 
 总之，`rewritePPC64latelower.go` 是 Go 编译器针对 PPC64 架构进行后期优化的重要组成部分，通过模式匹配和指令重写，提高了生成代码的效率。开发者通常无需直接操作它，但理解其背后的优化原理有助于编写出更高效的 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritePPC64latelower.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/PPC64latelower.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -996,9 +998,4 @@ func rewriteValuePPC64latelower_OpPPC64SETBCR(v *Value) bool {
 func rewriteBlockPPC64latelower(b *Block) bool {
 	return false
 }
-
-"""
-
-
-
 ```

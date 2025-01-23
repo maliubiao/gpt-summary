@@ -142,15 +142,17 @@ By following this structured approach, examining the code's components, and unde
 
 总而言之，`v8/test/cctest/wasm/test-liftoff-inspection.cc` 是 V8 保证其 WebAssembly 基线编译器能够生成正确且可靠的调试信息的关键测试文件，这对于开发者调试 WebAssembly 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-liftoff-inspection.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-liftoff-inspection.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -642,7 +644,4 @@ TEST(Regress1199526) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

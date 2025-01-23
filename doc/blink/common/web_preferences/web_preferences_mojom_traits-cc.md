@@ -147,14 +147,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 `blink/common/web_preferences/web_preferences_mojom_traits.cc` 是 Blink 引擎中非常重要的一个文件，它负责将 Web 浏览器偏好设置通过 Mojo 接口进行传递和转换。这些偏好设置直接影响着网页的渲染和行为，与 JavaScript, HTML, CSS 的功能紧密相关。理解这个文件的功能有助于理解浏览器内部的工作机制，并可以帮助开发者更好地理解和处理用户配置对网页的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/web_preferences/web_preferences_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -396,7 +398,4 @@ bool StructTraits<blink::mojom::WebPreferencesDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

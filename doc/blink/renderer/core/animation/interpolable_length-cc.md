@@ -200,14 +200,16 @@ By following this structured approach and iteratively refining the explanation, 
 
 `blink/renderer/core/animation/interpolable_length.cc` 是 Chromium Blink 引擎中一个至关重要的文件，它负责实现 CSS 长度值的平滑插值，是实现 CSS 动画和过渡效果的基础。它处理了各种长度单位、百分比、`calc()` 表达式以及关键字的插值逻辑，并与 JavaScript 和 HTML 紧密协作，为用户提供了丰富的视觉效果。理解这个文件的功能有助于开发者更好地理解浏览器如何处理动画和过渡，并避免一些常见的使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_length.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -892,7 +894,4 @@ void InterpolableLength::Trace(Visitor* v) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

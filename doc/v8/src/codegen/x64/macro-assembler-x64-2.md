@@ -91,12 +91,14 @@ const result = myNativeFunction(10);
 
 这部分 `macro-assembler-x64.cc` 代码是V8引擎在x64架构上执行JavaScript代码的关键组成部分。它提供了一组用于生成高效、安全且可调试的机器码的构建块，涵盖了函数调用、类型检查、堆栈管理、与C++的交互以及性能监控等核心功能。 这些底层操作支撑着JavaScript代码的正常执行和优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/macro-assembler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eason::kOperandIsASmiAndNotAFunction);
   Push(object);
   LoadMap(object, object);
@@ -1123,8 +1125,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #undef __
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
-
 ```

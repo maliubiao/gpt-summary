@@ -148,14 +148,16 @@ CSP 是一种 Web 安全机制，旨在减少跨站脚本攻击 (XSS) 等风险�
 
 `content_security_policy_parsers_test.cc` 通过测试 `MatchesTheSerializedCSPGrammar` 函数，确保 Blink 引擎能够正确地识别符合 CSP 序列化语法规则的策略字符串。这对于浏览器正确实施 CSP，从而保护用户免受 XSS 等攻击至关重要。该测试针对的是 CSP 字符串的语法结构，与 JavaScript、HTML 和 CSS 的安全加载和执行密切相关，并能帮助开发者避免编写不合法的 CSP 策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/content_security_policy_parsers_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ TEST(ContentSecurityPolicyParsers, MatchesTheSerializedCSPGrammar) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

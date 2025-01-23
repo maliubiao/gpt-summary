@@ -134,7 +134,7 @@ By following these steps, we can provide a comprehensive answer that addresses a
 
 `tagprog.c` 是 Frida 构建系统中的一个简单但重要的测试用例。它的主要功能是打印 Frida 的版本信息，这对于版本跟踪、测试验证以及调试构建问题都很有帮助。虽然代码本身很简单，但它背后的构建和运行过程涉及到二进制编译、链接以及对操作系统和版本控制系统的理解。开发者通常不会直接接触这个源代码，而是在 Frida 的构建或调试过程中间接地与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/66 vcstag/tagprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 extern const char *vcstag;
@@ -152,7 +154,4 @@ int main(void) {
     printf("Version is %s\n", vcstag);
     return 0;
 }
-
-"""
-
 ```

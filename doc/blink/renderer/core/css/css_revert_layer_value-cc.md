@@ -145,15 +145,17 @@ By following these steps, the goal was to provide a comprehensive and understand
 
 总而言之，`css_revert_layer_value.cc` 虽然代码量不大，但它是 Blink 渲染引擎中实现 CSS `revert-layer` 关键字的重要组成部分，负责表示这个特定的 CSS 值，并在样式计算过程中发挥作用，以实现层叠回退的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_revert_layer_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ String CSSRevertLayerValue::CustomCSSText() const {
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

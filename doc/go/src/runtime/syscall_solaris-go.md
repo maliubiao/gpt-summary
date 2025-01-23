@@ -189,7 +189,7 @@ func main() {
 
 总而言之，`go/src/runtime/syscall_solaris.go` 是 Go 语言运行时环境的重要组成部分，它实现了 `syscall` 包在 Solaris 上的底层操作，使得 Go 程序能够与 Solaris 操作系统进行交互。理解这个文件的功能有助于深入理解 Go 语言的系统编程能力以及跨平台特性的实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/syscall_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -197,8 +197,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -529,9 +531,4 @@ func syscall_write(fd, buf, nbyte uintptr) (n, err uintptr) {
 	asmcgocall(unsafe.Pointer(&asmsysvicall6x), unsafe.Pointer(&call))
 	return call.r1, call.err
 }
-
-"""
-
-
-
 ```

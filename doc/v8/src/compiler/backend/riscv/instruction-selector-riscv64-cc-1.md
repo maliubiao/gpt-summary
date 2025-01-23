@@ -126,7 +126,7 @@ console.log(result); // 输出 12
 
 这段代码是 V8 编译器中 RISC-V 64 位后端的核心组成部分，负责将高级的程序操作转化为底层的机器指令。它覆盖了多种常见的算术、逻辑和类型转换操作，并包含针对特定情况的优化。理解这段代码有助于深入了解 V8 如何将 Javascript 代码编译并在 RISC-V 架构上高效执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Adapter, Int64BinopMatcher>(this, node, kRiscvXor, true,
                                            kRiscvXor);
   } else {
@@ -1023,7 +1025,4 @@ void InstructionSelectorT<Adapter>::VisitChangeInt32ToInt64(node_t node) {
       switch (load_rep.representation()) {
         case MachineRepresentation::kBit:  // Fall through.
         case Ma
-"""
-
-
 ```

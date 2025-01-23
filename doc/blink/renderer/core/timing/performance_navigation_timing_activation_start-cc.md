@@ -142,15 +142,17 @@ Based on this analysis, I'll structure the answer to cover all aspects of the re
 
 总而言之，`blink/renderer/core/timing/performance_navigation_timing_activation_start.cc` 这个文件是浏览器性能监控机制中的一个关键组成部分，它负责计算并提供 `PerformanceNavigationTiming` API 中的 `activationStart` 指标，帮助开发者了解页面导航过程中从旧文档过渡到新文档激活状态的时间点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/performance_navigation_timing_activation_start.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ DOMHighResTimeStamp PerformanceNavigationTimingActivationStart::activationStart(
 }
 
 }  // namespace blink
-
-"""
-
 ```

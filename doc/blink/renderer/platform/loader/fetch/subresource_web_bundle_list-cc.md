@@ -162,14 +162,16 @@ By following these steps, I can dissect the code, understand its purpose, connec
 
 总而言之，`SubresourceWebBundleList` 是 Blink 引擎中一个重要的组件，它负责管理和查找用于优化资源加载的 Web Bundle，直接影响着浏览器如何获取和使用 HTML、CSS、JavaScript 等资源。正确地管理和使用这个类对于确保 Web Bundle 功能的正常运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/subresource_web_bundle_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ SubresourceWebBundleList::FindSubresourceWebBundleWhichWillBeReleased(
 }
 
 }  // namespace blink
-
-"""
-
 ```

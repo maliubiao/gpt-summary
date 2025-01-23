@@ -158,11 +158,13 @@ console.log(arr[1]); // 输出 undefined，V8 内部可能用 Hole NaN 表示已
 
 总而言之， `v8/src/runtime/runtime-numbers.cc` 文件是 V8 引擎中处理数字和字符串转换等基础操作的核心组成部分，它为 JavaScript 提供了底层的数值处理能力。 开发者虽然不能直接调用这些运行时函数，但 JavaScript 代码的执行会依赖于它们。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-numbers.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ RUNTIME_FUNCTION(Runtime_GetHoleNaNLower) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

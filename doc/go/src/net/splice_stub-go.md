@@ -196,7 +196,7 @@ func main() {
 
 总之，`go/src/net/splice_stub.go` 是 Go 语言在非 Linux 系统上为 `splice` 相关功能提供的占位符实现，它不提供实际的数据传输功能，主要是为了保持 API 的一致性。开发者需要意识到平台差异，避免在非 Linux 系统上过度依赖或期望 `splice` 带来的性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/splice_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -223,9 +225,4 @@ func spliceFrom(_ *netFD, _ io.Reader) (int64, error, bool) {
 func spliceTo(_ io.Writer, _ *netFD) (int64, error, bool) {
 	return 0, nil, false
 }
-
-"""
-
-
-
 ```

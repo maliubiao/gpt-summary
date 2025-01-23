@@ -240,7 +240,7 @@ sys.stdin.read()
 
 你可以修改 `script_code` 中的函数名来 hook 其他 `ctype` 函数，例如 `tolower`, `isupper` 等。这可以帮助你理解 Android Framework 或 NDK 应用程序在运行时如何使用这些字符处理函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/ctype_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,8 +251,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -327,7 +329,4 @@ static void ctype_h() {
   #endif
 #endif
 }
-
-"""
-
 ```

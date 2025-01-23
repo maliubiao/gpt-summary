@@ -160,7 +160,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 用户通过 LLDB 或其他调试工具监控 Frida 的会话状态和脚本执行情况。
 
 通过这些步骤，用户可以逐步调试和验证 Frida 的功能，确保其在目标进程中的正确性和稳定性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/tests/test-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
 				var session = yield device.attach (process.id, options);
 				var detached_handler = session.detached.connect ((reason, crash) => {
@@ -1267,8 +1269,4 @@ Prompt:
 						const methInner = NSBundle['- initWithURL:'];
 						Interceptor.attach(meth.implementation, {
 						  onEnter(args) {
-				
-"""
-
-
 ```

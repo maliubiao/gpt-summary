@@ -76,7 +76,7 @@ Based on this analysis, I can now generate the summary for part 1.
 
 总而言之，`allplatformstests.py` 是 Frida 项目中至关重要的一个文件，它通过一系列跨平台测试用例，确保了 Frida 构建系统的稳定性和可靠性，这对于 Frida 的开发、部署和最终被逆向工程师使用都至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -827,8 +829,4 @@ class AllPlatformTests(BasePlatformTests):
                           self._run, self.mtest_command + ['--setup=valgrind'])
         with open(os.path.join(self.logdir, 'testlog-valgrind.txt'), encoding='utf-8') as f:
             vg_log = f.read()
-
-"""
-
-
 ```

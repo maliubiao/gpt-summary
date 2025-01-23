@@ -288,7 +288,7 @@ if (Process.platform === 'android') {
 
 通过观察 `dlopen` 的参数，特别是文件名，以及 Hook 点的触发，你可以理解 Android Framework 或 NDK 如何通过 `dlopen` 加载共享库，以及动态链接器如何处理符号链接。 请注意，这个测试文件本身通常不会在应用运行过程中被直接触发，它更多的是在 Android 系统构建和测试阶段使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/dlfcn_symlink_support.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -379,7 +381,4 @@ void create_dlfcn_test_symlink(const char* suffix, std::string* result) {
 void remove_dlfcn_test_symlink(const std::string& path) {
   ASSERT_TRUE(unlink(path.c_str()) == 0) << strerror(errno);
 }
-
-"""
-
 ```

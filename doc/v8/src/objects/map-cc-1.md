@@ -153,7 +153,7 @@ arr1.push("string"); // 添加字符串
 
 这段代码主要负责 **Map的创建、转换以及与元素类型和描述符相关的管理**。它提供了在对象属性结构或元素类型发生变化时，高效地更新对象内部表示的关键机制。这些机制对于V8引擎优化JavaScript代码的性能至关重要。代码中包含了查找、比较、复制和修改Map的功能，以及维护Map之间转换关系的能力。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/map.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 o::AddDerivedMap(info, map, isolate);
     }
     return map;
@@ -956,7 +958,4 @@ Handle<Map> Map::AsLanguageMode(Isolate* isolate, Handle<Map> initial_map,
       isolate->factory()->strict_function_transition_symbol();
   MaybeHandle<Map> maybe_transition = TransitionsAccessor::SearchSpecial(
       isolate, initial_map, *tran
-"""
-
-
 ```

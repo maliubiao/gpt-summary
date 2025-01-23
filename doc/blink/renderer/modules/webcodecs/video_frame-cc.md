@@ -205,7 +205,7 @@ By following these steps and iteratively refining the analysis, we can arrive at
 
 总而言之，`blink/renderer/modules/webcodecs/video_frame.cc` 文件是 WebCodecs API 中 `VideoFrame` 功能的核心实现，负责创建、管理、访问和转换视频帧数据，是连接 JavaScript 和底层媒体处理的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/video_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -213,8 +213,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1038,7 +1040,4 @@ VideoFrame* VideoFrame::Create(ScriptState* script_state,
 
     auto* sbi = static_cast<StaticBitmapImage*>(image.get());
     gpu::MailboxHolder mailbox_holder = sbi->GetMailboxHolder
-"""
-
-
 ```

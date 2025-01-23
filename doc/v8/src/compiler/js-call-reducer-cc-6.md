@@ -139,7 +139,7 @@ greet.call(null, "Alice"); // ReduceFunctionPrototypeCall 可能会优化函数�
 
 总而言之，`v8/src/compiler/js-call-reducer.cc` 是 V8 编译器中一个关键的优化组件，它通过识别和简化常见的 JavaScript 函数调用模式，为生成高效的机器码奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -147,9 +147,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共12部分，请归纳一下它的功能
+```
 
-"""
-  // Check for known builtin functions.
+### 源代码
+```cpp
+// Check for known builtin functions.
 
   Builtin builtin =
       shared.HasBuiltinId() ? shared.builtin_id() : Builtin::kNoBuiltinId;
@@ -871,8 +873,4 @@ Reduction JSCallReducer::ReduceJSConstruct(Node* node) {
     // as new.target if {new_target} equals {target}.
     if (target == new_target) {
       node->ReplaceInput(n.NewTargetIndex(), bound_target_function);
- 
-"""
-
-
 ```

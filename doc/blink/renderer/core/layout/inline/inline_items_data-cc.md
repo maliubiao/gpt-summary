@@ -139,14 +139,16 @@ By following these steps of code analysis, keyword identification, function diss
 
 `inline_items_data.cc` 中的 `InlineItemsData` 类是 Blink 渲染引擎中用于管理内联元素结构的关键组件。它存储了构成内联内容的各种 `InlineItem`，并提供了访问和操作这些项的方法，例如获取指定范围内的打开标签。它在将 HTML 结构转化为可视布局的过程中扮演着重要的角色，并与 CSS 样式和 JavaScript 的 DOM 操作有着密切的联系。理解这个文件有助于深入了解 Blink 渲染引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_items_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ void InlineItemsData::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

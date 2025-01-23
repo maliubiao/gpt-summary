@@ -287,15 +287,17 @@ console.log(obj.age); // 触发 get 访问器
 
 总而言之，`v8/src/objects/api-callbacks.tq` 文件定义了 V8 引擎内部用于处理 JavaScript API 回调的关键数据结构，这些结构体是连接 C++ 引擎和 JavaScript 代码的重要桥梁，使得 V8 能够正确地执行与对象属性相关的各种动态操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/api-callbacks.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/api-callbacks.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ extern class AccessorInfo extends HeapObject {
   @if(TAGGED_SIZE_8_BYTES) optional_padding: uint32;
   @ifnot(TAGGED_SIZE_8_BYTES) optional_padding: void;
 }
-
-"""
-
 ```

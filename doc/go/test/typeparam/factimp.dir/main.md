@@ -126,15 +126,17 @@ func Fact[T constraints.Integer | constraints.Float](n T) int {
 
 总之，这段 `main.go` 代码通过调用和断言，简洁地测试了 `a` 包中 `Fact` 函数对于不同类型参数和实际参数的处理是否符合预期。它主要关注了泛型函数的基本调用和类型推断。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/factimp.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -161,9 +163,4 @@ func main() {
 		panic(fmt.Sprintf("got %f, want %f", got, want))
 	}
 }
-
-"""
-
-
-
 ```

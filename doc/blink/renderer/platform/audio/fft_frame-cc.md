@@ -134,14 +134,16 @@ By following these steps, I can effectively analyze the C++ code and provide a c
 
 总而言之，`blink/renderer/platform/audio/fft_frame.cc` 中的 `FFTFrame` 类是 Blink 引擎音频处理的核心组件，它提供了高效的频域表示和操作方法，是实现 Web Audio API 各种功能的基础。虽然 JavaScript, HTML, CSS 不能直接操作它，但其背后的计算逻辑直接影响着 Web 开发者能够实现的声音效果和音频可视化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/fft_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -458,7 +460,4 @@ void FFTFrame::Multiply(const FFTFrame& frame) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

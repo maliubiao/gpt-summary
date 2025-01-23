@@ -168,7 +168,7 @@ Let's consider the `test_cflags_cross_environment_pollution` test:
 
 In summary, `linuxcrosstests.py` plays a crucial role in ensuring the reliability of Frida's build system for cross-compilation to Linux, a capability that is fundamental for reverse engineers using Frida on various target platforms. The tests cover various aspects of cross-compilation, including compiler flags, environment isolation, and the correct handling of different target architectures.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/linuxcrosstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -395,7 +397,4 @@ class LinuxCrossMingwTests(BaseLinuxCrossTests):
             '-Dbuild.pkg_config_path=' + os.path.join(testdir, 'build_extra_path'),
             '-Dpkg_config_path=' + os.path.join(testdir, 'host_extra_path'),
         ])
-
-"""
-
 ```

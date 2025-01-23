@@ -88,15 +88,17 @@ Here's a breakdown of the logic in each test case:
 
 **总结来说，这部分测试代码专注于验证 `MediaVideoVisibilityTracker` 在按需计算视频可见性时的核心逻辑和边界情况，包括生命周期状态的影响、遮挡的影响、请求的优先级以及追踪器分离后的行为。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_video_visibility_tracker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 y_callback.VisibilityCallback());
   request_visibility_callback.WaitUntilDone();
   EXPECT_TRUE(IntersectionRect().IsEmpty());
@@ -401,8 +403,4 @@ TEST_F(MediaVideoVisibilityTrackerTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

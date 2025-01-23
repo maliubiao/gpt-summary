@@ -147,15 +147,17 @@ By following these steps and engaging in self-correction, we arrive at a compreh
 
 `quic_gso_batch_writer_test.cc` 文件通过各种测试用例，全面地验证了 `QuicGsoBatchWriter` 类的核心功能，包括批量判断、写入、错误处理、时间控制和协议特定的标记处理。虽然 JavaScript 开发者不直接操作这个类，但它是 Chromium 网络栈中 QUIC 协议高效运行的关键组成部分，直接影响着基于 QUIC 的网络连接的性能。 调试涉及 QUIC 连接性能或底层数据包发送的问题时，这个测试文件和被测试的类都是重要的参考对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/batch_writer/quic_gso_batch_writer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -749,7 +751,4 @@ TEST_F(QuicGsoBatchWriterTest, FlowLabelIPv6) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

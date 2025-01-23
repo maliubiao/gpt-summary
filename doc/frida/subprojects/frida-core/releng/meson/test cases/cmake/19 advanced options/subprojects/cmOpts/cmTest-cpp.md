@@ -134,7 +134,7 @@ Initially, I might have focused too much on what the code *does* at runtime. How
 
 通过这样的调试过程，用户可以逐步定位到 `cmTest.cpp` 文件，并理解其在 Frida 构建过程中的作用，以及如何通过修改配置或调整环境来解决构建错误。这个测试文件实际上充当了一个编译时的断言，用于确保构建系统的行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/19 advanced options/subprojects/cmOpts/cmTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmTest.hpp"
 
 #if __cplusplus < 201103L
@@ -169,7 +171,4 @@ Prompt:
 int getTestInt() {
   return MESON_MAGIC_INT;
 }
-
-"""
-
 ```

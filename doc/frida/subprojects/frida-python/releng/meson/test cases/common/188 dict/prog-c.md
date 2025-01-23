@@ -165,7 +165,7 @@ While this specific program is simple, it touches on fundamental concepts:
 
 In summary, this seemingly simple C program serves as a fundamental building block for illustrating dynamic instrumentation principles with Frida, which are crucial in reverse engineering and security analysis. Its simplicity makes it an ideal starting point for understanding how to hook functions, inspect arguments, and modify program behavior at runtime.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/188 dict/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 
 int main(int argc, char **argv) {
@@ -183,7 +185,4 @@ int main(int argc, char **argv) {
 
   return strcmp(argv[1], argv[2]);
 }
-
-"""
-
 ```

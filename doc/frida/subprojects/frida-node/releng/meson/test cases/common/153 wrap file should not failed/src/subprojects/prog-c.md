@@ -120,7 +120,7 @@ int main(void) {
 
 `prog.c` 文件本身是一个非常简单的C程序，它的主要作用是作为Frida构建系统的一个测试用例存在。这个测试用例的目的是验证在处理 "wrap file" 时，构建过程不会失败。虽然程序本身功能简单，但它位于Frida项目的上下文中，就与动态分析、Hooking、二进制底层、操作系统等概念联系起来。 开发者查看这个文件通常是为了理解构建测试的逻辑，并排查与 "wrap file" 处理相关的构建错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/153 wrap file should not failed/src/subprojects/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
@@ -137,7 +139,4 @@ int main(void) {
     printf("This is only to test that this works.\n");
     return 0;
 }
-
-"""
-
 ```

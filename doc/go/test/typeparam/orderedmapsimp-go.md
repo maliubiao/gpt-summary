@@ -203,15 +203,17 @@ cherry 3
 
 `go/test/typeparam/orderedmapsimp.go` 的主要作用是作为 Go 语言编译器泛型功能测试的一部分，很可能包含了使用类型参数实现的有序 Map 的示例或测试代码。由于其位于 `package ignored` 中，它不是一个供开发者直接使用的库，也不太可能直接处理命令行参数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/orderedmapsimp.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -219,9 +221,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

@@ -152,7 +152,7 @@ if __name__ == '__main__':
 
 `print-version.py` 虽然功能简单，但在 Frida 的测试框架中扮演着重要的角色。 它作为一个可控的、简单的目标程序，帮助 Frida 开发者验证其动态插桩能力，特别是与获取目标程序版本信息相关的功能。 它间接地与逆向方法、二进制底层、操作系统概念相关联，因为它模拟了 Frida 在这些领域需要处理的场景。 理解这样的测试用例有助于理解 Frida 的工作原理和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/26 find program/print-version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -170,7 +172,4 @@ if len(sys.argv) != 2 or sys.argv[1] != '--version':
     exit(1)
 
 print('1.0')
-
-"""
-
 ```

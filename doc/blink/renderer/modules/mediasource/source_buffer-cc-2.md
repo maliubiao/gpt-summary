@@ -135,7 +135,7 @@ Here's a breakdown of the thought process:
 
 总而言之，这部分代码是 `SourceBuffer` 的核心实现，负责处理媒体数据的初始化和异步追加，是 MSE 功能实现的关键组成部分。它与 JavaScript 的 MSE API 紧密相连，通过事件机制进行通信，并直接影响 HTMLMediaElement 的媒体播放行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/source_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 move(label), std::move(language),
           select_next_video_track);
 
@@ -852,8 +854,5 @@ void SourceBuffer::AppendBufferAsyncPart_Locked(
       source_->SendUpdatedInfoToMainThreadCache();
 
       // 4. Queue a task to fire a simple event named update at this
-      // 
-"""
-
-
+      //
 ```

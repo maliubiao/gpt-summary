@@ -102,7 +102,7 @@ if (Process.name === 'target_app_name') {
 
 简而言之，这个 `get-prgname.c` 文件是 Frida 为了在特定场景下（例如，Swift 应用程序的动态分析）获取目标进程名称而创建的一个小工具。它利用了 GLib 库提供的跨平台能力，并且是 Frida 内部实现细节的一部分。 逆向工程师可能会在研究 Frida 的内部机制或者调试相关问题时遇到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/22 gir link order/get-prgname/get-prgname.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "get-prgname.h"
 
 #include <glib.h>
@@ -120,7 +122,4 @@ const char *get_prgname_get_name (void)
 {
   return g_get_prgname ();
 }
-
-"""
-
 ```

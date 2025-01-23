@@ -127,11 +127,13 @@ function add(x, y) {
 
 **总结来说，`asm-scanner-unittest.cc` 文件通过各种测试用例来确保 `AsmJsScanner` 能够正确地将 asm.js 源代码分解成词法单元，这是 V8 引擎处理 asm.js 代码的基础步骤，直接关系到后续的解析和编译过程。**  因为它处理的是 asm.js，而 asm.js 是 JavaScript 的一个子集，所以它本质上是对 JavaScript 语法进行扫描，只是它需要满足 asm.js 的特定约束。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/asmjs/asm-scanner-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -445,7 +447,4 @@ TEST_F(AsmJsScannerTest, Newlines) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

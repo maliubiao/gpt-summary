@@ -93,15 +93,17 @@ Based on the provided C++ code snippet from `blink/renderer/platform/loader/fetc
 
 The `ResourceFetcher` class in `blink/renderer/platform/loader/fetch/resource_fetcher.cc` is a core component responsible for initiating, managing, and prioritizing the loading of various web resources (HTML, CSS, JavaScript, images, etc.). It leverages a memory cache to optimize resource retrieval and makes decisions about loading order based on resource type, visibility, and other factors to enhance page load performance. It interacts closely with the browser's rendering engine and collects performance metrics. This initial part of the file lays the groundwork for the resource fetching process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 1998 Lars Knoll (knoll@mpi-hd.mpg.de)
     Copyright (C) 2001 Dirk Mueller (mueller@kde.org)
@@ -856,7 +858,4 @@ ResourceLoadPriority ResourceFetcher::AdjustImagePriority(
       features::kLCPCriticalPathAdjustImageLoadPriorityOverrideFirstNBoost
           .Get();
   if (kOverrideFirstNBo
-"""
-
-
 ```

@@ -410,7 +410,7 @@ This iterative process of scanning, analyzing individual rules, identifying patt
 
 总而言之，这段代码的核心目标是在编译期间尽可能地简化和优化表达式，特别是那些涉及到常量的表达式，以提高生成代码的效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -419,8 +419,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第15部分，共26部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 sh16x64, t)
 			v1 := b.NewValue0(v.Pos, OpConst64, typ.UInt64)
 			v1.AuxInt = int64ToAuxInt(log16(-c))
@@ -1856,9 +1858,4 @@ func rewriteValuegeneric_OpNeq32F(v *Value) bool {
 	// result: (ConstBool [c != d])
 	for {
 		for _i0 := 0; _i0 <= 1; _i0, v_0, v
-"""
-
-
-
-
 ```

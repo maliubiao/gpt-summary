@@ -247,7 +247,7 @@ sys.stdin.read()
 
 运行此 Frida 脚本后，当目标应用调用 `capget` 函数时，你将在控制台中看到详细的调用信息，包括传递给 `capget` 的 header 和 data 结构体的内容，以及返回的 Capabilities 值。你可以根据需要修改脚本来 hook 其他 Capability 相关的函数或执行更复杂的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/capability.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -258,8 +258,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -364,7 +366,4 @@ struct vfs_ns_cap_data {
 #define CAP_TO_INDEX(x) ((x) >> 5)
 #define CAP_TO_MASK(x) (1U << ((x) & 31))
 #endif
-
-"""
-
 ```

@@ -142,14 +142,16 @@ By following this thought process, considering the code structure, the request's
 
 总而言之，`raster_dark_mode_filter_impl.cc` 是 Blink 渲染引擎中实现暗黑模式的关键组件，它在光栅化阶段对图像数据进行颜色转换，以实现暗黑模式的视觉效果。虽然它不直接与 JavaScript, HTML, CSS 代码交互，但其功能受到这些上层技术的影响，并最终决定了用户在暗黑模式下看到的网页外观。 开发者在使用或修改 Blink 代码时，需要注意 `DarkModeSettings` 的正确配置以及潜在的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/raster_dark_mode_filter_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ sk_sp<cc::ColorFilter> RasterDarkModeFilterImpl::ApplyToImage(
 }
 
 }  // namespace blink
-
-"""
-
 ```

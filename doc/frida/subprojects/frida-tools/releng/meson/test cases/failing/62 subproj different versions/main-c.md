@@ -190,7 +190,7 @@ By following this structured thought process, starting with the code itself and 
 
 总而言之，这个简单的 `main.c` 文件在一个复杂的构建和测试环境中扮演着重要的角色，用于验证 Frida 在处理子项目版本问题时的正确性。它的简单性使得测试目标更加清晰，专注于测试构建系统的版本管理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/62 subproj different versions/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "a.h"
 #include "b.h"
@@ -209,7 +211,4 @@ int main(int argc, char **argv) {
     printf("%d\n", life);
     return 0;
 }
-
-"""
-
 ```

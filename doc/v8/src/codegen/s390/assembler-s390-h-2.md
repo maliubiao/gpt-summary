@@ -131,7 +131,7 @@ RegList final_available = assembler_->GetScratchRegisterList()->Available();
 
 `ScratchRegisterScope` 是一个用于管理临时寄存器的实用工具类，它提供了一种安全且方便的方式在代码生成过程中获取和释放寄存器。通过 RAII 的机制，它确保了寄存器在使用后能够被正确地归还，避免了寄存器资源耗尽的问题，提高了代码生成器的健壮性和效率。这对于 V8 引擎有效地将 JavaScript 代码编译成高效的机器码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/assembler-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/assembler-s390.h以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 oubleRegisterList() = old_available_double_;
   }
 
@@ -201,8 +203,4 @@ oubleRegisterList() = old_available_double_;
 }  // namespace v8
 
 #endif  // V8_CODEGEN_S390_ASSEMBLER_S390_H_
-
-"""
-
-
 ```

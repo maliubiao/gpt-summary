@@ -182,15 +182,17 @@ Data read from cache: This is some data to cache.
 
 这段测试代码片段主要用于验证 `writeDiskCache` 函数将数据写入磁盘缓存的功能。`writeDiskCache` 是 Go 模块下载和缓存机制中的一个底层组件，用于存储下载的模块数据。虽然用户不会直接调用它，但理解其功能有助于理解 `go` 工具的缓存行为，并避免一些常见的错误操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modfetch/cache_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ func TestWriteDiskCache(t *testing.T) {
 		t.Fatal(err)
 	}
 }
-
-"""
-
-
-
 ```

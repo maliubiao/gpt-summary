@@ -116,12 +116,14 @@ console.log(val); // 输出 20
 
 这部分代码主要关注于 `ConcurrentLookupIterator` 及其相关的辅助函数，用于在并发环境下安全高效地查找 JavaScript 对象的属性和元素。 它针对字符串字符和普通对象属性的查找进行了特定的优化，并考虑了访问器属性等复杂情况。 结合第一部分，可以更全面地理解 V8 引擎在属性查找方面所做的努力和优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/lookup.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 Char(
         reinterpret_cast<Tagged<String>*>(result_out), isolate, local_isolate,
         wrapped_string, index);
@@ -214,8 +216,4 @@ ConcurrentLookupIterator::TryGetPropertyCell(
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

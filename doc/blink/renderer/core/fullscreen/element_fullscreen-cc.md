@@ -172,14 +172,16 @@ By following this systematic approach, we can thoroughly analyze the code snippe
 
 总而言之，`element_fullscreen.cc` 是 Chromium Blink 引擎中处理元素全屏请求的关键部分，它连接了 JavaScript API 和底层的全屏实现逻辑，并涉及到 HTML 元素的操作以及与 CSS 相关的渲染效果。理解其功能有助于开发者更好地使用 Fullscreen API，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fullscreen/element_fullscreen.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ void ElementFullscreen::webkitRequestFullscreen(
 }
 
 }  // namespace blink
-
-"""
-
 ```

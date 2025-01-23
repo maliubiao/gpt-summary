@@ -129,15 +129,17 @@ func main() {
 
 这段 `c.go` 代码的核心功能是展示了 Go 语言的相对导入特性，允许在同一项目内的不同包之间进行引用。通过声明和初始化 `b.V1`，我们可以看到如何使用导入的包中的类型。理解相对导入的正确使用方式是避免编译错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug507.dir/c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -147,9 +149,4 @@ package b
 import "./a"
 
 var V1 = a.S{I: nil}
-
-"""
-
-
-
 ```

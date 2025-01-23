@@ -166,15 +166,17 @@ macro Add(a: int32, b: int32): int32 {
 
 总之，`v8/src/torque/declarations.h` 是 Torque 编译器的核心组件，负责管理和维护 Torque 代码中声明的所有实体的信息，这对于 Torque 编译器的正确运行和生成高效的 C++ 代码至关重要，而这些生成的代码最终支撑着 V8 引擎的 JavaScript 执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/declarations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/declarations.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ class Declarations {
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_DECLARATIONS_H_
-
-"""
-
 ```

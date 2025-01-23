@@ -103,11 +103,13 @@ for (let i = 0; i < 500000; i++) {
 
 `v8/src/heap/cppgc/heap-growing.cc` 文件是 V8 引擎中负责动态管理 C++ 堆增长和触发垃圾回收的关键组件。它通过维护和调整 GC 触发阈值，以及监听堆分配大小的变化来实现这一功能。 虽然 JavaScript 开发者不能直接操作这些 C++ 代码，但其行为直接影响了 JavaScript 程序的内存管理和性能表现。理解这些底层的机制有助于更好地理解 JavaScript 运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-growing.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -278,7 +280,4 @@ constexpr double HeapGrowing::kGrowingFactor;
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

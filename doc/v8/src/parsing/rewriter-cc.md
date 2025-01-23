@@ -192,15 +192,17 @@ Block {
 
 `v8/src/parsing/rewriter.cc` 是 V8 引擎中负责 AST 重写的关键组件，其主要目的是规范化语句的完成值，以便 V8 内部的后续处理能够更加一致和可靠地执行 JavaScript 代码。它通过引入临时变量和修改 AST 结构来实现这一目标，尤其关注控制流语句和 `try...finally` 语句的处理。虽然用户不会直接与 `rewriter.cc` 交互，但其功能影响着 JavaScript 代码的执行语义和潜在的编程错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/rewriter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/rewriter.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -643,7 +645,4 @@ std::optional<VariableProxy*> Rewriter::RewriteBody(
 #undef VISIT_AND_RETURN_IF_STACK_OVERFLOW
 
 }  // namespace v8::internal
-
-"""
-
 ```

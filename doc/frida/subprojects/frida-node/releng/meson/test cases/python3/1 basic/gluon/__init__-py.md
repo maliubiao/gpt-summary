@@ -106,7 +106,7 @@ from gluon import test_hook
 
 虽然提供的 `__init__.py` 文件是空的，但它的存在是必要的，因为它将 `gluon` 目录标记为一个 Python 包，使得该目录下的其他模块可以被导入和使用。在 Frida 的上下文中，这个文件作为测试套件的一部分，为组织和执行与动态 Instrumentation 相关的测试代码提供了结构。即使当前为空，它也可能在未来被用于执行包的初始化操作。理解 `__init__.py` 的作用对于理解 Python 项目的组织结构至关重要，尤其是在像 Frida 这样包含大量模块和测试用例的项目中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python3/1 basic/gluon/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,9 +114,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

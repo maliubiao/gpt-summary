@@ -217,7 +217,7 @@ sys.stdin.read()
 
 `bionic/libc/include/utmpx.handroid` 提供了一个空操作的 POSIX 登录记录接口。它在当前的 Android 系统中没有实际的功能，更多的是为了 API 兼容性或未来扩展的可能性。理解这一点对于进行 Android 底层开发和移植代码至关重要。在使用相关函数时，务必注意其在 Android 上的实际行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/utmpx.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -228,8 +228,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -333,7 +335,4 @@ struct utmpx* _Nullable pututxline(const struct utmpx* _Nonnull __entry) __RENAM
 void endutxent(void) __RENAME(endutent);
 
 __END_DECLS
-
-"""
-
 ```

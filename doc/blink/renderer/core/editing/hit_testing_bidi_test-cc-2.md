@@ -77,7 +77,7 @@ div { font: 10px/10px Ahem; width: 300px; }
 
 这部分 `hit_testing_bidi_test.cc` 的功能是**专门测试 Blink 引擎在处理包含嵌套 BiDi 文本段落时，进行精确点击位置判断的能力，尤其关注点击发生在不同 BiDi 文本段落边缘的情况**。它通过模拟各种复杂的 HTML 结构和点击坐标，验证引擎能否正确地将屏幕坐标映射到文本内容中的光标位置。这些测试覆盖了从左到右和从右到左的基准文本方向，以及包含或不包含基准文本段落结尾的不同场景，确保了浏览器在处理复杂的双向文本布局时，用户交互的准确性和一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/hit_testing_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _TRUE(result.IsNotNull());
   EXPECT_TRUE(result.IsCollapsed());
   EXPECT_EQ(
@@ -881,7 +883,4 @@ TEST_F(HitTestingBidiTest,
   // Bidi:    1 1 1 4 4 4 3 3 3 2 2 2
   LoadAhem();
   InsertStyleElement("div {font: 10px/10px Ahem; widt
-"""
-
-
 ```

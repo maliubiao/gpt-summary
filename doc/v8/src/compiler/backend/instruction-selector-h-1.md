@@ -155,7 +155,7 @@ addl %reg1, %reg2      // 将 %reg1 和 %reg2 相加，结果存储到 %reg2
 
 `v8/src/compiler/backend/instruction-selector.h` 的第二部分主要负责定义了 `InstructionSelector` 类的成员函数，这些函数实现了**将编译器生成的中间表示 (IR) 转换为目标机器指令的核心逻辑**。它包含了针对各种操作符、数据类型和控制流结构的特定代码生成方法。这部分还包含了处理 SIMD 指令、WebAssembly 特有操作以及提供辅助功能的其他方法。  本质上，它是 V8 编译器后端将高级抽象的代码转化为实际可在硬件上执行的低级指令的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector.h以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ndVector* inputs,
                                          FrameStateInputKind kind, Zone* zone);
   size_t AddInputsToFrameStateDescriptor(StateValueList* values,
@@ -678,8 +680,4 @@ ndVector* inputs,
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_INSTRUCTION_SELECTOR_H_
-
-"""
-
-
 ```

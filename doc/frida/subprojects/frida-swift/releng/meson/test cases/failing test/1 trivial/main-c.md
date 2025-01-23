@@ -86,7 +86,7 @@ Essentially, the process involves starting with the obvious, then progressively 
 
 尽管 `main.c` 的代码非常简单，但它在 Frida 的测试体系中扮演着重要的角色。它用于验证 Frida 是否能够正确处理和报告目标进程的非零退出状态，这对于逆向工程中理解程序行为至关重要。它也涉及到操作系统进程管理和退出码的基本概念，并可以帮助用户避免一些常见的误解和配置错误。 作为调试线索，当 Frida 的 Swift 支持出现问题时，开发者可以首先运行这类简单的测试用例来隔离问题，判断是核心的 Frida 功能出现了问题，还是 Swift 绑定层面的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing test/1 trivial/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -94,12 +94,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 1;
 }
-
-"""
-
 ```

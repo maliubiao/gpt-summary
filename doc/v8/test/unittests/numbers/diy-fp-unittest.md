@@ -112,11 +112,13 @@ console.log(result3); // 输出 18014398509481982 (可能损失精度)
 
 `v8/test/unittests/numbers/diy-fp-unittest.cc` 文件是 V8 引擎中用于测试自定义浮点数表示类 `DiyFp` 的单元测试文件。`DiyFp` 可能是 V8 为了优化 JavaScript 数字运算而实现的内部数据结构。 虽然 JavaScript 开发者不能直接访问 `DiyFp`，但它的正确性直接影响着 JavaScript 中数值运算的准确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/numbers/diy-fp-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -213,7 +215,4 @@ TEST_F(DiyFpTest, Multiply) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

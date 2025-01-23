@@ -158,7 +158,7 @@ go build -tags msan your_program.go
 
 `go/src/internal/msan/doc.go` 文件描述的 `msan` 包是 Go 语言内存清理器功能的一部分，提供了一些辅助函数用于手动插桩代码进行内存错误检测。它的核心功能依赖于编译时使用 `-tags msan` 构建标签来激活。使用者容易犯的错误是忘记添加这个构建标签，导致 `msan` 包的功能失效。 同时需要注意 `internal` 包的特性，其 API 可能不稳定。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/msan/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -177,9 +179,4 @@ Prompt:
 // This package exports the private msan routines in runtime unconditionally
 // but without the "msan" build tag they are no-ops.
 package msan
-
-"""
-
-
-
 ```

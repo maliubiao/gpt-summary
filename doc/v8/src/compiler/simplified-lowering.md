@@ -55,12 +55,14 @@ add(3.14, 2.71); // 第二次调用，类型反馈得知 a 和 b 是浮点数
 
 `v8/src/compiler/simplified-lowering.cc` 文件是 Turbofan 编译器中一个至关重要的组件，它通过选择合适的机器表示形式和降低高层操作，来优化 JavaScript 代码的执行效率。它利用类型信息（包括动态类型反馈）来生成更高效的机器码，从而提升 JavaScript 的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1810,8 +1812,4 @@ class RepresentationSelector {
   template <Phase T>
   void VisitSpeculativeNumberModulus(Node* node, Truncation truncation,
                                      SimplifiedLowering* lowering) {
-
-"""
-
-
 ```

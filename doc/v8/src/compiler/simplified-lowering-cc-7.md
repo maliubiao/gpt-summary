@@ -141,7 +141,7 @@ By following this systematic approach of scanning, inferring, analyzing, connect
 
 作为编译过程的最后阶段之一，`v8/src/compiler/simplified-lowering.cc` 文件的主要功能是**将抽象的、与平台无关的 Simplified 中间表示转换为更具体、更接近目标机器指令的表示形式**。它通过分析和转换各种操作节点，例如数值运算、类型转换、内存访问等，来实现这一目标。这个过程是 V8 引擎进行高效代码生成和优化的关键步骤，它使得 JavaScript 代码能够在不同的硬件平台上高效执行。本文件处理了多种 JavaScript 特有的操作，并负责将它们转化为更底层的机器操作，为后续的机器码生成阶段做准备。它与 JavaScript 的类型系统、数值运算和内置函数等特性紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,8 +149,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
   Node* const max = jsgraph()->Uint32Constant(255u);
 
@@ -240,8 +242,4 @@ void SimplifiedLowering::ChangeOp(Node* node, const Operator* new_op) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

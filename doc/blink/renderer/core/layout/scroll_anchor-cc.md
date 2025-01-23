@@ -181,14 +181,16 @@ By following this systematic approach, which involves code examination, conceptu
 
 总而言之，`scroll_anchor.cc` 文件是 Chromium Blink 引擎中实现关键的滚动锚定特性的核心组件。它涉及到复杂的布局计算和 DOM 操作，旨在为用户提供更流畅的网页浏览体验，尤其是在内容动态变化的情况下。理解其功能和与 Web 技术的关系有助于开发者更好地利用和调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/scroll_anchor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1076,7 +1078,4 @@ void ScrollAnchor::NotifyRemoved(LayoutObject* layout_object) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

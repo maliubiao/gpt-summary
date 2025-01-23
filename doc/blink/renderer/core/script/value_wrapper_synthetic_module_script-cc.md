@@ -232,15 +232,17 @@ By following this thought process, combining code analysis with knowledge of web
 
 总而言之，`value_wrapper_synthetic_module_script.cc` 是 Blink 引擎中一个关键的组件，它允许将非 JavaScript 资源（如 CSS 和 JSON）作为 JavaScript 模块进行管理，从而增强了 Web 开发的灵活性和模块化能力。虽然开发者不会直接编写或调用这个 C++ 文件中的代码，但理解其功能有助于理解浏览器如何处理 CSS 模块脚本和 JSON 模块，以及在调试相关问题时提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/value_wrapper_synthetic_module_script.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -461,7 +463,4 @@ void ValueWrapperSyntheticModuleScript::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

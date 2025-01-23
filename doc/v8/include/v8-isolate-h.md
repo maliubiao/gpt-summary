@@ -75,7 +75,7 @@ Strategizing complete. I will now proceed with generating the response by follow
 
 在后续的部分，我们可以更深入地探讨其中的某些功能，并使用 JavaScript 示例来展示其联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-isolate.h以.tq结尾，那它是个v8 torque源代码，
@@ -83,8 +83,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -999,7 +1001,4 @@ class V8_EXPORT Isolate {
 
   /**
    * Adjusts the amount of regist
-"""
-
-
 ```

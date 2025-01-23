@@ -131,7 +131,7 @@ A developer might arrive at examining this file for several reasons while workin
 
 **In summary, `foobar.c` is a simple but crucial component within Frida's test suite. It provides basic C and C++ functions that are used to verify Frida's ability to interact with and instrument code that links these two languages. Its simplicity makes it easy to reason about and debug, making it a valuable tool for ensuring the correctness of Frida's C/C++ linking capabilities.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/138 C and CPP link/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -168,7 +170,4 @@ void mynumbers(int nums[]) {
     nums[0] = forty_two();
     nums[1] = six_one();
 }
-
-"""
-
 ```

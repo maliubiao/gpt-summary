@@ -141,7 +141,7 @@ By following these steps, I can systematically break down the request, analyze t
 
 尽管 `prog.c` 代码极其简单，但在 Frida 的上下文中，它可以作为测试、演示和逆向分析的基础。它的存在于一个 "failing" 的测试用例中，暗示着它被用于某种比较或错误情况的验证。调试该测试用例的开发者会查看 `prog.c`，以理解其预期行为，并找出导致测试失败的原因，这很可能涉及到比较 `prog` 与其他可执行文件的行为或 Frida 对其进行操作时的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/48 executable comparison/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,10 +149,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

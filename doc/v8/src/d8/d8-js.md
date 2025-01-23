@@ -141,11 +141,13 @@ console.log(JSON.stringify(obj)); // 输出: {"_x":0} (getter 和 setter 的定�
 
 `d8-js.cc` 文件通过嵌入一个自定义的 `Stringify` JavaScript 函数，增强了 d8 命令行工具在输出 JavaScript 值时的能力。这个 `Stringify` 函数能够处理更广泛的 JavaScript 类型，例如循环引用、Proxy 对象、Symbol 属性以及 getter 和 setter，提供比标准方法更详细和有用的调试信息。这使得开发者在使用 d8 进行 JavaScript 代码测试和调试时，能更清晰地了解对象的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-js.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```javascript
 // Copyright 2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ return Stringify;
 })();
 
 )D8";
-
-"""
-
 ```

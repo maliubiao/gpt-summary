@@ -180,15 +180,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`prerender_handle.cc` 文件是 Blink 渲染引擎中负责管理页面预渲染的核心组件，它连接了 HTML 标签、JavaScript 操作和浏览器底层的资源加载机制，旨在提升用户体验，通过提前加载页面来减少导航延迟。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/prerender_handle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -312,7 +314,4 @@ void PrerenderHandle::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

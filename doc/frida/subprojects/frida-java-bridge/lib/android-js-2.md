@@ -73,7 +73,7 @@ if (Process.arch === 'arm') {
 - **ARM64:** 独立的寄存器命名约定（x0-x30 vs r0-r15）
 - **x86:** 需要显式保存FPU状态（fxsave/fxrstor指令）
 - **代码生成器:** 提供`ThumbWriter`/`Arm64Writer`等平台专用写入器
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/android.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -83,9 +83,11 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    '1f fc ff ff',
+### 源代码
+```javascript
+'1f fc ff ff',
           '1f 00 00 ff',
           'e0 ff ff ff'
         ],
@@ -1309,7 +1311,4 @@ const artQuickCodeHookRedirectSize = {
   ia32: 5,
   x64: 16,
   arm: 8
-"""
-
-
 ```

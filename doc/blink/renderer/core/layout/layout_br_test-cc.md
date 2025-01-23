@@ -101,14 +101,16 @@ Let's break down the thought process for analyzing the provided C++ test file `l
 
 `layout_br_test.cc` 文件通过单元测试确保 `LayoutBR` 类能够正确处理 HTML `<br>` 标签的布局和文本相关属性。它揭示了 `<br>` 标签在 Blink 渲染引擎中的内部表示和行为，并间接指出了与该标签相关的常见使用方式和潜在的误解。 理解这些测试用例有助于开发者更准确地使用 HTML 和 CSS，并理解浏览器渲染引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_br_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ TEST_F(LayoutBRTest, TextMethods) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

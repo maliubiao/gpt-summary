@@ -107,11 +107,13 @@ Throughout this process, I was constantly asking myself: "How does this internal
 
 理解这些模板类的功能对于深入了解 V8 引擎的内部工作原理以及如何通过 C++ 扩展 JavaScript 功能至关重要。这个文件中的代码涉及到对象创建、类型检查、函数元数据管理以及性能优化等多个 V8 核心领域。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/templates.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -473,7 +475,4 @@ Handle<JSObject> DictionaryTemplateInfo::NewInstance(
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

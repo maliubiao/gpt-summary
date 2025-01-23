@@ -273,12 +273,14 @@ for (let key in obj) { // ForInEnumerate, ForInPrepare, ForInNext, ForInStep
 
 总而言之，这个文件的代码是 V8 JavaScript 引擎解释器 Ignition 的核心组成部分，它将高级的 JavaScript 语法和操作转化为可以执行的低级指令。每个 `IGNITION_HANDLER` 都负责执行一个特定的、细粒度的 JavaScript 语义操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 vector =
           LoadFeedbackVectorOrUndefinedIfJitless();
       UpdateFeedback(var_type_feedback.value(), maybe_feedback_vector,
@@ -1914,8 +1916,4 @@ Handle<Code> GenerateBytecodeHandler(Isolate* isolate, const char* debug_name,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

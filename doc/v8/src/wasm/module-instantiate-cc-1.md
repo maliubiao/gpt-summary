@@ -135,7 +135,7 @@ WebAssembly.instantiateStreaming(fetch('module.wasm'), importObject)
 
 总而言之，这部分 `v8/src/wasm/module-instantiate.cc` 代码片段的核心功能是 **处理 WebAssembly 模块的导入，特别是判断如何高效地调用导入的 JavaScript 函数或其他外部资源**。它通过检查导入的类型、签名和预定义信息，来选择最优的调用方式，并能检测出一些常见的导入错误，例如参数数量不匹配。这对于 WebAssembly 与 JavaScript 的互操作性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-instantiate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-instantiate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -143,9 +143,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```cpp
+{
     return ImportCallKind::kWasmToJSFastApi;
   }
   well_known_status_ = CheckForWellKnownImport(
@@ -889,7 +891,4 @@ MaybeHandle<WasmInstanceObject> InstanceBuilder::Build() {
   }
 
   DCHECK(!isolate_->
-"""
-
-
 ```

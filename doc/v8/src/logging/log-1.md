@@ -215,12 +215,14 @@ This detailed logging is crucial for debugging, performance analysis, and unders
 
 这部分 `v8/src/logging/log.cc` 代码是 V8 引擎日志记录的核心实现，它详细记录了引擎在执行 JavaScript 代码时的各种关键事件和状态变化。这些日志对于理解 V8 引擎的内部工作原理、进行性能分析和调试至关重要。通过记录已编译的代码对象，它还能在后期启动日志记录时捕获到之前生成的代码信息。与外部工具的集成则进一步扩展了其应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/log.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 amespace
 
 void V8FileLogger::FunctionEvent(const char* reason, int script_id,
@@ -1090,8 +1092,4 @@ void ExistingCodeLogger::LogExistingFunction(Handle<SharedFunctionInfo> shared,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

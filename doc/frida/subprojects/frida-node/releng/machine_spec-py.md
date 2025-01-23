@@ -265,7 +265,7 @@ By following these steps, I can create a comprehensive and accurate answer to th
 
 总而言之，`frida/subprojects/frida-node/releng/machine_spec.py` 是 Frida 项目中一个非常核心的文件，它负责定义和处理目标机器的规格信息，为 Frida 的跨平台能力提供了基础。理解这个文件的功能对于理解 Frida 的内部工作原理和解决平台相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/machine_spec.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -273,8 +273,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 from dataclasses import dataclass
 import platform
@@ -569,7 +571,4 @@ BIG_ENDIAN_ARCHS = {
 }
 
 TARGET_TRIPLET_ARCH_PATTERN = re.compile(r"^(i.86|x86_64|arm(v\w+)?|aarch64|mips\w*|powerpc|s390x)$")
-
-"""
-
 ```

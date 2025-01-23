@@ -151,7 +151,7 @@ Imagine a developer working on the Frida project and encountering a build issue:
 
 In essence, `dirchanger.py` is a small but crucial utility within Frida's build system (and potentially other projects using Meson). It provides a controlled way to execute commands within specific directory contexts, which is essential for managing the complexities of a multi-stage build process. Understanding its function helps developers debug build issues and understand the underlying mechanisms of the build system.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/scripts/dirchanger.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -181,7 +183,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

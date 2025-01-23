@@ -202,14 +202,16 @@ By following this systematic approach, we can effectively analyze and explain th
 
 总而言之，`html_source_element.cc` 文件是 Blink 引擎中处理 `<source>` 标签的核心部分，它负责解析属性、管理媒体查询、与父元素通信以及处理错误，从而实现了 HTML 中多媒体资源的灵活选择和响应式图片的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_source_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008, 2010 Apple Inc. All rights reserved.
  *
@@ -415,7 +417,4 @@ void HTMLSourceElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

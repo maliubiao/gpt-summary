@@ -177,7 +177,7 @@ Here's a breakdown of the thought process to answer the request:
 
 在整个可访问性流程中，`ax_object.cc` 扮演着至关重要的角色，它连接了辅助技术和渲染引擎，使得辅助技术能够理解和操作网页内容。 这部分代码专注于处理用户的交互意图，并将这些意图转化为浏览器可以理解和执行的动作。 考虑到这是第 9 部分，可以推测之前的部分可能涵盖了 `AXObject` 的创建、属性获取、以及可访问性树的构建，而最后一部分可能涉及可访问性事件的通知和更高级的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e) {
   // In most cases, UpdateAllLifecyclePhasesExceptPaint() is enough, but if
   // the action is part of a display locked node, that will not update the node
@@ -1015,7 +1017,4 @@ bool AXObject::SupportsNameFromContents(bool recursive,
       // Ruby annotations are removed from accessible names and instead used
       // as a description of the parent Role::kRuby object. The benefit is that
       // announcement of the description can be togg
-"""
-
-
 ```

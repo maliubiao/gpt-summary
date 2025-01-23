@@ -184,7 +184,7 @@ func main() {
 
 `go/src/go/types/exprstring.go` 提供的功能是将 Go 语言表达式的 AST 节点转换为字符串表示，主要用于类型检查和信息展示。生成的字符串可能为了简洁而进行简化，不一定完全符合 Go 语法，使用者需要注意这一点。它不涉及命令行参数的处理，而是在 Go 程序的内部作为工具函数使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/exprstring.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -431,9 +433,4 @@ func writeExprList(buf *bytes.Buffer, list []ast.Expr) {
 		WriteExpr(buf, x)
 	}
 }
-
-"""
-
-
-
 ```

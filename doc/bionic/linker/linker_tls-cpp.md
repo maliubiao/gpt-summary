@@ -213,7 +213,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 通过运行这个 Frida 脚本，你可以在应用启动过程中观察到哪些共享库的 TLS 模块被注册，从而了解动态链接器是如何一步步处理 TLS 的。你可以类似地 hook 其他 `linker_tls.cpp` 中的函数，例如 `register_tls_module` 和 `unregister_soinfo_tls`，以更深入地了解 TLS 的管理过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_tls.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -224,8 +224,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -390,7 +392,4 @@ void unregister_soinfo_tls(soinfo* si) {
   }
   return unregister_tls_module(si);
 }
-
-"""
-
 ```

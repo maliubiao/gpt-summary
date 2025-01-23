@@ -164,7 +164,7 @@ script.load()
 
 总之，用户通常不会直接编辑或创建这个 `__init__.py` 文件。它更多是 Frida 项目内部结构的一部分，与项目的构建、测试和模块化组织有关。作为调试线索，它的存在与否以及其所在的位置，可以帮助开发人员理解 Frida 的模块组织结构，并排查与模块导入相关的错误。这个特定的路径和文件名暗示了它与 Frida 的安装数据结构测试有关，可能用于验证 Frida 的 Python 组件在安装后是否被正确地组织。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/252 install data structured/pysrc/submod/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,10 +172,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''init for submod'''
-
-"""
-
 ```

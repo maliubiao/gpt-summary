@@ -99,7 +99,7 @@ Imagine you are using the Frida CLI to inject a JavaScript script into a running
 
 **As a debugging clue:** If a Frida connection fails, examining whether `frida_listen` successfully created the socket and bound to a port can be a crucial first step. If `frida_listen` returns an error code (by checking the upper bits of the return value), it indicates a problem within the target process's ability to set up the communication channel. You might then investigate resource usage, permissions, or potential issues with the underlying socket API implementation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/helpers/upload-listener.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "upload-api.h"
 
 uint64_t
@@ -212,7 +214,4 @@ main (void)
 }
 
 #endif
-
-"""
-
 ```

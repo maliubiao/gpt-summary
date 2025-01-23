@@ -99,15 +99,17 @@ By following these steps, we can effectively analyze the C++ unit test code and 
 
 作为 `blink/common/permissions_policy/permissions_policy_unittest.cc` 的第二部分，这段代码主要集中于**测试 `PermissionsPolicy` 类在处理 iframe 权限策略继承和覆盖时的行为**。它详细验证了默认开启和默认自身类型的 feature 如何受到父级策略和 iframe `allow` 属性的影响。此外，它还测试了沙箱环境下的权限策略以及如何处理未定义的 feature。这部分测试用例旨在确保 `PermissionsPolicy` 类能够正确地管理和控制跨 frame 的权限，并防止常见的配置错误。 特别值得注意的是，这部分代码也开始测试一些提案中的针对子资源请求的权限策略算法变更。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 efaultSelfFeature, /*allowed_origins=*/
        {*blink::OriginWithPossibleWildcards::FromOriginAndWildcardsForTest(
            origin_c_,
@@ -1452,7 +1454,4 @@ TEST_F(PermissionsPolicyTest, ProposedTestDisallowedCrossOriginChildPolicy) {
 }
 
 T
-"""
-
-
 ```

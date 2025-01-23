@@ -233,7 +233,7 @@ got := runTestProg(t, "testprogcgo", "CgoExternalThreadSIGPROF", "GO_START_SIGPR
 
 总之，这段测试代码覆盖了 CGO 中许多关键和容易出错的场景，帮助确保 Go 运行时在与 C 代码交互时的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/crash_cgo_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -241,8 +241,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1114,9 +1116,4 @@ func TestCgoToGoCallGoexit(t *testing.T) {
 		t.Fatalf("output should contain %s, got %s", "runtime.Goexit called in a thread that was not created by the Go runtime", output)
 	}
 }
-
-"""
-
-
-
 ```

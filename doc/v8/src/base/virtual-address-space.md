@@ -123,11 +123,13 @@ view[0] = 100;
 
 `virtual-address-space.cc` 是 V8 引擎进行底层内存管理的关键组件。它提供了一组与操作系统交互的接口，用于分配、释放、保护和管理虚拟内存。 虽然 JavaScript 开发者通常不需要直接与这些 C++ 类交互，但他们的代码行为（创建对象、执行函数、使用 Typed Arrays 等）都会间接地依赖于这个文件提供的功能，让 V8 引擎能够有效地管理 JavaScript 运行所需的内存资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/virtual-address-space.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -535,7 +537,4 @@ void VirtualAddressSubspace::FreeSubspace(VirtualAddressSubspace* subspace) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

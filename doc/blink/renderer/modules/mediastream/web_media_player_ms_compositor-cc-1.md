@@ -104,7 +104,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这段代码片段的主要功能是 **接收和预处理来自 MediaStream 的解码后的视频帧，并检测帧的关键属性变化 (如尺寸、变换、不透明度)，然后将这些变化通知到 `WebMediaPlayerMS` 类，以便进行后续的渲染和显示处理。**  它扮演着视频帧数据流的初步处理和信息传递的关键角色，确保视频帧的属性变化能够及时地反映到最终的渲染结果上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/web_media_player_ms_compositor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _video_transform.rotation,
                              current_frame_->natural_size());
 
@@ -310,8 +312,4 @@ WebMediaPlayerMSCompositor::GetLastPresentedFrameMetadata() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -116,11 +116,13 @@ console.log("Square Root:", sqrtValue); // 输出: Square Root: 5
 
 总而言之，`v8/src/asmjs/asm-js.cc` 是 V8 引擎中实现 asm.js 功能的关键组成部分，它负责将这种高性能 JavaScript 子集编译和运行为 WebAssembly，从而提升特定类型 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-js.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```javascript
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -580,7 +582,4 @@ MaybeHandle<Object> AsmJs::InstantiateAsmWasm(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

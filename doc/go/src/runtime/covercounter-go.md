@@ -148,7 +148,7 @@ func TestAdd(t *testing.T) {
 
 `go/src/runtime/covercounter.go` 中的 `coverage_getCovCounterList` 函数是 Go 语言代码覆盖率实现的关键部分。它负责收集程序运行时产生的覆盖率计数器信息，为生成最终的覆盖率报告提供基础数据。虽然普通 Go 代码无法直接调用它，但通过 `go test -cover` 命令，我们可以间接地利用它的功能来分析代码的测试覆盖率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/covercounter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,8 +156,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -184,9 +186,4 @@ func coverage_getCovCounterList() []rtcov.CovCounterBlob {
 	}
 	return res
 }
-
-"""
-
-
-
 ```

@@ -40,9 +40,12 @@ By following these steps, I arrive at a comprehensive summary that captures the 
 
 **总结来说，这个文件旨在确保 V8 在 POSIX 系统上的 WebAssembly 陷阱处理机制的健壮性和可靠性，并验证它能够与系统中已有的信号处理机制良好地集成。**  它通过模拟错误场景和自定义信号处理来测试 V8 的陷阱处理程序是否按预期工作，以及在需要时是否可以回退到之前的信号处理程序。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/trap-handler-posix-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/trap-handler-posix-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -113,6 +116,4 @@ TEST_F(SignalHandlerFallbackTest, DoTest) {
 #endif
 
 }  //  namespace
-
-"""
 ```

@@ -105,7 +105,7 @@ Here's a breakdown of the thought process:
 
 总而言之，这部分代码是 Frida Gum 引擎 JavaScript 绑定的核心组成部分，它将底层的代码重定位功能暴露给 JavaScript 环境，使得逆向工程师能够方便地进行动态代码分析和修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/generate-bindings.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ion_prefix}_free ({wrapper_struct_name} * self)
 {{
   _{wrapper_function_prefix}_finalize (self);
@@ -1188,7 +1190,4 @@ GUMJS_DEFINE_CONSTRUCTOR ({gumjs_function_prefix}_construct)
     {wrapper_function_prefix}_mark_weak (relocator);
 
     relocator->impl = {impl_
-"""
-
-
 ```

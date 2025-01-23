@@ -134,15 +134,17 @@ const uint8_t* data;
 
 `v8/test/common/streaming-helper.h` 中的 `TestSourceStream` 类是一个用于测试目的的工具，它模拟了从多个块中读取源代码的过程。它简化了测试 V8 编译器处理分段输入的能力，并避免了实际文件 I/O 的复杂性。它与 JavaScript 的关系在于它提供了编译 JavaScript 代码的输入。 理解其内存管理是避免潜在 C++ 错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/common/streaming-helper.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/common/streaming-helper.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ class TestSourceStream : public v8::ScriptCompiler::ExternalSourceStream {
 }  // namespace v8
 
 #endif  // V8_COMMON_STREAMING_HELPER_H_
-
-"""
-
 ```

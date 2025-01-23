@@ -159,11 +159,13 @@ console.log(sampleBuffer.buffer); // 输出: [ 5, undefined, 6, 4 ]
 
 `circular-queue-unittest.cc` 测试的 `SamplingCircularQueue` 是 V8 引擎内部使用的一个高效、线程安全的循环队列，很可能被用于性能分析等需要采样数据的场景。虽然 JavaScript 没有直接对应的内置结构，但可以使用类似固定大小数组并实现循环覆盖逻辑的方式来模拟其功能。这体现了 V8 引擎作为 JavaScript 运行时环境的底层实现，需要各种高效的数据结构来支撑其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/profiler/circular-queue-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -325,7 +327,4 @@ TEST_F(CircularQueueTest, SamplingCircularQueueMultithreading) {
 
   CHECK(!scq.Peek());
 }
-
-"""
-
 ```

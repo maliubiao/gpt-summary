@@ -165,15 +165,17 @@ console.log(myMap.get(key1)); // V8 内部会使用哈希来快速查找
 
 希望这个详细的分析能够帮助你理解 `v8/src/third_party/siphash/halfsiphash.h` 文件的功能及其在 V8 和 JavaScript 中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/siphash/halfsiphash.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/siphash/halfsiphash.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 /*
  * SipHash reference C implementation
  *
@@ -193,7 +195,4 @@ Prompt:
 
 V8_EXPORT_PRIVATE uint32_t halfsiphash(const uint32_t value,
                                        const uint64_t seed);
-
-"""
-
 ```

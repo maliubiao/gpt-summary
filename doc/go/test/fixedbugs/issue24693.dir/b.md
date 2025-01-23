@@ -176,15 +176,17 @@ Before the bug fix, if the compiler had similar issues with itab construction, t
 
 **In summary, this code snippet is a carefully crafted example to expose and test a subtle bug in the Go compiler related to interface method dispatch in the presence of embedded interfaces and separate compilation units. It highlights the importance of correct itab construction and consistent ordering of methods within interface method sets.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue24693.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -223,9 +225,4 @@ func F2(i interface {
 }) {
 	i.m()
 }
-
-"""
-
-
-
 ```

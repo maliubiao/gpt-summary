@@ -161,7 +161,7 @@ input() # 防止脚本过早退出
 
 因此，到达这个 `foo.c` 文件的路径，通常意味着开发人员或测试人员正在构建和测试 Frida 与特定语言（如 Swift 和 Vala）的集成能力，或者逆向工程师正在使用 Frida 分析使用了这类库的目标程序。这个简单的 `foo_foo_return_success` 函数成为了一个清晰可控的 hook 目标，方便进行测试和演示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/vala/11 generated vapi/libfoo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "foo.h"
 
 struct _FooFoo
@@ -199,7 +201,4 @@ int foo_foo_return_success(void)
 {
   return 0;
 }
-
-"""
-
 ```

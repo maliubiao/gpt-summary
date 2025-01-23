@@ -96,11 +96,13 @@ let isGreaterThanOrEqual = a >= b; // 对应 GreaterThanOrEqual_WithFeedback 或
 
 `builtins-number-gen.cc` 文件是 V8 引擎中至关重要的组成部分，它定义了 JavaScript 中数字操作的基础实现。通过使用宏和 `CodeStubAssembler`，它高效地生成了用于执行这些操作的内置函数，并利用反馈机制来优化代码执行。每当你对 JavaScript 中的数字进行操作时，幕后很可能就有这个文件中的 C++ 代码在辛勤工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-number-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ TF_BUILTIN(StrictEqual_Baseline, CodeStubAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

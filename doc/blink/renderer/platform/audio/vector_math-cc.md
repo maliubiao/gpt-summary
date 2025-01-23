@@ -153,14 +153,16 @@ By following these steps, including careful analysis of the code and considering
 
 总而言之，`blink/renderer/platform/audio/vector_math.cc` 是 Blink 引擎中一个关键的性能敏感模块，它提供了用于音频处理的优化的向量数学运算，并通过 Web Audio API 服务于 JavaScript 代码。理解其功能和潜在的错误使用场景对于开发高性能的 Web Audio 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/vector_math.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -449,7 +451,4 @@ void Zvmul(const float* real1p,
 }
 
 }  // namespace blink::vector_math
-
-"""
-
 ```

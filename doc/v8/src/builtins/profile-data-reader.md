@@ -149,11 +149,13 @@ In this example, the `arr.push(i)` call within the loop will invoke the `Array.p
 
 **In summary, `profile-data-reader.cc` is a crucial component for V8's performance optimization. By loading and parsing profiling data, it provides valuable insights into the runtime behavior of built-in JavaScript functions, allowing TurboFan to generate more efficient code and improve overall JavaScript execution speed.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/profile-data-reader.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ const ProfileDataFromFile* ProfileDataFromFile::TryRead(const char* name) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

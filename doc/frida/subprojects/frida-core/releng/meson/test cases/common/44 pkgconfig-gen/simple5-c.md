@@ -139,7 +139,7 @@ int simple5(void)  // 函数定义
 
 总而言之，尽管 `simple5.c` 的代码非常简单，但它在 Frida 的开发和测试流程中扮演着重要的角色，用于验证 `pkgconfig-gen` 工具的正确性，并间接地涉及到逆向工程中对二进制文件和底层系统特性的理解。 它的简单性使其成为一个理想的基础测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/44 pkgconfig-gen/simple5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,15 +147,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int simple5(void);
 
 int simple5(void)
 {
     return 0;
 }
-
-"""
-
 ```

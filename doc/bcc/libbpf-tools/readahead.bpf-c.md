@@ -59,7 +59,7 @@ Response:
 1. **查看直方图**: 用户态工具读取 `hist` 映射，生成延迟分布直方图。
 2. **检查 Hook 函数**: `bpftrace -l 'fentry:do_page_cache_ra*'` 确认函数可挂载。
 3. **跟踪 PID**: 结合 `in_readahead` 映射和进程树分析具体进程的预读行为。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/readahead.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -68,8 +68,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2020 Wenbo Zhang
 #include <vmlinux.h>
@@ -177,7 +179,4 @@ update_and_cleanup:
 }
 
 char LICENSE[] SEC("license") = "GPL";
-
-"""
-
 ```

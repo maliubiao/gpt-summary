@@ -160,7 +160,7 @@ Initially, I might have focused too much on the specific string comparisons. How
 
 总而言之，`dumpprog.c` 虽然代码简单，但它在 Frida 的构建系统中扮演着重要的质量保证角色，确保了关键的预处理器宏定义符合预期，这对于 Frida 运行时行为的正确性至关重要，也间接地与逆向分析、底层系统交互等概念相关。 当构建失败并指向这个文件时，它通常意味着构建配置或环境存在问题，需要用户深入调查构建系统的配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/14 configure file/dumpprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define SHOULD_BE_UNDEFINED 1
 
 #include"config3.h"
@@ -222,7 +224,4 @@ int main(void) {
     }
     SHOULD_BE_RETURN 0;
 }
-
-"""
-
 ```

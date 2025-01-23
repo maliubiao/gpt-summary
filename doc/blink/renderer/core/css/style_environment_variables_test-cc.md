@@ -62,7 +62,7 @@ Based on these observations, I can formulate a summary of the file's purpose.
 
 总而言之，`style_environment_variables_test.cc` 的第一部分定义了大量测试用例，旨在全面验证 Blink 渲染引擎中 CSS 环境变量功能的正确性和健壮性，确保开发者可以按照预期使用 CSS 环境变量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_environment_variables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -70,8 +70,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -824,8 +826,4 @@ TEST_F(StyleEnvironmentVariablesTest, TitlebarArea_AfterNavigation) {
   EXPECT_TRUE(data);
   EXPECT_EQ(data->Serialize(), "0px");
   data = vars.ResolveVariable(StyleEnvironmentVariables::GetVariableName(
-               
-"""
-
-
 ```

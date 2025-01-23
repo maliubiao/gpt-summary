@@ -134,7 +134,7 @@ Let's break down the thought process to arrive at the detailed analysis of the `
 
 因此，用户到达 `source.c` 文件通常是因为他们正在进行 Frida 的开发、测试或调试工作，特别是与 Node.js 绑定和 C 代码交互相关的部分。这个简单的 `add` 函数作为一个基础的测试用例，帮助验证工具链的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/rust/12 bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -152,7 +154,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

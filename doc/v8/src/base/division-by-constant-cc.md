@@ -163,15 +163,17 @@ V8 的算法会计算出一个乘数和位移量，使得对于一个有符号�
 
 `v8/src/base/division-by-constant.cc` 是 V8 引擎中一个关键的优化模块，它通过预先计算魔术数字，将除以常数的运算转换为更高效的乘法和位移操作，从而显著提升 JavaScript 代码的执行效率。该文件主要处理底层的算法实现，与 JavaScript 的联系在于编译器会利用其计算结果来生成优化的机器码。理解其功能有助于更深入地了解 V8 的性能优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/division-by-constant.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/division-by-constant.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ template EXPORT_TEMPLATE_DEFINE(V8_BASE_EXPORT)
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

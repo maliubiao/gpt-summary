@@ -178,7 +178,7 @@ By following this systematic approach, considering the context, and refining ini
 
 这个简单的 `prog.c` 文件虽然功能简单，但作为 Frida 的测试用例，它可以用来验证 Frida 的一些核心功能，例如能否正确地获取函数地址、能否进行基本的 hook 操作等。它的简洁性使得在调试 Frida 本身的问题时更容易隔离和定位错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/3 pipeline/src/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"input_src.h"
 
 int main(void) {
@@ -197,7 +199,4 @@ int main(void) {
     }
     return 1;
 }
-
-"""
-
 ```

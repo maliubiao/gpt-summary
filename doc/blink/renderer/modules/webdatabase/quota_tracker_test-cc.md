@@ -178,15 +178,17 @@ By following these steps, the detailed and informative explanation provided earl
 
 总而言之，`quota_tracker_test.cc` 这个文件虽然是一个测试文件，但它反映了 `QuotaTracker` 这一核心组件在 Blink 引擎中管理 Web 应用程序本地存储空间的关键作用，并间接地与 JavaScript、HTML 等前端技术的功能息息相关。理解其功能有助于开发者诊断和解决与存储配额相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/quota_tracker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ TEST(QuotaTrackerTest, LocalAccessBlocked) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

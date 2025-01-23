@@ -159,15 +159,17 @@ console.log("对象创建完成");
 
 总而言之，`v8/test/unittests/heap/cppgc/test-platform.cc` 提供了一个用于测试 CppGC 的受控环境，允许开发者模拟和控制平台的行为，特别是关于任务调度和执行方面。理解其功能有助于编写更可靠的 CppGC 单元测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/test-platform.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/test-platform.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ TestPlatform::DisableBackgroundTasksScope::~DisableBackgroundTasksScope()
 }  // namespace testing
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

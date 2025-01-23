@@ -170,7 +170,7 @@ Get MESON_THE_XVALUE by name failed.
 
 总而言之，`main5.c` 是 Frida 内部测试框架的一个关键组成部分，用于确保 Frida 能够正确地与使用 GLib 对象系统的程序进行交互，这对于 Frida 的动态插桩能力至关重要，并且与逆向工程的实践紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/7 gnome/mkenums/main5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <glib-object.h>
@@ -215,7 +217,4 @@ int main(int argc, char **argv) {
     fprintf(stderr, "All ok.\n");
     return 0;
 }
-
-"""
-
 ```

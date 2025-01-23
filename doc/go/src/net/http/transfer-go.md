@@ -195,7 +195,7 @@ export GODEBUG=httplaxcontentlength=1
 
 总之，`go/src/net/http/transfer.go` 中的代码是 `net/http` 包中至关重要的部分，它负责处理 HTTP 消息的传输细节，确保客户端和服务器之间能够正确地通信。理解这段代码的功能有助于我们更好地理解 HTTP 协议以及如何在 Go 中构建和处理 HTTP 请求和响应。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transfer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -203,8 +203,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1345,9 +1347,4 @@ func (fw bufioFlushWriter) Write(p []byte) (n int, err error) {
 	}
 	return
 }
-
-"""
-
-
-
 ```

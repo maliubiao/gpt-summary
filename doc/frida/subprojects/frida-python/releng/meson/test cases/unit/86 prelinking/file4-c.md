@@ -122,7 +122,7 @@ By following these steps, we can generate a comprehensive and accurate analysis 
 
 这段 `file4.c` 虽然简单，但它作为 Frida 测试用例的一部分，涵盖了动态分析中常见的场景，例如函数调用追踪、跨模块调用以及与预链接等底层技术的交互。理解这些测试用例有助于用户更好地使用 Frida 进行逆向工程和安全分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/86 prelinking/file4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<private_header.h>
 
 int round1_d() {
@@ -141,7 +143,4 @@ int round1_d() {
 int round2_d() {
     return 42;
 }
-
-"""
-
 ```

@@ -180,15 +180,17 @@ ext.colorMaskiOES(0, true, false, true, false); // 针对 buffer 0，只写入�
 
 总而言之，`oes_draw_buffers_indexed.cc` 文件是 WebGL 底层实现的一部分，它通过 C++ 代码实现了 `OES_draw_buffers_indexed` 扩展的功能，使得 Web 开发人员可以通过 JavaScript 代码更灵活地控制多渲染目标的渲染行为。理解这个文件有助于深入了解 WebGL 的工作原理以及如何调试相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_draw_buffers_indexed.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ void OESDrawBuffersIndexed::colorMaskiOES(GLuint buf,
 }
 
 }  // namespace blink
-
-"""
-
 ```

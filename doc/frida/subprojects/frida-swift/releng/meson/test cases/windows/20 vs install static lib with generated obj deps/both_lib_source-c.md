@@ -171,7 +171,7 @@ sys.stdin.read()
 
 总而言之，`both_lib_source.c` 是一个简洁但重要的测试用例，用于验证 Frida 在 Windows 平台上处理动态链接库与静态链接库交互的能力。它反映了逆向工程中常见的场景，并提供了调试和理解这种交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/20 vs install static lib with generated obj deps/both_lib_source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int static_lib_function(void);
 extern __declspec(dllexport) int both_lib_function(void);
 
@@ -188,7 +190,4 @@ int both_lib_function(void)
 {
     return static_lib_function();
 }
-
-"""
-
 ```

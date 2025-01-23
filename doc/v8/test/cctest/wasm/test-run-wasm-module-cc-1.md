@@ -108,7 +108,7 @@ console.log("WebAssembly 模块已成功加载和实例化。");
 
 你提到的 `.tq` 结尾指的是 V8 的 Torque 语言源代码。  `v8/test/cctest/wasm/test-run-wasm-module.cc` 的结尾是 `.cc`，这意味着它是 **C++** 源代码，而不是 Torque 源代码。 因此，它不是 Torque 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-module.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-module.cc以.tq结尾，那它是个v8 torque源代码，
@@ -116,9 +116,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    0,                   // linear memory index
+### 源代码
+```cpp
+0,                   // linear memory index
         WASM_I32V_1(0),      // destination offset
         kExprEnd,
         U32V_1(0),  // source size
@@ -138,8 +140,4 @@ Prompt:
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -241,15 +241,17 @@ Let's focus on the `Mutex` class and its `Lock()` and `Unlock()` methods.
 
 These examples illustrate how crucial the proper use of mutexes is for writing correct and reliable multithreaded code, and why the abstractions provided in `mutex.h` are essential for V8's internal workings.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/mutex.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/mutex.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -655,7 +657,4 @@ class V8_NODISCARD SharedMutexGuardIf final {
 }  // namespace v8
 
 #endif  // V8_BASE_PLATFORM_MUTEX_H_
-
-"""
-
 ```

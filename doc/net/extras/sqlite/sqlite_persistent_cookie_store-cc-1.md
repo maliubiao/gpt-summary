@@ -101,7 +101,7 @@ The primary goal of this code is to efficiently and reliably load and manage coo
 
 这段代码主要负责 `SQLitePersistentCookieStore::Backend` 在后台线程中**从 SQLite 数据库中异步加载 Cookie 数据**，并将其转换为 `CanonicalCookie` 对象。它采用了分批加载的策略，并处理了数据库 Schema 的迁移以及潜在的数据一致性问题。此外，它还包含了将 Cookie 添加、更新和删除操作添加到队列中进行批量处理的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_cookie_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 okies.swap(cookies_);
   }
 
@@ -970,7 +972,4 @@ void SQLitePersistentCookieStore::Backend::DeleteAllInList(
     BackgroundDeleteAllInList(cookies);
   } else {
     // Perform deletion on background t
-"""
-
-
 ```

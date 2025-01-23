@@ -161,7 +161,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，这部分代码通过各种单元测试，细致地验证了 Frida Python 绑定在 Linux-like 系统上的构建和安装过程，特别关注了与共享库处理、依赖管理、RPATH 设置以及与 `pkg-config` 等工具的集成。这些测试对于确保 Frida 的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,9 +170,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    def test_cpp_std_override(self):
+### 源代码
+```python
+def test_cpp_std_override(self):
         testdir = os.path.join(self.unit_test_dir, '6 std override')
         self.init(testdir)
         compdb = self.get_compdb()
@@ -877,7 +879,4 @@ Prompt:
 
     @skipIfNoPkgconfigDep('gmodule-2.0')
     def test_ldflag_dedup(se
-"""
-
-
 ```

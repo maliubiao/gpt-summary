@@ -198,15 +198,17 @@ In the incorrect example above, `copy` is just another pointer pointing to the s
 
 In summary, the `b.go` code provides a way to conditionally create a deep copy of a nested struct field when copying a larger struct, preventing unintended side effects when modifying the copy.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue22941.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -237,9 +239,4 @@ func F(in, out *T) {
 func G(x, y *T) {
 	F(x, y)
 }
-
-"""
-
-
-
 ```

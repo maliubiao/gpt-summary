@@ -113,11 +113,13 @@ add("hello", "world");
 
 `deoptimizer-mips64.cc` 文件是 V8 引擎在 MIPS64 架构上实现反优化的关键组成部分，它定义了反优化出口，并提供了操作寄存器值和栈帧信息的结构体和方法，确保当优化的 JavaScript 代码需要回退到未优化状态时，程序的执行能够正确地继续。 这与 JavaScript 的动态类型特性密切相关，因为运行时类型的不确定性可能导致优化假设失效，从而触发反优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/mips64/deoptimizer-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

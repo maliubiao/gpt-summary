@@ -151,7 +151,7 @@ This systematic approach, from high-level understanding to detailed analysis and
 
 总而言之，`interceptor-functiondatalistener.c` 是 Frida-Gum 库中一个用于测试自定义函数调用监听器功能的示例代码。它展示了如何使用 `GumInvocationListener` 接口来收集函数调用时的信息，并与逆向工程、底层知识和常见的编程错误密切相关。 了解这类代码可以帮助开发者更好地理解 Frida 的工作原理，并编写更强大的 Frida 脚本来进行动态程序分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/interceptor-functiondatalistener.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -310,7 +312,4 @@ test_function_data_listener_reset (TestFunctionDataListener * self)
   memset (&self->last_on_enter_data, 0, sizeof (TestFunctionInvocationData));
   memset (&self->last_on_leave_data, 0, sizeof (TestFunctionInvocationData));
 }
-
-"""
-
 ```

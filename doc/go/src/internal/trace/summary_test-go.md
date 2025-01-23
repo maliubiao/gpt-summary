@@ -158,7 +158,7 @@ func main() {
 
 总而言之，`go/src/internal/trace/summary_test.go` 文件是 Go 语言运行时追踪功能中至关重要的一部分，它通过一系列的测试用例，保证了追踪摘要功能的正确性和可靠性，为开发者分析 Go 程序的性能提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/summary_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -604,9 +606,4 @@ func TestRelatedGoroutinesV2Trace(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -122,15 +122,17 @@ accelerometer.start();
 
 总之，`sensor_test_utils.cc` 是 Blink 渲染引擎中用于测试传感器功能的重要基础设施。它帮助开发者确保 Web 传感器 API 的正确性和稳定性，虽然用户不会直接操作到这个文件，但它保证了用户在浏览器中使用传感器功能时的良好体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/sensor/sensor_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ void SensorTestUtils::WaitForEvent(EventTarget* event_target,
 }
 
 }  // namespace blink
-
-"""
-
 ```

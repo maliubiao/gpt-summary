@@ -207,15 +207,17 @@ observer.observe(document);
 
 总而言之，`pressure_observer_manager.cc` 是 Blink 引擎中实现 Compute Pressure API 的核心组件，它负责管理观察者、与浏览器进程通信以获取系统压力信息，并将这些信息传递给 JavaScript 代码，从而让网页能够感知设备的压力状态并做出相应的调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/compute_pressure/pressure_observer_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -411,7 +413,4 @@ void PressureObserverManager::DidAddClient(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -43,7 +43,7 @@ I need to go through each test function and extract its purpose.
 
 总的来说，这部分代码通过大量的测试用例，覆盖了 `net` 包中各种 DNS 查询函数在不同场景下的行为，包括成功的解析、超时、找不到记录、找不到主机等各种异常情况，确保了 DNS 解析功能的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/lookup_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -52,8 +52,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 case network == "ip6" && !v6Ok:
 						t.Skip("IPv6 is not supported")
 					}
@@ -435,10 +437,4 @@ func TestDNSErrorUnwrap(t *testing.T) {
 		t.Errorf("errors.Is(err, context.Canceled) = false; want = true")
 	}
 }
-
-"""
-
-
-
-
 ```

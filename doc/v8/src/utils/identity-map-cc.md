@@ -192,15 +192,17 @@ console.log(identityMap.get(obj3)); // 输出 undefined (因为 obj3 是一个�
 
 `v8/src/utils/identity-map.cc` 实现了一个高效的、基于对象身份的哈希映射，它在 V8 内部用于管理和查找与特定对象实例关联的数据。它的设计考虑了 V8 的垃圾回收机制，并支持动态调整大小和迭代。虽然用户不会直接操作这个类，但理解其工作原理有助于理解 JavaScript 中 `WeakMap` 等相关概念的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/identity-map.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/identity-map.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ void IdentityMapBase::Resize(int new_capacity) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

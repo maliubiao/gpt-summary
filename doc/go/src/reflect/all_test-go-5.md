@@ -242,7 +242,7 @@ func main() {
 
 总的来说，这个 `go/src/reflect/all_test.go` 的代码片段是 `reflect` 包功能测试的一个重要组成部分，它全面地测试了动态类型创建、值操作以及与 Go 运行时的交互，特别是强调了在处理指针类型时与垃圾回收的协同工作。这些测试用例帮助确保 `reflect` 包的正确性和稳定性，并为开发者提供了如何安全有效地使用反射功能的示例。
 ```
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -251,9 +251,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
- tt)
+### 源代码
+```go
+tt)
 
 	// NOTE: The garbage collector handles allocated channels specially,
 	// so we have to save pointers to channels in x; the pointer code will
@@ -1437,9 +1439,4 @@ func TestMapAlloc(t *testing.T) {
 	tmp := 0
 	val := ValueOf(&tmp).Elem()
 	allocs = testing
-"""
-
-
-
-
 ```

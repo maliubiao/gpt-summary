@@ -88,15 +88,17 @@ By systematically going through each test and relating it back to the request's 
 
 `blink/renderer/platform/heap/test/heap_test.cc` 文件的主要功能是提供了一组全面的单元测试，用于验证 Blink 引擎中堆管理相关组件的功能和正确性。这些测试覆盖了 `HeapVector` 和 `HeapHashMap` 的基本操作、多线程环境下的对象清理、特定类型对象的内存统计以及底层的内存分配机制。 这些测试对于确保 Blink 引擎的稳定性和避免内存泄漏等问题至关重要，并且间接地关系到 JavaScript、HTML 和 CSS 的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/heap_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ce blink
 
 WTF_ALLOW_INIT_WITH_MEM_FUNCTIONS(blink::PartObjectWithRef)
@@ -383,8 +385,4 @@ TEST_F(HeapTest, ContainerAnnotationOnTinyBacking) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -195,14 +195,16 @@ During this process, I might realize some initial assumptions are incorrect or n
 
 总而言之，`atomic_operations.cc` 文件提供了一组底层的原子内存操作工具，是 Blink 引擎实现线程安全的重要组成部分，并间接地支持了 JavaScript 的并发特性以及 HTML 和 CSS 的渲染过程。开发者在使用这些函数时需要注意内存大小、对齐以及内存顺序的含义，避免潜在的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/atomic_operations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -343,7 +345,4 @@ void AtomicMemzero(void* buf, size_t bytes) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

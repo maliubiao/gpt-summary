@@ -171,15 +171,17 @@ Initially, I might have focused too much on the low-level C++ aspects. I realize
 
 总而言之，`web_scoped_window_focus_allowed_indicator_test.cc` 是 Blink 引擎中保证窗口焦点控制逻辑正确性的重要组成部分，它间接地影响着 Web 开发者编写的 JavaScript, HTML 和 CSS 代码的运行行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_scoped_window_focus_allowed_indicator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -241,7 +243,4 @@ TEST(WebScopedWindowFocusAllowedIndicatorTest, Basic) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

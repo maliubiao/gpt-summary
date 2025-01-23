@@ -537,7 +537,7 @@ void WasmGraphBuilder::MemOrTableTypeToUintPtrOrOOBTrap(
         gasm_->TruncateInt64ToInt32(gasm_->Word64Shr(*node, Int32Constant(32)));
     any_high_word =
         
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -545,10 +545,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共12部分，请归纳一下它的功能
+```
 
-"""
-
-      return graph()->NewNode(mcgraph()->machine()->S128Not(), inputs[0]);
+### 源代码
+```cpp
+return graph()->NewNode(mcgraph()->machine()->S128Not(), inputs[0]);
     case wasm::kExprS128Select:
       return graph()->NewNode(mcgraph()->machine()->S128Select(), inputs[2],
                               inputs[0], inputs[1]);
@@ -1277,7 +1278,4 @@ Node* WasmGraphBuilder::ArrayNew(wasm::ModuleTypeIndex array_index,
   gasm_->StoreMap(a, rtt);
   gasm_->InitializeImmutableInObject(
       ObjectAccess(MachineType::TaggedPointer(), kNoWrite
-"""
-
-
 ```

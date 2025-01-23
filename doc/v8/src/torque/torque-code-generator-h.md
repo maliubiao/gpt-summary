@@ -209,15 +209,17 @@ Return(%3);                      // 返回结果
 
 总而言之，`v8/src/torque/torque-code-generator.h` 定义的 `TorqueCodeGenerator` 类是 V8 编译流水线中的关键组件，负责将高级的 Torque 代码转换为 V8 引擎可以执行的低级 C++ 代码，从而实现 JavaScript 的各种内置功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-code-generator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/torque-code-generator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ class TorqueCodeGenerator {
 }  // namespace v8
 
 #endif  // V8_TORQUE_TORQUE_CODE_GENERATOR_H_
-
-"""
-
 ```

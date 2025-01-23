@@ -174,7 +174,7 @@ The user wants a summary of the functionality of the `gumprintf.c` file, along w
 
 `gumprintf.c` 是 frida-gum 框架中负责格式化字符串输出的关键组件。它提供了一套自定义的 `printf` 风格的函数，特别是 `snprintf`、`vsnprintf`、`asprintf` 和 `vasprintf` 的实现。这些函数能够将各种类型的数据按照指定的格式转换为字符串，并写入到指定缓冲区或动态分配的内存中。该文件经过了定制化修改，以适应 frida-gum 的特定需求，例如使用自定义的内存分配器和移除本地化支持。其主要目的是为 frida 提供可靠且可移植的格式化输出能力，这在动态插桩、日志记录和调试过程中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumprintf.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /* $Id: snprintf.c,v 1.9 2008/01/20 14:02:00 holger Exp $ */
 
 /*
@@ -1298,8 +1300,5 @@ again:
   }
 
   /*
-   * Print 
-"""
-
-
+   * Print
 ```

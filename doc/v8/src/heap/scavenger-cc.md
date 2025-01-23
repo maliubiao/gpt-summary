@@ -160,7 +160,7 @@ SlotCallbackResult Scavenger::ScavengeObject(FullObjectSlot slot, Tagged<HeapObj
 
 `v8/src/heap/scavenger.cc` 实现了 V8 引擎的新生代垃圾回收器（Scavenger），其核心功能是识别并回收新生代中不再使用的对象，并将存活的对象复制到新的空间或晋升到老年代。它通过根扫描、Remembered Set 和并行处理等技术来高效完成垃圾回收任务，直接影响 JavaScript 程序的内存管理和性能。用户常见的编程错误，如意外持有对象引用，可能导致 Scavenger 无法有效回收内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/scavenger.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/scavenger.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,8 +168,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -983,7 +985,4 @@ void Scavenger::ScavengePage(MutablePageMetadata* page) {
         });
 
     WritableJitPage jit_page =
-"""
-
-
 ```

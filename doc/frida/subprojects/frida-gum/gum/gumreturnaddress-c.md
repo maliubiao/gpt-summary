@@ -195,7 +195,7 @@ Finally, I organize the information into logical sections as requested: Function
 
 `gumreturnaddress.c` 文件是 Frida 中一个基础但非常重要的组成部分，它提供了将原始内存地址转换为有意义的符号信息的功能，这对于动态逆向分析、调试和理解程序执行流程至关重要。它涉及到对二进制底层、操作系统机制和调试信息的理解。用户通过编写 Frida 脚本，利用 Frida 提供的 API，最终会间接地使用到这个文件中的功能，从而获取程序的返回地址信息进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumreturnaddress.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -255,7 +257,4 @@ gum_return_address_array_is_equal (const GumReturnAddressArray * array1,
 
   return TRUE;
 }
-
-"""
-
 ```

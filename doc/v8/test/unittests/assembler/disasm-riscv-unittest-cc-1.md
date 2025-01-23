@@ -72,7 +72,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 综合来看，这两个部分的代码展示了 `v8/test/unittests/assembler/disasm-riscv-unittest.cc` 文件通过大量的单元测试用例，系统地验证了 V8 引擎中 RISC-V 架构反汇编器的功能是否正确，能够准确地将各种 RISC-V 向量指令的机器码转换成对应的汇编代码。 这对于 V8 在 RISC-V 平台上正确高效地执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-riscv-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-riscv-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -80,8 +80,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 v28");
   COMPARE(vfnmsac_vf(v17, fa5, v28), "bfc7d8d7       vfnmsac.vf v17, fa5, v28");
 
@@ -149,8 +151,4 @@ v28");
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -174,15 +174,17 @@ By following this iterative process of understanding, analyzing, connecting to b
 
 总而言之，`blink/renderer/core/svg/svg_animated_integer.cc` 文件是 Blink 引擎处理 SVG 动画的关键组成部分，负责管理可动画化的整数属性的值，并将其同步到实际的 SVG 元素上，最终影响用户在浏览器中看到的 SVG 动画效果。 调试此类问题通常需要深入了解浏览器渲染引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_animated_integer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -235,7 +237,4 @@ void SVGAnimatedInteger::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

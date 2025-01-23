@@ -126,15 +126,17 @@ let myString = "Hello from JavaScript!";
 
 总而言之，`v8/tools/v8windbg/base/utilities.h` 提供了一组底层的实用工具，用于在 Windows 调试环境下与 V8 引擎进行交互，主要集中在字符串转换和 WinDbg 数据模型的创建与操作。理解这些工具的功能有助于开发更强大的 V8 调试扩展。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/v8windbg/base/utilities.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/v8windbg/base/utilities.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ HRESULT GetCurrentThread(WRL::ComPtr<IDebugHostContext>& sp_host_context,
   } while (false)
 
 #endif  // V8_TOOLS_V8WINDBG_BASE_UTILITIES_H_
-
-"""
-
 ```

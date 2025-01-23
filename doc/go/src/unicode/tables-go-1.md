@@ -45,7 +45,7 @@ By following these steps, I aimed to provide a summary that accurately describes
 
 可以推断，`go/src/unicode/tables.go` 文件包含多个这样的代码段（共 7 部分），每个部分定义了不同类别或属性的 `RangeTable`。这些不同的部分共同构成了 `unicode` 包中用于字符分类和属性判断的完整数据集合。  Go 语言的其他 `unicode` 包中的函数和数据结构会使用这些预定义的 `RangeTable` 来确定给定字符的属性，例如是否为字母、数字、标点符号等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unicode/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -54,8 +54,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 8d00, 0x18d08, 1},
 		{0x1b000, 0x1b122, 1},
 		{0x1b132, 0x1b150, 30},
@@ -1466,9 +1468,4 @@ var _P = &RangeTable{
 		{0x27e6, 0x27ef, 1},
 		{0x2983, 0x2998, 1},
 		{0x29
-"""
-
-
-
-
 ```

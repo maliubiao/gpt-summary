@@ -127,7 +127,7 @@ By following these steps, the detailed explanation provided in the initial good 
 
 总而言之，这个简单的 `prog.c` 文件是 Frida 构建和测试流程中的一个环节，用于验证构建系统的配置是否正确，确保在特定的条件下（即 `FOO` 和 `BAR` 被定义）程序能够成功编译。它的存在是为了保证 Frida 作为一个复杂的动态 instrumentation 工具能够可靠地构建和运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/9 d dedup/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifndef FOO
@@ -151,7 +153,4 @@ int main(int argc, char **argv) {
     printf("All is well.\n");
     return 0;
 }
-
-"""
-
 ```

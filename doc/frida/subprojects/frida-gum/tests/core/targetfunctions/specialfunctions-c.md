@@ -170,7 +170,7 @@ By following this structured approach and constantly refining the explanations, 
 
 `gum_test_special_function` 是 Frida Gum 测试套件中的一个简单但重要的函数。它展示了 Frida 如何 hook 和修改函数的行为，并可以作为理解 Frida 工作原理的一个起点。虽然用户通常不会直接调用这个函数，但理解其功能有助于理解 Frida 的测试机制和 Frida Gum 库的使用方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/targetfunctions/specialfunctions.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 #ifdef _MSC_VER
@@ -198,7 +200,4 @@ gum_test_special_function (GString * str)
 
   return NULL;
 }
-
-"""
-
 ```

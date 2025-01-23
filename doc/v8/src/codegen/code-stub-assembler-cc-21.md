@@ -186,7 +186,7 @@ obj.c = true;
 
 作为第22部分，这段代码主要关注 **`SwissNameDictionary` 数据结构的实现细节和操作方法**。它提供了在 V8 的代码生成阶段操作这种关键数据结构的底层工具。这部分代码是 V8 引擎高效管理对象属性的基础，为 JavaScript 对象的快速属性访问提供了支撑。它涉及到内存管理、哈希表操作、性能优化（如 SIMD）等多个方面。理解这部分代码有助于深入了解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第22部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 riptorArrayGetDetails(descriptors, Uint32Constant(descriptor));
       TVARIABLE(Uint32T, var_details, details);
       TVARIABLE(Object, var_value);
@@ -1034,7 +1036,4 @@ TNode<ArrayList> CodeStubAssembler::AllocateArrayList(TNode<Smi> capacity) {
     StoreObjectFieldNoWriteBarrier(array, offsetof(ArrayList, capacity_),
                                    capacity);
     StoreObjectFieldNoWriteBarrier(array, offsetof(
-"""
-
-
 ```

@@ -102,7 +102,7 @@ Here's a breakdown of the thinking process to analyze the given C code snippet a
 
 总而言之，`prog_pch.c` 是 Frida 构建过程中一个很小的但很关键的部分，它通过预处理器指令强制使用了 MSVC 编译器，这暗示了 Frida 在 Windows 平台上的构建需求和对预编译头文件的利用。当构建失败并出现与此文件相关的错误时，通常是由于构建环境配置不当，未能使用 MSVC 编译器导致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing build/2 pch disabled/c/pch/prog_pch.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,14 +110,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if !defined(_MSC_VER)
 #error "This file is only for use with MSVC."
 #endif
 
 #include "prog.h"
-
-"""
-
 ```

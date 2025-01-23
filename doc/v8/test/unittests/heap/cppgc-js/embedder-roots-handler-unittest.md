@@ -140,11 +140,13 @@ myObject = null; //  释放 JavaScript 端的引用，使得 GC 更容易回收
 
 这个 C++ 单元测试确保了 V8 引擎的这些内部机制能够正确工作，保证了嵌入器和 JavaScript 之间的对象生命周期管理的一致性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc-js/embedder-roots-handler-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -348,7 +350,4 @@ TEST_F(EmbedderRootsHandlerTest,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

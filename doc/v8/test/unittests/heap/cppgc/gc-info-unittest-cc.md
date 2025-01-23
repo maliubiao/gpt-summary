@@ -228,15 +228,17 @@ TEST_F(GCInfoTableTest, RegisterNewGCInfo) {
 
 总而言之，`v8/test/unittests/heap/cppgc/gc-info-unittest.cc` 是一个重要的单元测试文件，用于验证 V8 的 C++ 垃圾回收机制中关键的数据结构和算法的正确性，这对于 V8 引擎的稳定性和性能至关重要。虽然它不是直接的 JavaScript 代码，但它所测试的功能是支撑 JavaScript 内存管理的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/gc-info-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/gc-info-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -521,7 +523,4 @@ static_assert(std::is_same<typename internal::GCInfoFolding<
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

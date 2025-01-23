@@ -51,11 +51,13 @@ console.log(example(5));
 
 总而言之，`dead-code-elimination.cc` 文件是 V8 引擎中一个至关重要的组成部分，它通过识别和移除 JavaScript 代码中的死代码，提高了代码的执行效率和内存利用率。  用户通常不需要直接与这个文件交互，但它的工作对提升 JavaScript 应用的性能有着重要的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/dead-code-elimination.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -441,7 +443,4 @@ Node* DeadCodeElimination::DeadValue(Node* node, MachineRepresentation rep) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

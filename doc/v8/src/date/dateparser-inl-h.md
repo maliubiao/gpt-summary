@@ -144,15 +144,17 @@ console.log(isNaN(timestamp4)); // 输出 true，表示解析失败
 
 总而言之，`v8/src/date/dateparser-inl.h` 是 V8 引擎中负责高效日期字符串解析的关键组件，它支持 ES5 ISO 8601 和旧式日期格式，并直接影响 JavaScript 中 `Date.parse()` 方法的行为。理解其功能有助于开发者更好地处理 JavaScript 中的日期和时间。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/date/dateparser-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/date/dateparser-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -507,7 +509,4 @@ DateParser::DateToken DateParser::ParseES5DateTime(
 }  // namespace v8
 
 #endif  // V8_DATE_DATEPARSER_INL_H_
-
-"""
-
 ```

@@ -120,11 +120,13 @@ console.log(str.toUpperCase()); // toUpperCase 是 String.prototype 上的一个
 
 `roots-serializer.cc` 是 V8 引擎中一个关键的组件，它负责将 JavaScript 运行时环境的基石（根对象）的状态保存下来，以便在后续启动时快速恢复，从而显著提升 JavaScript 程序的启动性能。它虽然是 C++ 代码，但其作用直接关系到 JavaScript 功能的可用性和运行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/roots-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ void RootsSerializer::CheckRehashability(Tagged<HeapObject> obj) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -178,7 +178,7 @@ console.log(plainTime.toLocaleString('zh-CN')); // 输出本地化的时间字�
 
 作为 `Temporal.PlainTime` 实现的一部分，第 21 部分主要集中在 **`Temporal.PlainTime` 对象的各种操作和转换**。它定义了如何创建、加减、计算时间差、获取组成部分以及将其转换为其他 Temporal 类型和字符串表示的方法。这部分代码是 `Temporal.PlainTime` 核心功能的关键组成部分，使得 JavaScript 开发者能够方便地操作和处理时间值。考虑到这是 25 部分中的第 21 部分，可以推断出前面的部分可能涉及对象的创建和基础属性，而后面的部分可能涉及更高级的功能或与其他 Temporal 类型的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第21部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t<JSTemporalPlainTime>(item_obj);
     return CreateTemporalTime(
         isolate, {item->iso_hour(), item->iso_minute(), item->iso_second(),
@@ -928,7 +930,4 @@ Maybe<StringPrecision> ToSecondsStringPrecision(
       return Just(StringPrecision({Precision::k8, Unit::kNanosecond, 10}));
     case 9:
       return Just(
-"""
-
-
 ```

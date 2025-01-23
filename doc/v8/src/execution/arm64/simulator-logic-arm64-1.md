@@ -266,12 +266,14 @@ console.log(resultWasm); // 输出: Float32Array [6, 8, 10, 12]
 
 总而言之，这段 C++ 代码是 V8 引擎用于模拟 ARM64 体系结构中向量逻辑运算指令的关键组成部分，这对于在非 ARM64 平台上运行和测试 V8 以及优化 JavaScript 和 WebAssembly 代码的执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-logic-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 );
 }
 
@@ -2111,8 +2113,4 @@ LogicVRegister Simulator::fsqrt(VectorFormat vform, LogicVRegister dst,
     FN(vform, dst, temp1, temp2);                                       \
     return dst;                                                         \
   }                                                                     \
-                     
-"""
-
-
 ```

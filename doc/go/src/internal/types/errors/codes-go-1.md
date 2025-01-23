@@ -197,7 +197,7 @@ By following this structured approach, and iteratively refining the analysis and
 
 总而言之，这段代码是 Go 语言类型检查器内部错误代码定义的一部分，它反映了 Go 语言在编译时和静态分析中需要处理的各种不合法或不安全的操作。 了解这些错误代码有助于开发者更好地理解 Go 语言的类型系统和相关限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/types/errors/codes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 t
 	//  var _ = unsafe.SliceData(x)
 	InvalidUnsafeSliceData
@@ -278,10 +280,4 @@ t
 	// newer Go release.
 	TooNew
 )
-
-"""
-
-
-
-
 ```

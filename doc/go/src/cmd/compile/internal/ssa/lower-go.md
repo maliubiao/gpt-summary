@@ -144,15 +144,17 @@ func main() {
 
 这段 `lower.go` 代码是 Go 编译器 SSA Lowering 阶段的核心部分，负责将平台无关的中间表示转换为特定目标机器的指令。它通过应用一系列重写规则来实现转换，并使用 `checkLower` 函数来确保所有的通用操作都被正确地 Lowering。这对于生成高效且正确的机器码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/lower.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -205,9 +207,4 @@ func checkLower(f *Func) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

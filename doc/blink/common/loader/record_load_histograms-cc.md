@@ -124,14 +124,16 @@ This systematic approach helps in dissecting the code and extracting meaningful 
 
 `record_load_histograms.cc` 文件是 Blink 引擎中用于监控网页加载过程中网络错误的工具。它通过记录各种网络错误的频率，为开发者和 Chromium 团队提供了宝贵的数据，用于了解和改进网页加载的性能和可靠性。它虽然不直接操作 JavaScript、HTML 或 CSS，但它所记录的错误信息直接反映了这些技术在实际加载过程中遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/record_load_histograms.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ void RecordLoadHistograms(const url::Origin& origin,
 }
 
 }  // namespace blink
-
-"""
-
 ```

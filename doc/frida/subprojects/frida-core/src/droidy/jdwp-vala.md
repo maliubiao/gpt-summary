@@ -131,7 +131,7 @@ var result = yield client.invoke_static_method(class_id, thread_id, method_id, a
 6. **关闭客户端**：用户调用 `close` 方法关闭客户端，结束调试会话。
 
 通过这些步骤，用户可以逐步调试 Java 应用程序，获取运行时信息并控制程序执行。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/droidy/jdwp.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaJDWP", gir_version = "1.0")]
 namespace Frida.JDWP {
 	public class Client : GLib.Object, AsyncInitable {
@@ -1495,8 +1497,4 @@ namespace Frida.JDWP {
 				ref_type: ref_type,
 				signature: signature,
 				status: status
-		
-"""
-
-
 ```

@@ -122,7 +122,7 @@ console.log(roundedNum); // 输出 4
 
 总而言之，`v8/src/codegen/mips64/constants-mips64.h` 是 V8 引擎在 MIPS64 架构上进行代码生成的蓝图。它详细定义了指令的构成元素、操作规则以及相关的硬件特性，为代码生成器提供了必要的知识，以确保生成的 JavaScript 代码能够正确、高效地在 MIPS64 处理器上执行。它不是 Torque 代码，而是标准的 C++ 头文件，用于定义在 C++ 代码生成过程中使用的常量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/constants-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/constants-mips64.h以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 = ((1U << 23) + 9),
   SRLI = ((2U << 23) + 9),
   BCLRI = ((3U << 23) + 9),
@@ -1145,8 +1147,4 @@ bool InstructionGetters<T>::IsForbiddenAfterBranchInstr(Instr instr) {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_MIPS64_CONSTANTS_MIPS64_H_
-
-"""
-
-
 ```

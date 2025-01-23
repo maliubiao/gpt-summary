@@ -142,7 +142,7 @@ By following this structured approach, combining code analysis with an understan
 
 `b.c` 文件虽然代码量很小，但体现了共享库中函数的基本功能和条件执行逻辑。结合 Frida 这样的动态插桩工具，我们可以深入理解程序的运行时行为，进行逆向分析，排查问题。 理解代码中的控制流、函数依赖关系、底层实现细节以及可能的用户错误，对于有效地调试和分析程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/72 shared subproject/subprojects/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
@@ -173,7 +175,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

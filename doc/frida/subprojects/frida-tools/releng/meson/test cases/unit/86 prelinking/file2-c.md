@@ -97,7 +97,7 @@ This systematic approach helps break down the problem and address all aspects of
 
 总而言之，`file2.c` 虽然代码很简单，但它在 Frida 工具的预链接测试上下文中扮演着一个验证和示例的角色。它揭示了预链接的基本概念以及如何在测试环境中进行验证。对于逆向工程师来说，理解这种简单的跳转结构是理解更复杂代码混淆和优化的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/86 prelinking/file2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<private_header.h>
 
 int round1_b() {
@@ -116,7 +118,4 @@ int round1_b() {
 int round2_b() {
     return round2_c();
 }
-
-"""
-
 ```

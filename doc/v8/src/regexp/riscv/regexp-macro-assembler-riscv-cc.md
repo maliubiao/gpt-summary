@@ -237,7 +237,7 @@ while ((array = regex.exec(str)) !== null) {
 
 `v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc` 是 V8 引擎中至关重要的组件，它负责将高级的正则表达式操作转换为底层的 RISC-V 汇编指令。理解其功能有助于深入了解 V8 如何执行 JavaScript 正则表达式以及如何进行性能优化。该文件本身是 C++ 代码，与 Torque 无关。用户虽然不直接操作此文件，但其编写的 JavaScript 正则表达式会直接影响到此文件生成的机器码的效率和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -245,8 +245,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1053,7 +1055,4 @@ Handle<HeapObject> RegExpMacroAssemblerRISCV::GetCode(Handle<String> source,
 
     // Initialize on-stack registers.
     if (num_saved_registers_ > 0) {  // Always is, if generated from a regexp.
-"""
-
-
 ```

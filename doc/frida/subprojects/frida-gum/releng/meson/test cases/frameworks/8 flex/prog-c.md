@@ -233,7 +233,7 @@ Parse error
 
 总而言之，`prog.c` 自身功能简单，但它在一个特定的测试和调试上下文中扮演着重要的角色，尤其是在与 `lex`/`yacc` 生成的解析器配合使用时，对于理解程序如何处理输入数据，以及在逆向工程中分析文件格式和协议等方面具有实际意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/8 flex/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -241,8 +241,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"parser.tab.h"
 #include<unistd.h>
 #include<sys/types.h>
@@ -273,7 +275,4 @@ int yyerror(void) {
      printf("Parse error\n");
      exit(1);
 }
-
-"""
-
 ```

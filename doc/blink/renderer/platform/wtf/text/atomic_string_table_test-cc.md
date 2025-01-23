@@ -135,14 +135,16 @@ By following these steps, combining code analysis with domain knowledge and a bi
 
 `atomic_string_table_test.cc`  验证了 `AtomicStringTable` 及其相关的 `WeakResult` 功能的正确性，这些功能对于 Blink 渲染引擎高效地处理和管理字符串至关重要，直接影响着浏览器解析和渲染 HTML、CSS 以及执行 JavaScript 的性能。 了解其工作原理有助于理解 Blink 引擎内部的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/atomic_string_table_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ TEST(WeakResultTest, UTF8) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -172,7 +172,7 @@ func main() {
 
 这段 `go/src/runtime/stack.go` 代码片段是 Go 语言运行时系统中负责 **goroutine 栈内存管理** 的核心部分。它定义了栈的结构和分配策略，实现了栈溢出检测、高效的栈分配和回收机制（包括全局对象池和 per-P 缓存），以及动态栈扩容的功能。  它的主要目标是确保 goroutine 能够拥有足够的栈空间来执行代码，同时尽可能地减少内存开销和提高性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stack.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1261,9 +1263,4 @@ func newstack() {
 
 	// Allocate a bigger segment and move the stack.
 	o
-"""
-
-
-
-
 ```

@@ -176,7 +176,7 @@ Element: &{l0:578437695752307201 l1:691752902764108185 l2:805068109775909169 l3:
 
 总而言之，这段代码提供了一组高效的工具，用于在特定有限域上进行算术运算，这对于实现 Edwards25519 这样的椭圆曲线密码学算法至关重要。使用者需要理解域的性质、内部表示以及各种运算的作用，以避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/field/fe.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -607,9 +609,4 @@ func (r *Element) SqrtRatio(u, v *Element) (R *Element, wasSquare int) {
 	r.Absolute(rr) // Choose the nonnegative square root.
 	return r, correctSignSqrt | flippedSignSqrt
 }
-
-"""
-
-
-
 ```

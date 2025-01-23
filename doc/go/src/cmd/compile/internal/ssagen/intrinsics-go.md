@@ -132,7 +132,7 @@ func main() {
 
 **注意:** 这段代码仅仅是定义了如何进行内联优化，实际的SSA生成和应用这些优化的过程发生在编译器的其他部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/intrinsics.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1656,10 +1658,4 @@ func initIntrinsics(cfg *intrinsicBuildConfig) {
 
 			// g is only 64-bits so the upper 64-bits of the
 			// 128-bit register will be zero. Zero will never match
-			
-"""
-
-
-
-
 ```

@@ -155,15 +155,17 @@ File content: Modified!
 
 总而言之，这段代码片段是 Go 链接器为了在 Darwin 系统上执行内存同步操作而定义的一个内部函数。它利用了 `//go:linkname` 功能将 `ld` 包中的 `msync` 函数链接到了 `syscall` 包中的 `msync` 系统调用。 普通 Go 开发者应该使用 `syscall.Msync` 来进行内存同步操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/msync_darwin_libc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -176,9 +178,4 @@ import _ "unsafe" // for go:linkname
 
 //go:linkname msync syscall.msync
 func msync(b []byte, flags int) (err error)
-
-"""
-
-
-
 ```

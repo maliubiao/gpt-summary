@@ -121,7 +121,7 @@ This detailed breakdown illustrates the systematic approach to understanding and
 
 作为整个测试套件的最后一部分，`v8/test/cctest/test-assembler-mips64.cc` 的功能是**对 MIPS64 架构上汇编器的关键 SIMD 指令进行全面的、底层的正确性验证**。它专注于测试浮点数的基本运算 (min/max)、定点算术运算、浮点数的指数操作以及浮点数到整数的转换。这些测试确保了 V8 引擎在 MIPS64 平台上执行 JavaScript 代码时，能够正确地利用硬件提供的 SIMD 加速功能，保证数值计算的准确性和性能。它是 V8 引擎质量保证流程中至关重要的一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -129,8 +129,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第13部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 i], &exp_res_fmin_w[i])
     TEST_FP_MIN_MAX_W(fmin_a_w, &tc_w[i], &exp_res_fmin_a_w[i])
   }
@@ -437,8 +439,4 @@ TEST(MSA_ftq) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

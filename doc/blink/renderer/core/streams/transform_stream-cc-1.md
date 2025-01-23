@@ -165,7 +165,7 @@ By following these steps, I can effectively analyze the C++ code snippet and gen
 
 这两个函数都是底层实现的一部分，它们通过与 JavaScript Promises 的交互，使得 JavaScript 代码能够感知和响应 `TransformStream` 的状态变化（错误和背压），从而构建健壮和高效的数据流处理应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/transform_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 State* script_state,
                                                    TransformStream* stream,
                                                    v8::Local<v8::Value> e) {
@@ -224,8 +226,4 @@ void TransformStream::SetBackpressure(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

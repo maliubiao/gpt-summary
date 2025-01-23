@@ -213,7 +213,7 @@ func TestNIST_A2(t *testing.T) {
 
 这段 Go 代码片段定义了一组详尽的测试用例，旨在全面验证 Go 语言 `crypto/des` 包中 DES 和 Triple DES 加密算法的实现是否正确、符合标准，并能妥善处理弱密钥和半弱密钥等特殊情况。 它为 `crypto/des` 包的开发者提供了一种机制来确保其代码的质量和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/des/des_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1086,9 +1088,4 @@ var tableA2Tests = []CryptTest{
 			0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x02,
 			0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x02},
 		n
-"""
-
-
-
-
 ```

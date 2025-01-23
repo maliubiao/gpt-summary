@@ -300,7 +300,7 @@ sys.stdin.read()
 
 通过以上分析，我们可以了解到 `bionic/libc/kernel/uapi/sound/scarlett2.handroid` 头文件在 Android 系统中扮演着用户空间与 Scarlett 2 设备内核驱动程序之间的桥梁角色，定义了双方通信的协议。 了解这些细节对于开发与特定硬件设备交互的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/scarlett2.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -343,7 +345,4 @@ struct scarlett2_flash_segment_erase_progress {
 };
 #define SCARLETT2_IOCTL_GET_ERASE_PROGRESS _IOR('S', 0x64, struct scarlett2_flash_segment_erase_progress)
 #endif
-
-"""
-
 ```

@@ -171,7 +171,7 @@ Initially, I might have focused too much on the *direct* action of this script. 
 
 总而言之，`cytest.py` 是一个简单的单元测试脚本，用于验证 Frida Swift 绑定中 `Storer` 类的基本功能，确保其能正确地进行数据读写和类型检查。虽然它本身不执行 Frida 的 hook 操作，但它测试的组件是 Frida 实现动态 instrumentation 的基础之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python3/3 cython/cytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from storer import Storer
@@ -204,7 +206,4 @@ try:
     sys.exit(1)
 except TypeError:
     pass
-
-"""
-
 ```

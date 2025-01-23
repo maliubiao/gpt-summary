@@ -77,12 +77,14 @@ TEST(Addition) {
 
 总而言之，`v8/test/cctest/test-macro-assembler-loong64.cc` (第一部分) 的功能是 **测试V8 JavaScript引擎在LoongArch64架构上的宏汇编器，验证其生成机器码的正确性，这直接关系到JavaScript代码在该架构上的高效且正确的执行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1922,7 +1924,4 @@ TEST(SUB_D) {
       {             0x800, 0xFFFFFFFFFFFFF800,         1},  // max_int12 + 1
       // Generates addi_d
       // max_int12 + 1 is not int12 but is uint12, just
-"""
-
-
 ```

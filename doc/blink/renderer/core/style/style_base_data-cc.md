@@ -128,14 +128,16 @@ Let's break down the thought process for analyzing this Blink source code snippe
 
 `style_base_data.cc` 中定义的 `StyleBaseData` 类是 Blink 引擎中用于存储基本样式信息的关键数据结构。它连接了 HTML 结构、CSS 样式规则和 JavaScript 动态修改，特别是管理了 CSS 属性的 `!important` 标记。理解其功能有助于我们更好地理解浏览器如何处理网页样式，并避免常见的样式使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_base_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ StyleBaseData::StyleBaseData(const ComputedStyle* style,
     : computed_style_(style), important_set_(std::move(set)) {}
 
 }  // namespace blink
-
-"""
-
 ```

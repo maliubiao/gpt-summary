@@ -176,15 +176,17 @@ By following this systematic approach, we can effectively analyze the `sql_value
 
 总而言之，`sql_value.cc` 是 Blink 渲染引擎中一个关键的组成部分，它负责将 SQLite 数据库中的数据桥接到 JavaScript 环境，使得网页能够方便地利用本地数据存储功能。 了解其功能有助于理解 Web SQL Database API 的内部工作原理，并在遇到相关问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sqlite/sql_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc. All rights reserved.
  *
@@ -246,7 +248,4 @@ v8::Local<v8::Value> SQLValue::ToV8(ScriptState* script_state) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

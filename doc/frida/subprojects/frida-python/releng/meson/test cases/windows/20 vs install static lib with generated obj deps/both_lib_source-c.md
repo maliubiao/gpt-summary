@@ -150,7 +150,7 @@ if __name__ == '__main__':
 
 总而言之，这个简单的 C 代码文件是 Frida 测试套件中的一个组成部分，用于验证在 Windows 平台上处理动态链接库与静态链接库依赖关系时的正确性，尤其是在静态库的依赖对象文件是动态生成的情况下。它反映了逆向工程中常见的场景，并可能涉及到二进制底层、操作系统和构建系统的知识。 用户到达这里通常是为了调试 Frida 的构建过程或运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/20 vs install static lib with generated obj deps/both_lib_source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int static_lib_function(void);
 extern __declspec(dllexport) int both_lib_function(void);
 
@@ -167,7 +169,4 @@ int both_lib_function(void)
 {
     return static_lib_function();
 }
-
-"""
-
 ```

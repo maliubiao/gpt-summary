@@ -207,14 +207,16 @@ By following this systematic approach, combining code analysis with a high-level
 
 `SyncLoadContext.cc` 文件实现了 Blink 引擎中处理同步网络加载的核心逻辑。它通过阻塞调用线程的方式来保证请求的顺序执行，主要用于支持同步的 JavaScript 操作和浏览器内部的特定同步加载需求。虽然同步加载在某些场景下是必要的，但开发者需要谨慎使用，尤其要避免在主线程进行同步操作，并妥善处理错误和超时情况，以避免影响用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/sync_load_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -578,7 +580,4 @@ bool SyncLoadContext::Completed() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

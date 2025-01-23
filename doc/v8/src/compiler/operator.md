@@ -129,11 +129,13 @@ if (sum > 12) {
 
 `operator.cc` 中定义的 `Operator` 类是 V8 编译器进行代码优化的基础构建块。它提供了一种统一的方式来表示 JavaScript 代码中的各种操作，并允许编译器在这些操作的基础上进行分析、转换和优化，最终生成高效的机器码。 虽然开发者不会直接与 `Operator` 类交互，但它在幕后支撑着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ void Operator::PrintPropsTo(std::ostream& os) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

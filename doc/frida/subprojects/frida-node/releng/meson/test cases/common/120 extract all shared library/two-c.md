@@ -171,7 +171,7 @@ int func2(void) {
 
 总而言之，尽管 `two.c` 中的 `func2` 函数非常简单，但在 Frida 的上下文中，它可以作为学习、测试和调试动态分析技术的良好起点。它也体现了在逆向工程中，即使是微小的代码片段也可能蕴含着重要的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/120 extract all shared library/two.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,14 +179,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"extractor.h"
 
 int func2(void) {
     return 2;
 }
-
-"""
-
 ```

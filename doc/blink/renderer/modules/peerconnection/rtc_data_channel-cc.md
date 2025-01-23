@@ -234,15 +234,17 @@ By following these steps, I could systematically analyze the `RTCDataChannel.cc`
 
 总而言之，`blink/renderer/modules/peerconnection/rtc_data_channel.cc` 是 WebRTC 数据通道功能在 Blink 渲染引擎中的核心实现，负责将 JavaScript 的 `RTCDataChannel` API 映射到底层的 WebRTC 本地实现，并处理数据的发送、接收、状态管理和错误处理。 理解这个文件的功能对于深入理解 WebRTC 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_data_channel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -1176,7 +1178,4 @@ void RTCDataChannel::BlobReader::Dispose() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -598,7 +598,7 @@ MachineType MachineTypeForNarrow(InstructionSelectorT<Adapter>* selector,
                                  typename Adapter::node_t hint_node) {
   if (selector->IsLoadOrLoadImmutable(hint_node)) {
     MachineType hint = selector->load_view(hint_
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/instruction-selector-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -606,8 +606,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Fixed(node, eax);
   node_t projection1 = selector->FindProjection(node, 1);
   if (selector->valid(projection1)) {
@@ -1424,7 +1426,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWordCompareZero(
               UNREACHABLE();
           }
         case RegisterRepresentation::Float64():
-"""
-
-
 ```

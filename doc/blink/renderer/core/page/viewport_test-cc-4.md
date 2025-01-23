@@ -99,7 +99,7 @@ By combining these observations, I can generate a comprehensive answer.
 
 `viewport_test.cc` 是一个关键的测试文件，用于验证 Chromium Blink 引擎中视口功能的正确性。它涵盖了视口元标签的解析、`interactive-widget` 属性的处理、虚拟键盘行为的控制以及文档类型和浏览器缩放对视口的影响。这些测试确保了网页能够根据开发者在 HTML 中定义的视口设置正确地渲染和响应用户交互，尤其是在移动设备上。该文件通过模拟不同的 HTML 结构和用户操作，帮助开发者避免常见的视口配置错误，并保证了 Web 平台的兼容性和一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/viewport_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 wportHistogramsTest, TypeXhtml) {
   UseDocType(
       "<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.1//EN' "
@@ -418,8 +420,4 @@ TEST_F(ViewportMetaSimTest, PageZoomDoesntAffectMobileLayoutSize_WidthDevice) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

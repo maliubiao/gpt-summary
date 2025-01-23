@@ -231,7 +231,7 @@ A developer or build system might execute this script as part of the following s
 
 In a debugging scenario, if a user reports an issue related to the Frida Node.js bindings having an incorrect version, examining the build scripts and the usage of `adjust-version.py` would be a crucial step in identifying where the version information might have been set incorrectly. The user might have followed the official build instructions, which would involve running commands that eventually call this script with specific arguments. Examining the output of the build process would show the exact command-line arguments used when executing `adjust-version.py`.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/scripts/adjust-version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -239,8 +239,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from pathlib import Path
 import re
 import sys
@@ -260,7 +262,4 @@ def main(argv: list[str]):
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

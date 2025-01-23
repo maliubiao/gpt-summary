@@ -146,7 +146,7 @@ By following this structured thought process, we arrive at a comprehensive and a
 
 总而言之，`func17.c` 虽然代码非常简单，但在 Frida 的测试框架中扮演着一个角色，用于验证在静态链接场景下的基本功能。用户到达这个文件通常是因为他们正在进行与 Frida QML 相关的开发、测试、调试或学习工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/66 static link/lib/func17.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,13 +154,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17()
 {
   return 1;
 }
-
-"""
-
 ```

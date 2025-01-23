@@ -101,14 +101,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总而言之，`webgpu_native_test_support.cc` 是 Blink 引擎中为了方便进行 WebGPU 底层功能测试而存在的一个辅助文件，它提供了直接访问和操作原生 Dawn 库的能力，这对于验证 WebGPU 实现的正确性至关重要。它虽然不直接参与 JavaScript, HTML, CSS 的处理，但它是 WebGPU 功能在浏览器中得以实现的基础组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgpu_native_test_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ WGPUInstance MakeNativeWGPUInstance() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

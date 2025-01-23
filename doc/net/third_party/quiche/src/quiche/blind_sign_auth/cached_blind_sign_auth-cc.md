@@ -213,15 +213,17 @@ Let's break down the thought process for analyzing the `cached_blind_sign_auth.c
 
 通过追踪这些步骤和使用调试工具，可以帮助理解用户操作如何触发 `CachedBlindSignAuth` 的代码执行，并定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/blind_sign_auth/cached_blind_sign_auth.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ void CachedBlindSignAuth::RemoveExpiredTokens() {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

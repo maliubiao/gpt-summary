@@ -152,7 +152,7 @@ fetch('https://example.com/data')
 
 总而言之，这段代码是 QUIC 协议实现的核心部分，负责将抽象的 QUIC 帧结构转换为可以在网络上传输的二进制数据。理解它的功能有助于理解浏览器如何使用 QUIC 协议进行网络通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0;
   }
 
@@ -997,8 +999,4 @@ bool QuicFramer::MaybeProcessIetfLength(QuicDataReader* encrypted_reader,
 bool QuicFramer::ProcessIetfDataPacket(QuicDataReader* encrypted_reader,
                                        QuicPacketHeader* header,
                                        const QuicEncryptedPacket& packet,
- 
-"""
-
-
 ```

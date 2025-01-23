@@ -128,14 +128,16 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 `thread_state_storage.cc` 是 Blink 引擎中一个至关重要的基础设施组件，它负责管理每个线程的堆状态信息。虽然它与 JavaScript, HTML, CSS 没有直接的语法关联，但它为这些技术的运行提供了底层的内存管理支持，特别是保证了多线程环境下的内存隔离和正确性。理解其功能有助于深入理解浏览器引擎的内部工作原理以及多线程编程中的一些常见问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/thread_state_storage.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ ThreadStateStorage::ThreadStateStorage(
       thread_state_(&thread_state) {}
 
 }  // namespace blink
-
-"""
-
 ```

@@ -192,7 +192,7 @@ This detailed thought process ensures a comprehensive and well-reasoned analysis
 
 总而言之，`frida/subprojects/frida-python/releng/tomlkit/tomlkit/_utils.py` 文件提供了一组底层的实用工具函数，用于处理 TOML 格式中的日期时间解析、字符串转义和字典合并，这些功能在 Frida 解析配置文件或处理相关数据时发挥着重要作用。 虽然它本身不直接涉及底层的二进制或内核交互，但作为 Frida 工具链的一部分，它间接地支持了 Frida 的各种动态分析能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/tomlkit/_utils.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import re
@@ -360,7 +362,4 @@ def merge_dicts(d1: dict, d2: dict) -> dict:
             merge_dicts(d1[k], v)
         else:
             d1[k] = d2[k]
-
-"""
-
 ```

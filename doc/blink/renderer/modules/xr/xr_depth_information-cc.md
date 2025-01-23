@@ -219,15 +219,17 @@ CSS 可以用来设置 canvas 的样式，但这与 `XRDepthInformation` 的直�
 
 总而言之，`xr_depth_information.cc` 文件中定义的 `XRDepthInformation` 类是 WebXR API 中处理深度信息的关键组件，它在 C++ 层封装了深度数据，并提供给 JavaScript 代码使用，从而使得 Web 开发者能够利用 XR 设备的深度感知能力来构建更丰富的沉浸式体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_depth_information.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ void XRDepthInformation::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

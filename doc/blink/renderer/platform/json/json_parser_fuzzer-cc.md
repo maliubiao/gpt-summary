@@ -171,14 +171,16 @@ JSON在Web开发中扮演着重要角色，尤其与JavaScript关系密切。
 
 `json_parser_fuzzer.cc` 是一个关键的测试文件，它通过模糊测试来增强Blink JSON解析器的健壮性和安全性。这对于确保Web浏览器能够可靠地处理各种来自Web页面的JSON数据至关重要，直接影响到JavaScript的执行、HTML中嵌入的JSON数据的处理以及整体的浏览器稳定性。它关注的是底层解析器的实现，但其测试覆盖了用户在编写和处理JSON时可能遇到的各种错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/json/json_parser_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
                    comment_state, 500);
   return 0;
 }
-
-"""
-
 ```

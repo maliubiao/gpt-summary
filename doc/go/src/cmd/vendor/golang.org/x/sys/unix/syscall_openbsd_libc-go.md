@@ -129,15 +129,17 @@ func main() {
 
 总而言之，这段代码是 Go 语言与 OpenBSD 操作系统内核交互的桥梁，为 `syscall` 包提供了底层的系统调用能力。直接使用这些功能需要非常小心，并充分理解操作系统的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_libc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -164,9 +166,4 @@ func syscall_rawSyscall6(fn, a1, a2, a3, a4, a5, a6 uintptr) (r1, r2 uintptr, er
 func syscall_syscall9(fn, a1, a2, a3, a4, a5, a6, a7, a8, a9 uintptr) (r1, r2 uintptr, err Errno) {
 	return syscall_syscall10(fn, a1, a2, a3, a4, a5, a6, a7, a8, a9, 0)
 }
-
-"""
-
-
-
 ```

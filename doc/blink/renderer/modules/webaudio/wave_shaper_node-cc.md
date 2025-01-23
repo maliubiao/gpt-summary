@@ -172,15 +172,17 @@ By following this kind of systematic analysis and considering the different aspe
 
 总而言之，`WaveShaperNode.cc` 是 Web Audio API 中实现音频波形塑形功能的关键组件，它通过 JavaScript 暴露接口给 Web 开发者，让他们能够创造各种独特的音频效果。理解其功能和使用方式对于进行 Web 音频开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/wave_shaper_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -364,7 +366,4 @@ void WaveShaperNode::ReportWillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

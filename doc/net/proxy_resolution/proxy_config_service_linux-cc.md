@@ -106,7 +106,7 @@ fetch('https://www.example.com');
 
 总结来说，`net/proxy_resolution/proxy_config_service_linux.cc` (第一部分) 负责构建 Linux 系统上获取和管理代理配置的基础框架，并实现了从环境变量中读取代理配置的功能。它为后续从其他配置源（如 gsettings 和 KDE 配置文件）获取配置奠定了基础。 虽然它本身不涉及 JavaScript，但它的功能直接影响着 JavaScript 发起的网络请求的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_config_service_linux.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -960,7 +962,4 @@ class SettingGetterImplKDE : public ProxyConfigServiceLinux::SettingGetter {
   }
 
   // The settings in
-"""
-
-
 ```

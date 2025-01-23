@@ -146,7 +146,7 @@ python mygen.py input.txt output.txt
 
 总而言之，`mygen.py` 作为一个简单的文件复制工具，虽然功能简单，但在软件开发和逆向工程的某些环节中都有其用武之地。理解其功能和潜在的使用场景，有助于我们更好地利用它解决实际问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/129 build by default/mygen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -164,7 +166,4 @@ ifile = open(sys.argv[1])
 ofile = open(sys.argv[2], 'w')
 
 ofile.write(ifile.read())
-
-"""
-
 ```

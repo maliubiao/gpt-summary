@@ -155,15 +155,17 @@ Let's break down the thought process to arrive at the comprehensive analysis of 
 
 总结来说，`StubSpeculationHost` 在正常的生产环境中可能不会被直接使用，它更多地用于测试、开发或作为某些功能尚未完全实现的占位符。理解其功能和局限性对于调试与推测规则相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/speculation_rules/stub_speculation_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ void StubSpeculationHost::UpdateSpeculationCandidates(Candidates candidates) {
 void StubSpeculationHost::InitiatePreview(const KURL& url) {}
 
 }  // namespace blink
-
-"""
-
 ```

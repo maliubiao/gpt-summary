@@ -124,12 +124,14 @@ const unsignedClamped = BigInt.asUintN(8, -1n); // V8 uses the BigInt::AsUintN f
 
 In essence, `bigint.cc` is the engine room where the mathematical operations and data manipulation for JavaScript's `BigInt` type are handled at a low level. It interacts with other parts of the V8 engine to seamlessly integrate BigInts into the JavaScript runtime.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/bigint.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1817,8 +1819,4 @@ void MutableBigInt_LeftShiftAndCanonicalize(Address result_addr, Address x_addr,
                                             intptr_t shift) {
   Tagged<BigInt> x = Cast<BigInt>(Tagged<Object>(x_addr));
   Tagged<MutableBigInt> result =
-     
-"""
-
-
 ```

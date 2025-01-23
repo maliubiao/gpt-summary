@@ -98,14 +98,16 @@ Let's break down the thought process to arrive at the explanation of `compositor
 
 总而言之，`compositor_test.cc` 定义的 `CompositorTest` 类是 Blink 渲染引擎中用于测试 Compositor 模块的重要基础设施。它通过提供模拟时间环境等功能，使得开发者能够有效地验证 Compositor 在处理各种由 HTML、CSS 和 JavaScript 驱动的渲染场景时的正确性和性能。 编写针对 Compositor 的测试需要对 Compositor 的内部工作原理有一定的了解，并注意正确地设置测试环境和编写精确的断言。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/compositor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -121,7 +123,4 @@ CompositorTest::CompositorTest()
 CompositorTest::~CompositorTest() = default;
 
 }  // namespace blink
-
-"""
-
 ```

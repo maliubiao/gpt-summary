@@ -190,14 +190,16 @@ CSS 同样不会直接与 `ReportingObserver` 交互。但是，CSS 的解析和
 
 总而言之，`reporting_observer.cc` 中定义的 `ReportingObserver` 类是 Blink 引擎中一个重要的组件，它充当着浏览器内部事件与 JavaScript 代码之间的桥梁，为开发者提供了一种标准化的方式来监控和处理浏览器行为，从而更好地理解和调试网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/reporting_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ void ReportingObserver::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

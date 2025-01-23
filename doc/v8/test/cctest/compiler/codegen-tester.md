@@ -122,11 +122,13 @@ function getObject() {
 
 `codegen-tester.cc` 是 V8 编译器的一个关键测试组件，它通过模拟 JavaScript 中不同形式的整数二元运算，确保编译器能够为这些运算生成正确且优化的机器码，从而保证 JavaScript 代码的执行效率和正确性。它关注的是编译器内部的实现细节，但其最终目标是提升 JavaScript 的性能和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/codegen-tester.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ void Int32BinopInputShapeTester::RunRight(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

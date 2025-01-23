@@ -116,7 +116,7 @@ This structured approach helps in dissecting the code and its context, leading t
 
 总而言之，`ordertest.c` 虽然代码简洁，但在 Frida 的构建系统中扮演着重要的角色，用于确保构建过程的正确性，这对于 Frida 作为一个可靠的动态插桩工具至关重要。它通过一个简单的预编译检查来验证构建系统是否能够正确处理头文件的包含顺序，从而避免潜在的构建错误和运行时问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/130 include order/ordertest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "hdr.h"
 #include "prefer-build-dir-over-src-dir.h"
 
@@ -137,7 +139,4 @@ int main(void)
 {
   return 0;
 }
-
-"""
-
 ```

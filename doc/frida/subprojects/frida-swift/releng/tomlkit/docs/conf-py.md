@@ -122,7 +122,7 @@ By following this structured approach, you can effectively analyze the given cod
 
 `frida/subprojects/frida-swift/releng/tomlkit/docs/conf.py` 是 Frida 项目中 `tomlkit` 子项目的 Sphinx 文档构建配置文件。它定义了如何从 `tomlkit` 的源代码生成文档。虽然它本身不执行逆向操作或直接与底层系统交互，但它对于提供清晰的文档至关重要，而这些文档是逆向工程师理解和使用 Frida 及其组件（如 `tomlkit`）的基础。配置文件的错误可能导致文档构建失败，影响用户获取信息的途径。理解用户到达此文件的步骤有助于诊断与文档相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/docs/conf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -192,7 +194,4 @@ html_theme = "furo"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
-
-"""
-
 ```

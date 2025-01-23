@@ -103,11 +103,13 @@ for (let i = 0; i < myArray.length; i++) {
 
 `heap-consistency.cc` 中定义的类是 V8 引擎内部用于管理垃圾回收的关键工具。虽然 JavaScript 开发者不能直接使用它们，但这些类确保了 V8 在执行某些关键操作时，可以临时阻止垃圾回收，从而保证数据一致性、性能和程序的正确性。 理解这些内部机制有助于我们更深入地理解 JavaScript 运行时环境的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-consistency.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ NoGarbageCollectionScope::~NoGarbageCollectionScope() { Leave(heap_handle_); }
 
 }  // namespace subtle
 }  // namespace cppgc
-
-"""
-
 ```

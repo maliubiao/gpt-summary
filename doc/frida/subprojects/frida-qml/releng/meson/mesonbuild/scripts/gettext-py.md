@@ -173,7 +173,7 @@ python gettext.py update_po --pkgname=frida-qml --source-root=/path/to/frida --s
 
 总而言之，`gettext.py` 是 Frida 项目中用于管理 QML 组件翻译文件的关键脚本，它通过自动化 `gettext` 工具的使用，简化了软件国际化的流程。理解其功能和工作原理，有助于开发者进行本地化管理，也有助于逆向工程师理解目标软件的本地化策略和内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/gettext.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -269,7 +271,4 @@ def run(args: T.List[str]) -> int:
     else:
         print('Unknown subcommand.')
         return 1
-
-"""
-
 ```

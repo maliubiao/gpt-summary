@@ -120,7 +120,7 @@ Response:
 
 **总而言之，这部分代码集中测试了 TLS 客户端在握手阶段的各种核心功能和错误处理机制，涵盖了会话管理、密钥协商、协议选择、证书验证、重协商控制以及底层连接错误处理等多个方面。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_client_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -129,8 +129,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 deletes the key.
 	cache.Put(keys[0], nil)
 	if _, ok := cache.Get(keys[0]); ok {
@@ -1190,10 +1192,5 @@ func TestAlertFlushing(t *testing.T) {
 	serverConfig := testConfig.Clone()
 
 	// Cause a signature-time error
-	brokenKey := 
-"""
-
-
-
-
+	brokenKey :=
 ```

@@ -119,7 +119,7 @@ Initially, I might have focused too much on the Python aspects. However, the key
 
 总而言之，`frida/subprojects/frida-node/releng/meson/meson.py` 脚本是 Frida 工具链中用于启动 Meson 构建系统的关键入口点，它连接了 Frida 的源代码和底层的编译工具，使得开发者和逆向工程师能够构建出 `frida-node` 组件。理解这个脚本的作用以及 Meson 的工作原理，对于理解 Frida 的构建过程和进行相关的开发或逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/meson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -156,7 +158,4 @@ from mesonbuild import mesonmain
 
 if __name__ == '__main__':
     sys.exit(mesonmain.main())
-
-"""
-
 ```

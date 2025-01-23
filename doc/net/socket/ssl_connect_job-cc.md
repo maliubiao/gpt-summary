@@ -208,15 +208,17 @@ fetch('https://example.com/data.json')
 
 因此，当你在调试一个 HTTPS 连接问题时，查看 NetLog 中 `SSL_CONNECT_JOB` 相关的事件，以及其前后的 `TRANSPORT_CONNECT_JOB`、`HTTP_PROXY_CONNECT_JOB` 或 `SOCKS_CONNECT_JOB` 的事件，可以帮助你理解连接建立的哪个阶段出现了问题。错误码和相关的详细信息可以帮助你定位问题的根源，例如是网络问题、代理配置问题还是 SSL/TLS 握手问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_connect_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -701,7 +703,4 @@ void SSLConnectJob::ChangePriorityInternal(RequestPriority priority) {
 }
 
 }  // namespace net
-
-"""
-
 ```

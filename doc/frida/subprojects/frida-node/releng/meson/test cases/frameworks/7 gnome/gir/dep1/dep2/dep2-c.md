@@ -216,7 +216,7 @@ By following these steps, combining code analysis with contextual awareness abou
 
 总而言之，`dep2.c` 定义了一个简单的 GObject 类，它的功能是存储和返回一个字符串。在 Frida 的上下文中，它可以作为被动态插桩的目标，用于测试 Frida 的功能或用于逆向工程分析使用了该类的应用程序的行为。理解其内部实现对于有效地使用 Frida 进行调试和逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/7 gnome/gir/dep1/dep2/dep2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "dep2.h"
 
 struct _MesonDep2
@@ -350,7 +352,4 @@ meson_dep2_return_message (MesonDep2 *self)
 
   return (const gchar*) self->msg;
 }
-
-"""
-
 ```

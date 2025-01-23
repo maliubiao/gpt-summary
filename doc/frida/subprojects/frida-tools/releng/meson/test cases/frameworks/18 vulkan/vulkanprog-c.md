@@ -135,7 +135,7 @@ By following these steps, we can thoroughly analyze the code snippet and provide
 
 总而言之，`vulkanprog.c` 作为一个 Frida 的测试用例，其核心功能是尝试创建和销毁一个 Vulkan 实例，并验证 Frida 在处理 Vulkan 程序时的基本能力，特别是对于 Vulkan 初始化可能失败的情况。它在逆向分析中可以作为一个简单的目标进行动态插桩练习，同时也涉及到与操作系统、设备驱动以及 Vulkan API 底层的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/18 vulkan/vulkanprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <vulkan/vulkan.h>
 #include <stdio.h>
 
@@ -171,7 +173,4 @@ int main(void)
 
     return 0;
 }
-
-"""
-
 ```

@@ -278,7 +278,7 @@ if __name__ == '__main__':
 
 通过运行这个 Frida 脚本，并在 Android 设备上进行 USB 连接操作，你可以在 Frida 的输出中看到哪些进程调用了 `ioctl`，以及使用了哪些 GadgetFS 相关的命令，从而帮助你调试和理解 Android 如何与 GadgetFS 交互。你需要根据实际运行环境和目标进程调整脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/usb/gadgetfs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -320,7 +322,4 @@ struct usb_gadgetfs_event {
 #define GADGETFS_FIFO_FLUSH _IO('g', 2)
 #define GADGETFS_CLEAR_HALT _IO('g', 3)
 #endif
-
-"""
-
 ```

@@ -150,7 +150,7 @@ Frida 的介入会改变这个输出，例如通过 `onLeave` 修改返回值。
 
 总而言之，用户到达这里通常是出于对程序行为的深入理解、逆向分析的需求，或者对 Frida 内部工作原理的探索。这个简单的 `func2` 函数虽然功能单一，但在测试和理解动态插桩工具如何工作时，可以作为一个清晰简洁的示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/s3/s3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,12 +158,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2() {
     return -42;
 }
-
-"""
-
 ```

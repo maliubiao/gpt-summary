@@ -192,7 +192,7 @@ function f(i) {
 
 这部分 `v8/src/asmjs/asm-parser.cc` 代码的核心功能是 **解析和验证 asm.js 代码中的变量声明和控制流语句**。它负责识别变量的类型、处理变量的初始化、检查语句的语法结构是否符合 asm.js 规范，并生成相应的 WebAssembly 指令。这部分代码是 asm.js 到 WebAssembly 转换的关键步骤，确保了 asm.js 代码的正确性和可执行性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/asmjs/asm-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -200,8 +200,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt + locals->size());
           if (sinfo->type->IsA(AsmType::Int())) {
             locals->push_back(kWasmI32);
@@ -1188,8 +1190,5 @@ AsmType* AsmJsParser::RelationalExpression() {
     continue;                                                                 \
   }
       HANDLE_CASE('<', I32LtS, I32LtU, F64Lt, F32Lt, "<");
-      HANDLE_CASE(TOK(LE), I32LeS, I32LeU, 
-"""
-
-
+      HANDLE_CASE(TOK(LE), I32LeS, I32LeU,
 ```

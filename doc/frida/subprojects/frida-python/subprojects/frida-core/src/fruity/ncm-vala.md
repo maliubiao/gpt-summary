@@ -98,7 +98,7 @@ breakpoint.SetScriptCallbackFunction("handle_ncm_frame")
 ### 总结
 
 `ncm.vala` 文件实现了 Frida 工具中 USB CDC-NCM 协议的通信功能，涉及 USB 设备的初始化、网络数据包的传输与接收、虚拟网络栈的集成等。通过 LLDB 调试工具，开发者可以深入分析 USB 通信过程和数据包处理逻辑，定位和解决常见的使用错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/ncm.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	internal sealed class UsbNcmDriver : Object, AsyncInitable {
@@ -660,7 +662,4 @@ namespace Frida.Fruity {
 #endif
 	}
 }
-
-"""
-
 ```

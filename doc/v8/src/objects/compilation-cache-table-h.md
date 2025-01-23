@@ -67,15 +67,17 @@ By following this structured approach, combining keyword analysis, understanding
 
 * **作为哈希表 (Hash Table):**  `CompilationCacheTable` 继承自 `HashTable`，因此它本质上是一个哈希表。这意味着它使用键值对的方式存储缓存的编译结果，并通过哈希算法快速查找。
 * **不同类型的缓存:** 文件中定义了针对不同类型代码的查找和存储方法，例如 `
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/compilation-cache-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/compilation-cache-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ class CompilationCacheTable
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_COMPILATION_CACHE_TABLE_H_
-
-"""
-
 ```

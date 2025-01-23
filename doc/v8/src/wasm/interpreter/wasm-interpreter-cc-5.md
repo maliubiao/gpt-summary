@@ -155,7 +155,7 @@ const result = WebAssembly.SIMD.f64x2.add(a, b); // 向量加法
 
 作为整个 WebAssembly 解释器实现的第 6 部分，这段代码专注于提供 **并发和并行处理** 的基础能力。它实现了 WebAssembly 规范中关于原子操作和 SIMD 操作的关键部分，使得 WebAssembly 能够安全高效地在多线程环境中运行，并利用 SIMD 指令进行数据并行计算，从而提升性能。这部分功能对于构建高性能的 WebAssembly 应用至关重要，特别是在需要处理大量数据或进行复杂计算的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 64_t, I64, std::atomic_fetch_xor) \
   V(I64AtomicXor8U, Uint8, uint8_t, I32, uint64_t, I64, std::atomic_fetch_xor) \
   V(I64AtomicXor16U, Uint16, uint16_t, I32, uint64_t, I64,                     \
@@ -695,8 +697,5 @@ INSTRUCTION_HANDLER_FUNC s2s_SimdS128StoreMem(
   uint64_t offset = Read<uint64_t>(code);
 
   uint64_t index = pop<uint32_t>(sp, code, wasm_runtime);
-  uint64_t 
-"""
-
-
+  uint64_t
 ```

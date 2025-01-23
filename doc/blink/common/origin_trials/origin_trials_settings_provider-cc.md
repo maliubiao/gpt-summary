@@ -123,14 +123,16 @@ Origin Trials 是一种让开发者在生产环境中测试实验性的 Web 平�
 
 总而言之，`origin_trials_settings_provider.cc` 是 Blink 引擎中一个核心组件，它负责管理 Origin Trial 的配置，直接影响着浏览器对实验性 Web 平台特性的支持，从而间接地影响 JavaScript, HTML 和 CSS 的行为。开发者需要正确理解和使用 Origin Trial 机制才能有效地利用这些实验性特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/origin_trials_settings_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ OriginTrialsSettingsProvider::GetSettings() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

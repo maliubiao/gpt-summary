@@ -155,7 +155,7 @@ If a user encounters a build error related to the Swift Foundation dependency, a
 
 In summary, `configtool.py` is a crucial part of Frida's build system for managing external dependencies that are configured via command-line tools. It plays a role in ensuring that Frida is built correctly with the required libraries and versions, which has implications for how Frida interacts with target processes during reverse engineering. The code relies on low-level system interactions and logical reasoning to achieve its functionality and is susceptible to common user errors related to dependency management. Understanding how a user initiates a build and the steps involved in dependency resolution is key to debugging issues related to this code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/dependencies/configtool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -328,7 +330,4 @@ class ConfigToolDependency(ExternalDependency):
         if default_value is not None:
             return default_value
         raise DependencyException(f'Could not get config-tool variable and no default provided for {self!r}')
-
-"""
-
 ```

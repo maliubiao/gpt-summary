@@ -131,7 +131,7 @@ script.load()
 
 虽然 `gluoninate.py` 文件本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的基本插桩功能。它可以作为学习 Frida、调试 Frida 安装以及理解 Frida 内部原理的入口点。它的简单性也使其成为排除 Frida 相关问题的有效工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/python/1 basic/gluon/gluonator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,11 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 def gluoninate():
     return 42
-
-"""
-
 ```

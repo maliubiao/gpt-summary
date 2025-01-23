@@ -150,14 +150,16 @@ element.style.boxShadow = '10px 10px 5px blue';
 
 总而言之，`blink/renderer/core/style/shadow_list.cc` 是 Blink 引擎中处理 CSS 阴影效果的关键模块，负责计算阴影的几何属性，以便正确地渲染和布局包含阴影的元素。 它与 CSS 的 `box-shadow` 和 `text-shadow` 属性紧密相关，并在 JavaScript 动态修改样式时发挥作用。 理解其功能有助于开发者更好地理解浏览器如何渲染阴影以及避免一些常见的使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/shadow_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -212,7 +214,4 @@ void ShadowList::AdjustRectForShadow(gfx::RectF& rect) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

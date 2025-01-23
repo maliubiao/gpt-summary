@@ -1,6 +1,6 @@
 Response:
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -8,8 +8,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 nst32 [c]) x) (Less32U x (Const32 [d])))
 	// cond: uint32(c) >= uint32(d)
 	// result: (Leq32U (Const32 <x.Type> [c-d]) (Sub32 <x.Type> x (Const32 <x.Type> [d])))
@@ -3105,9 +3107,4 @@ func rewriteValuegeneric_OpRsh16Ux64(v *Value) bool {
 		}
 		c := auxIntToInt64(i_1.AuxInt)
 		if v_1.
-"""
-
-
-
-
 ```

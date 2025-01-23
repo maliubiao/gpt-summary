@@ -112,11 +112,13 @@ jz    去优化入口点
 
 总而言之，`v8/src/compiler/backend/code-generator.cc` 是 TurboFan 编译器将优化后的 JavaScript 代码转换为可执行机器代码的核心组件，它直接影响 JavaScript 的执行效率和性能，并负责处理运行时可能出现的各种情况，例如类型不匹配和异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/code-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1743,7 +1745,4 @@ OutOfLineCode::~OutOfLineCode() = default;
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -142,15 +142,17 @@ The user wants a summary of the functionalities of the provided C++ code snippet
 *   **在过渡过程中修改 DOM 结构或样式导致提前结束:**  如果在视图转换进行中，通过 JavaScript 剧烈地修改了 DOM 结构或者参与转换的元素的关键样式，可能会导致过渡提前结束或出现不期望的效果。
 *   **忘记设置 `view-transition-name`:**  如果希望某个元素参与视图转换，但忘记设置 `view-transition-name` 属性，该元素将不会被跟踪，也不会产生相应的伪元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition_style_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on_names) {
   // Fail if the document element does not exist, since that's the place where
   // we attach pseudo elements, and if it's not there, we can't do a transition.
@@ -1003,7 +1005,4 @@ void ViewTransitionStyleTracker::ComputeLiveElementGeometry(
 bool ViewTransitionStyleTracker::HasActiveAnimations() const {
   auto pseudo_has_animation = [](PseudoElement* pseudo_element) {
     auto* animations = pseudo_element->GetElementAnimations()
-"""
-
-
 ```

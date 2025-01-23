@@ -171,7 +171,7 @@ goroutineRelatedReqs := SchedReqs{Thread: MayHave, Proc: MayHave, Goroutine: Mus
 
 `go/src/internal/trace/event/requirements.go` 这段代码定义了一种灵活的方式来描述事件发生时的调度上下文要求。它很可能是 Go 运行时追踪功能的一部分，用于过滤、分析和关联不同类型的事件。使用者需要仔细理解 `MustHave`、`MayHave` 和 `MustNotHave` 的含义，以避免在事件过滤时出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/event/requirements.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -207,9 +209,4 @@ const (
 // UserGoReqs is a common requirement among events that are running
 // or are close to running user code.
 var UserGoReqs = SchedReqs{Thread: MustHave, Proc: MustHave, Goroutine: MustHave}
-
-"""
-
-
-
 ```

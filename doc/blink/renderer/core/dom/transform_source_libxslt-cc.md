@@ -176,15 +176,17 @@ By following these steps, breaking down the code, and considering the surroundin
 
 总而言之，`transform_source_libxslt.cc` 是 Blink 引擎中处理 XSLT 转换的关键组成部分，它负责安全地持有和管理用于转换的 XML 源文档，为 JavaScript 操作 XSLT 以及将 XML 数据转换为 HTML 和 CSS 提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/transform_source_libxslt.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -223,7 +225,4 @@ TransformSource::~TransformSource() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -199,7 +199,7 @@ console.log(String.fromCharCode(65)); // String.fromCharCode 被初始化
 
 作为 V8 引擎初始化过程的第 4 部分，这段代码的核心功能是 **奠定 JavaScript 对象模型的基础**。它创建并配置了最基本的内置对象和类型，例如 `Object`, `Function`, `Array`, `Number`, `Boolean`, `String` 及其原型和核心方法。这些是后续更高级的 JavaScript 功能（例如类、Promise、模块等）构建的基础。可以认为，这一部分完成了 JavaScript 世界中 "基本粒子" 的创建和组装。后续的步骤将会在此基础上构建更复杂的结构和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -207,9 +207,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共11部分，请归纳一下它的功能
+```
 
-"""
- map->set_native_context(*native_context());
+### 源代码
+```cpp
+map->set_native_context(*native_context());
     native_context()->set_function_context_map(*map);
 
     map = factory->NewMapWithMetaMap(meta_map, CATCH_CONTEXT_TYPE,
@@ -838,7 +840,4 @@ Prompt:
     SimpleInstallFunction(isolate_, prototype, "localeCompare",
                           Builtin::kStringPrototypeLocaleCompare, 1, kAdapt);
 #endif  // V8_INTL_SUP
-"""
-
-
 ```

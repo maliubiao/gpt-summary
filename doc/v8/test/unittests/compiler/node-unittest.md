@@ -97,11 +97,13 @@ let result = add(5, 10);
 
 `node-unittest.cc` 文件中的测试用例确保了 V8 编译器内部表示代码的核心数据结构 `Node` 的行为符合预期。 虽然 JavaScript 开发者通常不会直接接触到这些 `Node` 对象，但它们是 V8 引擎高效执行 JavaScript 代码的关键。 这些测试保证了编译器能够正确地构建、连接和操作代码的内部表示，从而实现代码的优化和最终的机器码生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -369,7 +371,4 @@ TEST_F(NodeTest, BigNodes) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

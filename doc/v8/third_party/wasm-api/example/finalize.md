@@ -127,11 +127,13 @@ wasmInstance = null;
 
 `finalize.cc` 通过 C++ 代码演示了 WebAssembly 模块实例的终结器机制，允许在实例不再需要时执行清理操作。 虽然 JavaScript 没有完全相同的概念，但 `WeakRef` 和 `FinalizationRegistry` 提供了一种在对象被垃圾回收时执行回调的机制，可以用来理解和模拟资源清理的概念。  WebAssembly 的终结器为 Wasm 模块提供了在被垃圾回收时执行特定清理逻辑的能力，这对于释放外部资源或进行其他必要的收尾工作非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/finalize.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -234,8 +236,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

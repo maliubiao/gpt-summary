@@ -108,7 +108,7 @@ By following these steps, we move from a basic understanding of the code to a mo
 
 总而言之，`args_test.cpp` 是 Frida 构建系统中的一个简单但重要的测试工具，用于验证自定义命令的参数传递和文件操作功能，确保 Frida 的构建过程能够正确生成所需的配置文件或代码。 虽然它本身不直接执行逆向操作，但它生成的输出可能在逆向分析中起到辅助作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/args_test.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -136,7 +138,4 @@ int main(int argc, const char *argv[]) {
 
   return 0;
 }
-
-"""
-
 ```

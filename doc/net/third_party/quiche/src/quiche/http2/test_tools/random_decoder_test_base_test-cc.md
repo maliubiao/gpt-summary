@@ -124,15 +124,17 @@ fetch('https://example.com/data')
 
 `random_decoder_test_base_test.cc` 是一个重要的测试文件，用于验证 Chromium 中 HTTP/2 解码器框架的健壮性和正确性。它通过模拟各种随机的解码场景，帮助开发者发现潜在的 bug，确保浏览器能够可靠地处理 HTTP/2 网络通信，从而保证用户流畅的浏览体验。虽然它本身是 C++ 代码，但它所测试的功能直接影响到运行在浏览器中的 JavaScript 代码的网络功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/random_decoder_test_base_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/test_tools/random_decoder_test_base.h"
 
 #include <stddef.h>
@@ -462,7 +464,4 @@ TEST(CorruptEnumTest, CorruptsOnlyEnum) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

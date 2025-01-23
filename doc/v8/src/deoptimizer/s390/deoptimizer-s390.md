@@ -88,11 +88,13 @@ add("hello", "world"); // 输出 "helloworld"
 
 `deoptimizer-s390.cc` 文件是 V8 引擎在 s390 架构上实现反优化功能的关键组成部分。它定义了反优化过程中的数据结构和操作，确保当优化代码失效时，程序能够安全地回退到未优化状态，保证 JavaScript 代码的正确执行。虽然一些细节实现 (如 `PatchJumpToTrampoline` 和 `SetCallerConstantPool`) 在 s390 上可能有所不同，但其核心目标是维护 JavaScript 执行的正确性并处理动态类型的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/s390/deoptimizer-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

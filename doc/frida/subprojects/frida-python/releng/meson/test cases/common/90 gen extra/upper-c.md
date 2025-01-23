@@ -123,7 +123,7 @@ This thought process involves:
 
 `upper.c` 作为一个简单的 C 代码文件，其自身功能有限，主要是调用一个未定义的函数。然而，在 Frida 的测试用例上下文中，它的存在是为了测试 Frida 在处理未定义符号、进行函数 Hook 和代码注入等方面的能力。通过分析这个简单的文件，可以帮助理解 Frida 的工作原理，以及在逆向工程中如何使用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/90 gen extra/upper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,14 +131,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int BOB_MCBOB(void);
 
 int main(void) {
     return BOB_MCBOB();
 }
-
-"""
-
 ```

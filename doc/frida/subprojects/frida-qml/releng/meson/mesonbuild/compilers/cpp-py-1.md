@@ -84,7 +84,7 @@ The user wants a summary of the functionality of the provided Python code, which
 
 总而言之，这部分代码是 Frida 构建系统中关于 C++ 编译器配置的核心部分，它根据不同的编译器类型，提供了定制化的选项处理和参数生成逻辑，确保 Frida 能够正确地在各种目标平台上构建。 理解这段代码对于调试 Frida 的构建过程，以及深入理解 Frida 如何利用编译器特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/cpp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 options[key].value]
 
         if ver is not None:
@@ -379,8 +381,4 @@ class MetrowerksCPPCompilerEmbeddedPowerPC(MetrowerksCompiler, CPPCompiler):
         if std.value != 'none':
             args.append('-lang ' + std.value)
         return args
-
-"""
-
-
 ```

@@ -49,12 +49,14 @@ console.log(trimmedStr); // 输出: "Hello World!"
 
 其他的内置方法，例如 `Array.prototype.map()`, `Object.keys()` 等，虽然没有在这段代码中展示，但其原理是类似的，都是在 V8 的 `bootstrapper.cc` 文件或其他相关文件中通过 C++ 代码进行初始化和注册的，从而使得 JavaScript 能够拥有这些强大的内置功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 PORT
     SimpleInstallFunction(isolate_, prototype, "match",
                           Builtin::kStringPrototypeMatch, 1, kAdapt);
@@ -1348,7 +1350,4 @@ PORT
         DCHECK_EQ(index, kNumPropertiesWithWordlike);
         DCHECK(!map->is_dictionary_map());
         DCHECK(!map_with_wordlike->is_dictionary_
-"""
-
-
 ```

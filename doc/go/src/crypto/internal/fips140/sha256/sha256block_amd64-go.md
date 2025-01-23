@@ -176,7 +176,7 @@ p := []byte("This is a 64-byte block of data used for SHA256 processing...")
 
 总而言之，这段代码是 Go 标准库为了提高 SHA256 性能而进行的底层优化，对普通用户来说是透明的。错误通常只会在尝试修改或深入理解 Go 内部实现时发生。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha256/sha256block_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -225,9 +227,4 @@ func block(dig *Digest, p []byte) {
 		blockAMD64(dig, p)
 	}
 }
-
-"""
-
-
-
 ```

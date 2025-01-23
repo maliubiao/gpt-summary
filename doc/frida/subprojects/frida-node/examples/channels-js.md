@@ -193,7 +193,7 @@ By following these steps, I was able to systematically analyze the code and gene
 
 `channels.js` 是一个展示 Frida 如何与目标设备建立通信通道的示例脚本。它涉及到动态分析、进程间通信、操作系统底层 API 以及特定平台的协议 (如 iOS 的 Lockdown)。理解这个脚本的功能和相关知识点，有助于开发者使用 Frida 进行更深入的逆向工程和安全分析工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/channels.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('..');
 const util = require('util');
 
@@ -222,7 +224,4 @@ main()
   .catch(e => {
     console.error(e.stack);
   });
-
-"""
-
 ```

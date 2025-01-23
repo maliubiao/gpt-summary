@@ -112,9 +112,12 @@ console.log(set.has(obj2)); // 输出 true
 
 总而言之，`hashcode-unittest.cc` 这个文件验证了 V8 引擎中对象哈希码机制的正确性和健壮性，这对于 JavaScript 中对象和相关数据结构的性能和行为至关重要。它确保了像 `Set` 和 `Map` 这样的数据结构能够高效地存储和检索对象。
 
-Prompt: ```这是目录为v8/test/unittests/objects/hashcode-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/hashcode-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -422,6 +425,4 @@ TEST_F(HashcodeTest, DefaultHashQuality) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

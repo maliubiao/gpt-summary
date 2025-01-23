@@ -173,7 +173,7 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`TextPrinter.java` 虽然简单，但在 Frida 的上下文中扮演着测试和示例的角色，帮助开发者验证和展示 Frida 对 Java 代码的动态操作能力。用户访问这个文件通常是为了学习、调试或深入理解 Frida 的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/java/8 codegen custom target/com/mesonbuild/TextPrinter.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class TextPrinter {
@@ -197,7 +199,4 @@ class TextPrinter {
         System.out.println(msg);
     }
 }
-
-"""
-
 ```

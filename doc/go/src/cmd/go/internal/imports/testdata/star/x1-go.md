@@ -166,24 +166,21 @@ var Message = "Hello from x"
 
 总而言之，这段代码片段本身并没有实现什么核心的 Go 语言功能，而是作为一个反例，用于演示和测试 Go 语言构建约束的行为，特别是当存在逻辑矛盾的约束时会发生什么。它强调了正确理解和使用构建约束的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/star/x1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 //go:build blahblh && linux && !linux && windows && darwin
 // +build blahblh,linux,!linux,windows,darwin
 
 package x
 
 import "import4"
-
-"""
-
-
-
 ```

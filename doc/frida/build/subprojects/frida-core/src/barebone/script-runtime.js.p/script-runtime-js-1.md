@@ -227,7 +227,7 @@ console.log("And:", andResult.toString(16));
 
 这段 `script-runtime.js` 代码的核心功能是**在 frida 的 JavaScript 运行时环境中提供对 64 位无符号整数的精确表示和操作能力**。它通过 `BUInt64` 类实现了常见的算术、位运算和比较操作，并提供了类型转换方法。这使得 frida 脚本能够可靠地处理目标进程中涉及的 64 位数据，例如内存地址、指针和寄存器值，是 frida 实现动态插桩和调试的重要基础组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-core/src/barebone/script-runtime.js.p/script-runtime.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -237,10 +237,9 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 v&h(t))}or(t){return new BUInt64(this.$v|h(t))}xor(t){return new BUInt64(this.$v^h(t))}shr(t){return new BUInt64(this.$v>>h(t))}shl(t){return new BUInt64(this.$v<<h(t))}not(){return new BUInt64(~this.$v)}compare(t){const r=this.$v,e=h(t);return r===e?0:r<e?-1:1}equals(t){return 0===this.compare(t)}toNumber(){return Number(this.$v)}toString(t){return this.$v.toString(t)}toJSON(){return this.$v.toString()}valueOf(){return Number(this.$v)}}function h(t){return"object"==typeof t?"$v"in t?t.$v:t.handle.$v:BigInt(t)}function u(){throw new Error("Not yet implemented by the barebone backend")}
-"""
-
-
 ```

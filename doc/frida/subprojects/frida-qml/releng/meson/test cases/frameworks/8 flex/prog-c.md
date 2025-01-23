@@ -133,7 +133,7 @@ setting2 = 123;
 
 总而言之，这个 `prog.c` 文件是一个简单的基于 `flex` 和 `bison` 的解析器示例，可以作为理解更复杂的解析器工作原理的基础，尤其是在逆向工程中，它可以帮助我们理解目标程序如何处理输入数据。它也展示了 Linux 系统编程的一些基本概念，例如文件描述符和标准输入输出的重定向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/8 flex/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"parser.tab.h"
 #include<unistd.h>
 #include<sys/types.h>
@@ -173,7 +175,4 @@ int yyerror(void) {
      printf("Parse error\n");
      exit(1);
 }
-
-"""
-
 ```

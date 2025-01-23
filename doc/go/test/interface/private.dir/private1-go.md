@@ -152,15 +152,17 @@ func main() {
 
 `private1.go` 的核心作用是清晰地演示了Go语言中接口私有方法的概念和限制。它通过定义一个包含私有方法的接口和一个实现该接口的类型，并暴露一个该类型的实例，为其他包提供了测试和理解这一特性的基础。理解这一点对于编写健壮且符合Go语言设计哲学的代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/private.dir/private1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,10 +180,4 @@ type Implementation struct{}
 func (p *Implementation) private() {}
 
 var X = new(Implementation)
-
-
-"""
-
-
-
 ```

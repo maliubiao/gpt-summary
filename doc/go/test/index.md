@@ -177,14 +177,16 @@ println(cap(s2)) // 输出 10
 
 `go/test/index.go` 生成的测试用例会覆盖各种类似的边界情况，帮助开发者更好地理解和避免这些错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/index.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // skip
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -484,9 +486,4 @@ func forall(choices [][]string, f func([]string)) {
 	}
 	recurse(0)
 }
-
-"""
-
-
-
 ```

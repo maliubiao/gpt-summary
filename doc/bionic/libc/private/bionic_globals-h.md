@@ -300,7 +300,7 @@ function offsetof(struct, member) {
 
 希望这个详细的解释能够帮助你理解 `bionic_globals.h` 的作用和它在 Android 系统中的重要性。这个头文件是理解 Android 底层机制的关键入口点之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_globals.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -491,7 +493,4 @@ __LIBC_HIDDEN__ void __libc_init_sysinfo();
 #endif
 
 #endif
-
-"""
-
 ```

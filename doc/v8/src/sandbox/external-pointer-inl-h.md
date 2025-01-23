@@ -217,15 +217,17 @@ ptr_member.store(isolate, 0x98765432);
 
 总而言之，`v8/src/sandbox/external-pointer-inl.h` 定义了 V8 内部用于安全管理外部指针的关键机制，这对于 JavaScript 与 C++ 代码的互操作性至关重要，尤其是在需要处理 V8 堆外数据时。开发者在使用这些机制时需要特别注意内存管理、线程安全和类型匹配，以避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/external-pointer-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/external-pointer-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ V8_INLINE void SetupLazilyInitializedExternalPointerField(
 }  // namespace v8
 
 #endif  // V8_SANDBOX_EXTERNAL_POINTER_INL_H_
-
-"""
-
 ```

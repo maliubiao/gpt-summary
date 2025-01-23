@@ -90,7 +90,7 @@ def __lldb_init_module(debugger, internal_dict):
 5. **保存日志**：Frida 脚本将崩溃报告保存到指定路径，供用户分析。
 
 通过以上步骤，用户可以一步步地捕获和分析崩溃报告，定位应用程序中的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/darwin/agent/reportcrash.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 const LIBSYSTEM_KERNEL_PATH = '/usr/lib/system/libsystem_kernel.dylib';
 const CORESYMBOLICATION_PATH = '/System/Library/PrivateFrameworks/CoreSymbolication.framework/CoreSymbolication';
 const CRASH_REPORTER_SUPPORT_PATH = '/System/Library/PrivateFrameworks/CrashReporterSupport.framework/CrashReporterSupport';
@@ -768,7 +770,4 @@ function wrapBlock(handle, wrapper) {
 }
 
 initialize();
-
-"""
-
 ```

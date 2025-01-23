@@ -131,11 +131,13 @@ console.log(err.stack); // 输出: Custom stack trace
 
 `v8/src/builtins/accessors.cc` 是 V8 引擎的关键组成部分，它将 C++ 代码连接到 JavaScript 的内置对象属性访问。它定义了当 JavaScript 代码尝试读取或写入这些属性时实际执行的底层操作，是理解 JavaScript 引擎内部工作原理的重要一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/accessors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1011,7 +1013,4 @@ void Accessors::ErrorStackSetter(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

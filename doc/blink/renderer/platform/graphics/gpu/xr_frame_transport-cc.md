@@ -114,14 +114,16 @@ By following these steps, I could dissect the code's functionality and explain i
 
 总而言之，`xr_frame_transport.cc` 是 Blink 渲染引擎中连接 WebXR API 和底层 VR 服务的关键桥梁，负责高效、可靠地将渲染结果传递给 VR 设备，并处理相关的同步问题。理解其功能有助于开发者更好地理解 WebXR 的工作原理，并避免常见的开发错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/xr_frame_transport.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -503,7 +505,4 @@ void XRFrameTransport::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

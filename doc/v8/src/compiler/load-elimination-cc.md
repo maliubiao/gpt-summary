@@ -170,7 +170,7 @@ function process(obj) {
 
 该文件的主要功能是实现 V8 编译器中的加载消除优化。它通过维护抽象状态来跟踪内存中对象的状态，并利用别名分析来判断加载操作是否冗余。当检测到冗余加载时，优化器会将其替换为之前加载的值，从而提高代码执行效率。  代码的这一部分主要关注于抽象状态的定义、别名分析的基础设施以及 `Reduce` 方法的框架结构和部分节点类型的处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/load-elimination.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/load-elimination.cc以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1108,7 +1110,4 @@ Reduction LoadElimination::ReduceTransitionAndStoreElement(Node* node) {
   // Kill the elements as well.
   state = state->KillField(object,
                            FieldI
-"""
-
-
 ```

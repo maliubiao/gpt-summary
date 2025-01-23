@@ -144,7 +144,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 这部分代码主要负责测试 `WebSocketTransportClientSocketPool` 在各种复杂场景下的连接管理和资源控制能力。它覆盖了连接失败时的回退策略、并发连接限制、连接等待和释放机制、以及错误处理流程。通过这些详尽的测试用例，可以确保 `WebSocketTransportClientSocketPool` 能够高效、稳定地管理 WebSocket 连接，为上层的 Javascript WebSocket API 提供可靠的基础。 这些测试也验证了连接池在处理 DNS 别名和维护正确的网络隔离密钥方面的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/websocket_transport_client_socket_pool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _EQ("2.2.2.2", endpoint.ToStringWithoutPort());
 }
 
@@ -782,8 +784,4 @@ TEST_F(WebSocketTransportClientSocketPoolTest, LoadState) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

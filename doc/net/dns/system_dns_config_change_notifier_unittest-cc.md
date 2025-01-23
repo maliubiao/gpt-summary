@@ -147,15 +147,17 @@ This detailed breakdown reflects the kind of systematic approach needed to under
 
 总而言之，`net/dns/system_dns_config_change_notifier_unittest.cc` 是一个关键的测试文件，用于确保 Chromium 网络栈能够正确地响应系统级别的 DNS 配置变化，这对于保证浏览器的网络连接稳定性和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/system_dns_config_change_notifier_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -486,7 +488,4 @@ TEST_F(SystemDnsConfigChangeNotifierTest, RefreshConfig) {
 }
 
 }  // namespace net
-
-"""
-
 ```

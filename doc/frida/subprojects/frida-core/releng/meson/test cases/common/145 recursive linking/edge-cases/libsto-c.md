@@ -146,7 +146,7 @@ Let's break down the thought process to generate the comprehensive analysis of t
 
 如果在调试过程中，用户发现 Frida 无法 Hook 到 `get_stodep_value`，或者行为不符合预期，他们可能会进一步查看 `libsto.c` 的源代码，以更深入地理解其实现。这就是用户一步步到达查看这个源代码文件的过程，它作为调试的线索，帮助用户理解目标程序的行为。这个简单的例子展示了 Frida 如何作为逆向工程和动态分析的强大工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/145 recursive linking/edge-cases/libsto.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 int get_builto_value (void);
@@ -164,7 +166,4 @@ SYMBOL_EXPORT
 int get_stodep_value (void) {
   return get_builto_value ();
 }
-
-"""
-
 ```

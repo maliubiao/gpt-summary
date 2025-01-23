@@ -97,15 +97,17 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 `editing_command_test.cc` 是 Blink 引擎编辑功能的核心测试文件，它通过各种测试用例来验证编辑命令的创建、启用状态和行为是否正确。这与 JavaScript 中通过 `document.execCommand()` 执行编辑命令，以及 HTML 中通过 `contenteditable` 属性定义可编辑区域的功能紧密相关。该文件有助于发现和预防用户或开发者在使用编辑功能时可能遇到的问题。 开发者可以通过分析和运行这些测试用例来调试与编辑相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/editing_command_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ TEST_F(EditingCommandTest, DeleteSoftLineBackwardTargetRanges) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

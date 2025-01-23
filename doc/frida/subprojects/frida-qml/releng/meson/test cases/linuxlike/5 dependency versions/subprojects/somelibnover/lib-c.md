@@ -181,7 +181,7 @@ int somelibnover_do_the_thing(int value) {
 
 这个简单的 C 文件通常用于 Frida 的测试框架中，用来验证 Frida 是否能够正确地 hook 和操作不同版本的依赖库。通过查看这个文件，可以理解 Frida 如何处理简单的函数和库的 hook 操作，为更复杂的逆向分析打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/linuxlike/5 dependency versions/subprojects/somelibnover/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,9 +189,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

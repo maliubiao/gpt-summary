@@ -110,14 +110,16 @@ By following these steps, we can systematically analyze the code and understand 
 
 总而言之，`main_thread_perftest.cc` 通过测试主线程调度器的性能，间接地帮助我们理解和优化与 JavaScript, HTML, CSS 相关的 Web 性能问题。 它的测试结果可以指导 Blink 引擎的开发者改进调度策略，同时也提醒 Web 开发者注意避免常见的导致主线程拥塞的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_perftest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ TEST_F(MainThreadPerfTest, PostTaskPerformance) {
 }  // namespace blink
 
 #endif  // defined(THREAD_SANITIZER)
-
-"""
-
 ```

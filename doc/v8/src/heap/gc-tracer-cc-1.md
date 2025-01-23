@@ -82,7 +82,7 @@ pause=1.2 mutator=98.8 gc=ms reduce_memory=0 time_to_safepoint=0.1 heap.prologue
 
 这部分 `gc-tracer.cc` 代码的核心功能是 **作为 V8 引擎中垃圾回收事件的详细性能记录器。** 它能够针对不同类型的 GC 事件，记录其各个阶段的耗时、内存使用情况、对象数量变化以及计算相关的性能指标，并将这些信息格式化输出，为 V8 引擎的性能分析和优化提供关键数据。  虽然是 C++ 代码，但它直接关联到 JavaScript 的内存管理和执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/gc-tracer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/gc-tracer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -90,8 +90,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .2f "
           "scavenge.weak_global_handles.process=%.2f "
           "scavenge.parallel=%.2f "
@@ -826,7 +828,4 @@ void GCTracer::ReportFullCycleToRecorder() {
     DCHECK_NE(-1, cppgc_event.main_thread_efficiency_in_bytes_per_us);
     event.main_thread_efficiency_cpp_in_bytes_per_us =
         cppgc_event.main_thread_efficiency_in_bytes_per
-"""
-
-
 ```

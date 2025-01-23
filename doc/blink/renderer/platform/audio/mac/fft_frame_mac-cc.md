@@ -193,14 +193,16 @@ data: [-0.1, 0.2, -0.3, 0.4, -0.5, 0.6, -0.7, 0.8]  // 期望接近这个值
 
 总而言之，`fft_frame_mac.cc` 是 Blink 引擎在 macOS 上进行高效音频 FFT 处理的关键组件，它通过 macOS 提供的底层库实现，并为上层的 Web Audio API 提供了必要的功能。开发者通常不需要直接操作这个文件，而是通过 Web Audio API 在 JavaScript 中使用其功能。理解其功能有助于理解 Web Audio API 的底层实现和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/mac/fft_frame_mac.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -405,7 +407,4 @@ void FFTFrame::Cleanup() {
 }  // namespace blink
 
 #endif  // BUILDFLAG(IS_MAC) && !defined(WTF_USE_WEBAUDIO_PFFFT)
-
-"""
-
 ```

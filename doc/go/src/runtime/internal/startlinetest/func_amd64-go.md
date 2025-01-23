@@ -121,7 +121,7 @@ TEXT ·AsmFunc(SB), NOSPLIT, $0-8
 
 这段代码的核心目的是提供一个简单的汇编函数，用于测试 Go 运行时环境获取函数起始行号的能力。通过 `AsmFunc` 调用 `runtime_test.CallerStartLine`，测试可以验证运行时环境是否能够正确地报告跨越 Go 代码和汇编代码边界的函数调用栈信息。理解汇编代码和 `CallerStartLine` 的具体行为是正确使用和理解这段代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/internal/startlinetest/func_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -129,8 +129,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -144,9 +146,4 @@ func AsmFunc() int
 
 // Provided by runtime_test.
 var CallerStartLine func(bool) int
-
-"""
-
-
-
 ```

@@ -137,7 +137,7 @@ This structured approach ensures that all aspects of the user's prompt are addre
 
 总而言之，`vs2017backend.py` 在 Frida 的 Windows 构建过程中扮演着至关重要的角色，它连接了 Meson 构建系统和 Visual Studio 2017，使得开发者可以使用熟悉的 IDE 来编译和调试 Frida 及其相关组件。对于进行 Frida 开发或遇到 Windows 构建问题的用户来说，理解这个文件的功能和工作原理是很有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/vs2017backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -206,7 +208,4 @@ class Vs2017Backend(Vs2010Backend):
             optargs = [x for x in file_args['c'] if x.startswith('/std:c')]
             if optargs:
                 ET.SubElement(clconf, 'LanguageStandard_C').text = optargs[0].replace("/std:c", "stdc")
-
-"""
-
 ```

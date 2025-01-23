@@ -155,7 +155,7 @@ Frida 是一个动态插桩工具，广泛应用于逆向工程。这部分代�
 
 在调试过程中，如果某个测试失败，可以查看 JUnit XML 报告，了解具体的错误信息和输出，或者查看测试的详细日志 (`get_log()`)，这有助于定位问题所在。例如，如果报告中显示一个 TAP 测试失败，可以检查测试程序的标准输出，看是否有错误的 TAP 输出格式，或者查看标准错误，看是否有其他错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 (sum(1 for r in test.results if r.result is TestResult.SKIP)),
                 time=str(test.duration),
             )
@@ -941,7 +943,4 @@ class TestHarness:
 
         self.prepare_build()
         self.load_
-"""
-
-
 ```

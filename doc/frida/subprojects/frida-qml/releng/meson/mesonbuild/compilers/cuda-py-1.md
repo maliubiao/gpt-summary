@@ -132,7 +132,7 @@ Here's a breakdown of the request and how to address each point:
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/cuda.py` 文件的这一部分继续定义了 `CudaCompiler` 类，详细实现了 CUDA 代码的编译和链接过程在 Meson 构建系统中的集成。它负责将 Meson 的通用编译/链接请求转换为 CUDA 编译器 `nvcc` 特定的命令行参数，并处理与主机编译器的交互。这个类涵盖了选项处理、头文件包含、库查找、调试信息生成、优化、运行时库处理等多个方面，确保 Frida 能够正确地编译和链接包含 CUDA 代码的组件，这对于 Frida 动态分析和逆向使用场景中注入和操作 GPU 代码至关重要。它也处理了一些与底层系统（如 Linux 的共享库机制）以及用户可能遇到的常见配置错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 id) {{
             return 0;
         }}'''
@@ -327,8 +329,4 @@ id) {{
 
     def get_assert_args(self, disable: bool) -> T.List[str]:
         return self.host_compiler.get_assert_args(disable)
-
-"""
-
-
 ```

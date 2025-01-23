@@ -122,7 +122,7 @@ By following this thought process, I can provide a comprehensive and accurate an
 
 `my_compiler.py` 是 Frida 项目中一个简单的测试脚本，用于模拟一个接收文本输入并产生 "二进制" 输出的程序。它的主要目的是测试 Frida 的 hook 和拦截能力，确保 Frida 能够正确地与这类自定义目标进行交互。用户一般不会直接操作这个脚本，它通常在 Frida 的自动化测试流程中被使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/109 custom target capture/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -146,7 +148,4 @@ if __name__ == '__main__':
         print('Malformed input')
         sys.exit(1)
     print('This is a binary output file.')
-
-"""
-
 ```

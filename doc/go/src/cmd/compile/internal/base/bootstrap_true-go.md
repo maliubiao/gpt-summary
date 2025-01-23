@@ -119,15 +119,17 @@ go build -tags=compiler_bootstrap ./cmd/compile
 
 `bootstrap_true.go` 的核心作用是作为一个编译时的标志，用于指示当前的 Go 编译器构建是否使用了 `compiler_bootstrap` build tag。这在 Go 编译器的自举过程中可能用于区分不同的构建阶段或启用特定的行为。它通过定义一个简单的常量来实现这一点，并通过 `go build` 命令的 `-tags` 参数来控制是否包含该文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/base/bootstrap_true.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -139,9 +141,4 @@ package base
 // CompilerBootstrap reports whether the current compiler binary was
 // built with -tags=compiler_bootstrap.
 const CompilerBootstrap = true
-
-"""
-
-
-
 ```

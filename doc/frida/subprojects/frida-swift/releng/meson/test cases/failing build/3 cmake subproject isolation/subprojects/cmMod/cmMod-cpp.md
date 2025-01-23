@@ -109,7 +109,7 @@ Here's a breakdown of the thinking process to arrive at the analysis of the C++ 
 
 `cmMod.cpp` 定义了一个简单的 C++ 类，用于测试 Frida 构建系统中子项目的隔离性。它本身的功能是基础的字符串操作，但在 Frida 的上下文中，它可以被用作动态 Instrumentation 的目标，用于观察和修改目标程序的行为。 文件路径揭示了其在 Frida 项目构建测试中的角色，特别是用于模拟构建失败场景下的子项目隔离。 开发者查看这个文件很可能是为了调试构建错误，了解 `cmMod` 子项目是否按预期隔离。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing build/3 cmake subproject isolation/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "fileA.hpp"
 
@@ -131,7 +133,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

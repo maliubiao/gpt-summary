@@ -228,15 +228,17 @@ c: type is int
 
 `go/src/cmd/compile/internal/types2/example_test.go` 是一个很好的学习 `types2` 包 API 的起点。它展示了如何进行基本的类型检查、访问作用域信息以及获取详细的类型信息。理解这些示例可以帮助开发者更好地理解 Go 语言的类型系统和编译过程。然而，需要注意的是，直接使用 `cmd/compile/internal/types2` 包通常用于构建 Go 语言的工具链，对于一般的 Go 应用程序开发，推荐使用 `go/types` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -487,9 +489,4 @@ func mode(tv types2.TypeAndValue) string {
 		return "unknown"
 	}
 }
-
-"""
-
-
-
 ```

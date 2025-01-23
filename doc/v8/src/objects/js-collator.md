@@ -119,11 +119,13 @@ console.log(fruits); // 输出: [ 'Apple', 'banana', 'orange' ] (根据英语默
 
 `js-collator.cc` 是 V8 引擎中实现 `Intl.Collator` 这一关键国际化功能的 C++ 代码。它通过与 ICU 库的紧密结合，为 JavaScript 提供了强大且灵活的 locale-sensitive 字符串比较能力，使得开发者能够构建适应不同语言和文化习惯的应用程序。  JavaScript 代码通过 `Intl.Collator` API 与 `js-collator.cc` 中实现的底层功能进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-collator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -716,7 +718,4 @@ const std::set<std::string>& JSCollator::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

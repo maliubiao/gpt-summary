@@ -106,7 +106,7 @@ func main() {
 
 `go/src/runtime/vdso_linux_amd64.go` 是 Go 运行时为了在 Linux AMD64 架构上提升系统调用性能而设计的一部分。它通过查找并缓存 VDSO 中常用系统调用函数的地址，使得 Go 程序在执行这些系统调用时能够更高效。开发者通常不需要直接关心这些底层实现，Go 标准库会透明地利用这些优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_linux_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -146,9 +148,4 @@ var (
 
 // vdsoGettimeofdaySym is accessed from the syscall package.
 //go:linkname vdsoGettimeofdaySym
-
-"""
-
-
-
 ```

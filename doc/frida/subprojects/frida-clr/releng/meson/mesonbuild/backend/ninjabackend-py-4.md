@@ -122,7 +122,7 @@ Here's a breakdown of the thought process to generate the response:
 
 此代码片段（`ninjabackend.py` 的第 5 部分）的核心功能是生成 Ninja 构建系统中用于**编译**源代码文件的构建规则。它负责处理各种编程语言的编译过程，包括管理编译参数、处理调试信息、预编译头文件、依赖关系以及特定于语言的特性。 简而言之，**它将 Meson 的构建意图转化为 Ninja 可以理解和执行的编译指令。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 file called foo.pdb. So will a static library
         # foo.lib, which clobbers both foo.pdb _and_ the dll file's
         # export library called foo.lib (by default, currently we name
@@ -751,7 +753,4 @@ file called foo.pdb. So will a static library
 
         prelinker = target.get_prelinker()
         cmd = prelinker.exelist
-"""
-
-
 ```

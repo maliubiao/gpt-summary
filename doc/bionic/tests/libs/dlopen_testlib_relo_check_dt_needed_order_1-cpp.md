@@ -216,7 +216,7 @@ if (Process.platform === 'android') {
 
 总结来说，`dlopen_testlib_relo_check_dt_needed_order_1.cpp` 虽然代码简单，但在 Android Bionic 的上下文中，它扮演着验证动态链接器正确性的重要角色，特别是关于依赖库加载顺序的处理。 理解其背后的原理有助于我们更好地理解 Android 系统底层的工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_testlib_relo_check_dt_needed_order_1.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -227,8 +227,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -248,7 +250,4 @@ Prompt:
 extern "C" int relo_test_get_answer_lib() {
   return 1;
 }
-
-"""
-
 ```

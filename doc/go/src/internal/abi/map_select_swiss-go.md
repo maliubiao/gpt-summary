@@ -124,7 +124,7 @@ go run -tags=goexperiment.swissmap your_program.go
 
 总而言之，`go/src/internal/abi/map_select_swiss.go` 这个文件的作用是在编译时根据 `goexperiment.swissmap` 构建标签来决定程序中 map 类型的具体实现，这体现了 Go 语言在尝试新功能时所采用的灵活和可控的方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/map_select_swiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -156,9 +158,4 @@ package abi
 // for an ad-hoc local Type object). It may be best to move code that isn't
 // usable by the compiler out of the package.
 type mapType = SwissMapType
-
-"""
-
-
-
 ```

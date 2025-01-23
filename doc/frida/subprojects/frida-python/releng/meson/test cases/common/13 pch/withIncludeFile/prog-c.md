@@ -164,7 +164,7 @@ if (ObjC.available) {
 
 `prog.c` 文件本身是一个非常简单的 C 程序，但它的存在于 Frida 的测试用例中，主要目的是验证 Frida 的构建系统或其注入机制是否正确处理了预编译头。 它强调了在某些构建配置下，代码可以不显式包含所有需要的头文件。  理解这个测试用例有助于理解 Frida 如何与目标进程交互，以及如何处理编译优化技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/13 pch/withIncludeFile/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH or explicit inclusion
 
 void func(void) {
@@ -184,7 +186,4 @@ void func(void) {
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

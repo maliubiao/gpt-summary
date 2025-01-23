@@ -74,12 +74,14 @@ logMessage("Something happened");
 
 这部分代码定义了 V8 编译器中用于优化 JavaScript 和 WebAssembly 代码的关键步骤。这些阶段通过各种技术，例如消除冗余代码、简化操作、优化内存访问和寄存器分配等，最终生成高效的机器码，从而提高 JavaScript 代码的执行速度。 这些优化对开发者来说是透明的，但它们是 V8 引擎实现高性能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 (data, &graph_reducer, &load_elimination);
     AddReducer(data, &graph_reducer, &wasm_gc);
     AddReducer(data, &graph_reducer, &dead_code_elimination);
@@ -1734,7 +1736,4 @@ void LowerInt64(const wasm::FunctionSig* sig, MachineGraph* mcgraph,
 base::OwnedVector<uint8_t> SerializeInliningPositions(
     const ZoneVector<WasmInliningPosition>& positions) {
   const size_t entry_size = sizeof positions[0].in
-"""
-
-
 ```

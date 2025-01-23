@@ -109,14 +109,16 @@ By following this systematic approach, breaking down the code into its component
 
 总而言之，`bmp_image_decoder_fuzzer.cc` 是 Blink 引擎中用于确保 BMP 图像解码器稳定性和安全性的重要工具。它通过自动化地测试各种可能的输入，帮助开发者发现并修复潜在的问题，最终提升用户的浏览体验和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/bmp/bmp_image_decoder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return 0;
 }
 }  // namespace blink
-
-"""
-
 ```

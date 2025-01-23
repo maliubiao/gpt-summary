@@ -142,7 +142,7 @@ Here's a breakdown of the thinking process to analyze the C code and generate th
 
 总而言之，`c.c` 这个文件虽然简单，但在 Frida 的测试和开发流程中扮演着验证基本插桩功能的重要角色。它展示了如何定义一个可以被 Frida 目标锁定的函数，并涉及到动态链接、平台差异等底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/75 custom subproject dir/custom_subproject_dir/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -166,7 +168,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

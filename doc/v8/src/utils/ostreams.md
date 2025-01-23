@@ -171,11 +171,13 @@ void OutputPerformanceData(const char* filename, double execution_time, size_t m
 
 总而言之，`v8/src/utils/ostreams.cc` 文件提供了一套底层的、灵活的输出机制，V8 引擎的各个部分可以使用它来生成各种形式的输出信息，这些信息最终会影响到 JavaScript 开发人员所看到的控制台输出、错误信息、性能分析结果等。  它本身不直接暴露给 JavaScript API，而是作为 V8 内部实现的一部分而存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/ostreams.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -377,7 +379,4 @@ std::ostream& operator<<(std::ostream& os, const AsHexBytes& hex) {
 
 #undef snprintf
 #undef LOG_TAG
-
-"""
-
 ```

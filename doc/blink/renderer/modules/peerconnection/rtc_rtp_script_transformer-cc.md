@@ -434,15 +434,17 @@ void RTCRtpScriptTransformer::Clear() {
 
 总而言之，`rtc_rtp_script_transformer.cc` 是 Blink 中实现 WebRTC Insertable Streams 功能的关键 C++ 代码，它允许 JavaScript 代码以一种强大的方式介入到音视频数据的编码和解码过程中。理解其功能和与 JavaScript 的交互方式对于调试 WebRTC 应用中的相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_rtp_script_transformer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -633,7 +635,4 @@ void RTCRtpScriptTransformer::Clear() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

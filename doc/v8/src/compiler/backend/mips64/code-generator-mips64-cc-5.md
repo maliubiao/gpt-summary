@@ -150,7 +150,7 @@ li t1, 10
 
 This part of `v8/src/compiler/backend/mips64/code-generator-mips64.cc` focuses on the low-level details of generating MIPS64 assembly code for fundamental operations like function returns, stack manipulation, and data movement. It ensures that JavaScript code is translated into efficient and correct machine instructions for the MIPS64 architecture, handling register management, stack frame setup and teardown, and various data types. It plays a crucial role in the overall compilation pipeline of the V8 JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/code-generator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _access_state()->GetFrameOffset(spill_slot);
     DCHECK(offset.from_frame_pointer());
     __ Sd(zero_reg, MemOperand(fp, offset.offset()));
@@ -670,8 +672,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

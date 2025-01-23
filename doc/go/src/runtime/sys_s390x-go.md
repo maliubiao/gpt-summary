@@ -154,7 +154,7 @@ func (g *Gobuf) SetCtxt(ctxt unsafe.Pointer) { g.ctxt = ctxt }
 
 `gostartcall` 是 Go 运行时在 `s390x` 架构上用于初始化新 goroutine 执行上下文的关键函数。它通过修改 `gobuf` 结构体的程序计数器和链接寄存器，模拟了一次函数调用和 `Gosave` 操作，从而让新的 goroutine 能够从指定的函数开始执行。理解这个函数有助于深入理解 Go 语言的并发模型和运行时机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sys_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -182,9 +184,4 @@ func gostartcall(buf *gobuf, fn, ctxt unsafe.Pointer) {
 	buf.pc = uintptr(fn)
 	buf.ctxt = ctxt
 }
-
-"""
-
-
-
 ```

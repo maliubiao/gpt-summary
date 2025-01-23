@@ -145,15 +145,17 @@ audioData.copyTo(destinationBuffer).then(() => {
 
 总而言之，`audio_data_copy_to_fuzzer.cc` 是一个重要的测试文件，它通过自动化地探索各种输入场景，来保障 Chromium 浏览器中 WebCodecs API 的 `AudioData.copyTo` 方法的正确性和安全性。它与 JavaScript 功能紧密相关，并通过模拟各种可能的 JavaScript 调用场景来发现潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/audio_data_copy_to_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ DEFINE_TEXT_PROTO_FUZZER(const wc_fuzzer::AudioDataCopyToCase& proto) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

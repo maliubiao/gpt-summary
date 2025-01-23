@@ -97,7 +97,7 @@ By following these steps, the comprehensive explanation provided in the initial 
 
 通过这些线索，用户可以开始检查他们的构建配置，例如 `meson.build` 文件，查看是否错误地包含了 `scommon_broken.c`，并找到应该使用的正确的 `scommon` 文件。他们也可能需要检查构建系统的配置，以确保选择了正确的源文件路径。这个文件实际上是一个**故意引入的错误点**，用于测试构建系统的容错性和提供清晰的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/scommon/scommon_broken.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,10 +105,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #error This file must not be used. The other scommon one should be instead.
-
-"""
-
 ```

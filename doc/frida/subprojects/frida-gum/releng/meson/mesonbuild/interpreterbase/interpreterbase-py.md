@@ -209,7 +209,7 @@ A user interacting with Frida indirectly triggers this code through the Meson bu
 
 `interpreterbase.py` is a foundational component of the Meson build system used by Frida. It's responsible for parsing and interpreting the build instructions defined in `meson.build` files. While not directly involved in Frida's dynamic instrumentation capabilities, it's crucial for configuring and building Frida itself, which indirectly impacts how reverse engineers can use and customize the tool. Understanding this file is essential for anyone wanting to delve into the build process of Frida or other Meson-based projects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreterbase/interpreterbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -884,7 +886,4 @@ class InterpreterBase:
 
     def validate_extraction(self, buildtarget: mesonlib.HoldableObject) -> None:
         raise InterpreterException('validate_extraction is not implemented in this context (please file a bug)')
-
-"""
-
 ```

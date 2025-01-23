@@ -165,11 +165,13 @@ int main() {
 
 总而言之，`v8threads.cc` 定义了 V8 引擎内部用于管理线程和提供线程安全的关键机制，这些机制对于保证 JavaScript 代码在多线程环境中的正确执行至关重要，尤其是在 V8 内部线程处理异步操作和垃圾回收时，以及在嵌入 V8 的 C++ 应用中进行多线程编程时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/v8threads.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -500,7 +502,4 @@ ThreadId ThreadManager::CurrentId() { return ThreadId::Current(); }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

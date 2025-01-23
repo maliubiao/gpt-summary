@@ -263,7 +263,7 @@ if (Process.platform === 'android') {
 
 总结来说，`extern.handroid` 头文件声明了 `__strsignal` 函数，该函数是 Android 系统中用于将信号编号转换为可读字符串的重要工具，它在错误处理、日志记录和调试等方面发挥着关键作用。理解其功能和使用方式对于 Android 开发人员，特别是进行 Native 开发的开发者来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/android/include/extern.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -301,7 +303,4 @@ __BEGIN_DECLS
 const char* __strsignal(int, char*, size_t);
 
 __END_DECLS
-
-"""
-
 ```

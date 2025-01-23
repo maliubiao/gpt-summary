@@ -231,7 +231,7 @@ session.detach()
 
 总结来说，`w_drem.c` 文件虽然很小，但它代表了 Android 系统中数学运算的基础部分。理解它的作用以及它在整个系统中的位置，对于深入理解 Android 运行机制和进行底层开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/w_drem.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -242,8 +242,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * drem() wrapper for remainder().
  *
@@ -258,7 +260,4 @@ drem(double x, double y)
 {
 	return remainder(x, y);
 }
-
-"""
-
 ```

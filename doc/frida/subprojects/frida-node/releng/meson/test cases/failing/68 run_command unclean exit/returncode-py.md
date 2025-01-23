@@ -152,7 +152,7 @@ python returncode.py 123
 
 尽管 `returncode.py` 代码非常简洁，但它在 Frida 的测试框架中扮演着至关重要的角色，用于模拟具有特定退出状态码的进程，帮助验证 Frida 在处理进程退出场景下的功能是否正常。它的存在体现了软件测试中“模拟”和“控制”环境的重要性，特别是在像 Frida 这样的底层工具的开发中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/68 run_command unclean exit/returncode.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,13 +160,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 exit(int(sys.argv[1]))
-
-"""
-
 ```

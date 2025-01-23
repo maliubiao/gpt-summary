@@ -190,7 +190,7 @@ func main() {
 
 `go/src/internal/trace/event_test.go` 中的这段代码主要用于测试 `trace` 包中 `syncEvent` 类型的事件在调用特定方法时是否会按照预期触发 `panic`。这有助于确保 `trace` 包内部不同类型的事件具有正确的行为和约束，防止开发者在不应该调用的方法上意外使用某些类型的事件。 理解这种测试机制可以帮助开发者更好地理解 Go 内部 tracing 机制的设计和不同事件类型的特点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/event_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -243,9 +245,4 @@ func mustPanic(t *testing.T, f func()) {
 	}()
 	f()
 }
-
-"""
-
-
-
 ```

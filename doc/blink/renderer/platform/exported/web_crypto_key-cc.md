@@ -216,14 +216,16 @@ WebCryptoKeyUsageMask usages = kUsagesSign;
 
 总而言之，`blink/renderer/platform/exported/web_crypto_key.cc` 文件是 Blink 引擎中实现 Web Crypto API 密钥管理的核心部分，它定义了 `WebCryptoKey` 类，负责存储和操作密码学密钥的各种属性，并直接支持了 JavaScript 中对密钥的操作。理解这个文件的功能有助于深入了解浏览器如何处理密码学相关的任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_crypto_key.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -346,7 +348,4 @@ void WebCryptoKey::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -159,7 +159,7 @@ Also, distinguishing between the "no_bd" (no build data) and "func" (using build
 
 `frida/subprojects/frida-clr/releng/meson/mesonbuild/mintro.py` 是 Frida 项目中一个关键的构建辅助工具，它利用 Meson 的 Introspection 功能，以结构化的 JSON 格式提供关于构建系统的大量信息。这些信息对于 IDE 集成、自动化构建以及逆向工程分析都非常有价值。虽然它不是直接的逆向工具，但它提供的数据是逆向分析的基础。理解 `mintro.py` 的功能和工作方式，有助于我们更好地理解 Frida 的构建过程和目标二进制的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/mintro.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -836,7 +838,4 @@ def write_meson_info_file(builddata: build.Build, errors: list, build_files_upda
         json.dump(info_data, fp)
         fp.flush()
     os.replace(tmp_file, info_file)
-
-"""
-
 ```

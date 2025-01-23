@@ -112,14 +112,16 @@ By following these steps, you can systematically analyze a source code file and 
 
 总而言之，`layout_embedded_object.cc` 文件在 Chromium Blink 渲染引擎中扮演着至关重要的角色，它负责管理嵌入式对象在网页上的布局和渲染，并处理与插件可用性相关的各种情况，直接影响着用户浏览包含此类内容的网页的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_embedded_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2000 Simon Hausmann <hausmann@kde.org>
@@ -234,7 +236,4 @@ void LayoutEmbeddedObject::ComputeIntrinsicSizingInfo(
 }
 
 }  // namespace blink
-
-"""
-
 ```

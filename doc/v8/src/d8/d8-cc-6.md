@@ -184,7 +184,7 @@ function helperFunction() {
 
 作为 d8 源代码的第 7 部分，这段代码的核心功能是 **实现 V8 对 JavaScript Web Workers API 的支持**。它定义了 `Worker` 类的结构和行为，包括创建独立的执行线程、处理线程之间的消息传递（序列化和反序列化 JavaScript 值）、允许 Worker 线程导入和执行额外的脚本，以及提供关闭 Worker 线程的机制。  考虑到这是倒数第二部分，这部分很可能是在 V8 运行时环境已经建立的基础上，添加并发和并行处理能力的关键组件。它负责隔离 JavaScript 执行环境，使得 d8 能够模拟浏览器中 Web Workers 的行为，从而支持更复杂的应用程序和测试场景。 这部分代码专注于 Worker 的生命周期管理和通信机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 unction();
           }
           if (handler_present) {
@@ -1040,7 +1042,4 @@ class Deserializer : public ValueDeserializer::Delegate {
 
   MaybeLocal<SharedArrayBuffer> GetSharedArrayBufferFromId(
       Isolate* isola
-"""
-
-
 ```

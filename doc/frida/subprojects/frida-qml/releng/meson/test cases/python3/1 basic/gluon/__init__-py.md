@@ -122,7 +122,7 @@ from frida.subprojects.frida_qml.releng.meson.test_cases.python3.1_basic.gluon i
 
 尽管 `frida/subprojects/frida-qml/releng/meson/test cases/python3/1 basic/gluon/__init__.py` 文件本身是空的，但它作为 Python 包的标记文件在 Frida 的测试框架中起着至关重要的作用。它使得相关的测试模块可以被组织和导入，并为测试 Frida 对 QML 应用的 instrumentation 能力提供了结构基础。虽然这个文件不直接执行逆向操作或涉及底层知识，但它所处的上下文环境与这些概念密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python3/1 basic/gluon/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,9 +130,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

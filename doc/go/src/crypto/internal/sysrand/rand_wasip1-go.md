@@ -109,7 +109,7 @@ func main() {
 
 这段 `rand_wasip1.go` 文件中的 `read` 函数是 Go 语言在 WASI 环境下获取安全随机数的一种实现方式。它直接使用了 WASI 提供的 `random_get` 系统调用。使用者需要注意的是，这段代码只能在 WASI 环境下正常工作。在其他环境下，调用会失败。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/sysrand/rand_wasip1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -117,8 +117,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -134,9 +136,4 @@ func read(b []byte) error {
 	// be filled, but this appears to be the case in all runtimes tested.
 	return syscall.RandomGet(b)
 }
-
-"""
-
-
-
 ```

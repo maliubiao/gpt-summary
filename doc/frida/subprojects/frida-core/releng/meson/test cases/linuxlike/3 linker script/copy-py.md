@@ -122,7 +122,7 @@ By following this thought process, combining a direct understanding of the code 
 
 总而言之，虽然 `copy.py` 脚本本身很简单，但它在 Frida 的构建、测试和开发过程中扮演着重要的基础性角色，用于准备测试环境，隔离分析对象，并验证 Frida 对各种二进制文件和库的处理能力。它的存在以及可能出现的错误，可以为开发者提供调试 Frida 相关问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/linuxlike/3 linker script/copy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,14 +130,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import shutil
 import sys
 
 if __name__ == '__main__':
     shutil.copy(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

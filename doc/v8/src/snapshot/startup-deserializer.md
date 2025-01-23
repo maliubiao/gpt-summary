@@ -103,11 +103,13 @@ V8 在每次启动时都需要执行一系列 C++ 代码来创建 `Array` 构造
 
 **总结来说，`startup-deserializer.cc` 通过反序列化预先构建好的 V8 引擎状态，避免了重复的初始化工作，从而显著提升了 JavaScript 的启动速度，使得用户可以更快地开始执行 JavaScript 代码。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/startup-deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ void StartupDeserializer::FlushICache() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

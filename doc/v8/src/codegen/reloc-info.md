@@ -176,11 +176,13 @@ add(x, y);
 
 `v8/src/codegen/reloc-info.cc` 文件是 V8 引擎中一个非常核心的组件，它为代码生成和执行提供了关键的基础设施，使得 V8 能够高效地编译和运行 JavaScript 代码，并处理各种动态特性，例如函数调用、对象访问、外部 API 调用以及 WebAssembly 集成。 理解这个文件的功能有助于深入了解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/reloc-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -681,7 +683,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

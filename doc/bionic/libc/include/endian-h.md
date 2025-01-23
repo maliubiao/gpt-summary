@@ -316,7 +316,7 @@ sys.stdin.read()
 
 虽然 `bionic/libc/include/endian.handroid` 文件本身只是一个简单的包含文件，但它指向了 Android 系统中处理字节序的关键头文件 `<sys/endian.h>`。理解字节序及其转换对于进行跨平台或网络编程至关重要。通过 Frida Hook，我们可以深入观察这些底层函数的执行过程，更好地理解 Android 系统的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/endian.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -327,8 +327,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /*
@@ -339,7 +341,4 @@ Prompt:
  */
 
 #include <sys/endian.h>
-
-"""
-
 ```

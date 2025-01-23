@@ -129,11 +129,13 @@ try {
 
 `builtins-temporal-gen.cc` 文件是 V8 引擎中实现 Temporal API 关键功能的 C++ 代码。它负责处理 `Temporal.Calendar` 对象的字段提取，并提供了一个用于从可迭代对象中提取 `Temporal.Instant` 对象的内部工具。这些 C++ 函数直接支撑着 JavaScript 中相应的 `Temporal` API 的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-temporal-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ TF_BUILTIN(TemporalCalendarPrototypeFields, TemporalBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

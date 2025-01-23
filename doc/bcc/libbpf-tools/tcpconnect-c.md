@@ -84,7 +84,7 @@ TIME(s)  UID   PID    COMM  IP  SADDR           DADDR           DPORT
 - 检查`/sys/kernel/debug/tracing/trace_pipe`确认kprobe是否生效。
 - 使用`bpftool prog list`验证BPF程序已加载。
 - 添加`-v`参数启用详细日志，观察libbpf调试输出。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/tcpconnect.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2020 Anton Protopopov
 //
@@ -561,7 +563,4 @@ cleanup:
 
 	return err != 0;
 }
-
-"""
-
 ```

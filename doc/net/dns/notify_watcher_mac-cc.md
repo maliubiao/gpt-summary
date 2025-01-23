@@ -117,15 +117,17 @@ Let's break down the thought process for analyzing the `notify_watcher_mac.cc` f
 
 总而言之，`net/dns/notify_watcher_mac.cc` 是 Chromium 网络栈中一个关键的底层组件，它通过监听 macOS 系统级别的 DNS 配置变化通知，确保浏览器能够及时感知并适应网络环境的改变，从而提供更稳定和可靠的网络体验。 虽然 JavaScript 代码不直接调用这个文件中的代码，但它受益于其提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/notify_watcher_mac.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ NotifyWatcherMac::CallbackType NotifyWatcherMac::CancelInternal() {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -725,7 +725,7 @@ void CallKnownApiFunction::GenerateCode(MaglevAssembler* masm,
   }
 
   if (api
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.cc以.tq结尾，那它是个v8 torque源代码，
@@ -733,8 +733,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e);
 }
 
@@ -1564,7 +1566,4 @@ void CallKnownApiFunction::GenerateCallApiCallbackOptimizedInline(
   // b) local experiments on x64 didn't show improvements.
   MemOperand argc_operand = MemOperand(fp, FC::kFCIArgcOffset);
 #endif
-"""
-
-
 ```

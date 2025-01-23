@@ -73,7 +73,7 @@ bpf_probe_read_kernel(&valuep->name, sizeof(valuep->name), name);
 // 验证点3：原子更新统计
 valuep->count++; // 需确认是否为原子操作
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/slabratetop.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause) */
 /* Copyright (c) 2022 Rong Tao */
 #include <vmlinux.h>
@@ -143,7 +145,4 @@ int BPF_KPROBE(kmem_cache_alloc_noprof, struct kmem_cache *cachep)
 }
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
-
-"""
-
 ```

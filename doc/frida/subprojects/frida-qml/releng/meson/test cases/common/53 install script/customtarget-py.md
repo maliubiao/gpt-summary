@@ -136,7 +136,7 @@ By following these steps, moving from a basic understanding of the code to its b
 
 总而言之，`customtarget.py` 看起来是一个非常简单的辅助脚本，其主要功能是在指定的目录下创建两个空文件。它在 Frida 的上下文中很可能被用于测试 Frida 组件的安装或部署过程，模拟文件系统的状态，或者作为其他更复杂测试的前置步骤。虽然脚本本身不涉及复杂的逆向分析或底层操作，但它在整个 Frida 生态系统中扮演着保证软件质量的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/53 install script/customtarget.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -165,7 +167,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

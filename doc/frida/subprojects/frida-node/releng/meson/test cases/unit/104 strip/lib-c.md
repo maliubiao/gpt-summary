@@ -125,7 +125,7 @@ void func(void){ fprintf(stderr, "Test 1 2 3\n"); }
 
 因此，用户（通常是 Frida 的开发者或测试人员）通过执行构建和测试流程，间接地“到达”了这里。当测试失败或需要调试时，他们会查看这个 `lib.c` 文件的代码，理解其功能，以及 Frida 是如何与它交互的，从而找到问题所在。这个简单的 `lib.c` 文件在整个 Frida 项目中扮演着验证核心功能的小型测试案例的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/104 strip/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,12 +133,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 void func(void){ fprintf(stderr, "Test 1 2 3\n"); }
-
-"""
-
 ```

@@ -152,15 +152,17 @@ function test() {
 
 `v8/src/interpreter/constant-array-builder.cc` 是 V8 解释器中一个关键的组件，负责高效地管理和存储字节码执行所需的常量值。理解它的作用有助于理解 V8 如何优化代码执行和内存使用。虽然开发者不会直接与这个文件交互，但了解其背后的原理可以帮助编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/constant-array-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/constant-array-builder.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -599,7 +601,4 @@ template Handle<Object> ConstantArrayBuilder::Entry::ToHandle(
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

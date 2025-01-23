@@ -97,7 +97,7 @@ This systematic approach allows for a thorough understanding of the code and its
 
 总而言之，`elbrus.py` 文件是 Frida 为了支持在特定的 Elbrus 架构上进行动态 instrumentation 而定制的编译器适配模块。它的功能在于提供构建系统所需的关于 Elbrus 编译器的信息，并定义如何使用该编译器来构建 Frida 的组件。理解这个文件有助于理解 Frida 在 Elbrus 平台上的构建过程，以及编译器选项对最终生成的可执行文件的影响，这与逆向分析工作息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/mixins/elbrus.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2023 Intel Corporation
 
@@ -200,7 +202,4 @@ class ElbrusCompiler(GnuLikeCompiler):
 
     def openmp_flags(self) -> T.List[str]:
         return ['-fopenmp']
-
-"""
-
 ```

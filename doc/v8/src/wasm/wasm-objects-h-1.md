@@ -151,7 +151,7 @@ Here's a breakdown of the content and how to structure the summary:
 
 总而言之，`v8/src/wasm/wasm-objects.h` 定义了 V8 引擎用于表示和操作 WebAssembly 内部结构的蓝图，它对于理解 V8 如何执行 WebAssembly 代码至关重要。虽然开发者通常不直接操作这些对象，但理解它们的功能有助于调试和优化 WebAssembly 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-objects.h以.tq结尾，那它是个v8 torque源代码，
@@ -159,9 +159,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- //    wrapper is added to the table, we increment the ref count. When we
+### 源代码
+```c
+//    wrapper is added to the table, we increment the ref count. When we
   //    remove the last reference, we decrement the ref count, which potentially
   //    triggers code GC.
   struct WrapperEntry {
@@ -932,8 +934,4 @@ Handle<Object> WasmToJSObject(Isolate* isolate, Handle<Object> value);
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_WASM_WASM_OBJECTS_H_
-
-"""
-
-
 ```

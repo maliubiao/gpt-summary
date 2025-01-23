@@ -148,7 +148,7 @@ Object.values(obj)[0]                  -> "foofoo"
 
 `v8/test/cctest/test-api-interceptors.cc`  是 V8 引擎中一个关键的测试文件，专门用于验证 JavaScript API 拦截器的各项功能。它通过创建具有不同拦截器配置的对象，并在 JavaScript 环境中执行各种属性操作（访问、查询、枚举、设置），来确保拦截器按照预期工作。 这些测试覆盖了命名属性和索引属性的拦截，并针对枚举行为、`kNonMasking` 标志以及与 `Object.defineProperty` 的交互进行了详细的验证。通过这些测试，V8 引擎的开发者可以保证 API 拦截器功能的正确性和稳定性，这对于那些需要深度定制 JavaScript 对象行为的嵌入式或扩展 V8 的场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ncatNamedPropertyGetter, nullptr, RestrictiveNamedQuery, nullptr,
       EnumCallbackWithNames));
   LocalContext context;
@@ -488,8 +490,4 @@ THREADED_TEST(Regress42204611) {
   //   3. The setter when applying the property descriptor.
   CHECK_EQ(calls, std::vector<std::string>({"getter", "definer", "setter"}));
 }
-
-"""
-
-
 ```

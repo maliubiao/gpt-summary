@@ -117,7 +117,7 @@ func main() {
 
 这部分 `zerrors_linux.go` 文件是 Go 语言与 Linux 系统交互的基石，它定义了大量的常量，为 Go 程序提供了访问 Linux 底层功能的词汇表。开发者可以使用这些常量来调用系统调用，配置系统行为，并获取系统信息。 理解这些常量的含义和正确的使用方式对于编写与 Linux 系统紧密集成的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -125,8 +125,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 FAN_RESPONSE_INFO_AUDIT_RULE                = 0x1
 	FAN_RESPONSE_INFO_NONE                      = 0x0
 	FAN_UNLIMITED_MARKS                         = 0x20
@@ -1381,9 +1383,4 @@ FAN_RESPONSE_INFO_AUDIT_RULE                = 0x1
 	PR_MCE_KILL_DEFAULT                         = 0x2
 	PR_MCE_KILL_EARLY                           = 0x1
 	PR_MCE_K
-"""
-
-
-
-
 ```

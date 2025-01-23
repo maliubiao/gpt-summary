@@ -124,7 +124,7 @@ By following these steps, focusing on the context, and iteratively refining the 
 
 `gen_header.py` 是一个简单的文件复制工具，在 Frida Python 库的构建和测试过程中，特别是在与 `bindgen` 相关的测试用例中扮演着辅助角色。它虽然不直接执行逆向操作，但其目的是为生成用于逆向工程的 Rust FFI 绑定做准备。理解这个脚本的功能可以帮助开发者理解 Frida Python 库的构建流程和 `bindgen` 的使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/12 bindgen/src/gen_header.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-license-Identifier: Apache-2.0
 # Copyright © 2021-2023 Intel Corporation
@@ -153,7 +155,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

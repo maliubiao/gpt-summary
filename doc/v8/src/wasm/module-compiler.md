@@ -108,12 +108,14 @@ loadAndRunWasm();
 
 **In essence, this part of the C++ code is the "brain" behind the WebAssembly compilation process within V8. It orchestrates the different stages of compilation, manages background threads for efficiency, and respects compilation hints to optimize the process.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1772,7 +1774,4 @@ void TriggerTierUp(Isolate* isolate,
   // significantly. The latter is assumed to be the case if the priority
   // increased at least to four, and is a power of two.
   if (priority == 2 || !base::bits::IsPowerOfTwo(priority)) return;
-"""
-
-
 ```

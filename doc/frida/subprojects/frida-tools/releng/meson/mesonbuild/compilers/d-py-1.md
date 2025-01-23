@@ -155,7 +155,7 @@ Essentially, my process involved a combination of code analysis, domain knowledg
 
 这个代码片段是 Frida 构建系统中用于配置 D 语言编译器链接行为的关键部分。它根据不同的操作系统、架构和构建类型，生成正确的链接器参数，以确保 Frida 能够成功地编译和链接与 D 语言目标程序交互所需的组件。这对于 Frida 的动态插桩功能至关重要，因为它确保了 Frida 能够与各种 D 语言程序协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/d.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,9 +164,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-         return ['phobos64.lib']
+### 源代码
+```python
+return ['phobos64.lib']
             elif self.arch == 'x86_mscoff':
                 return ['phobos32mscoff.lib']
             return ['phobos.lib']
@@ -222,8 +224,4 @@ Prompt:
 
     def rsp_file_syntax(self) -> RSPFileSyntax:
         return RSPFileSyntax.MSVC
-
-"""
-
-
 ```

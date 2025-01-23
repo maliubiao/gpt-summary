@@ -186,15 +186,17 @@ By following this structured approach, constantly asking "why" and "how does thi
 
 总而言之，`audio_worklet_node.cc` 文件是 Web Audio API 中 `AudioWorkletNode` 功能的核心实现，负责节点的创建、参数管理、错误处理以及与音频工作线程的通信，是理解 Web Audio 自定义音频处理机制的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_worklet_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -459,7 +461,4 @@ void AudioWorkletNode::ReportWillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

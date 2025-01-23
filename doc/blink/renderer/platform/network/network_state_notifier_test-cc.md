@@ -162,15 +162,17 @@ During this process, I might have initially focused too much on the details of i
 
 总的来说，`blink/renderer/platform/network/network_state_notifier_test.cc` 文件的主要功能是**全面地测试 `NetworkStateNotifier` 类的核心能力，包括管理观察者、正确地通知各种网络状态变化（连接类型、带宽、有效连接类型、RTT、吞吐量、省流模式、在线状态）、处理跨线程场景以及验证网络状态覆盖机制的正确性。**  这个测试文件确保了 `NetworkStateNotifier` 作为 Blink 引擎中重要的网络状态信息提供者，能够稳定可靠地工作，为上层模块（包括最终影响 JavaScript API 和资源加载策略）提供准确的网络信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/network_state_notifier_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2014, Google Inc. All rights reserved.
  *
@@ -862,7 +864,4 @@ TEST_F(NetworkStateNotifierTest, SetNetworkQualityInfoOverride) {
   EXPECT_EQ(kWebConnectionTypeOther, notifier_.ConnectionType());
   EXPECT_EQ(kEthernetThroughputMbps, notifier_.MaxBandwidth());
   EXPECT_EQ(WebEffectiveConnectionType::kTy
-"""
-
-
 ```

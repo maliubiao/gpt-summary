@@ -151,15 +151,17 @@ void PendingCompilationErrorHandler::ReportMessageAt(int start_position,
 
 `v8/src/parsing/pending-compilation-error-handler.cc` 是 V8 编译流程中一个重要的组件，它负责收集、管理和报告在解析 JavaScript 代码时遇到的错误和警告。 它确保了 V8 能够以结构化的方式处理编译问题，并向开发者提供有用的错误信息。  虽然它本身是 C++ 代码，但其核心功能直接服务于 JavaScript 语言的正确执行和开发者的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/pending-compilation-error-handler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/pending-compilation-error-handler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ Handle<String> PendingCompilationErrorHandler::FormatErrorMessageForTest(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

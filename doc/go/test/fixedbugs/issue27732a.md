@@ -88,15 +88,17 @@ go test -gcflags='-N -l -m -smallframes' go/test/fixedbugs/issue27732a.go
 
 `go/test/fixedbugs/issue27732a.go` 的主要目的是测试 Go 编译器在 `-smallframes` 标志下，对于大型局部数组变量的堆分配行为。它通过声明一个巨大的局部数组，并期望编译器在 `-smallframes` 约束下将其分配到堆上来验证编译器的正确性。使用者需要理解数组的固定大小特性以及 `-smallframes` 标志对栈帧大小的限制，才能理解这段代码的功能和背后的原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue27732a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l -smallframes
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -120,9 +122,4 @@ func main() {
 	var c circularBuffer // ERROR "moved to heap: c$"
 	sink = c[0][0]
 }
-
-"""
-
-
-
 ```

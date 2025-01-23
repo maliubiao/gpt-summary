@@ -196,7 +196,7 @@ rpc.exports = {
 
 总结来说，`asm/setup.handroid` 是一个非常基础的头文件，它定义了内核命令行参数的最大长度。虽然它本身不包含复杂的逻辑或函数实现，但它为 Android 系统的底层运作提供了必要的常量定义。理解它的作用有助于理解 Android 系统启动和进程创建等核心机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/setup.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -207,8 +207,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -220,7 +222,4 @@ Prompt:
 #include <linux/types.h>
 #define COMMAND_LINE_SIZE 2048
 #endif
-
-"""
-
 ```

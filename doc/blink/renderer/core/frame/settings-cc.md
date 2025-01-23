@@ -103,14 +103,16 @@ Finally, reviewing the generated answer to ensure it's clear, concise, and addre
 
 虽然前端开发者不能直接操作这些设置，但理解这些设置的存在以及它们对页面渲染的影响，有助于更好地理解浏览器的内部工作原理，并更好地进行性能优化和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/settings.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009, 2011, 2012 Apple Inc. All rights
  * reserved.
@@ -149,7 +151,4 @@ void Settings::SetPreferCompositingToLCDTextForTesting(bool enabled) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -186,7 +186,7 @@ By following these steps, the analysis moves from a basic understanding of the C
 
 总而言之，即使 `libfile2.c` 中的代码非常简单，但在 Frida 动态插桩的上下文中，它仍然可以用于测试 Frida 的 Hook 功能，验证 Frida 是否能够正确地拦截和操作静态链接库中的简单函数。开发者在遇到相关测试失败时，会逐步深入到这个源代码文件，分析其功能和在测试中的作用，以便找到问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/3 static/libfile2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,12 +194,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int libfunc2(void) {
     return 4;
 }
-
-"""
-
 ```

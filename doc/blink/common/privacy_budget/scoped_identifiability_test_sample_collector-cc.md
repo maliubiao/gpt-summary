@@ -139,14 +139,16 @@ Finally, organize the findings into clear sections as demonstrated in the provid
 
 总而言之，`ScopedIdentifiabilityTestSampleCollector` 是 Blink 引擎中用于测试隐私预算和可识别性相关功能的工具类。它通过拦截和记录在测试过程中产生的相关事件，帮助开发者验证隐私保护机制是否按预期工作。它与 JavaScript, HTML, CSS 的关系是间接的，因为它收集的是这些技术执行后产生的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/scoped_identifiability_test_sample_collector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ void ScopedIdentifiabilityTestSampleCollector::ClearEntries() {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

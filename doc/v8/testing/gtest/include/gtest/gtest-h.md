@@ -178,15 +178,17 @@ TEST(MathTest, PositiveNumbers) {
 
 总而言之，`v8/testing/gtest/include/gtest/gtest.h` 本身的功能是提供一个稳定的包含 Google Test 库的入口点，它与 JavaScript 的关系是通过测试 V8 的 C++ 代码来确保 JavaScript 功能的正确实现。 实际的代码逻辑推理和用户编程错误都体现在使用 Google Test 编写的测试用例中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gtest/include/gtest/gtest.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/testing/gtest/include/gtest/gtest.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ Prompt:
 // third_party/googletest.
 
 #include "third_party/googletest/src/googletest/include/gtest/gtest.h"
-
-"""
-
 ```

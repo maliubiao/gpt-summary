@@ -100,7 +100,7 @@ Based on the code, the primary function of `instruction-selector.cc` is to **tra
 
 代码片段展示了 `instruction-selector.cc` 文件的 **初始化和基础架构部分**。它定义了 `InstructionSelectorT` 类，设置了基本的数据结构（如指令列表、虚拟寄存器映射），并提供了用于启动指令选择过程和添加指令的基本方法。  它还处理了与中间表示无关的一些通用设置，例如跟踪最大栈帧高度和推送的参数数量。 重要的是，它为后续的指令选择逻辑奠定了基础，并展现了对不同编译管道 (Turbofan/Turboshaft) 的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector.cc以.tq结尾，那它是个v8 torque源代码，
@@ -108,8 +108,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -993,7 +995,4 @@ class TurbofanStateObjectDeduplicator {
 };
 
 class Tur
-"""
-
-
 ```

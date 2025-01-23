@@ -296,15 +296,17 @@ func main() {
 
 这段代码是 Go 语言为了在特定的操作系统和架构上提供底层系统调用接口而进行适配的一部分。它通过提供类型安全和方便的辅助函数，简化了 Go 程序员进行底层操作的过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -346,9 +348,4 @@ func (cmsg *Cmsghdr) SetLen(length int) {
 // SYS___SYSCTL is used by syscall_bsd.go for all BSDs, but in modern versions
 // of openbsd/riscv64 the syscall is called sysctl instead of __sysctl.
 const SYS___SYSCTL = SYS_SYSCTL
-
-"""
-
-
-
 ```

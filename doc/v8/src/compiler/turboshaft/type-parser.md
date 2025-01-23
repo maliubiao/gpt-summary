@@ -84,11 +84,13 @@ let floatNum = 3.14;
 
 `type-parser.cc` 是 V8 引擎中负责解析类型信息字符串的一个工具。它主要服务于编译器的内部需求，帮助 V8 理解和表示更精细的数值类型，从而进行更高效的 JavaScript 代码优化。虽然 JavaScript 开发者不会直接与这个文件交互，但它的功能是 V8 实现高性能 JavaScript 执行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/type-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -124,7 +126,4 @@ std::optional<Type> TypeParser::ParseType() {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

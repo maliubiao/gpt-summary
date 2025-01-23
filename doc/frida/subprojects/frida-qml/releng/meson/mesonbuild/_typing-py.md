@@ -159,7 +159,7 @@ This step-by-step breakdown reflects how one might approach understanding the pu
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/_typing.py` 这个文件虽然看起来很小，但它在 Frida 项目的构建和代码质量保证方面扮演着重要的角色。它通过定义自定义的类型提示，特别是 `ImmutableListProtocol`，帮助开发者更清晰地表达代码的意图，并能在早期发现潜在的编程错误，从而提高整个项目的稳定性和可维护性。这对于像 Frida 这样复杂的工具来说是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/_typing.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 # Copyright © 2020-2023 Intel Corporation
@@ -238,7 +240,4 @@ class ImmutableListProtocol(Protocol[T]):
     def index(self, item: T) -> int: ...
 
     def copy(self) -> typing.List[T]: ...
-
-"""
-
 ```

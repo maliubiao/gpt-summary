@@ -294,7 +294,7 @@ sys.stdin.read()
 
 这个 Frida 示例会 hook `sendto` 系统调用，并尝试判断是否是 Netlink 套接字，然后打印相关信息。你需要根据具体的 Android 版本和目标进程进行调整。 通过这些 hook，你可以观察 Android framework 或 NDK 应用如何构建和发送与 connection tracking helper 相关的 Netlink 消息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nfnetlink_cthelper.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -361,7 +363,4 @@ enum nfnl_cthelper_tuple_type {
 };
 #define NFCTH_TUPLE_MAX (__NFCTH_TUPLE_MAX - 1)
 #endif
-
-"""
-
 ```

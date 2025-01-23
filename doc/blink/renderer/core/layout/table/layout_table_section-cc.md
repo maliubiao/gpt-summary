@@ -204,14 +204,16 @@ By following this iterative process of scanning, analyzing, connecting, illustra
 
 总而言之，`layout_table_section.cc` 文件中的 `LayoutTableSection` 类是 Blink 渲染引擎中处理 HTML 表格结构的关键组件，它负责表示和管理表格的分节，并与父表格对象以及相关的布局机制进行交互，最终确保网页上的表格能够正确地渲染和显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/layout_table_section.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -359,7 +361,4 @@ unsigned LayoutTableSection::NumRows() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

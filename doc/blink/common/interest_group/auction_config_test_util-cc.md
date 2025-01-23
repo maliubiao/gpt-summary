@@ -155,14 +155,16 @@ After this initial pass, I would organize the findings into the requested catego
 
 总而言之，`auction_config_test_util.cc` 提供了一系列方便的工具函数，用于在 Blink 引擎中创建和管理用于测试 Interest Group 竞价流程的 `AuctionConfig` 对象。理解其功能和所配置的参数对于进行有效的 Interest Group 功能测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/auction_config_test_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ AuctionConfig CreateFullAuctionConfig() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

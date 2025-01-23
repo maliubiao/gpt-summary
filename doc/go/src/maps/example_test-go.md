@@ -521,15 +521,17 @@ m1 is: map[0:zero 1:one 2:two 3:three]
 
 总的来说，`go/src/maps/example_test.go` 这个文件通过一系列清晰的示例，有效地展示了 `maps` 包中各个泛型函数的用法和特性，帮助开发者理解和使用这个 Go 语言的新增工具包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/maps/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -723,9 +725,4 @@ func ExampleCollect() {
 	// Output:
 	// m1 is: map[0:zero 1:one 2:two 3:three]
 }
-
-"""
-
-
-
 ```

@@ -36,7 +36,7 @@ I will organize the summary by grouping related functionalities and providing ex
 
 在接下来的部分中，将会详细介绍这些功能，并结合 JavaScript、HTML 和 CSS 给出具体的例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_form_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -44,8 +44,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -866,8 +868,5 @@ void HTMLFormElement::CollectListedElements(
     // Descend recursively into shadow DOM if the following conditions are met:
     // - We are supposed to gather elements in shadow trees.
     // - `element` is a shadow root.
-    // - `element` is a shadow-including descendant of 
-"""
-
-
+    // - `element` is a shadow-including descendant of
 ```

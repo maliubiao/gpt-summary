@@ -170,7 +170,7 @@ Here's a breakdown of the thought process to analyze the provided Python script:
 
 总而言之，这个脚本是 Frida 构建过程中的一个自动化步骤，负责调整发行版本的配置和创建一些占位文件，为后续的打包和测试做准备。理解它的功能有助于理解 Frida 的构建流程，并能为逆向分析提供一些辅助信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/35 dist script/subprojects/sub/dist-script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -199,7 +201,4 @@ subprocess.run([*mesonrewrite, '-s', source_root, *rewrite_cmd], check=True)
 modfile = source_root / 'prog.c'
 with modfile.open('w') as f:
     f.write('int main(){return 0;}')
-
-"""
-
 ```

@@ -192,15 +192,17 @@ console.log(matches); // 输出: ["abbbc", "abbbc"]
 
 `v8/src/regexp/regexp-bytecodes.cc` 是 V8 引擎中一个关键的调试工具，它允许开发者查看和理解 JavaScript 正则表达式编译后的底层执行指令。虽然普通 JavaScript 开发者不需要直接与这个文件交互，但理解其背后的概念有助于编写更高效和可靠的正则表达式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecodes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-bytecodes.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ void RegExpBytecodeDisassemble(const uint8_t* code_base, int length,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

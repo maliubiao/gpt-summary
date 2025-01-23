@@ -346,7 +346,7 @@ sys.stdin.read()
 
 通过这个 Frida hook 示例，你可以观察到当 Android framework 或 NDK 中的代码进行网络操作时，是如何一步步地调用到 Bionic libc 中的字节序转换函数的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/endian.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -357,8 +357,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 1997 Niklas Hallqvist.  All rights reserved.
  *
@@ -466,7 +468,4 @@ __END_DECLS
 #endif
 
 #endif
-
-"""
-
 ```

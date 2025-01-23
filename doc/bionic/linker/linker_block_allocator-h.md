@@ -277,7 +277,7 @@ if __name__ == '__main__':
 
 这个分析涵盖了 `bionic/linker/linker_block_allocator.h` 的主要功能、与 Android 动态链接器的关系、实现细节、常见错误以及调试方法。希望对你有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_block_allocator.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -388,7 +390,4 @@ class LinkerTypeAllocator {
   LinkerBlockAllocator block_allocator_;
   DISALLOW_COPY_AND_ASSIGN(LinkerTypeAllocator);
 };
-
-"""
-
 ```

@@ -142,14 +142,16 @@ By following these steps, I can generate a comprehensive and accurate response t
 
 总而言之，`blink/common/page/drag_mojom_traits.cc` 在 Chromium 的拖放功能中扮演着关键的桥梁作用，确保了不同进程之间关于允许的拖放操作信息的正确传递和转换，从而支撑了 Web 开发者使用的 HTML Drag and Drop API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/drag_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ bool StructTraits<blink::mojom::AllowedDragOperationsDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

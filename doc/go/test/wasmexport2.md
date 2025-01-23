@@ -176,14 +176,16 @@ func main() {
 
 总之，`go/test/wasmexport2.go` 是一个用于验证 `//go:wasmexport` 指令行为的测试文件，它通过预期成功和失败的用例，明确了哪些 Go 类型可以安全地导出到 WebAssembly。开发者在使用 `//go:wasmexport` 时，需要特别注意参数和返回值的类型限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/wasmexport2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2024 The Go Authors. All rights reserved.
@@ -276,9 +278,4 @@ func toomanyresults() (int32, int32) { return 0, 0 } // ERROR "go:wasmexport: to
 
 //go:wasmexport bad10
 func bad10() string { return "" } // ERROR "go:wasmexport: unsupported result type" // string cannot be a result
-
-"""
-
-
-
 ```

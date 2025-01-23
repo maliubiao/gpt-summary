@@ -110,14 +110,16 @@ Let's break down the thought process for analyzing the given C++ test file.
 
 `web_theme_engine_test.cc` 是一个关键的测试文件，用于验证 Blink 渲染引擎中主题处理的核心部分。 它通过测试 `WebThemeEngine` 与底层平台主题表示之间的转换，确保了网页能够正确地反映用户的系统主题设置，从而提供更一致和原生的用户体验。 虽然它不是直接处理 JavaScript, HTML 或 CSS 代码，但它的正确性对于这些技术在浏览器中的正确呈现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/theme/web_theme_engine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ TEST(WebThemeEngineTest, NativeColorScheme) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

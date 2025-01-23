@@ -162,7 +162,7 @@ By following these steps, including deconstruction, connection to core concepts,
 
 总而言之，这个简单的 `libfile.c` 文件在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的基本功能，例如读取和修改导出变量、hook 导出函数等。它的简洁性使得它可以作为一个清晰的示例，帮助开发者理解 Frida 的工作原理以及如何使用 Frida 进行动态分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/178 bothlibraries/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_EXPORT int retval = 42;
@@ -179,7 +181,4 @@ DO_EXPORT int retval = 42;
 DO_EXPORT int func(void) {
     return retval;
 }
-
-"""
-
 ```

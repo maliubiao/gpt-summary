@@ -154,14 +154,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`frame_ad_evidence.cc` 文件是 Blink 引擎中用于判断和跟踪框架是否为广告的关键组件，它整合了多种来源的证据，并为最终的广告判断提供基础。它与 JavaScript、HTML 和 CSS 的交互主要体现在如何收集这些证据的过程中，特别是通过分析框架的创建方式、加载的 URL 以及内容是否匹配广告过滤规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/frame_ad_evidence.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ void FrameAdEvidence::UpdateFilterListResult(mojom::FilterListResult value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

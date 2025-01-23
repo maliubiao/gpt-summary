@@ -259,15 +259,17 @@ Worker: Data received!
 
 理解 `ConditionVariable` 的功能和正确使用方法对于编写高效且可靠的多线程程序至关重要。V8 使用这些底层的同步原语来构建其高性能的 JavaScript 运行时环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/condition-variable.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/condition-variable.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -376,7 +378,4 @@ using LazyConditionVariable =
 }  // namespace v8
 
 #endif  // V8_BASE_PLATFORM_CONDITION_VARIABLE_H_
-
-"""
-
 ```

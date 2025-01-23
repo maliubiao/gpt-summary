@@ -220,7 +220,7 @@ add r5, r3, r4  // 将 r3 和 r4 的值相加，结果存入 r5 (对应变量 su
 
 `v8/src/codegen/ppc/assembler-ppc.cc` 的第二部分主要负责定义 `Assembler` 类中用于生成各种 PowerPC 汇编指令的函数，涵盖了数据存储、加载、算术运算、位操作、跳转、特殊寄存器操作、浮点运算和向量运算等多个方面。这些函数是 V8 引擎将 JavaScript 代码翻译成机器码的关键组成部分。了解这部分代码的功能有助于理解 V8 引擎的底层执行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -228,8 +228,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er dst, const MemOperand& src) {
   DCHECK(src.ra_ != r0);
   d_form(STH, dst, src.ra(), src.offset(), true);
@@ -1211,8 +1213,5 @@ void Assembler::lxsibzx(const Simd128Register rt, const MemOperand& src) {
        src.rb().code() * B11 | TX);
 }
 
-void Assembler::lxsihzx(const Simd128Register rt, const MemOperand& src) 
-"""
-
-
+void Assembler::lxsihzx(const Simd128Register rt, const MemOperand& src)
 ```

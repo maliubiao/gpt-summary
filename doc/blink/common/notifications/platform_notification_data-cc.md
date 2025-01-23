@@ -196,14 +196,16 @@ data.tag = "meeting-reminder";
 
 总之，`blink/common/notifications/platform_notification_data.cc` 定义的 `PlatformNotificationData` 类是 Blink 引擎中表示跨平台通知数据的核心结构，它桥接了 JavaScript Notifications API 和底层的平台通知系统，确保通知数据能够被正确地传递和呈现。理解这个类的功能有助于理解浏览器如何处理网页发出的通知请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/notifications/platform_notification_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ PlatformNotificationData& PlatformNotificationData::operator=(
 PlatformNotificationData::~PlatformNotificationData() = default;
 
 }  // namespace blink
-
-"""
-
 ```

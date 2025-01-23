@@ -142,7 +142,7 @@ Initially, I might have just said "It's used for testing."  But the prompt asks 
 
 这个简单的 `libfile.c` 文件作为一个测试用例，可以帮助 Frida 的开发者测试其 hooking 功能，以及确保 Frida 能够正确处理不同平台上的共享库符号导出机制。 对于用户来说，这是一个非常基础的例子，用于学习如何使用 Frida hook C 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/4 shared/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -166,7 +168,4 @@ Prompt:
 int DLL_PUBLIC libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

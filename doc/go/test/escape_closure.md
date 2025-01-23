@@ -153,15 +153,17 @@ This systematic approach, breaking down the problem into smaller pieces, identif
 
 总之，`escape_closure.go` 是一个用于测试 Go 编译器逃逸分析功能的代码，它通过各种闭包的使用场景来验证编译器是否能够正确地判断变量是否需要逃逸到堆上。理解这些测试用例可以帮助开发者更好地理解 Go 语言的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_closure.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -355,9 +357,4 @@ func ClosureIndirect2() {
 }
 
 func nopFunc2(p *int) *int { return p } // ERROR "leaking param: p to result ~r0 level=0"
-
-"""
-
-
-
 ```

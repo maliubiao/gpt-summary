@@ -167,11 +167,13 @@ console.log(arr[1]); // 输出: undefined (内部返回 the_hole)
 
 总而言之，`runtime-collections.cc` 文件是 V8 引擎中处理 JavaScript 集合类型底层实现的基石，它通过提供高效的内存管理和操作函数，使得 JavaScript 的集合类型能够高效地运行。 JavaScript 开发者虽然不能直接调用这些运行时函数，但他们所使用的 `Set`, `Map`, `WeakSet`, `WeakMap` 的所有操作最终都会由这些 C++ 代码来执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-collections.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -328,7 +330,4 @@ RUNTIME_FUNCTION(Runtime_WeakCollectionSet) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

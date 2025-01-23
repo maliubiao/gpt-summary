@@ -164,15 +164,17 @@ func incrementCountPtr(d *MyData) {
 
 总结来说，`issue4429.go` 这个代码片段是一个精心设计的测试用例，用于验证 Go 编译器在遇到对非指针类型进行解引用操作时，能否正确地抛出相应的编译错误。这体现了 Go 语言对类型安全的重视。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4429.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -189,9 +191,4 @@ func main() {
   av := a{};
   _ = *a(av); // ERROR "invalid indirect|expected pointer|cannot indirect"
 }
-
-"""
-
-
-
 ```

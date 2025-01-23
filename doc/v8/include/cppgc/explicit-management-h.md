@@ -178,15 +178,17 @@ myObject = null; // 将引用设置为 null，使得 myObject 成为垃圾回收
 
 `v8/include/cppgc/explicit-management.h` 提供了一种机制，允许 V8 引擎的 C++ 代码对垃圾回收过程进行更细粒度的控制。虽然这在性能关键的场景中可能很有用，但也引入了需要开发者谨慎处理的复杂性和潜在的错误风险，特别是 "use-after-free" 错误。 理解这些 API 的语义和使用者责任至关重要，以避免出现难以调试的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/explicit-management.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/explicit-management.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ bool Resize(T& object, AdditionalBytes additional_bytes) {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_EXPLICIT_MANAGEMENT_H_
-
-"""
-
 ```

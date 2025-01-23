@@ -54,9 +54,12 @@ This systematic approach, starting with the filename and progressively analyzing
 
 **总结来说，这个单元测试就像一个“陷阱”。它通过检查 `_WINDOWS_` 宏是否被定义来探测 `windows.h` 是否被意外地包含进来。如果发现了意外包含，就会触发编译错误，从而防止这种不期望的依赖关系存在。**  这有助于维护代码库的清晰性和可移植性。
 
-Prompt: ```这是目录为v8/test/unittests/avoid-windows-h-includes.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/avoid-windows-h-includes.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -70,6 +73,4 @@ Prompt: ```这是目录为v8/test/unittests/avoid-windows-h-includes.cc的一个
 // See base/win/windows_h_disallowed.h for details.
 #error Windows.h was included unexpectedly.
 #endif  // defined(_WINDOWS_)
-
-"""
 ```

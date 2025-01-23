@@ -95,11 +95,13 @@ console.log(result);
 
 `cpu-ppc.cc` 中的 `CpuFeatures::FlushICache` 函数是 V8 引擎为了在 ppc64 架构上正确执行 JIT 编译生成的机器码而提供的底层支持。它确保了当内存中的代码被修改后，CPU 的指令缓存能够及时更新，从而保证 JavaScript 代码的正确执行和性能优化。 JavaScript 开发者无需直接关心这个函数，但它是 V8 引擎高效运行 JavaScript 代码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/cpu-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -128,7 +130,4 @@ void CpuFeatures::FlushICache(void* buffer, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
 ```

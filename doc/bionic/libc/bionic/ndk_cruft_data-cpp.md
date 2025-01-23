@@ -269,7 +269,7 @@ if (Process.arch === 'arm') {
 
 总结来说，`bionic/libc/bionic/ndk_cruft_data.cpp` 虽然代码量不多，但它为旧版本的 Android NDK 提供了字符大小写转换的关键数据，是 `libc` 库实现基本字符处理功能的基础。 理解它的作用有助于我们更好地理解 Android 系统和 native 代码的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/ndk_cruft_data.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,9 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
-
+### 源代码
+```cpp
 // Ancient NDKs' <ctype.h> contained inline references to these tables.
 
 #if !defined(__LP64__)
@@ -376,7 +377,4 @@ static const short _C_toupper_[] = {
 const short *_toupper_tab_ = _C_toupper_;
 
 #endif
-
-"""
-
 ```

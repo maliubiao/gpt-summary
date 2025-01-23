@@ -144,7 +144,7 @@ The value is 123
 
 总而言之，这个 `main.cpp` 文件虽然代码量很小，但它作为 Frida 的一个单元测试，体现了 Frida 与 C++ 模块交互的核心能力，这对于 Frida 在逆向工程中分析和操作目标进程的代码至关重要。 理解这个测试用例可以帮助我们更好地理解 Frida 的工作原理以及其在逆向分析中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/85 cpp modules/vs/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 import M0;
 #include<cstdio>
 
@@ -161,7 +163,4 @@ int main() {
     printf("The value is %d", func0());
     return 0;
 }
-
-"""
-
 ```

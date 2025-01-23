@@ -144,7 +144,7 @@ The provided code snippet focuses on the core encoding process within the `Video
 
 这部分代码是 `VideoEncoder` 类的核心逻辑，负责接收和处理编码请求，管理帧的回读操作，与底层的媒体编码器进行交互，并在编码完成后将数据回调给 JavaScript。它处理了配置、编码、重配置等关键流程，并包含了错误处理和性能监控的相关逻辑。这段代码是 WebCodecs API 在 Chromium 中实现视频编码功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/video_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ndTracing();
 
     self->blocking_request_in_progress_ = nullptr;
@@ -989,7 +991,4 @@ HeapVector<Member<VideoEncoderBuffer>> VideoEncoder::getAllFrameBuffers(
     exception_state.ThrowDOMException(
         DOMExceptionCode::kNotSupportedError,
         "getAllFrame
-"""
-
-
 ```

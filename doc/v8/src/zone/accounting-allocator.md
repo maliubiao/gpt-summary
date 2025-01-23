@@ -125,11 +125,13 @@ for (let i = 0; i < 10000; i++) {
 
 `accounting-allocator.cc` 中定义的 `AccountingAllocator` 类是 V8 引擎内部关键的内存管理组件，它负责在 Zone 中分配和回收内存，并可能支持内存压缩。虽然 Javascript 开发者不需要直接与这个类交互，但 Javascript 代码的执行依赖于 V8 引擎提供的内存管理机制，而 `AccountingAllocator` 正是这个机制的重要组成部分。它确保了 V8 能够有效地管理 Javascript 运行时所需的内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/accounting-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ void AccountingAllocator::ReturnSegment(Segment* segment,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

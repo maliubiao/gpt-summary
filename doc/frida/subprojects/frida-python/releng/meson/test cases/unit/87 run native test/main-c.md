@@ -132,7 +132,7 @@ if (ObjC.available) {
 
 总而言之，这个简单的 `main.c` 文件虽然功能简单，但可以作为理解程序执行流程、文件操作以及作为 Frida 动态分析的入门示例。它涉及了 C 语言编程的基础知识，以及在 Linux 或类似环境下程序与操作系统交互的基本原理。其在 Frida 测试用例中的存在，也说明了它在验证 Frida 功能方面的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/87 run native test/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main (int argc, char * argv[])
@@ -159,7 +161,4 @@ int main (int argc, char * argv[])
   }
   return 0;
 }
-
-"""
-
 ```

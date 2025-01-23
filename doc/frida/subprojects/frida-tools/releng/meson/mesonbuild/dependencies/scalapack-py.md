@@ -154,7 +154,7 @@ By following this structured thinking process, including self-correction, we can
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/scalapack.py` 这个文件是 Frida 构建系统的一部分，负责处理 `scalapack` 依赖项的查找和配置，尤其针对 Intel MKL 提供了特殊的处理逻辑，确保 Frida 能够正确链接和使用这个高性能数值计算库。理解这个文件的功能可以帮助开发者诊断与 `scalapack` 相关的 Frida 构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/scalapack.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2020 The Meson development team
 
@@ -306,7 +308,4 @@ class MKLPkgConfigDependency(PkgConfigDependency):
             allow_system = True
         cflags = self.pkgconfig.cflags(self.name, allow_system, define_variable=(('prefix', self.__mklroot.as_posix()),))
         self.compile_args = self._convert_mingw_paths(cflags)
-
-"""
-
 ```

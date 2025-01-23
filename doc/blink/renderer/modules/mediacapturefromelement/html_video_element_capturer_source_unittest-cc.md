@@ -185,15 +185,17 @@ By following these steps, we can systematically understand the purpose and funct
 - **浏览器控制台:** 查看是否有与媒体捕获相关的错误或警告信息。
 - **Blink 渲染引擎的日志:**  更深入的调试可能需要查看 Blink 引擎的日志，以了解 `HTMLVideoElementCapturerSource` 的内部状态和操作。这个单元测试文件可以帮助开发者理解 `HTMLVideoElementCapturerSource` 的预期行为，从而更好地定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediacapturefromelement/html_video_element_capturer_source_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -600,7 +602,4 @@ TEST_F(HTMLVideoElementCapturerSourceTest, TaintedPlayerDoesNotDeliverFrames) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

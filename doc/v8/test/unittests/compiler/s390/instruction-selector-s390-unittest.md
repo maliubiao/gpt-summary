@@ -94,11 +94,13 @@ console.log(result);
 
 `instruction-selector-s390-unittest.cc` 是 V8 编译器质量保证的一部分，它通过单元测试确保指令选择器在为 s390 架构生成代码时能够正确地将 JavaScript 的高级操作转化为底层的机器指令，从而保证 JavaScript 代码在 s390 平台上能够正确高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/s390/instruction-selector-s390-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -112,7 +114,4 @@ namespace internal {
 namespace compiler {}  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

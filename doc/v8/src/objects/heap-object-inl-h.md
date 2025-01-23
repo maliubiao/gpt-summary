@@ -123,15 +123,17 @@ processItem(null); // 报错：Cannot read properties of null (reading 'name')
 
 `v8/src/objects/heap-object-inl.h` 是 V8 引擎中用于高效进行堆对象类型检查的关键内部头文件。它定义了通用的类型检查宏，并利用这些宏为各种对象类型生成特定的检查函数。这些函数是 V8 实现 JavaScript 动态类型语义的基础，并且与开发者在 JavaScript 中遇到的类型相关问题密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/heap-object-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/heap-object-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ INSTANCE_TYPE_CHECKERS(TYPE_CHECKER)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_HEAP_OBJECT_INL_H_
-
-"""
-
 ```

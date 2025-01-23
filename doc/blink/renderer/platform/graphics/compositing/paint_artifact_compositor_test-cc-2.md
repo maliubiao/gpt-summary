@@ -113,15 +113,17 @@ Based on this analysis, I can formulate a summary.
 
 总而言之，这部分测试代码的核心在于验证 `PaintArtifactCompositor` 能够正确地理解和转换 Blink 渲染引擎产生的绘制指令和相关的属性信息，最终生成高效且正确的合成层结构，以用于屏幕渲染。它覆盖了滚动、固定定位、变换、裁剪、透明度等多种重要的渲染场景，并关注了性能优化，例如绘制指令的合并。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_artifact_compositor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ));
   auto& scroll_c = *scroll_state_c.Transform().ScrollNode();
 
@@ -893,8 +895,5 @@ TEST_P(PaintArtifactCompositorTest, NonCompositedSimpleMask) {
               DrawsRectangles(Vector<RectWithColor>{
                   RectWithColor(gfx::RectF(0, 0, 200, 200), Color::kGray),
                   RectWithColor(gfx::RectF(50, 50, 100, 100), Color::kWhite)}));
-  EXPECT_EQ(Translation(100, 
-"""
-
-
+  EXPECT_EQ(Translation(100,
 ```

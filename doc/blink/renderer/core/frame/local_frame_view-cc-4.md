@@ -136,16 +136,18 @@ I need to summarize these functionalities concisely, provide examples relating t
 
 这部分 `LocalFrameView` 的代码主要负责管理和维护框架的**视觉和交互属性**，包括在不同坐标系之间进行精确的转换，处理框架内的滚动行为，控制框架的可见性，以及执行绘制操作。它还处理了与父框架和根框架的交互，确保了嵌套框架环境下的正确渲染和事件处理。 这些功能是 Web 浏览器正确渲染页面内容、响应用户交互以及实现复杂页面布局的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
- const gfx::Point& point_in_document) const {
+### 源代码
+```cpp
+const gfx::Point& point_in_document) const {
   return gfx::ToFlooredPoint(DocumentToFrame(gfx::PointF(point_in_document)));
 }
 
@@ -1064,7 +1066,4 @@ bool LocalFrameView::UpdateViewportIntersectionsForSubtree(
        child = child->Tree().NextSibling()) {
     needs_occlusion_tracking |=
         child->View()->UpdateViewportIntersectionsForSubtree(flags,
-"""
-
-
 ```

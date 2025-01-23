@@ -117,7 +117,7 @@ By following these steps, we can systematically analyze the code snippet and gen
 
 总而言之，这部分代码是 Frida 中 JavaScript 脚本运行的核心基础设施，负责脚本的生命周期管理、执行环境搭建、以及与 Frida 核心的通信和调试支持。理解这段代码的功能对于深入理解 Frida 的工作原理和进行高级的 Frida 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8script.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,9 +126,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-      *new_end = '\0';
+### 源代码
+```cpp
+*new_end = '\0';
 
       cursor += 3;
     }
@@ -1175,8 +1177,4 @@ gum_string_view_to_utf8 (const StringView & view)
   return g_utf16_to_utf8 (view.characters16 (), (glong) view.length (), NULL,
       NULL, NULL);
 }
-
-"""
-
-
 ```

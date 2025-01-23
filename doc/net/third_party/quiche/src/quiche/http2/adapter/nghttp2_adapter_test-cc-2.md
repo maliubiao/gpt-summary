@@ -135,7 +135,7 @@ fetch('https://example.com/api/data', {
 
 总而言之，这部分 `nghttp2_adapter_test.cc` 的代码主要关注于测试 `NgHttp2Adapter` 作为 HTTP/2 客户端时，如何正确处理服务器的连接关闭信号 (`GOAWAY`)，如何拒绝不支持的 HTTP 响应 (101)，以及如何正确地发送带有或不带请求体的 HTTP/2 请求，并使用 Data Provider 处理请求体数据发送的阻塞和恢复。 这些测试确保了 Chromium 的 HTTP/2 客户端能够健壮且符合规范地与服务器进行通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -143,9 +143,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共11部分，请归纳一下它的功能
+```
 
-"""
-  {":scheme", "http"},
+### 源代码
+```cpp
+{":scheme", "http"},
                  {":authority", "example.com"},
                  {":path", "/this/is/request/one"}});
 
@@ -969,8 +971,4 @@ TEST(NgHttp2AdapterTest, ClientSubmitRequestEmptyDataWithFin) {
 
   // Resume the deferred stream.
   body1.set_is_data_available(true);
-  
-"""
-
-
 ```

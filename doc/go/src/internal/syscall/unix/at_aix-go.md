@@ -155,7 +155,7 @@ func main() {
 
 总结来说，这段 `at_aix.go` 文件是 Go 语言在 AIX 系统上实现路径相关文件操作的重要底层支撑，它通过 `cgo` 技术桥接了 AIX 提供的 `...at` 系列系统调用，为 Go 的 `os` 包提供了更灵活和强大的文件系统操作能力。直接使用 `syscall` 包中的这些函数需要谨慎，理解相对路径和文件描述符的概念至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/at_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -163,8 +163,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -184,9 +186,4 @@ const (
 	AT_SYMLINK_NOFOLLOW = 0x1
 	UTIME_OMIT          = -0x3
 )
-
-"""
-
-
-
 ```

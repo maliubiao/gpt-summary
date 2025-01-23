@@ -199,15 +199,17 @@ By following these steps, combining careful code reading with knowledge of web b
 
 `net/cert/x509_util_nss.cc` 是 Chromium 网络栈中一个关键的 C++ 文件，它充当了 Chromium 与 NSS 证书库之间的桥梁，提供了各种实用工具函数来创建、转换、比较和分析 X.509 证书。虽然 JavaScript 不能直接调用它，但它为浏览器处理 HTTPS 连接、支持 Web Crypto API 以及实现证书管理功能提供了必要的底层支持。理解这个文件的功能对于调试网络安全相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_util_nss.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -663,7 +665,4 @@ int ImportUserCert(CERTCertificate* cert,
 }
 
 }  // namespace net::x509_util
-
-"""
-
 ```

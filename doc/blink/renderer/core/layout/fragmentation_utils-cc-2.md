@@ -121,16 +121,18 @@ By following this systematic approach, I can effectively analyze the C++ code an
 
 `fragmentation_utils.cc` 文件是 Blink 布局引擎中处理内容碎片化的核心工具库。它提供了创建多列布局、追踪断点、计算片段尺寸和偏移、以及判断元素是否可以被分割等关键功能。这些功能紧密关联着 CSS 的多列布局、分页控制和书写模式等特性，并服务于将 HTML 结构化的内容以符合 CSS 规则的方式分割渲染。理解这个文件中的功能有助于深入理解 Blink 引擎如何处理复杂的布局场景，尤其是在内容无法一次性完全显示的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/fragmentation_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-      multicol, style, space, style->GetWritingDirection(),
+### 源代码
+```cpp
+multicol, style, space, style->GetWritingDirection(),
       /*previous_break_token=*/nullptr);
   multicol_container_builder.SetIsNewFormattingContext(true);
   multicol_container_builder.SetInitialFragmentGeometry(fragment_geometry);
@@ -371,8 +373,4 @@ bool CanPaintMultipleFragments(const LayoutObject& layout_object) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

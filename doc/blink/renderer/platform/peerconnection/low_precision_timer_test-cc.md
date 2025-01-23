@@ -83,14 +83,16 @@ Specifically, I need to:
 
 **总而言之， `low_precision_timer_test.cc` 文件通过各种测试用例，全面地验证了 `LowPrecisionTimer` 类的核心功能，确保其在 Blink 引擎中能可靠地工作，从而支撑 WebRTC 和其他需要低精度定时器的功能模块的正常运行。**  虽然它不直接操作 HTML 或 CSS，但它所测试的定时器功能是构建许多 Web 交互和动态效果的基础。JavaScript 通过相应的 API 与这些底层机制进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/low_precision_timer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -440,7 +442,4 @@ TEST_F(LowPrecisionTimerTest, IsActive) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

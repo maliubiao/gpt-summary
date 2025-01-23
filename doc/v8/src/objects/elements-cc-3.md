@@ -180,7 +180,7 @@ The final step involves organizing the gathered information into a clear and str
 
 这段代码是 V8 引擎中处理 JavaScript 数组元素操作的核心部分。它通过模板和继承的机制，为不同类型的数组（基于其存储的元素类型和是否可扩展、密封、冻结）提供了优化的添加、删除、移动、查找和填充元素的方法。 这段代码直接支撑了 JavaScript 中数组的各种内置方法的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements.cc以.tq结尾，那它是个v8 torque源代码，
@@ -188,8 +188,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ushImpl(Handle<JSArray> receiver,
                                   BuiltinArguments* args, uint32_t push_size) {
     Handle<FixedArrayBase> backing_store(receiver->elements(),
@@ -981,7 +983,4 @@ class FastDoubleElementsAccessor
                                 Tagged<FixedArrayBase> backing_store,
                                 InternalIndex entry) {
     return FixedDoubleArray::get(Cast<Fixe
-"""
-
-
 ```

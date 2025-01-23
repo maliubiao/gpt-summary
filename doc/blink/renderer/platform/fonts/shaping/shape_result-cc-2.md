@@ -128,16 +128,18 @@ Based on this analysis, I can now formulate the answer.
 
 总而言之，`shape_result.cc` 定义了 Blink 渲染引擎中用于表示和操作文本塑形结果的关键数据结构和方法。它连接了文本内容、字体信息和最终的屏幕渲染，是实现正确和高效文本显示的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  for (auto& run : result->runs_) {
+### 源代码
+```cpp
+for (auto& run : result->runs_) {
       DCHECK(run->start_index_ >= delta);
       run->start_index_ -= delta;
     }
@@ -747,8 +749,4 @@ gfx::RectF ShapeResult::ComputeInkBounds() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -153,7 +153,7 @@ my_func(10); // 可能会崩溃
 
 总而言之，`nope.c` 是一个非常简单的测试用例，用于验证 Frida 或相关工具在遇到未定义值时的行为。它与逆向方法、底层知识以及用户错误都有一定的关联，主要体现在模拟这些场景以便进行测试和验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/213 source set dictionary/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,12 +161,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

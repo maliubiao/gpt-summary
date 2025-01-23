@@ -140,7 +140,7 @@ By following this kind of structured analysis and focusing on the context, it's 
 
 尽管 `c_value` 函数非常简单，但在 Frida 动态仪器化的上下文中，它仍然具有重要的意义。它可以作为测试 Frida 功能的基础组件，帮助理解动态分析的基本概念，并为更复杂的逆向工程任务奠定基础。用户接触到这个文件的原因通常与 Frida 的开发、学习、调试或逆向实践相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/rust/2 sharedlib/value.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,12 +148,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int c_value(void) {
     return 7;
 }
-
-"""
-
 ```

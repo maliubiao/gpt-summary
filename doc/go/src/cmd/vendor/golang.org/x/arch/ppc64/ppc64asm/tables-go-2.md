@@ -87,7 +87,7 @@ func abs(x int) int {
 ### 总结
 
 这段代码是 PowerPC 64 位架构指令集解码的核心部分，定义了大量的指令及其操作数字段。它的主要功能是支持指令的解码和执行，涵盖了向量操作、浮点操作、存储加载、分支跳转等多种类型的指令。在实际使用中，需要特别注意操作数字段的位范围和指令格式的正确性。
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/ppc64/ppc64asm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -96,8 +96,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 gField{ap_VecSReg_31_31_6_10, ap_Reg_11_15, ap_Reg_16_20}},
 	{MTVSRWS, 0xfc0007fe00000000, 0x7c00032600000000, 0xf80000000000, // Move To VSR Word & Splat X-form (mtvsrws XT,RA)
 		[6]*argField{ap_VecSReg_31_31_6_10, ap_Reg_11_15}},
@@ -758,9 +760,4 @@ gField{ap_VecSReg_31_31_6_10, ap_Reg_11_15, ap_Reg_16_20}},
 	{XSCVUXDDP, 0xfc0007fc00000000, 0xf00005a000000000, 0x1f000000000000, // VSX Scalar Convert with round Unsigned Doubleword to Double-Precision format XX2-form (xscvuxddp XT,XB)
 		[6]*argField{ap_VecSReg_31_31_6_10, ap_VecSReg_30_30_16_20}},
 	{XSDIVD
-"""
-
-
-
-
 ```

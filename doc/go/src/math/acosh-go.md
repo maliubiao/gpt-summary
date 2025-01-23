@@ -193,7 +193,7 @@ go run your_program.go 2.5
 
 总之，`go/src/math/acosh.go` 的代码实现了计算反双曲余弦的数学函数，并考虑了特殊情况和性能优化。它通常作为 Go 程序的数学运算基础部分被调用，而不是直接通过命令行使用。用户需要注意输入值的范围，避免传递小于 1 的参数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/acosh.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -268,9 +270,4 @@ func acosh(x float64) float64 {
 	t := x - 1
 	return Log1p(t + Sqrt(2*t+t*t)) // 2 >= x > 1
 }
-
-"""
-
-
-
 ```

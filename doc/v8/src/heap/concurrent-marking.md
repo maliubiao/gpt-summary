@@ -129,11 +129,13 @@ if (dereferenced) {
 
 `concurrent-marking.cc` 文件实现了 V8 引擎中至关重要的并发标记功能，它通过在后台线程执行标记任务，显著提升了 JavaScript 应用的性能和响应速度。它处理了包括普通对象和弱引用对象在内的内存管理，是 V8 引擎高效运行的关键组成部分。 JavaScript 开发者无需直接操作这些底层机制，但他们编写的代码会受益于并发标记带来的性能优势。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/concurrent-marking.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -946,7 +948,4 @@ ConcurrentMarking::PauseScope::~PauseScope() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -124,15 +124,17 @@ By following these steps of understanding, examining, connecting, reasoning, and
 
 `dom_node_ids_test.cc` 是 Blink 引擎中一个重要的单元测试文件，它专注于测试 `DOMNodeIds` 类，这个类负责为 DOM 节点生成和管理唯一的 ID。  尽管用户不会直接接触到这个文件，但它所测试的功能对于保证网页的正确渲染和 JavaScript DOM 操作的正常运行至关重要。  当用户在浏览器中进行各种操作并触发 DOM 操作时，如果出现与节点 ID 相关的问题，这个测试文件可以作为调试的重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/dom_node_ids_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ TEST_F(DOMNodeIdsTest, ExistingIdForNode) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

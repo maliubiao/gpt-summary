@@ -109,16 +109,18 @@ This代码片段主要负责处理接收到资源响应 (response) 后的逻辑�
 4. **使用错误的 data URL 格式:**  如果 JavaScript 或 HTML 中使用了格式错误的 data URL，`HandleDataUrl` 中的解析可能会失败，导致资源加载错误。开发者需要仔细检查 data URL 的格式是否正确。
 5. **Service Worker 返回不符合 CSP 的响应:** 如果 Service Worker 拦截了请求并返回了一个违反页面 CSP 策略的响应，`DidReceiveResponse` 中的 CSP 检查会阻止该响应的使用。开发者需要确保 Service Worker 返回的响应符合页面的安全策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-              uint64_t total_bytes_to_be_sent) {
+### 源代码
+```cpp
+uint64_t total_bytes_to_be_sent) {
   resource_->DidSendData(bytes_sent, total_bytes_to_be_sent);
 }
 
@@ -919,8 +921,5 @@ void ResourceLoader::HandleDataUrl() {
 }
 
 bool ResourceLoader::ShouldBlockRequestBasedOnSubresourceFilterDnsAliasCheck(
-    const Vector<String>& 
-"""
-
-
+    const Vector<String>&
 ```

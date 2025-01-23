@@ -149,14 +149,16 @@ Let's break down the thought process to analyze the `web_string.cc` file.
 
 理解 `blink::WebString` 的功能对于理解 Blink 引擎如何处理文本数据至关重要，特别是在与其他模块或 Chromium 上层代码交互时。正确使用其提供的各种方法可以避免常见的字符串处理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -352,7 +354,4 @@ WebString::operator WTF::AtomicString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

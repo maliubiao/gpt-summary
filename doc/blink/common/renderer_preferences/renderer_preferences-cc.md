@@ -96,14 +96,16 @@ By following these steps, I can systematically analyze the code snippet and prov
 
 `renderer_preferences.cc` 文件定义了 `RendererPreferences` 类，它是 Blink 渲染引擎中用于存储各种渲染偏好设置的数据结构。这些偏好设置直接影响着 HTML、CSS 和 JavaScript 的解析和渲染行为。理解这个类及其包含的偏好设置对于理解浏览器的渲染机制以及解决一些渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/renderer_preferences/renderer_preferences.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -130,7 +132,4 @@ RendererPreferences& RendererPreferences::operator=(
     RendererPreferences&& other) = default;
 
 }  // namespace blink
-
-"""
-
 ```

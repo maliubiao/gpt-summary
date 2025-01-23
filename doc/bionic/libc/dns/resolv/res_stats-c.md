@@ -247,7 +247,7 @@ if __name__ == "__main__":
 
 通过 Frida Hook，你可以动态地观察 Bionic 库中函数的运行情况，这对于理解 Android 底层网络机制和调试相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_stats.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -258,8 +258,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -446,7 +448,4 @@ android_net_res_stats_get_usable_servers(const struct __res_params* params,
         }
     }
 }
-
-"""
-
 ```

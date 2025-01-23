@@ -178,7 +178,7 @@ Here's a step-by-step scenario where a user's actions would involve this code as
 
 In summary, `arm.py` is a crucial piece of Frida's build system for ARM architectures. It encapsulates the specific knowledge about ARM compilers needed to generate correct and efficient binaries. Understanding this file is essential for anyone involved in building, debugging, or modifying Frida for ARM targets, and it has direct implications for reverse engineering efforts on those platforms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/mixins/arm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 Meson development team
 
@@ -355,7 +357,4 @@ class ArmclangCompiler(Compiler):
                 parameter_list[idx] = i[:2] + os.path.normpath(os.path.join(build_dir, i[2:]))
 
         return parameter_list
-
-"""
-
 ```

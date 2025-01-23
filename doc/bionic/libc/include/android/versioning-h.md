@@ -214,7 +214,7 @@ Interceptor.attach(Module.findExportByName(null, "__builtin_available"), {
 
 总结来说，`bionic/libc/include/android/versioning.handroid` 文件通过定义一系列宏，为 Android 平台提供了强大的 API 版本管理机制，确保了应用的兼容性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/android/versioning.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -225,8 +225,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -309,7 +311,4 @@ Prompt:
 #define __INTRODUCED_IN_32(api_level)
 #define __INTRODUCED_IN_64(api_level) __BIONIC_AVAILABILITY(introduced=api_level)
 #endif
-
-"""
-
 ```

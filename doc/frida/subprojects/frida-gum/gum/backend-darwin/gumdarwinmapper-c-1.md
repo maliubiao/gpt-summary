@@ -619,7 +619,7 @@ gum_emit_arm_resolve_if_needed (const GumDarwinBindDetails * details,
     return TRUE;
 
   entry =
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/gumdarwinmapper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -628,8 +628,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 arwin_mapper_make_code_address (GumDarwinMapper * self,
                                      GumAddress value)
 {
@@ -1554,7 +1556,4 @@ gum_emit_arm64_init_offset_calls (const GumDarwinInitOffsetsDetails * details,
   gum_arm64_writer_put_add_reg_reg_reg (aw, ARM64_REG_X5, ARM64_REG_X5,
       ARM64_REG_X6);
   gum_arm64_writer_put_b
-"""
-
-
 ```

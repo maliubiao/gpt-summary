@@ -269,7 +269,7 @@ if (Process.platform === 'android') {
 
 `strings_nofortify_test.cpp` 是 Bionic C 库单元测试的重要组成部分，用于在禁用 Fortify 安全机制的情况下测试字符串操作函数的行为。这有助于理解底层算法的正确性、性能特点以及潜在的安全风险。虽然它不直接被 Android Framework 或 NDK 应用程序执行，但它确保了这些应用程序使用的底层库的质量。使用 Frida 可以动态地监控和调试这些测试的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/strings_nofortify_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,9 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
-
+### 源代码
+```cpp
 #ifdef _FORTIFY_SOURCE
 #undef _FORTIFY_SOURCE
 #endif
@@ -294,7 +295,4 @@ Prompt:
 #if defined(_FORTIFY_SOURCE)
 #error "_FORTIFY_SOURCE has been redefined, fix the code to remove this redefinition."
 #endif
-
-"""
-
 ```

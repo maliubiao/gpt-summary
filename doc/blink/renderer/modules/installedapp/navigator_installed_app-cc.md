@@ -204,15 +204,17 @@ Promise 会 resolve 并返回一个包含 `RelatedApplication` 对象的数组�
 
 总而言之，`navigator_installed_app.cc` 是 Blink 引擎中实现 `navigator.getInstalledRelatedApps()` JavaScript API 的关键部分，它负责安全性和上下文检查，并将实际的应用程序发现工作委托给 `InstalledAppController`。理解这个文件的功能有助于开发者正确使用这个 API，并进行相关的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/installedapp/navigator_installed_app.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ NavigatorInstalledApp::getInstalledRelatedApps(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -185,16 +185,18 @@ By following this structured approach, combining code analysis with knowledge of
 
 `GridSizingTrackCollection` 类的主要功能是**负责网格布局中轨道尺寸的计算、管理和缓存**。它根据 CSS 样式定义构建轨道集合，初始化轨道的尺寸属性，并在布局的不同阶段缓存和最终确定轨道的几何信息。 这个类是实现 CSS Grid 布局的核心组成部分，确保了网格轨道能够按照规范正确地进行尺寸计算和布局。 它处理了各种复杂的轨道尺寸定义，包括固定长度、弹性单位、自动尺寸以及 `minmax()` 和 `fit-content()` 等函数，并为后续的布局算法提供了必要的轨道尺寸信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_track_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   }
+### 源代码
+```cpp
+}
 
     if (is_opposite_direction_in_root_grid) {
       std::swap(subgrid_baselines.major, subgrid_baselines.minor);
@@ -549,8 +551,4 @@ void GridSizingTrackCollection::InitializeSets(LayoutUnit grid_available_size) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

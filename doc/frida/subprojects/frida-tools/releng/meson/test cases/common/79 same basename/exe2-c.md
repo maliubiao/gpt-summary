@@ -207,7 +207,7 @@ if __name__ == '__main__':
 
 总而言之，`exe2.c` 很可能是一个用于测试 Frida 工具链功能的简单测试用例，特别是用于验证 Frida 在处理具有相同基本名称的可执行文件时的能力。 开发者查看此文件的目的是了解其基本结构和预期行为，从而更好地进行调试或理解 Frida 的测试结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/79 same basename/exe2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,14 +215,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void);
 
 int main(void) {
     return func() == 1 ? 0 : 1;
 }
-
-"""
-
 ```

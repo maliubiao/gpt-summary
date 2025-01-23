@@ -185,7 +185,7 @@ By following these steps, I was able to break down the complex code into underst
 
 总而言之，`blink/renderer/core/loader/image_loader.cc` 文件的第一部分主要定义了 `ImageLoader` 类的基本结构和核心功能，包括图像加载的启动、与 HTML 元素的关联、基本的数据管理、异步解码的初步支持、CORS 处理、延迟加载的初步逻辑以及错误处理机制的建立。它奠定了图像加载流程的基础，并为后续的图像渲染和显示做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/image_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -992,7 +994,4 @@ void ImageLoader::ImageNotifyFinished(ImageResourceContent* content) {
   CHECK(!pending_load_event_.IsActive());
   pending_load_event_ = PostCancellableTask(
       *GetElement()->GetDocument().Ge
-"""
-
-
 ```

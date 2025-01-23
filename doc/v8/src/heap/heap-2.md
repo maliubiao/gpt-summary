@@ -207,12 +207,14 @@ if ('measureMemory' in performance) {
 
 第 3 部分的 `heap.cc` 代码主要关注 **V8 堆的内存管理和优化**。它提供了用于**调整数组大小、管理内存区域、响应内存压力、控制垃圾回收过程、跟踪对象布局和大小变化**以及**收集堆统计信息**的底层机制。这些机制是 V8 引擎高效运行 JavaScript 代码和管理内存的关键组成部分。虽然 JavaScript 开发者通常不需要直接操作这些底层功能，但了解这些机制有助于理解 JavaScript 引擎的工作原理和性能特征。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ddress new_start = old_start + bytes_to_trim;
 
   // Technically in new space this write might be omitted (except for
@@ -1952,7 +1954,4 @@ size_t Heap::OldGenerationSizeOfObjects() const {
   }
   total += trusted_space()->SizeOfObjects();
   total += trusted_lo_
-"""
-
-
 ```

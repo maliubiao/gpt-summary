@@ -146,7 +146,7 @@ V8 的代码生成器会查找 `add` 指令对应的机器码 `0x7C000214`，并
 
 `v8/src/codegen/ppc/constants-ppc.h` 的主要功能是为 V8 引擎提供一个权威的 PowerPC 架构汇编指令及其对应机器码的清单。它充当了代码生成过程中的一个关键数据源，使得 V8 能够将 JavaScript 代码准确地翻译成可以在 PowerPC 处理器上执行的机器指令。这个头文件通过预定义的宏，组织和管理了大量的指令信息，提高了代码的可读性和可维护性，并降低了在代码生成过程中引入错误的可能性。它确保了 V8 在 PowerPC 架构上的正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/constants-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/constants-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 000000)                   \
   /* Store Floating-Point Single */             \
   V(stfs, STFS, 0xD0000000)                     \
@@ -703,7 +705,4 @@ Prompt:
   V(vpkswss, VPKSWSS, 0x100001CE)                          \
   /* Vector Pack Signed Word Unsigned Saturate */          \
   V(vpkswus, VPKSWUS, 0x1000014E)                          \
-"""
-
-
 ```

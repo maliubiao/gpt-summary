@@ -156,15 +156,17 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 总而言之，`hpack_huffman_decoder.cc` 在 Chrome 的网络栈中负责将 HTTP/2 和 HTTP/3 头部中 Huffman 编码的部分解码回原始字符串，这对于用户与网页的正常交互至关重要。调试线索可以通过浏览器提供的工具或抓包分析来追踪到这个解码器的执行过程和结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/huffman/hpack_huffman_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -651,7 +653,4 @@ std::string HpackHuffmanDecoder::DebugString() const {
 }
 
 }  // namespace http2
-
-"""
-
 ```

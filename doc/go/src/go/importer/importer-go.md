@@ -155,7 +155,7 @@ Println 函数的类型: func(a ...interface{}) (n int, err error)
 
 `go/importer` 包是 Go 工具链中负责加载包元数据的核心组件。它通过抽象不同的导入方式，为 Go 语言的静态分析和编译过程提供了统一的接口。理解其工作原理以及正确使用 `ForCompiler` 函数及其 `lookup` 参数对于构建可靠的 Go 工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/importer/importer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -163,8 +163,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -287,9 +289,4 @@ func (m *gccgoimports) ImportFrom(path, srcDir string, mode types.ImportMode) (*
 	}
 	return m.importer(m.packages, path, srcDir, m.lookup)
 }
-
-"""
-
-
-
 ```

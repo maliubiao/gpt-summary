@@ -198,7 +198,7 @@ DCHECK(!sfi.HasBytecodeArray());
 
 `v8/src/objects/shared-function-info-inl.h` 文件定义了 `SharedFunctionInfo` 类的内联方法，这些方法提供了对 JavaScript 函数元数据和各种状态数据（如源代码、字节码、编译后的代码、WebAssembly 相关数据等）的访问、修改和查询功能。 `SharedFunctionInfo` 对象是 V8 引擎中表示 JavaScript 函数的核心结构，它在函数的编译、执行、调试等各个阶段都起着关键作用。这个文件中的方法确保了对这些关键信息的安全和高效管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/shared-function-info-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/shared-function-info-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -206,8 +206,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 dData());
 }
 
@@ -458,8 +460,4 @@ ACCESSORS(SharedFunctionInfoWrapper, shared_info, Tagged<SharedFunctionInfo>,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_SHARED_FUNCTION_INFO_INL_H_
-
-"""
-
-
 ```

@@ -179,7 +179,7 @@ By following this systematic approach, we can effectively analyze the code and a
 7. **`gumarmrelocator.c` 中的代码会被调用，负责读取 `target_function` 开头的指令，并将其重新定位到 Frida 分配的内存区域。**  这个过程会调用 `gum_arm_relocator_read_one` 来解析指令，并根据需要调用 `gum_arm_relocator_rewrite_...` 函数来重写包含 PC 相对引用的指令。最后，使用 `GumArmWriter` 将原始或重写后的指令写入到新的内存位置。
 8. **调试线索：** 如果在 Frida 脚本执行过程中出现与代码执行或内存访问相关的错误，可以怀疑是指令重定位过程出现了问题。例如，如果程序崩溃在被 hook 的函数附近，并且错误信息指示访问了错误的内存地址，那么可能是 `gumarmrelocator.c` 没有正确处理某些类型的指令，导致重定位后的代码无法正确执行。可以通过查看 Frida 的日志输出，或者使用更底层的调试工具来跟踪指令的执行流程，从而定位到 `gumarmrelocator.c` 中的具体问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-arm/gumarmrelocator.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -991,7 +993,4 @@ gum_arm_relocator_rewrite_bl (GumArmRelocator * self,
       (target_mode == CS_MODE_THUMB) ? target->imm | 1 : target->imm);
   return TRUE;
 }
-
-"""
-
 ```

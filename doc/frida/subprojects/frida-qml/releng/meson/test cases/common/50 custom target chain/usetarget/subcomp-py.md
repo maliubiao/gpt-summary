@@ -114,7 +114,7 @@ By following these steps, moving from the specific code to its broader context w
 
 总而言之， `subcomp.py` 是 Frida 测试套件中的一个简单构建步骤验证脚本，它的主要功能是生成一个包含固定内容的文件，以验证 Frida 构建过程中的自定义目标链是否正常工作。 它虽然自身不执行复杂的逆向操作，但对确保 Frida 作为逆向工具的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/50 custom target chain/usetarget/subcomp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -131,7 +133,4 @@ import sys
 with open(sys.argv[1], 'rb') as ifile:
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('Everything ok.\n')
-
-"""
-
 ```

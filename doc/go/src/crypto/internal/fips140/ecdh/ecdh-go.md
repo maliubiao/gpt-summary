@@ -218,7 +218,7 @@ Bob 的共享密钥: 9b8a7c6d4f2e103b5a9d8c7b6a5e4f3d2c1b0a987f6e5d4c3b2a19087f6
 
 总而言之，这段 Go 代码实现了符合 FIPS 140 标准的 ECDH 密钥交换，提供了密钥生成、密钥对象创建以及实际的密钥交换功能。使用者需要注意曲线的匹配和密钥的有效性，并理解这段代码主要用于 FIPS 140 环境。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/ecdh/ecdh.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -537,9 +539,4 @@ func isLess(a, b []byte) bool {
 	// If there is a borrow at the end of the operation, then a < b.
 	return borrow == 1
 }
-
-"""
-
-
-
 ```

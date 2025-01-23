@@ -98,7 +98,7 @@ Here's a breakdown of how to approach this:
 
 作为 21 部分中的第 9 部分，这段代码专注于测试 `HostResolverManager` 在**生命周期管理 (删除)** 和**请求管理 (取消)** 方面的功能，以及对 **Secure DNS Mode (特别是 Automatic 模式)** 的详细测试。  它验证了 `HostResolverManager` 在处理进行中的请求、以及与 DoH 相关的复杂场景下的正确性。  这部分测试为理解 `HostResolverManager` 如何保证 DNS 解析的稳定性和安全性提供了重要的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Source(), std::nullopt, resolve_context_.get())));
   }
   EXPECT_EQ(10u, num_running_dispatcher_jobs());
@@ -802,7 +804,4 @@ TEST_F(HostResolverManagerDnsTest,
   // the dns client is disabled.
   ResolveHostResponseHelper response_insecure_cached(resolver_->CreateRequest(
       HostPortPair("insecu
-"""
-
-
 ```

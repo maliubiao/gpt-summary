@@ -156,7 +156,7 @@ The user wants a summary of the functionality of the C++ source code file `trans
 
 该文件的主要功能是**定义和管理 QUIC 协议中使用的传输参数**。它提供了存储、编码、解码和验证这些参数的结构和方法，是 QUIC 连接建立和运行的关键组成部分。它定义了哪些参数可以协商，它们的类型、默认值和有效范围，并确保在连接建立时双方对这些参数达成一致。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/transport_parameters.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -946,7 +948,4 @@ bool SerializeTransportParameters(const TransportParameters& in,
       kTypeAndValueLength +               // discard
       kTypeAndValueLength +               // google_handshake_message
       kTypeAndValueLength +               //
-"""
-
-
 ```

@@ -180,15 +180,17 @@ Let's break down the thought process for analyzing the C++ test file.
 
 因此，当你在 Chromium 的网络栈中调试与 HTTPS 代理相关的 QUIC 连接问题时，你可能会需要查看 `ConnectTunnel` 类的代码以及它的测试文件，以了解代理服务器是如何处理 `CONNECT` 请求的。这个测试文件 `connect_tunnel_test.cc` 提供了一种验证 `ConnectTunnel` 功能是否正确的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/tools/connect_tunnel_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -549,7 +551,4 @@ TEST_F(ConnectTunnelTest, DestinationTcpConnectionError) {
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
 ```

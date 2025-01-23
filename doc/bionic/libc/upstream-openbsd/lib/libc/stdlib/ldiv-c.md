@@ -259,7 +259,7 @@ if (nativeFuncAddr) {
 
 总结来说，`ldiv.c` 定义了一个基础但非常重要的整数除法函数，它在 Android 系统和 Native 开发中被广泛使用。理解其实现原理和潜在的错误可以帮助开发者编写更健壮的代码。虽然 `ldiv` 本身不涉及复杂的 dynamic linker 机制，但作为 `libc` 的一部分，它的链接和加载是动态链接过程的一部分。通过 Frida，我们可以方便地监控和调试 `ldiv` 函数的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdlib/ldiv.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: ldiv.c,v 1.5 2005/08/08 08:05:36 espie Exp $ */
 /*
  * Copyright (c) 1990 Regents of the University of California.
@@ -322,7 +324,4 @@ ldiv(long num, long denom)
 	}
 	return (r);
 }
-
-"""
-
 ```

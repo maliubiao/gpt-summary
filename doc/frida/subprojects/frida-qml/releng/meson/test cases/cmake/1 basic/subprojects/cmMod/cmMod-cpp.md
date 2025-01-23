@@ -146,7 +146,7 @@ Hello World
 
 总而言之，`cmMod.cpp` 是 Frida 项目中一个非常基础的 C++ 文件，主要用于测试 CMake 构建系统的子项目功能。虽然其功能简单，但可以作为 Frida 进行动态 instrumentation 的一个潜在目标，并涉及到一些底层和系统相关的知识。它的存在更多的是为了构建和测试，而不是为了展示复杂的逆向技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/1 basic/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -171,7 +173,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

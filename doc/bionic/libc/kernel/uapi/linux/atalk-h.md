@@ -264,7 +264,7 @@ sys.stdin.read()
 
 总结来说，虽然 `bionic/libc/kernel/uapi/linux/atalk.h` 存在于 Android 的 Bionic 库中，但它主要反映了与 Linux 内核的兼容性。 AppleTalk 协议在现代 Android 系统中几乎没有实际应用，因此 Android Framework 和 NDK 很少会直接与其交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/atalk.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -314,7 +316,4 @@ struct atalk_netrange {
   __be16 nr_lastnet;
 };
 #endif
-
-"""
-
 ```

@@ -216,7 +216,7 @@ if (fAddress) {
 
 这个过程展示了逆向工程师如何从一个程序的异常行为出发，逐步使用动态分析工具（如 Frida）和静态分析方法（查看源代码）来定位和理解问题。`lib2.c` 文件在这种场景下就成为了一个关键的线索，帮助用户理解函数调用关系和数据流动。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/194 static threads/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,14 +224,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern void *f(void);
 
 void *g(void) {
   return f();
 }
-
-"""
-
 ```

@@ -192,15 +192,17 @@ extern "C" {
 
 总而言之，`quiche_simple_arena.cc` 提供了一个用于高效管理内存的工具，特别适用于需要频繁分配和释放小块内存的场景，例如网络协议的实现。虽然它与 JavaScript 没有直接的编程接口，但它在 Chromium 的网络栈中扮演着重要的角色，影响着浏览器与服务器的通信效率。理解其功能和限制有助于理解 Chromium 的内部工作原理以及排查相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/quiche_simple_arena.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ QuicheSimpleArena::Block& QuicheSimpleArena::Block::operator=(
 }
 
 }  // namespace quiche
-
-"""
-
 ```

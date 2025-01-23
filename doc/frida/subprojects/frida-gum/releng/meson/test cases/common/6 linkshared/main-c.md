@@ -125,7 +125,7 @@ By following this process, we can systematically analyze the code snippet and pr
 
 这个 `main.c` 文件本身的功能非常简单，主要作用是调用一个外部共享库中的函数。它的存在更多是为了作为动态分析的**目标**或**载体**，方便逆向工程师使用 Frida 等工具来研究和操纵外部共享库的行为。它涉及到共享库、动态链接、平台差异等底层知识，常见的错误与共享库的加载和链接有关。作为调试线索，它很可能是逆向工程师为了研究特定共享库功能而创建或遇到的一个简单示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/6 linkshared/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -146,7 +148,4 @@ int DLL_IMPORT func(void);
 int main(void) {
     return func();
 }
-
-"""
-
 ```

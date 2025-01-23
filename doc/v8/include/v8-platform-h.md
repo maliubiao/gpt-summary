@@ -108,7 +108,7 @@ runner->PostTask(std::move(myTask));
 
 `v8/include/v8-platform.h` 的第一部分定义了 V8 与底层平台交互的关键抽象接口，涵盖了任务调度、并行任务管理、阻塞调用处理、追踪和内存管理等核心功能。这些接口使得 V8 能够以平台无关的方式利用底层系统的资源，并为 JavaScript 代码的执行提供必要的支持。 嵌入 V8 的程序需要理解这些接口，以便正确地配置和集成 V8 引擎。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-platform.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-platform.h以.tq结尾，那它是个v8 torque源代码，
@@ -116,8 +116,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1039,8 +1041,5 @@ class VirtualAddressSpace {
    * \param size The size of the allocation in bytes. Must be a multiple of the
    * allocation_granularity().
    *
-   * \param permissions 
-"""
-
-
+   * \param permissions
 ```

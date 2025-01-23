@@ -145,7 +145,7 @@ build my_frida_agent.so: link my_agent.cpp common_utils.a
 
 **调试线索：** 如果用户在 Frida CLR bridge 的构建过程中遇到问题，例如编译或链接错误，他们可能会检查 `build/build.ninja` 文件，查看生成的具体构建命令和依赖关系。如果怀疑是 Meson 生成的 Ninja 文件有问题，他们可能会检查 `ninjabackend.py` 的代码，理解 Meson 是如何将高级的构建描述转化为底层的 Ninja 指令的。例如，查看某个特定目标的构建规则是否正确生成，或者依赖关系是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -924,8 +926,4 @@ class NinjaBackend(backends.Backend):
     def create_target_source_introspection(self, target: build.Target, comp: compilers.Compiler, parameters, sources, generated_sources,
                                            unity_sources: T.Optional[T.List[mesonlib.FileOrString]] = None):
         '''
-  
-"""
-
-
 ```

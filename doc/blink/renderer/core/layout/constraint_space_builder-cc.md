@@ -112,14 +112,16 @@ By following these steps, we can effectively analyze the C++ code and connect it
 
 `constraint_space_builder.cc` 文件中的 `ConstraintSpaceBuilder` 类在 Blink 渲染引擎的布局过程中扮演着至关重要的角色。它负责构建和管理 `ConstraintSpace` 对象，这些对象携带了布局所需的关键约束信息，特别是关于百分比大小的解析。理解这个类的功能有助于深入了解浏览器如何将 HTML、CSS 转换为最终的页面布局。虽然开发者不直接操作这个类，但他们编写的 CSS 样式会直接影响其行为和输出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/constraint_space_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ void ConstraintSpaceBuilder::SetReplacedPercentageResolutionSize(
 }
 
 }  // namespace blink
-
-"""
-
 ```

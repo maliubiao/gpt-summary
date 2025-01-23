@@ -91,7 +91,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这段代码是 `net/quic/quic_session_pool_test.cc` 文件的一部分，主要功能是 **对 `QuicSessionPool` 类在各种网络错误和网络环境变化情况下的行为进行全面的单元测试**。它覆盖了连接建立失败、IP 地址改变时的会话管理、连接迁移等关键场景，确保 `QuicSessionPool` 能够正确地管理和复用 QUIC 会话，并能应对各种异常情况，保证网络连接的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t_stream()
       ->NotifySessionOneRttKeyAvailable();
   EXPECT_THAT(callback_.WaitForResult(), IsOk());
@@ -826,7 +828,4 @@ TEST_P(QuicSessionPoolTest, MigratedToBlockedSocketAfterProbing) {
       MutableNetworkTrafficAnnotationTag(TRAFFIC_ANNOTATION_FOR_TESTS);
   stream->RegisterRequest(&request_info);
   EXPECT_EQ(OK, s
-"""
-
-
 ```

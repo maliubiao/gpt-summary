@@ -126,14 +126,16 @@ Response: Let's break down the thought process to arrive at the explanation of t
 
 总而言之，`blink/common/loader/inter_process_time_ticks_converter_unittest.cc` 是一个关键的测试文件，它确保了 `InterProcessTimeTicksConverter` 能够正确地在不同的进程之间转换时间戳，这对于 Chromium 浏览器的稳定性和功能的正确性至关重要，并间接影响着 JavaScript、HTML 和 CSS 等 Web 技术在多进程环境下的运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/inter_process_time_ticks_converter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -443,7 +445,4 @@ TEST(InterProcessTimeTicksConverterTest, ValuesOutsideOfRange) {
 }  // anonymous namespace
 
 }  // namespace blink
-
-"""
-
 ```

@@ -168,7 +168,7 @@ This detailed thought process, involving code analysis, connecting concepts, ima
 
 总而言之，`baseplatformtests.py` 是 Frida-Swift 组件的关键测试文件，它通过模拟用户与 Meson 构建系统的交互，验证了 Frida-Swift 在不同平台和配置下的构建和基本功能是否正确。理解这个文件的功能有助于理解 Frida-Swift 的构建流程，以及如何排查相关的构建和测试问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/unittests/baseplatformtests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 # Copyright © 2024 Intel Corporation
@@ -697,7 +699,4 @@ class BasePlatformTests(TestCase):
         shutil.copytree(srcdir, dest)
 
         return dest
-
-"""
-
 ```

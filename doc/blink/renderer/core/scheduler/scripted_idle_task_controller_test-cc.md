@@ -117,14 +117,16 @@ By following this process of initial scanning, focused analysis, connecting to w
 
 总而言之，`blink/renderer/core/scheduler/scripted_idle_task_controller_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中 `requestIdleCallback` API 的核心逻辑的正确性和健壮性，涵盖了任务注册、执行、取消、超时、调度以及生命周期管理等多个方面，并特别关注了潜在的内存管理问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scheduler/scripted_idle_task_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -540,7 +542,4 @@ TEST_P(ScriptedIdleTaskControllerTest,
 INSTANTIATE_TEST_SUITE_P(, ScriptedIdleTaskControllerTest, ::testing::Bool());
 
 }  // namespace blink
-
-"""
-
 ```

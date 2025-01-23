@@ -98,14 +98,16 @@ This systematic approach, starting from the file's name and contents and then dr
 
 `space_utils.cc` 文件提供了一组底层的布局实用函数，这些函数是 Blink 渲染引擎正确渲染网页内容的关键。它们处理了各种复杂的布局场景，包括浮动元素的清除、正交书写模式下的尺寸计算以及不同类型元素的默认尺寸行为。这些功能直接反映了 HTML 元素的特性以及 CSS 属性对布局的影响。 虽然开发者通常不会直接调用这些函数，但它们在浏览器内部默默地工作，确保网页能够按照预期的方式呈现。 错误地实现或理解这些底层的布局逻辑会导致网页渲染错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/space_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ bool ShouldBlockContainerChildStretchAutoInlineSize(const BlockNode& child) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

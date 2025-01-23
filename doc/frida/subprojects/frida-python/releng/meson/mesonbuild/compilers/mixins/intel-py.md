@@ -125,7 +125,7 @@ Suppose a reverse engineer is examining a Frida gadget (a small piece of code in
 * **Binary Bottom:** Compiler flags directly influence the generated binary code. Optimization flags change the instruction sequences, register usage, and overall structure of the executable. Debug flags add sections to the binary containing debugging information.
 
 * **Linux:** The `IntelGnuLikeCompiler` class specifically targets the Intel compiler on Linux and macOS, which are POSIX-compliant systems. It uses compiler flags common to the GCC family
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/intel.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The meson development team
 
@@ -302,7 +304,4 @@ class IntelVisualStudioLikeCompiler(VisualStudioLikeCompiler):
 
     def get_pch_base_name(self, header: str) -> str:
         return os.path.basename(header)
-
-"""
-
 ```

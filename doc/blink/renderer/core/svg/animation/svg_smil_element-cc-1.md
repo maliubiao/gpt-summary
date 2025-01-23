@@ -113,7 +113,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 总而言之，`SVGSMILElement.cc` 的这一部分代码是 Chromium Blink 引擎中处理 SVG SMIL 动画的核心组件，负责管理动画的时间轴、状态变化、事件分发以及与其他动画元素的同步。它确保了 SVG 动画能够按照规范正确地播放和响应用户交互，是连接 HTML 定义的动画、JavaScript 控制和最终 CSS 渲染的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/animation/svg_smil_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 resentation_time =
       current_presentation_time - SMILTime::Epsilon();
   if (was_active) {
@@ -624,8 +626,4 @@ void SVGSMILElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

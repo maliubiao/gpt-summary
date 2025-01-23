@@ -223,7 +223,7 @@ sys.stdin.read()
 
 总而言之，`bionic_ifuncs.handroid.h` 定义了 Android Bionic 库中用于实现函数动态分发的机制，它允许系统在运行时根据硬件特性选择最佳的函数实现，从而提高性能和兼容性。 开发者通常不需要直接操作这个文件，但了解其工作原理有助于理解 Android 系统底层的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_ifuncs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -234,8 +234,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -422,7 +424,4 @@ typedef size_t strnlen_func_t(const char*, size_t);
 typedef char* strrchr_func_t(const char*, int);
 #define STRRCHR_SHIM() \
   DEFINE_STATIC_SHIM(char* strrchr(const char* src, int ch) { FORWARD(strrchr)(src, ch); })
-
-"""
-
 ```

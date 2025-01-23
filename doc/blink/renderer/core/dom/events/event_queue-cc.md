@@ -192,15 +192,17 @@ By following this detailed thought process, combining code analysis with an unde
 
 总之，`blink/renderer/core/dom/events/event_queue.cc` 文件中的 `EventQueue` 类是 Blink 渲染引擎中至关重要的组件，它负责管理和调度事件的异步执行，连接了底层的事件机制和上层的 Web 技术，确保用户交互能够触发相应的 JavaScript 代码，并驱动页面的动态行为。理解它的工作原理对于理解浏览器事件处理机制和调试相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/events/event_queue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All Rights Reserved.
  *
@@ -328,7 +330,4 @@ bool EventQueue::HasPendingEvents() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

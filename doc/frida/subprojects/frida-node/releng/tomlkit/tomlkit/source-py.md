@@ -171,7 +171,7 @@ print(source.current) # 输出 '#'
 
 `source.py` 中的 `Source` 类是 `tomlkit` 库的核心组件之一，负责管理和迭代 TOML 输入文本。理解其功能对于理解 TOML 解析过程以及调试与 TOML 解析相关的错误至关重要。虽然它本身是纯 Python 代码，但其应用场景与逆向工程、底层系统配置等方面都有着密切联系。用户通常不会直接操作这个文件，但当使用 `tomlkit` 遇到问题时，它会成为调试的重要入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from copy import copy
@@ -361,7 +363,4 @@ class Source(str):
             cur += len(line) + 1
 
         return len(self.splitlines()), 0
-
-"""
-
 ```

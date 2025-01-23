@@ -131,7 +131,7 @@ func example2(a int64, c int64) bool {
 
 总而言之，这段代码是Go语言编译器中用于优化ARM64架构代码的关键部分，它通过模式匹配和规则替换，提高了生成代码的效率和性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,8 +139,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 0, v_0, v_1 = _i0+1, v_1, v_0 {
 			x := v_0
 			if v_1.Op != OpARM64MOVDconst {
@@ -3055,10 +3057,5 @@ func rewriteValueARM64_OpARM64FMULD(v *Value) bool {
 			if v_0.Op != OpARM64FNEGD {
 				continue
 			}
-			x := 
-"""
-
-
-
-
+			x :=
 ```

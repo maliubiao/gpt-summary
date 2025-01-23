@@ -236,15 +236,17 @@ func main() {
 
 总而言之，`go/src/cmd/link/internal/ld/data_test.go` 中的 `TestAddGotSym` 函数及其相关的 `setUpContext` 函数是用于测试 Go 链接器中处理全局偏移表 (GOT) 功能的关键部分，确保在不同的构建和链接场景下，GOT 的相关符号能够被正确地添加和管理，这对于实现动态链接和生成位置无关的可执行文件至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/data_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -337,9 +339,4 @@ func TestAddGotSym(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

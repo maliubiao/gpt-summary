@@ -95,11 +95,13 @@ CheckVersion(6, 0, 287, 53, "-emb.1", false, "6.0.287.53-emb.1",
 
 `version-unittest.cc` 确保了 V8 引擎能够正确地记录和展示其版本信息，这对于开发者调试、了解不同 V8 版本特性以及在特定 V8 版本上运行代码非常重要。JavaScript 通过 `process.versions.v8` 等方式间接地使用了这些版本信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/version-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -197,7 +199,4 @@ TEST_F(VersionTest, VersionString) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

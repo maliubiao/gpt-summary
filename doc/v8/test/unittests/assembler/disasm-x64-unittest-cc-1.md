@@ -83,7 +83,7 @@ COMPARE("4889e0             REX.W movq rax,rsp", movq(rax, rsp));
 
 总而言之，这段代码是 V8 引擎中 x64 架构反汇编器的单元测试的第二部分。它通过生成各种 x64 指令（特别是 SSE、SSE2、SSE3、SSSE3、SSE4.1、SSE4.2 和 AVX 指令集的指令），然后断言反汇编器能够将这些指令正确地转换回其汇编语言表示形式，从而确保反汇编器的正确性和可靠性。这对于 V8 引擎的调试、性能分析和整体稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -91,9 +91,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- rax, Operand(rdx, 2)));
+### 源代码
+```cpp
+rax, Operand(rdx, 2)));
   COMPARE("480f4f4203           REX.W cmovgq rax,[rdx+0x3]",
           cmovq(greater, rax, Operand(rdx, 3)));
   COMPARE("4180f803             cmpb r8l,0x3", cmpb(r8, Immediate(0x3)));
@@ -697,7 +699,4 @@ TEST_F(DisasmX64Test, DisasmX64CheckOutputAVX) {
           vcmpnleps(xmm5, xmm4, xmm1));
   COMPARE("c5d8c2ac8b1027000006 vcmpps xmm5,xmm4,[rbx+rcx*4+0x2710], (nle)",
           vcmpnleps(xmm5
-"""
-
-
 ```

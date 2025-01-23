@@ -155,14 +155,16 @@ By following this systematic process of analysis, inference, example creation, a
 
 `html_heading_element.cc` 文件是 Blink 渲染引擎中实现 HTML 标题元素的核心代码。它定义了表示标题元素的 C++ 类，并为浏览器如何理解和处理 HTML 中的 `<h1>` 到 `<h6>` 标签提供了基础。理解这个文件有助于理解浏览器渲染引擎的工作原理以及 HTML 标题元素在网页开发中的作用和最佳实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_heading_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -194,7 +196,4 @@ HTMLHeadingElement::HTMLHeadingElement(const QualifiedName& tag_name,
     : HTMLElement(tag_name, document) {}
 
 }
-
-"""
-
 ```

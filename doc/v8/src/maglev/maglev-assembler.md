@@ -78,11 +78,13 @@ let obj2 = { ref: obj1 }; // StoreTaggedFieldWithWriteBarrier 会被用来存储
 
 `v8/src/maglev/maglev-assembler.cc` 文件是 Maglev 编译器的核心组成部分，它提供了一个平台无关的接口来生成底层的机器代码，从而执行 JavaScript 代码。它所提供的各种指令和功能都直接对应着 JavaScript 语言的特性和 V8 引擎的内部实现机制。理解 `MaglevAssembler` 的功能有助于深入了解 JavaScript 引擎的编译和执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -801,7 +803,4 @@ void MaglevAssembler::TryMigrateInstance(Register object,
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

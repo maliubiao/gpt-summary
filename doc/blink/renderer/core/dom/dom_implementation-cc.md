@@ -154,15 +154,17 @@ By following this step-by-step approach, starting with the obvious (filename) an
 
 `dom_implementation.cc` 文件是 Blink 引擎中负责创建核心 DOM 对象的关键部分。它为 JavaScript 提供了创建不同类型文档（HTML、XML、SVG）的基础，并且在浏览器内部处理 HTML 解析和文档构建过程中也发挥着重要作用。理解这个文件的功能有助于开发者理解浏览器如何构建和操作 DOM 结构，并能帮助调试与文档创建相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/dom_implementation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -290,7 +292,4 @@ void DOMImplementation::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

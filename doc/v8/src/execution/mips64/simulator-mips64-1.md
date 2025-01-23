@@ -77,12 +77,14 @@ JavaScript 中的 `console.log(sum)` 调用可能会触发一个运行时调用�
 
 总而言之，这部分代码是 MIPS64 模拟器的核心组成部分，负责模拟 CPU 的内存操作、同步机制以及至关重要的浮点运算，使得 V8 可以在没有硬件 MIPS64 支持的环境下运行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 , addr, icount_);
         break;
       case 4:
@@ -2018,7 +2020,4 @@ void Simulator::DecodeTypeRegisterCOP1() {
     case CTC1: {
       // At the moment only FCSR is supported.
       DCHECK_EQ(fs_reg(), kFCSRRegist
-"""
-
-
 ```

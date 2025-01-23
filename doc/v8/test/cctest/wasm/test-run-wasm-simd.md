@@ -71,12 +71,14 @@ console.log(result.getW()); // 输出 12.0
 
 这个 C++ 代码文件的第一部分定义了一些辅助函数和宏，并开始编写针对各种 WebAssembly SIMD 指令的测试用例。 这些测试用例涵盖了诸如浮点数和整数的向量化加载、存储、运算（如加法、减法、乘法等）以及比较操作。  它通过在 C++ 环境中模拟执行 WebAssembly 代码，并断言输出结果的正确性，来确保 V8 引擎对这些 SIMD 指令的实现是符合规范的。  这些测试的 WebAssembly SIMD 指令在 JavaScript 中有对应的 `WebAssembly.SIMD` API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1971,7 +1973,4 @@ WASM_EXEC_TEST(I16x8GtU) {
 }
 
 WASM_EXEC_TEST(I16x
-"""
-
-
 ```

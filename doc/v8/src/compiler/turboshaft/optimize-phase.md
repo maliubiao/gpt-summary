@@ -114,11 +114,13 @@ function accessArray(arr) {
 
 `optimize-phase.cc` 文件在 V8 编译器的 Turboshaft 管道中扮演着至关重要的角色。它通过一系列复杂的优化步骤，力求将 JavaScript 代码转换为更高效的机器码，从而提升 JavaScript 应用的性能。这些优化对于开发者来说是透明的，但它们在幕后默默地工作，确保 JavaScript 代码能够以最佳状态运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/optimize-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ void OptimizePhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

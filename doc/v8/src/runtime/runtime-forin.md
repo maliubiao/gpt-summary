@@ -122,11 +122,13 @@ for (let key in obj) {
 
 `v8/src/runtime/runtime-forin.cc` 文件中的代码实现了 JavaScript `for...in` 循环的核心运行时逻辑。 `Runtime_ForInEnumerate` 负责生成待遍历的属性列表，而 `Runtime_ForInHasProperty`  负责在循环过程中动态检查属性的可枚举性，确保 `for...in` 循环按照 JavaScript 规范正确执行。 这两个运行时函数共同支撑了 JavaScript 中 `for...in` 循环的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-forin.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ RUNTIME_FUNCTION(Runtime_ForInHasProperty) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -102,7 +102,7 @@ HTTP/2 是现代 Web 的基础协议，JavaScript 发起的网络请求通常会
 
 这部分代码主要测试了 `NgHttp2Adapter` 在处理客户端发送的各种复杂 HTTP/2 帧序列时的鲁棒性和正确性，特别是关注在头部处理（包括特殊头部如 `Host` 和包含 OBS-text 的头部）、数据处理（包括带有填充的数据）以及流量控制方面。此外，还测试了在发生错误情况时，`NgHttp2Adapter` 如何发送适当的错误帧（如 RST_STREAM 和 GOAWAY）。这些测试确保了 Chromium 的 HTTP/2 实现能够正确、安全地处理各种客户端行为和错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 "},
                     {"header5", "not processed"},
                     {"header6", "not processed"},
@@ -884,7 +886,4 @@ TEST(NgHttp2AdapterTest, ClientDisobeysStreamFlowControl) {
 TEST(NgHttp2AdapterTest, ServerErrorWhileHandlingHeaders) {
   TestVisitor visitor;
   auto adapter
-"""
-
-
 ```

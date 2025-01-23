@@ -187,15 +187,17 @@ By following this process of analysis, inference, and contextualization, I could
 
 总而言之，`keyboard_clickable_input_type_view.cc` 这个文件在 Blink 引擎中扮演着关键角色，它弥合了键盘操作和鼠标点击之间的差距，确保用户可以使用键盘方便地与网页上的某些交互元素进行交互，从而提升了网页的可访问性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/keyboard_clickable_input_type_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, 2012 Google Inc. All rights reserved.
  * Copyright (C) 2011 Apple Inc. All rights reserved.
@@ -274,7 +276,4 @@ void KeyboardClickableInputTypeView::AccessKeyAction(
 }
 
 }  // namespace blink
-
-"""
-
 ```

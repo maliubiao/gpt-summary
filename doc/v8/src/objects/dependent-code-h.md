@@ -202,15 +202,17 @@ DependentCode::DeoptimizeDependencyGroups(isolate, global_var_property_cell, Dep
 
 总结来说，`v8/src/objects/dependent-code.h` 定义了 V8 引擎中用于管理代码依赖关系的核心机制。它允许 V8 在进行激进优化的同时，确保代码的正确性，并在依赖条件失效时进行反优化。理解这个机制有助于理解 V8 的优化策略以及如何编写更易于 V8 优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/dependent-code.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/dependent-code.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ DEFINE_OPERATORS_FOR_FLAGS(DependentCode::DependencyGroups)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_DEPENDENT_CODE_H_
-
-"""
-
 ```

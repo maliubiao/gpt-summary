@@ -103,7 +103,7 @@ The user wants a summary of the functionality of the provided C++ code snippet, 
 
 这些测试用例确保了 `TCPSocket` 类的稳定性和可靠性，为上层网络协议 (如 HTTP, WebSocket) 的正确运行提供了基础保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tcp_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 port for tcp_info struct, and so they are
 // enabled only on certain platforms.
 #if defined(TCP_INFO) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -383,8 +385,4 @@ INSTANTIATE_TEST_SUITE_P(Any,
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

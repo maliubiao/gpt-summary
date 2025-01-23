@@ -140,14 +140,16 @@ This structured approach allows me to systematically analyze the code, understan
 
 总而言之，`wtf.cc` 文件是 Blink 引擎的基石，提供了许多核心的、底层的工具和实用程序，这些工具在处理 JavaScript 代码、解析 HTML 文档、应用 CSS 样式以及执行各种其他渲染任务时都发挥着重要作用。理解 `wtf.cc` 的功能有助于深入了解 Blink 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/wtf.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -239,7 +241,4 @@ void Initialize() {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

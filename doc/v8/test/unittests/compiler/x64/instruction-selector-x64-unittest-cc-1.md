@@ -81,7 +81,7 @@ Self-correction/Refinement during the thought process:
 
 **总结来说，这部分测试旨在覆盖 x64 架构下常见的整数和浮点数运算场景，验证指令选择器能够选择正确的指令，并利用架构特性进行优化，例如使用 `lea` 指令来代替某些加法、乘法和移位操作，以及直接在内存操作数上进行某些运算。** 这对于生成高效的机器码至关重要，直接影响 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -89,8 +89,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 const p0 = m.Parameter(0);
   Node* const p1 = m.Parameter(1);
   Node* const s0 = m.Int32Mul(p1, m.Int32Constant(2));
@@ -951,7 +953,4 @@ TEST_F(InstructionSelectorTest, Float32BinopArithmeticWithLoad) {
     Stream s = m.Build();
     ASSERT_EQ(3U, s.size());
     EXPECT_EQ(kSSEFloat32Add, s[0]->arch_opc
-"""
-
-
 ```

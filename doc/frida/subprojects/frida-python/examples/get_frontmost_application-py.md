@@ -163,7 +163,7 @@ Frida 的工作原理涉及到深入的操作系统底层知识：
 
 总而言之，`get_frontmost_application.py` 是一个简单但实用的 Frida 脚本，用于动态获取移动设备前台应用的信息，这在移动应用的安全分析、逆向工程和自动化测试等领域都有广泛的应用。它涉及到 Frida 框架、操作系统底层机制以及一定的编程技巧。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/get_frontmost_application.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from pprint import pformat
 
 from pygments import highlight
@@ -198,7 +200,4 @@ if app is not None:
     print(f"{app.identifier}:", highlight(pformat(params), PythonLexer(), Terminal256Formatter()))
 else:
     print("No frontmost application")
-
-"""
-
 ```

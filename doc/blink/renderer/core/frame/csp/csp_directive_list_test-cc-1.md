@@ -131,15 +131,17 @@ This part of the test file continues to evaluate the "reasonableness" of various
 
 该部分测试用例主要关注 CSP 指令列表的安全性评估，特别是针对 `<object>`, `<base>`, 和 `<script>` 这三个关键元素。它验证了哪些 CSP 指令组合被认为是合理的安全限制，能够有效地防止潜在的安全风险，并强调了 `report-uri` 指令在 `<meta>` 标签中的特殊处理以及 `strict-dynamic` 指令对传统白名单机制的影响。这些测试有助于确保 Blink 引擎正确地解析和执行 CSP 策略，从而提高 Web 应用的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/csp_directive_list_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ective_list));
     directive_list = CreateList(test.list, ContentSecurityPolicyType::kEnforce);
     EXPECT_EQ(test.expected,
@@ -326,8 +328,4 @@ TEST_F(CSPDirectiveListTest, StrictDynamicIgnoresAllowlistWarning) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

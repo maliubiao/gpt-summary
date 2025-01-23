@@ -100,14 +100,16 @@ By following this structured approach, combining code analysis with logical dedu
 
 `HTMLParserReentryPermit` 是 Blink 引擎中用于管理 HTML 解析器重入的关键机制。它通过控制在某些操作期间是否允许重新进入解析器，来保证解析过程的正确性和稳定性。 虽然用户和前端开发者不会直接接触这个类，但它的正确实现对于浏览器正确渲染网页至关重要，并且与 JavaScript 的执行、HTML 的解析以及 CSS 的加载都有着内在的联系。  提供的代码片段只展示了类的定义，更具体的重入控制逻辑需要在其他相关代码中查找。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_parser_reentry_permit.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -119,7 +121,4 @@ namespace blink {
 HTMLParserReentryPermit::HTMLParserReentryPermit() = default;
 
 }  // namespace blink
-
-"""
-
 ```

@@ -150,7 +150,7 @@ The snippet primarily consists of test cases (using `TEST_P`) for the `HttpNetwo
 
 这部分单元测试主要集中在验证 `HttpNetworkTransaction` 类处理 HTTP 基本身份验证的各种场景，包括成功的认证、Keep-Alive 连接下的认证、通过代理的认证，以及处理错误凭据和服务器异常情况。这些测试确保了 Chromium 网络栈在处理需要用户凭据才能访问的资源时，能够按照 HTTP 协议规范正确地完成身份验证流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ERT_THAT(callback1.GetResult(rv), IsOk());
 
     LoadTimingInfo load_timing_info1;
@@ -965,8 +967,4 @@ TEST_P(HttpNetworkTransactionTest, BasicAuthProxyKeepAliveHttp11) {
     EXPECT_TRUE(response->did_use_http_auth);
     EXPECT_EQ(PacResultElementToProxyChain("PROXY myproxy:70"),
               response->proxy_chain);
-
-"""
-
-
 ```

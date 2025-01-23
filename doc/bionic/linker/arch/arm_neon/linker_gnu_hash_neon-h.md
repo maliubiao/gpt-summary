@@ -235,7 +235,7 @@ sys.stdin.read()
 
 `bionic/linker/arch/arm_neon/linker_gnu_hash_neon.handroid` 文件定义了动态链接器在 ARM 架构上进行 GNU 哈希计算的关键函数，并通过 NEON 指令集实现了性能优化。它在 Android 系统的动态链接过程中扮演着重要的角色，直接影响着应用程序的启动速度和运行效率。虽然开发者通常不会直接使用这个函数，但理解其功能有助于深入了解 Android 系统的底层机制。通过 Frida 等工具，我们可以观察和调试这个函数的行为，从而更好地理解动态链接的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/arch/arm_neon/linker_gnu_hash_neon.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -246,8 +246,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -283,7 +285,4 @@ Prompt:
 #include <utility>
 
 std::pair<uint32_t, uint32_t> calculate_gnu_hash_neon(const char* name);
-
-"""
-
 ```

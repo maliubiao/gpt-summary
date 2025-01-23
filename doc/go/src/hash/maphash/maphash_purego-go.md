@@ -197,7 +197,7 @@ func main() {
 
 总而言之，这段代码提供了一个纯 Go 实现的高效哈希函数，主要用于支持 Go 语言的 `map` 数据结构的实现，特别是在需要避免 C 绑定的场景下。理解其内部机制有助于更好地理解 Go 语言 map 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/maphash/maphash_purego.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -384,9 +386,4 @@ func appendT(h *Hash, v reflect.Value) {
 	}
 	panic(errors.New("maphash: hash of unhashable type " + v.Type().String()))
 }
-
-"""
-
-
-
 ```

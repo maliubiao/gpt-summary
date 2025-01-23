@@ -93,12 +93,14 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 **总结来说，这是 `v8/src/compiler/backend/ppc/instruction-selector-ppc.cc` 文件的最后一部分，专注于将 V8 编译器生成的中间代码中关于原子操作、SIMD 操作（包括 JavaScript SIMD API 和 WebAssembly SIMD）、内存加载/存储的特定操作以及其他底层操作转换为 PowerPC 架构的机器指令，从而使得 JavaScript 代码能够在 PPC 架构的处理器上高效地执行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/instruction-selector-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 yRepresentation::Uint64()) {
       opcode = uint64_op;
     } else {
@@ -942,8 +944,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

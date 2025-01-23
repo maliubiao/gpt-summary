@@ -88,7 +88,7 @@ navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true } })
 
 总而言之，`ProcessingBasedContainer::ApplyConstraintSet` 就像一个过滤器，它根据用户在 JavaScript 中指定的音频约束，来判断当前支持的音频处理配置是否符合要求。如果所有约束都满足，则这个配置是可行的，否则需要告知用户哪些约束无法满足。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_audio.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ed_constraint_name =
         latency_container_.ApplyConstraintSet(constraint_set.latency);
     if (failed_constraint_name)
@@ -906,8 +908,5 @@ std::tuple<double, double> GetMinMaxLatenciesForAudioParameters(
 
   // Doing the microseconds conversion to match what is done in
   // AudioParameters::GetBufferDuration() so that values reported to the user
-  // are truncated consistently to 
-"""
-
-
+  // are truncated consistently to
 ```

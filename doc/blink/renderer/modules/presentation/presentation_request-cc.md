@@ -228,15 +228,17 @@ presentationRequest.start();
 - **在 `blink/renderer/modules/presentation/presentation_request.cc` 中添加日志:**  为了深入了解 Blink 引擎内部的执行流程，可以在关键方法中添加 `DLOG` 或 `DVLOG` 输出，以便在 Chromium 的调试版本中查看日志信息。例如，可以在 `PresentationRequest::start()` 的开头和结尾添加日志，查看该方法是否被调用以及执行结果。
 - **检查网络请求:** 如果演示涉及到加载远程资源，可以查看浏览器的 Network 面板，确认资源是否加载成功。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/presentation/presentation_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -561,7 +563,4 @@ PresentationRequest::PresentationRequest(ExecutionContext* execution_context,
       urls_(urls) {}
 
 }  // namespace blink
-
-"""
-
 ```

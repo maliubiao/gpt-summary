@@ -122,7 +122,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`ninjabackend.py` 的这一部分的核心功能是 **将 Meson 的高级构建描述转换为 Ninja 构建系统可以执行的低级指令，并记录构建过程中的关键信息，以便后续的构建和分析。** 它负责处理各种类型的构建目标，管理依赖关系，并支持多种编程语言和构建相关的任务。 该部分是 Meson 构建流程中至关重要的一环，直接决定了最终的构建结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,9 +131,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      Adds the source file introspection information for a language of a target
+### 源代码
+```python
+Adds the source file introspection information for a language of a target
 
         Internal introspection storage format:
         self.introspection_data = {
@@ -809,8 +811,4 @@ Prompt:
                 ofilename = os.path.join(self.get_target_private_dir(target), ofilebase)
                 elem = NinjaBuildElement(self.all_outputs, ofilename, "CUSTOM_COMMAND", rel_sourcefile)
                 elem.add_item('COMMAND', ['resgen', rel_sourcefile, ofilename])
-       
-"""
-
-
 ```

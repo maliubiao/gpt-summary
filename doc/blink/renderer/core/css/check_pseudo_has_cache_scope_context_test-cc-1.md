@@ -85,7 +85,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 这部分代码专注于测试 Blink 渲染引擎中 `:has()` 伪类的缓存机制，特别是当 `:has()` 的内部选择器涉及到不同的 DOM 树作用域（如兄弟节点、后代节点）时，缓存是否能够正确地生效和被利用，从而提高 CSS 匹配的性能。 它通过多个测试用例覆盖了不同的作用域上下文和选择器组合，并验证了预期的缓存命中和未命中情况，以及相关的内部优化机制的计数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/check_pseudo_has_cache_scope_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tYetChecked},
        {"#div24",
         kCheckPseudoHasResultChecked |
@@ -737,7 +739,4 @@ TEST_F(CheckPseudoHasCacheScopeContextTest, Case4) {
        {"#div242323", kCheckPseudoHasResultNotCached, kAlreadyNotMatched},
        {"#div24233", kCheckPseudoHasResultNotCached, kAlreadyNotMatched},
        {"#div242331", kCheckPseudoHasResultNotCac
-"""
-
-
 ```

@@ -158,7 +158,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，这部分代码是 Chromium 磁盘缓存后端的核心实现，负责管理缓存条目的生命周期和维护缓存的完整性，是浏览器高效加载网页的关键组成部分。它通过异步处理 I/O 操作，避免阻塞主线程，保证用户界面的流畅性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/backend_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ount() const {
   if (!index_.get() || disabled_)
     return 0;
@@ -1029,8 +1031,4 @@ void BackendImpl::FlushAsynchronouslyForTesting(base::OnceClosure callback) {
 }
 
 }  // namespace disk_cache
-
-"""
-
-
 ```

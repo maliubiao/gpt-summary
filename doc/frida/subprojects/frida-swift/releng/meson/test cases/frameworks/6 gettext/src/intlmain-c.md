@@ -178,7 +178,7 @@ By following this structured approach, I can generate a comprehensive and insigh
 
 总而言之，`intlmain.c` 作为一个简单的 `gettext` 使用示例，揭示了程序如何进行国际化和本地化。理解其工作原理对于逆向分析、调试国际化相关的软件问题至关重要。 Frida 作为一个强大的动态分析工具，可以帮助我们深入观察和操纵这些国际化相关的函数，从而更好地理解程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/6 gettext/src/intlmain.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<libintl.h>
 #include<locale.h>
 #include<stdio.h>
@@ -205,7 +207,4 @@ int main(int argc, char **argv) {
     printf("%s\n", _("International greeting."));
     return 0;
 }
-
-"""
-
 ```

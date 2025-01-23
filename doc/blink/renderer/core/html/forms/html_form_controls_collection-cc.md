@@ -162,14 +162,16 @@ By following these steps, one can systematically analyze the provided C++ code a
 
 总而言之，`HTMLFormControlsCollection` 是 Blink 渲染引擎中一个核心的类，它实现了对 HTML 表单控件的动态管理和访问，并为 JavaScript 操作表单提供了基础。理解它的功能和行为对于进行前端开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_form_controls_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -401,7 +403,4 @@ void HTMLFormControlsCollection::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

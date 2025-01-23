@@ -86,7 +86,7 @@ build frida/build/MyTool.exe: csharp MyTool.cs | frida/build/Utils.dll
 
 作为 Frida 构建系统 Ninja 后端的一部分，这个代码片段的核心功能是 **为 C#, Java, Vala, Cython 和 Rust 编程语言的目标生成 Ninja 构建规则，以驱动实际的编译和链接过程**。它负责将高级的构建意图转化为底层的构建指令，并处理各种语言特定的编译细节和依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,9 +95,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-         elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
+### 源代码
+```python
+elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
                 self.add_build(elem)
                 deps.append(ofilename)
                 a = '-resource:' + ofilename
@@ -728,8 +730,4 @@ Prompt:
                                        self.environment.get_build_dir(),
                                        target_slashname_workaround_dir,
                                        self.determine_rpath_dirs(target),
-                  
-"""
-
-
 ```

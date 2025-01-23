@@ -132,11 +132,13 @@ try {
 
 总而言之，`control-flow-builders.cc` 中定义的构建器类是 V8 解释器实现 JavaScript 控制流逻辑的关键组成部分。 它们提供了一种结构化的方式来生成底层的字节码指令，从而使 JavaScript 代码能够按照预期的流程执行。理解这些构建器类有助于深入了解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/control-flow-builders.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ void ConditionalControlFlowBuilder::Else() {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

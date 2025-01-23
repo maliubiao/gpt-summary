@@ -117,7 +117,7 @@ Finally, the answer needs to be structured logically and clearly explain the con
 
 总而言之，`static1.c` 作为一个简单的 C 代码文件，其意义在于它被用作 Frida 测试框架中的一个组成部分，用于验证 Frida 在处理具有传递依赖的场景下的正确性和稳定性。开发者通常会在测试失败或需要调试相关功能时关注到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/rust/21 transitive dependencies/static1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,14 +125,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int static1(void);
 
 int static1(void){
     return 1;
 }
-
-"""
-
 ```

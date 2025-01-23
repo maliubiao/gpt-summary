@@ -171,7 +171,7 @@ api.list_threads() => [{'id': 1234, 'name': 'main', 'state': 'Runnable'}, {'id':
 
 总而言之，`bytecode.py` 脚本演示了 Frida 的一个高级特性：将 JavaScript 代码编译成字节码以提高效率，并通过远程过程调用（RPC）与目标进程中的代码进行交互，进行动态分析和逆向工程。它涉及到操作系统底层、进程管理、线程枚举等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/bytecode.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import frida
 
 system_session = frida.attach(0)
@@ -200,7 +202,4 @@ script = session.create_script_from_bytes(bytecode)
 script.load()
 api = script.exports_sync
 print("api.list_threads() =>", api.list_threads())
-
-"""
-
 ```

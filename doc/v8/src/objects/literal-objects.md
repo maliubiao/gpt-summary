@@ -150,11 +150,13 @@ const myRegex = /ab+c/i;
 
 `v8/src/objects/literal-objects.cc` 是 V8 引擎中负责高效创建和管理 JavaScript 字面量对象的核心组件。它通过定义 `ClassBoilerplate` 和相关的辅助结构，为类、对象、数组和正则表达式的创建提供了模板和机制，从而提高了 JavaScript 代码的执行效率。  它将 JavaScript 的高级语法结构映射到 V8 内部的低级表示，是 V8 引擎实现的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/literal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1003,7 +1005,4 @@ void RegExpBoilerplateDescription::BriefPrintDetails(std::ostream& os) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

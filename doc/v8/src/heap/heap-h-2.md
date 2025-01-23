@@ -156,7 +156,7 @@ Now, let's synthesize these points into a concise summary of the provided code s
 
 总的来说，这部分 `v8/src/heap/heap.h` 定义了 V8 堆内存管理的核心接口，控制着对象的生命周期和内存分配策略，是 V8 引擎高效运行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap.h以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ationType allocation) {
     return AllocationType::kYoung == allocation ||
            AllocationType::kOld == allocation;
@@ -1003,7 +1005,4 @@ class V8_NODISCARD GCCallbacksScope final {
 class V8_NODISCARD AlwaysAllocateScopeForTesting {
  public:
   explicit inline AlwaysAllocateScopeForTesting
-"""
-
-
 ```

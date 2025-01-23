@@ -224,15 +224,17 @@ ws.onclose = function(event) {
 
 总而言之，`websocket_close_observer_handler.cc` 提供了一个用于测试 WebSocket 关闭场景的服务器端组件，通过模拟观察者和被观察者角色，可以验证客户端对不同关闭代码的处理行为。它与 JavaScript 的交互主要体现在 JavaScript 通过 WebSocket API 连接到这个 Handler，并根据服务器端的响应进行断言和验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/embedded_test_server/websocket_close_observer_handler.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ void WebSocketCloseObserverHandler::SendCloseCode() {
 }
 
 }  // namespace net::test_server
-
-"""
-
 ```

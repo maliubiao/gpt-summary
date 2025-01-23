@@ -218,7 +218,7 @@ libm.so (共享库文件)
 
 总而言之，`s_fmal.c` 是 Android Bionic 中实现高精度浮点数融合乘加运算的关键文件。它通过一些精巧的算法和数据结构，确保了 `fmal` 函数的正确性和精度，并在 Android 系统的各种场景中发挥着重要作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_fmal.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -228,8 +228,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -501,7 +503,4 @@ fmal(long double x, long double y, long double z)
 	else
 		return (add_and_denormalize(r.hi, adj, spread));
 }
-
-"""
-
 ```

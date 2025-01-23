@@ -136,7 +136,7 @@ func inVDSOPage(pc uintptr) bool {
 
 `go/src/runtime/vdso_in_none.go` 提供了一个简单的、总是返回 `false` 的 `inVDSOPage` 函数实现。 它的作用是确保在不支持 VDSO 的操作系统和架构上，Go 运行时系统能够正常运行，而不会因为缺少 `inVDSOPage` 的定义而报错。 这体现了 Go 语言跨平台设计的思想，针对不同的平台提供相应的实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_in_none.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -159,9 +161,4 @@ package runtime
 func inVDSOPage(pc uintptr) bool {
 	return false
 }
-
-"""
-
-
-
 ```

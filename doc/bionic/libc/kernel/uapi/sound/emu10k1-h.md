@@ -289,7 +289,7 @@ sys.stdin.read()
 
 **通过这个 Frida Hook 示例，你可以观察到 Android Framework 或 NDK 代码在与 EMU10K1 声卡交互时，是如何调用 `ioctl` 系统调用，并传递相关的命令和参数的。** 你需要根据实际的 Android 版本和硬件平台，调整目标进程名称和 ioctl 命令的值。 此外，HAL 层的实现细节可能会有所不同，可能需要 hook HAL 层库中的特定函数才能更准确地定位到与 EMU10K1 相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/emu10k1.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -643,7 +645,4 @@ struct snd_emu10k1_fx8010_pcm_rec {
 #define SNDRV_EMU10K1_IOCTL_SINGLE_STEP _IOW('H', 0x83, int)
 #define SNDRV_EMU10K1_IOCTL_DBG_READ _IOR('H', 0x84, int)
 #endif
-
-"""
-
 ```

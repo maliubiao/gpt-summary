@@ -126,7 +126,7 @@ fetch('https://www.example.com')
 
 总而言之，`dns_config_service_linux_unittest.cc` 中的这部分代码专注于测试 `DnsConfigServiceLinux` 在处理多个配置更改通知时的正确性和效率，确保它能够及时、有效地更新 DNS 配置信息，从而保障 Chromium 浏览器网络请求的正常进行。用户遇到的 DNS 相关问题最终可能追溯到 `DnsConfigServiceLinux` 的行为是否符合预期，而这些单元测试就是验证其行为的关键手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_config_service_linux_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 switchReader::ServiceSpecification(NsswitchReader::Service::kDns)});
 
   CallbackHelper callback_helper;
@@ -205,8 +207,4 @@ TEST_F(DnsConfigServiceLinuxTest, FreshReadsAfterAdditionalTriggers) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

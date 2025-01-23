@@ -194,15 +194,17 @@ func main() {
 
 总而言之，`go/src/cmd/link/internal/loader/loader_test.go` 通过一系列单元测试，验证了 `internal/loader` 包中 `Loader` 类型在符号管理、数据管理和重定位管理等方面的核心功能，这些功能是 Go 语言链接器实现其链接任务的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/loader/loader_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -668,9 +670,4 @@ func TestOuterSub(t *testing.T) {
 		t.Errorf("expected %d in sub list got %d", 5, count)
 	}
 }
-
-"""
-
-
-
 ```

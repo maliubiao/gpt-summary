@@ -398,7 +398,7 @@ if __name__ == '__main__':
 
 运行这个 Frida 脚本，并让目标 Android 应用执行涉及获取文件标志的操作，你就可以看到 `ioctl` 调用以及是否使用了 `FS_IOC_GETFLAGS`。你可以根据需要修改脚本来 hook 其他相关的 ioctl 命令或 libc 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -409,8 +409,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -667,7 +669,4 @@ struct procmap_query {
   __u64 build_id_addr;
 };
 #endif
-
-"""
-
 ```

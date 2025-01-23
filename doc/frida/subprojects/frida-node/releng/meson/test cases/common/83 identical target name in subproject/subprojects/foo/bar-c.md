@@ -102,7 +102,7 @@ Let's break down the thought process for analyzing this C code snippet and fulfi
 
 总而言之，这个简单的 `bar.c` 文件虽然自身功能简单，但它在 Frida 的构建和测试流程中扮演着一个重要的角色，尤其是在验证构建系统处理子项目和命名冲突方面的能力。它的存在是为了确保 Frida 能够正确处理更复杂、由多个模块组成的逆向目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/83 identical target name in subproject/subprojects/foo/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,15 +110,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a subproject bar.\n");
     return 0;
 }
-
-"""
-
 ```

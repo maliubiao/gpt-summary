@@ -126,7 +126,7 @@ Here's a breakdown of the thinking process to arrive at the analysis of the prov
 
 通过以上步骤，用户可以逐步定位到问题的原因，例如构建配置错误、参数传递错误或者测试环境设置不正确。这个简单的 `prog.c` 文件成为了一个关键的调试入口点，帮助用户验证构建和配置的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/100 postconf with args/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,14 +134,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"generated.h"
 
 int main(void) {
     return THE_NUMBER != 9 || THE_ARG1 != 5 || THE_ARG2 != 33;
 }
-
-"""
-
 ```

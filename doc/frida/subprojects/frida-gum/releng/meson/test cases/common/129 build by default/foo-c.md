@@ -166,7 +166,7 @@ This step-by-step breakdown reflects the likely workflow of a Frida developer or
 
 总而言之，尽管 `foo.c` 本身的功能非常简单，但将其置于 Frida 的上下文中，它就成为了一个用于验证 Frida 动态插桩能力的基础示例。通过分析这个简单的例子，可以帮助理解 Frida 的基本工作原理和应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/129 build by default/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,15 +174,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Existentialism.\n");
     return 0;
 }
-
-"""
-
 ```

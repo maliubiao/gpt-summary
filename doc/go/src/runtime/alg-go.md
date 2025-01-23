@@ -206,7 +206,7 @@ func main() {
 
 `go/src/runtime/alg.go` 文件是 Go 语言运行时中负责哈希和相等性比较的关键部分，它为 `map` 类型和其他需要这些操作的数据结构提供了基础。理解这段代码的功能有助于更深入地理解 Go 语言的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/alg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -705,9 +707,4 @@ func readUnaligned64(p unsafe.Pointer) uint64 {
 	}
 	return uint64(q[0]) | uint64(q[1])<<8 | uint64(q[2])<<16 | uint64(q[3])<<24 | uint64(q[4])<<32 | uint64(q[5])<<40 | uint64(q[6])<<48 | uint64(q[7])<<56
 }
-
-"""
-
-
-
 ```

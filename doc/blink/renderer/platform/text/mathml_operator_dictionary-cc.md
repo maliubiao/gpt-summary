@@ -158,14 +158,16 @@ By following this structured approach, starting with a general understanding and
 
 `mathml_operator_dictionary.cc` 是 Blink 渲染引擎中一个关键的组件，它维护着 MathML 运算符的字典，并提供查找运算符类别信息的功能。这个功能对于正确渲染和处理 HTML 中嵌入的 MathML 内容至关重要，尽管用户和前端开发者不会直接与之交互，但其背后的逻辑影响着 MathML 在浏览器中的呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/mathml_operator_dictionary.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ MathMLOperatorDictionaryCategory FindCategory(
 }
 
 }  // namespace blink
-
-"""
-
 ```

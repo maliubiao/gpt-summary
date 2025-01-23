@@ -97,7 +97,7 @@ By following these steps, the generated response accurately describes the functi
 
    虽然这些错误不是由 `disasm-loong64.cc` 直接引起的，但反汇编工具可以帮助开发者理解这些错误在机器码层面的体现，从而更好地优化代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/loong64/disasm-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/loong64/disasm-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -105,8 +105,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rmat(instr, "mulh.w       'rd, 'rj, 'rk");
       break;
     case MULH_WU:
@@ -724,8 +726,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
-
 ```

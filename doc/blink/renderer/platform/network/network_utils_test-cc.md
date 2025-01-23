@@ -99,14 +99,16 @@ During this process, I might realize I need to go back and look at the code more
 
 `network_utils_test.cc` 的主要目的是确保 `network_utils.h` 中提供的网络工具函数能够正确处理各种输入，并返回预期的结果。这些工具函数虽然不是直接暴露给 JavaScript, HTML 或 CSS 的 API，但它们为浏览器的核心网络功能和安全策略提供了基础支持，从而间接地影响了 Web 开发的各个方面。 单元测试的存在保证了这些底层逻辑的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/network_utils_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST(NetworkUtilsTest, GetDomainAndRegistry) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

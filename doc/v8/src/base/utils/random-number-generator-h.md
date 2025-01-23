@@ -175,15 +175,17 @@ int output4 = rng2.NextInt(10);
 
 In summary, `v8/src/base/utils/random-number-generator.h` provides a crucial utility for generating pseudo-random numbers within the V8 engine, directly impacting the functionality of JavaScript's `Math.random()`. Understanding its features and limitations is important for both V8 internals and for embedders who need to provide good entropy sources.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/utils/random-number-generator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/utils/random-number-generator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ class V8_BASE_EXPORT RandomNumberGenerator final {
 }  // namespace v8
 
 #endif  // V8_BASE_UTILS_RANDOM_NUMBER_GENERATOR_H_
-
-"""
-
 ```

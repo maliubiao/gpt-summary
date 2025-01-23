@@ -90,7 +90,7 @@ Finally, I organize the information into a clear and structured answer, addressi
 
 这段代码是 Go 语言工具链中用于保证调试信息质量的重要组成部分。它通过一系列细致的测试用例，覆盖了 DWARF 信息的多个关键方面，确保开发者在使用调试器时能够获得准确可靠的信息，从而有效地进行程序调试和分析。 它的核心任务是验证编译器和链接器在生成 DWARF 信息时的正确性和完整性， 涉及到代码生成、优化以及元数据处理等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/dwarf_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -99,8 +99,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 e last couple of
 	// instructions in a function were incorrect (bad file/line). This
 	// test verifies that all of the line table rows for a function
@@ -749,10 +751,4 @@ func TestConsistentGoKindAndRuntimeType(t *testing.T) {
 		t.Logf("%d types checked\n", typesChecked)
 	}
 }
-
-"""
-
-
-
-
 ```

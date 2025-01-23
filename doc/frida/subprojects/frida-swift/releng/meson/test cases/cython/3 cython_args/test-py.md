@@ -145,7 +145,7 @@ Here's a breakdown of the thinking process to analyze the provided Python code s
 
 总而言之，这个简单的 `test.py` 文件是 Frida 框架中用于验证其 Cython 集成功能的一个基本单元测试，它的成功执行依赖于正确的 Cython 模块编译、安装以及 Frida 环境的配置。 它的失败可以提供调试的入口，帮助开发者定位 Frida 与 Cython 交互过程中存在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cython/3 cython_args/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,12 +153,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import cythonargs
 
 assert cythonargs.test() == 1
-
-"""
-
 ```

@@ -193,12 +193,14 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，这个代码片段是 V8 JavaScript 引擎在 s390 架构上实现各种核心 JavaScript 功能的蓝图，它将 JavaScript 语言的概念和操作转化为底层的机器指令。 它是 V8 引擎高性能执行 JavaScript 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/s390/builtins-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 nalSpread) {
     // Pass the spread in the register r2.
     // r4 already points to the penultimate argument, the spread
@@ -2065,7 +2067,4 @@ void Builtins::Generate_DoubleToI(MacroAssembler* masm) {
   Register result_reg = r2;
 
   HardAbortSco
-"""
-
-
 ```

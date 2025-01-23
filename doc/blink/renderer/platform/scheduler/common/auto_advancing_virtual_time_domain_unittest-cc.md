@@ -110,14 +110,16 @@ By following these steps, I can systematically analyze the C++ unittest file and
 
 总而言之， `auto_advancing_virtual_time_domain_unittest.cc` 文件是用来确保 Blink 渲染引擎中一个重要的虚拟时间管理组件能够正常工作，这对于测试依赖于时间的功能，例如 JavaScript 定时器和 CSS 动画，至关重要。虽然它不直接操作前端技术，但它为这些技术在 Blink 内部的实现提供了底层的时间控制机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/auto_advancing_virtual_time_domain_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ TEST_F(AutoAdvancingVirtualTimeDomainTest, GetNextWakeUpHandlesPastRunTime) {
 }  // namespace auto_advancing_virtual_time_domain_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

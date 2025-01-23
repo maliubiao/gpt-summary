@@ -90,7 +90,7 @@ By following these steps, we can transform the analysis of a very simple piece o
 
 尽管 `prog.c` 代码本身极其简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理链接失败场景时的行为。它的存在提醒开发者关注与二进制文件链接相关的各种问题，这些问题在逆向分析和动态插桩中非常常见。这个简单的文件成为了一个观察和调试 Frida 工具链中链接相关功能的“探针”。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/53 link with executable/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,14 +98,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int
 main (int argc, char **argv)
 {
   return 0;
 }
-
-"""
-
 ```

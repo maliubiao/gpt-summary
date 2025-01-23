@@ -168,14 +168,16 @@ By following this breakdown and refinement process, the comprehensive and accura
 
 总而言之，`hyphenator_aosp.cc` 是 Blink 引擎中负责实现文本自动断字的关键组件，它通过加载语言特定的断字模式并应用算法来确定单词的断字位置，从而提升网页文本的排版质量。它与 CSS 的 `hyphens` 属性直接关联，并能处理 HTML 中的软连字符，同时也受到 JavaScript 对 DOM 操作的间接影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/hyphenation/hyphenator_aosp.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /* ***** BEGIN LICENSE BLOCK *****
  *
  * Copyright (C) 2015 The Android Open Source Project
@@ -426,7 +428,4 @@ void Hyphenator::hyphenateFromCodes(uint8_t* result,
 }
 
 }  // namespace android
-
-"""
-
 ```

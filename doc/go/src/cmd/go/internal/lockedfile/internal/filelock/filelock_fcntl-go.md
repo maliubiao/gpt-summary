@@ -192,15 +192,17 @@ Writer A
 
 这段代码是 `cmd/go` 工具中一个关键的组成部分，用于在特定平台上实现可靠的文件锁机制。它利用了 Go 语言的并发特性和系统调用能力，并针对 `fcntl` 的特性进行了适配和优化。理解其基于 inode 的锁管理方式以及对 `EDEADLK` 错误的处理对于正确使用和理解 `cmd/go` 的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/lockedfile/internal/filelock/filelock_fcntl.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -411,9 +413,4 @@ func setlkw(fd uintptr, lt lockType) error {
 		}
 	}
 }
-
-"""
-
-
-
 ```

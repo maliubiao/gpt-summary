@@ -289,7 +289,7 @@ sys.stdin.read()
 
 请注意，具体的 hook 点和方法可能需要根据 Android 版本的不同进行调整。进行内核 hook 需要非常小心，避免导致系统不稳定。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_TEE.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -317,7 +319,4 @@ struct xt_tee_tginfo {
   struct xt_tee_priv * priv __attribute__((aligned(8)));
 };
 #endif
-
-"""
-
 ```

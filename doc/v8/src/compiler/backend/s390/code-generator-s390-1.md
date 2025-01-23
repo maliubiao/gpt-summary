@@ -59,12 +59,14 @@ console.log(result);
 
 总而言之，`code-generator-s390.cc` 这个文件是V8引擎在S390架构上执行JavaScript代码的基石，它负责将高级的JavaScript操作转化为底层的硬件指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/code-generator-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 lhs_register, sp, Operand(offset));
       }
 
@@ -1842,7 +1844,4 @@ lhs_register, sp, Operand(offset));
       break;
     }
     case kS390_S128St
-"""
-
-
 ```

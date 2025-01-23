@@ -139,7 +139,7 @@ By following this iterative process of analysis, contextualization, deduction, a
 
 总而言之，这个 `s2.c` 文件本身是一个非常简单的程序，但它的存在是为了配合 Frida 的动态 instrumentation 功能进行测试和验证。它的简洁性使得它成为一个清晰的示例，用于演示 Frida 如何在运行时修改程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/12 promote/subprojects/s2/s2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,15 +147,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func();
 
 
 int main(int argc, char **argv) {
     return func() != 42;
 }
-
-"""
-
 ```

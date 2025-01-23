@@ -110,11 +110,13 @@ console.log(obj1 === obj2); // false，普通对象不是共享的
 
 `shared-heap-serializer.cc` 是 V8 引擎中负责高效管理和持久化共享堆的关键组件。它通过序列化共享的、不可变的对象（主要是内部化字符串）来加速 V8 的启动过程并减少内存消耗，这直接影响了 JavaScript 代码的执行效率和资源占用。  内部化字符串是 JavaScript 中与共享堆密切相关的一个重要概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/shared-heap-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -335,7 +337,4 @@ void SharedHeapSerializer::ReconstructSharedHeapObjectCacheForTesting() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

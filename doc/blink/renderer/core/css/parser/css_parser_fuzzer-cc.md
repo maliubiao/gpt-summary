@@ -123,15 +123,17 @@ This systematic approach, combining code analysis, understanding of the underlyi
 
 `blink/renderer/core/css/parser/css_parser_fuzzer.cc` 是一个至关重要的测试文件，它通过生成大量的随机和异常 CSS 输入来确保 Blink 的 CSS 解析器能够可靠、安全地处理各种情况，包括用户错误和潜在的恶意代码。它与 JavaScript、HTML 和 CSS 紧密相关，因为 CSS 解析是 Web 渲染引擎的核心组成部分，直接影响页面的呈现和安全性。 开发者和安全研究人员可以利用这个 fuzzer 来发现和修复 CSS 解析器中的缺陷。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ FUZZ_TEST(CssParser, ParseSheetFuzzer)
                  AnySecureContextMode(),
                  AnyCSSDeferPropertyParsing(),
                  fuzztest::Arbitrary<std::string>());
-
-"""
-
 ```

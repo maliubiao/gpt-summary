@@ -159,15 +159,17 @@ func main() {
 
 这段代码片段的核心目的是展示在 Go 1.15 中使用 `//go:embed` 指令时会产生的编译错误。它强调了 `//go:embed` 是 Go 1.16 及更高版本才引入的功能。理解这一点对于使用 Go 的资源嵌入功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/embedvers.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -lang=go1.15
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -180,9 +182,4 @@ import _ "embed"
 
 //go:embed x.txt // ERROR "go:embed requires go1.16 or later"
 var x string
-
-"""
-
-
-
 ```

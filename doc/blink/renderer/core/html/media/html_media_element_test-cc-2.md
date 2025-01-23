@@ -79,16 +79,18 @@ For each functionality, I'll consider its relation to JavaScript, HTML, and CSS,
 
 这部分测试代码主要集中在 `HTMLMediaElement` 的两个关键方面：**在异常情况下的资源管理和恢复能力**（例如，执行上下文销毁后的行为）以及 **视频可见性追踪器的精细化控制**，确保其在各种场景下的正确生命周期管理，从而优化性能和避免资源浪费。此外，它还测试了 **通过 URL 片段进行媒体轨道选择** 的功能，这为开发者提供了更灵活的媒体资源控制方式。  这些测试共同确保了 `HTMLMediaElement` 在不同场景下的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- not cause anything unusual to happen.
+### 源代码
+```cpp
+not cause anything unusual to happen.
   dummy_page_holder_.reset();
 
   EXPECT_FALSE(ControlsVisible());
@@ -834,8 +836,4 @@ TEST_P(HTMLMediaElementTest, StartVideoWithDoubleTrackSelection) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

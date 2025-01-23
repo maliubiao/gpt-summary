@@ -146,14 +146,16 @@ By following these steps, I can effectively analyze the C++ code and explain its
 
 总而言之，`blink/renderer/core/events/progress_event.cc` 文件定义的 `ProgressEvent` 类是浏览器内部处理资源加载进度信息的核心组件，它为 JavaScript 中 `ProgressEvent` 对象的实现提供了基础。理解这个类的功能有助于理解浏览器如何跟踪和报告资源加载进度，以及如何正确地在 JavaScript 中使用相关的事件和属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/progress_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple Inc. All rights reserved.
  *
@@ -214,7 +216,4 @@ void ProgressEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

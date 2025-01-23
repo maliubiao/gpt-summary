@@ -150,14 +150,16 @@ Finally, I organized the information into the different categories requested by 
 
 总而言之，`DeadlineTaskRunner` 是 Blink 渲染引擎中一个用于管理主线程延迟任务的关键组件，它通过允许动态调整截止时间，为优化性能和实现各种基于时间的特性提供了基础。理解其工作原理有助于理解浏览器如何高效地处理 JavaScript 事件、HTML 渲染和 CSS 动画等任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/deadline_task_runner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ void DeadlineTaskRunner::RunInternal() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

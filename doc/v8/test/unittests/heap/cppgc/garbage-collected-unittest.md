@@ -136,11 +136,13 @@ obj3 = null;
 
 总而言之，`garbage-collected-unittest.cc` 这个 C++ 文件是 V8 引擎内部 cppgc 组件的关键测试，它保证了 V8 能够正确地管理 C++ 对象的内存，这对于 V8 引擎的稳定性和性能至关重要，并间接地支持了 JavaScript 运行时的内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/garbage-collected-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ static_assert(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

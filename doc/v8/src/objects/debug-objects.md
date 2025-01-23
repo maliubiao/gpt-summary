@@ -119,11 +119,13 @@ add(-1, 3);
 
 总而言之，`v8/src/objects/debug-objects.cc` 文件定义了 V8 引擎用于支持 JavaScript 调试和代码覆盖率的核心数据结构和操作逻辑。它在幕后默默地工作，使得开发者可以使用断点、单步执行等调试功能，并可以分析代码的覆盖率情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/debug-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -553,7 +555,4 @@ Tagged<StackFrameInfo> StackTraceInfo::get(int index) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

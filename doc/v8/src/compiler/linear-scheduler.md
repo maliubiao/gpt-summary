@@ -119,11 +119,13 @@ function foo(x) {
 
 `LinearScheduler` 在 V8 编译器的优化流程中扮演着重要的角色。它通过分析程序的控制流和数据依赖关系，为后续的指令调度和代码生成提供了关键信息，从而影响着最终生成的机器码的效率。理解它的工作原理有助于理解 V8 编译器是如何优化 JavaScript 代码的执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/linear-scheduler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ bool LinearScheduler::SameBasicBlock(Node* node0, Node* node1) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

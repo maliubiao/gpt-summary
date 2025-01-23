@@ -177,7 +177,7 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_darwin_amd64.go` 这个文件定义了在 Darwin/AMD64 架构下进行底层系统编程时需要用到的各种常量，涵盖了网络接口控制、socket 编程、文件操作、终端控制、TCP 协议选项、信号处理和错误代码等多个方面。它是 Go 语言 `syscall` 包与 Darwin 操作系统内核交互的基础，使得 Go 程序能够执行底层的系统调用操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_darwin_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -185,9 +185,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-         = 0x80206939
+### 源代码
+```go
+= 0x80206939
 	SIOCSIFKPI                              = 0x80206986
 	SIOCSIFLLADDR                           = 0x8020693c
 	SIOCSIFMAC                              = 0x80206983
@@ -756,10 +758,4 @@ var signalList = [...]struct {
 	{30, "SIGUSR1", "user defined signal 1"},
 	{31, "SIGUSR2", "user defined signal 2"},
 }
-
-"""
-
-
-
-
 ```

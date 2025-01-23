@@ -160,7 +160,7 @@ By following these steps, combining code analysis with understanding the broader
 
 总而言之，`args_test.cpp` 是 Frida-Swift 构建系统中的一个辅助工具，用于生成简单的头文件。它的存在是为了测试构建系统中自定义命令的功能是否正常，虽然它本身的功能很简单，但对于理解 Frida-Swift 的构建过程和排查相关问题有一定的帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/args_test.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -188,7 +190,4 @@ int main(int argc, const char *argv[]) {
 
   return 0;
 }
-
-"""
-
 ```

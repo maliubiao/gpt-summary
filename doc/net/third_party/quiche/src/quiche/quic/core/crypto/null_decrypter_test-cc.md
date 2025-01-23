@@ -189,15 +189,17 @@ function arraysAreEqual(arr1, arr2) {
 
 总而言之，`null_decrypter_test.cc` 是一个单元测试文件，用于验证 QUIC 协议中早期握手阶段用于简单数据完整性校验的 `NullDecrypter` 类的功能。它通过模拟不同的场景，包括正确的哈希值、错误的哈希值以及输入数据长度不足的情况，来确保 `NullDecrypter` 能够正确地执行其哈希验证逻辑。 虽然与 JavaScript 没有直接的运行时关系，但其背后的网络协议概念在 JavaScript 开发中处理网络数据时是具有参考意义的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/null_decrypter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -335,7 +337,4 @@ TEST_F(NullDecrypterTest, ShortInput) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

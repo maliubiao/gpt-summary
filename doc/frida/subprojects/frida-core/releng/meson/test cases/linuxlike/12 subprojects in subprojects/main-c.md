@@ -163,7 +163,7 @@ int b_fun() {
 
 总而言之，这个简单的 C 代码文件在 Frida 的上下文中，成为了测试 Frida 处理子项目和动态链接能力的微型示例。通过分析这个示例，开发者可以验证 Frida 在这种场景下的行为是否正确，同时也为使用者提供了一个了解 Frida 工作原理的窗口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/linuxlike/12 subprojects in subprojects/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "a.h"
 #include "b.h"
@@ -182,7 +184,4 @@ int main(void) {
     printf("%d\n", life);
     return 0;
 }
-
-"""
-
 ```

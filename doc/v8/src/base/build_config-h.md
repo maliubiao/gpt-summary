@@ -134,15 +134,17 @@ console.log(result); // 输出 8
 
 总而言之，`v8/src/base/build_config.h` 是 V8 构建系统的基石，它通过条件编译来适应不同的平台和配置，从而确保 V8 引擎能够在各种环境下高效且正确地运行。虽然开发者不会直接编辑它，但理解它的作用对于理解 V8 的构建过程和潜在的平台特定行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/build_config.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/build_config.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ constexpr int kMinimumOSPageSize = 4 * 1024;
 #endif
 
 #endif  // V8_BASE_BUILD_CONFIG_H_
-
-"""
-
 ```

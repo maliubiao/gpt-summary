@@ -96,11 +96,13 @@ add(5, 10);
 
 总而言之，`bytecode-array-iterator-unittest.cc` 通过测试 `BytecodeArrayIterator` 确保了 V8 引擎能够正确地遍历和理解其内部的字节码表示，这直接关系到 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-array-iterator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ TEST_F(BytecodeArrayIteratorTest, IteratesBytecodeArray) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -92,11 +92,13 @@ ASSERT_EQ(2u, NumOverlapEntriesForTesting({15, 10}));
 
 总而言之，`gdb-jit-unittest.cc` 是一个幕后英雄，它确保了当你在调试 JavaScript 代码时，GDB 能够准确地理解 V8 的 JIT 编译机制，从而提供可靠的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/diagnostics/gdb-jit-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -155,7 +157,4 @@ TEST(GDBJITTest, OverlapEntries) {
 }  // namespace GDBJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

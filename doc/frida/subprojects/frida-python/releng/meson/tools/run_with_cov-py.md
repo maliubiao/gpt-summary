@@ -168,7 +168,7 @@ python run_with_cov.py my_test_script.py --arg1 value1
 
 总而言之，`run_with_cov.py` 是 Frida Python 项目中用于进行代码覆盖率分析的一个实用工具，它帮助开发者确保代码的质量和测试的完整性。虽然它本身不直接进行逆向操作，但其产生的代码覆盖率数据对于理解代码行为和进行逆向分析非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/tools/run_with_cov.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
@@ -220,7 +222,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

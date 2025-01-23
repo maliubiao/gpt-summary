@@ -286,7 +286,7 @@ Frida 会连接到目标进程，找到 `call_array` 函数的地址，并 hook 
 
 希望这个详细的解释能够帮助你理解 `libc_init_static.cpp` 的功能和作用。记住，静态链接在 Android 中相对较少见，主要用于一些底层的系统组件或者使用 NDK 构建的独立可执行文件。大部分 Android 应用和库仍然依赖于动态链接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/libc_init_static.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -297,8 +297,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -559,7 +561,4 @@ __LIBC_HIDDEN__ libc_shared_globals* __libc_shared_globals() {
   BIONIC_USED_BEFORE_LINKER_RELOCATES static libc_shared_globals globals;
   return &globals;
 }
-
-"""
-
 ```

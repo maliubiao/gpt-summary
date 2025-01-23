@@ -116,14 +116,16 @@ Response: Let's break down the thought process for analyzing the given C++ test 
 
 总而言之，`renderer_scheduler_test_support.cc` 提供了一组关键的工具，使得 Blink 引擎的开发者能够有效地测试渲染器调度器的行为，确保它能够正确地管理和执行与 JavaScript、HTML 和 CSS 相关的各种任务，从而保证网页的性能和用户体验。 理解这些测试工具的功能和正确的使用方法对于编写高质量的单元测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/renderer_scheduler_test_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ GetSingleThreadTaskRunnerForTesting() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

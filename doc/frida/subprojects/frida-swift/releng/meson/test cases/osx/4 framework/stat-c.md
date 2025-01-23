@@ -211,7 +211,7 @@ Frida 脚本会找到 `func` 函数的地址，并设置 hook。当目标进程�
 
 总而言之，`stat.c` 虽然代码极其简单，但在 Frida 的测试框架中扮演着重要的角色。它作为一个清晰、易懂的测试目标，帮助开发者验证 Frida 的核心功能，也为用户理解 Frida 的工作原理提供了基础。在实际的逆向工程中，用户会遇到更复杂的目标，但理解像 `stat.c` 这样的基本示例是迈向更复杂分析的第一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/osx/4 framework/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -219,10 +219,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) { return 933; }
-
-"""
-
 ```

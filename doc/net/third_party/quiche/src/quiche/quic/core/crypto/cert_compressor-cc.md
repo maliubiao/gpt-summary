@@ -177,15 +177,17 @@ fetch('https://example.com/api/data')
 
 总而言之，`cert_compressor.cc` 是 Chromium 网络栈中一个重要的性能优化组件，它通过高效地压缩和解压缩 TLS 证书链，提升了 HTTPS 连接的速度和效率，对最终用户的网络体验有着直接的影响。尽管 JavaScript 代码不直接调用这个 C++ 文件，但它的功能是支撑安全和快速 Web 连接的关键基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/cert_compressor.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -785,7 +787,4 @@ bool CertCompressor::DecompressChain(
 }
 
 }  // namespace quic
-
-"""
-
 ```

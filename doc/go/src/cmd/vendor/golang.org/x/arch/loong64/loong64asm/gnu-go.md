@@ -189,15 +189,17 @@ func main() {
 
 `gnu.go` 文件中的 `GNUSyntax` 函数是 Go 语言工具链中处理 LoongArch 汇编指令格式化的一个关键组成部分，它负责将内部表示的指令转换为符合 GNU 汇编器规范的字符串，确保生成的汇编代码能够被 GNU binutils 正确处理。使用者需要理解其作用，并避免手动构造可能不符合规范的汇编指令字符串。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/loong64/loong64asm/gnu.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -214,9 +216,4 @@ import (
 func GNUSyntax(inst Inst) string {
 	return strings.ToLower(inst.String())
 }
-
-"""
-
-
-
 ```

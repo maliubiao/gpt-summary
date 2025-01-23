@@ -104,11 +104,13 @@ worker.terminate();
 
 `worker-thread-unittest.cc` 这个 C++ 文件是 V8 引擎中用于测试底层工作线程功能的单元测试，这些底层机制支撑着 JavaScript 中 Web Workers 的实现。通过这个测试文件，开发者可以验证 V8 引擎在创建、管理、执行和销毁工作线程以及处理相关任务时的正确性。JavaScript 的 Web Workers 提供了一种在浏览器或 Node.js 环境中实现并行处理的方式，与 C++ 中的 `WorkerThread` 在概念和功能上是对应的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libplatform/worker-thread-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ TEST(WorkerThreadTest, Basic) {
 }  // namespace worker_thread_unittest
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

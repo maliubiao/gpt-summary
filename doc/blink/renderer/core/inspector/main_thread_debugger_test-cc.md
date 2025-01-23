@@ -91,14 +91,16 @@ By following these steps, we can systematically analyze the C++ test file and ex
 
 总而言之，`blink/renderer/core/inspector/main_thread_debugger_test.cc` 是一个关键的测试文件，它确保了 Chromium Blink 引擎中负责主线程调试功能的 `MainThreadDebugger` 类的稳定性和正确性。虽然它不直接操作 JavaScript, HTML 或 CSS 代码，但它验证了与这些 Web 核心技术紧密相关的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/main_thread_debugger_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ TEST_P(MainThreadDebuggerMultipleMainFramesTest, Allow) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

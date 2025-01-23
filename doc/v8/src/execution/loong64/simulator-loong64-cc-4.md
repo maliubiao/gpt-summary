@@ -144,7 +144,7 @@ case ADD_W: {
 
 这段代码片段是 `v8/src/execution/loong64/simulator-loong64.cc` 文件的核心部分，专注于 **模拟 LoongArch64 架构的算术、逻辑、内存访问和浮点运算指令**。它通过一个大的 `switch` 语句来分发指令并执行相应的模拟逻辑。 这部分代码是 V8 引擎在缺乏原生 LoongArch64 支持时，或者在进行调试和测试时，能够执行 JavaScript 代码的关键组成部分。它详细地展示了如何用 C++ 代码来精确地模拟底层硬件指令的行为，包括对 32 位和 64 位整数以及浮点数的处理，以及对内存访问和原子操作的模拟。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e(rd_reg()), rd(), Registers::Name(rj_reg()),
                    rj(), Registers::Name(rk_reg()), rk());
       int32_t alu32_out = static_cast<int32_t>(rj() + rk());
@@ -886,8 +888,4 @@ e(rd_reg()), rd(), Registers::Name(rj_reg()),
         }
         WriteConditionalW(rj(),
                           static_cast<int32_t>(static_cast<int32_t>(rk()) |
-                                           
-"""
-
-
 ```

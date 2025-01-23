@@ -129,14 +129,16 @@ By following this thought process, combining code analysis with knowledge of web
 
 总而言之，`event_with_callback.cc` 中定义的 `EventWithCallback` 类是 Blink 渲染引擎中处理用户输入事件的关键组件，它封装了事件本身、处理完成后的回调以及性能指标，并支持事件的合并优化。理解其功能有助于深入理解浏览器如何响应用户的交互操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/event_with_callback.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ EventWithCallback::OriginalEventWithCallback::~OriginalEventWithCallback() =
     default;
 
 }  // namespace blink
-
-"""
-
 ```

@@ -174,7 +174,7 @@ const char server_address[] = "server_address";
 
 总而言之，`gen.py` 脚本是一个简单的代码生成工具，用于在 Frida 的构建过程中生成一些 C 语言风格的字符串常量定义，这些常量可能用于标识资源、配置信息或其他需要在 C 代码中使用的静态字符串。它在逆向工程的上下文中主要作为辅助工具，方便生成一些需要在 Hook 脚本或 Frida 内部组件中使用的代码片段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/105 generatorcustom/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -197,7 +199,4 @@ with open(ifile) as f:
 templ = 'const char %s[] = "%s";\n'
 with open(ofile, 'w') as f:
     f.write(templ % (resname, resname))
-
-"""
-
 ```

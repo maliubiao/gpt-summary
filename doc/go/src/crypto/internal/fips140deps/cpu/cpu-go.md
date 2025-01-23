@@ -193,7 +193,7 @@ CPU 特性支持情况:
 
 总而言之， `go/src/crypto/internal/fips140deps/cpu/cpu.go` 是 Go 内部用于检测 CPU 架构和指令集支持的关键组件，特别用于为密码学操作提供硬件加速的依据。  开发者通常不需要直接使用它，而是通过 Go 标准库提供的更高级别的 API 来间接利用其功能。 避免直接导入 `internal` 包是使用 Go 的重要原则。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140deps/cpu/cpu.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -242,9 +244,4 @@ var X86HasPCLMULQDQ = cpu.X86.HasPCLMULQDQ
 var X86HasSHA = cpu.X86.HasSHA
 var X86HasSSE41 = cpu.X86.HasSSE41
 var X86HasSSSE3 = cpu.X86.HasSSSE3
-
-"""
-
-
-
 ```

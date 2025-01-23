@@ -58,11 +58,13 @@ TEST_F(WorkloadsTest, Transition) {
 
 总而言之，`v8/test/unittests/heap/cppgc/workloads-unittest.cc` 通过各种 C++ 的测试用例，验证了 V8 引擎中 C++ 垃圾回收器 `cppgc` 的正确性和可靠性，这对于确保 JavaScript 程序的稳定运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/workloads-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -414,7 +416,4 @@ TEST_F(WorkloadsTest, BasicFunctionality) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

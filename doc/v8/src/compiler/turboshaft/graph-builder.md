@@ -93,12 +93,14 @@ TurboFan 的调度图可能包含：
 
 总而言之，`graph-builder.cc` 是将 TurboFan 的中间表示转换为 Turboshaft 可以理解和进一步优化的表示的关键组件，它直接影响了 JavaScript 代码的最终执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1567,8 +1569,5 @@ OpIndex GraphBuilder::Process(
     }
     case IrOpcode::kStoreToObject: {
       Node* object = node->InputAt(0);
-      Node* offset = 
-"""
-
-
+      Node* offset =
 ```

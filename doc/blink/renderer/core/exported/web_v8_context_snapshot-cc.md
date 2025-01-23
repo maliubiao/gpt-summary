@@ -114,15 +114,17 @@ This iterative process of analysis, deduction, example creation, and structuring
 
 `web_v8_context_snapshot.cc` 文件在 Chromium Blink 渲染引擎中扮演着优化 JavaScript 启动性能的关键角色。它通过创建 V8 上下文快照，使得新的 JavaScript 执行环境可以更快地初始化，从而提升网页的加载速度和响应能力。虽然普通用户不会直接接触到这个文件，但理解其功能有助于理解 Chromium 如何优化 JavaScript 性能。对于开发者而言，它是调试与 JavaScript 启动性能相关问题的潜在入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_v8_context_snapshot.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -139,7 +141,4 @@ v8::StartupData WebV8ContextSnapshot::TakeSnapshot(v8::Isolate* isolate) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

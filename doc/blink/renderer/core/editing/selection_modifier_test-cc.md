@@ -131,15 +131,17 @@ A user's interaction with a web page that involves text selection would eventual
 
 **As a debugging clue:** If there's a bug related to text selection in a Chromium-based browser, and you suspect the issue lies in how the selection is being moved or extended, you might look at the `SelectionModifier` class and its tests. By examining the tests, you can understand the expected behavior for different scenarios and potentially identify where the actual behavior deviates. You might then use debugging tools to step through the `SelectionModifier::Modify` method and see how it's handling the specific case that's causing the issue.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/selection_modifier_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -604,7 +606,4 @@ TEST_F(SelectionModifierTest, EditableVideo) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

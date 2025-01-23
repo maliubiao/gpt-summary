@@ -156,7 +156,7 @@ int get_returnvalue (void) {
 
 总而言之，`someret.c` 虽然代码很简单，但在 Frida 的开发和测试流程中扮演着重要的角色，用于验证 Frida 的核心功能，特别是与 Python 绑定和构建系统相关的部分。逆向工程师在学习和使用 Frida 时，可能会间接地通过测试用例了解其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/38 pkgconfig format/someret.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,12 +164,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_returnvalue (void) {
   return 0;
 }
-
-"""
-
 ```

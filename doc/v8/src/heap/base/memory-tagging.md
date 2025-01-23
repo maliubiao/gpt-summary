@@ -97,11 +97,13 @@ void SomeInternalV8Function() {
 
 `memory-tagging.cc` 文件通过 `SuspendTagCheckingScope` 类提供了一种在 C++ 代码层面控制内存标签检查的机制。这与 JavaScript 的关系是间接的：MTE 提高了 V8 引擎的内存安全性，从而使得 JavaScript 代码的执行更加稳定可靠。`SuspendTagCheckingScope` 允许 V8 在某些特定情况下临时禁用这种检查，可能出于性能考虑，但这需要非常谨慎，因为禁用内存安全检查总是有潜在风险的。  JavaScript 开发者无需直接关心这个文件中的代码，但可以受益于它所提供的底层内存安全保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/memory-tagging.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ SuspendTagCheckingScope::~SuspendTagCheckingScope() {
 }
 
 }  // namespace heap::base
-
-"""
-
 ```

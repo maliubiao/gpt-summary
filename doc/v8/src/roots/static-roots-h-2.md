@@ -113,7 +113,7 @@ const iterator = arr[Symbol.iterator](); // V8 内部使用 kSymbol_iterator_str
 
 `v8/src/roots/static-roots.h` 文件作为 V8 源代码的一部分，其核心功能是定义了一系列静态的只读常量，这些常量代表了 JavaScript 语言的关键元素（关键字、内建对象、属性名、错误类型等）以及 V8 引擎内部使用的特殊符号和数据结构名称。它为 V8 的其他模块提供了一个统一且高效的方式来引用这些常用的字符串标识符，避免了在代码中重复定义字符串字面量，提高了代码的可读性和维护性。  它就像一个 V8 内部的“词汇表”，定义了 V8 在处理 JavaScript 代码时所使用的基本“词汇”。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/roots/static-roots.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/roots/static-roots.h以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 g,
     StaticReadOnlyRoot::kisoHour_string,
     StaticReadOnlyRoot::kisoMicrosecond_string,
@@ -441,8 +443,4 @@ g,
 }  // namespace v8
 #endif  // V8_STATIC_ROOTS_BOOL
 #endif  // V8_ROOTS_STATIC_ROOTS_H_
-
-"""
-
-
 ```

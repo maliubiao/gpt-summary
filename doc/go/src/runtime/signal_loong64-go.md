@@ -149,7 +149,7 @@ func main() {
 
 总而言之，这段代码是 Go 运行时在特定架构上处理信号和实现 panic 机制的关键组成部分。它通过直接操作 CPU 寄存器和栈来达到控制程序执行流程的目的。理解这些底层机制有助于更好地理解 Go 程序的行为，尤其是在出现错误和崩溃的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -157,8 +157,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -256,9 +258,4 @@ func (c *sigctxt) pushCall(targetPC, resumePC uintptr) {
 	c.set_link(uint64(resumePC))
 	c.set_pc(uint64(targetPC))
 }
-
-"""
-
-
-
 ```

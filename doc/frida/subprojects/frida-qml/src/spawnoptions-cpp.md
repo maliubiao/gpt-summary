@@ -240,7 +240,7 @@ options->setCwd("/tmp/data");
 
 总而言之，`frida/subprojects/frida-qml/src/spawnoptions.cpp` 文件是 Frida 框架中一个核心的组成部分，它为控制目标进程的启动提供了必要的配置能力，这对于动态分析、逆向工程和安全研究至关重要。 用户通常不会直接接触这个文件，而是通过 Frida 提供的高级 API 来间接使用它的功能。 理解其功能和背后的原理有助于更好地使用 Frida 进行各种复杂的插桩和分析任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/spawnoptions.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -248,8 +248,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <frida-core.h>
 
 #include "spawnoptions.h"
@@ -391,7 +393,4 @@ static gchar **unparseStrv(QVector<QString> vector)
 
     return strv;
 }
-
-"""
-
 ```

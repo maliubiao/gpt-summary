@@ -109,15 +109,17 @@ func main() {
 
 `go/test/fixedbugs/issue5125.dir/main.go` 的作用是通过 blank import 引入 `bug` 包，并执行 `bug` 包的 `init` 函数，从而触发或验证针对 issue 5125 的修复。它本身不处理命令行参数，主要的逻辑都在 `bug` 包中。使用者需要注意 blank import 的副作用，即被导入包的 `init` 函数会被执行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5125.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -128,9 +130,4 @@ import _ "./bug"
 
 func main() {
 }
-
-"""
-
-
-
 ```

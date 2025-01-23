@@ -188,15 +188,17 @@ By following these steps, you can thoroughly analyze a source code file and prov
 
 `blink/renderer/core/css/cssom_utils.cc` 是 Blink 渲染引擎中一个重要的辅助文件，它提供了一系列用于处理和分析 CSSOM 中 CSS 值的实用工具函数，特别是涉及到 CSS Grid 布局时。理解这些函数的功能有助于理解浏览器如何解析和计算 CSS 样式，以及在遇到相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ CSSValueList* CSSOMUtils::ComputedValueForGridTemplateShorthand(
 }
 
 }  // namespace blink
-
-"""
-
 ```

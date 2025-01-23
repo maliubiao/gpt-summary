@@ -232,7 +232,7 @@ Interceptor.attach(Module.findExportByName(null, "func_a"), { // 应该是 "func
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/test cases/common/48 file grabber/prog.c` 这个简单的 C 程序主要用作 Frida 动态插桩的测试目标，用于演示 Frida 的基本 hook 功能，并帮助开发者理解 Frida 如何与目标进程进行交互。它本身的功能很简单，但其在 Frida 上下文中的应用能够体现动态分析和逆向工程的核心概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/48 file grabber/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -240,8 +240,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int funca(void);
 int funcb(void);
 int funcc(void);
@@ -249,7 +251,4 @@ int funcc(void);
 int main(void) {
     return funca() + funcb() + funcc();
 }
-
-"""
-
 ```

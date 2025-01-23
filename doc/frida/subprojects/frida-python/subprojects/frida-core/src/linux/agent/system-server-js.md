@@ -60,7 +60,7 @@ Response:
 
 ### 7. **总结**
    这个文件是Frida工具中用于与Android系统服务交互的核心代码，提供了丰富的API来获取应用信息、管理应用进程等。通过Frida的动态插桩能力，用户可以轻松地调试和扩展这些功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/linux/agent/system-server.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -69,8 +69,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 let ApplicationInfo, Base64OutputStream, Bitmap, ByteArrayOutputStream, Canvas, ComponentName, ContextWrapper, Intent, ResolveInfo,
   RunningAppProcessInfo, RunningTaskInfo, UserHandle;
 let ACTION_MAIN, ARGB_8888, CATEGORY_HOME, CATEGORY_LAUNCHER, GET_ACTIVITIES, FLAG_ACTIVITY_NEW_TASK, FLAG_DEBUGGABLE, NO_WRAP, PNG;
@@ -561,7 +563,4 @@ function performOnJavaVM(task) {
 }
 
 Java.perform(init);
-
-"""
-
 ```

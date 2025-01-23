@@ -162,7 +162,7 @@ GOARCH=arm go tool cgo -cdefs defs_netbsd.go defs_netbsd_arm.go >defs_netbsd_arm
 
 `go/src/runtime/defs_netbsd_arm.go` 是 Go 运行时环境在 NetBSD ARM 架构下的一个重要组成部分。它通过 `cgo` 定义了与 CPU 寄存器相关的常量，这些常量被用于底层的信号处理、上下文切换等机制。普通 Go 开发者不需要直接使用这些常量，它们是 Go 运行时系统实现其核心功能的基石。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_netbsd_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -170,8 +170,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -211,9 +213,4 @@ const (
 	REG_R15  = C._REG_R15
 	REG_CPSR = C._REG_CPSR
 )
-
-"""
-
-
-
 ```

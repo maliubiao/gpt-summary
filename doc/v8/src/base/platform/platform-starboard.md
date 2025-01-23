@@ -135,11 +135,13 @@ By following these steps, combining code analysis with a conceptual understandin
 
 `platform-starboard.cc` 是 V8 引擎在 Starboard 平台上运行的关键组成部分，它负责将 V8 的通用平台抽象层映射到 Starboard 平台提供的具体操作系统功能。 这使得 V8 引擎能够在 Starboard 环境中正确高效地执行 JavaScript 代码。  文件中大量的 `SB_NOTIMPLEMENTED()` 标记也暗示着某些功能可能尚未实现或在 Starboard 平台上不需要以这种方式实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-starboard.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -648,7 +650,4 @@ Stack::StackSlot Stack::GetCurrentStackPosition() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

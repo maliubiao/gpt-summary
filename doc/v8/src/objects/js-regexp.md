@@ -130,11 +130,13 @@ const regex2 = /pattern/gi;
 
 `v8/src/objects/js-regexp.cc` 是 V8 引擎中实现 JavaScript 正则表达式功能的核心 C++ 文件。它负责创建、初始化、编译 `RegExp` 对象，处理标志，以及构建正则表达式匹配的结果对象，特别是处理捕获组及其索引。它直接支撑了 JavaScript 中 `RegExp` 对象的各种行为和方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-regexp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -568,7 +570,4 @@ void IrRegExpData::SetBytecodeForExperimental(
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

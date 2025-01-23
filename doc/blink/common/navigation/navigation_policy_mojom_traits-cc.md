@@ -130,14 +130,16 @@ By following this thought process, we can systematically analyze the C++ code an
 
 总而言之，`navigation_policy_mojom_traits.cc` 是 Blink 引擎中负责跨进程传递导航策略数据的关键组件，它通过定义 Mojo 消息的序列化和反序列化规则，使得不同进程能够理解和处理相同的导航策略信息，这对于浏览器的安全性和用户体验至关重要。它间接地影响了 JavaScript, HTML 中与下载相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/navigation/navigation_policy_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ bool StructTraits<blink::mojom::NavigationDownloadPolicyDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

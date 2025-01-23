@@ -156,7 +156,7 @@ By following these steps, systematically analyzing the code, connecting it to re
 
 总而言之，这个测试文件的第二部分延续了第一部分的目标，专注于验证在更细致的用户交互场景下，Blink 引擎如何正确处理锚元素的点击，特别是与导航预测功能相关的逻辑。它涵盖了快速连续点击和导航预测器采样配置等关键场景，并能帮助开发者理解和调试相关的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/anchor_element_interaction_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -164,10 +164,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  ProcessPositionUpdates();
+### 源代码
+```cpp
+ProcessPositionUpdates();
 
   platform_->RunForPeriodSeconds(0.01);
   // Second pointerdown happens 10ms after the scroll end, which is within the
@@ -209,8 +210,4 @@ TEST_F(AnchorElementInteractionViewportHeuristicsTest,
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

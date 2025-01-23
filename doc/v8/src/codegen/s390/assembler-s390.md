@@ -113,11 +113,13 @@ function_start add:
 
 `assembler-s390.cc` 是 V8 引擎将 JavaScript 代码转化为可在 s390 架构上执行的机器码的关键工具。它提供了一组底层的 C++ 接口，允许 V8 的编译器生成高效的汇编代码，从而驱动 JavaScript 代码的执行。虽然它本身不是 JavaScript 代码，但它的功能是直接服务于 JavaScript 的运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/assembler-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -991,7 +993,4 @@ DoubleRegList Assembler::DefaultFPTmpList() {
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
 ```

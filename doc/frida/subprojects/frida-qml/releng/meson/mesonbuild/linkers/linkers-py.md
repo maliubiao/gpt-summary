@@ -162,7 +162,7 @@ This systematic approach allows me to break down the complex code into manageabl
 
 `linkers.py` 文件的核心功能是为 Meson 构建系统提供一个抽象的、平台无关的方式来与各种静态和动态链接器进行交互。它定义了链接器的通用接口和针对特定链接器的实现，负责生成正确的链接命令，处理链接参数、库搜索路径、RPATH 设置等关键的链接过程。这部分代码主要关注链接器的抽象基类和一部分具体的实现类，为 Meson 的链接功能奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -1117,7 +1119,4 @@ class CcrxDynamicLinker(DynamicLinker):
     id = 'rlink'
 
     def __init__(self, for_machine: mesonlib.Mac
-"""
-
-
 ```

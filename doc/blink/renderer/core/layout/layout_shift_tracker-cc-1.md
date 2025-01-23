@@ -160,15 +160,17 @@ Geometry {
 
 `ReattachHookScope` 是 Blink 渲染引擎中用于在 DOM 节点被移除和重新添加时，保存和恢复关键布局信息的机制。这对于准确追踪累积布局偏移 (CLS) 至关重要，因为它允许引擎比较节点在分离和重附加前后的布局状态。它通过 `NotifyDetach` 记录分离前的几何信息，并通过 `NotifyAttach` 将这些信息恢复到重新添加的节点，从而为后续的布局偏移计算提供必要的参考数据。这对于确保流畅的用户体验，特别是避免意外的页面元素移动，起着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_shift_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 >(*layout_object);
   PhysicalRect visual_overflow_rect = box.PreviousVisualOverflowRect();
   if (visual_overflow_rect.IsEmpty() && box.PreviousSize().IsEmpty())
@@ -204,8 +206,4 @@ void ReattachHookScope::NotifyAttach(const Node& node) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

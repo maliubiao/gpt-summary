@@ -114,7 +114,7 @@ By following these steps, we can systematically analyze the code and its context
 
 总而言之，这个看似简单的 C 代码文件实际上是 Frida 质量保证体系中的一个重要组成部分，它确保了 Frida 能够在处理具有复杂代码结构的程序时保持正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/151 duplicate source names/dir1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int dir2;
 extern int dir2_dir1;
 extern int dir3;
@@ -140,7 +142,4 @@ int main(void) {
         return 1;
     return 0;
 }
-
-"""
-
 ```

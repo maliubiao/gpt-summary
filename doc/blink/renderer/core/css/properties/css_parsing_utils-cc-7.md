@@ -162,7 +162,7 @@ By following these steps and iteratively refining my understanding and the gener
 
 `blink/renderer/core/css/properties/css_parsing_utils.cc` 文件是 Blink 引擎中负责解析复杂 CSS 属性值的关键组成部分。它提供了一组工具函数，用于从 CSS 语法流中提取并解释各种 CSS 语法结构，将其转换为内部表示，最终用于渲染网页。理解这个文件中的功能对于深入了解浏览器如何解析和应用 CSS 样式至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -170,9 +170,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
-                           CSSValue*& start_value,
+### 源代码
+```cpp
+CSSValue*& start_value,
                                       CSSValue*& end_value) {
   // Input should be nullptrs.
   DCHECK(!start_value);
@@ -1162,7 +1164,4 @@ CSSValue* ConsumeSingleContainerName(CSSParserTokenStream& stream,
 }
 
 CSSValue* ConsumeContainerNa
-"""
-
-
 ```

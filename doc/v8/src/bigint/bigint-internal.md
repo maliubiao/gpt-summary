@@ -95,11 +95,13 @@ console.log(remainder); // 输出结果为一个 BigInt
 
 `v8/src/bigint/bigint-internal.cc` 是 V8 引擎中 BigInt 功能的核心实现，它提供了高效的算法来执行 BigInt 的各种算术运算。 JavaScript 开发者可以通过 `BigInt` 数据类型及其运算符来使用这些功能，而无需直接接触底层的 C++ 代码。 这个文件是连接 JavaScript 代码和底层高效 BigInt 运算的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/bigint-internal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ Status Processor::Modulo(RWDigits R, Digits A, Digits B) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

@@ -126,7 +126,7 @@ This iterative process of analyzing the code, understanding the context, and the
 
 尽管 `trivial.c` 中的 `subfunc` 函数非常简单，但在 Frida 的测试框架中，尤其是在 `not-found dependency` 这个测试用例中，它扮演着重要的角色。它用于模拟一个简单的、缺失的依赖，帮助验证 Frida 在处理这类情况时的行为。  理解这样一个简单函数的上下文和用途，可以帮助开发者和逆向工程师更好地理解 Frida 的内部工作原理和测试策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/161 not-found dependency/subprojects/trivial/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,12 +134,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int subfunc(void) {
     return 42;
 }
-
-"""
-
 ```

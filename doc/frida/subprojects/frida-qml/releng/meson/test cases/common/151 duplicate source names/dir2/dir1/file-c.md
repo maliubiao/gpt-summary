@@ -148,7 +148,7 @@ Frida 应该能够找到当前文件中的 `dir2_dir1` 变量并返回其值 `21
 
 总而言之，这个简单的 C 代码片段在一个复杂的测试环境中扮演着重要的角色，用于验证 Frida 在处理具有重复源文件名的场景下的符号解析能力，这对于逆向工程师在处理大型项目时非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/151 duplicate source names/dir2/dir1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,10 +156,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dir2_dir1 = 21;
-
-"""
-
 ```

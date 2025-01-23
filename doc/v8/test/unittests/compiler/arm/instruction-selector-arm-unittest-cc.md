@@ -114,7 +114,7 @@ let overflow = maxInt + 1; // 结果会回绕，但不会抛出溢出错误
 
 这段代码（第1部分）的主要功能是测试 V8 编译器中 ARM 架构的指令选择器在处理基本的 **32位整数数据处理指令**（如 AND, OR, XOR, ADD, SUB）、**浮点数算术指令** (如加减乘除) 以及相关的 **移位操作** 时的正确性。它验证了对于不同的操作数类型（寄存器、立即数）和操作数组合（带移位），指令选择器能够生成预期的 ARM 机器指令。此外，它还测试了基于这些数据处理指令的结果进行条件分支的指令选择。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,8 +122,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -976,7 +978,4 @@ TEST_P(InstructionSelectorODPITest, BothWithShiftByParameter) {
     ASSERT_LE(1U, s.size());
     EXPECT_EQ(odpi.arch_opcode, s[0]->arch_opcode());
     EXPECT_EQ(shift.r_mode, s[0]->addressing_m
-"""
-
-
 ```

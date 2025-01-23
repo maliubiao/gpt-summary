@@ -193,7 +193,7 @@ console.log(listFormatter.format(list)); // 输出: "apple, banana, and orange"
 
 总而言之，`v8/src/init/bootstrapper.cc` 的第 6 部分代码负责在 V8 引擎启动时，至关重要地初始化了 JavaScript 的标准错误处理机制、核心的 `JSON` 和 `Math` 全局对象，以及提供了国际化 (Intl) API 的基础。这为后续的 JavaScript 代码执行奠定了基础，使得开发者可以使用这些预定义的全局对象和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -201,8 +201,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 actory->RangeError_string(),
                Context::RANGE_ERROR_FUNCTION_INDEX);
 
@@ -864,7 +866,4 @@ actory->RangeError_string(),
         DCHECK_EQ(index, kNumPropertiesWithWordlike);
         DCHECK(!map->is_dictionary_map());
         DCHECK(!map_with_wordlike->is_dictionary_
-"""
-
-
 ```

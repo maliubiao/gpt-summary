@@ -199,15 +199,17 @@ Token: EOF, Text: "EOF", Line: 3, Col: 0
 
 总而言之，`go/src/cmd/asm/internal/lex/lex.go` 实现了 Go 汇编器的词法分析器，负责将汇编源代码转换为 token 流，为后续的语法分析和代码生成阶段做准备。它定义了 token 的表示形式，提供了读取 token 的接口，并处理了汇编器特有的一些词法元素，如 ARM 架构的移位操作符和宏定义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/asm/internal/lex/lex.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -345,9 +347,4 @@ func Tokenize(str string) []Token {
 	}
 	return tokens
 }
-
-"""
-
-
-
 ```

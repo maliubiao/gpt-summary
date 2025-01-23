@@ -151,11 +151,13 @@ simulateOperations();
 
 总而言之，`v8/src/tasks/operations-barrier.cc` 中的 `OperationsBarrier` 类是 V8 引擎内部用于管理和同步并发操作的一个关键工具，它允许 V8 等待特定类型的操作完成后再进行下一步，并且可以取消这些操作。虽然 JavaScript 没有直接的对应物，但其背后的概念（等待异步任务完成）可以通过 `Promise` 和 `async/await` 来理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tasks/operations-barrier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ void OperationsBarrier::Release() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

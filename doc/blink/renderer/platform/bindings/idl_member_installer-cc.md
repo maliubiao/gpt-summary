@@ -125,14 +125,16 @@ interface MyObject {
 
 总而言之，`idl_member_installer.cc` 是 Blink 引擎中至关重要的一个组成部分，它负责将 Web IDL 定义的接口转化为 JavaScript 可以理解和使用的形式，是连接 Web 标准和 JavaScript 运行环境的关键桥梁。它使得 JavaScript 能够操作 HTML 结构、控制 CSS 样式，并利用浏览器提供的各种 Web API 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/idl_member_installer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -741,7 +743,4 @@ void IDLMemberInstaller::InstallExposedConstructs(
 }  // namespace bindings
 
 }  // namespace blink
-
-"""
-
 ```

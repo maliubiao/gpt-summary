@@ -149,15 +149,17 @@ Let's consider the `AnonymousNamedGetter` and `AnonymousNamedSetter` functions, 
 
 In summary, `css_style_declaration.cc` is a critical component of the Blink rendering engine, responsible for managing and manipulating CSS style declarations, acting as the bridge between CSS rules and JavaScript interactions. Understanding its functionality is essential for comprehending how web page styles are applied and how JavaScript can dynamically modify them.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_style_declaration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007-2011 Google Inc. All rights reserved.
  *
@@ -457,7 +459,4 @@ bool CSSStyleDeclaration::NamedPropertyQuery(const AtomicString& name,
 }
 
 }  // namespace blink
-
-"""
-
 ```

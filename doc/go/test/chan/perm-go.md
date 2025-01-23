@@ -321,15 +321,17 @@ func main() {
 
 这段 `perm.go` 代码通过精心设计的错误示例，帮助开发者理解和避免在使用 Go 语言通道时常犯的类型错误，从而编写出更健壮的并发程序。它是一个很好的教学示例，展示了 Go 语言编译器如何在编译时进行严格的类型检查，以保障程序的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/perm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -400,9 +402,4 @@ func main() {
 	close(cr) // ERROR "receive"
 	close(n)  // ERROR "invalid operation.*non-chan type|must be channel|non-channel"
 }
-
-"""
-
-
-
 ```

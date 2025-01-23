@@ -166,7 +166,7 @@ By following these steps and iteratively refining the understanding, I can arriv
 
 这些 Built-in 函数是 V8 引擎高效执行 JavaScript 代码的重要组成部分，它们在幕后处理了许多复杂的逻辑，使得 JavaScript 开发者可以使用更高级的抽象概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-internal-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-internal-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,8 +174,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 atch_handle);
 }
 
@@ -232,8 +234,4 @@ TF_BUILTIN(GetOwnPropertyDescriptor, CodeStubAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

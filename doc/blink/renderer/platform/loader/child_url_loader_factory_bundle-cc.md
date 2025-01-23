@@ -219,14 +219,16 @@ By following these steps, I could systematically break down the code, understand
 
 总而言之，`child_url_loader_factory_bundle.cc` 是 Blink 渲染引擎中一个至关重要的网络加载管理模块，它负责根据请求的特性选择合适的加载器工厂，并处理各种特殊类型的网络请求，从而支撑着 JavaScript, HTML, 和 CSS 等 Web 技术的功能实现。理解其功能有助于开发者更好地理解浏览器如何处理网络请求，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/child_url_loader_factory_bundle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -645,7 +647,4 @@ bool ChildURLLoaderFactoryBundle::IsHostChildURLLoaderFactoryBundle() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

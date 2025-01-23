@@ -174,7 +174,7 @@ endif
 
 总而言之，`prism-meson.min.js` 是一个幕后工作的文件，它默默地为 Frida 文档和其他使用 Prism.js 的场景提供 Meson 代码的语法高亮支持，使得用户和开发者更容易阅读和理解 Meson 构建脚本。虽然普通用户不会直接与之交互，但它的存在对于提升用户体验和辅助理解构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/docs/theme/extra/prism_components/prism-meson.min.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,9 +182,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 Prism.languages.meson={"triple-quoted-string":{pattern:/'''[\s\S]*?'''/,alias:"string"},comment:/#.*/,string:/'(?:\\'|[^'])*'/,number:/\b\d+(?:\.\d+)?\b/,keyword:/\b(?:if|else|elif|endif|foreach|endforeach)\b/,"function":/(?=\.|\b)[a-zA-Z_]+\s*(?=\()/,"boolean":/\b(?:true|false)\b/,builtin:/\b(?:meson|host_machine|target_machine|build_machine)(?=\.)/,operator:/(?:[<>=*+\-\/!]?=|%|\/|\*|-|\+|\b(?:or|and|not)\b)/,punctuation:/[(),[\]]/};
-"""
-
 ```

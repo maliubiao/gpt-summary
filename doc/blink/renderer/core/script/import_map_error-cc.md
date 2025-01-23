@@ -245,15 +245,17 @@ By following these steps of analysis, connection, reasoning, and error identific
 
 总而言之，`import_map_error.cc` 这个文件是 Blink 引擎处理 import map 相关错误的关键组件，它负责将 C++ 层的错误信息桥接到 JavaScript 环境，使得开发者能够及时发现和修复 import map 配置中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/import_map_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ v8::Local<v8::Value> ImportMapError::ToV8(ScriptState* script_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

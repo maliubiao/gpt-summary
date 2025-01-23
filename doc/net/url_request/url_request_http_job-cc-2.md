@@ -528,7 +528,7 @@ fetch('https://example.com/data.json')
 
 这段代码专注于**接收响应数据、处理接收过程中的特定错误（如内容长度不匹配）、跟踪数据传输量、以及在请求完成后进行清理和性能指标记录。**  它体现了在 HTTP 请求的**数据接收和完成阶段**所需要执行的关键逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_http_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -536,8 +536,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 act match.
   // See http://crbug.com/79694.
   if (rv == ERR_CONTENT_LENGTH_MISMATCH ||
@@ -912,8 +914,4 @@ bool URLRequestHttpJob::ShouldRecordPartitionedCookieUsage() const {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

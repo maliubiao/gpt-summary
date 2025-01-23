@@ -123,7 +123,7 @@ Content-Length: 13\r\n
 
 总而言之，`net/http/http_stream_parser.cc` 的这一部分是浏览器网络栈中至关重要的组件，它负责理解服务器发回的 HTTP 响应的结构和含义，为后续的响应体读取和处理奠定基础，并确保网络通信的健壮性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_parser.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /0.9.  Treat the entire response
       // as the body.
       end_offset = 0;
@@ -499,8 +501,4 @@ bool HttpStreamParser::SendRequestBuffersEmpty() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

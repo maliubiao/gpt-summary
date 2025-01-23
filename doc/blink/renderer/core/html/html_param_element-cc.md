@@ -157,14 +157,16 @@ This structured approach allows for a comprehensive analysis of the code snippet
 
 总而言之，`blink/renderer/core/html/html_param_element.cc` 文件实现了与 HTML `<param>` 标签相关的核心功能，包括属性管理和名称获取逻辑，并与 JavaScript 和 HTML 紧密相关。了解其功能和潜在的使用错误有助于开发者更好地理解和使用 `<param>` 标签。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_param_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -210,7 +212,4 @@ const AtomicString& HTMLParamElement::Value() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

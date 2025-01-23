@@ -109,11 +109,13 @@ const match5 = str5.match(regex5); // 匹配成功，match5 为 ["aBc"]
 
 `regexp-macro-assembler-riscv.cc` 是 V8 引擎中至关重要的底层组件，它负责将 JavaScript 正则表达式编译成高效的 RISC-V 机器码，从而使得 JavaScript 能够进行高性能的正则表达式匹配。 你在 JavaScript 中使用的各种正则表达式特性，例如字符匹配、锚点、捕获组、反向引用、字符类、量词和全局匹配等，都在这个文件中找到了底层的实现基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1513,7 +1515,4 @@ void RegExpMacroAssemblerRISCV::CallCFunctionFromIrregexpCode(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -141,7 +141,7 @@ By following this systematic approach, considering the context, and anticipating
 
 因此，查看 `bob.c` 的源代码是调试 frida-gum 在处理特定链接器脚本构建的二进制文件时的行为的一个环节。这个文件本身是一个测试用例，用于验证 frida 的功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/linuxlike/3 linker script/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hiddenFunction(void) {
@@ -160,7 +162,4 @@ int hiddenFunction(void) {
 int bobMcBob(void) {
     return hiddenFunction();
 }
-
-"""
-
 ```

@@ -111,11 +111,13 @@ arr = null; // 释放内存
 
 `v8/test/fuzzer/fuzzer.cc` 是一个关键的组件，用于对 V8 JavaScript 引擎进行自动化测试。它接收来自 libFuzzer 的随机字节流，并将这些字节流作为潜在的 JavaScript 代码输入到 V8 中。通过大量的、持续的模糊测试，可以有效地发现 V8 在处理各种异常或恶意输入时可能存在的错误和漏洞，从而提高 V8 的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/fuzzer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ int main(int argc, char* argv[]) {
 
   return LLVMFuzzerTestOneInput(input_data.data(), input_data.size());
 }
-
-"""
-
 ```

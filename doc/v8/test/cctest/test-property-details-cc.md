@@ -243,15 +243,17 @@ The V8 test ensures that even with a massive index, the essential properties of 
 
 In summary, `v8/test/cctest/test-property-details.cc` is a crucial unit test within V8 that rigorously verifies the functionality of the `PropertyDetails` class, which is fundamental to how JavaScript object properties are managed internally. It checks for correctness under various property configurations and safeguards against potential issues like integer overflow.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-property-details.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-property-details.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ TEST(AsByte) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

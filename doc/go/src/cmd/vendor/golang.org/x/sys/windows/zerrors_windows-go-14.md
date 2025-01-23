@@ -148,7 +148,7 @@ func main() {
 
 **总结来说，这最后一部分涵盖了各种系统级错误，进一步完善了 Go 语言对 Windows 错误码的抽象，使得 Go 程序能够更精细、更准确地处理 Windows 平台上的各种潜在错误情况。** 整个 `zerrors_windows.go` 文件为 Go 开发者提供了一个方便且全面的 Windows 错误码参考，极大地简化了 Windows 平台编程的错误处理工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,9 +156,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第15部分，共15部分，请归纳一下它的功能
+```
 
-"""
-                     NTStatus      = 0xC0380002
+### 源代码
+```go
+NTStatus      = 0xC0380002
 	STATUS_VOLMGR_DISK_CONFIGURATION_NOT_IN_SYNC                              NTStatus      = 0xC0380003
 	STATUS_VOLMGR_PACK_CONFIG_UPDATE_FAILED                                   NTStatus      = 0xC0380004
 	STATUS_VOLMGR_DISK_CONTAINS_NON_SIMPLE_VOLUME                             NTStatus      = 0xC0380005
@@ -434,10 +436,4 @@ Prompt:
 	STATUS_APPEXEC_HOST_ID_MISMATCH                                           NTStatus      = 0xC0EC0006
 	STATUS_APPEXEC_UNKNOWN_USER                                               NTStatus      = 0xC0EC0007
 )
-
-"""
-
-
-
-
 ```

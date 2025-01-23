@@ -80,11 +80,13 @@ console.log(result);
 
 总之，`test-v8windbg.cc` 是用于测试一个与 V8 引擎相关的调试工具的 C++ 代码，这个工具很可能用于在 Windows 平台上使用 WinDbg 调试 V8 引擎，从而帮助开发者理解和解决 JavaScript 代码在 V8 中的运行问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-v8windbg.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -99,7 +101,4 @@ UNINITIALIZED_TEST(V8windbg) { v8windbg_test::RunTests(); }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -143,7 +143,7 @@ const libb = Module.findExportByName(null, 'lib_b_func'); // 注意这里的拼�
 
 因此，`libb.c` 虽然是一个非常简单的文件，但它在 Frida 的单元测试中扮演着验证 `pkg-config` 功能的角色。对于用户而言，理解这样的代码有助于他们构建更复杂的 Frida 脚本，进行动态分析和逆向工程。  通过查看源代码，用户可以更准确地确定需要 hook 的函数名，了解函数的基本功能，从而更好地利用 Frida 进行目标程序的分析和修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/libb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,14 +151,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func();
 
 void libb_func() {
     liba_func();
 }
-
-"""
-
 ```

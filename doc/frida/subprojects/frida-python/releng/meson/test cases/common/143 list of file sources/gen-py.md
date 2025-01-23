@@ -157,7 +157,7 @@ By following this structured analysis, considering the context, examining the co
 
 总而言之，`gen.py` 是 Frida 项目中一个辅助脚本，用于在测试或其他流程中复制文件。它本身不直接执行逆向操作，但为 Frida 的测试和运行提供了必要的环境准备工作。理解这个脚本的功能需要结合其在 Frida 项目中的上下文以及 Frida 的整体工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/143 list of file sources/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import shutil
 import sys
 
@@ -174,7 +176,4 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         raise Exception('Requires exactly 2 args')
     shutil.copy2(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

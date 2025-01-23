@@ -162,7 +162,7 @@ During the process, I might have initially focused too much on the binary manipu
 
 总而言之，`myinstall.py` 是 Frida 构建系统中的一个辅助脚本，用于在安装过程中创建必要的目录结构和占位文件，为 Frida 的后续部署和运行做好准备。理解它的功能有助于理解 Frida 的安装过程和潜在的故障点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/26 install umask/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -189,7 +191,4 @@ except FileExistsError:
 
 with open(os.path.join(dirname, sys.argv[2]), 'w') as f:
     f.write('')
-
-"""
-
 ```

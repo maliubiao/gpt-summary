@@ -153,7 +153,7 @@ Continuing main function...
 
 这段代码是 Go runtime 调试机制的核心组成部分，它允许在程序运行时进行低级别的状态操纵，以实现类似断点和代码注入的功能。 普通 Go 开发者不需要直接操作这些底层的结构和函数，但理解其功能有助于理解 Go 语言的调试原理。错误地使用 `unsafe` 包或尝试直接干预信号处理流程可能会导致严重的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_debug_amd64_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -295,9 +297,4 @@ func loadRegArgs(dst *abi.RegArgs, src *sigcontext) {
 		dst.Floats[i] |= uint64(src.fpstate._xmm[i].element[1]) << 32
 	}
 }
-
-"""
-
-
-
 ```

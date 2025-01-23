@@ -124,7 +124,7 @@ def __lldb_init_module(debugger, internal_dict):
 
 总而言之，`frida/build/subprojects/frida-gum/bindings/gumjs/runtime.bundle.p/out-qjs/objc.js` 的第一部分代码主要提供了 Frida 与 Objective-C 运行时交互的基础设施，包括访问和表示 Objective-C 的类、对象和协议，进行方法替换，处理 Blocks，以及动态创建类和协议等核心功能，为 Frida 用户提供了在运行时动态分析和修改 Objective-C 代码的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-gum/bindings/gumjs/runtime.bundle.p/out-qjs/objc.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 (function (setImmediate){(function (){
 const {getApi: getApi, defaultInvocationOptions: defaultInvocationOptions} = require("./lib/api"), fastpaths = require("./lib/fastpaths");
@@ -1112,8 +1114,4 @@ function Runtime() {
   function getBoundData(e) {
     return getBinding(e).data;
   }
-  
-"""
-
-
 ```

@@ -194,14 +194,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`fe_drop_shadow.cc` 文件是 Chromium Blink 引擎中实现 CSS `drop-shadow` 滤镜的关键组成部分，它负责接收 CSS 传递的参数，并利用 Skia 图形库来绘制出最终的阴影效果。它与 HTML、CSS 和 JavaScript 紧密相关，共同构成了网页的视觉呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_drop_shadow.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) Research In Motion Limited 2011. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -300,7 +302,4 @@ StringBuilder& FEDropShadow::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

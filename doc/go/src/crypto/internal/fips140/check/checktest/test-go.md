@@ -173,7 +173,7 @@ func init() {
 
 `go/src/crypto/internal/fips140/check/checktest/test.go` 的主要目的是为了在 FIPS 140 的上下文中，测试关键全局变量的初始状态和完整性。它通过声明和初始化特定类型的全局变量，并使用 `init` 函数进行自检来实现这一目标。 使用者需要注意全局变量的修改，避免在初始化检查之前意外地更改这些变量的值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/check/checktest/test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ func init() {
 		panic("globl8 did not sum properly")
 	}
 }
-
-"""
-
-
-
 ```

@@ -121,14 +121,16 @@ Let's break down the thought process for analyzing this code and generating the 
 
 总而言之，`FakeURLLoaderFactoryForBackgroundThread` 是一个强大的测试工具，允许开发者在不依赖实际网络环境的情况下，验证后台线程中网络请求相关的逻辑。但正确地使用它需要理解其工作原理以及 Chromium 的网络加载机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/testing/fake_url_loader_factory_for_background_thread.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ FakeURLLoaderFactoryForBackgroundThread::Clone() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

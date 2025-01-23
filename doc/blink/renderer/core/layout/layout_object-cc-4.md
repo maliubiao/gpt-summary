@@ -99,15 +99,17 @@ Here's a breakdown of the thought process to generate the response:
 
 这部分 `LayoutObject::cc` 代码的核心在于实现了一套精确可靠的坐标映射机制，它能够处理复杂的 CSS 变换和页面结构，为渲染引擎的布局和交互功能提供了基础。理解这部分代码的功能有助于深入理解浏览器如何确定页面元素的位置，以及 JavaScript 和 CSS 如何影响元素的渲染。这是整个布局流程中至关重要的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rs, so it should be safe to just subtract the delta
     // between the ancestor and |o|.
     transform_state.Move(-ancestor->OffsetFromAncestor(container),
@@ -1045,7 +1047,4 @@ Element* LayoutObject::OffsetParent(const Element* base) const {
     ancestor_tree_scopes = base->GetAncestorTreeScopes();
 
   float effective_zoom = StyleRef().Effective
-"""
-
-
 ```

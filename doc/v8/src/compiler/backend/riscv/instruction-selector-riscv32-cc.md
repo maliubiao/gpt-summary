@@ -149,7 +149,7 @@ let andResult = num1 & num2; // 可能对应 VisitWord32And，生成 kRiscvAnd �
 
 `v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc` 文件的主要功能是作为 V8 JavaScript 引擎中 RISC-V 32 位架构的指令翻译器。它接收来自编译器后端的中间表示，并根据不同的操作类型和操作数，选择并生成最合适的 RISC-V 汇编指令。这个过程涵盖了内存访问 (加载和存储)、算术运算、逻辑运算、类型转换、位操作以及 SIMD 指令的选择，旨在高效地将高级的 JavaScript 代码转化为可以在 RISC-V 32 位处理器上执行的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1041,7 +1043,4 @@ void InstructionSelectorT<Adapter>::VisitFloat64Ieee754Binop(
 template <typename Adapter>
 void InstructionSelectorT<Adapter>::VisitFloat64Ieee754Unop(
     node_t n
-"""
-
-
 ```

@@ -137,14 +137,16 @@ func main() {
 
 `go/test/typeswitch2b.go`  是一个用于测试 Go 语言编译器类型 switch 相关错误处理的测试用例。它特别关注在类型 switch 中变量作用域和重复声明的处理。 开发者在使用类型 switch 时需要注意变量的作用域，避免混淆不同作用域内同名变量，以及理解类型 switch 声明的变量只在其对应的 `case` 分支内有效。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeswitch2b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -165,9 +167,4 @@ func notused(x interface{}) {
 		_ = t // this is using the t of "t := x.(type)"
 	}
 }
-
-"""
-
-
-
 ```

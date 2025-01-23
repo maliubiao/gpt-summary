@@ -106,11 +106,13 @@ fetch('out_of_bounds.wasm')
 
 `v8/src/trap-handler/handler-inside.cc` 是 V8 引擎中处理 WebAssembly 运行时错误的底层关键组件。它负责在发生陷阱时进行精细的判断，区分真正的内存错误和预期的陷阱，并为 V8 引擎提供必要的信息，以便将错误信息传递回 JavaScript 环境。这确保了当 WebAssembly 代码出错时，JavaScript 可以捕获并处理这些错误，保证了程序的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-inside.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ bool IsAccessedMemoryCovered(uintptr_t addr) {
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

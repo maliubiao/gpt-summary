@@ -148,7 +148,7 @@ Initially, I might have focused too much on the simplicity of the C code. The ke
 
 因此，到达 `foo.c` 文件的执行路径通常是通过 Frida 的自动化测试流程。 调试线索在于理解 Frida 的构建过程、测试脚本的逻辑以及 Frida API 的使用方式。 如果测试失败，开发者会检查 `foo.c` 的代码是否正确编译，Frida 脚本是否正确地定位和 hook 了目标函数，以及目标进程的执行流程是否符合预期。  `foo.c` 本身虽然简单，但它作为 Frida 测试用例的一部分，其存在和执行是整个 Frida 测试流程中的一个关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/181 same target name flat layout/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,10 +156,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int meson_test_main_foo(void) { return 10; }
-
-"""
-
 ```

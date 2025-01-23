@@ -116,11 +116,13 @@ This could be represented with:
 
 `tnode.cc` is a fundamental file in V8's code generation process. It likely defines the core data structure (`TNode`) used to represent JavaScript operations and values in an intermediate representation. This representation, with its type information and ability to reference external entities, is crucial for V8's ability to optimize and execute JavaScript code efficiently. While invisible to JavaScript developers, the concepts implemented in this file directly impact the performance and behavior of JavaScript applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/tnode.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ constexpr MachineType MachineTypeOf<ExternalReference>::value;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

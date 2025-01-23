@@ -138,7 +138,7 @@ func main() {
 
 总而言之，这段 `go/src/database/sql/sql.go` 的代码是 Go 语言 `database/sql` 包的基础核心，它定义了与各种 SQL 数据库进行交互的通用接口和核心机制，包括驱动管理、连接池管理、事务处理、SQL 操作执行以及对 NULL 值和参数化查询的支持。它为 Go 程序提供了一个抽象层，使得开发者可以使用统一的 API 操作不同的数据库，而无需关心底层数据库的具体实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/sql.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -147,8 +147,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2478,11 +2480,4 @@ func (tx *Tx) rollback(discardConn bool) error {
 	if !tx.done.CompareAndSwap(false, true) {
 		return ErrTxDone
 	}
-
-
-"""
-
-
-
-
 ```

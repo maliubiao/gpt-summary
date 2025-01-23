@@ -102,15 +102,17 @@ For each test, I need to:
 
 这部分代码主要针对 `WebFrame` 类的各种功能进行了详细的单元测试，特别是围绕用户交互（如双击）、页面缩放、焦点管理和内容呈现等方面。它确保了 Blink 引擎在处理这些场景时的行为符合预期，并且能够正确地响应用户操作和页面配置。这些测试覆盖了与 HTML 结构、CSS 样式以及可能的 JavaScript 交互相关的多个方面，旨在提高渲染引擎的稳定性和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共19部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 elpers::WebViewHelper web_view_helper;
   web_view_helper.InitializeAndLoad(
       base_url_ + "get_scale_bounds_check_for_auto_zoom_test.html", nullptr,
@@ -846,7 +848,4 @@ class ClearScrollStateOnCommitWebFrameClient
  public:
   ClearScrollStateOnCommitWebFrameClient() = default;
   ~ClearScrollStateOnComm
-"""
-
-
 ```

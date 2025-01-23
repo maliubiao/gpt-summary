@@ -165,15 +165,17 @@ func main() {
 
 总结一下，`go/test/reflectmethod7.go` 这段代码简洁地演示了 Go 语言中关于方法集以及如何使用 `reflect` 包来访问和调用定义在值接收者上的方法，即使是通过指针类型来查找。 这突出了 Go 语言在方法调用上的灵活性以及 `reflect` 包的强大功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/reflectmethod7.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -198,9 +200,4 @@ func main() {
 	}
 	fn.Func.Call([]reflect.Value{reflect.New(t)})
 }
-
-"""
-
-
-
 ```

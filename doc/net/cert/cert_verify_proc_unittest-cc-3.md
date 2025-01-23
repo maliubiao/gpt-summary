@@ -163,7 +163,7 @@ fetch('https://www.example.com')
 
 总而言之，`net/cert/cert_verify_proc_unittest.cc` 的这部分代码通过一系列单元测试，确保了 `CertVerifyProc` 组件在处理各种证书场景时的正确性和健壮性，这对于保证 Chromium 浏览器的 HTTPS 安全至关重要。它涵盖了证书有效期、签名验证、名称规范化以及通过网络获取证书等核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mple.com", flags, &verify_result);
   // Current time is between notBefore and notAfter. Verification should
   // succeed.
@@ -982,8 +984,4 @@ TEST_P(CertVerifyProcInternalWithNetFetchingTest,
 
   // Should succeed, VERIFY_DISABLE_NETWORK_FETCHES takes priority.
   EXPECT_THAT(error, IsOk());
-  
-"""
-
-
 ```

@@ -63,7 +63,7 @@ fetch('https://example.com');
 
 总结来说，`net/socket/ssl_connect_job_unittest.cc` 的第一部分主要关注 `SSLConnectJob` 在直接连接和通过 SOCKS 代理连接 HTTPS 服务器时的各种基础连接场景的测试，包括成功、失败和超时等情况。这些测试覆盖了连接建立过程中的关键步骤，为保证 HTTPS 连接的稳定性和正确性提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -71,8 +71,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -838,7 +840,4 @@ TEST_F(SSLConnectJobTest, HttpProxyFail) {
         &test_delegate, PacResultElementToProxyChain("PROXY foo:444"));
     test_delegate.StartJobExpectingResult(ssl_connect_job.get(),
                                           ER
-"""
-
-
 ```

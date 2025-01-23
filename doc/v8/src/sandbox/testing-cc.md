@@ -142,7 +142,7 @@ console.log(`Offset of 'properties' in JS_OBJECT_TYPE: ${propertiesOffset}`);
 
 总而言之，该代码为 V8 引擎提供了一套强大的工具，用于测试和验证其沙箱环境的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/testing.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/testing.cc以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -983,7 +985,4 @@ SandboxTesting::FieldOffsetMap& SandboxTesting::GetFieldOffsetMap() {
   if (!is_initialized) {
 #ifdef V8_ENABLE_LEAPTIERING
     fields[JS_FUNCTION_TY
-"""
-
-
 ```

@@ -354,15 +354,17 @@ fun MyFunction(x: intptr): intptr {
 
 总而言之，`v8/src/torque/ls/message.h` 定义了 Torque 语言服务器通信的基础结构，使得 V8 开发者能够更方便地为 Torque 语言提供强大的开发工具支持，最终帮助提升 JavaScript 引擎的开发效率和质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/message.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ls/message.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -735,7 +737,4 @@ using DocumentSymbolResponse = ResponseArrayResult<SymbolInformation>;
 }  // namespace v8
 
 #endif  // V8_TORQUE_LS_MESSAGE_H_
-
-"""
-
 ```

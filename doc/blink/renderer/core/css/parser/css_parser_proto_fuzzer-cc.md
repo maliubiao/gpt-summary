@@ -167,15 +167,17 @@ By following this structured approach, considering the code's context, and refin
 
 `css_parser_proto_fuzzer.cc` 是 Blink 引擎中一个关键的工具，用于确保 CSS 解析器的健壮性和安全性。它通过生成大量的、多样化的 CSS 输入，并配置不同的解析模式，来测试解析器在各种情况下的行为，帮助发现潜在的 bug 和安全漏洞。虽然普通用户不会直接接触到这个文件，但它在幕后默默地保障着用户浏览网页时的安全和稳定。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_proto_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ DEFINE_BINARY_PROTO_FUZZER(const Input& input) {
   blink::CSSParser::ParseSheet(context, style_sheet, style_sheet_string,
                                defer_property_parsing);
 }
-
-"""
-
 ```

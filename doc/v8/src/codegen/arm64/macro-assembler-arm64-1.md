@@ -65,12 +65,14 @@ console.log(Atomics.load(view, 0));
 
 总而言之，这个代码片段是 V8 引擎实现其核心值表示和并发控制的关键部分，为高效且线程安全的 JavaScript 执行提供了底层的构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/macro-assembler-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 cting 0.0 preserves all inputs except for signalling NaNs, which
   // become quiet NaNs. We use fsub rather than fadd because fsub preserves -0.0
   // inputs: -0.0 + 0.0 = 0.0, but -0.0 - 0.0 = -0.0.
@@ -1854,7 +1856,4 @@ void MacroAssembler::AtomicDecompressTagged(const Register& destination,
   Add(temp, base, index);
   Ldar(destination.W(), temp);
   Add
-"""
-
-
 ```

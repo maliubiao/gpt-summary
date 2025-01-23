@@ -115,11 +115,13 @@ const smallObjects = Array(10000).fill(null).map(() => new SmallObject(Math.rand
 
 `custom-spaces-unittest.cc` 是一个测试文件，用于验证 V8 引擎 cppgc 模块中自定义内存空间功能的正确性。虽然 JavaScript 开发者无法直接操作自定义空间，但这项底层机制对于 V8 引擎优化 JavaScript 内存管理和提高性能至关重要。通过将不同类型的对象分配到不同的自定义空间，V8 可以更有效地进行垃圾回收、提高缓存局部性并应用更精细的内存管理策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/custom-spaces-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -399,7 +401,4 @@ TEST_F(TestWithHeapWithCompactableCustomSpaces,
 }  // namespace internal
 
 }  // namespace cppgc
-
-"""
-
 ```

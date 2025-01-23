@@ -136,7 +136,7 @@ func main() {
 
 `go/src/runtime/align_test.go` 是一个关键的测试文件，用于确保 Go runtime 中用于原子操作的 64 位数据在内存中正确对齐，这直接关系到原子操作的正确性和程序的稳定性。它通过读取特定的声明文件，解析其中的字段和变量信息，并结合对 `runtime` 包源代码的分析，来验证对齐的正确性和完整性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/align_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -346,9 +348,4 @@ func buildableFiles(t *testing.T, dir string) []string {
 	}
 	return pkg.GoFiles
 }
-
-"""
-
-
-
 ```

@@ -140,7 +140,7 @@ Finally, the generated response is structured logically, covering all the points
 
 总而言之，这个 `libA.c` 文件虽然功能简单，但它在 Frida 项目中扮演着测试静态库符号剥离的重要角色，并能帮助逆向工程师理解静态库的基本结构和符号可见性概念。 通过动态插桩工具 Frida，用户可以观察到这个简单函数的行为，并可能因为好奇或调试需求而追踪到这个源代码文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/65 static archive stripping/lib/libA.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,14 +148,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libA.h>
 
 static int libA_func_impl(void) { return 0; }
 
 int libA_func(void) { return libA_func_impl(); }
-
-"""
-
 ```

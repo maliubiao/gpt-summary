@@ -136,7 +136,7 @@ const str4 = "hello";
 
 总而言之，`v8/test/cctest/test-shared-strings.cc` 的第一部分主要关注 **V8 引擎中共享字符串机制的核心功能和基本特性**，包括其在不同隔离区中的内部化行为、并发场景下的稳定性和正确性，以及与垃圾回收的交互。它通过一系列单元测试来验证 V8 共享字符串实现的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-shared-strings.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-shared-strings.cc以.tq结尾，那它是个v8 torque源代码，
@@ -144,8 +144,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1017,7 +1019,4 @@ UNINITIALIZED_TEST(PromotionScavenge) {
 
   v8_flags.stress_concurrent_allocation = false;  // For SealCurrentObjects.
   v8_flags.shared_string
-"""
-
-
 ```

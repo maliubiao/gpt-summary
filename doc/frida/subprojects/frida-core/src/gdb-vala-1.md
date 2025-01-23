@@ -89,7 +89,7 @@ def __lldb_init_module(debugger, internal_dict):
 6. **处理异常**：如果程序触发异常，用户通过调试器捕获并处理异常。
 
 通过这些步骤，用户可以逐步调试目标程序，定位问题并修复。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/gdb.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 printf ("%x", register_id);
 				return this;
 			}
@@ -893,8 +895,4 @@ printf ("%x", register_id);
 		};
 	}
 }
-
-"""
-
-
 ```

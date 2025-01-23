@@ -156,14 +156,16 @@ Finally, I'll organize the information into a clear and understandable format, u
 
 总而言之，`element_intersection_observer_data.cc` 扮演着幕后英雄的角色，它有效地管理了 `IntersectionObserver` API 的核心数据，确保了对元素交叉状态的准确追踪和报告，为 Web 开发者提供了强大而灵活的视口交互能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/element_intersection_observer_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ void ElementIntersectionObserverData::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

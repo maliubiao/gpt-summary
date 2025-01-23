@@ -273,7 +273,7 @@ if (linkerFunc) {
 
 请注意，Hook 系统库或动态链接器的内部函数可能比较复杂，需要深入了解 Android 平台的实现细节，并且不同 Android 版本之间可能存在差异。 上述 Frida 脚本示例仅供参考，具体的 Hook 点和实现方式需要根据实际的调试目标和环境进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/memtag_globals_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -399,7 +401,4 @@ TEST(MemtagGlobalsTest, RelrRegressionTestForb314038442WithMteGlobals) {
   GTEST_SKIP() << "bionic/arm64 only";
 #endif
 }
-
-"""
-
 ```

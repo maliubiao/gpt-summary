@@ -235,15 +235,17 @@ console.log(htmlString);
 
 `MarkupAccumulator` 是 Blink 渲染引擎中一个至关重要的组件，负责将 DOM 结构转换为字符串表示形式，主要用于 HTML 和 XML 的序列化。它与 JavaScript 操作 DOM、HTML 的渲染以及 CSS 样式的应用都有着密切的关系。理解它的功能对于深入了解浏览器内部工作原理以及进行 Web 开发和调试都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/serializers/markup_accumulator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2012 Apple Inc. All
  * rights reserved. Copyright (C) 2009, 2010 Google Inc. All rights reserved.
@@ -957,7 +959,4 @@ template String MarkupAccumulator::SerializeNodes<EditingStrategy>(
     ChildrenOnly);
 
 }  // namespace blink
-
-"""
-
 ```

@@ -174,15 +174,17 @@ IFA_ADDRESS: 192.168.1.100 (原始字节)
 
 总而言之，`address_tracker_linux.cc` 是 Chromium 在 Linux 系统上感知网络环境变化的关键组件，它通过监听底层的 Netlink 消息，维护网络状态信息，并提供回调机制，使得 Chromium 的其他部分能够及时响应网络配置的改变。虽然 JavaScript 代码不能直接调用它，但其提供的底层信息直接影响着浏览器中网络相关 JavaScript API 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/address_tracker_linux.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -888,7 +890,4 @@ AddressTrackerLinux::AddressTrackerAutoLock::~AddressTrackerAutoLock() {
 }
 
 }  // namespace net::internal
-
-"""
-
 ```

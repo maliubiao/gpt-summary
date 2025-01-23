@@ -140,7 +140,7 @@ This is a new line.
 
 总而言之，这部分代码是 Blink 引擎处理文本删除操作的关键部分，它根据不同的删除粒度（行、段落、单词）和方向，对可编辑内容进行精确的删除。理解这部分代码有助于理解浏览器如何响应用户的编辑操作，以及如何通过 JavaScript 与这些底层功能进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/editor_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,9 +148,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- case EditingCommandType::kDeleteToBeginningOfLine:
+### 源代码
+```cpp
+case EditingCommandType::kDeleteToBeginningOfLine:
       return RangesFromCurrentSelectionOrExtendCaret(
           *frame_, SelectionModifyDirection::kBackward,
           TextGranularity::kLineBoundary);
@@ -177,8 +179,4 @@ Prompt:
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

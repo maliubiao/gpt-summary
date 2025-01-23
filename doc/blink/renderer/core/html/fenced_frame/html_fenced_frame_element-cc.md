@@ -80,15 +80,17 @@ The user is asking for a summary of the functionality of the provided C++ code s
 
 总而言之，`HTMLFencedFrameElement` 类的第一部分主要负责 fenced frame 元素的基础生命周期管理、属性处理、尺寸控制以及与安全和导航相关的核心功能实现。它作为 Blink 渲染引擎中 `<fencedframe>` 标签的具象化，连接了 HTML 结构、CSS 样式和 JavaScript 交互，并确保了 fenced frame 内容的隔离性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/fenced_frame/html_fenced_frame_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -908,7 +910,4 @@ void HTMLFencedFrameElement::DispatchFencedEvent(
 }
 
 // START HTMLFencedFrameElement::
-"""
-
-
 ```

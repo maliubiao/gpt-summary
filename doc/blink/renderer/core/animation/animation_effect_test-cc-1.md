@@ -116,15 +116,17 @@ By following these steps and incorporating self-correction, the resulting answer
 
 总而言之，这段代码片段测试了 `AnimationEffect` 类在处理 Timing 更新时的关键行为：正确地通知所有者 Timing 的变化，并在没有实际变化时避免不必要的通知，这对于保证动画的正确渲染和性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_effect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nalEffectTiming::Create();
     effect_timing->setIterationStart(-10);
     effect->updateTiming(effect_timing, exception_state);
@@ -244,8 +246,4 @@ TEST(AnimationAnimationEffectTest, UpdateTimingNoChange) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

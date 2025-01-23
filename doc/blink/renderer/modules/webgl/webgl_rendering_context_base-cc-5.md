@@ -253,7 +253,7 @@ ScriptValue WebGLRenderingContextBase::getUniform(
 
 总而言之，这部分代码是 Blink 引擎中 WebGL 实现的核心组成部分，它连接了 JavaScript API 和底层的 OpenGL ES 操作，使得开发者可以通过 JavaScript 来控制 GPU 的渲染行为并获取渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 builder.Clear();
       name_builder.Append(name);
       if (size > 1 && index >= 1) {
@@ -1223,7 +1225,4 @@ GLenum WebGLRenderingContextBase::ConvertTexInternalFormat(
       ExtensionsUtil()->IsExtensionEnabled(
           "GL_CHROMIUM_color_buffer_float_rgb"))
     return GL_RGB32F_EXT
-"""
-
-
 ```

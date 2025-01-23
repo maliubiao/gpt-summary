@@ -196,7 +196,7 @@ func main() {
 
 因此，在使用 CTR 模式时，务必确保对于相同的密钥，**IV 是唯一且不会重复使用的**。通常的做法是使用一个递增的计数器作为 IV，或者使用随机数生成器生成唯一的 IV。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/cipher/ctr_aes_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -511,9 +513,4 @@ func TestCTR_AES_multiblock_XORKeyStreamAt(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

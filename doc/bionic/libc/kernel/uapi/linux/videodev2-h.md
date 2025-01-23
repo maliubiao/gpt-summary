@@ -61,7 +61,7 @@ By following these steps, we arrive at the summary provided in the example answe
 
 接下来在第二部分，我们会更深入地探讨每个 libc 函数的实现，动态链接器的处理，以及如何在 Android 中使用这些定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/videodev2.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -73,8 +73,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -837,7 +839,4 @@ typedef __u64 v4l2_std_id;
 #define V4L2_STD_B (V4L2_STD_PAL_B | V4L2_STD_PAL_B1 | V4L2_STD_SECAM_B)
 #define V4L2_STD_G (V4L2_STD_PAL_G | V4L2_STD_SECAM_G)
 #define V4L2
-"""
-
-
 ```

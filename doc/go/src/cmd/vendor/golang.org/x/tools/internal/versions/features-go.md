@@ -209,15 +209,17 @@ mytool --goversion=1.21 myfile.go
 
 `features.go` 提供了一种简洁的方式来管理 Go 语言特性的版本控制。它通过定义版本常量和提供比较函数，使得 Go 工具可以根据目标 Go 版本动态地调整其行为，确保与不同版本的 Go 语言兼容。使用者需要注意版本字符串的格式以及 `AtLeast` 和 `Before` 的具体含义，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/versions/features.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -261,9 +263,4 @@ func Before(v, release string) bool {
 	}
 	return Compare(Lang(v), Lang(release)) < 0
 }
-
-"""
-
-
-
 ```

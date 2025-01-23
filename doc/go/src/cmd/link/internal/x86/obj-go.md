@@ -132,15 +132,17 @@ By following these steps, I can break down the provided code snippet, understand
 
 总而言之，`go/src/cmd/link/internal/x86/obj.go` 是 Go 链接器中至关重要的组成部分，它为 x86 架构定义了链接的规则和行为，并处理了与目标文件格式相关的初始化工作。开发者通常不会直接修改这个文件，但理解其功能有助于理解 Go 程序的链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/x86/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/8l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/8l/obj.c
 //
@@ -251,9 +253,4 @@ func archinit(ctxt *ld.Link) {
 		return
 	}
 }
-
-"""
-
-
-
 ```

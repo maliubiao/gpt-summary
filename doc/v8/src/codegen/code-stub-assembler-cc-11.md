@@ -172,7 +172,7 @@ Essentially, my process involved moving from the concrete (the code itself) to t
 
 作为第 12 部分，这个代码片段很可能集中在提供 `CodeStubAssembler` 中用于**基本类型转换、位操作、性能监控、字符串处理以及对象属性访问**的核心工具函数。这些是构建更复杂代码片段的基础，用于实现各种 JavaScript 语言特性和内置功能。可以推测，后续的部分可能会涉及更高级的操作，例如函数调用、控制流、对象创建等等。  这部分的主要目标是提供构建 blocks，以便在后续阶段能够高效地生成针对特定 JavaScript 操作的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,9 +180,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第12部分，共23部分，请归纳一下它的功能
+```
 
-"""
-                        TNode<Object> input) {
+### 源代码
+```cpp
+TNode<Object> input) {
   return CAST(CallBuiltin(Builtin::kToObject, context, input));
 }
 
@@ -978,7 +980,4 @@ CodeStubAssembler::NameDictionaryLookup<NameDictionary>(TNode<NameDictionary>,
                                                         Label*, LookupMode);
 template V8_EXPORT_PRIVATE void CodeStubAssembler::NameDictionaryLookup<
     GlobalDictionary>(TNode<GlobalDiction
-"""
-
-
 ```

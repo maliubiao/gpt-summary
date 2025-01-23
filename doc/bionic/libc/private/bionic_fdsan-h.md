@@ -248,7 +248,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "close"), {
 
 请注意，直接操作或检查 fdsan 的内部数据结构可能很复杂，并且可能因 Android 版本而异。上述 Frida 示例提供了一个基本的起点，用于观察文件描述符的打开和关闭操作，这有助于理解 fdsan 的基本工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_fdsan.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -324,7 +326,4 @@ struct FdTableImpl {
 };
 
 using FdTable = FdTableImpl<128>;
-
-"""
-
 ```

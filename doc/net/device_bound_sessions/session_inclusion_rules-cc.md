@@ -185,15 +185,17 @@ By following these steps, combining code analysis with logical reasoning and thi
 
 总而言之，`session_inclusion_rules.cc` 是 Chromium 网络栈中一个关键的组件，它定义了设备绑定会话的边界，并决定了哪些网络请求应该被视为属于同一个会话。理解其功能对于调试与设备绑定会话相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/session_inclusion_rules.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -538,7 +540,4 @@ std::unique_ptr<SessionInclusionRules> SessionInclusionRules::CreateFromProto(
 }
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

@@ -124,7 +124,7 @@ Let's imagine a user encounters the error: "None backend cannot generate target 
 
 **Debugging Clue:** The error message itself is a key debugging clue. It tells the user that the "none" backend is being used despite the presence of build targets, suggesting a problem with the Meson configuration or backend selection. The "should have failed earlier" part hints that the issue might have been detectable during the configuration phase, prompting the user to investigate their Meson setup and backend choice.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/nonebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 The Meson development team
 
@@ -160,7 +162,4 @@ class NoneBackend(Backend):
         mlog.log('Generating simple install-only backend')
         self.serialize_tests()
         self.create_install_data_files()
-
-"""
-
 ```

@@ -176,15 +176,17 @@ By following these steps, combining code analysis with an understanding of web d
 
 总而言之，`navigator_content_utils_client.cc` 是 Blink 渲染引擎中一个关键的组成部分，它连接了 JavaScript 的协议处理器 API 和浏览器的底层实现，负责处理网页注册和取消注册自定义协议处理器的请求，并确保这些操作符合安全策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/navigatorcontentutils/navigator_content_utils_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ void NavigatorContentUtilsClient::UnregisterProtocolHandler(
 }
 
 }  // namespace blink
-
-"""
-
 ```

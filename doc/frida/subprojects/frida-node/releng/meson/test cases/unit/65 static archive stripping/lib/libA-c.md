@@ -128,7 +128,7 @@ This detailed thought process allows for a comprehensive analysis that covers th
 
 `libA.c` 的功能非常简单，但它展示了软件开发中常见的隐藏实现细节和间接调用的模式。在逆向工程的背景下，理解 `static` 关键字的作用域和函数调用约定至关重要。这个例子也体现了 Frida 测试用例的一部分，用于验证在处理包含静态链接库时，工具的行为是否符合预期（例如，在进行符号剥离后，静态函数的信息是否被正确处理）。 用户到达这个文件的过程通常是逆向分析和调试的典型流程，从动态观察到静态分析，逐步深入理解目标程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/65 static archive stripping/lib/libA.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,14 +136,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libA.h>
 
 static int libA_func_impl(void) { return 0; }
 
 int libA_func(void) { return libA_func_impl(); }
-
-"""
-
 ```

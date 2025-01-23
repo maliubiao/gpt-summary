@@ -143,7 +143,7 @@ frame.origins = ["https://example.com", "invalid-origin", "https://cdn.example.c
 
 作为分析 `net/quic/quic_chromium_client_session_test.cc` 的第 4 部分，我们可以总结出这段代码片段专注于 **验证 `QuicChromiumClientSession` 中处理 QUIC `ORIGIN` 帧的核心逻辑**。它通过构造包含不同有效和无效源的 `ORIGIN` 帧，并断言 `OnOriginFrame` 方法处理后的客户端状态是否符合预期，来确保客户端能够正确地接收和存储服务器声明的源信息。这对于保障基于 QUIC 的网络连接的安全性至关重要，并间接支持了 Web 浏览器中与跨域资源访问相关的特性。它侧重于 `OnOriginFrame` 方法的 **功能正确性** 和 **健壮性** (能够处理无效输入)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sion_->received_origins().size());
   EXPECT_TRUE(session_->received_origins().count(origin1));
   EXPECT_TRUE(session_->received_origins().count(origin2));
@@ -175,8 +177,4 @@ sion_->received_origins().size());
 
 }  // namespace
 }  // namespace net::test
-
-"""
-
-
 ```

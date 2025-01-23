@@ -308,7 +308,7 @@ Section Headers (描述各个 section 的信息)
 
 总而言之，`bionic/libm/fenv-x86_64.c` 是 Android 系统中控制底层浮点运算行为的关键组件。理解其功能和实现对于开发高性能、高精度的 Android 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/fenv-x86_64.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -318,8 +318,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*  $OpenBSD: fenv.c,v 1.3 2012/12/05 23:20:02 deraadt Exp $  */
 /*  $NetBSD: fenv.c,v 1.1 2010/07/31 21:47:53 joerg Exp $ */
 
@@ -744,7 +746,4 @@ fegetexcept(void)
 
   return (~control & FE_ALL_EXCEPT);
 }
-
-"""
-
 ```

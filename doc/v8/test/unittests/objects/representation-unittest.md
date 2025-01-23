@@ -90,11 +90,13 @@ myVar = { name: 'John' }; // 此时 myVar 存储的是一个对象，V8 内部�
 
 `representation-unittest.cc` 通过测试 `Representation` 类的 `is_more_general_than` 方法，确保 V8 内部对于不同值类型和其内部表示的抽象和关系是正确的。这对于 V8 正确高效地管理 JavaScript 值的存储和操作至关重要，因为它涉及到类型推断、优化和内存管理等方面。  `Representation` 机制帮助 V8 在保持 JavaScript 动态性的同时，尽可能地进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/representation-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -155,7 +157,4 @@ TEST_F(RepresentationTest, RepresentationMoreGeneralThan) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

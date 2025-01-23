@@ -185,7 +185,7 @@ This is where the Frida context becomes important. While the templates themselve
 
 总而言之，`valatemplates.py` 是 Frida 项目中用于自动化生成 Vala 项目基础结构的工具，它简化了 Vala 组件的创建过程，并与 Frida 的构建系统紧密集成。 理解这个文件的功能和结构有助于理解 Frida 项目的构建方式，以及如何使用 Vala 语言为 Frida 贡献代码或进行扩展。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/templates/valatemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -277,7 +279,4 @@ class ValaProject(FileImpl):
     lib_template = lib_vala_template
     lib_test_template = lib_vala_test_template
     lib_meson_template = lib_vala_meson_template
-
-"""
-
 ```

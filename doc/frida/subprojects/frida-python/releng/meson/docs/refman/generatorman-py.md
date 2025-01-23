@@ -179,7 +179,7 @@ void my_function(int arg1, string arg2)
 
 `generatorman.py` 是 Frida 项目中一个关键的工具，它负责将 Frida Python API 的定义转换为用户友好的 man page 文档。虽然它本身是一个 Python 脚本，但其生成的文档内容与逆向工程、二进制底层、操作系统内核和框架等底层技术紧密相关。理解这个脚本的功能有助于理解 Frida 项目的文档生成流程，并在遇到文档问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/refman/generatorman.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import re
 from pathlib import Path
 
@@ -571,7 +573,4 @@ class GeneratorMan(GeneratorBase):
             page.br()
 
         page.write()
-
-"""
-
 ```

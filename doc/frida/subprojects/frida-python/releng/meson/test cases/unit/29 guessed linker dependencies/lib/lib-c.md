@@ -133,7 +133,7 @@ By following this thought process, which involves code inspection, contextual un
 
 这个 `lib.c` 文件虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的构建系统能否正确处理不同平台和编译器下的动态链接库符号导出。通过分析这个文件，我们可以了解动态链接、符号可见性等底层概念，以及 Frida 如何利用这些概念进行动态 instrumentation。对于用户而言，理解这类测试用例可以帮助他们解决使用 Frida 时遇到的链接问题，并更深入地理解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/29 guessed linker dependencies/lib/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -163,7 +165,4 @@ void DLL_PUBLIC libb_func() {
 }
 
 #endif
-
-"""
-
 ```

@@ -180,7 +180,7 @@ assembler->addq(reg1, Immediate(3));     // 现在是正确的整数加法
 
 这是第 **3** 部分，共 **6** 部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/macro-assembler-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/macro-assembler-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -188,8 +188,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mp1, lhs, uint8_t{32});
   vpmuludq(tmp1, tmp1, rhs);
   // 2. Multiply high dword of each qword of right with left.
@@ -1153,7 +1155,4 @@ void MacroAssembler::Cmp(Register dst, Handle<Object> source) {
     // TODO(v8:9706): Fix-it! This load will always uncompress the value
     // even when we are loading a compressed embedded object.
     IndirectLoadConstant(kScratchRegis
-"""
-
-
 ```

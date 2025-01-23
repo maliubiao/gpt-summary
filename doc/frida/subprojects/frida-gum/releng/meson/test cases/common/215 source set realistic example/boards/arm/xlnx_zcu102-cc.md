@@ -102,7 +102,7 @@ Finally, organize the findings into a clear and structured answer, addressing ea
 
 总而言之，`xlnx_zcu102.cc` 文件是 Frida 针对特定硬件平台进行适配的一个例子，它体现了 Frida 的模块化设计，允许为不同的硬件平台提供定制化的功能和行为，从而更好地服务于逆向工程师在各种嵌入式设备上的工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/215 source set realistic example/boards/arm/xlnx_zcu102.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "arm.h"
@@ -128,7 +130,4 @@ void XlnxZCU102Board::say_hello()
 }
 
 static XlnxZCU102Board xlnx_zcu102;
-
-"""
-
 ```

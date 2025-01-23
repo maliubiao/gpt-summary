@@ -141,14 +141,16 @@ This systematic approach helps to dissect the code, understand its purpose, and 
 
 总而言之，`v8_object_constructor.cc` 是 Blink 引擎中一个关键的低层组件，它负责将 C++ 实现的 Web API 接口暴露给 JavaScript，并确保 JavaScript 对象的正确创建和管理。理解这个文件的工作原理有助于深入理解 Blink 引擎和 JavaScript 引擎之间的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_object_constructor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -270,7 +272,4 @@ v8::Local<v8::Function> V8ObjectConstructor::CreateInterfaceObject(
 }
 
 }  // namespace blink
-
-"""
-
 ```

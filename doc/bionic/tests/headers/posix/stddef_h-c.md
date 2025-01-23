@@ -241,7 +241,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/headers/posix/stddef_h.c` 是一个用于验证 `stddef.h` 头文件正确性的测试文件，它本身并不实现任何核心功能，但它对于确保 Android 系统的稳定性和兼容性至关重要。Android Framework 和 NDK 代码会间接地依赖 `stddef.h` 中定义的类型和宏。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/stddef_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -252,8 +252,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -297,7 +299,4 @@ static void stddef_h() {
   TYPE(wchar_t);
   TYPE(size_t);
 }
-
-"""
-
 ```

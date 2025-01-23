@@ -185,14 +185,16 @@ console.log(notFoundElement); // 输出: undefined
 
 总而言之，这段 Torque 代码是 V8 引擎中 `TypedArray.prototype.find` 方法的具体实现，它负责遍历类型化数组，执行用户提供的回调函数，并返回符合条件的第一个元素或 `undefined`。 代码中包含了对类型检查和 detached 状态的处理，以确保符合 JavaScript 规范并提供合理的错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-find.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ transitioning javascript builtin TypedArrayPrototypeFind(
   }
 }
 }
-
-"""
-
 ```

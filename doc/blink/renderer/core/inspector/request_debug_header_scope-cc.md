@@ -150,14 +150,16 @@ document.getElementById('myButton').addEventListener('click', fetchData);
 
 总而言之，`request_debug_header_scope.cc` 是 Blink 引擎中一个重要的组成部分，它通过在网络请求中附加 JavaScript 调用栈信息，极大地增强了开发者在调试和理解 Web 应用行为时的能力，尤其是在处理复杂的异步操作时。它背后的机制对于用户和前端开发者是透明的，但在浏览器内部运行着关键的关联和追踪逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/request_debug_header_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ RequestDebugHeaderScope::~RequestDebugHeaderScope() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

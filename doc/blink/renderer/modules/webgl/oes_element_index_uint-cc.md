@@ -199,15 +199,17 @@ By following this structured thought process and making necessary refinements, I
 
 总而言之，`oes_element_index_uint.cc` 这个文件在 WebGL 中扮演着重要的角色，它使得 Web 开发者能够突破索引缓冲区的限制，渲染更加复杂和精细的 3D 模型。理解其功能和使用方式对于开发高性能的 WebGL 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_element_index_uint.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -259,7 +261,4 @@ const char* OESElementIndexUint::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

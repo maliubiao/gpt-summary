@@ -228,7 +228,7 @@ go run your_program.go 1234
 
 4. **误解内存单位:**  结构体中的内存大小通常以字节为单位。 用户可能会直接使用这些值，而没有意识到需要将其转换为更易读的单位（如 KB 或 MB）。  例如，`WorkingSetSize` 的单位是字节，需要除以 1024 才能得到 KB。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/windows/psapi_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -236,8 +236,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -258,9 +260,4 @@ type PROCESS_MEMORY_COUNTERS struct {
 }
 
 //sys	GetProcessMemoryInfo(handle syscall.Handle, memCounters *PROCESS_MEMORY_COUNTERS, cb uint32) (err error) = psapi.GetProcessMemoryInfo
-
-"""
-
-
-
 ```

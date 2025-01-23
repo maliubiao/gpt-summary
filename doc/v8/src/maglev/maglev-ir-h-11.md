@@ -239,7 +239,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，这个头文件定义了 Maglev IR 中用于表示条件分支逻辑的核心组件，这些组件对于将 JavaScript 代码高效地编译成机器码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.h以.tq结尾，那它是个v8 torque源代码，
@@ -247,8 +247,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ckTypeBitField = NextBitField<CheckType, 1>;
 };
 
@@ -544,8 +546,4 @@ NodeType StaticTypeForNode(compiler::JSHeapBroker* broker,
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_IR_H_
-
-"""
-
-
 ```

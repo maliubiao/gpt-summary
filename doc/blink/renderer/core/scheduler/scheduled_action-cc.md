@@ -167,14 +167,16 @@ Delayed
 
 总的来说，`ScheduledAction.cc` 文件是 Blink 引擎中一个核心的调度机制的实现，它桥接了 JavaScript 代码的执行和底层的系统调度，并考虑了安全性、性能和资源管理等关键因素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scheduler/scheduled_action.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007-2009 Google Inc. All rights reserved.
  *
@@ -371,7 +373,4 @@ ScriptState* ScheduledAction::GetScriptState() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

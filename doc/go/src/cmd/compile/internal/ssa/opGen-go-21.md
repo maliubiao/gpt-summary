@@ -128,7 +128,7 @@ v3 = Add <int32> v1 v2
 
 这段代码是 Go 编译器将 Go 语言代码转换为目标机器代码过程中的一个关键步骤。它定义了编译器在中间表示层可以使用的基本指令，并为这些指令指定了目标架构上的实现方式和资源需求（例如寄存器）。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -137,8 +137,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第22部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 F6 F8 F10 F12 F14 F16 F18 F20 F22 F24 F26 F28 F30
 			},
 			outputs: []outputInfo{
@@ -1228,9 +1230,4 @@ F6 F8 F10 F12 F14 F16 F18 F20 F22 F24 F26 F28 F30
 		resultNotInArgs: true,
 		faultOnNilArg0:  true,
 		hasSideEffects:  true
-"""
-
-
-
-
 ```

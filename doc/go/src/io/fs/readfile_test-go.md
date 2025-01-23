@@ -210,7 +210,7 @@ go test -run TestReadFile ./io/fs
 
 3. **混淆 `fs.ReadFile` 和 `os.ReadFile`：** 虽然它们的功能类似，但 `fs.ReadFile` 是基于 `io/fs` 抽象文件系统的，可以用于操作不同的文件系统实现（例如，内存中的文件系统），而 `os.ReadFile` 专门用于读取操作系统本地文件系统上的文件。在使用时需要根据具体的场景选择合适的方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/io/fs/readfile_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -218,8 +218,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -289,9 +291,4 @@ func TestReadFilePath(t *testing.T) {
 		t.Fatalf("s1: %s != s2: %s", s1, s2)
 	}
 }
-
-"""
-
-
-
 ```

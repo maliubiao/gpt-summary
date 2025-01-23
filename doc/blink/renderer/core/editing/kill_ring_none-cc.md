@@ -127,15 +127,17 @@ Let's break down the thought process for analyzing the `kill_ring_none.cc` file.
 
 总而言之，`kill_ring_none.cc` 提供了一个禁用或空操作的 Kill Ring 实现，这通常用于某些特殊场景或作为占位符。理解它的功能有助于理解 Blink 引擎中文本编辑功能的运作方式，以及可能出现的一些用户行为上的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/kill_ring_none.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All Rights Reserved.
  *
@@ -178,7 +180,4 @@ void KillRing::StartNewSequence() {}
 void KillRing::SetToYankedState() {}
 
 }  // namespace blink
-
-"""
-
 ```

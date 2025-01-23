@@ -145,15 +145,17 @@ By following these steps, I can systematically analyze the code, understand its 
 
 `serialized_script_value_fuzzer.cc` 是 Blink 引擎中一个重要的安全性和稳定性测试工具。它通过模拟各种可能出现的序列化数据，包括畸形或恶意的输入，来确保 `SerializedScriptValue` 类的反序列化功能能够安全可靠地运行，避免因处理不当的数据而导致浏览器崩溃或出现安全漏洞。理解这个 fuzzer 的功能有助于理解浏览器如何处理 JavaScript 对象的序列化和反序列化，以及在相关 Web 技术中使用时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/serialization/serialized_script_value_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ LLVMFuzzerInitialize(int* argc, char*** argv) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

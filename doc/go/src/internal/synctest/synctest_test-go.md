@@ -181,7 +181,7 @@ func TestControlledTime(t *testing.T) {
 
 总而言之，`internal/synctest` 提供了一种强大的机制来编写更加可靠的并发测试，特别是当涉及到时间依赖时。 理解其模拟时间的特性以及 `synctest.Run` 的作用域是避免使用错误的 key。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/synctest/synctest_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -635,9 +637,4 @@ func wantPanic(t *testing.T, want string) {
 		t.Errorf("got no panic, want one")
 	}
 }
-
-"""
-
-
-
 ```

@@ -158,14 +158,16 @@ By following this structured approach and continuously refining my understanding
 
 总而言之，`ReverbInputBuffer` 是 Blink 渲染引擎中一个重要的底层音频处理组件，它通过高效的环形缓冲区机制，为实现音频混响等效果提供了基础的数据存储和访问能力。虽然 JavaScript 开发者不会直接操作这个类，但理解其功能有助于理解 Web Audio API 背后的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/reverb_input_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -243,7 +245,4 @@ void ReverbInputBuffer::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

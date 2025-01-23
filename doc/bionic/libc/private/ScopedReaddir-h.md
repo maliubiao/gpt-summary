@@ -295,7 +295,7 @@ sys.stdin.read()
 
 这个 Frida 脚本会 hook `libc.so` 中 `ScopedReaddir::ReadEntry()` 方法，并在每次调用返回时打印读取到的目录条目的名称。你需要将 `com.example.myapp` 替换为你想监控的 Android 应用的包名。运行这个脚本后，当目标应用执行到 `ScopedReaddir::ReadEntry()` 时，Frida 会捕获调用并输出相关信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/ScopedReaddir.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -358,7 +360,4 @@ class ScopedReaddir {
 
   BIONIC_DISALLOW_COPY_AND_ASSIGN(ScopedReaddir);
 };
-
-"""
-
 ```

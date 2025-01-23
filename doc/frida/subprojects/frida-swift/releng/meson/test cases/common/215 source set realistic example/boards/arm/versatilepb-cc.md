@@ -131,7 +131,7 @@ Initially, I might have focused too much on the simple output. Recognizing the "
 
 这个 `versatilepb.cc` 文件是 Frida 测试框架中一个用于模拟特定 ARM 开发板的组件。它通过定义一个简单的类和方法，为 Frida 提供了一个可控的测试环境，用于验证其在 ARM 架构上的功能。它与逆向工程、底层知识以及常见的编程错误都有着间接的联系，并可以作为调试 Frida 在 ARM 环境下运行情况的一个线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/215 source set realistic example/boards/arm/versatilepb.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "arm.h"
@@ -157,7 +159,4 @@ void VersatilePBBoard::say_hello()
 }
 
 static VersatilePBBoard versatilepb;
-
-"""
-
 ```

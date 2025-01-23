@@ -109,7 +109,7 @@ Based on this initial analysis, here's a summary of the functionalities in this 
 
 总而言之，这段代码是 Chromium 中负责处理 HTTP/2 会话的核心组件。它处理底层 HTTP/2 协议的细节，包括接收和解析帧、处理头部、管理流、进行流量控制和支持 HPACK 压缩。它作为网络栈的一部分，为浏览器与支持 HTTP/2 的服务器进行通信提供了基础。虽然它本身是 C++ 代码，但它的功能直接支撑了 JavaScript 发起的网络请求和浏览器接收到的网络响应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/oghttp2_session.h"
 
 #include <algorithm>
@@ -999,8 +1001,4 @@ OgHttp2Session::SendResult OgHttp2Session::WriteForStream(
   while (connection_can_write == SendResult::SEND_OK && available_window > 0 &&
          IsReadyToWriteData(state)) {
     DataFrameHeaderInfo info =
-   
-"""
-
-
 ```

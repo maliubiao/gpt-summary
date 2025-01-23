@@ -119,14 +119,16 @@ Finally, the generated explanation organizes these thoughts into a coherent stru
 
 总而言之，`blink/common/user_agent/user_agent_mojom_traits.cc` 是 Chromium Blink 引擎中一个关键的文件，它负责在不同的进程之间安全可靠地传递用户代理信息，从而支持了 Web 平台上与用户代理相关的各种功能。理解它的作用有助于理解浏览器内部如何处理和传播用户代理信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/user_agent/user_agent_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ bool StructTraits<blink::mojom::UserAgentOverrideDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

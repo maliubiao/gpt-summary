@@ -112,7 +112,7 @@ By following these steps, I can generate a comprehensive and accurate summary of
 
 这部分 `InputMethodController` 代码是 Blink 引擎处理输入法组合文本的核心模块。它负责接收输入法引擎的指令，更新和渲染组合文本，并与 JavaScript 事件机制协同工作，为用户提供流畅的输入体验。其主要功能集中在管理组合文本的生命周期，包括开始、更新、替换、取消，并应用输入法提供的额外样式和信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/input_method_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -120,9 +120,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-         DocumentMarker::MarkerTypes::Spelling())
+### 源代码
+```cpp
+DocumentMarker::MarkerTypes::Spelling())
                  .empty()) {
           continue;
         }
@@ -1007,7 +1009,4 @@ WebTextInputInfo InputMethodController::TextInputInfo() const {
       cached_text_input_info_.GetComposition(range);
   if (composition_plain_text_range.IsNotNull()) {
     info.composition_start = composition_plain_text_range.Star
-"""
-
-
 ```

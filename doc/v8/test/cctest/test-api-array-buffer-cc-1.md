@@ -152,7 +152,7 @@ new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 总而言之，这部分代码主要关注 V8 API 中 `ArrayBuffer` 和 `ArrayBufferView` 的创建和内容访问机制，特别是通过 `GetContents` 方法在 C++ 中安全获取 JavaScript 数组缓冲区数据的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-array-buffer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-array-buffer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 OOL
                                 ? v8::internal::EmptyBackingStoreBuffer()
                                 : nullptr;
@@ -359,8 +361,4 @@ TEST(ArrayBufferView_GetContentsDetached) {
       "data_view";
   TestArrayBufferViewGetContent(source, nullptr);
 }
-
-"""
-
-
 ```

@@ -100,7 +100,7 @@ The code snippet consists of several C++ unit tests using the Google Test framew
 
 这个代码片段（第31部分）主要专注于测试 `HttpNetworkTransaction` 类在处理 **NEL 报告、缓存策略、TLS 0-RTT 机制以及复杂的身份验证流程**时的正确性和健壮性。它覆盖了 0-RTT 的不同操作模式、拒绝场景和错误处理，以及涉及代理和源服务器的双重客户端证书和 HTTP 身份验证的复杂情况。 这些测试用例旨在确保 `HttpNetworkTransaction` 能够可靠地处理各种复杂的网络场景，为上层应用（包括 JavaScript 代码发起的请求）提供稳定的网络服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第31部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ckRead> data_reads = {
       // Write one byte of the status line, followed by a pause.
       MockRead(ASYNC, 2, "H"),
@@ -951,8 +953,4 @@ TEST_P(HttpNetworkTransactionTest, AuthEverythingWithConnectClose) {
   // The origin requests client certificates.
   SSLSocketDataProvider ssl_origin3(ASYNC, ERR_SSL_CLIENT_AUTH_CERT_NEEDED);
   ssl_origin3.cert_request_info = cert_request_info_origin;
- 
-"""
-
-
 ```

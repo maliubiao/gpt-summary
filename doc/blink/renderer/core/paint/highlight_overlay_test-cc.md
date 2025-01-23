@@ -203,7 +203,7 @@ Vector<HighlightEdge>{
 
 `highlight_overlay_test.cc` 文件的主要功能是**测试 Chromium Blink 引擎中 `HighlightOverlay` 类的核心逻辑，包括如何计算需要绘制的高亮图层 (`ComputeLayers`)、如何确定每个高亮图层的边缘范围 (`ComputeEdges`) 以及如何将重叠的边缘组合成具有特定样式的高亮部分 (`ComputeParts`)**。这些测试覆盖了文本选择、拼写/语法错误、搜索结果高亮以及自定义高亮等多种场景，确保 `HighlightOverlay` 能够正确地管理和渲染各种高亮效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/highlight_overlay_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -211,8 +211,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -817,8 +819,4 @@ TEST_F(HighlightOverlayTest, ComputeParts) {
                               {{HighlightLayerType::kCustom, 1, foo_color}}},
                 HighlightPart{HighlightLayerType::kSpelling, 3, {10,13}, spelling_text_style.style, 0,
                               {{HighlightLayerType::kOriginating, 0, {0,25}, originating_color},
-                               
-"""
-
-
 ```

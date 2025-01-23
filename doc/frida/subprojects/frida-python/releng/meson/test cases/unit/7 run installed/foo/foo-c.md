@@ -132,7 +132,7 @@ By following these steps, we can move from the simple C code to a comprehensive 
 
 虽然 `foo.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着验证基础功能的重要角色。 理解它的上下文可以帮助我们更好地理解 Frida 的工作原理，以及它如何应用于更复杂的逆向工程场景。  它也间接涉及到许多底层系统知识，尽管代码本身没有显式地使用它们。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/7 run installed/foo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,12 +140,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo() {
     return 0;
 }
-
-"""
-
 ```

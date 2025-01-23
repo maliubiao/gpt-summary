@@ -60,7 +60,7 @@ Here's a breakdown of the thought process to answer the user's request:
 
 **简而言之，这部分数据是 `cosf` 函数的测试用例库的一个片段，用于验证其在特定平台上的实现质量。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cosf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -72,9 +72,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  { // Entry 378
+### 源代码
+```c
+{ // Entry 378
     0x1.fc97283c4f5bd1f793201972b8db551fp-1,
     -0x1.d8f720p-4
   },
@@ -1620,7 +1622,4 @@ Prompt:
   },
   { // Entry 764
     0x1.ffffffffffe6546cc38211f5
-"""
-
-
 ```

@@ -124,7 +124,7 @@ By following these steps, you can systematically analyze the code and generate a
 
 **作为调试线索：** 如果测试失败，开发人员会查看测试的输出、错误信息，以及 `main.c` 的源代码，来理解为什么测试没有按照预期工作。例如，如果期望程序写入文件但实际没有，可能是 Frida 没有正确地传递参数，或者目标进程内部出现了错误。 这个简单的 `main.c` 文件提供了一个可控的、易于理解的环境，用于排查 Frida 本身的功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/87 run native test/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main (int argc, char * argv[])
@@ -151,7 +153,4 @@ int main (int argc, char * argv[])
   }
   return 0;
 }
-
-"""
-
 ```

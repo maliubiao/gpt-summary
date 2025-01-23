@@ -231,15 +231,17 @@ Essentially, the process involved a combination of:
 
 总而言之，`v8/src/objects/arguments.tq` 是 V8 引擎中一个关键的文件，它细致地实现了 JavaScript 中 `arguments` 对象的各种行为和优化策略，区分了严格模式和非严格模式，并处理了参数映射等复杂逻辑。理解这个文件可以帮助我们更深入地了解 JavaScript 的底层运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/arguments.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/arguments.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -591,7 +593,4 @@ macro SloppyArgumentsStore(
   *destination = value;
   return value;
 }
-
-"""
-
 ```

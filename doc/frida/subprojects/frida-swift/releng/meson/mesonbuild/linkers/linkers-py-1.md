@@ -73,7 +73,7 @@ class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
 
 总而言之，这部分代码延续了 Frida 中对不同动态链接器的抽象和实现，特别是针对 Metrowerks 编译器的支持。它定义了如何根据 Metrowerks 链接器的特性生成正确的链接命令，这对于 Frida 能够成功地在目标平台上构建和运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -755,8 +757,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

@@ -144,7 +144,7 @@ By following this detailed analysis, we can systematically break down the code a
 
 总而言之，`interceptor-arm-fixture.c` 是 Frida Gum 测试框架的关键组成部分，它提供了一套用于测试 ARM 架构上函数拦截功能的工具和接口。理解它的功能对于编写 Frida 相关的单元测试和调试 Frida 本身都至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/interceptor-arm-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018-2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -313,7 +315,4 @@ arm_listener_context_on_leave (ArmListenerContext * self,
 {
   g_string_append_c (self->fixture->result, self->leave_char);
 }
-
-"""
-
 ```

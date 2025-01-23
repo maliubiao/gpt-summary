@@ -164,7 +164,7 @@ function add(x, y) { return x + y; }
 
 这段 `v8/src/snapshot/serializer.cc` 代码片段是 V8 引擎快照机制的关键组成部分，负责将 JavaScript 堆中的对象及其关联数据转换为可持久化存储的二进制格式。它通过递归遍历对象图，并针对不同类型的对象和引用采取特定的序列化策略，以实现高效且正确的快照生成。理解这段代码的功能有助于深入了解 V8 的内部工作原理，以及与快照和代码缓存相关的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/serializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/serializer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ->SafeEquals(ReadOnlyRoots(isolate()).wasm_null_padding()),
       !IsFreeSpaceOrFiller(*object_, cage_base));
 #else
@@ -762,8 +764,4 @@ bool Serializer::SerializeReadOnlyObjectReference(Tagged<HeapObject> obj,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

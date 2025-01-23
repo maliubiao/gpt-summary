@@ -120,7 +120,7 @@ Based on this, I can now formulate a summary of the file's functionalities, high
 
 总而言之，`blink/renderer/core/paint/outline_painter.cc` 的第一部分主要负责处理和绘制 HTML 元素的各种轮廓样式，包括根据 CSS 属性绘制普通轮廓，以及在元素获得焦点时绘制焦点环。它涉及到几何计算、图形绘制以及与 Blink 引擎其他组件的交互，例如 `ComputedStyle` 和 `GraphicsContext`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/outline_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -934,7 +936,4 @@ void PaintSingleFocusRing(GraphicsContext& context,
                           float width,
                           int offset,
                           const FloatRoundedRect::Radii& corner_
-"""
-
-
 ```

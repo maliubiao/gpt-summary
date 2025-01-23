@@ -253,7 +253,7 @@ if (Process.platform === 'linux') {
 
 请注意，`io_uring` 是一个相对较新的 Linux 特性，在旧版本的 Android 上可能不可用。同时，直接使用系统调用可能绕过了一些 Android Framework 提供的安全和抽象层，需要谨慎使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/io_uring.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -750,7 +752,4 @@ enum io_uring_socket_op {
 }
 #endif
 #endif
-
-"""
-
 ```

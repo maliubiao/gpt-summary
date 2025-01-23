@@ -131,15 +131,17 @@ func LeadingZeros(n uint) int {
 
 这将导致在较老的 AMD64 处理器上运行测试时失败，因为这些处理器不支持 `LZCNTQ` 指令，编译器不会生成该指令，从而导致 `asmcheck` 失败。正确的做法是保留针对不同 AMD64 版本的区分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/mathbits.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -1090,9 +1092,4 @@ func Div64degenerate(x uint64) (q, r uint64) {
 	// amd64:-"DIVQ"
 	return bits.Div64(0, x, 5)
 }
-
-"""
-
-
-
 ```

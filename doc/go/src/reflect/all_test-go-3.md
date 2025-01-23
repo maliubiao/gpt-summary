@@ -277,7 +277,7 @@ func main() {
 
 总而言之，这部分 `all_test.go` 代码是 `reflect` 包功能测试的重要组成部分，它细致地检验了结构体字段的访问和修改规则，方法调用的各种场景，以及类型转换的正确性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -286,8 +286,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 2.namedT0
 	bad(func() { clear(v.Field(6).Field(1).Field(0)) }) // .namedT2.namedT0.W
 
@@ -1227,9 +1229,4 @@ func TestValueOverflow(t *testing.T) {
 	}
 
 	maxUint32 :=
-"""
-
-
-
-
 ```

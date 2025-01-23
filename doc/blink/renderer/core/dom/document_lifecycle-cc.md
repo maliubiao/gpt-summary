@@ -152,15 +152,17 @@ enum class LifecycleState : int {
 
 `blink/renderer/core/dom/document_lifecycle.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它定义并管理了 HTML 文档的生命周期状态，这些状态与浏览器处理 HTML、CSS 和 JavaScript 的过程紧密相关。理解这些状态及其转换对于进行性能优化和调试渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_lifecycle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -414,7 +416,4 @@ void DocumentLifecycle::EnsureStateAtMost(LifecycleState state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

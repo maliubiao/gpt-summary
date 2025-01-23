@@ -172,15 +172,17 @@ By following these steps, iteratively analyzing the code, and connecting the dot
 
 总而言之，`blink::ReadableStreamBytesConsumer` 是 Blink 引擎中一个关键的组件，它弥合了 JavaScript 异步 `ReadableStream` 和 C++ 同步数据处理之间的差距，使得 C++ 代码能够方便地消费来自 Web API 的字节数据流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/readable_stream_bytes_consumer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ void ReadableStreamBytesConsumer::SetErrored() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

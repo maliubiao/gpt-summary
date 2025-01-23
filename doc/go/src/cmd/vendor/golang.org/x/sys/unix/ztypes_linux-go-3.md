@@ -117,7 +117,7 @@ func main() {
 
 总而言之，这个代码片段 (`go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux.go` 的一部分)  **定义了 Go 语言中用于与 Linux 内核的 `nl80211` 无线子系统进行交互的底层常量**。这些常量代表了可以发送给内核的命令、无线设备支持的特性以及与这些命令和特性相关的各种属性。这个文件是 Go 语言 `syscall` 包中用于支持底层网络操作的重要组成部分，使得 Go 程序能够进行无线网络的配置和管理。它为更高级别的网络库提供了基础，使得开发者可以使用 Go 语言构建复杂的网络应用，例如 WiFi 管理工具。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -125,9 +125,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                   = 0x5
+### 源代码
+```go
+= 0x5
 	NL80211_CMD_GET_KEY                                     = 0x9
 	NL80211_CMD_GET_MESH_CONFIG                             = 0x1c
 	NL80211_CMD_GET_MESH_PARAMS                             = 0x1c
@@ -1204,10 +1206,4 @@ type SockDiagReq struct {
 	Family   uint8
 	Protocol uint8
 }
-
-"""
-
-
-
-
 ```

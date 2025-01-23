@@ -151,14 +151,16 @@ By following this structured approach and incorporating deductive reasoning, exa
 
 总之，`FetchContext` 是 Blink 引擎中一个关键的组件，它负责管理资源获取的上下文，并提供了可扩展的机制来定制资源加载的行为。它与 JavaScript, HTML, CSS 的资源加载过程紧密相关，理解其功能对于开发高性能和可靠的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/fetch_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -225,7 +227,4 @@ void FetchContext::StartSpeculativeImageDecode(Resource* resource,
 }
 
 }  // namespace blink
-
-"""
-
 ```

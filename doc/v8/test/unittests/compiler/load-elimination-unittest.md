@@ -152,15 +152,17 @@ function foo(arr, index) {
 
 `v8/test/unittests/compiler/load-elimination-unittest.cc` 是 V8 编译器中加载消除优化器的单元测试文件。它通过各种测试用例验证了优化器在不同场景下能否正确识别和消除冗余的加载操作，从而提高 JavaScript 代码的执行效率。理解这些测试用例有助于我们了解加载消除优化的原理和适用范围，以及避免编写可能阻碍这种优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/load-elimination-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/load-elimination-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -662,7 +664,4 @@ TEST_F(LoadEliminationTest, AliasAnalysisForFinishRegion) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

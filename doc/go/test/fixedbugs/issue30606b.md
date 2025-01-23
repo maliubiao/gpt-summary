@@ -197,15 +197,17 @@ func main() {
 
 总而言之，这段代码是 Go 语言内部为了确保其运行时环境在处理特定类型的数据结构时能够正确高效地工作而编写的测试用例。它侧重于类型的定义，为后续的内存分配、垃圾回收等测试提供基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue30606b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -257,9 +259,4 @@ var x5 = reflect.New(reflect.StructOf([]reflect.StructField{
 	{Name: "F2", Type: mediumPtrType},
 	{Name: "F3", Type: bigPtrType},
 }))
-
-"""
-
-
-
 ```

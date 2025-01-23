@@ -172,7 +172,7 @@ By following these steps, I aimed to provide a detailed and accurate overview of
 
 作为系列文章的最后一部分，对 `blink/renderer/core/loader/document_loader.cc` 的分析表明，它是 Blink 渲染引擎中一个至关重要的、多功能的组件。它不仅仅负责下载 HTML 内容，还深入参与到安全策略的执行（CSP）、性能优化（代码缓存）、资源管理（子资源过滤）以及用户体验的提升（视图转换）等多个关键领域。理解 `DocumentLoader` 的工作原理对于深入理解浏览器的工作方式，以及排查页面加载相关的问题至关重要。它的功能覆盖了与 Web 开发息息相关的 JavaScript、HTML 和 CSS，充分体现了其在现代 Web 平台中的核心地位。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/document_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ));
 }
 
@@ -347,8 +349,4 @@ const mojom::RendererContentSettingsPtr& DocumentLoader::GetContentSettings() {
 DEFINE_WEAK_IDENTIFIER_MAP(DocumentLoader)
 
 }  // namespace blink
-
-"""
-
-
 ```

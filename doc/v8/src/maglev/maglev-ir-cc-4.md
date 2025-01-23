@@ -184,7 +184,7 @@ Many of these IR nodes are designed to catch common JavaScript programming error
 
 This specific part of `v8/src/maglev/maglev-ir.cc` defines Maglev IR nodes focused on **type checking, value conversion, and basic object creation**. It lays the groundwork for ensuring the correctness of JavaScript operations by verifying data types and preparing values for subsequent operations. The nodes here handle fundamental scenarios like ensuring a value is a string, converting the `this` value, and creating basic object and array literals. This section contributes to the overall goal of Maglev to efficiently and safely execute JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 traints() {
   UseRegister(receiver_input());
 }
@@ -999,7 +1001,4 @@ void ExtendPropertiesBackingStore::GenerateCode(MaglevAssembler* masm,
     snapshot.live_registers.set(object);
     snapshot.live_registers.set(old_property_array);
     snapshot.live_registers.set(new_property_
-"""
-
-
 ```

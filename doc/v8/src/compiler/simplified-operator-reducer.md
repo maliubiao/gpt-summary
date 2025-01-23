@@ -127,11 +127,13 @@ function exampleCheckIf() {
 
 `simplified-operator-reducer.cc` 是 V8 编译器中一个重要的优化阶段，它通过对中间代码中的简化运算符进行分析和转换，消除了冗余计算、简化了表达式、优化了类型转换和控制流，最终提升了 JavaScript 代码的执行效率。这些优化对于 JavaScript 的性能至关重要，因为 JavaScript 是一门动态类型语言，运行时开销相对较大，编译时的优化可以显著减少这种开销。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -461,7 +463,4 @@ SimplifiedOperatorBuilder* SimplifiedOperatorReducer::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

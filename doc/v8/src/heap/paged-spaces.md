@@ -105,11 +105,13 @@ let myString = "This is a string";
 
 总而言之，`v8/src/heap/paged-spaces.cc` 是 V8 引擎堆内存管理的核心，它定义了内存的组织结构和管理机制，直接支撑着 JavaScript 程序的运行和内存回收。 你在 JavaScript 中操作的每一个对象，背后都有这个 C++ 文件中定义的机制在默默地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/paged-spaces.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -790,7 +792,4 @@ void SharedSpace::ReleasePage(PageMetadata* page) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

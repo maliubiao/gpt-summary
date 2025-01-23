@@ -189,15 +189,17 @@ stats.RecordPhaseStats("optimization", "Hydrogen Optimization", basic_stats2);
 
 总而言之，`v8/src/diagnostics/compilation-statistics.cc` 是 V8 引擎中一个重要的组成部分，它提供了关于代码编译过程的宝贵信息，可以帮助 V8 团队改进编译器，并帮助开发者更好地理解 JavaScript 代码的执行特性和潜在的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/compilation-statistics.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/compilation-statistics.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -399,7 +401,4 @@ std::ostream& operator<<(std::ostream& os, const AsPrintableStatistics& ps) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

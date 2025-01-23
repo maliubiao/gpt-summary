@@ -132,7 +132,7 @@ This step-by-step approach, starting from basic observation and progressively co
 
 如果在使用 Frida 或 Frida-QML 时遇到与模块导入相关的错误，例如 `ModuleNotFoundError: submod`，那么检查 `frida/subprojects/frida-qml/releng/meson/test cases/common/252 install data structured/pysrc/submod/__init__.py` 文件是否存在且内容正确（虽然本例中内容很简单）是一个重要的调试步骤。如果该文件丢失或被修改，则可以解释为什么 Python 无法找到或导入 `submod` 包。这可以帮助开发人员或用户定位安装或配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/252 install data structured/pysrc/submod/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,10 +140,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''init for submod'''
-
-"""
-
 ```

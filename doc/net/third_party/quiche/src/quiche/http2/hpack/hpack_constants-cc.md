@@ -166,15 +166,17 @@ Finally, organize the information logically, addressing each part of the prompt 
 
 总而言之，`hpack_constants.cc` 虽然是一个底层的 C++ 文件，但它对于理解 HTTP/2 的头部压缩机制至关重要，并间接地影响了 JavaScript 应用的网络性能。在网络调试和性能优化方面，了解其内容可以帮助开发者更好地理解浏览器行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/hpack_constants.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -547,7 +549,4 @@ const HpackStaticTable& ObtainHpackStaticTable() {
 }
 
 }  // namespace spdy
-
-"""
-
 ```

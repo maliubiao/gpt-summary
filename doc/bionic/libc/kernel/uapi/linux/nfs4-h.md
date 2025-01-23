@@ -242,7 +242,7 @@ except Exception as e:
 
 这个 `nfs4.handroid` 头文件是 Android 系统与 NFSv4 协议交互的基础，虽然用户空间的应用程序通常不会直接包含它，但它定义的常量和结构体在系统底层发挥着关键作用。 通过 Frida 等工具，我们可以观察到这些定义如何在系统调用的参数中体现出来，从而更好地理解 Android 如何与网络文件系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nfs4.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -394,7 +396,4 @@ Prompt:
 #define NFS4_MAX_OPS 8
 #define NFS4_MAX_BACK_CHANNEL_OPS 2
 #endif
-
-"""
-
 ```

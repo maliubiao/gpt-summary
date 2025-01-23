@@ -127,7 +127,7 @@ This detailed breakdown shows how to approach the code analysis step-by-step, st
 
 总之，`frida/subprojects/frida-core/releng/meson/unittests/pythontests.py` 文件是 Frida 项目中用于确保 Python 扩展模块相关功能正确性的重要组成部分。它通过一系列单元测试来验证构建系统在处理不同 Python 版本、分发和字节码编译等方面的能力，这对于 Frida 作为一个需要与目标 Python 环境交互的动态插桩工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/pythontests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -225,7 +227,4 @@ python = pymod.find_installation('python3', required: true)
         if shutil.which('python2') or PythonModule._get_win_pythonpath('python2'):
             raise self.skipTest('python2 installed, already tested')
         self._test_bytecompile()
-
-"""
-
 ```

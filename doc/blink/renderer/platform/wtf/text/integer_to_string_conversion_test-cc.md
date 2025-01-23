@@ -128,14 +128,16 @@ Finally, I'd organize the findings into a clear and structured answer, covering 
 
 总而言之，`integer_to_string_conversion_test.cc` 这个文件对于保证 Blink 引擎内部整数到字符串转换功能的正确性和稳定性至关重要，而这个功能又是支撑 JavaScript、HTML 和 CSS 正常运行的基础之一。它通过严谨的单元测试，减少了潜在的 bug，并确保了浏览器在处理数字数据时的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/integer_to_string_conversion_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ TYPED_TEST(IntegerToStringConversionBoundsTest, UpperBound) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

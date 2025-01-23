@@ -166,7 +166,7 @@ Stopped thread.
 
 这个简单的 `threadprog.c` 文件可以作为 Frida 学习和测试的基础案例，帮助开发者理解如何使用 Frida 来监控和分析多线程程序的行为。通过 hook 线程创建和同步相关的函数，开发者可以深入了解程序的并发执行情况，从而更好地进行逆向分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/94 threads/threadprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
 
 #include<windows.h>
@@ -222,7 +224,4 @@ int main(void) {
 }
 
 #endif
-
-"""
-
 ```

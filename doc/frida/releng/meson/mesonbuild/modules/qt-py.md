@@ -180,7 +180,7 @@ Let's say a developer is working on a Frida script to interact with a Qt applica
 
 In essence, while the developer might not directly interact with `qt.py`, understanding its functionality is crucial for comprehending how the target Qt application was built and how Frida interacts with its underlying Qt mechanisms. Build errors, unexpected Frida behavior, or a need for deeper understanding of Qt's internals can all lead a developer to investigate the role of this module.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/qt.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -811,7 +813,4 @@ class QtBaseModule(ExtensionModule):
             return ModuleReturnValue(results.return_value[0], [results.new_objects, translations])
         else:
             return ModuleReturnValue(translations, [translations])
-
-"""
-
 ```

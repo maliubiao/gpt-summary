@@ -80,7 +80,7 @@ By following this systematic approach, I can address all aspects of the request 
 
 `bad.py` 文件本身是一个非常简单的占位符，它的核心功能是作为 Frida 构建系统测试的一部分，用于验证某些文件或模块是否被正确地排除在最终安装包之外。 它间接地保障了 Frida 工具的质量和可靠性。 开发者和构建维护者会关注这个文件，以确保 Frida 的构建和发布流程的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/252 install data structured/pysrc/bad.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -88,10 +88,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.bad should not be installed'''
-
-"""
-
 ```

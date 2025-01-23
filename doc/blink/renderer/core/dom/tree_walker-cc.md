@@ -212,15 +212,17 @@ console.log(nextSibling); // 输出上一个节点的下一个元素兄弟节点
 
 `blink/renderer/core/dom/tree_walker.cc` 是 Chromium Blink 引擎中实现 DOM 树遍历核心功能的关键文件。它提供了灵活的节点选择和遍历机制，是 JavaScript 中 `TreeWalker` API 的底层实现。理解其功能和潜在的使用错误对于开发高性能和可靠的 Web 应用至关重要。当网页上的 JavaScript 代码需要深入分析或操作 DOM 结构时，就有可能涉及到这个文件的代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/tree_walker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2000 Frederik Holljen (frederik.holljen@hig.no)
@@ -478,7 +480,4 @@ void TreeWalker::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

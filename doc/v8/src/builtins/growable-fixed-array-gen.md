@@ -119,11 +119,13 @@ console.log(myArray); // 输出: [1, 2, 3, ...]
 
 `v8/src/builtins/growable-fixed-array-gen.cc` 中的 `GrowableFixedArray` 类是 V8 引擎内部用于高效实现 JavaScript 数组动态增长的关键组件。它允许在需要时扩展内部存储，并通过 `Push` 操作方便地添加元素，最终可以转换为固定大小的 `FixedArray` 或 JavaScript 的 `Array` 对象。 这使得 JavaScript 数组在开发者使用时感觉是无限容量的，而底层实现则是经过优化的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/growable-fixed-array-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ TNode<FixedArray> GrowableFixedArray::ResizeFixedArray(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -218,7 +218,7 @@ gcc file_copy.c -o file_copy
 
 **因此，用户很可能是为了构建、测试或开发 Frida 而接触到这个脚本的。 当测试或构建流程需要执行某个外部程序并管理其输入输出时，Frida 的构建系统会调用 `copyrunner.py`。** 如果在构建或测试过程中出现与文件操作相关的错误，开发者可能会查看 `copyrunner.py` 的代码来理解其作用，并排查是否与该脚本的调用方式或参数有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/3 pipeline/depends/copyrunner.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -226,8 +226,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, subprocess
@@ -235,7 +237,4 @@ import sys, subprocess
 prog, infile, outfile = sys.argv[1:]
 
 subprocess.check_call([prog, infile, outfile])
-
-"""
-
 ```

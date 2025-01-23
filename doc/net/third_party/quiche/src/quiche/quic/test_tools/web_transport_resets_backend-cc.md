@@ -137,15 +137,17 @@ stream.reset(300); // 发送一个 RESET_STREAM 帧，错误码 300
 
 通过以上步骤，结合网络面板的信息和服务器端的日志，开发者可以逐步缩小问题范围，最终定位到负责处理流重置的后端代码，例如 `web_transport_resets_backend.cc`，并分析其行为是否符合预期。 尤其当怀疑服务器端对流重置的处理有问题时，查看这个文件的逻辑将非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/web_transport_resets_backend.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ QuicSimpleServerBackend::WebTransportResponse WebTransportResetsBackend(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

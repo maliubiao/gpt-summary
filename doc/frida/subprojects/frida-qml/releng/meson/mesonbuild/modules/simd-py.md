@@ -171,7 +171,7 @@ arch_simd = simd_lib.check('my_simd_lib',
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/simd.py` 是 Frida 构建系统中的一个关键模块，负责根据目标平台的 SIMD 指令集支持情况编译出优化的代码，这对于提升 Frida 在不同架构上的性能至关重要，并且与逆向工程中对性能有较高要求的场景紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/simd.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -295,7 +297,4 @@ class SimdModule(ExtensionModule):
 
 def initialize(interp: Interpreter) -> SimdModule:
     return SimdModule(interp)
-
-"""
-
 ```

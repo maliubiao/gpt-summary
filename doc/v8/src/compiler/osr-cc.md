@@ -126,15 +126,17 @@ console.log(myFunction(5));
 
 总结来说，`v8/src/compiler/osr.cc` 中的 `OsrHelper` 类是 V8 引擎实现 OSR 机制的关键组件，它负责在优化过程中设置和管理函数帧，确保从非优化代码到优化代码的平滑过渡，从而提升 JavaScript 代码的执行效率。虽然用户不会直接编写或修改这个文件，但理解 OSR 的概念有助于编写更易于 V8 引擎优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/osr.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/osr.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ void OsrHelper::SetupFrame(Frame* frame) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

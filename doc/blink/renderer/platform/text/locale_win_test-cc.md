@@ -150,14 +150,16 @@ By following these steps, I can create a comprehensive and accurate answer that 
 
 总而言之，`locale_win_test.cc` 这个文件通过一系列单元测试，确保了 `LocaleWin` 类在 Windows 平台上能够正确地处理各种本地化相关的任务，这对于构建能够适应不同语言和文化用户的 Web 应用程序至关重要。它直接支持了浏览器在处理 JavaScript 的国际化 API 和渲染本地化内容时的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/locale_win_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -466,7 +468,4 @@ TEST_F(LocaleWinTest, localizedNumberRoundTrip) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -167,7 +167,7 @@ const char* tachyon_phaser_command() {
 
 通过分析 `tachyon_module.c` 的源代码，结合 Frida 的使用场景和 Python 扩展的构建过程，用户可以逐步排查错误，例如检查模块是否正确编译，依赖的外部函数是否正确链接，以及 Python 代码中是否传递了正确的参数。这个 C 代码文件是调试整个 Frida 扩展功能流程中的一个关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python/4 custom target depends extmodule/ext/tachyon_module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
   Copyright 2016 The Meson development team
 
@@ -228,7 +230,4 @@ static struct PyModuleDef tachyonmodule = {
 PyMODINIT_FUNC PyInit_tachyon(void) {
     return PyModule_Create(&tachyonmodule);
 }
-
-"""
-
 ```

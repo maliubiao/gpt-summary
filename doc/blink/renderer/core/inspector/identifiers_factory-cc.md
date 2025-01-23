@@ -123,14 +123,16 @@ By following this structured approach, combining code analysis with domain knowl
 
 总而言之，`identifiers_factory.cc` 是 Blink 渲染引擎中一个关键的实用工具，它为各种内部对象提供了用于调试和检查的稳定且唯一的标识符，这些标识符在 Chrome DevTools 中扮演着至关重要的角色，帮助开发者理解和调试 web 页面的行为。理解其功能和限制对于进行深入的浏览器开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/identifiers_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc.  All rights reserved.
  *
@@ -286,7 +288,4 @@ String IdentifiersFactory::IdForCSSStyleSheet(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -238,15 +238,17 @@ While developers don't directly interact with `struct-types.h`, understanding it
 
 In summary, `v8/src/wasm/struct-types.h` is a foundational header in V8's Wasm implementation, defining the C++ representations of struct and array types. Understanding its purpose helps in comprehending how V8 manages Wasm's complex data structures and how JavaScript interacts with them, ultimately leading to writing more robust and correct code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/struct-types.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/struct-types.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -584,7 +586,4 @@ inline size_t hash_value(const CanonicalArrayType& type) {
 }  // namespace v8
 
 #endif  // V8_WASM_STRUCT_TYPES_H_
-
-"""
-
 ```

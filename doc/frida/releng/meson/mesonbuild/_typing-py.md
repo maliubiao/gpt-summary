@@ -226,7 +226,7 @@ print(mutable_data)
 
 `frida/releng/meson/mesonbuild/_typing.py` 文件是 Frida 项目中用于定义自定义类型提示的关键文件，特别是 `ImmutableListProtocol` 对于确保某些数据结构的只读性至关重要。它主要服务于 Frida 的内部开发和静态类型检查，间接地影响用户对 Frida API 的使用方式，并为 Frida 的可维护性和健壮性做出了贡献。用户通常不会直接操作这个文件，但类型提示的存在会影响他们编写和调试与 Frida 交互的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/_typing.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -234,8 +234,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 # Copyright © 2020-2023 Intel Corporation
@@ -305,7 +307,4 @@ class ImmutableListProtocol(Protocol[T]):
     def index(self, item: T) -> int: ...
 
     def copy(self) -> typing.List[T]: ...
-
-"""
-
 ```

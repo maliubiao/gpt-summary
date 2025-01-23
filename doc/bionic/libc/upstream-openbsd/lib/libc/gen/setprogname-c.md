@@ -252,7 +252,7 @@ if (Process.platform === 'android') {
 
 通过这个 Hook，你可以观察到在应用程序启动的早期，`setprogname` 是如何被调用的，以及程序名是如何被设置的。你需要确保你的 Frida 版本与目标设备兼容，并且你拥有调试目标应用程序的权限。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gen/setprogname.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* $OpenBSD: setprogname.c,v 1.6 2017/09/17 06:38:03 otto Exp $ */
 /*
  * Copyright (c) 2013 Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -296,7 +298,4 @@ setprogname(const char *progname)
 	else
 		__progname = tmpn + 1;
 }
-
-"""
-
 ```

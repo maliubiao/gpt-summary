@@ -185,7 +185,7 @@ func main() {
 
 这段代码是 `socktest` 框架中用于模拟 `accept4` 系统调用的关键部分。它通过拦截和过滤机制，允许开发者在测试环境中灵活地控制 `accept` 操作的行为，从而编写更可靠的网络测试。使用者需要注意区分模拟的 socket 和真实的 socket，避免在需要真实网络操作的场景下使用模拟的 socket。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/internal/socktest/sys_cloexec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -237,9 +239,4 @@ func (sw *Switch) Accept4(s, flags int) (ns int, sa syscall.Sockaddr, err error)
 	sw.stats.getLocked(nso.Cookie).Accepted++
 	return ns, sa, nil
 }
-
-"""
-
-
-
 ```

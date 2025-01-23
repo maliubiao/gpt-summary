@@ -419,15 +419,17 @@ void ShowTree(const blink::VisiblePosition& vpos) {
 * 如果遇到 `DCHECK` 失败，通常意味着 `VisiblePosition` 的状态与当前的文档状态不一致，需要检查 DOM 树或样式的变化过程。
 * 使用 `ShowTreeForThis()` 可以查看 `VisiblePosition` 对应的 DOM 结构，帮助理解其定位的上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/visible_position.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Apple Inc. All rights
  * reserved.
@@ -716,7 +718,4 @@ void ShowTree(const blink::VisiblePosition& vpos) {
 }
 
 #endif
-
-"""
-
 ```

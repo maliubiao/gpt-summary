@@ -145,15 +145,17 @@ By following this kind of methodical process, moving from the general to the spe
 
 总而言之，`net/reporting/reporting_uploader_unittest.cc` 是确保 `ReportingUploader` 类功能正确性和健壮性的重要组成部分，它涵盖了各种正常和异常情况，为网络报告功能的稳定运行提供了保障。它与 JavaScript 的联系在于它是 JavaScript Reporting API 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_uploader_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -901,7 +903,4 @@ TEST_F(ReportingUploaderTest, RespectsNetworkAnonymizationKey) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

@@ -97,12 +97,14 @@ convert(10);
 
 总而言之，`v8/src/compiler/js-typed-lowering.cc` 是 Turbofan 编译器中一个至关重要的组成部分，它通过分析类型信息，将高级的 JavaScript 操作转换为更底层的、性能更高的简化操作，从而显著提升 JavaScript 代码的执行效率。 这是类型优化编译的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-typed-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1711,7 +1713,4 @@ Reduction JSTypedLowering::ReduceJSLoadScriptContext(Node* node) {
     context = gasm.LoadField<Context>(
         AccessBuilder::ForContextSlotKnownPointer(Context::PREVIOUS_INDEX),
         con
-"""
-
-
 ```

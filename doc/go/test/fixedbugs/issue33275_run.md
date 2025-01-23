@@ -167,15 +167,17 @@ func main() {
 
 `issue33275_run.go` 是一个测试程序，旨在验证 Go 语言在特定场景下（并发修改 `map`）的稳定性，确保不会出现 "index out of range" 这样的错误。它通过运行一个子进程并检查其输出来实现测试目的。 这段代码强调了在 Go 中使用 `map` 时需要注意并发安全的问题，开发者应该使用适当的同步机制（例如 `sync.Mutex` 或 `sync.RWMutex`）来保护并发访问的 `map`。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue33275_run.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 //go:build !nacl && !js && !wasip1 && !gccgo
@@ -202,9 +204,4 @@ func main() {
 		panic(`go run issue33275.go reported "index out of range"`)
 	}
 }
-
-"""
-
-
-
 ```

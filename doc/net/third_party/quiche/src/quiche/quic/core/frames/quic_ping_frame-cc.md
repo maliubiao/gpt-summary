@@ -148,15 +148,17 @@ QuicPingFrame ping_frame(123);
 
 `quic_ping_frame.cc` 定义了 QUIC 协议中 PING 帧的表示，虽然与 JavaScript 没有直接的编程接口，但用户通过浏览器发起网络请求时，如果使用了 QUIC 协议，底层的 PING 帧交互是网络连接管理的重要组成部分。调试人员可以通过浏览器提供的网络工具或直接查看 Chromium 源代码来了解 PING 帧的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/frames/quic_ping_frame.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ std::ostream& operator<<(std::ostream& os, const QuicPingFrame& ping_frame) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

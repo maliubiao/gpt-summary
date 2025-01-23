@@ -97,14 +97,16 @@ This detailed process, moving from a high-level understanding to specific code a
 
 总而言之，这个文件是 Blink 内部基础设施的关键部分，它确保了不同进程和组件之间能够安全可靠地传递和识别各种 Web 平台概念的引用。虽然普通开发者不会直接操作它，但它的正确运行对于 JavaScript, HTML 和 CSS 功能的实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/tokens/tokens_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -336,7 +338,4 @@ bool UnionTraits<blink::mojom::WebGPUExecutionContextTokenDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

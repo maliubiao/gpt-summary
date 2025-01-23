@@ -236,15 +236,17 @@ window.webkitResolveLocalFileSystemURL(
 
 总而言之，`DOMWindowFileSystem.cc` 是 Blink 引擎中连接 JavaScript 文件系统 API 和底层文件系统实现的桥梁，它负责处理来自 JavaScript 的请求，进行安全检查和参数验证，并将请求转发到更底层的模块进行处理，最终将结果返回给 JavaScript。理解这个文件的功能对于理解浏览器如何暴露文件系统能力给网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/dom_window_file_system.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012, Google Inc. All rights reserved.
  *
@@ -404,7 +406,4 @@ static_assert(
     "DOMWindowFileSystem::kPersistent should match FileSystemTypePersistent");
 
 }  // namespace blink
-
-"""
-
 ```

@@ -194,14 +194,16 @@ PhysicalRect {
 
 `ScrollableOverflowCalculator` 是 Blink 渲染引擎中一个核心组件，负责精确计算元素的可滚动溢出区域。它的计算结果直接影响浏览器如何显示滚动条以及用户如何与页面进行交互。理解其工作原理对于前端开发者来说，能够更好地控制页面的布局和滚动行为，避免出现意外的渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/scrollable_overflow_calculator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -525,7 +527,4 @@ PhysicalRect ScrollableOverflowCalculator::ScrollableOverflowForPropagation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

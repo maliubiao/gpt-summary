@@ -140,7 +140,7 @@ Essentially, my process involved understanding the code, connecting it to releva
 
 总而言之，`CanvasRenderingContext2DState::cc` 文件的这部分代码负责管理 Canvas 2D 渲染上下文中与文本的**字母间距**、**单词间距**和**渲染质量**相关的状态。它接收来自 JavaScript 的设置，解析和转换这些值，并更新内部的 `FontDescription` 对象，以便在后续的文本绘制操作中应用这些样式。这部分代码是 Canvas 2D API 实现的关键组成部分，连接了 JavaScript API 和底层的文本渲染机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pacing_in_pixel =
       conversion_data.ZoomedComputedPixels(num_spacing, unit);
 
@@ -207,8 +209,4 @@ void CanvasRenderingContext2DState::SetTextRendering(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -189,7 +189,7 @@ Frida 可以用来验证实际运行中加载的是哪个版本的库，以及 `
 
 通过这样的路径，用户可以深入了解 Frida 工具的内部工作原理，特别是其在处理依赖版本方面的能力，并可能基于这些测试用例学习如何使用 Frida 来调试和分析类似的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/linuxlike/5 dependency versions/subprojects/somelib/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,9 +197,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

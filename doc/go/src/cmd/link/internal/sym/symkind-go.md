@@ -178,15 +178,17 @@ func main() {
 
 总而言之，`go/src/cmd/link/internal/sym/symkind.go` 是 Go 链接器中一个关键的文件，它定义了符号的类型，并为链接器理解和处理程序的不同组成部分提供了基础。理解 `SymKind` 对于深入理解 Go 程序的链接过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/sym/symkind.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/l.h and related files.
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/l.h
 //
@@ -423,9 +425,4 @@ func (t SymKind) IsNOPTRDATA() bool {
 func (t SymKind) IsDWARF() bool {
 	return SDWARFSECT <= t && t <= SDWARFLINES
 }
-
-"""
-
-
-
 ```

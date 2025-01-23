@@ -110,7 +110,7 @@ Let's break down the thought process for analyzing this seemingly trivial C code
 
 虽然 `exe.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色。  它通过故意引入一个构建错误，来验证 Meson 构建系统在处理参数顺序方面的正确性，从而确保 Frida 的构建过程的健壮性，最终保障了 Frida 作为逆向工具的可靠性。  这个测试用例也反映了用户在使用构建系统时可能犯的常见错误。 开发者查看这个文件通常是为了维护、调试 Frida 的构建系统，或者为了理解 Frida 的测试结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/35 project argument after target/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,12 +118,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

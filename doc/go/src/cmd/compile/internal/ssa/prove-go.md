@@ -159,7 +159,7 @@ go build -gcflags="-d=ssa/prove/debug=3" your_program.go
 
 这部分代码为 Go 语言编译器中的 SSA 优化过程提供了核心的静态分析能力。它通过跟踪变量的取值范围和它们之间的关系，构建了一个用于推理程序行为的知识库 (`factsTable`)。这个知识库是后续优化步骤 (例如边界检查消除) 的基础。代码定义了关键的数据结构 (`limit`, `relation`, `ordering`, `factsTable`) 和相关的操作函数，用于维护和更新这个知识库。 `prove` 函数作为入口，利用这些信息来判断和消除冗余的条件分支。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/prove.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -167,8 +167,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2462,9 +2464,4 @@ func simplifyBlock(sdom SparseTree, ft *factsTable, b *Block) {
 			v.SetArg(i, c)
 			ft.initLimitForNewValue(c)
 			if b.Fun
-"""
-
-
-
-
 ```

@@ -107,14 +107,16 @@ Here's a breakdown of the thinking process to analyze the provided C++ code and 
 
 总而言之，`CanvasDeferredPaintRecord` 是 Blink 渲染引擎中用于优化 Canvas 绘制过程的关键组件，它允许延迟记录绘制操作，并在合适的时机进行统一处理，从而提高渲染效率。虽然 Web 开发者不直接接触它，但它的正确运行对于 Canvas API 的功能实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_deferred_paint_record.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ gfx::SizeF CanvasDeferredPaintRecord::GetSize() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

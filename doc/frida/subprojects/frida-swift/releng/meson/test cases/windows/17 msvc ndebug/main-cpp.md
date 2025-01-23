@@ -144,7 +144,7 @@ void important_function(int value) {
 
 因此，这个 `main.cpp` 文件很可能是一个用于验证 Frida 在 Windows 平台上处理 Release 构建的 Swift 代码时的正确性的一个简单测试用例。它的存在是为了确保在发布版本中，与调试相关的代码被正确地排除，从而保证性能和减小二进制文件大小。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/17 msvc ndebug/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 int main() {
 #ifdef NDEBUG
     // NDEBUG is defined
@@ -163,6 +165,4 @@ int main() {
     return 1;
 #endif
 }
-"""
-
 ```

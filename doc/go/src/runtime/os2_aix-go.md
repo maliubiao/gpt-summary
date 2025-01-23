@@ -199,7 +199,7 @@ func main() {
 
 总而言之，`go/src/runtime/os2_aix.go` 是 Go 语言在 AIX 操作系统上的基石，它通过封装底层的 C 库函数和系统调用，为 Go 程序的运行提供了必要的操作系统接口。 理解这个文件的内容有助于深入理解 Go 语言的运行时机制以及它如何与不同的操作系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os2_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -971,9 +973,4 @@ func pthread_self() pthread {
 func signalM(mp *m, sig int) {
 	syscall2(&libpthread_kill, uintptr(pthread(mp.procid)), uintptr(sig))
 }
-
-"""
-
-
-
 ```

@@ -109,12 +109,14 @@ function bar(y) {
 
 总之，`code-generator-x64.cc` (第 5 部分) 的功能是 V8 引擎将高级 JavaScript 代码转化为可在 x64 处理器上执行的低级机器指令的关键组成部分，涵盖了控制流、函数调用、数据操作等核心方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 es branches after this instruction.
 void CodeGenerator::AssembleArchBranch(Instruction* instr, BranchInfo* branch) {
   Label::Distance flabel_distance =
@@ -1278,8 +1280,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 #undef __
 
 }  // namespace v8::internal::compiler
-
-"""
-
-
 ```

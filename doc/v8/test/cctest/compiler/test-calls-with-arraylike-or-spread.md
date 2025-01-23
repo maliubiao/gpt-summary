@@ -115,11 +115,13 @@ console.log(fooWithSpread(4, 5, 6)); // 输出 15
 
 总而言之，这个 C++ 测试文件是 V8 团队用于确保其 JavaScript 引擎能够有效地优化使用 `apply` 方法和展开语法进行函数调用的场景。通过观察编译器在不同阶段生成的中间表示，可以验证优化是否按预期进行，从而提升 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-calls-with-arraylike-or-spread.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ TEST(ReduceCAPICallWithArrayLike) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

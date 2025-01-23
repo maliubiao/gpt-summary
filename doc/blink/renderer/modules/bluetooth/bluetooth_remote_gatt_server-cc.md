@@ -266,15 +266,17 @@ Finally, I organize the information into the categories requested by the prompt:
 
 总而言之，`bluetooth_remote_gatt_server.cc` 是 Web Bluetooth API 中至关重要的一个环节，它负责管理与远程蓝牙 GATT 服务器的连接和数据交互，并将底层的蓝牙操作抽象成 JavaScript 可以使用的 API。理解其功能和与 JavaScript 的关系，对于调试 Web Bluetooth 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/bluetooth/bluetooth_remote_gatt_server.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -555,7 +557,4 @@ void BluetoothRemoteGATTServer::GetPrimaryServicesImpl(
 }
 
 }  // namespace blink
-
-"""
-
 ```

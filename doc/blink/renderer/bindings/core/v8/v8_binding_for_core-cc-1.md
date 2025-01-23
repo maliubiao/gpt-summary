@@ -140,7 +140,7 @@ This detailed process ensures a thorough understanding of the code and allows fo
 
 总的来说，这个代码片段是 Blink 渲染引擎中负责连接核心功能和 V8 JavaScript 引擎的关键桥梁。 它提供了一组工具函数，用于管理 JavaScript 的执行环境 (微任务队列和事件循环)、检查并行算法的运行状态以及增强 JavaScript 异常信息。 这些功能对于确保 JavaScript 代码能够正确高效地在浏览器中运行，并为开发者提供更好的调试体验至关重要。  `v8_binding_for_core.cc` 作为一个整体，扮演着将高级的 JavaScript 概念和操作映射到底层 Blink 实现的关键角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_binding_for_core.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,10 +148,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-           .ToLocal(&property_names)) {
+### 源代码
+```cpp
+.ToLocal(&property_names)) {
     return Vector<String>();
   }
 
@@ -230,8 +231,4 @@ void ApplyContextToException(v8::Isolate* isolate,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

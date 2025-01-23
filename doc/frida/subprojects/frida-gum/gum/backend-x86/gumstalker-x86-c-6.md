@@ -171,7 +171,7 @@ A user interacting with Frida would indirectly trigger the execution of this cod
 
 In essence, `gumstalker-x86.c` provides the core **real-time code tracing and interception capabilities for x86/x64 architectures within the Frida dynamic instrumentation framework.** It uses a combination of code rewriting, hardware breakpoints, and exception handling to monitor and potentially modify the execution flow of a target process, enabling powerful dynamic analysis and reverse engineering scenarios. It is highly platform-dependent, with specific code paths for Windows and other operating systems, reflecting the underlying differences in their kernel and system-level mechanisms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/gumstalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 EBP;
     case X86_REG_ESI: return GUM_X86_ESI;
     case X86_REG_EDI: return GUM_X86_EDI;
@@ -506,8 +508,4 @@ gum_store_thread_exit_match (GumAddress address,
 #endif
 
 #endif
-
-"""
-
-
 ```

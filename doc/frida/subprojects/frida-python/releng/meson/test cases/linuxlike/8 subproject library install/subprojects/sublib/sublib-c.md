@@ -136,7 +136,7 @@ By following these steps, systematically analyzing the code and its context, and
 
 总而言之，这个 `sublib.c` 文件是一个用于测试 Frida 基本 Hook 功能的简单示例，它涉及到动态链接库、函数导出等基础概念，并可以用来验证 Frida 在 Linux 环境下的运行情况。虽然功能简单，但对于理解 Frida 的工作原理和进行初步的 Hook 尝试非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/linuxlike/8 subproject library install/subprojects/sublib/sublib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,14 +144,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<subdefs.h>
 
 int DLL_PUBLIC subfunc(void) {
     return 42;
 }
-
-"""
-
 ```

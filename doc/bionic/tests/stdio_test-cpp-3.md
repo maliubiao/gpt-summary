@@ -161,7 +161,7 @@ void log_data(int value) {
 
 这个 Frida 示例可以帮助你动态地观察 `sscanf` 的调用情况，包括传入的格式字符串和参数，以及返回值，从而理解其行为。你可以根据需要修改脚本来 hook 其他 `stdio` 函数或提取更详细的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stdio_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -173,8 +173,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ECT_EQ(01234567, i);
 
   long long int lli;
@@ -751,8 +753,4 @@ TEST(STDIO_TEST, printf_lc_0) {
   EXPECT_EQ(3, snprintf(buf, sizeof(buf), "<%lc>", L'\0'));
   EXPECT_TRUE(!memcmp(buf, "<\0>", 3));
 }
-
-"""
-
-
 ```

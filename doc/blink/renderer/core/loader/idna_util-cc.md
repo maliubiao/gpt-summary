@@ -180,15 +180,17 @@ Finally, I organize the information into a clear and structured answer, covering
 
 总而言之，`idna_util.cc` 是 Blink 渲染引擎中处理国际化域名的重要组成部分，它负责识别和警告潜在的 IDNA 偏差字符，以提高网络安全性和用户体验。虽然其中的 `UnsafeASCIIToIDNA` 函数仅用于非关键的日志记录和警告，但 `GetConsoleWarningForIDNADeviationCharacters` 函数直接影响开发者和用户的可见体验，帮助他们识别和理解潜在的域名混淆问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/idna_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ String GetConsoleWarningForIDNADeviationCharacters(const KURL& url) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

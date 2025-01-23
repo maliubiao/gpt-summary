@@ -307,7 +307,7 @@ if (Process.platform === 'android') {
 
 这个 Hook 示例可以帮助你理解 Android 应用在底层是如何使用 `iconv` 进行字符编码转换的。通过观察 `iconv_open` 的参数，你可以知道正在尝试进行哪些编码之间的转换。通过观察 `iconv` 的参数，你可以看到实际要转换的输入数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/iconv_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -318,8 +318,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -360,7 +362,4 @@ static void iconv_h() {
   FUNCTION(iconv_close, int (*f)(iconv_t));
   FUNCTION(iconv_open, iconv_t (*f)(const char*, const char*));
 }
-
-"""
-
 ```

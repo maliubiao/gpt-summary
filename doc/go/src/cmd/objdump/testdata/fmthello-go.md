@@ -133,15 +133,17 @@ go build -ldflags="-X 'main.flag=true'" fmthello.go
 
 总而言之，这段代码虽然简单，但巧妙地利用了 Go 语言的特性和编译器指令，用于测试 `go tool objdump` 命令在处理特定格式化信息时的能力，特别是关于行号信息的处理和全局变量的设置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/objdump/testdata/fmthello.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package main
 
 import "fmt"
@@ -162,9 +164,4 @@ func Println(s string) {
 }
 
 var flag bool
-
-"""
-
-
-
 ```

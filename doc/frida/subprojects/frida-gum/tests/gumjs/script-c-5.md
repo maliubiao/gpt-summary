@@ -219,7 +219,7 @@ Now I can organize these functionalities into a coherent summary.
 
 总而言之，`frida/subprojects/frida-gum/tests/gumjs/script.c` 这个测试文件旨在全面测试 Frida 的 GumJS 引擎提供的核心功能，特别是与**进程和模块信息获取、动态加载、远程过程调用以及消息传递**相关的 API 的正确性和稳定性。它通过模拟各种用户脚本可能执行的操作，确保 Frida 能够可靠地完成动态 instrumentation 的任务。这些测试覆盖了底层的二进制和操作系统知识，同时也模拟了用户常见的操作和可能遇到的错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -228,8 +228,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 urn;
   }
 
@@ -1420,7 +1422,4 @@ TESTCASE (timeout_can_be_scheduled)
       "  send(value);"
       "}, uint64(20), 1338);");
   EXPECT_NO_
-"""
-
-
 ```

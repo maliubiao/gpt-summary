@@ -207,7 +207,7 @@ gcc -shared -fPIC a.c -o liba.so
 
 通过以上步骤，开发者可能会在调试过程中直接查看 `frida/subprojects/frida-node/releng/meson/test cases/common/72 shared subproject/a.c` 的源代码，以理解测试的预期行为，并作为调试的参考。这个文件本身是调试过程中的一个关键参考点，用于理解测试的逻辑和预期结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/72 shared subproject/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -230,7 +232,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

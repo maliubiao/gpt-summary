@@ -127,14 +127,16 @@ navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true } })
 
 总而言之，`media_stream_audio_processor_options_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎能够正确地将高级的音频处理属性转换为底层的音频处理设置，这对于提供高质量的 WebRTC 音频体验至关重要。它间接地关联了前端的 JavaScript API 和用户的音频体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_audio_processor_options_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ TEST(AudioProcessingPropertiesTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

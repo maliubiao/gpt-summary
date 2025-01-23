@@ -247,15 +247,17 @@ func main() {
 
 总结来说，`go/test/chan/doubleselect.go` 通过并发地向多个 channel 发送数据并在一个 `select` 语句中接收，来测试 Go 语言 `select` 语句在并发环境下的正确性，确保即使多个 `case` 同时满足条件，也只会选择其中一个执行，从而避免数据竞争和状态错误。 它使用命令行参数 `-n` 来控制测试的迭代次数，方便进行不同强度的压力测试。使用者需要理解 `select` 的选择性而非并行性，避免错误地期望所有满足条件的 `case` 都会执行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/doubleselect.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -343,9 +345,4 @@ func main() {
 	// end up panicking with: "throw: bad g->status in ready".
 	recver(cmux)
 }
-
-"""
-
-
-
 ```

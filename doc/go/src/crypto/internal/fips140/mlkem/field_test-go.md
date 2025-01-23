@@ -387,7 +387,7 @@ By following these steps, one can systematically analyze the provided test code 
 
 总的来说，这个测试文件确保了有限域运算的正确性，以及压缩和解压缩功能的有效性，这对于实现诸如 ML-KEM（Memory-safe Lattice-based Key Encapsulation Mechanism）这样的密码学算法至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/mlkem/field_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -395,8 +395,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -666,9 +668,4 @@ func TestGammas(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

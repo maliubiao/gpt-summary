@@ -131,11 +131,13 @@ obj.value = 10;       // 调用 setter
 
 `ExternalReferenceTable` 是 V8 引擎中一个至关重要的组件，它充当着一个中央注册表，管理着各种内部 C++ 代码和数据的地址，这些代码和数据是执行 JavaScript 代码所必需的。它使得 V8 引擎能够动态地链接和访问这些资源，从而实现 JavaScript 的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -492,7 +494,4 @@ void ExternalReferenceTable::AddNativeCodeStatsCounters(Isolate* isolate,
 }  // namespace v8
 
 #undef SYMBOLIZE_FUNCTION
-
-"""
-
 ```

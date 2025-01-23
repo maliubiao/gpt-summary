@@ -132,7 +132,7 @@ During the process, I might initially focus too much on the specific details of 
 
 因此，`foo.c` 这个文件可能作为 Frida 测试用例的一部分，用于验证 Frida 的 hook 功能是否能够正确地拦截和分析函数调用。用户查看这个文件是为了了解测试用例的结构和预期行为，以便更好地理解 Frida 的工作原理或调试 Frida 本身的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/44 pkgconfig-gen/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int answer_to_life_the_universe_and_everything (void);
@@ -149,7 +151,4 @@ int answer_to_life_the_universe_and_everything (void);
 int simple_function(void) {
     return answer_to_life_the_universe_and_everything();
 }
-
-"""
-
 ```

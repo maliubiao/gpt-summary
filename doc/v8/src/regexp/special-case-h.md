@@ -135,15 +135,17 @@ console.log(/k/i.test('K'));   // 输出: false  <--  与标准 Unicode 大小
 
 `v8/src/regexp/special-case.h` (或其可能的 Torque 版本) 的存在和实现，正是为了确保 V8 的正则表达式引擎能够正确地处理这些复杂的、ECMA-262 规范中定义的特殊情况，避免用户因为对大小写匹配的细节理解不足而产生错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/special-case.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/special-case.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ class RegExpCaseFolding final : public AllStatic {
 #endif  // V8_INTL_SUPPORT
 
 #endif  // V8_REGEXP_SPECIAL_CASE_H_
-
-"""
-
 ```

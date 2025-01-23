@@ -97,7 +97,7 @@ The user wants a summary of the functionality of the `mixed_content_checker.cc` 
 
 总而言之，`mixed_content_checker.cc` 是 Chromium Blink 引擎中负责维护 Web 安全的重要组成部分，它通过识别和处理混合内容，保护用户免受潜在的安全风险。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/mixed_content_checker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -869,8 +871,5 @@ bool MixedContentChecker::IsMixedFormAction(
 
   UseCounter::Count(frame->GetDocument(), WebFeature::kMixedContentPresent);
 
-  // Use 
-"""
-
-
+  // Use
 ```

@@ -152,15 +152,17 @@ By following these steps, iteratively examining the code, and making connections
 
 总而言之，`blink/renderer/core/paint/line_relative_rect.cc` 中定义的 `LineRelativeRect` 类是 Blink 渲染引擎处理文本布局和绘制的关键组件，它抽象了相对于文本行的矩形概念，并考虑了各种书写模式，确保了网页内容在不同语言和布局方向下能够正确渲染。用户与网页的各种交互，特别是涉及到文本显示和操作的部分，都会间接地触发对这个类的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/line_relative_rect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ void LineRelativeRect::AdjustLineEndToInkOverflow(
 }
 
 }  // namespace blink
-
-"""
-
 ```

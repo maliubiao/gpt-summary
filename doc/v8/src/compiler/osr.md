@@ -90,11 +90,13 @@ console.log(myFunction(100000));
 
 `v8/src/compiler/osr.cc` 中的代码是 V8 引擎实现 OSR 功能的关键部分。它负责在 JavaScript 代码执行过程中，将执行状态从未优化版本迁移到优化版本，从而提高 JavaScript 代码的执行效率。虽然 JavaScript 开发者无法直接控制 OSR 的发生和具体实现，但编写“热点”代码是触发 OSR 的常见方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/osr.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -124,7 +126,4 @@ void OsrHelper::SetupFrame(Frame* frame) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

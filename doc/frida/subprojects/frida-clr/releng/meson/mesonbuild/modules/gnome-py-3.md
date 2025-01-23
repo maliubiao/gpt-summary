@@ -221,7 +221,7 @@ state = ... # 包含构建环境信息的对象
 
 作为第 4 部分，该文件的主要功能可以归纳为：**为 Frida 构建过程中处理 GNOME 相关的库（尤其是使用 Vala 或 GObject 的库）提供生成 VAPI 文件和管理依赖关系的能力。** 它封装了调用 `vapigen` 工具的细节，并与 Meson 构建系统集成，使得开发者可以方便地声明和生成 VAPI 文件，以便 Frida 能够更好地理解和操作目标程序的 API。这对于使用 Frida 进行针对 GNOME 应用的逆向工程和动态分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 cy, str]],
                                ) -> T.Tuple[T.List[str], T.List[VapiTarget], T.List[str], T.List[str], T.List[str]]:
         '''
@@ -375,8 +377,4 @@ def initialize(interp: 'Interpreter') -> GnomeModule:
     mod.interpreter.append_holder_map(TypelibTarget, interpreter.CustomTargetHolder)
     mod.interpreter.append_holder_map(VapiTarget, interpreter.CustomTargetHolder)
     return mod
-
-"""
-
-
 ```

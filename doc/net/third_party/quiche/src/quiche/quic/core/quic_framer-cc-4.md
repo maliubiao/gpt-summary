@@ -165,7 +165,7 @@ Here's a breakdown of the thought process to generate the response:
 
 这部分 `quic_framer.cc` 代码的核心功能是解析接收到的 QUIC 数据包中的关键帧类型，包括用于握手的 CRYPTO 帧、用于连接迁移的 NEW_TOKEN 帧、用于数据传输的 STREAM 帧以及用于确认数据包接收的 ACK 帧。它负责将网络字节流转换为结构化的数据，并通知上层模块进行进一步处理。对于调试而言，理解这些帧的结构和解析过程对于排查 QUIC 连接问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ReadVarInt62(&frame.reliable_offset)) {
     set_detailed_error("Failed to read the reliable offset.");
     return false;
@@ -1064,7 +1066,4 @@ bool QuicFramer::ApplyHeaderProtection(EncryptionLevel level, char* buffer,
   }
 
   // Adjust |pn_offset| to account for the diversific
-"""
-
-
 ```

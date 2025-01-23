@@ -156,7 +156,7 @@ python create_zipapp.py --outfile my_meson.pyz --compress
 
 通过以上步骤，开发者可以逐步定位问题，并修复 `create_zipapp.py` 脚本或其调用的上下文中的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/packaging/create_zipapp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -189,7 +191,4 @@ with tempfile.TemporaryDirectory() as d:
     shutil.copy2(source / 'meson.py', Path(d, '__main__.py'))
     shutil.copytree(source / 'mesonbuild', Path(d, 'mesonbuild'))
     zipapp.create_archive(d, interpreter=options.interpreter, target=options.outfile, compressed=options.compress)
-
-"""
-
 ```

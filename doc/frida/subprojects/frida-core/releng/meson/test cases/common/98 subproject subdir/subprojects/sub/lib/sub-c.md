@@ -157,7 +157,7 @@ By following this detailed thought process, we can generate a comprehensive and 
 
 总而言之，虽然 `sub.c` 代码非常简单，但它在 Frida 的测试和构建体系中扮演着一定的角色，并且可以作为学习和理解 Frida 动态 instrumentation 原理的起点。 逆向工程师可以通过 hook 这样的简单函数来验证 Frida 的基本功能，并为分析更复杂的系统打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/98 subproject subdir/subprojects/sub/lib/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,14 +165,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "sub.h"
 
 int sub(void) {
     return 0;
 }
-
-"""
-
 ```

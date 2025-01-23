@@ -140,11 +140,13 @@ By following these steps, focusing on the key functionalities and the interactio
 
 `v8-inspector-session-impl.cc` 文件是 V8 Inspector 功能的关键组成部分，它充当调试客户端和 V8 引擎之间的桥梁，负责处理调试协议消息，协调各种 Inspector Agents，并提供与 JavaScript 运行时交互的能力，使得开发者可以通过调试工具有效地调试和分析 JavaScript 代码。它背后的 C++ 代码直接支撑着我们在 Chrome DevTools 中使用的各种强大的 JavaScript 调试功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-inspector-session-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -686,7 +688,4 @@ V8InspectorSession::EvaluateResult V8InspectorSessionImpl::evaluate(
 void V8InspectorSessionImpl::stop() { m_debuggerAgent->stop(); }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

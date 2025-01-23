@@ -159,11 +159,13 @@ console.log(intStringJs); // 输出 "789"
 
 总而言之，`v8/src/inspector/string-16.cc` 文件中的 `String16` 类是 Inspector 模块中用于处理 UTF-16 字符串的关键组件，它使得 C++ 代码能够有效地表示、操作和与 JavaScript 字符串进行交互，从而支持 Inspector 的调试和分析功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/string-16.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -418,7 +420,4 @@ std::string String16::utf8() const {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

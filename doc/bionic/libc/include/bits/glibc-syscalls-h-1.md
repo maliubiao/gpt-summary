@@ -75,7 +75,7 @@ By following this structured approach, breaking down the complex request into sm
 
 希望这个归纳总结能够帮助你更好地理解 `bionic/libc/include/bits/glibc-syscalls.handroid` 文件的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/glibc-syscalls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -87,8 +87,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _NR_timer_settime)
   #define SYS_timer_settime __NR_timer_settime
 #endif
@@ -209,8 +211,4 @@ _NR_timer_settime)
 #if defined(__NR_writev)
   #define SYS_writev __NR_writev
 #endif
-
-"""
-
-
 ```

@@ -80,12 +80,14 @@ outerFunction();
 
 `v8/src/ast/scopes.cc` 是 V8 引擎中负责管理 JavaScript 代码作用域和局部变量的关键组成部分。它定义了用于表示不同类型作用域的数据结构，并提供了声明、查找和管理变量的功能，从而实现了 JavaScript 的词法作用域规则。理解这个文件的功能有助于深入理解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1827,7 +1829,4 @@ void DeclarationScope::AnalyzePartially(Parser* parser,
     // which cannot be resolved inside. It doesn't make sense to try to resolve
     // them in the outer Scopes here, because they are incomplete.
     Scope::AnalyzePartially(this, ast_node_fac
-"""
-
-
 ```

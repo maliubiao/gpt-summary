@@ -202,7 +202,7 @@ func main() {
 
 总而言之，`runtime/os_unix.go` 中的这段代码是 Go 运行时用于在 Unix 系统上安全可靠地管理进程间文件描述符继承的关键底层实现，虽然开发者通常不需要直接操作它，但理解其背后的原理对于编写健壮的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,8 +210,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -231,9 +233,4 @@ const (
 func closeonexec(fd int32) {
 	fcntl(fd, _F_SETFD, _FD_CLOEXEC)
 }
-
-"""
-
-
-
 ```

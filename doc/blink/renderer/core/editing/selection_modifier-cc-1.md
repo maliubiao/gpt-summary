@@ -164,7 +164,7 @@ By following these steps, we can systematically analyze the C++ code and generat
 
 总而言之，这段代码是 Chromium Blink 引擎中处理文本选择修改的核心组件，它响应用户的交互，并与 JavaScript、HTML 和 CSS 紧密配合，确保用户在网页上的文本选择操作能够正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/selection_modifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on direction,
     TextGranularity granularity) {
   switch (direction) {
@@ -480,8 +482,4 @@ void SelectionModifier::UpdateAllLifecyclePhasesExceptPaint() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

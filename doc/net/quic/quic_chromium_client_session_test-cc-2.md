@@ -90,7 +90,7 @@ fetch('https://www.example.org/data')
 
 这部分代码主要集中在 **测试 `QuicChromiumClientSession` 在连接迁移、错误处理（包括空的响应头和网络写入错误）、连接保持活跃（通过 PING 帧）、以及与连接性监控模块集成方面的功能**。此外，它还测试了客户端对服务器发送的 ORIGIN 帧的处理，以及对接收到的 ECN 标记的报告。这些测试确保了 QUIC 客户端会话在各种网络条件和服务器行为下都能稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ity_state_source;
 
   MockQuicData quic_data(version_);
@@ -872,7 +874,4 @@ TEST_P(QuicChromiumClientSessionTest, OnOriginFrame) {
   frame.origins.push_back(kExampleOrigin1);
   session_->OnOriginFrame(frame);
   EXPECT_EQ(1u, ses
-"""
-
-
 ```

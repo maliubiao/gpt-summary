@@ -40,7 +40,7 @@ Therefore, my thinking process led me to the summarized answer:  这个文件 `a
 
 **简单来说，这个文件是用来测试 Android 系统中 `atan2f` 函数在 Intel 平台上的正确性的数据集合。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan2f_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -52,8 +52,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1648,8 +1650,4 @@ static data_1_2_t<float, float, float> g_atan2f_intel_data[] = {
   },
   { // Entry 315
     0x1.fd5ba9aac2f6dc65912f313e7d111defp-4,
-  
-"""
-
-
 ```

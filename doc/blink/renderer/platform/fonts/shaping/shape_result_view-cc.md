@@ -152,14 +152,16 @@ Blink 引擎会首先进行文本塑形，生成一个 `ShapeResult` 对象。�
 
 总而言之，`shape_result_view.cc` 文件定义了一个关键的组件，它提供了一个方便和高效的方式来访问和操作文本塑形的结果，是 Blink 引擎中处理文本布局的核心组成部分，并间接地支撑着 JavaScript, HTML 和 CSS 相关的文本渲染和操作功能。理解其功能和使用方法对于理解浏览器如何渲染文本至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -818,7 +820,4 @@ void ShapeResultView::ExpandRangeToIncludePartialGlyphs(unsigned* from,
 }
 
 }  // namespace blink
-
-"""
-
 ```

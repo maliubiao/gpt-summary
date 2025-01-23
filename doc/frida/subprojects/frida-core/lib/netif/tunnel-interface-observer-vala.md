@@ -102,7 +102,7 @@ breakpoint.SetScriptCallbackFunction("handle_interface_changes_breakpoint")
    - 用户可以通过 LLDB 设置断点，观察 `handle_interface_changes` 方法的执行过程，检查 `changed_keys` 和 `interfaces` 的状态。
 
 通过以上步骤，用户可以逐步跟踪网络接口变化的处理过程，并调试相关功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/netif/tunnel-interface-observer.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 public class Frida.TunnelInterfaceObserver : Object, DynamicInterfaceObserver {
 #if IOS || TVOS
 	private Gee.Map<string, DynamicInterface> interfaces = new Gee.HashMap<string, DynamicInterface> ();
@@ -212,7 +214,4 @@ public class Frida.TunnelInterfaceObserver : Object, DynamicInterfaceObserver {
 	}
 #endif
 }
-
-"""
-
 ```

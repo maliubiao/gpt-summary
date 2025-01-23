@@ -150,14 +150,16 @@ TEST_F(FrameTest, NavigateSameDomainMultipleTimes) {
 
 总而言之，`frame_test.cc` 通过一系列单元测试，细致地验证了 `blink::Frame` 类在处理用户激活和导航等关键功能时的正确性，这对于确保浏览器的安全性和用户体验至关重要。这些测试覆盖了与 JavaScript、HTML 和 CSS 相关的核心 Web 平台能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -438,7 +440,4 @@ TEST_F(FrameTest, NavigateClearsScrollSnapshotClients) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -222,15 +222,17 @@ func main() {
 
 总结来说，`go/src/cmd/compile/internal/types2/sizes_test.go` 文件通过一系列测试用例，验证了 Go 编译器在计算类型大小和内存对齐方面的正确性，涵盖了不同架构、不同的配置以及 `unsafe` 包的使用场景。理解这些测试背后的原理，有助于 Go 开发者编写更健壮、更可移植的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/sizes_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -425,9 +427,4 @@ func TestGCSizes(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

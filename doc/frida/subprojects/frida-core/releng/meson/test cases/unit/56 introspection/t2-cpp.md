@@ -156,7 +156,7 @@ input()
 
 `frida/subprojects/frida-core/releng/meson/test cases/unit/56 introspection/t2.cpp` 是 Frida 框架中的一个基础单元测试，用于验证 `add_numbers` 函数的正确性。虽然代码本身简单，但它体现了软件测试的基本原则，并与逆向工程中验证假设的思想相通。它也间接地涉及到二进制底层、操作系统内核和框架等底层知识，因为它作为 Frida 项目的一部分，其运行和被测试的代码可能涉及到这些领域。用户接触到这个文件通常是因为他们是 Frida 的开发者、贡献者，或者在调试 Frida 自身的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/56 introspection/t2.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "staticlib/static.h"
 
 int main(void) {
@@ -174,7 +176,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

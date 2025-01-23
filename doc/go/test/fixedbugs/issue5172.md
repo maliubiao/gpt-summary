@@ -149,15 +149,17 @@ The errors in this test case highlight potential mistakes Go programmers might m
 
 In summary, this code snippet is a carefully crafted test case designed to ensure the Go compiler correctly handles errors related to undefined types within the context of `go` and `defer` statements. It verifies that the compiler reports the fundamental error (undefined type) rather than misleading secondary issues like incorrect type conversions.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5172.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -184,9 +186,4 @@ func main() {
 	t := T{1} // ERROR "too many"
 	go t.Bar()
 }
-
-"""
-
-
-
 ```

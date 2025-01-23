@@ -129,15 +129,17 @@ By following this systematic approach, combining code analysis with an understan
 
 总而言之，`chunk_graph_utils.cc` 是 Chromium Blink 引擎中用于优化文本查找功能的重要组成部分，它通过构建块图这种高效的数据结构来加速在复杂 HTML 结构中查找文本的过程，并特别处理了像 Ruby 注释这样的特殊布局。它的工作依赖于对 HTML 结构和 CSS 样式的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/finder/chunk_graph_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -552,7 +554,4 @@ BuildChunkGraph(const Node& first_visible_text_node,
 }
 
 }  // namespace blink
-
-"""
-
 ```

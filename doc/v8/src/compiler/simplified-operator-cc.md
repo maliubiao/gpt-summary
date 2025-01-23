@@ -159,7 +159,7 @@ FieldAccess {
 
 `v8/src/compiler/simplified-operator.cc` 是 V8 编译器中一个至关重要的文件，它定义了用于表示和操作 JavaScript 语义的中间表示形式。这些表示形式在编译器的优化和代码生成阶段被广泛使用，直接影响了最终生成的机器码的效率。理解这个文件中的概念有助于理解 V8 编译器的工作原理，并可以帮助开发者编写更易于 V8 优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1018,7 +1020,4 @@ bool operator==(AssertNotNullParameters const& lhs,
   V(ChangeBitToTagged, Operator::kNoProperties, 1, 0)             \
   V(TruncateBigIntToWord64, Operator::kNoProperties, 1, 0)        \
   V(ChangeInt64ToBigIn
-"""
-
-
 ```

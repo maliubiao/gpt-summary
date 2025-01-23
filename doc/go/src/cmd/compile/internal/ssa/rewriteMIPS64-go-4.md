@@ -142,7 +142,7 @@ Args: [
 
 总而言之，`rewriteMIPS64.go` 的这部分代码定义了MIPS64架构特定的SSA重写规则，用于优化各种基本操作，包括算术运算、逻辑运算、位运算、比较运算和内存操作。这些规则是Go编译器将高级Go代码转换为高效MIPS64机器码的关键步骤，旨在提高最终生成的可执行文件的性能。它通过模式匹配和转换，将抽象的SSA表示转换为更接近目标机器指令的形式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -151,8 +151,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 unc rewriteValueMIPS64_OpMIPS64SUBV(v *Value) bool {
 	v_1 := v.Args[1]
 	v_0 := v.Args[0]
@@ -1445,9 +1447,4 @@ func rewriteValueMIPS64_OpRsh16Ux8(v *Value) bool {
 		v1 := b.NewValue0(v.Pos, OpMIPS64SGTU, typ.Bool)
 		v2 := b.NewValue0(v.Pos, OpMIPS64MOVVconst, typ.UInt64)
 		v2.AuxInt = i
-"""
-
-
-
-
 ```

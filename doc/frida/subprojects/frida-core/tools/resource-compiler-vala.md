@@ -122,7 +122,7 @@ Response:
    - 检查生成的 `output.h`、`output.c`、`output.vapi` 和 `output-blob.obj` 或 `output-blob.S` 文件，确保资源文件已正确编译和压缩。
 
 通过以上步骤，用户可以逐步完成资源文件的编译和压缩，并生成相应的输出文件。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tools/resource-compiler.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public enum Toolchain {
 		MICROSOFT,
@@ -1138,7 +1140,4 @@ namespace Frida {
 						stream.put_byte (0);
 				} else {
 					stream.put_uint32
-"""
-
-
 ```

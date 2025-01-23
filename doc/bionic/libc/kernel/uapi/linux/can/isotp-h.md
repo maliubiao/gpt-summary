@@ -324,7 +324,7 @@ if __name__ == '__main__':
 
 通过运行这个 Frida 脚本，当目标 Android 应用调用 `setsockopt` 设置 ISOTP 选项时，你可以在 Frida 的控制台中看到相关的参数信息，从而了解 Android Framework 或 NDK 是如何一步步配置 ISOTP 协议的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/can/isotp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -335,8 +335,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -397,7 +399,4 @@ struct can_isotp_ll_options {
 #define CAN_ISOTP_DEFAULT_LL_TX_FLAGS 0
 #define CAN_ISOTP_FRAME_TXTIME_ZERO 0xFFFFFFFF
 #endif
-
-"""
-
 ```

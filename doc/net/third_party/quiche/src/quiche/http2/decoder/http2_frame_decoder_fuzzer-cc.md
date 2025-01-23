@@ -103,15 +103,17 @@ Let's break down the thought process for analyzing this fuzzing code.
 
 **模糊测试的目的就是在第 8 和第 9 步之间，通过大量随机的、可能畸形的输入，来尽早发现 `Http2FrameDecoder` 中可能存在的漏洞，从而提高浏览器的稳定性和安全性。** 开发者可以通过模糊测试报告的崩溃信息和触发崩溃的输入数据，快速定位并修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/http2_frame_decoder_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cstddef>
 #include <cstdint>
 
@@ -126,7 +128,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
   decoder.DecodeFrame(&db);
   return 0;  // Always return 0; other values are reserved for future uses.
 }
-
-"""
-
 ```

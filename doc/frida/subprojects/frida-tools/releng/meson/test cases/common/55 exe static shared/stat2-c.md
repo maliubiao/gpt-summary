@@ -216,7 +216,7 @@ int statlibfunc2(void) {
 
 总而言之，`stat2.c` 虽然代码简单，但在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 对静态链接和共享链接库中函数的 instrumentation 能力。理解它的功能以及它在测试流程中的位置，可以帮助开发者调试 Frida 自身或者使用 Frida 进行逆向工程的用户理解其工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/55 exe static shared/stat2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,12 +224,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int statlibfunc2(void) {
     return 18;
 }
-
-"""
-
 ```

@@ -110,15 +110,17 @@ By following this structured thinking process, we can generate a comprehensive a
 
 虽然 `fetch_later_result.cc` 文件本身的代码非常简单，但它很可能在 Blink 引擎的资源加载优化和异步处理机制中扮演着重要的角色。它用于跟踪“稍后获取”操作的激活状态，这与 JavaScript 的 Fetch API、HTML 的资源预加载/预取等功能密切相关。理解 `FetchLaterResult` 的作用需要结合其在更大的 Blink 代码库中的上下文进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/fetch_later_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ bool FetchLaterResult::activated() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

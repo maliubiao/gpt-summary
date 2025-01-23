@@ -151,7 +151,7 @@ Here's a breakdown of the thinking process to arrive at the analysis of the C co
 
 总而言之，这个简单的 `foo.c` 文件虽然代码不多，但它展示了动态链接的基本概念，以及 Frida 如何在这种场景下发挥作用进行动态分析和逆向。文件路径本身就提供了重要的上下文信息，表明它是 Frida 测试框架的一部分，用于验证 Frida 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/256 subproject extracted objects/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -172,7 +174,4 @@ int DLL_IMPORT cppfunc(void);
 int otherfunc(void) {
     return cppfunc() != 42;
 }
-
-"""
-
 ```

@@ -204,15 +204,17 @@ type Key struct{ X, Y int }
 
 理解这些常见的初始化错误能够帮助 Go 开发者编写更健壮和正确的代码。 `initializerr.go` 正是通过模拟这些错误场景来确保 Go 编译器能够有效地帮助开发者发现并修复这些问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/initializerr.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -254,9 +256,4 @@ var _ = map[Key]string{
 	Key{1, 2}: "hello",
 	Key{1, 2}: "world",
 }
-
-"""
-
-
-
 ```

@@ -190,15 +190,17 @@ This systematic approach, starting from a high-level understanding and progressi
 
 总而言之，`blink/renderer/modules/storage/storage_area.cc` 是 Web Storage API 在 Blink 渲染引擎中的关键组件，负责处理 JavaScript 的存储操作请求，进行权限验证，并与底层的存储机制交互，同时负责触发存储事件通知。理解这个文件的功能对于理解浏览器如何实现 Web Storage 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage/storage_area.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  *
@@ -456,7 +458,4 @@ void StorageArea::OnDocumentActivatedForPrerendering() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

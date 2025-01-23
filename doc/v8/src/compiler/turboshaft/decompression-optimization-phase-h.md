@@ -150,15 +150,17 @@ Operation: LoadAndDecompressMultiple(object, [field1, field2]) -> [value1, value
 
 `v8/src/compiler/turboshaft/decompression-optimization-phase.h` 定义了 Turboshaft 编译器中一个负责优化解压缩操作的阶段。它通过分析中间表示，识别解压缩模式并应用优化策略来提高 JavaScript 代码的执行效率。虽然用户不会直接与这个阶段交互，但其优化成果会影响 JavaScript 的性能。 常见编程错误与这个阶段的直接关联较少，更多是影响到需要进行解压缩操作的场景的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/decompression-optimization-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/decompression-optimization-phase.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ struct DecompressionOptimizationPhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_DECOMPRESSION_OPTIMIZATION_PHASE_H_
-
-"""
-
 ```

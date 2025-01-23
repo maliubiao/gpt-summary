@@ -120,7 +120,7 @@ console.log(process({}));    // 继续触发反优化
 
 这段代码片段是 V8 引擎反优化机制的一部分，主要负责在发生反优化时，**为 JavaScript 和 WebAssembly 代码创建新的、未优化的栈帧**。它包含了跟踪反优化事件、处理 WebAssembly 特定的反优化流程（包括重新编译 Liftoff 代码和构建 Liftoff 栈帧），以及计算 JavaScript 代码反优化后的栈帧布局等功能。 其核心目标是确保程序能够从优化后的代码安全地回退到未优化版本继续执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/deoptimizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/deoptimizer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -128,8 +128,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 int(deopt_data->GetSharedFunctionInfo(), scope.file());
     PrintF(") (opt id %d) for deoptimization, reason: %s]\n",
            deopt_data->OptimizationId().value(), reason);
@@ -880,7 +882,4 @@ void Deoptimizer::DoComputeOutputFrames() {
         DoComputeBuiltinContinuation(translated_frame, frame_index,
                                      BuiltinContinuationMode::JAVASCRIPT);
         brea
-"""
-
-
 ```

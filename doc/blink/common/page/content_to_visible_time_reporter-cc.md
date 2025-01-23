@@ -138,14 +138,16 @@ Response: Let's break down the thought process for analyzing the given C++ code.
 
 `content_to_visible_time_reporter.cc` 是 Blink 引擎中一个重要的性能监控组件，它专注于度量用户感知到的页面可见时间，并针对特定的用户交互场景进行精细化测量。它生成的性能数据对于优化网页加载和交互体验至关重要，并且其测量的指标直接受到前端技术（HTML, CSS, JavaScript）的影响。开发者需要正确使用其提供的 API 来确保性能数据的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/content_to_visible_time_reporter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -437,7 +439,4 @@ void ContentToVisibleTimeReporter::OverwriteTabSwitchStartState(
 }
 
 }  // namespace blink
-
-"""
-
 ```

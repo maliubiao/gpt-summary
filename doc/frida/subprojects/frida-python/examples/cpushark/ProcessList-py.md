@@ -133,7 +133,7 @@ Here's a breakdown of the thought process to generate the comprehensive analysis
 
 总而言之，`ProcessList.py` 是一个用户界面辅助模块，它利用 Frida 的核心进程枚举功能，为用户提供了一个方便的方式来选择要分析的目标进程，这是动态逆向分析工作流中的关键一步。它虽然不直接操作二进制底层，但其功能依赖于操作系统内核提供的进程管理能力，并通过 Frida 进行了抽象和封装。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/cpushark/ProcessList.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from Foundation import NSNotFound, NSObject
 
 
@@ -176,7 +178,4 @@ class ProcessList(NSObject):
 
     def comboBox_indexOfItemWithStringValue_(self, comboBox, value):
         return self._processIndexByName.get(value.lower(), NSNotFound)
-
-"""
-
 ```

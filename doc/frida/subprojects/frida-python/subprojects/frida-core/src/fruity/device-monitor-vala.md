@@ -131,7 +131,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 用户调用 `DeviceMonitor.stop()` 方法，停止设备监控。
 
 通过以上步骤，用户可以监控设备的连接和断开状态，并进行相应的处理。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/device-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public sealed class DeviceMonitor : Object {
@@ -1371,7 +1373,4 @@ namespace Frida.Fruity {
 		private string? _name;
 
 		private Promise<UsbDevice>? dev
-"""
-
-
 ```

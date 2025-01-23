@@ -309,7 +309,7 @@ sys.stdin.read()
 
 希望以上详细的分析能够帮助你理解 `bionic/libc/dns/net/getservent.c` 文件的功能和实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/net/getservent.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -473,7 +475,4 @@ struct servent* getservbyport(int port, const char* proto) {
   rs->servent_ptr = old_servent_ptr;
   return s;
 }
-
-"""
-
 ```

@@ -162,7 +162,7 @@ fetchLater('/api/data', {
 
 在调试时，你可以设置断点在 `FetchLaterManager::fetchLater()`, `FetchLaterManager::ContextDestroyed()`, `FetchLaterManager::ContextEnteredBackForwardCache()`, 和 `DeferredLoader` 的相关方法中，来跟踪延迟请求的生命周期和状态。 观察 `deferred_loaders_` 列表可以帮助了解当前有哪些待处理的延迟请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/fetch_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tate) {
   // https://whatpr.org/fetch/1647.html#dom-global-fetch-later
   // Continuing the fetchLater(input, init) method steps:
@@ -502,8 +504,4 @@ void FetchLaterManager::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

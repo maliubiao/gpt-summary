@@ -91,15 +91,17 @@ By following this systematic approach, combining code analysis with knowledge of
 
 `net/cert/x509_cert_types_unittest.cc` 文件是 Chromium 网络栈中至关重要的单元测试文件。它专注于测试 X.509 证书中 Distinguished Name 的解析功能，确保了浏览器在处理 HTTPS 连接和证书验证时的正确性和安全性。虽然普通用户不会直接接触到这段代码，但它默默地保障着网络浏览的安全。 开发者在处理证书相关逻辑时，需要注意 DN 的结构、字符串编码以及比较方法，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_cert_types_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ TEST(X509TypesTest, ParseDNEntrust) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

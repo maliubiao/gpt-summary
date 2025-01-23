@@ -101,15 +101,17 @@ Here's a thinking process to arrive at the explanation of `transport_security_st
 
 总而言之，`transport_security_state_source.cc` 虽然代码很简单，但它定义了一个重要的常量，该常量在 Chromium 网络栈处理传输安全状态时发挥作用，间接地影响了浏览器的安全行为，并可能影响 JavaScript 代码的执行结果。 理解这个文件的作用有助于开发者更好地理解 Chromium 的安全机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/transport_security_state_source.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -121,7 +123,4 @@ namespace net {
 const char kNoReportURI[] = "";
 
 }  // namespace net
-
-"""
-
 ```

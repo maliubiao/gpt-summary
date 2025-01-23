@@ -226,7 +226,7 @@ By following this thought process, combining code analysis with knowledge of Fri
 
 总而言之，`frida-core-example-unix.c` 是一个很好的 Frida 入门示例，它展示了如何使用 C 语言编写 Frida 客户端程序，连接到目标进程，并注入 JavaScript 代码来进行动态分析和 API Hooking。理解其功能和涉及的技术对于进行更复杂的 Frida 开发和逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/devkit-assets/frida-core-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -234,8 +234,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 #include <stdlib.h>
@@ -424,7 +426,4 @@ stop (gpointer user_data)
 
   return FALSE;
 }
-
-"""
-
 ```

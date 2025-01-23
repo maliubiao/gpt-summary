@@ -82,12 +82,14 @@ Response: The user wants a summary of the C++ code in `v8/src/wasm/c-api.cc`. Th
 
 总结来说，这个 C++ 文件是 V8 引擎实现 WebAssembly C API 的基础，它定义了核心的数据结构和操作，为 JavaScript 中使用的 `WebAssembly` API 提供了底层的支持。 理解这些 C API 的功能有助于深入理解 V8 引擎是如何执行 WebAssembly 代码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/c-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2092,7 +2094,4 @@ auto Global::get() const -> Val {
       v8::Isolate::Scope isolate_scope(store->isolate());
       i::Handle<i::Object> result = v8_global->GetRef();
       if (IsWasmFuncR
-"""
-
-
 ```

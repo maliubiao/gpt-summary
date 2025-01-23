@@ -102,7 +102,7 @@ By following these steps, the detailed and informative answer presented earlier 
 
 `test.c` 文件虽然代码简单，但它在 Frida 的构建过程中扮演着一个重要的角色，即作为一个编译时的断言，确保 `_FILE_OFFSET_BITS` 宏没有被意外设置。这有助于保证 Frida 在各种目标平台上构建的正确性和可靠性，最终支持其作为动态 instrumentation 工具在逆向工程中的应用。 它的存在主要是为了预防潜在的构建错误，而不是直接进行逆向操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/33 cross file overrides always args/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _FILE_OFFSET_BITS
   #error "_FILE_OFFSET_BITS should not be set"
 #endif
@@ -120,7 +122,4 @@ int main(int argc, char *argv[])
 {
   return 0;
 }
-
-"""
-
 ```

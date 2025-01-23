@@ -155,15 +155,17 @@ span:nth-last-child(2) { /* 选择倒数第二个 span 元素 */
 
 通过查看测试用例，开发者可以更好地理解浏览器的内部实现，并可能从中找到他们遇到的问题的线索，例如是否是某些特殊情况没有被考虑到，或者是否是 Blink 引擎本身的 Bug。他们甚至可以修改测试用例来复现他们遇到的问题，并将其作为 Bug 报告的一部分提交。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/nth_index_cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ TEST_F(NthIndexCacheTest, NthIndex) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

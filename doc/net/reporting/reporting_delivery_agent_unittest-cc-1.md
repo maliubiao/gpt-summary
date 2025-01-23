@@ -139,7 +139,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 总而言之，这部分测试用例旨在确保 `ReportingDeliveryAgent` 能够根据不同的报告类型和来源，正确地将报告发送到配置的端点，并遵循预期的批量处理和隔离规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_delivery_agent_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ource
 // when necessary. This test queues two reports for the same reporting source,
 // for different endpoints, another for a different source at the same URL, and
@@ -393,8 +395,4 @@ TEST_F(ReportingDeliveryAgentTest, SendReportsForMultipleSources) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

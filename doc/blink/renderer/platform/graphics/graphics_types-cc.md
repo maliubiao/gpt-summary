@@ -179,14 +179,16 @@ This iterative process of scanning, identifying, relating, exemplifying, and str
 
 总而言之，`graphics_types.cc` 文件在 Blink 渲染引擎中扮演着重要的基础角色，它定义了用于描述和操作图形属性的关键类型和函数，直接支撑着 Web 标准中与图形相关的各种特性在浏览器中的实现。开发者在使用 JavaScript, HTML, CSS 进行图形编程时，其行为最终都会被 Blink 引擎解析并映射到这个文件中定义的底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/graphics_types.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.  All rights reserved.
  * Copyright (C) 2012 Rik Cabanier (cabanier@adobe.com)
@@ -493,7 +495,4 @@ String CanvasPixelFormatName(CanvasPixelFormat pixel_format) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

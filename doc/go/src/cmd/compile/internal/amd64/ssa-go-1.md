@@ -185,7 +185,7 @@ This systematic approach of reading, identifying keywords, analyzing functions, 
 
 作为 `go/src/cmd/compile/internal/amd64/ssa.go` 的第二部分，这段代码延续了将SSA中间表示转换为AMD64汇编指令的过程。它涵盖了更广泛的SSA操作码和控制流块，包括函数调用、内存操作（尤其是优化的 `DUFFZERO` 和 `DUFFCOPY`）、原子操作、闭包实现、goroutine 管理、空指针检查等关键的Go语言特性。结合第1部分，这两部分代码共同构成了AMD64架构下Go代码生成的核心逻辑。它保证了Go程序的高效执行，并为Go语言的各种高级特性提供了底层的机器指令实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/amd64/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 2].Reg()
 		p.From.Type = obj.TYPE_MEM
 		p.From.Scale = v.Op.Scale()
@@ -737,10 +739,4 @@ func spillArgReg(pp *objw.Progs, p *obj.Prog, f *ssa.Func, t *types.Type, reg in
 	p.Pos = p.Pos.WithNotStmt()
 	return p
 }
-
-"""
-
-
-
-
 ```

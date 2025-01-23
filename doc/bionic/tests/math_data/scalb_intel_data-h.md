@@ -83,7 +83,7 @@ This step-by-step process allows us to analyze the code snippet, understand its 
 
 总而言之，`bionic/tests/math_data/scalb_intel_data.handroid` 文件是一个存储 `scalb` 函数测试数据的静态数组。 数组中的每个元素都包含一组输入值和期望的输出值，用于验证 `scalb` 函数在 Android Bionic 库中的实现是否正确。 这种测试驱动的方法有助于确保 Android 平台的数学运算的准确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/scalb_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -95,8 +95,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -2005,7 +2007,4 @@ static data_1_2_t<double, double, double> g_scalb_intel_data[] = {
     -0x1.2p3
   },
   { // Entry 378
-"""
-
-
 ```

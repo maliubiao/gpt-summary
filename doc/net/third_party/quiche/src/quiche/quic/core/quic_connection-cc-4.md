@@ -157,7 +157,7 @@ fetch('https://example.com/image.jpg')
 
 因此，**作为第 5 部分，这段代码的核心功能是管理 QUIC 连接中数据包的发送过程，包括将数据帧封装成数据包、处理不同的发送策略（立即发送、缓冲、合并）、处理发送错误、支持 MTU 发现、并与拥塞控制和流量控制机制交互，以确保可靠和高效的数据传输。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _release_time =
       std::max(now, next_release_time_result.release_time);
   packet_writer_params_.release_time_delay = next_release_time - now;
@@ -913,8 +915,4 @@ void QuicConnection::OnHandshakeComplete() {
                      kAlarmGranularity);
   if (!accelerated_server_preferred_address_ &&
       received_server_preferred_address_.IsInitialized()) {
-
-"""
-
-
 ```

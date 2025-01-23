@@ -158,7 +158,7 @@ if (a & b !== 0) {
 
 总而言之，这个代码片段是 V8 引擎中非常基础但至关重要的测试，它确保了编译器能够正确地生成执行基本算术和位运算的机器码，这是保证 JavaScript 代码正确执行的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-machops.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rn(m.Word32Equal(m.Int32Add(m.Int32Constant(i), m.Parameter(0)),
                          m.Int32Constant(0)));
   FOR_UINT32_INPUTS(j) {
@@ -1306,7 +1308,4 @@ TEST(RunWord32OrInBranch) {
     m.Bind(&blockb);
     bt.AddReturn(m.Int32Constant(0 - constant));
     FOR_INT32_INPUTS(i
-"""
-
-
 ```

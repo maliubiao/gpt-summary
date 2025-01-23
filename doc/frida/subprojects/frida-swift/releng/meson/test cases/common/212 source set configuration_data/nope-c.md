@@ -168,7 +168,7 @@ sys.stdin.read()
 
 总而言之，`nope.c` 是 Frida 测试套件中的一个重要组成部分，它通过模拟一个简单的错误场景（未定义的函数指针），来确保 Frida 在遇到类似情况时能够健壮地运行并提供有用的反馈。它体现了软件测试中“负面测试”的重要性，即验证系统在不符合预期输入或异常情况下的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/212 source set configuration_data/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,12 +176,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

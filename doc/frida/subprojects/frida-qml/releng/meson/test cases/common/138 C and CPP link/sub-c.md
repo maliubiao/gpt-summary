@@ -131,7 +131,7 @@ By following this systematic approach, we can transform the simple C code into a
 
 总而言之，尽管 `sub.c` 中的 `a_half` 函数本身非常简单，但在 Frida 的上下文中，它作为一个微型的测试用例，可以用于理解和验证动态 instrumentation 工具的工作原理，特别是涉及到 C/C++ 代码的链接和 hook。用户或开发者可以通过构建、测试和调试 Frida 的过程逐步接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/138 C and CPP link/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -160,7 +162,4 @@ Prompt:
 float a_half(void) {
     return .5;
 }
-
-"""
-
 ```

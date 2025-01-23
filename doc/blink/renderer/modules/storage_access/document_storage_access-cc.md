@@ -225,15 +225,17 @@ By following this thought process, combining code analysis with knowledge of web
 
 `DocumentStorageAccess.cc` 是 Blink 引擎中负责处理跨站点存储访问请求的核心组件。它通过 JavaScript API 暴露功能，并与浏览器的权限管理系统紧密集成，确保用户对存储访问的控制。理解这个文件的功能对于理解浏览器的隐私和安全机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage_access/document_storage_access.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -801,7 +803,4 @@ void DocumentStorageAccess::ProcessTopLevelStorageAccessPermissionState(
 }
 
 }  // namespace blink
-
-"""
-
 ```

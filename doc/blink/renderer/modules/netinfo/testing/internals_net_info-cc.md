@@ -229,15 +229,17 @@ if (navigator.connection) {
 
 总而言之，`internals_net_info.cc` 是 Blink 渲染引擎中一个用于测试目的的关键组件，它允许开发者和测试人员在受控的环境下模拟各种网络状况，从而确保网页在不同网络条件下的健壮性和性能。 它通过 `Internals` API 与外部测试代码进行交互，并间接地影响了 JavaScript 中 Network Information API 的返回值，最终可能影响到网页的 HTML、CSS 和 JavaScript 行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/netinfo/testing/internals_net_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ void InternalsNetInfo::clearNetworkConnectionInfoOverride(Internals&) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

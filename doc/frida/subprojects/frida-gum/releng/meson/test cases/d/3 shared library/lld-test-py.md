@@ -115,7 +115,7 @@ This methodical approach ensures a comprehensive and well-structured answer that
 
 总而言之，`lld-test.py` 是 Frida 构建系统中的一个保障性测试，用于验证动态链接配置的正确性，确保 Frida 及其组件在运行时能够找到所需的共享库。它间接地与逆向方法相关，因为它验证了逆向分析的基础条件之一：目标程序的依赖项能够被正确加载。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/d/3 shared library/lld-test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -145,7 +147,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

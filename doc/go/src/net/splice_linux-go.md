@@ -219,7 +219,7 @@ func main() {
 
 总而言之，`go/src/net/splice_linux.go` 这部分代码通过封装 Linux 的 `splice` 系统调用，为 Go 的网络编程提供了零拷贝的数据传输能力，主要用于优化 TCP 连接与流式 Unix 连接之间的数据传输，从而提升性能。使用者需要注意连接类型的兼容性以及 `handled` 返回值的含义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/splice_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -227,8 +227,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -293,9 +295,4 @@ func spliceTo(w io.Writer, c *netFD) (written int64, err error, handled bool) {
 	written, handled, err = pollSplice(&uc.fd.pfd, &c.pfd, 1<<63-1)
 	return written, wrapSyscallError("splice", err), handled
 }
-
-"""
-
-
-
 ```

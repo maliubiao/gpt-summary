@@ -206,7 +206,7 @@ add eax, ecx
 
 `v8/src/codegen/ia32/assembler-ia32.h` 文件定义了 V8 引擎在 IA-32 架构上生成机器码的核心抽象层。它提供了一个 `Assembler` 类，封装了 IA-32 的各种指令、寄存器、操作数和寻址模式，使得 V8 的代码生成器能够以一种结构化的方式构建可执行的机器代码。这个文件是 V8 将 JavaScript 代码转换为可以在 IA-32 处理器上运行的指令的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/assembler-ia32.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/assembler-ia32.h以.tq结尾，那它是个v8 torque源代码，
@@ -214,8 +214,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1166,7 +1168,4 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     cvttss2si(dst, Operand(src));
   }
   void c
-"""
-
-
 ```

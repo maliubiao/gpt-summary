@@ -141,7 +141,7 @@ Functions in net/http:
 
 作为标准库 API 清单的一部分，这部分代码（即 `net/http` 包的清单）的具体功能是**详细列出 `net/http` 包中所有公开的函数、方法、类型、变量和常量，并提供它们的类型信息 (Func, Method, Type 等) 和一些额外的元数据 (例如 `Method` 类型的元素的数字表示参数或接收者的位置)。** 这为依赖于静态分析标准库的 Go 工具提供了必要的结构化信息。  它允许这些工具在不编译代码的情况下理解 `net/http` 包的 API 表面。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/stdlib/manifest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -149,8 +149,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 e).Location", Method, 0},
 		{"(*Response).ProtoAtLeast", Method, 0},
 		{"(*Response).Write", Method, 0},
@@ -2273,10 +2275,4 @@ e).Location", Method, 0},
 		{"AF_SCLUSTER", Const, 0},
 		{"AF_SECURITY", Const, 0},
 		{"AF_SIP", Const, 0},
-	
-"""
-
-
-
-
 ```

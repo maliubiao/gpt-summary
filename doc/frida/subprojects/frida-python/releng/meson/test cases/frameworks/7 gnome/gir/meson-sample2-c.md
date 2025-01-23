@@ -148,7 +148,7 @@ Interceptor.attach(Module.findExportByName(null, 'meson_sample_print_message'), 
 
 总而言之，`meson-sample2.c` 文件本身是一个简单的 GObject 类的定义，它的功能是创建对象和打印消息。但在 Frida 的上下文中，它成为了一个可以被动态分析和操纵的目标，用于理解程序的行为和执行流程。 理解其代码结构有助于进行更有效的 Frida hook 和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/7 gnome/gir/meson-sample2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample2.h"
 
 struct _MesonSample2
@@ -203,7 +205,4 @@ meson_sample2_print_message (MesonSample2 *self)
 {
   g_print ("Message: Hello\n");
 }
-
-"""
-
 ```

@@ -106,7 +106,7 @@ fetch('https://example.com/large_file.zip')
 
 这部分单元测试主要验证了 `ThroughputAnalyzer` 在处理多个并发请求以及检测网络连接是否处于 "悬挂" 状态时的行为。它覆盖了最小并发请求数配置的影响，以及在请求开始和结束时间重叠场景下的吞吐量观察逻辑。这些测试确保了 `ThroughputAnalyzer` 能够在复杂的网络场景下准确地收集吞吐量信息，为网络质量评估提供可靠的数据基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/throughput_analyzer_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hroughput_analyzer.throughput_observations_received());
 
     // TestDelegates must be before URLRequests that point to them.
@@ -287,8 +289,4 @@ TEST_F(ThroughputAnalyzerTest, TestHangingWindow) {
 }  // namespace
 
 }  // namespace net::nqe
-
-"""
-
-
 ```

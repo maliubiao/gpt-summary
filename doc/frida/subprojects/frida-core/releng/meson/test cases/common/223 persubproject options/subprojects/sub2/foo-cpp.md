@@ -166,7 +166,7 @@ Interceptor.attach(Module.findExportByName(null, "foo"), {
 
 虽然 `foo.cpp` 代码本身非常简单，但它在 Frida 项目中扮演着测试构建系统特定功能（处理子项目选项）的角色。它体现了软件开发中测试的重要性，并通过简单的代码验证构建系统的正确性。对于 Frida 的用户来说，他们通常不会直接与这个文件交互，但理解其存在的意义可以帮助理解 Frida 的开发和测试流程。对于 Frida 的开发者来说，这个文件是他们进行构建系统调试和测试的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/223 persubproject options/subprojects/sub2/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <memory>
 
 class Dummy {
@@ -186,7 +188,4 @@ int foo() {
   auto obj = std::make_unique<Dummy>();
   return 0;
 }
-
-"""
-
 ```

@@ -161,7 +161,7 @@ Finally, organize the information logically, starting with a concise summary of 
 
 `stage1.py` 是 Frida 测试框架中一个简单的构建块，用于验证测试流程中的状态转换。它的功能是读取一个预期内容的输入文件，并生成一个具有特定内容的新文件。 虽然它自身不涉及复杂的逆向工程或底层操作，但它的存在是为了确保 Frida 这一强大的动态分析工具能够正确可靠地工作。理解这个脚本的功能有助于理解 Frida 测试流程的基本原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/262 generator chain/stage1.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,15 +169,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
 
 assert(Path(sys.argv[1]).read_text() == 'stage1\n')
 Path(sys.argv[2]).write_text('stage2\n')
-
-"""
-
 ```

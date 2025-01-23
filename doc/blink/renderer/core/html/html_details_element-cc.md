@@ -242,14 +242,16 @@ This iterative process of scanning, grouping, connecting, exemplifying, reasonin
 
 总而言之，`html_details_element.cc` 文件是实现 `<details>` 元素核心功能的重要组成部分，它处理了元素的展开/折叠逻辑、属性变化、事件触发以及与 CSS 的交互，并为开发者提供了创建可折叠内容区域的标准方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_details_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, 2011 Nokia Corporation and/or its subsidiary(-ies)
  *
@@ -642,7 +644,4 @@ bool HTMLDetailsElement::HandleCommandInternal(HTMLElement& invoker,
 }
 
 }  // namespace blink
-
-"""
-
 ```

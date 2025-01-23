@@ -201,7 +201,7 @@ func TestWaitForSigusr1Timeout(t *testing.T) {
 
 示例说明了如何在测试中使用 `WaitForSigusr1` 来同步 Goroutine 并验证信号处理的正确性。 `TestWaitForSigusr1Timeout` 展示了如何利用向管道写入数据来模拟超时场景。理解这些细节对于编写可靠的 Go 运行时测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -209,8 +209,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -310,9 +312,4 @@ const (
 	O_CREAT  = _O_CREAT
 	O_TRUNC  = _O_TRUNC
 )
-
-"""
-
-
-
 ```

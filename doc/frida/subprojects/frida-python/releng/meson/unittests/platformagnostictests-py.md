@@ -161,7 +161,7 @@ Finally, the process involves organizing the findings into a clear and structure
 
 总而言之，`platformagnostictests.py` 是 Frida 构建系统 Meson 配置功能的核心测试集，它涵盖了选项处理、依赖查找、构建后端管理等多个方面。理解这些测试用例有助于理解 Frida 的构建过程，排查构建错误，甚至对 Frida 进行定制和扩展。对于逆向工程师而言，理解构建系统的工作原理是构建和使用 Frida 这样的动态 instrumentation 工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/platformagnostictests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 # Copyright © 2024 Intel Corporation
@@ -581,7 +583,4 @@ class PlatformAgnosticTests(BasePlatformTests):
             f.write("option('new_option', type : 'boolean', value : false)")
         self.setconf('-Dsubproject:new_option=true')
         self.assertEqual(self.getconf('subproject:new_option'), True)
-
-"""
-
 ```

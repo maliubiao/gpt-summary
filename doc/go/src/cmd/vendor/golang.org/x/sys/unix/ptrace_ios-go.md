@@ -163,15 +163,17 @@ func main() {
 
 `go/src/cmd/vendor/golang.org/x/sys/unix/ptrace_ios.go` 文件中的 `ptrace` 函数在 iOS 上是一个空实现，它总是返回 "Operation not supported" 错误。这表明 `ptrace` 系统调用在 iOS 上是不被支持的。开发者需要了解平台的限制，并使用 iOS 提供的其他调试和监控机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/ptrace_ios.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -183,9 +185,4 @@ package unix
 func ptrace(request int, pid int, addr uintptr, data uintptr) (err error) {
 	return ENOTSUP
 }
-
-"""
-
-
-
 ```

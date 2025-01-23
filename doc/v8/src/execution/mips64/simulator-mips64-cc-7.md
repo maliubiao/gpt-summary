@@ -144,7 +144,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 总而言之，`v8/src/execution/mips64/simulator-mips64.cc` 是 V8 引擎中一个至关重要的组成部分，它允许开发者在非 MIPS64 平台上开发、测试和调试 V8 的 MIPS64 代码生成功能，确保 JavaScript 代码在 MIPS64 架构上的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 strSize;
     }
   };
@@ -1138,7 +1140,4 @@ bool Simulator::GlobalMonitor::LinkedAddress::NotifyStoreConditional_Locked(
         // behavior of hardware, which can randomly fail due to background
         // cache evictions.
         if (failure_counter_++ >= kMaxFailureCounter) {
-"""
-
-
 ```

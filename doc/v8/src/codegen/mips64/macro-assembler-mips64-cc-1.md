@@ -128,7 +128,7 @@ V8 引擎在执行这段代码时，可能需要生成类似 `Lw` (如果属性�
 
 总体而言，这部分代码为 V8 引擎在 MIPS64 架构上生成高效且正确的机器码指令提供了重要的基础设施。它屏蔽了底层硬件的复杂性，使得代码生成器可以使用更高级别的接口来完成任务.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tchRegisterScope temps(this);
       Register scratch = temps.Acquire();
       lwr(scratch, MemOperand(rs.rm(), rs.offset() + kMipsLwrOffset));
@@ -1133,8 +1135,5 @@ void MacroAssembler::Neg_d(FPURegister fd, FPURegister fs) {
 
 void MacroAssembler::Cvt_d_uw(FPURegister fd, FPURegister fs) {
   // Move the data from fs to t8.
-  BlockTrampolinePoolScope 
-"""
-
-
+  BlockTrampolinePoolScope
 ```

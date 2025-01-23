@@ -162,7 +162,7 @@ int main(int, char**) {
 
 因此，`cttest.cpp` 文件的出现是 Frida 开发流程中，为了保证代码质量和验证静态分析工具功能的一个环节。 开发人员通过编写这样的简单测试用例，可以确保 `clang-tidy` 能够正确地识别和报告与布尔类型转换相关的代码问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/68 clang-tidy/cttest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 int main(int, char**) {
@@ -179,7 +181,4 @@ int main(int, char**) {
     printf("Intbool is %d\n", (int)intbool);
     return 0;
 }
-
-"""
-
 ```

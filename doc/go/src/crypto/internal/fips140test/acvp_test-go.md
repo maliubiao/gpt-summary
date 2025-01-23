@@ -199,7 +199,7 @@ func readResponse(t *testing.T, reader io.Reader) [][]byte {
 
 `go/src/crypto/internal/fips140test/acvp_test.go` 文件的核心作用是充当一个桥梁，让 Go 语言的 FIPS 140 模块能够被外部的 `acvptool` 工具验证其符合性。它实现了与 `acvptool` 的通信协议，并根据 `acvptool` 发送的命令调用 Go 语言的密码学算法实现。 理解其与 `acvptool` 的协作方式以及依赖的环境变量是正确使用和理解这段代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140test/acvp_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -797,9 +799,4 @@ func readResponse(t *testing.T, reader io.Reader) [][]byte {
 
 	return args
 }
-
-"""
-
-
-
 ```

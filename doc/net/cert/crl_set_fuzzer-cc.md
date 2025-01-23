@@ -116,15 +116,17 @@ Here's a breakdown of the thinking process to analyze the provided C++ code and 
 
 总之，`crl_set_fuzzer.cc` 是 Chromium 网络安全的重要组成部分，它通过自动化测试来提高处理证书吊销列表的健壮性，从而保障用户的网络安全。虽然它不直接与 JavaScript 交互，但它所测试的功能是浏览器安全性的关键部分，会间接地影响到 Web 应用的运行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/crl_set_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

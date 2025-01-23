@@ -133,15 +133,17 @@ func main() {
 
 总而言之，这段代码利用无缓冲通道实现了简单的同步和数据传递，但使用者需要确保在调用 `Do()` 之前，有其他 goroutine 向通道发送了正确类型的数据，以避免死锁和 panic。这通常用于测试或演示通道的基本行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug448.dir/pkg1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -153,9 +155,4 @@ var x = make(chan interface{})
 func Do() int {
 	return (<-x).(int)
 }
-
-"""
-
-
-
 ```

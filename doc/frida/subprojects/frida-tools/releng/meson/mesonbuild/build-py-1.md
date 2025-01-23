@@ -188,7 +188,7 @@ self.pic = True
 
 这个代码片段定义了 Frida 构建系统中 `BuildTarget` 类的初始化逻辑，负责接收和处理构建目标（例如库或可执行文件）的各种属性，包括源文件、依赖关系、编译和链接选项以及安装信息。它为后续的构建过程奠定了基础，确保 Meson 能够理解并正确构建项目中的每个目标。它涉及到对多种编程语言、二进制文件结构、操作系统概念（如共享库和链接）的理解和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 elf.objects: T.List[ObjectTypes] = []
         self.structured_sources = structured_sources
         self.external_deps: T.List[dependencies.Dependency] = []
@@ -861,8 +863,4 @@ elf.objects: T.List[ObjectTypes] = []
         for t in targets:
             if not isinstance(t, (Target, CustomTargetIndex)):
                 if isinstance(t, dependencies.ExternalLibrary):
-                   
-"""
-
-
 ```

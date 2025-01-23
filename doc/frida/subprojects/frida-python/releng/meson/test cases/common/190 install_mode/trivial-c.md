@@ -145,7 +145,7 @@ By following this thought process, we can move from simply understanding the C c
 
 总而言之，`trivial.c` 作为一个极其简单的 C 程序，其价值在于它是 Frida 测试框架中的一个基础组件，用于验证 Frida 的核心功能，并为开发者提供了一个简单易懂的目标来理解动态插桩的原理和实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/190 install_mode/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,15 +153,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Trivial test is working.\n");
     return 0;
 }
-
-"""
-
 ```

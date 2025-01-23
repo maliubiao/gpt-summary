@@ -132,7 +132,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `frida.vala` 文件是 Frida 工具的核心部分，负责管理会话、脚本、调试器和对等连接。它涉及底层的 ICE、DTLS 和 SCTP 协议，确保通信的安全性和可靠性。通过 LLDB 调试工具，开发者可以深入分析这些功能的执行过程，排查潜在的错误和问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/frida.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 nt.snapshot_script (embed_script, options, cancellable);
 			}
 		}
@@ -1289,8 +1291,4 @@ nt.snapshot_script (embed_script, options, cancellable);
 		});
 	}
 }
-
-"""
-
-
 ```

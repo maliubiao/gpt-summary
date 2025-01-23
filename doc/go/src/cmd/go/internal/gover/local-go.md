@@ -140,15 +140,17 @@ func main() {
 
 **正确的做法是应该根据 `gover.Local()` 的实际语义来判断 Go 语言的版本，而不是假设其格式。**  例如，比较版本号的数字部分，或者使用更健壮的版本比较库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/gover/local.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ func local() (goVers, toolVers string) {
 	}
 	return goVers, toolVers
 }
-
-"""
-
-
-
 ```

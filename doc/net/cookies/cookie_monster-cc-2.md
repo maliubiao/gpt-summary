@@ -93,7 +93,7 @@ Let's break down the provided code:
 
 这部分代码负责 `CookieMonster` 类中 Cookie 的核心生命周期管理，包括添加、更新、删除 Cookie，并实施垃圾回收策略以维护 Cookie 存储的健康状态。它连接了浏览器接收到的 HTTP `Set-Cookie` 头部和 JavaScript 的 `document.cookie` API 与底层的 Cookie 存储和管理机制。理解这部分代码对于调试 Cookie 相关的问题，例如 Cookie 设置失败、意外删除或行为不符合预期至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -101,9 +101,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- += n_bytes;
+### 源代码
+```cpp
++= n_bytes;
   if (partition_key.nonce()) {
     num_nonced_partitioned_cookie_bytes_ += n_bytes;
   }
@@ -927,8 +929,5 @@ size_t CookieMonster::GarbageCollectLeastRecentlyAccessed(
 
 // A wrapper around registry_controlled_domains::GetDomainAndRegistry
 // to make clear we're creating a key for our local map or for the persistent
-// store's use. Here 
-"""
-
-
+// store's use. Here
 ```

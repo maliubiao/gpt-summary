@@ -103,14 +103,16 @@ By following these steps, I can effectively analyze the seemingly simple code sn
 
 `hit_test_request.cc` 中定义的 `HitTestRequest` 类虽然代码简洁，但在 Blink 渲染引擎中扮演着至关重要的角色，它封装了命中测试所需的关键信息，使得浏览器能够正确地响应用户的交互，并将事件分发给相应的 HTML 元素。理解其功能有助于更好地理解浏览器的工作原理，并避免与命中测试相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/hit_test_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -125,7 +127,4 @@ void HitTestRequest::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

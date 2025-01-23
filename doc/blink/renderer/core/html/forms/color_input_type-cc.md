@@ -182,14 +182,16 @@ This systematic approach, starting with high-level understanding and gradually d
 
 总而言之，`color_input_type.cc` 文件是 Blink 引擎中处理 `<input type="color">` 元素的核心，负责管理其值、与原生颜色选择器交互、提供用户界面更新以及支持 `datalist` 提供的颜色建议。它与 HTML 元素、JavaScript 的 DOM 操作以及 CSS 的样式机制紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/color_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -493,7 +495,4 @@ ColorChooserClient* ColorInputType::GetColorChooserClient() {
 
 
 }  // namespace blink
-
-"""
-
 ```

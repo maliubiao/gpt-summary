@@ -66,7 +66,7 @@ ret                // Return
 
 这是 V8 JavaScript 引擎中负责将 ARM64 架构的机器码指令转换成人类可读的汇编语言文本的关键组件。它通过识别指令类型、生成助记符和格式化操作数，为 V8 的调试、性能分析和理解底层执行机制提供了重要的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/arm64/disasm-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/arm64/disasm-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -74,8 +74,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 MS)
 #undef AMS
   }
@@ -1287,7 +1289,4 @@ void DisassemblingDecoder::VisitNEONCopy(Instruction* instr) {
 }
 
 void Dis
-"""
-
-
 ```

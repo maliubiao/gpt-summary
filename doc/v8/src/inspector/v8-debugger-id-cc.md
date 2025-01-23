@@ -128,15 +128,17 @@ This detailed breakdown demonstrates how to systematically analyze code, underst
 
 总而言之，`v8-debugger-id.cc` 提供了在 V8 Inspector 中管理调试会话或上下文的关键标识符的机制。虽然 JavaScript 开发者不会直接操作这些对象，但理解其背后的概念对于理解 V8 的调试架构至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger-id.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-debugger-id.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ std::pair<int64_t, int64_t> V8DebuggerId::pair() const {
 
 }  // namespace internal
 }  // namespace v8_inspector
-
-"""
-
 ```

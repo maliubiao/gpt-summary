@@ -183,14 +183,16 @@ convolveMatrix.setAttribute('bias', '0.5'); // 修改偏移量
 
 总而言之，`fe_convolve_matrix.cc` 文件是 Blink 引擎中实现 `<feConvolveMatrix>` SVG 滤镜的关键组成部分，它负责定义滤镜的行为、验证参数并将其转换为 Skia 图形库可以执行的操作，从而在网页上实现各种图像卷积效果。 开发者可以通过 HTML (SVG) 和 CSS 来声明式地使用这个滤镜，也可以通过 JavaScript 动态地修改其属性。理解其参数和功能对于有效地使用 `<feConvolveMatrix>` 滤镜至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_convolve_matrix.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -381,7 +383,4 @@ StringBuilder& FEConvolveMatrix::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

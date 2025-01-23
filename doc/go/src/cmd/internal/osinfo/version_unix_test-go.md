@@ -148,15 +148,17 @@ func main() {
 
 总而言之，这段代码是 `osinfo` 包中用于测试 `Version()` 函数在 Unix 系统上行为的测试用例，它验证了返回的版本字符串的基本格式。使用者在使用 `osinfo.Version()` 时，应该理解返回字符串的格式可能因系统而异，并注意平台兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/osinfo/version_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -183,9 +185,4 @@ func TestVersion(t *testing.T) {
 		t.Errorf("wanted at least 4 fields in %q, got %d", v, len(fields))
 	}
 }
-
-"""
-
-
-
 ```

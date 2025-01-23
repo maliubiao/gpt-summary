@@ -162,7 +162,7 @@ Documentation change, CI skipped.
 
 总而言之，`skip_ci.py` 是 Frida 项目 CI 流程中的一个优化工具，通过分析代码变更来智能地跳过不必要的 CI 执行，特别是在只修改文档的情况下，从而提高开发效率并节省 CI 资源。 虽然它本身不直接涉及逆向工程或底层技术，但它服务于一个深度依赖这些技术的项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/skip_ci.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
@@ -236,7 +238,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

@@ -138,7 +138,7 @@ if (g_address) {
 
 总而言之，即使 `g.c` 文件非常简单，但在 Frida 动态 instrumentation 的上下文中，它可以作为一个重要的**观测点**。逆向工程师和开发者可以利用 Frida 的能力来 hook 这个空函数，从而窥探目标程序的行为，收集调试信息，或者验证他们的假设。这个简单的例子也展示了动态分析的强大之处，即使是最简单的代码片段也能成为分析和调试的切入点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/214 source set custom target/g.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,14 +146,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void g(void)
 {
 }
-
-"""
-
 ```

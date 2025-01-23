@@ -166,7 +166,7 @@ By following this kind of detailed analysis and iterative refinement, I can arri
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/mpi.py` 文件在 Frida 的构建过程中扮演着关键的角色，它负责检测和配置 MPI 依赖项，确保 Frida 能够与使用 MPI 的应用程序进行交互。理解其功能和实现细节对于调试 Frida 构建过程中的 MPI 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/mpi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -407,7 +409,4 @@ class MSMPIDependency(SystemDependency):
         self.compile_args = ['-I' + incdir, '-I' + os.path.join(incdir, post)]
         if self.language == 'fortran':
             self.link_args.append('-l' + os.path.join(libdir, 'msmpifec'))
-
-"""
-
 ```

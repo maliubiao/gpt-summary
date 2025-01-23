@@ -182,15 +182,17 @@ process_data_handler(*handler_with_two_fields);
 
 总结来说，`v8/src/objects/data-handler-inl.h` 定义了用于存储对象属性访问优化信息的关键数据结构 `DataHandler` 的内联方法。它与 JavaScript 的性能密切相关，是内联缓存等优化技术的基础。理解其功能有助于深入了解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/data-handler-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/data-handler-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ ACCESSORS_CHECKED(DataHandler, data3, Tagged<MaybeObject>, kData3Offset,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_DATA_HANDLER_INL_H_
-
-"""
-
 ```

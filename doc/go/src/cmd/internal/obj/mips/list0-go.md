@@ -163,15 +163,17 @@ func main() {
 
 总而言之，`go/src/cmd/internal/obj/mips/list0.go` 是 Go 编译器中 MIPS 架构支持的关键组成部分，负责将内部表示转换为人类可读的字符串，主要用于汇编和反汇编过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/mips/list0.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // cmd/9l/list.c from Vita Nuova.
 //
 //	Copyright © 1994-1999 Lucent Technologies Inc.  All rights reserved.
@@ -255,9 +257,4 @@ func DRconv(a int) string {
 	fp += s
 	return fp
 }
-
-"""
-
-
-
 ```

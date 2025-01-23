@@ -207,7 +207,7 @@ go run your_program.go
 
 `go/src/internal/asan/doc.go` 定义的 `asan` 包是为了方便开发者在 Go 代码中手动集成 Address Sanitizer 功能。它提供了一些辅助函数，这些函数在启用了 `asan` 构建标签时会执行实际的 ASan 相关操作，而在未启用时则作为空操作。使用者需要注意在编译和运行时通过 `-tags=asan` 启用 ASan 才能使这些函数生效。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/asan/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -215,8 +215,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -227,9 +229,4 @@ Prompt:
 // asan build; this package exports them unconditionally but without the
 // "asan" build tag they are no-ops.
 package asan
-
-"""
-
-
-
 ```

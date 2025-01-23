@@ -115,14 +115,16 @@ By following this methodical approach, we can thoroughly understand the purpose 
 
 总而言之，`vsync_tick_provider_test.cc` 通过一系列细致的测试用例，验证了 `VSyncTickProvider` 能够正确地管理和提供时钟信号，并且能够根据标签页的可见性动态地切换时钟源，这对于确保 Blink 引擎中需要精确时间控制的功能的正确性和性能至关重要，并直接影响到用户在使用网页时的体验，尤其是在多媒体和交互式应用中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/vsync_tick_provider_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -396,7 +398,4 @@ TEST_F(VSyncTickProviderTest, MultipleMetronomeAreAlignedOnTick) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

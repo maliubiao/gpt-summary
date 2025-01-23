@@ -137,7 +137,7 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
    `BaseWithIndexAndDisplacementMatcher` 的正确性有助于确保 V8 编译器在处理类似 JavaScript 数组访问时，能生成正确的机器码，从而避免这些潜在的运行时错误。虽然 JavaScript 有内存管理机制，不容易出现 C/C++ 那样的直接内存错误，但理解底层的寻址方式对于优化性能仍然重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-matchers-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/node-matchers-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -145,9 +145,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- // (M4 + D15) -> [NULL, 0, m4, d15]
+### 源代码
+```cpp
+// (M4 + D15) -> [NULL, 0, m4, d15]
   m4 = graph()->NewNode(m_op, p1, d4);
   ADD_NONE_ADDRESSING_OPERAND_USES(m4);
   BaseWithIndexAndDisplacement32Matcher match109(
@@ -972,7 +974,4 @@ TEST_F(NodeMatcherTest, ScaledWithOffset64Matcher) {
   BaseWithIndexAndDisplacement64Matcher match90(
       graph()->NewNode(a_op, b0, temp));
   CheckBaseW
-"""
-
-
 ```

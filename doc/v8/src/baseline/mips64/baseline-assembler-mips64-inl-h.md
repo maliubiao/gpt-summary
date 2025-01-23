@@ -215,15 +215,17 @@ By following this structured approach, combining general V8 knowledge with close
 
 总而言之，`v8/src/baseline/mips64/baseline-assembler-mips64-inl.h` 是 V8 引擎中一个至关重要的文件，它为 MIPS64 架构的 Baseline 编译器提供了构建快速且可执行的 JavaScript 代码所需的低级抽象和工具。它封装了底层的汇编指令，并实现了常见的代码生成模式，使得编译过程更加高效和可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/mips64/baseline-assembler-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/mips64/baseline-assembler-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -803,7 +805,4 @@ inline void EnsureAccumulatorPreservedScope::AssertEqualToAccumulator(
 }  // namespace v8
 
 #endif  // V8_BASELINE_MIPS64_BASELINE_ASSEMBLER_MIPS64_INL_H_
-
-"""
-
 ```

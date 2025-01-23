@@ -179,15 +179,17 @@ C8 00 00 00  // target = 200 (0xC8)
 
 `v8/src/codegen/x64/builtin-jump-table-info-x64.cc` 是 V8 引擎中负责管理 x64 架构下内置函数跳转表信息的关键 C++ 代码。它提供了创建和访问跳转表数据的机制，这对于高效地调用和执行 JavaScript 内置函数至关重要。理解其功能有助于理解 V8 的内部工作原理以及如何编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/builtin-jump-table-info-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/builtin-jump-table-info-x64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ bool BuiltinJumpTableInfoIterator::HasCurrent() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -117,7 +117,7 @@ By following these steps, I can systematically analyze the code, understand its 
 
 这段代码是 `XRFrameProvider` 的一部分，专门负责 **收集和报告 WebXR 渲染过程中的关键性能指标**。它记录了帧的渲染耗时、JavaScript 动画帧的耗时、提交耗时以及帧率和丢帧数，并将这些信息发送到 Chromium 的内部监控系统。这些统计数据对于开发者诊断 WebXR 应用的性能问题至关重要。通过分析这些数据，开发者可以了解 JavaScript 代码的性能瓶颈、GPU 的负载情况以及渲染流程的效率，从而优化 WebXR 应用的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_frame_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t =
       device::mojom::blink::XrFrameStatistics::New();
 
@@ -176,8 +178,4 @@ void XRFrameProvider::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

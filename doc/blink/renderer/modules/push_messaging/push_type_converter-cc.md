@@ -131,15 +131,17 @@ By following these steps, the comprehensive and accurate analysis of the `push_t
 
 总结来说，`push_type_converter.cc` 虽然不直接与前端代码交互，但它在幕后扮演着关键角色，确保了 Push API 的数据能够在 Chromium 的不同进程之间安全、正确地传递，从而使得网页上的推送通知功能得以实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/push_messaging/push_type_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ TypeConverter<blink::mojom::blink::PushSubscriptionOptionsPtr,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

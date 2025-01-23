@@ -264,7 +264,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "ioctl"), {
 
 `bionic/libc/kernel/uapi/linux/parport.h` 定义了 Linux 内核并行端口的用户空间 API。虽然在现代 Android 设备上直接使用较少，但它仍然是理解底层硬件交互和驱动程序开发的基础。理解这个头文件中的常量和定义，有助于开发者进行与并行端口相关的底层编程和调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/parport.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -346,7 +348,4 @@ typedef enum {
 #define PARPORT_EPP_FAST_16 (1 << 2)
 #define PARPORT_EPP_FAST_8 (1 << 3)
 #endif
-
-"""
-
 ```

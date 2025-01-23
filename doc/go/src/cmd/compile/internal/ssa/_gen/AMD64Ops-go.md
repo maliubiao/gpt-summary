@@ -173,7 +173,7 @@ ADDQ R2, R1  // 将 R2 的值加到 R1，结果存储在 R1 中
 
 总而言之，`go/src/cmd/compile/internal/ssa/_gen/AMD64Ops.go` 文件的主要功能是**为 Go 编译器在 AMD64 架构上进行代码生成时，提供关于可用操作码的详尽描述和约束信息**。它是一个关键的数据定义文件，确保编译器能够正确地将 SSA 中间表示转换为 AMD64 汇编代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/_gen/AMD64Ops.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -937,9 +939,4 @@ func init() {
 		{name: "SETGEF", argLength: 1, reg: flagsgp, asm: "SETCC"}, // extract floating >= condition from arg0
 
 		{name: "MOVBQSX", argLength: 1, reg: gp11, asm: "MOVBQSX"}, // si
-"""
-
-
-
-
 ```

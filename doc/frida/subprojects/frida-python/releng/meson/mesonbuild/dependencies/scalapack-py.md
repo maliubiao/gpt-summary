@@ -168,7 +168,7 @@ If a user encounters the "Dependency not found" error, they might:
 
 In summary, `scalapack.py` plays a crucial role in the Frida build process by defining how the Scalapack dependency is located and configured. Its special handling of Intel MKL highlights the complexities of dealing with real-world software dependencies and the need for workarounds in build systems. Understanding this file is beneficial for developers working on Frida or users troubleshooting build issues related to this dependency.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/dependencies/scalapack.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2020 The Meson development team
 
@@ -320,7 +322,4 @@ class MKLPkgConfigDependency(PkgConfigDependency):
             allow_system = True
         cflags = self.pkgconfig.cflags(self.name, allow_system, define_variable=(('prefix', self.__mklroot.as_posix()),))
         self.compile_args = self._convert_mingw_paths(cflags)
-
-"""
-
 ```

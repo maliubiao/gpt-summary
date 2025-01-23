@@ -117,14 +117,16 @@ By following these steps, we can systematically analyze the provided C++ code an
 
 总而言之，`identifiability_sample_test_utils.cc` 提供了一个轻量级且可控的方式来模拟 Blink 引擎中隐私预算相关的设置，这对于测试与隐私功能交互的 JavaScript 代码至关重要。通过控制方法的返回值和观察调用次数，开发者可以编写出更健壮的测试用例，确保隐私功能的正确实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_sample_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/public/common/privacy_budget/identifiability_sample_test_utils.h"
 
 namespace blink {
@@ -157,7 +159,4 @@ bool CountingSettingsProvider::IsTypeAllowed(
 }
 
 }  // namespace blink
-
-"""
-
 ```

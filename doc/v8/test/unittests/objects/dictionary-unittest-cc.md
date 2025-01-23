@@ -201,15 +201,17 @@ console.log(mySet.has(1)); // V8 会在内部的哈希集合中查找是否存�
 
 总而言之，`dictionary-unittest.cc` 是 V8 引擎中非常重要的一个测试文件，它确保了 V8 内部用于实现 JavaScript 对象和 Set 等关键数据结构的字典功能的正确性和健壮性。这些测试覆盖了字典操作的各种场景，包括插入、查找、删除、扩容以及与垃圾回收的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/dictionary-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/dictionary-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -519,7 +521,4 @@ TEST_F(DictionaryTest, MaximumClonedShallowObjectProperties) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -128,11 +128,13 @@ fs.readFile('myFile.txt', 'utf8', (err, data) => {
 
 `platform-posix.cc` 文件是 V8 引擎在 POSIX 系统上的“代言人”，它封装了与操作系统交互的细节，使得 V8 的核心代码能够专注于 JavaScript 的执行逻辑，而无需关心底层操作系统的差异。  JavaScript 的许多核心特性和 Node.js 的底层功能都依赖于这个文件中提供的 C++ 实现。 它是 V8 实现跨平台能力的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-posix.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1558,7 +1560,4 @@ Stack::StackSlot Stack::GetCurrentStackPosition() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

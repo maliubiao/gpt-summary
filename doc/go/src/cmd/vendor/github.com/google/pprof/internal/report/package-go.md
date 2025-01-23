@@ -177,7 +177,7 @@ func main() {
 
 总而言之，这段代码提供了一个简洁而有效的机制，用于从符合特定格式的符号名称字符串中提取包名，这在性能分析工具 `pprof` 中是非常有用的，可以帮助用户理解代码的组织结构和性能瓶颈所在。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/report/package.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -185,8 +185,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 package report
 
 import "regexp"
@@ -204,9 +206,4 @@ func packageName(name string) string {
 	}
 	return m[1]
 }
-
-"""
-
-
-
 ```

@@ -107,11 +107,13 @@ function performIntensiveCalculation(data) {
 
 `worker-thread.cc` 中定义的 `WorkerThread` 类是 V8 引擎实现 JavaScript Web Workers 功能的关键底层机制。它负责创建和管理独立的执行线程，并处理来自任务队列的任务，这些任务通常与在 Web Worker 中执行 JavaScript 代码和在主线程与 Worker 线程之间传递消息相关。  `TaskQueue` 作为任务的缓冲，确保了线程安全地处理来自不同来源的任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/worker-thread.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ void WorkerThread::Run() {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

@@ -267,7 +267,7 @@ sys.stdin.read()
 
 请注意，直接 hook `GetCpuCountFromString` 可能比较困难，因为它是一个 `private` 函数，可能不会被直接导出。 在实际调试中，你可能需要 hook 调用了包含此函数的上层函数，或者使用更底层的 hook 技术。 然而，这个例子说明了使用 Frida hook C 函数的基本原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/get_cpu_count_from_string.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -333,7 +335,4 @@ static int GetCpuCountFromString(const char* s) {
   }
   return cpu_count;
 }
-
-"""
-
 ```

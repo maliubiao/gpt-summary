@@ -119,15 +119,17 @@ By following these steps, systematically analyzing the code, and considering the
 
 总而言之，`internals_speech_synthesis.cc` 是 Blink 引擎中一个关键的测试辅助文件，它通过提供一个可控的模拟语音合成器，帮助开发者编写更可靠、更独立的语音合成功能测试。 它与用户的直接操作没有关系，而是作为幕后英雄，确保用户最终体验到的语音合成功能是健壮的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/speech/testing/internals_speech_synthesis.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Samsung Electronics. All rights reserved.
  *
@@ -182,7 +184,4 @@ void InternalsSpeechSynthesis::enableMockSpeechSynthesizer(Internals&,
 }
 
 }  // namespace blink
-
-"""
-
 ```

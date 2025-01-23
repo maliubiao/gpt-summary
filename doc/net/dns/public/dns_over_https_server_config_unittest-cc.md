@@ -173,15 +173,17 @@ This methodical approach, starting with identifying the core purpose and then di
 
 总而言之，`dns_over_https_server_config_unittest.cc` 文件对于确保 Chromium 网络栈正确处理 DNS over HTTPS 服务器配置至关重要。它通过详尽的测试用例覆盖了各种有效和无效的配置场景，帮助开发者避免潜在的错误，并保证 DOH 功能的稳定性和可靠性。 虽然与 JavaScript 没有直接的代码关联，但它所测试的功能是浏览器中 DOH 特性不可或缺的一部分，并且与用户通过 JavaScript 驱动的界面进行的配置操作紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/public/dns_over_https_server_config_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -422,7 +424,4 @@ TEST(DnsOverHttpsServerConfigTest, FromValueInvalid) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

@@ -126,7 +126,7 @@ By following these steps, we can create a comprehensive and accurate summary of 
 
 这是 `manifest_parser_unittest.cc` 文件的第五部分，专门测试了 Blink 引擎 manifest 解析器对 `scope_extensions`、`lock_screen`、`note_taking` 和 `share_target` 这四个关键 manifest 属性的解析逻辑。它涵盖了各种有效和无效的配置场景，包括数据类型、URL 格式、作用域限制以及通配符的使用规则，旨在确保 manifest 文件中这些属性能够被正确解析和处理，从而保证 Web 应用相关功能的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 et()));
   }
 
@@ -1098,7 +1100,4 @@ TEST_F(ManifestParserTest, ShareTargetUrlTemplateParseRules) {
     EXPECT_TRUE(manifest->share_target->params->text.IsNull());
     EXPECT_EQ(manifest->share_target->params->title, "mytitle");
     EXPECT_TRUE(
-"""
-
-
 ```

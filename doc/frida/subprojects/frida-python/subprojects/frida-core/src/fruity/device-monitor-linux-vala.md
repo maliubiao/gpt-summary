@@ -102,7 +102,7 @@ process.Continue()
 4. **处理结果**：如果成功获取 UDID，Frida 继续监控设备；如果失败，Frida 提示用户检查网络接口或设备连接状态。
 
 通过这些步骤，用户可以逐步调试和监控 Linux 设备，确保 Frida 工具的正常运行。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/device-monitor-linux.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class LinuxFruitFinder : Object, FruitFinder {
@@ -537,7 +539,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

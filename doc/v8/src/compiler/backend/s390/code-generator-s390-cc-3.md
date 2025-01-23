@@ -179,7 +179,7 @@ l r3, 0(r2)
 
 结合前文以及已知这是代码生成器的第四部分，可以推断这部分代码主要关注于**生成处理内存数据 (加载和存储) 以及执行并行计算 (SIMD) 和并发控制 (原子操作) 的机器码指令**。它是将高级的、架构无关的表示转换为可在 s390 架构上执行的低级指令的关键组成部分。它的功能是确保 JavaScript 代码能够有效地利用 s390 架构的特性，包括其向量处理能力和原子操作支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/code-generator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/code-generator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -187,8 +187,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (r1, r1);
       __ vlvg(i.OutputSimd128Register(), r0, MemOperand(r0, 1), Condition(3));
       __ vlvg(i.OutputSimd128Register(), r1, MemOperand(r0, 0), Condition(3));
@@ -1064,7 +1066,4 @@ Prompt:
       break;
     }
     case kS390_S128St
-"""
-
-
 ```

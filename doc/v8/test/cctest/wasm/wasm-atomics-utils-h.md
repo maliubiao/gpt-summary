@@ -164,15 +164,17 @@ console.log(sharedArray[0]); // 输出 15
 
 总而言之，`wasm-atomics-utils.h` 是 V8 引擎中用于测试和辅助实现 WebAssembly 原子操作的关键头文件，它定义了原子操作的基本形式和一些辅助函数，这些底层的实现支撑着 JavaScript 中 `SharedArrayBuffer` 和 `Atomics` API 的功能。理解这些底层的概念对于编写正确的并发 WebAssembly 或 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/wasm-atomics-utils.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/wasm-atomics-utils.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ T CompareExchange(T initial, T a, T b) {
 }  // namespace v8
 
 #endif
-
-"""
-
 ```

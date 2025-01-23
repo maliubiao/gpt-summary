@@ -229,7 +229,7 @@ By following these steps and continuously refining my understanding, I can provi
 
 这部分代码主要定义了 Meson 构建系统中解释器的一些核心功能，用于处理构建配置和目标定义。它允许用户通过 `meson.build` 文件声明如何生成配置文件、指定包含目录、添加编译器和链接器参数、配置测试环境以及管理项目依赖。这些功能是 Meson 构建系统的基础，使得用户能够灵活地配置和管理复杂的软件构建过程，例如 Frida 这样的动态 instrumentation 工具的构建。这部分代码体现了构建系统对构建过程的抽象和自动化能力，简化了开发者手动编写 Makefile 或类似构建脚本的工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 y=True,
             default=[],
         ),
@@ -820,7 +822,4 @@ y=True,
             raise InterpreterException('Target name must not consist only of whitespace.')
         if has_path_sep(name):
             pathseg = os.path.join(self
-"""
-
-
 ```

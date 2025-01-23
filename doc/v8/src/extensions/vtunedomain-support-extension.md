@@ -90,11 +90,13 @@ __vtune_domain_support_mark("rendering", "updateDisplay", "end");
 
 `vtunedomain-support-extension.cc` 提供了一个桥梁，使得 JavaScript 开发者能够在代码中插入 VTune 的域标记，从而利用 VTune 工具进行更精准的性能分析，区分不同模块或逻辑单元的性能表现。这对于大型 JavaScript 应用或者需要深入性能优化的场景非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/vtunedomain-support-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ void VTuneDomainSupportExtension::Mark(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

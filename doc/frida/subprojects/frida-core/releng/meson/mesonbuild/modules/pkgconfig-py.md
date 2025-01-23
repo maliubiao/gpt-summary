@@ -114,7 +114,7 @@ pkgconfig.generate(
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/modules/pkgconfig.py` 模块的主要职责是自动化生成库的 `.pc` 文件，这对于库的发布和被其他项目依赖至关重要。 它封装了处理各种依赖关系、编译选项和版本信息的逻辑，简化了 `.pc` 文件的创建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2022 The Meson development team
 
@@ -773,7 +775,4 @@ class PkgConfigModule(NewExtensionModule):
             if any(kwargs[k] for k in blocked_vars):  # type: ignore
                 raise mesonlib.MesonException(f'Cannot combine dataonly with any of {blocked_vars}')
             default_install_dir = os.path.join(state.environment.get_da
-"""
-
-
 ```

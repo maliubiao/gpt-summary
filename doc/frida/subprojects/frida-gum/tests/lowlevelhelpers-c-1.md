@@ -105,7 +105,7 @@ By following this step-by-step analysis and considering the context of Frida and
 
 `roxy_func_free` 函数是 Frida Gum 库中用于释放为动态生成的代理函数所分配内存的函数。它接收一个 `ProxyFunc` 类型的参数，该参数实际上是代理函数内存页的起始地址，并调用 `gum_free_pages` 函数来释放这部分内存。这对于避免内存泄漏，保持目标进程的稳定运行至关重要，是 Frida 动态插桩机制中内存管理的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/lowlevelhelpers.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,16 +114,14 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 roxy_func_free (ProxyFunc proxy_func)
 {
   gum_free_pages ((gpointer) (gsize) proxy_func);
 }
 
 #endif
-
-"""
-
-
 ```

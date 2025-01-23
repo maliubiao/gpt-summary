@@ -157,14 +157,16 @@ By following these steps, we can systematically analyze the C++ code and underst
 
 `interpolated_transform_operation.cc` 文件中的 `InterpolatedTransformOperation` 类是 Blink 渲染引擎中实现 CSS `transform` 属性插值的核心组件。它负责存储起始和结束变换状态，以及插值进度，并在需要时计算并应用中间的变换值，从而实现平滑的动画和过渡效果。 它的工作直接关联着 JavaScript, HTML 和 CSS 中定义的变换效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/transforms/interpolated_transform_operation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -242,7 +244,4 @@ TransformOperation* InterpolatedTransformOperation::Blend(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -97,11 +97,13 @@ try {
 
 总而言之，`handler-inside-win.cc` 是 V8 引擎在 Windows 上安全执行 WebAssembly 代码的关键组成部分，它负责捕获并处理 WebAssembly 代码中可能发生的越界访问错误，并将其转换为 JavaScript 可以理解和处理的异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-inside-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ LONG HandleWasmTrap(EXCEPTION_POINTERS* exception) {
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

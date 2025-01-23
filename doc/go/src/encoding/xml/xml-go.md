@@ -210,7 +210,7 @@ func main() {
 
 这部分代码定义了 Go 语言中用于表示 XML 文档结构的关键数据类型，为 XML 解析器的实现提供了基础的数据模型。它包括了表示 XML 元素、属性、命名空间、不同类型的 XML 内容（如文本、注释、指令等）的结构体和接口。 核心目标是提供一种在 Go 程序中方便且类型安全地表示 XML 文档的方式。 这为后续实现 XML 解析和编码逻辑奠定了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/xml/xml.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -219,8 +219,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1593,9 +1595,4 @@ var first = &unicode.RangeTable{
 		{0x0B0F, 0x0B10, 1},
 		{0x0B13, 0x0B28, 1},
 		{0x0B2A, 0x0
-"""
-
-
-
-
 ```

@@ -184,15 +184,17 @@ console.log(stringToHex("AB")); // 输出 "4142" (A 的 ASCII 码是 65，十六
 
 总之，`v8/src/debug/wasm/gdb-server/gdb-remote-util.cc` 提供了一组底层的实用工具，用于在 GDB 远程调试服务器的上下文中处理十六进制转换、字符串分割和内存表示，这对于调试 WebAssembly 代码至关重要。这些功能帮助将低级的二进制数据转换为 GDB 可以理解和显示的格式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/gdb-remote-util.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/wasm/gdb-server/gdb-remote-util.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ std::string Mem2Hex(const std::string& str) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

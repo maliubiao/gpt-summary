@@ -214,15 +214,17 @@ const shadowPara = shadowRoot.querySelector('#shadow-p');
 
 `shadow_root.cc` 文件是 Chromium Blink 引擎中实现 Shadow DOM 机制的关键组件。它负责 `ShadowRoot` 对象的生命周期管理、内容操作、样式封装、事件处理以及 slot 内容分配等核心功能。理解这个文件的功能有助于深入理解 Web Components 和浏览器的渲染机制。 当开发者在使用 Shadow DOM 时遇到问题，可以通过分析 Blink 引擎的源码，特别是 `shadow_root.cc` 及其相关的类，来定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/shadow_root.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -619,7 +621,4 @@ std::ostream& operator<<(std::ostream& ostream, const ShadowRootMode& mode) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

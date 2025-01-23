@@ -259,7 +259,7 @@ func main() {
 
 总而言之，`path_unix.go` 文件提供了在 Unix 系统上处理和操作文件路径的关键基础功能，这些功能被 Go 语言的其他部分和用户代码广泛使用。它确保了路径操作的平台特定行为符合 Unix 系统的规范。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/path/filepath/path_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -267,8 +267,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -313,9 +315,4 @@ func join(elem []string) string {
 func sameWord(a, b string) bool {
 	return a == b
 }
-
-"""
-
-
-
 ```

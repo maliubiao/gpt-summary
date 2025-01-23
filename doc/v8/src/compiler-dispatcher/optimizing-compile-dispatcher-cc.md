@@ -181,15 +181,17 @@ console.log(add(10, 20));
 
 总而言之，`v8/src/compiler-dispatcher/optimizing-compile-dispatcher.cc` 是 V8 优化编译流程中的一个关键组件，它负责管理和调度 JavaScript 代码的优化编译任务，从而提升 JavaScript 代码的执行效率。用户虽然不直接与之交互，但了解其工作原理有助于编写更易于被 V8 优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler-dispatcher/optimizing-compile-dispatcher.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler-dispatcher/optimizing-compile-dispatcher.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -447,7 +449,4 @@ OptimizingCompileDispatcher::OptimizingCompileDispatcher(Isolate* isolate)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

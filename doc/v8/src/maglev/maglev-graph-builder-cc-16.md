@@ -159,7 +159,7 @@ This code indirectly relates to common user errors by handling the underlying lo
 
 In essence, this part of `v8/src/maglev/maglev-graph-builder.cc` focuses on **translating JavaScript conditional logic and control flow instructions into the Maglev graph**. It meticulously handles various JavaScript value types and comparison scenarios to create efficient branching nodes that accurately represent the intended behavior of the JavaScript code. It also includes specific logic for `for...in` loops, generator functions, and error handling. This section is crucial for the optimization process as it sets the stage for later stages to further optimize these conditional branches and control flow structures.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第17部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 
   if (node->properties().value_representation() ==
@@ -986,7 +988,4 @@ ReduceResult MaglevGraphBuilder::TryReduceGetIterator(ValueNode* receiver,
 }
 
 void MaglevGraphBuilder::VisitGetIter
-"""
-
-
 ```

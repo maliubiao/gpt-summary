@@ -112,15 +112,17 @@ UBSan 主要检测 C++ 代码中的未定义行为，这些行为在用户使用
 
 `v8/src/base/sanitizer/ubsan.h` 是一个 V8 内部的 C++ 头文件，用于条件性地禁用 Undefined Behavior Sanitizer (UBSan) 检查。它本身不包含 JavaScript 代码，但通过帮助 V8 开发者检测和修复 C++ 代码中的未定义行为，间接地提高了 JavaScript 运行时的稳定性和可靠性。 理解 UBSan 以及它旨在捕获的常见 C++ 编程错误，对于理解 V8 内部机制和编写健壮的 C++ 代码都很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sanitizer/ubsan.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/sanitizer/ubsan.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ Prompt:
 #endif  // !defined(UNDEFINED_SANITIZER)
 
 #endif  // V8_BASE_SANITIZER_UBSAN_H_
-
-"""
-
 ```

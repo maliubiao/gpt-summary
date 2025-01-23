@@ -212,7 +212,7 @@ go run your_program.go apple banana
 
 总而言之，`strings.Compare` 是 Go 语言中一个用于执行字符串字典序比较的实用函数，它提供了三路比较的结果，特别适用于需要这种比较方式的场景，例如自定义排序。但在简单的相等性或大小比较中，内置的比较运算符是更简洁高效的选择。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/compare.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -239,9 +241,4 @@ import "internal/bytealg"
 func Compare(a, b string) int {
 	return bytealg.CompareString(a, b)
 }
-
-"""
-
-
-
 ```

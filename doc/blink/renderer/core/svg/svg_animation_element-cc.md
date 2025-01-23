@@ -229,15 +229,17 @@ By following this systematic approach, one can effectively analyze complex sourc
 
 总而言之，`svg_animation_element.cc` 是 Blink 渲染引擎中处理 SVG 动画的核心，负责将声明式的 SVG 动画转化为实际的视觉效果。它与 HTML 的动画标签、JavaScript 的动画控制 API 以及 CSS 影响的视觉属性都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_animation_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007 Rob Buis <buis@kde.org>
@@ -979,7 +981,4 @@ bool SVGAnimationElement::OverwritesUnderlyingAnimationValue() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

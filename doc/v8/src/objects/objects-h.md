@@ -203,7 +203,7 @@ const arr = [1, 2, 3];
 
 `v8/src/objects/objects.h` 是 V8 引擎中定义 JavaScript 对象模型和基本操作的核心头文件。它定义了所有 V8 对象的基类 `Object`，以及大量的枚举、结构体和静态方法，这些方法直接对应了 JavaScript 规范中定义的各种对象操作、类型转换、比较运算等核心功能。理解这个文件对于深入了解 V8 引擎的内部工作原理至关重要。它不属于 Torque 源代码，因为它没有 `.tq` 扩展名。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects.h以.tq结尾，那它是个v8 torque源代码，
@@ -211,8 +211,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -957,7 +959,4 @@ class MapWord {
   static inline MapWord FromMap(const Tagged<Map> map);
 
   // View this map
-"""
-
-
 ```

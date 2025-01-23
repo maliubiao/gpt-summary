@@ -148,15 +148,17 @@ func EqStructCost(typ *types.Type) int64 {
 
 总而言之，`compare_test.go` 通过一系列测试用例验证了 `EqStructCost` 函数计算结构体比较成本的正确性，这对于 Go 编译器在生成高效的比较代码至关重要。 开发者理解这些概念可以更好地理解 Go 语言的性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/compare/compare_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -258,9 +260,4 @@ func TestEqStructCost(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

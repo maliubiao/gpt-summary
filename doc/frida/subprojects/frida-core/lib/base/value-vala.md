@@ -116,7 +116,7 @@ bool value = reader.get_bool_value(); // value 应该为 true
 ### 总结
 
 该文件实现了 Frida 工具中复杂数据结构的构建和解析功能，支持嵌套结构和多种数据类型。通过 LLDB 调试工具，用户可以逐步跟踪数据处理的流程，定位和解决问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/base/value.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public interface ObjectBuilder : Object {
 		public abstract unowned ObjectBuilder begin_dictionary ();
@@ -518,7 +520,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

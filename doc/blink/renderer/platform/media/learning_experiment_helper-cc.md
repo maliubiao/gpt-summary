@@ -203,14 +203,16 @@ controller_->CompleteObservation(the_same_unique_id_as_before, target);
 
 总而言之，`learning_experiment_helper.cc` 是 Blink 引擎中一个重要的基础设施，它帮助开发者方便地收集媒体相关的实验数据，用于训练和优化各种机器学习模型，从而提升用户的媒体播放体验。正确理解和使用它的方法和流程对于进行有效的媒体学习实验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/learning_experiment_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void LearningExperimentHelper::CancelObservationIfNeeded() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

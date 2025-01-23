@@ -203,7 +203,7 @@ if (Process.arch === 'x64' || Process.arch === 'arm64') {
 
 总而言之，`bionic/libc/kernel/uapi/asm-x86/asm/hwcap2.handroid` 是一个关键的头文件，它定义了 x86 架构下的一组硬件能力标志，为 Android 系统和应用程序提供了检测和利用特定 CPU 特性的能力，从而实现性能优化和功能增强。 动态链接器和 libc 库都依赖于这些信息来做出关键的决策。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/hwcap2.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -214,8 +214,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -228,7 +230,4 @@ Prompt:
 #define HWCAP2_RING3MWAIT _BITUL(0)
 #define HWCAP2_FSGSBASE _BITUL(1)
 #endif
-
-"""
-
 ```

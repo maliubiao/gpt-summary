@@ -54,12 +54,14 @@ console.log("Hello from snapshot!");
 
 `deserializer.cc` 文件中的 `Deserializer` 类是 V8 引擎快照机制的关键组成部分，它负责将预先存储的引擎状态加载到内存中，从而加速 V8 引擎的启动，并直接影响 JavaScript 代码的执行效率，因为很多内置对象和函数都是通过反序列化加载的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1715,8 +1717,5 @@ Tagged<HeapObject> Deserializer<IsolateT>::Allocate(
   return obj;
 }
 
-template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE) 
-"""
-
-
+template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 ```

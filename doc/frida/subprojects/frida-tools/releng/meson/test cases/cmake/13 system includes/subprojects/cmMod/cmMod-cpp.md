@@ -150,7 +150,7 @@ int bar(int val) {
 
 `frida/subprojects/frida-tools/releng/meson/test cases/cmake/13 system includes/subprojects/cmMod/cmMod.cpp` 这个文件是一个简单的 C++ 类定义，其主要目的是作为 Frida 构建系统测试的一部分，用于验证子项目依赖和系统头文件的处理是否正确。它本身的功能比较基础，但在确保 Frida 构建的正确性和稳定性方面发挥着作用。与逆向的关联是间接的，因为它属于 Frida 工具链的一部分，而 Frida 是一个强大的逆向工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/13 system includes/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "triggerWarn.hpp"
 
@@ -172,7 +174,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

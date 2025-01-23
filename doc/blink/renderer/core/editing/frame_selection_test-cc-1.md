@@ -132,7 +132,7 @@ TEST_F(FrameSelectionTest, FocusingButtonHidesRangeInReadOnlyTextControl) {
 
 总而言之，`blink/renderer/core/editing/frame_selection_test.cc` 的这部分代码通过大量的单元测试，确保了 Blink 引擎在各种复杂的场景下能够正确地管理和呈现文本选区，保证了用户在浏览器中进行文本选择和编辑时的行为符合预期。 这些测试覆盖了各种 HTML 元素、用户交互以及焦点变化，有效地防止了与文本选择相关的 bug 的出现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/frame_selection_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n().GetSelectionInDOMTree().IsCaret());
   EXPECT_FALSE(Selection().SelectionHasFocus());
   EXPECT_TRUE(Selection().IsHidden());  // Caret is now hidden.
@@ -902,8 +904,4 @@ TEST_F(FrameSelectionTest, PaintCaretRecordsSelectionWithNoSelectionHandles) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

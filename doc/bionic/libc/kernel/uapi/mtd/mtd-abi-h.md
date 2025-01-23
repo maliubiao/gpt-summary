@@ -309,7 +309,7 @@ function recvfrom(sockfd, buf, len, flags, src_addr, addrlen) {
 
 **注意:**  ioctl 命令的魔数 (例如 `0xc0044d02`) 是与架构相关的，需要根据目标设备的架构 (32 位或 64 位) 进行调整。你可以通过查看内核头文件或使用工具 (如 `_IOC_NR`, `_IOC_TYPE`, `_IOC_SIZE`, `_IOC_DIR` 宏) 来计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/mtd/mtd-abi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -481,7 +483,4 @@ enum mtd_file_modes {
   MTD_FILE_MODE_RAW,
 };
 #endif
-
-"""
-
 ```

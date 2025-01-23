@@ -177,7 +177,7 @@ Based on these functions, the main functionalities in this part are:
 
 总而言之，这部分代码是 `RTCPeerConnection` 接口的核心实现，负责处理 WebRTC 连接建立和维护的关键信令过程，并与底层的 WebRTC 引擎进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_peer_connection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 exception_state.ThrowDOMException(DOMExceptionCode::kInvalidStateError,
                                       kSignalingStateClosedMessage);
     return EmptyPromise();
@@ -1012,7 +1014,4 @@ ScriptPromise<IDLUndefined> RTCPeerConnection::addIceCandidate(
   DisableBackForwardCache(GetExecutionContext());
 
   auto* request = MakeGarbageCollected<RTCVoidReques
-"""
-
-
 ```

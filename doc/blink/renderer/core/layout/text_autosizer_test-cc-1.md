@@ -153,16 +153,18 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 总结来说，这部分测试代码覆盖了 Blink 引擎文本自动调整大小功能的多个核心场景，包括对不同布局模式、容器尺寸、视口配置以及设备特性的处理。通过这些测试，可以确保该功能在各种情况下都能按照预期工作，提升网页在不同设备上的可读性和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/text_autosizer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   dolor in reprehenderit in voluptate velit esse cillum dolore eu "
+### 源代码
+```cpp
+dolor in reprehenderit in voluptate velit esse cillum dolore eu "
       "fugiat nulla pariatur."
       "    Excepteur sint occaecat cupidatat non proident, sunt in culpa "
       "qui officia deserunt"
@@ -751,8 +753,4 @@ TEST_P(TextAutosizerSimTest, ViewportChangesUpdateAutosizing) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

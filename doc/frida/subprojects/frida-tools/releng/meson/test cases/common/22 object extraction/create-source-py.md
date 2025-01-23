@@ -151,7 +151,7 @@ By following this systematic approach, breaking down the script, and considering
 
 `create-source.py` 是 Frida 测试基础设施中的一个小工具，用于生成简单的 C/C++ 代码片段，主要用于创建和维护 Frida 的测试用例。它本身的功能很简单，但它的存在是为了支持 Frida 更复杂的功能测试，这些测试会涉及到逆向工程、二进制底层、操作系统内核等方面的知识。 用户通常不会直接运行这个脚本，而是通过 Frida 的测试流程或者在调试 Frida 测试用例时接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/22 object extraction/create-source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,12 +159,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/env python3
 import sys
 print(f'#include "{sys.argv[1]}"')
-
-"""
-
 ```

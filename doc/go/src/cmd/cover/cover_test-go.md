@@ -271,7 +271,7 @@ By following this structured approach, combining code analysis with an understan
 
 这段测试代码通过各种场景覆盖了 `cmd/cover` 工具的核心功能和边界情况，确保了该工具的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cover/cover_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -279,8 +279,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -921,9 +923,4 @@ func main() {
 		t.Errorf("unexpected success; want failure due to newline in file path")
 	}
 }
-
-"""
-
-
-
 ```

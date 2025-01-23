@@ -107,11 +107,13 @@ myInnerFunc(7);
 
 `debug-scope-iterator.cc` 中定义的 `debug::ScopeIterator` 是 V8 引擎内部用于调试的重要组件。它提供了一种结构化的方式来访问和操作 JavaScript 代码执行时的作用域信息，这对于实现 JavaScript 调试器的各种功能至关重要，例如查看变量值、设置断点和运行时修改变量。它弥合了 C++ 引擎实现和 JavaScript 运行时概念之间的 gap，使得调试工具能够理解和操作 JavaScript 的作用域结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-scope-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ bool DebugScopeIterator::SetVariableValue(v8::Local<v8::String> name,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

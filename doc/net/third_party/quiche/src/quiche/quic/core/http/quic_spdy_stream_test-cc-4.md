@@ -162,7 +162,7 @@ By following these steps, I could create a detailed and informative response tha
 
 这部分 `quic_spdy_stream_test.cc` 文件专注于测试 `QuicSpdyStream` 类在处理 **HTTP/3 特有的 Datagram 和 Capsule 功能**时的行为。它涵盖了正常情况下的发送和接收，以及各种边界情况和错误处理，例如在不支持的环境下发送 Datagram、处理未知类型的 Capsule、以及处理非法的请求头。这些测试确保了 Chromium 的 HTTP/3 实现能够正确且健壮地支持这些关键的新特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -170,9 +170,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- Datagram when disabled locally");
+### 源代码
+```cpp
+Datagram when disabled locally");
 }
 
 TEST_P(QuicSpdyStreamTest, SendHttpDatagramBeforeReceivingSettings) {
@@ -364,8 +366,4 @@ TEST_P(QuicSpdyStreamTest, HostHeaderInRequest) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

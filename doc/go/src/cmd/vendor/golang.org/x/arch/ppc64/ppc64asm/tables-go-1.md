@@ -88,7 +88,7 @@ Arg 1: start=16, end=20
 
 ### 总结
 这部分代码的主要功能是定义和解析 PPC64 架构中的汇编指令。它通过操作码、操作数类型和指令格式来描述每个指令的行为，并提供了在 Go 语言中解析和执行这些指令的基础。
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/ppc64/ppc64asm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -97,8 +97,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 o Fixed Quadword Quad X-form (dctfixqq VRT,FRBp)
 		[6]*argField{ap_VecReg_6_10, ap_FPReg_16_20}},
 	{LXVKQ, 0xfc1f07fe00000000, 0xf01f02d000000000, 0x0, // Load VSX Vector Special Value Quadword X-form (lxvkq XT,UIM)
@@ -699,9 +701,4 @@ o Fixed Quadword Quad X-form (dctfixqq VRT,FRBp)
 		[6]*argField{}},
 	{MTVSRDD, 0xfc0007fe00000000, 0x7c00036600000000, 0x0, // Move To VSR Double Doubleword X-form (mtvsrdd XT,RA,RB)
 		[6]*ar
-"""
-
-
-
-
 ```

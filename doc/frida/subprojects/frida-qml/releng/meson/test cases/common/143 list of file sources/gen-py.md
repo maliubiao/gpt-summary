@@ -161,7 +161,7 @@ By following this structured approach, and thinking critically about the context
 
 总而言之，`gen.py` 脚本虽然功能简单，但在特定的上下文中，例如软件构建、测试和逆向工程流程中，它可以作为一个有用的辅助工具，用于执行基本的文件复制操作。 它的存在表明在 Frida QML 的测试环境中，可能需要复制一些文件来准备测试环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/143 list of file sources/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import shutil
 import sys
 
@@ -178,7 +180,4 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         raise Exception('Requires exactly 2 args')
     shutil.copy2(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

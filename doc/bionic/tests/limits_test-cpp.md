@@ -249,7 +249,7 @@ if (Java.available) {
 
 `bionic/tests/limits_test.cpp` 是一个重要的单元测试，用于确保 Android 系统中 `<limits.h>` 中定义的宏是正确的。这些宏对于 Android 系统和应用程序的正确运行至关重要。虽然测试文件本身不涉及动态链接器的直接操作，但这些宏的定义最终会通过 `libc.so` 共享库被应用程序使用。理解这些宏的意义和正确使用方式对于避免常见的编程错误非常重要。通过 Frida 等工具，我们可以动态地观察和调试应用程序对这些宏的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/limits_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -342,7 +344,4 @@ TEST(limits, macros) {
 #error ULLONG_MAX
 #endif
 }
-
-"""
-
 ```

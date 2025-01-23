@@ -281,7 +281,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "open"), {
 
 通过这种方式，你可以观察到 Android 应用在底层如何使用这些基本类型与系统进行交互。这个例子演示了如何通过 Hook 系统调用来间接观察 `types.h` 中定义的类型在实际运行时的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/types.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -292,8 +292,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -325,7 +327,4 @@ typedef __u32 __bitwise __wsum;
 typedef unsigned __bitwise __poll_t;
 #endif
 #endif
-
-"""
-
 ```

@@ -206,7 +206,7 @@ console.log(point.a); // 读取原型链上的属性
 
 `v8/src/compiler/access-info.cc` (的这个部分) 的主要职责是在编译 JavaScript 代码时，分析对象的结构和属性，并生成用于优化属性访问的关键信息。它深入理解 JavaScript 的原型继承和对象模型，以便 V8 能够生成尽可能高效的机器码来执行属性读取和写入操作。理解其背后的逻辑有助于我们编写更易于 V8 优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/access-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/access-info.cc以.tq结尾，那它是个v8 torque源代码，
@@ -214,8 +214,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ssInfo(
             receiver_map, name, holder.value(), index, access_mode, details);
       }
@@ -615,8 +617,4 @@ PropertyAccessInfo AccessInfoFactory::LookupTransition(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -220,7 +220,7 @@ const _EAGAIN = syscall.EAGAIN
 
 `go/src/runtime/retry.go` 中的 `retryOnEAGAIN` 函数是 Go 运行时提供的一个实用工具，用于简化处理非阻塞 I/O 操作中可能出现的 `EAGAIN` 错误。它通过递增延迟的重试机制，提高了程序的健壮性，但开发者需要理解其适用场景和潜在的限制，避免不当使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/retry.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -228,8 +228,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -253,9 +255,4 @@ func retryOnEAGAIN(fn func() int32) int32 {
 	}
 	return _EAGAIN
 }
-
-"""
-
-
-
 ```

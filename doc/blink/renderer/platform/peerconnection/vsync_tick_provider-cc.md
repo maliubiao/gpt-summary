@@ -111,14 +111,16 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`VSyncTickProvider` 是 Blink 渲染引擎中一个重要的底层组件，它为需要与显示刷新率同步的操作提供了基础的定时机制，特别是在 WebRTC 等实时通信场景中发挥着关键作用。理解其工作原理有助于更好地理解浏览器如何处理与时间相关的任务，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/vsync_tick_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ void VSyncTickProvider::OnTabVisibilityChange(bool visible) {
   }
 }
 }  // namespace blink
-
-"""
-
 ```

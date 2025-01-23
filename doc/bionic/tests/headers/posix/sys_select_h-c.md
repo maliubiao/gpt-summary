@@ -340,7 +340,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/headers/posix/sys_select_h.c` 是一个至关重要的测试文件，用于确保 Android Bionic 库中 `sys/select.h` 头文件的正确性，这对于依赖 I/O 多路复用的 Android 功能的正常运行至关重要。了解其功能以及 `select` 和 `pselect` 的使用方式，有助于开发高质量的 Android 应用和理解 Android 系统的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_select_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -351,8 +351,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -415,7 +417,4 @@ static void sys_select_h() {
   FUNCTION(pselect, int (*f)(int, fd_set*, fd_set*, fd_set*, const struct timespec*, const sigset_t*));
   FUNCTION(select, int (*f)(int, fd_set*, fd_set*, fd_set*, struct timeval*));
 }
-
-"""
-
 ```

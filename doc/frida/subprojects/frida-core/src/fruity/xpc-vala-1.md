@@ -104,7 +104,7 @@ if __name__ == "__main__":
 4. **建立隧道连接**：配对成功后，Frida 工具会建立隧道连接，允许设备之间的数据传输。
 
 通过这些步骤，用户可以逐步完成设备的配对和通信，Frida 工具会在每个步骤中处理相关的加密和通信逻辑。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/xpc.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 );
 				var baze = new BigNumber ();
 				BigNumber.sub (baze, remote_pubkey, val);
@@ -1296,7 +1298,4 @@ Prompt:
 		public static async QuicTunnelConnection open (InetSocketAddress address, NetworkStack netstack, TunnelKey local_keypair,
 				TunnelKey remote_pubkey, Cancellable? cancellable = null) throws Error, IOError {
 			var connection = new QuicTunnelConnection (address, netst
-"""
-
-
 ```

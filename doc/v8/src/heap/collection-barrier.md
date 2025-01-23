@@ -102,11 +102,13 @@ console.timeEnd("GC Time");
 
 `CollectionBarrier` 是 V8 引擎中用于协调和控制垃圾回收过程的关键组件，特别是在后台线程中。它通过提供请求 GC、等待 GC 完成、通知 GC 状态等机制，保证了垃圾回收过程的正确性和效率，从而间接地影响了 JavaScript 代码的性能和内存管理。JavaScript 开发者虽然不能直接操作它，但理解其功能有助于更好地理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/collection-barrier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void CollectionBarrier::StopTimeToCollectionTimer() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

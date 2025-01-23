@@ -189,15 +189,17 @@ console.log("UTC Time:", utcDate.toUTCString());
 
 总而言之，`v8/src/base/platform/platform-zos.cc` 是 V8 在 z/OS 上运行的关键组件，它提供了操作系统抽象，使得 V8 引擎可以跨平台运行，并处理诸如内存管理和时间处理等底层任务。理解这些平台特定的实现有助于深入了解 V8 的工作原理以及 JavaScript 运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-zos.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/platform-zos.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -433,7 +435,4 @@ PosixMemoryMappedFile::~PosixMemoryMappedFile() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -123,7 +123,7 @@ By following these steps, systematically analyzing the code, and drawing connect
 
 这部分 `svg_image_test.cc` 的主要功能是**深入测试 Blink 渲染引擎在处理作为背景图像的 SVG 时，如何进行更精细的裁剪优化，特别是针对包含非绘制元素的情况。** 它验证了 Blink 能够有效地避免渲染不可见的或由于遮罩、滤镜等原因而不参与绘制的 SVG 元素，从而提升渲染性能。  它通过模拟不同的 CSS 样式和 SVG 结构，确保在各种情况下，Blink 的 SVG 背景图像渲染优化都能正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/graphics/svg_image_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0' r='10' fill='blue'/>
               <circle cx='50' cy='5950' r='10' fill='blue'/>
               <circle cx='75' cy='5950' r='10' fill='blue'/>
@@ -217,8 +219,4 @@ TEST_F(SVGImageSimTest, SpriteSheetNonDrawingCulling) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

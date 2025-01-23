@@ -101,15 +101,17 @@ Based on this analysis, I can now generate the requested information, including 
 
 总而言之，`parser_test.go` 文件通过各种测试用例，全面地检验了 Go 语言解析器的正确性、鲁棒性和性能。它涵盖了基本语法解析、错误处理、特定语言特性的处理（如行指令）以及性能优化等方面。这些测试对于确保 Go 编译器的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/syntax/parser_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -505,9 +507,4 @@ func TestUnpackListExprAllocs(t *testing.T) {
 		errorf("UnpackListExpr allocated %v times", allocs)
 	}
 }
-
-"""
-
-
-
 ```

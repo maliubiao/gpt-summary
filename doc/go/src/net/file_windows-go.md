@@ -183,7 +183,7 @@ func main() {
 
 `go/src/net/file_windows.go` 中的这段代码定义了在 Windows 平台上将 `os.File` 转换为 `net` 包中网络相关接口的功能。 然而，代码中明确指出这些功能尚未实现（通过 `// TODO: Implement this` 和返回 `syscall.EWINDOWS`）。 因此，目前在 Windows 上直接使用这些函数会返回错误。 理解其设计目的是为了在未来支持从现有文件描述符创建网络连接对象，这在某些系统集成和底层交互的场景中非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/file_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -218,9 +220,4 @@ func filePacketConn(f *os.File) (PacketConn, error) {
 	// TODO: Implement this
 	return nil, syscall.EWINDOWS
 }
-
-"""
-
-
-
 ```

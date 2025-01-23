@@ -152,15 +152,17 @@ Essentially, my process was a top-down approach: start with a high-level underst
 
 总结来说，`script_state_impl.cc` 文件是 Blink 渲染引擎中一个非常核心的组件，它负责管理 JavaScript 代码的执行上下文，连接 V8 引擎和 Blink 的其他部分，是 JavaScript 与网页交互的基石。理解它的功能对于理解 Blink 的架构和调试 JavaScript 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_state_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void ScriptStateImpl::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

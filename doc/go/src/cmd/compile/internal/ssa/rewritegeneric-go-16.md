@@ -134,7 +134,7 @@ func orComplementExample(a uint16) uint16 {
 
 `rewritegeneric.go` 文件的第17部分专门负责优化SSA中间表示中的 **16位、32位和64位无符号整数的按位或（OR）操作**。它通过模式匹配识别可以简化的 OR 运算，例如常量折叠、代数化简、按位取反的优化以及位旋转操作的识别，从而提升最终生成代码的效率。这部分是Go编译器进行后端优化的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,9 +143,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第17部分，共26部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```go
+{
 		for _i0 := 0; _i0 <= 1; _i0, v_0, v_1 = _i0+1, v_1, v_0 {
 			if v_0.Op != OpAnd16 {
 				continue
@@ -1519,9 +1521,4 @@ func rewriteValuegeneric_OpOr64(v *Value) bool {
 			_ = z.Args[1]
 			z_0 := z.Args[0]
 			if z_0.Op != OpConst32 || auxIntToInt32(z_0.AuxInt) != 64 || y != z.Args[1] || !((shiftIsBounded(left) || shiftIsBounded(
-"""
-
-
-
-
 ```

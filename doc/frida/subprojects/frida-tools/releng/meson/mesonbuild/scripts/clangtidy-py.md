@@ -121,7 +121,7 @@ Essentially, I followed a process of understanding the code's purpose, placing i
 
 总而言之，`clangtidy.py` 是 Frida 项目中用于确保代码质量的一个重要工具，它通过调用 Clang Tidy 进行静态代码分析，并可选择自动修复发现的问题。这有助于提高代码的可读性、可维护性，并减少潜在的错误和安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/scripts/clangtidy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -161,7 +163,4 @@ def run(args: T.List[str]) -> int:
 
     run_func = run_clang_tidy_fix if options.fix else run_clang_tidy
     return run_tool('clang-tidy', srcdir, builddir, run_func, builddir)
-
-"""
-
 ```

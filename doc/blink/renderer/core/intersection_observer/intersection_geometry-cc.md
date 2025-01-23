@@ -147,15 +147,17 @@ The user wants to understand the functionality of the `intersection_geometry.cc`
 
 在提供的代码片段中，`intersection_geometry.cc` 的主要功能是**计算根元素和目标元素的基本几何信息，包括它们的初始矩形和边距处理。它还实现了 `RootGeometry` 类，用于存储和更新根元素的几何信息。**  这部分代码为后续的交叉计算和可见性判断奠定了基础。 特别是 `InitializeRootRect`, `InitializeTargetRect`, `ComputeMargin`, `ApplyMargin`, 以及 `IntersectionGeometry::RootGeometry` 类的相关方法是核心。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_geometry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -968,8 +970,4 @@ bool IntersectionGeometry::ApplyClip(const LayoutObject* target,
         // In case the ancestor in an SVG element with a viewbox property
         // we need to convert the child's coordinates to the SVG coordinates
         if (auto* properties =
-               
-"""
-
-
 ```

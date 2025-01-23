@@ -109,7 +109,7 @@ After analyzing each function, I will synthesize a concise summary of the overal
 
 `blink/renderer/modules/peerconnection/peer_connection_tracker.cc` 的核心功能是作为一个**WebRTC PeerConnection API 的事件和状态追踪器**。它通过 hook 或回调的方式，在 Blink 渲染引擎内部的关键 WebRTC 操作发生时被调用，记录下重要的信息，例如 PeerConnection 的创建和销毁、ICE 候选者的生成、SDP 的交换、媒体流的添加和移除、DataChannel 的创建和状态变化、连接状态的变化等等。  这些追踪信息被发送到上层，用于监控 WebRTC 连接的状态，进行性能分析、错误排查和统计等目的。它并不直接参与 WebRTC 连接的建立和数据传输，而是作为一个观察者和记录者。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/peer_connection_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CALLED_ON_VALID_THREAD(main_thread_);
   int id = GetLocalIDForHandler(pc_handler);
   if (id == -1)
@@ -427,8 +429,4 @@ void PeerConnectionTracker::AddStandardStats(int lid, base::Value::List value) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

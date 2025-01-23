@@ -277,7 +277,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 通过这个 Frida Hook 示例，你可以观察到 `ioctl` 系统调用的参数，验证上述的步骤和假设，并深入了解 Android 系统与硬件的交互过程。 请注意，实际的请求码和数据结构可能需要根据具体的 Android 版本和设备进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/wmi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -340,7 +342,4 @@ struct dell_wmi_smbios_buffer {
 #define WSMT_DIS_TOKEN 0x04ED
 #define DELL_WMI_SMBIOS_CMD _IOWR(WMI_IOC, 0, struct dell_wmi_smbios_buffer)
 #endif
-
-"""
-
 ```

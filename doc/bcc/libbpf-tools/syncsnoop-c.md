@@ -64,7 +64,7 @@ Response:
 2. **验证数据流**：在 `handle_event` 中添加调试打印，确认事件格式。
 3. **检查权限**：使用 `strace` 跟踪 `syncsnoop` 的 `bpf(BPF_PROG_LOAD)` 调用。
 4. **内核日志**：通过 `dmesg` 查看 BPF 验证器错误（如 `libbpf: load bpf program failed: Permission denied`）。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/syncsnoop.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause)
 // Copyright (c) 2024 Tiago Ilieve
 //
@@ -223,7 +225,4 @@ cleanup:
 
 	return err != 0;
 }
-
-"""
-
 ```

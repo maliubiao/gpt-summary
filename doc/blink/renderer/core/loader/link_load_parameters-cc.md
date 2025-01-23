@@ -190,15 +190,17 @@ By following these steps, systematically examining the code and connecting it to
 
 因此，`link_load_parameters.cc` 虽然本身不直接与用户的交互相关，但它是浏览器处理网页资源加载的关键组成部分。当网页出现资源加载问题时，理解 `LinkLoadParameters` 的作用和属性，有助于开发者定位问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/link_load_parameters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ LinkLoadParameters::LinkLoadParameters(const LinkHeader& header,
 }
 
 }  // namespace blink
-
-"""
-
 ```

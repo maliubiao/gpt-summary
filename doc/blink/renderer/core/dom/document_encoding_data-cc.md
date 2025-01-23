@@ -146,15 +146,17 @@ By following these steps, you can effectively analyze a piece of source code and
 
 总而言之，`document_encoding_data.cc` 中定义的 `DocumentEncodingData` 类是 Blink 渲染引擎中管理文档字符编码信息的关键组件，它连接了网络传输、HTML 解析以及后续的 JavaScript 和 CSS 处理，确保网页内容能够被正确地解释和呈现给用户。理解这个类的功能有助于诊断和解决网页编码相关的显示问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_encoding_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -213,7 +215,4 @@ void DocumentEncodingData::SetEncoding(const WTF::TextEncoding& encoding) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

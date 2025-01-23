@@ -184,7 +184,7 @@ func main() {
 
 总而言之，`go/src/math/j1.go` 提供了一阶第一类和第二类贝塞尔函数的计算功能，并通过针对不同输入范围采用不同的近似方法来保证计算的效率和精度。使用者需要了解函数的定义域和特殊情况处理，并对浮点数运算的精度有一定的认识。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/j1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -618,9 +620,4 @@ func qone(x float64) float64 {
 	s := 1 + z*(q[0]+z*(q[1]+z*(q[2]+z*(q[3]+z*(q[4]+z*q[5])))))
 	return (0.375 + r/s) / x
 }
-
-"""
-
-
-
 ```

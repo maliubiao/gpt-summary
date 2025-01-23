@@ -153,14 +153,16 @@ By following these steps, I can effectively analyze the provided C++ code and ge
 
 `AXObjectCache.cc` 文件是 Chromium Blink 引擎中负责管理可访问性对象缓存的关键组件。它连接了 DOM 树和辅助技术，通过创建和维护 `AXObject`，使得网页内容能够被屏幕阅读器等辅助技术理解和使用。开发者在使用 HTML、CSS 和 JavaScript 构建网页时，需要注意遵循可访问性最佳实践，正确使用 ARIA 属性，确保 `AXObjectCache` 能够生成准确的可访问性信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/accessibility/ax_object_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009, 2010 Apple Inc. All rights reserved.
  *
@@ -299,7 +301,4 @@ bool AXObjectCache::IsInsideFocusableElementOrARIAWidget(const Node& node) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

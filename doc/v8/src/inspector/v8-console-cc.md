@@ -179,7 +179,7 @@ task.run(myTask);
 
 `v8/src/inspector/v8-console.cc` 是 V8 Inspector 中至关重要的组件，它负责实现 JavaScript `console` 对象的各种方法，并将这些调用转化为与开发者工具交互的底层操作，包括消息记录、断点管理、性能分析和对象检查。它充当了 JavaScript 代码和 V8 Inspector 后端之间的桥梁，是开发者进行调试和性能分析的关键工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-console.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-console.cc以.tq结尾，那它是个v8 torque源代码，
@@ -187,8 +187,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -972,7 +974,4 @@ void V8Console::queryObjectsCallback(
 void V8Console::inspectedObject(const v8::FunctionCallbackInfo<v8::Value>& info,
                                 int sessionId, unsigned num) {
   DCHECK_GT(V8InspectorSess
-"""
-
-
 ```

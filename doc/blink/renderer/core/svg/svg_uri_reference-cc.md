@@ -180,15 +180,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`svg_uri_reference.cc` 是 Blink 渲染引擎中处理 SVG URI 引用的关键组件，它确保了 SVG 能够正确地链接和重用文档内部或外部的资源，是实现 SVG 强大功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_uri_reference.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -362,7 +364,4 @@ void SVGURIReference::UnobserveTarget(Member<IdTargetObserver>& observer) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -103,7 +103,7 @@ This部分代码主要负责以下功能，这些功能是 `DocumentMarkerContro
 
 这部分代码专注于**管理和操作文档标记的生命周期**，特别是**根据优先级规则绘制标记**和**响应文本内容变化来维护标记的正确性**。它提供了添加、查询、移除和更新各种类型文档标记的功能，并处理了不同标记类型之间的交互，例如在存在建议标记时抑制显示重叠的拼写错误标记。此外，它还包含了处理文本匹配标记的特定逻辑，例如高亮显示搜索结果。代码中的方法为 Blink 引擎提供了细粒度的控制，以确保文档标记能够准确、高效地渲染，并与用户的交互和文档的变化保持同步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/document_marker_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 & suggestion_markers =
       MarkersFor(text, DocumentMarker::MarkerTypes::Suggestion());
   if (suggestion_markers.empty()) {
@@ -588,8 +590,4 @@ void ShowDocumentMarkers(const blink::DocumentMarkerController* controller) {
     controller->ShowMarkers();
 }
 #endif
-
-"""
-
-
 ```

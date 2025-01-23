@@ -134,7 +134,7 @@ let c = a.add(b);
 
 总而言之，这段代码是 V8 编译器中非常核心的一部分，它专注于将内存访问和 SIMD 操作从高级的中间表示翻译成底层的 x64 机器指令，这是将 JavaScript 代码高效地运行在 x64 架构 CPU 上的关键步骤。它针对不同的数据类型、寻址模式和 SIMD 操作提供了精确的指令选择逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -142,8 +142,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::StoreOp& store = op.Cast<turboshaft::StoreOp>();
       base = store.base();
       index = store.index();
@@ -1053,7 +1055,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitSimdPack128To256(
   InstructionOperand inputs[] = {src0, src1, imm};
 
   Emit(kX6
-"""
-
-
 ```

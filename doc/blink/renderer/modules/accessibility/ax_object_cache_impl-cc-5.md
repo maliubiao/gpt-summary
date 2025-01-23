@@ -249,7 +249,7 @@ el, element);
 
 作为第 6 部分，这段代码着重于 **处理 HTML 元素属性的变更，并同步更新可访问性树的状态**。  它定义了针对不同 HTML 和 ARIA 属性变化的具体处理逻辑，包括更新元素名称、角色、状态以及维护元素之间的关系。 这是可访问性功能的核心部分，确保动态网页内容的变化能够及时反映给辅助技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -257,8 +257,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 el, element);
     } else if (attr_name == html_names::kAriaLabeledbyAttr ||
                attr_name == html_names::kAriaLabelledbyAttr) {
@@ -1110,7 +1112,4 @@ void AXObjectCacheImpl::MarkDocumentDirtyWithCleanLayout() {
   pending_events_to_serialize_.clear();
   pending_objects_to_serialize_.clear();
   ch
-"""
-
-
 ```

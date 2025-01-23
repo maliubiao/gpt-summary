@@ -106,11 +106,13 @@ loadAndRunWasm();
 
 `target.cc`  是 V8 中 GDB 服务器的关键部分，它充当了 GDB 客户端和 V8 WebAssembly 运行时之间的桥梁，使得外部调试器能够检查和控制 WebAssembly 代码的执行。它不直接参与 JavaScript 代码的执行，而是专注于处理与 WebAssembly 调试相关的 GDB 协议和 V8 内部状态的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/target.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -815,7 +817,4 @@ wasm_addr_t Target::GetCurrentPc() const {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

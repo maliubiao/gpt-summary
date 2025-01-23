@@ -135,15 +135,17 @@ nativeObject.processString(myString);
 
 总而言之，`StringForwardingTable` 是 V8 内部一个重要的组件，用于在字符串进行内部化和外部化等转换时提供临时的转发机制，从而提高性能并简化垃圾回收过程。 开发者虽然不会直接操作它，但理解其功能有助于更好地理解 JavaScript 字符串的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-forwarding-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string-forwarding-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ class StringForwardingTable {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_STRING_FORWARDING_TABLE_H_
-
-"""
-
 ```

@@ -127,7 +127,7 @@ console.log("Negative Infinity: " + -Infinity); // 输出: Negative Infinity: -I
 
 这段代码是 V8 tracing 功能的一部分单元测试，专门测试了 tracing 系统在记录包含特殊浮点数值的事件参数时的正确性。它验证了这些特殊值能够被准确地序列化为 JSON 格式的字符串，确保了 tracing 数据的可靠性。这与 JavaScript 中处理 `NaN`、`Infinity` 和 `-Infinity` 的概念紧密相关，并有助于避免用户在编程中可能遇到的与这些特殊值相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libplatform/tracing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/libplatform/tracing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 le>::infinity();
   double neg_inf_num = -std::numeric_limits<double>::infinity();
 
@@ -173,8 +175,4 @@ le>::infinity();
 }  // namespace tracing
 }  // namespace platform
 }  // namespace v8
-
-"""
-
-
 ```

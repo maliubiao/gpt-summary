@@ -113,15 +113,17 @@ go build -gcflags=-G=3 ./go/test/typeparam/importtest.go
 
 `go/test/typeparam/importtest.go` 是一个基础的测试文件，用于验证在启用了泛型支持的 Go 编译器中，基本的 `import` 语句是否能够正常工作。它本身不执行复杂的逻辑或处理命令行参数，其主要价值在于作为自动化测试的一部分，确保 Go 语言的导入机制在引入泛型后仍然稳定可靠。  它的存在暗示了在 Go 泛型开发的早期阶段，确保基础功能的正确性是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/importtest.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -138,9 +140,4 @@ import "math"
 func f(x float64) {
 	fmt.Println(math.Sin(x))
 }
-
-"""
-
-
-
 ```

@@ -164,15 +164,17 @@ test('fetchData should throw an error on failure', async () => {
 
 总而言之，`quiche_test_utils_test.cc` 是 QUIC 库中用于测试自定义测试辅助工具的关键文件，它帮助开发者确保用于断言操作状态的匹配器能够正常工作，从而提高单元测试的可靠性和代码质量。虽然与 JavaScript 没有直接的代码关系，但在概念上反映了处理异步操作结果和进行单元测试的通用原则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/test_tools/quiche_test_utils_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/common/test_tools/quiche_test_utils.h"
 
 #include "absl/status/status.h"
@@ -210,7 +212,4 @@ TEST(QuicheTestUtilsTest, StatusMatchers) {
 
 }  // namespace
 }  // namespace quiche::test
-
-"""
-
 ```

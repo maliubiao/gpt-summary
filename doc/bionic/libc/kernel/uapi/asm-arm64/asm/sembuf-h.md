@@ -235,7 +235,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm64/asm/sembuf.handroid` 本身只是一个简单的包含文件，它引入了定义信号量操作结构体 `sembuf` 的通用头文件。  信号量是一种用于进程间同步的底层机制，在 Android 的某些系统服务和 Native 代码中可能被使用。理解 `sembuf` 结构体及其相关的 libc 函数，对于理解 Android 底层的并发和同步机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/sembuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -246,8 +246,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -255,7 +257,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/sembuf.h>
-
-"""
-
 ```

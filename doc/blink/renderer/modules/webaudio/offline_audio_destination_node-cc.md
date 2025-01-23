@@ -191,15 +191,17 @@ This detailed thought process, combining code inspection, domain knowledge of th
 
 总而言之，`blink/renderer/modules/webaudio/offline_audio_destination_node.cc` 定义了离线音频渲染的关键出口点，负责收集和管理最终的音频输出数据，并在渲染完成后将其提供给 JavaScript 代码。理解其功能对于调试和正确使用 Web Audio API 的离线渲染特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/offline_audio_destination_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -272,7 +274,4 @@ void OfflineAudioDestinationNode::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

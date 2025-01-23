@@ -124,14 +124,16 @@ By following these steps, we can systematically analyze the provided code and ar
 
 总而言之，`main_thread_unittest.cc` 是一个关键的测试文件，用于确保 Chromium Blink 渲染引擎的主线程调度器能够正确、高效地管理和执行各种任务，从而保证网页的正常渲染和交互。它与 JavaScript、HTML 和 CSS 的功能密切相关，因为它直接控制着这些技术在浏览器中的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ TEST_F(MainThreadTest, TestNestedRunLoop) {
 }  // namespace main_thread_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

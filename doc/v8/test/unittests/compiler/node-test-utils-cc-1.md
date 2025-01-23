@@ -125,7 +125,7 @@ function add(a, b) {
 
 总而言之，这部分 `node-test-utils.cc` 代码的核心功能是 **定义了一系列 C++ 匹配器，用于在 V8 编译器的 IR 图中查找和验证特定类型的节点及其属性。** 这些匹配器是 V8 编译器单元测试的基础设施，用于确保编译器能够正确地将 JavaScript 代码转换为高效的机器码。它们覆盖了各种常见的 IR 节点类型，包括内存访问、栈操作、类型转换、上下文访问和通用操作符。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-test-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/node-test-utils.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,9 +133,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    PrintMatchAndExplain(NodeProperties::GetControlInput(node),
+### 源代码
+```cpp
+PrintMatchAndExplain(NodeProperties::GetControlInput(node),
                                  "control", control_matcher_, listener));
   }
 
@@ -864,8 +866,5 @@ Matcher<Node*> IsMerge(const Matcher<Node*>& control0_matcher,
 }
 
 
-Matcher<Node*> 
-"""
-
-
+Matcher<Node*>
 ```

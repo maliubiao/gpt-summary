@@ -161,15 +161,17 @@ By following these steps, we can systematically analyze the code and understand 
 
 总而言之，`blink/renderer/core/svg/svg_path_blender.cc` 是 Blink 渲染引擎中负责 SVG 路径形变的核心组件，它使得开发者可以通过 CSS 动画/过渡或 JavaScript 来实现平滑的 SVG 路径动画效果。理解其功能有助于调试 SVG 动画相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_path_blender.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) Research In Motion Limited 2010, 2011. All rights reserved.
  *
@@ -506,7 +508,4 @@ bool SVGPathBlender::BlendAnimatedPath(BlendState& blend_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

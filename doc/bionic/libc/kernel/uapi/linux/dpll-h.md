@@ -330,7 +330,7 @@ function readlink(path) {
 
 请注意，这只是一个基本的 Frida hook 示例，实际调试可能需要更复杂的逻辑来解析数据结构和过滤无关的 `ioctl` 调用。你可能需要查阅 Android 源代码或相关文档来确定 `DPLL_IOCTL_MAGIC` 的实际值以及数据结构的布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dpll.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -341,8 +341,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -477,7 +479,4 @@ enum dpll_cmd {
 };
 #define DPLL_MCGRP_MONITOR "monitor"
 #endif
-
-"""
-
 ```

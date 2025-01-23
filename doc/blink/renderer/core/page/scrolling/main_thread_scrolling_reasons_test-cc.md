@@ -168,15 +168,17 @@ Essentially, I treated the test file as documentation of the conditions that inf
 
 总而言之，`main_thread_scrolling_reasons_test.cc` 是一个至关重要的测试文件，用于确保 Chromium 的滚动优化策略能够正确工作，并在各种网页场景下提供流畅的滚动体验。它通过测试各种 HTML 和 CSS 的组合，来验证滚动操作是否按预期发生在合成器线程，并在必要时准确地检测和报告主线程滚动的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/main_thread_scrolling_reasons_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -720,7 +722,4 @@ TEST_P(NonCompositedMainThreadScrollingReasonsTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -137,7 +137,7 @@ Initially, I might have focused too much on the specific return value of `0`. Wh
 
 `libA.c` 是一个非常简单的 C 代码文件，其主要目的是为了在一个单元测试环境中，验证静态库的构建和符号处理过程。它展示了 `static` 关键字的基本用法，以及静态链接的一些概念。虽然功能简单，但它在理解软件构建流程、静态库的特性以及逆向工程中的一些挑战方面具有一定的代表性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/65 static archive stripping/lib/libA.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,14 +145,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libA.h>
 
 static int libA_func_impl(void) { return 0; }
 
 int libA_func(void) { return libA_func_impl(); }
-
-"""
-
 ```

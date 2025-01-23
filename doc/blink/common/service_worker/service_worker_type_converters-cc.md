@@ -133,14 +133,16 @@ By following this structured approach, combining code analysis with domain knowl
 
 总而言之，`service_worker_type_converters.cc` 文件虽然是底层的 C++ 代码，但它在 Service Worker 的正常运行中扮演着关键的角色，确保了不同进程之间对于 Service Worker 状态的正确理解和传递，最终影响着 Web 应用程序的功能和用户体验。它处理的类型转换直接反映了 JavaScript 代码的执行结果和 Service Worker 的生命周期事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/service_worker/service_worker_type_converters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ TypeConverter<blink::ServiceWorkerStatusCode,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

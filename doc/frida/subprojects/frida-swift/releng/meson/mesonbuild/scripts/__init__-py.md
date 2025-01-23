@@ -109,7 +109,7 @@ By following this structured approach, combining code analysis with understandin
 
 总而言之，虽然 `__init__.py` 文件中的 `destdir_join` 函数看起来很简单，但它在 Frida 的构建过程中扮演着关键的角色，确保 Frida 的组件被正确地安装到目标系统中，这对于 Frida 的正常运行和逆向工程师的分析工作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -129,7 +131,4 @@ def destdir_join(d1: str, d2: str) -> str:
         return d2
     # c:\destdir + c:\prefix must produce c:\destdir\prefix
     return str(PurePath(d1, *PurePath(d2).parts[1:]))
-
-"""
-
 ```

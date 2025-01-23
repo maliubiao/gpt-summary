@@ -197,7 +197,7 @@ extern "C" long double calculate_hyperbolic_cosine_ld(long double x) {
 
 总而言之，`e_coshl.c` 是 Android 数学库中实现双曲余弦函数的核心代码，通过编译链接成为 `libm.so` 的一部分，并被 Android 系统和应用程序广泛使用。理解其实现原理和与 Android 架构的联系对于开发高性能和可靠的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_coshl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* from: FreeBSD: head/lib/msun/src/e_coshl.c XXX */
 
 /*
@@ -338,7 +340,4 @@ coshl(long double x)
     /* |x| > o_threshold, cosh(x) overflow */
 	RETURNI(huge*huge);
 }
-
-"""
-
 ```

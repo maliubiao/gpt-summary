@@ -166,7 +166,7 @@ Interceptor.attach(Module.findExportByName(null, "dlclose"), {
 
 总而言之，这段代码是 Android 动态链接器的核心组成部分，负责安全有效地卸载不再需要的共享库，释放资源并保持系统的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -178,8 +178,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e: calling destructors for \"%s\"@%p ... done",
            si->get_realpath(),
            si);
@@ -1118,7 +1120,4 @@ bool soinfo::prelink_image(bool dlext_use_relro) {
 
 #if defined(__arm__)
   (void) phdr_t
-"""
-
-
 ```

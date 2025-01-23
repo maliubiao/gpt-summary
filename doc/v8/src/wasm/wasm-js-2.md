@@ -129,12 +129,14 @@ console.log(func.type()); // 输出类似 { type: 'function', parameters: [], re
 
 总而言之，这部分 C++ 代码是 V8 引擎中至关重要的一部分，它将底层的 WebAssembly 实现桥接到 JavaScript 环境，使得开发者可以使用 JavaScript API 来加载、编译、实例化和与 WebAssembly 模块进行交互。它还负责按需启用和安装一些高级的 WebAssembly 功能，提升了 WebAssembly 与 JavaScript 的集成度和灵活性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-js.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 or, WASM_TABLE_OBJECT_TYPE,
                          WasmTableObject::kHeaderSize, "WebAssembly.Table");
     native_context->set_wasm_table_constructor(*table_constructor);
@@ -540,8 +542,4 @@ std::unique_ptr<WasmStreaming> StartStreamingForTesting(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -207,7 +207,7 @@ session.createScript(`
 
 总结来说，`bionic/libc/kernel/uapi/linux/kvm_para.h` 虽然只是一个简单的头文件，但它定义了连接 Android 虚拟化技术栈中 Guest OS 和 Hypervisor 之间通信的关键常量。理解这些常量有助于我们深入理解 Android 虚拟化的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kvm_para.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -248,7 +250,4 @@ Prompt:
 #define KVM_HC_MAP_GPA_RANGE 12
 #include <asm/kvm_para.h>
 #endif
-
-"""
-
 ```

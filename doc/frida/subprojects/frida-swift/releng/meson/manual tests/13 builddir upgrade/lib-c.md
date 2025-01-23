@@ -116,7 +116,7 @@ This step-by-step process helps break down the analysis of even a simple code sn
 
 总而言之，这个简单的 `lib.c` 文件虽然功能单一，但在 Frida 的上下文中扮演着测试基础设施的角色，用于验证 Frida 在动态链接库加载和函数调用方面的基本功能，尤其是在涉及到构建环境升级等场景时。 查看这个文件的用户很可能是 Frida 的开发者或高级用户，正在进行调试和故障排除工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/manual tests/13 builddir upgrade/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -135,7 +137,4 @@ Prompt:
 int DLL_PUBLIC foo(void) {
   return 0;
 }
-
-"""
-
 ```

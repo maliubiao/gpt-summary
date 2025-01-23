@@ -79,12 +79,14 @@ let willOverflow = maxInt + 1; // JavaScript 会自动转换为浮点数，但�
 
 总之，这部分 C++ 代码是 V8 引擎质量保证的关键部分，它确保了 JavaScript 中数字运算的准确性和可靠性。这些测试模拟了各种可能的输入和场景，以验证编译器生成的机器码是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 (MachineType::Float32());
     m.Return(m.Float32Sub(m.Parameter(0), m.Float32Constant(i)));
 
@@ -2180,7 +2182,4 @@ TEST(RunFloat64Atan) {
   CHECK(std::isnan(m.Call(std::numeric_limits<double>::quiet_NaN())));
   CHECK(std::isnan(m.Call(std::numeric_limits<double>::signaling_NaN())));
   CHEC
-"""
-
-
 ```

@@ -140,15 +140,17 @@ void ProcessIncomingData(const std::string& data) {
 
 总而言之，`quiche_logging_impl.cc` 提供了一个关键的基础设施，用于在 Chromium 的 Quiche 库中进行灵活和可配置的日志记录，这对于开发、调试和诊断基于 QUIC 的网络连接至关重要。虽然它不直接与 JavaScript 交互，但它记录的信息对于理解由 JavaScript 发起的网络请求的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/default/quiche_platform_impl/quiche_logging_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ Prompt:
 #ifndef ABSL_VLOG
 ABSL_FLAG(int, v, 0, "Show all QUICHE_VLOG(m) messages for m <= this.");
 #endif
-
-"""
-
 ```

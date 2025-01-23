@@ -164,15 +164,17 @@ By following these steps and engaging in some self-correction, the comprehensive
 
 总而言之，`quic_encrypter.cc` 是 Chromium QUIC 实现中至关重要的一个文件，负责根据协商的协议和算法创建用于数据包加密的对象，确保 QUIC 连接的安全性和隐私。虽然 JavaScript 代码不直接调用它，但它依赖于其提供的加密功能来实现安全的网络通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/quic_encrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ std::unique_ptr<QuicEncrypter> QuicEncrypter::CreateFromCipherSuite(
 }
 
 }  // namespace quic
-
-"""
-
 ```

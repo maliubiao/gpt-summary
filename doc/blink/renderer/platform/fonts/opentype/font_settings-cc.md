@@ -132,14 +132,16 @@ By following this detailed breakdown, I can thoroughly analyze the code snippet 
 
 `font_settings.cc` 文件提供了一些底层的实用工具，用于在 Blink 渲染引擎中处理 OpenType 字体特性设置。它专注于标签的字符串和整数表示之间的转换，以及计算字体变体设置的哈希值，这些功能是解析和应用 CSS `font-variation-settings` 属性的关键部分，并有助于提高性能。这些功能不直接与 JavaScript 或 HTML 代码交互，但它们是浏览器渲染引擎处理 CSS 样式时不可或缺的一部分，最终影响用户在网页上看到的字体效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/font_settings.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ unsigned FontVariationSettings::GetHash() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

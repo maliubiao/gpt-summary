@@ -126,7 +126,7 @@ int func(void) {
 
 虽然 `file2.c` 的代码本身非常简单，但在 Frida 的测试框架中，它可能被用来验证 Frida 在处理具有相同名称的函数时的行为。它作为 Frida 插桩的目标，也间接涉及了逆向工程的方法和底层的二进制、操作系统及框架知识。用户在调试与 Frida 相关的构建或测试问题时，可能会逐步深入到这样的测试用例代码中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/185 same target name/sub/file2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,12 +134,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 5;
 }
-
-"""
-
 ```

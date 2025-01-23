@@ -110,15 +110,17 @@ Let's break down the thought process for analyzing the provided `http_stream.cc`
 
 尽管 `net/http/http_stream.cc` 文件本身代码不多，但它定义了网络栈中一个核心的抽象概念。`HttpStream` 作为所有 HTTP 流的基类，为不同版本的 HTTP 协议和底层传输协议提供了一个统一的接口。`GetQuicErrorDetails()` 方法是为支持 QUIC 协议而引入的扩展点，允许具体的子类提供更详细的 QUIC 错误信息。理解这个文件的作用有助于理解 Chromium 网络栈的整体架构和错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -133,7 +135,4 @@ std::optional<HttpStream::QuicErrorDetails> HttpStream::GetQuicErrorDetails()
 }
 
 }  // namespace net
-
-"""
-
 ```

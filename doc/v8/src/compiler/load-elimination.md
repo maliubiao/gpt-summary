@@ -71,11 +71,13 @@ processObject(myObject);
 
 `v8/src/compiler/load-elimination.cc` 文件实现了 V8 引擎中的加载消除优化，通过维护抽象状态和分析程序执行过程中的内存加载操作，识别并消除冗余的加载，从而提高 JavaScript 代码的执行效率。这个优化对于频繁访问对象属性和数组元素的代码尤为重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/load-elimination.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1581,7 +1583,4 @@ Factory* LoadElimination::factory() const { return jsgraph()->factory(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -133,14 +133,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`v8_cross_origin_property_support.cc` 是 Chromium Blink 引擎中一个关键的组件，它在 V8 引擎层面提供了细粒度的控制，用于管理跨域场景下的 JavaScript 对象属性访问，确保了网络安全性和隔离性，同时允许在安全的前提下进行必要的跨域通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_cross_origin_property_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ v8::Local<v8::Array> EnumerateCrossOriginProperties(
 }  // namespace bindings
 
 }  // namespace blink
-
-"""
-
 ```

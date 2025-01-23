@@ -142,15 +142,17 @@ Load  [address: A]
 
 `v8/src/compiler/turboshaft/store-store-elimination-phase.h` 定义了 V8 Turboshaft 编译器中的一个优化阶段，其核心目标是消除连续对同一内存地址进行的冗余存储操作。这是一种常见的编译器优化技术，旨在提高代码执行效率。虽然它不是直接的 JavaScript 代码，但它对最终执行的 JavaScript 代码的性能有显著影响。理解这类编译优化有助于我们编写更高效的 JavaScript 代码，避免一些可能导致冗余操作的编程模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/store-store-elimination-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/store-store-elimination-phase.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ struct StoreStoreEliminationPhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_STORE_STORE_ELIMINATION_PHASE_H_
-
-"""
-
 ```

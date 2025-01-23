@@ -115,12 +115,14 @@ I will provide JavaScript examples that correspond to some of the functions and 
 
 总而言之，这段代码是 Maglev 编译器将 JavaScript 的高级语义转换为底层可执行图的关键部分，专注于数值和变量操作的优化。它通过精细的类型转换、常量处理和针对性地构建不同类型的节点来实现高效的 JavaScript 执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 uncated alternative.
         return alternative.set_int32(BuildSmiUntag(value));
       }
@@ -1825,7 +1827,4 @@ ValueNode* MaglevGraphBuilder::BuildTaggedEqual(ValueNode* lhs,
 
 void MaglevGraphBuilder::VisitTestReferenceEqual() {
   V
-"""
-
-
 ```

@@ -131,7 +131,7 @@ GOAMD64=v2 go run myprogram.go
 
 这段代码的核心作用是为了测试 `cpu` 包内部获取 AMD64 指令集级别的功能。它通过将内部私有函数暴露为公开变量的方式，使得测试代码可以访问并验证其行为。虽然它本身不处理命令行参数，但其功能很可能与环境变量 `GOAMD64` 的处理密切相关。最需要注意的是，开发者不应该在生产代码中直接使用 `internal` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/export_x86_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,8 +139,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -152,9 +154,4 @@ package cpu
 var (
 	GetGOAMD64level = getGOAMD64level
 )
-
-"""
-
-
-
 ```

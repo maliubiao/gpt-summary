@@ -179,15 +179,17 @@ static constexpr std::array<Tagged_t, /* root 数量 */> StaticReadOnlyRootsPoin
 
 `v8/src/snapshot/static-roots-gen.cc` 是一个关键的编译时工具，用于生成包含 V8 引擎重要静态只读对象地址的头文件。这提高了 V8 引擎访问这些对象的效率，从而提升 JavaScript 代码的执行性能。虽然 JavaScript 开发者不会直接接触到这个文件，但理解其背后的原理有助于更好地理解 V8 引擎的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/static-roots-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/static-roots-gen.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ void StaticRootsTableGen::write(Isolate* isolate, const char* file) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

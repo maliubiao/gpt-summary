@@ -73,7 +73,7 @@ Therefore, the summary should focus on the comprehensive testing of `math.h` fun
 
 这个文件的目的是确保 Android 系统中使用的数学运算的准确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -85,8 +85,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 zero.
   ASSERT_DOUBLE_EQ(1.0, round(0.5));
   ASSERT_DOUBLE_EQ(-1.0, round(-0.5));
@@ -1093,8 +1095,4 @@ TEST(math_h, trunc_intel) {
 TEST(math_h, truncf_intel) {
   DoMathDataTest<1>(g_truncf_intel_data, truncf);
 }
-
-"""
-
-
 ```

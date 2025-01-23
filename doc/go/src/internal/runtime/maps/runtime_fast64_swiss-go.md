@@ -195,7 +195,7 @@ go build -tags=goexperiment.swissmap your_program.go
 
 总而言之，这段代码是 Go 语言 `map` 数据结构针对 `uint64` 键的一种高效底层实现，使用了 Swiss table 技术来优化查找、插入和删除操作的性能。理解其原理有助于更好地理解 `map` 的行为和避免常见的并发安全问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/maps/runtime_fast64_swiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -203,8 +203,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -714,9 +716,4 @@ func runtime_mapdelete_fast64(typ *abi.SwissMapType, m *Map, key uint64) {
 
 	m.Delete(typ, abi.NoEscape(unsafe.Pointer(&key)))
 }
-
-"""
-
-
-
 ```

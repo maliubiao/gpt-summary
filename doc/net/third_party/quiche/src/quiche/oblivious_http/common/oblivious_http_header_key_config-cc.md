@@ -213,15 +213,17 @@ So, the output would be the byte sequence: `0x01 0x00 0x10 0x00 0x01 0x00 0x01`.
 
 By stepping through the network stack's code during an OHTTP request, a debugger would eventually reach this `oblivious_http_header_key_config.cc` file when dealing with the OHTTP header processing and key configuration management.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/common/oblivious_http_header_key_config.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/common/oblivious_http_header_key_config.h"
 
 #include <algorithm>
@@ -696,7 +698,4 @@ absl::Status ObliviousHttpKeyConfigs::ReadSingleKeyConfig(
 }
 
 }  // namespace quiche
-
-"""
-
 ```

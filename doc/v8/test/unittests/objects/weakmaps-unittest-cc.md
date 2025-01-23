@@ -162,15 +162,17 @@ console.log(weakMap.has(key2)); // 输出: true
 
 总而言之，`v8/test/unittests/objects/weakmaps-unittest.cc` 通过一系列精心设计的测试用例，确保 V8 引擎中的 `WeakMap` 实现符合预期，能够正确处理弱引用、垃圾回收以及内部数据结构的调整。理解这些测试用例有助于深入理解 `WeakMap` 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/weakmaps-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/weakmaps-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -558,7 +560,4 @@ TEST_F(WeakMapsTest, WeakMapsWithChainedEntries) {
 }  // namespace test_weakmaps
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -132,15 +132,17 @@ This detailed thought process, moving from understanding the code to considering
 
 总而言之，`TextResource` 是 Blink 引擎中处理文本资源的关键组件，它负责将从网络获取的原始字节流转换为浏览器可以理解的 Unicode 文本，这对于正确渲染网页内容至关重要。理解 `TextResource` 的功能有助于诊断和解决与字符编码相关的网页显示问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource/text_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ String TextResource::DecodedText() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

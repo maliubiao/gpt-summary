@@ -140,14 +140,16 @@ This step-by-step process allows for a thorough analysis of the code and its con
 
 总而言之，`blink/renderer/core/layout/layout_frame_set.cc` 是 Blink 渲染引擎中处理 `<frameset>` 元素布局的关键组件，它负责管理子框架，处理框架大小调整，并与 HTML 结构紧密关联。虽然 `<frameset>` 在现代 Web 开发中已不常用，但理解其实现原理有助于理解浏览器如何处理传统的页面布局方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_frame_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ CursorDirective LayoutFrameSet::GetCursor(const PhysicalOffset& point,
 }
 
 }  // namespace blink
-
-"""
-
 ```

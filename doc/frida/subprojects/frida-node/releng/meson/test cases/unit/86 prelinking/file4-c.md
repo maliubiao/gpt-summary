@@ -177,7 +177,7 @@ if (Process.arch === 'linux') {
 
 这个 `file4.c` 文件作为单元测试的一部分，很可能就是为了验证 Frida 在处理预链接场景时的正确性。开发者或测试人员会编写类似的 Frida 脚本来验证 Frida 是否能够正确地 hook 和跟踪预链接的函数。如果在测试过程中发现 Frida 无法正确 hook 或者行为异常，那么就需要进一步调试 Frida 本身或者理解预链接的机制如何影响动态插桩。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/86 prelinking/file4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<private_header.h>
 
 int round1_d() {
@@ -196,7 +198,4 @@ int round1_d() {
 int round2_d() {
     return 42;
 }
-
-"""
-
 ```

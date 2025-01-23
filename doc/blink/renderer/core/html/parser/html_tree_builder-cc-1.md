@@ -126,15 +126,17 @@ Here's a breakdown of how to approach this:
 
 这段代码片段主要负责 HTML 解析过程中**起始标签**的处理。它根据当前的解析状态 (插入模式) 和标签类型，执行相应的 DOM 树构建操作，包括插入元素、处理特殊标签 (如 `template`, `select`, `script`)、处理 MathML 和 SVG 标签，以及进行错误处理。它确保了 HTML 结构能够被正确地解析和构建成 DOM 树，这直接关系到网页的结构呈现以及 JavaScript 和 CSS 的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tree_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ericRawTextStartTag(token);
       break;
     case HTMLTag::kNoembed:
@@ -1056,8 +1058,4 @@ void HTMLTreeBuilder::CallTheAdoptionAgency(AtomicHTMLToken* token) {
         tree_.CreateElementFromSavedToken(formatting_element_item);
     // 12.
     tree_.TakeAllChildren(new_item, furthest_block);
-
-"""
-
-
 ```

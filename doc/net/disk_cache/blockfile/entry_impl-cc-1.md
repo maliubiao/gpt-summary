@@ -127,7 +127,7 @@ By following these steps, the generated response effectively summarizes the prov
 
 总的来说，这部分代码是缓存条目数据持久化的核心逻辑所在，它确保了数据能够有效地存储在磁盘上，并能在需要时被检索。 它通过内存缓冲和直接磁盘操作的结合，以及对不同类型存储方式的支持，实现了高效且灵活的缓存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/entry_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -135,9 +135,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   end_offset > max_file_size) {
+### 源代码
+```cpp
+end_offset > max_file_size) {
     int size = base::CheckAdd(offset, buf_len)
                    .ValueOrDefault(std::numeric_limits<int32_t>::max());
     backend_->TooMuchStorageRequested(size);
@@ -604,8 +606,4 @@ void EntryImpl::GetData(int index,
 }
 
 }  // namespace disk_cache
-
-"""
-
-
 ```

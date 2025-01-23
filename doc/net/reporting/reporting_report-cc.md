@@ -206,15 +206,17 @@ Imagine a website wants to report a Content Security Policy (CSP) violation.
 
 **In Summary:** `reporting_report.cc` is a fundamental part of Chromium's error reporting mechanism. It defines the structure for holding report data and provides methods for grouping and tracking the status of these reports. Its direct connection to the JavaScript Reporting API makes it a crucial component in providing feedback from websites to developers and maintainers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_report.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ bool ReportingReport::IsUploadPending() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

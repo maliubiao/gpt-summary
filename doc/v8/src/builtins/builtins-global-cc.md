@@ -195,15 +195,17 @@ Here are some common programming errors related to the functionalities implement
 
 This file is a crucial part of V8, responsible for the core implementation of fundamental global JavaScript functionalities related to URI manipulation and dynamic code execution. Understanding its role provides insight into how JavaScript code interacts with the underlying engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-global.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-global.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ BUILTIN(GlobalEval) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

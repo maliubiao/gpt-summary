@@ -104,7 +104,7 @@ By following this systematic approach, I could thoroughly analyze the code snipp
 
 这段代码片段是 Blink 渲染引擎中 XML 文档解析器的一部分，专门负责**解析 XML 元素的属性字符串**。它利用 `libxml2` 库的 SAX 解析机制，并封装了一个便捷的 `ParseAttributes` 函数，用于从给定的字符串中提取属性名值对。这段代码在浏览器解析 HTML、SVG、MathML 等包含属性的文档时发挥着关键作用。它通过创建一个临时的、包含 `<attrs>` 标签的 XML 结构来利用通用的 XML 解析器处理属性字符串。 核心逻辑在于 `AttributesStartElementNsHandler` 函数，它在 SAX 解析过程中被调用，并负责提取和存储属性信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/parser/xml_document_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -112,9 +112,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                                       int /*nbDefaulted*/,
+### 源代码
+```cpp
+int /*nbDefaulted*/,
                                             const xmlChar** libxml_attributes) {
   if (strcmp(reinterpret_cast<const char*>(xml_local_name), "attrs") != 0)
     return;
@@ -160,8 +162,4 @@ HashMap<String, String> ParseAttributes(const String& string, bool& attrs_ok) {
 #undef xmlParseChunk
 
 }  // namespace blink
-
-"""
-
-
 ```

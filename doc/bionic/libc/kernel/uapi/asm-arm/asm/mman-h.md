@@ -222,7 +222,7 @@ if (Process.arch === 'arm') {
 
 通过这种方式，可以动态地观察 Android 系统中 `mmap` 的行为，并理解 `arch_mmap_check` 在其中的作用。请注意，`FIRST_USER_ADDRESS` 的实际值可能需要通过其他方式获取或推断。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/mman.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -233,8 +233,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -243,7 +245,4 @@ Prompt:
  */
 #include <asm-generic/mman.h>
 #define arch_mmap_check(addr,len,flags) (((flags) & MAP_FIXED && (addr) < FIRST_USER_ADDRESS) ? - EINVAL : 0)
-
-"""
-
 ```

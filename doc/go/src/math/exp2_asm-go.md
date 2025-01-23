@@ -137,7 +137,7 @@ func main() {
 
 总之，这段 `go/src/math/exp2_asm.go` 代码是 Go 语言为了在 `arm64` 架构上提供更高效的 `2^x` 运算而采用的一种优化手段，体现了 Go 语言对不同硬件平台的支持和性能优化的关注。开发者应该使用 `math.Exp2` 来调用此功能，而无需关心底层的架构特定实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/exp2_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ package math
 const haveArchExp2 = true
 
 func archExp2(x float64) float64
-
-"""
-
-
-
 ```

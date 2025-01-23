@@ -91,9 +91,12 @@ This systematic approach, starting with keyword identification and moving toward
 
 这个文件本身并不包含扩展的具体功能实现，而是作为一个基础框架，为扩展的实际功能代码提供运行环境和与调试器交互的能力。真正的 V8 特定的调试逻辑很可能在 `CreateExtension` 和 `DestroyExtension` 函数以及其他相关文件中实现。
 
-Prompt: ```这是目录为v8/tools/v8windbg/base/dbgext.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/v8windbg/base/dbgext.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,6 +172,4 @@ HRESULT __stdcall DebugExtensionCanUnload(void) {
 void __stdcall DebugExtensionUnload() { return; }
 
 }  // extern "C"
-
-"""
 ```

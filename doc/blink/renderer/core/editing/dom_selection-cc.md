@@ -171,7 +171,7 @@ Confidence Score: 5/5  I feel confident I can address all aspects of the prompt 
 
 在提供的第一部分代码中，`blink/renderer/core/editing/dom_selection.cc` 文件的主要功能是实现了 DOM Selection API 的核心部分，包括 **获取选区信息** (如锚点、焦点、是否折叠、类型、方向、包含的 Range 数量) 和一部分 **修改选区的功能** (如折叠选区、清空选区、设置起始和结束位置)。它为 JavaScript 提供了操作用户选区的底层接口，并与 HTML 结构和 CSS 样式有着密切的关系。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/dom_selection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2009 Apple Inc. All rights reserved.
  * Copyright (C) 2012 Google Inc. All rights reserved.
@@ -1068,7 +1070,4 @@ Node* DOMSelection::ShadowAdjustedNode(const Position& position) const {
   Node* adjusted_node = tree_scope_->AncestorInThisScope(container_node);
 
   if (
-"""
-
-
 ```

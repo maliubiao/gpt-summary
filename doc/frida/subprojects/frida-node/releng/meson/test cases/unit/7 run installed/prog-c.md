@@ -173,7 +173,7 @@ By following this structured approach, we can generate a comprehensive and infor
 
 总而言之，`prog.c` 作为一个简单的测试用例，目的是为了验证 Frida 的基本功能，例如 hook 和代码注入。通过分析这个简单的例子，可以更好地理解 Frida 的工作原理以及与逆向工程和底层知识的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/7 run installed/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,14 +181,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo();
 
 int main(int argc, char **argv) {
     return foo();
 }
-
-"""
-
 ```

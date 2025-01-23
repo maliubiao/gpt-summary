@@ -180,7 +180,7 @@ Interceptor.attach(Module.findExportByName(null, 'main'), {
 
 通过这些步骤，用户可以利用 Frida 提供的动态分析能力，深入理解像 `prog.c` 这样看似简单的程序的内部工作原理。这个特定的 `prog.c` 文件很可能是 Frida 测试套件的一部分，用于验证 Frida 在处理包含宏定义的代码时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/100 postconf with args/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,14 +188,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"generated.h"
 
 int main(void) {
     return THE_NUMBER != 9 || THE_ARG1 != 5 || THE_ARG2 != 33;
 }
-
-"""
-
 ```

@@ -172,7 +172,7 @@ func main() {
 
 这段代码是一个用于测试 Go 语言 `runtime` 包中 `runtime.NumCPU()` 函数在 FreeBSD 操作系统上正确性的测试用例。它通过运行一个独立的程序来验证该函数是否能够准确地获取系统的 CPU 数量。使用者需要注意的是 `runtime.NumCPU()` 返回的是逻辑 CPU 数量，而非物理核心数量。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/numcpu_freebsd_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -197,9 +199,4 @@ func TestFreeBSDNumCPU(t *testing.T) {
 		t.Fatalf("expected %q, but got:\n%s", want, got)
 	}
 }
-
-"""
-
-
-
 ```

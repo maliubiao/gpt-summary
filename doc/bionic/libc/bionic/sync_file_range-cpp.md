@@ -299,7 +299,7 @@ if (Process.arch === 'arm') {
 
 通过这个 Frida Hook 示例，你可以实时观察到哪些应用、在什么时机、使用什么样的参数调用了 `sync_file_range`，这对于理解文件同步行为和调试相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/sync_file_range.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -351,7 +353,4 @@ int sync_file_range(int fd, off64_t offset, off64_t length, unsigned int flags) 
   return __sync_file_range2(fd, flags, offset, length);
 }
 #endif
-
-"""
-
 ```

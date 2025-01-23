@@ -148,7 +148,7 @@ By following these steps, breaking down the problem, analyzing the code, and con
 
 因此，`conf.py` 文件是文档构建流程中的关键组成部分。用户与之交互通常是为了理解库的功能、自定义文档外观、或者排查文档构建过程中出现的问题。 作为一个调试线索，检查 `conf.py` 可以帮助定位文档生成过程中配置相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/docs/conf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -218,7 +220,4 @@ html_theme = "furo"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
-
-"""
-
 ```

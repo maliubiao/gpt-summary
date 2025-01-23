@@ -60,11 +60,13 @@ console.log(int32Array[0]); // 输出: 25
 
 总而言之， `v8/src/builtins/builtins-sharedarraybuffer-gen.cc` 文件是 V8 引擎中实现 JavaScript `Atomics` 对象核心功能的关键部分，它负责提供安全和高效的共享内存原子操作的底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-sharedarraybuffer-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -928,7 +930,4 @@ void SharedArrayBufferBuiltinsAssembler::AtomicBinopBuiltinCommon(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

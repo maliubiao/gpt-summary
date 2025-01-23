@@ -144,7 +144,7 @@ By following these steps, I can systematically analyze the code and provide a th
 `blink/renderer/modules/payments/payment_request_details_test.cc` 文件的主要功能是**测试 Chromium Blink 引擎中 Payment Request API 的 `PaymentDetailsInit` 对象（支付详情）的验证逻辑**。 它通过创建各种包含合法和非法支付详情的 `PaymentDetailsInit` 对象，并使用 Google Test 框架进行断言，来确保 Blink 引擎能够按照 Payment Request API 的规范正确地校验支付信息，并在遇到非法数据时抛出预期的异常。 这个测试文件覆盖了支付总额、商品信息、运送选项以及支付方式修饰符等关键字段的不同有效和无效场景，旨在保证支付请求的稳定性和安全性。
 ```
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/payment_request_details_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -795,7 +797,4 @@ INSTANTIATE_TEST_SUITE_P(
                                     kPaymentTestOverwriteValue,
                                     "notdigits",
                                     tr
-"""
-
-
 ```

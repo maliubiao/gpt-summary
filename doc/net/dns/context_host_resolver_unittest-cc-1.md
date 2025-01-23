@@ -106,7 +106,7 @@ Here's a breakdown of the thinking process to generate the answer:
 
 总而言之，这部分代码专注于测试 `ContextHostResolver` 在更复杂的场景下的行为，包括缓存失效、服务终端解析以及网络绑定解析，这些功能对于确保浏览器网络请求的正确性和性能至关重要，并直接影响到 Javascript 代码发起的网络操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/context_host_resolver_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- DnsClient is mocked out.
+### 源代码
+```cpp
+DnsClient is mocked out.
   MockDnsClientRuleList rules;
   SetMockDnsRules(std::move(rules));
 
@@ -418,8 +420,4 @@ TEST_F(ContextHostResolverTest, NetworkBoundResolverCacheInvalidation) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -147,7 +147,7 @@ console.log("Third load after set:", value3);
 
 `v8/src/compiler/turboshaft/wasm-load-elimination-reducer.h` 定义了 V8 中用于优化 WebAssembly 代码加载操作的关键组件。它通过跟踪内存内容和识别冗余加载来提升 WebAssembly 代码的执行效率，这对于运行在 JavaScript 环境中的 WebAssembly 应用至关重要。 该组件能够处理复杂的控制流和多种 WebAssembly 操作，并利用别名分析来提高优化的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-load-elimination-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-load-elimination-reducer.h以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -997,8 +999,5 @@ void WasmLoadEliminationAnalyzer::ProcessAssertNotNull(
 // {non_aliasing_objects_}) can alias with anything when coming back from the
 // call if it was an argument of the call.
 void WasmLoadEliminationAnalyzer::ProcessCall(OpIndex op_idx,
-                                              const CallOp& op) 
-"""
-
-
+                                              const CallOp& op)
 ```

@@ -109,12 +109,13 @@ console.log(weakMap.has(key1)); // 输出: false (可能)
 
 总结来说，`marking-worklists.cc` 定义了 V8 内部管理垃圾回收标记阶段工作的核心数据结构。 虽然 JavaScript 开发者通常不需要直接与这些底层细节打交道，但这些工作列表的存在和运作方式直接影响了 JavaScript 程序的内存管理效率和正确性，特别是涉及到弱引用等高级特性时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marking-worklists.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
-
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +147,4 @@ MarkingWorklists::ExternalMarkingWorklist::~ExternalMarkingWorklist() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

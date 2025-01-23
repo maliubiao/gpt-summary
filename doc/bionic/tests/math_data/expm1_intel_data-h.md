@@ -177,7 +177,7 @@ if (Process.arch === "arm64" || Process.arch === "x64") {
 
 这个代码文件 `expm1_intel_data.handroid` 的主要功能是作为 Android 系统中 `libm` 库中 `expm1` 函数的测试数据提供者，特别是针对 Intel 架构的设备。它包含了多组双精度浮点数，每组代表 `expm1` 函数的一个输入值及其对应的预期输出值，用于验证函数实现的正确性和精度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/expm1_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -189,8 +189,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1657,8 +1659,4 @@ static data_1_1_t<double, double> g_expm1_intel_data[] = {
     -0x1.921fb54442d18p1
   },
   { // Entry 362
-  
-"""
-
-
 ```

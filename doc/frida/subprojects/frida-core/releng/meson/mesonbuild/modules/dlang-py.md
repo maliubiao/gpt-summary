@@ -115,7 +115,7 @@ This structured approach allows for a thorough and comprehensive analysis of the
 
 `dlang.py` 是 Frida 构建系统中一个专注于 D 语言项目集成的模块。它通过生成和管理 DUB 配置文件，简化了 D 语言项目的构建过程。虽然它不直接参与 Frida 的动态 instrumentation 过程，但为构建可能被 instrument 的 D 语言目标提供了必要的支持。理解这个模块的功能有助于理解 Frida 如何处理不同编程语言编写的目标程序，以及在构建过程中可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/dlang.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -242,7 +244,4 @@ class DlangModule(ExtensionModule):
 
 def initialize(*args, **kwargs):
     return DlangModule(*args, **kwargs)
-
-"""
-
 ```

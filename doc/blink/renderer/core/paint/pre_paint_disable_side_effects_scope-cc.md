@@ -182,15 +182,17 @@ void SomeRenderingFunction() {
 
 总而言之，`pre_paint_disable_side_effects_scope.cc` 文件虽然代码简单，但它所定义的静态变量是实现预绘制阶段副作用控制的关键部分，对浏览器的渲染流程优化至关重要。 它的作用体现在幕后，通过 C++ 代码影响着浏览器如何处理和渲染用户可见的 HTML、CSS 和 JavaScript 内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/pre_paint_disable_side_effects_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ namespace blink {
 unsigned PrePaintDisableSideEffectsScope::count_ = 0;
 
 }  // namespace blink
-
-"""
-
 ```

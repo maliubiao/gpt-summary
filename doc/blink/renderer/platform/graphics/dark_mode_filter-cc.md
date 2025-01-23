@@ -191,14 +191,16 @@ By following this iterative process of scanning, understanding, connecting, and 
 
 总而言之，`blink/renderer/platform/graphics/dark_mode_filter.cc` 文件是 Blink 渲染引擎中实现暗黑模式的核心组件，它通过颜色反转、图像处理和缓存等机制，将浅色主题的网页转换为适合在暗光环境下浏览的深色主题，并与 CSS 样式、HTML 结构以及 JavaScript 动态修改密切相关。理解其功能和使用方式对于开发和调试 Chromium 的暗黑模式功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_filter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -509,7 +511,4 @@ size_t DarkModeFilter::GetInvertedColorCacheSizeForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -126,15 +126,17 @@ Here's a breakdown of the thought process to answer the request:
 
 这部分测试主要关注 `HTMLPreloadScanner` 在处理特定 HTML 结构和属性时的行为，特别是涉及到 CSP、懒加载、`<template>` 元素、`<base>` 标签以及 CSS `@import` 规则的场景。目标是确保预加载扫描器能够准确地识别可预加载的资源，并遵循相关的标准和安全策略，从而优化页面加载性能并避免潜在的问题。此外，还测试了在特定条件下禁用预加载扫描的能力，以及与 Shared Storage API 的集成。最后，引入了对 LCP 元素中懒加载图片进行预加载的测试，以进一步提升关键渲染路径的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_preload_scanner_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 g=>"},
   };
 
@@ -597,8 +599,4 @@ TEST_F(HTMLPreloadScannerTest, PreloadScanDisabled_NoPreloads) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

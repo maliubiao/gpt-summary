@@ -158,14 +158,16 @@ Mojo 是 Chromium 中用于跨进程通信的机制。这个文件充当了一�
 
 这个文件是 Blink 引擎处理输入事件的核心组成部分，它确保了用户在网页上的操作能够被准确地捕获、传递和处理，最终驱动 JavaScript 代码的执行和网页的交互行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_coalesced_input_event_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -725,7 +727,4 @@ StructTraits<blink::mojom::EventDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

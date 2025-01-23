@@ -151,15 +151,17 @@ This systematic approach, combining code analysis, domain knowledge (web technol
 
 这段代码进一步展示了 `JPEGImageDecoder` 在处理 YUV 数据、优化解码过程以及与 Chromium 渲染引擎更深层次的集成方面所起的作用。 它不仅仅是将 JPEG 解码成位图，还支持更底层的 YUV 解码，这在视频处理和硬件加速解码中非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/jpeg/jpeg_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 signed width, unsigned height) {
   decoded_size_ = gfx::Size(width, height);
 }
@@ -554,8 +556,4 @@ void JPEGImageDecoder::Decode(DecodingMode decoding_mode) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

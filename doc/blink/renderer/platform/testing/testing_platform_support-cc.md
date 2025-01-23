@@ -110,14 +110,16 @@ Initially, I might have focused too heavily on the lower-level details. However,
 
 总而言之，`testing_platform_support.cc` 提供了一个关键的框架，使得 Blink 能够进行高效且可控的单元测试。理解其提供的功能以及它与 Web 技术的关系，有助于编写更可靠和准确的 Blink 测试代码。同时，需要注意其局限性，避免常见的错误使用方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/testing_platform_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -382,7 +384,4 @@ ScopedUnittestsEnvironmentSetup::ScopedUnittestsEnvironmentSetup(int argc,
 ScopedUnittestsEnvironmentSetup::~ScopedUnittestsEnvironmentSetup() = default;
 
 }  // namespace blink
-
-"""
-
 ```

@@ -129,15 +129,17 @@ This systematic breakdown, from high-level overview to detailed code analysis an
 
 总而言之，`blink/renderer/core/editing/text_offset_mapping.cc` 是 Blink 引擎中一个至关重要的文件，它负责在文本内容的线性偏移量和 DOM 树的结构化位置之间建立精确的映射关系，是实现文本选择、光标操作等编辑功能的基础。理解其功能有助于深入理解浏览器如何处理网页上的文本内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/text_offset_mapping.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -739,7 +741,4 @@ void TextOffsetMapping::ForwardRange::Iterator::operator++() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -154,7 +154,7 @@ Initially, I might have focused too much on the C code itself. The key was to re
 
 总而言之，`prog9.c` 是 Frida 构建系统中的一个简单的测试程序，用于验证关键的编译宏定义是否按照预期设置。它的存在确保了 Frida 的构建质量，从而间接地影响了使用 Frida 进行逆向分析的可靠性。 当构建失败并指向 `prog9.c` 时，这通常意味着构建配置存在问题，需要用户检查他们的构建环境和配置步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/14 configure file/prog9.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 #include <config9a.h>
 #include <config9b.h>
@@ -182,7 +184,4 @@ int main(void) {
         || A_INT != 42
         || B_INT != 42;
 }
-
-"""
-
 ```

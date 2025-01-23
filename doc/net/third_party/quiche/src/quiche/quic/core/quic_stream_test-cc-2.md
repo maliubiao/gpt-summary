@@ -80,7 +80,7 @@ Finally, I'll outline the user actions leading to this code being executed as de
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_stream_test.cc` 的这部分代码通过详尽的测试用例，保障了 QUIC 协议中流管理的关键功能的正确性和健壮性，这对于构建稳定高效的网络应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 teOrBufferData(data, false, nullptr);
   EXPECT_FALSE(HasWriteBlockedStreams());
 
@@ -463,8 +465,4 @@ TEST_P(QuicStreamTest, FinBeforeReliableOffset) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

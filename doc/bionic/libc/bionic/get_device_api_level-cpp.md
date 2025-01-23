@@ -192,7 +192,7 @@ sys.stdin.read()
 
 这个 Frida 脚本可以帮助你验证 Android Framework 或 NDK 代码是否以及何时调用了 `get_device_api_level`，从而更深入地理解其在系统中的作用。 你可以通过修改 `onLeave` 中的代码来进一步分析返回值，或者在 `onEnter` 中检查调用栈等信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/get_device_api_level.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -235,7 +237,4 @@ Prompt:
 
 #define __BIONIC_GET_DEVICE_API_LEVEL_INLINE /* Out of line. */
 #include <bits/get_device_api_level_inlines.h>
-
-"""
-
 ```

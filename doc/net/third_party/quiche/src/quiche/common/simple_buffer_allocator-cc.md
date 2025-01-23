@@ -149,15 +149,17 @@ Here's a breakdown of the thinking process used to generate the detailed explana
 
 `simple_buffer_allocator.cc` 提供了一个基础的内存分配和释放工具，供 Chromium 网络栈中的 QUIC 协议实现使用。它与 JavaScript 没有直接的交互，但当用户进行网络操作时，底层的 QUIC 实现可能会使用这个分配器来管理数据缓冲区。理解其功能和潜在的错误用法有助于调试与网络相关的性能、崩溃和内存问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/simple_buffer_allocator.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ char* SimpleBufferAllocator::New(size_t size, bool /* flag_enable */) {
 void SimpleBufferAllocator::Delete(char* buffer) { delete[] buffer; }
 
 }  // namespace quiche
-
-"""
-
 ```

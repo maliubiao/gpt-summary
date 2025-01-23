@@ -161,15 +161,17 @@ fetch('https://example.com/data')
 
 总而言之，`LegacyQuicStreamIdManager` 是 QUIC 协议实现中一个核心的组件，负责管理流 ID，确保数据能够在连接的多个并发逻辑通道上正确地传输。虽然 JavaScript 开发人员通常不直接操作这个类，但理解其功能有助于理解基于 QUIC 的网络通信的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/legacy_quic_stream_id_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ size_t LegacyQuicStreamIdManager::MaxAvailableStreams() const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

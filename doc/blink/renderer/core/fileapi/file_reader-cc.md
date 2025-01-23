@@ -208,14 +208,16 @@ fileInput.addEventListener('change', function() {
 
 `FileReader.cc` 是 Chromium Blink 引擎中实现文件读取核心功能的代码，它负责将用户选择的文件内容异步加载到 Web 应用中，并提供了丰富的事件机制来跟踪读取状态和处理结果。理解其功能对于开发涉及文件上传、处理等功能的 Web 应用至关重要。它与 JavaScript 通过 API 交互，与 HTML 中的文件选择元素配合使用，而 CSS 则间接地通过 JavaScript 操作由 `FileReader` 读取的数据。开发者需要注意正确使用 `FileReader` 的 API 和处理相关的事件，避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fileapi/file_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc.  All rights reserved.
  *
@@ -712,7 +714,4 @@ void FileReader::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

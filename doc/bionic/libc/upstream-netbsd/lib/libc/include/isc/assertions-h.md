@@ -292,7 +292,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 脚本可以帮助开发者在运行时动态地观察断言的触发情况，即使这些断言在编译时被禁用了 (如果 `__assertion_failed` 的实现仍然存在)。 然而，需要注意的是，如果 Bionic 库的构建配置完全移除了断言相关的代码，那么可能无法找到 `__assertion_failed` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/include/isc/assertions.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: assertions.h,v 1.5 2009/04/12 17:07:16 christos Exp $	*/
 
 /*
@@ -437,7 +439,4 @@ const char *assertion_type_to_text(assertion_type type);
 #endif /* CHECK_INVARIANT */
 #endif /* ASSERTIONS_H */
 /*! \file */
-
-"""
-
 ```

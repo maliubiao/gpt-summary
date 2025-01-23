@@ -136,7 +136,7 @@ func main() {
 
 总而言之，这部分 `rewriteMIPS64.go` 代码的功能是针对 MIPS64 架构，将 Go 语言中的右移、`Select0`、`Select1` 和 `Store` 等操作转换为更底层的、更具体的 MIPS64 汇编指令，以实现更高效的代码执行。它包含了对不同数据类型和位移量的细致处理，以及针对特定操作的优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 nt64ToAuxInt(64)
 		v3 := b.NewValue0(v.Pos, OpZeroExt8to64, typ.UInt64)
 		v3.AddArg(y)
@@ -1415,9 +1417,4 @@ func rewriteValueMIPS64_OpStore(v *Value) bool {
 	}
 	// match: (Store {t} ptr val mem)
 	// cond: t.Size() == 8 && t.IsFloat()
-"""
-
-
-
-
 ```

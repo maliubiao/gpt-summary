@@ -205,15 +205,17 @@ function foo(x) {
 
 `v8/src/parsing/parse-info.h` 中定义的 `ParseInfo` 类是 V8 引擎解析 JavaScript 代码的核心数据结构。它携带了所有必要的输入信息，并在解析过程中存储和传递状态和一些输出信息。理解 `ParseInfo` 的功能有助于深入理解 V8 引擎的解析和编译流程。如果它以 `.tq` 结尾，则表示它是一个使用 Torque 编写的源代码文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parse-info.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parse-info.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -625,7 +627,4 @@ class V8_EXPORT_PRIVATE ParseInfo {
 }  // namespace v8
 
 #endif  // V8_PARSING_PARSE_INFO_H_
-
-"""
-
 ```

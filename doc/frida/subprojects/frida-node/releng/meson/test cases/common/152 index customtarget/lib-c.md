@@ -131,7 +131,7 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，这个 `lib.c` 文件是一个非常基础的 C 代码片段，它在 Frida 的 Node.js 集成测试中扮演着一个简单的被测目标的角色。通过分析这个文件，可以理解 Frida 如何与 Native 代码进行交互，以及在进行动态分析时可以利用的一些基本技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/152 index customtarget/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -161,7 +163,4 @@ Prompt:
 void func(char * buffer) {
     stringify(1, buffer);
 }
-
-"""
-
 ```

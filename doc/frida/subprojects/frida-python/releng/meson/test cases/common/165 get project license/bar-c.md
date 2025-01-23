@@ -159,7 +159,7 @@ By following these steps, the detailed and helpful answer generated previously c
 
 总而言之，这个简单的 `bar.c` 文件虽然功能简单，但可以作为理解动态插桩工具 Frida 工作原理的基础。通过 Frida，用户可以在运行时观察和修改程序的行为，这对于逆向工程、安全分析和调试都非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/165 get project license/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,15 +167,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a main project bar.\n");
     return 0;
 }
-
-"""
-
 ```

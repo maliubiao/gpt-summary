@@ -161,7 +161,7 @@ Let's break down the thought process for analyzing this Python script.
 
 总而言之，`checkexists.py` 是一个简单的文件/目录存在性检查工具，它在 Frida 的构建系统中扮演着确保构建环境和输出状态符合预期的角色。虽然它本身不直接参与逆向操作，但理解其功能有助于理解 Frida 的构建流程和自动化测试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/129 build by default/checkexists.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os.path, sys
@@ -181,7 +183,4 @@ for path in sys.argv[1:]:
         invert = True
     elif not os.path.exists(path) ^ invert:
         sys.exit(1)
-
-"""
-
 ```

@@ -176,15 +176,17 @@ if (navigator.connection && navigator.connection.rtt > 200) {
 
 `observation_buffer_unittest.cc` 文件对于确保 Chromium 网络栈中 `ObservationBuffer` 类的正确性和稳定性至关重要。它通过各种测试用例覆盖了 `ObservationBuffer` 的核心功能，包括容量限制、带权重的百分位计算、不同时间戳和 RSSI 下的百分位计算以及观测数据的移除。虽然 JavaScript 开发者不能直接操作 `ObservationBuffer`，但其内部的运作直接影响了提供给 JavaScript 的网络性能相关 API，最终影响用户的网络体验。对这个文件的理解有助于开发者调试网络相关问题，并确保网络质量估算的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/observation_buffer_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -555,7 +557,4 @@ TEST(NetworkQualityObservationBufferTest, TestGetMedianRTTSince) {
 }  // namespace
 
 }  // namespace net::nqe::internal
-
-"""
-
 ```

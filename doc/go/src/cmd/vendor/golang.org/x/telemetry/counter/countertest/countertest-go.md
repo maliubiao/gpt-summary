@@ -249,15 +249,17 @@ func TestReadFile(t *testing.T) {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/telemetry/counter/countertest/countertest.go` 提供了一组专门用于测试 `golang.org/x/telemetry/counter` 包的工具函数，帮助开发者在测试环境中验证计数器功能的正确性。它的关键功能包括初始化测试环境的 telemetry、读取计数器和堆栈计数器的值以及从文件中读取持久化的计数器数据。使用者需要注意不要将这些测试工具函数误用于生产代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/telemetry/counter/countertest/countertest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -321,9 +323,4 @@ func ReadStackCounter(c *counter.StackCounter) (stackCounts map[string]uint64, _
 func ReadFile(name string) (counters, stackCounters map[string]uint64, _ error) {
 	return ic.ReadFile(name)
 }
-
-"""
-
-
-
 ```

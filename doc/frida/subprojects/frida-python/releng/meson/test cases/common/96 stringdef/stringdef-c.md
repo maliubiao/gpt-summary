@@ -99,7 +99,7 @@ Here's a breakdown of the thinking process to arrive at the comprehensive explan
 
 `stringdef.c` 虽然是一个非常简单的 C 程序，但它有效地测试了预处理器宏定义的正确性。在 Frida 的上下文中，它作为测试用例，帮助确保 Frida 的构建系统和相关功能能够正确地处理编译时的配置信息。理解这个文件的功能，以及它与逆向、底层知识、用户错误和调试的关联，有助于理解 Frida 这样的动态插桩工具是如何构建和测试的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/96 stringdef/stringdef.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 
@@ -119,7 +121,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

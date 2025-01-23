@@ -178,15 +178,17 @@ By following these steps, the detailed and informative explanation of the C++ co
 
 总而言之，`media_control_animation_event_listener.cc` 是 Blink 渲染引擎中一个重要的组件，它桥接了底层的 CSS 动画事件和上层的媒体控件逻辑，使得开发者可以通过声明式的 CSS 动画来驱动用户界面的交互和反馈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_animation_event_listener.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ void MediaControlAnimationEventListener::Invoke(ExecutionContext* context,
 void MediaControlAnimationEventListener::Observer::Trace(Visitor*) const {}
 
 }  // namespace blink
-
-"""
-
 ```

@@ -147,15 +147,17 @@ console.log(overflowResult); // 结果可能不是你期望的，因为可能发
 
 `v8/src/base/ubsan.cc` 是 V8 引擎为了在 32 位平台上支持 Undefined Behavior Sanitizer 而提供的关键组件。它通过自定义实现 `__mulodi4` 函数，帮助 V8 在开发和测试阶段尽早发现有符号整数乘法溢出等问题，从而提高 JavaScript 运行时的稳定性和安全性。虽然它是一个 C++ 文件，但它解决的问题与编程中常见的整数溢出错误密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ubsan.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/ubsan.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ extern "C" int64_t __mulodi4(int64_t a, int64_t b, int* overflow) {
   *overflow = (r_high > 0 || result_sign != expected_result_sign) ? 1 : 0;
   return result;
 }
-
-"""
-
 ```

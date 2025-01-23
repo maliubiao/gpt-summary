@@ -189,7 +189,7 @@ Here's a thinking process to arrive at the analysis of `func4.c`:
 
 总而言之，用户到达这个文件的路径很可能与他们使用 Frida 进行逆向工程或进行相关开发和测试工作有关。这个文件作为一个简单的例子，可以帮助理解 Frida 如何处理静态链接的函数调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,15 +197,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3();
 
 int func4()
 {
   return func3() + 1;
 }
-
-"""
-
 ```

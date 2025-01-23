@@ -104,11 +104,13 @@ V8 为了节省内存，会对某些 tagged 值进行压缩。这对应了 `Comp
 
 `representations.cc` 文件定义了 Turboshaft 编译器理解和操作 JavaScript 数据的基础。它定义了各种数据在寄存器和内存中的表示形式，这些表示形式直接对应着 JavaScript 的基本数据类型、对象、以及 V8 内部的优化策略（如 tagged 值）。理解这些表示形式对于深入了解 V8 引擎如何编译和执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/representations.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ std::ostream& operator<<(std::ostream& os, MemoryRepresentation rep) {
   }
 }
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

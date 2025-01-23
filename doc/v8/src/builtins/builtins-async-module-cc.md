@@ -167,15 +167,17 @@ loadModule();
 
 总而言之，`v8/src/builtins/builtins-async-module.cc` 中的代码是 V8 引擎实现 JavaScript 异步模块加载功能的核心部分，负责在异步模块加载完成后执行必要的内部操作，并将结果（成功或失败）传递回 JavaScript 环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-async-module.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-async-module.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ BUILTIN(CallAsyncModuleRejected) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -125,7 +125,7 @@ Frida 是一个动态插桩工具，广泛应用于软件逆向工程中。其�
 
 `overrides.py` 自身功能简单，但其作为 Frida 测试套件中一个 **失败的** 双重覆盖测试用例，扮演着重要的角色。 它帮助 Frida 的开发者验证和修复在处理复杂覆盖场景时可能出现的问题，确保 Frida 的稳定性和可靠性。  它也间接反映了逆向工程中动态插桩技术的复杂性和潜在的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/66 dual override/overrides.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,13 +133,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('Yo dawg, we put overrides in your overrides,')
 print('so now you can override when you override.')
-
-"""
-
 ```

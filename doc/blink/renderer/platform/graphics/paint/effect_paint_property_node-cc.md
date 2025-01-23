@@ -153,14 +153,16 @@ By following this structured approach, we can systematically analyze the C++ cod
 
 总而言之，`effect_paint_property_node.cc` 中定义的 `EffectPaintPropertyNode` 类是 Blink 渲染引擎中管理元素视觉效果属性的核心组件，它在内部连接了 CSS 属性和渲染过程，并负责跟踪这些属性的变化以进行高效的渲染更新。理解它的功能有助于开发者更好地理解浏览器如何处理视觉效果，并避免常见的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/effect_paint_property_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ std::unique_ptr<JSONObject> EffectPaintPropertyNode::ToJSON() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

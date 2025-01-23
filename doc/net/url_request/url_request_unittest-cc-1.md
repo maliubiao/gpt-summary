@@ -110,7 +110,7 @@ This section of `url_request_unittest.cc` focuses on testing the `URLRequest`'s 
 
 **总结:** 这部分代码通过一系列单元测试，详细地验证了 Chromium 网络栈中 `URLRequest` 类在处理 referrer 信息、请求加载时序、网络代理错误以及基于 DNS 的协议升级等关键功能时的正确性和健壮性，为理解浏览器网络行为提供了重要的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 google.com");
 
   req->set_referrer_policy(
@@ -877,7 +879,4 @@ TEST_F(URLRequestTest, SetPriorityBasic) {
   TestDelegate d;
   std::unique_ptr<URLRequest> req(default_context().CreateRequest(
       GURL("http://test_intercept/foo"), DEFAULT_PRIORITY, &d,
-"""
-
-
 ```

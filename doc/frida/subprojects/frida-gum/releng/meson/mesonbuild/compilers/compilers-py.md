@@ -127,7 +127,7 @@ By following these steps, we can systematically analyze the code and produce a c
 
 该文件的核心功能是**作为 Meson 构建系统的一部分，集中管理各种编程语言的编译器信息**。它定义了文件类型与语言的关联，提供了判断文件类型的功能，定义了可互操作的语言列表，以及通用的编译和链接选项。最重要的是，它定义了 `Compiler` 抽象基类，为不同编程语言的编译器实现提供了统一的接口，使得 Meson 能够正确地识别、配置和调用编译器来构建项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -907,7 +909,4 @@ class Compiler(HoldableObject, metaclass=abc.ABCMeta):
     def _get_compile_output(self, dirname: str, mode: CompileCheckMode) -> str:
         assert mode != CompileCheckMode.PREPROCESS, 'In pre-processor mode, the output is sent to stdout and discarded'
         # Exten
-"""
-
-
 ```

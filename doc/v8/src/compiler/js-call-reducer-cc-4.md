@@ -162,7 +162,7 @@ By going through each function in this way, I can build up a detailed understand
 
 总而言之，`v8/src/compiler/js-call-reducer.cc` 在 V8 编译过程中扮演着关键角色，它通过识别并替换低效的 JavaScript 函数调用模式来提升代码的性能。 它针对各种内置函数和 API 提供了特定的优化策略，利用 V8 内部的低级操作来加速执行。 它的工作是编译器优化流程的一部分，旨在生成更高效的机器代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 y(broker(), key_index);
             Node* lhs = jsgraph()->HeapConstantNoHole(receiver_key.object());
             __ GotoIf(__ ReferenceEqual(TNode<Object>::UncheckedCast(lhs),
@@ -980,7 +982,4 @@ Reduction JSCallReducer::ReduceCallApiFunction(Node* node,
       // faster than the generic call sequence.
       Builtin builtin_name;
       if (function_tem
-"""
-
-
 ```

@@ -155,11 +155,13 @@ console.log(result);
 
 `v8/src/compiler/wasm-inlining-into-js.cc` 是 V8 引擎中一个重要的优化组件，它通过将简单的 WebAssembly 函数内联到 JavaScript 代码中来提高性能，从而实现更高效的 JavaScript 和 WebAssembly 互操作。它通过解码 WebAssembly 字节码、构建 Turbofan 图节点以及处理类型信息来实现这一目标，但受到可以内联的 WebAssembly 函数的复杂性限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-inlining-into-js.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```javascript
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -549,7 +551,4 @@ bool WasmIntoJSInliner::TryInlining(Zone* zone, const wasm::WasmModule* module,
 }
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

@@ -124,7 +124,7 @@ By following these steps, including careful reading, identification of key compo
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/environment.py` 文件的第一部分主要负责 **Meson 构建环境的自动检测和配置**。它通过检测操作系统、CPU 架构、已安装的工具链，并读取环境变量和配置文件，为 Frida 的后续构建过程奠定基础。 这个过程对于确保 Frida 能够正确地在目标平台上编译和运行至关重要，尤其在涉及交叉编译等复杂场景下。  它收集的信息和配置直接影响到编译器的选择、编译选项的设置以及最终生成的可执行文件的架构和特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -886,8 +888,4 @@ class Environment:
                         key = OptionKey('env_args', machine=for_machine, lang='c')
                         for lang in compilers.compilers.LANGUAGES_USING_CPPFLAGS:
                             key = key.evolve(lang=lang)
-     
-"""
-
-
 ```

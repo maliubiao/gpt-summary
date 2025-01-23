@@ -197,15 +197,17 @@ message.end_object = 5;
 
 总而言之，`moqt_messages.cc` 文件是 Chromium 中 MoQT 协议的核心组成部分，它定义了协议的消息格式和相关的处理逻辑，为实现基于 QUIC 的媒体传输提供了基础。虽然它本身是 C++ 代码，但其功能直接支持了 Web 应用中通过 JavaScript 使用 MoQT 进行媒体通信的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_messages.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ FullTrackName::FullTrackName(absl::Span<const absl::string_view> elements)
     : tuple_(elements.begin(), elements.end()) {}
 
 }  // namespace moqt
-
-"""
-
 ```

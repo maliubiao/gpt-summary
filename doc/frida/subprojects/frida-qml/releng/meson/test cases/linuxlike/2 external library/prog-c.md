@@ -99,7 +99,7 @@ Finally, organize the information into a clear and comprehensive answer, address
 
 总而言之，这个 `prog.c` 文件虽然简单，但在 Frida 项目中扮演着一个测试外部库依赖是否正常的角色，帮助开发者验证 Frida 环境的正确性，并为潜在的问题提供调试线索。它涉及到操作系统底层库的加载机制、程序链接过程以及逆向工程中对目标程序依赖项的分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/linuxlike/2 external library/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<zlib.h>
 
 int main(void) {
@@ -117,7 +119,4 @@ int main(void) {
         return 0;
     return 1;
 }
-
-"""
-
 ```

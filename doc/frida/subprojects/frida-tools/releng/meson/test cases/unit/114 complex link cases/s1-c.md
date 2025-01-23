@@ -112,7 +112,7 @@ int s1(void) {
 
 总之，`s1.c` 虽然代码简单，但它在 Frida 的开发和测试流程中扮演着重要的角色，特别是在验证构建系统处理复杂链接场景的能力方面。对于用户而言，理解这类测试用例可以帮助他们更好地理解 Frida 的工作原理，并可能作为调试复杂问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/114 complex link cases/s1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,12 +120,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s1(void) {
     return 1;
 }
-
-"""
-
 ```

@@ -137,15 +137,17 @@ int result2 = add_function(5, 10); // 错误：由于没有刷新指令缓存，
 
 总而言之，`v8/src/codegen/s390/cpu-s390.cc` 这个文件在 s390x 架构上的主要功能是提供一个空的 `FlushICache` 函数，表明在该架构下，显式刷新指令缓存是不必要的，这得益于其强大的内存模型和 V8 的单线程特性。尽管如此，理解指令缓存刷新的概念对于理解动态代码生成和某些架构上的编程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/cpu-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/cpu-s390.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ void CpuFeatures::FlushICache(void* buffer, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
 ```

@@ -124,15 +124,17 @@ The `PtrComprCageBase` parameter in the functions is a key part of enforcing the
 
 **In summary, `v8/src/sandbox/sandboxed-pointer.h` defines low-level, internal functions within V8 for securely reading and writing memory within a sandboxed environment. These functions are crucial for V8's stability and security, even though they are not directly exposed to JavaScript developers.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/sandboxed-pointer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/sandboxed-pointer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ V8_INLINE void WriteSandboxedPointerField(Address field_address,
 }  // namespace v8
 
 #endif  // V8_SANDBOX_SANDBOXED_POINTER_H_
-
-"""
-
 ```

@@ -263,7 +263,7 @@ setTimeout(hook_prctl, 0);
 
 通过 Frida Hook，你可以观察到哪些进程在应用 seccomp 策略，以及策略的具体内容，从而更好地理解 `genseccomp.py` 生成的策略是如何被使用的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tools/genseccomp.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -596,7 +598,4 @@ def main():
 
 if __name__ == "__main__":
   main()
-
-"""
-
 ```

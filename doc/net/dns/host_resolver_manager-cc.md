@@ -179,7 +179,7 @@ My thinking process to analyze the code and generate the response involved sever
 
 到目前为止，`net/dns/host_resolver_manager.cc` 的核心功能是作为 Chromium 中枢的主机名解析器，负责接收解析请求，协调各种解析策略（缓存、hosts 文件、系统 DNS、异步 DNS 等），并管理底层的 DNS 客户端。它直接支撑着浏览器中所有需要将域名转换为 IP 地址的网络操作，与 JavaScript 发起的网络请求紧密相关。  代码中已经展现了对多种解析方法和网络状态变化的初步处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1089,7 +1091,4 @@ HostCache::Entry HostResolverManager::ResolveLocally(
         source_net_log.AddEvent(
             NetLogEventType::HOST_RESOLVER_MANAGER_HOSTS_HIT,
             [&] { return NetLogResults(resol
-"""
-
-
 ```

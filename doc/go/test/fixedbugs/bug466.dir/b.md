@@ -135,15 +135,17 @@ func Mul(z complex128) complex128 {
 
 总而言之，`b.go` 作为一个测试文件，其主要职责是确保 `a` 包的功能按照预期工作。使用者需要关注 `a` 包的实现以及 `b.go` 中设定的断言条件，才能理解其测试的逻辑和目的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug466.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -174,9 +176,4 @@ func main() {
 		panic("y != (1+2i)*(3+4i)")
 	}
 }
-
-"""
-
-
-
 ```

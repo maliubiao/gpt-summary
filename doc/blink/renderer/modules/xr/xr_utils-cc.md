@@ -150,15 +150,17 @@ By following these steps, I can systematically analyze the provided code and pro
 
 如果在上述任何步骤中出现错误，例如传递了错误的关节名称，或者底层的变换矩阵数据异常，都可能导致 `xr_utils.cc` 中的断言失败或逻辑错误，从而成为调试的线索。 开发者可以通过查看 Chromium 的日志、设置断点等方式，追踪到这些工具函数被调用的过程，从而定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -455,7 +457,4 @@ bool IsFeatureEnabledForContext(device::mojom::XRSessionFeature feature,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -161,7 +161,7 @@ My thinking process to analyze the provided C++ test file and generate the expla
 
 希望这些信息能够帮助你理解 `image_paint_timing_detector_test.cc` 这部分代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/image_paint_timing_detector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -169,9 +169,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```cpp
+{
   SetBodyInnerHTML(R"HTML(
     <video id="target" poster=")HTML" LARGE_IMAGE R"HTML("></video>
   )HTML");
@@ -684,8 +686,4 @@ TEST_P(ImagePaintTimingDetectorTransparentPlaceholderImageTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

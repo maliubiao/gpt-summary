@@ -119,15 +119,17 @@ This detailed breakdown simulates the thought process involved in understanding 
 
 总而言之，`resource_load_observer_for_frame_test.cc`  这个测试文件虽然代码量不大，但它测试了 Blink 引擎中一个重要的安全机制：当用户在之前忽略证书错误的情况下，再次加载缓存的恶意或不安全的资源时，能够正确地进行通知，避免潜在的安全风险。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource_load_observer_for_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ TEST(ResourceLoadObserverForFrameTest, MemoryCacheCertificateError) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

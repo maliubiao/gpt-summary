@@ -142,7 +142,7 @@ By following this structured approach, I can thoroughly analyze the code, connec
 
 总而言之，这个代码片段的主要功能是在 Frida 的构建过程中，**负责从操作系统环境变量中读取和解析构建相关的配置信息，并将其转化为构建系统可以使用的内部选项。**  它能够处理不同构建机器的环境变量，区分编译时和链接时的参数，并为后续的构建步骤提供必要的配置数据。这对于支持交叉编译和处理各种平台特定的构建需求至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,9 +151,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                       env_opts[key].extend(p_list)
+### 源代码
+```python
+env_opts[key].extend(p_list)
                     else:
                         key = OptionKey.from_string(keyname).evolve(machine=for_machine)
                         if evar in compilers.compilers.CFLAGS_MAPPING.values():
@@ -391,8 +393,4 @@ Prompt:
 
     def has_exe_wrapper(self) -> bool:
         return self.exe_wrapper and self.exe_wrapper.found()
-
-"""
-
-
 ```

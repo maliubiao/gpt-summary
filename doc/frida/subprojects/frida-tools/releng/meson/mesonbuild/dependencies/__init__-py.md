@@ -136,7 +136,7 @@ Frida 是一个动态插桩工具，广泛应用于逆向工程。它需要依�
 
 总而言之，这个 `__init__.py` 文件是 Frida 构建系统中至关重要的组成部分，它定义了如何管理和查找 Frida 所需的各种依赖项，直接影响着 Frida 的成功构建和运行。理解这个文件的内容有助于理解 Frida 的依赖关系以及排查构建过程中遇到的依赖项问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -398,7 +400,4 @@ _packages_accept_language.update({
     'netcdf',
     'openmp',
 })
-
-"""
-
 ```

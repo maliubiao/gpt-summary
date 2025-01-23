@@ -141,7 +141,7 @@ A developer or someone working on Frida might end up looking at this script duri
 
 In summary, while `docgen.py` is a simple script for generating dummy HTML files, its context within the Frida project as part of a test suite makes it indirectly relevant to reverse engineering, low-level system knowledge, and debugging the installation aspects of the Frida framework. It serves as a basic building block for verifying more complex Frida functionalities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/123 custom target directory install/docgen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -166,7 +168,4 @@ except FileExistsError:
 for name in ('a', 'b', 'c'):
     with open(os.path.join(out, name + '.html'), 'w') as f:
         f.write(name)
-
-"""
-
 ```

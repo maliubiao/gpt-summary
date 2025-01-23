@@ -107,7 +107,7 @@ main.main()
 
 总之，`go/src/runtime/stubs_nonwasm.go` 中的 `pause` 函数是一个为非 WASM 平台提供的占位符，它的存在是为了在接口上与 WASM 平台的 `pause` 函数保持一致，但其自身会触发 panic，表明在非 WASM 环境下不应该调用该函数。 这体现了 Go 语言的条件编译特性，并提醒开发者在编写跨平台代码时需要注意平台特定的差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs_nonwasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -115,8 +115,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -127,9 +129,4 @@ package runtime
 
 // pause is only used on wasm.
 func pause(newsp uintptr) { panic("unreachable") }
-
-"""
-
-
-
 ```

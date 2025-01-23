@@ -95,7 +95,7 @@ By going through these steps, I can construct a comprehensive answer that addres
 
 因此，**第 5 部分的主要功能是定义了用于执行外部命令 (`RunTarget`)、创建 JAR 文件 (`Jar`)、表示自定义构建目标的输出 (`CustomTargetIndex`) 以及处理数据和符号链接安装的构建目标类型。** 这些构建目标是 Frida CLR 组件构建过程中不可或缺的一部分，它们定义了构建的各个阶段和产物。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,9 +104,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- = 'run'
+### 源代码
+```python
+= 'run'
 
     def __init__(self, name: str,
                  command: T.Sequence[T.Union[str, File, BuildTargetTypes, programs.ExternalProgram]],
@@ -406,8 +408,4 @@ def save(obj: Build, filename: str) -> None:
             pickle.dump(obj, f)
     finally:
         obj.environment.coredata = cdata
-
-"""
-
-
 ```

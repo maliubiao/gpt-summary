@@ -151,7 +151,7 @@ The user is asking for a summary of the functionality of the provided C++ code s
 
 这第三部分主要关注**出站数据处理、流量控制、错误处理和会话状态管理**，确保数据能够正确且高效地发送到对端，并处理各种可能出现的错误情况，维持会话的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s;
 }
 
@@ -591,8 +593,4 @@ bool OgHttp2Session::SendDataFrame(Http2StreamId stream_id,
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
-
 ```

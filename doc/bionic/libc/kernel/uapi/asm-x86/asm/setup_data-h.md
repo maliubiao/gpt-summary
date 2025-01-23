@@ -266,7 +266,7 @@ except Exception as e:
 
 **注意：**  直接 hook 内核对 `setup_data` 的处理通常需要内核级别的 hook 工具，例如使用 `kprobe` 或 `tracepoints`，这超出了 Frida 的直接能力。上述 Frida 示例是在用户空间层面进行的间接观察。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/setup_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -343,7 +345,4 @@ struct ima_setup_data {
 } __attribute__((packed));
 #endif
 #endif
-
-"""
-
 ```

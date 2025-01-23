@@ -145,15 +145,17 @@ By following this structured thought process, I can effectively analyze the C++ 
 
 总而言之，`oblivious_http_response_test.cc` 是确保 Chromium 中 OHTTP 响应处理逻辑正确性的关键组成部分，它通过各种测试用例覆盖了加密、解密和端到端流程，为开发者提供了理解和调试 OHTTP 相关问题的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/buffers/oblivious_http_response_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/buffers/oblivious_http_response.h"
 
 #include <stddef.h>
@@ -382,7 +384,4 @@ TEST(ObliviousHttpResponse, TestEncapsulateWithQuicheRandom) {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

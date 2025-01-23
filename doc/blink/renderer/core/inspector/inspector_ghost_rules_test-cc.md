@@ -156,14 +156,16 @@ By following these steps, combining code analysis with an understanding of the t
 
 `inspector_ghost_rules_test.cc` 是一个重要的测试文件，它详细测试了 `InspectorGhostRules` 类的功能，揭示了 "幽灵规则" 的创建、生命周期以及与 CSS 结构的关系。理解这个测试文件有助于开发者更好地理解 Blink 引擎中与 CSS 检查和调试相关的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_ghost_rules_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -411,7 +413,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          testing::ValuesIn(ghost_rules_data));
 
 }  // namespace blink
-
-"""
-
 ```

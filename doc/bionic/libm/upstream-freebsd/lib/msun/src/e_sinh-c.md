@@ -305,7 +305,7 @@ Android 使用动态链接器 (`linker`/`ld-android.so`) 来加载和链接共�
 
 `e_sinh.c` 文件实现了 Android 系统中双精度浮点数的双曲正弦函数。它根据输入值的范围采用不同的计算方法，以兼顾精度和性能，并处理特殊情况。理解其实现原理对于进行数值计算、调试相关问题以及深入理解 Android 系统底层库的工作方式都非常有帮助。通过调试工具和日志，可以追踪到 Android Framework 或 NDK 代码如何最终调用到这个文件中的 `sinh` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_sinh.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,9 +315,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -392,7 +393,4 @@ sinh(double x)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(sinh, sinhl);
 #endif
-
-"""
-
 ```

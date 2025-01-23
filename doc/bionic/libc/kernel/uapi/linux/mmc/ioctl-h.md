@@ -406,7 +406,7 @@ sys.stdin.read()
 
 当目标应用执行与 MMC 相关的操作时，Frida 将会拦截 `ioctl` 调用，并打印出文件描述符、请求码以及 `mmc_ioc_cmd` 或 `mmc_ioc_multi_cmd` 结构体的内容，从而帮助你调试和理解 Android Framework 或 NDK 是如何与内核 MMC 驱动进行交互的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/mmc/ioctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -417,8 +417,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -455,7 +457,4 @@ struct mmc_ioc_multi_cmd {
 #define MMC_IOC_MAX_BYTES (512L * 1024)
 #define MMC_IOC_MAX_CMDS 255
 #endif
-
-"""
-
 ```

@@ -152,7 +152,7 @@ Finally, organize the thoughts into a clear and structured answer, covering all 
 
 总而言之，`test_not_zlib.c` 是 Frida 内部质量保证的一部分，它确保了 Frida 在处理数据时具有一定的健壮性，即使面对不符合预期的 zlib 数据也能优雅地处理。虽然普通用户不会直接操作这个文件，但理解其背后的意义可以帮助用户更好地理解 Frida 的工作原理，并排查在使用过程中可能遇到的与数据处理相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/31 forcefallback/test_not_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <notzlib.h>
 
 int main (int ac, char **av)
@@ -170,7 +172,4 @@ int main (int ac, char **av)
     return 1;
   return 0;
 }
-
-"""
-
 ```

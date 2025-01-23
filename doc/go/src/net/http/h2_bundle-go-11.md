@@ -224,7 +224,7 @@ scheduler.Push(req) // 这可能会导致 panic 或其他未定义的行为
 
 第 12 部分专注于 **HTTP/2 写入调度器的实现**，它定义了调度器的接口和多种不同的调度策略（优先级、随机、轮询）。它还定义了表示待写入帧的结构体以及用于管理帧队列的结构体。这部分代码是 HTTP/2 连接管理的关键组成部分，负责决定哪些帧应该被发送以及发送的顺序，并处理与流量控制的交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,9 +233,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第12部分，共13部分，请归纳一下它的功能
+```
 
-"""
- each fragment. firstFrag/lastFrag are true
+### 源代码
+```go
+each fragment. firstFrag/lastFrag are true
 // for the first/last fragment, respectively.
 func http2splitHeaderBlock(ctx http2writeContext, headerBlock []byte, fn func(ctx http2writeContext, frag []byte, firstFrag, lastFrag bool) error) error {
 	// For now we're lazy and just pick the minimum MAX_FRAME_SIZE
@@ -1303,9 +1305,4 @@ func (ws *http2roundRobinWriteScheduler) Push(wr http2FrameWriteRequest) {
 
 func (ws *http2roundRobinWriteScheduler) Pop() (http2FrameWriteRequest, bool) {
 	// Control and RST_STREAM fra
-"""
-
-
-
-
 ```

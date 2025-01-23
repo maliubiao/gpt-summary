@@ -115,7 +115,7 @@ By following this structured thought process, we can generate a comprehensive an
 
 总而言之，`bob.c` 文件本身的代码很简单，但它的价值在于它作为 Frida 测试框架的一部分，用于测试 Frida 在处理隐藏符号以及构建失败场景下的能力。它涉及到逆向工程中关于代码混淆和信息隐藏的概念，并且与二进制底层、操作系统和构建系统等知识相关。理解这样的测试用例有助于开发者更好地理解 Frida 的工作原理和局限性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/failing build/1 hidden symbol/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,14 +123,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hidden_function() {
     return 7;
 }
-
-"""
-
 ```

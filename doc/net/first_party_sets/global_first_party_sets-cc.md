@@ -196,15 +196,17 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 总而言之，`global_first_party_sets.cc` 是 Chromium 中管理 FPS 定义的关键 C++ 组件。它不直接涉及 JavaScript 代码，但其维护的数据直接影响着浏览器中 JavaScript 的行为，特别是与 Cookie 和存储访问相关的安全和隐私特性。 理解这个文件的功能对于调试与 FPS 相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/first_party_sets/global_first_party_sets.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -772,7 +774,4 @@ std::ostream& operator<<(std::ostream& os, const GlobalFirstPartySets& sets) {
 }
 
 }  // namespace net
-
-"""
-
 ```

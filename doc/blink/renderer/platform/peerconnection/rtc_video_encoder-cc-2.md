@@ -101,15 +101,17 @@ Okay, the planning is complete. I will now proceed with generating the response.
 
 `RTCVideoEncoder::Impl::ReturnEncodedImage` 方法负责接收底层视频编码器的输出，将编码后的比特流和元数据封装成符合 WebRTC 规范的 `webrtc::EncodedImage` 对象，并填充编解码器特定的信息。最终，它通过注册的回调函数将编码结果传递给 WebRTC 管道的上一层进行后续处理，例如 RTP 打包和网络传输。该方法还处理了 H.265 的参数集插入，并针对不同的视频编解码器（特别是 VP9 的 SVC）设置了相应的元数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 xBitstream(rtc::MakeArrayView(
             output_mapping->front(), metadata.payload_size_bytes));
     if (fixed.action == H265ParameterSetsTracker::PacketAction::kInsert) {
@@ -905,7 +907,4 @@ int32_t RTCVideoEncoder::InitEncode(
     }
     simulcast_to_svc_converter.emplace(*codec_settings);
     converted_settings = simulca
-"""
-
-
 ```

@@ -166,7 +166,7 @@ Type: TypeFlags  // 表示比较的结果，用于后续的条件判断
 
 这段代码是Go语言编译器中针对ARM架构的SSA重写规则的一部分。它定义了将Go语言中的各种操作（例如比较、算术运算、内存操作等）转换为高效的ARM机器指令的具体步骤。通过这些重写规则，Go编译器能够生成针对ARM架构优化过的、性能更好的代码。 它是Go语言编译过程中的一个关键环节，负责将高级的Go语言概念映射到具体的硬件指令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第11部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 }
 func rewriteValueARM_OpNeq32F(v *Value) bool {
 	v_1 := v.Args[1]
@@ -1592,9 +1594,4 @@ func rewriteBlockARM(b *Block) bool {
 			x := v_0.Args[0]
 			v_0_1 := v_0.Args[1]
 			if v
-"""
-
-
-
-
 ```

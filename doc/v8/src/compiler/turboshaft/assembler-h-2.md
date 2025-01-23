@@ -118,7 +118,7 @@ if (typeof a === 'number') { // 内部可能使用 ObjectIsNumber 或类似的�
 
 总而言之，这个代码片段是 V8 Turboshaft 编译器中定义基本运算和类型转换接口的关键部分，它为后续的优化和代码生成奠定了基础，并且与 JavaScript 的语义紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 turn ReduceIfReachable##operation(resolve(left), resolve(right), \
                                         operation##Op::Kind::k##kind,  \
                                         V<tag>::rep);                  \
@@ -786,7 +788,4 @@ turn ReduceIfReachable##operation(resolve(left), resolve(right), \
   template <typename T,
             typename = std::enable_if_t<is_subtype_v<T, HeapObject>>>
   V<T> HeapConsta
-"""
-
-
 ```

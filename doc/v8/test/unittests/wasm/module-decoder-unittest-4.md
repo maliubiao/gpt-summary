@@ -78,10 +78,13 @@ WebAssembly.instantiate(module_bytes)
 
 这部分 C++ 代码是 WebAssembly 引擎测试套件的一部分，它专门用于验证模块解码器在处理 Element Section 时的正确性和健壮性。这些测试确保了当遇到各种合法的和非法的 Element Section 定义时，解码器能够按照 WebAssembly 规范的要求进行处理，并在出现错误时能够正确地报告。这直接关系到 JavaScript 中 WebAssembly 模块实例化的过程，因为浏览器在实例化模块时会依赖于正确的模块解码和验证。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 entry count
               TABLE_INDEX0, WASM_INIT_EXPR_I32V_1(0),
               1,     // elements count
@@ -1729,7 +1732,4 @@ TEST_F(WasmModuleVerifyTest, PassiveElementSegment) {
       // sig#0 -----------------------------------------------------------------
       TYPE_SECTION_ONE_SIG_VOID_VOID,
       // funcs -----------------------------------------------------------------
-      
-"""
-
 ```

@@ -98,14 +98,16 @@ This systematic approach allows me to break down the code, understand its purpos
 
 总而言之，`blink_perf_test_suite.cc` 是 Blink 性能测试框架的关键组成部分，它提供了运行和管理性能测试的基础设施，并负责收集和记录性能数据，这对于确保 Blink 渲染引擎的高效运行至关重要。它与 JavaScript、HTML 和 CSS 的功能紧密相关，因为性能测试的目标通常就是评估 Blink 处理这些 Web 技术的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/blink_perf_test_suite.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ void BlinkPerfTestSuite::Shutdown() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

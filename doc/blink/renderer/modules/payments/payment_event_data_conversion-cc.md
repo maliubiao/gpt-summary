@@ -209,15 +209,17 @@ item->setPending(false);
 
 总而言之，`payment_event_data_conversion.cc` 是 Payment Request API 实现中至关重要的一个环节，它负责将浏览器内部的支付数据转换为 JavaScript 可以理解和使用的形式，是连接底层支付能力和上层 Web 应用的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/payment_event_data_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -413,7 +415,4 @@ CanMakePaymentEventInit* PaymentEventDataConversion::ToCanMakePaymentEventInit(
 }
 
 }  // namespace blink
-
-"""
-
 ```

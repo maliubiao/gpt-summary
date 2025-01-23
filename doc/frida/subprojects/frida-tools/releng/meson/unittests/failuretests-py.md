@@ -120,7 +120,7 @@ By following this detailed analysis process, I can comprehensively understand th
 
 总而言之，`failuretests.py` 通过模拟各种可能导致 Frida 构建失败的场景，来确保 Frida 的构建系统在遇到错误时能够提供清晰的错误信息，帮助开发者快速定位和解决问题。这对于保证 Frida 的可靠性和易用性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/failuretests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -513,7 +515,4 @@ class FailureTests(BasePlatformTests):
     def test_error_func(self):
         self.assertMesonRaises("error('a', 'b', ['c', ['d', {'e': 'f'}]], 'g')",
                                r"Problem encountered: a b \['c', \['d', {'e' : 'f'}\]\] g")
-
-"""
-
 ```

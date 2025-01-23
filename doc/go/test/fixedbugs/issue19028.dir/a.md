@@ -155,15 +155,17 @@ func main() {
 
 这段代码是 Go 语言 `reflect` 包内部为了组织或者测试目的而定义的一个类型别名。 它并没有引入新的功能，只是为已有的 `reflect.Type` 类型提供了一个不同的名字。理解类型别名的本质是关键，即它只是一个现有类型的另一个名称，而不是一个新的类型。 由于它非常简单，因此使用者容易犯的错误是误解其为一个独立的类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue19028.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -173,9 +175,4 @@ package reflect
 import "reflect"
 
 type Type reflect.Type
-
-"""
-
-
-
 ```

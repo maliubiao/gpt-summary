@@ -723,12 +723,14 @@ void AsmJsParser::ValidateFunctionTable() {
   EXPECT_TOKEN('[');
   uint64_t count = 0;
   for (;;) {
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2668,8 +2670,5 @@ AsmType* AsmJsParser::RelationalExpression() {
     continue;                                                                 \
   }
       HANDLE_CASE('<', I32LtS, I32LtU, F64Lt, F32Lt, "<");
-      HANDLE_CASE(TOK(LE), I32LeS, I32LeU, 
-"""
-
-
+      HANDLE_CASE(TOK(LE), I32LeS, I32LeU,
 ```

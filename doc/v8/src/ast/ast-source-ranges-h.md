@@ -176,15 +176,17 @@ V8 通过跟踪每个 AST 节点的源范围，可以定位到导致解析失败
 
 `v8/src/ast/ast-source-ranges.h` 是 V8 引擎中一个关键的头文件，它定义了用于跟踪和管理 JavaScript 代码在抽象语法树中各个节点源代码位置的核心数据结构。这些信息对于错误报告、调试、代码覆盖率和性能分析等功能至关重要，极大地提升了开发者的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast-source-ranges.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/ast-source-ranges.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -634,7 +636,4 @@ class SourceRangeMap final : public ZoneObject {
 }  // namespace v8
 
 #endif  // V8_AST_AST_SOURCE_RANGES_H_
-
-"""
-
 ```

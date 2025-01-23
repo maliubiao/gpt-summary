@@ -197,15 +197,17 @@ myFunction(); // 调用 C++ 函数
 
 理解 `vm-state.h` 中的这些概念对于深入了解 V8 的执行流程和开发 V8 扩展非常重要。它揭示了 V8 如何管理其内部状态以及如何处理与外部代码的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/vm-state.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/vm-state.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ class V8_NODISCARD ExternalCallbackScope {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_VM_STATE_H_
-
-"""
-
 ```

@@ -170,14 +170,16 @@ const blob = new Blob([text], { type: 'text/plain' });
 
 总而言之，`web_blob_info.cc` 中定义的 `WebBlobInfo` 类是 Blink 渲染引擎中处理 Blob 数据的核心结构之一，它封装了 Blob 的元数据并管理对实际 Blob 数据的访问，从而支持了 Web 平台上与 Blob 相关的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_blob_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ scoped_refptr<BlobDataHandle> WebBlobInfo::GetBlobHandle() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

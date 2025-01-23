@@ -143,7 +143,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，这个简单的 `libb.c` 文件虽然代码不多，但在软件开发和逆向工程中都扮演着重要的角色。它可以作为理解代码依赖关系、Hook 技术、动态链接等概念的起点。通过分析这样的代码片段，可以帮助我们更好地理解程序的运行机制和底层原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/libb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,14 +151,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func();
 
 void libb_func() {
     liba_func();
 }
-
-"""
-
 ```

@@ -256,7 +256,7 @@ session.detach()
 
 总而言之，`crtbegin_so.c` 是 Android Bionic 中一个关键的文件，它确保了共享库在卸载时能够正确地进行清理工作，特别是对于包含 C++ 代码的库来说至关重要。理解它的功能有助于开发者更好地理解 Android 的动态链接机制和共享库的生命周期管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-common/bionic/crtbegin_so.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -344,7 +346,4 @@ static void __on_dlclose_late(void) {
 # include "atexit.h"
 #endif
 #include "pthread_atfork.h"
-
-"""
-
 ```

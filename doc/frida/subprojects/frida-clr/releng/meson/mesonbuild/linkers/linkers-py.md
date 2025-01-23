@@ -161,7 +161,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 `frida/subprojects/frida-clr/releng/meson/mesonbuild/linkers/linkers.py` 的第一部分主要定义了用于抽象静态链接和动态链接过程的基类和一些具体的链接器实现。它为 Meson 提供了一个灵活的方式来与不同的链接器交互，管理链接器的执行命令，并根据不同的平台和构建选项生成相应的链接参数。这对于构建 Frida 这样的跨平台工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -1116,7 +1118,4 @@ class CcrxDynamicLinker(DynamicLinker):
     id = 'rlink'
 
     def __init__(self, for_machine: mesonlib.Mac
-"""
-
-
 ```

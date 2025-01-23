@@ -176,11 +176,13 @@ console.log("Squared Array:", squaredArray);
 
 总之，`v8/src/compiler/fast-api-calls.cc` 是 V8 引擎中一个关键的性能优化组件，它专注于使 JavaScript 调用 Native C++ 代码更加高效，特别是对于涉及到基本数据类型和 `TypedArray` 的场景。 它通过生成专门的、更精简的调用代码路径来实现这一点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/fast-api-calls.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -566,7 +568,4 @@ Node* BuildFastApiCall(Isolate* isolate, Graph* graph,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

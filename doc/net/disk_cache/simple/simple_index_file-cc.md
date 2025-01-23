@@ -156,15 +156,17 @@ By following these steps, combining code analysis with a broader understanding o
 
 总而言之，`simple_index_file.cc` 是 Chromium 简单缓存中负责管理和持久化索引的关键文件，它对于缓存的快速查找和高效运行至关重要。理解其功能和工作原理对于理解 Chromium 的缓存机制以及排查缓存相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_index_file.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -805,7 +807,4 @@ bool SimpleIndexFile::LegacyIsIndexFileStale(
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

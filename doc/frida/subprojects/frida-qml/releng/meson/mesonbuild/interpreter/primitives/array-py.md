@@ -163,7 +163,7 @@ executable('frida-core', ..., link_with: frida_core_libs)
 
 `array.py` 文件在 Frida 的构建系统中扮演着关键角色，它使得 Meson 能够理解和操作数组这种基本的数据结构。虽然它不直接执行逆向操作或涉及底层内核，但它是构建 Frida 工具链的基础，而 Frida 工具链是逆向工程师的重要武器。理解这个文件的功能可以帮助开发者更好地理解 Frida 的构建过程，并在遇到构建错误时提供有价值的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/primitives/array.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -281,7 +283,4 @@ class ArrayHolder(ObjectHolder[T.List[TYPE_var]], IterableObject):
             return self.held_object[other]
         except IndexError:
             raise InvalidArguments(f'Index {other} out of bounds of array of size {len(self.held_object)}.')
-
-"""
-
 ```

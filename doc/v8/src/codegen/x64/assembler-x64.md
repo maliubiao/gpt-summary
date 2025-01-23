@@ -70,12 +70,14 @@ assm->ret();
 
 **总结来说， `v8/src/codegen/x64/assembler-x64.cc` 是 V8 引擎将 JavaScript 代码转化为可以在 x64 架构上执行的机器码的关键组成部分，它定义了生成各种 x64 汇编指令的方法，并处理了诸如 CPU 特性检测、重定位信息管理等底层细节。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/assembler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2320,7 +2322,4 @@ void Assembler::pushq(Register src) {
   }
 #endif
 }
-"""
-
-
 ```

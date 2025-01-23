@@ -145,15 +145,17 @@ reader.readAsText(file); // 'file' 是一个 File 对象
 
 总而言之，`MockFileStream` 是 Chromium 网络栈中一个重要的测试工具，它允许开发者在不依赖真实文件系统的情况下，模拟各种文件操作场景，从而提高测试的效率和覆盖率，确保网络功能的稳定性和可靠性。它与 JavaScript 的联系是间接的，主要体现在测试那些最终会暴露给 JavaScript 的 Web API 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/mock_file_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ int64_t MockFileStream::ErrorCallback64(Int64CompletionOnceCallback callback) {
 }
 
 }  // namespace net::testing
-
-"""
-
 ```

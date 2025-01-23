@@ -113,7 +113,7 @@ foo();
 
 作为第 7 部分，这部分代码主要关注 V8 调试器在 **控制程序执行流程** 方面的测试，特别是 **终止执行** 的机制。它涵盖了在多种调试场景下，如何通过 `SetTerminateOnResume` 来中断 JavaScript 代码的运行，以及如何获取对象的私有成员信息。这些测试确保了 V8 调试器在处理断点、异常和多线程等复杂情况下的稳定性和正确性，并为开发者提供了可靠的调试能力。它也开始涉及更高级的调试特性，例如异常处理和函数黑盒。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
 
   CHECK_EQ(names.size(), 1);
@@ -1073,7 +1075,4 @@ void RunExceptionBlackboxCheckTest(int functions_checked, const char* code) {
 }
 
 void RunExceptionOptimizedCallstackWalkTest(bool predict_u
-"""
-
-
 ```

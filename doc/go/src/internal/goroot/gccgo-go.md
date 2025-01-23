@@ -217,7 +217,7 @@ nonstandard is standard (gccgo): false
 
 总而言之，这段代码的核心功能是提供一种根据编译器类型判断给定路径是否属于 Go 标准库的机制。它体现了 Go 工具链对不同编译器的支持，并根据编译器的特点采用了不同的判断策略。对于 "gc"，通过检查源代码目录是否存在 `.go` 文件来判断；对于 "gccgo"，则通过查找预定义的标准库列表 (`stdpkg`) 来判断。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goroot/gccgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -225,8 +225,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -263,9 +265,4 @@ func IsStandardPackage(goroot, compiler, path string) bool {
 		panic("unknown compiler " + compiler)
 	}
 }
-
-"""
-
-
-
 ```

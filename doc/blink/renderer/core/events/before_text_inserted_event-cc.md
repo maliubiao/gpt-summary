@@ -125,14 +125,16 @@ Let's break down the thought process for analyzing the `before_text_inserted_eve
 
 总而言之，`blink/renderer/core/events/before_text_inserted_event.cc` 定义了一个关键的内部事件，允许 Blink 引擎在文本插入到可编辑节点之前执行一些操作，并为 JavaScript 提供了拦截和修改文本插入行为的能力。理解这个事件对于开发需要精细控制用户输入的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/before_text_inserted_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005 Apple Computer, Inc.  All rights reserved.
  *
@@ -183,7 +185,4 @@ void BeforeTextInsertedEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -149,7 +149,7 @@ By following this detailed analysis and refinement process, we can arrive at a c
 
 总而言之，这部分测试代码是确保 Go 语言性能剖析功能正确可靠的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/pprof_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -158,8 +158,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 64, skip int)
 
 func TestMutexProfile(t *testing.T) {
@@ -1332,9 +1334,4 @@ func TestTryAdd(t *testing.T) {
 		},
 	}, {
 		// The s
-"""
-
-
-
-
 ```

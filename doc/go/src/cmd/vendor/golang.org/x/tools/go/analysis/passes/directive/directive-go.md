@@ -169,15 +169,17 @@ go vet -vettool=$(which analysistool) ./...
 
 `directive.go` 文件实现了一个 Go 静态分析器，用于检查 Go 工具链指令的正确使用，目前主要关注 `//go:debug` 指令。它通过解析 Go 代码和读取其他文件内容来定位并验证这些指令的位置和上下文，以帮助开发者避免潜在的配置错误。该分析器不直接处理命令行参数，而是作为更高级别工具（如 `go vet`）的一部分运行。 使用者需要注意 `//go:debug` 指令的特定放置要求，以避免分析器报告错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/directive/directive.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -382,9 +384,4 @@ func stringsCutPrefix(s, prefix string) (after string, found bool) {
 	}
 	return s[len(prefix):], true
 }
-
-"""
-
-
-
 ```

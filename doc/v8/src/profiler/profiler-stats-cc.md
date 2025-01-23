@@ -128,15 +128,17 @@ for (let i = 0; i < 10000; i++) {
 
 `v8/src/profiler/profiler-stats.cc` 是 V8 引擎中负责收集 profiler 运行时统计信息的 C++ 文件。它记录了 profiler 内部发生的各种事件的原因和次数，这些信息可以帮助理解 profiler 的行为以及间接反映 JavaScript 代码执行期间的一些内部状态。虽然用户不能直接操作这个文件，但理解其功能有助于更好地理解 V8 的 profiling 机制和可能出现的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/profiler-stats.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/profiler-stats.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ const char* ProfilerStats::ReasonToString(Reason reason) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

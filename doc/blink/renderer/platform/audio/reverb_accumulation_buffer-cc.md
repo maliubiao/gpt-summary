@@ -140,14 +140,16 @@ Finally, I would organize the information logically, starting with the basic fun
 
 总而言之，`blink/renderer/platform/audio/reverb_accumulation_buffer.cc` 提供了一个底层的、高性能的机制来处理混响效果中的音频延迟和累积，它是 Chromium 浏览器引擎音频处理能力的重要组成部分，并间接地支持了 Web Audio API 的强大功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/reverb_accumulation_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -265,7 +267,4 @@ void ReverbAccumulationBuffer::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

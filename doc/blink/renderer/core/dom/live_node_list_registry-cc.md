@@ -197,15 +197,17 @@ document.body.appendChild(newDiv);
 
 总而言之，`live_node_list_registry.cc` 是 Blink 引擎中一个关键的组件，它负责高效地管理和维护活跃节点列表，确保 JavaScript 代码能够实时地反映 DOM 的变化，并且通过垃圾回收集成，避免持有失效的 DOM 节点引用。理解它的功能对于理解 Blink 引擎的 DOM 实现和调试相关的 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/live_node_list_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void LiveNodeListRegistry::ProcessCustomWeakness(const LivenessBroker& info) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

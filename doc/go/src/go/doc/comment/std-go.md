@@ -129,7 +129,7 @@ func main() {
 
 因此，使用者应该**避免直接修改 `std.go` 文件**。如果需要更新或修改标准库列表的处理方式，应该去查看并修改 `mkstd.sh` 脚本的逻辑，或者理解生成过程，并修改生成源。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment/std.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -137,8 +137,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -190,9 +192,4 @@ var stdPkgs = []string{
 	"unsafe",
 	"weak",
 }
-
-"""
-
-
-
 ```

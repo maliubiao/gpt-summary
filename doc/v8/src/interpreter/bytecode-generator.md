@@ -59,12 +59,14 @@ function example(a) {
 
 总之，`bytecode-generator.cc` 的第一部分定义了在将 JavaScript 代码转化为低级字节码时所需的关键数据结构和机制，为后续的 AST 遍历和字节码生成奠定了基础。它直接关系到 JavaScript 中作用域管理、控制流执行以及变量和表达式的计算等核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1942,7 +1944,4 @@ void BytecodeGenerator::GenerateAsyncGeneratorFunctionBody() {
   //   %AsyncGeneratorReject(generator, .catch);
   // } finally {
   //   %_GeneratorC
-"""
-
-
 ```

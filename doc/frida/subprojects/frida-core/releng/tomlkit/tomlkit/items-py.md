@@ -128,7 +128,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 `frida/subprojects/frida-core/releng/tomlkit/tomlkit/items.py` 文件的核心功能是定义了 `tomlkit` 库用于表示和操作 TOML 数据类型的各种类和函数，负责将 Python 对象转换为 TOML 数据结构，并提供序列化和反序列化的能力。虽然它本身不直接涉及底层系统调用或内核交互，但它是 `frida` 与 TOML 配置文件交互的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tomlkit/items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import abc
@@ -1420,7 +1422,4 @@ class Array(Item, _CustomList):
                 if whitespace:
                     new_values.append(Whitespace(whitespace))
                     whitespace = "
-"""
-
-
 ```

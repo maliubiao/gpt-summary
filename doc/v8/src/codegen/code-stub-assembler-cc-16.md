@@ -171,7 +171,7 @@ console.log(10n > 5);  // true (BigInt 与 Number 比较)
 
 在整个代码生成流程中，这个部分负责确保在运行时能够高效地表示和操作 JavaScript 对象，并根据运行时的反馈信息进行优化。它连接了高级的 JavaScript 语义和底层的机器指令，是 V8 性能优化的关键组成部分。这段代码的功能是为后续的代码生成和优化步骤提供必要的构建块和运行时支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,9 +179,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第17部分，共23部分，请归纳一下它的功能
+```
 
-"""
-                           ElementsKind to_kind,
+### 源代码
+```cpp
+ElementsKind to_kind,
                                                Label* bailout) {
   DCHECK(!IsHoleyElementsKind(from_kind) || IsHoleyElementsKind(to_kind));
   if (AllocationSite::ShouldTrack(from_kind, to_kind)) {
@@ -1004,7 +1006,4 @@ TNode<Boolean> CodeStubAssembler::RelationalComparison(
           OverwriteFeedback(var_type_feedback, CompareOperationFeedback::kAny);
           // Convert {left} to a Numeric; we don't need to perform the
           // dedicated ToPrimitive(left, hint
-"""
-
-
 ```

@@ -95,7 +95,7 @@ This C++ source code file (`local_caret_rect_test.cc`) defines unit tests for th
 
 总而言之，`blink/renderer/core/editing/local_caret_rect_test.cc` 文件的主要功能是 **作为单元测试，细致地检验 `LocalCaretRect` 类在处理各种网页布局和文本特性时，能否精确地计算出文本光标的局部矩形位置。** 这对于确保用户在网页上进行文本编辑时的良好体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/local_caret_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -829,7 +831,4 @@ TEST_F(LocalCaretRectTest, AfterLineBreak) {
   EXPECT_EQ(
       LocalCaretRect(second_br->GetLayoutObject(), PhysicalRect(0, 10, 1, 10)),
       LocalCaretRe
-"""
-
-
 ```

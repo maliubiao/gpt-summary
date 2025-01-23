@@ -211,7 +211,7 @@ func cryptBlocksDec(b *aes.Block, civ *[aes.BlockSize]byte, dst, src []byte) {
 
 这段代码是 Go 标准库中针对特定架构优化的 AES-CBC 加密和解密的核心实现。它利用硬件指令提升性能。使用者需要注意 CBC 模式的特性，特别是 IV 的正确使用和数据填充，以避免安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/aes/cbc_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -219,8 +219,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -251,9 +253,4 @@ func cryptBlocksDec(b *Block, civ *[BlockSize]byte, dst, src []byte) {
 	// Decrypt function code is encrypt + 128.
 	cryptBlocksChain(b.function+128, &civ[0], &b.key[0], &dst[0], &src[0], len(src))
 }
-
-"""
-
-
-
 ```

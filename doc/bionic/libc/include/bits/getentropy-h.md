@@ -268,7 +268,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/include/bits/getentropy.handroid` 文件是 Bionic C 库中 `getentropy` 函数的接口声明，它定义了如何安全地获取高质量的随机数，这在 Android 系统和应用程序中扮演着至关重要的角色。理解这个文件以及 `getentropy` 函数的实现和使用方式，对于 Android 开发和安全分析都很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/getentropy.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -279,8 +279,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -338,7 +340,4 @@ __nodiscard int getentropy(void* _Nonnull __buffer, size_t __buffer_size) __INTR
 
 
 __END_DECLS
-
-"""
-
 ```

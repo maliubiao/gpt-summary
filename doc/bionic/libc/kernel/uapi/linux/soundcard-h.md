@@ -491,7 +491,7 @@ int main() {
 2. **Native 代码层 (frameworks/av/media/):** `AudioTrack` 类的方法调用会通过 JNI (Java Native Interface) 调用到 C++ 代码，例如 `frameworks/av/media/libaudioclient/AudioTrack.cpp`。
 
 3. **AudioFlinger 服务:**  `AudioTrack` 的 native 代码会与 `AudioFlinger` 服务进行交互。`AudioFlinger` 是 Android 音
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/soundcard.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -502,8 +502,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1169,7 +1171,4 @@ typedef struct mixer_vol_table {
 #define SEQ_WRPATCH(patchx,len) { if(_seqbufptr) SEQ_DUMPBUF(); if(write(seqfd, (char *) (patchx), len) == - 1) perror("Write patch: /dev/sequencer"); }
 #define SEQ_WRPATCH2(patchx,len) (SEQ_DUMPBUF(), write(seqfd, (char *) (patchx), len))
 #endif
-
-"""
-
 ```

@@ -151,15 +151,17 @@ func main() {
 
 `go/test/fixedbugs/issue6703v.go` 这个代码片段的核心作用是验证 Go 编译器能否检测出由于在指针类型字面量的方法调用中引起的初始化循环依赖。它通过 `// errorcheck` 指令指导测试工具检查编译器是否产生了预期的错误信息，确保 Go 语言的初始化机制能够有效地防止这类问题的发生。 理解这种错误模式有助于开发者避免在实际编程中引入类似的循环依赖。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6703v.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -178,9 +180,4 @@ func (*T) pm() int {
 }
 
 var x = (*T)(nil).pm() // ERROR "initialization cycle|depends upon itself"
-
-"""
-
-
-
 ```

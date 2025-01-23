@@ -150,7 +150,7 @@ Java.perform(function() {
 
 因此，到达 `generator.py` 脚本的执行通常是 Frida 项目构建过程的一部分，目的是生成一些测试或构建所需的辅助文件。当测试用例需要生成一些简单的代码或脚本时，就可以使用这样的生成器脚本。如果构建过程中出现与这些生成文件相关的问题，那么查看 `generator.py` 的逻辑和它接收到的参数就能提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/140 custom target multiple outputs/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -174,7 +176,4 @@ with open(os.path.join(odir, name + '.h'), 'w') as f:
     f.write('int func();\n')
 with open(os.path.join(odir, name + '.sh'), 'w') as f:
     f.write('#!/bin/bash')
-
-"""
-
 ```

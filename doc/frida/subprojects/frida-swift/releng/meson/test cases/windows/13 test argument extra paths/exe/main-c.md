@@ -137,7 +137,7 @@ Initially, I might have focused too much on the C code itself. However, the file
 
 总而言之，虽然 `main.c` 代码非常简单，但它在 Frida 的上下文中扮演着重要的角色，用于测试和验证 Frida 的特定功能，特别是与操作系统底层路径处理相关的能力。它的具体功能和涉及的知识领域很大程度上取决于 `foo.h` 中定义的 `foo_process()` 函数的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/13 test argument extra paths/exe/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,14 +145,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <foo.h>
 
 int main(void) {
   return foo_process();
 }
-
-"""
-
 ```

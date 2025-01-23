@@ -201,7 +201,7 @@ Section Headers: 描述了文件中的各个段（如 .text, .data, .bss, .symta
 
 总结一下，虽然 `signbit.cpp` 文件本身的代码非常简洁，但它代表了 Android Bionic 库中数学函数的一个组成部分，并通过动态链接机制在 Android 系统中发挥着作用。理解其功能和背后的原理对于进行 Android 底层开发和调试非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/signbit.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -211,8 +211,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -257,7 +259,4 @@ extern "C" int __signbitf(float f) {
 extern "C" int __signbitl(long double ld) {
   return signbit(ld);
 }
-
-"""
-
 ```

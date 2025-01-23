@@ -202,15 +202,17 @@ In this example, even though we pass the address of `s` to `processStruct`, the 
 
 **In summary, `go/test/escape_param.go` is a carefully crafted test suite designed to verify the correctness of the Go compiler's escape analysis implementation for function parameters. It showcases various scenarios and their expected escape behaviors, providing a valuable tool for compiler developers.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_param.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -652,9 +654,4 @@ func param14a(x [4]*int) interface{} { // ERROR "leaking param: x$"
 func param14b(x *int) interface{} { // ERROR "leaking param: x to result ~r0 level=0"
 	return x
 }
-
-"""
-
-
-
 ```

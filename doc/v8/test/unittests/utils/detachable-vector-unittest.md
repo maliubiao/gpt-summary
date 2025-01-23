@@ -113,11 +113,13 @@ processBuffer(bufferToProcess);
 
 总而言之，`detachable-vector-unittest.cc` 测试的是一个自定义的动态数组实现，其关键特性是可以“分离”其底层存储，这在 V8 引擎内部可能用于优化内存管理和资源传递。虽然 JavaScript 本身没有直接的 `detach` 概念，但可以通过 `ArrayBuffer` 和所有权转移等方式进行概念上的类比。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/detachable-vector-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ TEST(DetachableVector, ShrinkToFit) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -166,15 +166,17 @@ function unsafeArrayAccess(arr, index) {
 
 `v8/src/trap-handler/trap-handler-simulator.h` 文件定义了用于 V8 模拟器的 `ProbeMemory` 函数，它可以模拟内存访问行为，并在发生模拟的内存访问错误时，根据当前的指令地址查找并返回预定义的“着陆点”。这主要用于测试 V8 引擎在处理内存访问错误时的逻辑，与 JavaScript 的关系是间接的，主要体现在模拟器环境下对潜在错误的模拟和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/trap-handler-simulator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/trap-handler-simulator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ uintptr_t ProbeMemory(uintptr_t address, uintptr_t pc)
 #endif  // V8_TRAP_HANDLER_VIA_SIMULATOR
 
 #endif  // V8_TRAP_HANDLER_TRAP_HANDLER_SIMULATOR_H_
-
-"""
-
 ```

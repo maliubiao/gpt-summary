@@ -165,15 +165,17 @@ syntax_definition = // 上面输出的 CSSSyntaxDefinition 对象
 
 总而言之，`css_syntax_definition.cc` 是 Blink 引擎中处理 CSS 语法定义的核心部分，它确保浏览器能够正确理解和应用 CSS 样式，包括标准属性和自定义属性。在调试 CSS 相关问题时，特别是涉及到语法错误或自定义属性时，这个文件是一个重要的关注点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_syntax_definition.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -546,7 +548,4 @@ String CSSSyntaxDefinition::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

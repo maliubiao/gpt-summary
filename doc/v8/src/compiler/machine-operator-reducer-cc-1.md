@@ -168,7 +168,7 @@ node->InputAt(0) 是一个表示常量 3.14 的节点
 
 `v8/src/compiler/machine-operator-reducer.cc` 的第二部分主要负责对机器级别的操作进行优化，特别是针对类型转换、位运算、加载操作和条件分支等场景，通过常量折叠、消除冗余操作等手段提高代码执行效率。它关注的是编译器生成的中间表示，并尝试将其简化为更高效的形式。 虽然不直接处理用户编写的 JavaScript 代码，但其优化工作可以间接提升最终执行的 JavaScript 代码的性能，并可能减轻一些因不良编程习惯带来的性能损耗。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 agation_ == kSilenceSignallingNan &&
             std::isnan(m.ResolvedValue())) {
           return ReplaceFloat64(SilenceNaN(m.ResolvedValue()));
@@ -996,7 +998,4 @@ Reduction MachineOperatorReducer::ReduceWord32Comparisons(Node* node) {
     uint32_t left = m.left().ResolvedValue();
     Int32BinopMatcher mright(m.right().node());
     if (mright.right().Ha
-"""
-
-
 ```

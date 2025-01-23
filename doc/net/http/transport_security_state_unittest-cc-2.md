@@ -86,7 +86,7 @@ fetch('https://example.test/api/data')
 
 总而言之，这部分代码是 `TransportSecurityState` 单元测试的重要组成部分，它验证了更新静态公钥 Pinning 策略的各种逻辑和边界情况，确保了 Chromium 在处理 HPKP 时的正确性和健壮性。虽然 JavaScript 本身不涉及这些底层实现，但其发起的网络请求会受到这里定义的策略的约束。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/transport_security_state_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -94,9 +94,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-            state.CheckPublicKeyPins(host_port_pair, true, bad_hashes));
+### 源代码
+```cpp
+state.CheckPublicKeyPins(host_port_pair, true, bad_hashes));
 }
 
 TEST_F(TransportSecurityStateTest, UpdateKeyPinsListNotValidPin) {
@@ -408,8 +410,4 @@ TEST_F(TransportSecurityStatePinningKillswitchTest, PinningKillswitchSet) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

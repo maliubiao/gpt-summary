@@ -172,15 +172,17 @@ function square(x) {
 
 `v8/src/maglev/maglev-compiler.h` 定义了 V8 中 Maglev 编译器的接口，负责将 JavaScript 字节码编译成优化的机器码。它与 JavaScript 的执行性能密切相关。虽然用户不直接操作这个头文件，但他们编写的 JavaScript 代码的质量和模式会影响 Maglev 编译器的优化效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-compiler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-compiler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ class MaglevCompiler : public AllStatic {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_COMPILER_H_
-
-"""
-
 ```

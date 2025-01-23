@@ -145,7 +145,7 @@ The destination register `Vd` will be updated to: `0x11080F060D040B02`. The lowe
 
 This specific part of `v8/src/execution/arm/simulator-arm.cc` focuses on **implementing the simulation logic for a significant portion of the ARM NEON instruction set.** It handles data manipulation instructions like transposition, zipping, narrowing, rounding, conversions, table lookups, and various arithmetic, logical, and comparison operations on vector registers. This section is crucial for accurately emulating the behavior of ARM processors with NEON support when running JavaScript code within the V8 simulator on non-ARM platforms. It builds upon the basic simulator infrastructure and provides the detailed logic for executing complex SIMD operations. The previous parts likely set up the simulator framework and handled simpler instructions, while the subsequent part will likely cover the remaining NEON instructions or other aspects of the ARM architecture simulation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm/simulator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,9 +153,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
-           break;
+### 源代码
+```cpp
+break;
           case Neon32:
             Transpose<uint32_t, kDoubleSize>(this, Vd, Vm);
             break;
@@ -1130,7 +1132,4 @@ void Simulator::DecodeAdvancedSIMDDataProcessing(Instruction* instr) {
         NeonSize ns =
             static_cast<NeonSize>(base::bits::WhichPowerOfTwo(size >> 3));
         switch (ns)
-"""
-
-
 ```

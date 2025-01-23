@@ -105,7 +105,7 @@ int dummy_func(void) {
 
 虽然 `foo.c` 的代码本身非常简单，但它在 Frida 的构建测试用例中扮演着重要的角色，用于验证构建系统能否正确地处理外部依赖项的 "wrap" 过程。这对于 Frida 作为一个动态 instrumentation 工具能够成功地与目标进程中的库进行交互至关重要，而这正是逆向工程中的一个关键环节。理解这些测试用例可以帮助开发者和用户更好地理解 Frida 的构建过程和潜在的错误来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/153 wrap file should not failed/subprojects/zlib-1.2.8/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,12 +113,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dummy_func(void) {
     return 42;
 }
-
-"""
-
 ```

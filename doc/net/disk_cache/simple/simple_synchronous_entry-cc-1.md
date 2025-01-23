@@ -97,7 +97,7 @@ Here's a plan to address the request:
 
 总而言之，这段代码是 Chromium 缓存系统中处理稀疏文件的关键部分。它允许高效地存储和检索大型资源的片段，优化磁盘空间的使用，并支持例如 HTTP Range 请求等功能。通过 `WriteSparseData` 写入稀疏数据，并通过 `GetAvailableRange` 查询可用的数据范围，这段代码为浏览器缓存提供了灵活的存储机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_synchronous_entry.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 file_operations);
   int64_t offset = in_entry_op.sparse_offset;
   int buf_len = in_entry_op.buf_len;
@@ -962,7 +964,4 @@ int SimpleSynchronousEntry::ReadAndValidateStream0AndMaybe1(
   if (has_key_sha256) {
     net::SHA256HashValue hash_value;
     CalculateSHA256O
-"""
-
-
 ```

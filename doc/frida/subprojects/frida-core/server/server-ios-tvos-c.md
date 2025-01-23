@@ -176,7 +176,7 @@ Frida 本身就是一个强大的动态 instrumentation 工具，是逆向工程
 
 总而言之，`server-ios-tvos.c` 文件是 Frida 在 iOS/tvOS 上运行的关键组件，负责提升自身权限以便进行动态 instrumentation。理解其功能和涉及的技术，对于调试 Frida 相关问题以及深入理解 iOS/tvOS 的安全机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/server/server-ios-tvos.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "server-ios-tvos.h"
 
 #include <dlfcn.h>
@@ -368,7 +370,4 @@ inject_failed:
     return FALSE;
   }
 }
-
-"""
-
 ```

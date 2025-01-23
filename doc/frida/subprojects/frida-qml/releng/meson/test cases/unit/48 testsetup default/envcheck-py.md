@@ -148,7 +148,7 @@ By following this structured thought process, starting with the basic functional
 
 总而言之，`envcheck.py` 作为一个简单的环境检查工具，在 Frida 的测试流程中扮演着重要的角色，确保测试在预期的环境中运行，并帮助开发者和用户识别因环境变量配置不当而引起的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/48 testsetup default/envcheck.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -169,7 +171,4 @@ assert 'ENV_C' in os.environ
 print('ENV_A is', os.environ['ENV_A'])
 print('ENV_B is', os.environ['ENV_B'])
 print('ENV_C is', os.environ['ENV_C'])
-
-"""
-
 ```

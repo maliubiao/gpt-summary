@@ -89,7 +89,7 @@ Here's a breakdown of how to approach this:
 
 这部分代码主要关注 `TrustStoreNSS` 在受限信任环境下的行为，特别是在只信任特定用户槽位上的证书时。它通过一系列单元测试，验证了 `TrustStoreNSS` 是否能够正确地根据配置过滤和判断用户添加的证书的信任状态。此外，它还将 `TrustStoreNSS` 作为 `CertIssuerSource` 的一个实现进行了测试，考察了其证书同步能力。这些测试对于确保 Chromium 在处理用户添加的证书时既安全又可靠至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/trust_store_nss_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rEqual(
           x509_util::CreateCryptoBuffer(cert_with_trust.cert_bytes).get(),
           oldroot_->cert_buffer());
@@ -262,8 +264,4 @@ INSTANTIATE_TYPED_TEST_SUITE_P(TrustStoreNSSNotNormalizedTest,
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

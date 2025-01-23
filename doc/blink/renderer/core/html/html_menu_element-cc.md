@@ -135,14 +135,16 @@ CSS 可以用来设置 `<menu>` 元素的样式，例如颜色、字体、边距
 
 总而言之，`html_menu_element.cc` 文件是 Blink 渲染引擎中处理 `<menu>` HTML 元素的关键组成部分，它负责 `<menu>` 元素在浏览器内部的表示、属性管理以及与其他引擎模块的交互。虽然 `<menu>` 元素在现代 Web 开发中不如 `<ul>` 或 `<ol>` 常用，但理解其在 Blink 引擎中的实现仍然有助于深入了解浏览器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_menu_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -175,7 +177,4 @@ HTMLMenuElement::HTMLMenuElement(Document& document)
     : HTMLElement(html_names::kMenuTag, document) {}
 
 }  // namespace blink
-
-"""
-
 ```

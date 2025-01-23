@@ -364,7 +364,7 @@ console.log(calculate_inlined(10));
 
 总而言之，这段代码是 V8 引擎在执行 JavaScript 代码优化时，**内联函数调用** 的关键步骤。 它负责将被调用函数的代码逻辑融入到调用函数中，从而减少函数调用的开销。 这部分代码处理了多种情况，包括标准函数调用、构造函数调用、以及 `sloppy` 模式下的调用，并且考虑了异常处理和参数匹配等问题，以确保内联操作的正确性和性能收益。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-inlining.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-inlining.cc以.tq结尾，那它是个v8 torque源代码，
@@ -372,9 +372,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-            : ""));
+### 源代码
+```cpp
+: ""));
   // ----------------------------------------------------------------
   // After this point, we've made a decision to inline this function.
   // We shall not bailout from inlining if we got here.
@@ -585,8 +587,4 @@ SimplifiedOperatorBuilder* JSInliner::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -146,7 +146,7 @@ This script is primarily focused on testing the Meson build system itself. It us
 
 这部分 `allplatformstests.py` 脚本的主要功能是**对 Meson 构建系统进行全面的平台无关的单元测试**。它覆盖了 Meson 的核心功能，包括构建定义文件的解析、依赖管理、代码生成、编译、链接、测试以及与第三方工具 (如 CMake) 的集成。这些测试确保了 Meson 在不同平台上的行为一致性和正确性，对于 Frida 这样的跨平台工具的构建至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 i[k]
 
             sources = []
@@ -914,7 +916,4 @@ i[k]
         envs = {'CPPFLAGS': '-DCPPFLAG',
                 'CFLAGS': '-DCFLAG',
                 'CXXFLAGS': '-
-"""
-
-
 ```

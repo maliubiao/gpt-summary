@@ -98,7 +98,7 @@ fetch('https://www.example.com');
 
 在调试网络连接问题时，如果怀疑是代理的问题，可以检查浏览器的网络日志 (chrome://net-export/)，查看代理连接的尝试和失败信息，以及是否发生了代理回退。也可以通过禁用代理来排除代理引起的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 he
       // HTTP/1.1 parser maps it to `ERR_EMPTY_RESPONSE` or
       // `ERR_RESPONSE_HEADERS_TRUNCATED` in most cases.
@@ -828,7 +830,4 @@ TEST_F(JobControllerReconsiderProxyAfterErrorTest,
       proxy_list.AddProxyChain(kNestedProxyChain1);
       proxy_list.AddProxyChain(kNestedProxyChain2);
       proxy_list.AddProxyChain(P
-"""
-
-
 ```

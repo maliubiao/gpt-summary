@@ -200,15 +200,17 @@ By following these steps, we can arrive at a comprehensive and informative analy
 
 总而言之，`blink/renderer/core/svg/svg_fe_color_matrix_element.cc` 文件是 Blink 渲染引擎中处理 SVG 颜色矩阵滤镜的关键组成部分，负责将 SVG 标记转化为实际的图形处理操作，并与 HTML、CSS 和 JavaScript 紧密协作，为 Web 开发者提供强大的图像处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_color_matrix_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -335,7 +337,4 @@ void SVGFEColorMatrixElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

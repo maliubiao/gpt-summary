@@ -147,7 +147,7 @@ This step-by-step approach ensures comprehensive analysis and a well-structured 
 
 总而言之，`minit.py` 作为一个项目初始化的辅助工具，简化了 Frida 扩展开发的入门门槛，让开发者可以专注于编写核心的 Instrumentation 代码，而无需从零开始配置构建系统。它与逆向工程紧密相关，因为它正是构建用于动态 instrumentation 的工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/minit.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -361,7 +363,4 @@ def run(options: Arguments) -> int:
         if ret.returncode:
             raise SystemExit
     return 0
-
-"""
-
 ```

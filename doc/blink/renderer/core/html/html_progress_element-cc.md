@@ -164,14 +164,16 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`html_progress_element.cc` 文件是 Chromium Blink 引擎中 `<progress>` 元素的核心实现，负责处理其状态管理、属性解析、渲染逻辑以及与 CSS 样式和 JavaScript 的交互。理解这个文件的功能有助于深入了解浏览器如何解析和渲染 HTML `<progress>` 元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_progress_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
  *
@@ -351,7 +353,4 @@ void HTMLProgressElement::SetInlineSizePercentage(double position) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

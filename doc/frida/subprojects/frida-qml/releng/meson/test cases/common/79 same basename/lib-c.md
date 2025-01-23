@@ -150,7 +150,7 @@ By following these steps, combining code analysis with contextual understanding,
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/test cases/common/79 same basename/lib.c` 是 Frida 测试框架中的一个基础测试用例，用于验证 Frida 在处理不同类型的库以及进行函数 Hook 时的能力。它简洁地展示了共享库和静态库的不同之处，并通过条件编译提供了不同的测试场景。对于 Frida 的开发者和高级用户来说，理解这些测试用例有助于深入理解 Frida 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/79 same basename/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -182,7 +184,4 @@ int func(void) {
 #else
 #error "Missing type definition."
 #endif
-
-"""
-
 ```

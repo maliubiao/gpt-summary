@@ -58,15 +58,17 @@ Here's a breakdown of the key areas covered by the code:
 
 这部分 `dedicated_worker_test.cc` 文件的主要功能是为 Blink 引擎中的 `DedicatedWorker` 组件提供全面的单元测试。它涵盖了 Worker 的生命周期管理、消息传递机制、事件处理、UseCounter 集成、任务调度以及安全上下文等方面。通过这些测试，可以确保 `DedicatedWorker` 的核心功能正常运行，并且与其他 Blink 组件能够正确交互。此外，它还模拟了一些可能导致错误的场景，帮助开发者避免常见的 DedicatedWorker 使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/dedicated_worker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -836,7 +838,4 @@ TEST_F(DedicatedWorkerTest,
 
 TEST_F(DedicatedWorkerTest, PostCustomEventWithString) {
   V8
-"""
-
-
 ```

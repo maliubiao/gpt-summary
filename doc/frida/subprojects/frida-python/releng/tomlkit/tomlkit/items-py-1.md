@@ -813,7 +813,7 @@ print(new_toml_string)
 **举例:**
 
 假设一个 Android 应用的 native 层使用 TOML 文件来配置某些底层参数，例如 socket 的超时时间。逆向工程师可以使用 Frida 和 `tomlkit` 在运行时读取和修改这些参数，以便调试或分析应用的行为。 虽然 `tomlkit` 不直接涉及 Android 内核，但它帮助
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/tomlkit/items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -822,8 +822,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 "
                 new_values.append(it)
                 data_values.append(it.value)
@@ -1511,8 +1513,4 @@ class Null(Item):
 
     def _getstate(self, protocol=3) -> tuple:
         return ()
-
-"""
-
-
 ```

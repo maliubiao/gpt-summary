@@ -179,7 +179,7 @@ console.log(truncated); // 输出 4
 
 这部分代码主要集中测试了 MIPS64 架构 MSA 扩展中的 **浮点数转换、基本运算（平方根、倒数等）、舍入、对数以及向量逻辑和移位指令** 的正确性。它通过定义不同的测试用例，并运行生成的汇编代码，来验证这些指令在各种输入下的行为是否符合预期。这是 V8 引擎确保其在 MIPS64 架构上正确执行 JavaScript 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -187,8 +187,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alizeVM();
 
   const float inf_float = std::numeric_limits<float>::infinity();
@@ -1095,8 +1097,4 @@ TEST(MSA_slli_srai_srli) {
   }
 
 #define SRAI_DF(lanes, mask, func)                                            \
-
-"""
-
-
 ```

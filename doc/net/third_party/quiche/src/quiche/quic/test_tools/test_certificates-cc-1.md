@@ -117,7 +117,7 @@ This detailed breakdown shows the kind of layered analysis required to understan
 
 `net/third_party/quiche/src/quiche/quic/test_tools/test_certificates.cc` 文件的核心功能是 **为 Chromium QUIC 协议的测试提供了一组预定义的、静态的 TLS 证书和私钥。**  这些资源用于模拟各种 TLS 握手场景，验证 QUIC 实现的正确性和健壮性，并方便开发者进行本地开发和测试。 它是一个关键的测试基础设施组件，确保 QUIC 协议在各种情况下的可靠运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/test_certificates.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , '\x15', '\x30', '\x13', '\x06', '\x03', '\x55', '\x04', '\x03',
     '\x0c', '\x0c', '\x77', '\x77', '\x77', '\x2e', '\x66', '\x6f', '\x6f',
     '\x2e', '\x74', '\x65', '\x73', '\x74', '\x30', '\x82', '\x01', '\x22',
@@ -367,8 +369,4 @@ AwEHoUQDQgAENCuPQTywFI8hbsGo68AeN1KVWmd09buzlu/2CAtsJcNoECUmpVXH
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

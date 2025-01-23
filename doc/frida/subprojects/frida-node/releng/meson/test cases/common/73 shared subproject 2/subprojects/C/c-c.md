@@ -130,7 +130,7 @@ Interceptor.attach(funcCAddress, {
 
 总而言之，这个简单的 `c.c` 文件是 Frida 测试框架的一部分，用于验证 Frida 处理共享库子项目的功能。它虽然简单，但涵盖了动态链接、符号导出等逆向工程和底层系统的重要概念，并且可以作为 Frida 用户学习和调试的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/73 shared subproject 2/subprojects/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -154,7 +156,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

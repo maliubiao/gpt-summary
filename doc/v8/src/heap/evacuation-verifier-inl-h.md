@@ -138,15 +138,17 @@ console.log(obj2.ref.value); // 可能访问到错误的内存，导致崩溃或
 
 总而言之，`v8/src/heap/evacuation-verifier-inl.h` 是 V8 引擎内部用于确保堆疏散过程正确性的重要组成部分，它通过一系列断言检查来验证对象的状态和指针关系，帮助开发者尽早发现潜在的内存管理错误。虽然用户不会直接编写或修改此文件，但它的正确性直接影响到 JavaScript 程序的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/evacuation-verifier-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/evacuation-verifier-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ void EvacuationVerifier::VerifyPointersImpl(TSlot start, TSlot end) {
 }  // namespace v8
 
 #endif  // V8_HEAP_EVACUATION_VERIFIER_INL_H_
-
-"""
-
 ```

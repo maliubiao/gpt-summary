@@ -159,7 +159,7 @@ This is UTF-8 encoded é
 
 通过这样的步骤，你可以从一个实际的调试问题出发，通过查看 Frida 的测试用例来理解 Frida 的工作原理以及如何测试特定的功能（例如字符编码处理）。这有助于你更好地理解你遇到的问题，并找到解决方案。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/18 msvc charset/utf8.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(int argc, char *argcv[])
@@ -176,7 +178,4 @@ int main(int argc, char *argcv[])
   printf("This is UTF-8 encoded é\n");
   return 0;
 }
-
-"""
-
 ```

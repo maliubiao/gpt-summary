@@ -101,15 +101,17 @@ By following these steps, I can dissect the code, understand its purpose, and pr
 
 通过以上步骤，开发者可以利用单元测试作为调试的起点，了解网络状态监听模块的基本工作原理，并逐步定位问题所在。`network_change_notifier_linux_unittest.cc` 文件提供了关于 `NetworkChangeNotifierLinux` 如何工作的基本信息和测试用例，有助于开发者理解和调试相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/network_change_notifier_linux_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ TEST_F(NetworkChangeNotifierLinuxTest, AddressTrackerLinuxSetDiffCallback) {
 }
 
 }  // namespace net
-
-"""
-
 ```

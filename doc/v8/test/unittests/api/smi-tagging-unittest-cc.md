@@ -186,15 +186,17 @@ void MyFunction(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
 总而言之，`v8/test/unittests/api/smi-tagging-unittest.cc` 是一个至关重要的测试文件，它验证了 V8 核心的整数表示机制的正确性，这直接影响到 JavaScript 代码的性能和数值计算的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/smi-tagging-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/api/smi-tagging-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -274,7 +276,4 @@ TEST(SmiTaggingTest, AssertCornerCases) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

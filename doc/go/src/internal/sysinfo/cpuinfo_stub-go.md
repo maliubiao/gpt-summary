@@ -135,7 +135,7 @@ func main() {
 
 `cpuinfo_stub.go` 中的 `osCPUInfoName` 函数是一个针对特定操作系统的“桩”实现。它的主要作用是当目标操作系统不在指定的列表中时，提供一个返回空字符串的默认行为。这体现了 Go 语言通过条件编译来实现平台特定功能的机制，但也提醒使用者，并非所有内部函数在所有平台上都会有相同的行为或返回有意义的值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/sysinfo/cpuinfo_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -156,9 +158,4 @@ package sysinfo
 func osCPUInfoName() string {
 	return ""
 }
-
-"""
-
-
-
 ```

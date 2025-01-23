@@ -209,14 +209,16 @@ console.log(str.endsWith('o', 5));    // 输出: true，因为在索引 5 之前
 
 总而言之，这个 Torque 代码文件精确地实现了 JavaScript 中 `String.prototype.endsWith()` 的规范行为，包括参数处理、类型检查和核心的子串比较逻辑。理解这段代码有助于深入了解 V8 引擎是如何高效地实现 JavaScript 内置方法的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/string-endswith.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ transitioning javascript builtin StringPrototypeEndsWith(
   // 13. Otherwise, return false.
   return Convert<Boolean>(IsSubstringAt(string, searchStr, start));
 }
-
-"""
-
 ```

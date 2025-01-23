@@ -153,7 +153,7 @@ Finally, the information gathered in the above steps needs to be organized into 
 
 `rejected.c` 文件本身是一个简单的 C 代码，用于模拟 Frida 在特定情况下插桩被拒绝的场景。它作为 Frida 内部测试用例的一部分，帮助开发者验证 Frida 在处理错误和边界情况时的行为。对于用户而言，理解这个文件的作用有助于理解 Frida 在遇到插桩失败时可能的原因，并为调试提供思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/17 prebuilt shared/rejected.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rejected.h"
 
 void say(void) {
@@ -171,7 +173,4 @@ void say(void) {
     alexandria_visit();
     printf("The librarian tells you it's time to leave\n");
 }
-
-"""
-
 ```

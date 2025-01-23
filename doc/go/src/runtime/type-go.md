@@ -198,7 +198,7 @@ go build -buildmode=shared -linkshared mypackage.go
 
 总而言之，这段代码是 Go 语言运行时环境中非常核心的部分，它负责类型信息的表示和管理，为反射、垃圾回收等关键功能提供了基础支持。开发者通常不需要直接与这段代码交互，而是通过 `reflect` 等更高级的包来操作类型信息。理解这段代码有助于深入理解 Go 语言的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/type.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -861,9 +863,4 @@ func typesEqual(t, v *_type, seen map[_typePair]struct{}) bool {
 		return false
 	}
 }
-
-"""
-
-
-
 ```

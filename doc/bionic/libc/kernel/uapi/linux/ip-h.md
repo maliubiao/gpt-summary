@@ -418,7 +418,7 @@ input() # 防止脚本退出
 
 **注意:** 这个 Frida 脚本只是一个基本示例。实际应用中可能需要更复杂的逻辑来处理不同的网络协议、IP 选项以及错误情况。 此外，需要根据目标 Android 设备的架构（32 位或 64 位）来调整指针和数据类型的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ip.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -429,8 +429,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -574,7 +576,4 @@ enum {
 };
 #define IPV4_DEVCONF_MAX (__IPV4_DEVCONF_MAX - 1)
 #endif
-
-"""
-
 ```

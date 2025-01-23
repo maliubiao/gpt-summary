@@ -143,15 +143,17 @@ By following this line of reasoning, we can understand the role of this specific
 
 `inspector_web_audio_agent.cc` 是 Web Audio API 和 Chrome 开发者工具之间重要的桥梁，它负责将底层的 Web Audio 状态和事件转化为开发者可以理解和调试的信息，帮助开发者理解和优化他们的 Web Audio 应用。它的工作核心是监听 Web Audio 的各种生命周期事件和连接变化，并将这些信息以特定的协议格式发送给开发者工具的前端进行展示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/inspector_web_audio_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -408,7 +410,4 @@ void InspectorWebAudioAgent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

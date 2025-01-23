@@ -143,7 +143,7 @@ Let's consider a scenario where Meson is using a concrete linker that inherits f
 
 In essence, this `base.py` file is a foundational piece of Frida's build system, specifically for handling the creation of static libraries. Users encountering issues during the library creation phase of the build might find themselves examining this code to understand how the linker is being invoked and configured.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/linkers/base.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -192,7 +194,4 @@ class ArLikeLinker:
 
     def rsp_file_syntax(self) -> RSPFileSyntax:
         return RSPFileSyntax.GCC
-
-"""
-
 ```

@@ -248,15 +248,17 @@ go run go/test/arenas/smoke.go
 
 总而言之，这段代码是验证 Go 语言 arenas 功能基本用法的一个示例，涵盖了 arena 的创建、基本类型的分配、切片的分配以及与反射的交互。理解 arenas 的适用场景和生命周期管理是正确使用该功能的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/arenas/smoke.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // build -goexperiment arenas
 
 // Copyright 2023 The Go Authors. All rights reserved.
@@ -322,9 +324,4 @@ func main() {
 		log.Fatalf("bad i2 value: got %d, want %d", *i2, iValue)
 	}
 }
-
-"""
-
-
-
 ```

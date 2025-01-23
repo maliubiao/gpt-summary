@@ -187,15 +187,17 @@ console.log(interval1.difference(interval2)); // 输出一个包含 TimeInterval
 
 因此，`quic_interval_test.cc` 虽然是测试代码，但在 Chromium 的开发过程中扮演着至关重要的角色，确保了 `QuicInterval` 类的稳定性和可靠性，从而间接地保证了网络连接的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_interval_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -665,7 +667,4 @@ TEST_F(QuicIntervalTest, IntervalOfTypeWithNoOstreamSupport) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

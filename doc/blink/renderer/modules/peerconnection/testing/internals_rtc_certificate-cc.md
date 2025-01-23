@@ -124,15 +124,17 @@ Here's a breakdown of the thinking process to arrive at the comprehensive analys
 
 `internals_rtc_certificate.cc` 是 Blink 引擎内部用于测试 `RTCCertificate` 对象相等性的一个辅助工具。 它不直接与用户交互，但对于保证 WebRTC 功能的正确性至关重要。 当用户遇到 WebRTC 相关的问题时，Blink 开发者可能会使用这类内部测试工具来辅助调试和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/testing/internals_rtc_certificate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ bool InternalsRTCCertificate::rtcCertificateEquals(Internals& internals,
 }
 
 }  // namespace blink
-
-"""
-
 ```

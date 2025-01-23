@@ -95,11 +95,13 @@ const myString = "This is a string";
 
 `process-heap-statistics.cc` 文件定义了 V8 引擎用于跟踪其 C++ 堆内存使用情况的全局统计变量。 这些统计数据反映了 JavaScript 代码执行时 V8 内部的内存分配行为，是 V8 引擎进行内存管理和优化的重要组成部分。 JavaScript 开发者虽然不能直接操作这些变量，但其代码的执行会直接影响这些统计数据的值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/process-heap-statistics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -112,7 +114,4 @@ std::atomic_size_t ProcessHeapStatistics::total_allocated_space_{0};
 std::atomic_size_t ProcessHeapStatistics::total_allocated_object_size_{0};
 
 }  // namespace cppgc
-
-"""
-
 ```

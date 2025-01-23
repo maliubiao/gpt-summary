@@ -162,7 +162,7 @@ Interceptor.attach(Module.findExportByName(null, "s1"), { // 假设 s1 也是导
 
 虽然 `s2.c` 的代码非常简单，但它可以作为理解函数调用、逆向工程方法和底层系统概念的基础案例。通过 Frida 这样的动态插桩工具，我们可以深入观察和修改程序的运行时行为，从而更好地理解程序的执行流程和逻辑。对于更复杂的程序，这种分析方法至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/114 complex link cases/s2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,14 +170,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s1(void);
 
 int s2(void) {
     return s1() + 1;
 }
-
-"""
-
 ```

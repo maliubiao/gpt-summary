@@ -181,7 +181,7 @@ python3 frida/subprojects/frida-gum/releng/meson/run_unittests.py InternalTests.
 
 当测试失败时，开发人员会查看测试输出，了解哪个测试用例失败了，以及失败的原因。这可以帮助他们定位代码中的错误。脚本中打印的版本信息和总运行时间也可以作为调试的辅助信息。例如，如果测试运行时间异常长，可能表明存在性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/run_unittests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
@@ -341,7 +343,4 @@ if __name__ == '__main__':
         raise SystemExit(main())
     finally:
         print('Total time: {:.3f} seconds'.format(time.monotonic() - start))
-
-"""
-
 ```

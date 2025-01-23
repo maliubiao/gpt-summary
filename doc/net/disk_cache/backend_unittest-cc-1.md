@@ -96,7 +96,7 @@ It's important to note that this is *test* code, so its function is to *verify* 
 
 这段代码主要功能是 **针对 Chromium 磁盘缓存后端的各种核心功能和异常情况进行全面的单元测试**，包括后端生命周期管理（启动、关闭）、缓存容量限制、数据读写、数据完整性、缓存条目管理（创建、删除、枚举）以及在高并发或异常情况下的鲁棒性。 通过这些测试，可以确保磁盘缓存后端在各种场景下都能正确、稳定地运行，从而保障浏览器的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/backend_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SERT_TRUE(CleanupCacheDir());
   SetNewEviction();  // Match the expected behavior for integrity verification.
   UseCurrentThread();
@@ -1242,7 +1244,4 @@ TEST_F(DiskCacheBackendTest, InMemorySparseEvict) {
   // Create several sparse entries and fill with enough data to
   // pass eviction threshold
   ASSERT_EQ(64, WriteSparseData(entries[0].get(), 0, buffer.get(), 64))
-"""
-
-
 ```

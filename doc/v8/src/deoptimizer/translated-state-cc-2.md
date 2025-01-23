@@ -162,7 +162,7 @@ calculate("hello"); // 第二次调用，x 是 string，类型改变，可能触
 
 这段代码是反优化过程中的关键部分，它负责将优化执行过程中的低级表示转换成更易于理解和操作的中间表示，为后续的反优化步骤提供必要的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/translated-state.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/translated-state.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _offset = OptimizedJSFrame::StackSlotOffsetRelativeToFp(
           iterator->NextOperand());
       uint32_t value = GetUInt32Slot(fp, slot_offset);
@@ -1006,7 +1008,4 @@ void TranslatedState::InitializeJSObjectAt(
           JSFunction::kDispatchHandleOffset, handle);
 #else
     if (InstanceTypeChecker::IsJSFunction(map->instance_t
-"""
-
-
 ```

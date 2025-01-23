@@ -134,14 +134,16 @@ This systematic approach, moving from understanding the code to connecting it to
 
 总而言之，`extensions_3d_util.cc` 在 Blink 引擎中扮演着关键的角色，它桥接了 WebGL API 和底层的 OpenGL ES 扩展机制，使得网页开发者能够利用 GPU 的强大功能进行图形渲染。理解它的功能对于理解 WebGL 的底层工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/extensions_3d_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ bool Extensions3DUtil::CanUseCopyTextureCHROMIUM(GLenum dest_target) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

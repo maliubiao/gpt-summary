@@ -107,7 +107,7 @@ Essentially, my approach was a combination of top-down (understanding the overal
 
 总而言之，`net/http/http_cache_transaction.cc` 是 Chromium 网络栈中一个关键的组成部分，它负责管理 HTTP 缓存的复杂逻辑，直接影响着网页的加载速度和用户体验。 理解它的功能对于调试网络问题和优化网页性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_transaction.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -115,9 +115,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    CacheEntryStatus new_cache_entry_status) {
+### 源代码
+```cpp
+CacheEntryStatus new_cache_entry_status) {
   DCHECK_NE(CacheEntryStatus::ENTRY_UNDEFINED, new_cache_entry_status);
   if (cache_entry_status_ == CacheEntryStatus::ENTRY_OTHER) {
     return;
@@ -437,8 +439,4 @@ void HttpCache::Transaction::EndDiskCacheAccessTimeCount(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

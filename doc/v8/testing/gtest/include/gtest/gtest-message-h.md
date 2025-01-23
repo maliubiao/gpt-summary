@@ -154,15 +154,17 @@ Which is: 10
 
 总而言之，`v8/testing/gtest/include/gtest/gtest-message.h` 本身是一个简单的转发头文件，其目的是为了维护 V8 代码的稳定性，避免直接依赖 Google Test 不稳定的内部目录结构。 它间接地与 JavaScript 相关，因为它定义了用于测试 V8 C++ 代码的消息机制，而 V8 的 C++ 代码实现了 JavaScript 引擎。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gtest/include/gtest/gtest-message.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/testing/gtest/include/gtest/gtest-message.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ Prompt:
 // third_party/googletest.
 
 #include "third_party/googletest/src/googletest/include/gtest/gtest-message.h"
-
-"""
-
 ```

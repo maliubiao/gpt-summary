@@ -103,14 +103,16 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 总而言之，`web_cache.cc` 提供了一个对 Blink 渲染引擎内存缓存进行操作的接口，它与 JavaScript, HTML, CSS 等前端技术紧密相关，因为缓存中存储着这些资源，从而影响着网页的加载和渲染性能。理解其功能和限制对于开发和调试 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -180,7 +182,4 @@ void WebCache::GetResourceTypeStats(WebCacheResourceTypeStats* result) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -206,15 +206,17 @@ func (lca *lcaEasy) depth(b *Block) int {
 
 总而言之，这段代码的核心功能是测试编译器内部 SSA 表示中 LCA 算法的正确性。它通过生成不同结构的控制流图，并使用多个 LCA 算法实现进行比较，来确保更复杂的实现是正确的。LCA 算法在编译器中对于变量合并和 Phi 函数的插入至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/lca_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -303,9 +305,4 @@ func (lca *lcaEasy) depth(b *Block) int {
 	}
 	return n
 }
-
-"""
-
-
-
 ```

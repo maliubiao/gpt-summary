@@ -310,7 +310,7 @@ sys.stdin.read()
 
 希望以上详细的分析能够帮助你理解 `e_atan2l.c` 文件的功能、与 Android 的关系、实现细节以及如何在 Android 中进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_atan2l.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -321,9 +321,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
-
+### 源代码
+```c
 /* FreeBSD: head/lib/msun/src/e_atan2.c 176451 2008-02-22 02:30:36Z das */
 /*
  * ====================================================
@@ -439,7 +440,4 @@ atan2l(long double y, long double x)
 	    	    return  (z-pi_lo)-pi;/* atan(-,-) */
 	}
 }
-
-"""
-
 ```

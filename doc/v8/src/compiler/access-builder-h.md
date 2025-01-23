@@ -184,15 +184,17 @@ console.log(arr[5]); // 数组越界访问
 
 `v8/src/compiler/access-builder.h` 是 V8 编译器中一个关键的工具类，它通过提供静态方法来简化 `FieldAccess` 和 `ElementAccess` 描述符的创建，使得编译器能够方便地描述如何访问 JavaScript 对象的内部数据。它与 JavaScript 的各种操作息息相关，是 V8 引擎高效执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/access-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/access-builder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -607,7 +609,4 @@ class V8_EXPORT_PRIVATE AccessBuilder final
 }  // namespace v8
 
 #endif  // V8_COMPILER_ACCESS_BUILDER_H_
-
-"""
-
 ```

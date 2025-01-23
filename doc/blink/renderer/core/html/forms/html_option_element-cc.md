@@ -203,14 +203,16 @@ By following this detailed and iterative process, you can thoroughly analyze a c
 
 理解 `html_option_element.cc` 的功能对于理解 Blink 引擎如何处理 HTML 表单元素至关重要。它涉及到浏览器内部如何将 HTML 结构映射到对象，以及如何处理用户交互和样式应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_option_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -977,7 +979,4 @@ void HTMLOptionElement::FinishParsingChildren() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

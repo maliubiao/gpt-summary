@@ -137,7 +137,7 @@ During the process, I might have initially focused too much on the low-level Win
 
 这部分单元测试专注于验证 `FileStream` 类在 Windows 平台上处理命名管道连接的核心逻辑，包括在客户端连接前后调用 `ConnectNamedPipe()` 的场景，以及在连接完成前对象被销毁的情况。 它还确保 `ConnectNamedPipe()` 不能用于普通文件。 这些测试对于确保 Chromium 在使用命名管道进行进程间通信时的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/file_stream_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::File(std::move(pipe), /*async=*/true);
     }
     return base::File(base::File::GetLastFileError());
@@ -297,8 +299,4 @@ TEST_F(FileStreamPipeDeathTest, CannotConnectFile) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

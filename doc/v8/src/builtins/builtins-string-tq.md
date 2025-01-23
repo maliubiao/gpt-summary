@@ -201,14 +201,16 @@ Here's a breakdown of its functionalities:
 
 In summary, this Torque code implements the fundamental string manipulation functionalities of JavaScript within the V8 engine. It handles type conversions to strings, provides access to individual characters, allows string concatenation, and defines the behavior of the `String` constructor, all while adhering to the ECMAScript specification. The code also includes internal optimizations and helper functions for efficient string processing within the engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -506,7 +508,4 @@ macro EqualContent<T1: type, T2: type>(
   }
   return true;
 }
-
-"""
-
 ```

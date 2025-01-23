@@ -199,7 +199,7 @@ if __name__ == '__main__':
 
 `appB.c` 是一个简单但具有代表性的程序，用于测试 Frida 在特定场景下的功能，特别是与静态链接和符号剥离相关的场景。 它的简单性使得理解其基本功能和与逆向工程概念的联系变得容易，同时也揭示了底层二进制、操作系统和链接方面的知识。  理解这个文件及其上下文有助于理解 Frida 的工作原理以及在不同场景下的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/65 static archive stripping/app/appB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,13 +207,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libB.h>
 
 int main(void) { printf("The answer is: %d\n", libB_func()); }
-
-"""
-
 ```

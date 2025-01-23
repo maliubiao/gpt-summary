@@ -50,11 +50,13 @@ console.log("返回值 2 (f64):", returnValue2);
 
 `multi-return.cc` 这个 C++ 文件通过模糊测试的方式，验证了 V8 引擎在处理具有多个返回值的 WebAssembly 函数时的正确性。它通过随机生成各种函数签名和调用场景，来尽可能地覆盖各种边界情况，确保 JavaScript 可以正确地调用和处理这些 Wasm 函数的返回值。 这对于确保 JavaScript 与 WebAssembly 的互操作性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/multi-return.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -351,14 +351,16 @@ std::optional<Feature> AddressSpaceFeature(
 * **避免从公共网络上的非安全页面访问本地或私有网络资源：**  这通常是安全风险，浏览器会采取措施阻止此类行为。
 * **测试不同安全上下文和网络环境下的应用：**  确保应用在不同的场景下都能正常工作，特别是涉及到跨域或跨地址空间资源访问时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/security/address_space_feature.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 Google Inc. All rights reserved.
  *
@@ -525,7 +527,4 @@ std::optional<Feature> AddressSpaceFeature(
 }
 
 }  // namespace blink
-
-"""
-
 ```

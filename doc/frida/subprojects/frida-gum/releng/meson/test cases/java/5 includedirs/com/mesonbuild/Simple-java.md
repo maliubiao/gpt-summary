@@ -186,7 +186,7 @@ Printing from Java.
 
 `Simple.java` 虽然是一个非常简单的 Java 程序，但在 Frida 这样的动态插桩工具的上下文中，它成为了一个有力的测试用例，可以帮助我们理解和验证 Frida 的 Java 插桩能力。它也展示了逆向工程的基本思想：通过动态观察和修改程序的行为来理解其内部机制。理解这个简单的例子有助于我们更好地理解 Frida 的工作原理以及如何使用它来分析更复杂的 Java 应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/java/5 includedirs/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -204,7 +206,4 @@ class Simple {
         t.print();
     }
 }
-
-"""
-
 ```

@@ -123,15 +123,17 @@ fetch('https://example.com/large_image.jpg')
 
 通过分析 `bandwidth_sampler.cc` 的代码，结合网络抓包工具 (如 Wireshark) 以及 Chrome 提供的网络调试工具 (`chrome://net-internals/#quic` 或 `chrome://webrtc-internals`)，开发者可以深入了解在网络波动期间，`BandwidthSampler` 是如何工作的，以及拥塞控制算法是如何响应的，从而定位性能瓶颈或网络问题的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/bandwidth_sampler.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -723,7 +725,4 @@ QuicPacketNumber BandwidthSampler::end_of_app_limited_phase() const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

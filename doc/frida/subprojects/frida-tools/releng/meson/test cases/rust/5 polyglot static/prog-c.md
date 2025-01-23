@@ -124,7 +124,7 @@ Let's break down the thought process for analyzing this C code snippet and answe
 
 总而言之，这个简单的 `prog.c` 文件虽然功能单一，但它在 Frida 工具的测试和验证中扮演着重要的角色，特别是在验证 Frida 对多语言混合编程的支持方面。它也是一个很好的例子，说明了逆向工程中常常需要面对不同编程语言之间的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/rust/5 polyglot static/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 void hello_from_both();
@@ -141,7 +143,4 @@ void hello_from_both();
 int main(void) {
     hello_from_both();
 }
-
-"""
-
 ```

@@ -223,7 +223,7 @@ G's ID: 123
 
 这段 `go/src/runtime/runtime2.go` 的代码定义了 Go 运行时系统的核心数据结构，这些结构是 Goroutine 管理、调度、内存管理和同步的基础。它为理解 Go 语言的底层机制提供了重要的视角。虽然普通开发者不会直接修改这些代码，但理解这些概念对于编写高效、并发的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/runtime2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -232,8 +232,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1107,10 +1109,5 @@ type schedt struct {
 	// totalRuntimeLockWaitTime (plus the value of lockWaitTime on each M in
 	// allm) is the sum of time goroutines have spent in _Grunnable and with an
 	// M, but waiting for locks within the runtime. This field stores the value
-	// 
-"""
-
-
-
-
+	//
 ```

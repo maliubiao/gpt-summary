@@ -103,14 +103,16 @@ This systematic approach allows for a comprehensive understanding of the code an
 
 `string_concatenate.cc` 提供了一组底层的、高效的工具，用于将各种类型的字符串数据复制到指定类型的缓冲区中。它是 Blink 引擎处理字符串的基础设施之一，间接地支持着 JavaScript 字符串操作、HTML 和 CSS 的解析等功能。编程时需要特别注意目标缓冲区的大小，以避免缓冲区溢出等安全问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_concatenate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ void WTF::StringTypeAdapter<StringView>::WriteTo(
     StringImpl::CopyChars(destination, chars);
   });
 }
-
-"""
-
 ```

@@ -174,7 +174,7 @@ func TestBandsPerSeries(t *testing.T) {
 
 `go/src/internal/trace/export_test.go` 中的这段代码是 Go 语言测试框架的一个技巧，用于在单元测试中安全地访问和操作包内部的私有状态。它通过创建一个导出的 `BandsPerSeries` 变量，使得测试代码可以间接地与内部的 `bandsPerSeries` 交互，而不会影响包的封装性，也不会让 `bandsPerSeries` 对外部代码可见。 理解 `export_test.go` 的作用域和用途对于编写高质量的 Go 语言单元测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ Prompt:
 package trace
 
 var BandsPerSeries = bandsPerSeries
-
-"""
-
-
-
 ```

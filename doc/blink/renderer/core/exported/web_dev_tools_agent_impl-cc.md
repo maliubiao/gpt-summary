@@ -170,15 +170,17 @@ By following these steps, iteratively refining understanding, and focusing on th
 
 总而言之，`web_dev_tools_agent_impl.cc` 是 Blink 引擎中至关重要的组件，它连接了渲染引擎和开发者工具，使得开发者能够方便地检查、调试和优化网页。它涉及到 JavaScript 执行、HTML 结构、CSS 样式以及网络通信等多个 Web 技术的核心方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_dev_tools_agent_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2011 Google Inc. All rights reserved.
  *
@@ -829,7 +831,4 @@ void WebDevToolsAgentImpl::DidProcessTask(
 }
 
 }  // namespace blink
-
-"""
-
 ```

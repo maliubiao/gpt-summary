@@ -107,15 +107,17 @@ console.log(jsonString); // 输出: {"a":1,"b":"hello"}
 
 `v8/src/objects/js-raw-json.tq` 定义了 V8 内部的 `JSRawJson` 对象，用于表示未完全解析的 JSON 字符串。这可能是一种内部优化手段，用于在某些情况下（例如 `JSON.stringify()` 的实现）临时存储 JSON 字符串，而无需立即将其解析为 JavaScript 对象。 了解这个概念可以帮助开发者更好地理解 JavaScript 中 JSON 处理的底层机制，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-raw-json.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-raw-json.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -123,7 +125,4 @@ Prompt:
 #include 'src/objects/js-raw-json.h'
 
 extern class JSRawJson extends JSObject {}
-
-"""
-
 ```

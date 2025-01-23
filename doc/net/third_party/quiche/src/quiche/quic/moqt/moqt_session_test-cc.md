@@ -72,7 +72,7 @@ MoQT 协议旨在为 Web 应用程序提供实时的、基于 QUIC 的媒体传�
 
 这个 C++ 源代码文件是 `MoqtSession` 类的单元测试，其主要功能是验证 `MoqtSession` 在客户端和服务端场景下处理各种 MoQT 控制消息、管理会话状态、处理订阅请求和错误的能力。它通过模拟网络交互和消息传递，确保 `MoqtSession` 的实现符合 MoQT 协议的规范，并为开发者提供了一个理解和调试 MoQT 功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -905,8 +907,4 @@ TEST_F(MoqtSessionTest, ReplyToAnnounce) {
   };
   bool correct_message = false;
   EXPECT_CALL(session_callbacks_.incoming_announce_callback,
-        
-"""
-
-
 ```

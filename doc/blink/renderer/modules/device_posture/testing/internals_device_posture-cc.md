@@ -208,15 +208,17 @@ testDevicePosture();
 
 总而言之，`internals_device_posture.cc` 是一个关键的测试工具，它允许开发者和测试人员在受控的环境中模拟和验证 Web 应用对设备姿态变化的响应，而无需依赖真实的物理设备，从而提高了测试效率和覆盖率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/device_posture/testing/internals_device_posture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ ScriptPromise<IDLUndefined> InternalsDevicePosture::clearDevicePostureOverride(
 }
 
 }  // namespace blink
-
-"""
-
 ```

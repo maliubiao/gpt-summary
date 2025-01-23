@@ -133,7 +133,7 @@ By following this thought process, breaking down the problem into smaller parts,
 
 总而言之，虽然 `script.py` 代码简洁，但它在 Frida 的上下文中扮演着重要的角色，用于测试执行外部命令的能力，并且体现了操作系统进程管理和退出码的基本概念。 它通常不是用户直接交互的工具，而是 Frida 开发和测试流程的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/70 cross test passed/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import subprocess
@@ -150,7 +152,4 @@ import sys
 
 if __name__ == "__main__":
     sys.exit(subprocess.run(sys.argv[1:]).returncode)
-
-"""
-
 ```

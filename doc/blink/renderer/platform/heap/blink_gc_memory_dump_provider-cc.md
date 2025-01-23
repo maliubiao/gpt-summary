@@ -151,14 +151,16 @@ blink_gc/main/allocated_objects -> blink_objects/blink_gc/v8::internal::JSObject
 
 `blink_gc_memory_dump_provider.cc` 是 Blink 引擎中一个关键的性能监控组件，它负责收集和报告 Blink GC 堆的内存使用情况。 这些信息对于理解和优化 Blink 的内存行为，诊断内存泄漏和性能问题至关重要，并且间接地反映了 JavaScript、HTML 和 CSS 的内存使用模式。  虽然普通用户不会直接使用它，但开发者可以利用其提供的 tracing 数据来识别和解决潜在的内存相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/blink_gc_memory_dump_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -405,7 +407,4 @@ bool BlinkGCMemoryDumpProvider::OnMemoryDump(
 }
 
 }  // namespace blink
-
-"""
-
 ```

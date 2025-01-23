@@ -671,7 +671,7 @@ console.log(ws.has(obj2)); // 输出: false
 ```
 
 这段 C++ 代码中的 `TF_BUILTIN` 宏定义的函数（例如 `WeakMapGet`, `Weak
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-collections-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-collections-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -679,8 +679,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ups, methodName]() {
     TNode<OrderedHashMap> new_groups = CAST(CallRuntime(
         Runtime::kOrderedHashMapGrow, NoContextConstant(), groups, methodName));
@@ -1235,8 +1237,4 @@ TF_BUILTIN(WeakSetPrototypeHas, WeakCollectionsBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

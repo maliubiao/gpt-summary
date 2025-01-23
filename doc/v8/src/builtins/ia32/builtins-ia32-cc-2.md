@@ -174,7 +174,7 @@ I will now structure the response to cover the requested aspects: a list of func
 
 `v8/src/builtins/ia32/builtins-ia32.cc` 的第 3 部分主要负责 IA-32 架构下 V8 引擎中以下关键功能的实现：**解释器模式的进入和执行、基线编译代码的入口和反优化处理、从 CodeStub 和 Builtin 函数返回、`Function.prototype.apply` 和 `Function.prototype.call`、`Reflect.apply` 和 `Reflect.construct` 的实现，以及处理变长参数的函数调用和基本的函数调用机制。**  这些功能都是 V8 引擎执行 JavaScript 代码的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ia32/builtins-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,9 +182,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
- table register.
+### 源代码
+```cpp
+table register.
   __ Move(kInterpreterDispatchTableRegister,
           Immediate(ExternalReference::interpreter_dispatch_table_address(
               masm->isolate())));
@@ -1061,8 +1063,4 @@ void Builtins::Generate_CallFunction(MacroAssembler* masm,
         __ Push(esi);
         __ CallBuiltin(Builtin::kToObject);
         __ Pop(esi);
-      
-"""
-
-
 ```

@@ -192,7 +192,7 @@ func main() {
 
 `go/src/net/mptcpsock_stub.go` 在非 Linux 系统上提供 MPTCP 相关函数的占位符实现，其核心功能是将 MPTCP 操作降级为标准的 TCP 操作，以保持 API 的一致性，但实际上并没有提供真正的 MPTCP 功能。开发者需要明确目标运行环境是否支持 MPTCP，避免在不支持的系统上误用这些函数并产生错误的预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/mptcpsock_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -225,9 +227,4 @@ func (sl *sysListener) listenMPTCP(ctx context.Context, laddr *TCPAddr) (*TCPLis
 func isUsingMultipathTCP(fd *netFD) bool {
 	return false
 }
-
-"""
-
-
-
 ```

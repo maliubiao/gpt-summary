@@ -199,15 +199,17 @@ The most common mistake users could make when dealing with a file like this (if 
 
 In summary, `go/test/typeparam/setsimp.go` is a test file designed to be run in its own directory to verify specific behaviors related to Go's type parameters (generics) and likely how they interact with set-like data structures or operations. The `package ignored` indicates it's for internal testing and not a reusable library.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/setsimp.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -215,9 +217,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

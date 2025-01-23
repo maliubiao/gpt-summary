@@ -180,7 +180,7 @@ func main() {
 
 总而言之，`go/src/runtime/sigqueue.go` 是 Go 语言处理操作系统信号的核心基础设施，它实现了信号的排队和传递机制，使得 Go 程序能够在并发环境下安全可靠地响应系统信号。`os/signal` 包建立在这个基础之上，为开发者提供了更易用的信号处理接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sigqueue.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -465,9 +467,4 @@ func signal_ignored(s uint32) bool {
 	i := atomic.Load(&sig.ignored[s/32])
 	return i&(1<<(s&31)) != 0
 }
-
-"""
-
-
-
 ```

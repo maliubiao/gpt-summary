@@ -111,7 +111,7 @@ RegExpNode
 
 这是 `v8/test/unittests/regexp/regexp-grammar.h` 文件的第二部分，它详细定义了构成正则表达式语法结构的 C++ 类。这些类使用模板如 `TupleDomain`, `Optional`, 和 `NonEmptyVector` 来表示语法的组合、可选和重复模式。此外，还定义了表示字面量和字符集的终结符。这段代码是 V8 JavaScript 引擎中用于解析和理解正则表达式的关键组成部分，它描述了正则表达式的语法规则，并为构建正则表达式的抽象语法树提供了基础。用户在编写 JavaScript 正则表达式时，需要遵循这些隐含的语法规则，否则会导致解析错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regexp/regexp-grammar.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/regexp/regexp-grammar.h以.tq结尾，那它是个v8 torque源代码，
@@ -119,8 +119,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 8, Literal42,
                          UnicodePropertyValueExpressionNode, Literal13> {};
 class UnicodePropertyValueExpressionSubNode44 final
@@ -320,8 +322,4 @@ inline auto InPatternGrammar() {
 
 }  // namespace fuzztest::internal_no_adl
 #endif  // FUZZTEST_GRAMMARS_PATTERN_GRAMMAR_H_
-
-"""
-
-
 ```

@@ -132,7 +132,7 @@ By following these steps, we can systematically analyze the C++ code and extract
 
 通过这些断点，可以追踪用户输入或操作如何一步步地触发 Blink 引擎的编辑代码，并观察 `editing_utilities.cc` 中的实用工具函数是如何被调用的，从而帮助理解和解决编辑相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/editing_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nceled;
 
   // 'beforeinput' event handler may destroy target frame.
@@ -292,8 +294,4 @@ HTMLImageElement* ImageElementFromImageDocument(const Document* document) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

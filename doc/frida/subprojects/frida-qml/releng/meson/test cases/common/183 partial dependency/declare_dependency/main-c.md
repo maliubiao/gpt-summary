@@ -148,7 +148,7 @@ Frida 的测试框架可能会在不同的情景下运行 `main.c`，例如：
 
 总而言之，`main.c` 是 Frida 中一个用于测试在处理部分依赖关系时行为的小型测试用例。它通过简单的逻辑判断 `foo` 函数的返回值来验证 Frida 或其构建系统是否正确处理了依赖声明。理解这个测试用例有助于理解 Frida 如何在更复杂的逆向场景下处理程序依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/183 partial dependency/declare_dependency/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -183,7 +185,4 @@ int main(void) {
         return 1;
     }
 }
-
-"""
-
 ```

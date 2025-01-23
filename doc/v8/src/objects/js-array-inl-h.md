@@ -179,15 +179,17 @@ Let's break down the thought process for analyzing the provided C++ header file.
 
 总结来说，`v8/src/objects/js-array-inl.h` 是 V8 内部实现 JavaScript 数组功能的核心部分，它通过内联方法提供了高效的数组操作，并与 Torque 代码生成工具紧密结合。理解这个文件有助于深入理解 JavaScript 数组在 V8 引擎中的底层实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-array-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-array-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ void JSArrayIterator::set_kind(IterationKind kind) {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_ARRAY_INL_H_
-
-"""
-
 ```

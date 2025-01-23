@@ -138,7 +138,7 @@ My thought process to answer the prompt about the `XMLDocumentParser` code snipp
 
 总而言之，这部分代码是 XML 解析器的核心组成部分，负责将 libxml2 解析器提供的底层事件转化为 Blink 内部的 DOM 树结构。它与 HTML、JavaScript 和 CSS 都有密切关系，因为 XML 可以作为数据格式用于 Web 应用，并且可以通过处理指令链接 CSS 样式表。对于调试来说，理解这些函数的调用时机和它们处理的数据是理解 XML 解析过程的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/parser/xml_document_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tes(
     Vector<Attribute, kAttributePrealloc>& prefixed_attributes,
     const xmlChar** libxml_namespaces,
@@ -1068,8 +1070,4 @@ static void AttributesStartElementNsHandler(void* closure,
                                             int /*nbNamespaces*/,
                                             const xmlChar** /*namespaces*/,
                                             int nb_attributes,
-     
-"""
-
-
 ```

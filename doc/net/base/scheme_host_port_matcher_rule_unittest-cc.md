@@ -204,15 +204,17 @@ TEST(SchemeHostPortMatcherRuleTest,
 
 因此，虽然用户操作看起来只是简单的访问网页，但在其背后，浏览器会执行复杂的逻辑，包括使用像 `SchemeHostPortMatcherRule` 这样的类来进行 URL 匹配，以确保安全性和符合网站策略。 当出现资源加载问题时，理解这些底层的匹配机制有助于定位问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/scheme_host_port_matcher_rule_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -707,7 +709,4 @@ TEST(SchemeHostPortMatcherRuleTest, BadInputs) {
 }  // anonymous namespace
 
 }  // namespace net
-
-"""
-
 ```

@@ -119,11 +119,13 @@ console.timeEnd("createAndRelease");
 
 总而言之，`concurrent-marker.cc` 实现的并发标记器是 V8 引擎中一个重要的后台机制，它通过与 JavaScript 主线程并行执行垃圾回收的标记阶段，实现了更流畅的 JavaScript 执行体验。  JavaScript 代码的运行行为（如对象创建、修改和引用）直接影响着并发标记器的工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/concurrent-marker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -392,7 +394,4 @@ std::unique_ptr<Visitor> ConcurrentMarker::CreateConcurrentMarkingVisitor(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -118,7 +118,7 @@ fetch('https://example.com/data')
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/http/end_to_end_test.cc` 的主要功能是为 Chromium 的 QUIC 协议的 HTTP 实现提供 **端到端的集成测试**。它通过模拟客户端和服务器的交互，并可以配置各种网络条件和连接参数，来验证 HTTP 功能在 QUIC 协议上的正确性和健壮性。 这个文件对于确保基于 QUIC 的网络通信的可靠性至关重要，并且间接地影响着使用浏览器的 JavaScript 应用程序的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/end_to_end_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -977,7 +979,4 @@ class EndToEndTest : public QuicTestWithParam<TestParams> {
     // WebTransport support.
     client_->WaitUntil(
         2000, [this]() { return GetClientS
-"""
-
-
 ```

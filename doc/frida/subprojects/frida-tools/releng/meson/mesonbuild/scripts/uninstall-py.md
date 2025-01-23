@@ -140,7 +140,7 @@ Frida 是一个动态插桩工具，广泛应用于软件逆向工程。`uninsta
 1. **安装 Frida:** 用户首先会按照 Frida 的官方文档或者其他教程，使用 Meson 构建系统来编译和安装 Frida。这通常涉及以下步骤：
    * 克隆 Frida 的 Git 仓库。
    * 创建一个构建目录
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/scripts/uninstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -191,7 +193,4 @@ def run(args: T.List[str]) -> int:
         return 0
     do_uninstall(logfile)
     return 0
-
-"""
-
 ```

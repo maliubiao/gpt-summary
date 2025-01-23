@@ -194,14 +194,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`wtf_string.cc` 文件中定义的 `WTF::String` 类是 Blink 引擎中处理文本的核心组件，它提供了丰富的功能来满足 Web 浏览器在处理 JavaScript、HTML 和 CSS 等内容时的字符串操作需求。理解其功能和潜在的使用错误对于开发和维护 Blink 引擎至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/wtf_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2010, 2012 Apple Inc. All rights
@@ -726,7 +728,4 @@ void String::WriteIntoTrace(perfetto::TracedValue context) const {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

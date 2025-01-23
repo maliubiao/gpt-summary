@@ -291,7 +291,7 @@ func main() {
 
 总而言之，这段代码是 Go 运行时系统中关于线程管理和与外部代码交互的关键组成部分，它确保了 Go 程序的正确执行和与 C 代码的有效集成。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/proc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -300,8 +300,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 r {
 			// Wait for 100us, then try to re-preempt in
 			// case of any races.
@@ -1381,9 +1383,4 @@ func startlockedm(gp *g) {
 		throw("startlockedm: m has p")
 	}
 	// directly handoff c
-"""
-
-
-
-
 ```

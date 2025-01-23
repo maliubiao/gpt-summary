@@ -142,11 +142,13 @@ loadModule();
 
 `builtins-async-module.cc` 中定义的这两个内置函数是 V8 引擎内部处理异步模块加载结果的关键组件。它们连接了底层的 C++ 代码和上层的 JavaScript 异步模块特性，使得引擎能够正确地处理异步模块的成功加载和执行，以及处理加载或执行过程中发生的错误。 它们是 JavaScript 中 `import()` 表达式实现异步模块功能的幕后功臣。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-async-module.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ BUILTIN(CallAsyncModuleRejected) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

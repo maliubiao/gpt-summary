@@ -154,15 +154,17 @@ y << 64: 1 (相当于 y << 0)
 
 总而言之，`go/test/shift3.go` 是一个底层的编译器测试，用于确保 Go 语言在处理特定类型的位移操作时行为正确。普通 Go 开发者在编写代码时，通常不需要直接关注这些细节，但理解这些底层的机制可以帮助避免一些潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/shift3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -204,9 +206,4 @@ func main() {
 	f(x<<(M+0.), 0)    // shift by untyped float representable as uint
 	f(x<<(M+0.+0i), 0) // shift by untyped complex representable as uint
 }
-
-"""
-
-
-
 ```

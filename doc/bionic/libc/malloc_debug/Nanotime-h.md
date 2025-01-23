@@ -228,7 +228,7 @@ if (clock_gettimeAddress) {
 
 `Nanotime.handroid` 文件虽然简单，但它提供的获取单调时钟的功能在 Android 系统中至关重要，涉及到性能测量、事件同步等多个方面。理解其背后的 `clock_gettime` 系统调用以及动态链接机制，有助于深入理解 Android 系统的底层运行原理。使用 Frida 可以方便地对这些函数进行 hook 和调试，帮助我们分析系统行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/Nanotime.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -239,8 +239,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -279,7 +281,4 @@ static inline __always_inline uint64_t Nanotime() {
   clock_gettime(CLOCK_MONOTONIC, &t);
   return static_cast<uint64_t>(t.tv_sec) * 1000000000LL + t.tv_nsec;
 }
-
-"""
-
 ```

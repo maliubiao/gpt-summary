@@ -138,7 +138,7 @@ This detailed breakdown illustrates how even a seemingly trivial file can reveal
 
 总而言之，这个 `lib.c` 文件虽然简单，但在 Frida 的构建和测试流程中扮演着重要的角色，用于确保构建系统能够正确处理编译器警告，从而保证最终生成的 Frida 工具的质量和稳定性。它主要面向 Frida 的开发者和构建系统维护者，而不是直接面向最终用户。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/265 default_options dict/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,10 +146,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #warning Make sure this is not fatal
-
-"""
-
 ```

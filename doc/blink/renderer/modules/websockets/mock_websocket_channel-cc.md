@@ -183,15 +183,17 @@ By following this thought process, I can generate a comprehensive and accurate a
 
 `mock_websocket_channel.cc` 是 Blink 引擎中用于测试 WebSocket 功能的重要组件。它提供了一种可控且高效的方式来模拟 WebSocket 通道的行为，帮助开发者验证 WebSocket 相关代码的正确性。它与 JavaScript 和 HTML 功能紧密相关，因为 WebSocket API 主要在 JavaScript 中使用，而 HTML 文件中可能包含使用 WebSocket 的 JavaScript 代码。 普通用户操作不会直接接触到这个文件，它主要服务于 Blink 引擎的内部测试和开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/websockets/mock_websocket_channel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ MockWebSocketChannel::MockWebSocketChannel() = default;
 MockWebSocketChannel::~MockWebSocketChannel() = default;
 
 }  // namespace blink
-
-"""
-
 ```

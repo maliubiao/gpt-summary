@@ -156,7 +156,7 @@ func main() {
 
 这段 `xxhash.go` 代码是 `zstd` 库中用于计算 XXHash64 哈希值的核心实现。它通过维护内部状态，分块处理输入数据，并使用特定的哈希轮函数来生成最终的 64 位哈希值。理解其工作原理有助于理解 `zstd` 库中数据校验和完整性保护的机制。使用者需要注意在使用 `xxhash64` 结构体时正确地进行初始化 (`Reset`)，以避免计算错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/zstd/xxhash.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,8 +164,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -314,9 +316,4 @@ func (xh *xxhash64) mergeRound(v, n uint64) uint64 {
 	v = v*xxhPrime64c1 + xxhPrime64c4
 	return v
 }
-
-"""
-
-
-
 ```

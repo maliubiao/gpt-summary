@@ -161,7 +161,7 @@ console.log(result); // 输出 8
 
 总而言之，这个代码片段是 V8 引擎中 WebAssembly 功能实现的基石，它处理了 JavaScript 和 WebAssembly 之间的互操作、栈管理、异步操作以及错误处理等关键方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/x64/builtins-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 asmContinuationJmpbufTag, kScratchRegister);
   MemOperand GCScanSlotPlace =
       MemOperand(rbp, StackSwitchFrameConstants::kGCScanSlotCountOffset);
@@ -1028,7 +1030,4 @@ void Builtins::Generate_CEntry(MacroAssembler* masm, int result_size,
   // rax. Larger return sizes must be written to an address passed as a hidden
   // first argument.
   static constexpr int kMaxReg
-"""
-
-
 ```

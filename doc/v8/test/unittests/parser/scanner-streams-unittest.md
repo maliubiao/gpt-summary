@@ -208,7 +208,7 @@ Scanner Stream 应该跳过 BOM，并按顺序产生字符 'a', 'b', 'c'。 `str
 
 `v8/test/unittests/parser/scanner-streams-unittest.cc` 的第 1 部分主要关注于测试 V8 引擎中用于扫描源代码的字符流的基本功能，特别是针对 UTF-8 编码和不同输入源的测试。它涵盖了字符的读取、定位、回退以及对 UTF-8 BOM 的处理。这些测试旨在确保扫描器能够准确地从各种来源读取和解码源代码字符，为后续的词法分析和语法分析奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/scanner-streams-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/scanner-streams-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -216,8 +216,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1103,7 +1105,4 @@ TEST_F(ScannerStreamsTest, CloneCharacterStreams) {
     CHECK_EQ(1, resource.LockDepth());
 
     TestCloneCharacterStream(one_
-"""
-
-
 ```

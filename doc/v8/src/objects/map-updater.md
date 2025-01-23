@@ -123,11 +123,13 @@ Object.freeze(obj6); // 触发 MapUpdater，创建一个冻结对象的 Map
 
 `v8/src/objects/map-updater.cc` 是 V8 引擎中一个关键的组件，它负责高效地管理和更新 JavaScript 对象的内部结构 `Map`。尽管 JavaScript 开发者无法直接与之交互，但其功能对于 JavaScript 代码的性能至关重要。 上述 JavaScript 示例中的各种操作，例如添加属性、修改属性类型、更改属性特性、修改原型、改变数组元素类型以及密封和冻结对象，都会在底层触发 `MapUpdater` 的工作，以确保 V8 引擎能够高效地处理这些变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map-updater.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1502,7 +1504,4 @@ void MapUpdater::GeneralizeField(Isolate* isolate, DirectHandle<Map> map,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

@@ -260,7 +260,7 @@ func TestHTTPTraceIntegration(t *testing.T) {
 
 这段 `transport_test.go` 代码片段的功能是 **全面测试 `net/http.Transport` 类型在自动HTTP/2升级、连接管理、备用协议处理、响应头长度限制以及 `httptrace` 集成等方面的正确性和健壮性**。它通过模拟各种网络场景和配置，验证 `Transport` 是否按照预期工作，并帮助开发者发现潜在的bug。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -269,8 +269,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 estTransportAutomaticHTTP2_DialerAndTLSConfigSupportsHTTP2AndTLSConfig(t *testing.T) {
 	testTransportAutoHTTP(t, &Transport{
 		ForceAttemptHTTP2: true,
@@ -1404,9 +1406,4 @@ var rgz = []byte{
 	0xeb, 0xff, 0x42, 0x88, 0x21, 0xc4, 0x00, 0x00,
 	0x14, 0x00, 0xeb, 0xff, 0x42, 0x88, 0x21, 0xc4,
 	0x00, 0x
-"""
-
-
-
-
 ```

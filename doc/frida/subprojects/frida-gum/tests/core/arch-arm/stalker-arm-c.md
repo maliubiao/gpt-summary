@@ -122,7 +122,7 @@ Frida 本身就是一个强大的逆向工程工具，而 `stalker` 组件是其
 
 希望以上分析能够帮助你理解这个代码文件的功能。 如果有任何疑问，请随时提出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/stalker-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2017 Antonio Ken Iannillo <ak.iannillo@gmail.com>
@@ -1126,7 +1128,4 @@ TESTCASE (thumb_excluded_range_ret_events)
     g_assert_cmpuint (FOLLOW_AND_INVOKE (func + 1), ==, 4);
 
     g_assert_
-"""
-
-
 ```

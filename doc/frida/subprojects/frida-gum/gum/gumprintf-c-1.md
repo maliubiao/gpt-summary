@@ -129,7 +129,7 @@ Here's a breakdown of its functionalities:
 
 This part of `gumprintf.c` contains the detailed implementation for formatting floating-point numbers within Frida's instrumentation framework. It handles various formatting options like precision, width, padding, and separators. Helper functions are provided for tasks such as calculating exponents, converting numbers to different bases, and rounding. This functionality is crucial for presenting numerical data in a user-friendly format during dynamic analysis and debugging using Frida. It builds upon the initial parsing of format strings and argument extraction handled in the first part of the file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumprintf.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 a decimal point if either the fractional part is non-zero
    * and/or the "#" flag was specified.
    */
@@ -327,8 +329,4 @@ mypow10 (gint exponent)
 }
 
 #endif
-
-"""
-
-
 ```

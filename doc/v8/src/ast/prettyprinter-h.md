@@ -181,15 +181,17 @@ While `AstPrinter` isn't directly involved in reporting user errors, V8 develope
 
 Both classes are essential for the internal workings of V8 and its ability to understand and execute JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/prettyprinter.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/prettyprinter.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ class AstPrinter final : public AstVisitor<AstPrinter> {
 }  // namespace v8
 
 #endif  // V8_AST_PRETTYPRINTER_H_
-
-"""
-
 ```

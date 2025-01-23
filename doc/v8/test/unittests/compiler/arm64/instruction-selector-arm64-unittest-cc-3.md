@@ -156,7 +156,7 @@ let value = array[0]; // 测试会验证加载操作和可能的类型转换
 
 作为 `instruction-selector-arm64-unittest.cc` 系列的第 4 部分，这个代码片段的功能是 **专门测试 ARM64 指令选择器在处理 SIMD 浮点运算的特定优化、SIMD 数据重排、整数乘法与特定立即数的优化、基本的浮点算术和比较运算、条件选择、类型转换以及一些针对 `ChangeUint32ToUint64` 和 `ChangeInt32ToInt64` 转换的优化**。 它深入测试了指令选择器在各种不同场景下的正确性和优化能力，确保 V8 引擎在 ARM64 架构上能生成高效的机器码。  考虑到这是系列的一部分，可以推断其他部分可能涵盖了指令选择器的其他方面，例如内存访问、控制流、函数调用等等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ctionSelectorSimdF64x2MulWithDupTest =
     InstructionSelectorTestWithParam<SIMDMulDupInst>;
 
@@ -981,8 +983,5 @@ static const MemoryAccess kMemoryAccesses[] = {
      kArm64LdrsbW,
      kArm64Strb,
      {-256, -255, -3,  -2,   -1,   0,    1,    2,    3,    255,
-      256,  257,  258, 1000, 1001, 2121, 2442, 4093, 
-"""
-
-
+      256,  257,  258, 1000, 1001, 2121, 2442, 4093,
 ```

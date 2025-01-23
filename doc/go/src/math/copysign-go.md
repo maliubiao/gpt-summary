@@ -136,7 +136,7 @@ func main() {
 
 总结来说，`math.Copysign` 提供了一种精确地控制浮点数符号的方法，它直接操作了底层的位表示，确保了符号的正确传递，即使在处理像负零这样的特殊情况时也能正常工作。 理解其位操作的原理有助于避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/copysign.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ func Copysign(f, sign float64) float64 {
 	const signBit = 1 << 63
 	return Float64frombits(Float64bits(f)&^signBit | Float64bits(sign)&signBit)
 }
-
-"""
-
-
-
 ```

@@ -208,15 +208,17 @@ Initially, one might focus solely on the `DynamicsCompressorNode` class itself. 
 
 到达 `dynamics_compressor_node.cc` 这样的底层代码通常是当开发者需要深入了解 Web Audio API 的内部工作原理，或者遇到非常难以追踪的前端问题时。这需要对 Chromium/Blink 的代码结构有一定的了解。开发者可能会通过搜索 Chromium 源代码仓库，或者根据 Web Audio API 的规范文档找到相关的实现文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/dynamics_compressor_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -418,7 +420,4 @@ void DynamicsCompressorNode::ReportWillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

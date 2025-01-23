@@ -127,7 +127,7 @@ By following these steps, analyzing the code, and connecting the specific tests 
 
 作为系列的最后一部分，`quic_spdy_session_test.cc` **归纳了对 QUIC 会话中 HTTP 层（虽然名为 "SPDY" 但更多是 HTTP/3 的概念）关键功能的测试，特别是关于 WebTransport 协议的协商和 HPACK 头部压缩的特定行为。**  它确保了 QUIC 会话能够正确地处理 WebTransport 相关的设置，并在特定情况下（如接收到过大的动态表大小设置或无效的扩展 CONNECT 设置）做出正确的反应。该文件通过各种测试用例，验证了客户端和服务器在 QUIC 连接上实现 HTTP 语义时的正确性和健壮性，尤其是对于现代网络应用广泛使用的 WebTransport 协议。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -135,9 +135,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      ? GetNthClientInitiatedUnidirectionalStreamId(transport_version(), 3)
+### 源代码
+```cpp
+? GetNthClientInitiatedUnidirectionalStreamId(transport_version(), 3)
           : GetNthServerInitiatedUnidirectionalStreamId(transport_version(), 3);
   QuicStreamFrame frame(control_stream_id, /*fin=*/false, /*offset=*/0, data);
   session_->OnStreamFrame(frame);
@@ -271,8 +273,4 @@ TEST_P(QuicSpdySessionTestServerNoExtendedConnect, BadExtendedConnectSetting) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

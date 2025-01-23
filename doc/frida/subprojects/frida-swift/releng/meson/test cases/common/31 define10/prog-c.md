@@ -152,7 +152,7 @@ Let's break down the thought process for analyzing this C code snippet and gener
 
 总而言之，`prog.c` 作为一个简单的测试用例，其核心功能是验证预处理器常量的定义。它在 Frida 的上下文中，是用于测试 Frida 是否能够正确处理和理解程序中预处理器定义常量的基石。理解这个简单的例子，有助于用户理解 Frida 在更复杂的逆向场景中如何与程序的底层机制 взаимодей作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/31 define10/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include"config.h"
 
@@ -175,7 +177,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

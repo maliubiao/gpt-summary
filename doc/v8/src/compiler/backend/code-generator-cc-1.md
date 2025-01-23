@@ -165,7 +165,7 @@ add("hello"); // 这会导致之前的类型假设失效，触发反优化
 
 `v8/src/compiler/backend/code-generator.cc` 是 V8 编译器后端的核心组件，负责将平台无关的中间表示（TurboFan 指令）翻译成目标架构的机器码。它处理各种指令类型，包括算术运算、控制流、函数调用等，并进行必要的架构适配。此外，它还负责生成关键的元数据，如源码位置信息和反优化数据，这些数据对于调试、性能分析和代码的健壮性至关重要。该组件还支持 WebAssembly 代码的生成和反优化。简而言之，`code-generator.cc` 是 V8 将高级 JavaScript 代码转化为可执行机器码的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/code-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/code-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,8 +173,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ase kFlags_conditional_set: {
       // Assemble a conditional boolean materialization after this instruction.
       AssembleArchConditionalBoolean(instr);
@@ -941,8 +943,4 @@ OutOfLineCode::~OutOfLineCode() = default;
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

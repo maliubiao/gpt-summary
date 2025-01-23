@@ -72,7 +72,7 @@ Response:
    - **进程挂起**：通过设置`POSIX_SPAWN_START_SUSPENDED`标志，可以在进程启动时挂起它，以便进行调试。
 
 这个文件是Frida工具在macOS上进行动态插桩和调试的核心部分，通过拦截系统调用和进程启动，提供了强大的调试能力。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/darwin/agent/launchd.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -81,8 +81,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 const POSIX_SPAWN_START_SUSPENDED = 0x0080;
 const SIGKILL = 9;
 
@@ -415,7 +417,4 @@ function findInserterResume() {
 
   return null;
 }
-
-"""
-
 ```

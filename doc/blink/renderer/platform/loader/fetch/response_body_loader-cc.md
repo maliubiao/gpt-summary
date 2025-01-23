@@ -128,14 +128,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 `ResponseBodyLoader` 是 Blink 渲染引擎中一个核心的低级别组件，负责从各种来源获取 HTTP 响应体的数据，并将其安全有效地传递给上层模块进行处理。它与网页的呈现息息相关，因为所有构成网页的资源（HTML, CSS, JavaScript, 图片等）都需要通过它来加载。理解其功能和生命周期对于理解 Blink 的资源加载机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/response_body_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -818,7 +820,4 @@ void ResponseBodyLoader::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

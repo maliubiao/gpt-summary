@@ -115,11 +115,13 @@ if (performance && performance.memory) {
 
 `heap-statistics-collector.cc` 是 V8 引擎内部用于监控和分析 C++ 垃圾回收堆的重要组成部分。它收集的详细统计信息对于 V8 引擎的开发、调试和性能优化至关重要，并且间接地影响 JavaScript 的内存管理效率和性能。虽然 JavaScript 开发者不能直接操作这些 C++ 代码，但其运行结果可以通过性能监控工具和 API 反映出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-statistics-collector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ bool HeapStatisticsCollector::VisitHeapObjectHeader(HeapObjectHeader& header) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

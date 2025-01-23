@@ -174,11 +174,13 @@ console.assert(checkValues(Infinity, undefined) === true);
 
 `function-tester.cc` 中定义的 `FunctionTester` 类是一个 V8 内部的测试工具，它提供了一个 C++ 接口来创建、编译、调用和断言 JavaScript 函数的行为。它通过 V8 的 C++ API 来模拟 JavaScript 的执行环境，使得 V8 编译器的开发者能够方便地编写和运行单元测试，验证编译器在处理各种 JavaScript 代码时的正确性。  它本身不直接存在于 JavaScript 运行时中，而是作为测试框架的一部分存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/function-tester.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ Handle<JSFunction> FunctionTester::Compile(Handle<JSFunction> f) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

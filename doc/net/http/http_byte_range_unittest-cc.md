@@ -161,15 +161,17 @@ Range: bytes=1024-2047
 
 总而言之，`net/http/http_byte_range_unittest.cc` 通过一系列的单元测试，确保了 `HttpByteRange` 类能够正确地表示和处理 HTTP 字节范围请求，这对于支持 Web 浏览器中各种需要部分内容加载的功能至关重要。虽然它本身是 C++ 代码，但其功能直接服务于 JavaScript 发起的网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_byte_range_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2009 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ TEST(HttpByteRangeTest, GetHeaderValue) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

@@ -158,7 +158,7 @@ Now, let's organize the answer according to the user's request format.
 
 总结来说，这段代码是 Chromium 网络栈中用于测试 HTTP 代理连接功能的关键部分，涵盖了嵌套代理和代理身份验证等复杂场景，对于理解浏览器如何通过代理服务器建立连接至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_proxy_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pdySerializedFrame first_hop_req(spdy_util_.ConstructSpdyConnect(
       kFirstHopExtraRequestHeaders, std::size(kFirstHopExtraRequestHeaders) / 2,
       1, HttpProxyConnectJob::kH2QuicTunnelPriority,
@@ -940,7 +942,4 @@ TEST_P(HttpProxyConnectJobTest, SSLError) {
     session_deps_.socket_factory->AddSocketDataProvider(&data);
 
     SSLSocketDataProvider ssl_data(io_mode, ERR_CERT_AUTHORIT
-"""
-
-
 ```

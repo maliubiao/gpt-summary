@@ -108,11 +108,13 @@ try {
 
 总而言之，`v8-console-message.cc` 是 V8 引擎中连接 JavaScript 控制台 API 和开发者工具的关键桥梁，负责将 JavaScript 世界的控制台操作转化为开发者工具能够理解和展示的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-console-message.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -783,7 +785,4 @@ void V8ConsoleMessageStorage::contextDestroyed(int contextId) {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

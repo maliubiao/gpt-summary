@@ -200,7 +200,7 @@ By following these steps and continually refining the analysis based on the cont
 
 通过这些步骤，用户就能够一步步地通过 Frida 的动态插桩技术到达 `adder.c` 代码的执行点，并进行深入的分析和调试。这个过程依赖于对 Frida 工具的理解，以及对目标程序结构的初步认识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/15 polyglot sharedlib/adder.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<adder.h>
 #include<stdlib.h>
 
@@ -234,7 +236,4 @@ int adder_add(adder *a, int number)
 void adder_destroy(adder *a) {
     free(a);
 }
-
-"""
-
 ```

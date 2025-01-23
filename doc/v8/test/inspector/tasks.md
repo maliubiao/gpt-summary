@@ -123,11 +123,13 @@ console.log("Hello from Inspector!");
 
 `v8/test/inspector/tasks.cc` 文件中的代码虽然不直接暴露给 JavaScript 开发者使用，但它是 V8 Inspector 实现各种调试和分析功能的基础。它提供了在 V8 引擎内部执行同步和异步任务，以及执行 JavaScript 代码的能力，这些能力支撑了我们在浏览器开发者工具中看到的各种 Inspector 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/inspector/tasks.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ void ExecuteStringTask::Run(InspectorIsolateData* data) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

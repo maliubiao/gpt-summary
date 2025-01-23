@@ -112,7 +112,7 @@ Finally, I need to synthesize a concise summary of the code's primary functions.
 
 `environment.py` 文件是 Frida (以及其他使用 Meson 的项目) 构建系统的核心组成部分，负责初始化和管理构建环境，检测必要的工具链和系统信息，并处理来自不同来源的配置选项。它的主要目标是为后续的构建过程提供一个一致且正确的环境，确保项目能够顺利编译和链接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -874,8 +876,4 @@ class Environment:
                         key = OptionKey('env_args', machine=for_machine, lang='c')
                         for lang in compilers.compilers.LANGUAGES_USING_CPPFLAGS:
                             key = key.evolve(lang=lang)
-     
-"""
-
-
 ```

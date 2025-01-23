@@ -132,7 +132,7 @@ By following these steps, combining code analysis with knowledge of Frida and re
 
 总而言之，`frida-helper-backend-types.c` 文件虽然代码量很少，但它在 Frida 的内部架构中扮演着重要的角色，通过静态断言确保了关键数据结构在不同组件之间的一致性，这对于保证 Frida 的稳定运行至关重要，并且与 Frida 实现动态插桩的各种逆向技术息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/frida-helper-backend-types.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-helper-backend.h"
 #include "helpers/inject-context.h"
 
@@ -149,7 +151,4 @@ G_STATIC_ASSERT (sizeof (FridaHelperBootstrapContext) == sizeof (FridaBootstrapC
 G_STATIC_ASSERT (sizeof (FridaHelperLoaderContext) == sizeof (FridaLoaderContext));
 G_STATIC_ASSERT (sizeof (FridaHelperLibcApi) == sizeof (FridaLibcApi));
 G_STATIC_ASSERT (sizeof (FridaHelperByeMessage) == sizeof (FridaByeMessage));
-
-"""
-
 ```

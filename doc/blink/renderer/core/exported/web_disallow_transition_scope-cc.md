@@ -169,15 +169,17 @@ element.style.backgroundColor = 'red';
 
 `WebDisallowTransitionScope` 是 Blink 引擎内部用于临时禁止 CSS 过渡的一个工具类。它主要在需要精确控制渲染行为或在进行批量 DOM 操作时使用，以避免不必要的动画干扰。虽然开发者通常不会直接在 JavaScript 中使用它（除非 Blink 提供了相应的接口），但理解其功能有助于分析和调试与 CSS 过渡相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_disallow_transition_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ DocumentLifecycle& WebDisallowTransitionScope::Lifecycle(
 }  // namespace blink
 
 #endif  // DCHECK_IS_ON()
-
-"""
-
 ```

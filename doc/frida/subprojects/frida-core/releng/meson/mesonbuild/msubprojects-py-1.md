@@ -110,7 +110,7 @@ By following these steps, one can methodically analyze the code snippet and gene
 
 `run_in_parallel` 函数的核心功能是**高效地并行执行多个独立子项目的构建或运行任务**，它是 Frida 构建流程中的关键组成部分。它通过使用 `asyncio` 和执行器来实现并发，提高了构建速度。同时，它具备基本的错误处理机制，能够识别并报告构建失败的子项目，为用户提供调试线索。 这个函数的设计考虑了构建过程的效率和可靠性，是构建复杂软件项目（如 Frida）时常用的技术手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 er(logger, r, wrap, dirname, options)
         task = loop.run_in_executor(executor, runner.run)
         tasks.append(task)
@@ -136,8 +138,4 @@ er(logger, r, wrap, dirname, options)
         m += ', '.join(failures)
         mlog.warning(m)
     return len(failures)
-
-"""
-
-
 ```

@@ -160,7 +160,7 @@ Here's a breakdown of the thought process to generate the response:
 
 总的来说，这部分测试确保了 `HostResolverManager` 在处理 DNS 配置、缓存管理、请求取消以及特定类型的 DNS 查询（如 TXT）时的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第13部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _config);
 
   const DnsConfig* fetched_config = client_ptr->GetEffectiveConfig();
@@ -923,7 +925,4 @@ TEST_F(HostResolverManagerDnsTest, TxtDnsQuery) {
   EXPECT_EQ(resolve_context_->host_cache()->size(), 1u);
   ResolveHostResponseHelper cached_response(resolver_->CreateRequest(
       HostPortPair("host", 108), NetworkAnonymizationKey(), Net
-"""
-
-
 ```

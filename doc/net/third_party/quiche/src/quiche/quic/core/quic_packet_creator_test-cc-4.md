@@ -123,7 +123,7 @@ QUIC 协议是 HTTP/3 和 WebTransport 等现代网络协议的基础。JavaScri
 
 总之，这部分测试覆盖了 `QuicPacketCreator` 在数据发送和包大小控制方面的重要功能，确保其能可靠高效地将数据封装成 QUIC 数据包。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_packet_creator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ata to prevent a stream frame with a non-zero offset from
   // fitting.
   QuicConsumedData consumed = creator_.ConsumeData(
@@ -933,7 +935,4 @@ TEST_F(QuicPacketCreatorMultiplePacketsTest, AddMessageFrame) {
                 2, MemSliceFromString(std::string(
                        creator_.GetCurrentLargestMessagePayload(), 'a'))));
   EXPECT_
-"""
-
-
 ```

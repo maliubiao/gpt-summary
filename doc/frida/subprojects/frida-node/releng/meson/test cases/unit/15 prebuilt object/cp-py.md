@@ -150,7 +150,7 @@ python frida/subprojects/frida-node/releng/meson/test\ cases/unit/15\ prebuilt\ 
 
 尽管 `cp.py` 代码非常简单，但放在 Frida 的上下文中，它扮演着一个基础但重要的角色，主要用于在构建、测试或开发过程中复制文件，这些文件可能包括目标二进制文件、用于注入的库或其他资源，为后续的 Frida 动态 instrumentation 和逆向分析工作做好准备。 理解其功能以及可能出现的错误，有助于开发者更好地理解 Frida 的内部工作原理和调试测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/15 prebuilt object/cp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,14 +158,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/env python3
 
 import sys
 from shutil import copyfile
 copyfile(*sys.argv[1:])
-
-"""
-
 ```

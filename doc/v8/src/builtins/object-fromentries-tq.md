@@ -146,14 +146,16 @@ console.log(objFromGenerator); // 输出: { e: 5, f: 6 }
 
 这段 Torque 代码是 V8 引擎中 `Object.fromEntries()` 方法的核心实现。它通过快速和慢速两个通道来处理不同类型的可迭代对象，并确保能够正确地将键值对转换为 JavaScript 对象。理解这段代码有助于深入了解 JavaScript 引擎的内部工作原理以及性能优化的策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/object-fromentries.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ transitioning javascript builtin ObjectFromEntries(
   }
 }
 }  // namespace object
-
-"""
-
 ```

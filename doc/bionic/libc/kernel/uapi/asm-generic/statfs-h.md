@@ -332,7 +332,7 @@ if __name__ == '__main__':
 
 这个 Frida 脚本会拦截 `libc.so` 中的 `statvfs` 函数，并在函数调用前后打印相关信息，帮助你了解 Android Framework 或 NDK 是如何调用到这个底层函数的。你需要根据目标进程的架构 (32位或64位) 来调整栈指针的偏移量，以正确读取 `statvfs` 结构体的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/statfs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -343,8 +343,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -410,7 +412,4 @@ struct compat_statfs64 {
   __u32 f_spare[4];
 } ARCH_PACK_COMPAT_STATFS64;
 #endif
-
-"""
-
 ```

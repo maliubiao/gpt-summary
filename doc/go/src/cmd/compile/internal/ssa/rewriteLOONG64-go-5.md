@@ -153,7 +153,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 作为第 6 部分，它可以被认为是整个 SSA 重写流程中的一个关键阶段，专注于将一些基础但重要的操作转换成目标架构的指令，为后续更复杂的优化和代码生成奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteLOONG64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 if !(t.IsBoolean()) {
 			break
 		}
@@ -1464,9 +1466,4 @@ func rewriteValueLOONG64_OpPanicBounds(v *Value) bool {
 	return false
 }
 func rewriteValueLOONG64_Op
-"""
-
-
-
-
 ```

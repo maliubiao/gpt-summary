@@ -135,14 +135,16 @@ By following this thought process, carefully examining the code and the request,
 
 总之，虽然 `constants.cc` 文件本身是 C++ 代码，但其中定义的常量直接或间接地影响着 Web 开发中使用的 JavaScript、HTML 和 CSS 的行为和效果。理解这些常量有助于开发者更好地理解浏览器的运行机制，并避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/widget/constants.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ const int kMinimumBorderlessWindowSize = 29;
 const base::TimeDelta kNewContentRenderingDelay = base::Seconds(4);
 
 }  // namespace blink
-
-"""
-
 ```

@@ -144,11 +144,13 @@ onmessage = function(e) {
 
 `cross-thread-persistent-unittest.cc` 这个文件测试的是 V8 引擎内部用于跨线程安全管理 C++ 对象的机制。虽然 JavaScript 开发者不直接接触这些 API，但它们对于支持 JavaScript 的并发模型（如 Web Workers）以及 V8 引擎的内部运作至关重要，确保了跨线程共享的 C++ 对象能够正确地被管理和回收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/cross-thread-persistent-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ TEST_F(CrossThreadPersistentTest, DestroyRacingWithGC) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

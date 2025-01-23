@@ -149,14 +149,15 @@ Here are some ways these functionalities relate to JavaScript:
 
 The fact that this is "part 4 of 6" suggests that this section likely deals with the core logic of translating the *operations* within Wasm functions, building upon earlier stages that might handle function signatures, imports/exports, and memory layout, and preceding later stages that might involve optimization or final code emission.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-      return graph()->NewNode(mcgraph()->machine()->S128Not(), inputs[0]);
+### 源代码
+```
+return graph()->NewNode(mcgraph()->machine()->S128Not(), inputs[0]);
     case wasm::kExprS128Select:
       return graph()->NewNode(mcgraph()->machine()->S128Select(), inputs[2],
                               inputs[0], inputs[1]);
@@ -1653,7 +1654,4 @@ Node* WasmGraphBuilder::StringEncodeWtf8Array(
   }
   if (array_null_check == kWithNullCheck) {
     array = AssertNotNull(array, wasm::kWasmArrayRef, p
-"""
-
-
 ```

@@ -71,11 +71,13 @@ console.log(str1 === str3); // true (拼接后的字符串与字面量相同，�
 
 因此，`ast-value-factory.cc` 文件中的代码是 V8 引擎实现 JavaScript 字符串高效管理的关键组成部分，直接影响着 JavaScript 字符串字面量在内存中的表示和处理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast-value-factory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -492,7 +494,4 @@ const AstRawString* AstValueFactory::GetString(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

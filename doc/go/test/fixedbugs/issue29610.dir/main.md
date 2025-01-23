@@ -106,15 +106,17 @@ main.go:4:2: cannot find package "./b" in:
 
 这段代码虽然简单，但它的目的是为了在Go的测试环境中验证编译器对本地包导入和跨包类型引用的正确处理。它的价值在于编译过程本身，而不是程序的实际运行。 开发者需要理解Go的包管理机制才能正确地理解和运行这类测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue29610.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -126,9 +128,4 @@ import "./b"
 var v b.S
 
 func main() {}
-
-"""
-
-
-
 ```

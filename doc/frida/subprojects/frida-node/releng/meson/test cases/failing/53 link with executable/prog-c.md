@@ -103,7 +103,7 @@ This systematic approach, moving from simple observation to contextual analysis 
 
 总而言之，`prog.c` 作为一个极简的 C 语言程序，其真正的意义在于它作为 Frida 测试框架中的一个组成部分，用于测试 Frida 在特定场景下的行为，特别是与可执行文件链接相关的场景。它的 "failing" 属性表明它旨在触发或暴露 Frida 在这方面可能存在的问题或边缘情况，为 Frida 的开发和调试提供了重要的依据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/53 link with executable/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,14 +111,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int
 main (int argc, char **argv)
 {
   return 0;
 }
-
-"""
-
 ```

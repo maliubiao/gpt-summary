@@ -159,7 +159,7 @@ Frida 本身就是一个动态插桩工具，广泛应用于逆向工程、安�
 
 总而言之，`env_android.py` 是 Frida 构建过程中一个非常关键的环节，它负责为 Android 平台配置 native 构建环境，涉及到 Android NDK、目标架构、API 版本、编译链接选项等多个方面。理解这个脚本的功能和工作原理，对于解决 Frida 在 Android 平台上的构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/env_android.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 import shlex
@@ -319,7 +321,4 @@ ARCH_LINKER_FLAGS = {
         "-Wl,--fix-cortex-a8",
     ]
 }
-
-"""
-
 ```

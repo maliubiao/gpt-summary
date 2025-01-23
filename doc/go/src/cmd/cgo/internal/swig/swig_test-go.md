@@ -231,15 +231,17 @@ OK
 
 总结来说， `go/src/cmd/cgo/internal/swig/swig_test.go` 这个文件通过运行各种测试用例，验证了 `cgo` 工具在与 SWIG 集成时，Go 和 C/C++ 代码之间互操作的正确性，包括标准输入输出、Go 调用 C/C++ 函数以及 C/C++ 回调 Go 函数等场景，并考虑了 LTO 优化的情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/swig/swig_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -400,9 +402,4 @@ func mustHaveSwigOnce(t *testing.T) {
 		t.Skip("test requires swig 3.0.6 or later")
 	}
 }
-
-"""
-
-
-
 ```

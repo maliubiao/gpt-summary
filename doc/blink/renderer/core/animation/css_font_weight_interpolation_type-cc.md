@@ -149,14 +149,16 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之， `css_font_weight_interpolation_type.cc` 是 Blink 渲染引擎中一个关键的组成部分，它确保了 CSS `font-weight` 属性在动画和过渡期间能够平滑地变化，为用户带来更好的视觉体验。 它与 CSS 属性紧密相关，并通过 HTML 和 JavaScript 来触发和控制。 开发者在使用 `font-weight` 进行动画时，需要理解其工作原理和潜在的使用误区。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_font_weight_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ void CSSFontWeightInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

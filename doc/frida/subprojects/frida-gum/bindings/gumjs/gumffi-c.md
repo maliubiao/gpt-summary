@@ -161,7 +161,7 @@ This detailed thought process, going from a high-level understanding to the spec
 
 `gumffi.c` 是 Frida-gum 库中一个至关重要的组成部分，它负责处理 JavaScript 和本地 C/C++ 代码之间的互操作，提供了类型和 ABI 的映射和查找功能。理解这个文件的功能对于深入了解 Frida 的工作原理以及调试与 FFI 相关的错误非常有帮助。它涉及到计算机底层的数据表示、调用约定以及跨平台开发的挑战。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumffi.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2020 Marcus Mengs <mame8282@googlemail.com>
@@ -345,7 +347,4 @@ gum_ffi_maybe_promote_variadic (ffi_type * type)
 
   return type;
 }
-
-"""
-
 ```

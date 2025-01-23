@@ -525,7 +525,7 @@ func (c *ctxt9) oprrr(a obj.As) uint32 {
 	case AVCMPGTSH:
 		return OPVC(4, 838, 0, 0) /* vcmpgtsh - v2.03 */
 	case
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/ppc64/asm9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -533,8 +533,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 C(63, 424, 0, 0)
 	case AFRIZCC:
 		return OPVCC(63, 424, 0, 1)
@@ -1749,10 +1751,4 @@ func (c *ctxt9) opstorex(a obj.As) uint32 {
 	c.ctxt.Diag("unknown storex opcode %v", a)
 	return 0
 }
-
-"""
-
-
-
-
 ```

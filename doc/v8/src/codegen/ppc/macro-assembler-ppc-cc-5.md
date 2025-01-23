@@ -161,7 +161,7 @@ console.log(result); // 输出: Int32x4 { 3, 7, 11, 15 }
 
 作为总共 7 个部分中的第 6 部分，这部分代码继续扩展了 `MacroAssembler` 类的功能，**着重于为 PowerPC 架构提供 SIMD 指令的支持**。它实现了各种 SIMD 数据类型的转换、运算、重排以及与内存之间的数据交换。此外，它还包含了一些通用的寄存器和内存操作，以及处理程序控制流（例如条件跳转和函数调用）的功能。 可以推断，前后的部分可能分别负责更基础的指令、浮点运算、更高级的控制流或与 V8 引擎其他部分的交互。 这部分的功能是构建高性能 JavaScript 执行引擎的关键组成部分，特别是对于需要并行处理数据的场景（例如图形处理、音视频编解码等）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 egister scratch1,
                                             Simd128Register scratch2) {
   vupkhsh(dst, src);
@@ -1037,7 +1039,4 @@ void MacroAssembler::ReverseBitsInSingleByteU64(Register dst, Register src,
 //   (*argc_operand + slots_to_drop_on_return) * kSystemPointerSize
 // (GCed, includes the call JS arguments space and the additional space
 // allocated for t
-"""
-
-
 ```

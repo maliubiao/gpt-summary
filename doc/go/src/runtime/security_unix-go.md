@@ -192,7 +192,7 @@ func main() {
 
 这段 `security_unix.go` 代码的核心功能是在 Unix 系统上启用 Go 程序的安全模式，并通过强制设置 `GOTRACEBACK=none` 环境变量来抑制 panic 时的详细堆栈追踪信息。这可以提高在某些安全敏感场景下的信息安全性，防止泄露内部实现细节。 然而，开发者需要理解其局限性，避免过度依赖此功能来解决所有安全问题，并在调试时注意 `GOTRACEBACK=none` 带来的影响。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/security_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -242,9 +244,4 @@ func secureEnv() {
 		envs = append(envs, "GOTRACEBACK=none")
 	}
 }
-
-"""
-
-
-
 ```

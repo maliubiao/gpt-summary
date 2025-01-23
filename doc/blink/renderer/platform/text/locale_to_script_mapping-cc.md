@@ -133,14 +133,16 @@ This systematic approach of understanding the goal, dissecting the code, connect
 
 总而言之， `locale_to_script_mapping.cc` 文件在 Blink 引擎中扮演着关键的角色，它通过将语言区域设置映射到相应的 Unicode 脚本，为浏览器选择合适的字体渲染不同语言的文本提供了基础，直接影响着用户在网页上看到的文本显示效果。 开发者理解其功能和使用场景，可以避免一些常见的国际化和本地化问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/locale_to_script_mapping.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -647,7 +649,4 @@ UScriptCode ScriptCodeForHanFromSubtags(const String& locale, char delimiter) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

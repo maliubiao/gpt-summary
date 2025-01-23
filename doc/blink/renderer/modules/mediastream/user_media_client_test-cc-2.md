@@ -140,7 +140,7 @@ By following this plan, I can create a comprehensive and accurate summary of the
 
 总而言之，这部分测试代码专注于验证 `UserMediaClient` 在处理视频轨道约束变更时的各种复杂情况，确保了 WebRTC 相关的 JavaScript API 在 Chromium 中的正确实现和行为。它覆盖了多轨道共享源、设备能力限制、轨道生命周期等多个关键方面，为开发者理解和调试 WebRTC 应用提供了重要的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/user_media_client_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mat as the
   // source by default.
   MediaStreamTrack* track2 = RequestLocalVideoTrack();
@@ -504,8 +506,4 @@ TEST_F(UserMediaClientDeferredDeviceSelectionTest,
 
 #endif
 }  // namespace blink
-
-"""
-
-
 ```

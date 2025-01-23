@@ -218,17 +218,16 @@ TEST(MyClassTest, TestInternalCounter) {
 
 总而言之，`gtest_prod.h` 提供了一种在单元测试中访问生产代码内部细节的机制，这对于编写彻底的测试非常有用，但也需要谨慎使用，避免过度暴露内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/release/testdata/v8/third_party/googletest/src/googletest/include/gtest/gtest_prod.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/release/testdata/v8/third_party/googletest/src/googletest/include/gtest/gtest_prod.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 gtest_prod
-
-"""
-
 ```

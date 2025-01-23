@@ -184,15 +184,17 @@ LineInfo:
 
 总而言之，这段代码是 Blink 渲染引擎中负责将内联内容排列成行的关键部分，它深入地与 HTML 的结构和 CSS 的样式属性交互，以确定最终的文本布局。理解其功能有助于开发者更好地理解浏览器的排版行为，并避免常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_breaker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _count_) [[unlikely]] {
     RecalcClonedBoxDecorations();
   }
@@ -1050,7 +1052,4 @@ bool LineBreaker::BreakTextAt(InlineItemResult* item_result,
   DCHECK_LE(current_.text_offset, break_at_.end.text_offset);
   DCHECK_LE(current_.item_index, break_at_.offset.item_index);
   const bool should_break = current_.
-"""
-
-
 ```

@@ -142,15 +142,17 @@ By following these steps, we can systematically analyze the C++ test file and ad
 
 总之，`quic_connection_alarms_test.cc` 文件是确保 QUIC 连接告警机制正确性的关键组成部分，虽然普通用户不会直接接触，但它的功能对于保证基于 QUIC 的网络连接的可靠性和性能至关重要，并为开发者提供了调试 QUIC 连接问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_alarms_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -439,7 +441,4 @@ TEST_F(QuicAlarmMultiplexerTest, DebugString) {
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
 ```

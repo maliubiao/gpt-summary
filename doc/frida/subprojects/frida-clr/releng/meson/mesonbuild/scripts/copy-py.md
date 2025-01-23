@@ -95,7 +95,7 @@ A user might encounter this script's existence during debugging in several scena
 
 **In summary,** while seemingly simple, `copy.py` is a fundamental part of Frida's build system, ensuring that the necessary files for the `frida-clr` component are correctly placed for Frida to function effectively as a dynamic instrumentation tool for .NET applications. Its role is critical for enabling the core reverse engineering capabilities that Frida provides.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/copy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021-2023 Intel Corporation
 from __future__ import annotations
@@ -124,7 +126,4 @@ def run(args: T.List[str]) -> int:
     except Exception:
         return 1
     return 0
-
-"""
-
 ```

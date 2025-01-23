@@ -166,15 +166,17 @@ By following these steps, one can effectively analyze and understand the functio
 
 总而言之，`net/quic/crypto/proof_verifier_chromium_test.cc` 这个测试文件对于确保 Chromium 的 QUIC 实现的安全性至关重要。它通过各种测试用例覆盖了 `ProofVerifierChromium` 类的核心功能和各种边界情况，帮助开发者及时发现和修复潜在的安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/crypto/proof_verifier_chromium_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -902,7 +904,4 @@ TEST_F(ProofVerifierChromiumTest, DestroyWithPendingRequest) {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

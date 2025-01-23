@@ -187,7 +187,7 @@ A user (likely a Frida developer or someone building Frida from source) would re
 
 **As a debugging clue:** If a user encounters issues with the Frida build process related to configuration, they might investigate the contents of the configuration files loaded by `keyval.py` or examine how the loaded values are used in the `meson.build` scripts. For example, if a certain feature is not being enabled during the build, they might check the corresponding key-value pair in the configuration file. They could also step through the `meson.build` files using a debugger (if Meson supports it) to see how the configuration data is being used.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/keyval.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017, 2019 The Meson development team
 
@@ -262,7 +264,4 @@ class KeyvalModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> KeyvalModule:
     return KeyvalModule(interp)
-
-"""
-
 ```

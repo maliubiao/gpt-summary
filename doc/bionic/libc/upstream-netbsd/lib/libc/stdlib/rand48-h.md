@@ -320,7 +320,7 @@ sys.stdin.read()
 
 这个例子展示了如何使用 Frida 来调试 Bionic libc 中的 `rand48` 相关函数，可以帮助你理解 Android Framework 或 NDK 应用是如何一步步调用到这些底层函数的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/stdlib/rand48.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -331,8 +331,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: rand48.h,v 1.6 2011/05/18 19:36:36 dsl Exp $	*/
 
 /*
@@ -367,7 +369,4 @@ extern unsigned short	__rand48_add;
 #define	RAND48_ADD	(0x000b)
 
 #endif /* _RAND48_H_ */
-
-"""
-
 ```

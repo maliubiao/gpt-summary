@@ -142,7 +142,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，这段代码是 Chromium 网络栈中用于测试证书验证过程中约束处理逻辑的关键部分，确保了浏览器能够正确地识别和处理不符合安全规范的证书，从而保护用户的网络安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ITAL_SIGNATURE});
     }
     EXPECT_THAT(Verify(), IsOk());
@@ -1057,7 +1059,4 @@ INSTANTIATE_TEST_SUITE_P(All,
 TEST_P(CertVerifyProcConstraintsTrustedLeafTest, BaseCase) {
   // Without changing anything on the test chain, it should validate
   // successfully. If this is not true the
-"""
-
-
 ```

@@ -203,7 +203,7 @@ verbose = false
 
 总而言之，`machine_file.py` 是 Frida-CLR 组件中负责加载环境配置的关键部分。它通过解析配置文件，为 Frida 在不同目标平台上正确运行提供了必要的参数。 理解这个脚本的功能和它处理的配置信息，对于调试 Frida 的行为和进行更深入的逆向分析非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/machine_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -211,8 +211,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 from typing import Sequence, Union
@@ -257,7 +259,4 @@ def strv_to_meson(strv: Sequence[str]) -> str:
 
 def str_to_meson(s: str) -> str:
     return "'" + s + "'"
-
-"""
-
 ```

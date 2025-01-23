@@ -255,14 +255,16 @@ Promise.try(function(a, b) { return a + b; }, 5, 3);
 
 总而言之，`v8/src/builtins/promise-try.tq` 中的这段 Torque 代码实现了 JavaScript 的 `Promise.try` 功能，它提供了一种将同步函数调用包装成 Promise 的便捷方式，并负责处理函数执行过程中可能出现的异常。 理解其同步执行的特性以及如何正确处理 Promise 的 resolve 和 reject 是避免常见编程错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-try.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,7 +313,4 @@ transitioning javascript builtin PromiseTry(
 }
 
 }  // namespace promise
-
-"""
-
 ```

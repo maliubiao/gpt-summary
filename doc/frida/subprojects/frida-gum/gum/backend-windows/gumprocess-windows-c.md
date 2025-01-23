@@ -191,7 +191,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 `gumprocess-windows.c` 文件的主要功能是为 Frida 工具提供了一组用于在 Windows 平台上与目标进程进行交互的底层 API。它实现了诸如进程和线程管理、模块枚举、内存操作以及硬件断点/观察点等核心功能，这些功能是 Frida 进行动态 instrumentation 和逆向工程的基础。该文件大量使用了 Windows API，并涉及到对 PE 文件格式、线程上下文、调试寄存器等底层概念的理解。用户通过 Frida 的高层 API 操作最终会调用到这个文件中的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-windows/gumprocess-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -1557,7 +1559,4 @@ gum_windows_parse_context (const CONTEXT * context,
   cpu_context->ecx = context->Ecx;
   cpu_context->eax = context->Eax;
 #elif defined (HAVE_I386) && GLIB_SIZEOF_VOI
-"""
-
-
 ```

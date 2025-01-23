@@ -120,7 +120,7 @@ if (Process.arch !== 'arm64' && Process.arch !== 'arm' && Process.arch !== 'x64'
     * **函数调用约定：** `main` 函数调用 `func` 函数时，涉及到函数调用约定（例如，参数如何传递、返回值如何处理）。Frida 需要理解这些约定才能正确地 hook 函数并获取参数和返回值。
     * **内存布局：** Frida 需要知道目标进程的内存布局，包括代码段、数据段等，才能找到 `func` 函数的地址并进行 hook。
     * **指令集架构：** 代码的执行方式取决于 CPU 的指令集架构（
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/95 custominc/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 
 int func(void);
@@ -139,7 +141,4 @@ int main(int argc, char **argv) {
     (void)(argv);
     return func();
 }
-
-"""
-
 ```

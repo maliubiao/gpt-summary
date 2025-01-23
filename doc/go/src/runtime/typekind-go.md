@@ -190,7 +190,7 @@ func getInterfaceTypePtr(i interface{}) unsafe.Pointer {
 
 总而言之，`go/src/runtime/typekind.go` 中的 `isDirectIface` 函数是 Go 语言运行时系统中用于优化接口性能的关键部分，它决定了特定类型的值在接口内部是如何存储的。这属于 Go 语言底层实现的一部分，开发者通常不需要直接调用或关心它，但理解其背后的原理有助于更深入地理解 Go 语言的类型系统和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/typekind.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ import "internal/abi"
 func isDirectIface(t *_type) bool {
 	return t.Kind_&abi.KindDirectIface != 0
 }
-
-"""
-
-
-
 ```

@@ -157,15 +157,17 @@ this file does import sync
 
 总而言之，这段代码的核心价值在于展示了 Go 语言中本地包的导入方式，以及它如何在使用了类型参数的上下文中工作。  `sync.Mutex` 的使用则暗示了代码可能涉及并发安全。 理解 Go 模块系统和类型参数是避免使用本地包导入时出现错误的Key。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48337a.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ func main() {
 	obj := a.NewWrapperWithLock("this file does import sync")
 	obj.PrintWithLock()
 }
-
-"""
-
-
-
 ```

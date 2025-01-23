@@ -232,15 +232,17 @@ Understanding `ElementsKind` can help diagnose performance issues and understand
 
 In summary, `v8/src/objects/elements-kind.h` is a foundational header file in V8 that defines the various internal storage strategies for JavaScript arrays and objects. Understanding these "element kinds" is crucial for comprehending V8's optimization techniques and for writing efficient JavaScript code that avoids common performance pitfalls.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements-kind.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements-kind.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -811,7 +813,4 @@ inline bool ElementsKindEqual(ElementsKind a, ElementsKind b) { return a == b; }
 }  // namespace v8
 
 #endif  // V8_OBJECTS_ELEMENTS_KIND_H_
-
-"""
-
 ```

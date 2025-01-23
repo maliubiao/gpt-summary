@@ -126,14 +126,16 @@ This iterative process of code analysis, connecting to web concepts, inferring p
 
 `layout_inside_list_marker.cc` 文件中的 `LayoutInsideListMarker` 类是 Blink 渲染引擎中处理 `list-style-position: inside;` 列表标记布局的关键组件。 它与 HTML 列表元素和 CSS 的 `list-style-position` 属性紧密相关，并间接受 JavaScript 的影响。 理解其 `PositionForPoint` 方法的行为对于处理用户交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/list/layout_inside_list_marker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ PositionWithAffinity LayoutInsideListMarker::PositionForPoint(
 }
 
 }  // namespace blink
-
-"""
-
 ```

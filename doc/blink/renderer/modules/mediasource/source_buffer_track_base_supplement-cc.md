@@ -130,15 +130,17 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`source_buffer_track_base_supplement.cc` 是 Blink 引擎中一个关键的辅助组件，它负责维护 `TrackBase` 对象和 `SourceBuffer` 对象之间的关系，这对于实现 MSE API 的功能至关重要。它不直接与用户交互，而是在幕后默默地工作，确保媒体数据的正确处理和播放。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/source_buffer_track_base_supplement.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ void SourceBufferTrackBaseSupplement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

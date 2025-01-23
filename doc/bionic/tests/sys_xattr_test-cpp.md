@@ -291,7 +291,7 @@ if (Process.platform === 'android') {
 
 通过这种方式，你可以观察 Android Framework 或 NDK 的哪些部分最终调用了底层的 `setxattr` 等函数，从而理解其调用链。你可以根据需要 hook 其他相关的函数，例如 `fsetxattr`，`getxattr` 等，来进行更深入的调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_xattr_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -302,8 +302,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -442,7 +444,4 @@ TEST(sys_xattr, flistattr_invalid_fd) {
   ASSERT_EQ(-1, flistxattr(-1, buf, sizeof(buf)));
   ASSERT_ERRNO(EBADF);
 }
-
-"""
-
 ```

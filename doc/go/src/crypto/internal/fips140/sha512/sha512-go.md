@@ -187,7 +187,7 @@ func main() {
 
 这段代码是 Go 语言加密库中实现 SHA-512 家族哈希算法的关键部分，它遵循 FIPS 140 标准，保证了其在安全敏感场景下的合规性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha512/sha512.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -498,9 +500,4 @@ func (d *Digest) checkSum() [size512]byte {
 
 	return digest
 }
-
-"""
-
-
-
 ```

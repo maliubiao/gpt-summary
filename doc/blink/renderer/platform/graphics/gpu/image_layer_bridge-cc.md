@@ -162,14 +162,16 @@ By following this structured thought process, analyzing the code snippets, and c
 
 总而言之，`ImageLayerBridge` 是 Blink 渲染引擎中处理图像渲染的关键组件，它负责将各种来源的图像数据转化为可以在 GPU 或 CPU 上高效渲染的图层资源，并与浏览器的其他部分（包括 JavaScript, HTML, CSS）紧密配合，最终将图像呈现在用户面前。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/image_layer_bridge.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -522,7 +524,4 @@ ImageLayerBridge::RegisteredBitmap& ImageLayerBridge::RegisteredBitmap::
 operator=(RegisteredBitmap&& other) = default;
 
 }  // namespace blink
-
-"""
-
 ```

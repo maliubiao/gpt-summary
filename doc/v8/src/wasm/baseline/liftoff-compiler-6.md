@@ -116,12 +116,14 @@ loadAndRunWasm();
 
 **总结来说，`liftoff-compiler.cc` 文件的功能是实现 WebAssembly 的快速基线编译，这使得 JavaScript 引擎能够高效地加载和执行 WebAssembly 代码。虽然 JavaScript 代码不会直接调用 Liftoff 编译器，但它是 WebAssembly 在 V8 中执行的关键组成部分。** 作为第7部分，它可能包含了 Liftoff 编译器的最后一些细节实现、调试支持、性能分析相关的功能，或者是整个 Liftoff 编译流程的收尾工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 d).
   // Set by the first opcode, reset by the second.
   WasmOpcode outstanding_op_ = kNoOutstandingOp;
@@ -342,8 +344,4 @@ std::unique_ptr<DebugSideTable> GenerateLiftoffDebugSideTable(
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

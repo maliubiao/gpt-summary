@@ -314,7 +314,7 @@ ScopeInfo {
 
 总而言之，`v8/src/objects/scope-info.cc` 的核心职责是**提供 `ScopeInfo` 对象的定义、创建和管理机制**，这是 V8 引擎理解和执行 JavaScript 代码中作用域规则的基础。它将抽象的 JavaScript 作用域概念转化为 V8 内部可操作的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/scope-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/scope-info.cc以.tq结尾，那它是个v8 torque源代码，
@@ -322,8 +322,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1137,7 +1139,4 @@ void ScopeInfo::SetInferredFunctionName(Tagged<String> name) {
 
 bool ScopeInfo::HasOuterScopeInfo() const {
   return HasOuterScopeInfoBit::decode(Flags
-"""
-
-
 ```

@@ -141,15 +141,17 @@ This testing framework helps *prevent* common programming errors in the V8 compi
 
 **In summary, `reducer-test.h` is a fundamental tool for ensuring the correctness and effectiveness of Turboshaft's optimization passes (reducers). It allows V8 developers to rigorously test how their compiler transformations affect the intermediate representation of JavaScript code.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/turboshaft/reducer-test.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/turboshaft/reducer-test.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -381,7 +383,4 @@ class ReducerTest : public TestWithNativeContextAndZone {
 };
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

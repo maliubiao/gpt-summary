@@ -151,15 +151,17 @@ By following this plan and analyzing the code, I can generate a comprehensive su
 `frame_serializer.cc` (提供的第 1 部分代码) 的核心功能是**为将浏览器帧的内容序列化为 MHTML 格式做准备，主要负责管理和组织需要包含在 MHTML 文件中的各种资源（HTML 结构、CSS 样式、图片等），并提供了初步的 HTML 结构序列化能力，能够根据配置和策略选择性地包含或排除特定的 HTML 元素和属性。**  它定义了如何收集、获取和准备这些资源，为后续的 MHTML 文件生成奠定了基础。  代码中也体现了对性能和资源去重的考虑。
 ```
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_serializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -953,7 +955,4 @@ class SerializerMarkupAccumulator : public MarkupAccumulator {
     // Adopted stylesheets are evaluated last, so we append them last.
     if (!MHTMLImprovementsEnabled()) {
       AppendStylesheets(do
-"""
-
-
 ```

@@ -149,7 +149,7 @@ Here are a few scenarios where a user might encounter this specific file during 
 
 In summary, while `lib1.c` itself is a very basic C file, its context within the Frida project (specifically as a test case for `linkwhole` and precompiled headers) gives it significance. It serves as a simple example to verify build system behavior and demonstrate fundamental programming concepts like function calls and dependencies, which are also essential in reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/13 pch/linkwhole/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,13 +157,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void func1() {
     printf("Calling func2.");
     func2();
 }
-
-"""
-
 ```

@@ -110,14 +110,16 @@ By following this structured approach, I can systematically analyze the code and
 
 总而言之，`blink/renderer/platform/text/locale_icu_test.cc` 这个文件通过详尽的测试用例，确保了 Blink 引擎的 `LocaleICU` 类能够正确地处理各种与国际化和本地化相关的需求，这对于构建支持多语言的 Web 应用至关重要。它间接保证了 JavaScript 的国际化 API 的正确性，并为浏览器正确渲染 HTML 和应用 CSS 样式提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/locale_icu_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -420,7 +422,4 @@ TEST_F(LocaleICUTest, reversible) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -172,7 +172,7 @@ The answer is: 42
 
 总而言之，`appB.c` 自身是一个非常基础的 C 程序，但它的重要性在于它在 Frida 的特定测试场景中的作用，用于检验 Frida 在处理符号表被剥离的静态链接库时的能力。理解它的功能需要结合 Frida 的上下文以及对二进制底层知识的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/65 static archive stripping/app/appB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,13 +180,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libB.h>
 
 int main(void) { printf("The answer is: %d\n", libB_func()); }
-
-"""
-
 ```

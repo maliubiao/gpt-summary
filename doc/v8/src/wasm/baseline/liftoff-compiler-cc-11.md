@@ -157,7 +157,7 @@ loadAndRunWasm();
 
 总而言之，`v8/src/wasm/baseline/liftoff-compiler.cc` 是 V8 快速执行 WebAssembly 代码的关键组成部分，它牺牲了极致的性能优化来换取更快的编译速度，并负责处理 WebAssembly 模块加载后的初始执行。提供的代码片段具体展示了 Liftoff 如何安全可靠地实现 WebAssembly 的函数调用机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -165,8 +165,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第12部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dex_slot.i32_const(), max_table_size);
         } else if (Is64() && table->is_table64()) {
           // On 32-bit, this is the same as below, so include the `Is64()` test
@@ -904,7 +906,4 @@ dex_slot.i32_const(), max_table_size);
   LiftoffAssembler asm_;
 
   // Used for merging code generation of subsequent operations (via look-ahea
-"""
-
-
 ```

@@ -101,7 +101,7 @@ print(summary)
 ### 总结
 
 该文件实现了 Frida 在 Darwin 系统上的核心功能，包括崩溃信息的处理、代理模块的映射、事件的处理等。通过 LLDB 和 Python 脚本，用户可以复刻部分功能，如解析崩溃报告。用户在使用过程中需要注意崩溃报告的格式和参数名的规范，以确保功能的正常运行。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/darwin-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 split ("\n", 2);
 			var raw_header = tokens[0];
 			var report = tokens[1];
@@ -324,8 +326,4 @@ split ("\n", 2);
 	}
 #endif
 }
-
-"""
-
-
 ```

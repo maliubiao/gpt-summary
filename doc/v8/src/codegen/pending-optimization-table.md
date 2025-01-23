@@ -129,11 +129,13 @@ console.log(%GetOptimizationStatus(functionToOptimize)); // 输出可能会包�
 
 `pending-optimization-table.cc` 中定义的 `ManualOptimizationTable` 是 V8 内部用于管理需要手动触发优化的 JavaScript 函数的机制。它允许在特定的测试或调试环境下，显式地标记函数并让 V8 在后续对其进行优化。虽然标准 JavaScript 无法直接访问这个 C++ 类，但 V8 提供的某些非标准扩展（如 `%OptimizeFunctionOnNextCall`）可以实现类似的功能，以便开发者控制 JavaScript 代码的优化过程。这对于理解 V8 的优化机制以及进行底层的测试和调试非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/pending-optimization-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ bool ManualOptimizationTable::IsMarkedForManualOptimization(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

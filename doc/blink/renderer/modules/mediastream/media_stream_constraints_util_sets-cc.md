@@ -168,15 +168,17 @@ const constraints = {
 
 总而言之，`media_stream_constraints_util_sets.cc` 是 Blink 引擎中处理媒体流约束的关键组件，它负责将用户在 JavaScript 中定义的期望转化为浏览器内部可以理解和执行的指令，最终影响用户看到的媒体流效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_sets.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -771,7 +773,4 @@ DiscreteSet<bool> RescaleSetFromConstraint(
 
 }  // namespace media_constraints
 }  // namespace blink
-
-"""
-
 ```

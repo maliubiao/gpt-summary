@@ -139,7 +139,7 @@ Initially, I might focus too much on the direct actions of the script (file copy
 
 `build_website.py` 是一个用于自动化更新 Frida 项目网站文档的关键脚本。虽然它本身不直接执行逆向操作，但它确保了文档的及时更新，这对于逆向工程师理解和使用 Frida 至关重要。脚本的实现依赖于多个外部工具和特定的环境配置，因此可能会因为环境问题或用户操作不当而失败。理解脚本的功能和潜在的错误场景可以帮助开发人员和维护者快速定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/tools/build_website.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, subprocess, shutil
@@ -200,7 +202,4 @@ def update() -> None:
 
 if __name__ == '__main__':
     update()
-
-"""
-
 ```

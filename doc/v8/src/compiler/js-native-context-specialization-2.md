@@ -129,13 +129,15 @@ const element = sparseArray[5]; // CanTreatHoleAsUndefined 可能影响此处的
 
 这部分代码是 V8 引擎中非常核心的部分，它专注于提升 JavaScript 代码在特定场景下的执行效率，尤其是针对常见的属性和元素访问模式。通过深入了解对象的结构和类型信息，它可以生成高度优化的机器码，从而显著提高 JavaScript 应用程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- Node* control, PropertyAccessInfo const& access_info) {
+### 源代码
+```
+Node* control, PropertyAccessInfo const& access_info) {
   // TODO(v8:11457) Support property tests for dictionary mode protoypes.
   DCHECK(!access_info.HasDictionaryHolder());
 
@@ -1370,8 +1372,4 @@ SimplifiedOperatorBuilder* JSNativeContextSpecialization::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

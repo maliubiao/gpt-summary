@@ -105,7 +105,7 @@ By analyzing these tests, I can identify the key functionalities and the error h
 
 通过查看网络日志，开发者可以追踪到发送的请求头和接收到的 `RST_STREAM` 帧，从而定位问题的原因。这些单元测试覆盖了这些关键步骤，确保在各种异常情况下，客户端的行为是可预测且正确的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/bidirectional_stream_quic_impl_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ssPacket(
       ConstructResponseHeadersPacket(2, !kFin, std::move(response_headers),
                                      &spdy_response_headers_frame_length));
@@ -792,8 +794,4 @@ TEST_P(BidirectionalStreamQuicImplTest, ReleaseStreamFails) {
 }
 
 }  // namespace net::test
-
-"""
-
-
 ```

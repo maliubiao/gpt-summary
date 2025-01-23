@@ -155,15 +155,17 @@ wire_bytes = {
 
 总结来说，`v8/test/fuzzer/wasm-compile.cc` 是 V8 引擎中一个重要的测试工具，它通过生成随机的、合法的 WebAssembly 模块来持续测试编译器的健壮性和正确性，从而保障 JavaScript 环境中 WebAssembly 功能的可靠运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-compile.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/fuzzer/wasm-compile.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

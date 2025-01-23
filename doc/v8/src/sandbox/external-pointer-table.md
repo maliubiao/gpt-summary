@@ -131,11 +131,13 @@ console.log("First 4 bytes:", buffer.readUInt32(0));
 
 `v8/src/sandbox/external-pointer-table.cc` 文件实现了 V8 引擎中用于安全管理 JavaScript 堆外内存的机制。它对于实现高性能的 JavaScript 与 C++ 互操作至关重要，特别是在原生模块的场景下。虽然普通 JavaScript 开发者不会直接与之交互，但它的存在保证了 JavaScript 可以安全地使用 C++ 扩展提供的外部资源，而不会导致内存泄漏或其他安全问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/external-pointer-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -487,7 +489,4 @@ void ExternalPointerTable::UpdateAllEvacuationEntries(
 }  // namespace v8
 
 #endif  // V8_COMPRESS_POINTERS
-
-"""
-
 ```

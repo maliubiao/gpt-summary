@@ -109,15 +109,17 @@ The user wants to understand the functionality of the given C++ source code file
 
 那么，开发者可能会查看 `web_frame_serializer_sanitization_test.cc` 中的测试用例，来了解 `WebFrameSerializer` 进行了哪些清理操作，从而找到问题的原因并调整他们的网页代码或 `WebFrameSerializer` 的实现。 例如，他们可以搜索与特定 HTML 元素、属性或 JavaScript 功能相关的测试用例，来理解其在序列化过程中是如何被处理的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_frame_serializer_sanitization_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -518,7 +520,4 @@ TEST_F(WebFrameSerializerSanitizationTest, ImageInPluginElement) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

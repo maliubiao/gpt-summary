@@ -150,7 +150,7 @@ By following these steps, iteratively analyzing the code and its context, and co
 
 总而言之，`func15.c` 虽然代码简单，但它体现了函数调用、静态链接等基本概念，并且在 Frida 的上下文中，可以作为学习动态分析和逆向工程的一个简单示例。 理解这样的代码片段是构建更复杂分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func15.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,15 +158,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func14();
 
 int func15()
 {
   return func14() + 1;
 }
-
-"""
-
 ```

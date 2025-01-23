@@ -156,7 +156,7 @@ By following these steps, combining code analysis with contextual knowledge of F
 
 总结来说，`postprocess.py` 是 Frida 构建过程中的一个幕后英雄，它通过增强 AST 的信息，为后续的构建步骤提供了更丰富的数据，虽然用户通常不会直接与之交互，但理解它的功能有助于理解 Frida 的构建流程和排查构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/ast/postprocess.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -275,7 +277,4 @@ class AstConditionLevel(AstVisitor):
         node.condition.accept(self)
         node.block.accept(self)
         self.condition_level -= 1
-
-"""
-
 ```

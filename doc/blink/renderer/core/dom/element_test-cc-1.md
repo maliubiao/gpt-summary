@@ -102,7 +102,7 @@ The tests primarily focus on the `focusgroup` attribute and its related behavior
 
 总之，`element_test.cc` 的这部分代码主要负责测试 `blink::Element` 类中关于焦点组属性的解析、继承和动态更新，以及各种伪元素的创建和管理机制，确保这些核心功能在不同的 HTML 和 CSS 场景下都能正常工作。这些测试对于保证 Chromium 浏览器的焦点管理和渲染功能的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s, FocusgroupFlags::kNone);
   ASSERT_FALSE(fg4_flags & FocusgroupFlags::kWrapInline);
   ASSERT_TRUE(fg4_flags & FocusgroupFlags::kWrapBlock);
@@ -604,8 +606,4 @@ TEST_F(ElementTest, TheSelectArrowPseudoElement) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -138,14 +138,16 @@ By following these steps, iteratively analyzing the code and connecting it to br
 
 总而言之，`blink/renderer/core/html/forms/input_type_view.cc` 文件是 Blink 渲染引擎中一个至关重要的组件，它为各种 HTML `<input>` 元素提供了基础的视图逻辑和事件处理机制，是连接 HTML 结构、CSS 样式和 JavaScript 交互的关键桥梁。理解其功能有助于开发者更好地理解浏览器如何处理表单输入，并避免常见的开发错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/input_type_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -401,7 +403,4 @@ void ClickHandlingState::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

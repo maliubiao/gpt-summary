@@ -163,15 +163,17 @@ When using GDB to debug Wasm in V8, users might encounter these common errors:
 
 In summary, `v8/src/debug/wasm/gdb-server/gdb-server.h` defines the core of the Wasm debugging functionality within V8, allowing developers to use the familiar GDB debugger to inspect and control the execution of their WebAssembly code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/gdb-server.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/wasm/gdb-server/gdb-server.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -388,7 +390,4 @@ class GdbServer {
 }  // namespace v8
 
 #endif  // V8_DEBUG_WASM_GDB_SERVER_GDB_SERVER_H_
-
-"""
-
 ```

@@ -150,15 +150,17 @@ By following this systematic approach, including code examination, web technolog
 
 总而言之，`RemoveNodePreservingChildrenCommand` 是 Blink 渲染引擎中处理特定编辑场景的关键组件，它确保在移除节点的同时，能够合理地保留其子节点，维护内容的完整性，尤其是在富文本编辑等复杂场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/remove_node_preserving_children_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008 Apple Inc. All rights reserved.
  *
@@ -231,7 +233,4 @@ void RemoveNodePreservingChildrenCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

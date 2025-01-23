@@ -139,7 +139,7 @@ Here's a breakdown of the thinking process to analyze the C code and address the
 
 总而言之，`prog-checkver.c` 尽管是一个很小的程序，但在 Frida 的构建过程中扮演着重要的角色，确保了其依赖库的版本一致性，这对于软件的稳定性和安全性至关重要。对于逆向工程师来说，理解这种版本检查机制也有助于他们更深入地分析 Frida 的内部工作原理和依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/linuxlike/1 pkg-config/prog-checkver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <zlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -164,7 +166,4 @@ int main(void) {
     printf("Couldn't find 'deflate'\n");
     return 1;
 }
-
-"""
-
 ```

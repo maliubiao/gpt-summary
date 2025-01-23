@@ -122,7 +122,7 @@ export { subtract as sub } from './math';
 
 这部分 `parser.cc` 的代码主要负责 **解析 JavaScript 的 `export` 声明**。它能够识别和处理各种不同的 `export` 语法结构，并将这些结构转换为 V8 内部的表示形式，以便进行进一步的编译和代码生成。此外，它还负责在解析过程中进行一些基本的语法检查，例如防止导出保留字或在不恰当的地方使用字符串字面量作为导出名称。 这部分的功能是理解模块化 JavaScript 代码的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 }
 
@@ -931,7 +933,4 @@ Statement* Parser::DesugarLexicalBindingsInForStatement(
   outer_loop->Initialize(nullptr, nullptr, nullptr, inner_block);
 
   return outer_block
-"""
-
-
 ```

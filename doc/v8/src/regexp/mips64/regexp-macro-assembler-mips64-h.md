@@ -232,15 +232,17 @@ Understanding the underlying assembly generation can help diagnose some common R
 
 In summary, `v8/src/regexp/mips64/regexp-macro-assembler-mips64.h` is a foundational component for efficient regular expression execution in V8 on MIPS64 architectures. It provides the building blocks to translate abstract RegExp operations into low-level machine code, influencing the performance and behavior of JavaScript's regular expression features.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/mips64/regexp-macro-assembler-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/mips64/regexp-macro-assembler-mips64.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -500,7 +502,4 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerMIPS
 }  // namespace v8
 
 #endif  // V8_REGEXP_MIPS64_REGEXP_MACRO_ASSEMBLER_MIPS64_H_
-
-"""
-
 ```

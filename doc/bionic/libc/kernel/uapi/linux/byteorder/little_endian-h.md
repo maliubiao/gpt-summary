@@ -226,7 +226,7 @@ sys.stdin.read()
 
 这个 Frida 示例提供了一种动态分析字节序转换过程的方法，可以帮助开发者理解 Android Framework 或 NDK 如何最终使用到 `little_endian.h` 中定义的宏。请注意，实际的调用栈可能很复杂，涉及多个层级的函数调用。Hook 更高层的函数或方法可能需要更复杂的 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/byteorder/little_endian.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -297,7 +299,4 @@ Prompt:
 #define __cpu_to_be16s(x) __swab16s((x))
 #define __be16_to_cpus(x) __swab16s((x))
 #endif
-
-"""
-
 ```

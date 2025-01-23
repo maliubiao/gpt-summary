@@ -127,7 +127,7 @@ expected_rule.sources.emplace_back(expected_source);
 
 总而言之，这部分代码是 Blink 引擎中 Service Worker 路由功能的核心测试部分，它确保了从外部 (通常是 JavaScript) 表示的路由规则能够正确地转换为引擎内部使用的格式，从而保证 Service Worker 能够按照预期拦截和处理网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/service_worker_router_type_converter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -135,9 +135,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  test::TaskEnvironment task_environment;
+### 源代码
+```cpp
+test::TaskEnvironment task_environment;
   auto* idl_rule = blink::RouterRule::Create();
   const KURL kFakeBaseUrl("");
   auto* idl_condition = blink::RouterCondition::Create();
@@ -334,8 +336,4 @@ TEST(ServiceWorkerRouterTypeConverterTest, CacheName) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

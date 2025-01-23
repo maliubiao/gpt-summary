@@ -163,7 +163,7 @@ During this process, I might realize I've missed something or could explain it b
 
 这部分 `DOMSelection.cc` 代码的核心职责是 **提供对 Shadow DOM 具有感知能力的选区操作支持**，包括调整节点关系和偏移量，以及进行必要的有效性检查。同时，它也提供了向控制台输出警告信息和管理内部临时 Range 对象的功能，以确保选区操作的正确性和效率。 这与 JavaScript Selection API 和 HTML 的 Shadow DOM 特性紧密相关，确保了在复杂 DOM 结构下选区操作的一致性和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/dom_selection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 !adjusted_node)
     return nullptr;
 
@@ -238,8 +240,4 @@ Range* DOMSelection::TemporaryRange::GetRange() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

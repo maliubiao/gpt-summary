@@ -116,15 +116,17 @@ HTML 和 CSS 定义了网页的结构和样式。如果 WebGPU 用于渲染网�
 
 `GPUInternalError` 是 Blink 引擎 WebGPU 模块中用于报告内部错误的机制。它不是由用户的直接操作或 JavaScript 编程错误直接引起的，而是指示 WebGPU 底层实现中出现了问题。 调试这类问题通常需要深入了解 WebGPU 的内部机制，并且可能需要 Chromium 开发者进行源码级别的调试。用户操作通常是触发这些内部错误的场景，而调试线索则需要在浏览器控制台、`chrome://gpu` 页面以及更底层的调试工具中寻找。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_internal_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ GPUInternalError* GPUInternalError::Create(const String& message) {
 GPUInternalError::GPUInternalError(const String& message) : GPUError(message) {}
 
 }  // namespace blink
-
-"""
-
 ```

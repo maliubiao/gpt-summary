@@ -182,7 +182,7 @@ By following these steps, iteratively analyzing the code, and considering the co
 
 总而言之，`cmMod.cpp` 虽然功能简单，但它在 Frida 的开发和测试流程中扮演着一定的角色。通过分析这个文件，我们可以了解 Frida 的构建配置、依赖关系以及其可能涉及的底层技术。在逆向工程的上下文中，这样的测试用例可以帮助理解 Frida 的工作原理和如何利用它来分析目标程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/2 advanced/subprojects/cmMod/lib/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include <zlib.h>
 #include "config.h"
@@ -218,7 +220,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

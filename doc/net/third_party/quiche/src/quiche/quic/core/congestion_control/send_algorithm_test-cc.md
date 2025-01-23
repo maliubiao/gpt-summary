@@ -140,15 +140,17 @@ This systematic approach allows for a comprehensive understanding of the C++ tes
 
 总而言之，`send_algorithm_test.cc` 是 QUIC 协议开发中至关重要的一部分，它通过模拟各种网络场景，系统地验证了不同拥塞控制算法的正确性和性能，从而保证了基于 QUIC 的网络连接的稳定性和效率。虽然用户不直接操作这个文件，但其测试结果直接影响用户最终的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/send_algorithm_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -498,7 +500,4 @@ TEST_P(SendAlgorithmTest, LowRTTTransfer) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

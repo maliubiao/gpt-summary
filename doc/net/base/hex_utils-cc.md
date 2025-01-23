@@ -235,15 +235,17 @@ By following this structured approach, including analyzing the code, connecting 
 
 `net/base/hex_utils.cc` 虽然是一个底层的 C++ 文件，但它提供的十六进制编码和解码功能是网络编程和数据处理中非常基础且常用的操作。在 JavaScript Web 开发的上下文中，虽然开发者不会直接调用这些 C++ 函数，但它们的功能与处理二进制数据、调试网络通信等方面密切相关。理解这些底层工具的功能有助于开发者更好地理解浏览器的工作原理，并能更有效地调试与网络和数据处理相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/hex_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ std::string HexDump(std::string_view input) {
 }
 
 }  // namespace net
-
-"""
-
 ```

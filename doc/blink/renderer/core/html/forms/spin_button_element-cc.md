@@ -157,14 +157,16 @@ By following these steps of analysis, deduction, and relating the code to the br
 
 总而言之，`spin_button_element.cc` 定义了用于在 Chromium 中渲染和处理数字输入控件内部的上下箭头按钮的核心逻辑，它与 HTML 结构、CSS 样式以及 JavaScript 脚本都有着密切的联系，共同为用户提供交互式的数值输入体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/spin_button_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2010 Google Inc. All rights reserved.
@@ -429,7 +431,4 @@ void SpinButtonElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

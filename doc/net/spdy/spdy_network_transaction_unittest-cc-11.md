@@ -124,7 +124,7 @@ fetch('https://example.com/data.json')
 
 作为该系列单元测试的最后一部分，`net/spdy/spdy_network_transaction_unittest.cc` 覆盖了 `SpdyNetworkTransaction` 类中一些较为关键和复杂的场景，特别是关于 **0-RTT 连接** 和 **HTTP/2 的兼容性探测机制 (grease)**。  这表明在整个测试体系中，对于性能优化（0-RTT）和协议的健壮性、与未来扩展的兼容性（grease）是非常重视的。  由于是最后一部分，它可能也包含了一些对之前测试中未充分覆盖的边缘情况或特定配置的测试。  总的来说，这部分测试进一步巩固了 `SpdyNetworkTransaction` 在各种真实网络环境和服务器行为下的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ) {
   spdy::SpdySerializedFrame req(spdy_util_.ConstructSpdyPost(
       kDefaultUrl, 1, kUploadDataSize, LOWEST, nullptr, 0));
@@ -782,8 +784,4 @@ TEST_P(SpdyNetworkTransactionTest, AlpsFramingError) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

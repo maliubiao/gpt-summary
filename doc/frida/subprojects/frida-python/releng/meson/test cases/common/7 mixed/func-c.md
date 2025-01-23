@@ -157,7 +157,7 @@ By following these steps, moving from understanding the code itself to consideri
 
 总而言之，虽然 `func` 函数本身非常简单，但它可以在 Frida 动态插桩的上下文中作为一个基本的观察点，用于学习和调试程序的行为。 通过 Frida 的各种功能，逆向工程师可以深入了解程序的运行状态，并进行各种修改和实验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/7 mixed/func.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,13 +165,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     int class = 0;
     return class;
 }
-
-"""
-
 ```

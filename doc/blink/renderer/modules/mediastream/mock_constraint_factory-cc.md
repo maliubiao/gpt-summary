@@ -133,15 +133,17 @@ Let's break down the thought process for analyzing this `mock_constraint_factory
 
 总而言之，`mock_constraint_factory.cc` 是一个测试工具，用于在 Blink 引擎的测试环境中创建和管理模拟的媒体约束对象，以便验证媒体流处理的相关逻辑是否正确。它与 JavaScript 中的 `getUserMedia` API 的约束参数紧密相关，但用户不会直接操作它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/mock_constraint_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ void MockConstraintFactory::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

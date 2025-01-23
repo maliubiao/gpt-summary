@@ -119,7 +119,7 @@ func main() {
 
 `go/src/internal/testpty/pty_none.go` 提供了一个在特定条件下返回“PTY 不支持”错误的实现。这通常用于测试或者在不支持 PTY 的平台上作为一种回退机制。使用者需要注意，当这个文件生效时，与 PTY 相关的操作将会失败。理解 `//go:build` 的约束条件对于判断何时会使用这个“空”实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/testpty/pty_none.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -127,8 +127,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -142,9 +144,4 @@ import "os"
 func open() (pty *os.File, processTTY string, err error) {
 	return nil, "", ErrNotSupported
 }
-
-"""
-
-
-
 ```

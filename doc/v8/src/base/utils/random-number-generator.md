@@ -55,11 +55,13 @@ console.log(array[0]);
 
 `v8/src/base/utils/random-number-generator.cc` 文件中的 `RandomNumberGenerator` 类是 V8 引擎中生成伪随机数的关键组件。它负责提供各种生成随机数的方法，并通过多种机制（包括外部提供的熵源、操作系统 API 和时间戳）来初始化种子，力求提供尽可能好的随机性。 JavaScript 的 `Math.random()` 等功能直接依赖于这个 C++ 类的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/utils/random-number-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ uint64_t RandomNumberGenerator::MurmurHash3(uint64_t h) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

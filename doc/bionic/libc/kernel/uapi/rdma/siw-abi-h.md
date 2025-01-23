@@ -311,7 +311,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/rdma/siw-abi.h` 定义了 Android (基于 Linux 内核) 中 Software iWARP 的用户空间接口，用于高性能网络通信。虽然 Android Framework 和 NDK 通常不直接使用它，但在特定的高性能或硬件加速场景下可能会被间接使用。理解这个头文件对于理解 Android 系统底层 RDMA 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/siw-abi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -322,8 +322,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -465,7 +467,4 @@ struct siw_cq_ctrl {
   __u32 pad;
 };
 #endif
-
-"""
-
 ```

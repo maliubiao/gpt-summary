@@ -140,15 +140,17 @@ largeArray = null; // 释放引用，可能触发 GC
 
 总而言之，`v8/src/base/platform/platform-openbsd.cc` 是 V8 引擎在 OpenBSD 上的基石，提供了关键的操作系统接口，使得 JavaScript 能够在 OpenBSD 环境中顺利运行。虽然 JavaScript 开发者通常不会直接接触这些代码，但了解其功能有助于理解 V8 的底层工作原理和可能遇到的平台相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-openbsd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/platform-openbsd.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -281,7 +283,4 @@ std::optional<OS::MemoryRange> OS::GetFirstFreeMemoryRangeWithin(
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

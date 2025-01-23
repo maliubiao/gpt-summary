@@ -147,7 +147,7 @@ Read through the answer to ensure accuracy, completeness, and clarity. Check for
 
 总而言之，`frida_version.py` 是一个实用的小工具，用于确定 Frida 代码仓库的版本，这对于 Frida 的开发、调试和使用都非常重要。虽然它本身不直接参与逆向分析，但它提供的版本信息是进行有效逆向工作的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/frida_version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -226,7 +228,4 @@ def detect(repo: Path) -> FridaVersion:
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

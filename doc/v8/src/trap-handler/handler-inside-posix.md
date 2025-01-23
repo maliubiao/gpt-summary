@@ -99,11 +99,13 @@ try {
 
 **总结来说，`handler-inside-posix.cc` 是 V8 引擎为了提高 WebAssembly 代码的健壮性和安全性而实现的关键底层机制，它将操作系统的信号转换为 JavaScript 可以理解和处理的错误，使得 WebAssembly 程序的错误处理更加友好。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-inside-posix.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ void HandleSignal(int signum, siginfo_t* info, void* context) {
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

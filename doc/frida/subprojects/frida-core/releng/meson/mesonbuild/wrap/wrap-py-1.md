@@ -128,7 +128,7 @@ url_hash = aabbccddeeff...
 
 总而言之，`wrap.py` 负责 Frida 构建过程中至关重要的依赖项管理环节，它确保了外部代码的正确获取、验证和集成，为 Frida 的成功构建奠定了基础。它体现了软件工程中对于依赖管理的常见需求，并结合了哈希校验、补丁应用等技术来保证构建过程的可靠性和可控性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,9 +137,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- bool = True) -> None:
+### 源代码
+```python
+bool = True) -> None:
         if what + '_hash' not in self.wrap.values and not hash_required:
             return
         expected = self.wrap.get(what + '_hash').lower()
@@ -264,8 +266,4 @@ Prompt:
                         os.chmod(dst_file, stat.S_IWUSR)
                         os.remove(dst_file)
                 shutil.copy2(src_file, dst_dir)
-
-"""
-
-
 ```

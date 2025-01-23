@@ -214,7 +214,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "android_gethostbynameforn
 
 这部分代码是 Android Bionic libc 中网络功能的重要组成部分，它使得应用程序能够解析主机名和执行反向 IP 地址查找，并考虑了 Android 平台的特定需求，如网络命名空间。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/net/gethnamaddr.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 en + NS_IN6ADDRSZ > info->buflen)
 			goto nospc;
 		map_v4v6_address(bf, bf);
@@ -575,8 +577,4 @@ gethostent(void)
 	memset(&rs->host, 0, sizeof(rs->host));
 	return netbsd_gethostent_r(rs->hostf, &rs->host, rs->hostbuf, sizeof(rs->hostbuf), &h_errno);
 }
-
-"""
-
-
 ```

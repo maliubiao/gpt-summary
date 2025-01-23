@@ -130,12 +130,14 @@ Strategizing complete. I will now generate the response based on these insights.
 
 总而言之，`regexp-compiler-tonode.cc` 是 V8 引擎中将 JavaScript 正则表达式转换为可执行形式的关键组成部分。 它负责将正则表达式的语法结构映射到引擎内部的执行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler-tonode.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1818,8 +1820,4 @@ void CharacterRange::Canonicalize(ZoneList<CharacterRange>* character_ranges) {
   if (character_ranges->length() <= 1) return;
   // Check whether ranges are already canonical (increasing, non-overlapping,
   // non-adjacent).
- 
-"""
-
-
 ```

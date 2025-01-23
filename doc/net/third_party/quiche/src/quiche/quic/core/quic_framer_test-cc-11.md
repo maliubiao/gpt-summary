@@ -132,7 +132,7 @@ Similarly, if a website using WebTransport has issues with stream management, th
 
 As part 12 of 16, this specific section of `quic_framer_test.cc` primarily focuses on **testing the `QuicFramer`'s ability to correctly parse and serialize specific IETF QUIC control frames**, namely `NEW_TOKEN`, `STOP_SENDING`, `PATH_CHALLENGE`, `PATH_RESPONSE`, and `RETIRE_CONNECTION_ID`. It also includes crucial tests for **verifying the correct handling of frame type encoding**, ensuring adherence to the IETF QUIC specification regarding minimal encoding and rejection of unknown frame types. Given its position in the sequence, it's likely that earlier parts covered more fundamental frame types (like stream data frames) and core packet parsing, while later parts might delve into more complex scenarios or other QUIC features. This section plays a vital role in ensuring the robust and correct implementation of the IETF QUIC extensions within Chromium's network stack.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0x03,
                                     0x04, 0x05, 0x06, 0x07};
 
@@ -1220,7 +1222,4 @@ TEST_P(QuicFramerTest, RetireConnectionIdFrame) {
   EXPECT_TRUE(framer_.ProcessPacket(*encrypted));
 
   EXPECT_THAT(framer_.error(), Is
-"""
-
-
 ```

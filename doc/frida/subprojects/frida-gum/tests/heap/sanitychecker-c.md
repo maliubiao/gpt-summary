@@ -134,7 +134,7 @@ Frida 本身就是一个动态 instrumentation 工具，广泛应用于软件逆
 
 总而言之，`frida/subprojects/frida-gum/tests/heap/sanitychecker.c` 是一个至关重要的测试文件，它不仅验证了 Frida 堆内存健全性检查器的功能，也为用户提供了学习和理解该功能用法的示例。通过分析这个文件，我们可以深入了解 Frida 在内存管理方面的能力，以及它在动态逆向分析中的应用价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/sanitychecker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -276,7 +278,4 @@ TESTCASE (checker_itself_does_not_leak)
 }
 
 #endif /* HAVE_WINDOWS */
-
-"""
-
 ```

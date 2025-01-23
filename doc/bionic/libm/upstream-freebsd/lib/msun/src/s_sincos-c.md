@@ -232,7 +232,7 @@ sys.stdin.read()
 
 总而言之，`s_sincos.c` 文件实现了高效且精确的 sine 和 cosine 同步计算，是 Android 系统中重要的基础数学函数，被广泛应用于各种场景。理解其实现原理有助于我们更好地理解 Android 系统的底层运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_sincos.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -322,7 +324,4 @@ sincos(double x, double *sn, double *cs)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(sincos, sincosl);
 #endif
-
-"""
-
 ```

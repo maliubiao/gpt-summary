@@ -186,15 +186,17 @@ This thought process involves a combination of code reading, understanding of co
 
 理解 `v8/src/objects/tagged-impl.cc` 中的概念有助于更深入地理解 JavaScript 引擎的工作原理，以及为什么某些 JavaScript 行为会如此。虽然开发者通常不需要直接操作 Tagged 指针，但了解其背后的机制可以帮助避免常见的编程错误，并编写更高效的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/tagged-impl.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/tagged-impl.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ template class TaggedImpl<HeapObjectReferenceType::WEAK, Address>;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

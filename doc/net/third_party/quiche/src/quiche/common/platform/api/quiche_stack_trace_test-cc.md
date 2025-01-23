@@ -159,15 +159,17 @@ quiche::test::QuicheStackTraceTest_GetStackTrace_Test::TestBody() at net/third_p
 
 总而言之，`quiche_stack_trace_test.cc` 文件是 Chromium 网络栈中 Quiche 库的关键测试文件，用于确保能够正确地捕获和符号化堆栈跟踪，这对于调试底层的网络通信错误至关重要。虽然普通用户不会直接接触到这个文件，但当用户遇到网络问题时，这个文件所测试的功能可能会在幕后帮助开发者诊断问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/api/quiche_stack_trace_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/common/platform/api/quiche_stack_trace.h"
 
 #include <cstdint>
@@ -229,7 +231,4 @@ TEST(QuicheStackTraceTest, GetStackTraceInTwoSteps) {
 }  // namespace
 }  // namespace test
 }  // namespace quiche
-
-"""
-
 ```

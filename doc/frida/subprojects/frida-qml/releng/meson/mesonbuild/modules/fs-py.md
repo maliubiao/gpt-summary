@@ -152,7 +152,7 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/fs.py` 文件为 Frida 的构建系统提供了强大的文件系统操作能力，虽然它本身不直接执行逆向操作，但其功能在逆向工程的构建和分析流程中扮演着重要的辅助角色。理解这个模块的功能和潜在的错误场景，有助于进行 Frida 相关的构建和调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/fs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -485,7 +487,4 @@ class FSModule(ExtensionModule):
 
 def initialize(*args: T.Any, **kwargs: T.Any) -> FSModule:
     return FSModule(*args, **kwargs)
-
-"""
-
 ```

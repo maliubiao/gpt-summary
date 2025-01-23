@@ -171,15 +171,17 @@ console.log(result2);
 
 `v8/src/base/numbers/strtod.h` 中声明的 `Strtod` 函数是一个用于将纯数字字符串（不含小数点、符号等）转换为 `double` 类型的函数，并允许指定一个指数。它在 V8 内部用于特定的数字处理场景，其对输入的严格限制需要开发者注意，以避免常见的编程错误。理解其功能和约束有助于理解 V8 内部的数字处理机制，并能更好地对比其与 JavaScript 中相关功能的异同。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/strtod.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/strtod.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ V8_BASE_EXPORT double Strtod(Vector<const char> buffer, int exponent);
 }  // namespace v8
 
 #endif  // V8_BASE_NUMBERS_STRTOD_H_
-
-"""
-
 ```

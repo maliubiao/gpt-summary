@@ -96,7 +96,7 @@ Now I can construct the response using these insights.
 
 这段测试代码模拟了步骤 5 和 7，确保 `SpdySessionPool` 在接收到 SSL 配置变更通知时能够正确处理其管理的 SPDY 会话。 通过查看网络日志（chrome://net-export/）或者使用调试器，开发者可以追踪 SSL 配置变更的通知流程以及 `SpdySessionPool` 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_pool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 essionKey, /* enable_ip_based_pooling = */ false,
       /* is_websocket = */ false, NetLogWithSource(),
       request_deleted_callback1.Callback(), &request_delegate1,
@@ -523,8 +525,4 @@ TEST_F(SpdySessionPoolTest, SSLConfigForServerChangedWithOnlyPendingStreams) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

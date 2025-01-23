@@ -168,7 +168,7 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 这部分 `net/websockets/websocket_channel.cc` 的代码主要负责 WebSocket 连接的**关闭流程和数据发送**。它处理了启动和完成关闭握手、发送数据帧、处理错误情况以及解析接收到的关闭帧。 这些功能是实现可靠的、符合 WebSocket 协议的通信的关键组成部分。它与 JavaScript 的 WebSocket API 紧密相关，实现了 JavaScript 代码发起的关闭和发送操作，并处理了 JavaScript 需要感知到的关闭事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_channel.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 
   SetState(CLOSE_WAIT);
@@ -307,8 +309,4 @@ void WebSocketChannel::CloseTimeout() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

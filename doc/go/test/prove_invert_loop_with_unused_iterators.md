@@ -155,15 +155,17 @@ go test -gcflags="-0 -d=ssa/prove/debug=1" go/test/prove_invert_loop_with_unused
 
 这段 Go 代码片段定义了一个简单的循环执行函数 `invert`，其主要目的是作为 Go 编译器的一个测试用例，用于验证编译器是否能识别出可以进行循环反转优化的简单循环结构。通过特定的编译器标志，可以观察到编译器在分析这类循环时的行为。使用者需要理解代码的测试目的以及相关的编译器标志才能正确理解和使用这段代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/prove_invert_loop_with_unused_iterators.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=ssa/prove/debug=1
 
 //go:build amd64
@@ -175,9 +177,4 @@ func invert(b func(), n int) {
 		b()
 	}
 }
-
-"""
-
-
-
 ```

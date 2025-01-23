@@ -71,7 +71,7 @@ Response:
 1. **Map 操作检查**：`bpf_map_update_elem` 和 `bpf_map_lookup_elem` 的返回值。
 2. **Tracepoint 挂载**：确认内核版本支持相关 tracepoint（如 `sys_enter_newstat` 是否存在）。
 3. **Perf 缓冲区**：用户态是否正确接收事件（可能需处理丢失事件）。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/statsnoop.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2021 Hengqi Chen
 #include <vmlinux.h>
@@ -212,7 +214,4 @@ int handle_newlstat_return(struct syscall_trace_exit *ctx)
 }
 
 char LICENSE[] SEC("license") = "GPL";
-
-"""
-
 ```

@@ -289,7 +289,7 @@ session.then(() => {
 
 总而言之，`bionic/libc/kernel/uapi/linux/vtpm_proxy.handroid/vtpm_proxy.h` 定义了用户空间程序与内核中虚拟 TPM 代理驱动交互的底层接口，它在 Android 的安全体系中扮演着重要的角色，特别是在 Keymaster/Keystore 等关键组件中。用户空间程序通过 `ioctl` 系统调用，并配合这个头文件中定义的结构体和宏，来管理和使用虚拟 TPM 设备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/vtpm_proxy.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -326,7 +328,4 @@ struct vtpm_proxy_new_dev {
 #define TPM2_CC_SET_LOCALITY 0x20001000
 #define TPM_ORD_SET_LOCALITY 0x20001000
 #endif
-
-"""
-
 ```

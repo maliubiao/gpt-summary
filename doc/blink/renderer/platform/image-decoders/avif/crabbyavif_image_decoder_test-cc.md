@@ -123,15 +123,17 @@ By following this methodical approach, I could break down the code and understan
 
 `crabbyavif_image_decoder_test.cc` 的第一部分主要定义了一些辅助函数、数据结构和初始的静态图像解码测试用例。它构建了测试环境，并开始验证 `CrabbyAVIFImageDecoder` 对于各种静态 AVIF 图像的解码能力，包括不同的颜色类型、位深度、Alpha 选项和颜色配置。  它也初步涉及了颜色配置的处理和图像方向的验证。  此外，它还包含了处理无效 AVIF 图像的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/crabbyavif_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1032,7 +1034,4 @@ constexpr AVIFImageParam kAnimatedTestParams[] = {
     {"/images/resources/avif/star-animated-8bpc-with-alpha.avif", 5u,
      kAnimationLoopInfinite},
     {"/images
-"""
-
-
 ```

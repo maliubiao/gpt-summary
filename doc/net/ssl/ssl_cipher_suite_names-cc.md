@@ -193,15 +193,17 @@ By following these steps, I could systematically analyze the C++ code and genera
 
 总而言之，`net/ssl/ssl_cipher_suite_names.cc` 这个文件虽然是底层的 C++ 代码，但它在 Chromium 网络栈中扮演着重要的角色，负责将底层的安全连接信息转化为用户能够理解的形式，并帮助判断连接的安全性，这直接影响到用户的浏览体验和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_cipher_suite_names.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -395,7 +397,4 @@ bool IsTLSCipherSuiteAllowedByHTTP2(uint16_t cipher_suite) {
 }
 
 }  // namespace net
-
-"""
-
 ```

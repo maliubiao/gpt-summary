@@ -91,7 +91,7 @@ The user wants to understand the functionality of the `webgl_rendering_context_b
 
 总的来说，这部分 `webgl_rendering_context_base.cc` 代码主要负责 **WebGL 渲染上下文的创建、初始化和生命周期管理**，包括限制活跃上下文数量、处理创建错误、以及在资源紧张时强制丢失和尝试恢复上下文。它是 Blink 引擎中 WebGL 功能的核心组成部分，连接了 JavaScript API 和底层的图形系统。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -911,7 +913,4 @@ scoped_refptr<StaticBitmapImage> WebGLRenderingContextBase::GetImage(
   ScopedFramebufferRestorer fbo_restorer(this);
   // In rare situations on macOS the drawing buffer can be destroyed
   // during the resolve pro
-"""
-
-
 ```

@@ -107,7 +107,7 @@ input()
 
 总而言之，`pull_meson_test_function.c` 虽然代码简单，但它是 Frida 测试框架中用于验证动态链接和函数调用功能的一个重要组成部分。它涉及到操作系统底层、动态链接、编译系统等多个方面的知识，并且与逆向工程中常用的动态分析技术密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/170 generator link whole/pull_meson_test_function.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,15 +115,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "export.h"
 #include "meson_test_function.h"
 
 int DLL_PUBLIC function_puller(void) {
     return meson_test_function();
 }
-
-"""
-
 ```

@@ -157,7 +157,7 @@ libc.so:
 
 通过 Hook 这些 Java 或 Native 函数，可以观察到调用链，从而确认是否最终会到达 `bionic/libc/tzcode/localtime.c` 中的代码。 具体的调用链可能涉及多层封装和转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tzcode/localtime.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -169,10 +169,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-		x += y != t;
+### 源代码
+```c
+x += y != t;
 	}
 	return x;
 }
@@ -234,8 +235,4 @@ time(time_t *p)
 }
 
 #endif
-
-"""
-
-
 ```

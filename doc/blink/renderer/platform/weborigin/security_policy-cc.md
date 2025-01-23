@@ -178,14 +178,16 @@ By following these steps, a comprehensive analysis of the `security_policy.cc` f
 
 总而言之，`security_policy.cc` 是 Blink 渲染引擎中一个至关重要的文件，它通过执行各种安全策略来保护用户的安全和隐私，并确保 Web 平台的稳定性和可靠性。理解其功能对于 Web 开发者来说非常重要，以便正确地构建安全可靠的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/security_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -571,7 +573,4 @@ bool SecurityPolicy::IsSharedArrayBufferAlwaysAllowedForOrigin(
 }
 
 }  // namespace blink
-
-"""
-
 ```

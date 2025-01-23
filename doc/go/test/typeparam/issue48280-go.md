@@ -152,15 +152,17 @@ go test -run Issue48280  ./go/test/typeparam
 
 `go/test/typeparam/issue48280.go` 很可能是 Go 语言测试套件中用于测试泛型相关问题的特定测试文件。其本身不包含可执行代码，其主要作用是作为测试环境的一部分，用于验证编译器或运行时系统在处理特定泛型场景时的行为是否符合预期。 包名 `ignored` 也明确提示开发者不应该直接使用或依赖该包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48280.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -168,9 +170,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

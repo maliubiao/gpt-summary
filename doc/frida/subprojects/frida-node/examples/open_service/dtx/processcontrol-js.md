@@ -239,7 +239,7 @@ By following these steps, and constantly refining the understanding based on the
 
 总而言之，`processcontrol.js` 是一个展示如何使用 Frida 和 DTX 服务来控制 iOS 进程的实用示例。它涉及了动态分析、操作系统底层知识以及框架交互，同时也容易受到一些常见的使用错误的影响。理解其功能和背后的原理对于进行 iOS 逆向工程和动态分析非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/open_service/dtx/processcontrol.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -247,8 +247,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('../../..');
 
 let control = null;
@@ -284,7 +286,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

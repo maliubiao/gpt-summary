@@ -210,15 +210,17 @@ console.log(sum); // 输出 15
 
 总结来说，`v8/src/numbers/integer-literal-inl.h` 提供了一个用于表示和操作整数字面量的 C++ 类，并重载了常用的运算符，这在 V8 引擎内部处理 JavaScript 代码中的整数字面量时非常有用。 了解这些底层的实现可以帮助我们更好地理解 JavaScript 引擎的工作原理，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/numbers/integer-literal-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/numbers/integer-literal-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ inline IntegerLiteral operator+(const IntegerLiteral& x,
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_NUMBERS_INTEGER_LITERAL_INL_H_
-
-"""
-
 ```

@@ -159,14 +159,16 @@ item2.style.order = '-1';
 
 总而言之，`flex_child_iterator.cc` 文件是 Blink 引擎中处理 flexbox 布局排序逻辑的关键部分，它负责根据 CSS 的 `order` 属性来确定 flex 容器子元素的排列顺序，为后续的布局计算提供正确的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/flex/flex_child_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ FlexChildIterator::FlexChildIterator(const BlockNode node) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

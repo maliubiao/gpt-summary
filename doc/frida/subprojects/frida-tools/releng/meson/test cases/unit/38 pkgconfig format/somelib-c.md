@@ -167,7 +167,7 @@ By following these steps and iteratively refining the analysis, we can construct
 
 总而言之，`somelib.c` 作为一个非常简单的 C 代码文件，在 Frida 工具的测试用例中出现，主要是为了演示函数调用的基本结构，并可能作为测试 Frida Hook 功能或相关构建流程的基础。即使代码很简单，它也蕴含着逆向工程、底层原理和软件构建等方面的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/38 pkgconfig format/somelib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int get_returnvalue (void);
@@ -184,7 +186,4 @@ int get_returnvalue (void);
 int some_func() {
     return get_returnvalue();
 }
-
-"""
-
 ```

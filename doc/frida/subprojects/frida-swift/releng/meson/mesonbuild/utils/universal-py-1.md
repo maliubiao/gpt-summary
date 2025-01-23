@@ -155,7 +155,7 @@ Based on this analysis, the primary function of this module seems to be providin
 
 因此，如果用户在 Frida Swift 模块的构建过程中遇到与配置文件处理、命令执行或平台兼容性相关的问题，可以查看这个 `universal.py` 文件中的相关函数，以了解具体的实现逻辑和可能的错误原因。例如，如果生成的配置文件内容不正确，可能是 `do_replacement` 或 `do_define` 函数的逻辑有问题，或者配置数据本身存在错误。如果外部命令执行失败，可以检查 `Popen_safe` 的调用参数和返回值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n that happens, it can be
     # considered an achievement in itself.
     #
@@ -1055,7 +1057,4 @@ def detect_subprojects(spdir_name: str, current_dir: str = '',
         if append_this:
             if basename in result:
                 result[basename].appe
-"""
-
-
 ```

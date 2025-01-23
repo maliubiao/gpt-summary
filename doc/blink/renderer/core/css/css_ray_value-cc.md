@@ -180,15 +180,17 @@ ray_value.CustomCSSText() 将返回 "ray(0deg contain contain at 50% 50%)"
 
 总而言之，`css_ray_value.cc` 文件是 Blink 引擎中处理 CSS `ray()` 函数的核心组件，它负责表示、操作和生成 `ray()` 函数的值，并在渲染过程中发挥着关键作用。理解这个文件的功能对于调试与 `ray()` 函数相关的 CSS 问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_ray_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ void CSSRayValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

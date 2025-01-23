@@ -169,7 +169,7 @@ if (derefObj) {
 
 作为 `objects-printer.cc` 的一部分，这段代码（第 3 部分）延续了其核心功能，即提供了一系列用于打印 V8 堆中各种 JavaScript 对象详细内部状态的 C++ 函数。 这些函数覆盖了包括迭代器、弱引用、FinalizationRegistry、共享内存、原子操作、可清理资源、各种迭代器辅助类、弱集合和映射、不同类型的数组、绑定函数、普通函数、共享函数信息以及全局对象等多种重要的 JavaScript 概念在 V8 内部的表示。  这段代码是 V8 引擎开发人员和调试人员用于理解和诊断 V8 内部行为的关键工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/objects-printer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SetIteratorPrint(std::ostream& os) {
   JSCollectionIteratorPrint(os, "JSSetIterator");
 }
@@ -1063,7 +1065,4 @@ void WasmDispatchTable::WasmDispatchTablePrint(std::ostream& os) {
   }
   if (printed != len) os << "\n  [...]";
   os
-"""
-
-
 ```

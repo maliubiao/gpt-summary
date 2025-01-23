@@ -228,15 +228,17 @@ By following these steps, I can systematically analyze the code snippet and prov
 
 总而言之，`declared_style_property_map.cc` 位于 CSSOM 的核心，任何通过 JavaScript 修改或访问 CSS 规则声明属性的操作，都有可能涉及到这个文件中的代码。开发者通常会在理解样式如何被应用和修改的流程时接触到这里。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/declared_style_property_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -370,7 +372,4 @@ String DeclaredStylePropertyMap::SerializationForShorthand(
 }
 
 }  // namespace blink
-
-"""
-
 ```

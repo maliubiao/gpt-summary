@@ -275,7 +275,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-x86/asm/ucontext.handroid` 文件定义了 x86 架构下 `ucontext` 结构体使用的特定宏，这些宏直接影响到 libc 中与上下文管理和信号处理相关的函数的行为，并且在 Android Framework 和 NDK 的各种场景中都有着重要的作用。 使用 Frida 可以帮助开发者深入理解和调试这些底层的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/ucontext.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -303,7 +305,4 @@ Prompt:
 #endif
 #include <asm-generic/ucontext.h>
 #endif
-
-"""
-
 ```

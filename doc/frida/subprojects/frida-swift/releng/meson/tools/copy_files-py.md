@@ -155,7 +155,7 @@ By following these steps, you can systematically analyze the script and provide 
 
 总而言之，`copy_files.py` 是 Frida Swift 构建过程中的一个实用工具，用于方便地复制文件和目录，确保构建过程能够找到所需的资源。虽然它本身的功能比较简单，但其在构建系统中的作用对于 Frida 的正常编译和运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/tools/copy_files.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # Copyright 2018 The Meson development team
 
@@ -206,7 +208,4 @@ if __name__ == '__main__':
     copy_files(files=args.files,
                input_dir=args.input_dir,
                output_dir=args.output_dir)
-
-"""
-
 ```

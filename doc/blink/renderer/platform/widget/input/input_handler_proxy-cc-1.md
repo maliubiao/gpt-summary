@@ -120,15 +120,17 @@ Based on this analysis, I can now formulate the summarized functionality.
 
 这部分 `InputHandlerProxy` 的代码主要关注于对输入事件的精细化管理和调度，特别是针对滚动事件的优化处理，以及与合成器线程的协同工作，以实现流畅且高性能的用户交互体验。它在 Chromium Blink 引擎中扮演着至关重要的角色，连接了用户的输入和最终的页面渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/input_handler_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 vents_ = !compositor_event_queue_->empty();
   // TODO(jonross): This occurs for more than just `BeginFrameArgs::MISSED`.
   // We likely need to cap the number of consecutive times duing which this
@@ -442,8 +444,4 @@ void InputHandlerProxy::RequestCallbackAfterEventQueueFlushed(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

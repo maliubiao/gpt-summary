@@ -145,14 +145,16 @@ Let's break down the thought process for analyzing this C++ code and generating 
 
 总而言之，`ChunkToLayerMapper` 是 Blink 渲染引擎中一个关键的组件，负责将绘制信息准确地映射到合成层上，为最终的屏幕渲染奠定基础。它与 JavaScript, HTML, CSS 的交互是通过它们对渲染属性的影响来实现的。理解其功能有助于开发者更好地理解浏览器的渲染过程，并避免一些常见的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/chunk_to_layer_mapper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ void ChunkToLayerMapper::InflateForRasterEffectOutset(gfx::RectF& rect) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

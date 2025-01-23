@@ -123,7 +123,7 @@ By following this systematic breakdown, considering the context of Frida and Qt,
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/frameworks/4 qt/plugin/plugin.cpp` 是 Frida 测试 Qt 插件支持的一个基础示例，它展示了如何创建一个简单的 Qt 插件，并为 Frida 提供了测试其加载和交互能力的入口。 虽然代码本身很简单，但它背后的机制涉及了动态链接、操作系统加载器以及 Qt 框架的插件系统等多个底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/4 qt/plugin/plugin.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "plugin.h"
 #include <QFile>
 
@@ -145,6 +147,4 @@ QString plugin1::getResource()
 #if QT_VERSION < 0x050000
     Q_EXPORT_PLUGIN2(Plugin1, plugin1)
 #endif
-"""
-
 ```

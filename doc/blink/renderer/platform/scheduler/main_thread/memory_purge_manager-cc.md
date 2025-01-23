@@ -129,14 +129,16 @@ By following this process, you can systematically analyze a complex source code 
 
 总而言之，`MemoryPurgeManager` 是 Blink 引擎中一个重要的组件，它通过在合适的时机触发内存清理操作，尤其是在渲染器进入后台时，来帮助减少内存占用，提高浏览器的整体性能和资源利用率。它与 JavaScript、HTML 和 CSS 的关系是间接的，通过触发系统级别的内存压力通知，促使 Blink 内部的机制释放与这些技术相关的内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/memory_purge_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ base::TimeDelta MemoryPurgeManager::GetTimeToPurgeAfterBackgrounded() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

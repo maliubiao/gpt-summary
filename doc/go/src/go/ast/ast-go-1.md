@@ -105,7 +105,7 @@ My thinking process to answer the prompt goes like this:
 
 这部分代码的核心在于定义了 Go 语言 AST 中表示文件 (`File`) 和包 (`Package`) 的数据结构。虽然 `Package` 结构体已被标记为弃用，但 `File` 结构体及其相关函数在 AST 的处理中仍然至关重要。  `IsGenerated` 函数提供了一种实用的方法来识别自动生成的代码，而 `Unparen` 函数则是一个用于简化表达式的工具函数。  这些定义和函数共同为 Go 语言的静态分析、代码生成、重构等工具提供了必要的基础结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/ast/ast.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,9 +114,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```go
+{
 		return d.Body.End()
 	}
 	return d.Type.End()
@@ -244,10 +246,4 @@ func Unparen(e Expr) Expr {
 		e = paren.X
 	}
 }
-
-"""
-
-
-
-
 ```

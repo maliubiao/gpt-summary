@@ -235,7 +235,7 @@ function bar(a, b) {
 
 总而言之，`v8/src/compiler/bytecode-analysis.cc` 的主要功能是为 V8 编译器的后续优化阶段提供关于 **字节码的结构（特别是循环）和寄存器的生命周期（活跃性）** 的关键信息。它通过分析字节码来理解程序的控制流和数据流，这对于生成高效的目标代码至关重要。该文件中的代码专注于静态分析，即在代码执行之前检查代码的属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-analysis.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-analysis.cc以.tq结尾，那它是个v8 torque源代码，
@@ -243,8 +243,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1076,7 +1078,4 @@ std::ostream& BytecodeAnalysis::BytecodeAnalysisImpl::PrintLivenessTo(
 
   for (; !iterator.done(); iterator.Advance()) {
     int current_offset = iterato
-"""
-
-
 ```

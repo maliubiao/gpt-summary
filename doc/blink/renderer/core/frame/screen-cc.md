@@ -144,14 +144,16 @@ current.available_rect = (0, 0, 1920, 1000)
 
 In summary, `screen.cc` is a crucial part of the Blink rendering engine, responsible for providing essential information about the user's display to web pages via the JavaScript `screen` object. Understanding its functionality and potential pitfalls is important for web developers to create robust and user-friendly web applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/screen.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc.  All rights reserved.
  *
@@ -348,7 +350,4 @@ const display::ScreenInfo& Screen::GetScreenInfo() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

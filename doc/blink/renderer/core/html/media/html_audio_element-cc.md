@@ -156,14 +156,16 @@ document.body.appendChild(myAudio);
 
 总而言之，`html_audio_element.cc` 文件是 Blink 引擎中处理 HTML `<audio>` 标签的核心组件，它负责对象的创建、属性的设置以及与浏览器底层功能的交互，从而使得网页能够播放音频内容。 它与 JavaScript、HTML 和 CSS 都有密切的联系，共同构建了网页中音频播放的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_audio_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2010, 2011, 2012, 2013 Apple Inc. All rights reserved.
  *
@@ -213,7 +215,4 @@ HTMLAudioElement* HTMLAudioElement::CreateForJSConstructor(
 }
 
 }  // namespace blink
-
-"""
-
 ```

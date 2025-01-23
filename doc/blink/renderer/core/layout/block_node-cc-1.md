@@ -107,15 +107,17 @@ Now I need to structure this information into a concise summary, including conne
 
 总而言之，这部分代码涵盖了 `BlockNode` 在布局流程中的核心职责，从处理重复布局到最终确定元素及其子元素的位置和尺寸，并与 CSS 的各种布局特性紧密相关。它也考虑了性能优化，例如通过缓存来避免不必要的重复计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 a deep clone.
     result = LayoutResult::Clone(*box_->GetLayoutResult(0));
   }
@@ -917,7 +919,4 @@ LogicalSize BlockNode::GetAspectRatio() const {
   const EAspectRatioType ar_type = Style().AspectRatio().GetType();
   if (ar_type == EAspectRatioType::kRatio ||
       (ar_type == EAspectR
-"""
-
-
 ```

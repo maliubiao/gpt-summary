@@ -165,7 +165,7 @@ function process(value) {
 
 这部分代码专注于数值运算和类型转换相关的优化，是 V8 编译器进行高效代码生成的重要组成部分。它可以帮助开发者编写的 JavaScript 代码在 V8 引擎上以更快的速度执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/typed-optimization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/typed-optimization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,8 +173,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tiveToNumber(rhs);
     Node* const value =
         graph()->NewNode(simplified()->NumberAdd(), toNum_lhs, toNum_rhs);
@@ -281,8 +283,4 @@ SimplifiedOperatorBuilder* TypedOptimization::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -171,7 +171,7 @@ By following these steps, considering the context, brainstorming examples, and o
 
 总而言之，虽然 `func1_in_obj` 本身功能非常简单，但在 Frida 的上下文中，它作为一个测试用例，用于验证 Frida 动态插桩工具在特定构建和场景下的功能，并能帮助开发者和逆向工程师理解 Frida 的工作原理和潜在的应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/135 custom target object output/objdir/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,12 +179,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

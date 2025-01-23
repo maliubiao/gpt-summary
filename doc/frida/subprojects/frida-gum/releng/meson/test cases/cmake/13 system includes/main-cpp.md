@@ -126,7 +126,7 @@ Hello
 
 `frida/subprojects/frida-gum/releng/meson/test cases/cmake/13 system includes/main.cpp` 是 Frida 项目的一个简单的 C++ 测试用例，用于验证 Frida 是否能够正确处理包含自定义头文件的程序。它虽然简单，但对于确保 Frida 的稳定性和正确性至关重要。通过分析这个文件，我们可以了解 Frida 在动态 instrumentation 过程中需要处理的一些基本问题，并能从中窥探 Frida 与二进制底层、操作系统以及编程语言的交互方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/13 system includes/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -146,7 +148,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

@@ -125,7 +125,7 @@ Imagine a user encounters an issue while browsing a website:
 
 This section of the `nghttp2_adapter_test.cc` file focuses on **testing various server-initiated actions and how the `NgHttp2Adapter` handles specific client behaviors and potential error conditions within an HTTP/2 connection.** It covers scenarios like server-side stream resets, connection shutdowns, sending trailers, and handling client-side continuation frames and metadata. It also explores error handling related to data sources and invalid header configurations, ensuring the adapter correctly translates `nghttp2` events and manages the HTTP/2 state within Chromium.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -133,9 +133,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共11部分，请归纳一下它的功能
+```
 
-"""
- OnFrameHeader(1, 4, RST_STREAM, 0));
+### 源代码
+```cpp
+OnFrameHeader(1, 4, RST_STREAM, 0));
   EXPECT_CALL(visitor, OnRstStream(1, Http2ErrorCode::CANCEL));
   EXPECT_CALL(visitor, OnCloseStream(1, Http2ErrorCode::CANCEL))
       .WillOnce(
@@ -893,7 +895,4 @@ TEST(NgHttp2AdapterTest, ServerDropsNewStreamBelowWatermark) {
   EXPECT_EQ(3, adapter->GetHighestReceivedStreamId());
 
   EXPEC
-"""
-
-
 ```

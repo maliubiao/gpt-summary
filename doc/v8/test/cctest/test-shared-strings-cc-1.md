@@ -113,7 +113,7 @@ const str4 = "w" + "o" + "r" + "l" + "d";
 
 这部分 `test-shared-strings.cc` 源代码专注于测试 V8 引擎中共享字符串在各种垃圾回收和内存管理场景下的行为，包括晋升、类型转换以及与外部字符串的交互。这些测试确保了 V8 内部字符串管理的正确性和效率，从而间接提升 JavaScript 代码的性能和内存利用率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-shared-strings.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-shared-strings.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _table = true;
   i::FlagList::EnforceFlagImplications();
 
@@ -972,7 +974,4 @@ void CheckStringAndResource(
       } else {
         // Check that exactly one resource is alive.
         expected_ali
-"""
-
-
 ```

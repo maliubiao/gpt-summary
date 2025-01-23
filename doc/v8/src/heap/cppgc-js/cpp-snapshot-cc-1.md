@@ -105,7 +105,7 @@ While this C++ code itself isn't prone to typical user-level programming errors,
 
 This part of the `cpp-snapshot.cc` code focuses on the second phase of building the C++ heap snapshot graph. It iterates through the objects deemed "visible" in the first phase and adds nodes and edges to the `EmbedderGraph` to represent the relationships between these objects. This includes handling different types of references like regular pointers and weak references (ephemerons). Additionally, it identifies and adds root objects to the graph, including persistent objects and objects reachable from the C++ stack, ensuring a comprehensive view of the reachable C++ object graph within V8.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cpp-snapshot.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/cpp-snapshot.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,8 +113,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ExistingState(header);
   if (state.WasVisitedFromStack()) {
     return;
@@ -267,8 +269,4 @@ void CppGraphBuilder::Run(v8::Isolate* isolate, v8::EmbedderGraph* graph,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

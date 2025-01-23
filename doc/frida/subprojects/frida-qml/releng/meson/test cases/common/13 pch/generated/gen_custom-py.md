@@ -113,7 +113,7 @@ By following this thought process, we can systematically analyze even a simple s
 
 总而言之，`gen_custom.py` 虽然代码简单，但在 Frida 这样一个复杂的动态插桩工具的构建和测试流程中扮演着配置特定编译环境的角色。理解这个脚本的功能可以帮助逆向工程师更好地理解 Frida 的构建过程和目标程序的编译时配置，从而更有效地进行逆向分析和插桩。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/13 pch/generated/gen_custom.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,14 +121,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write("#define FOO 0")
-
-"""
-
 ```

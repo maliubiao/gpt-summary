@@ -320,7 +320,7 @@ Java.perform(function() {
 
 通过运行这个 Frida 脚本，你可以观察到 `regexec` 函数何时被调用，以及它的参数和返回值，从而调试 Android Framework 或 NDK 中正则表达式的使用情况。你需要将此脚本注入到目标 Android 进程中才能生效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/regex/regexec.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -331,8 +331,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: regexec.c,v 1.26 2021/02/26 19:24:47 christos Exp $	*/
 
 /*-
@@ -587,7 +589,4 @@ regexec(const regex_t * __restrict preg,
 	else
 		return(lmatcher(g, string, nmatch, pmatch, eflags));
 }
-
-"""
-
 ```

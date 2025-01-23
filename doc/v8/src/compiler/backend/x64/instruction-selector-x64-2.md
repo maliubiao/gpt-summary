@@ -95,13 +95,15 @@ let result = myFunction(1, 2); // The code prepares arguments (1 and 2) for the 
 
 In essence, this part of `instruction-selector-x64.cc` is a critical bridge between the abstract operations defined in the JavaScript language and the concrete instructions executed by the x64 CPU. It's responsible for making JavaScript code run efficiently on x64 architectures by choosing the optimal machine instructions for various operations. The optimizations included aim to further enhance performance.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  case IrOpcode::kInt32Add:
+### 源代码
+```
+case IrOpcode::kInt32Add:
     case IrOpcode::kInt32Sub:
     case IrOpcode::kInt32Mul:
     case IrOpcode::kInt32MulHigh:
@@ -1653,8 +1655,4 @@ void InstructionSelectorT<TurbofanAdapter>::VisitWordCompareZero(
               case IrOpcode::kInt32SubWithOverflow:
                 cont->OverwriteAndNegateIfEqual(kOverflow);
                 return VisitBinop(this, node, kX64Sub32, cont);
-
-"""
-
-
 ```

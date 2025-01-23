@@ -347,7 +347,7 @@ sys.stdin.read()
 当你运行目标应用并执行某些操作导致调用 `read` 系统调用时，Frida 将会拦截这些调用，并在控制台中打印出相关信息，包括传递给 `read` 的缓冲区地址。 虽然我们不能直接看到 `__user` 宏的具体影响，但可以通过观察使用这些地址的函数的行为来推断其潜在作用。
 
 总结来说，`bionic/libc/kernel/android/uapi/linux/compiler.handroid` 文件本身功能很简单，主要为了编译
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/android/uapi/linux/compiler.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -358,8 +358,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /*
@@ -371,7 +373,4 @@ Prompt:
 
 #define __force
 #define __user
-
-"""
-
 ```

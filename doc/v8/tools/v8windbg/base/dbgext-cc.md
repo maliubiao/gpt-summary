@@ -174,15 +174,17 @@ V8 Object at 0x12345678:
 
 总而言之，`v8/tools/v8windbg/base/dbgext.cc` 是一个基础的 WinDbg 调试扩展框架，它为开发者提供了与 V8 引擎交互的能力，从而可以更深入地理解和调试运行在其上的 JavaScript 代码。虽然它本身不是 JavaScript 或 Torque 代码，但它是 V8 调试工具链中的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/v8windbg/base/dbgext.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/v8windbg/base/dbgext.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ HRESULT __stdcall DebugExtensionCanUnload(void) {
 void __stdcall DebugExtensionUnload() { return; }
 
 }  // extern "C"
-
-"""
-
 ```

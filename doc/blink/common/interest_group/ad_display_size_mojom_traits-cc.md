@@ -146,14 +146,16 @@ By following this thought process, breaking down the code, and connecting it to 
 
 总而言之，`ad_display_size_mojom_traits.cc` 虽然是一个底层的 C++ 文件，但它在 Chromium 浏览器引擎中扮演着关键的角色，负责处理广告展示相关的尺寸信息，并与 JavaScript, HTML, CSS 等前端技术间接地联系在一起，确保广告能够以正确的尺寸呈现在用户面前。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/ad_display_size_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ bool StructTraits<blink::mojom::AdDescriptorDataView, blink::AdDescriptor>::
 }
 
 }  // namespace mojo
-
-"""
-
 ```

@@ -91,11 +91,13 @@ main();
 
 总结来说，`eh-frame.cc` 这个 C++ 文件虽然不直接包含 JavaScript 代码，但它是 V8 引擎支持 JavaScript 异常处理和调试能力的关键组成部分。它生成的 `.eh_frame` 数据使得 V8 能够与操作系统和调试器协同工作，正确地处理和报告 JavaScript 运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/eh-frame.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -746,7 +748,4 @@ void EhFrameDisassembler::DisassembleToStream(std::ostream& stream) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -137,7 +137,7 @@ const obj = new normalFunction(); // TypeError: normalFunction is not a construc
 
 这部分代码主要定义了 LoongArch64 架构下 V8 引擎中与 JavaScript 函数调用和构造过程密切相关的内置函数的汇编代码生成逻辑。它涵盖了从解释器入口、参数处理、栈帧设置、到基线编译的 prologue 和 deoptimization 等关键环节。这些内置函数是 V8 引擎执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/loong64/builtins-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/loong64/builtins-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -145,8 +145,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 MP_IF_EQUAL)
 #undef JUMP_IF_EQUAL
 
@@ -1022,8 +1024,4 @@ static void Generate_InterpreterEnterBytecode(MacroAssembler* masm) {
   __ Add_d(a1, kInterpreterBytecodeArrayRegister,
            kInterpreterBytecodeOffsetRegister);
   __ Ld_bu(a7, MemOperand(a1, 0));
-
-"""
-
-
 ```

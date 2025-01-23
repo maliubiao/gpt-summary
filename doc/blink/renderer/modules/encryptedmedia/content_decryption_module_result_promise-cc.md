@@ -141,15 +141,17 @@ navigator.requestMediaKeySystemAccess('com.widevine.alpha', [{
 
 总而言之，`ContentDecryptionModuleResultPromise` 是 Blink 引擎中处理 CDM 异步操作结果的关键组件，它负责将底层的 CDM 操作状态转化为 JavaScript Promise 的状态，并进行错误处理和映射，确保 JavaScript 代码能够正确地处理与加密媒体相关的操作结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encryptedmedia/content_decryption_module_result_promise.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,7 +298,4 @@ void ContentDecryptionModuleResultPromise::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -294,7 +294,7 @@ Frida Hook 可以提供以下调试线索：
 
 希望以上详细的分析能够帮助你理解 `s_cos.c` 文件的功能、实现以及在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_cos.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -392,7 +394,4 @@ cos(double x)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(cos, cosl);
 #endif
-
-"""
-
 ```

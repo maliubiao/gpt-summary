@@ -247,15 +247,17 @@ By following these steps, I can systematically break down the code, understand i
 
 总而言之，`OutOfFlowLayoutPart.cc` 是 Chromium Blink 引擎中负责计算和管理脱离正常文档流的元素布局的关键模块。它处理绝对定位和固定定位元素的定位、与分片布局的交互、以及与渲染流程的数据传递。理解这个模块的功能有助于深入理解浏览器如何渲染网页，特别是处理复杂布局场景时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/out_of_flow_layout_part.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 g that of the clipped container.
     // This way we increase the likelihood of luring the OOF into the same
     // fragmentainer as the clipped container, so that we get the correct clip
@@ -385,8 +387,4 @@ void OutOfFlowLayoutPart::NodeToLayout::Trace(Visitor* visitor) const {
 }  // namespace blink
 
 WTF_ALLOW_CLEAR_UNUSED_SLOTS_WITH_MEM_FUNCTIONS(blink::NonOverflowingCandidate)
-
-"""
-
-
 ```

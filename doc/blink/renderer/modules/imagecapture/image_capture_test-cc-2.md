@@ -185,7 +185,7 @@ This section of `image_capture_test.cc` focuses on rigorously testing the constr
 
 这部分 `image_capture_test.cc` 专注于测试 `ImageCapture` API 的核心功能，特别是对媒体轨道约束的应用和捕获单帧的能力进行细致的验证。它通过各种场景测试了约束应用的正确性（包括高级约束和安全约束），以及 `grabFrame()` 方法在不同轨道状态下的行为。这些测试确保了 API 的稳定性和符合规范，并为开发者提供了关于如何正确使用 `ImageCapture` 的保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/imagecapture/image_capture_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ings) iterates
   // over the advanced constraint sets and computes the fitness distance
   // between the advanced constraint sets and each settings dictionary
@@ -444,8 +446,4 @@ TEST_F(ImageCaptureTest, GrabFrameOfDisabledTrackRejects) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

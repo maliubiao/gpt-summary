@@ -138,15 +138,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `web_selector_test.cc` 是 Blink 引擎中用于测试 CSS 选择器规范化功能的关键测试文件。它确保了浏览器能够正确地理解和处理各种 CSS 选择器，从而保证网页的样式能够正确渲染，并且 JavaScript 代码能够正确地操作 DOM 元素。 虽然普通用户不会直接接触这个文件，但其背后的逻辑支撑着用户浏览网页时的各种视觉效果和交互行为。 当出现与 CSS 选择器相关的 bug 时，这个测试文件可以帮助开发者快速定位和修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_selector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -210,7 +212,4 @@ TEST(WebSelectorTest, Restricts) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

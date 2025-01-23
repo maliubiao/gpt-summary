@@ -127,7 +127,7 @@ Iterator(1).OpenNextEntry() = 0, key = <key of entry 10>
 
 **总结来说，这部分 `DiskCacheLPMFuzzer::RunCommands` 方法通过执行一系列模拟的缓存操作，来测试 Chromium 磁盘缓存的正确性和健壮性，并可能发现潜在的问题。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/disk_cache_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 id();
         bool async = ione.async();
 
@@ -631,8 +633,4 @@ DEFINE_BINARY_PROTO_FUZZER(const disk_cache_fuzzer::FuzzCommands& commands) {
   MAYBE_PRINT << "-----------------------" << std::endl;
 }
 //
-
-"""
-
-
 ```

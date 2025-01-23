@@ -153,7 +153,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，这部分测试代码旨在确保 `MediaDevices` 接口中的捕获句柄配置和子捕获目标生成功能能够按照预期工作，并且能够正确处理各种输入和错误情况，从而保证 Web 开发者能够可靠地使用这些 API 来实现屏幕共享和内容捕获功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_devices_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ope;
   auto* media_devices = GetMediaDevices(*GetDocument().domWindow());
 
@@ -637,8 +639,4 @@ TEST_P(ProduceSubCaptureTargetTest, IdStringFormat) {
 // has been updated.
 
 }  // namespace blink
-
-"""
-
-
 ```

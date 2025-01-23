@@ -114,11 +114,13 @@ console.log(result); // 输出 123
 
 `wasm-load-elimination.cc` 是 V8 引擎中一个关键的优化模块，它通过跟踪 Wasm 对象的抽象状态来消除冗余的加载操作，直接提升了 JavaScript 中 WebAssembly 代码的性能。虽然开发者在 JavaScript 代码中无法直接控制这个优化过程，但它的存在使得运行在 V8 引擎上的 Wasm 代码能够更加高效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-load-elimination.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -719,7 +721,4 @@ Graph* WasmLoadElimination::graph() const { return jsgraph()->graph(); }
 Isolate* WasmLoadElimination::isolate() const { return jsgraph()->isolate(); }
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

@@ -367,7 +367,7 @@ if (Process.platform === 'android') {
 
 通过 Frida Hook，你可以动态地观察 `signalfd` 函数的调用情况，帮助你理解 Android 系统或应用的信号处理逻辑。你可以修改 Frida 脚本来查看更多细节，例如读取完整的 `sigset_t` 结构，或者 hook 其他相关的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/sys_signalfd.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -378,8 +378,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -423,7 +425,4 @@ int signalfd(int fd, const sigset_t* mask, int flags) {
   SigSetConverter set{mask};
   return signalfd64(fd, set.ptr, flags);
 }
-
-"""
-
 ```

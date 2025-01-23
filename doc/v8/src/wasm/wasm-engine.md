@@ -104,12 +104,14 @@ try {
 
 In essence, the C++ code in `wasm-engine.cc` is the "engine" behind the JavaScript `WebAssembly` API, handling the low-level details of WebAssembly module processing within the V8 environment. It manages the compiled code, memory, and execution context for WebAssembly, allowing it to seamlessly integrate with JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-engine.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1688,7 +1690,4 @@ std::shared_ptr<NativeModule> WasmEngine::NewNativeModule(
   native_module_info->isolates.insert(isolate);
   DCHECK_EQ(1, isolates_.count(isolate));
   IsolateInfo* isolate_info = isolate
-"""
-
-
 ```

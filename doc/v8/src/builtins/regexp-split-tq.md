@@ -159,14 +159,16 @@ console.log(resultWithCapture); // 输出: ["abc", "123", "def"]
 
 总而言之，这个 Torque 文件是 V8 引擎为了优化 `RegExp.prototype.@@split` 方法而存在的一个关键部分，它通过一些前提条件判断，尽可能地将执行路径导向更高效的代码，从而提升 JavaScript 中字符串 `split` 方法的性能。理解这个文件的功能有助于深入理解 V8 引擎的优化策略以及 JavaScript 正则表达式相关操作的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/regexp-split.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ transitioning javascript builtin RegExpPrototypeSplit(
   return RegExpSplit(fastRegExp, string, limit);
 }
 }
-
-"""
-
 ```

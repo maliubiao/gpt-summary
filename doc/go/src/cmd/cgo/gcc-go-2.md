@@ -102,7 +102,7 @@ type _Ctype_struct_MyStruct struct {
 
 总而言之，`go/src/cmd/cgo/gcc.go` 的这一部分代码是 cgo 工具实现 C 到 Go 类型转换的核心组件。它负责解析 C 代码中的类型信息（通过 DWARF），并生成与之等价的 Go 语言类型定义。它需要处理各种复杂的类型结构，并考虑到不同平台和编译选项的影响，例如 `-godefs`。理解这部分代码的功能有助于开发者更好地理解 cgo 的工作原理，并避免在使用 cgo 时遇到的一些潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/gcc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -111,8 +111,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 l")
 	c.byte = c.Ident("byte")
 	c.int8 = c.Ident("int8")
@@ -1294,10 +1296,5 @@ func (c *typeConv) badJNI(dt *dwarf.TypedefType) bool {
 			case *dwarf.VoidType:
 				return true
 			case *dwarf.StructType:
-				if v.StructName == "_jobject" && 
-"""
-
-
-
-
+				if v.StructName == "_jobject" &&
 ```

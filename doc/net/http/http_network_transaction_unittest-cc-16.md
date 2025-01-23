@@ -156,7 +156,7 @@ By following this structured approach, breaking down the code into smaller, unde
 
 总而言之，`net/http/http_network_transaction_unittest.cc` 文件的第 17 部分主要测试了 `HttpNetworkTransaction` 类在处理各种 HTTP 认证场景下的行为，特别是 Basic 和 Digest 认证。它涵盖了从最基本的认证流程到更复杂的场景，例如 URL 中包含身份信息、认证凭据的缓存和预认证、以及 Digest 认证中 nonce 计数的管理。这部分测试确保了 Chromium 网络栈在处理身份验证方面的正确性和健壮性，从而支持了 Web 浏览器中各种需要身份验证的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第17部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 
   TestCompletionCallback callback;
@@ -1063,7 +1065,4 @@ TEST_P(HttpNetworkTransactionTest, ResetStateForRestart) {
   HttpNetworkTransaction trans(DEFAULT_PRIORITY, session.get());
 
   // S
-"""
-
-
 ```

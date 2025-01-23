@@ -175,7 +175,7 @@ This structured approach, moving from a high-level understanding to detailed ana
 
 通过理解用户操作的流程以及 `scanbuild.py` 的功能，可以更好地定位和解决静态分析过程中出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/scanbuild.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -242,7 +244,4 @@ def run(args: T.List[str]) -> int:
         return 1
 
     return scanbuild(exelist, srcdir, bldpath, privdir, logdir, subprojdir, meson_cmd)
-
-"""
-
 ```

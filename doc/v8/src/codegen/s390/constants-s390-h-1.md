@@ -102,7 +102,7 @@ V(va, VA, 0xABC1) // 假设的定义
 
 作为 `v8/src/codegen/s390/constants-s390.h` 文件的第 2 部分，这段代码的主要功能是 **详细列举并定义了 s390 架构中属于特定指令格式（如 VRR_A, VRR_B, VRR_C 等）的向量和部分标量浮点运算指令的操作码**。这些定义为 V8 引擎在 s390 平台上进行代码生成提供了必要的指令集信息，确保 JavaScript 代码能够被正确地编译成该架构的机器码并执行。每个 `V(...)` 宏调用都将指令的助记符、内部表示和实际的机器码关联起来，为 V8 内部的指令查找和编码过程提供了基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/constants-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/constants-s390.h以.tq结尾，那它是个v8 torque源代码，
@@ -110,9 +110,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  0xE7C1) /* type = VRR_A VECTOR FP CONVERT FROM LOGICAL 64-BIT  */          \
+### 源代码
+```c
+0xE7C1) /* type = VRR_A VECTOR FP CONVERT FROM LOGICAL 64-BIT  */          \
   V(vcgd, VCGD, 0xE7C2) /* type = VRR_A VECTOR FP CONVERT TO FIXED 64-BIT  */  \
   V(vcdg, VCDG, 0xE7C3) /* type = VRR_A VECTOR FP CONVERT FROM FIXED 64-BIT */ \
   V(vlde, VLDE, 0xE7C4) /* type = VRR_A VECTOR FP LOAD LENGTHENED  */          \
@@ -554,7 +556,4 @@ Prompt:
   V(llhh, LLHH, 0xE3C6) /* type = RXY_A LOAD LOGICAL HALFWORD HIGH (32<-16) */ \
   V(sthh, STHH, 0xE3C7) /* type = RXY_A STORE HALFWORD HIGH (16)  */           \
   V(lfhat, LFHAT, 0xE3C8) /* type = RXY_A LOAD HIGH AND TRAP (32H<-32
-"""
-
-
 ```

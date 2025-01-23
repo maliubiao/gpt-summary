@@ -289,7 +289,7 @@ if (Process.platform === 'android') {
 
 `sys/times.h` 定义的 `times()` 函数是 Android 系统中用于获取进程 CPU 使用时间的重要接口。它在性能监控、资源管理等方面发挥着关键作用。理解其实现原理、使用方法以及与 Android Framework 和 NDK 的交互方式，有助于我们更好地理解 Android 系统的运行机制和进行性能分析。通过 Frida 等工具，我们可以动态地观察和调试 `times()` 函数的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/times.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -353,7 +355,4 @@ __BEGIN_DECLS
 clock_t times(struct tms* _Nullable __buf);
 
 __END_DECLS
-
-"""
-
 ```

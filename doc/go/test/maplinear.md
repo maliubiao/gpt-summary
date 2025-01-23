@@ -127,15 +127,17 @@ While the code itself doesn't highlight user errors, the tests it performs relat
 
 **In summary, `go/test/maplinear.go` is a performance benchmark for Go's map implementation, ensuring that insertion operations maintain near-linear time complexity even with various key types, including potentially tricky ones like `NaN`. It's a crucial part of the Go project's testing infrastructure to prevent performance regressions.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/maplinear.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 //go:build darwin || linux
@@ -309,9 +311,4 @@ func main() {
 		}
 	})
 }
-
-"""
-
-
-
 ```

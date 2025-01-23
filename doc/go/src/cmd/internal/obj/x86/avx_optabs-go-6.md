@@ -134,7 +134,7 @@ Data2: 1 2 3 4
 
 总而言之，这段代码是Go语言编译器处理x86架构AVX指令集的核心数据结构之一，它提供了指令编码的关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/avx_optabs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 {as: AVPMOVSDW, ytab: _yvpmovdw, prefix: Pavx, op: opBytes{
 		avxEscape | evex128 | evexF3 | evex0F38 | evexW0, evexN8 | evexZeroingEnabled, 0x23,
 		avxEscape | evex256 | evexF3 | evex0F38 | evexW0, evexN16 | evexZeroingEnabled, 0x23,
@@ -645,9 +647,4 @@ Prompt:
 		avxEscape | vex128 | vex66 | vex0F38 | vexW0, 0x46,
 		avxEscape | vex256 | vex66 | vex0F38 | vexW0, 0x46,
 		avxEscape | evex128 | evex66 | e
-"""
-
-
-
-
 ```

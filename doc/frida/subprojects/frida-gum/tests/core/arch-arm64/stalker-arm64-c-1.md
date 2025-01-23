@@ -105,7 +105,7 @@ By following these steps, we can generate a comprehensive and informative summar
 
 作为第二部分，这段代码的功能可以归纳为：**验证 Frida Stalker 在 ARM64 架构下，结合 `gum_stalker_exclude` 和 `gum_stalker_unfollow_me` API，能够正确地排除指定的代码区域不被跟踪，并在执行到被排除区域时，能够根据 `gum_stalker_unfollow_me` 的调用停止跟踪。**  它专注于测试排除功能在遇到不同类型的跳转指令时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm64/stalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 rm64_writer_cur (&cw);
   gum_arm64_writer_put_add_reg_reg_imm (&cw, ARM64_REG_X0, ARM64_REG_X0, 10);
   gum_arm64_writer_put_ret (&cw);
@@ -1171,7 +1173,4 @@ TESTCASE (performance)
   g_timer_reset (timer);
   pretend_workload (&runner_range);
   duration_stalked = g_timer_e
-"""
-
-
 ```

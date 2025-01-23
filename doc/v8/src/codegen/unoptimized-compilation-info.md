@@ -144,11 +144,13 @@ This step-by-step process, starting with understanding the C++ code and then bri
 
 `UnoptimizedCompilationInfo` 是 V8 引擎在处理 JavaScript 代码时用于存储和管理非优化编译阶段所需信息的关键内部类。它包含了关于函数结构、解析结果和源码位置等重要数据，这些数据直接影响着 JavaScript 代码的初始执行、参数处理、调试以及后续的优化过程。虽然开发者无法直接在 JavaScript 中访问或操作 `UnoptimizedCompilationInfo` 的实例，但它的存在和功能是 JavaScript 代码得以高效执行的基础之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/unoptimized-compilation-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ UnoptimizedCompilationInfo::SourcePositionRecordingMode() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

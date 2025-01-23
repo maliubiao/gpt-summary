@@ -127,7 +127,7 @@ func TestenvOptimizationOff() bool {
 
 `go/src/runtime/symtabinl_test.go` 的这个部分是一个针对 Go 运行时系统的测试，专门用于验证在函数内联的情况下，堆栈展开功能是否能够正确工作。它通过遍历目标函数的指令，并使用内联展开器来重构调用堆栈信息，然后与预期的结果进行比较，确保运行时能够准确地报告内联函数的调用链。对于一般的 Go 开发者，理解这个测试可以帮助更好地理解 Go 的内联优化机制以及运行时如何处理堆栈信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/symtabinl_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -260,9 +262,4 @@ func tiuTest() { // +9
 	tiu3++         // +12
 }               // +13
 var tiu1 [2]int // +14
-
-"""
-
-
-
 ```

@@ -193,15 +193,17 @@ This iterative process of reading, analyzing, connecting, and exemplifying helps
 
 总而言之，`blink/renderer/core/page/print_context.cc` 是 Blink 渲染引擎中打印功能的核心，它负责将网页内容转换为可打印的格式，并与 HTML、CSS 和 JavaScript 协同工作，以实现用户期望的打印输出。理解其功能和与 Web 技术的关系对于调试打印相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/print_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Alp Toker <alp@atoker.com>
  * Copyright (C) 2007 Apple Inc.
@@ -441,7 +443,4 @@ ScopedPrintContext::~ScopedPrintContext() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -102,7 +102,7 @@ let sum = a + b;
 
 这部分 `simulator-loong64.cc` 代码是 V8 引擎在 LoongArch64 平台上模拟 CPU 核心功能的重要组成部分。它允许 V8 引擎在没有真实硬件的情况下运行和测试 JavaScript 代码，并提供了对寄存器、浮点运算状态和内存访问的细粒度控制和模拟，同时包含了一些用于调试和错误检测的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -110,8 +110,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sters));
   FPUregisters_[fpureg] = value;
 }
@@ -1066,7 +1068,4 @@ int16_t Simulator::ReadH(int64_t addr, Instruction* instr) {
   int16_t* ptr = reinterpret_cast<int16_t*>(addr);
   TraceMemRd(addr, static_cast<int64_t>(*ptr));
   return *p
-"""
-
-
 ```

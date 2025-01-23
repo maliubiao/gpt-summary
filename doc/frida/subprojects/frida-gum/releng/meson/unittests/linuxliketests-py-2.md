@@ -155,7 +155,7 @@ Frida 本身就是一个强大的动态 instrumentation 工具，广泛应用于
 
 因此，开发者查看 `linuxliketests.py` 的目的是为了理解测试用例的逻辑，分析测试失败的原因，并最终定位和修复 Frida-gum 构建系统中的 bug。这个文件是调试 Frida-gum 构建过程的关键线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf):
         testdir = os.path.join(self.unit_test_dir, '51 ldflagdedup')
         if is_cygwin() or is_osx():
@@ -544,8 +546,4 @@ lf):
         self.assertIn('build t9-e1: c_LINKER t9-e1.p/main.c.o | libt9-s1.a libt9-s2.a libt9-s3.a\n', content)
         self.assertIn('build t12-e1: c_LINKER t12-e1.p/main.c.o | libt12-s1.a libt12-s2.a libt12-s3.a\n', content)
         self.assertIn('build t13-e1: c_LINKER t13-e1.p/main.c.o | libt12-s1.a libt13-s3.a\n', content)
-
-"""
-
-
 ```

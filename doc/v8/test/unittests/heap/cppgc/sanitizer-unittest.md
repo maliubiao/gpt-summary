@@ -115,11 +115,13 @@ obj = null; // 移除强引用
 
 `sanitizer-unittest.cc` 文件通过测试 V8 的 cppgc 组件与内存安全工具的集成，保障了 JavaScript 引擎底层的内存管理的安全性和可靠性。这对于构建稳定和高性能的 JavaScript 运行时至关重要。 虽然 JavaScript 开发者通常不需要直接关注这些底层细节，但这些测试确保了 JavaScript 代码运行在一个安全且没有内存泄漏的环境中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/sanitizer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ TEST_F(AsanTest, ObjectPoisoningInDestructor) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

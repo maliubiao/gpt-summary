@@ -156,15 +156,17 @@ registry.register(target.deref(), heldValue);
 
 总而言之，`v8/src/heap/cppgc/prefinalizer-handler.cc` 是 V8 中管理 C++ 对象回收前清理工作的重要组成部分，它与 JavaScript 的 FinalizationRegistry 等特性有着概念上的联系，并需要开发者谨慎使用以避免潜在的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/prefinalizer-handler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/prefinalizer-handler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ void PreFinalizerHandler::NotifyAllocationInPrefinalizer(size_t size) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

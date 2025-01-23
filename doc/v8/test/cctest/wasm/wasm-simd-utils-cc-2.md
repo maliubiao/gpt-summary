@@ -105,7 +105,7 @@ Here's a breakdown of the tasks:
 
 总的来说，这段代码是 V8 引擎中用于测试 WebAssembly SIMD 指令在启用了向量化优化后的行为的关键部分。它涵盖了浮点数和整数类型的二元和一元操作，以及类型转换和符号扩展/窄化等操作，并通过大量的测试用例来验证这些操作的正确性。 这有助于确保 V8 能够正确且高效地执行 WebAssembly 中的 SIMD 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/wasm-simd-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/wasm-simd-utils.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,10 +113,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-    FOR_FLOAT64_INPUTS(y) {
+### 源代码
+```cpp
+FOR_FLOAT64_INPUTS(y) {
       if (!PlatformCanRepresent(y)) continue;
       if (ShouldSkipTestingConstants(opcode, x, y)) continue;
       double expected = expected_op(x, y);
@@ -417,8 +418,4 @@ template void RunIntToIntNarrowingRevecTest<int16_t, uint8_t>(
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

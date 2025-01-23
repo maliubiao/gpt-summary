@@ -178,7 +178,7 @@ Segmentation fault (core dumped)
 
 总而言之，这个简单的 C 代码片段是 Frida 项目中一个精心设计的测试用例，用于验证 Frida 或底层系统在处理程序崩溃时的行为。它为理解信号机制和逆向分析提供了基础的示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing test/3 ambiguous/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,15 +186,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <signal.h>
 #include <unistd.h>
 
 int main(void) {
     kill(getpid(), SIGSEGV);
 }
-
-"""
-
 ```

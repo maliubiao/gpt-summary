@@ -170,7 +170,7 @@ g++ -c my_hook.cc -o my_hook.o -I/path/to/frida/includes -fPIC ...
 
 作为 Frida 构建系统的一部分，`backends.py` 的核心功能是将编译目标转换为可执行的生成器对象。它负责构建执行编译器所需的命令和参数，处理源文件、输出文件和依赖关系，从而驱动实际的编译过程。这部分代码是 Frida 构建流程中至关重要的一环，它连接了高级的构建目标描述和底层的编译器执行。理解这部分代码有助于理解 Frida 的构建过程以及可能出现的编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rt a Compiler to a Generator.
         '''
         exelist = compiler.get_exelist()
@@ -205,8 +207,4 @@ rt a Compiler to a Generator.
         all_sources = T.cast('_ALL_SOURCES_TYPE', target.sources) + T.cast('_ALL_SOURCES_TYPE', target.generated)
         return self.compiler_to_generator(target, target.compiler, all_sources,
                                           target.output_templ, target.depends)
-
-"""
-
-
 ```

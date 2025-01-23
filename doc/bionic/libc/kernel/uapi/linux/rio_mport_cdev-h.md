@@ -364,7 +364,7 @@ if __name__ == '__main__':
 
 `bionic/libc/kernel/uapi/linux/rio_mport_cdev.handroid` 是一个关键的头文件，定义了用户空间应用程序与 Linux 内核中 RapidIO 多端口字符设备驱动程序进行通信的接口。它允许用户空间程序执行各种操作，包括维护、属性获取、门铃和端口写、内存映射、DMA 传输和设备管理。理解这个头文件对于开发和调试与 RapidIO 硬件交互的 Android 系统组件至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/rio_mport_cdev.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -375,8 +375,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -538,7 +540,4 @@ struct rio_rdev_info {
 #define RIO_DEV_ADD _IOW(RIO_MPORT_DRV_MAGIC, 23, struct rio_rdev_info)
 #define RIO_DEV_DEL _IOW(RIO_MPORT_DRV_MAGIC, 24, struct rio_rdev_info)
 #endif
-
-"""
-
 ```

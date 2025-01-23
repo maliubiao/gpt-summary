@@ -166,14 +166,16 @@ By following these steps, I could dissect the code, infer its purpose, and gener
 
 `WindowPopin` 类在 Blink 渲染引擎中扮演着识别和管理窗口 pop-in 上下文的关键角色。它通过检查页面的安全协议和是否为 partitioned popin 来确定窗口的 pop-in 类型。虽然这段 C++ 代码不直接操作 HTML 和 CSS，但它提供的信息可以被 JavaScript 使用，从而间接地影响页面的渲染和行为。理解其功能和潜在的使用错误对于 Blink 开发者来说非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/window_popin.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ std::optional<V8PopinContextType> WindowPopin::popinContextType() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

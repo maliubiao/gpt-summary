@@ -117,7 +117,7 @@ function add(a, b) {
 
 `v8/src/compiler/backend/ia32/instruction-selector-ia32.cc` 的第一部分代码定义了针对 IA32 架构进行指令选择的基础结构和工具。它包含了用于匹配寻址模式、生成操作数以及选择和发射机器指令的关键类和函数。这部分代码是 V8 编译器将高级语言 (如 JavaScript) 转换为可在 IA32 处理器上执行的低级机器指令的核心组件。它也初步展现了对 WebAssembly SIMD 指令的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/instruction-selector-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,8 +125,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -984,7 +986,4 @@ void VisitI8x16Shift(InstructionSelectorT<Adapter>* selector,
                                   : g.DefineSameAsFirst(node);
 
   if (g.CanBeImmediate(selector->inpu
-"""
-
-
 ```

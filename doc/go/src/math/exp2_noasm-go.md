@@ -135,7 +135,7 @@ func main() {
 
 `go/src/math/exp2_noasm.go` 的主要作用是为非 `arm64` 架构的 `math` 包声明不存在优化的架构特定 `exp2` 实现，并提供一个占位函数。这允许 Go 在支持的架构上提供更高效的 `exp2` 计算，同时在其他架构上回退到通用的实现。它体现了 Go 语言在标准库中进行架构特定优化的机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/exp2_noasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ const haveArchExp2 = false
 func archExp2(x float64) float64 {
 	panic("not implemented")
 }
-
-"""
-
-
-
 ```

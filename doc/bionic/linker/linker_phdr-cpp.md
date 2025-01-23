@@ -75,7 +75,7 @@ Essentially, I broke down the code into its primary responsibilities and the key
 
 接下来，我们期待您提供剩余部分的内容，以便进行更深入的分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_phdr.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -87,8 +87,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -996,8 +998,5 @@ void ElfReader::ZeroFillSegment(const ElfW(Phdr)* phdr) {
   //   1) Result in a SIGBUS, as the region is not backed by the underlying
   //      file.
   //   2) Break the COW backing, faulting in new anon pages for a region
-  //     
-"""
-
-
+  //
 ```

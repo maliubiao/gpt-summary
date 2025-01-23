@@ -257,7 +257,7 @@ MIGHAgEAMBMGByqGS...
 
 这段代码是 `go/src/crypto/tls/tls_test.go` 的一部分，专门用于测试 TLS 1.3 协议中加密客户端问候 (ECH) 的功能。它创建并配置 TLS 客户端和服务器，模拟 TLS 握手，并验证 ECH 是否成功协商，以及连接状态中记录的服务器名称和验证的证书是否符合预期。这段代码确保了 Go 语言的 TLS 库正确实现了 ECH 功能，能够隐藏客户端请求的服务器名称，提高连接的隐私性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/tls_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -266,8 +266,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 d.Reader
 	clientConfig.Time = nil
 	clientConfig.MinVersion = VersionTLS13
@@ -312,10 +314,4 @@ d.Reader
 		t.Fatal("unexpected certificate")
 	}
 }
-
-"""
-
-
-
-
 ```

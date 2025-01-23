@@ -110,7 +110,7 @@ process.Continue()
 4. **建立隧道**：用户通过 `open_tunnel()` 方法在设备和主机之间建立隧道连接，用于数据传输。
 
 通过这些步骤，用户可以逐步调试和验证 Frida 与 iOS 设备的通信过程。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/xpc.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	using OpenSSL;
@@ -1167,7 +1169,4 @@ namespace Frida.Fruity {
 				var val = new BigNumber ();
 
 				BigNumber.mul (val, multiplier, password_verifier, bn_ctx
-"""
-
-
 ```

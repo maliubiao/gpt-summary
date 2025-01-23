@@ -265,15 +265,17 @@ go vet -vettool=$(which myvet) mypackage
 
 `unitchecker` 是 Go 工具链中一个关键的组件，它为 `go vet` 提供了执行静态分析的基础设施。它负责处理与构建系统的交互，加载代码和元数据，以及驱动各种静态分析器的运行。理解其工作原理对于开发自定义的 `go vet` 扩展工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/unitchecker/unitchecker.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -725,9 +727,4 @@ type result struct {
 type importerFunc func(path string) (*types.Package, error)
 
 func (f importerFunc) Import(path string) (*types.Package, error) { return f(path) }
-
-"""
-
-
-
 ```

@@ -133,14 +133,16 @@ Finally, I'd organize the information into logical sections as presented in the 
 
 总而言之，`fe_gaussian_blur.cc` 是 Blink 渲染引擎中一个核心的图形处理组件，它负责高效地实现高斯模糊效果，并为 CSS `filter` 属性和 SVG 滤镜等 web 技术提供底层支持。理解它的功能和原理有助于开发者更好地利用模糊效果，同时避免潜在的性能问题和使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_gaussian_blur.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -241,7 +243,4 @@ StringBuilder& FEGaussianBlur::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

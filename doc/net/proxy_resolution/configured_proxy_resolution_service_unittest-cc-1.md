@@ -95,7 +95,7 @@ PAC 脚本本身就是用 JavaScript 编写的。这个测试文件中的很多�
 
 这段代码主要测试了 `ConfiguredProxyResolutionService` 在处理各种与 PAC 脚本相关的场景时的正确性和健壮性。它涵盖了 PAC 脚本的加载、解析、执行、错误处理以及与并发请求的交互等方面，确保在各种复杂的网络配置下，代理解析服务能够按照预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/configured_proxy_resolution_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 XPECT_EQ(LOAD_STATE_RESOLVING_PROXY_FOR_URL, request->GetLoadState());
 
     ASSERT_EQ(1u, factory_ptr->pending_requests().size());
@@ -881,7 +883,4 @@ TEST_F(ConfiguredProxyResolutionServiceTest, ProxyFallback) {
   int rv =
       service.ResolveProxy(url, std::string(), NetworkAnonymizationKey(), &info,
                            callbac
-"""
-
-
 ```

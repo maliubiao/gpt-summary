@@ -137,15 +137,17 @@ go test -run=Issue5291 ./go/test/fixedbugs
 
 总而言之，`issue5291.go` 作为一个特殊的标记文件，其主要目的是帮助 Go 语言开发团队进行回归测试，确保之前修复的 GC 相关的 bug 不会再次出现。 开发者无需直接操作此文件，但了解其背后的意义有助于更好地理解 Go 语言的 GC 机制和测试方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5291.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -155,9 +157,4 @@ Prompt:
 // Issue 5291: GC crash
 
 package ignored
-
-"""
-
-
-
 ```

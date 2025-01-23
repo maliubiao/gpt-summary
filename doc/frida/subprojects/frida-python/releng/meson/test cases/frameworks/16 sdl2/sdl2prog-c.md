@@ -158,7 +158,7 @@ This systematic approach, starting with a basic understanding of the code and pr
 
 总而言之，这个 `sdl2prog.c` 文件虽然是一个简单的 C 程序，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理依赖 SDL2 库的应用程序时，能否正确地处理库的版本兼容性问题。它也反映了在软件开发和逆向工程中，库的版本管理是一个需要重视的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/16 sdl2/sdl2prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* vim: set sts=4 sw=4 et : */
 
 #include <stdio.h>
@@ -201,7 +203,4 @@ int main(int argc, char *argv[]) {
 #endif
     return 0;
 }
-
-"""
-
 ```

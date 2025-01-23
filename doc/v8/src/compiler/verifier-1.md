@@ -101,12 +101,14 @@ console.log(result);
 
 `v8/src/compiler/verifier.cc` 的第二部分延续了第一部分的功能，专注于验证编译器生成的 IR 代码的正确性，特别是调度后的 IR 的结构和属性。它通过检查操作码类型、图的结构、支配关系、Phi 节点的放置以及输入的有效性，来确保编译过程的正确性，最终保证 JavaScript 代码的可靠执行。虽然开发者通常不会直接与这个文件交互，但它的存在对于 V8 引擎的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 Word32And:
     case IrOpcode::kWord32Or:
     case IrOpcode::kWord32Xor:
@@ -666,8 +668,4 @@ void Verifier::VerifyEdgeInputReplacement(const Edge& edge,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

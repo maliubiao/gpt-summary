@@ -115,7 +115,7 @@ Here's a thinking process to arrive at the detailed analysis of the `setup.py` f
 
 `frida/subprojects/frida-clr/releng/meson/setup.py` 文件是 Frida 项目中用于打包和安装 .NET CLR 支持组件的关键脚本。它负责检查 Python 版本，定义需要安装的数据文件，并利用 `setuptools` 进行安装。虽然它本身不直接执行逆向操作，但它是构建 Frida CLR 的必要步骤，为逆向工程师提供了强大的工具。理解这个文件及其上下文有助于理解 Frida 的构建过程和依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/setup.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -145,7 +147,4 @@ if sys.platform != 'win32':
                   ('share/polkit-1/actions', ['data/com.mesonbuild.install.policy'])]
 
 setup(data_files=data_files,)
-
-"""
-
 ```

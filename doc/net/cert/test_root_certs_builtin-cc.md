@@ -115,15 +115,17 @@ By following this systematic thought process, including considering edge cases a
 
 总而言之，`net/cert/test_root_certs_builtin.cc` 提供了一个用于在 Chromium 网络栈测试中管理自定义根证书的接口。虽然其当前实现比较简单，但它在构建可靠的网络功能测试中起着关键作用，并通过影响底层的证书验证流程间接地影响 JavaScript 发起的 HTTPS 请求的行为。开发者在遇到与测试环境中的证书验证相关的问题时，可能会通过调试路径接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/test_root_certs_builtin.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -143,7 +145,4 @@ TestRootCerts::~TestRootCerts() = default;
 void TestRootCerts::Init() {}
 
 }  // namespace net
-
-"""
-
 ```

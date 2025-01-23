@@ -158,15 +158,17 @@ const worker = new Worker('worker.js');
 
 总而言之，`v8/src/base/platform/platform-freebsd.cc` 是 V8 在 FreeBSD 上运行的关键组成部分，它提供了必要的操作系统抽象，使得 V8 能够在 FreeBSD 环境中正确地执行 JavaScript 代码。虽然开发者通常不会直接接触或修改这个文件，但了解其功能有助于理解 V8 的工作原理以及可能出现的底层问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-freebsd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/platform-freebsd.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

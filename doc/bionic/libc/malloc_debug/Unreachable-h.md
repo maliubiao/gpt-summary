@@ -271,7 +271,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，当目标应用执行到 `Unreachable::CheckIfRequested` 时，你将在 Frida 控制台中看到相应的日志输出，从而可以了解哪些代码路径被认为是 "不可达" 的，以及在什么情况下这些路径会被执行到。这对于理解 Android 内存分配的内部机制和调试相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/Unreachable.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -282,8 +282,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2022 The Android Open Source Project
  * All rights reserved.
@@ -333,7 +335,4 @@ class Unreachable {
 
   BIONIC_DISALLOW_IMPLICIT_CONSTRUCTORS(Unreachable);
 };
-
-"""
-
 ```

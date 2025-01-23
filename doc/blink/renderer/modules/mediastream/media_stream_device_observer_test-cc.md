@@ -107,15 +107,17 @@ Imagine a user is on a website using their webcam for a video call, and they enc
 
 By understanding the user's actions and the potential issues they might encounter, developers can use these tests to ensure that the `MediaStreamDeviceObserver` is robust and handles various scenarios correctly, leading to a better user experience with web-based media applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_device_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -554,7 +556,4 @@ TEST_F(MediaStreamDeviceObserverTest, OnZoomLevelChange) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

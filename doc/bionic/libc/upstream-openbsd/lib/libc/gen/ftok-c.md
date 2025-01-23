@@ -299,7 +299,7 @@ if (Process.platform === 'android') {
 
 希望这个详细的解释能够帮助你理解 `bionic/libc/upstream-openbsd/lib/libc/gen/ftok.c` 文件的功能和在 Android 中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gen/ftok.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: ftok.c,v 1.10 2022/04/13 16:23:53 millert Exp $ */
 /*
  * Copyright (c) 1994 SigmaSoft, Th. Lockert <tholo@sigmasoft.com>
@@ -355,7 +357,4 @@ ftok(const char *path, int id)
 	return (key_t)
 	    ((u_id & 0xff) << 24 | (st.st_dev & 0xff) << 16 | (st.st_ino & 0xffff));
 }
-
-"""
-
 ```

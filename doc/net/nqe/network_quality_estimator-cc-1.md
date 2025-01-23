@@ -211,7 +211,7 @@ Essentially, this section builds upon the data collection mechanisms (presumably
 
 总而言之，这部分 `NetworkQualityEstimator` 代码的核心职责是**利用收集到的网络性能数据 (RTT 和吞吐量) 来动态评估设备的网络连接质量，并将其抽象为不同的有效连接类型 (如 2G, 3G, 4G 等)，同时提供机制将这些评估结果通知给浏览器的其他组件和网页的 JavaScript 代码，以便进行相应的优化和调整。**  它还负责管理网络质量数据的缓存，并提供了用于测试和模拟网络环境的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/network_quality_estimator.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -219,8 +219,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ernal::InvalidRTT();
       fallback_success = false;
     }
@@ -913,8 +915,4 @@ uint32_t NetworkQualityEstimator::GetPeerToPeerConnectionsCountChange() const {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

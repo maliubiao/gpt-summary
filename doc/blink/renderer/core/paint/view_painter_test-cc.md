@@ -202,15 +202,17 @@ By stepping through these stages and understanding the role of `ViewPainter`, we
 
 总而言之，`view_painter_test.cc` 是一个关键的测试文件，它确保了 Chromium 渲染引擎能够正确地绘制视口内容，处理滚动和触摸交互，对于保证浏览器的稳定性和用户体验至关重要。 开发者可以通过分析这些测试用例，更好地理解 `ViewPainter` 的工作原理，并有效地调试相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/view_painter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -459,7 +461,4 @@ TEST_P(ViewPainterTest, TouchActionRect) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

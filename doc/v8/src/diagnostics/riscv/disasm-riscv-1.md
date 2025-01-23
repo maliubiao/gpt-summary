@@ -63,12 +63,14 @@ vadd.vv  v8, v10, v12  // 将向量寄存器 v10 和 v12 的元素相加，结�
 
 简而言之，这部分 C++ 代码是 V8 引擎理解和展示其在 RISC-V 架构上生成的向量指令的关键组成部分，对于调试和性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/riscv/disasm-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 vs1");
       } else {
         UNREACHABLE();
@@ -1059,8 +1061,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 #undef STRING_STARTS_WITH
 
 }  // namespace disasm
-
-"""
-
-
 ```

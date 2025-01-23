@@ -182,7 +182,7 @@ message = "Hello\nWorld" # 在单行字符串中使用换行符
 
 总而言之，`test_api.py` 是 `tomlkit` 库的单元测试文件，它通过各种测试用例来验证 `tomlkit` API 的功能是否正确，这直接关系到 Frida 是否能够正确地解析和处理 TOML 格式的配置文件，从而影响 Frida 的正常运行和用户的使用体验。 当 Frida 的开发者需要调试 TOML 解析相关的问题时，`test_api.py` 提供了一系列的测试案例作为参考和验证的手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tests/test_api.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import io
 import json
 import os
@@ -659,7 +661,4 @@ def test_parse_empty_quoted_table_name():
     parsed = loads(content)
     assert parsed == {"": {"x": 1}}
     assert dumps(parsed) == content
-
-"""
-
 ```

@@ -314,7 +314,7 @@ if __name__ == '__main__':
 
 这个例子展示了如何间接地观察与 `<limits.h>` 相关的常量在 Android 系统中的使用。由于 `limits.handroid` 只是一个包含指令，我们无法直接 hook 它。我们只能 hook使用了其包含的常量的地方。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/limits.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -325,8 +325,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /**
@@ -337,7 +339,4 @@ Prompt:
  */
 
 #include <limits.h>
-
-"""
-
 ```

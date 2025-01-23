@@ -242,7 +242,7 @@ By following this structured thought process, combining code analysis with under
 
 总而言之，这段代码完善了 `WebGL2RenderingContextBase` 类的功能，涵盖了 WebGL2 规范中一些重要的查询、校验和状态管理操作，并与底层图形 API 紧密联系，最终服务于上层的 JavaScript WebGL API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl2_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -250,8 +250,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 riptValue::CreateNull(script_state->GetIsolate());
       default:
         SynthesizeGLError(GL_INVALID_ENUM, kFunctionName,
@@ -688,8 +690,4 @@ void WebGL2RenderingContextBase::
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

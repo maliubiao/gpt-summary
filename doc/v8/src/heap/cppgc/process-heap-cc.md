@@ -171,15 +171,17 @@ v8::Local<v8::Object> createNativeObject(v8::Isolate* isolate) {
 
 `v8/src/heap/cppgc/process-heap.cc` 是 V8 中 `cppgc` 垃圾回收器的一个关键组件，负责维护进程级 `cppgc` 堆的注册表，并提供查找特定内存地址所属堆的功能。虽然它不直接包含 JavaScript 代码，但它为 V8 管理 C++ 对象的内存提供了基础，并与 JavaScript 的 Native Modules 机制紧密相关。理解其功能有助于理解 V8 的内存管理机制以及在编写 Native Modules 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/process-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/process-heap.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ const HeapRegistry::Storage& HeapRegistry::GetRegisteredHeapsForTesting() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

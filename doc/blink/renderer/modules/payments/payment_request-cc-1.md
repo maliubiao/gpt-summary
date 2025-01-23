@@ -165,7 +165,7 @@ The user wants me to summarize the functionality of the provided C++ code snippe
 *   **检查网络请求:**  开发者工具的网络面板可以帮助查看浏览器与支付服务提供商之间的网络请求。
 *   **利用 Chromium 的 tracing 工具:**  Chromium 提供了 tracing 工具，可以记录更底层的执行信息，帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/payment_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 g& error = String::Format(
       "Quota reached for PaymentRequest.%s(). This would normally "
       "reject the promise, but allowing continued usage on localhost and "
@@ -1056,7 +1058,4 @@ void PaymentRequest::OnHasEnrolledInstrument(
                                               kHasEnrolledInstrumentDebugName);
       [[fallthrough]];
     case HasEnrolled
-"""
-
-
 ```

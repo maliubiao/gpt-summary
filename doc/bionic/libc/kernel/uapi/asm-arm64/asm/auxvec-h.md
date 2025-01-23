@@ -283,7 +283,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm64/asm/auxvec.handroid` 文件虽然内容简洁，但定义了访问辅助向量的关键常量，这些常量在 Android 系统的进程启动和运行中扮演着重要的角色，被 libc 和动态链接器等底层组件广泛使用。 通过 Frida 可以方便地观察和调试这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/auxvec.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -308,7 +310,4 @@ Prompt:
 #define AT_MINSIGSTKSZ 51
 #define AT_VECTOR_SIZE_ARCH 2
 #endif
-
-"""
-
 ```

@@ -165,15 +165,17 @@ This systematic approach, starting with understanding the overall purpose and th
 
 总而言之，`net/base/proxy_server_unittest.cc` 通过一系列的单元测试，确保了 `ProxyServer` 类能够正确地表示和处理各种代理服务器的配置信息，这对于浏览器正确地使用代理来访问网络至关重要。  用户在浏览器中配置代理的每一步操作，最终都会涉及到对 `ProxyServer` 类的使用和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/proxy_server_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -414,7 +416,4 @@ TEST(ProxyServerTest, Properties) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

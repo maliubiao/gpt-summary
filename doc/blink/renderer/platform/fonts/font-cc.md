@@ -175,14 +175,16 @@ By following this structured and iterative process, we can effectively analyze a
 
 总而言之，`blink/renderer/platform/fonts/font.cc` 文件中的 `Font` 类是 Blink 渲染引擎中处理字体和文本渲染的核心组件，它与 CSS 样式、HTML 结构以及 JavaScript 的文本操作 API 都有着密切的联系，共同决定了网页上文本的最终呈现效果。理解其功能有助于我们更好地理解浏览器如何渲染文本，并能帮助开发者避免一些常见的文本显示问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -849,7 +851,4 @@ bool Font::IsFallbackValid() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

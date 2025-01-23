@@ -70,7 +70,7 @@ This thought process allows for a structured approach to answering the request, 
 
 接下来，第二部分将会详细展开你提出的其他问题，例如与 Android 功能的关系、`libc` 函数的实现、动态链接、用户错误、以及如何通过 Android framework/NDK 到达这里并进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atanhf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -82,8 +82,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1611,8 +1613,4 @@ static data_1_1_t<float, float> g_atanhf_intel_data[] = {
   },
   { // Entry 377
     -0x1.00055788aad3c9ee173b60f77d5e4818p-6,
-   
-"""
-
-
 ```

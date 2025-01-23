@@ -231,7 +231,7 @@ Frida 需要具体的数值。这些宏的值可以通过以下方式计算：
 
 总结来说，`bionic/libc/kernel/uapi/linux/radeonfb.h` 是一个定义了与 Linux 内核中 Radeon 帧缓冲设备交互的接口的头文件，它允许用户空间的程序通过 `ioctl` 系统调用来控制 Radeon 显卡的显示输出，例如设置镜像模式。虽然现代 Android 系统更多地依赖于更高级的图形架构，但在某些情况下，这些底层的接口仍然可能被使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/radeonfb.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -242,8 +242,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -259,7 +261,4 @@ Prompt:
 #define FBIO_RADEON_GET_MIRROR _IOR('@', 3, size_t)
 #define FBIO_RADEON_SET_MIRROR _IOW('@', 4, size_t)
 #endif
-
-"""
-
 ```

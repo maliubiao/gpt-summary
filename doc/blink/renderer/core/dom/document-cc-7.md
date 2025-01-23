@@ -165,7 +165,7 @@ Let's break down the code snippet section by section:
 
 这部分代码主要负责 **文档的事件管理和部分核心属性的控制**。它建立了从底层事件（如鼠标滚动、窗口大小变化）到 JavaScript 可监听事件的桥梁，并提供了对一些重要的文档属性（如 cookie、domain）的编程接口。此外，它还涉及到一些现代 Web 特性（如 Scroll Snap、Visual Viewport、Private State Tokens）的支持。 这部分的功能对于构建交互式网页至关重要，因为它允许 JavaScript 代码响应用户的操作和环境变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 delta_x_ += delta_x;
   overscroll_accumulated_delta_y_ += delta_y;
   bool bubbles = target->IsDocumentNode();
@@ -975,7 +977,4 @@ void Document::TrustTokenQueryAnswererConnectionError() {
 }
 
 void Document::ari
-"""
-
-
 ```

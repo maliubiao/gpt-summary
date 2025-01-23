@@ -118,7 +118,7 @@ Let's break down the thought process for analyzing this seemingly simple C file.
 
 总而言之，`android-selinux.c` 这个文件虽然很小，但它在 Frida 能够在 Android 平台上进行强大的动态 instrumentation 中扮演着关键的角色，它试图克服 Android 系统中强大的安全屏障 SELinux，以便 Frida 能够自由地观察和操控目标进程。理解这个文件的作用需要一定的底层知识，并且它与逆向工程实践紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-go/frida/android-selinux.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "android-selinux.h"
 
 void android_patch_selinux(void) {
@@ -135,6 +137,4 @@ void android_patch_selinux(void) {
     frida_selinux_patch_policy();
 #endif
 }
-"""
-
 ```

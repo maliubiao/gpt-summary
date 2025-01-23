@@ -193,7 +193,7 @@ Input is within normal range: 45
 
 总而言之，`mutator.go` 文件中的代码实现了 Go 语言 fuzzing 功能的核心部分，负责生成各种各样的测试输入，通过随机的变异操作来探索程序潜在的错误。理解其支持的类型和 `maxBytes` 参数对于正确使用这个 mutator 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/mutator.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -496,9 +498,4 @@ func init() {
 		interesting32 = append(interesting32, int32(v))
 	}
 }
-
-"""
-
-
-
 ```

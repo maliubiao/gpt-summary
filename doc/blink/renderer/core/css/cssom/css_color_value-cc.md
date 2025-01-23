@@ -146,15 +146,17 @@ This structured approach, combining code analysis with an understanding of the s
 
 总而言之，`css_color_value.cc` 是 Blink 引擎中处理 CSS 颜色值的一个核心组件，它负责将 CSS 文本表示的颜色转换为内部对象表示，以便浏览器可以正确渲染页面。理解它的功能对于调试 CSS 颜色相关的 bug 非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/css_color_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ V8UnionCSSColorValueOrCSSStyleValue* CSSColorValue::parse(
 }
 
 }  // namespace blink
-
-"""
-
 ```

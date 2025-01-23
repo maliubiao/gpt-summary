@@ -156,15 +156,17 @@ for (let i = 0; i < 100000; i++) {
 
 `v8/src/heap/cppgc/gc-info-table.cc` 文件实现了 V8 中用于存储垃圾回收相关信息的关键组件 `GCInfoTable`。它负责管理这些信息，动态调整大小，并提供线程安全的访问。虽然 JavaScript 开发者不会直接与之交互，但理解其功能有助于理解 V8 的垃圾回收机制以及与之相关的潜在编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/gc-info-table.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/gc-info-table.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ GCInfoIndex GCInfoTable::RegisterNewGCInfo(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

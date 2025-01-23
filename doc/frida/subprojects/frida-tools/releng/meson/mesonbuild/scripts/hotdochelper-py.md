@@ -138,7 +138,7 @@ Let's break down the thought process for analyzing the `hotdochelper.py` script.
 
 通过以上分析，我们可以理解 `hotdochelper.py` 在 Frida 工具链中的作用，以及它与逆向工程、底层知识和常见用户错误之间的联系。它虽然只是一个辅助脚本，但却是保证 Frida 文档正确生成和安装的重要一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/scripts/hotdochelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os
@@ -188,7 +190,4 @@ def run(argv: T.List[str]) -> int:
         shutil.rmtree(installdir, ignore_errors=True)
         shutil.copytree(source_dir, installdir)
     return 0
-
-"""
-
 ```

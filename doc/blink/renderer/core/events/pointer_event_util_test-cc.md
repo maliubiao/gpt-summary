@@ -171,14 +171,16 @@ document.addEventListener('pointermove', (event) => {
 
 总而言之，`pointer_event_util_test.cc` 这个文件通过单元测试确保了 Blink 引擎能够正确地处理和规范化 Pointer Events 相关的角度值，这对于 Web 开发者来说是透明的，但却保证了 JavaScript API 接收到的数据是可靠和一致的，从而降低了开发者处理跨平台、跨设备输入的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/pointer_event_util_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ INSTANTIATE_TEST_SUITE_P(TiltInValidRangeTests,
                                            std::make_tuple(270, 90),
                                            std::make_tuple(360, 0)));
 }  // namespace blink
-
-"""
-
 ```

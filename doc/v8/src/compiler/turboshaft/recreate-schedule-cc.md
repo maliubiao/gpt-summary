@@ -94,7 +94,7 @@ The primary function of `recreate-schedule.cc` is to **reconstruct a Turbofan sc
 
 The `v8/src/compiler/turboshaft/recreate-schedule.cc` file is responsible for the crucial task of **reconstructing a Turbofan-compatible schedule and graph from a Turboshaft graph**. It acts as a translator, converting Turboshaft's operations and control flow into the corresponding Turbofan representations. This process is essential for enabling Turbofan's subsequent optimization passes and code generation within the V8 JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/recreate-schedule.cc以.tq结尾，那它是个v8 torque源代码，
@@ -102,8 +102,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1022,7 +1024,4 @@ Node* ScheduleBuilder::ProcessOperation(const TaggedBitcastOp& op) {
 Node* ScheduleBuilder::ProcessOperation(const SelectOp& op) {
   // If there is a Select, then it should only be one that is supported by the
   // machine, and it should be meant to be implementation
-"""
-
-
 ```

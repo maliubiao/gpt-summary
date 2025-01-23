@@ -140,14 +140,16 @@ offsetElement.setAttribute('dy', '-10');
 
 总而言之，`fe_offset.cc` 文件在 Blink 渲染引擎中扮演着关键角色，它负责实现 SVG `feOffset` 滤镜效果，使得网页开发者可以通过简单的属性设置就能实现图像的偏移操作，从而创造更丰富的视觉效果。理解这个文件的功能有助于开发者更好地利用 SVG 滤镜特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_offset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -229,7 +231,4 @@ StringBuilder& FEOffset::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

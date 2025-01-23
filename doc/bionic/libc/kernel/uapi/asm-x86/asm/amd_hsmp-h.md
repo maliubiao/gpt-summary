@@ -286,7 +286,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 通过以上分析，我们可以了解到 `bionic/libc/kernel/uapi/asm-x86/asm/amd_hsmp.h` 头文件在 Android 系统中扮演着连接用户空间和 AMD HSMP 驱动程序的关键角色，为 Android 系统提供了监控和管理 AMD 处理器硬件的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/amd_hsmp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -297,8 +297,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -555,7 +557,4 @@ struct hsmp_metric_table {
 #define HSMP_BASE_IOCTL_NR 0xF8
 #define HSMP_IOCTL_CMD _IOWR(HSMP_BASE_IOCTL_NR, 0, struct hsmp_message)
 #endif
-
-"""
-
 ```

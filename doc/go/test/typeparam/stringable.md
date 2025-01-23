@@ -192,15 +192,17 @@ func main() {
 
 `go/test/typeparam/stringable.go` 这个代码片段简洁地展示了 Go 语言中泛型和接口的强大组合，允许创建类型安全的、可复用的数据结构，用于处理具有字符串表示形式的各种类型。使用者需要注意确保放入 `StringableList` 的类型都实现了 `Stringer` 接口，以避免编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/stringable.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -247,9 +249,4 @@ func main() {
 		panic(fmt.Sprintf("got %s, want %s", got, want))
 	}
 }
-
-"""
-
-
-
 ```

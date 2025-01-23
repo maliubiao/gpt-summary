@@ -187,14 +187,16 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，`size_interpolation_functions.cc` 在 Blink 引擎中扮演着关键角色，负责处理 CSS 尺寸属性动画和过渡的底层计算，确保网页上的视觉效果能够平滑过渡。它需要处理各种不同的尺寸表示方式，并考虑其兼容性，以便生成正确的中间值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/size_interpolation_functions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ FillSize SizeInterpolationFunctions::CreateFillSize(
 }
 
 }  // namespace blink
-
-"""
-
 ```

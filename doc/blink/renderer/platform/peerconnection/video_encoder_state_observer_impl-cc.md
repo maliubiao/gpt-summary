@@ -148,14 +148,16 @@ By following these steps, you can systematically analyze the code and generate a
 
 `VideoEncoderStateObserverImpl` 是 Blink 渲染引擎中一个关键的组件，它负责监控和收集视频编码器的状态信息和性能数据。虽然它本身不直接与 JavaScript, HTML, CSS 交互，但它支撑着 WebRTC 的视频编码功能，而这些功能最终是通过 JavaScript API 暴露给 Web 开发者的。理解其功能和潜在的使用错误有助于我们更好地理解 WebRTC 的底层工作原理和进行故障排除。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/video_encoder_state_observer_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ VideoEncoderStateObserverImpl::FindHighestActiveEncoding() const {
   return top_info;
 }
 }  // namespace blink
-
-"""
-
 ```

@@ -203,14 +203,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`font_cache_linux.cc` 是 Blink 渲染引擎在 Linux 平台上实现字体管理的关键组件，它确保了网页文本能够以尽可能接近开发者意图的方式显示，即使在字体缺失或字符不支持的情况下也能提供合理的替代方案。理解它的功能有助于开发者更好地处理字体相关的网页显示问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/linux/font_cache_linux.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -365,7 +367,4 @@ const SimpleFontData* FontCache::PlatformFallbackFontForCharacter(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -189,7 +189,7 @@ Let's say a reverse engineer wants to analyze a piece of firmware compiled with 
 
 In essence, this file acts as a bridge between the generic build system logic of Meson and the specific requirements and command-line syntax of the Microchip XC16 compiler. It ensures that when Frida needs to build code for a target microcontroller, the process is handled correctly.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/mixins/xc16.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2019 The Meson development team
 
@@ -310,7 +312,4 @@ class Xc16Compiler(Compiler):
                 parameter_list[idx] = i[:9] + os.path.normpath(os.path.join(build_dir, i[9:]))
 
         return parameter_list
-
-"""
-
 ```

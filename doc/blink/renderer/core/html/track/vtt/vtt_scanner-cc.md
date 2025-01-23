@@ -207,15 +207,17 @@ By following these steps, we can systematically analyze the code and generate a 
 
 `blink/renderer/core/html/track/vtt/vtt_scanner.cc` 是 Chromium Blink 引擎中负责解析 VTT 字幕文件的关键组件。它通过提供一系列扫描方法，将 VTT 格式的文本分解成结构化的数据，为后续的字幕处理和渲染奠定了基础。用户在网页上观看带有字幕的视频时，其背后就默默地运行着像 `vtt_scanner.cc` 这样的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/vtt/vtt_scanner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Opera Software ASA. All rights reserved.
  *
@@ -364,7 +366,4 @@ bool VTTScanner::ScanPercentage(double& percentage) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

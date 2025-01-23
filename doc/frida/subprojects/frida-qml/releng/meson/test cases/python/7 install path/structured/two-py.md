@@ -106,7 +106,7 @@ A user (likely a developer or someone involved in building Frida) would arrive a
 
 **In summary, while `two.py` is empty, its location within the Frida project strongly suggests it's a placeholder for a test case designed to verify the correct structured installation of Frida QML components. This type of test is crucial for ensuring the usability and reliability of Frida for reverse engineering tasks and touches upon various lower-level aspects of the operating system and targeted frameworks.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python/7 install path/structured/two.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,9 +114,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

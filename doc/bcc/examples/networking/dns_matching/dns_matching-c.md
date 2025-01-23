@@ -71,7 +71,7 @@ Response:
 
 ### 总结
 此程序通过 **TC eBPF 钩子**实现 DNS 域名过滤，依赖哈希表动态配置黑名单。调试时需关注网络层解析正确性、哈希表状态及 eBPF 程序挂载点。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/examples/networking/dns_matching/dns_matching.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * dns_matching.c  Drop DNS packets requesting DNS name contained in hash map
  *    For Linux, uses BCC, eBPF. See .py file.
@@ -185,7 +187,4 @@ int dns_matching(struct __sk_buff *skb)
   // Drop the packet
   return 0;
 }
-
-"""
-
 ```

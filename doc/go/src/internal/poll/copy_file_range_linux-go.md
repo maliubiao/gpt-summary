@@ -141,7 +141,7 @@ func main() {
 
 例如，如果用户尝试在两个位于不同文件系统的文件之间使用 `io.Copy` 进行复制，在内核版本低于 5.3 的情况下，`copy_file_range` 会返回 `syscall.EXDEV` 错误，`handleCopyFileRangeErr` 会返回 `false, nil`，Go 会回退到更通用的复制方法。如果用户没有正确处理 `io.Copy` 可能返回的错误，可能会对操作是否成功产生误解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/copy_file_range_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -149,8 +149,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -234,9 +236,4 @@ func handleCopyFileRangeErr(err error, copied, written int64) (bool, error) {
 	}
 	return true, err
 }
-
-"""
-
-
-
 ```

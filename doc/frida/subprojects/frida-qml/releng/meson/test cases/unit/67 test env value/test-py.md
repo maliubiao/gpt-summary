@@ -124,7 +124,7 @@ AssertionError
 
 总而言之，这个简单的脚本是 Frida 测试基础设施的一部分，用于验证环境变量的正确设置，这对于确保 Frida 及其相关组件的正常运行至关重要。它的存在是为了提前捕获潜在的配置错误，保证软件的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/67 test env value/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,15 +132,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
 import sys
 
 assert os.environ['TEST_VAR'] == sys.argv[1]
-
-"""
-
 ```

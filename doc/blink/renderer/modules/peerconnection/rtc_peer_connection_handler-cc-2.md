@@ -166,7 +166,7 @@ By following these steps and carefully examining the code, a comprehensive summa
 
 **总结来说，这部分代码主要负责处理 `RTCPeerConnection` 生命周期中的关键操作，例如移除 track，关闭连接，处理热状态和速度限制，管理事件日志，创建 data channel，更新会话描述，跟踪连接状态变化，以及管理 transceiver 和 ICE candidate。它作为 Blink 渲染引擎中 WebRTC 功能的核心组成部分，将 Javascript 的 WebRTC API 调用转化为对底层 WebRTC 原生接口的操作，并负责将原生层的事件回调传递到 Javascript 层。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_peer_connection_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ate_surfacer.is_initialized());
   if (!result || !result->ok()) {
     // Don't leave the surfacer in a pending state.
@@ -774,8 +776,4 @@ void RTCPeerConnectionHandler::ReportICEState(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -186,7 +186,7 @@ go build main.go  # 错误：没有使用 -race
 
 总结来说，`go/src/runtime/race/race_darwin_arm64.go` 是 Go 语言数据竞争检测器在 Darwin ARM64 平台上的桥梁，它通过声明需要动态链接的 C 函数，使得 Go 运行时能够与操作系统进行交互，从而实现对并发程序中数据竞争的监控。使用 `-race` 标志是启用该功能的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/race/race_darwin_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -304,9 +306,4 @@ package race
 //go:cgo_import_dynamic memcpy memcpy ""
 //go:cgo_import_dynamic memmove memmove ""
 //go:cgo_import_dynamic memset memset ""
-
-"""
-
-
-
 ```

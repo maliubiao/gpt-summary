@@ -138,7 +138,7 @@ In essence, this part of the tests delves deeper into specific edge cases and op
 
 这部分 `qpack_encoder_test.cc` 文件通过一系列细致的单元测试，深入验证了 `QpackEncoder` 在更复杂和特定的场景下的行为，包括对未确认动态表条目的处理、在部分匹配情况下对静态表和动态表的使用策略，以及 "cookie crumbling" 功能的正确性。 这些测试确保了 QPACK 编码器在各种情况下都能高效且正确地压缩 HTTP 头部。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_encoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ble.
   std::string insert_entries_hex;
   if (HuffmanEnabled()) {
@@ -575,8 +577,4 @@ TEST_P(QpackEncoderTest, CookieCrumblingDisabledDynamicTable) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

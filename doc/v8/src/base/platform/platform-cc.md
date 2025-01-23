@@ -157,15 +157,17 @@ V8 引擎在执行这段 JavaScript 代码时，会使用底层的 C++ 代码（
 
 `v8/src/base/platform/platform.cc`  这段代码的核心功能是提供一种跨平台的方式来获取当前线程的栈起始地址。虽然这段 C++ 代码不直接被 JavaScript 代码调用，但它是 V8 引擎管理内存、检测错误（如栈溢出）以及进行调试和性能分析的关键组成部分。理解这段代码有助于更深入地了解 V8 引擎的内部工作原理以及 JavaScript 的运行时环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/platform.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ Stack::StackSlot Stack::GetStackStart() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

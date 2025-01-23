@@ -118,15 +118,17 @@ By following this structured approach, breaking down the problem, and constantly
 
 `net/nqe/throughput_analyzer.cc` 中的 `ThroughputAnalyzer` 类是 Chromium 网络栈中一个关键的组件，负责估计网络下行吞吐量。它通过监控网络请求、区分影响准确性的请求、使用观察窗口等机制来实现这一目标。虽然它本身是 C++ 代码，但其功能与 JavaScript 功能密切相关，因为 JavaScript 发起的网络请求是其分析的基础，而分析结果可以用于优化 Web 应用的用户体验。理解其工作原理对于调试网络相关问题和优化 Web 应用性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/throughput_analyzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -611,7 +613,4 @@ void ThroughputAnalyzer::EraseHangingRequests(const URLRequest& request) {
 }  // namespace nqe::internal
 
 }  // namespace net
-
-"""
-
 ```

@@ -186,15 +186,17 @@ This systematic approach, starting with high-level understanding and gradually d
 
 总而言之，`html_media_element_capture.cc` 文件是 Blink 引擎中实现 HTML 媒体元素捕获为 `MediaStream` 功能的关键部分，它连接了 JavaScript API 和底层的媒体处理逻辑，并涉及到一些安全和事件处理机制。理解这个文件的功能有助于开发者更好地使用 `captureStream()` API，并排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediacapturefromelement/html_media_element_capture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -558,7 +560,4 @@ MediaStream* HTMLMediaElementCapture::captureStream(
 }
 
 }  // namespace blink
-
-"""
-
 ```

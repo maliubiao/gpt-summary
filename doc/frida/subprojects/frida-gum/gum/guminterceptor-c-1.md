@@ -180,7 +180,7 @@ By following this systematic approach, combining high-level understanding with d
 
 这段代码的核心功能是**实现 Frida 的函数运行时拦截机制**。它通过事务管理确保拦截操作的原子性，使用函数上下文来管理被拦截的函数信息，通过监听器机制允许用户在函数执行前后注入自定义代码，并利用代码段操作和 trampoline 技术来实现代码的动态修改和执行流的重定向。它构建了 Frida 动态 instrumentation 功能的基础，使得用户能够在运行时观察、修改目标进程的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/guminterceptor.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,9 +189,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-       update->ctx) - target_page));
+### 源代码
+```c
+update->ctx) - target_page));
         }
 
         source_page += page_size;
@@ -1098,8 +1100,4 @@ gum_page_address_compare (gconstpointer a,
 {
   return GPOINTER_TO_SIZE (a) - GPOINTER_TO_SIZE (b);
 }
-
-"""
-
-
 ```

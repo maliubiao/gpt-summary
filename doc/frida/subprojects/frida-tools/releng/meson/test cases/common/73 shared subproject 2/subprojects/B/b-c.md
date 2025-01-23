@@ -119,7 +119,7 @@ By following this detailed thinking process, we can systematically analyze the c
 
 总而言之，`b.c` 文件虽然代码量不大，但在一个较大的软件项目中，它可以作为测试框架或子模块的一部分，其简单的逻辑体现了函数调用、条件判断和错误处理的基本概念，也为逆向分析和调试提供了入口点。开发者可以通过分析这个文件的代码和其运行时的行为，来理解整个系统的运作方式，并定位潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/73 shared subproject 2/subprojects/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -149,7 +151,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

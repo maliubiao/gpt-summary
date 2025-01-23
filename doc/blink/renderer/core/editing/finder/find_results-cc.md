@@ -160,15 +160,17 @@ By following this structured approach, breaking down the code into its component
 
 在调试过程中，如果你怀疑 "在页面中查找" 功能有问题，例如找不到预期的结果或高亮显示不正确，你可以设置断点在 `find_results.cc` 的相关方法中，例如 `FindResults::begin()`, `Iterator::operator++()`, `EarliestMatch()` 等，来检查搜索过程中的状态和数据，从而定位问题。你还可以检查传递给 `FindResults` 构造函数的参数是否正确，以及 `TextSearcherICU` 的设置是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/finder/find_results.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,7 +318,4 @@ bool FindResults::Iterator::IsAtEnd() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

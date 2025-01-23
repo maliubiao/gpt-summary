@@ -108,7 +108,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总的来说，这个文件的核心功能是作为 Meson 构建系统的一个桥梁，将 Meson 的构建定义转换为 Visual Studio 2010 可以理解的项目和解决方案文件。它负责处理项目结构、依赖关系、编译选项等关键信息，使得开发者可以使用 Visual Studio 来构建和调试 Frida 项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -736,7 +738,4 @@ class Vs2010Backend(backends.Backend):
                              target_ext=None,
                              target_platform=None) -> T.Tuple[ET.Element, ET.Element]:
         root = ET.Element('Project', {'DefaultTargets': "Build
-"""
-
-
 ```

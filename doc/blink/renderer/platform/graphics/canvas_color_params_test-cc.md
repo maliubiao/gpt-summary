@@ -103,14 +103,16 @@ By following this structured approach and being open to self-correction, we can 
 
 `canvas_color_params_test.cc` 是一个重要的测试文件，它确保了 Chromium 浏览器在处理 Canvas 颜色时的一致性和正确性。这直接关系到网页开发者在使用 Canvas API 时所见即所得的体验，以及用户浏览包含 Canvas 内容的网页时所看到的颜色准确性。 该测试通过比对用于绘制和存储的色彩空间，有效地验证了 Chromium 内部色彩管理机制的正确运作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_color_params_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ TEST(CanvasColorParamsTest, MatchSkColorSpaceWithGfxColorSpace) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

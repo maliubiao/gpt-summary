@@ -133,7 +133,7 @@ By following this thought process, which combines code inspection with contextua
 
 `frida/subprojects/frida-qml/releng/meson/test cases/common/98 subproject subdir/subprojects/sub/lib/sub.c` 中的 `sub` 函数虽然功能简单，但在 Frida 的测试框架中扮演着验证基础功能的角色。它涉及到二进制底层、操作系统内核和框架的知识，并且在 Frida 的开发和调试过程中可能被间接地接触到。理解这类简单的测试用例有助于深入理解 Frida 的内部机制和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/98 subproject subdir/subprojects/sub/lib/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,14 +141,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "sub.h"
 
 int sub(void) {
     return 0;
 }
-
-"""
-
 ```

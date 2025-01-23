@@ -145,15 +145,17 @@ By following these steps, we can systematically analyze the given code and under
 
 总而言之，`quic_framer_process_data_packet_fuzzer.cc` 是一个重要的测试工具，用于提高 Chromium 浏览器 QUIC 协议实现的健壮性和安全性，确保用户在访问网站时能够获得稳定可靠的网络体验。它通过模拟接收各种可能出现的数据包，帮助开发者发现和修复潜在的 bug，从而避免用户在使用浏览器时遇到网络错误或安全问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/fuzzing/quic_framer_process_data_packet_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -434,7 +436,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   }
   return 0;
 }
-
-"""
-
 ```

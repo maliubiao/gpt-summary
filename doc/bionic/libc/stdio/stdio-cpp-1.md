@@ -383,7 +383,7 @@ sys.stdin.read()
 
 这部分 `stdio.cpp` 代码提供了在 Android 系统中执行外部命令并与其进行管道通信的功能 (`popen`, `pclose`)，以及对文件流进行线程安全访问的机制 (`flockfile`, `ftrylockfile`, `funlockfile`)。同时，它还包含了用于确保内部数据结构一致性的静态断言。这些功能是 Android 系统中许多底层操作的基础，被 Android Framework、系统服务和 NDK 开发的应用程序广泛使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/stdio/stdio.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -395,8 +395,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _FILENO);
     execl(__bionic_get_shell_path(), "sh", "-c", "--", cmd, nullptr);
     _exit(127);
@@ -445,8 +447,4 @@ static_assert(alignof(::__sFILE) == alignof(phony::__sFILE),
               "alignment mismatch between `struct __sFILE` implementation and public stub");
 
 }
-
-"""
-
-
 ```

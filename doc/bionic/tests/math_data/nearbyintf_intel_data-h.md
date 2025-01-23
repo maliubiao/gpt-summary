@@ -258,7 +258,7 @@ if (nearbyintf) {
 
 总结来说，`bionic/tests/math_data/nearbyintf_intel_data.handroid` 是 Android Bionic 库中用于测试 `nearbyintf` 函数在 Intel 架构上实现的数据文件。它包含了大量的输入输出对，用于验证该函数在各种情况下的正确性，确保 Android 系统中依赖浮点运算的组件能够可靠运行。 开发者在使用 `nearbyintf` 时需要理解其舍入规则和返回值类型，并注意浮点数的精度问题。 Frida 可以作为强大的调试工具，帮助开发者深入理解和验证 `nearbyintf` 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/nearbyintf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -269,8 +269,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1609,7 +1611,4 @@ static data_1_1_t<float, float> g_nearbyintf_intel_data[] = {
     -0x1.7ffff0p0
   }
 };
-
-"""
-
 ```

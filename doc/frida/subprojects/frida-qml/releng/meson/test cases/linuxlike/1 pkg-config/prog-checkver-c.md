@@ -99,7 +99,7 @@ By following this structured approach and iteratively refining the explanations,
 
 总而言之，`prog-checkver.c` 是 Frida 构建系统中的一个简单的但很重要的测试用例，用于确保构建环境的 `zlib` 配置正确，这对于 Frida 的稳定运行和与目标进程的正确交互至关重要，尤其是在涉及到需要解压缩或处理 `zlib` 压缩数据的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/linuxlike/1 pkg-config/prog-checkver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <zlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -124,7 +126,4 @@ int main(void) {
     printf("Couldn't find 'deflate'\n");
     return 1;
 }
-
-"""
-
 ```

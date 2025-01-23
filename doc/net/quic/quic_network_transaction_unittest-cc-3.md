@@ -118,7 +118,7 @@ Content-Type: text/html
 
 这部分单元测试的主要功能是 **验证 Chromium 网络栈在接收到包含 Alt-Svc 头的 HTTP 响应后，能够正确地处理并尝试升级到 QUIC 连接，并且能够处理各种复杂的场景，包括版本协商、NetworkAnonymizationKey 的影响、错误处理以及回退机制。** 它确保了在通过 Alt-Svc 机制使用 QUIC 时，客户端行为的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ion_.AlpnDeferToRFCv1()) {
     // These versions currently do not support Alt-Svc.
     return;
@@ -896,7 +898,4 @@ TEST_P(QuicNetworkTransactionTest, TimeoutAfterHandshakeConfirmedThenBroken2) {
 
   // In order for a new QUIC session to be established via alternate-protocol
   // wit
-"""
-
-
 ```

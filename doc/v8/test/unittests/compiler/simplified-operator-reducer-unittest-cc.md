@@ -182,15 +182,17 @@ By following these steps, I can dissect the provided C++ code and construct a co
 
 总而言之，`v8/test/unittests/compiler/simplified-operator-reducer-unittest.cc` 是一个关键的测试文件，用于确保 V8 编译器中的 `SimplifiedOperatorReducer` 组件能够正确且有效地执行各种代码简化优化，从而提高 JavaScript 代码的执行性能。它通过大量的单元测试覆盖了各种可能的化简场景，并使用 Google Test 框架进行组织和验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/simplified-operator-reducer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/simplified-operator-reducer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -752,7 +754,4 @@ TEST_F(SimplifiedOperatorReducerTest,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

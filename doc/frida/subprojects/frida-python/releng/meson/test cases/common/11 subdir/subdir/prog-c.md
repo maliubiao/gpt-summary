@@ -122,7 +122,7 @@ By following this process of deconstruction, contextualization, and linking back
 
 总而言之，虽然 `prog.c` 自身功能极其简单，但在 Frida 的上下文中，它是作为一个基础的测试目标而存在的，用于验证 Frida 的基本能力，并作为更复杂测试的基础。理解它的作用需要结合 Frida 的架构和测试框架来考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/11 subdir/subdir/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,10 +130,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

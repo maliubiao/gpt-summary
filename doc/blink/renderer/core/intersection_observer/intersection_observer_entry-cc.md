@@ -153,14 +153,16 @@ By following this structured approach, I could effectively analyze the C++ code 
 
 总而言之，`IntersectionObserverEntry.cc` 中定义的 `IntersectionObserverEntry` 类是实现 Intersection Observer API 的核心数据结构，它连接了底层的渲染引擎和上层的 JavaScript API，使得开发者能够方便地监听和处理元素的交叉状态，从而实现诸如懒加载、无限滚动等功能。理解其功能和背后的原理对于有效地使用 Intersection Observer API 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_observer_entry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ void IntersectionObserverEntry::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

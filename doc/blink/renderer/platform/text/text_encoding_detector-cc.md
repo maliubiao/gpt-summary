@@ -120,14 +120,16 @@ By following these steps, combining code analysis with an understanding of web d
 
 总而言之，`blink/renderer/platform/text/text_encoding_detector.cc` 是 Blink 引擎中负责文本编码自动检测的关键组件。它在浏览器处理各种文本资源（包括 HTML、JavaScript 和 CSS）时发挥着重要作用，尤其是在缺乏明确编码声明的情况下。然而，最佳实践仍然是明确地声明文本编码，而不是依赖浏览器的自动检测。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_encoding_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009 Google Inc. All rights reserved.
  *
@@ -216,7 +218,4 @@ bool DetectTextEncoding(base::span<const uint8_t> bytes,
 }
 
 }  // namespace blink
-
-"""
-
 ```

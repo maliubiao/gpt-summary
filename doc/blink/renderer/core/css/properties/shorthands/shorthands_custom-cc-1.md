@@ -114,7 +114,7 @@ By following this process of analyzing the code, identifying its purpose, relati
 
 **作为调试线索:**  当开发者发现元素的样式没有按预期显示时，可以检查浏览器的开发者工具中的 "Styles" 标签，查看应用到元素上的 CSS 规则。如果发现某个简写属性的值不正确，或者某些长属性没有被正确设置，那么可能是 CSS 语法错误，或者与简写属性的解析逻辑有关。开发者可能需要在 Blink 引擎的源代码中查找相关的 `ParseShorthand` 函数，了解其解析逻辑，从而定位问题。例如，如果 `border-radius` 的解析结果不符合预期，开发者可以查看 `BorderRadius::ParseShorthand` 的实现，理解其如何处理不同数量的值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/shorthands/shorthands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 const CSSParserLocalContext&,
     HeapVector<CSSPropertyValue, 64>& properties) const {
   return css_parsing_utils::ConsumeShorthandGreedilyViaLonghands(
@@ -944,7 +946,4 @@ bool FontVariant::ParseShorthand(
       caps_value ? *caps_value
                  : *CSSIdentifierValue::Create(CSSValueID::kNormal),
       important, css_parsing_utils::IsImplicitProperty::kNo
-"""
-
-
 ```

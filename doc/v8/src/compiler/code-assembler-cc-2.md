@@ -119,7 +119,7 @@ function example(x) {
 
 这部分代码主要负责**管理代码生成过程中的控制流和变量状态**。`CodeAssemblerLabel` 允许在代码中定义跳转目标，并处理当多个执行路径汇聚到同一个目标时变量值的合并，使用 Phi 节点来解决值不一致的问题。`CodeAssemblerParameterizedLabelBase` 扩展了标签的功能，使其可以接收参数。`CodeAssemblerState` 管理全局状态，而 `ScopedExceptionHandler` 则简化了异常处理器的使用。 简而言之，这部分代码为构建健壮且正确的机器码提供了关键的基础设施，尤其是在处理条件分支、循环和异常处理等复杂控制流结构时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/code-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/code-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 awMachineLabel(); }
 
 void CodeAssemblerLabel::MergeVariables() {
@@ -377,8 +379,4 @@ ScopedExceptionHandler::~ScopedExceptionHandler() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

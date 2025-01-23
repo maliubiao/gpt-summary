@@ -141,11 +141,13 @@ console.log("After fetchData call");
 
 `default-job.cc` 定义的 `DefaultJobState` 提供了一种通用的、平台无关的方式来管理 V8 引擎中的后台任务。它使得 V8 能够高效地处理 JavaScript 中的异步操作，从而保持应用的响应性和性能。虽然 JavaScript 开发者通常不需要直接与这些底层的 C++ 类交互，但理解它们的功能有助于更好地理解 JavaScript 引擎的工作原理以及异步编程模型的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-job.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ void DefaultJobHandle::UpdatePriority(TaskPriority priority) {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

@@ -156,11 +156,13 @@ console.log(`Queried Array Objects (using snapshot): ${arrayObjectsQueried ? arr
 
 `heap-profiler.cc` 是 V8 引擎中实现堆快照和堆采样等关键性能分析功能的 C++ 文件。它通过 V8 的 JavaScript API 暴露给开发者，允许他们收集和分析 JavaScript 应用程序的内存使用情况，从而进行性能优化和内存泄漏检测。  它提供了生成快照、进行采样、跟踪对象移动和提供对象 ID 等核心功能，是 V8 引擎中重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009-2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -537,7 +539,4 @@ void HeapProfiler::QueryObjects(DirectHandle<Context> context,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

@@ -165,15 +165,17 @@ Hello, Go!
 
 `go/test/linkmain.go` 的主要作用是在特定的 Go 测试场景中，通过提供一个空的 `main` 函数，来辅助控制程序的入口点。它本身不会被直接编译执行，而是作为链接过程的一部分发挥作用。 理解 `//go:build ignore` 和 `package notmain` 的含义是理解其功能和使用场景的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkmain.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 //go:build ignore
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -186,9 +188,4 @@ package notmain
 
 func main() {
 }
-
-"""
-
-
-
 ```

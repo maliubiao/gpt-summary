@@ -124,12 +124,14 @@ It seems like this part handles the core mechanics of physically reorganizing th
 
 总而言之，`v8/src/heap/mark-compact.cc` 的第三部分主要关注标记压缩垃圾回收器的核心流程，包括**整理内存空间**（通过对象迁移）和**回收不再使用的资源**（通过刷新旧代码和清理弱引用），从而提升 JavaScript 程序的内存利用率和执行效率。这部分功能是 V8 引擎实现自动内存管理的关键组成部分，对 JavaScript 开发者来说是幕后工作，但直接影响着程序的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 outPreparseData::kSize);
     heap_->CreateFillerObjectAt(compiled_data.address() + aligned_filler_offset,
                                 compiled_data_size - aligned_filler_offset);
@@ -1804,7 +1806,4 @@ class PointersUpdatingJob : public v8::JobTask {
         remaining_updating_items_(updating_items_.size()),
         generator_(updating_items_.size()),
         tracer_(isolate->h
-"""
-
-
 ```

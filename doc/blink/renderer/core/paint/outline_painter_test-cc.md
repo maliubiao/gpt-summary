@@ -160,15 +160,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总之，`outline_painter_test.cc` 是 Blink 引擎中至关重要的一个测试文件，它确保了 `OutlinePainter` 类的正确性和稳定性，直接关系到网页元素轮廓的渲染效果，并与 HTML、CSS 和 JavaScript 紧密相关。理解这些测试用例有助于开发者理解浏览器如何处理 CSS 的 `outline` 属性，以及在出现渲染问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/outline_painter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ TEST_F(OutlinePainterTest, IterateCollapsedPath) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

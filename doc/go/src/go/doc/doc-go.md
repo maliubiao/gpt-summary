@@ -298,7 +298,7 @@ world
 
 总而言之，`go/doc` 包是 Go 语言中一个强大而重要的工具，用于提取和组织源代码文档。理解其工作原理和使用方法，能够帮助开发者更好地构建和维护 Go 语言项目，并生成清晰易懂的 API 文档。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -306,8 +306,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -662,9 +664,4 @@ func (p *Package) Markdown(text string) []byte {
 func (p *Package) Text(text string) []byte {
 	return p.Printer().Text(p.Parser().Parse(text))
 }
-
-"""
-
-
-
 ```

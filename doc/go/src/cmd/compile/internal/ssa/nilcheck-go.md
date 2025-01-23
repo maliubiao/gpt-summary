@@ -207,15 +207,17 @@ b1:
 
 `nilcheckelim` 和 `nilcheckelim2` 是 Go 编译器中重要的优化 pass，用于提高程序性能，减少不必要的 nil 检查。 `nilcheckelim` 利用控制流的支配关系，在更早的阶段进行优化，而 `nilcheckelim2` 则利用硬件的故障机制，在更低的层次上进行优化。理解这两个 pass 的工作原理有助于理解 Go 编译器的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/nilcheck.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -553,9 +555,4 @@ func nilcheckelim2(f *Func) {
 		// more unnecessary nil checks.  Would fix test/nilptr3.go:159.
 	}
 }
-
-"""
-
-
-
 ```

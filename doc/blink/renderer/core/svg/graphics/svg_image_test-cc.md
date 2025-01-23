@@ -124,7 +124,7 @@ By following these steps, I can arrive at a comprehensive and accurate summary o
 
 总而言之，`svg_image_test.cc` 的第一部分主要专注于测试 `SVGImage` 类的**核心加载、解析、渲染和动画控制功能**，以及它与 **Blink 内部机制**的交互。 这些测试覆盖了 SVG 图片在浏览器中的基本生命周期和关键行为，并验证了它与 HTML、CSS 的集成，为确保 SVG 功能的正确性和性能提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/graphics/svg_image_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -972,7 +974,4 @@ TEST_F(SVGImageSimTest, InterestRectDoesNotCullImageSpriteSheet) {
             <svg xmlns='http://www.w3.org/2000/svg' width='100' height='6000'>
               <circle cx='50' cy='50' r='10' fill='green'/>
               <circle cx='25' cy='595
-"""
-
-
 ```

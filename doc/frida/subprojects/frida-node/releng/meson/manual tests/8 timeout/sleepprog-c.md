@@ -125,7 +125,7 @@ By following these steps, the analysis becomes structured, comprehensive, and di
 
 总而言之，`sleepprog.c` 作为一个简单的示例程序，其主要目的是用于测试动态分析工具（如 Frida）在处理长时间休眠进程时的行为，特别是超时机制的有效性。它虽然简单，但可以作为理解操作系统底层进程调度和动态分析工具工作原理的一个起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/manual tests/8 timeout/sleepprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,15 +133,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<unistd.h>
 
 int main(void) {
     sleep(1000);
     return 0;
 }
-
-"""
-
 ```

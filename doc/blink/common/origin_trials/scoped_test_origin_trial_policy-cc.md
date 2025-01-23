@@ -172,14 +172,16 @@ Origin Trials 是一种 Web 平台机制，允许开发者在生产环境中尝�
 
 总之，`blink/common/origin_trials/scoped_test_origin_trial_policy.cc` 是一个专门用于测试 Origin Trials 功能的工具，它通过提供一个可控的环境来简化测试过程。理解其工作原理和限制对于进行有效的 Chromium Blink 引擎开发和测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/scoped_test_origin_trial_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ ScopedTestOriginTrialPolicy::~ScopedTestOriginTrialPolicy() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

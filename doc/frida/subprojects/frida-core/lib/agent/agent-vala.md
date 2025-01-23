@@ -155,7 +155,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `agent.vala` 是 Frida 工具的核心组件，负责管理代理的生命周期、会话、进程间通信和调试功能。它通过底层系统调用和内存管理，确保代理在目标进程中的稳定运行。用户可以通过 D-Bus 接口与代理进行交互，执行动态插桩和调试操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/agent/agent.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida.Agent {
 	public void main (string agent_parameters, ref Frida.UnloadPolicy unload_policy, void * injector_state) {
 		if (Runner.shared_instance == null)
@@ -1354,8 +1356,5 @@ namespace Frida.Agent {
 				controller = yield connection.get_proxy (null, ObjectPath.AGENT_CONTROLLER, DO_NOT_LOAD_PROPERTIES, null);
 
 				connection.start_message_processing ();
-			} catch 
-"""
-
-
+			} catch
 ```

@@ -169,7 +169,7 @@ This detailed breakdown shows the systematic approach to analyzing the code and 
 
 或者，如果他们在开发与 Frida 相关的工具或遇到了与 Frida 在处理简单程序时行为不符的情况，他们可能会通过调试 Frida 自身的代码或者查看其测试用例来定位问题，从而到达这个文件。这个简单的 `prog.c` 文件很可能被用作 Frida 功能的单元测试，确保 Frida 能够正确地附加到目标进程并进行 hook 操作，即使目标程序非常简单。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/201 kwarg entry/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<prog.h>
 #include<stdio.h>
 
@@ -186,7 +188,4 @@ int main(void) {
     printf(MESSAGE);
     return 0;
 }
-
-"""
-
 ```

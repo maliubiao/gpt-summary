@@ -155,7 +155,7 @@ JavaScript 本身无法直接操作底层的 socket。Chromium 的渲染进程�
 
 这部分代码为 `UDPSocketWin` 类添加了关键的高级 UDP 功能，包括非阻塞 I/O、全面的多播支持以及 QoS 和 DSCP 的配置能力。它利用了 Windows 平台提供的 socket API 和 QoS API，并将其封装成 Chromium 网络栈的一部分，为上层的网络应用提供更丰富和灵活的 UDP 通信选项。`DscpManager` 的引入是本部分的一个亮点，它专门负责处理与 QoS 相关的复杂逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_socket_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ntrol_buffer.buf = raw_control_buffer;
     control_buffer.len = sizeof(raw_control_buffer);
     WSAMSG message;
@@ -757,8 +759,4 @@ void DscpManager::OnHandleCreated(QwaveApi* api,
 }
 
 }  // namespace net
-
-"""
-
-
 ```

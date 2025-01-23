@@ -140,15 +140,17 @@ This specific part of the `html_permission_element_test.cc` file thoroughly test
 
 Essentially, this section delves into the more nuanced aspects of how the `<permission>` element interacts with the rendering engine, CSS, and the browser's permission system to provide a robust and user-friendly experience.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_permission_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 red_callback(
         base::BindOnce(&NotReachedForPEPCRegistered));
     base::RunLoop().RunUntilIdle();
@@ -706,8 +708,4 @@ TEST_F(HTMLPemissionElementLayoutChangeTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

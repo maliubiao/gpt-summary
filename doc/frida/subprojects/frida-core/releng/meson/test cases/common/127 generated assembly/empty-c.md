@@ -88,7 +88,7 @@ By following this process, combining direct analysis of the file's content with 
 
 总而言之，`empty.c` 在 Frida 的测试框架中扮演着一个简单但重要的角色，用于测试构建系统和汇编代码生成器在处理空输入时的行为，以及作为某些测试场景的基准。它不直接参与逆向操作，但其存在是为了确保 Frida 作为一个逆向工具的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/127 generated assembly/empty.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -96,9 +96,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

@@ -165,7 +165,7 @@ By following this systematic approach, the comprehensive and informative answer 
 
 总而言之，`generator-deps.py` 是 Frida 构建过程中的一个辅助脚本，它负责生成一些简单的构建产物，为后续的编译和链接过程提供支持。虽然它本身不直接涉及逆向操作，但它是构建逆向工具 Frida 的必要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/14 configure file/generator-deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -194,7 +196,4 @@ depf = Path(sys.argv[2])
 if not depf.exists():
     with depf.open('w') as ofile:
         ofile.write(f"{outputf.name}: depfile\n")
-
-"""
-
 ```

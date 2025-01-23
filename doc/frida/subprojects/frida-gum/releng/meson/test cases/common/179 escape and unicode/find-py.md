@@ -110,7 +110,7 @@ Here's a thinking process to arrive at the detailed analysis of the Python scrip
 
 总之，`find.py` 是一个简单的文件查找工具，但在 Frida 的上下文中，它很可能是用于辅助处理 C 源代码，为后续的编译、测试或分析工作提供便利。它的 null 分隔输出方式表明它是为了与其他程序或工具进行交互而设计的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/179 escape and unicode/find.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -129,7 +131,4 @@ for fh in os.listdir('.'):
     if os.path.isfile(fh):
         if fh.endswith('.c'):
             sys.stdout.write(fh + '\0')
-
-"""
-
 ```

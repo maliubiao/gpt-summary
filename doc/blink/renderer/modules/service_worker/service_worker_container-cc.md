@@ -198,15 +198,17 @@ Let's consider a user encountering an issue where their service worker is not re
 
 **In summary, `blink/renderer/modules/service_worker/service_worker_container.cc` is a fundamental file in the Chromium rendering engine responsible for implementing the client-side of the Service Worker API. It manages the lifecycle of service worker registrations, handles communication between the page and service workers, and enforces security and validity checks. Understanding its functionality is crucial for web developers working with service workers and for those debugging issues related to them.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/service_worker_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -916,7 +918,4 @@ void ServiceWorkerContainer::OnGetRegistrationForReady(
 }
 
 }  // namespace blink
-
-"""
-
 ```

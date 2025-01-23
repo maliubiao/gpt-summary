@@ -248,7 +248,7 @@ function sizeof(type) {
 
 总而言之，虽然 `bionic/libc/include/lastlog.handroid` 文件本身只是一个简单的包含指令，但它指向的 `<utmp.h>` 在 Android 系统中扮演着重要的角色，用于记录用户会话信息。理解 `<utmp.h>` 的功能和使用方式，对于理解 Android 系统的用户管理和安全机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/lastlog.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /**
@@ -271,7 +273,4 @@ Prompt:
  */
 
 #include <utmp.h>
-
-"""
-
 ```

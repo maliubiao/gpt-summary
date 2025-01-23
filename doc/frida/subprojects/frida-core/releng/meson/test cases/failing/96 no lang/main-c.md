@@ -164,7 +164,7 @@ if __name__ == "__main__":
 
 总而言之，虽然 `main.c` 代码本身非常简单，但它作为 Frida 测试用例的一部分，特别是作为一个 "failing" 的测试用例，旨在验证 Frida 在面对没有预期语言环境的极简目标程序时的行为，这对于理解 Frida 的底层工作原理和用户在实际使用中可能遇到的问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/96 no lang/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,12 +172,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

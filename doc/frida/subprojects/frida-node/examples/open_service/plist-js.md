@@ -180,7 +180,7 @@ By following this thinking process, we can systematically analyze the provided c
 
 总而言之，`frida/subprojects/frida-node/examples/open_service/plist.js` 是一个简洁但实用的 Frida 脚本示例，展示了如何连接到设备上的系统服务并发送请求，这在动态分析和逆向工程中是一个非常常见的操作。理解这个脚本的功能和背后的原理，有助于开发者更好地利用 Frida 进行系统分析和安全研究。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/open_service/plist.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('../..');
 const util = require('util');
 
@@ -205,7 +207,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

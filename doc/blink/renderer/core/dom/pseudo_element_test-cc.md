@@ -164,15 +164,17 @@ Blink 渲染引擎会为这个 `<div>` 元素创建一个列表标记的伪元�
 
 总而言之，`pseudo_element_test.cc` 是 Blink 引擎中一个重要的测试文件，它确保了在处理 `display: list-item` 和相关属性时，能够正确地创建和布局列表标记伪元素，这对于正确渲染网页上的列表至关重要。 开发者可以通过查看此类测试用例来理解引擎的内部工作原理，并在调试相关渲染问题时获得线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/pseudo_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ TEST_F(PseudoElementTest, AttachLayoutTree) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

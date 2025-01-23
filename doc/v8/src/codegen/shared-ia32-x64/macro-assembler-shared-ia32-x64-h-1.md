@@ -336,7 +336,7 @@ console.log(popcounts); // 输出: [ 4, 4, 0 ]
 
 总而言之，这部分代码是 V8 引擎中用于代码生成的重要组成部分，它提供了操作向量数据的底层能力，这些能力支撑了 JavaScript 的高级特性和 WebAssembly 的高效执行。理解这些宏指令的功能有助于深入理解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.h以.tq结尾，那它是个v8 torque源代码，
@@ -344,8 +344,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 double(),
                      tmp));
       roundpd(dst, dst, kRoundToZero);
@@ -575,8 +577,4 @@ double(),
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_CODEGEN_SHARED_IA32_X64_MACRO_ASSEMBLER_SHARED_IA32_X64_H_
-
-"""
-
-
 ```

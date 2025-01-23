@@ -260,7 +260,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 总而言之，`cipher_suites.go` 文件是 Go 语言 `crypto/tls` 包的核心组成部分，它定义了 TLS 密码套件的结构、列表、选择逻辑以及相关的加密算法实现，为构建安全的 TLS 连接提供了基础。理解这个文件的内容对于正确配置和使用 Go 的 TLS 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/cipher_suites.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -268,8 +268,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -990,9 +992,4 @@ const (
 	TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305   = TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
 	TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305 = TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
 )
-
-"""
-
-
-
 ```

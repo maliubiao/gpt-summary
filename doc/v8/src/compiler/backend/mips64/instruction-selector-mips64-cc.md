@@ -306,7 +306,7 @@ let y = obj.x;
 
 总而言之，`v8/src/compiler/backend/mips64/instruction-selector-mips64.cc` 是 V8 编译器中至关重要的一个组成部分，它将平台无关的中间表示转换为特定的 MIPS64 机器指令，使得 JavaScript 代码能够在 MIPS64 架构的处理器上高效执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/instruction-selector-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -314,8 +314,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1217,7 +1219,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWord32And(
     turboshaft::OpIndex node) {
   // TODO(MIPS_dev): May could be optimized like in Turbofan.
   VisitBinop(this, node, kMips64And32, true, kMips64And32)
-"""
-
-
 ```

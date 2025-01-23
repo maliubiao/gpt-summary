@@ -146,14 +146,16 @@ ordered_tasks_: [
 
 总而言之，`sequence_manager_fuzzer_processor.cc` 是一个重要的测试工具，用于确保 Blink 引擎的调度器能够正确、高效、稳定地管理各种任务，尤其是在复杂的并发场景下，从而保证浏览器功能的正常运行。虽然它不直接处理 JavaScript, HTML, CSS 的代码，但它对这些技术的稳定执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/fuzzer/sequence_manager_fuzzer_processor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/platform/scheduler/test/fuzzer/sequence_manager_fuzzer_processor.h"
 
 #include "third_party/blink/renderer/platform/scheduler/test/fuzzer/simple_thread_impl.h"
@@ -270,7 +272,4 @@ ThreadPoolManager* SequenceManagerFuzzerProcessor::thread_pool_manager() const {
 
 }  // namespace sequence_manager
 }  // namespace base
-
-"""
-
 ```

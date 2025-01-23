@@ -133,7 +133,7 @@ Let's break down the thought process to analyze the `math_benchmark.cpp` file.
 
 总而言之，`bionic/benchmarks/math_benchmark.cpp` 是一个底层的性能测试文件，它直接测试了 Android 系统中核心的数学函数库的效率，而这些数学函数又被 Android 框架和应用程序广泛使用。 理解这个文件的作用有助于我们更好地理解 Android 系统的底层工作原理以及如何进行性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/math_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -709,7 +711,4 @@ static void BM_math_sincosf_latency(benchmark::State& state) {
   state.SetLabel(range.label);
 }
 BIONIC_BENCHMARK_WITH_ARG(BM_math_sincosf_latency, "MATH_SINCOS_COMMON");
-
-"""
-
 ```

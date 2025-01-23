@@ -153,15 +153,17 @@ By following these steps, including examining the code, inferring purpose, conne
 
 通过以上步骤，开发者可以追踪用户操作如何最终导致 `QuicStopSendingFrame` 的创建和发送，从而定位网络问题的根源。 例如，如果捕获到了一个 `STOP_SENDING` 帧，开发者可以查看其 `stream_id` 和错误码，来判断是哪个流出现了问题以及问题的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/frames/quic_stop_sending_frame.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ bool QuicStopSendingFrame::operator!=(const QuicStopSendingFrame& rhs) const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

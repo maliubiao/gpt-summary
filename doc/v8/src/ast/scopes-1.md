@@ -135,12 +135,14 @@ console.log(message); // 输出 "Hello from module!"
 
 总而言之，`v8/src/ast/scopes.cc` 的这个部分是V8引擎实现JavaScript作用域规则的核心代码，它直接影响着JavaScript代码的语义和执行方式。理解这部分代码有助于深入理解JavaScript的执行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 tory, &new_unresolved_list,
                             maybe_in_arrowhead);
 
@@ -1572,8 +1574,4 @@ void PrivateNameScopeIterator::AddUnresolvedPrivateName(VariableProxy* proxy) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

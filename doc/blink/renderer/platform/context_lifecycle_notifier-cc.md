@@ -156,14 +156,16 @@ By following this step-by-step process, combining code analysis with domain know
 
 总而言之，`blink/renderer/platform/context_lifecycle_notifier.cc` 中定义的 `ContextLifecycleNotifier` 类是 Blink 渲染引擎中一个重要的工具，用于安全可靠地管理和通知关于上下文生命周期结束的事件，这对于资源管理和避免在上下文销毁后出现错误至关重要，并与 JavaScript, HTML, CSS 等 Web 技术息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/context_lifecycle_notifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ void ContextLifecycleNotifier::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

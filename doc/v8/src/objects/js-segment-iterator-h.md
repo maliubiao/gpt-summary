@@ -178,15 +178,17 @@ While developers don't directly interact with `JSSegmentIterator` in C++, unders
 
 In summary, `v8/src/objects/js-segment-iterator.h` is a crucial piece of V8's implementation of the `Intl.Segmenter` API, providing the core logic for iterating over string segments based on internationalization rules provided by the ICU library. While it's a C++ header file, its functionality is directly exposed and used by JavaScript developers through the `Intl.Segmenter` API.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segment-iterator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-segment-iterator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ class JSSegmentDataObjectWithIsWordLike
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_SEGMENT_ITERATOR_H_
-
-"""
-
 ```

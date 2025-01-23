@@ -87,15 +87,17 @@ Here's a breakdown of how to address each point:
 
 总而言之，这部分测试代码深入验证了 `TaskQueueThrottler` 组件在处理基于唤醒间隔的节流，以及与 CPU 时间预算结合时的行为。它涵盖了在不同时间点调整唤醒间隔对任务执行的影响，以及两种节流机制协同工作时的各种场景，确保了该组件能够按照预期有效地管理和优化任务的执行，从而提升浏览器的整体性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/throttling/task_queue_throttler_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ce(&TestTask, &run_times, test_task_runner_),
       base::Seconds(80));
   timer_task_runner_->PostDelayedTask(
@@ -383,8 +385,4 @@ TEST_F(TaskQueueThrottlerTest,
 }  // namespace task_queue_throttler_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

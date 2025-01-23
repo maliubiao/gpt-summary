@@ -143,7 +143,7 @@ build_dir = '/path/to/frida/build'
 
 因此，当遇到 Java 相关的 Frida 构建问题时，查看这个 `java.py` 文件可以帮助理解构建系统是如何与 Java 编译器交互的，从而为调试提供线索。特别是当涉及到类路径问题或编译器选项时，理解这个文件的功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/java.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -266,7 +268,4 @@ class JavaCompiler(BasicLinkerIsCompilerMixin, Compiler):
 
     def get_debug_args(self, is_debug: bool) -> T.List[str]:
         return java_debug_args[is_debug]
-
-"""
-
 ```

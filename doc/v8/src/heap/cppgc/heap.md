@@ -112,11 +112,13 @@ function myFunction() {
 
 `v8/src/heap/cppgc/heap.cc` 文件是 V8 引擎中 C++ 垃圾回收器的核心实现，负责管理 V8 内部 C++ 对象的内存生命周期。虽然 JavaScript 开发者不能直接控制 `cppgc` 的行为，但 JavaScript 代码的执行和对象的创建会间接地依赖于 `cppgc` 来进行底层的内存管理。当 JavaScript 对象不再被需要时，V8 的垃圾回收器会负责回收其内存，这其中就包括 `cppgc` 对 V8 内部 C++ 对象的管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ void Heap::FinalizeIncrementalGarbageCollectionForTesting(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

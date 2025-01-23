@@ -232,7 +232,7 @@ Inside func_c
 
 作为调试线索，这个 `a.c` 文件提供了一个非常清晰且可控的测试环境。当 Frida 在 instrumentation 类似 `func_b` 或 `func_c` 这样的外部函数时出现问题，开发者可以参考这个简单的例子，逐步排查 Frida 的 hook 机制、参数传递、返回值处理等环节是否存在问题。例如，如果 Frida 在 hook 共享库中的函数时出现地址解析错误，开发者可能会先用这个 `a.c` 文件配合简单的共享库进行测试，确认 Frida 能否正确找到 `func_b` 和 `func_c` 的地址。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/72 shared subproject/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -240,8 +240,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -255,7 +257,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

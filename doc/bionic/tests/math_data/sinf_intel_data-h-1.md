@@ -45,7 +45,7 @@ To provide a good summary, I should focus on:
 
 总而言之，这段代码片段是 Android 系统中保障数学计算正确性的重要组成部分，它通过提供详细的测试用例来验证 `sinf` 函数的实现质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sinf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -57,8 +57,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 60f3fa460b85811d2ae710cd69ec3690p-3,
     -0x1.62b958p-3
   },
@@ -1616,7 +1618,4 @@ Prompt:
   },
   { // Entry 768
     -0x1.444
-"""
-
-
 ```

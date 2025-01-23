@@ -134,7 +134,7 @@ func main() {
 
 `go/src/math/log_stub.go` 的主要作用是为那些没有提供架构特定优化自然对数函数实现的平台提供一个占位符，并通过 `panic` 机制防止在这些平台上意外调用未实现的 `archLog` 函数。这体现了 Go 语言标准库利用条件编译和平台特定实现来提供最佳性能的策略。使用者需要意识到不同架构下标准库函数的性能可能存在差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/log_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -142,8 +142,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -157,9 +159,4 @@ const haveArchLog = false
 func archLog(x float64) float64 {
 	panic("not implemented")
 }
-
-"""
-
-
-
 ```

@@ -136,11 +136,13 @@ console.log(Symbol.keyFor(localSym)); // 输出: undefined
 
 `builtins-symbol.cc` 文件是 V8 引擎中实现 JavaScript `Symbol` 核心功能的关键部分。它定义了创建 `Symbol` 值以及管理全局注册 `Symbol` 的机制，确保了 JavaScript 中 `Symbol` 对象的行为符合 ECMAScript 规范。通过这些 C++ 代码，V8 引擎能够正确地执行 JavaScript 中与 `Symbol` 相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-symbol.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ BUILTIN(SymbolKeyFor) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

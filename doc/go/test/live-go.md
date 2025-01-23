@@ -194,15 +194,17 @@ func f1() {
 
 总而言之，这段代码是 Go 编译器内部测试框架的一部分，用于确保 liveness analysis 功能的正确性，特别是在禁用内联优化的情况下。理解 liveness 分析的概念对于理解 Go 编译器的优化行为和一些高级特性（如垃圾回收）至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/live.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheckwithauto -0 -l -live -wb=0 -d=ssa/insert_resched_checks/off
 
 //go:build !ppc64 && !ppc64le && !goexperiment.regabiargs
@@ -928,9 +930,4 @@ func f44(f func() [2]*int) interface{} { // ERROR "live at entry to f44: f"
 	ret.s[0] = f()
 	return ret
 }
-
-"""
-
-
-
 ```

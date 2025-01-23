@@ -282,15 +282,17 @@ exampleBlockScope();
 
 总结来说，`v8/src/objects/scope-info.h` 定义的 `ScopeInfo` 类是 V8 引擎理解和管理 JavaScript 作用域的核心组件。它存储了关于作用域的各种元数据，并在代码编译、优化和运行时发挥着关键作用。理解 `ScopeInfo` 的功能有助于我们更好地理解 JavaScript 的作用域机制以及 V8 如何实现这些机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/scope-info.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/scope-info.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -679,7 +681,4 @@ std::ostream& operator<<(std::ostream& os, VariableAllocationInfo var);
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_SCOPE_INFO_H_
-
-"""
-
 ```

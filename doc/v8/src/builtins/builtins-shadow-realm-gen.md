@@ -85,11 +85,13 @@ testImportValue();
 
 总而言之，`builtins-shadow-realm-gen.cc` 文件是 V8 引擎中实现 JavaScript `ShadowRealm` API 核心功能的关键部分，它通过 C++ 代码提供了创建隔离环境、封装和调用跨 Realm 的值以及动态导入模块的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-shadow-realm-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -522,7 +524,4 @@ TF_BUILTIN(ShadowRealmImportValueRejected, ShadowRealmBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

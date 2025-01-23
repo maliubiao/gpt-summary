@@ -157,15 +157,17 @@ By following these steps, and continually refining the understanding through car
 
 总而言之，`document_policy_sim_test.cc` 是一个关键的测试文件，它确保了 Chromium Blink 引擎能够正确地解析、应用和执行文档策略，从而保证了 Web 页面的安全性和功能的一致性。通过模拟各种场景，它可以帮助开发者验证文档策略功能的正确性，并提供调试线索来定位与文档策略相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/permissions_policy/document_policy_sim_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -538,7 +540,4 @@ TEST_F(DocumentPolicySimTest, RequiredDocumentPolicyUseCounterTest) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

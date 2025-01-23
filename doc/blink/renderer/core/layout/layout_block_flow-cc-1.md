@@ -92,15 +92,17 @@ While users don't directly interact with this C++ code, common errors in HTML, C
 
 This specific snippet within `LayoutBlockFlow::EnsureLinesValidUpTo` focuses on **finalizing the validation of layout lines**, particularly the most recently added one. It ensures that the last line's layout is correct and consistent with applied CSS rules. It employs a loop with a safety mechanism (`kMaxLinesToValidateInEnsureValidity`) to prevent excessive or infinite validation attempts, ensuring the rendering process remains efficient and responsive even in complex layout scenarios. This part of the code likely comes into play after other parts of the `EnsureLinesValidUpTo` method have performed more general validation tasks, focusing on ensuring the integrity of the most recently created layout structure.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_block_flow.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nvalidate_all_lines) {
       break;
     }
@@ -108,8 +110,4 @@ nvalidate_all_lines) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

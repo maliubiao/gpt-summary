@@ -152,15 +152,17 @@ observer.start();
 
 `pressure_source_index.cc` 文件虽然简短，但在 Blink 的 Compute Pressure API 实现中扮演着关键的角色。它提供了一个安全可靠的方式将压力源枚举值转换为内部使用的索引值，确保了不同压力源的数据能够被正确地访问和管理。用户通过与网页的交互，触发 JavaScript 代码的执行，最终可能会间接地导致这个 C++ 函数被调用，以完成底层的压力源索引映射工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/compute_pressure/pressure_source_index.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ wtf_size_t ToSourceIndex(V8PressureSource::Enum source) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

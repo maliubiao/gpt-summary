@@ -71,12 +71,14 @@ Now, let's think about how these relate to JavaScript:
 
 总的来说，这段代码是 V8 调试器实现的关键部分，它负责将 V8 引擎中的 JavaScript 值转换为可以在调试器中进行检查和操作的镜像对象。 它与 JavaScript 的各种特性和类型都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/value-mirror.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 8::Value> values(isolate);
   int filter =
       static_cast<int>(v8::debug::PrivateMemberFilter::kPrivateAccessors) |
@@ -331,8 +333,4 @@ std::unique_ptr<ValueMirror> ValueMirror::create(v8::Local<v8::Context> context,
 }
 
 }  // namespace v8_inspector
-
-"""
-
-
 ```

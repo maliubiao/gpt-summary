@@ -117,7 +117,7 @@ By following these steps, the aim is to provide a comprehensive and understandab
 
 总而言之，这部分代码通过一系列细致的单元测试，旨在验证 `QuicConnection` 类在连接 ID 管理和数据包处理方面的正确性和健壮性，从而保障基于 QUIC 协议的网络连接的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,9 +125,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第21部分，共24部分，请归纳一下它的功能
+```
 
-"""
- (!connection_.connection_id().IsEmpty()) {
+### 源代码
+```cpp
+(!connection_.connection_id().IsEmpty()) {
     EXPECT_CALL(connection_id_generator_, GenerateNextConnectionId(_))
         .WillOnce(Return(TestConnectionId(456)));
   }
@@ -919,8 +921,4 @@ TEST_P(QuicConnectionTest, FailedToConsumeCryptoData) {
     connection_.SendCryptoDataWithString("foo", 0, ENCRYPTION_INITIAL);
     // Send HANDSHAKE 2.
     EXPECT_CALL(visitor_, OnHandshakePacketSent()).Times(1);
- 
-"""
-
-
 ```

@@ -84,13 +84,15 @@ The C++ functions like `Intl::GetTimeZoneOffsetTransitionNanoseconds` and `Intl:
 
 In summary, this C++ code snippet is a vital part of V8's implementation of the JavaScript Intl API, providing the core logic for locale negotiation, time zone handling, and accessing internationalization data. It directly powers the behavior you observe when using Intl objects and related methods in your JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/intl-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- true.
+### 源代码
+```
+true.
   bool need_fd = true;
   // 23. If roundingPriority is "auto", then
   if (RoundingPriority::kAuto == digit_options.rounding_priority) {
@@ -1621,8 +1623,4 @@ int64_t Intl::GetTimeZoneOffsetNanoseconds(Isolate* isolate,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

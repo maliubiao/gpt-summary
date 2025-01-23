@@ -187,7 +187,7 @@ func main() {
 
 这段代码的核心在于将散落的覆盖率数据文件组织成逻辑单元，为后续的覆盖率分析和报告生成提供基础数据。理解其功能和潜在的错误点，有助于更好地使用 Go 语言的覆盖率工具。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/pods/pods_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -343,9 +345,4 @@ o2/covcounters.0880952783ab1be95aa0733055a4d1a6.38.1 o:1
 		}
 	}
 }
-
-"""
-
-
-
 ```

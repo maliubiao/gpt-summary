@@ -131,15 +131,17 @@ Initially, I might have focused too much on the strict definition of XML. Realiz
 
 总而言之，`SharedBufferReader` 是 Blink 引擎中一个基础但重要的工具，用于从共享内存缓冲区中读取数据，这在处理需要高效读取和解析外部资源（如 HTML、CSS 和 XML）时非常常见。理解其功能和潜在的使用错误对于调试 Blink 引擎中的相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/parser/shared_buffer_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -207,7 +209,4 @@ size_t SharedBufferReader::ReadData(base::span<char> output_buffer) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

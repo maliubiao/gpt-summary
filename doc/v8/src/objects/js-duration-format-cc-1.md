@@ -114,7 +114,7 @@ console.log(df3.formatToParts(duration));
 
 总而言之，`v8/src/objects/js-duration-format.cc` 的主要功能是 **将表示时间长度的内部数据结构 `DurationRecord`，根据 `Intl.DurationFormat` 对象指定的格式和区域设置，转换为用户可读的字符串或格式化片段数组。** 它利用 ICU 库实现了国际化的支持，并提供了 `format` 和 `formatToParts` 两个核心方法，对应于 JavaScript 中 `Intl.DurationFormat` 的功能。 这段代码是 V8 引擎中实现 `Intl.DurationFormat` 的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-duration-format.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-duration-format.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,8 +122,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ation, separator, parts, strings);
   }
   return display_negative_sign;
@@ -476,8 +478,4 @@ const std::set<std::string>& JSDurationFormat::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

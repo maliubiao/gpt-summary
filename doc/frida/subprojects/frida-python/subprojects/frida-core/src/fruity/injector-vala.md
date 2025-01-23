@@ -111,7 +111,7 @@ def __lldb_init_module(debugger, internal_dict):
 5. **验证注入**：用户通过 TCP 端口与注入的模块进行交互，验证注入是否成功。
 
 通过这些步骤，用户可以逐步完成代码注入操作，并在遇到问题时根据调试线索进行排查。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/injector.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruityInjector", gir_version = "1.0")]
 namespace Frida.Fruity.Injector {
 	public static async GadgetDetails inject (owned Gum.DarwinModule module, LLDB.Client lldb, HostChannelProvider channel_provider,
@@ -860,7 +862,4 @@ namespace Frida.Fruity.Injector {
 			0x01, 0x2a, 0x8b, 0x09, 0x03, 0x00, 0xf9, 0x08, 0xf9, 0x73, 0xd3, 0x18, 0x0b, 0x08, 0x8b, 0x28, 0xfe, 0xff, 0xb5,
 			0x27, 0x00, 0x00, 0x14, 0x13, 0x03, 0x40, 0xf9, 0x70, 0xfe, 0x7e, 0xd3, 0x62, 0xbe, 0x60, 0xd3, 0x63, 0xc2, 0x70,
 			0xd3, 0
-"""
-
-
 ```

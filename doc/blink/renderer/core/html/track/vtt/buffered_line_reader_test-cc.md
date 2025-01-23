@@ -173,15 +173,17 @@ By following these steps and iteratively refining the analysis, a comprehensive 
 
 因此，尽管用户看不到 `BufferedLineReader` 的运行，但他们的观看行为触发了整个流程，最终导致了 `BufferedLineReader` 的使用。 这个测试文件确保了 `BufferedLineReader` 在这个流程中的关键环节能够正确可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/vtt/buffered_line_reader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013, Opera Software ASA. All rights reserved.
  *
@@ -467,7 +469,4 @@ TEST(BufferedLineReaderTest, NormalizedNUL) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

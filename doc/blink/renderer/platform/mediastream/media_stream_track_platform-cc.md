@@ -145,14 +145,16 @@ CSS 可以用来样式化 `<video>` 和 `<audio>` 元素，例如设置大小、
 
 总而言之，`media_stream_track_platform.cc` 定义了一个关键的抽象层，它连接了 JavaScript 中可见的媒体流轨道对象与底层的平台实现，并负责维护一些重要的统计信息，用于监控媒体流的性能。理解其功能有助于深入理解 Chromium 浏览器如何处理媒体流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_track_platform.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ base::TimeDelta MediaStreamTrackPlatform::AudioFrameStats::MaximumLatency()
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -352,7 +352,7 @@ if __name__ == '__main__':
 
 通过 Frida Hook，你可以观察到 Android Framework 或 NDK 中的哪些组件在何时调用了 `pathconf` 或 `fpathconf`，以及传递了哪些参数，从而更好地理解这些函数在 Android 系统中的使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/pathconf.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -363,8 +363,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -516,7 +518,4 @@ long fpathconf(int fd, int name) {
   }
   return __pathconf(sb, name);
 }
-
-"""
-
 ```

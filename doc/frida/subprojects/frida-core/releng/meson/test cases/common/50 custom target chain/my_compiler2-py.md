@@ -140,7 +140,7 @@ Let's break down the thought process for analyzing this Python script and answer
 
 总而言之，`my_compiler2.py` 作为一个测试用例，展示了 Frida 构建系统中自定义构建步骤的能力，并模拟了一个简单的文件转换过程，这与逆向工程中理解软件构建过程的概念是相关的。通过分析这个脚本，我们可以了解到 Frida 的构建流程、可能的自定义扩展方式，以及在构建过程中可能出现的错误类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/50 custom target chain/my_compiler2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -165,7 +167,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('This is a different binary output file.\n')
-
-"""
-
 ```

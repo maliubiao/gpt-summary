@@ -386,7 +386,7 @@ if (Process.platform === 'android') {
 
 通过这个 Frida 示例，你可以实时监控 `gettimeofday` 的调用情况，验证应用程序如何使用这个底层的 Bionic libc 函数。你可以类似地 hook 其他时间相关的函数，例如 `settimeofday` 或 `utimes`，来调试和理解 Android 系统的时间管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/time.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -397,8 +397,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -520,7 +522,4 @@ int futimesat(int __dir_fd, const char* __BIONIC_COMPLICATED_NULLNESS __path, co
 __END_DECLS
 
 #endif
-
-"""
-
 ```

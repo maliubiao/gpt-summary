@@ -161,15 +161,17 @@ func main() {
 
 总结来说，`go/test/rotate0.go` 的核心功能是生成用于测试 Go 语言位旋转操作的测试代码。它本身不直接执行位旋转，而是作为测试基础设施的一部分，用于确保 Go 语言在位操作方面的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/rotate0.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // runoutput ./rotate.go
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -182,9 +184,4 @@ Prompt:
 package main
 
 const mode = 0
-
-"""
-
-
-
 ```

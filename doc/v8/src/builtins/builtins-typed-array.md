@@ -140,11 +140,13 @@ C++ 代码 `TypedArrayPrototypeReverse` 交换 `TypedArray` 中对称位置的�
 
 `builtins-typed-array.cc` 文件是 V8 引擎中实现 `TypedArray` 核心功能的关键组成部分。 它使用 C++ 提供了高效的底层实现，使得 JavaScript 能够方便地进行类型化的数组操作，这对于处理二进制数据、图形处理、音频处理等高性能需求的应用至关重要。  理解这个文件有助于深入了解 JavaScript 引擎的工作原理，以及 `TypedArray` 在 JavaScript 中的实际实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-typed-array.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -471,7 +473,4 @@ BUILTIN(TypedArrayPrototypeReverse) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -114,15 +114,17 @@ By following these steps, I can generate a comprehensive and accurate summary of
 
 总而言之，这部分代码是针对 `HTMLPreloadScanner` 的细致的功能测试，覆盖了多种 HTML 特性和属性，确保浏览器能够正确地识别和预加载资源，从而提升页面加载性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_preload_scanner_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dSend(
       network::mojom::WebClientHintsType::kDpr_DEPRECATED);
   dpr.SetShouldSend(network::mojom::WebClientHintsType::kDpr);
@@ -834,7 +836,4 @@ TEST_F(HTMLPreloadScannerTest, Integrity) {
       {0,
        "<script src=bla.js integrity=sha257-XXX "
        "integrity=sha256-qznLcsROx4GACP2dm0UCKCzCG+HiZ1guq6ZZDob/Tn
-"""
-
-
 ```

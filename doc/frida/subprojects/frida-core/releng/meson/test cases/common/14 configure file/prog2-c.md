@@ -122,7 +122,7 @@ Initially, one might overthink the complexity of `prog2.c`. The key is to recogn
 
 `prog2.c` 作为一个非常简单的 C 程序，其核心功能是提供一个基本的、可执行的二进制文件，用于 Frida 构建系统和测试框架的验证。虽然它本身不涉及复杂的逻辑或逆向工程技术，但它在 Frida 的生态系统中扮演着重要的角色，帮助确保 Frida 能够正确地构建和运行。查看这个文件通常是开发者在调试 Frida 构建、理解测试用例或进行更深入的 Frida 开发时的一个步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/14 configure file/prog2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,14 +130,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<config2.h>
 
 int main(void) {
     return ZERO_RESULT;
 }
-
-"""
-
 ```

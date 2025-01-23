@@ -98,15 +98,17 @@ By following this structured approach, considering potential questions, and refi
 * **查看 Chromium 的网络日志 (net-internals)。**  `chrome://net-internals` 页面提供了关于网络事件的详细信息，可以帮助追踪网络请求的整个过程，包括与 DHCP 相关的操作。
 * **检查操作系统的网络配置和 DHCP 客户端服务状态。**  确保操作系统的 DHCP 客户端服务正在运行，并且网络配置正确。如果操作系统层面的 DHCP 就有问题，Chromium 的初始化也无法成功。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/win/dhcpcsvc_init_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ void EnsureDhcpcsvcInit() {
 }
 
 }  // namespace net
-
-"""
-
 ```

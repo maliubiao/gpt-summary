@@ -129,7 +129,7 @@ By following this detailed thought process, breaking down the code, and connecti
 
 总而言之，`receiver.c` 是一个精心设计的简单程序，用于测试 Frida 如何处理弱符号链接。它为理解动态插桩工具的工作原理提供了一个清晰的示例，并揭示了逆向工程中常用的技术和可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/98 link full name/proguser/receiver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 int  __attribute__((weak)) get_checked(void) {
     return -1;
@@ -157,7 +159,4 @@ int main(void) {
     fprintf(stdout,"bad\n");
     return TEST_FAILURE;
 }
-
-"""
-
 ```

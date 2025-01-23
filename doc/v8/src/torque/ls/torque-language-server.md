@@ -142,11 +142,13 @@ macro ArrayPush<T>(array: JSArray, element: T): Number {
 
 `torque-language-server.cc` 实现了 Torque 语言的语言服务器，它是一个开发工具，用于帮助 V8 开发者编写和维护用 Torque 语言编写的、最终会生成 C++ 代码来支持 JavaScript 功能的代码。它本身不执行 JavaScript，但它服务于 JavaScript 引擎的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/torque-language-server.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ int WrappedMain(int argc, const char** argv) {
 int main(int argc, const char** argv) {
   return v8::internal::torque::ls::WrappedMain(argc, argv);
 }
-
-"""
-
 ```

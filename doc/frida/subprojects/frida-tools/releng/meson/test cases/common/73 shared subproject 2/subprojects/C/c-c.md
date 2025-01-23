@@ -154,7 +154,7 @@ By following this thought process, moving from code analysis to contextual under
 
 `frida/subprojects/frida-tools/releng/meson/test cases/common/73 shared subproject 2/subprojects/C/c.c` 这个文件是一个非常基础的共享库源代码，其主要目的是作为 Frida 工具测试框架的一部分，用于验证 Frida 对共享库函数进行 hook 的能力。它涉及到共享库的概念、不同操作系统上的导出机制、以及 Frida 的基本 hook 原理。用户通常不会直接使用或修改这个文件，但它在 Frida 的开发和测试过程中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/73 shared subproject 2/subprojects/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -178,7 +180,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

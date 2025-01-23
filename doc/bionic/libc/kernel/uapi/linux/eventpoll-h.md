@@ -414,7 +414,7 @@ session.detach()
 
 这个详细的分析涵盖了 `bionic/libc/kernel/uapi/linux/eventpoll.h` 的功能、与 Android 的关系、涉及的 libc 函数和 dynamic linker、常见错误以及 Frida Hook 示例，希望能帮助你深入理解 `epoll` 机制在 Android 中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/eventpoll.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -425,8 +425,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -474,7 +476,4 @@ struct epoll_params {
 #define EPIOCSPARAMS _IOW(EPOLL_IOC_TYPE, 0x01, struct epoll_params)
 #define EPIOCGPARAMS _IOR(EPOLL_IOC_TYPE, 0x02, struct epoll_params)
 #endif
-
-"""
-
 ```

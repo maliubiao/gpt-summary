@@ -204,7 +204,7 @@ func main() {
 
 总之，这段代码通过大量的测试用例，覆盖了 `net/http` 包中服务器和请求多路复用器的关键功能，帮助开发者理解和正确使用这些核心组件。它揭示了在实际使用中可能遇到的一些常见问题和陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/serve_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -213,8 +213,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1391,9 +1393,4 @@ func testIdentityResponse(t *testing.T, mode testMode) {
 
 	handler := HandlerFunc(func(rw ResponseWriter, req *Request) {
 		rw.Header().Set("Con
-"""
-
-
-
-
 ```

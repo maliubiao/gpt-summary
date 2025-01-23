@@ -107,12 +107,14 @@ if (x > 0) {
 
 这部分代码是 x64 代码生成器的基础，它定义了构建 x64 汇编指令所需的工具和抽象。它处理了操作数的转换、常见指令的生成以及一些特殊的代码生成场景，为后续更复杂的 JavaScript 逻辑的编译奠定了基础。 宏融合和 TSAN 的支持表明了 V8 引擎在性能优化和代码安全方面的考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1639,7 +1641,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
       }
       RecordCallPosition(instr);
       AssemblePlaceHolderFo
-"""
-
-
 ```

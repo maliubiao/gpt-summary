@@ -151,15 +151,17 @@ Let's break down the thought process to analyze the provided C++ code for `gamep
 
 总而言之，`blink/renderer/modules/gamepad/gamepad_touch.cc` 是连接底层硬件触摸事件和上层 JavaScript Gamepad API 的关键桥梁，负责在 Blink 渲染引擎中表示和管理游戏手柄的触摸信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/gamepad/gamepad_touch.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ void GamepadTouch::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -136,7 +136,7 @@ fetch('/data', {
 
 作为整个测试套件的最后一部分，`net/third_party/quiche/src/quiche/balsa/balsa_frame_test.cc` **全面地验证了 HTTP 消息帧解析器 `BalsaFrame` 的核心功能和各种边界情况的处理。**  它通过大量的单元测试，确保了 `BalsaFrame` 能够正确、安全地解析各种符合和不符合 HTTP 规范的报文头，并能有效地处理错误情况。  这对于保证 Chromium 浏览器的网络通信功能的稳定性和可靠性至关重要，并间接地影响着运行在浏览器中的 JavaScript 代码的网络请求行为。该文件覆盖了从基本的报文头解析到更复杂的场景，例如中间响应、协议升级和对不规范报文头的处理，为 `BalsaFrame` 的开发和维护提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_frame_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,9 +144,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                      &BalsaHeaders::parsed_response_code, 100))));
+### 源代码
+```cpp
+&BalsaHeaders::parsed_response_code, 100))));
   ASSERT_EQ(
       balsa_frame_.ProcessInput(initial_headers.data(), initial_headers.size()),
       initial_headers.size());
@@ -538,8 +540,4 @@ TEST_F(HTTPBalsaFrameTest, ObsTextInReasonPhraseAllowed) {
 
 }  // namespace
 }  // namespace quiche::test
-
-"""
-
-
 ```

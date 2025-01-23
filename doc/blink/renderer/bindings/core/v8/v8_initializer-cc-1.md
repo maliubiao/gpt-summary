@@ -157,7 +157,7 @@ Finally, a concise summary reiterates the main purpose of the file. The iterativ
 
 `v8_initializer.cc` 文件是 Chromium Blink 渲染引擎中 V8 JavaScript 引擎初始化和配置的关键组件。 它负责创建和设置主线程和 Worker 线程的 V8 Isolate 实例，并配置各种回调函数以处理错误、安全检查、异步操作、模块加载等。 该文件还负责 V8 引擎的内存管理和性能监控的配置。 它的核心作用是确保 V8 引擎能够正确地与 Blink 的其他部分协同工作，从而能够执行网页中的 JavaScript 代码，实现动态网页的功能。 作为第二部分，它延续了 V8 初始化的工作，可能在第一部分中处理了更基础的 V8 启动和库加载，而这里则专注于更具体的 Blink 集成和配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_initializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 isolate, EmbedderGraphBuilder::BuildEmbedderGraphCallback);
   V8PerIsolateData::From(isolate)->SetActiveScriptWrappableManager(
       MakeGarbageCollected<ActiveScriptWrappableManager>());
@@ -402,8 +404,4 @@ void V8Initializer::InitializeWorker(v8::Isolate* isolate) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

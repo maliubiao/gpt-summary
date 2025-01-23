@@ -177,15 +177,17 @@ largeArray = null;
 
 `v8/src/heap/cppgc/heap-growing.cc` 是 V8 引擎中负责管理 C++ 堆增长和触发垃圾回收的关键组件。它通过动态调整垃圾回收阈值，平衡内存使用和垃圾回收的开销，从而提高 V8 引擎的性能和稳定性。理解其背后的原理，有助于 JavaScript 开发者编写更高效、更少内存泄漏的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-growing.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/heap-growing.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ constexpr double HeapGrowing::kGrowingFactor;
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

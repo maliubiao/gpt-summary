@@ -111,14 +111,16 @@ During the analysis, I might have initially focused too much on the hardware dec
 
 `rtc_video_decoder_factory.cc` 是 Blink 引擎中负责视频解码的关键组件。它抽象了不同视频编解码器的创建过程，并考虑了硬件加速的可能性。虽然开发者不能直接操作这个文件，但它的功能直接影响着 WebRTC 视频通话和在线视频应用的性能和兼容性。理解其作用有助于开发者更好地理解 WebRTC 的底层工作原理，并避免一些常见的错误配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_decoder_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -561,7 +563,4 @@ std::unique_ptr<webrtc::VideoDecoder> RTCVideoDecoderFactory::Create(
 }
 
 }  // namespace blink
-
-"""
-
 ```

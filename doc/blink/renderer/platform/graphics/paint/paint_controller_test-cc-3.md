@@ -118,15 +118,17 @@ During the process, I might have initially focused too much on the low-level det
 
 这些测试用例覆盖了 `PaintController` 在处理绘制操作、优化和错误处理等方面的关键功能，并间接地反映了引擎如何处理与 JavaScript、HTML 和 CSS 相关的渲染场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ()
     EXPECT_DEATH(
         paint_controller.RecordRegionCaptureData(client, kCropId, kBounds),
@@ -234,8 +236,4 @@ TEST_P(PaintControllerTest, DeletedClientInUnderInvalidatedSubsequence) {
 #endif  // defined(GTEST_HAS_DEATH_TEST) && !BUILDFLAG(IS_ANDROID)
 
 }  // namespace blink
-
-"""
-
-
 ```

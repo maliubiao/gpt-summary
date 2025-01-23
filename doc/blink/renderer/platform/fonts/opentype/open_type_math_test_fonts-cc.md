@@ -141,14 +141,16 @@ By following these steps, combining code analysis with contextual information fr
 
 总而言之，`open_type_math_test_fonts.cc` 是 Blink 渲染引擎中一个专注于测试 OpenType 数学字体特性的重要组件，它通过提供特定的测试字体数据，确保浏览器能够正确渲染包含可伸缩运算符的数学公式，这直接关系到 MathML 在 Web 页面上的正确显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_math_test_fonts.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ void retrieveGlyphForStretchyOperators(const blink::Font operatorsWoff,
 }
 
 }  // namespace blink
-
-"""
-
 ```

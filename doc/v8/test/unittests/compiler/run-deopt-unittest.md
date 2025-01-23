@@ -131,11 +131,13 @@ console.log(g()); // 预期输出: false (因为在 catch 块中 g 已经被反�
 
 `run-deopt-unittest.cc` 文件是 V8 引擎中用于测试代码反优化机制的关键部分。它通过 C++ 代码定义了一系列测试用例，这些用例模拟了各种可能触发反优化的场景，并使用 V8 提供的工具和内建函数来验证反优化行为的正确性。 这些测试用例直接关系到 V8 引擎能否在性能优化和代码正确性之间取得平衡，确保在需要时能够安全地回退到未优化状态。 通过 JavaScript 示例，我们可以更直观地理解这些测试用例所覆盖的场景和反优化的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/run-deopt-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ TEST_F(RunDeoptTest, DeoptTrivial) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

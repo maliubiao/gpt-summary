@@ -137,14 +137,16 @@ By following these steps, iteratively analyzing the code, and refining the under
 
 `blink/renderer/core/probe/async_task_context.cc` 中的 `AsyncTaskContext` 类是 Blink 渲染引擎中一个重要的内部组件，用于跟踪和管理异步任务的上下文信息。 它通过与 Chromium 的跟踪系统、Blink 的调试器和广告跟踪系统集成，为开发者和浏览器内部提供关于异步操作的重要洞察，有助于调试、性能分析和理解异步操作的生命周期。  虽然前端开发者不会直接使用这个类，但理解其功能有助于更好地理解和处理与 JavaScript、HTML 和 CSS 相关的异步编程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/probe/async_task_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ void* AsyncTaskContext::Id() const {
 
 }  // namespace probe
 }  // namespace blink
-
-"""
-
 ```

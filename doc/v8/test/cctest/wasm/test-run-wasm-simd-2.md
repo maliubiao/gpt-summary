@@ -133,12 +133,14 @@ v = v128Ty.load8Lane(v, buffer, 0, 0); // 第一个 0 是要加载的内存偏�
 
 总而言之，这部分 C++ 代码是 V8 引擎中用于测试 WebAssembly SIMD 功能的核心部分，它确保了各种 SIMD 指令在不同场景下的正确执行，并为 JavaScript 中使用的 `WebAssembly.SIMD` API 提供了可靠的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 (int i = 1; i < lanes_s; i++) {
       CHECK_EQ(S{0}, LANE(global, i));
     }
@@ -1814,7 +1816,4 @@ TEST(RunWasmTurbofan_ShuffleToS256Load8x8U) {
   SKIP_TEST_IF_NO_TURBOSHAFT;
   EXPERIMENTAL_FLAG_SCOPE(revectorize);
   if (!CpuFeatu
-"""
-
-
 ```

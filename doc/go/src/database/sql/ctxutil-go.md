@@ -273,7 +273,7 @@ myDriverTx.Rollback
 
 总而言之，`ctxutil.go` 的核心作用是桥接 `context.Context` 和数据库驱动的实现，为数据库操作提供统一的、可取消的执行方式，并尽可能利用驱动提供的 `Context` 感知能力。理解其工作原理有助于开发者更好地利用 Go 语言的 `context` 特性来管理数据库操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/ctxutil.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -281,8 +281,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -429,9 +431,4 @@ func namedValueToValue(named []driver.NamedValue) ([]driver.Value, error) {
 	}
 	return dargs, nil
 }
-
-"""
-
-
-
 ```

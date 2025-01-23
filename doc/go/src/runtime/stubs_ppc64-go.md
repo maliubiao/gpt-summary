@@ -155,7 +155,7 @@ func main() {
 
 `go/src/runtime/stubs_ppc64.go` 中的 `callCgoSigaction` 函数是 Go 语言运行时与操作系统底层信号处理机制交互的关键部分，它通过 CGO 调用 C 代码来实现信号操作。 开发者通常通过 `syscall` 包来间接使用这个功能，需要注意编写正确的信号处理函数，并了解信号处理的潜在陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs_ppc64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -163,8 +163,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -177,9 +179,4 @@ package runtime
 //
 //go:noescape
 func callCgoSigaction(sig uintptr, new, old *sigactiont) int32
-
-"""
-
-
-
 ```

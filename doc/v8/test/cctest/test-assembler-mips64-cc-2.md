@@ -154,7 +154,7 @@ let sum_single = x + y;
 
 作为 V8 编译和执行流程中的一部分， `v8/test/cctest/test-assembler-mips64.cc` 这个文件专注于 **验证 MIPS64 架构汇编器生成浮点运算相关指令的正确性**。它是 V8 测试框架中针对特定架构的底层测试部分，确保了 V8 在 MIPS64 平台上能够正确地执行涉及浮点数运算的 JavaScript 代码。其他 12 个部分可能涵盖了其他架构的汇编器测试、其他类型的指令测试、或者更高级别的代码生成和优化测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 le inputsb[kTableLength] = {
         4.8, 5.3,  6.1, -10.0, -8.9, -9.8, 9.8,  9.8,  9.8,  -9.8,  -11.2, -9.8,
         3.0, dnan, 0.0, -0.0,  dnan, dinf, dinf, 42.0, dinf, dminf, dnan};
@@ -1237,8 +1239,4 @@ TEST(floor_l) {
       test.b = inputs_S[i];
       f.Call(&test, 0, 0, 0, 0);
       if ((test.isNaN2008 & kFCSRNaN2008FlagMask) &&
-              
-"""
-
-
 ```

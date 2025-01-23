@@ -149,7 +149,7 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`tachyon_module.c` 是一个用于测试 Frida 在不同 Python 版本下加载和使用 C 扩展能力的简单示例。它本身的功能很简单，但可以作为理解更复杂 C 扩展的基础，并且在 Frida 这样的动态 instrumentation 工具的上下文中，它可以用于测试 Hooking 和代码注入等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python/8 different python versions/ext/tachyon_module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
   Copyright 2018 The Meson development team
 
@@ -218,7 +220,4 @@ PyMODINIT_FUNC PyInit_tachyon(void) {
     return PyModule_Create(&tachyonmodule);
 }
 #endif
-
-"""
-
 ```

@@ -174,15 +174,17 @@ go test -gcflags="-0 -m -d=inlfuncswithclosures=1" inline_endian.go
 
 总而言之，这段代码是 Go 编译器测试套件的一部分，用于验证函数内联优化在处理字节序转换时的有效性。理解其背后的测试意图比直接将其作为通用的字节序处理工具使用更为重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_endian.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheckwithauto -0 -m -d=inlfuncswithclosures=1
 
 //go:build (386 || amd64 || arm64 || ppc64le || s390x) && !gcflags_noopt
@@ -218,9 +220,4 @@ func appendBigEndian(b []byte) []byte { // ERROR "can inline appendBigEndian" "l
 	b = binary.BigEndian.AppendUint16(b, 16) // ERROR "inlining call to binary.bigEndian.AppendUint16"
 	return b
 }
-
-"""
-
-
-
 ```

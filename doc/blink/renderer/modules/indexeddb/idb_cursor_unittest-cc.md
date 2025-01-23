@@ -144,15 +144,17 @@ request.onsuccess = function(event) {
 
 `idb_cursor_unittest.cc` 是一个至关重要的测试文件，用于确保 Chromium Blink 引擎中 `IDBCursor` 类的正确性和性能。它通过模拟各种使用场景，验证了游标的基本操作和预取机制，有助于防止错误并提高 IndexedDB 的效率。理解这个文件有助于深入了解 IndexedDB 在浏览器中的实现细节以及如何与 JavaScript API 交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_cursor_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -547,7 +549,4 @@ TEST_F(IDBCursorTest, PrefetchReset) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

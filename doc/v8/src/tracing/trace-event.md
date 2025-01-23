@@ -88,11 +88,13 @@ console.timeEnd("expensiveOperation");
 
 总结来说，`trace-event.cc` 是 V8 引擎中一个核心的模块，负责生成用于性能分析和调试的追踪信息，它与 JavaScript 的功能紧密相关，因为 JavaScript 代码的执行会触发 V8 内部的追踪事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/trace-event.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ void CallStatsScopedTracer::Initialize(v8::internal::Isolate* isolate,
 }  // namespace tracing
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

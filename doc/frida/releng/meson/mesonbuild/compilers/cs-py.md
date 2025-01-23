@@ -166,7 +166,7 @@ This systematic approach of dissecting the code, linking it to the broader conte
 
 总而言之，`frida/releng/meson/mesonbuild/compilers/cs.py` 文件在 Frida 的构建系统中扮演着关键角色，它抽象了 C# 编译器的细节，使得 Frida 能够跨平台地构建包含 C# 组件的项目，同时也影响着最终生成的可执行文件的特性，这对于逆向工程具有重要的意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/cs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -312,7 +314,4 @@ class VisualStudioCsCompiler(CsCompiler):
 
     def rsp_file_syntax(self) -> 'RSPFileSyntax':
         return RSPFileSyntax.MSVC
-
-"""
-
 ```

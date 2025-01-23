@@ -153,7 +153,7 @@ By following these steps, we can provide a comprehensive and well-reasoned answe
 
 总而言之，这个简单的 `foo.c` 文件展示了 C 语言中函数定义、外部函数引用以及动态链接的基本概念。在 Frida 这样的动态 instrumentation 工具的上下文中，它可以是被分析的目标代码片段，用于理解程序运行时的行为。用户通过 Frida 的各种功能，可以观察、修改这段代码的执行，从而进行逆向分析、调试或安全研究。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/256 subproject extracted objects/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -174,7 +176,4 @@ int DLL_IMPORT cppfunc(void);
 int otherfunc(void) {
     return cppfunc() != 42;
 }
-
-"""
-
 ```

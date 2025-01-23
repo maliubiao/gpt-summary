@@ -215,7 +215,7 @@ RIP 寄存器的值: 0xFFFFFFFFFFFFFFFF
 
 总而言之，这段 `go/src/runtime/signal_freebsd_amd64.go` 代码是 Go 运行时系统在 FreeBSD/AMD64 平台上处理信号的核心基础设施，它提供了访问信号上下文和 CPU 寄存器状态的底层能力，但用户不应该直接操作这些底层的结构体，而应该使用 Go 提供的 `signal` 包来进行安全的信号处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_freebsd_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -223,8 +223,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -276,9 +278,4 @@ func (c *sigctxt) set_rip(x uint64)     { c.regs().mc_rip = x }
 func (c *sigctxt) set_rsp(x uint64)     { c.regs().mc_rsp = x }
 func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) { c.info.si_addr = x }
-
-"""
-
-
-
 ```

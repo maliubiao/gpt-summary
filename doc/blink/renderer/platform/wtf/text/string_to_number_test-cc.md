@@ -175,14 +175,16 @@ This systematic approach, starting with understanding the purpose of the file an
 
 总结来说，`string_to_number_test.cc` 文件通过大量的测试用例，确保了 Blink 引擎能够正确地将各种格式的字符串转换为数字，这对于浏览器正确渲染网页、执行 JavaScript 代码至关重要。它覆盖了各种边界情况和错误情况，有助于提高代码的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_to_number_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -560,7 +562,4 @@ TEST(StringToNumberTest, CharactersToFloatParsedLength) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

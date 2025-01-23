@@ -191,7 +191,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code:
 
 总而言之，这个 `simd_sse41.c` 文件虽然代码量不大，但涵盖了 SIMD 指令集的使用、底层数据操作和内存管理等关键概念，是理解 Frida 如何与这类代码交互的重要示例，并且在逆向工程中具有实际的应用价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/147 simd/simd_sse41.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -241,7 +243,4 @@ void increment_sse41(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

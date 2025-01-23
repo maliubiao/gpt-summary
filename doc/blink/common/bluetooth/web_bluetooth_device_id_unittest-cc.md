@@ -146,14 +146,16 @@ By systematically going through the code, identifying the core functionalities b
 
 总而言之，`web_bluetooth_device_id_unittest.cc` 文件通过详尽的测试用例，确保了 `WebBluetoothDeviceId` 类的稳定性和正确性，这对于 Web Bluetooth API 的可靠运行至关重要。虽然 Web 开发者不直接操作这个类，但理解其功能和约束有助于更好地使用 Web Bluetooth API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/bluetooth/web_bluetooth_device_id_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ TEST(WebBluetoothDeviceIdTest, Create) {
   EXPECT_TRUE(
       WebBluetoothDeviceId::IsValid(WebBluetoothDeviceId::Create().str()));
 }
-
-"""
-
 ```

@@ -311,7 +311,7 @@ session.then(session => {
 
 通过这个 Frida hook，你可以在 SurfaceFlinger 进程调用 `ioctl` 时，实时查看与 framebuffer 相关的操作，帮助你理解 Android 图形系统是如何与帧缓冲驱动交互的。你可以根据需要添加更多的 `case` 分支来解析不同的 `FBIO_*` 命令，或者进一步分析传递给 `ioctl` 的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fb.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -322,8 +322,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -635,7 +637,4 @@ struct fb_cursor {
 #define FB_BACKLIGHT_LEVELS 128
 #define FB_BACKLIGHT_MAX 0xFF
 #endif
-
-"""
-
 ```

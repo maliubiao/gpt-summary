@@ -144,14 +144,16 @@ By following these steps, I can systematically analyze the provided Torque code 
 
 这个 Torque 代码文件定义了 JavaScript 中 `Boolean` 类型的核心行为，包括构造函数的创建逻辑以及原型链上 `toString` 和 `valueOf` 方法的实现。它强调了类型检查（通过 `ThisBooleanValue` 宏）和区分原始布尔值与 Boolean 对象的重要性。理解这段代码可以帮助我们更深入地理解 JavaScript 中布尔类型的运作方式以及避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/boolean.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ transitioning javascript builtin BooleanPrototypeValueOf(
   return ThisBooleanValue(receiver, 'Boolean.prototype.valueOf');
 }
 }
-
-"""
-
 ```

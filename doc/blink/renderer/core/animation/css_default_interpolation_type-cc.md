@@ -155,14 +155,16 @@ By following this structured approach, breaking down the code into smaller piece
 
 `css_default_interpolation_type.cc` 在 Chromium Blink 渲染引擎中扮演着关键角色，负责处理 CSS 动画和过渡中那些无法进行数值插值的属性。它确保了这些属性在动画过程中能够正确地从起始值切换到结束值，但不会产生平滑的过渡效果。理解其功能对于前端开发者理解 CSS 动画和过渡的行为至关重要，可以避免一些常见的误解和使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_default_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ void CSSDefaultInterpolationType::Apply(
 }
 
 }  // namespace blink
-
-"""
-
 ```

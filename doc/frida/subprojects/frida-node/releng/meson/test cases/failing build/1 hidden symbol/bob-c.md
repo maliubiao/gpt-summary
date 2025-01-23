@@ -163,7 +163,7 @@ Process.enumerateModules().forEach(function(module) {
 
 总而言之，虽然 `bob.c` 的代码本身非常简单，但它在 Frida 的上下文中代表了一个需要使用动态 instrumentation 技术来克服静态分析局限性的典型场景，特别是当涉及到处理隐藏符号或进行更底层的逆向分析时。 目录结构 `frida/subprojects/frida-node/releng/meson/test cases/failing build/1 hidden symbol/` 也暗示了这是一个用于测试 Frida 在处理隐藏符号时的能力的测试用例，可能用于验证 Frida 是否能够成功 hook 或识别这类符号，即使在构建过程中它被认为是 "failing" 的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing build/1 hidden symbol/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,14 +171,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hidden_function() {
     return 7;
 }
-
-"""
-
 ```

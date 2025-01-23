@@ -96,12 +96,14 @@ console.log(today.toString()); // 获取今天的 ISO 格式日期 (不带时区
 
 总而言之，`v8/src/objects/js-temporal-objects.cc` 的第8部分专注于实现 JavaScript **Temporal API** 中 `Temporal.Calendar`, `Temporal.TimeZone`, 和 `Temporal.PlainDate` 这几个核心对象的关键功能。它处理了日历相关的计算、时区转换以及不带时区的日期操作，是 V8 引擎支持现代日期和时间处理的重要组成部分。 由于是多部分文件，可以预见其他部分会处理 Temporal API 的其他时间单位和组合，例如时间和带时区的日期时间等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第8部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 j, method_name));
   // 5. Set two to ? ToTemporalDate(two).
   Handle<JSTemporalPlainDate> two;
@@ -1556,7 +1558,4 @@ MaybeHandle<JSTemporalPlainDate> JSTemporalPlainDate::From(
   Handle<JSReceiver> options;
   ASSIGN_RETURN_ON_EXCEPTION(
       isolate, options, GetOptionsO
-"""
-
-
 ```

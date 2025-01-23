@@ -140,7 +140,7 @@ By following this thought process, starting with the basics and progressively la
 
 这个 `prog.c` 文件虽然简单，但它提供了一个可以用来演示 Frida 核心概念和逆向方法的微型示例。要完全理解它的行为，我们需要知道 `sub()` 函数的定义。 在实际的逆向工程中，我们通常会遇到更复杂的代码，但基本的原理是相同的：使用动态工具（如 Frida）来观察和操纵程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/112 subdir subproject/prog/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,14 +148,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <sub.h>
 
 int main(void) {
     return sub();
 }
-
-"""
-
 ```

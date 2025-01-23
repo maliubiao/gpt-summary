@@ -141,15 +141,17 @@ func main() {
 
 `go/test/fixedbugs/issue5515.go` 是一个用于测试 Go 编译器在处理接口方法调用内联时是否存在错误的特定测试用例。它模拟了一个简单的接口方法调用场景，用于验证编译器的正确性。普通 Go 开发者一般不会直接使用它，但可以通过理解它的功能，加深对 Go 接口和方法机制，以及编译器优化的理解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5515.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -184,9 +186,4 @@ type Interface interface {
 func sort(data Interface) {
         data.Swap(0, 4)
 }
-
-"""
-
-
-
 ```

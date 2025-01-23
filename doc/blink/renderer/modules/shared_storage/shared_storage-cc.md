@@ -175,7 +175,7 @@ By following these steps, I can systematically analyze the code and provide a co
 
 总而言之，`blink/renderer/modules/shared_storage/shared_storage.cc` 的第一部分主要负责实现 **Shared Storage API 的 JavaScript 接口**，处理来自 JavaScript 的调用，进行 **初步的权限检查和参数验证**，并通过 **Mojo 与浏览器进程通信**，将存储操作请求转发到浏览器进程进行实际处理。它还包含了 **性能监控和错误处理** 的逻辑，并初步支持了 **Fenced Frames 的特殊用例**。这部分代码是连接 JavaScript API 和底层浏览器存储机制的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1008,8 +1010,4 @@ ScriptPromise<IDLDouble> SharedStorage::remainingBudget(
                 resolver->Reject(V8ThrowDOMException::CreateOrEmpty(
                     script_state->GetIsolate(),
                     DOMExceptionCode::kOperationError, error_message));
-    
-"""
-
-
 ```

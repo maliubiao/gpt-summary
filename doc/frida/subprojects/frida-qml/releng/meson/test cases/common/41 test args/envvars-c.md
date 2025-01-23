@@ -165,7 +165,7 @@ export PATH="/usr/bin:fakepath:/usr/local/bin"
 
 总而言之，`envvars.c` 是一个简单但重要的测试工具，用于验证 Frida 环境下环境变量的正确性，它涉及了操作系统底层、进程管理、以及动态插桩技术等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/41 test args/envvars.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -198,7 +200,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

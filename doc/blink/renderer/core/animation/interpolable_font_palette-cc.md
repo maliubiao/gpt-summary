@@ -233,14 +233,16 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`interpolable_font_palette.cc` 文件在 Blink 引擎中扮演着关键角色，它使得开发者能够通过 CSS 动画、过渡和 `palette-mix()` 函数，实现字体调色板的平滑过渡和混合，从而为网页设计带来更丰富的视觉效果。理解其功能有助于开发者更好地利用这些 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_font_palette.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ void InterpolableFontPalette::Interpolate(const InterpolableValue& to,
 }
 
 }  // namespace blink
-
-"""
-
 ```

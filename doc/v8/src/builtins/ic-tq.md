@@ -176,14 +176,16 @@ While this code is internal to V8, the feedback it collects helps optimize code 
 
 The `ic.tq` code defines the foundational mechanisms for V8's Inline Caching. It provides macros to collect runtime feedback about function calls, constructor calls, and `instanceof` operations. This feedback is crucial for V8 to dynamically optimize JavaScript code execution based on how it's actually being used. While users don't directly interact with these macros, the optimizations they enable have a significant impact on JavaScript performance.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ic.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ extern operator '.length_intptr' macro LoadFeedbackVectorLength(FeedbackVector):
     intptr;
 
 }  // namespace ic
-
-"""
-
 ```

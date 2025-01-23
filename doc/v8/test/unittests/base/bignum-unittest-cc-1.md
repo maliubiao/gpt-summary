@@ -134,7 +134,7 @@ console.log("余数:", remainder); // 输出: 余数: 1n
 
 这些测试用例通过具体的输入和预期的输出来验证 `Bignum` 类在各种算术和比较操作中的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/bignum-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/bignum-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -142,9 +142,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- strcmp("1815699B31E30B3CDFBE17D185F44910BBBF313896C3DC95B4B9314D19B5B32"
+### 源代码
+```cpp
+strcmp("1815699B31E30B3CDFBE17D185F44910BBBF313896C3DC95B4B9314D19B5B32"
              "F57AD71655476B630F3E02DF855502394A74115A5BA2B480BCBCD5F52F6F69D"
              "E6C5622CB5152A54788BD9D14B896DE8CB73B53C3800DDACC9C51E0C38FAE76"
              "2F9964232872F9C2738E7150C4AE3F1B18F70583172706FAEE26DC5A78C77A2"
@@ -770,8 +772,4 @@ TEST_F(BignumTest, AssignPowerUInt16) {
 }  // namespace test_bignum
 }  // namespace base
 }  // namespace v8
-
-"""
-
-
 ```

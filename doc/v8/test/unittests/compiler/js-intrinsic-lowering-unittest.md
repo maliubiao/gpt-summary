@@ -97,11 +97,13 @@ console.log(generatorObject.next()); // { value: undefined, done: true }
 
 `js-intrinsic-lowering-unittest.cc` 文件测试了 V8 编译器的 `JSIntrinsicLowering` 优化阶段，特别是它能否将对内部运行时函数 `%_CreateJSGeneratorObject` 的调用正确转换为编译器内部的 `JSCreateGeneratorObject` 节点。这直接关系到 JavaScript 生成器函数的实现和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/js-intrinsic-lowering-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ TEST_F(JSIntrinsicLoweringTest, InlineCreateJSGeneratorObject) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

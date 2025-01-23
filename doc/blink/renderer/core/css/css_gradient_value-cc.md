@@ -145,7 +145,7 @@ background-image: linear-gradient(red, blue);
 
 `blink/renderer/core/css/css_gradient_value.cc` 文件的第一部分主要负责定义和初步处理 CSS 渐变值，包括解析颜色停止点、处理不同类型的渐变，并为后续的图像生成过程提供必要的数据结构和计算。它是 Blink 引擎中处理 CSS 渐变的核心组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_gradient_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc.  All rights reserved.
  * Copyright (C) 2015 Google Inc. All rights reserved.
@@ -1054,7 +1056,4 @@ CSSGradientValue* CSSGradientValue::ComputedCSSValue(
     case kConicGradientClass:
       return To<CSSConicGradientValue>(this)->ComputedCSSValue(
           style, allow_visite
-"""
-
-
 ```

@@ -112,7 +112,7 @@ By following this structured thought process, combining a basic understanding of
 
 总而言之，尽管 `gen_generator.py` 自身的功能很简单，但它在 Frida 的构建和测试流程中扮演着重要的角色，并间接地与逆向工程、底层二进制、操作系统等领域相关联。理解这个脚本的功能和上下文可以帮助开发者和逆向工程师更好地理解 Frida 的工作原理和进行问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/13 pch/generated/gen_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
@@ -129,7 +131,4 @@ with open(sys.argv[1]) as f:
     content = f.read()
 with open(sys.argv[2], 'w') as f:
     f.write(content)
-
-"""
-
 ```

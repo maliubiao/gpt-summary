@@ -126,7 +126,7 @@ By following this structured analysis and refinement process, one can arrive at 
 
 作为第 4 部分，这段代码主要关注于 `V8ScriptValueSerializer` 对于特定类型的对象（`FencedFrameConfig`）以及与 Gin 集成时的行为的测试。它进一步验证了序列化和反序列化的正确性，并确保在遇到某些特定情况（如 Gin 管理的对象）时，序列化器能够安全地处理（例如，抛出异常而不是崩溃）。 结合之前的几部分，整个测试文件旨在全面验证 `V8ScriptValueSerializer` 在各种场景下的功能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/serialization/v8_script_value_serializer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,10 +134,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-  EXPECT_EQ(config->url_, new_config->url_);
+### 源代码
+```cpp
+EXPECT_EQ(config->url_, new_config->url_);
   EXPECT_EQ(config->shared_storage_context_,
             new_config->shared_storage_context_);
   EXPECT_EQ(config->urn_uuid_, new_config->urn_uuid_);
@@ -211,8 +212,4 @@ TEST(V8ScriptValueSerializerTest, CoexistWithGin) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

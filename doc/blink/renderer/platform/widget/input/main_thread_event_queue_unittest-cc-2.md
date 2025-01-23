@@ -83,16 +83,18 @@ Based on these observations, I can summarize the functionality of the test file.
 
 总而言之，这部分测试重点在于验证事件队列在特定场景下的优化处理和特殊类型事件的处理逻辑，以及事件处理完成后的通知机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/main_thread_event_queue_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                       2),
+### 源代码
+```cpp
+2),
           // These callbacks were run just after handling the second
           // touchmove.
           ReceivedCallback(CallbackReceivedState::kCalledAfterHandleEvent,
@@ -555,8 +557,4 @@ TEST_F(MainThreadEventQueueTest, InputEventsDispatchedNotified) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

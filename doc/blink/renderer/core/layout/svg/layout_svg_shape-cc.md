@@ -151,14 +151,16 @@ By following this structured approach, analyzing the code in chunks, and continu
 
 总而言之，`blink/renderer/core/layout/svg/layout_svg_shape.cc` 文件在 Chromium Blink 渲染引擎中扮演着至关重要的角色，它负责将 SVG 形状元素的声明式描述 (HTML 和 CSS) 转换为浏览器可以渲染和交互的图形表示。它涉及到复杂的几何计算、布局逻辑和渲染机制，并与 JavaScript, HTML 和 CSS 紧密配合，共同构建出丰富的 Web 页面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_shape.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2008 Rob Buis <buis@kde.org>
@@ -752,7 +754,4 @@ RasterEffectOutset LayoutSVGShape::VisualRectOutsetForRasterEffects() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

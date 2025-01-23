@@ -148,11 +148,13 @@ let obj = { name: "Alice", age: 30 }; // JavaScript 代码创建一个对象
 
 `v8/src/heap/factory-base.cc` 中定义的 `FactoryBase` 类是 V8 引擎中 **对象生命周期的起点**。它提供的对象创建能力是 V8 引擎实现各种 JavaScript 语言特性的基础，直接影响着 JavaScript 代码的执行效率和内存管理。 了解 `FactoryBase` 的功能有助于更深入地理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory-base.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1542,7 +1544,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

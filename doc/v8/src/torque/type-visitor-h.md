@@ -224,15 +224,17 @@ TypeVector result = TypeVisitor::ComputeTypeVector(expressions);
 
 总而言之，`v8/src/torque/type-visitor.h` 中定义的 `TypeVisitor` 类是 Torque 编译器的重要组成部分，负责理解和处理类型信息，确保 Torque 代码的类型安全性，并最终帮助生成更健壮和高效的 V8 代码，这些代码实现了 JavaScript 的各种功能。通过在编译时进行类型检查，Torque 能够避免许多在动态类型的 JavaScript 中可能发生的运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/type-visitor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/type-visitor.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ class TypeVisitor {
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_TYPE_VISITOR_H_
-
-"""
-
 ```

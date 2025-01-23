@@ -157,15 +157,17 @@ TEST_F(TreeScopeTest, CommonAncestorOfInclusiveTrees) {
 
 总而言之，`tree_scope_test.cc` 通过一系列精心设计的测试用例，验证了 `TreeScope` 及其关键方法 `CommonAncestorTreeScope` 的正确性。虽然普通用户不会直接接触到这些代码，但其正确性对于保证网页的正常渲染、事件处理、样式应用以及 Shadow DOM 的行为至关重要。当用户遇到与这些方面相关的 Bug 时，Blink 开发者可能会依赖这样的测试用例来定位和修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/tree_scope_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -281,7 +283,4 @@ TEST_F(TreeScopeTest, CommonAncestorOfTreesInDifferentDocuments) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

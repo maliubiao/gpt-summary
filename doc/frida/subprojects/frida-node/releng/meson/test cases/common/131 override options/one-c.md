@@ -157,7 +157,7 @@ if (hidden_func() == 0) {
 
 总而言之，这段简单的 `static` 函数本身的功能很直接，但它的价值在于作为 Frida 测试框架的一部分，用于验证和演示 Frida 的函数 override 功能。逆向工程师经常使用类似的技术来理解和修改目标程序的行为。用户接触到这段代码，很可能是因为他们正在学习或使用 Frida，并且正在研究如何进行函数 hook 和 override。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/131 override options/one.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,12 +165,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 static int hidden_func(void) {
     return 0;
 }
-
-"""
-
 ```

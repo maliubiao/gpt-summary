@@ -149,11 +149,13 @@ console.log("你好，世界！"); // 这部分可能是 UTF-8
 
 `scanner-character-streams.cc` 是 V8 引擎中一个至关重要的组成部分，它负责以高效且灵活的方式提供 JavaScript 源代码的字符流给词法分析器。它屏蔽了底层字符串存储和编码的复杂性，为后续的编译过程奠定了基础。它的设计考虑了性能、内存效率以及对不同输入源的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/scanner-character-streams.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1119,7 +1121,4 @@ Utf16CharacterStream* ScannerStream::For(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -131,14 +131,16 @@ By following this structured approach, breaking down the code, connecting it to 
 
 `metrics_helper.cc` 中的 `MetricsHelper` 类及其 `ShouldDiscardTask` 方法，是 Blink 引擎中用于清理异常性能数据的机制。它通过设定一个阈值来识别并排除那些可能由系统错误或编程错误导致的超长任务，从而保证性能指标的准确性，为开发者分析和优化网页性能提供更可靠的数据基础。 它的作用是间接的，通过过滤数据来提高性能分析的准确性，而不是直接影响 JavaScript, HTML 或 CSS 的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/metrics_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ bool MetricsHelper::ShouldDiscardTask(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

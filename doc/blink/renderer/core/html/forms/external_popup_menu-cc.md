@@ -138,15 +138,17 @@ Let's break down the thought process for analyzing this `external_popup_menu.cc`
 
 总而言之，`external_popup_menu.cc` 负责了 `<select>` 元素下拉菜单在 Blink 渲染引擎内部的具体实现，它连接了 HTML 结构、CSS 样式以及用户的交互行为，并与浏览器进程协同工作来呈现最终的下拉菜单效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/external_popup_menu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -518,7 +520,4 @@ int ExternalPopupMenu::ToExternalPopupMenuItemIndex(
 }
 
 }  // namespace blink
-
-"""
-
 ```

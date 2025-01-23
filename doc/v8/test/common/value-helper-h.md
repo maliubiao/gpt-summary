@@ -177,15 +177,17 @@ The `ValueHelper` is designed to help uncover common programming errors related 
 
 In summary, `v8/test/common/value-helper.h` is a crucial utility for ensuring the correctness and robustness of V8's numeric handling by providing a comprehensive set of test values and comparison tools. It helps identify and prevent common programming errors related to numeric data types.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/common/value-helper.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/common/value-helper.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -587,7 +589,4 @@ std::ostream& operator<<(std::ostream& out, FloatCompareWrapper<type> wrapper) {
 }  // namespace v8
 
 #endif  // V8_COMMON_VALUE_HELPER_H_
-
-"""
-
 ```

@@ -167,7 +167,7 @@ python3 myinstall.py target_scripts my_script
 
 总而言之，尽管 `myinstall.py` 脚本本身功能简单，但在 Frida 这样的复杂项目中，它扮演着安装过程中的一个特定角色，与其他构建和安装步骤协同工作，最终将 Frida 的各个组件部署到正确的位置，以便进行动态分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/53 install script/src/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -191,7 +193,4 @@ if not os.path.exists(dirname):
 
 with open(os.path.join(dirname, sys.argv[2] + '.in'), 'w') as f:
     f.write('')
-
-"""
-
 ```

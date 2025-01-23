@@ -116,11 +116,13 @@ node --no-turbo-fan your_script.js
 
 `flags.cc` 文件是 V8 引擎中一个非常核心的组件，它提供了一种机制来配置引擎的各种行为。这些配置直接影响 JavaScript 代码的编译、优化、内存管理以及其他运行时特性。用户可以通过命令行标志来调整 V8 引擎以满足不同的需求，例如性能优化、内存控制、调试等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flags.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1200,7 +1202,4 @@ void FlagList::ResetFlagHash() {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

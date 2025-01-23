@@ -128,7 +128,7 @@ Initially, I might have focused too much on the simplicity of the code itself. H
 
 总而言之，`foo.c` 作为一个极其简单的 C 语言文件，其价值在于它作为 Frida 测试框架中的一个基本构建块，用于验证 Frida 的核心功能，并帮助开发者理解和调试 Frida 的内部机制。它虽然自身逻辑简单，但却触及了动态链接、函数导出等底层概念，这些都是逆向工程的重要基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/90 devenv/subprojects/sub/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _WIN32
   #define DO_EXPORT __declspec(dllexport)
 #else
@@ -148,7 +150,4 @@ DO_EXPORT int foo(void)
 {
   return 0;
 }
-
-"""
-
 ```

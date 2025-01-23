@@ -131,15 +131,17 @@ By following this structured analysis and refinement process, I can generate a c
 
    `fuzztest-adapter.h` 的作用就是让 V8 的开发者能够利用 `fuzztest` 框架，自动化地生成各种各样的输入，从而更有效地发现这些隐藏在代码深处的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/fuzztest-adapter.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/fuzztest-adapter.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ Prompt:
 #include "third_party/fuzztest/src/fuzztest/googletest_fixture_adapter.h"
 
 #endif  // V8_UNITTESTS_FUZZTEST_ADAPTER_H_
-
-"""
-
 ```

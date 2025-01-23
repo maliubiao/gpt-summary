@@ -261,7 +261,7 @@ By systematically analyzing these individual tests, I can build a comprehensive 
 
 `v8/test/unittests/parser/parsing-unittest.cc` 的第 4 部分是一个综合性的测试套件，用于验证 V8 引擎的 JavaScript 解析器在处理各种语法结构、严格模式限制、错误条件和边缘情况时的正确性。它涵盖了 JavaScript 语言中一些容易出错或需要特殊处理的语法特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -269,8 +269,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 statement_data[] = {
       "eval() {\"use strict\";}", "arguments() {\"use strict\";}",
       "interface() {\"use strict\";}", "yield() {\"use strict\";}",
@@ -1126,7 +1128,4 @@ TEST_F(ParsingTest, InnerAssignment) {
       {"var x; eval('');", true, false, false},
       {"'use strict'; let x; eval('');", true, false, false},
       {"try {} catch(x) {
-"""
-
-
 ```

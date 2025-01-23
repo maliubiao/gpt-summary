@@ -176,14 +176,16 @@ By following these steps, I could analyze the seemingly small C++ file and effec
 
 `font_variant_east_asian.cc` 文件是 Chromium Blink 引擎中处理东亚字体变体的重要组成部分。它定义了表示这些变体的枚举和提供了字符串转换功能，使得渲染引擎能够正确地解析和应用 CSS 中 `font-variant-east-asian` 属性，从而实现对东亚字符显示的精细控制。 虽然开发者不会直接编写或修改这个 C++ 文件，但理解其背后的逻辑有助于更好地使用相关的 CSS 属性，避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_variant_east_asian.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ String FontVariantEastAsian::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -122,7 +122,7 @@ My thought process to answer the request about the `style_resolver_test.cc` file
 
 总的来说，`style_resolver_test.cc` 的这段代码主要集中在测试 **CSS 样式解析器在处理列表标记、继承型自定义属性、嵌套伪元素、级联值计算、Shadow DOM 样式、`ComputeValue` 函数、树作用域、`display: contents` 继承、`::selection` 伪元素以及容器查询等核心 CSS 特性时的正确性**。  它通过构建特定的 HTML 和 CSS 场景，并断言计算出的样式结果，来确保 Blink 引擎的样式解析器能够按照 CSS 规范的要求工作。 这部分测试覆盖了样式解析器在面对各种复杂的 CSS 规则和 DOM 结构时的行为，对于保证网页渲染的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ist-style: disc inside"><b></b></li>
       <li style="list-style: '- ' outside"><b></b></li>
       <li style="list-style: '- ' inside"><b></b></li>
@@ -1096,7 +1098,4 @@ TEST_F(StyleResolverTest, AnchorQueriesMPC) {
   // the anchor() queries give two different answers.
 
   auto* a = GetDocument().getElementById(AtomicStr
-"""
-
-
 ```

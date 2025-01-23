@@ -158,7 +158,7 @@ NewGCM 返回的是 MyGCM: true
 
 这段测试代码通过模拟一个自定义的 `Block` 实现，并断言 `crypto/cipher` 包的函数能够正确调用该实现中定义的 `NewCTR`, `NewCBCEncrypter`, `NewCBCDecrypter`, 和 `NewGCM` 方法，来验证了这种机制的有效性。它强调了 Go 语言中接口和类型断言的重要性，以及 `crypto/cipher` 包如何利用接口来实现对不同密码算法的抽象。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/cipher/modes_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -294,9 +296,4 @@ func exportedMethods(x any) []string {
 	}
 	return methods
 }
-
-"""
-
-
-
 ```

@@ -172,7 +172,7 @@ if (ObjC.available) {
 
 总而言之，这个 `main.cpp` 文件本身是一个简单的 C++ 程序，但在 Frida 的上下文中，它成为了一个用于测试和演示 Frida 功能的示例，并且可以作为逆向分析的简单目标。通过分析这个文件，我们可以了解 Frida 如何与目标程序进行交互，并从中学习相关的底层知识和常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/12 generator expressions/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -192,7 +194,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

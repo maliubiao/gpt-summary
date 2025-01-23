@@ -181,15 +181,17 @@ This structured approach allows for a comprehensive understanding of the code's 
 
 总而言之，`performance_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中 Web Performance API 的核心功能能够正确地工作，并且能够为开发者提供准确的性能数据。它通过模拟各种场景，验证了性能条目的创建、观察和获取机制，与 JavaScript 中 `performance` API 的使用紧密相关，并间接反映了 HTML 和 CSS 带来的性能影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/performance_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -594,7 +596,4 @@ TEST_F(PerformanceTest, MergePerformanceEntryVectorsTest) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

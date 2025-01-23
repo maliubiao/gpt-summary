@@ -125,14 +125,16 @@ Initially, I might focus too much on the specific implementation details of brea
 
 总而言之，`block_child_iterator_test.cc` 是一个关键的测试文件，它确保了 Blink 渲染引擎在遍历块级盒子的子元素时能够正确处理各种情况，包括没有断点标记、存在断点标记、已处理所有子节点以及在迭代过程中修改 DOM 结构等复杂场景，从而保证了网页布局的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_child_iterator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ TEST_F(BlockChildIteratorTest, DeleteNodeWhileIteration) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

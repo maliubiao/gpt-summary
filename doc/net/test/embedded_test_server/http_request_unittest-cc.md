@@ -181,15 +181,17 @@ Content-Length: 10\r\n\r\n
 
 总而言之，`net/test/embedded_test_server/http_request_unittest.cc` 这个文件通过一系列单元测试，确保了 Chromium 网络栈中的 HTTP 请求解析器能够正确可靠地处理各种不同格式和内容的 HTTP 请求，这对于保证浏览器的正常网络功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/embedded_test_server/http_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -365,7 +367,4 @@ TEST(HttpRequestTest, GetURLFallback) {
 }
 
 }  // namespace net::test_server
-
-"""
-
 ```

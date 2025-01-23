@@ -158,7 +158,7 @@ Ret v2
 
 到第 26 部分为止，`go/src/cmd/compile/internal/ssa/rewritegeneric.go` 文件的功能是定义了一系列通用的、与特定架构无关的 SSA 重写规则。这些规则旨在通过模式匹配和转换，优化各种 SSA 操作，例如算术运算（加、减、异或等）、位运算（移位、取反等）、内存操作（清零、移动等）和控制流。 这些优化旨在提高生成代码的性能和效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -167,8 +167,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第26部分，共26部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 (shiftIsBounded(left) || shiftIsBounded(right)) && canRotate(config, 64)
 	// result: (RotateLeft64 x y)
 	for {
@@ -1291,10 +1293,4 @@ func rewriteBlockgeneric(b *Block) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

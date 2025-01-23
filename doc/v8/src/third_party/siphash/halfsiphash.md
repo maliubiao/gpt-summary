@@ -94,11 +94,13 @@ console.log(`Value: ${value1}, Seed: ${seed2}, Hash: ${hash2}`);
 
 `v8/src/third_party/siphash/halfsiphash.cc` 文件实现了 HalfSipHash 算法的一个简化版本，用于在 V8 引擎内部快速计算 4 字节输入的哈希值。这可能用于诸如对象属性哈希、字符串哈希或缓存键哈希等场景，以提高 V8 的性能。JavaScript 开发者通常不会直接接触到这个函数，但理解其背后的哈希概念有助于理解 JavaScript 对象和引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/siphash/halfsiphash.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 /*
  * SipHash reference C implementation
  *
@@ -181,7 +183,4 @@ uint32_t halfsiphash(const uint32_t value, const uint64_t seed) {
   b = v1 ^ v3;
   return b;
 }
-
-"""
-
 ```

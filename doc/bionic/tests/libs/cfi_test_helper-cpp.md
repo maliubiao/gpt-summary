@@ -345,7 +345,7 @@ if __name__ == "__main__":
 
 通过这个 Frida 示例，你可以观察 `cfi_test_helper` 程序中关键函数的执行顺序和 `__cfi_slowpath` 的调用情况，从而更好地理解 CFI 测试的流程。记住，这主要是针对 Bionic 内部测试的调试，对于理解 Android Framework 或 NDK 中实际的 CFI 工作机制，需要 hook 运行在 Android 系统上的应用程序或服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/cfi_test_helper.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -356,8 +356,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -413,7 +415,4 @@ int main(void) {
   CHECK(g_count == 3);
   return 0;
 }
-
-"""
-
 ```

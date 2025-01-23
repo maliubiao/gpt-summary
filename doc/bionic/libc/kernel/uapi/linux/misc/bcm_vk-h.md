@@ -345,7 +345,7 @@ sys.stdin.read()
 
 请注意，`VK_IOCTL_LOAD_IMAGE` 和 `VK_IOCTL_RESET` 的实际数值需要根据编译环境确定，可以通过查看编译后的头文件或者在内核源码中查找。 上述 Frida 脚本中的假设值 `0xc0100002` 和 `0xc0080004` 仅为示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/misc/bcm_vk.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -356,8 +356,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -416,7 +418,4 @@ struct vk_reset {
 #define VK_FWSTS_RESET_L0 (0x9 << VK_FWSTS_RESET_REASON_SHIFT)
 #define VK_FWSTS_RESET_UNKNOWN (0xf << VK_FWSTS_RESET_REASON_SHIFT)
 #endif
-
-"""
-
 ```

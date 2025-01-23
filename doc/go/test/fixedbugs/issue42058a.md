@@ -87,15 +87,17 @@ func main() {
 
 `go/test/fixedbugs/issue42058a.go` 是 Go 语言源代码中的一个测试文件，用于验证编译器对通道元素类型大小的限制。它通过声明具有过大元素类型的通道来预期触发编译错误。 这段代码本身不执行任何运行时逻辑，它的价值在于确保 Go 编译器能够正确地执行静态类型检查和错误报告。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue42058a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.  Use of this
@@ -109,9 +111,4 @@ var c chan [2 << 16]byte // GC_ERROR "channel element type too large"
 type T [1 << 17]byte
 
 var x chan T // GC_ERROR "channel element type too large"
-
-"""
-
-
-
 ```

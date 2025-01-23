@@ -107,7 +107,7 @@ Finally, the request emphasizes that this is Part 4 of 4. This suggests the prev
 
 这段代码片段专注于测试 `NetworkQualityEstimator` 如何处理和利用缓存的网络质量信息，以及如何根据实际的网络观察数据（RTT 和吞吐量）进行估计和决策，例如计算有效连接类型和检测挂起请求。它还测试了观察者模式的正确实现，以及在不同配置下 `NetworkQualityEstimator` 的行为。总的来说，这段代码保证了 `NetworkQualityEstimator` 在网络质量评估的核心功能上的正确性和鲁棒性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/network_quality_estimator_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ughputEstimatesObserver rtt_throughput_observer;
   TestEffectiveConnectionTypeObserver effective_connection_type_observer;
   estimator.AddRTTObserver(&rtt_observer);
@@ -680,8 +682,4 @@ TEST_F(NetworkQualityEstimatorTest, AdjustHttpRttBasedOnRttCounts) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

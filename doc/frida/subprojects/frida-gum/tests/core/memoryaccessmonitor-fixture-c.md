@@ -136,7 +136,7 @@ This systematic approach, from initial scanning to detailed analysis and context
 
 总结来说，`memoryaccessmonitor-fixture.c` 是 Frida-gum 库中用于测试内存访问监控功能的核心测试 fixture，它展示了如何设置监控环境、注入测试代码以及处理监控事件。理解这个文件的功能有助于深入了解 Frida 的内存访问监控机制，以及它在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/memoryaccessmonitor-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -255,7 +257,4 @@ memory_access_notify_cb (GumMemoryAccessMonitor * monitor,
     g_assert_cmpuint (fixture->number_of_notifies, ==, 0)
 #define DISABLE_MONITOR() \
     gum_memory_access_monitor_disable (fixture->monitor)
-
-"""
-
 ```

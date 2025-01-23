@@ -114,7 +114,7 @@ Here's a breakdown of the thought process to analyze the code and generate the r
 
 总而言之，这个代码片段是 QUIC 连接功能测试的重要组成部分，它确保了 QUIC 连接在面对网络问题时能够做出合理的应对，并保持连接的活跃性。这对于保证基于 QUIC 的网络应用的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ds(5));
   EXPECT_FALSE(connection_.PathDegradingDetectionInProgress());
   // Send a third packet. The path degrading detection is no longer set but path
@@ -875,7 +877,4 @@ TEST_P(QuicConnectionTest, ResetBackOffRetransmitableOnWireTimeout) {
     EXPECT_TRUE(connection_.GetPingAlarm()->IsSet());
     EXPECT_EQ(initial_retransmittable_on_wire_timeout,
               connection_.GetPingAlarm()->deadline() - clock_.Approx
-"""
-
-
 ```

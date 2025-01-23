@@ -159,7 +159,7 @@ WebAssembly.instantiate(wasmCode)
 
 这部分 `v8/src/wasm/module-compiler.cc` 代码的核心功能是 **管理 WebAssembly 模块的编译过程，包括延迟编译、分层编译、类型反馈优化以及错误处理**。它定义了 `CompilationState` 类来维护编译状态，并实现了延迟编译和类型反馈机制，以提高 WebAssembly 代码的执行效率。 这些机制使得 V8 能够根据实际的执行情况动态地优化 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ancelled();
 }
 
@@ -965,7 +967,4 @@ void TriggerTierUp(Isolate* isolate,
   // significantly. The latter is assumed to be the case if the priority
   // increased at least to four, and is a power of two.
   if (priority == 2 || !base::bits::IsPowerOfTwo(priority)) return;
-"""
-
-
 ```

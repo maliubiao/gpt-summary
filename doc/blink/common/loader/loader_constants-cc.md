@@ -87,14 +87,16 @@ By following these steps, the comprehensive and informative answer provided earl
 
 总而言之， `blink/common/loader/loader_constants.cc` 这个文件通过定义 `kDoNotTrackHeader` 常量，为 Blink 引擎中处理 "Do Not Track" 功能提供了基础，并间接地影响了 JavaScript 代码的行为以及服务器端如何响应用户的隐私偏好。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/loader_constants.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -106,7 +108,4 @@ namespace blink {
 const char kDoNotTrackHeader[] = "DNT";
 
 }  // namespace blink
-
-"""
-
 ```

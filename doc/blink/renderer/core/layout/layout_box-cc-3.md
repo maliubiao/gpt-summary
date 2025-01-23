@@ -95,16 +95,18 @@ By following these steps, we can generate a comprehensive and accurate explanati
 
 这部分代码在 `LayoutBox` 类中扮演着至关重要的角色，它负责高效地管理和缓存布局计算的结果，处理布局分片等复杂场景，并确保布局信息的有效性。这对于浏览器的性能至关重要，因为它避免了对相同内容进行重复的布局计算，并支持各种复杂的 CSS 布局特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
- measure_cache_->Clear();
+### 源代码
+```cpp
+measure_cache_->Clear();
       }
     }
   }
@@ -961,7 +963,4 @@ RecalcScrollableOverflowResult LayoutBox::RecalcChildScrollableOverflowNG() {
 #if DCHECK_IS_ON()
   // We use PostLayout methods to navigate the fragment tree and reach the
   // corresponding LayoutObjects, so we need to use Allo
-"""
-
-
 ```

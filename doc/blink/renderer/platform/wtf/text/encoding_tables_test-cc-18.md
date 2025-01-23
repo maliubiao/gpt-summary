@@ -95,15 +95,17 @@ By following these steps, including the self-correction, we arrive at a comprehe
 
 总而言之，`blink/renderer/platform/wtf/text/encoding_tables_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎能够正确地处理各种字符编码，这是浏览器正确渲染网页内容的基础。 提供的代码片段是这个测试文件所测试的数据表的一部分，用于验证字符编码映射的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第19部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 D5, 0x6AD6, 0x6AD7, 0x6AD8, 0x6AD9,
      0x6ADA, 0x6ADB, 0x6ADC, 0x6ADD, 0x6ADE, 0x6ADF, 0x6AE0, 0x6AE1, 0x6AE2,
      0x6AE3, 0x6AE4, 0x6AE5, 0x6AE6, 0x6AE7, 0x6AE8, 0x6AE9, 0x6AEA, 0x6AEB,
@@ -531,7 +533,4 @@ D5, 0x6AD6, 0x6AD7, 0x6AD8, 0x6AD9,
      0xE130, 0xE131, 0xE132, 0xE133, 0xE134, 0xE135, 0xE136, 0xE137, 0xE138,
      0xE139, 0xE13A, 0xE13B, 0xE13C, 0xE13D, 0xE13E, 0xE13F, 0xE140, 0xE141,
      0x
-"""
-
-
 ```

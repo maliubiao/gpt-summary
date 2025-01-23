@@ -166,7 +166,7 @@ By following this breakdown, analyzing the code snippet, and considering the bro
 
 总而言之，这个简单的 `main.cpp` 文件在 Frida 项目中扮演着一个自动化测试的角色，用于验证与外部 C 函数交互的基础功能。开发者在遇到相关问题时，会通过查看源代码、运行调试器等手段来理解和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/118 llvm ir and assembly/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stdio.h>
 
 extern "C" {
@@ -191,7 +193,4 @@ int main (void)
   }
   return 0;
 }
-
-"""
-
 ```

@@ -90,7 +90,7 @@ By following these steps, we can arrive at a comprehensive and accurate analysis
 
 虽然 `prog.c` 的代码非常简单，但它在 Frida 项目的测试框架中扮演着重要的角色，用于验证构建系统在处理特定错误情况（缺少预编译头文件）时的行为。 它的存在帮助确保 Frida 工具的构建过程的健壮性，最终支持逆向工程师进行有效的动态分析。  开发者通过查看测试结果和这个文件的路径，可以快速定位到与预编译头文件相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/86 missing pch file/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,12 +98,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

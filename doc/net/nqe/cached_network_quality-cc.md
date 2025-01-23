@@ -138,15 +138,17 @@ By following these steps, combining code analysis, domain knowledge (Chromium ne
 
 总而言之，`cached_network_quality.cc` 定义了一个用于存储和比较网络质量快照的核心数据结构，它在 Chromium 的网络栈中扮演着重要的角色，并间接地影响着浏览器提供给 JavaScript 的网络相关 API。用户不会直接操作到这个文件，但当用户遇到网络问题时，开发人员可能会将其作为调试的入口点之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/cached_network_quality.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ bool CachedNetworkQuality::OlderThan(
 }
 
 }  // namespace net::nqe::internal
-
-"""
-
 ```

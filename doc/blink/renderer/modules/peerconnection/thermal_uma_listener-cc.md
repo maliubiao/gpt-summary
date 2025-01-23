@@ -136,15 +136,17 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`thermal_uma_listener.cc` 虽然不直接与前端技术交互，但它在幕后默默地收集着重要的设备状态信息，这些信息对于理解 WebRTC 应用的性能表现和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/thermal_uma_listener.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ void ThermalUmaListener::ReportStats() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

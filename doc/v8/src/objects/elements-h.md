@@ -213,15 +213,17 @@ delete arr[0]; // 注意：delete 操作数组元素会产生稀疏数组，可�
 
 总而言之，`v8/src/objects/elements.h` 是 V8 引擎中处理 JavaScript 对象元素的核心组件，它通过抽象和多态的方式支持了 JavaScript 灵活的元素操作，并针对不同的场景进行了性能优化。理解这个文件的作用有助于深入了解 V8 的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -489,7 +491,4 @@ void CopyTypedArrayElementsSlice(Address raw_source, Address raw_destination,
 }  // namespace v8
 
 #endif  // V8_OBJECTS_ELEMENTS_H_
-
-"""
-
 ```

@@ -121,7 +121,7 @@ A developer or someone debugging the Frida build process might end up looking at
 
 In summary, `cmModInc4.cpp` is a small but important part of Frida's testing infrastructure. It's not directly involved in the dynamic instrumentation process but ensures that the build system correctly handles include files, which is a fundamental requirement for building a complex tool like Frida. Understanding its purpose requires considering the context of build systems, testing methodologies, and the overall architecture of the Frida project.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/fakeInc/cmModInc4.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifndef MESON_INCLUDE_IMPL
 #error "MESON_INCLUDE_IMPL is not defined"
 #endif // !MESON_INCLUDE_IMPL
@@ -138,7 +140,4 @@ Prompt:
 string cmModClass::getStr2() const {
   return str;
 }
-
-"""
-
 ```

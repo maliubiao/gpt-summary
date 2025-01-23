@@ -147,15 +147,17 @@ fetch('https://example.com/api/data', {
 
 总而言之，`qpack_encoder_stream_sender_fuzzer.cc` 作为一个模糊测试工具，在 Chromium 网络栈的开发和维护中扮演着重要的角色，它帮助开发者发现潜在的 bug，确保 QPACK 编码器在各种情况下都能正确可靠地工作，最终保障用户的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/fuzzer/qpack_encoder_stream_sender_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

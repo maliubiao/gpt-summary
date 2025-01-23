@@ -195,15 +195,17 @@ document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
 
 总而言之，`module_script_loader_registry.cc` 文件中的 `ModuleScriptLoaderRegistry` 类扮演着模块脚本加载管理者的角色，确保 Blink 引擎能够有效地追踪和控制 JavaScript 模块的加载过程。它的功能与 JavaScript 模块的加载机制紧密相关，并通过 HTML 的 `<script type="module">` 标签触发。理解其工作原理对于调试与模块加载相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/modulescript/module_script_loader_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ void ModuleScriptLoaderRegistry::ReleaseFinishedLoader(
 }
 
 }  // namespace blink
-
-"""
-
 ```

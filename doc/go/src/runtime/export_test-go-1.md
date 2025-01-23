@@ -247,7 +247,7 @@ Here's a plan to generate the summary:
 
 总而言之，这段代码导出了 Go 运行时环境中的一些内部机制，主要是为了方便进行单元测试和性能分析，特别是针对垃圾回收器 (GC)、内存分配器 (包括 arena 分配器和持久化分配器)、以及 goroutine 调度的相关功能。 它提供了细粒度的控制和观察点，使得测试人员可以更深入地验证运行时环境的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -256,8 +256,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ram)(th).record(duration)
 }
 
@@ -856,10 +858,4 @@ func (b BitCursor) Write(data *byte, cnt uintptr) {
 func (b BitCursor) Offset(cnt uintptr) BitCursor {
 	return BitCursor{b: b.b.offset(cnt)}
 }
-
-"""
-
-
-
-
 ```

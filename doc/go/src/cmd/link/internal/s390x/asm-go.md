@@ -176,15 +176,17 @@ My thought process to answer the request goes like this:
 
 这段 `asm.go` 代码是 Go 链接器内部复杂工作的一个组成部分，它专注于特定架构的汇编生成和重定位，为 Go 程序的正确构建和运行奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/s390x/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/asm.c
 //
@@ -634,9 +636,4 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms, s loade
 		ldr.Errorf(s, "addpltsym: unsupported binary format")
 	}
 }
-
-"""
-
-
-
 ```

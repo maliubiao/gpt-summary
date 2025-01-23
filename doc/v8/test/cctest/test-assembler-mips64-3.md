@@ -81,13 +81,15 @@ for (let i = 0; i < array1.length; i++) {
 
 总结来说，这个代码文件是 V8 引擎中用于测试其 MIPS64 汇编器后端正确性的重要组成部分。它确保了生成的机器码能够按照预期的方式工作，从而保证了 JavaScript 代码在 MIPS64 架构上的正确执行和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
- num_instr);
+### 源代码
+```
+num_instr);
   __ jr(ra);
   __ nop();
 
@@ -1921,7 +1923,4 @@ TEST(MSA_ftrunc_s) {
     return;
 
   CcTest::Initi
-"""
-
-
 ```

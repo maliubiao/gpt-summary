@@ -120,15 +120,17 @@ My thought process for analyzing the provided C++ code snippet went something li
 
 `absolute_utils.cc` 的第一部分主要负责计算绝对定位元素的 **插入修改的包含块 (IMCB)** 和初步的 **偏移量 (Insets)**。它涵盖了处理基本的定位属性 (`top`, `right`, `bottom`, `left`)，并开始考虑对齐属性 (`align-self`, `justify-self`) 和书写模式对布局的影响。 这一部分的核心是确定绝对定位元素在其包含块内的可用空间和起始位置，为后续计算元素的最终尺寸和精确定位打下基础。它也处理了 `anchor-center` 属性的初步计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/absolute_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -938,7 +940,4 @@ const LayoutResult* ComputeOofBlockDimensions(
         space, style, border_padding, style.LogicalHeight(), &Length::Stretch(),
         kIndefiniteSize, imcb.BlockSize());
     const MinMaxSizes min_max_block
-"""
-
-
 ```

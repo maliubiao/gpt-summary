@@ -647,7 +647,7 @@ TEST_P(HttpNetworkTransactionTest, PostIgnoresHttp09ResponseAfterReset) {
       MockRead("HTTP 0.9 rocks!"),
       MockRead(SYNCHRONOUS, OK),
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -655,8 +655,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第28部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 T_POOL, 1);
   ClientSocketPoolManager::set_max_sockets_per_pool(
       HttpNetworkSession::NORMAL_SOCKET_POOL, 1);
@@ -1519,8 +1521,4 @@ TEST_P(HttpNetworkTransactionTest, ProxyHeadersNotSentOverWsTunnel) {
       MockWrite("CONNECT www.example.org:80 HTTP/1.1\r\n"
                 "Host: www.example.org:80\r\n"
                 "Proxy-Connection: keep-alive\r\n"
-           
-"""
-
-
 ```

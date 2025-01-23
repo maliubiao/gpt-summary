@@ -118,7 +118,7 @@ By following these steps, I can systematically analyze the code and provide a co
 
 `frida/subprojects/frida-qml/releng/meson/mesonbuild/coredata.py` 文件是 Frida 项目构建系统（使用 Meson）的核心组成部分，它**定义并管理了 Frida 构建过程中所有可以配置的内置选项**。这些选项涵盖了编译、链接、测试、安装等各个方面，允许开发者根据自己的需求定制 Frida 的构建过程。 这些选项的设计和默认值直接影响到 Frida 生成的二进制文件的特性，例如是否包含调试符号、依赖库的链接方式、安装路径等，这些特性与逆向分析、底层系统交互以及用户使用息息相关。 通过理解和配置这些选项，开发者可以更好地控制 Frida 的构建过程，解决构建问题，并生成满足特定需求的 Frida 版本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ption(UserBooleanOption, 'Whether to try static linking before shared linking', False)),
     (OptionKey('stdsplit'),        BuiltinOption(UserBooleanOption, 'Split stdout and stderr in test logs', True)),
     (OptionKey('strip'),           BuiltinOption(UserBooleanOption, 'Strip targets on install', False)),
@@ -196,8 +198,4 @@ FORBIDDEN_TARGET_NAMES = frozenset({
     'dist',
     'distcheck',
 })
-
-"""
-
-
 ```

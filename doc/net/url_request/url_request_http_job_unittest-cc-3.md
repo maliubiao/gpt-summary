@@ -95,7 +95,7 @@ This iterative process of code inspection, deconstruction, connecting to the req
 
 结合之前的几部分，整个测试文件旨在全面验证 `URLRequestHttpJob` 在处理 HTTP 请求时与 Cookie 相关的各种复杂场景，包括不同的 Cookie 属性、源类型以及用户偏好的影响，确保 Chromium 的网络栈能够正确可靠地处理 Cookie。 这部分专注于用户隐私控制，验证了浏览器尊重用户阻止 Cookie 的意愿。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_http_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -103,9 +103,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    CookieSourceType::kHTTP),
+### 源代码
+```cpp
+CookieSourceType::kHTTP),
                 MatchesCookieAccessResult(
                     HasExactlyExclusionReasonsForTesting(
                         std::vector<CookieInclusionStatus::ExclusionReason>{
@@ -123,8 +125,4 @@ Prompt:
 }
 
 }  // namespace net
-
-"""
-
-
 ```

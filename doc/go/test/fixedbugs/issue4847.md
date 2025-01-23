@@ -130,15 +130,17 @@ initialization cycle:
 
 这段 `go/test/fixedbugs/issue4847.go` 代码片段是一个精心设计的测试用例，用于验证 Go 语言编译器是否能够正确检测出全局变量初始化时的循环依赖。它通过定义相互依赖的变量和函数，人为地制造了一个初始化循环，并期望编译器能够识别并报告错误。  这对于保证 Go 程序的健壮性和避免运行时潜在的初始化问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4847.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -163,9 +165,4 @@ var foo = matcher(matchList)
 var matchAny = matcher(matchList) // ERROR "initialization cycle|depends upon itself"
 
 func matchAnyFn(s *S) (err E) { return matchAny(s) }
-
-"""
-
-
-
 ```

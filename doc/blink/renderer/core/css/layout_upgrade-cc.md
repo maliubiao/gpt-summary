@@ -148,15 +148,17 @@ By following these steps and continually refining the understanding, a comprehen
 
 总之，`blink/renderer/core/css/layout_upgrade.cc` 是 Blink 渲染引擎中一个关键的性能优化模块，它通过精细的判断机制来决定何时进行必要的布局重新计算，避免不必要的性能损耗，并确保页面在各种情况下都能正确渲染。 理解其工作原理对于进行 Web 性能优化和调试渲染问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/layout_upgrade.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ bool ElementLayoutUpgrade::ShouldUpgrade() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

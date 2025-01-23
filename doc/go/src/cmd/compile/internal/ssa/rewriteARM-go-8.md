@@ -239,7 +239,7 @@ Store z v5
 
 作为 `rewriteARM.go` 的一部分，这段代码（第 9 部分）专门负责 **优化 ARM 架构下 SSA 中间表示中的 `TEQ`、`TST` 和 `XOR` 操作**。它通过模式匹配识别出可以简化的表达式，并将它们转换为更高效的等价形式，例如利用常量进行计算或使用特定的 ARM 移位指令。这些优化有助于生成更精简、更快速的 ARM 机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -248,10 +248,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第9部分，共16部分，请归纳一下它的功能
+```
 
-"""
-
-	v_1 := v.Args[1]
+### 源代码
+```go
+v_1 := v.Args[1]
 	v_0 := v.Args[0]
 	b := v.Block
 	// match: (TEQshiftLLreg (MOVWconst [c]) x y)
@@ -1718,9 +1719,4 @@ func rewriteValueARM_OpDiv32(v *Value) bool {
 		v0 := b.NewValue0(v.Pos, OpARMXOR, typ.UInt32)
 		v1 := b.NewValue0(v.Pos, OpSelect0, typ.UInt32)
 		v2 := b.NewValue0(v.Pos, OpARMCALLudiv, types.NewTuple(typ.UInt32,
-"""
-
-
-
-
 ```

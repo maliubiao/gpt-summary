@@ -118,7 +118,7 @@ Initially, I might have focused too much on what the code *does* in isolation. T
 
 因此，`trivial.cc` 虽然代码很简单，但它是 Frida 构建过程中的一个关键检查点，它的成功执行是 Frida 正常运行的基础。当出现构建问题时，检查这个测试用例的执行结果是一个重要的调试步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/5 compiler detection/trivial.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,15 +126,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(int argc, char **argv) {
   std::cout << "C++ seems to be working." << std::endl;
   return 0;
 }
-
-"""
-
 ```

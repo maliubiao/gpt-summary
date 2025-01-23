@@ -142,15 +142,17 @@ for (let i = 0; i < 1000; i++) {
 
 `v8/src/ast/ast-value-factory.h` 定义了 V8 引擎在解析 JavaScript 代码时用于高效管理字符串和值的关键组件。它通过延迟物化、字符串去重等机制来提升解析性能并减少内存消耗。虽然用户不会直接操作这个类，但理解它的功能有助于理解 V8 引擎的工作原理以及其如何优化 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast-value-factory.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/ast-value-factory.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -584,7 +586,4 @@ extern template EXPORT_TEMPLATE_DECLARE(
 }  // namespace v8
 
 #endif  // V8_AST_AST_VALUE_FACTORY_H_
-
-"""
-
 ```

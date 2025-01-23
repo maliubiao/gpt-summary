@@ -164,7 +164,7 @@ Imagine a scenario where a developer is trying to build a Frida gadget (a small 
 
 This detailed walkthrough shows how a seemingly simple dependency declaration in a `meson.build` file can lead to the execution of the code in `pkgconfig.py` and how issues at this stage can manifest as build errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/dependencies/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -750,7 +752,4 @@ class PkgConfigDependency(ExternalDependency):
         if default_value is not None:
             return default_value
         raise DependencyException(f'Could not get pkg-config variable and no default provided for {self!r}')
-
-"""
-
 ```

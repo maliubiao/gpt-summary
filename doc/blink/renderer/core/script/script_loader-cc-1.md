@@ -132,7 +132,7 @@ To achieve this, I need to:
 
 总而言之，这段代码是 Chromium Blink 引擎中处理 `<script>` 标签的核心部分，它根据 HTML 规范和各种优化策略，负责安全有效地加载和准备执行 JavaScript 代码，是连接 HTML 结构和 JavaScript 逻辑的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/script_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ype is "importmap", then queue an element task
     // on the DOM manipulation task source given el to fire an event named error
     // at el, and return.
@@ -859,8 +861,4 @@ SpeculationRuleSet* ScriptLoader::RemoveSpeculationRuleSet() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -183,14 +183,16 @@ This iterative process of examining the code, identifying key components, unders
 
 总之，`generic_font_family_settings.cc` 是 Blink 引擎中负责管理字体的重要组成部分，它连接了 CSS 中抽象的通用字体族概念和操作系统中实际安装的字体，确保网页能够根据语言和用户偏好选择合适的字体进行渲染。理解其工作原理有助于开发者更好地控制网页的字体显示效果，并避免常见的字体相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/generic_font_family_settings.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -445,7 +447,4 @@ void GenericFontFamilySettings::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

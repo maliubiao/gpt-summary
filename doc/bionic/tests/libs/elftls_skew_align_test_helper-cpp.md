@@ -220,7 +220,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你动态地观察 TLS 变量的地址，验证其是否满足预期的对齐要求，从而辅助理解动态链接器在 TLS 处理方面的行为。 请注意，你需要 root 权限或在具有调试权限的环境中运行 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/elftls_skew_align_test_helper.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,8 +231,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -307,7 +309,4 @@ int main() {
   CHECK(var4.field == 0);
   return 0;
 }
-
-"""
-
 ```

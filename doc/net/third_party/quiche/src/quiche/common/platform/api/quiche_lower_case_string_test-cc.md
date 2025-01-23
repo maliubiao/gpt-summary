@@ -124,15 +124,17 @@ console.log(upperCase.toLowerCase()); // 输出: world
 
 总而言之，`quiche_lower_case_string_test.cc` 这个文件是 Quiche 库中用于测试 `QuicheLowerCaseString` 类功能的重要组成部分，帮助开发者确保该类能够正确地将字符串转换为小写。通过阅读测试代码，我们可以了解该类的预期行为以及如何正确使用它。在调试网络相关问题时，了解这类工具类的功能对于理解代码行为和定位 bug 非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/api/quiche_lower_case_string_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ TEST(QuicheLowerCaseString, Basic) {
 
 }  // namespace
 }  // namespace quiche::test
-
-"""
-
 ```

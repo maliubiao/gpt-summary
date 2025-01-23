@@ -287,7 +287,7 @@ Interceptor.attach(Module.findExportByName(null, "sendto"), {
 
 这个 Frida 脚本会 hook `netd` 进程的 `sendto` 系统调用，并检查发送的目标地址是否为 Netlink 套接字。如果是，它会尝试解析 Netlink 消息头和属性，并打印相关信息，帮助你观察 `netd` 如何与内核的 NCSI 模块进行通信。你需要根据具体的 Android 版本和 `netd` 的实现来调整脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ncsi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -357,7 +359,4 @@ enum ncsi_nl_channel_attrs {
   NCSI_CHANNEL_ATTR_MAX = __NCSI_CHANNEL_ATTR_AFTER_LAST - 1
 };
 #endif
-
-"""
-
 ```

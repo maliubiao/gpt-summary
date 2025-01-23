@@ -90,15 +90,17 @@ Based on this analysis, I can formulate the summary and examples.
 
 总而言之，这段代码是 Chromium 开发者工具中 CSS 相关功能的核心组成部分，它负责桥接 Blink 引擎的内部 CSS 表示和 Inspector 前端的显示需求。它处理了各种 CSS 特性，并提供了必要的元数据和结构，使得开发者能够有效地检查和调试网页的样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_css_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dom_agent_->BoundNodeId(&ancestor);
     if (!node_id)
       continue;
@@ -959,8 +961,4 @@ void InspectorCSSAgent::ResetPseudoStates() {
 HeapVector<Member<CSSStyleDeclaration>> InspectorCSSAgent::MatchingStyles(
     Element* element) {
   PseudoId pseudo_id = kPseudoIdNone;
- 
-"""
-
-
 ```

@@ -106,16 +106,18 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 这段代码是 SVG 文本布局算法的关键部分，负责将计算好的每个字符的布局信息（位置、尺寸、变换等）写回到渲染引擎可以理解的 `FragmentItem` 数据结构中。它考虑了文本的排布方向、缩放、旋转、基线偏移以及是否沿着路径排列等因素，最终确定每个字符在屏幕上的确切位置，为后续的渲染过程提供必要的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_text_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          const auto iter = base::ranges::find_if(
+### 源代码
+```cpp
+const auto iter = base::ranges::find_if(
               reverse_result_range,
               [](const auto& info) { return !info.hidden && !info.middle; });
           if (iter != reverse_result_range.end()) {
@@ -243,8 +245,4 @@ bool SvgTextLayoutAlgorithm::IsFirstCharacterInTextPath(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -164,15 +164,17 @@ export default "This is the default export from module C";
 
 `v8/src/objects/module-inl.h`  是 V8 引擎模块系统底层实现的关键部分，它通过内联优化提供了高效的模块管理机制，支持 JavaScript 的模块化编程。理解这些底层的实现细节有助于更深入地理解 JavaScript 模块的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/module-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/module-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ void SourceTextModule::DecrementPendingAsyncDependencies() {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_MODULE_INL_H_
-
-"""
-
 ```

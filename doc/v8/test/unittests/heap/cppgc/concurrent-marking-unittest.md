@@ -134,11 +134,13 @@ const obj = new MyObject();
 
 `concurrent-marking-unittest.cc` 文件是 V8 引擎稳定性和性能的重要保障。它通过细致的单元测试来验证并发标记机制在各种复杂场景下的正确性。这直接影响到 JavaScript 代码的执行效率和用户体验，因为它确保了垃圾回收过程不会引入错误，并尽可能减少主线程的停顿时间。理解这个文件有助于更深入地了解 V8 引擎的内部工作原理和 JavaScript 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/concurrent-marking-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ TEST_F(ConcurrentMarkingTest,
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

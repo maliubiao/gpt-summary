@@ -253,7 +253,7 @@ Here's a typical call path for how an Android application might reach the `erfl`
 
 By understanding the call chain and the implementation details of `erfl` and `erfcl`, developers can effectively debug issues related to these functions in their Android applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/s_erfl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -590,7 +592,4 @@ erfcl(long double x)
 	    if(x>0) return tiny*tiny; else return two-tiny;
 	}
 }
-
-"""
-
 ```

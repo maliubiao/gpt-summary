@@ -68,11 +68,13 @@ const myObject = {
 
 `protocol_core.cc` 是 CDP 通信的核心基础设施之一，它定义了用于高效地序列化和反序列化数据的机制，使得 C++ 的浏览器后端和 JavaScript 的开发者工具前端能够有效地交换信息。`DeferredMessage` 提供了一种异步处理消息的方式，允许在需要时再进行反序列化，提高了效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/protocol_core.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ void ProtocolTypeTraits<std::unique_ptr<DeferredMessage>>::Serialize(
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

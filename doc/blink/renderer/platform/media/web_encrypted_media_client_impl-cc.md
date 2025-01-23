@@ -182,14 +182,16 @@ By following this thought process, I can construct a comprehensive and accurate 
 
 总而言之，`web_encrypted_media_client_impl.cc` 是 Blink 引擎中处理 EME 功能的关键组件，它连接了 JavaScript 的 API 调用和底层的媒体解密能力，并负责关键的决策和对象创建。理解其功能有助于开发者更好地理解和调试 Web 平台的加密媒体播放。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_encrypted_media_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -548,7 +550,4 @@ WebEncryptedMediaClientImpl::Reporter* WebEncryptedMediaClientImpl::GetReporter(
   return reporter.get();
 }
 }  // namespace blink
-
-"""
-
 ```

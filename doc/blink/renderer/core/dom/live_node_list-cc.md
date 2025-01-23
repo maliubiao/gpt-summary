@@ -178,15 +178,17 @@ By following this thought process, starting broad and then diving into specifics
 
 总而言之，`live_node_list.cc` 文件是 Blink 引擎中实现动态更新的节点列表的关键部分，它连接了 JavaScript 的 DOM 操作和底层的渲染引擎，确保了 Web 开发者可以通过 `NodeList` 接口实时反映 HTML 文档的结构变化。理解其工作原理对于避免常见的编程错误和进行有效的调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/live_node_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -293,7 +295,4 @@ void LiveNodeList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

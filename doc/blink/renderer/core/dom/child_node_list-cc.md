@@ -205,15 +205,17 @@ By following these steps, you can systematically analyze a source code file and 
 
 通过以上分析，你可以逐步理解 `child_node_list.cc` 的功能，以及它在浏览器引擎中的作用，并利用这些知识进行更深入的调试和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/child_node_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -302,7 +304,4 @@ void ChildNodeList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

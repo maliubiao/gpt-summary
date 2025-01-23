@@ -155,7 +155,7 @@ fetch(request2);
 
 这部分代码主要测试了 `HttpStreamFactory` 中关于 `SocketTag` 的核心逻辑。它验证了 `HttpStreamFactory` 能够正确地根据 `SocketTag` 的不同来创建或复用 HTTP/2 和 QUIC 会话及底层的 socket 连接。此外，它还测试了修改 HTTP/2 会话 `SocketTag` 的行为和限制。同时，也覆盖了 IP 地址别名场景下会话的复用逻辑。总而言之，这部分测试确保了 `HttpStreamFactory` 在处理带有 `SocketTag` 的网络请求时，能够按照预期的方式管理连接资源，这对实现诸如请求隔离、流量区分等功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e stream with one tag results in one session, group and
   // socket.
   StreamRequester requester1(session.get());
@@ -842,7 +844,4 @@ TEST_P(HttpStreamFactoryTest, MultiIPAliases) {
   StreamRequester requester4(session.get());
   requester4.RequestStreamAndWait(session->http_stream_factory(),
                                   request_info2_alias, DEFAULT_PR
-"""
-
-
 ```

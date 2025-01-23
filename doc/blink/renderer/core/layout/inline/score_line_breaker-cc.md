@@ -119,14 +119,16 @@ By following these steps, systematically examining the code, and connecting it t
 
 总而言之，`blink/renderer/core/layout/inline/score_line_breaker.cc` 是 Blink 引擎中一个重要的排版优化组件，它通过评分机制来改善内联文本的换行效果，尤其关注提高多行文本的可读性和美观性。它与 CSS 样式紧密相关，并作为布局过程的一部分，间接地受到 HTML 结构和 JavaScript 操作的影响。理解其功能和触发条件有助于开发者更好地理解和控制网页的文本排版。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/score_line_breaker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -519,7 +521,4 @@ void ScoreLineBreaker::ComputeBreakPoints(const LineBreakCandidates& candidates,
 }
 
 }  // namespace blink
-
-"""
-
 ```

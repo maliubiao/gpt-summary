@@ -188,7 +188,7 @@ As the final part of this exploration, we can summarize the functionality of `v8
 
 The `CodeStubAssembler` class is a crucial **low-level code generation tool within the V8 JavaScript engine**. It provides a C++ interface to generate optimized assembly instructions for executing JavaScript code. It handles core operations like function calls, object property access, memory allocation, control flow, and prototype chain manipulation. While JavaScript developers don't directly write `CodeStubAssembler` code, it's a fundamental building block that enables the high performance of the V8 engine and directly underpins the execution of all JavaScript code. The methods and data structures within this class reflect the intricate details of V8's internal object representation and execution model. The presence of checks for prototype modifications and access to internal constants highlights its role in generating efficient and correct code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ckAndBranch(TNode<HeapObject> prototype, Label* if_unmodified,
                       Label* if_modified);
 
@@ -229,8 +231,4 @@ UNIQUE_INSTANCE_TYPE_MAP_LIST_GENERATOR(CLASS_MAP_CONSTANT_ADAPTER, _)
 }  // namespace v8
 
 #endif  // V8_CODEGEN_CODE_STUB_ASSEMBLER_H_
-
-"""
-
-
 ```

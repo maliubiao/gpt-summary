@@ -132,15 +132,17 @@ By following these steps and iteratively refining the understanding, you can arr
 
 总而言之，`qpack_decoder_fuzzer.cc` 是一个至关重要的工具，用于确保 Chromium 的 QPACK 解码器在各种情况下都能正确可靠地工作，从而保障网络通信的稳定性和安全性。它通过模拟各种可能的输入和操作序列，帮助开发者发现和修复潜在的 bug，这些 bug 可能会影响到最终用户的网络体验，甚至是安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/fuzzer/qpack_decoder_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -172,7 +172,7 @@ int libA_func(void) {
 
 这个简单的 `appA.c` 文件通常是作为更复杂系统中的一个组成部分出现的，用于演示库的调用和基本的程序执行流程。在逆向工程的上下文中，它提供了一个简单但有用的目标，可以用来学习和实践动态分析技术。 而目录结构 `frida/subprojects/frida-python/releng/meson/test cases/unit/65 static archive stripping/app/` 表明，这个例子更可能是 Frida 团队用于测试 Frida 在处理静态链接库和符号剥离情况下的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/65 static archive stripping/app/appA.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,13 +180,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libA.h>
 
 int main(void) { printf("The answer is: %d\n", libA_func()); }
-
-"""
-
 ```

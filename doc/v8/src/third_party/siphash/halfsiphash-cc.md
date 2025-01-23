@@ -154,15 +154,17 @@ myMap.get('a'); // 获取键 'a' 对应的值，底层也可能涉及哈希
 
 总而言之，`v8/src/third_party/siphash/halfsiphash.cc` 提供了一个高效且相对安全的哈希算法实现，主要用于 V8 内部需要快速计算数据指纹的场景。理解其功能和潜在的编程错误对于正确使用和理解 V8 的底层机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/siphash/halfsiphash.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/siphash/halfsiphash.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * SipHash reference C implementation
  *
@@ -245,7 +247,4 @@ uint32_t halfsiphash(const uint32_t value, const uint64_t seed) {
   b = v1 ^ v3;
   return b;
 }
-
-"""
-
 ```

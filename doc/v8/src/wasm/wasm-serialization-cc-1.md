@@ -155,7 +155,7 @@ Here's a breakdown of the thinking process to answer the user's request:
 
 该文件的第二部分专注于 **反序列化已经序列化过的 WebAssembly 模块**。它定义了 `NativeModuleDeserializer` 类及其相关方法，负责从二进制数据中读取模块的各种组件（头信息、函数代码、元数据、重定位信息等），并将这些信息恢复成 V8 引擎可以理解和执行的内部表示。`DeserializeNativeModule` 函数是反序列化的入口点，它负责协调整个反序列化过程，并最终创建可以在 JavaScript 中使用的 `WebAssembly.Module` 对象。这部分代码是 V8 引擎支持快速加载编译后的 WebAssembly 模块的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-serialization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-serialization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _limit) {
       reloc_queue.Add(std::move(batch));
       DCHECK(batch.empty());
@@ -482,8 +484,4 @@ MaybeHandle<WasmModuleObject> DeserializeNativeModule(
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

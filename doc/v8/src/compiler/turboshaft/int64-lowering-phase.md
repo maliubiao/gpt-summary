@@ -67,11 +67,13 @@ console.log(c); // 输出 4294967296 (2^32)
 
 `int64-lowering-phase.cc` 是 V8 引擎在为 32 位架构编译 JavaScript 代码时进行优化的一个关键部分。它通过将 64 位整数操作转换为 32 位操作序列，使得 JavaScript 代码能够在 32 位处理器上高效且正确地执行，即使涉及到超出 32 位范围的整数计算。这对于保证 V8 引擎在各种硬件平台上的兼容性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/int64-lowering-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -96,7 +98,4 @@ void Int64LoweringPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

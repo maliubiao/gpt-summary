@@ -116,7 +116,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，这个简单的 `libfoo.c` 文件虽然功能简单，但它很好地展示了动态instrumentation 工具在逆向工程中处理间接调用和控制流分析的能力，并涉及到一些底层的系统知识和常见的编程错误。它的存在于 Frida 的测试用例中，也暗示了用户到达这里的场景通常与 Frida 工具的开发、调试、学习或使用有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/230 external project/libfoo/libfoo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "libfoo.h"
 
 int func(void);
@@ -134,7 +136,4 @@ int call_foo()
 {
   return func() == 1 ? 42 : 0;
 }
-
-"""
-
 ```

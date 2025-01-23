@@ -118,14 +118,16 @@ This step-by-step process, starting with broad understanding and progressively d
 
 `progress_shadow_element.cc` 文件定义了 `ProgressShadowElement` 类，它是 `<progress>` 元素 Shadow DOM 的一个内部 `<div>` 元素。它的主要职责是构建 `<progress>` 元素的默认视觉表现，并根据宿主元素的样式进行调整。理解 Shadow DOM 的概念对于理解这类源代码文件至关重要，因为它揭示了浏览器如何封装和渲染复杂的 HTML 元素。开发者与 `<progress>` 元素的交互主要通过 HTML 属性、CSS 样式和 JavaScript API 进行，而无需直接操作像 `ProgressShadowElement` 这样的内部实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/shadow/progress_shadow_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -182,7 +184,4 @@ void ProgressShadowElement::AdjustStyle(ComputedStyleBuilder& builder) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

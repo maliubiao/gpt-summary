@@ -67,11 +67,13 @@ console.log("Hello from JavaScript running on V8!");
 
 `v8dll-main.cc` 自身的功能很简单，只是定义了一个不做任何事情的 DLL 入口点。但它的存在是必要的，因为它允许 V8 JavaScript 引擎在 Windows 上以 DLL 的形式运行，从而让 JavaScript 代码能够在基于 V8 的环境（如 Node.js 或浏览器）中执行。它就像一栋大楼的入口大门，虽然大门本身可能很简单，但没有它，人们就无法进入大楼并使用里面的设施（执行 JavaScript 代码）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/v8dll-main.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -92,7 +94,4 @@ BOOL WINAPI DllMain(HANDLE hinstDLL, DWORD dwReason, LPVOID lpvReserved) {
 }
 }
 #endif  // V8_OS_WIN
-
-"""
-
 ```

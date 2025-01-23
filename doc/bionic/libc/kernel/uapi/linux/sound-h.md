@@ -289,7 +289,7 @@ if __name__ == "__main__":
 
 这个 Hook 示例可以帮助你追踪 Android Framework 或 NDK 如何在底层与音频设备进行交互，并验证是否使用了 `linux/sound.h` 中定义的常量所对应的设备节点。虽然 Frida 不会直接显示常量的值，但通过观察打开的设备路径，可以推断出可能使用的常量类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/sound.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -327,7 +329,4 @@ Prompt:
 #define SND_DEV_AMIDI 13
 #define SND_DEV_ADMMIDI 14
 #endif
-
-"""
-
 ```

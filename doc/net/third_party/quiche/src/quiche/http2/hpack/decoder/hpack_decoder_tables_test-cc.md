@@ -120,15 +120,17 @@ This iterative process of high-level understanding, detailed code analysis, iden
 
 `hpack_decoder_tables_test.cc` 是一个关键的测试文件，用于确保 Chromium 网络栈中 HPACK 解码器关于静态表和动态表的实现符合 HTTP/2 规范。虽然它不直接包含 JavaScript 代码，但其测试的组件对于浏览器高效地处理 HTTP/2 请求至关重要，从而间接地影响了 JavaScript 应用的性能和用户体验。当网络请求出现头部解码相关的问题时，这个测试文件以及其相关的 HPACK 解码器代码将是重要的调试入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_decoder_tables_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -386,7 +388,4 @@ TEST_F(HpackDecoderTablesTest, RandomDynamicTable) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

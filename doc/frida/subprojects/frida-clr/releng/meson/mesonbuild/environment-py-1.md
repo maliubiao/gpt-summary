@@ -139,7 +139,7 @@ Here's a plan:
 
 总而言之，`environment.py` 在 Frida-CLR 的构建过程中扮演着至关重要的角色，它负责收集和管理构建环境的各种配置信息，确保构建过程能够顺利进行，尤其是在复杂的交叉编译场景下。理解其功能有助于排查构建问题，并进行更灵活的定制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,9 +148,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                       env_opts[key].extend(p_list)
+### 源代码
+```python
+env_opts[key].extend(p_list)
                     else:
                         key = OptionKey.from_string(keyname).evolve(machine=for_machine)
                         if evar in compilers.compilers.CFLAGS_MAPPING.values():
@@ -388,8 +390,4 @@ Prompt:
 
     def has_exe_wrapper(self) -> bool:
         return self.exe_wrapper and self.exe_wrapper.found()
-
-"""
-
-
 ```

@@ -184,7 +184,7 @@ While the test code itself is designed to *find* errors in V8's serialization, h
 
 This first part of `v8/test/cctest/test-serialize.cc` primarily sets up the testing infrastructure and includes basic tests for serializing and deserializing entire V8 isolates. It demonstrates the fundamental ability to capture the state of the engine and restore it later. It also introduces helper classes and functions used throughout the test suite for managing isolates and snapshot blobs. The tests aim to ensure the core serialization mechanism is working correctly for a clean, newly initialized isolate.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-serialize.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-serialize.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2007-2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1052,7 +1054,4 @@ UNINITIALIZED_TEST(CustomSnapshotDataBlobStringNotInternalized) {
 
   // Test-appropriate equivalent of v8::Isolate::New.
   v8:
-"""
-
-
 ```

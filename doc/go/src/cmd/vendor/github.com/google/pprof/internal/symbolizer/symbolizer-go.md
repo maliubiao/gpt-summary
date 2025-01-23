@@ -180,7 +180,7 @@ func main() {
 
 总而言之，`symbolizer.go` 的核心作用是将冰冷的内存地址转换为人类可读的符号信息，从而极大地提升了性能剖析数据的价值和可分析性。它通过灵活的模式选择和本地/远程结合的方式，尽可能地为用户提供准确的符号信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/symbolizer/symbolizer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -536,9 +538,4 @@ func removeMatching(name string, start, end byte) string {
 	}
 	return name
 }
-
-"""
-
-
-
 ```

@@ -207,7 +207,7 @@ fetch('https://example.com/data')
 
 这部分代码主要负责 **SpdySession 的初始化、配置、和基本操作管理**。它处理了会话的创建和初始化，包括与底层 socket 的关联，ALPS 设置的解析，以及初始的内部状态设置。此外，它还涵盖了 **帧的创建和写入队列的管理**，包括 HEADERS、DATA、RST_STREAM 和 PRIORITY 帧，以及与 **HTTP/2 优先级** 相关的逻辑。 关键功能还包括 **TLS 握手的确认** 和对 **流的基本生命周期管理** (创建、关闭、重置)。 这部分为后续的帧处理、数据传输和会话状态管理奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 treamSocketHandle> stream_socket_handle,
     SpdySessionPool* pool) {
   DCHECK(!stream_socket_handle_);
@@ -1159,7 +1161,4 @@ void SpdySession::EnqueuePriorityFrame(spdy::SpdyStreamId stream_id,
                                             exclusive));
 
   // PRIORITY frames describe sequenced updates to the tree, so the
-"""
-
-
 ```

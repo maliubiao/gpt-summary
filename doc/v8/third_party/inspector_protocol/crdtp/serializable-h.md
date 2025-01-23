@@ -167,15 +167,17 @@ MyData data(10, "TestData");
 
 总而言之，`v8/third_party/inspector_protocol/crdtp/serializable.h` 定义了一个用于序列化的抽象基类，为 V8 内部对象提供了一种转换为字节序列的标准方式，这对于 Chrome DevTools Protocol 的通信至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/serializable.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/serializable.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ class Serializable {
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_SERIALIZABLE_H_
-
-"""
-
 ```

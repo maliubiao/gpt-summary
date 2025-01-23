@@ -142,7 +142,7 @@ rpc.exports = {
 
 总而言之，这个简单的 `prog.c` 文件虽然功能简单，但在 Frida 的单元测试框架中扮演着重要的角色，用于验证 Frida 的 hook 功能，特别是针对像 `strcmp` 这样的标准库函数。用户到达这里通常是为了理解 Frida 的行为，调试测试用例，或者参与 Frida 的开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/35 dist script/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<string.h>
 
 #define REPLACEME "incorrect"
@@ -159,7 +161,4 @@ Prompt:
 int main(int argc, char **argv) {
     return strcmp(REPLACEME, "correct");
 }
-
-"""
-
 ```

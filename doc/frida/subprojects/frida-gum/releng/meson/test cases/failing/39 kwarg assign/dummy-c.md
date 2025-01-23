@@ -137,7 +137,7 @@ Finally, the process involves organizing these thoughts into a coherent and well
 
 尽管 `dummy.c` 中的函数非常简单，但在 Frida 的测试和开发环境中，它扮演着一个基础但重要的角色，用于验证 Frida 的核心功能，并帮助开发者发现和修复潜在的错误，尤其是在处理函数 hook 和参数/返回值时。它也反映了在逆向工程和动态分析中，即使是最简单的代码片段也可能提供有价值的信息和测试点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/39 kwarg assign/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,12 +145,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 const char* dummy() {
     return "I do nothing.";
 }
-
-"""
-
 ```

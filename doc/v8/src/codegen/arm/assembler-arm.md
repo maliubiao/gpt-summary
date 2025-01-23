@@ -129,12 +129,14 @@ MOV  pc, lr       // 返回
 
 请继续提供后续的部分，以便进行更全面的功能归纳。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1994,8 +1996,4 @@ void Assembler::usat(Register dst, int satpos, const Operand& src,
   }
 
   emit(cond | 0x6 * B24 | 0xE * B20 | satpos * B16 | dst.code() * B12 |
-      
-"""
-
-
 ```

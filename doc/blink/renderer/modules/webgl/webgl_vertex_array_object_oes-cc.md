@@ -165,15 +165,17 @@ Here's a breakdown of the thinking process to arrive at the detailed explanation
 
 总而言之，`webgl_vertex_array_object_oes.cc` 文件是 WebGL 中 VAO 功能的幕后功臣，它负责将 JavaScript 的 API 调用转化为底层的 OpenGL ES 操作，从而实现高效的顶点数据管理和渲染。理解这个文件的功能有助于深入理解 WebGL 的工作原理，并能更好地排查和解决相关的开发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_vertex_array_object_oes.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -211,7 +213,4 @@ WebGLVertexArrayObjectOES::WebGLVertexArrayObjectOES(
     : WebGLVertexArrayObjectBase(ctx, type) {}
 
 }  // namespace blink
-
-"""
-
 ```

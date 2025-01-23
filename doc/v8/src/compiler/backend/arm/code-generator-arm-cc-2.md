@@ -153,7 +153,7 @@ case kArmPush: {
 
 这部分 `v8/src/compiler/backend/arm/code-generator-arm.cc` 代码是 V8 编译器后端中非常重要的一部分，它负责将中间表示的指令转换为实际的 ARM 机器码。  它涵盖了浮点数运算、栈操作以及大量的 SIMD 指令，这些指令直接支撑了 JavaScript 中相应的语言特性和性能优化。 这部分代码的正确性和效率对于 V8 引擎的整体性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/code-generator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/code-generator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 putFloatRegister();
       SwVfpRegister left = i.InputFloatRegister(0);
       SwVfpRegister right = i.InputFloatRegister(1);
@@ -1048,7 +1050,4 @@ putFloatRegister();
     }
     case kArmI16x8ReplaceLane: {
       __ ReplaceLane(i.OutputSimd128
-"""
-
-
 ```

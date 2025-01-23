@@ -170,7 +170,7 @@ This specific section of the `ssl_client_socket_unittest.cc` file primarily focu
 
 总而言之，`net/socket/ssl_client_socket_unittest.cc` 的第 7 部分主要集中测试 `SSLClientSocket` 的 **0-RTT 连接功能**和 **Encrypted Client Hello (ECH)** 功能。它通过模拟各种场景，验证了客户端在这些特定功能下的行为是否符合预期，并覆盖了可能出现的错误情况。这部分测试对于确保 Chromium 网络栈在性能和隐私方面能够提供可靠的 HTTPS 连接至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
   raw_transport->WaitForWrite();
 
@@ -1005,7 +1007,4 @@ TEST_F(SSLClientSocketTest, ECHFallbackBadCert) {
 
   ASSERT_TRUE(
       StartEmbeddedTestServer(Embe
-"""
-
-
 ```

@@ -308,7 +308,7 @@ sys.stdin.read()
 
 总结来说，`generate_printer.py` 是一个 Bionic 构建过程中的重要工具，它自动化生成了用于运行时检测 CPU 特性的 C++ 代码，这些代码被 Bionic 的其他组件（包括 libc 函数）使用，以实现运行时优化和兼容性。 理解这个脚本的功能有助于理解 Android 系统如何根据不同的硬件平台进行自适应调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/cpu_target_features/generate_printer.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -319,8 +319,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 """Generate the compilation target feature printing source code.
@@ -428,7 +430,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

@@ -181,7 +181,7 @@ My thinking process to answer the request about `style_builder_converter.cc` goe
 
 `style_builder_converter.cc` 是 Blink 渲染引擎中一个至关重要的组件，负责将 CSS 属性值从文本表示转换为内部数据结构，这是样式系统工作的核心部分。它涵盖了各种各样的 CSS 属性，从基本的颜色和长度单位到更复杂的变换、动画和自定义属性。理解这个文件的功能有助于理解 Blink 如何处理和应用 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_builder_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 wise we need to store an unresolved value on StyleColor.
     if (style_color1.IsAbsoluteColor() && style_color2.IsAbsoluteColor()) {
       return StyleColor(unresolved_color_mix->Resolve(Color()));
@@ -1046,7 +1048,4 @@ StyleIntrinsicLength StyleBuilderConverter::ConvertIntrinsicDimension(
   }
 
   // Handle "<length> | auto && <length> | auto && none, whic
-"""
-
-
 ```

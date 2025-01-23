@@ -213,15 +213,17 @@ Node 2 Provenance - Unit: 0x..., Offset: 20, Position: 3:10
 
 总而言之，`v8/src/maglev/maglev-graph-labeller.h` 定义的 `MaglevGraphLabeller` 类是 Maglev 编译器中用于管理和追踪图元素的关键工具，它通过分配唯一标签和记录来源信息，为编译器的调试、分析和优化提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-labeller.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-labeller.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ class MaglevGraphLabeller {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_GRAPH_LABELLER_H_
-
-"""
-
 ```

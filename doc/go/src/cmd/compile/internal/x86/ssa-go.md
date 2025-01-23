@@ -222,15 +222,17 @@ While users don't directly interact with this `ssa.go` file, their coding practi
 
 The `go/src/cmd/compile/internal/x86/ssa.go` file is a core component of the Go compiler's backend for the x86 architecture. It translates the high-level, architecture-independent SSA representation of Go code into low-level, architecture-specific x86 assembly instructions. It handles various aspects of code generation, including arithmetic, logic, memory access, control flow, and special runtime operations. While users don't directly interact with this file, understanding its role helps in appreciating how Go code is transformed into executable machine code and how certain coding patterns can affect performance.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/x86/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1237,9 +1239,4 @@ func ssaGenBlock(s *ssagen.State, b, next *ssa.Block) {
 		b.Fatalf("branch not implemented: %s", b.LongString())
 	}
 }
-
-"""
-
-
-
 ```

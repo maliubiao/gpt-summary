@@ -146,7 +146,7 @@ Interceptor.attach(Module.findExportByName(null, "b_fun"), { // "b_fun" 不存�
 
 虽然 `fun.c` 中的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色。它用于验证 Frida 的核心功能，特别是与处理特殊字符和动态代码注入相关的能力。对于逆向工程师来说，理解这样的测试用例可以帮助他们更好地理解 Frida 的工作原理，以及如何利用 Frida 进行更复杂的分析和操作。 这个简单的函数也体现了在动态分析中，即使是非常小的代码片段，也可以作为观察和操作的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/179 escape and unicode/fun.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,12 +154,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int a_fun(void) {
     return 1;
 }
-
-"""
-
 ```

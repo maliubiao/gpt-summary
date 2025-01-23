@@ -180,7 +180,7 @@ By following these steps, I can systematically analyze the code, address all par
 
 总而言之，`meson-sample.c` 是一个用于测试 Frida 动态 instrumentation 能力的简单示例程序，它展示了如何定义和使用 GObject，并提供了一些可以被 Frida hook 的关键函数。理解其功能和背后的技术对于理解 Frida 的工作原理以及进行更复杂的逆向工程任务非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/22 gir link order/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 #include "get-prgname.h"
@@ -238,7 +240,4 @@ meson_sample_print_message (MesonSample *self)
   g_print ("Message: %s\n", get_prgname_get_name ());
   g_print ("Message: %d\n", fake_gthread_fake_function ());
 }
-
-"""
-
 ```

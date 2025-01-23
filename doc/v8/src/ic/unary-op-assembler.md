@@ -153,11 +153,13 @@ let u = -t; // u 的值是 -15n
 
 `v8/src/ic/unary-op-assembler.cc` 是 V8 引擎中负责高效执行 JavaScript 一元运算符的关键组成部分。它通过处理不同的数据类型、生成优化的机器码以及利用类型反馈机制来提升 JavaScript 代码的执行效率。  它直接关联着 JavaScript 中 `~`, `--`, `++`, `-` 这些运算符的行为和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/unary-op-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -480,7 +482,4 @@ TNode<Object> UnaryOpAssembler::Generate_NegateWithFeedback(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

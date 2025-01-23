@@ -174,14 +174,16 @@ By following these steps, you can effectively analyze and explain the functional
 
 总之，`VideoFrameSinkBundle` 是 Blink 渲染引擎中一个关键的底层组件，它负责有效地管理和传输渲染帧到 Viz 进程进行合成显示。虽然开发者通常不会直接与 `VideoFrameSinkBundle` 交互，但理解其功能有助于理解浏览器渲染管道的工作原理以及如何避免潜在的性能问题和渲染错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/video_frame_sink_bundle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -488,7 +490,4 @@ void VideoFrameSinkBundle::FlushMessages() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -154,7 +154,7 @@ Now, let's generate the response following this plan.
 
 总而言之，`blink/renderer/core/dom/document_test.cc` 的第一部分主要功能是**为 `blink::Document` 类提供基础的单元测试**，验证其核心的 DOM 管理、属性操作、生命周期管理以及与 HTML、CSS 交互等方面的功能是否正确。这些测试用例为确保 Blink 引擎中 `Document` 类的稳定性和可靠性提供了重要的保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2014, Google Inc. All rights reserved.
  *
@@ -965,7 +967,4 @@ TEST_F(DocumentTest, SynchronousMutationNotifierUpdateCharacterData) {
   delete_sample->deleteData(3, 4, ASSERT_NO_EXCEPTION);
   ASSERT_EQ(2u, observer.UpdatedCharacterDataRecords().size());
   EXPECT_EQ(delete_sample, observer.
-"""
-
-
 ```

@@ -78,12 +78,14 @@ console.log(match); // 输出: ['ABc']
 
 总结来说，`v8/src/regexp/regexp-compiler.cc` 是 V8 引擎中将 JavaScript 正则表达式转化为可执行代码的关键部分，它负责解析、优化和生成用于匹配的指令，并直接影响 JavaScript 正则表达式的性能和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1746,7 +1748,4 @@ void TextNode::GetQuickCheckDetails(QuickCheckDetails* details,
     TextElement elm = elements()->at(k);
     if (elm.text_type() == TextElement::ATOM) {
       base::Vector<const base::uc16>
-"""
-
-
 ```

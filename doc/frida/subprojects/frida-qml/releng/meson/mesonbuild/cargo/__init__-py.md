@@ -138,7 +138,7 @@ Here's a breakdown of the thinking process to analyze the provided Python code s
 
 总而言之，这个 `__init__.py` 文件本身很简单，但它是 Frida 处理 Rust 项目集成的入口点。它通过导出 `interpret` 函数，为 Frida 提供了理解和处理 Rust 代码的能力，这对于逆向分析使用 Rust 编写的程序至关重要。调试到这里通常意味着 Frida 的构建过程正在处理 Rust 相关的组件，并且可能遇到了问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/cargo/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,14 +146,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 __all__ = [
     'interpret'
 ]
 
 from .interpreter import interpret
-
-"""
-
 ```

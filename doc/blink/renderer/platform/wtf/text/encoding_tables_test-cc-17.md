@@ -99,15 +99,17 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 作为大型测试套件的一部分，这个 `encoding_tables_test.cc` 文件（的第 18 部分）很可能专注于测试 **特定范围的字符** 的编码和解码功能。 从提供的十六进制值来看，这些很可能是 **CJK (中文、日文、韩文)** 中的一部分汉字。 整个测试套件的目标是全面验证 Blink 引擎处理各种字符编码的能力，确保 Web 页面能够正确地显示各种语言的文本，并且 JavaScript 能够正确地处理文本数据。 这部分测试保证了 Blink 引擎能够正确处理一部分重要的东亚字符，为全球用户提供良好的浏览体验奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第18部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ,
      0x53A7, 0x53AA, 0x53AB, 0x53AC, 0x53AD, 0x53AF, 0x53B0, 0x53B1, 0x53B2,
      0x53B3, 0x53B4, 0x53B5, 0x53B7, 0x53B8, 0x53B9, 0x53BA, 0x53BC, 0x53BD,
@@ -535,7 +537,4 @@ Prompt:
      0x6ABF, 0x6AC0, 0x6AC1, 0x6AC2, 0x6AC3, 0x6AC4, 0x6AC5, 0x6AC6, 0x6AC7,
      0x6AC8, 0x6AC9, 0x6ACA, 0x6ACB, 0x6ACC, 0x6ACD, 0x6ACE, 0x6ACF, 0x6AD0,
      0x6AD1, 0x6AD2, 0x6AD3, 0x6AD4, 0x6A
-"""
-
-
 ```

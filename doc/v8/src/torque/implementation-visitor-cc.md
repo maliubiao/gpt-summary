@@ -172,7 +172,7 @@ TNode<IntPtrT> Add(TNode<IntPtrT> a, TNode<IntPtrT> b);
 
 `ImplementationVisitor` 是 Torque 编译器中至关重要的一个组件，它负责将高级的 Torque 语言转换为 v8 可以执行的底层 C++ 代码。它处理了 Torque 语言的各种语法结构，并确保生成的代码能够正确地实现预期的功能，同时也能检测出一些常见的编程错误。 它是连接 Torque 语言和 v8 底层实现的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1003,7 +1005,4 @@ const Type* ImplementationVisitor::Visit(TailCallStatement* stmt) {
 }
 
 Vis
-"""
-
-
 ```

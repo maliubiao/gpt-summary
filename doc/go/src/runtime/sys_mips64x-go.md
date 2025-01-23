@@ -214,7 +214,7 @@ func funcPC(f interface{}) uintptr {
 
 `gostartcall` 是 Go 运行时中一个用于初始化 goroutine 执行上下文的底层函数，它模拟了函数调用和 `Gosave` 操作。理解它的功能有助于深入理解 Go 语言的并发模型和 goroutine 的创建机制。然而，作为应用开发者，我们不应该直接操作这类底层运行时函数，而是应该依赖 Go 语言提供的更高级的并发原语（如 `go` 关键字、channel 等）。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sys_mips64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -244,9 +246,4 @@ func gostartcall(buf *gobuf, fn, ctxt unsafe.Pointer) {
 	buf.pc = uintptr(fn)
 	buf.ctxt = ctxt
 }
-
-"""
-
-
-
 ```

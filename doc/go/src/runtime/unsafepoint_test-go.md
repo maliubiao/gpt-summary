@@ -124,7 +124,7 @@ func setGlobalPointer() {
 
 这段代码的核心功能是测试 `runtime.UnsafePoint` 函数，并通过反汇编和分析写屏障的汇编指令，验证该函数能够正确地识别出写屏障中的指令为不安全点。这种测试方法虽然能够深入到指令级别进行验证，但也存在一定的脆弱性，依赖于编译器的具体实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/unsafepoint_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -256,9 +258,4 @@ func TestUnsafePoint(t *testing.T) {
 	// write barrier proper into adjacent instructions (in both directions).
 	// Hopefully we can clean up the latter at some point.
 }
-
-"""
-
-
-
 ```

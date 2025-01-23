@@ -161,14 +161,16 @@ By following this systematic approach, combining code analysis with an understan
 
 总而言之，`event_util.cc` 文件在 Chromium Blink 引擎中扮演着基础性的角色，它提供了一种高效且集中的方式来识别和分类各种类型的事件，这对于浏览器正确处理网页交互至关重要。它连接了底层的 C++ 事件处理机制和上层的 JavaScript 事件模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/event_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ bool IsSnapEventType(const AtomicString& event_type) {
 }  // namespace event_util
 
 }  // namespace blink
-
-"""
-
 ```

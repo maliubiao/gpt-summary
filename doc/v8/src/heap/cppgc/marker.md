@@ -125,11 +125,13 @@ obj1 = null; // 断开最后一个强引用
 
 总而言之，`marker.cc` 文件中的代码是 V8 引擎实现自动内存管理的关键基础设施，虽然 JavaScript 开发者不直接操作它，但其功能直接影响了 JavaScript 程序的内存行为和性能。理解 `marker.cc` 的功能有助于深入理解 JavaScript 垃圾回收的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -918,7 +920,4 @@ Marker::Marker(HeapBase& heap, cppgc::Platform* platform, MarkingConfig config)
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

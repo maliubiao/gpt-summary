@@ -156,7 +156,7 @@ This systematic approach allowed me to break down the complex request into manag
 
 这个简单的 `source.c` 文件在一个“会失败的” `bindgen` 测试用例中，很可能是为了测试 `bindgen` 工具在处理某些特定的 C 代码结构或边界情况时的行为。开发者会查看这个文件以及相关的 `bindgen` 配置和输出，来诊断和修复 `bindgen` 工具的 bug 或改进其功能。  这个文件的存在是为了确保 Frida 的 `bindgen` 功能能够正确处理各种 C 代码，即使是看似简单的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/111 nonsensical bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -174,7 +176,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

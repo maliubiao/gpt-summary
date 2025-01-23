@@ -82,15 +82,17 @@ Here's a plan:
 
 `graphics_context.cc` 负责提供 Blink 渲染引擎进行 2D 图形绘制的核心接口，它封装了底层的图形库，并提供了绘制基本形状、文本、图像以及管理绘图状态的功能。它是连接 Web 内容和底层渲染的关键组件。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/graphics_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2003, 2004, 2005, 2006, 2009 Apple Inc. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -966,7 +968,4 @@ void GraphicsContext::FillDRRect(const FloatRoundedRect& outer,
   const SkColor4f sk_color = color.toSkColor4f();
   if (!IsSimpleDRRect(outer, inner)) {
     if (sk_color == fill_fl
-"""
-
-
 ```

@@ -193,7 +193,7 @@ Hello, world!
 
 通过分析 `gen.c` 的源代码和其在 Frida 构建过程中的角色，可以帮助开发者理解测试用例的依赖关系，并定位构建或测试失败的原因。 例如，如果生成的头文件内容不正确，可能是 `gen.c` 的逻辑错误，也可能是输入文件的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/105 generatorcustom/gen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-License-Identifier: Apache-2.0 */
 /* Copyright © 2023 Intel Corporation */
 
@@ -246,7 +248,4 @@ int main(int argc, const char ** argv) {
 
     return 0;
 }
-
-"""
-
 ```

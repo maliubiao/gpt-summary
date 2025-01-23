@@ -62,15 +62,17 @@ My plan is to:
 
 该文件是 `ParkableString` 类的单元测试，其主要功能是全面验证 `ParkableString` 类的各种特性，包括字符串的停靠、唤醒、压缩、解压缩、锁定、多线程安全性、内存管理、磁盘存储以及错误处理。通过这些测试，可以确保 `ParkableString` 作为 Blink 引擎中重要的内存优化机制能够稳定可靠地工作。它间接地服务于 JavaScript、HTML 和 CSS，通过优化底层字符串的内存管理来提升 Web 应用的性能和资源利用率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/parkable_string_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -989,8 +991,4 @@ TEST_P(ParkableStringTest, SynchronousToDisk) {
 
   WaitForDelayedParking();
   EXPECT_EQ(ParkableStringImpl::Age::kOld, impl->age_for_testing());
-
-"""
-
-
 ```

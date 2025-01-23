@@ -181,7 +181,7 @@ func main() {
 
 在这个例子中，当指数 `n` 远大于 308 或远小于 -323 时，`math.Pow10` 会返回 `+Inf` 或 `0`，这可能是使用者没有预料到的。使用者需要了解 `float64` 的精度和表示范围限制。另一个潜在的错误是**将非整数作为参数传递给 `math.Pow10`**，因为该函数接受的是 `int` 类型的参数。如果传递浮点数，需要先进行类型转换，但可能会丢失精度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/pow10.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -238,9 +240,4 @@ func Pow10(n int) float64 {
 	// n < -323
 	return 0
 }
-
-"""
-
-
-
 ```

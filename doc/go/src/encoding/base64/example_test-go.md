@@ -212,7 +212,7 @@ go run your_file.go decode SGVsbG8=
 
 总而言之，这段示例代码清晰地展示了 Go 语言 `encoding/base64` 包提供的各种 Base64 编码和解码功能，以及在不同场景下的使用方法。 它通过 `Example` 函数和 `// Output:` 注释，提供了一种方便的方式来验证代码的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/base64/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -305,9 +307,4 @@ func ExampleNewEncoder() {
 	// Output:
 	// Zm9vAGJhcg==
 }
-
-"""
-
-
-
 ```

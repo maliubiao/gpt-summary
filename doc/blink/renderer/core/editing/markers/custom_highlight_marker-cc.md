@@ -192,15 +192,17 @@ Finally, organize the information into a clear and logical structure, addressing
 
 总而言之，`custom_highlight_marker.cc` 文件中的 `CustomHighlightMarker` 类是 Blink 引擎中连接 JavaScript CSS Custom Highlight API 和 CSS `::highlight()` 伪元素的关键桥梁，它负责在内部表示和管理自定义的高亮标记，并参与到页面的渲染过程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/custom_highlight_marker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ void CustomHighlightMarker::Trace(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

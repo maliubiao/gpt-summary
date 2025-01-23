@@ -94,7 +94,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `dns.vala` 文件实现了 DNS 数据包的解析功能，支持多种 DNS 记录类型。通过 LLDB 调试工具，用户可以深入调试这些解析方法，观察变量的值并排查错误。用户在使用时需要注意 DNS 数据包的格式和记录类型，以避免常见的错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/dns.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class DnsPacketReader {
@@ -279,7 +281,4 @@ namespace Frida.Fruity {
 		IN = 1,
 	}
 }
-
-"""
-
 ```

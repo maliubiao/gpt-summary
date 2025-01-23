@@ -169,7 +169,7 @@ Finally, I organize these thoughts into a coherent answer, addressing each part 
 
 总而言之，`prog.c` 文件虽然代码量很少，但它是 Frida 测试框架中的一个重要组成部分，用于验证 Frida 在 Native 代码层的动态插桩能力。理解这个文件的功能和它在 Frida 生态系统中的作用，有助于理解 Frida 的工作原理和动态逆向工程的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/native/3 pipeline/depends/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,14 +177,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void);
 
 int main(void) {
     return func() != 42;
 }
-
-"""
-
 ```

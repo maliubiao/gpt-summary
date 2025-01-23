@@ -195,7 +195,7 @@ fmt.Printf("回放连接写入了 %d 字节\n", m)
 
 总而言之，这段代码是 Go 语言 `crypto/tls` 包进行详细 TLS 握手测试的关键组成部分，它通过与参考实现的交互和录制-回放机制，确保 Go 语言的 TLS 实现的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -203,8 +203,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -834,9 +836,4 @@ var clientEd25519KeyPEM = testingKey(`
 -----BEGIN TESTING KEY-----
 MC4CAQAwBQYDK2VwBCIEINifzf07d9qx3d44e0FSbV4mC/xQxT644RRbpgNpin7I
 -----END TESTING KEY-----`)
-
-"""
-
-
-
 ```

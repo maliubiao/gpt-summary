@@ -119,15 +119,17 @@ This iterative process of scanning, analyzing key functions, inferring relations
 
 `vtt_element.cc` 文件在 Blink 渲染引擎中扮演着桥梁的角色，它将 WebVTT 字幕格式中的特定标签抽象为内部的 `VTTElement` 对象，并负责将这些对象转换为浏览器能够理解和渲染的标准 HTML 元素。这使得 WebVTT 能够为 HTML5 视频提供丰富的字幕和标题功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/vtt/vtt_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Apple Inc.  All rights reserved.
  *
@@ -274,7 +276,4 @@ void VTTElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

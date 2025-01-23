@@ -203,7 +203,7 @@ go test -v -run TestSHA512Golden
 
 作为测试代码的第三部分，这段代码的主要功能是**定义了用于测试 `crypto/sha512` 包中 SHA-512 算法实现的具体测试用例数据**。这些数据包括了不同长度和内容的输入消息，以及对应的预期 SHA-512 哈希值。其中，`extended512` 似乎针对更特定的测试场景，可能涉及到分块处理或内部状态的验证，而 `golden512` 则提供了一组标准的、已知的测试向量，用于确保基本的 SHA-512 实现的正确性。`output` 字段的存在暗示了测试可能还涉及对特定输出格式或中间状态的验证。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha512/sha512_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 x00\x00\x00%",
 	},
 	{
@@ -417,9 +419,4 @@ var golden512 = []sha512Test{
 	{
 		"7ad681f6f96f82f7abfa7ecc0334e8fa16d3dc1cdc45b60b7af43fe4075d2357c0c1d60e98350f1afb1f2fe7a4d7cd2ad55b88e458e06b73c40b437331f5dab4",
 		"The fugacity of a constituent in a mixture of gases at a given temperatur
-"""
-
-
-
-
 ```

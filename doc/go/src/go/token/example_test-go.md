@@ -179,7 +179,7 @@ func main() {
 
 总而言之，`go/src/go/token/example_test.go` 中的 `Example_retrievePositionInfo` 函数是一个很好的例子，展示了如何使用 Go 语言的 `go/token` 和 `go/parser` 包来获取和处理源代码的位置信息，并特别强调了 `//line` 指令的作用以及如何区分相对位置和绝对位置。理解这些概念对于进行代码分析、生成工具开发以及处理经过预处理或生成的代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/token/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -266,9 +268,4 @@ func ok(pos p) bool {
 	// fake.go:42:11[main.go:13:1]: func
 	// fake.go:7:9[main.go:17:14]: func
 }
-
-"""
-
-
-
 ```

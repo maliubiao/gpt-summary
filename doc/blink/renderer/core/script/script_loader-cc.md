@@ -168,7 +168,7 @@ Strategizing complete. I will now generate the response based on these steps and
 
 总而言之，`blink/renderer/core/script/script_loader.cc` 文件中的 `ScriptLoader` 类的主要功能是**负责 `<script>` 元素的加载、准备和初步处理，为后续的脚本执行做好准备。** 它充当 HTML 解析器和 JavaScript 引擎之间的桥梁，确保脚本按照规范和安全策略被正确加载和处理。 这部分代码的核心在于 `PrepareScript` 方法，它执行关键的检查和设置，为不同类型的脚本（经典、模块等）配置正确的加载和执行环境。 它还处理与资源加载、CORS、CSP、SRI 等相关的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/script_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -983,7 +985,4 @@ PendingScript* ScriptLoader::PrepareScript(
   // <spec step="31">If el has a src content attribute, then:</spec>
   if (element_->HasSourceAttribute()) {
     // <spec step="31.1">If el's t
-"""
-
-
 ```

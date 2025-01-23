@@ -143,15 +143,17 @@ fetch('https://www.example.com/data.json')
 
 `net/dns/dns_parse_domain_ascii_win_fuzzer.cc` 是一个用于测试 Chromium 网络栈中 `net::internal::ParseDomainASCII` 函数的模糊测试工具。它的目的是通过生成随机的宽字符串输入，来发现该函数在处理 Windows 平台下域名时的潜在漏洞和错误。这与 JavaScript 的关系在于，当 JavaScript 代码发起网络请求时，底层的 C++ 网络栈会处理域名解析，而 `ParseDomainASCII` 函数可能参与其中。模糊测试确保即使面对恶意的或格式错误的域名，这个解析过程也是安全可靠的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_parse_domain_ascii_win_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

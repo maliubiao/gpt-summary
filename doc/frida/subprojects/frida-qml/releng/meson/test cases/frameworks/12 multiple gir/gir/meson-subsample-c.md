@@ -188,7 +188,7 @@ By following these steps, I could generate a comprehensive analysis covering the
 
 总而言之，这个 `meson-subsample.c` 文件是 Frida 内部测试框架的一部分，用于确保 Frida 能够正确地与 GObject 系统交互。用户通常不会直接操作这个文件，而是通过运行 Frida 及其相关的测试工具来间接地使用它，以确保 Frida 的功能正常。当 Frida 在处理 GObject 相关的功能时出现问题，这个文件可以作为一个简单的起点来进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/12 multiple gir/gir/meson-subsample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 struct _MesonSubSample
@@ -322,7 +324,4 @@ meson_sub_sample_print_message (MesonSubSample *self)
 
   g_print ("Message: %s\n", self->msg);
 }
-
-"""
-
 ```

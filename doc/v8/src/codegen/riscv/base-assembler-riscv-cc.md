@@ -170,15 +170,17 @@ GenInstrALU_rr(funct7_for_add, funct3_for_add, Register::kA2, Register::kA0, Reg
 
 理解 `v8/src/codegen/riscv/base-assembler-riscv.cc` 的功能对于理解 V8 如何在 RISC-V 架构上执行 JavaScript 代码至关重要。它提供了一个直接操作 RISC-V 机器指令的接口，是代码生成器的基础组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/base-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/base-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -673,7 +675,4 @@ void AssemblerRiscvBase::GenInstrALUFP_rr(uint8_t funct7, uint8_t funct3,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

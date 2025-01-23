@@ -83,7 +83,7 @@ if __name__ == "__main__":
 4. **释放内存**：用户在使用完内存后，调用 `deallocate` 方法释放内存。
 
 通过这些步骤，用户可以有效地管理内存，并在调试过程中跟踪内存分配和释放的情况。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/barebone/allocator.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaBarebone", gir_version = "1.0")]
 namespace Frida.Barebone {
 	public interface Allocator : Object {
@@ -172,7 +174,4 @@ namespace Frida.Barebone {
 		}
 	}
 }
-
-"""
-
 ```

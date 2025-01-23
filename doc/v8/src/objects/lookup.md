@@ -117,12 +117,14 @@ obj.e = 6;         // JavaScript 引擎使用 LookupIterator 找到 'e' 的访�
 
 总而言之，`v8/src/objects/lookup.cc` 中的 `LookupIterator` 类是 V8 引擎实现 JavaScript 属性访问和操作的核心组件，它在幕后默默地工作，确保 JavaScript 代码能够正确地访问和修改对象的属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/lookup.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1719,7 +1721,4 @@ ConcurrentLookupIterator::TryGetOwnConstantElement(
     Tagged<JSPrimitiveWrapper> js_value = Cast<JSPrimitiveWrapper>(holder);
     Tagged<String> wrapped_string = Cast<String>(js_value->value());
     return ConcurrentLookupIterator::TryGetOwn
-"""
-
-
 ```

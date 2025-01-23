@@ -152,7 +152,7 @@ Java.perform(function() {
 
 总而言之，这个简单的 `tester.c` 文件在 Frida 的上下文中扮演着重要的角色，它作为一个轻量级的测试目标，帮助开发者验证 Frida 的动态 instrumentation 功能是否正常工作，并可以作为理解 Frida 工作原理的一个切入点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/failing test/5 tap tests/tester.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(int argc, char **argv) {
@@ -172,7 +174,4 @@ int main(int argc, char **argv) {
     puts(argv[1]);
     return 0;
 }
-
-"""
-
 ```

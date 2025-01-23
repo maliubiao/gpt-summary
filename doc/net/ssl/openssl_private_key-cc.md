@@ -167,15 +167,17 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`net/ssl/openssl_private_key.cc` 是 Chromium 网络栈中处理 OpenSSL 格式私钥的关键组件，它提供了签名功能并桥接了 OpenSSL 和 Chromium 内部的 `SSLPrivateKey` 接口，从而支持了诸如客户端证书认证等重要的安全功能。虽然 JavaScript 不直接与之交互，但它的功能是实现 Web Crypto API 和其他安全特性的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/openssl_private_key.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ scoped_refptr<SSLPrivateKey> WrapOpenSSLPrivateKey(
 }
 
 }  // namespace net
-
-"""
-
 ```

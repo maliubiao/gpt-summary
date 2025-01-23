@@ -196,7 +196,7 @@ Here's a breakdown of its functionalities:
 * **System Calls:** Using system call tracing tools (if available on QNX) when running the Frida Server can reveal the underlying system calls made by these functions, helping to pinpoint issues. For example, if `devctl` fails, the trace would show this.
 * **Source Code Inspection:** As in this exercise, inspecting the source code of `system-qnx.c` is crucial for understanding how Frida interacts with the QNX system and identifying potential areas for bugs or limitations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/qnx/system-qnx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 #include <errno.h>
@@ -327,7 +329,4 @@ frida_temporary_directory_get_system_tmp (void)
 {
   return g_strdup (g_get_tmp_dir ());
 }
-
-"""
-
 ```

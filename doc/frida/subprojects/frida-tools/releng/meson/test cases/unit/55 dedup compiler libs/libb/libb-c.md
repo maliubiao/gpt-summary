@@ -185,7 +185,7 @@ Interceptor.attach(Module.findExportByName("liba.so", "liba_get"), {
 
 总而言之，`libb.c` 文件虽然代码量不大，但它体现了软件模块之间的依赖关系，并且是动态插桩分析的理想目标。理解其功能和潜在问题，需要结合逆向工程方法、底层系统知识以及一定的逻辑推理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/55 dedup compiler libs/libb/libb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <liba.h>
 #include "libb.h"
 
@@ -202,7 +204,4 @@ void libb_mul(int x)
 {
   liba_add(liba_get() * (x - 1));
 }
-
-"""
-
 ```

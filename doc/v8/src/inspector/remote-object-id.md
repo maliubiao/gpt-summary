@@ -113,11 +113,13 @@ V8 引擎会使用 `RemoteObjectId::parse` 方法来解析这个字符串，从�
 
 `remote-object-id.cc` 文件是 V8 引擎 Inspector 组件的关键部分，它定义了用于在调试过程中唯一标识 JavaScript 运行时实体的机制。这些 ID 是在 C++ 层生成的和解析的，但它们直接支持了 JavaScript 调试功能，使得开发者工具能够与运行中的 JavaScript 代码进行交互和检查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/remote-object-id.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ String16 RemoteCallFrameId::serialize(uint64_t isolateId, int injectedScriptId,
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

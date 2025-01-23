@@ -126,15 +126,17 @@ Initially, I might focus too heavily on the multi-threading aspect. While import
 
 `css_parser_threaded_test.cc` 是 Blink 引擎中一个关键的测试文件，它专注于验证 CSS 解析器在多线程环境下的行为。这对于保证浏览器的稳定性和性能至关重要，因为它直接影响了网页样式的正确渲染。开发者可以通过浏览器 DevTools 观察到 CSS 解析的结果，而 Blink 引擎的开发者则依赖于此类测试来确保 CSS 解析器的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/threaded/css_parser_threaded_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ TSAN_TEST_F(CSSParserThreadedTest, FontFaceDescriptor) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

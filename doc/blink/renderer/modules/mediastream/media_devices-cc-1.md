@@ -140,7 +140,7 @@ Now, let's map these functionalities to the user's request, including JavaScript
 
 总而言之，这个代码片段是 Chromium 中处理与媒体设备、屏幕共享捕获句柄以及元素级裁剪/限制目标相关核心功能的关键部分，它连接了 JavaScript API 和浏览器底层的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_devices.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,9 +148,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   return;
+### 源代码
+```cpp
+return;
   }
 
   LocalDOMWindow* const window = To<LocalDOMWindow>(GetExecutionContext());
@@ -773,8 +775,4 @@ void MediaDevices::ResolveRestrictionTargetPromise(Element* element,
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

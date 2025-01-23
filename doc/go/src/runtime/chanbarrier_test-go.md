@@ -163,7 +163,7 @@ func main() {
 
 总而言之，`go/src/runtime/chanbarrier_test.go` 这部分代码专注于测试 Go 语言运行时对于无缓冲通道发送操作，特别是在 `select` 语句中的同步机制，以确保并发程序的正确性和避免潜在的死锁问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/chanbarrier_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -260,9 +262,4 @@ func testChanSendBarrier(useSelect bool) {
 func makeByte() []byte {
 	return make([]byte, 1<<10)
 }
-
-"""
-
-
-
 ```

@@ -148,7 +148,7 @@ for (;;) { // 可以在这里设置断点
 
 这个代码片段作为 `v8/test/cctest/test-debug.cc` 的一部分，专注于**测试 V8 调试器在不同循环结构中的断点功能**。它通过组合不同的循环头、循环体和循环尾来创建测试用例，并利用 `TestDebugBreakInLoop` 函数来验证断点是否按预期触发。这有助于确保 V8 的调试器能够正确地处理各种循环场景，为 JavaScript 开发者提供可靠的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,9 +156,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
- {"",
+### 源代码
+```cpp
+{"",
                                       "g()",
                                       "if (a == 0) { g() }",
                                       "if (a == 1) { g() }",
@@ -1095,7 +1097,4 @@ TEST(DebugEvaluateImportMetaInScript) {
   struct BreakProgramDelegate : public v8::debug::DebugDelegate {
     void BreakProgramRequested(v8::Local<v8::Context> context,
                                std::vector<v8::debug::Breakpoint
-"""
-
-
 ```

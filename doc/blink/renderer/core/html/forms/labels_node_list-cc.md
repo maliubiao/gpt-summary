@@ -154,14 +154,16 @@ By following this structured thought process, including careful code examination
 
 总而言之，`blink/renderer/core/html/forms/labels_node_list.cc` 文件定义了 Blink 引擎中用于管理表单控件和与之关联的 `<label>` 元素之间关系的核心数据结构和逻辑，这对于实现 HTML 表单的语义化和可访问性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/labels_node_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /**
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -367,7 +369,4 @@ Element* LabelsNodeList::TraverseBackwardToOffset(
 }
 
 }  // namespace blink
-
-"""
-
 ```

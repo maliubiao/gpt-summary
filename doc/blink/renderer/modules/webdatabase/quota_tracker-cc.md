@@ -181,15 +181,17 @@ By following this structured thought process and focusing on connecting the C++ 
 
 总而言之，`quota_tracker.cc` 是 Blink 引擎中管理 Web SQL 数据库配额的关键组件，它虽然不直接与前端代码交互，但为 Web SQL API 提供了重要的底层支持，影响着 JavaScript 代码对数据库的操作。理解其功能有助于开发者诊断和解决与 Web SQL 数据库相关的配额问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/quota_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -266,7 +268,4 @@ void QuotaTracker::UpdateDatabaseSize(const SecurityOrigin* origin,
 }
 
 }  // namespace blink
-
-"""
-
 ```

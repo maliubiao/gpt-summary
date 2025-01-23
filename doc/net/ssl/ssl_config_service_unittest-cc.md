@@ -126,15 +126,17 @@ This systematic approach helps to thoroughly analyze the code, understand its pu
 
 总之，`net/ssl/ssl_config_service_unittest.cc` 是 Chromium 网络栈中一个重要的测试文件，它确保了 `SSLConfigService` 能够正确地管理和更新 SSL 上下文配置，并及时通知相关的组件，这对于保证浏览器安全连接的正确性至关重要。它虽然不直接包含 JavaScript 代码，但其测试的功能是浏览器与 HTTPS 网站建立安全连接的基础，直接影响着 JavaScript 代码执行时的安全上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_config_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ TEST(SSLConfigServiceTest, ConfigUpdatesNotifyObservers) {
 }
 
 }  // namespace net
-
-"""
-
 ```

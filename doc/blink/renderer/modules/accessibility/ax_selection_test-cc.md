@@ -70,7 +70,7 @@ Here's a plan:
 
 总而言之，`ax_selection_test.cc` 的第一部分主要测试了 `AXSelection` 类 **从当前的 DOM 选择中创建 `AXSelection` 对象的能力**，以及 **清除当前选择** 和 **取消选择操作** 的功能。 它还测试了 **设置 `AXSelection` 对象并将其应用到 DOM 树** 的基本情况，包括在文本节点内部、跨越多行文本框以及跨越换行符的选择。  此外，它还初步测试了当选择的端点位于被 CSS 隐藏的元素时，`AXSelection` 的处理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_selection_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -78,8 +78,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -869,7 +871,4 @@ TEST_F(AccessibilitySelectionTest, FromCurrentSelectionInTextarea) {
   ASSERT_EQ(ax::mojom::Role::kTextField, ax_textarea->RoleValue());
 
   const
-"""
-
-
 ```

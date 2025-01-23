@@ -130,7 +130,7 @@ Interceptor.attach(ptr(outputFunctionAddress), {
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/test cases/wasm/1 basic/hello.cpp` 是 Frida 项目中一个非常基础但重要的测试用例，用于验证 Frida 对 WASM 的基本支持。虽然它本身功能很简单，但它位于动态 instrumentation 和逆向工程的工具链中，并涉及到对二进制底层和操作系统原理的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/wasm/1 basic/hello.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,15 +138,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(void) {
   std::cout << "Hello World" << std::endl;
   return 0;
 }
-
-"""
-
 ```

@@ -300,7 +300,7 @@ if __name__ == "__main__":
 
 这个 Frida 示例只是一个基本的演示。实际的调试器实现会更复杂，涉及到更多的 `ptrace` 命令和更精细的寄存器操作。 但它能帮助你理解 Android 调试的底层机制，以及 `debugreg.h` 中定义的常量在其中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/debugreg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -358,7 +360,4 @@ Prompt:
 #define DR_LOCAL_SLOWDOWN (0x100)
 #define DR_GLOBAL_SLOWDOWN (0x200)
 #endif
-
-"""
-
 ```

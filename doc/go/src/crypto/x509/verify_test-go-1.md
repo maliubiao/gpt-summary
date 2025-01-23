@@ -205,7 +205,7 @@ func TestNameConstraintMatching(t *testing.T) {
 
 这段代码（`verify_test.go` 的第 2 部分）主要通过单元测试来验证 `crypto/x509` 包在处理证书验证时的两种特定情况的正确性：**识别并报告未知证书颁发机构的错误**以及 **正确执行证书中定义的名称约束**。 它定义了测试用例和辅助函数来模拟这些场景，并断言程序的行为是否符合预期。 提供的各种 PEM 编码的证书字符串作为测试数据，覆盖了不同的情况，以确保代码的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/verify_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 FwNC0WSZ6G0+WgYV7MKD4jYWh1DXEaJtQCN763IaWGxgvQaLUwS423xgwsx+8rw
 hCRYns5u8myTbUlEu2b+GYimiogtDFMT01A7y88vKl9g+3bx42dJHQNNmSzmYPfs
 IljtQbVwJIyNL/rwjoz7BTk8e9WY0qUK7ZYh+oGK8kla8yfPKtkvOJV29KdFKzTm
@@ -808,9 +810,4 @@ w67CoNRb81dy+4Q1lGpA8ORoLWh5fIq2t2eNGc4qB8vlTIKiESzAwu7u3sRfuWQi
 const criticalExtRoot = `-----BEGIN CERTIFICATE-----
 MIIBqzCCAVGgAwIBAgIJAJ+mI/85cXApMAoGCCqGSM49BAMCMB0xDDAKBgNVBAoT
 A09yZzENMAsGA1UEAxMEUm9vdDAeFw0xNTAxMDEwMDAwMDBaFw0yNTAxMDE
-"""
-
-
-
-
 ```

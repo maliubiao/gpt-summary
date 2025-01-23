@@ -136,7 +136,7 @@ if (num > 10) { // 错误地使用了 >
 
 作为宏汇编器的第 4 部分，这段代码集中实现了 MIPS64 架构中 **条件设置和各种类型的分支指令的生成逻辑**。它提供了高级的 C++ 接口，方便 V8 的其他代码生成模块生成用于控制程序流程的汇编代码。 这部分是实现 JavaScript 控制结构（如 `if`, `else`, 循环等）的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -144,9 +144,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-       if (rhs.immediate() == 0) {
+### 源代码
+```cpp
+if (rhs.immediate() == 0) {
           if (cond == eq) {
             Sltu(dst, lhs, 1);
           } else {
@@ -1127,8 +1129,4 @@ MemOperand MacroAssembler::ExternalReferenceAsOperand(
         // Otherwise, do a memory load from the external reference table.
         DCHECK(scratch.is_valid());
         Ld(scratch, MemOperand(kRootRegister,
-              
-"""
-
-
 ```

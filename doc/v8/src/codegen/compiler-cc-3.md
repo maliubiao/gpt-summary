@@ -112,7 +112,7 @@ console.log(add(3, 4)); // 第二次调用，可能触发重新编译
 
 总而言之，这段代码片段的主要功能是**实现 V8 引擎在重新编译 JavaScript 代码时，特别是在后台线程中，将新的编译结果高效地合并到已有的编译信息中，以优化性能和提升热重载的效率。** 它涉及到对 `SharedFunctionInfo`、字节码数组、作用域信息等关键编译产物的管理和合并，并处理了并发和弱引用等复杂情况。通过这种合并机制，V8 可以在代码发生变化时，尽可能地重用之前的编译成果，避免完全重新编译，从而加快代码加载和执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -120,9 +120,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-   Handle<SharedFunctionInfo> old_sfi_handle =
+### 源代码
+```cpp
+Handle<SharedFunctionInfo> old_sfi_handle =
             local_heap->NewPersistentHandle(old_sfi);
         if (old_sfi->HasBytecodeArray()) {
           // Reset the old SFI's bytecode age so that it won't likely get
@@ -918,8 +920,4 @@ MaybeHandle<SharedFunctionInfo> Compiler::CompileForLiveEdit(
     MaybeHandle<ScopeInfo> outer_scope_info, Isolate* isolate) {
   IsCompiledScope is_compiled_scope;
   return v8::internal::CompileToplevel(parse_info, script, outer_scope_info,
-         
-"""
-
-
 ```

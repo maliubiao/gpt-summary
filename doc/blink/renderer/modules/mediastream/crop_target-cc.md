@@ -186,15 +186,17 @@ By following this structured approach, breaking down the code, identifying key r
 
 总而言之，`crop_target.cc` 实现了 `CropTarget` 类的核心逻辑，它连接了 JavaScript API 和底层的媒体捕获机制，允许开发者精确地控制屏幕共享或标签页共享的捕获区域。理解这个文件的功能以及它与 JavaScript、HTML 和 CSS 的关系，对于开发和调试涉及屏幕捕获功能的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/crop_target.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ CropTarget::CropTarget(String id)
     : SubCaptureTarget(SubCaptureTarget::Type::kCropTarget, std::move(id)) {}
 
 }  // namespace blink
-
-"""
-
 ```

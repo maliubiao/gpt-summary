@@ -137,7 +137,7 @@ By following this structured thought process, we can thoroughly analyze the code
 
 总而言之，这个简单的 `q5core.cpp` 文件虽然功能不多，但在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 对基本的 Qt Core 应用程序的插桩能力，特别是涉及到国际化功能方面。对于逆向工程师来说，理解这样的测试用例可以帮助他们更好地使用 Frida 来分析和理解更复杂的 Qt 应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/4 qt/q5core.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QCoreApplication>
 #include <QtGlobal>
 #include <QString>
@@ -175,7 +177,4 @@ int main(int argc, char **argv) {
   //return app.exec();
   return 0;
 }
-
-"""
-
 ```

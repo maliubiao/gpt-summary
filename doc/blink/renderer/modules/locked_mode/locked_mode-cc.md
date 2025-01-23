@@ -141,15 +141,17 @@ Here's a breakdown of the thinking process to analyze the `locked_mode.cc` file:
 
 `blink/renderer/modules/locked_mode/locked_mode.cc` 文件是 Blink 引擎中实现 "Locked Mode" 功能的核心部分。它通过 C++ 代码定义了 `LockedMode` 类，并通过 Supplement 机制将其集成到 `NavigatorBase` 中。这个功能很可能通过 JavaScript API 暴露给 Web 开发者，并能够影响网页的行为和样式，以及限制浏览器的某些功能。理解这个文件有助于理解 Chromium 如何实现这种底层的浏览器功能，以及如何与 JavaScript 等 Web 技术进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/locked_mode/locked_mode.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ void LockedMode::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -178,15 +178,17 @@ bool are_equal = (ptr1 == ptr2); // Compares ptr1.compressed_value_ (0x10) with 
 
 In summary, `CompressedZonePtr` is a memory-saving mechanism within V8 that efficiently represents pointers within memory zones. While it's a C++ implementation detail, it plays a crucial role in V8's performance and memory management when executing JavaScript code. The restrictions on copying and moving are essential for maintaining the validity of the compressed pointers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/compressed-zone-ptr.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/zone/compressed-zone-ptr.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ class CompressedZonePtr {
 }  // namespace v8
 
 #endif  // V8_ZONE_COMPRESSED_ZONE_PTR_H_
-
-"""
-
 ```

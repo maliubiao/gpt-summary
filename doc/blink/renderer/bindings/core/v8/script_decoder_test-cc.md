@@ -119,15 +119,17 @@ By following these steps, we can systematically analyze the C++ test file and ge
 
 因此，当你在调试一个网页，发现 JavaScript 代码执行有问题，例如出现乱码或者语法错误，而你怀疑是解码阶段出了问题时，就可以关注与 `ScriptDecoder` 相关的代码和测试用例。这些测试用例可以帮助你理解 `ScriptDecoder` 的行为，并排查是否是由于字符编码、BOM 处理或异步处理等方面的问题导致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -358,7 +360,4 @@ TEST_F(ScriptDecoderTest, Simple) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

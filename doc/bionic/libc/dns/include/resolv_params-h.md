@@ -255,7 +255,7 @@ Interceptor.attach(getaddrinfo_addr, {
 
 这个 Frida 示例提供了一个基本的框架。要更全面地调试 DNS 解析过程，你可能需要 Hook 更多的函数，例如与 `netd` 通信的函数，或者直接读取 `__res_state` 结构体的其他成员。  记住，Android 内部的实现细节可能会在不同版本之间发生变化，因此在进行调试时需要参考目标版本的源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/include/resolv_params.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -330,7 +332,4 @@ typedef res_sendhookact (*res_send_rhook)(const struct sockaddr *,
 					      int, int *);
 
 #endif // _RESOLV_PARAMS_H
-
-"""
-
 ```

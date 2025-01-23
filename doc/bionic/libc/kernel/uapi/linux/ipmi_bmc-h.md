@@ -296,7 +296,7 @@ if __name__ == '__main__':
 
 通过以上分析，我们详细了解了这个头文件的功能、与 Android 的关系、涉及的技术细节以及如何进行调试。记住，这个头文件定义的是与 Linux 内核交互的接口，在 Android 中通常由底层的系统组件或 HAL 使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ipmi_bmc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -307,8 +307,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -323,7 +325,4 @@ Prompt:
 #define IPMI_BMC_IOCTL_CLEAR_SMS_ATN _IO(__IPMI_BMC_IOCTL_MAGIC, 0x01)
 #define IPMI_BMC_IOCTL_FORCE_ABORT _IO(__IPMI_BMC_IOCTL_MAGIC, 0x02)
 #endif
-
-"""
-
 ```

@@ -168,14 +168,16 @@ By following this thought process, breaking down the code into its components, a
 
 总而言之，`font_data_for_range_set.cc` 文件定义的 `FontDataForRangeSet` 类在 Blink 渲染引擎中扮演着关键角色，它将字体数据与字符范围关联起来，使得浏览器能够根据 CSS 规则和文本内容，选择合适的字体进行渲染，从而支持丰富的国际化文本显示。理解其功能有助于我们更好地理解浏览器如何处理字体，并避免在使用 CSS 和 JavaScript 进行字体设置时出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_data_for_range_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ FontDataForRangeSet::FontDataForRangeSet(const FontDataForRangeSet& other) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -105,14 +105,16 @@ Here's a breakdown of the thought process to arrive at the detailed explanation 
 
 总而言之，`paint_record_pattern.cc` 文件定义了一个关键的机制，用于在 Blink 渲染引擎中创建和管理基于预录制绘制指令的可重复图案，这对于实现 Web 页面中各种背景和填充效果至关重要。虽然开发者通常不会直接操作这个类，但理解其功能有助于更好地理解浏览器如何渲染网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint_record_pattern.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ sk_sp<PaintShader> PaintRecordPattern::CreateShader(
 }
 
 }  // namespace blink
-
-"""
-
 ```

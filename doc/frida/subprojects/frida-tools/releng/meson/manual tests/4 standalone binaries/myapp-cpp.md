@@ -122,7 +122,7 @@ Here's a breakdown of the thinking process to arrive at the comprehensive analys
 
 因此，用户查看这个源代码文件是为了更好地理解目标程序，从而更有效地使用 Frida 进行动态分析和逆向工程。这个文件是 Frida 工具测试和示例的一部分，用于演示 Frida 的功能和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/manual tests/4 standalone binaries/myapp.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<SDL.h>
 #include<memory>
 #include<iostream>
@@ -171,7 +173,4 @@ int main(void) {
 
   return 0;
 }
-
-"""
-
 ```

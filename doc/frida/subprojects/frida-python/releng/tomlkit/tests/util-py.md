@@ -221,7 +221,7 @@ print(count.unwrap() + 5)
 
 通过这样的调试过程，用户可以深入了解 `tomlkit` 的工作原理，从而更好地理解和解决他们在 Frida 脚本中遇到的与 TOML 解析相关的问题。`util.py` 文件作为测试代码的一部分，为理解库的行为提供了宝贵的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/tests/util.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -229,8 +229,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.items import AoT
 from tomlkit.items import Array
 from tomlkit.items import Bool
@@ -288,7 +290,4 @@ def assert_is_ppo(v_unwrapped, unwrapped_type):
 def elementary_test(v, unwrapped_type):
     v_unwrapped = v.unwrap()
     assert_is_ppo(v_unwrapped, unwrapped_type)
-
-"""
-
 ```

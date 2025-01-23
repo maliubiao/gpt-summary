@@ -203,7 +203,7 @@ This part of the `QuicSessionPool` code focuses on the **establishment and confi
 
 总而言之，这部分代码是 QUIC 会话建立过程中的关键环节，它负责与操作系统进行底层的 socket 交互，并根据 QUIC 协议的要求对 socket 进行配置，为上层 QUIC 会话的创建和数据传输奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -211,9 +211,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                                          IPEndPoint addr,
+### 源代码
+```cpp
+IPEndPoint addr,
                                                 handles::NetworkHandle network,
                                                 const SocketTag& socket_tag) {
   socket->UseNonBlockingIO();
@@ -1047,7 +1049,4 @@ QuicSessionPool::CreateSessionHelper(
 
   quic::QuicConnectionId connection_id =
       q
-"""
-
-
 ```

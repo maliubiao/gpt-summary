@@ -201,15 +201,17 @@ console.log(2 in obj);   // 输出: false
 
 总而言之，`v8/src/objects/elements-inl.h` 中的代码是 V8 引擎中处理 JavaScript 对象元素访问和操作的核心组成部分，它通过提供优化的内联函数来提高性能，并封装了底层复杂的元素管理逻辑。理解这部分代码有助于深入了解 V8 引擎如何高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ inline bool ElementsAccessor::HasElement(Tagged<JSObject> holder,
 }  // namespace v8
 
 #endif  // V8_OBJECTS_ELEMENTS_INL_H_
-
-"""
-
 ```

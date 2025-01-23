@@ -186,15 +186,17 @@ LoadElement (array: arr, index: index)
 
 `v8/src/compiler/redundancy-elimination.cc` 是 V8 编译器中一个重要的优化Pass，它通过识别和消除重复的计算和检查操作来提高 JavaScript 代码的执行效率。它涉及到对 IR 图的分析、检查信息的传播以及对不同类型操作的优化处理。虽然用户编写 JavaScript 代码时不会直接与这个文件交互，但它的工作直接影响着最终执行代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/redundancy-elimination.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/redundancy-elimination.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -714,7 +716,4 @@ Reduction RedundancyElimination::UpdateChecks(Node* node,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

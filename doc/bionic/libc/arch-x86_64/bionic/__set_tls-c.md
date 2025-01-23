@@ -254,7 +254,7 @@ if __name__ == '__main__':
 
 这个详细的解释涵盖了 `__set_tls.c` 文件的功能、与 Android 的关系、实现细节、动态链接器的影响、常见错误以及如何使用 Frida 进行调试。希望能够帮助你理解这个重要的 bionic 组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-x86_64/bionic/__set_tls.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -305,7 +307,4 @@ extern int arch_prctl(int, unsigned long);
 __LIBC_HIDDEN__ int __set_tls(void* ptr) {
   return arch_prctl(ARCH_SET_FS, (unsigned long) ptr);
 }
-
-"""
-
 ```

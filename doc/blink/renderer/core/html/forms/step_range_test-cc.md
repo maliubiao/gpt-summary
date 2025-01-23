@@ -138,14 +138,16 @@ Let's break down the thought process for analyzing the C++ test file.
 
 总而言之，`step_range_test.cc` 通过单元测试确保了 `StepRange` 类在处理 HTML 表单中 `min`, `max`, `step` 属性时的逻辑正确性，这直接关系到用户与网页表单的交互体验，以及 JavaScript 操作表单元素时的行为一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/step_range_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ TEST(StepRangeTest, ReversedRange) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

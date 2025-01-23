@@ -163,7 +163,7 @@ By following this structured approach, combining code understanding with an awar
 
 `fallback.c` 提供了一个简单的非 SIMD 版本的数组递增功能，它在逆向工程中作为理解优化代码的参照非常有用。它也揭示了在底层二进制和系统层面，SIMD 指令的可用性和编译器优化对代码执行路径的影响。理解这类回退机制对于调试和性能分析至关重要，尤其在使用 Frida 这样的动态插桩工具时。用户通常通过 Frida 对目标进程的分析和调试，最终会接触到这类测试用例，以加深对 Frida 功能和目标程序行为的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/147 simd/fallback.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdfuncs.h>
 
 void increment_fallback(float arr[4]) {
@@ -181,7 +183,4 @@ void increment_fallback(float arr[4]) {
         arr[i]++;
     }
 }
-
-"""
-
 ```

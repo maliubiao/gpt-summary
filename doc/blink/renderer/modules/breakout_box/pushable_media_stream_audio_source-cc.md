@@ -226,15 +226,17 @@ void PushAudioToSource(PushableMediaStreamAudioSource* source, const float* audi
 
 总而言之，`PushableMediaStreamAudioSource` 提供了一个强大的机制，允许 Blink 引擎接收和处理来自外部源的音频数据，并将其集成到 Web 标准的 MediaStream API 中，从而实现更灵活和高级的音频处理功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/breakout_box/pushable_media_stream_audio_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -418,7 +420,4 @@ void PushableMediaStreamAudioSource::EnsureSourceIsStopped() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -141,7 +141,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言解析器中至关重要的一部分，它负责将 Go 源代码中的类型定义和部分语句转换为计算机可以理解的抽象语法树，为后续的类型检查、代码生成等步骤奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/parser/parser.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 'type', or a '}' at this point.
 	rbrace := p.expect(token.RBRACE)
 
@@ -1488,9 +1490,4 @@ func (p *parser) parseTypeSpec(doc *ast.CommentGroup, _ token.Token, _ int) ast.
 			//
 			// A type parameter list may have a type bound starting
 			// with a "[" as in: P []E. In tha
-"""
-
-
-
-
 ```

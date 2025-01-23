@@ -186,7 +186,7 @@ By following this structured approach, I was able to analyze the code effectivel
 
 因此，当你在调试涉及到连接多个数据源或者跨不同浏览上下文传输 stream 的问题时，你可以检查是否创建了 `ConcatenatingUnderlyingSource` 或 `CrossRealmTransformReadable/Writable` 对象，并跟踪这些对象的方法调用和状态变化，以理解数据流的走向和可能出现的问题。例如，你可以断点在 `Pull` 方法中查看数据是否正确地从第一个 stream 过渡到第二个 stream，或者在 `HandleMessage` 方法中查看是否收到了预期的跨 Realm 消息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/transferable_streams.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 riptState* script_state) const override {
       // We've finished reading `source1_`. Let's start reading `source2_`.
       source_->has_finished_reading_stream1_ = true;
@@ -492,8 +494,4 @@ ReadableStream* CreateConcatenatedReadableStream(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

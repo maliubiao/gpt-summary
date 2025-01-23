@@ -123,13 +123,15 @@ console.log(regex2.test(str)); // false
 
 总而言之，这个代码片段是 V8 JavaScript 引擎中用于编译和执行正则表达式的核心部分。它涵盖了从正则表达式语法树到机器码生成的关键步骤，并包含了多种优化技术以提高正则表达式的执行效率。 代码中的各种节点类型和发射方法直接对应于 JavaScript 正则表达式的语法结构和语义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- eat
+### 源代码
+```
+eat
   // any character one at a time.  Any non-anchored regexp has such a
   // loop prepended to it in order to find where it starts.  We look for
   // a pattern of the form ...abc... where we can look 6 characters ahead
@@ -904,8 +906,4 @@ void RegExpCompiler::ToNodeCheckForStackOverflow() {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

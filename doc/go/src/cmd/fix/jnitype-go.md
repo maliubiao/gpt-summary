@@ -205,15 +205,17 @@ func main() {
 
 总而言之，`go/src/cmd/fix/jnitype.go` 这个文件是 Go 语言 `go fix` 工具中用于自动化迁移 JNI 相关代码的重要组成部分，它帮助开发者将旧的基于指针的 JNI 对象类型和初始化方式更新为更符合 Go 语言习惯和新的 JNI 绑定方式。理解其背后的类型变更和初始化方式的改变对于正确使用修复后的代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/fix/jnitype.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -283,9 +285,4 @@ func jnifix(f *ast.File) bool {
 		return false
 	})
 }
-
-"""
-
-
-
 ```

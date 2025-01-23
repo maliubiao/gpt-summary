@@ -166,15 +166,17 @@ By following this structured approach and iteratively refining the analysis, we 
 
 因此，`css_border_image_slice_value.cc` 文件在浏览器解析 CSS 样式，计算元素样式，以及最终渲染具有边框图像的元素的过程中都发挥着关键作用。调试时，如果发现边框图像的切片行为不符合预期，可以检查与 `CSSBorderImageSliceValue` 相关的代码，查看解析的值是否正确，以及 `fill` 标志是否被正确设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_border_image_slice_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All rights reserved.
  *
@@ -237,7 +239,4 @@ void CSSBorderImageSliceValue::TraceAfterDispatch(
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

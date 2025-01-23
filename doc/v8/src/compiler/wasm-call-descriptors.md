@@ -109,11 +109,13 @@ console.log(result); // 输出 BigInt 类型的计算结果
 
 总而言之，`wasm-call-descriptors.cc` 是 V8 编译器中处理 WebAssembly 调用约定，特别是 JavaScript `BigInt` 与 WebAssembly 整数类型互操作性的关键部分。它通过管理调用描述符，确保了数据在 JavaScript 和 WebAssembly 之间的正确转换和传递。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-call-descriptors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ compiler::CallDescriptor* WasmCallDescriptors::GetLoweredCallDescriptor(
 #endif  // V8_TARGET_ARCH_32_BIT
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

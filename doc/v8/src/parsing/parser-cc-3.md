@@ -163,7 +163,7 @@ Let's break down each of these and think about the JavaScript connections and po
 
 总而言之，这是 V8 引擎中负责将 JavaScript 函数和类源代码转换为内部表示的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
 }
 
@@ -970,7 +972,4 @@ Expression* Parser::RewriteClassLiteral(ClassScope* block_scope,
   FunctionLiteral* static_initializer = nullptr;
   if (class_info->has_static_elements()) {
     st
-"""
-
-
 ```

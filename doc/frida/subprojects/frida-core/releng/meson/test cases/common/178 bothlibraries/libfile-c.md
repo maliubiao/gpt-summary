@@ -202,7 +202,7 @@ retval modified to 100
 
 总而言之，`libfile.c` 是一个用于测试 Frida 动态 instrumentation 功能的简单共享库。它展示了如何导出变量和函数，并为逆向工程师提供了一个实验平台，可以用来学习和实践如何使用 Frida 来修改程序行为。理解这个简单的例子有助于理解更复杂的 Frida 应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/178 bothlibraries/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_EXPORT int retval = 42;
@@ -219,7 +221,4 @@ DO_EXPORT int retval = 42;
 DO_EXPORT int func(void) {
     return retval;
 }
-
-"""
-
 ```

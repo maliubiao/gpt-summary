@@ -179,7 +179,7 @@ While this test code doesn't directly show user errors, it tests the compiler's 
 
 In summary, `v8/test/cctest/compiler/test-js-typed-lowering.cc` is a crucial part of V8's testing infrastructure. Its primary function is to **rigorously verify the correctness and effectiveness of the `JSTypedLowering` compiler phase**. This phase plays a vital role in optimizing JavaScript code by leveraging type information to replace generic JavaScript operations with more efficient, type-specific lower-level operations. The tests cover various JavaScript operators and type conversion scenarios, ensuring that the compiler correctly transforms the intermediate representation of the code for optimal performance.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-js-typed-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-js-typed-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -187,8 +187,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1197,7 +1199,4 @@ TEST(Int32AddNarrowing) {
         for (size_t j = 0; j < arraysize(kInt32Types); j++) {
           Node* n1 = R.Parameter(kInt32Types[j]);
           Node* one = R.graph.NewNode(R.
-"""
-
-
 ```

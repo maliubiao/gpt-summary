@@ -126,11 +126,13 @@ console.log(circumference);
 
 `constant-folding-reducer.cc` 文件在 V8 引擎的编译优化过程中扮演着关键角色。它通过识别和替换常量节点，减少了 JavaScript 代码在运行时的计算负担，从而提高了性能。这些优化对于 JavaScript 开发者来说是透明的，但它们是 V8 引擎能够高效执行 JavaScript 代码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/constant-folding-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ Reduction ConstantFoldingReducer::Reduce(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

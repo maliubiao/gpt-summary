@@ -148,11 +148,13 @@ Here, the `MyAsyncDisposable` class has an asynchronous disposal method `[Symbol
 
 `v8/src/objects/js-disposable-stack.cc` is a crucial part of V8's implementation of JavaScript's resource management features, specifically the `using` declaration. It provides the underlying mechanism for tracking disposable resources and ensuring their disposal methods (both synchronous and asynchronous) are called correctly when the resources are no longer in use. This helps prevent resource leaks and improves the reliability of JavaScript applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-disposable-stack.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -461,7 +463,4 @@ Maybe<bool> JSAsyncDisposableStack::NextDisposeAsyncIteration(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

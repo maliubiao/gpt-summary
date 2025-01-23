@@ -104,7 +104,7 @@ By following these steps, the detailed analysis provided in the initial good ans
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/data/__init__.py` 作为一个空的 Python 文件，其主要功能是将目录标记为 Python 包，从而支持 Frida 工具的模块化组织和构建过程。虽然它本身不直接参与逆向、底层操作，但它是构建 Frida 这个强大逆向工具的重要组成部分。用户通常不会直接操作它，但在调试构建或导入问题时可能会接触到。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,9 +112,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

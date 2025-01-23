@@ -178,7 +178,7 @@ Let's break down the thought process for analyzing the provided Python code.
 
 通过这些步骤，用户的操作最终会触发 `i18n.py` 文件中的代码执行，从而完成国际化相关的构建任务。如果构建过程中出现错误，例如缺少工具或参数配置错误，Meson 会在这些步骤中抛出异常或警告，帮助用户定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/i18n.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -593,7 +595,4 @@ class I18nModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> I18nModule:
     return I18nModule(interp)
-
-"""
-
 ```

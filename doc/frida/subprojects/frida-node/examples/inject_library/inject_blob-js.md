@@ -172,7 +172,7 @@ By following this structured thinking process, breaking down the code, and relat
 
 总而言之，`inject_blob.js` 提供了一种便捷的方式来使用 Frida 将自定义代码注入到目标进程中，这在动态逆向分析、安全研究和软件调试等领域具有重要的应用价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/inject_library/inject_blob.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 /*
  * Compile example.dylib like this:
  * $ clang -shared example.c -o example.dylib
@@ -224,6 +226,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-"""
-
 ```

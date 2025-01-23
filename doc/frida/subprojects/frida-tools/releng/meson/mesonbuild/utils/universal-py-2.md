@@ -94,7 +94,7 @@ Here's a breakdown of how to approach this:
 
 如果在构建过程中出现错误，例如 Wine 路径过长、序列化文件损坏、或者无法识别的构建选项，那么相关的函数（如 `get_wine_shortpath` 或 `pickle_load`) 可能会抛出异常或打印警告信息，这些信息可以作为调试的线索。用户可以通过查看构建日志来追踪这些信息，从而定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 nd(trial)
             else:
                 result[basename] = [trial]
@@ -684,8 +686,4 @@ def first(iter: T.Iterable[_T], predicate: T.Callable[[_T], bool]) -> T.Optional
         if predicate(i):
             return i
     return None
-
-"""
-
-
 ```

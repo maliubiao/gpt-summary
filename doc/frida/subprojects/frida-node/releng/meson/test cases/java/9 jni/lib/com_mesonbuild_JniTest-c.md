@@ -191,7 +191,7 @@ sys.stdin.read()
 
 这个简单的例子通常作为 JNI 学习或测试的基础。在实际复杂的项目中，本地代码可能包含更复杂的逻辑，涉及与操作系统、硬件的交互，以及性能敏感的操作。理解 JNI 的工作原理和如何调试 JNI 代码是进行 Java 应用逆向工程的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/java/9 jni/lib/com_mesonbuild_JniTest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <jni.h>
 
 #include "com_mesonbuild_JniTest.h"
@@ -210,7 +212,4 @@ JNIEXPORT jint JNICALL Java_com_mesonbuild_JniTest_jni_1test
 {
     return (jint)0xdeadbeef;
 }
-
-"""
-
 ```

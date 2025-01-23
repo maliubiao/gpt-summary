@@ -105,11 +105,13 @@ console.log(container.data.value); // 输出 2
 
 总而言之，`test-write-barrier.cc` 是 V8 引擎中用于验证垃圾回收机制核心功能的测试文件，它确保了在并发或增量垃圾回收过程中，对象引用关系的更新能够被正确地追踪，从而保证 JavaScript 程序的稳定性和内存安全。虽然 JavaScript 开发者不需要直接操作写屏障，但它的正确运行是 JavaScript 引擎正常工作的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-write-barrier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ HEAP_TEST(WriteBarrier_MarkingExtension) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

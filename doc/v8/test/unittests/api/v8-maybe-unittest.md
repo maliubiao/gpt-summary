@@ -137,11 +137,13 @@ By following this process, we can move from understanding the specific C++ code 
 
 `v8-maybe-unittest.cc` 测试的是 V8 引擎内部用于处理可选值的 `Maybe` 类型，特别是如何安全地操作只可移动的对象。虽然 JavaScript 没有直接对应的类型，但它通过 `null`/`undefined`、可选链、Nullish 合并以及 Promise 等机制来处理类似的问题，避免程序因访问不存在的值而崩溃。 这种对“可能存在也可能不存在”的值的处理是编程中一个通用的需求，不同的语言和框架会采用不同的方式来实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/v8-maybe-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ TEST(MaybeTest, AllowMovableTypes) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

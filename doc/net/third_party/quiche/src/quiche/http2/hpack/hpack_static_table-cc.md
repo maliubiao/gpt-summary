@@ -189,15 +189,17 @@ Imagine a user is experiencing issues with a website that uses HTTP/2, and a dev
 
 **In summary, `hpack_static_table.cc` is a fundamental component of the Chromium network stack's HTTP/2 implementation. It provides an efficient way to store and access the predefined HPACK static table, which is crucial for compressing HTTP headers and optimizing network performance for web applications.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/hpack_static_table.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ bool HpackStaticTable::IsInitialized() const {
 }
 
 }  // namespace spdy
-
-"""
-
 ```

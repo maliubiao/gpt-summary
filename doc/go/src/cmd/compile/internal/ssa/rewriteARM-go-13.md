@@ -210,7 +210,7 @@ b3: // false branch
 
 作为 `rewriteARM.go` 的第14部分，这段代码专注于**优化SSA中间表示中特定类型的控制流块**，特别是 `BlockARMLE`、`BlockARMLT` 等基于比较结果的条件跳转块。它通过模式匹配，将这些高级的条件跳转操作转换为更底层的、更接近ARM硬件指令的形式，或者进行简化以减少不必要的计算和比较。这有助于生成更高效的ARM机器码，提升Go程序在ARM架构上的执行效率。这部分延续了之前部分对ARM架构特性进行优化的工作，并为后续的代码生成阶段做好准备。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -219,9 +219,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第14部分，共16部分，请归纳一下它的功能
+```
 
-"""
- b.Controls[0].Op == OpARMGreaterEqual {
+### 源代码
+```go
+b.Controls[0].Op == OpARMGreaterEqual {
 			v_0 := b.Controls[0]
 			cc := v_0.Args[0]
 			b.resetWithControl(BlockARMGE, cc)
@@ -1551,9 +1553,4 @@ Prompt:
 			}
 			l := v_0.Args[0]
 			i
-"""
-
-
-
-
 ```

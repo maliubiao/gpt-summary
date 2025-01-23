@@ -103,14 +103,16 @@ This systematic approach helps in dissecting the code and understanding its role
 
 总而言之，`test_resource_fetcher_properties.cc` 中的 `TestResourceFetcherProperties` 类是 Blink 渲染引擎中一个重要的测试工具，它允许开发者模拟各种资源加载场景，验证不同策略和设置对资源获取行为的影响，从而确保 web 应用的安全性和功能正确性。 虽然它本身不是直接与 JavaScript, HTML, CSS 交互的代码，但它模拟了这些技术背后的核心机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/testing/test_resource_fetcher_properties.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -155,7 +157,4 @@ void TestResourceFetcherProperties::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

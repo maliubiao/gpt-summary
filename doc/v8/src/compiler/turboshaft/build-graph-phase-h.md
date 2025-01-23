@@ -163,15 +163,17 @@ Node 7 (Assignment):
 
 总之，`v8/src/compiler/turboshaft/build-graph-phase.h` 定义了 Turboshaft 编译器中至关重要的一个阶段，负责将 JavaScript 代码转换为便于优化的中间表示图。如果构建图的过程中遇到无法处理的情况，该阶段会选择 bailout。了解这个阶段的功能有助于理解 V8 编译器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/build-graph-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/build-graph-phase.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ struct BuildGraphPhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_BUILD_GRAPH_PHASE_H_
-
-"""
-
 ```

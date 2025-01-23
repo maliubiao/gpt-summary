@@ -145,7 +145,7 @@ By following this structured approach and continuously considering the context p
 
 总而言之，`cp.cpp` 是 Frida 构建测试环境中的一个简单但实用的工具，它通过执行基本的文件复制操作，帮助验证 Frida 构建系统的功能是否正常。它与逆向方法、底层知识的关联是间接的，主要体现在它可以用来准备和管理测试环境和数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cp.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -177,7 +179,4 @@ int main(int argc, char *argv[]) {
   dst << src.rdbuf();
   return 0;
 }
-
-"""
-
 ```

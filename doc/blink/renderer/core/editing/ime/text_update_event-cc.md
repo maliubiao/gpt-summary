@@ -179,15 +179,17 @@ By following this step-by-step approach, you can effectively analyze unfamiliar 
 
 总而言之，`text_update_event.cc` 定义的 `TextUpdateEvent` 是 Blink 渲染引擎中用于处理文本更新事件的关键组件，尤其在 IME 输入场景下，它能够提供更精细的文本变化信息，以便开发者进行更精确的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/text_update_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ const AtomicString& TextUpdateEvent::InterfaceName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

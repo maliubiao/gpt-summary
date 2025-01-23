@@ -154,14 +154,16 @@ By following these steps and iteratively refining the understanding and explanat
 
 总而言之，`skia_text_metrics.cc` 是 Blink 渲染引擎中一个至关重要的底层模块，它负责提供准确的字体度量信息，这些信息直接影响着网页上文本的渲染效果和布局。理解其功能和潜在的使用错误，对于开发和调试涉及文本渲染的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/skia/skia_text_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -353,7 +355,4 @@ hb_position_t SkiaScalarToHarfBuzzPosition(SkScalar value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

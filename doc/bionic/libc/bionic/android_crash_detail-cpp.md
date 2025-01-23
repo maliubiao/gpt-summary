@@ -329,7 +329,7 @@ sys.stdin.read()
 
 希望这个详细的分析对你有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/android_crash_detail.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -340,8 +340,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -464,7 +466,4 @@ void android_crash_detail_replace_name(crash_detail_t* crash_detail, const void*
   crash_detail->name = reinterpret_cast<const char*>(name);
   crash_detail->name_size = name_size;
 }
-
-"""
-
 ```

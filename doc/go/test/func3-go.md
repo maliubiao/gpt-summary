@@ -177,15 +177,17 @@ go run func3.go
 
 `go/test/func3.go` 这段代码的功能是专门设计用来测试 Go 语言编译器对非法函数签名的检测能力。它通过声明包含特定语法错误的函数，验证编译器是否能够正确地识别并报告这些错误。 这类测试文件通常用于 Go 语言的内部测试，以确保编译器的正确性和健壮性。使用者应该使用 `go tool compile -e` 命令来验证预期的编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/func3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -206,9 +208,4 @@ func f2(t1, *t2, x t3)	// ERROR "missing parameter name"
 func f3() (x int, *string)	// ERROR "missing parameter name"
 
 func f4() (t1 t1)	// legal - scope of parameter named t1 starts in body of f4.
-
-"""
-
-
-
 ```

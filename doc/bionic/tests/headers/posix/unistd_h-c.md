@@ -250,7 +250,7 @@ except Exception as e:
 
 希望以上详细的解释能够帮助你理解 `bionic/tests/headers/posix/unistd_h.c` 文件的作用以及它在 Android Bionic 中的地位。记住，它是一个测试文件，用于确保 `unistd.h` 的正确性，而 `unistd.h` 中声明的函数是 Android 系统和应用程序的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/unistd_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -667,7 +669,4 @@ static void unistd_h() {
   i = optind;
   i = optopt;
 }
-
-"""
-
 ```

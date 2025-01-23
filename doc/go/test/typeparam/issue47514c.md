@@ -240,15 +240,17 @@ Go 的测试框架 `go test` 提供了一些常用的命令行参数，例如：
 
 总而言之，`go/test/typeparam/issue47514c.go` 是 Go 语言测试套件中用于测试泛型特定行为的一个文件。 虽然没有具体代码，我们可以推测它可能关注泛型的约束、实例化、方法集或类型推断等方面的问题，并且通过 `go test` 命令在特定目录下运行。理解 Go 泛型的概念和常见错误有助于避免在使用泛型时出现问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue47514c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -256,9 +258,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

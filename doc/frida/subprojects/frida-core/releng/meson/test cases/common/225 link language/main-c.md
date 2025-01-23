@@ -118,7 +118,7 @@ By following this systematic breakdown, focusing on the context, and making logi
 
 尽管 `main.c` 本身非常简单，但它作为一个测试用例，突出了动态 instrumentation 工具（如 Frida）在处理具有外部链接的程序时的关键方面。它涉及到逆向工程中的函数调用分析，二进制层面的链接过程，以及用户在编译和使用 Frida 时可能遇到的常见问题。通过分析这样的简单例子，可以帮助用户更好地理解 Frida 的工作原理，并有效地进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/225 link language/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,14 +126,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "c_linkage.h"
 
 int main(void) {
     return makeInt();
 }
-
-"""
-
 ```

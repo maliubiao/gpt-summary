@@ -317,7 +317,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 通过 Frida hook，你可以动态地观察 `fmaxf` 函数的行为，验证其输入和输出是否符合预期，从而辅助调试和理解代码执行流程。 这也展示了从 Android Framework 或 NDK 如何最终触达到 Bionic 库中的 `fmaxf` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmaxf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -328,8 +328,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1433,7 +1435,4 @@ static data_1_2_t<float, float, float> g_fmaxf_intel_data[] = {
     -0x1.p-149
   }
 };
-
-"""
-
 ```

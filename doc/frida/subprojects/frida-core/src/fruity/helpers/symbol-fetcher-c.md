@@ -167,7 +167,7 @@ ffff808012345678	doModInitFunctions
 
 总而言之，`frida/subprojects/frida-core/src/fruity/helpers/symbol-fetcher.c` 是 Frida 用于在 macOS/iOS 上动态获取 `dyld` 关键符号信息的核心组件，它依赖于对 Mach-O 文件格式和动态链接器 `dyld` 的深入理解，是 Frida 进行动态分析的重要基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/helpers/symbol-fetcher.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdbool.h>
 #include <stdlib.h>
 #include <mach-o/loader.h>
@@ -457,7 +459,4 @@ main (void)
 }
 
 #endif
-
-"""
-
 ```

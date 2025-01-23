@@ -210,15 +210,17 @@ Let's trace how a user action might lead to the execution of this code:
 
 In summary, `tls_client_connection.cc` is a crucial component for establishing secure client-side connections in Chromium's QUIC implementation. It handles TLS configuration, handshake orchestration, and session management, playing a vital role in ensuring secure communication for web browsing and other network applications that rely on HTTPS. While it doesn't directly execute JavaScript, it provides the secure communication layer that JavaScript APIs like `fetch` and WebSockets depend on.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/tls_client_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -270,7 +272,4 @@ int TlsClientConnection::NewSessionCallback(SSL* ssl, SSL_SESSION* session) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

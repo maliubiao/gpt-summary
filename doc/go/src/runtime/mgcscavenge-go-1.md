@@ -258,7 +258,7 @@ func min(a, b uint) uint {
 
 总而言之，这段代码的目标是**将不再使用的内存归还给系统或为未来的分配做准备，从而提高内存利用率和程序性能。** 它体现了 Go 运行时在内存管理方面的精细控制和优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgcscavenge.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -267,8 +267,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 y(x, 0x7fffffffffffffff)
 	default:
 		throw("bad m value")
@@ -826,10 +828,4 @@ func (c *piController) next(input, setpoint, period float64) (float64, bool) {
 func (c *piController) reset() {
 	c.errIntegral = 0
 }
-
-"""
-
-
-
-
 ```

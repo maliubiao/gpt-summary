@@ -133,14 +133,16 @@ Response: Let's break down the thought process for analyzing the provided C++ un
 
 总而言之，这个单元测试文件确保了 Blink 引擎中处理广告拍卖货币代码的相关逻辑的正确性，这对于保障广告竞价流程的准确性和用户体验至关重要。理解这些 C++ 层的逻辑有助于前端开发者在使用相关的 JavaScript API 时避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/ad_auction_currencies_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ TEST(AdAuctionCurrenciesTest, PrintableAdCurrency) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

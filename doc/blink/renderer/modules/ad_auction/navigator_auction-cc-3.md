@@ -155,7 +155,7 @@ My thinking process to arrive at the summary of the provided code snippet goes l
 
 总而言之，该代码片段在 Chromium Blink 引擎的广告竞价流程中扮演着至关重要的角色，它负责安全可靠地将前端 JavaScript 提供的竞价配置信息传递到后端，并确保配置的正确性和有效性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/navigator_auction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -163,9 +163,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      return false;
+### 源代码
+```cpp
+return false;
     }
 
     output.auction_ad_config_non_shared_params->all_slots_requested_sizes
@@ -959,7 +961,4 @@ void NavigatorAuction::AuctionHandle::ResolveToConfigResolved::React(
   } else {
     auction_handle()->SetResolveToConfig(
         v8_value->BooleanValue(script_state->G
-"""
-
-
 ```

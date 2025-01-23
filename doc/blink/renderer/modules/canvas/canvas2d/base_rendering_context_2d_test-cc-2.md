@@ -99,7 +99,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 这个代码片段的功能是**详细测试 `BaseRenderingContext2D` 类在创建图形层时，如何正确地处理和应用变换、阴影和上下文过滤器等全局渲染状态**。它通过断言图形记录器中记录的绘制操作序列来验证实现的正确性。每个测试用例都针对不同的全局状态组合，确保了 Canvas 2D API 在处理复杂场景时的行为符合预期。 这些测试是确保 Chromium 浏览器中 Canvas 功能正确性和稳定性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 * context = MakeGarbageCollected<TestRenderingContext2D>(scope);
   NonThrowableExceptionState exception_state;
 
@@ -926,7 +928,4 @@ TEST(BaseRenderingContextLayerGlobalStateTests,
                                                       0, 1, 0, 5,  //
                                                       0, 0, 1, 0,  //
                                                       0, 0, 0, 1)
-"""
-
-
 ```

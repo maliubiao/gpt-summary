@@ -198,7 +198,7 @@ sys.stdin.read()
 
 请注意，实际的函数名称和参数可能会因 Android 版本和设备制造商的 HAL 实现而有所不同。你需要根据具体情况进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/snd_sst_tokens.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -209,8 +209,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -302,7 +304,4 @@ enum SKL_TKNS {
   SKL_TKN_MAX = SKL_TKN_U32_FMT_CFG_IDX,
 };
 #endif
-
-"""
-
 ```

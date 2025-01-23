@@ -118,7 +118,7 @@ By following this systematic approach, I can analyze even a simple piece of code
 
 虽然 `sub.c` 文件本身的功能非常简单，但它在 Frida 的生态系统中扮演着测试或示例的角色。它的存在是为了验证 Frida 的核心功能，并可以作为用户学习和理解 Frida 机制的一个起点。 当用户在调试与 Frida 相关的问题时，了解这个文件的存在和目的可以帮助他们更好地理解问题的根源。 例如，如果一个测试用例涉及到 hook 这个简单的 `sub` 函数失败了，那么问题可能出在 Frida 的 hook 机制本身，而不是目标进程的复杂逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/98 subproject subdir/subprojects/sub/lib/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,14 +126,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "sub.h"
 
 int sub(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -162,15 +162,17 @@ size_t size = cppgc::subtle::ObjectSizeTrait<MyObject>::GetSize(obj);
 
 `v8/include/cppgc/object-size-trait.h` 是 V8 垃圾回收机制的关键组成部分，它提供了一种安全且标准化的方法来获取 V8 垃圾回收器管理的对象的大小。这对于 V8 的内存管理和性能至关重要，并间接地影响着 JavaScript 的执行。用户需要确保 `ObjectSizeTrait` 用于正确的垃圾回收类型，以避免编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/object-size-trait.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/object-size-trait.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ struct ObjectSizeTrait<T, true> : cppgc::internal::BaseObjectSizeTrait {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_OBJECT_SIZE_TRAIT_H_
-
-"""
-
 ```

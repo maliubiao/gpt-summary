@@ -129,15 +129,17 @@ go test -bench=. -benchtime=5s go/test/fixedbugs/bug369.dir/main.go
 
 总而言之，这个 `main.go` 文件是一个精心设计的基准测试，用于比较两种非 ASCII 字符检测方法的性能，并且通过编程方式控制了基准测试的运行参数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug369.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ func main() {
 		// os.Exit(1)
 	}
 }
-
-"""
-
-
-
 ```

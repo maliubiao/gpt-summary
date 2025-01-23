@@ -79,12 +79,14 @@ The `Math.sqrt()` function will be represented by a `Float64Sqrt` IR node. The `
 
 In summary, this section of the C++ code is a vital part of V8's code generation pipeline for ARM64. It maps high-level operations to low-level machine instructions, implementing optimizations to ensure JavaScript code runs efficiently on ARM64-based devices.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/instruction-selector-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 e_t node) {
   using namespace turboshaft;  // NOLINT(build/namespaces)
   const ShiftOp& op = Get(node).Cast<ShiftOp>();
@@ -1799,8 +1801,4 @@ void VisitWordCompare(InstructionSelectorT<Adapter>* selector,
     if (g.IsIntegerConstant(constant)) {
       if (TryEmitCbzOrTbz<Adapter, 64>(selector, left,
                                        g.GetIntegerConstantValue(constant),
-        
-"""
-
-
 ```

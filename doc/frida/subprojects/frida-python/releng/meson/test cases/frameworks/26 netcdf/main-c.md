@@ -122,7 +122,7 @@ Here's a thinking process to arrive at the detailed explanation of the C code:
 
 总而言之，这个简单的 C 代码片段通常是作为更复杂系统或库交互的一个简化示例或测试用例而存在的，它在 Frida 的测试框架中，是为了验证 Frida 对 NetCDF 库的 hook 能力，或者用于调试与 NetCDF 库交互的程序时的一个切入点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/26 netcdf/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "netcdf.h"
 
 int main(void)
@@ -146,7 +148,4 @@ if ((ret = nc_close(ncid)))
 
 return 0;
 }
-
-"""
-
 ```

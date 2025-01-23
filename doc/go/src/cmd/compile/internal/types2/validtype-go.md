@@ -191,15 +191,17 @@ func main() {
 
 `validType.go` 中的 `validType` 和 `validType0` 函数是 Go 编译器类型检查的关键部分，它们负责检测和防止类型定义中的循环引用，确保类型系统的健全性和编译过程的顺利进行。对于泛型，它也能够正确处理类型参数，保证嵌套实例化类型的合法性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/validtype.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -488,9 +490,4 @@ func makeObjList(tlist []*Named) []Object {
 //         path = A[A[string]]->B[P]->A[string]->B[P]
 //
 // At this point we're done and A[A[string]] and is valid.
-
-"""
-
-
-
 ```

@@ -116,14 +116,16 @@ scoped_refptr<Hyphenation> hyphenator = Hyphenation::PlatformGetHyphenation(lang
 
 `hyphenation_null.cc` 提供了一个禁用文本断字功能的默认实现。它的存在可能是为了在某些平台或构建配置下，暂时或永久地禁用断字功能。理解它的作用有助于开发者更好地理解浏览器文本渲染的行为，并避免在预期断字时出现混淆。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/hyphenation/hyphenation_null.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ scoped_refptr<Hyphenation> Hyphenation::PlatformGetHyphenation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

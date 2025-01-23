@@ -132,11 +132,13 @@ console.log(memory); // 输出：[null, null, ..., { value: "objectA" }, ..., { 
 
 `marking-bitmap-unittest.cc` 测试的 `MarkingBitmap` 类是 V8 垃圾回收机制中的一个关键组件。它通过高效的位图结构来跟踪对象的标记状态，从而帮助 V8 准确地识别和回收不再使用的内存，确保 JavaScript 程序的稳定运行和内存效率。 虽然 JavaScript 开发者通常不需要直接与 `MarkingBitmap` 交互，但理解其背后的原理有助于理解 JavaScript 的内存管理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/marking-bitmap-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -352,7 +354,4 @@ TEST_F(NonAtomicBitmapTest, TransitionMarkBit) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

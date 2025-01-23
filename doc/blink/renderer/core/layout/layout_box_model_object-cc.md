@@ -118,15 +118,17 @@ This iterative process of scanning, analyzing, connecting, and summarizing allow
 
 `LayoutBoxModelObject` 类的第一部分主要负责**元素的盒模型属性管理、响应 CSS 样式变化并更新布局状态、管理 PaintLayer 的生命周期、以及提供基础的视觉溢出和轮廓绘制功能**。 它是 Blink 渲染引擎中处理元素布局的核心组件，并直接关联着 HTML 元素的呈现和 CSS 样式的应用。 此外，它还为 JavaScript 提供了获取元素几何信息的底层支持。  这一部分奠定了后续处理更复杂布局逻辑的基础，例如定位、浮动等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box_model_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -945,7 +947,4 @@ LogicalRect LayoutBoxModelObject::LocalCaretRectForEmptyElement(
       (BorderOutsets() + PaddingOutsets())
           .ConvertToLogical(
               {current_style.GetWritingMode()
-"""
-
-
 ```

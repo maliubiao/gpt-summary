@@ -188,7 +188,7 @@ setImmediate(hook_clone);
 
 通过这种方式，你可以使用 Frida hook 系统调用并检查处理器标志位的值，从而进行更深入的调试和分析。这个例子展示了如何间接地观察到 `processor-flags.handroid` 中定义的标志位在系统调用执行后的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/processor-flags.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -199,8 +199,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -350,7 +352,4 @@ Prompt:
 #define CX86_RCR_BASE 0xdc
 #define CR0_STATE (X86_CR0_PE | X86_CR0_MP | X86_CR0_ET | X86_CR0_NE | X86_CR0_WP | X86_CR0_AM | X86_CR0_PG)
 #endif
-
-"""
-
 ```

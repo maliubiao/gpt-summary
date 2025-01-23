@@ -147,7 +147,7 @@ v8/src/execution/messages.cc 的功能是处理和格式化 JavaScript 错误消
 
 这个文件的功能对于开发者调试 JavaScript 代码至关重要，因为它提供的错误信息能够帮助开发者快速定位并解决问题。它隐藏了 V8 引擎内部的复杂性，为 JavaScript 开发者呈现了更加友好的错误提示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/messages.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/messages.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,9 +155,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    // information to get canonical location information.
+### 源代码
+```cpp
+// information to get canonical location information.
     std::vector<FrameSummary> frames;
     it.frame()->Summarize(&frames);
     auto& summary = frames.back().AsJavaScript();
@@ -566,8 +568,4 @@ MaybeHandle<Object> ErrorUtils::CaptureStackTrace(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

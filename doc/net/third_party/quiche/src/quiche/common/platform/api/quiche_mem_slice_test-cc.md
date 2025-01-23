@@ -174,15 +174,17 @@ By following this structured approach, combining code analysis with reasoning ab
 
 总而言之，`quiche_mem_slice_test.cc` 是 QUICHE 库中一个重要的测试文件，用于确保 `QuicheMemSlice` 类的正确性和可靠性，而 `QuicheMemSlice` 则在 Chromium 的网络栈中扮演着管理内存片段的关键角色，间接地影响着 JavaScript 应用的网络性能。调试与网络相关的内存问题时，开发者很可能会深入研究这个文件以理解 `QuicheMemSlice` 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/api/quiche_mem_slice_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ TEST_F(QuicheMemSliceTest, SliceFromBuffer) {
 }  // namespace
 }  // namespace test
 }  // namespace quiche
-
-"""
-
 ```

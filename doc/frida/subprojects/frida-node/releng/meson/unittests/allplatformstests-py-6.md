@@ -183,7 +183,7 @@ These tests can help identify common errors users might make:
 
 In essence, `allplatformstests.py` serves as a comprehensive suite of unit tests specifically designed to validate the correctness and robustness of the Frida-node build process when managed by the Meson build system across various operating systems and configurations. It ensures that core functionalities like building, handling environment variables, installing components (with and without subprojects), setting up development environments, and integrating with tools like `clang-format` and Rust's tooling work as expected. These tests act as a safety net during development, preventing regressions and ensuring the reliability of the Frida-node build process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 DCXXFLAG'}
         srcdir = os.path.join(self.unit_test_dir, '88 multiple envvars')
         self.init(srcdir, override_envvars=envs)
@@ -930,8 +932,4 @@ DCXXFLAG'}
             # The first supported std should be selected
             self.setconf('-Dcpp_std=c++11,gnu++11,vc++11')
             self.assertEqual(self.getconf('cpp_std'), 'c++11')
-
-"""
-
-
 ```

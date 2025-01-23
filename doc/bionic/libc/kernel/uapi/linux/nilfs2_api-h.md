@@ -318,7 +318,7 @@ if __name__ == '__main__':
 
 这个 Frida 示例可以帮助你观察哪些进程在调用与 NILFS2 相关的 ioctl 命令，以及传递的具体参数和数据。 请注意，直接操作 NILFS2 文件系统通常需要 root 权限，并且可能影响系统的稳定性，因此在实际操作中需要谨慎。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nilfs2_api.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -329,8 +329,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -464,7 +466,4 @@ struct nilfs_bdesc {
 #define NILFS_IOCTL_SET_ALLOC_RANGE _IOW(NILFS_IOCTL_IDENT, 0x8C, __u64[2])
 #define NILFS_IOCTL_SET_SUINFO _IOW(NILFS_IOCTL_IDENT, 0x8D, struct nilfs_argv)
 #endif
-
-"""
-
 ```

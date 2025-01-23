@@ -140,11 +140,13 @@ function testSimple3(value) {
 
 `test-simple-riscv64.cc` 是 V8 引擎针对 RISC-V 64位架构的低级别测试，它不直接编写或执行 JavaScript 代码，而是通过生成和执行 RISC-V 汇编指令来验证 V8 在该架构上的代码生成和执行能力。这些测试确保了 V8 能够正确地将 JavaScript 代码编译成高效且正确的 RISC-V 机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-simple-riscv64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -398,7 +400,4 @@ TEST(LI_CONST) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

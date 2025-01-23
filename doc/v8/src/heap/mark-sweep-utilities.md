@@ -136,11 +136,13 @@ let str2 = "very long string";
 
 `v8/src/heap/mark-sweep-utilities.cc` 是 V8 引擎中负责 Mark-Sweep 垃圾回收关键辅助功能的 C++ 代码。它虽然不直接暴露给 JavaScript 开发者，但其正确性和效率直接影响着 JavaScript 程序的内存管理、性能和稳定性。理解这个文件的功能有助于深入了解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-sweep-utilities.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ void VerifyRememberedSetsAfterEvacuation(Heap* heap,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

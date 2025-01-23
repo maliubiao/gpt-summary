@@ -150,7 +150,7 @@ meson setup builddir -Db_optimization=g
 
 总而言之，`clang.py` 文件在 Frida 的构建过程中扮演着关键角色，它将 Meson 的通用构建描述转换为 Clang 编译器能够理解的具体指令，并处理了 Clang 编译器及其工具链的各种特性和配置。理解这个文件有助于理解 Frida 是如何被构建出来的，以及如何根据需要调整构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/mixins/clang.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019-2022 The meson development team
 
@@ -330,7 +332,4 @@ class ClangCompiler(GnuLikeCompiler):
                 raise mesonlib.MesonException('clang support for LTO threads requires clang >=4.0')
             args.append(f'-flto-jobs={threads}')
         return args
-
-"""
-
 ```

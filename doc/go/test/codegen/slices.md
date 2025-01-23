@@ -186,15 +186,17 @@ func SliceMakeCopyNoOptBlank(s []*int) []*int {
 
 总而言之，`go/test/codegen/slices.go` 是一个深入了解 Go 编译器如何优化切片操作的宝贵资源。它通过汇编级别的断言，确保编译器在处理切片时能够生成高效的代码。虽然普通 Go 开发者不会直接使用或修改这个文件，但理解其背后的原理可以帮助我们编写更高效的 Go 代码，并避免一些常见的切片使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/slices.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -626,9 +628,4 @@ func Slice0(p *struct{}, i int) []struct{} {
 	// amd64:-"MULQ"
 	return unsafe.Slice(p, i)
 }
-
-"""
-
-
-
 ```

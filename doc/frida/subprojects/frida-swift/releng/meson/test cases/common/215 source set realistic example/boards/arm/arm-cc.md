@@ -122,7 +122,7 @@ Initially, one might overstate the functionality of `some_arm_thing()` since it'
 
 总的来说，这个简单的 `arm.cc` 文件是 Frida 针对 ARM 架构支持的基础组件之一。它定义了 ARM 平台的抽象，并预留了未来可能需要实现的特定操作接口。虽然代码本身很简单，但它在 Frida 的整个架构中扮演着关键的角色，尤其是在涉及到低层二进制操作和架构相关的处理时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/215 source set realistic example/boards/arm/arm.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "arm.h"
 
 const char *ARMBoard::target()
@@ -142,7 +144,4 @@ const char *ARMBoard::target()
 void ARMBoard::some_arm_thing()
 {
 }
-
-"""
-
 ```

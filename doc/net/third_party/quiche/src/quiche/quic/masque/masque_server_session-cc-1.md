@@ -160,7 +160,7 @@ This structured approach ensures that all aspects of the request are considered,
 
 希望这些归纳能够更清晰地理解这段代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/masque/masque_server_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -168,10 +168,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-      masque_session_(masque_session) {
+### 源代码
+```cpp
+masque_session_(masque_session) {
   QUICHE_DCHECK_NE(fd_, kQuicInvalidSocketFd);
   QUICHE_DCHECK_NE(masque_session_, nullptr);
   this->stream()->RegisterHttp3DatagramVisitor(this);
@@ -446,8 +447,4 @@ void MasqueServerSession::ConnectEthernetServerState::OnHttp3Datagram(
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

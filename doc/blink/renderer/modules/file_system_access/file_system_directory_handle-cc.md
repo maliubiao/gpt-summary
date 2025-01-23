@@ -237,15 +237,17 @@ const fileHandle = await directoryHandle.getFileHandle('new_file.txt', { create:
 
 总而言之，`FileSystemDirectoryHandle.cc` 是 Web File System Access API 在 Blink 渲染引擎中的核心实现，负责将 JavaScript 的文件系统操作请求转发到浏览器进程，并处理返回的结果，从而让网页能够安全地与用户的文件系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/file_system_access/file_system_directory_handle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -679,7 +681,4 @@ FileSystemDirectoryHandle::CreateIterationSource(
 }
 
 }  // namespace blink
-
-"""
-
 ```

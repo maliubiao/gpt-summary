@@ -170,7 +170,7 @@ const myClassInstance = new MyClass();
 
 `v8/src/heap/new-spaces.cc` 实现了 V8 引擎中新生代堆内存空间的管理，包括内存的分配、增长、收缩，以及判断对象是否可以晋升到老年代等关键功能。它是 V8 垃圾回收机制的重要组成部分，直接影响 JavaScript 程序的内存分配和性能。 该文件使用基于页面的管理方式来高效地处理新生代对象的分配和回收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/new-spaces.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/new-spaces.cc以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ce();
   return page;
 }
@@ -306,8 +308,4 @@ AllocatorPolicy* PagedNewSpace::CreateAllocatorPolicy(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

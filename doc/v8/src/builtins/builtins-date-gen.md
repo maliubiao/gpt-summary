@@ -127,11 +127,13 @@ console.log(primitiveValueString);
 
 `builtins-date-gen.cc` 文件是 V8 引擎中至关重要的一部分，它使用高效的 C++ 代码实现了 JavaScript `Date` 对象的核心功能，特别是各种获取日期和时间组成部分的方法，以及类型检查和原始值转换机制。它体现了 JavaScript 引擎在性能优化方面的努力，例如通过缓存来加速日期字段的访问。理解这个文件有助于深入了解 JavaScript `Date` 对象在底层是如何工作的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-date-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -396,7 +398,4 @@ TF_BUILTIN(DatePrototypeToPrimitive, CodeStubAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -186,14 +186,16 @@ profileDiv.setAttribute('data-user-id', userId);
 
 `identifiability_digest_helpers.cc` 提供了一组用于生成隐私预算相关 Token 的基础工具。它通过对字符串进行哈希和信息压缩等操作，生成代表字符串数据的摘要，以便在浏览器内部跟踪和管理信息泄露的风险。虽然它本身是 C++ 代码，但它处理的数据很可能来源于 JavaScript, HTML, CSS 等前端技术。Chromium 内部的开发者需要谨慎选择合适的 Token 生成函数，以平衡隐私保护和功能需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/privacy_budget/identifiability_digest_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ IdentifiableToken IdentifiabilityBenignStringVectorToken(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -169,15 +169,17 @@ By following this structured approach, combining code analysis with conceptual u
 
 总而言之，`sparse_control.cc` 是 Chromium 磁盘缓存中一个重要的组件，它负责管理稀疏缓存条目的复杂逻辑，使得浏览器能够高效地存储和检索大型资源。 虽然 JavaScript 不会直接调用这个文件中的代码，但它依赖于磁盘缓存提供的功能，而 `sparse_control.cc` 正是这些功能的幕后功臣之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/sparse_control.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1117,7 +1119,4 @@ void SparseControl::DoAbortCallbacks() {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

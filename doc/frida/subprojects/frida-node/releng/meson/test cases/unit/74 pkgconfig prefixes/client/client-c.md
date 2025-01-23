@@ -185,7 +185,7 @@ int val2() {
 
 总而言之，这个简单的 `client.c` 文件本身功能简单，但其存在的上下文（Frida 测试用例）使其成为了理解 Frida 如何处理外部依赖、如何进行动态插桩的重要组成部分。 用户到达这个文件的过程通常是出于测试、调试或学习 Frida 内部机制的目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/74 pkgconfig prefixes/client/client.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <val2.h>
 #include <stdio.h>
 
@@ -203,7 +205,4 @@ int main(int argc, char **argv)
   printf("%d\n", val2());
   return 0;
 }
-
-"""
-
 ```

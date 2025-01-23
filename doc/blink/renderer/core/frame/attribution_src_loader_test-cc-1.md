@@ -110,15 +110,17 @@ Attribution-Reporting-Register-Source: {"source_event_id": "12345", "destination
 
 通过这些测试，Chromium 能够确保在各种场景下，`AttributionSrcLoader` 能够正确可靠地处理 Attribution Reporting 相关的逻辑，从而保证这一隐私保护技术的正确实施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/attribution_src_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eaderField(
         http_names::kAttributionReportingRegisterOSSource,
         AtomicString(R"("https://r.test/x")"));
@@ -485,8 +487,4 @@ TEST_F(AttributionSrcLoaderTest, AttributionSrcRequestStatus_Navigation) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

@@ -169,7 +169,7 @@ if __name__ == '__main__':
 
 总之，尽管 `lib.c` 文件非常简单，但它在 Frida 的构建和测试流程中扮演着角色，并且可以作为理解 Frida 工作原理的一个小窗口。 只有在特定的开发、调试或研究场景下，用户才有可能直接接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/99 install all targets/subdir/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -188,7 +190,4 @@ Prompt:
 int DLL_PUBLIC foo(void) {
   return 0;
 }
-
-"""
-
 ```

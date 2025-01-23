@@ -173,15 +173,17 @@ Applying this process to the provided code snippet leads to the detailed summary
 
 **总结来说，这段代码是 `HTMLInputElement` 元素的核心逻辑实现，负责处理属性、管理状态、响应事件以及与浏览器的渲染引擎和表单系统进行交互。它定义了 `input` 元素在 HTML 文档中的行为和功能，并且与 JavaScript 和 CSS 紧密联系。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_input_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ld_value != value) {
       UpdateType(value);
     }
@@ -1105,7 +1107,4 @@ Node::InsertionNotificationRequest HTMLInputElement::InsertedInto(
         !input_type_view_->HasCreatedShadowSubtree() &&
         input_type_view_->NeedsShadowSubtree()) {
       scheduled_create_s
-"""
-
-
 ```

@@ -245,7 +245,7 @@ By following these steps – from a high-level overview to detailed code analysi
 
 总之，这个 `meson-sample.c` 文件作为一个简单的 GLib 对象示例，被用作 Frida 工具的测试用例，用于验证 Frida 与 GLib 框架的互操作性。开发者可以通过分析这个文件，了解如何定义和使用 GLib 对象，并作为调试 Frida 脚本或 Frida 本身功能的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/11 gir subproject/subprojects/mesongir/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -253,8 +253,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 typedef struct _MesonSamplePrivate
@@ -382,7 +384,4 @@ meson_sample_print_message (MesonSample *self)
 
   g_print ("Message: %s\n", priv->msg);
 }
-
-"""
-
 ```

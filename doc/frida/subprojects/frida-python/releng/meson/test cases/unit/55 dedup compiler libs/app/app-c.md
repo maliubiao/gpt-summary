@@ -227,7 +227,7 @@ end value = 10
 
 **总结来说，用户到达 `app.c` 通常不是直接运行它，而是作为 Frida 开发、测试或学习过程中的一个环节，用于理解和调试 Frida 在处理共享库时的行为。** 这个文件作为一个简单的示例，帮助验证 Frida 的功能和揭示潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/55 dedup compiler libs/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -235,8 +235,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <liba.h>
 #include <libb.h>
@@ -250,7 +252,4 @@ main(void)
   printf("end value = %d\n", liba_get());
   return 0;
 }
-
-"""
-
 ```

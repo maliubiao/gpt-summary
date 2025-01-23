@@ -232,7 +232,7 @@ sys.stdin.read()
 
 通过 Hook 不同的函数，例如 `malloc` 和 `free`，并结合堆内存标记机制，可以更深入地理解 Android 内存管理的内部工作原理，并帮助定位内存错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/heap_tagging.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -306,7 +308,4 @@ __attribute__((unused)) static inline const char* DescribeTaggingLevel(
       return "sync";
   }
 }
-
-"""
-
 ```

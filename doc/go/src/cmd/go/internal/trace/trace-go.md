@@ -242,15 +242,17 @@ go test -trace=trace.out  ./mypackage
 
 4. **混淆 Goroutine ID (TID):**  理解 `StartGoroutine` 的作用至关重要。如果在多个 Goroutine 中执行操作，但没有使用 `StartGoroutine` 来分配独立的 TID，那么这些 Goroutine 的事件可能会被 Chrome Trace Viewer 视为在同一个“线程”中发生，导致时间线显示不准确。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/trace/trace.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -457,9 +459,4 @@ type traceFile struct {
 	enc     *json.Encoder
 	entries int64
 }
-
-"""
-
-
-
 ```

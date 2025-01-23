@@ -176,7 +176,7 @@ function funcB() {
 
 总而言之，这部分代码是 V8 编译器代码生成器正确性测试的一部分，专注于确保在特定的调用场景下（尾调用和 WebAssembly 调用），编译器能够生成正确且高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-code-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-code-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -184,8 +184,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etOrCreateParallelMove(Instruction::FIRST_GAP_POSITION,
                                   env.main_zone())
         ->AddMove(slot_minus_2, slot_2);
@@ -338,8 +340,4 @@ TEST(Regress_1171759) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

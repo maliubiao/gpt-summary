@@ -99,11 +99,13 @@ const instance2 = new MyClass(20);
 
 简单来说，你用 JavaScript 创建的每一个对象，背后都涉及到类似 `allocation.cc` 中定义的 C++ 分配机制。这个文件是 V8 引擎实现 JavaScript 内存管理的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/allocation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ CPPGC_FORCE_ALWAYS_INLINE void* MakeGarbageCollectedTraitInternal::Allocate(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -184,15 +184,17 @@ These errors are more relevant to developers working on the V8 engine itself, no
 
 In summary, `v8/src/objects/fixed-array.cc` is a foundational piece of V8, defining the core data structures used to represent arrays and collections of objects within the JavaScript engine. It handles both fixed-size and dynamically resizable arrays, along with specialized arrays for weak references, all crucial for the efficient operation of JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/fixed-array.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/fixed-array.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -496,7 +498,4 @@ bool WeakArrayList::Contains(Tagged<MaybeObject> value) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

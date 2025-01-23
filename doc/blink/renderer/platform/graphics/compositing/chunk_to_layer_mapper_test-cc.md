@@ -113,14 +113,16 @@ Let's break down the thought process for analyzing this C++ test file and extrac
 
 `chunk_to_layer_mapper_test.cc` 通过一系列单元测试，细致地验证了 `ChunkToLayerMapper` 在各种场景下的行为，确保了 Blink 渲染引擎能够正确地将不同的渲染 "chunk" 映射到最终的图形层上，并正确处理与之相关的 CSS 属性。这对于保证网页的正确渲染至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/chunk_to_layer_mapper_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ TEST_F(ChunkToLayerMapperTest, SwitchToSiblingEffect) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

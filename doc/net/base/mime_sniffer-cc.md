@@ -103,15 +103,17 @@ The user wants to understand the functionality of the `mime_sniffer.cc` file in 
 
 总之，`net/base/mime_sniffer.cc` 在 Chromium 的网络安全和内容处理中扮演着至关重要的角色，它弥补了 HTTP 协议中 MIME 类型信息可能缺失或不准确的问题，确保浏览器能够正确和安全地处理各种网络资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/mime_sniffer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -932,7 +934,4 @@ bool LooksLikeBinary(std::string_view content) {
 }
 
 }  // namespace net
-
-"""
-
 ```

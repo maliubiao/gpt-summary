@@ -146,7 +146,7 @@ Sample 2, Count: 2, Locations: 0x402fff 0x403fff 0x404fff
 
 总而言之，这段代码是 `pprof` 工具中至关重要的一部分，它使得 `pprof` 能够处理和分析各种旧版本的性能剖析数据，从而为用户提供更广泛的性能分析能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/profile/legacy_profile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -154,8 +154,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -1384,9 +1386,4 @@ var lockRxStr = strings.Join([]string{
 	`(SpinLock::)?SlowUnlock.*`,
 	`(SpinLockHolder::)?~SpinLockHolder.*`,
 }, `|`)
-
-"""
-
-
-
 ```

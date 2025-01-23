@@ -85,7 +85,7 @@ I need to:
 
 `frida/subprojects/frida-swift/releng/meson/mesonbuild/rewriter.py` 脚本是 Frida 构建系统的一个核心组件，它提供了一组命令来自动化修改 Meson 构建定义文件 (`meson.build`) 的功能。这包括增删构建目标、修改目标的源文件和额外文件、以及设置或修改构建函数的关键字参数和项目的默认选项。该脚本通过解析 `meson.build` 文件的抽象语法树 (AST) 来实现这些修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -94,8 +94,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -904,7 +906,4 @@ class Rewriter:
                     self.modified_nodes += [root]
 
         elif cmd
-"""
-
-
 ```

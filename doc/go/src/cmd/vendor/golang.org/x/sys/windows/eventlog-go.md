@@ -276,15 +276,17 @@ go run your_program.go -source MyCustomSource -message "来自命令行的事件
 
 总而言之，这段代码是 Go 语言与 Windows 事件日志系统进行交互的基础，它通过 `syscall` 包实现了对 Windows API 的调用，使得 Go 应用程序能够将各种类型的事件记录到 Windows 系统日志中。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/eventlog.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -305,9 +307,4 @@ const (
 //sys	RegisterEventSource(uncServerName *uint16, sourceName *uint16) (handle Handle, err error) [failretval==0] = advapi32.RegisterEventSourceW
 //sys	DeregisterEventSource(handle Handle) (err error) = advapi32.DeregisterEventSource
 //sys	ReportEvent(log Handle, etype uint16, category uint16, eventId uint32, usrSId uintptr, numStrings uint16, dataSize uint32, strings **uint16, rawData *byte) (err error) = advapi32.ReportEventW
-
-"""
-
-
-
 ```

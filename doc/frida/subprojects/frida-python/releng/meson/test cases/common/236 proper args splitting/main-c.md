@@ -132,7 +132,7 @@ Initially, I might have focused too much on the `main` function and tried to fin
 
 总而言之，这个看似简单的 `main.c` 文件在Frida的构建系统中扮演着一个重要的角色，它是一个编译时的断言，用于确保构建过程的关键参数被正确地传递，从而保证最终构建出的Frida组件能够正常工作。这对于像Frida这样的复杂工具来说，是保证构建质量和稳定性的重要手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/236 proper args splitting/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifndef FOO
 # error "FOO is not defined"
 #endif
@@ -153,7 +155,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

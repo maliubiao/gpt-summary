@@ -219,15 +219,17 @@ By following these steps and continually refining the understanding, we can arri
 
 总而言之，`ce_reactions_scope.cc` 是 Blink 引擎中管理自定义元素生命周期回调执行上下文的关键组件，确保这些回调能够按照正确的顺序和规则执行，并处理可能发生的异常。它与 JavaScript 和 HTML 紧密相关，是实现 Web Components 技术的重要基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/custom/ce_reactions_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ void CEReactionsScope::EnqueueToCurrentQueue(CustomElementReactionStack& stack,
 }
 
 }  // namespace blink
-
-"""
-
 ```

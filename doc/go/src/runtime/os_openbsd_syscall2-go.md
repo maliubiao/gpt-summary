@@ -255,7 +255,7 @@ func main() {
 
 在上面的错误示例中，如果 "non_existent_file.txt" 不存在，`syscall.Open` 会返回一个负数表示错误，但代码直接使用了这个负数作为文件描述符传递给 `syscall.Read`，这会导致错误。正确的做法是检查 `syscall.Open` 的返回值，如果返回负数，则处理错误，避免后续操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_openbsd_syscall2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -263,8 +263,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -367,9 +369,4 @@ func fcntl(fd, cmd, arg int32) (ret int32, errno int32)
 func walltime() (sec int64, nsec int32)
 
 func issetugid() int32
-
-"""
-
-
-
 ```

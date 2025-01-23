@@ -147,7 +147,7 @@ A user would typically interact with this script via the command line. Here's ho
 
 This part of the `deps.py` script defines the core structure for managing Frida's external dependencies. It sets up the command-line interface for synchronizing, building, rolling out, waiting for, and bumping dependency versions. It establishes the fundamental concepts of "bundles" and "machine specifications," which are crucial for handling cross-platform dependencies. The functions defined here lay the groundwork for downloading, extracting, and potentially building the necessary libraries and tools that Frida relies on. It also includes error handling for common issues like invalid input and network problems.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from __future__ import annotations
 import argparse
@@ -977,8 +979,4 @@ class Builder:
             print("\n".join([
                 "",
                 f"# Done",
-  
-"""
-
-
 ```

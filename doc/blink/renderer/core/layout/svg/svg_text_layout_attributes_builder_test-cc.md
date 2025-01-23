@@ -103,14 +103,16 @@ By combining these observations, we can construct a detailed and informative ans
 
 `blink/renderer/core/layout/svg/svg_text_layout_attributes_builder_test.cc` 中的 `TextPathCrash` 测试用例旨在验证 `SvgTextLayoutAttributesBuilder` 在处理特定嵌套 `<textPath>` 结构时的鲁棒性，防止因处理不当而导致的崩溃。 这与确保浏览器正确渲染和处理包含 `<textPath>` 元素的 HTML 内容，并能应对开发者可能犯的 SVG 结构错误密切相关。虽然测试本身是用 C++ 编写的，但它直接影响着最终用户在浏览器中看到的 SVG 文本渲染效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_text_layout_attributes_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ TEST_F(SvgTextLayoutAttributesBuilderTest, TextPathCrash) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

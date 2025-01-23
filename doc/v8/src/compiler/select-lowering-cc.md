@@ -143,15 +143,17 @@ console.log(example(8)); // 输出: 10
 
 总而言之，`v8/src/compiler/select-lowering.cc` 的作用是将高级的条件选择操作转化为更底层的控制流结构，这是编译器优化的关键步骤，它使得代码能够更有效地在目标架构上执行。它处理的 `Select` 操作直接对应于 JavaScript 中的条件表达式和 `if-else` 语句。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/select-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/select-lowering.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ Reduction SelectLowering::LowerSelect(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -98,11 +98,13 @@ add("hello", " world");
 
 `deoptimization-data.cc` 文件定义的数据结构和功能是 V8 引擎实现高性能的关键组成部分。它使得 V8 能够在运行时动态地进行代码优化，并在必要时安全地回退到未优化状态，保证了 JavaScript 代码的正确执行，即使在遇到动态类型等特性时也能保持较高的性能。 JavaScript 开发者通常不需要直接与这个文件中的代码交互，但理解其背后的原理有助于理解 V8 的工作方式以及 JavaScript 的性能特点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/deoptimization-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -514,7 +516,4 @@ void DeoptimizationFrameTranslation::PrintFrameTranslation(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

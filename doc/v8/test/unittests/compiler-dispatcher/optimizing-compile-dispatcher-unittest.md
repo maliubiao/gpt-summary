@@ -69,9 +69,12 @@ This systematic approach of identifying key components, analyzing test cases, in
 
 通过这些测试，可以确保 `OptimizingCompileDispatcher` 能够正确地管理优化编译任务，并且在非阻塞模式下不会影响 JavaScript 的正常执行。 `BlockingCompilationJob` 的引入是为了模拟后台编译任务的执行，以便测试 `Flush` 方法的非阻塞行为。
 
-Prompt: ```这是目录为v8/test/unittests/compiler-dispatcher/optimizing-compile-dispatcher-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/compiler-dispatcher/optimizing-compile-dispatcher-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,6 +175,4 @@ TEST_F(OptimizingCompileDispatcherTest, NonBlockingFlush) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

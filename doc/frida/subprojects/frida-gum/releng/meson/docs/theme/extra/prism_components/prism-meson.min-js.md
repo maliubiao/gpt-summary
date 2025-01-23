@@ -174,7 +174,7 @@ endiff # 错误的拼写
 
 总而言之，`prism-meson.min.js` 虽然本身不直接参与核心的动态 instrumentation 过程，但它是 Frida 项目文档的重要组成部分，通过提供 Meson 代码的语法高亮，帮助用户更好地理解 Frida 的构建过程和内部结构，这对于逆向工程、学习 Frida 内部机制以及为 Frida 做出贡献都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/docs/theme/extra/prism_components/prism-meson.min.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,9 +182,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 Prism.languages.meson={"triple-quoted-string":{pattern:/'''[\s\S]*?'''/,alias:"string"},comment:/#.*/,string:/'(?:\\'|[^'])*'/,number:/\b\d+(?:\.\d+)?\b/,keyword:/\b(?:if|else|elif|endif|foreach|endforeach)\b/,"function":/(?=\.|\b)[a-zA-Z_]+\s*(?=\()/,"boolean":/\b(?:true|false)\b/,builtin:/\b(?:meson|host_machine|target_machine|build_machine)(?=\.)/,operator:/(?:[<>=*+\-\/!]?=|%|\/|\*|-|\+|\b(?:or|and|not)\b)/,punctuation:/[(),[\]]/};
-"""
-
 ```

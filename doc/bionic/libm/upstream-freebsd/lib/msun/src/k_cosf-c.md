@@ -222,7 +222,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 总而言之，`k_cosf.c` 文件虽然小巧，但它是 Android 系统中三角函数计算的关键组成部分，直接影响着依赖于数学运算的各种应用程序的性能和精度。理解其实现方式有助于更深入地了解 Android 底层的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/k_cosf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -233,8 +233,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* k_cosf.c -- float version of k_cos.c
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  * Debugged and optimized by Bruce D. Evans.
@@ -276,7 +278,4 @@ __kernel_cosdf(double x)
 	r = C2+z*C3;
 	return ((one+z*C0) + w*C1) + (w*z)*r;
 }
-
-"""
-
 ```

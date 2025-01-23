@@ -107,12 +107,14 @@ console.log(sum);
 
 由于这是第 1 部分，后续的部分可能会涉及更具体的指令选择规则、优化策略以及与其他编译阶段的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1872,7 +1874,4 @@ void VisitWord32PairShift(InstructionSelectorT<Adapter>* selector,
   int32_t output_count = 0;
   int32_t temp_count = 0;
   outputs[output_count++] = g.DefineAs
-"""
-
-
 ```

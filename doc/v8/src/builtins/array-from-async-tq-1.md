@@ -224,7 +224,7 @@ main();
 
 总而言之，`v8/src/builtins/array-from-async.tq` 的这段代码是 V8 引擎实现 `Array.fromAsync` 核心功能的关键部分，它处理了异步迭代、类型检查、错误处理以及最终数组的构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-from-async.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/array-from-async.tq以.tq结尾，那它是个v8 torque源代码，
@@ -232,8 +232,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 -async-implementation.
 transitioning javascript builtin ArrayFromAsync(
     js-implicit context: NativeContext, receiver: JSAny)(...arguments): JSAny {
@@ -384,8 +386,4 @@ transitioning javascript builtin ArrayFromAsync(
   }
 }
 }
-
-"""
-
-
 ```

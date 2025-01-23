@@ -165,7 +165,7 @@ AssertionError
 * **确保构建环境的依赖项已安装：**  Frida 的构建需要一些依赖项（例如，用于编译 C 代码的工具链）。如果这些依赖项没有正确安装，可能会导致构建过程中的某些步骤失败，进而影响到测试环境的设置。
 * **查看 Frida 的官方文档：** Frida 的官方文档通常会提供详细的构建步骤和环境配置说明，开发者应该参考这些文档来确保构建环境的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/51 run target/check-env.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys
@@ -203,7 +205,4 @@ print(f'{build_root} == {env_build_root}')
 assert build_root == env_build_root
 print(f'{current_source_dir} == {env_current_source_dir}')
 assert current_source_dir == env_current_source_dir
-
-"""
-
 ```

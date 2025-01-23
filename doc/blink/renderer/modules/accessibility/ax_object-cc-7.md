@@ -152,7 +152,7 @@ This section of `ax_object.cc` focuses heavily on **tree traversal and manipulat
 
 这部分 `ax_object.cc` 的功能主要集中在 **维护和导航可访问性树的结构**。它提供了查找父节点、兄弟节点和子节点的方法，并考虑了元素是否被忽略的情况。此外，它还包含了识别特定类型的可访问性对象（如容器小部件）以及管理子节点更新的机制。这些功能是确保辅助技术能够正确理解和操作网页内容的基础。这部分代码是可访问性实现的核心组成部分，连接了底层的 DOM 和渲染结构与上层的辅助技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 use it is not clear whether to search for the "
                     "sibling in the unignored tree or in the whole tree: "
                  << this;
@@ -1137,7 +1139,4 @@ PhysicalRect AXObject::GetBoundsInFrameCoordinates() const {
 }
 
 void AXObject::UpdateStyleAndLayoutTreeForNode(Node& nod
-"""
-
-
 ```

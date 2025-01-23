@@ -94,7 +94,7 @@ test.project = "frida_core" # 假设的 project 名称
 
 这段代码的主要功能是 **生成详细的 JUnit 格式的测试报告**，用于记录 Frida 测试框架中每个测试用例和子测试的执行结果。它能够根据测试的状态（通过、失败、跳过、错误等）以及标准输出和标准错误，构建符合 JUnit 规范的 XML 报告，方便集成到持续集成系统和各种测试结果分析工具中。它为 Frida 开发者提供了一种标准化的方式来查看和分析测试结果，辅助他们进行调试和问题定位。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 (sum(1 for r in test.results if r.result is TestResult.SKIP)),
                 time=str(test.duration),
             )
@@ -880,7 +882,4 @@ class TestHarness:
 
         self.prepare_build()
         self.load_
-"""
-
-
 ```

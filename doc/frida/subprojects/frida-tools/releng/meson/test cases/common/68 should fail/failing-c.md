@@ -108,7 +108,7 @@ By following these steps, we can accurately analyze the provided C code and its 
 
 总而言之，`failing.c` 是一个非常简单的 C 程序，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理失败进程时的正确性。它本身并不涉及到复杂的逆向技术，而是作为测试工具存在，确保 Frida 能够可靠地处理各种程序状态，包括失败状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/68 should fail/failing.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,12 +116,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 1;
 }
-
-"""
-
 ```

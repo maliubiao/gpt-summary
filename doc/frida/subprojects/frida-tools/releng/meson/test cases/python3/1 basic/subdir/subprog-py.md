@@ -166,7 +166,7 @@ Running mainprog from subdir.
 
 总而言之，这个 `subprog.py` 脚本虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的基础功能。它的存在提示我们 Frida 的开发过程非常注重测试，以确保工具的稳定性和可靠性。通过分析这个脚本，我们可以窥探到 Frida 底层的一些工作原理以及可能涉及的技术领域。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python3/1 basic/subdir/subprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # In order to run this program, PYTHONPATH must be set to
@@ -188,7 +190,4 @@ print('Running mainprog from subdir.')
 
 if gluonator.gluoninate() != 42:
     sys.exit(1)
-
-"""
-
 ```

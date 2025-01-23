@@ -100,7 +100,7 @@ helpers.some_utility_function()
 
 总而言之，虽然这个特定的 `__init__.py` 文件本身是空的，它在 Python 的包管理机制中扮演着至关重要的角色，并且是 Frida 项目组织结构和构建过程的基础组成部分。它间接地与逆向工程、底层系统知识以及用户可能遇到的导入错误相关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/utils/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,9 +108,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -210,15 +210,17 @@ Actual:
 
 **简而言之，这个文件是 Chromium 网络栈中 SPDY/HTTP/2 测试基础设施的关键组成部分，用于辅助开发、测试和调试与 HTTP/2 协议相关的代码。** 用户（开发者）通常不会直接调用这些函数，而是通过运行测试用例或在调试网络问题时间接地接触到它们。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/spdy_test_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ SpdySerializedFrame MakeSerializedFrame(const char* data, size_t length) {
 
 }  // namespace test
 }  // namespace spdy
-
-"""
-
 ```

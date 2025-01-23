@@ -128,15 +128,17 @@ fetch('https://example.com/important-data', {
 
 因此，虽然用户并没有直接与 `net/base/request_priority.cc` 文件交互，但他们的操作会触发 JavaScript 代码发起网络请求，而这些请求的优先级最终会在浏览器的网络栈中被处理，而 `RequestPriorityToString` 函数就可能在网络栈的某个环节被调用，用于记录或调试这些请求的优先级信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/request_priority.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ const char* RequestPriorityToString(RequestPriority priority) {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -107,11 +107,13 @@ WebAssembly.instantiateStreaming(fetch('module.wasm'), importObject)
 
 总而言之，`wasm-graph-assembler.cc` 中定义的 `WasmGraphAssembler` 类是 V8 编译 WebAssembly 代码的关键组件，它提供了一组抽象的接口，用于构建代表 WebAssembly 操作的 TurboFan 图节点，并特别处理了与 JavaScript 互操作相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-graph-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -710,7 +712,4 @@ Node* WasmGraphAssembler::HasInstanceType(Node* heap_object,
 }
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

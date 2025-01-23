@@ -121,15 +121,17 @@ websocket.onmessage = (event) => {
 
 总而言之，`websocket_frame_parser_fuzzer.cc` 并不是用户直接操作的对象，而是 Chromium 开发者用于测试和保障 WebSocket 功能稳定性和安全性的重要工具。它通过模拟各种各样的网络数据，来检验 WebSocket 帧解析器的健壮性，防止因处理异常数据而导致的安全漏洞或程序崩溃。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_frame_parser_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   }
   return 0;
 }
-
-"""
-
 ```

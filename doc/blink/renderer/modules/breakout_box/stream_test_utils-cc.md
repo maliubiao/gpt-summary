@@ -145,15 +145,17 @@ Let's break down the thought process for analyzing the given C++ code snippet.
 
 总而言之，`blink/renderer/modules/breakout_box/stream_test_utils.cc` 是 Blink 引擎内部用于测试媒体流功能的工具文件，它提供的 `CreateVideoMediaStreamTrack` 函数可以方便地创建用于测试的视频媒体流轨道，这对于确保 Web 标准 MediaStream API 在 Chromium 中的正确实现至关重要。尽管用户不会直接接触这个文件，但它背后的功能支撑着用户在网页上使用摄像头等媒体设备的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/breakout_box/stream_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ MediaStreamTrack* CreateVideoMediaStreamTrack(ExecutionContext* context,
 }
 
 }  // namespace blink
-
-"""
-
 ```

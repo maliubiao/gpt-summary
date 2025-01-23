@@ -131,7 +131,7 @@ empty_config=
 
 总而言之，`gen-multi.py` 是一个用于生成 TOML 测试文件的辅助脚本，它通过解析特定的 `.multi` 文件，将其中的内容分割成多个独立的 `.toml` 文件，方便进行测试和分析。在 Frida 的开发和测试流程中，它可以用于生成各种各样的 TOML 配置文件，以验证 Frida 的 TOML 解析器的健壮性和正确性。对于逆向工程师来说，理解这种测试用例生成方式也有助于理解目标软件如何处理配置文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tests/toml-test/gen-multi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import glob
@@ -155,7 +157,4 @@ for f in glob.glob('tests/invalid/*/*.multi'):
         path = base + "/" + name + '.toml'
         with open(path, 'wb+') as fp:
             fp.write(l)
-
-"""
-
 ```

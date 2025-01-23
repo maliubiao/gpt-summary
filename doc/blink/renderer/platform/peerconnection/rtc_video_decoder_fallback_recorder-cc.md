@@ -96,14 +96,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `rtc_video_decoder_fallback_recorder.cc` 默默地工作在 WebRTC 功能的背后，负责收集关于视频解码器回退的重要信息。这些信息对于 Chromium 团队了解视频解码器的稳定性和性能至关重要，并可以帮助他们识别潜在的问题和进行优化。虽然普通用户和前端开发者不直接操作这个文件，但其功能直接影响着 WebRTC 应用的视频体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_decoder_fallback_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ void RecordRTCVideoDecoderFallbackReason(
 }
 
 }  // namespace blink
-
-"""
-
 ```

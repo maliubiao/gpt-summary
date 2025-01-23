@@ -118,7 +118,7 @@ By following this thought process, breaking down the request, and considering di
 
 总而言之，这个 `get-prgname.c` 文件是一个非常基础的测试用例，用于验证 Frida 在目标进程中获取程序名称的功能是否正常。它涉及到操作系统进程管理和 GLib 库的使用，并在逆向工程中可以作为识别目标进程的辅助手段。虽然代码本身简单，但理解其背后的原理和在 Frida 中的作用，有助于更深入地理解 Frida 的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/22 gir link order/get-prgname/get-prgname.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "get-prgname.h"
 
 #include <glib.h>
@@ -136,7 +138,4 @@ const char *get_prgname_get_name (void)
 {
   return g_get_prgname ();
 }
-
-"""
-
 ```

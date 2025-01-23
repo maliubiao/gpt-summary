@@ -69,15 +69,17 @@ I should organize the summary around these key areas.
 
 这部分测试主要关注 `MainThreadSchedulerImpl` 中更细粒度的任务优先级管理、特定场景下的调度策略（例如查找页面、合成、用户输入），以及一些防止主线程被阻塞的机制。它涵盖了各种复杂的调度场景，旨在确保 Blink 引擎在各种情况下都能高效、流畅地运行，并提供良好的用户体验。尤其关注了在用户交互时的响应速度和渲染效率的平衡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kMicrotaskTime,
             observer.result().front().second);
 }
@@ -950,8 +952,4 @@ INSTANTIATE_TEST_SUITE_P(,
 }  // namespace main_thread_scheduler_impl_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

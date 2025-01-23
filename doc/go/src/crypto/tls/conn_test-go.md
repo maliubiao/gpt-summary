@@ -194,7 +194,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`go/src/crypto/tls/conn_test.go` 文件通过各种测试用例，细致地验证了 Go 语言 `crypto/tls` 包中 TLS 连接建立、数据传输、证书选择、记录大小调整以及错误处理等关键功能的正确性和健壮性。 这对于确保 Go 语言实现的 TLS 协议的安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/conn_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -202,8 +202,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -527,9 +529,4 @@ func TestRecordBadVersionTLS13(t *testing.T) {
 		t.Fatalf("unexpected error: got %q, want %q", err, expectedErr)
 	}
 }
-
-"""
-
-
-
 ```

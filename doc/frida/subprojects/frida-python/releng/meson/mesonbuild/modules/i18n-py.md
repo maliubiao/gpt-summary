@@ -114,7 +114,7 @@ Here's a plan:
 
 `i18n.py` 模块在 Frida 的构建过程中扮演着重要的角色，它自动化了与软件国际化相关的任务，例如提取翻译字符串、合并翻译文件和编译翻译文件。理解这个模块的功能有助于理解 Frida 如何支持多语言，并在逆向分析 Frida 或使用 Frida 的目标程序时，能够更好地理解其本地化策略和文本信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/modules/i18n.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -529,7 +531,4 @@ class I18nModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> I18nModule:
     return I18nModule(interp)
-
-"""
-
 ```

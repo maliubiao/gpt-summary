@@ -120,11 +120,13 @@ causeError();
 
 总而言之，`v8/src/inspector/injected-script.cc` 文件是 V8 Inspector 的一个关键组成部分，它实现了 Inspector 与 JavaScript 执行环境交互的核心机制，使得开发者可以通过 DevTools 对 JavaScript 代码进行执行、检查和调试。它的功能直接对应了我们在 DevTools 中所能观察和操作的 JavaScript 世界。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/injected-script.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -1376,7 +1378,4 @@ void PromiseHandlerTracker::discardAll() {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

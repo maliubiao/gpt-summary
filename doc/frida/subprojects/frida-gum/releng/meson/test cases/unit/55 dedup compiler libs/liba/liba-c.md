@@ -129,7 +129,7 @@ Here's a thinking process to arrive at the detailed explanation:
 
 总而言之，`liba.c` 虽然是一个非常简单的示例，但它涵盖了动态链接库的基本概念，并且可以作为逆向工程、二进制分析和调试的入门示例。通过分析这样的代码，可以理解更复杂的库的运作方式，并掌握相关的工具和技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/55 dedup compiler libs/liba/liba.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "liba.h"
 
 static int val;
@@ -157,7 +159,4 @@ int liba_get(void)
 {
   return val;
 }
-
-"""
-
 ```

@@ -107,11 +107,13 @@ runWasm();
 
 `callback.cc` 演示了 WebAssembly 的回调机制，允许 C++ 代码（作为宿主环境）向 WebAssembly 模块提供可以被调用的函数。这与 JavaScript 使用 WebAssembly API 的方式非常相似，JavaScript 可以将自己的函数作为导入项提供给 WebAssembly 模块，实现双向的交互。这个示例是理解 WebAssembly 如何与宿主环境交互的重要一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/callback.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -256,8 +258,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

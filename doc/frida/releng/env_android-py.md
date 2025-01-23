@@ -188,7 +188,7 @@ By following this structured approach, carefully examining the code, and thinkin
 
 总而言之，`frida/releng/env_android.py` 是 Frida 构建流程中至关重要的一环，它负责确保 Android native 组件能够使用正确的工具链和编译选项进行构建，这对于 Frida 能够在 Android 设备上正常工作是基础。理解这个脚本的功能有助于诊断与 Frida Android 构建相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/env_android.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 import shlex
@@ -348,7 +350,4 @@ ARCH_LINKER_FLAGS = {
         "-Wl,--fix-cortex-a8",
     ]
 }
-
-"""
-
 ```

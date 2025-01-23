@@ -100,7 +100,7 @@ By following this structured thought process, considering the context of the scr
 
 总而言之，这个 `test-devenv.py` 脚本是一个简单的单元测试，用于验证 Frida 项目中 "devenv" 组件的开发环境配置是否正确。它的目的是在开发过程的早期发现潜在的环境配置问题，确保 Frida 的功能能够正常开发和测试，这对于像 Frida 这样的动态插桩工具，其正确的功能对于逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/90 devenv/test-devenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/python
 
 import os
@@ -119,7 +121,4 @@ assert os.environ['MESON_PROJECT_NAME'] == 'devenv'
 assert os.environ['TEST_A'] == '1'
 assert os.environ['TEST_B'] == '0+1+2+3+4'
 assert os.environ['TEST_C'] == os.pathsep.join(['/prefix', '/suffix'])
-
-"""
-
 ```

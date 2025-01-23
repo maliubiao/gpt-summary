@@ -167,7 +167,7 @@ Counter: 2000  // 最终的 counter 值可能每次运行都不同，但通常�
 
 总结来说，`go/src/runtime/race/internal/amd64v3/doc.go` 这个文件本身是竞态检测器针对特定架构的实现细节的文档声明和构建约束。它背后的 Go 功能是强大的 **竞态检测器**，可以帮助开发者发现并发程序中的数据竞争。 使用 `-race` 标志是启用竞态检测器的关键，并且是在开发并发 Go 程序时应该养成的好习惯。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/race/internal/amd64v3/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -187,9 +189,4 @@ Prompt:
 //go:build amd64 && linux && amd64.v3
 
 package amd64v3
-
-"""
-
-
-
 ```

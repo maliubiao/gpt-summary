@@ -132,14 +132,16 @@ By following these steps, I can generate a comprehensive and accurate explanatio
 
 总而言之，`blink/renderer/core/inspector/invalidation_set_to_selector_map_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎能够准确地跟踪 CSS 样式失效的原因，并将失效集与触发失效的 CSS 选择器关联起来。这对于开发者理解和优化 Web 页面的渲染性能至关重要，特别是在使用 DevTools 进行性能分析时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/invalidation_set_to_selector_map_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -710,7 +712,4 @@ TEST_F(InvalidationSetToSelectorMapTest, HandleRebuildAfterRuleSetChange) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

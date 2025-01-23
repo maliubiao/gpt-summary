@@ -356,7 +356,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以在应用加载 `libmylib.so` 时，看到 `dlopen` 被调用以及 linker 内部 `load_library` 函数的执行情况，从而调试共享库的加载过程。你可以根据需要 hook 其他 linker 内部函数，例如 `find_library_internal` 等，以更详细地了解库的查找和加载过程。记得根据你的目标 Android 版本和架构调整 hook 的函数符号名称。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -368,8 +368,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 able(const char* path, off64_t* file_offset, std::string* realpath) {
   ZipArchiveCache zip_archive_cache;
   return open_library_at_path(&zip_archive_cache, path, file_offset, realpath);
@@ -1237,7 +1239,4 @@ static void soinfo_unload_impl(soinfo* root) {
     si->call_destructors();
     LD_LOG(kLogDlopen,
            "... dlclos
-"""
-
-
 ```

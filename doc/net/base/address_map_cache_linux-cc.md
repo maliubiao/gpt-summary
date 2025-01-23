@@ -174,15 +174,17 @@ By following these steps, I was able to systematically analyze the code snippet 
 
 总而言之，`net/base/address_map_cache_linux.cc` 是 Chromium 网络栈中一个重要的底层组件，它通过缓存 Linux 平台的网络接口地址和状态信息，提高了网络操作的效率。虽然 JavaScript 代码本身不直接调用这个文件中的代码，但 JavaScript 发起的网络活动会间接地依赖于这个缓存提供的服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/address_map_cache_linux.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ void AddressMapCacheLinux::ApplyDiffs(const AddressMapDiff& addr_diff,
 }
 
 }  // namespace net
-
-"""
-
 ```

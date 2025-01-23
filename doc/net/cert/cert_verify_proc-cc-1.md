@@ -121,7 +121,7 @@ Chromium 的网络栈会尝试与 `www.example.com` 建立 HTTPS 连接。在这
 
 总而言之，这段代码片段虽然没有直接实现证书验证的逻辑，但它是 `CertVerifyProc` 功能正常运行的基础，确保了其内部数据结构能够被有效地管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rams::ImplParams(const ImplParams&) = default;
 CertVerifyProc::ImplParams& CertVerifyProc::ImplParams::operator=(
     const ImplParams& other) = default;
@@ -165,8 +167,4 @@ CertVerifyProc::CertificateWithConstraints::operator=(
     CertificateWithConstraints&& other) = default;
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -170,7 +170,7 @@ Object.freeze(obj);
 
 `v8/src/objects/map-updater.cc` 是 V8 引擎中负责 **管理和更新 JavaScript 对象 Map (Hidden Class)** 的关键 C++ 源代码文件。它处理对象属性的添加、删除、修改、属性特性的变更、元素类型的变化、原型链的变化以及对象完整性级别的设置。`MapUpdater` 的核心目标是优化对象布局，避免不必要的 Map 创建，并高效地处理对象结构的动态变化，从而直接影响 JavaScript 程序的性能。 理解其工作原理有助于开发者编写更高效的 JavaScript 代码，避免常见的性能陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map-updater.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/map-updater.cc以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1007,7 +1009,4 @@ Handle<DescriptorArray> MapUpdater::BuildDescriptorArray() {
   int new_slack =
       std::max<int>(old_nof_, old_descriptors_->number_of_descriptors()) -
       ol
-"""
-
-
 ```

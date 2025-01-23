@@ -113,11 +113,13 @@ console.log(instance.exports.add(10, 2));
 
 总而言之，`v8/src/wasm/wasm-module-builder.cc` 是 V8 引擎中一个关键的内部组件，负责在 C++ 层面构建 WebAssembly 模块，为 JavaScript 中加载和使用 WebAssembly 提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-module-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1144,7 +1146,4 @@ void WasmModuleBuilder::WriteAsmJsOffsetTable(ZoneBuffer* buffer) const {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -132,14 +132,16 @@ By following these steps, we can thoroughly analyze the code and provide a compr
 
 总而言之， `unicode_range.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它提供了关于 Unicode 字符范围的基础数据，支持了 CSS 的字体选择、JavaScript 的文本处理以及 HTML 的正确渲染。 虽然开发者通常不会直接操作这个文件，但理解其功能有助于更好地使用相关的 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/unicode_range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Computer, Inc.
  *
@@ -581,7 +583,4 @@ unsigned FindCharUnicodeRange(UChar32 ch) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

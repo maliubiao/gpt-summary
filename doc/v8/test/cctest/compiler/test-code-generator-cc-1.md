@@ -133,7 +133,7 @@ a(100000);
 
 这段代码（作为 `v8/test/cctest/compiler/test-code-generator.cc` 的一部分）的主要功能是**测试 V8 代码生成器在处理尾调用优化时，能否正确地生成用于调整栈帧和移动数据的指令序列**。它通过模拟各种数据移动场景（例如将寄存器值推入栈中），并断言代码生成器能够生成预期的优化代码，例如合并相邻的 push 操作，从而确保尾调用优化的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-code-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-code-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,9 +141,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                            result->length());
+### 源代码
+```cpp
+result->length());
     }
     return state_out;
   }
@@ -964,7 +966,4 @@ TEST(AssembleTailCallGap) {
         ->AddMove(slot_minus_3, slot_1);
     instr
         ->G
-"""
-
-
 ```

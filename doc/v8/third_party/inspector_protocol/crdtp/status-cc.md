@@ -205,15 +205,17 @@ status.ok()         // 返回: false (因为错误代码不是 Error::OK)
 
 总之，`v8/third_party/inspector_protocol/crdtp/status.cc` 文件在 V8 的检查器协议中扮演着关键的角色，它定义了用于报告操作状态和各种错误情况的基础设施，帮助开发者诊断和修复与 JavaScript 调试相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/status.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/status.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -344,7 +346,4 @@ std::string Status::ToASCIIString() const {
   return Message() + " at position " + std::to_string(pos);
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

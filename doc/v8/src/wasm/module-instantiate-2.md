@@ -120,14 +120,15 @@ WebAssembly.instantiate(wasmCode)
 
 这段 C++ 代码是 WebAssembly 模块实例化过程中的关键部分，它负责将 wasm 模块中声明的内存、表和异常标签在 V8 引擎中实际创建和初始化。这些初始化工作使得 JavaScript 可以访问和操作 wasm 模块的资源，并处理 wasm 代码中可能产生的异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-instantiate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-            kLazyFunctionsAndNull);
+### 源代码
+```
+kLazyFunctionsAndNull);
         if (MaybeMarkError(computed_element, thrower_)) return;
 
         WasmValue computed_value = to_value(computed_element);
@@ -179,8 +180,4 @@ void InstanceBuilder::InitializeTags(
 }  // namespace v8::internal::wasm
 
 #undef TRACE
-
-"""
-
-
 ```

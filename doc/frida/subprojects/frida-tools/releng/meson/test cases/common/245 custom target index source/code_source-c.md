@@ -108,7 +108,7 @@ This detailed breakdown shows how to analyze even a simple piece of code within 
 
 总而言之，虽然 `code_source.c` 文件本身非常简单，但它在Frida的测试框架中扮演着重要的角色，用于验证Frida的基本功能，并为开发者和用户提供了一个简单的参考示例，帮助他们理解和调试更复杂的代码注入场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/245 custom target index source/code_source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,15 +116,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int genfunc(void);
 
 int genfunc(void)
 {
   return 0;
 }
-
-"""
-
 ```

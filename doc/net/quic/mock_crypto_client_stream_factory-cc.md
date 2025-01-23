@@ -195,15 +195,17 @@ fetch('https://example.com/data')
 
 通过以上步骤，开发者可以逐步深入到 `MockCryptoClientStreamFactory` 的代码，了解在测试环境中是如何模拟客户端加密协商的，并找出可能导致问题的配置或逻辑错误。在非测试环境下，流程会类似，但会涉及到实际的 `QuicCryptoClientStream` 的创建和握手过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/mock_crypto_client_stream_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ MockCryptoClientStream* MockCryptoClientStreamFactory::last_stream() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

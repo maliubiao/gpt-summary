@@ -139,7 +139,7 @@ TEST PASSED: unit/22 warning location
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/unit/22 warning location/a.c` 是 Frida 内部的一个单元测试用例，用于确保 Frida 的构建系统能够正确处理和报告编译器警告的位置。虽然普通用户不会直接使用它，但它对于保证 Frida 的质量和稳定性至关重要，并间接地影响着用户的使用体验，例如提供准确的错误报告，帮助用户进行逆向分析和脚本开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/22 warning location/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,9 +147,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

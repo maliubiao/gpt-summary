@@ -166,7 +166,7 @@ uint8_t call_type_mismatch = tester.DefineFunction(
 
 总而言之，`v8/test/cctest/wasm/test-gc.cc` 是一个全面的测试套件，用于验证 V8 引擎中 WebAssembly 垃圾回收功能的正确性和性能。它覆盖了引用类型操作、类型转换、表操作、全局变量初始化以及与 JavaScript 的互操作等多个方面，并能帮助开发者理解 WebAssembly GC 的工作原理以及避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-gc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-gc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,8 +174,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 il, 0);
 }
 
@@ -770,8 +772,4 @@ WASM_COMPILED_EXEC_TEST(WasmExternConvertAny) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

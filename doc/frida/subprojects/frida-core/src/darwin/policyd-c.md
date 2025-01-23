@@ -140,7 +140,7 @@ This methodical approach, moving from the general context to specific details an
 
 总而言之，`frida/subprojects/frida-core/src/darwin/policyd.c` 是 Frida 在 Darwin 平台上实现动态插桩功能的一个核心组件，它通过巧妙地利用 `ptrace` 系统调用进行进程“软化”，为后续的 Agent 注入奠定基础。理解这段代码的功能需要一定的操作系统底层知识，特别是关于进程管理、系统调用和进程间通信的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/policyd.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "policyd.h"
 
 #include "frida-tvos.h"
@@ -253,8 +255,4 @@ attach_failed:
     return KERN_SUCCESS;
   }
 }
-
-
-"""
-
 ```

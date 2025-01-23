@@ -138,7 +138,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`MediaQueryUnknownExpNode` 在 Blink 渲染引擎中扮演着错误处理的角色，专门负责处理 CSS 媒体查询中那些无法被理解或识别的表达式。  它通过充当占位符和忽略未知部分，使得 CSS 解析过程不会因为遇到错误而彻底崩溃，从而提高了浏览器的健壮性。  虽然它本身并不执行任何具体的匹配逻辑，但它的存在确保了即使在存在语法错误或使用了未知特性的情况下，浏览器也能继续处理剩余的 CSS 规则，并尽可能地渲染网页。  它与 CSS 的解析过程紧密相关，并间接影响着 HTML 元素的样式以及 JavaScript 通过 `window.matchMedia()` 获取的媒体查询结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/media_query_exp.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oid MediaQueryUnknownExpNode::CollectExpressions(
     HeapVector<MediaQueryExp>&) const {}
 
@@ -157,8 +159,4 @@ MediaQueryExpNode::FeatureFlags MediaQueryUnknownExpNode::CollectFeatureFlags()
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

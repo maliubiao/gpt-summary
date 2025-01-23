@@ -210,7 +210,7 @@ Initially, I might have focused too heavily on the direct binary manipulation as
 
 总而言之，这个脚本是一个用于测试 Frida 与 GNOME 资源交互功能的单元测试用例，它帮助开发者验证 Frida 的功能是否正确，并提供了一个可参考的例子，说明如何在 Python 中使用 GObject 库加载和访问 GNOME 资源。对于 Frida 用户来说，这个脚本可以作为理解 Frida 如何处理 GNOME 应用程序资源的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/7 gnome/resources/resources.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import os
 from gi.repository import Gio
@@ -230,7 +232,4 @@ if __name__ == '__main__':
 
     data = Gio.resources_lookup_data('/com/example/myprog/res1.txt', Gio.ResourceLookupFlags.NONE)
     assert data.get_data() == b'This is a resource.\n'
-
-"""
-
 ```

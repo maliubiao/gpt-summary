@@ -150,7 +150,7 @@ Library A v1.0 -- Zlib 1.2.11
 
 这个 `main.cpp` 文件作为一个简单的测试用例，可以帮助 Frida 开发者验证 Frida 的基本功能，例如能够正确地 hook 动态链接库中的函数，并观察其行为。它的简单性使得它成为调试 Frida 功能的良好起点。  如果与预期不符，开发者可能会深入到这个 `main.cpp` 文件的上下文，检查编译过程、链接设置、以及 `libA` 和 `libB` 的具体实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/6 object library no dep/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stdlib.h>
 #include <iostream>
 #include "libA.hpp"
@@ -171,7 +173,4 @@ int main(void) {
   cout << getLibStr() << " -- " << getZlibVers() << endl;
   return EXIT_SUCCESS;
 }
-
-"""
-
 ```

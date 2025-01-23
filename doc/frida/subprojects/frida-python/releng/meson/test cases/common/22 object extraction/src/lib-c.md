@@ -181,7 +181,7 @@ Frida 的介入不会改变 `func` 函数本身的逻辑，但可以观察或修
 
 总而言之，即使是这样一个简单的函数，在 Frida 的上下文中也能成为动态分析和逆向工程的起点。它展示了 Frida 如何与目标进程交互，以及用户可能遇到的基本操作和潜在错误。 结合提供的文件路径，这个 `lib.c` 很可能是 Frida 自身测试框架的一部分，用于验证 Frida 的特定功能，例如对象提取。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/22 object extraction/src/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,12 +189,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 42;
 }
-
-"""
-
 ```

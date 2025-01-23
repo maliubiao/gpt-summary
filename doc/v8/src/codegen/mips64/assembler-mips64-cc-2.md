@@ -149,7 +149,7 @@ The filename does not end in `.tq`. The code is related to JavaScript as it's pa
 
 这部分 `assembler-mips64.cc` 的代码主要负责定义了 `Assembler` 类中用于生成 **位操作、内存操作、PC 相对寻址** 以及一些**其他通用指令**的方法，以及一部分 **浮点协处理器指令**。这些方法是 V8 引擎将 JavaScript 代码转换为 MIPS64 机器码的基础 building blocks。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ister(SPECIAL, zero_reg, rt, rd, sa & 0x1F, SRA);
 }
 
@@ -1123,7 +1125,4 @@ void Assembler::div_s(FPURegister fd, FPURegister fs, FPURegister ft) {
 }
 
 void Assembler::div_d(FPURegister fd, FPURegister fs, FPUReg
-"""
-
-
 ```

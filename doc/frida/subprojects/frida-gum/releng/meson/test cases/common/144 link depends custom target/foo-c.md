@@ -153,7 +153,7 @@ could not open /nonexistent_file.txt
 
 总而言之，这个 `foo.c` 文件虽然简单，但在 Frida 的开发和测试流程中扮演着验证构建系统依赖管理是否正确的重要角色。它的存在是确保 Frida 能够在正确的环境中，以正确的依赖关系运行，这对于其作为动态分析工具的功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/144 link depends custom target/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(void) {
@@ -178,7 +180,4 @@ int main(void) {
 
   return 0;
 }
-
-"""
-
 ```

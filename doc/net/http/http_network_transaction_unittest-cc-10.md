@@ -120,7 +120,7 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 总而言之，`net/http/http_network_transaction_unittest.cc` 文件的第 11 部分专注于 **测试 `HttpNetworkTransaction` 类在各种复杂的 HTTPS 代理和 SPDY/HTTP2 组合场景下的连接建立、数据传输和错误处理能力。** 它确保了 Chromium 网络栈在面对现代网络协议和代理配置时能够正确可靠地工作，从而保证用户浏览网页和使用网络应用的体验。这一部分特别强调了通过 HTTPS 代理使用 SPDY 进行连接的各种情况，包括成功和失败的场景，以及多层代理的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -128,10 +128,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共34部分，请归纳一下它的功能
+```
 
-"""
-
-  // frames.
+### 源代码
+```cpp
+// frames.
   spdy::SpdySerializedFrame wrapped_endpoint_connect(
       spdy_util_.ConstructWrappedSpdyFrame(endpoint_connect, 1));
 
@@ -953,7 +954,4 @@ void HttpNetworkTransactionTestBase::HttpsNestedProxyNoSocketReuseHelper(
   session_deps_.socket_factory->AddSocketDataProvider(&data2);
 
   for (size_t proxy_index = 0; proxy_index < c
-"""
-
-
 ```

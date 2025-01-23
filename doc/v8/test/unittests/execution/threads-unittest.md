@@ -101,11 +101,13 @@ onmessage = function(event) {
 
 `threads-unittest.cc` 文件测试了 V8 引擎内部线程 ID 管理的关键功能，确保了 V8 在多线程环境下能够正确地识别和区分不同的执行单元。这对于 V8 的性能和稳定性至关重要，并间接支持了 JavaScript 中利用 Web Workers 进行并行计算的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/execution/threads-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -195,7 +197,4 @@ TEST_F(ThreadsTest, ThreadIdValidation) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

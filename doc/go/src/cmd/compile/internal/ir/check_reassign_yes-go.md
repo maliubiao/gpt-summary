@@ -170,15 +170,17 @@ go test -tags=checknewoldreassignment # 运行测试时启用
 
 这段代码定义了一个常量 `consistencyCheckEnabled`，它通过 build tag `checknewoldreassignment` 来控制是否启用。  根据其路径和名称，它很可能是 Go 编译器内部用于进行关于变量重新赋值的更细致的静态检查或分析功能的开关。使用者需要理解 build tag 的作用，才能正确地启用或禁用相关的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ir/check_reassign_yes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -188,9 +190,4 @@ Prompt:
 package ir
 
 const consistencyCheckEnabled = true
-
-"""
-
-
-
 ```

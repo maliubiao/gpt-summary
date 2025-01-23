@@ -84,11 +84,13 @@ obj3.anotherRef = null;
 
 总结来说，`marking-worklist-unittest.cc` 这个文件通过单元测试确保了 V8 引擎中负责管理待标记对象队列的 `MarkingWorklist` 类能够正确地执行其核心功能，这对于保证 JavaScript 程序的内存管理和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/marking-worklist-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ TEST_F(MarkingWorklistTest, ContextWorklistCrossTask) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

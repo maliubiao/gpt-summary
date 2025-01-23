@@ -114,15 +114,17 @@ By following these steps, we can systematically analyze the C++ test file and pr
 
 总而言之，`tap_friendliness_checker_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎能够正确地检测和评估移动端网页的点击友好性，从而帮助开发者创建更好的移动端用户体验。通过模拟各种点击场景并验证 UKM 报告，该文件有效地保障了 `TapFriendlinessChecker` 核心功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mobile_metrics/tap_friendliness_checker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -372,7 +374,4 @@ TEST_F(TapFriendlinessCheckerTest, SmallAndCloseDisplayEdgeTapTarget) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

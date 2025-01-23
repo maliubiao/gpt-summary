@@ -161,7 +161,7 @@ I will structure the answer by grouping these related functionalities and provid
 
 总的来说，`go/src/internal/testenv/testenv.go` 提供了一组工具，用于根据 Go 团队的特定测试环境的特性来控制测试的执行。它允许测试根据构建器、操作系统特性、工具链可用性等条件有条件地运行或跳过。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/testenv/testenv.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -677,9 +679,4 @@ func ParallelOn64Bit(t *testing.T) {
 	}
 	t.Parallel()
 }
-
-"""
-
-
-
 ```

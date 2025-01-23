@@ -128,15 +128,17 @@ nativeModule.square(5); // 可能导致类型转换问题或错误，具体取�
 
 `v8/src/execution/encoded-c-signature.cc` 中的 `EncodedCSignature` 类是 V8 内部用于高效表示和处理 C 函数签名的关键组件，尤其是在与 JavaScript 互操作时处理浮点数。它帮助 V8 进行类型检查、数据转换和优化，从而提高性能并减少错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/encoded-c-signature.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/encoded-c-signature.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ EncodedCSignature::EncodedCSignature(const CFunctionInfo* signature) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

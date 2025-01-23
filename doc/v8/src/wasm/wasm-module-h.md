@@ -178,7 +178,7 @@ V8 引擎会根据 `WasmMemory` 结构体中存储的内存大小信息，在运
 
 `v8/src/wasm/wasm-module.h` 是 V8 引擎中 WebAssembly 功能的核心，它定义了表示 WebAssembly 模块及其组成部分的关键数据结构。理解这些结构对于理解 V8 如何处理 WebAssembly 模块至关重要，并有助于避免与 WebAssembly 相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-module.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-module.h以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1086,7 +1088,4 @@ struct V8_EXPORT_PRIVATE WasmModule {
     if (num_declared_functions == 0) return;
     DCHECK_NOT_NULL(validated_functions);
     size_t num_words = (nu
-"""
-
-
 ```

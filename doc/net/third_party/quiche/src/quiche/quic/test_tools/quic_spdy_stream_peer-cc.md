@@ -153,15 +153,17 @@ This iterative process of understanding the code, relating it to the broader con
 
 总而言之，`quic_spdy_stream_peer.cc` 是一个测试辅助工具，它使得 QUIC 协议的开发者能够更方便地测试 `QuicSpdyStream` 类的各种行为和状态，确保 QUIC 协议在 Chromium 中的实现是正确和可靠的。 虽然它与最终用户的 JavaScript 代码没有直接关联，但它通过保障底层网络栈的质量，间接地影响了所有依赖于网络的应用，包括使用 JavaScript 开发的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_spdy_stream_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ void QuicSpdyStreamPeer::set_header_decoding_delay(QuicSpdyStream* stream,
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

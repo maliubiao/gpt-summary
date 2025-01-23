@@ -120,7 +120,7 @@ my_table["version"] = 1
 
 总而言之，`frida/releng/tomlkit/tomlkit/items.py` 定义了用于表示和操作 TOML 数据结构的 Python 类，这些类在 Frida 动态插桩工具中扮演着关键角色，使得逆向工程师能够方便地读取、修改和生成目标进程的 TOML 配置信息。它抽象了底层的 TOML 语法，提供了面向对象的接口来处理 TOML 数据，并保留了格式信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tomlkit/items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 "
                 new_values.append(it)
                 data_values.append(it.value)
@@ -818,8 +820,4 @@ class Null(Item):
 
     def _getstate(self, protocol=3) -> tuple:
         return ()
-
-"""
-
-
 ```

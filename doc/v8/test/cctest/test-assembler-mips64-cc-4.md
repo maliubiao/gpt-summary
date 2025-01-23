@@ -159,7 +159,7 @@ let isGreater = a > b;
 
 作为 13 个测试文件中的第 5 个部分，这段代码专注于测试 V8 引擎中 MIPS64 架构汇编器的 **浮点数运算指令**（比较和转换）以及 **MIPS64 Release 6 引入的新指令** 的生成和执行是否正确。它通过构造不同的输入，执行生成的汇编代码，并检查输出结果来验证汇编器的正确性。  这部分测试是确保 V8 引擎在 MIPS64 架构上正确处理浮点数和利用新指令的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e::bit_cast<uint32_t>(test.fF), fFalse);
     CHECK_EQ(base::bit_cast<uint32_t>(test.fUn), fFalse);
     CHECK_EQ(base::bit_cast<uint32_t>(test.fEq), fFalse);
@@ -1185,8 +1187,4 @@ uint64_t run_lwpc(int offset) {
   // addiu a7, a4, 0xFFFF;  (0x250BFFFF)
   uint32_t addiu_start_2 = 0x25000000;
   for (int32_t i = 0x80000; i <= 0xBFFFF; ++i) {
-  
-"""
-
-
 ```

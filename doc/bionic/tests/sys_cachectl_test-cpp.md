@@ -231,7 +231,7 @@ libc.so:
 
 `bionic/tests/sys_cachectl_test.cpp` 是一个针对 Bionic 库中缓存控制功能的单元测试，特别是针对 RISC-V 架构的 `__riscv_flush_icache` 函数。理解这个测试文件需要了解缓存一致性的概念、系统调用的机制、动态链接的过程以及 Android 系统底层的运作方式。通过 Frida 可以方便地对这些底层函数进行 hook 和调试，从而深入了解系统的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_cachectl_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -242,8 +242,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -288,7 +290,4 @@ TEST(sys_cachectl, __riscv_flush_icache) {
   GTEST_SKIP() << "__riscv_flush_icache requires riscv64";
 #endif
 }
-
-"""
-
 ```

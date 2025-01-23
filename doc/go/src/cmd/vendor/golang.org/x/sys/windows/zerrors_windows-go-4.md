@@ -94,7 +94,7 @@ Error code: 2
 
 作为 `go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go` 文件的第 5 部分，此部分主要定义了与 **IPSec (Internet Protocol Security)** 相关的错误码常量以及一部分 **QoS (Quality of Service)** 相关的错误码常量。这些常量用于在 Go 程序中识别和处理与网络安全策略和网络服务质量相关的 Windows API 调用返回的特定错误。具体来说，它涵盖了 IPsec 策略的创建、查找、使用、删除等操作中可能出现的错误，以及 IKE 协商过程中可能遇到的各种问题，例如认证失败、超时、证书问题等等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -102,8 +102,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第5部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 OS_EPSFLOWSPEC                                                       syscall.Errno = 11027
 	WSA_QOS_EPSFILTERSPEC                                                     syscall.Errno = 11028
 	WSA_QOS_ESDMODEOBJ                                                        syscall.Errno = 11029
@@ -771,9 +773,4 @@ OS_EPSFLOWSPEC                                                       syscall.Err
 	CACHE_S_LAST                                                              syscall.Errno = 0x0004017F
 	CACHE_E_NOCACHE_UPDATED                                                   Handle        = 0x80040170
 	OLEO
-"""
-
-
-
-
 ```

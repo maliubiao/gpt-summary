@@ -136,7 +136,7 @@ This script is typically executed as part of the Meson build process for Frida. 
 
 In summary, `vsenv.py` is a crucial piece of Frida's build system on Windows. It automates the often-tedious task of setting up the Visual Studio build environment, ensuring that the necessary tools are available for compiling Frida's native components. Its interactions with system tools like `vswhere.exe` and its manipulation of environment variables make it a good example of a script that bridges the gap between a high-level build system (Meson) and the low-level requirements of native code compilation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/utils/vsenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os
@@ -272,7 +274,4 @@ def setup_vsenv(force: bool = False) -> bool:
             raise
         mlog.warning('Failed to activate VS environment:', str(e))
         return False
-
-"""
-
 ```

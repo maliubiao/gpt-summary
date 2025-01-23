@@ -138,7 +138,7 @@ A developer working on Frida who encounters a build issue related to linking or 
 
 This Python file serves as a critical component of Frida's quality assurance process. It comprehensively tests the Meson build system configuration for Frida's QML bindings on Linux-like platforms. By setting up various build scenarios and verifying the generated build instructions and the behavior of the compiled code, it ensures the build system is robust, correct, and handles different linking and dependency management situations appropriately. This ultimately contributes to the stability and reliability of Frida as a reverse engineering tool.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf):
         testdir = os.path.join(self.unit_test_dir, '51 ldflagdedup')
         if is_cygwin() or is_osx():
@@ -527,8 +529,4 @@ lf):
         self.assertIn('build t9-e1: c_LINKER t9-e1.p/main.c.o | libt9-s1.a libt9-s2.a libt9-s3.a\n', content)
         self.assertIn('build t12-e1: c_LINKER t12-e1.p/main.c.o | libt12-s1.a libt12-s2.a libt12-s3.a\n', content)
         self.assertIn('build t13-e1: c_LINKER t13-e1.p/main.c.o | libt12-s1.a libt13-s3.a\n', content)
-
-"""
-
-
 ```

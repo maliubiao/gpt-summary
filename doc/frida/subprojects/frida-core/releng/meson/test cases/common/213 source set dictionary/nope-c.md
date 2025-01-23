@@ -97,7 +97,7 @@ Here's a breakdown of the thinking process to analyze the C code snippet and ful
 
 `nope.c` 文件本身的功能非常简单，主要是声明并尝试使用一个未定义的函数指针。它的主要作用是作为 Frida 构建和测试系统的一部分，用于测试 Frida 如何处理无效或未定义的符号。它与逆向分析中可能遇到的无效指针问题相关，并涉及到操作系统底层的内存管理和异常处理机制。普通 Frida 用户一般不会直接接触到这个文件，它更多是 Frida 开发人员用于内部测试和调试的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/213 source set dictionary/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,12 +105,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

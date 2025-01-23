@@ -112,7 +112,7 @@ Frida 是一个强大的动态 instrumentation 工具，广泛应用于软件逆
 
 总而言之，即使没有代码，我们也能推断出 `frida/subprojects/frida-core/releng/meson/test cases/python/7 install path/test.py` 是一个关键的测试脚本，用于验证 Frida Core 组件的安装路径是否正确，这对于 Frida 的正常运行和在逆向工程中的应用至关重要。 它的失败可以提供重要的调试线索，帮助开发者定位安装过程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python/7 install path/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,9 +120,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

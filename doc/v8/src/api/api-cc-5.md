@@ -325,7 +325,7 @@ const currentProto = Object.getPrototypeOf(myObj); // 对应 C++ 中的 v8::Obje
 
 第 6 部分的 `v8/src/api/api.cc` 代码主要负责实现 V8 公开 API 中关于类型处理和基础对象操作的关键功能。它提供了类型检查机制，允许 C++ 代码安全地与 JavaScript 对象交互，并实现了诸如属性访问、修改、原型链操作等核心的 JavaScript 语义。这部分代码是 V8 引擎与外部 C++ 代码交互的重要桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -333,8 +333,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::Promise::Cast",
                   "Value is not a Promise");
 }
@@ -1161,7 +1163,4 @@ MaybeLocal<String> v8::Object::ObjectProtoToString(Local<Context> context) {
 }
 
 Local<String> v8::Object:
-"""
-
-
 ```

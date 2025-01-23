@@ -126,7 +126,7 @@ By following this structured thought process, breaking down the code and its con
 
 总而言之，`func2.c` 作为一个测试用例，其存在是为了确保 Frida 的构建系统能够正确地处理目标特定的编译参数，避免不同构建目标之间的参数互相干扰。这对于保证 Frida 构建的正确性和功能的可靠性至关重要，而 Frida 的可靠性直接影响到使用它进行逆向工程的准确性。  当构建过程因为这个文件报错时，它为开发者提供了一个清晰的信号，表明在处理目标特定参数的配置上存在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/21 target arg/func2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef CTHING
 #error "Local C argument set in wrong target"
 #endif
@@ -145,7 +147,4 @@ Prompt:
 #endif
 
 int func(void) { return 0; }
-
-"""
-
 ```

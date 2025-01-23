@@ -106,7 +106,7 @@ This code snippet primarily focuses on providing methods to generate string repr
 
 This part of the `blink/renderer/core/dom/node.cc` file provides functionality for generating string representations of the DOM tree, both in its traditional hierarchical form and the "flat tree" representation relevant for shadow DOM. It includes features to mark specific nodes within these representations, making it a valuable tool for debugging and understanding the structure of the DOM, especially when dealing with complex scenarios involving shadow DOM and dynamically generated content. It bridges the internal C++ representation of the DOM with the visual representations used in developer tools.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-   }
+### 源代码
+```cpp
+}
       if (Element* pseudo = element->GetPseudoElement(kPseudoIdMarker)) {
         AppendMarkedTree(indent_string, pseudo, marked_node1, marked_label1,
                          marked_node2, marked_label2, builder);
@@ -1006,7 +1008,4 @@ void Node::FlatTreeParentChanged() {
   if (!detach) {
     // We are moving a node with ensured computed style into the flat tree.
     // Clear ensured styles so that we can use IsEn
-"""
-
-
 ```

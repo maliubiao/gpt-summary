@@ -89,12 +89,14 @@ d8 --print-code my_script.js
 
 `v8/src/diagnostics/mips64/disasm-mips64.cc` 是 V8 引擎中用于反汇编 MIPS64 机器码的关键组件，它使得开发者能够理解 V8 为 JavaScript 代码生成的底层指令，从而进行更深入的分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/mips64/disasm-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2301,7 +2303,4 @@ void Decoder::DecodeTypeImmediate(Instruction* instr) {
       break;
     case LDC1:
       Format(
-"""
-
-
 ```

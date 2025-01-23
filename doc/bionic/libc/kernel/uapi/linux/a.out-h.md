@@ -262,7 +262,7 @@ if __name__ == '__main__':
 
 总结来说，虽然 `a.out.h` 定义的是一种古老的可执行文件格式，但在 Android Bionic 库中的存在表明了对历史的保留或者在某些非常底层的组件中可能仍然有其存在的意义。理解其结构和相关的宏定义，可以帮助我们更深入地理解操作系统的底层运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/a.out.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -426,7 +428,4 @@ struct relocation_info {
 #endif
 #endif
 #endif
-
-"""
-
 ```

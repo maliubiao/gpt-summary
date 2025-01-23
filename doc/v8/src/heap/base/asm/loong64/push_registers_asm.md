@@ -115,11 +115,13 @@ console.log("Waiting for task...");
 
 总而言之，`v8/src/heap/base/asm/loong64/push_registers_asm.cc` 中定义的 `PushAllRegistersAndIterateStack` 函数是 V8 引擎内部用于管理执行栈的关键低级函数。它通过保存寄存器和调用回调函数，支持了诸如垃圾回收、调试和异步操作等重要的 JavaScript 功能。 开发者通常不会直接接触到这个函数，但了解它的作用有助于理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/loong64/push_registers_asm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ asm(".text                                               \n"
     ".Lfunc_end0:                                        \n"
     ".size PushAllRegistersAndIterateStack, "
     ".Lfunc_end0-PushAllRegistersAndIterateStack         \n");
-
-"""
-
 ```

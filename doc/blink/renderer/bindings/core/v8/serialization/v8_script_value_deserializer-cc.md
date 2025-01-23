@@ -162,7 +162,7 @@ By following these steps, I can break down the code's purpose and relate it to b
 
 总而言之，`v8_script_value_deserializer.cc` 的第 1 部分主要负责**初始化反序列化过程，读取基本的序列化信息 (如版本号)，并开始反序列化各种内置的 DOM 对象**。 它建立了反序列化的基础框架，并处理了大量核心的 Web 平台对象类型的重建工作。 这部分代码是连接序列化数据和可用的 JavaScript 对象之间的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/serialization/v8_script_value_deserializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1001,7 +1003,4 @@ v8::MaybeLocal<v8::Object> V8ScriptValueDeserializer::ReadHostObject(
       return v8::MaybeLocal<v8::Object>();
   }
   i
-"""
-
-
 ```

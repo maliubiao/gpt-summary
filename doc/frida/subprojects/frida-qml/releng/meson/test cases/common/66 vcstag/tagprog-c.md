@@ -126,7 +126,7 @@ Let's break down the thought process for analyzing this C code snippet and answe
 
 总而言之，`tagprog.c` 是一个非常小的实用程序，用于在 Frida-QML 的构建和测试过程中输出版本信息。虽然代码本身很简单，但它在理解 Frida 的版本管理、构建流程以及在逆向工程中获取目标软件版本信息方面都扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/66 vcstag/tagprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 extern const char *vcstag;
@@ -144,7 +146,4 @@ int main(void) {
     printf("Version is %s\n", vcstag);
     return 0;
 }
-
-"""
-
 ```

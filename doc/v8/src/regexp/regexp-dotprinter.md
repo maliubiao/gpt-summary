@@ -130,11 +130,13 @@ const regex = /a(b*)c/;
 
 `regexp-dotprinter.cc` 是 V8 引擎内部的一个调试和分析工具，它不直接暴露给 JavaScript 开发者。但是，它所完成的工作是理解 JavaScript 正则表达式在 V8 引擎内部如何表示和执行的关键。通过将内部结构可视化，可以帮助 V8 开发者更好地理解和优化正则表达式引擎。对于一般的 JavaScript 开发者来说，了解这个工具的存在可以帮助理解 JavaScript 正则表达式的底层实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-dotprinter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ void DotPrinter::DotPrint(const char* label, RegExpNode* node) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

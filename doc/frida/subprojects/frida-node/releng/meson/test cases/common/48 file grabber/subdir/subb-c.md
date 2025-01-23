@@ -123,7 +123,7 @@ Here's a breakdown of the thinking process to generate the comprehensive analysi
 
 `subb.c` 是一个非常简单的 C 语言源文件，其主要功能是定义一个总是返回 0 的空函数 `funcb`。 在 Frida 的上下文中，它主要作为测试用例的目标，用于验证 Frida 的 instrumentation 功能。尽管其功能简单，但它可以用于演示 Frida 的基本 hook 和修改行为。分析这类简单的测试用例可以帮助理解 Frida 的工作原理以及逆向工程的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/48 file grabber/subdir/subb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,10 +131,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int funcb(void) { return 0; }
-
-"""
-
 ```

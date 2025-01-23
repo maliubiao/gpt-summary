@@ -177,14 +177,16 @@ By following this thought process, breaking down the problem, examining the code
 
 总而言之，`navigator_device_memory.cc` 这个文件是 Blink 引擎中实现 `navigator.deviceMemory` JavaScript API 的关键部分，它负责获取并暴露设备内存的近似值，并同时考虑到用户隐私和特性使用的跟踪。网页开发者可以使用这个 API 来优化用户体验，但需要注意其近似性和潜在的浏览器兼容性问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/navigator_device_memory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ float NavigatorDeviceMemory::deviceMemory() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

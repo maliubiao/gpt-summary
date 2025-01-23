@@ -228,15 +228,17 @@ params_: [
 
 总而言之，`net/base/url_search_params.cc` 中的 `UrlSearchParams` 类是 Chromium 网络栈中处理 URL 查询参数的重要组成部分，它提供了方便的方法来解析、操作和管理这些参数，并与 JavaScript 中的 `URLSearchParams` API 有着相似的功能。理解其功能和可能出现的错误有助于调试网络相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/url_search_params.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ UrlSearchParams::params() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

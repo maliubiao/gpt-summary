@@ -181,15 +181,17 @@ IIRFilter: state is bad, probably due to unstable filter.
 
 总而言之，`blink/renderer/modules/webaudio/iir_filter_handler.cc` 是 Web Audio API 中 `IIRFilterNode` 的核心实现，负责实际的滤波运算和错误处理，并与 JavaScript 层紧密配合，将潜在的问题反馈给 Web 开发者。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/iir_filter_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -278,7 +280,4 @@ void IIRFilterHandler::NotifyBadState() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

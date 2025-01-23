@@ -124,7 +124,7 @@ This detailed thought process, breaking down the code into its components and re
 
 `profiler-fixture.c` 是 Frida 性能分析功能的核心测试环境。它通过模拟采样器和提供一系列辅助函数，允许开发者编写可控的、可重复的测试用例，验证性能分析器的功能是否正确。这个文件涉及到动态二进制插桩、函数调用约定、内存管理等底层概念，并与逆向工程中的性能分析技术紧密相关。理解这个文件对于理解 Frida 的性能分析机制以及如何对其进行测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/prof/profiler-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -619,7 +621,4 @@ instrument_simple_functions (TestProfileReportFixture * fixture)
 }
 
 #endif /* HAVE_WINDOWS */
-
-"""
-
 ```

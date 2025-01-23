@@ -111,15 +111,17 @@ MoQT 是一种用于在 QUIC 连接上进行媒体传输的协议。JavaScript �
 
 总而言之，`moqt_track.cc` 负责在 Chromium 的 MoQT 实现中管理远程轨道的转发偏好，确保媒体传输过程中的策略一致性和正确性。它虽然不直接与 JavaScript 代码交互，但作为网络栈的底层组件，支撑着浏览器中基于 MoQT 的媒体功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_track.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file
@@ -142,7 +144,4 @@ bool RemoteTrack::CheckForwardingPreference(
 }
 
 }  // namespace moqt
-
-"""
-
 ```

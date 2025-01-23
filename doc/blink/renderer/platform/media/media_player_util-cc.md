@@ -117,14 +117,16 @@ Response: Let's break down the thought process for analyzing this C++ code snipp
 
 总而言之，`media_player_util.cc` 提供了一些底层的、通用的媒体处理工具函数，这些函数在 Blink 引擎处理 HTML5 媒体元素和相关 API 时起着重要的作用。它们连接了 JavaScript、HTML 与底层的媒体解码、渲染和设备管理等功能。理解这些工具函数的功能有助于深入了解 Chromium 的媒体实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/media_player_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ media::OutputDeviceStatusCB ConvertToOutputDeviceStatusCB(
 }
 
 }  // namespace blink
-
-"""
-
 ```

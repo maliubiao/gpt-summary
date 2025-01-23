@@ -168,15 +168,17 @@ foo();
 
 V8 的 `Zone` 类通过内部管理内存分配，减轻了开发者手动管理内存对齐的负担，尤其是在 JavaScript 引擎的内部实现中，保证了性能和稳定性。这个单元测试正是为了确保 `Zone` 能够正确地履行其内存对齐的职责。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/zone/zone-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/zone/zone-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ TEST_F(ZoneTest, 8ByteAlignment) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

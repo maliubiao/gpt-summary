@@ -258,7 +258,7 @@ BM_malloc_threads_throughput_64_4  41.2 ms       41.1 ms       17  16.0 GiB/s
 
 总结来说，`bionic/benchmarks/malloc_benchmark.cpp` 是一个重要的性能测试工具，用于确保 Android 系统的核心内存分配机制高效可靠。理解其功能和测试方法，以及与 Android 系统其他组件的关系，对于 Android 开发和性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/malloc_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -268,8 +268,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -459,7 +461,4 @@ BM_MALLOC_THREADS_THROUGHPUT(8192, 4);
 BM_MALLOC_THREADS_THROUGHPUT(8192, 8);
 
 #endif
-
-"""
-
 ```

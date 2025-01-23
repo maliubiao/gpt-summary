@@ -140,7 +140,7 @@ By following this structured thought process, the comprehensive and accurate res
 
 因此，查看 `a.c` 这个简单的文件可能是用户在调试 Frida 脚本，试图理解为什么一个看起来如此简单的函数，其行为却与预期不符时采取的步骤。这个简单的例子强调了即使是最基础的代码单元，在动态分析的上下文中也可能成为重要的观察点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/48 file grabber/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,10 +148,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int funca(void) { return 0; }
-
-"""
-
 ```

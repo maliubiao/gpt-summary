@@ -70,11 +70,13 @@ loadAndRunWasm();
 
 **总结来说，`liftoff-assembler.cc` 是 V8 引擎中连接 JavaScript 和 WebAssembly 的关键桥梁。它使得 V8 能够高效地编译和执行 WebAssembly 代码，从而让 JavaScript 开发者能够利用 WebAssembly 的性能优势。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1293,7 +1295,4 @@ bool CompatibleStackSlotTypes(ValueKind a, ValueKind b) {
 #endif
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

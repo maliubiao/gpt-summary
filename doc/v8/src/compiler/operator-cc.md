@@ -207,15 +207,17 @@ console.log(sum);
 
 虽然用户不直接与 `v8/src/compiler/operator.cc` 交互，但理解 `Operator` 的概念有助于理解 V8 编译器的内部工作原理，并能指导用户编写更高效的 JavaScript 代码，从而让 V8 编译器能够生成更优化的 `Operator` 图，最终提升代码执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/operator.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ void Operator::PrintPropsTo(std::ostream& os) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

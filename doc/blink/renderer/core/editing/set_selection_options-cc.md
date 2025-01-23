@@ -140,15 +140,17 @@ By following this thought process, combining code analysis with an understanding
 
 总而言之，`blink/renderer/core/editing/set_selection_options.cc` 定义了一个用于配置文本选择行为的数据结构。它本身不执行选择操作，但通过其内部的选项，深深地影响着 JavaScript 中选择 API 的行为以及用户在网页上的选择体验。调试与选择相关的问题时，理解 `SetSelectionOptions` 的各个选项及其作用，有助于定位问题的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/set_selection_options.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ SetSelectionOptions::Builder& SetSelectionOptions::Builder::SetIsDirectional(
   return *this;
 }
 }  // namespace blink
-
-"""
-
 ```

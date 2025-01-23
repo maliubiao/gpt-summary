@@ -113,7 +113,7 @@ By following these steps, I could arrive at the detailed explanation provided in
 
 总而言之，这个简单的 `main.cpp` 文件在一个特定的 Frida 项目的构建测试上下文中存在，它的主要目的是作为一个最小化的可执行程序，用于验证 CMake 构建系统在处理生成器表达式时的正确性，确保 Frida 能够正确地构建和运行其组件。尽管代码本身很简单，但它在构建系统和动态分析的上下文中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/12 generator expressions/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -133,7 +135,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

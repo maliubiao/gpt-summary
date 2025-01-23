@@ -150,7 +150,7 @@ By following this thought process, breaking down the request, and contextualizin
 
 总而言之，虽然 `clib2.c` 的代码非常简单，但它在 Frida 的测试体系中扮演着验证基础 C 代码与 Frida 交互的重要角色，并且能帮助开发者理解 Frida 在二进制层面和跨语言调用方面的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/12 bindgen/dependencies/clib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,14 +158,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "internal_dep.h"
 
 int64_t add64(const int64_t first, const int64_t second) {
     return first + second;
 }
-
-"""
-
 ```

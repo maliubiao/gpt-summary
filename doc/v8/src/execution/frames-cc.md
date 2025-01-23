@@ -143,7 +143,7 @@ By following these steps, I could systematically analyze the code snippet and pr
 
 总而言之，`v8/src/execution/frames.cc` 的第 1 部分主要负责构建用于表示和遍历 V8 引擎调用栈的基础设施。它定义了栈帧的结构、提供了不同的迭代器来访问栈帧，并考虑了 WebAssembly 和性能分析等特殊场景。这部分代码是 V8 引擎的核心组成部分，为 JavaScript 代码的执行和调试提供了基础支撑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/frames.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1019,8 +1021,4 @@ StackFrame::Type ComputeBuiltinFrameType(Tagged<GcSafeCode> code) {
     return StackFrame::INTERPRETED;
   } else if (code->is_baseline_leave_frame_builtin()) {
     return StackFrame::BASELINE;
-  
-"""
-
-
 ```

@@ -112,14 +112,16 @@ This systematic approach of reading, analyzing function by function, inferring p
 
 总而言之，`caching_word_shaper.cc` 是 Blink 渲染引擎中一个至关重要的组件，它负责高效地将文本转换为可渲染的字形，并与 HTML、CSS 和 JavaScript 紧密协作，共同呈现用户所看到的网页内容。理解其功能有助于我们更好地理解浏览器是如何处理文本渲染的，并能帮助开发者避免一些常见的文本渲染错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/caching_word_shaper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 Google Inc. All rights reserved.
  *
@@ -258,7 +260,4 @@ GlyphData CachingWordShaper::EmphasisMarkGlyphData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

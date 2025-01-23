@@ -105,11 +105,13 @@ example();
 
 `v8/src/interpreter/bytecode-label.cc` 中的代码定义了 V8 解释器中用于管理字节码标签的关键机制。这些标签允许解释器在生成和执行字节码时，能够有效地实现 JavaScript 的各种控制流语句，例如循环、条件判断和跳转。虽然 JavaScript 开发者通常不会直接接触到这些底层的实现细节，但理解其原理有助于更好地理解 JavaScript 代码的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-label.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ void BytecodeLabels::Bind(BytecodeArrayBuilder* builder) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

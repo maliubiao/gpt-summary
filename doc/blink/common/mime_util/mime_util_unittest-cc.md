@@ -195,14 +195,16 @@ Finally, organize the information into clear sections: functionality, relationsh
 
 总而言之，`mime_util_unittest.cc` 通过大量的测试用例，确保了 Blink 引擎能够准确地识别和处理各种 MIME 类型，这对于正确加载和渲染网页资源至关重要，直接影响到 HTML、CSS 和 JavaScript 的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mime_util/mime_util_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ TEST(MimeUtilTest, LookupTypes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

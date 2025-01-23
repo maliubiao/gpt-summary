@@ -168,15 +168,17 @@ const someObject = binding.getSomeObject();
 
 总而言之，`v8/src/objects/embedder-data-array-inl.h` 定义了 `EmbedderDataArray` 对象的内联实现，并提供了访问其内部存储的方法。它主要服务于 V8 的嵌入器，用于存储与 JavaScript 对象关联的额外数据，并且通常与 V8 的 Torque 代码生成工具集成使用。虽然 JavaScript 代码不能直接操作 `EmbedderDataArray`，但它可以通过嵌入器暴露的 API 与之产生间接的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/embedder-data-array-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/embedder-data-array-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ Address EmbedderDataArray::slots_end() {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_EMBEDDER_DATA_ARRAY_INL_H_
-
-"""
-
 ```

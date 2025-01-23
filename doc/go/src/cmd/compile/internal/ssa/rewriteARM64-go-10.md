@@ -163,7 +163,7 @@ v4 = EON <int64> v2 c
 
 这段 `rewriteARM64.go` 的第 11 部分专注于针对 ARM64 架构的 `MULW`, `MVN`, `NEG`, `NotEqual`, `OR`, 和 `ORN` 等操作进行精细化的代码重写和优化。它通过模式匹配和条件判断，将这些操作的特定使用场景转换为更高效的 ARM64 指令序列，从而提升最终生成代码的性能。 这部分是整个 ARM64 代码生成和优化流程中的一个重要环节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,9 +172,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第11部分，共20部分，请归纳一下它的功能
+```
 
-"""
- int64ToAuxInt(2)
+### 源代码
+```go
+int64ToAuxInt(2)
 			v1.AddArg2(x, x)
 			v0.AddArg(v1)
 			v.AddArg(v0)
@@ -1665,10 +1667,5 @@ func rewriteValueARM64_OpARM64ORshiftRA(v *Value) bool {
 	for {
 		d := auxIntToInt64(v.AuxInt)
 		x := v_0
-		if v_1.Op 
-"""
-
-
-
-
+		if v_1.Op
 ```

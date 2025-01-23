@@ -22,7 +22,7 @@ Therefore, the summary should focus on the purpose of the file, which is to test
 
 简而言之，`malloc_test.cpp` 是一个全面的内存分配功能测试套件，用于确保 Android Bionic 库提供的内存管理功能稳定可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/malloc_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -34,8 +34,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -1077,7 +1079,4 @@ void AlignCheck() {
   // strong-alignment, since who knows what code depends on this behavior now.
   // As mentioned before, for 64 bit this will enforce the higher
   // req
-"""
-
-
 ```

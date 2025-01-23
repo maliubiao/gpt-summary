@@ -248,7 +248,7 @@ void HTMLFormElement::UseCountPropertyAccess(
 
 总而言之，`HTMLFormElement` 类是 Blink 引擎中表示 HTML `<form>` 元素的关键组件，它不仅管理着表单的属性和行为，还负责与 JavaScript 和 CSS 等其他 Web 技术进行交互，并处理包括 Shadow DOM 在内的复杂场景。它确保了表单在浏览器中的正确渲染、交互和数据处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_form_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 `this`. If `root` is a
     //   descendant of `this`, then that is trivially true.
     if (elements_including_shadow_trees && element.AuthorShadowRoot() &&
@@ -563,8 +565,4 @@ void HTMLFormElement::UseCountPropertyAccess(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

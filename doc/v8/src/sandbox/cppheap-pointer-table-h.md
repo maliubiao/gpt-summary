@@ -198,15 +198,17 @@ obj.dispose();
 
 In summary, `v8/src/sandbox/cppheap-pointer-table.h` defines a crucial mechanism for managing the lifecycle and accessing pointers to C++ objects within the V8 engine, particularly in sandboxed environments. It facilitates the interaction between JavaScript and C++ code and plays a key role in memory management and object lifetime.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/cppheap-pointer-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/cppheap-pointer-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -502,7 +504,4 @@ static_assert(sizeof(CppHeapPointerTable) == CppHeapPointerTable::kSize);
 #endif  // V8_COMPRESS_POINTERS
 
 #endif  // V8_SANDBOX_CPPHEAP_POINTER_TABLE_H_
-
-"""
-
 ```

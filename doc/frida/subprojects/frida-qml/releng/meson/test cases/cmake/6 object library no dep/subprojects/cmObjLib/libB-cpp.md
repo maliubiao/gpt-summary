@@ -114,7 +114,7 @@ Initially, one might be tempted to overemphasize the "reverse engineering" aspec
 
 尽管 `libB.cpp` 文件本身的功能很简单，但它在 Frida 项目的上下文中扮演着重要的角色，特别是在测试和开发阶段。它提供了一个简单的桩实现，用于模拟 zlib 版本信息的获取，以便隔离依赖或进行模拟测试。理解这样的桩函数对于理解 Frida 的架构和调试过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/6 object library no dep/subprojects/cmObjLib/libB.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,14 +122,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libB.hpp"
 
 std::string getZlibVers(void) {
   return "STUB";
 }
-
-"""
-
 ```

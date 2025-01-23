@@ -228,7 +228,7 @@ Interceptor.attach(Module.findExportByName(null, "sendto"), {
 
 请注意，这只是一个基本的示例。实际调试可能需要更复杂的 Frida 脚本来过滤特定的消息类型或进程。 你可能还需要 hook `recvfrom` 来查看内核返回的响应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_addr.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -239,8 +239,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -300,7 +302,4 @@ struct ifa_cacheinfo {
 #define IFAPROT_KERNEL_RA 2
 #define IFAPROT_KERNEL_LL 3
 #endif
-
-"""
-
 ```

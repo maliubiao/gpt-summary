@@ -127,7 +127,7 @@ Frida 本身就是一个强大的动态 instrumentation 工具，广泛应用于
 
 总而言之，`build_windows_package.py` 是 Frida 项目中用于自动化构建特定 Windows 安装包的脚本，它涉及到多个工具和步骤，并且构建出的应用程序很可能利用了 Frida 的动态 instrumentation 功能进行某种形式的逆向分析或操作。理解这个脚本的功能需要一定的系统编程、构建系统和逆向工程知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/manual tests/4 standalone binaries/build_windows_package.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, urllib.request, shutil, subprocess
@@ -169,7 +171,4 @@ subprocess.check_call([r'\Program Files\Inno Setup 5\ISCC.exe', 'myapp.iss'],
                       cwd='build')
 shutil.copy('build/setup.exe', 'myapp 1.0.exe')
 shutil.rmtree('build')
-
-"""
-
 ```

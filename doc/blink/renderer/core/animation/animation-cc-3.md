@@ -138,15 +138,17 @@ Since this is part 4 of a 5-part request, I need to synthesize the information f
 
 这个代码片段主要关注 `Animation` 对象在**范围控制、状态管理以及与渲染引擎合成器线程的交互**。它实现了设置和更新动画播放范围的功能，能够根据时间轴的特定区域播放动画。同时，它处理动画状态的验证和更新，并负责将动画同步到合成器线程，以便进行高性能的渲染。此外，还涉及到动画的生命周期管理，包括取消、重启以及与事件派发机制的交互。这部分代码体现了 Blink 引擎如何精细地控制 Web Animations API 中动画的行为，并确保动画能正确高效地在浏览器中呈现。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 his);
   }
 }
@@ -1058,7 +1060,4 @@ void Animation::commitStyles(ExceptionState& exception_state) {
         inline_style->setProperty(
             target->GetExecutionContext(),
             property.GetCSSPropertyName().ToAtomicString(), value->CssText
-"""
-
-
 ```

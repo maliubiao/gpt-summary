@@ -203,7 +203,7 @@ func main() {
 
 总而言之，这部分 `go/src/runtime/proc.go` 代码的核心功能是 **提供管理 Goroutine 状态的原子操作** 和 **实现安全地停止和启动整个 Go 程序世界的机制**。这些机制是 Go 运行时系统实现并发、垃圾回收和程序诊断的基础。 `freezetheworld` 提供了在崩溃场景下的特殊处理，而 `mstart` 和 `mexit` 则负责 M 线程的生命周期管理，`forEachP` 用于跨 P 的同步操作。理解这些机制有助于更深入地理解 Go 语言的底层运作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/proc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 (mp)
 }
 
@@ -1263,9 +1265,4 @@ func forEachPInternal(fn func(*p)) {
 	// Wait for remaining Ps to run fn.
 	if wait {
 		fo
-"""
-
-
-
-
 ```

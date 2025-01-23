@@ -89,7 +89,7 @@ The user wants a summary of the functionality of the provided C++ code snippet. 
 
 这部分代码主要集中测试了 Shared Storage Worklet 中可以使用的 JavaScript API 的各种功能，包括获取 Interest Groups 信息 (`interestGroups()`) 以及对 Shared Storage 数据进行增删改查操作 (`set()`, `append()`, `delete()`, `clear()`, `get()`, `length()`, `entries()`)。测试覆盖了正常情况和各种异常情况，例如参数错误、后端服务错误等，确保这些 API 在 Worklet 环境下的行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage_worklet_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 push_back(std::move(storage_interest_group));
 
   AddModuleResult add_module_result = AddModule(/*script_content=*/R"(
@@ -1104,7 +1106,4 @@ TEST_F(SharedStorageWorkletTest, Entries_OneEmptyBatch_Success) {
 
 TEST_F(SharedStorageWorkletTest, Entries_FirstBatchError_Failure) {
   AddModuleR
-"""
-
-
 ```

@@ -179,7 +179,7 @@ Running command: /path/to/frida/subprojects/frida-node/releng/meson/test cases/f
 
 总而言之，虽然 `copy.py` 脚本本身功能简单，但在 Frida 的上下文中，它扮演着重要的角色，确保了测试环境中所需的文件能够被正确地放置，从而支持 Frida 对 GNOME 应用程序的动态分析能力进行测试和验证。它的失败可能指示着 Frida 的构建或测试环境存在配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/7 gnome/gir/copy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 Intel Corporation
@@ -207,7 +209,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

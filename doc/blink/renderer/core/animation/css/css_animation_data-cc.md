@@ -146,14 +146,16 @@ Here's a breakdown of its functionalities:
 
 In summary, `css_animation_data.cc` is a fundamental component within the Blink rendering engine responsible for holding the structured information about CSS animations. It bridges the gap between the parsed CSS and the actual animation execution, and it interacts closely with JavaScript's ability to manipulate animation properties. Understanding its role is crucial for comprehending how animations are processed and rendered in a web browser.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animation_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ const StyleTimeline& CSSAnimationData::GetTimeline(size_t index) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

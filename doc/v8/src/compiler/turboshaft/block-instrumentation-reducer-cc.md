@@ -141,15 +141,17 @@ console.timeEnd("expensiveOperation");
 
 `v8/src/compiler/turboshaft/block-instrumentation-reducer.cc` 文件是 V8 Turboshaft 编译器的一部分，其核心功能是提供一个创建用于存储基本块执行计数器的机制。这个机制是 V8 进行性能分析和优化的基础，但 JavaScript 开发者通常不会直接接触到这部分代码。理解其功能有助于我们理解 V8 内部的工作原理以及 JavaScript 代码的编译和优化过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/block-instrumentation-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/block-instrumentation-reducer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ Handle<HeapObject> CreateCountersArray(Isolate* isolate) {
 }  // namespace detail
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

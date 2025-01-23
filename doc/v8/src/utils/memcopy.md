@@ -125,11 +125,13 @@ By following these steps, iteratively refining the understanding, and focusing o
 
 `v8/src/utils/memcopy.cc` 文件定义了 V8 引擎中关键的内存复制和移动操作的底层实现。虽然 JavaScript 开发者不会直接调用这些 C++ 函数，但这些函数是 V8 实现许多 JavaScript 功能（如数组操作、类型化数组操作、字符串操作和对象操作）性能的关键组成部分。通过针对不同平台进行优化，V8 能够更高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/memcopy.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ void init_memcopy_functions() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

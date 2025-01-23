@@ -120,15 +120,17 @@ fetch('http://example.com:21/'); // 或者使用 XMLHttpRequest 或 WebSocket
 
 `net/base/port_util.cc` 是 Chromium 网络安全的重要组成部分，它通过维护和检查一系列受限端口列表，防止恶意网站或用户尝试连接到可能被滥用的端口，从而增强浏览器的安全性。理解其工作原理对于调试网络连接问题和理解浏览器的安全机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/port_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -327,7 +329,4 @@ ScopedAllowablePortForTesting::~ScopedAllowablePortForTesting() {
 }
 
 }  // namespace net
-
-"""
-
 ```

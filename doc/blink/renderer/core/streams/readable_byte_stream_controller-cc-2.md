@@ -166,7 +166,7 @@ Initially, I might focus too heavily on the low-level implementation details. Ho
 
 `ReadableByteStreamController` 是 Blink 引擎中实现可读字节流的核心组件。它负责管理数据缓冲、处理读取和取消请求、支持 BYOB 模式以及管理流的状态。它直接与 JavaScript 的 `ReadableStream` API 交互，并在诸如文件下载和媒体流处理等场景中发挥关键作用。 理解其功能对于调试涉及流式数据处理的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/readable_byte_stream_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Stream::kClosed) {
     //   a. Assert: bytesWritten is 0
     DCHECK_EQ(bytes_written, 0u);
@@ -391,8 +393,4 @@ void ReadableByteStreamController::ReleaseSteps() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

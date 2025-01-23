@@ -182,7 +182,7 @@ This structured approach, combining code decomposition with knowledge of Frida's
 
 通过这些步骤，用户可以测试和理解 Frida 的 `persist_timeout` 功能，并在目标进程短暂消失的情况下保持 Frida 会话的有效性。如果在任何步骤中出现问题，例如连接失败或找不到进程，这些步骤可以作为调试线索，帮助用户定位问题所在。 例如，如果连接失败，用户需要检查 Frida-server 是否正在运行，网络连接是否正常，以及目标设备的配置是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/session_persist_timeout.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from frida_tools.application import Reactor
 
 import frida
@@ -273,7 +275,4 @@ function puts(s) {
 
 app = Application()
 app.run()
-
-"""
-
 ```

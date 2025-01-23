@@ -121,11 +121,13 @@ console.log(result);
 
 `v8/src/zone/zone.cc` 定义的 `Zone` 类是 V8 引擎内部一个至关重要的内存管理工具，它通过提供快速的、基于作用域的内存分配和释放机制，提高了 V8 引擎的性能和效率。虽然 JavaScript 开发者不能直接操作 `Zone`，但它的存在对 JavaScript 代码的执行效率有着显著的影响。它使得 V8 能够更有效地管理临时对象和数据，从而为 JavaScript 代码的运行提供更优的环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/zone.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -370,7 +372,4 @@ ZoneScope::~ZoneScope() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -87,7 +87,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分 `AXObjectCacheImpl.cc` 代码的核心职责是**管理和执行 AX 对象的移除操作**，以保持可访问性树与 DOM 树的同步。它处理了各种移除场景，并具备一些辅助功能来确保可访问性的正确性和性能。与 JavaScript、HTML 和 CSS 的交互主要体现在响应 DOM 结构和样式的变化，并对用户可能造成的错误用法进行检测和提示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -95,8 +95,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _aria_modal_dialog_ = nullptr;
   }
 }
@@ -975,7 +977,4 @@ void AXObjectCacheImpl::NodeIsAttached(Node* node) {
           layout_parent = layout_parent->Parent();
         }
         MarkSubtreeDirty(layo
-"""
-
-
 ```

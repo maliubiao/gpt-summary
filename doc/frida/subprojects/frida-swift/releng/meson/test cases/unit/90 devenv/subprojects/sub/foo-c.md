@@ -126,7 +126,7 @@ By following these steps, including analyzing the code, understanding the contex
 
 尽管 `foo.c` 本身功能非常简单，但在 Frida 这样的动态插桩工具的背景下，它成为了一个用于测试、演示和学习动态分析技术的良好起点。它涉及到共享库、符号导出、进程内存空间等底层概念，并可以作为逆向工程和安全研究的构建块。 理解这类基础组件有助于更深入地掌握 Frida 的工作原理和动态分析的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/90 devenv/subprojects/sub/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _WIN32
   #define DO_EXPORT __declspec(dllexport)
 #else
@@ -146,7 +148,4 @@ DO_EXPORT int foo(void)
 {
   return 0;
 }
-
-"""
-
 ```

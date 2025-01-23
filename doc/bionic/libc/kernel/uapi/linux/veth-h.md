@@ -239,7 +239,7 @@ except Exception as e:
 
 这个 Frida 示例只是一个起点。具体的 hook 代码需要根据你想要调试的 Android 组件和它与 `veth` 设备交互的方式进行调整。你需要了解哪些系统调用被使用，以及 `VETH_INFO_PEER` 等常量是如何被传递的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/veth.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -267,7 +269,4 @@ enum {
 #define VETH_INFO_MAX (__VETH_INFO_MAX - 1)
 };
 #endif
-
-"""
-
 ```

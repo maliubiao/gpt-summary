@@ -130,11 +130,13 @@ By following this iterative process of examining the code, identifying key compo
 
 `v8/src/heap/local-heap.cc` 文件是 V8 引擎中管理非主线程堆内存的关键组件。它负责线程的内存分配、状态管理、安全点处理以及与主堆的协调。虽然 JavaScript 开发者不能直接接触 `LocalHeap`，但理解它的功能有助于理解 V8 如何实现高效的并发和自动内存管理。  Web Workers、异步操作、闭包和垃圾回收等 JavaScript 特性都依赖于 `LocalHeap` 提供的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/local-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -614,7 +616,4 @@ void LocalHeap::WeakenDescriptorArrays(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

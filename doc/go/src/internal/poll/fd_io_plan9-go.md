@@ -158,7 +158,7 @@ Wait 返回: n = 20, err = <nil>
 
 例如，如果读取操作很快完成，`Cancel` 可能在读取完成后才被调用，这时 `Wait` 会返回完整的读取结果，而不会因为 `Cancel` 而返回错误。反之，如果读取操作很慢，`Cancel` 可能成功中断操作，`Wait` 可能会返回一个表示操作被中断的错误（尽管在这个特定的 `asyncIO` 实现中，它看起来并不会返回明确的取消错误，而是依赖底层 `read` 调用的行为）。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_io_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -260,9 +262,4 @@ func (aio *asyncIO) Wait() (int, error) {
 // ignore and unignore the "hangup" signal received by the process.
 func runtime_ignoreHangup()
 func runtime_unignoreHangup()
-
-"""
-
-
-
 ```

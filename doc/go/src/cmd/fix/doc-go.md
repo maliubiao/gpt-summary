@@ -174,15 +174,17 @@ my_program.go: os.Error to error
 
 总而言之，`go tool fix` 是一个强大的工具，可以帮助开发者快速迁移代码到新的 Go 版本。但是，理解其工作原理，谨慎使用，并配合版本控制是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/fix/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ Instead, use a version control system's “diff” functionality to inspect
 the changes that fix makes before committing them.
 */
 package main
-
-"""
-
-
-
 ```

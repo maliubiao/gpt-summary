@@ -34,7 +34,7 @@ Here's a plan to address the request:
 
 总而言之，`context_lookup_benchmark_data.handroid` 文件是一个静态的系统属性数据库，它定义了一系列具有安全上下文和类型信息的属性。这个文件的核心功能是作为基准测试的输入数据，用于评估 Android 系统中系统属性查找的性能。 文件中的每个条目都代表了 Android 操作系统中一个具体的配置或状态，影响着系统的各个方面。 通过使用这个文件进行测试，开发者可以了解属性查找机制的效率，并在必要时进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/system_properties/context_lookup_benchmark_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -46,8 +46,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ragemanager_config_prop:s0 exact bool
 
 ro.vehicle.hal u:object_r:vehicle_hal_prop:s0 exact string
@@ -479,8 +481,4 @@ ro.gfx.angle.supported u:object_r:graphics_config_prop:s0 exact bool
 graphics.gpu.profiler.support          u:object_r:graphics_config_prop:s0 exact bool
 graphics.gpu.profiler.vulkan_layer_apk u:object_r:graphics_config_prop:s0 exact string
     )";
-
-"""
-
-
 ```

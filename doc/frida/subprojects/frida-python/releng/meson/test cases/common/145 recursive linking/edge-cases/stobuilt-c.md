@@ -128,7 +128,7 @@ Here's a thinking process to arrive at the analysis of the C code:
 
 总而言之，`stobuilt.c` 作为一个简单的测试用例，旨在验证 Frida 在处理特定链接场景下的能力。它涉及到动态链接、符号导出等底层概念，同时也为 Frida 开发者提供了一个可控的环境来测试和调试 Frida 的功能。 逆向工程师在学习 Frida 的原理和使用方法时，也可能会接触到这类测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/145 recursive linking/edge-cases/stobuilt.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 
@@ -145,7 +147,4 @@ SYMBOL_EXPORT
 int get_builto_value (void) {
   return 1;
 }
-
-"""
-
 ```

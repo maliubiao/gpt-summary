@@ -94,7 +94,7 @@ By following these steps, I could systematically analyze the code snippet and ad
 **举例说明:**
 
 假设一个网页需要向企业服务器发送一些性能数据或错误信息。网页中的 JavaScript 代码可能会使用 `navigator.sendBeacon()` API 或其他类似的方法发起一个请求。这个请求最终会传递到 Chromium 的网络栈
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ForTesting()
                     ->cache()
                     ->GetEnterpriseEndpointsForTesting()
@@ -125,8 +127,4 @@ INSTANTIATE_TEST_SUITE_P(ReportingServiceStoreTest,
                          ::testing::Bool());
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

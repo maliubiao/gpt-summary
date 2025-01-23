@@ -252,15 +252,17 @@ func GetT() *T {
 
 总而言之，这段代码片段的核心在于演示和测试 `uintptr` 在 Go 语言中作为一种无类型指针的用法，特别是在跨函数和方法调用时传递内存地址的能力。使用 `unsafe` 包需要非常谨慎，理解其潜在的风险，并确保代码的正确性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/uintptrescapes.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -352,9 +354,4 @@ func main() {
 	default:
 	}
 }
-
-"""
-
-
-
 ```

@@ -221,7 +221,7 @@ go build -tags=goexperiment.swissmap your_program.go
 
 总而言之，这段代码是 Go 语言 map 底层实现的关键部分，它优化了 `uint64` 键类型的 map 操作，但开发者通常不需要直接调用这些函数，而是通过标准的 Go map 语法来使用。理解其内部机制有助于更好地理解 map 的性能特性和避免一些常见的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/map_fast64_noswiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -229,8 +229,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -733,9 +735,4 @@ func evacuate_fast64(t *maptype, h *hmap, oldbucket uintptr) {
 		advanceEvacuationMark(h, t, newbit)
 	}
 }
-
-"""
-
-
-
 ```

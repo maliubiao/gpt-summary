@@ -80,11 +80,13 @@ main();
 
 `v8/src/libsampler/sampler.cc` 是 V8 引擎中一个重要的组成部分，它提供了一种低开销的机制来采样 JavaScript 代码的执行状态。这些采样数据对于性能分析、调试和 JIT 优化至关重要，帮助开发者和 V8 引擎自身更好地理解和优化 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libsampler/sampler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -768,7 +770,4 @@ void Sampler::DoSample() {
 
 }  // namespace sampler
 }  // namespace v8
-
-"""
-
 ```

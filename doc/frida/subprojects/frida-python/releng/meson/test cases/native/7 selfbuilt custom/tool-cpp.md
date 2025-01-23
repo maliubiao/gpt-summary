@@ -240,7 +240,7 @@ int get_serial () {
 
 这个 `tool.cpp` 虽然简单，但在 Frida 动态插桩的场景下，可以作为一个方便的辅助工具，加速逆向分析和实验的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/7 selfbuilt custom/tool.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -248,8 +248,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -284,7 +286,4 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
-
-"""
-
 ```

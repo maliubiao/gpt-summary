@@ -162,7 +162,7 @@ By following these steps and constantly relating the script to its purpose and t
 5. **逐步执行 `msgfmthelper.py`：**  可以在 `msgfmthelper.py` 脚本中添加打印语句，输出解析到的参数和执行的 `msgfmt` 命令，以便更好地理解脚本的执行过程。
 6. **使用 Frida 进行动态分析：**  如果需要更深入的了解，可以使用 Frida hook `subprocess.call` 函数，查看 `msgfmthelper.py` 实际调用的 `msgfmt` 命令和参数，或者 hook 与本地化相关的系统调用和库函数，观察应用程序加载本地化资源的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/scripts/msgfmthelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -201,7 +203,4 @@ def run(args: T.List[str]) -> int:
     return subprocess.call([options.msgfmt, '--' + options.type, '-d', options.podir,
                             '--template', options.input,  '-o', options.output] + options.args,
                            env=env)
-
-"""
-
 ```

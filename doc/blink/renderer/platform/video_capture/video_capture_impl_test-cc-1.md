@@ -105,16 +105,18 @@ My thinking process to analyze the provided C++ code snippet and generate the su
 
 这段代码是 `VideoCaptureImpl` 类的深入测试，主要关注启动超时处理、启动前的错误处理以及特定平台（主要是 Windows）的兼容性问题。它通过模拟各种场景和错误条件，验证了 `VideoCaptureImpl` 能够正确地管理视频捕获的生命周期，并能妥善处理各种异常情况。这对于确保基于 Web 的视频捕获功能的稳定性和可靠性至关重要，最终影响用户在网页上使用摄像头相关功能的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/video_capture/video_capture_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-       // Do nothing.
+### 源代码
+```cpp
+// Do nothing.
       }));
 
   StartCapture(0, params_small_);
@@ -267,8 +269,4 @@ TEST_F(VideoCaptureImplTest, WinCameraBusyErrorUpdatesCorrectState) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

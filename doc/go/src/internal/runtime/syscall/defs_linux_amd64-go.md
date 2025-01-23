@@ -214,7 +214,7 @@ func handleConnection(conn net.Conn) {
 
 总而言之，`go/src/internal/runtime/syscall/defs_linux_amd64.go` 文件为 Go 语言在 Linux AMD64 架构上进行系统调用提供了基础的定义，使得 Go 语言能够利用操作系统底层的强大功能，例如高效的 I/O 多路复用机制 `epoll`。 理解这个文件的作用有助于深入理解 Go 语言运行时环境的工作原理以及如何进行底层的系统编程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/syscall/defs_linux_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ type EpollEvent struct {
 	Events uint32
 	Data   [8]byte // unaligned uintptr
 }
-
-"""
-
-
-
 ```

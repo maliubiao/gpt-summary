@@ -169,14 +169,16 @@ This iterative process of skimming, focusing on key elements, connecting to web 
 
 总而言之，`bitmap_image.cc` 是 Blink 渲染引擎中负责处理和渲染位图图像的关键组件，它与 HTML、CSS 和 JavaScript 中的图像相关功能紧密相连，是网页图像显示的基础。理解其功能有助于开发者更好地理解浏览器如何处理图像，并避免常见的图像使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/bitmap_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Samuel Weinig (sam.weinig@gmail.com)
  * Copyright (C) 2004, 2005, 2006, 2008 Apple Inc. All rights reserved.
@@ -650,7 +652,4 @@ void BitmapImage::SetAnimationPolicy(
 }
 
 }  // namespace blink
-
-"""
-
 ```

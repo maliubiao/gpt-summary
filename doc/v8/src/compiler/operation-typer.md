@@ -88,11 +88,13 @@ compare(NaN, NaN);  // OperationTyper 可以推断出结果是 Boolean 类型 (f
 
 `operation-typer.cc` 文件是 V8 引擎中进行类型分析的关键组成部分。它通过模拟 JavaScript 引擎的类型转换和运算规则，在编译时尽可能地了解代码中变量和表达式的类型，从而为后续的优化步骤提供重要的信息，最终提升 JavaScript 代码的执行效率。如果没有这样的类型分析，编译器就不得不生成更通用的、性能较差的代码来处理各种可能的类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/operation-typer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1454,7 +1456,4 @@ Type OperationTyper::ToBoolean(Type type) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

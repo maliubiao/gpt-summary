@@ -140,15 +140,17 @@ func outer() func() {
 
 总而言之，`go/src/cmd/compile/internal/gc/compile.go` 是 Go 语言编译器中负责函数编译的核心模块，它管理编译队列，预处理函数，并利用并发来加速编译过程，最终将 Go 代码转换为可执行的机器码。它涉及到编译器前端（生成 AST）和后端（生成机器码）的衔接。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/gc/compile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -354,9 +356,4 @@ func compileFunctions(profile *pgoir.Profile) {
 	base.Ctxt.InParallel = false
 	types.CalcSizeDisabled = false
 }
-
-"""
-
-
-
 ```

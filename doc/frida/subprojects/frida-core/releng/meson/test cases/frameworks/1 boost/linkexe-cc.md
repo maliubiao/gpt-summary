@@ -152,7 +152,7 @@ By following these steps, we can systematically analyze the code and generate a 
 
 通过以上步骤，用户可以利用这个简单的测试用例作为调试线索，验证 Frida 的功能，理解 Frida 的工作原理，并解决自己在实际使用中遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/1 boost/linkexe.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include<boost/thread.hpp>
@@ -180,7 +182,4 @@ int main(int argc, char **argv) {
     thr.join();
     return 0;
 }
-
-"""
-
 ```

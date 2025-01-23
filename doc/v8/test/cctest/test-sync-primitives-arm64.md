@@ -98,11 +98,13 @@ onmessage = function(event) {
 
 因此，`test-sync-primitives-arm64.cc` 文件中的测试用例，尽管是针对 C++ 代码和 V8 模拟器的，但其验证的正确性对于 JavaScript 中依赖原子操作和共享内存并发的特性至关重要。它确保了 V8 引擎在 ARM64 平台上能够正确地执行这些底层的同步操作，从而保证 JavaScript 代码在多线程环境下的行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-sync-primitives-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -507,7 +509,4 @@ TEST(simulator_invalidate_exclusive_access_threaded) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

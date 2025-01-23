@@ -37,7 +37,7 @@ Therefore, the code seems to be setting up test cases for various mathematical f
 
 **总而言之，这段代码的功能是为 `math` 包中的各种数学函数提供一组详尽的特殊测试用例，以确保这些函数在处理边界条件、特殊数值（如无穷大、NaN、零）时能够返回预期的结果，保证了 `math` 包的健壮性和准确性。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -46,8 +46,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 1), 1},
 	{0, 1},
 	{0, 1},
@@ -1327,10 +1329,5 @@ func TestLog10(t *testing.T) {
 		}
 	}
 	if f := Log10(E); f != Log10E {
-		t.Errorf("Log10(%g) = 
-"""
-
-
-
-
+		t.Errorf("Log10(%g) =
 ```

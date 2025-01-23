@@ -131,7 +131,7 @@ func main() {
 
 总而言之，`index_native.go` 提供的是针对特定架构优化的字节切片和字符串查找功能，是 Go 标准库中 `bytes.Index` 和 `strings.Index` 的底层实现基础。使用时需要注意子串的长度限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/index_native.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,8 +139,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -160,9 +162,4 @@ func Index(a, b []byte) int
 //
 //go:noescape
 func IndexString(a, b string) int
-
-"""
-
-
-
 ```

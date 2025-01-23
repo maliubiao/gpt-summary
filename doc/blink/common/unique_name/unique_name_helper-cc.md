@@ -156,14 +156,16 @@ By following these steps, I can analyze the provided C++ code and produce a comp
 
 总而言之，`unique_name_helper.cc` 文件是 Blink 引擎中管理 Frame 身份的关键组件，它确保了每个 Frame 都有一个内部的唯一标识符，这对于浏览器的正确运行至关重要。虽然开发者通常不需要直接操作这些唯一名称，但理解其背后的机制有助于更好地理解 Blink 的工作原理以及如何正确地与 iframe 和浏览上下文进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/unique_name/unique_name_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -482,7 +484,4 @@ std::string UniqueNameHelper::ExtractStableNameForTesting(
 }
 
 }  // namespace blink
-
-"""
-
 ```

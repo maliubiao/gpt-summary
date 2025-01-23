@@ -186,15 +186,17 @@ go test -v -run TestBreak1 ./go/src/cmd/compile/internal/rangefunc/
 
 总而言之，这个测试文件是 Go 语言编译器内部 `rangefunc` 功能的测试代码，旨在验证该功能在各种正常和异常情况下的行为，包括与 `break`、`continue`、`return`、`goto` 和 `panic` 的交互。它通过定义不同的序列生成器（包括“坏”的实现）和检查机制来确保该功能的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/rangefunc/rangefunc_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2401,9 +2403,4 @@ func Test70035(t *testing.T) {
 		t.Errorf("got %v, want %v", got, want)
 	}
 }
-
-"""
-
-
-
 ```

@@ -86,7 +86,7 @@ add(5, 3); // 首次执行，可能需要编译
 
 这部分 `test-serialize.cc` 主要深入测试了 V8 代码序列化器在处理各种复杂场景下的能力，包括由 `ConsString` 组成的源代码、外部字符串、跨 Isolate 的代码共享、对上下文依赖的处理、对 V8 配置变化的敏感性、缓存数据的完整性校验以及与 ES6 新特性和增量垃圾回收的交互。 此外，它还包含了对 `SnapshotCreator` 的相关测试，验证了在特定场景下 `SnapshotCreator` 的正确行为。 总体而言，这部分测试旨在确保 V8 的代码缓存机制在各种情况下都能可靠地工作，提高代码加载速度和执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-serialize.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-serialize.cc以.tq结尾，那它是个v8 torque源代码，
@@ -94,8 +94,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ingFromUtf8(source_c).ToHandleChecked();
 
   Handle<String> source_str =
@@ -966,7 +968,4 @@ UNINITIALIZED_TEST(SnapshotCreatorMultipleContexts) {
   {
     SnapshotCreatorParams testing_params;
     v8::SnapshotCreator creator(testing_params.create_
-"""
-
-
 ```

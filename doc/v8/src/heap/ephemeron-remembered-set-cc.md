@@ -135,15 +135,17 @@ console.log(weakMap.has(key2)); // 输出 true，因为 key2 仍然被引用
 
 `v8/src/heap/ephemeron-remembered-set.cc` 是 V8 内部用于高效追踪对 ephemeron 哈希表（通常用于实现 `WeakMap` 和 `WeakSet`) 中键的写入操作的关键组件。它帮助垃圾回收器识别哪些 `WeakMap` 需要检查，以便正确管理弱引用对象的生命周期。用户虽然不直接与之交互，但理解其背后的机制有助于更好地理解和使用 JavaScript 的 `WeakMap` 和 `WeakSet`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/ephemeron-remembered-set.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/ephemeron-remembered-set.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ void EphemeronRememberedSet::RecordEphemeronKeyWrites(
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

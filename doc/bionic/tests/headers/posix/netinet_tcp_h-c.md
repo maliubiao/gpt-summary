@@ -267,7 +267,7 @@ Interceptor.attach(Module.findExportByName(null, "setsockopt"), {
 
 总结来说，`bionic/tests/headers/posix/netinet_tcp_h.c` 是一个非常基础的测试文件，用于确保 `TCP_NODELAY` 宏在 Android 的网络编程环境中是可用的。理解它的作用有助于理解 Android 如何支持底层的网络功能，以及如何在应用层使用这些功能来优化网络通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/netinet_tcp_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -315,7 +317,4 @@ Prompt:
 static void netinet_tcp_h() {
   MACRO(TCP_NODELAY);
 }
-
-"""
-
 ```

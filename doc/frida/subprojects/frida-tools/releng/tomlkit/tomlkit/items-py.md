@@ -221,7 +221,7 @@ Let's break down the thought process for analyzing the `items.py` file.
 
 `frida/subprojects/frida-tools/releng/tomlkit/tomlkit/items.py` 文件的主要功能是定义了用于表示 TOML 文档中各种数据类型的 Python 类，并提供了 Python 对象到 TOML 元素的转换机制。它负责管理 TOML 元素的格式细节，并支持生成 TOML 格式的字符串表示。该文件是 `tomlkit` 库的核心，使得在 Python 代码中能够方便地创建、操作和序列化 TOML 数据。 虽然它本身不包含直接的逆向代码，但作为 Frida 配置解析的工具，它在逆向工程中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import abc
@@ -1513,7 +1515,4 @@ class Array(Item, _CustomList):
                 if whitespace:
                     new_values.append(Whitespace(whitespace))
                     whitespace = "
-"""
-
-
 ```

@@ -153,15 +153,17 @@ fetch('https://example.com')
 
 总之，`net/cert/internal/system_trust_store_nss_unittest.cc` 这个文件对于确保 Chromium 能够安全地处理 HTTPS 连接至关重要，因为它测试了负责加载和管理系统信任证书的关键组件。虽然 JavaScript 代码不直接操作这些底层机制，但它依赖这些机制来建立安全的网络连接。理解这些单元测试的功能可以帮助开发者更好地理解 Chromium 的安全架构，并在遇到证书相关问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/system_trust_store_nss_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ TEST_F(SystemTrustStoreNSSTest, UserSlotRestrictionDisallows) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

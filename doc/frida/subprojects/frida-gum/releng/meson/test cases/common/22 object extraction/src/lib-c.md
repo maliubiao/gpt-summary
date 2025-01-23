@@ -169,7 +169,7 @@ ret
 
 这个简单的 `lib.c` 文件作为测试用例，帮助Frida开发者和用户验证Frida对象提取功能的正确性和稳定性。用户在实际逆向工程中遇到类似需要提取代码的场景时，其操作步骤和可能遇到的问题与这个测试用例所模拟的情况是类似的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/22 object extraction/src/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,12 +177,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 42;
 }
-
-"""
-
 ```

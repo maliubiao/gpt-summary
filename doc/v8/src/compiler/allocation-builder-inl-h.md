@@ -166,15 +166,17 @@ StoreField(object: allocation_node, field: Length, value: 5)
 
 总而言之，`v8/src/compiler/allocation-builder-inl.h` 定义的 `AllocationBuilder` 类是 V8 编译器中负责对象内存分配的关键组件，它连接了 JavaScript 代码的执行和底层内存管理。理解它的功能有助于深入了解 V8 如何创建和管理 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/allocation-builder-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/allocation-builder-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ void AllocationBuilder::AllocateSloppyArgumentElements(
 }  // namespace v8
 
 #endif  // V8_COMPILER_ALLOCATION_BUILDER_INL_H_
-
-"""
-
 ```

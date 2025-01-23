@@ -89,11 +89,13 @@ console.log(point.getX()); // 输出 10
 
 `type-visitor.cc` 是 Torque 编译器中一个核心的组件，它负责理解 Torque 代码中的类型定义，并将这些定义转换成 V8 内部可以使用的类型信息。这对于 V8 正确地执行 JavaScript 代码至关重要，因为它定义了 JavaScript 对象和操作的底层结构和类型规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/type-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -642,7 +644,4 @@ const Type* TypeVisitor::ComputeTypeForStructExpression(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

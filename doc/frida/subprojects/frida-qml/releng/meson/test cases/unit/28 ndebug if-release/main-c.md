@@ -140,7 +140,7 @@ Initially, I might focus too much on the specific C code and miss the broader co
 
 总的来说，这个看似简单的 `main.c` 文件虽然功能单一，但它在 Frida 的构建和测试过程中扮演着重要的角色，用于验证 `NDEBUG` 宏是否在不同的构建配置中被正确地定义。这对于确保最终发布的 Frida 软件是经过优化的 Release 版本至关重要。对于逆向工程师来说，理解 `NDEBUG` 宏及其在不同构建版本中的作用是进行有效逆向分析的基础知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/28 ndebug if-release/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -161,7 +163,4 @@ int main(void) {
 #endif
     return 0;
 }
-
-"""
-
 ```

@@ -135,14 +135,16 @@ This step-by-step approach, starting with a general understanding and progressiv
 
 总而言之，`blink/renderer/platform/fonts/typesetting_features.cc` 这个文件是 Blink 引擎内部处理排版特性的一个基础组件，它负责将这些特性以字符串的形式表示，方便内部处理和与 CSS 的 `font-feature-settings` 属性关联。 虽然开发者不会直接修改这个文件，但理解其背后的概念有助于更好地使用 CSS 和 JavaScript 来控制网页的排版效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/typesetting_features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ String ToString(TypesettingFeatures features) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -188,15 +188,17 @@ while (i < 10) {
 
 总结来说，`v8/src/compiler/turboshaft/loop-unrolling-reducer.h` 定义了 V8 编译器中一个重要的优化阶段，专注于通过展开循环来提高 JavaScript 代码的执行效率。它涉及到静态分析、模式匹配和代码转换等复杂的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/loop-unrolling-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/loop-unrolling-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -880,7 +882,4 @@ void LoopUnrollingReducer<Next>::FullyUnrollLoop(const Block* header) {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_LOOP_UNROLLING_REDUCER_H_
-
-"""
-
 ```

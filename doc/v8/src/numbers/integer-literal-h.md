@@ -172,15 +172,17 @@ IntegerLiteral c(false, 10); // 表示 10
 
 `v8/src/numbers/integer-literal.h` 中定义的 `IntegerLiteral` 类是 V8 内部用于安全和结构化地表示整数字面量的工具。它在代码解析、编译和优化阶段发挥着重要作用，并有助于避免与整数溢出、符号错误和类型假设相关的编程错误。虽然开发者通常不会直接与这个类交互，但理解它的功能有助于更好地理解 V8 如何处理 JavaScript 中的数字。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/numbers/integer-literal.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/numbers/integer-literal.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ IntegerLiteral operator+(const IntegerLiteral& x, const IntegerLiteral& y);
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_NUMBERS_INTEGER_LITERAL_H_
-
-"""
-
 ```

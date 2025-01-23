@@ -231,7 +231,7 @@ sys.stdin.read()
 
 请注意，动态链接器的实现细节可能会因 Android 版本而异，符号名也可能发生变化。你需要根据你目标 Android 设备的版本来调整 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_reloc_iterators.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -242,8 +242,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -353,7 +355,4 @@ inline bool for_all_packed_relocs(sleb128_decoder decoder, F&& callback) {
 
   return true;
 }
-
-"""
-
 ```

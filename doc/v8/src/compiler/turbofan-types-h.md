@@ -205,15 +205,17 @@ process(null); // TypeError: Cannot read properties of null (reading 'name')
 
 总结来说，`turbofan-types.h` 定义的类型系统是 V8 编译器理解和优化 JavaScript 代码的关键组成部分。 虽然它不是直接用于检测用户代码错误的工具，但它反映了 JavaScript 的动态类型特性，并指导编译器如何处理这些特性。 理解这个内部类型系统有助于更深入地理解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-types.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turbofan-types.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -950,7 +952,4 @@ class UnionType : public StructuralType {
 }  // namespace v8
 
 #endif  // V8_COMPILER_TURBOFAN_TYPES_H_
-
-"""
-
 ```

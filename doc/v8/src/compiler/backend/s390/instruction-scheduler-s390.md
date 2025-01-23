@@ -100,11 +100,13 @@ console.log(a + b);
 
 `instruction-scheduler-s390.cc` 文件是 V8 引擎中针对 s390 架构的指令调度器的核心组成部分。它负责提供关于 s390 机器指令的架构相关信息，帮助指令调度器优化 JavaScript 代码编译后生成的机器指令的执行顺序，从而提升 JavaScript 代码在 s390 平台上的性能。它通过 `GetTargetInstructionFlags` 函数为不同的 s390 指令设置不同的标志，以指导调度器进行更精细的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-scheduler-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -535,7 +537,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

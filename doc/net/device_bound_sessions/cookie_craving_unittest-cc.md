@@ -144,15 +144,17 @@ Imagine a scenario where a user reports that a specific feature requiring device
 
 In essence, this unittest file serves as a crucial safeguard, ensuring the correct behavior of the `CookieCraving` class, which is a fundamental component in managing secure, device-bound sessions within the Chromium browser and directly impacts how websites can utilize cookies for such functionalities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/cookie_craving_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -926,7 +928,4 @@ TEST(CookieCravingTest, FailCreateFromInvalidProto) {
 }
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

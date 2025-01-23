@@ -241,7 +241,7 @@ if __name__ == "__main__":
 
 尽管没有 `namespace.handroid` 的实际内容，我们可以推断它定义了与 Android 命名空间管理相关的接口和数据结构，这些功能是 Android 安全性和隔离机制的基础。通过分析其可能的用途和结合 Android 的架构，我们可以理解它在整个系统中的作用。使用 Frida 等工具可以帮助我们动态地观察和调试与命名空间相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/android/include/namespace.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -252,9 +252,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

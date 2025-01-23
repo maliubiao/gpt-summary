@@ -70,15 +70,17 @@ Based on the included headers and method names, `WebFrameWidgetImpl` seems to be
 
 这部分 `WebFrameWidgetImpl` 的代码主要负责作为渲染进程中 WebFrame 的窗口部件接口，接收和处理来自操作系统的底层输入事件，并通过与 Compositor 的交互来驱动页面的渲染更新。它也提供了基本的拖放和焦点管理功能，并为 Stylus 书写等高级输入功能提供了基础。它充当了 Blink 渲染引擎与宿主浏览器 UI 之间的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -850,7 +852,4 @@ void WebFrameWidgetImpl::HandleStylusWritingGestureAction(
   LocalFrame* focused_frame = FocusedLocalFrameInWidget();
   if (!focused_frame) {
     std::move(callback).Run(mojom::blink::Hand
-"""
-
-
 ```

@@ -165,7 +165,7 @@ PAX Headers: map[path:this_is_a_very_long_file_name_that_exceeds_the_limit_of_us
 
 `go/src/archive/tar/common.go` 文件是 `archive/tar` 包的基础，它定义了核心的数据结构和常量，并提供了一些关键的辅助功能，例如格式兼容性检查和与文件系统抽象的集成。理解这个文件的内容对于正确使用 `archive/tar` 包至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/tar/common.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -923,9 +925,4 @@ func isHeaderOnlyType(flag byte) bool {
 		return false
 	}
 }
-
-"""
-
-
-
 ```

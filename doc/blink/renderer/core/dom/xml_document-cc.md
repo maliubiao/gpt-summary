@@ -187,15 +187,17 @@ xhr.send();
 
 总而言之，`xml_document.cc` 文件在 Blink 渲染引擎中扮演着核心角色，负责表示和管理 XML 文档，并为 JavaScript 与 XML 内容的交互提供了基础。理解其功能和与其他 Web 技术的关系，有助于我们更好地理解和调试与 XML 相关的 Web 开发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/xml_document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Samsung Electronics. All rights reserved.
  *
@@ -232,7 +234,4 @@ XMLDocument::XMLDocument(const DocumentInit& initializer,
                            extended_document_classes)) {}
 
 }  // namespace blink
-
-"""
-
 ```

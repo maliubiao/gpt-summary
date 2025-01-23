@@ -144,14 +144,16 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`deprecation.cc` 文件是 Blink 引擎中一个重要的组成部分，它帮助开发者及时了解并迁移其代码中使用的已过时 Web 技术，从而保证 Web 的健康发展和代码的向前兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/deprecation/deprecation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ bool Deprecation::IsDeprecated(WebFeature feature) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

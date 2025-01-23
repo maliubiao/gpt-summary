@@ -116,7 +116,7 @@ if (Process.platform === 'linux') {
 
 总而言之，这个简单的 `src1.c` 文件在一个复杂的测试环境中扮演着一个被观察对象的角色，用于验证 Frida 在处理特定场景下的能力。它的简单性使得更容易隔离问题，并确保 Frida 能够正确地识别和操作目标函数。 "failing" 的标签是调试过程中的一个起点，提示我们需要深入研究 Frida 脚本和测试环境的配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/124 extract from unity/src1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,12 +124,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int sub_lib_method1() {
     return 1337;
 }
-
-"""
-
 ```

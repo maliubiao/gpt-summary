@@ -282,7 +282,7 @@ getObjectProperties(myObjectId);
 
 `v8/src/inspector/v8-runtime-agent-impl.cc` 是 V8 引擎中负责实现 Chrome DevTools Protocol 的 `Runtime` 域的关键组件。它提供了允许开发者远程检查和控制 JavaScript 运行时环境的功能，包括代码执行、函数调用、对象属性获取和管理等。该文件的功能是连接 DevTools 前端和 V8 引擎的桥梁，使得开发者可以通过 DevTools 与正在运行的 JavaScript 代码进行交互和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-runtime-agent-impl.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-runtime-agent-impl.cc以.tq结尾，那它是个v8 torque源代码，
@@ -290,8 +290,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -1109,8 +1111,4 @@ Response V8RuntimeAgentImpl::globalLexicalScopeNames(
     std::unique_ptr<protocol::Array<String16>>* outNames) {
   int contextId = 0;
   Response response = ensureContext(m_inspector, m_session->contextGroupId(),
- 
-"""
-
-
 ```

@@ -154,14 +154,16 @@ This iterative process of scanning, analyzing key functions, connecting to web c
 
 `layout_opportunity.cc` 中的 `LayoutOpportunity` 类是 Blink 渲染引擎处理 CSS Exclusions 和 Shapes 这一复杂布局特性的核心组件。它通过精确计算每一行文本的可用水平空间，确保文本能够按照 CSS 规则环绕指定的形状，从而实现丰富的网页排版效果。理解其工作原理有助于开发者更好地掌握 CSS Exclusions 和 Shapes 的使用，并避免常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/exclusions/layout_opportunity.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ std::ostream& operator<<(std::ostream& ostream,
 }
 
 }  // namespace blink
-
-"""
-
 ```

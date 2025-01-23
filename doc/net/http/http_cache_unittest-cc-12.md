@@ -167,7 +167,7 @@ HTTP 缓存是浏览器网络功能的核心组成部分，与 JavaScript 功能
 
 总而言之，`net/http/http_cache_unittest.cc` 的这一部分专注于细致地测试 HTTP 缓存处理不完整资源以及遵守各种 `Cache-Control` 指令的逻辑，并验证了网络隔离键对于缓存隔离的作用。这对于确保 Chromium 浏览器能够高效、正确地管理 HTTP 缓存至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第13部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rs = EXTRA_HEADER;
   std::string response_headers(transaction.response_headers);
   response_headers += ("Cache-Control: no-store\n");
@@ -1064,7 +1066,4 @@ TEST_F(HttpCacheTest, HttpCacheProfileThirdPartyFont) {
   transaction.response_headers = "Content-Type: font/otf\n";
 
   MockHttpRequest trans_info = MockHttpRequest(
-"""
-
-
 ```

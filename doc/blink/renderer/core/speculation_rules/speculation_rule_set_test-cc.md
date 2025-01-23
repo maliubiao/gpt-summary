@@ -411,7 +411,7 @@ KURL base_url("https://example.com/path/");
 
 总而言之，`blink/renderer/core/speculation_rules/speculation_rule_set_test.cc` 文件的主要功能是**全面测试 Chromium Blink 引擎中 `SpeculationRuleSet` 类的 JSON 解析和规则管理功能**。它通过各种测试用例，验证了 `SpeculationRuleSet` 类能否正确解析不同格式和内容的 speculation rules，处理错误情况，并能与 HTML 中的 `<script type="speculationrules">` 标签集成工作。这确保了浏览器能够可靠地理解和执行网页中定义的预加载和预渲染指令，从而提升用户浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/speculation_rules/speculation_rule_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -419,8 +419,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1236,7 +1238,4 @@ TEST_F(SpeculationRuleSetTest, PropagatesToDocument) {
   HTMLScriptElement* script =
       MakeGarbageCollected<HTMLScriptElement>(document, CreateElementFlags());
   script->setAttribute(html_names::kTypeAttr, AtomicString(
-"""
-
-
 ```

@@ -128,7 +128,7 @@ By following these steps, we arrive at a comprehensive and accurate answer that 
 
 `frida/releng/meson/ci/usercustomize.py` 文件在 Frida 项目中扮演着一个幕后角色，它通过在 Python 解释器启动时初始化代码覆盖率收集，为 Frida 的高质量开发和测试提供了支持。虽然普通用户不会直接接触到它，但了解其功能有助于理解 Frida 开发流程中质量保证的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/ci/usercustomize.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,14 +136,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
 import coverage
 coverage.process_startup()
-
-"""
-
 ```

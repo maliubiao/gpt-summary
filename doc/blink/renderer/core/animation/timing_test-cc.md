@@ -126,14 +126,16 @@ Let's break down the thought process to analyze the provided C++ test file.
 
 总而言之，`blink/renderer/core/animation/timing_test.cc` 文件通过详尽的单元测试，确保了 Blink 引擎中动画定时逻辑的正确性，这对于实现符合 Web 标准的、流畅且可预测的 Web 动画至关重要。它直接关联到 JavaScript 的 Web Animations API 和 CSS 动画/过渡的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/timing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ TEST_F(AnimationTimingTest, IsCurrent) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

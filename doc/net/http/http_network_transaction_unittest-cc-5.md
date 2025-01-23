@@ -142,7 +142,7 @@ Essentially, my process involved a combination of code reading, pattern recognit
 
 总而言之，这部分代码专注于测试 Chromium 网络栈在处理 HTTP 代理身份验证时的各种复杂场景，确保在不同的网络配置和服务器行为下，身份验证流程能够正确、安全地进行。 这对于保证用户的网络访问体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -150,10 +150,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共34部分，请归纳一下它的功能
+```
 
-"""
-
-    // Flush the idle socket before the NetLog and HttpNetworkTransaction go
+### 源代码
+```cpp
+// Flush the idle socket before the NetLog and HttpNetworkTransaction go
     // out of scope.
     session->CloseAllConnections(ERR_FAILED, "Very good reason");
   }
@@ -904,7 +905,4 @@ TEST_P(HttpNetworkTransactionTest,
       MockWrite("CONNECT myproxy:70 HTTP/1.1\r\n"
                 "Host: myproxy:70\r\n"
                 "Proxy-Con
-"""
-
-
 ```

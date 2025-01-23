@@ -101,7 +101,7 @@ By following this structured approach, combining code analysis with pattern reco
 
 总而言之，这部分测试代码主要关注的是 Go 语言中 `range` 循环与自定义迭代器机制的深度集成测试，着重考察了在涉及到 `break`、`return`、`goto`、`defer` 以及 panic 处理等复杂控制流时，`rangefunc` 的行为是否符合预期，以及是否能正确处理各种异常情况。这有助于确保 Go 语言编译器在处理 `range` 循环和自定义迭代器时能够生成正确且可靠的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/rangefunc/rangefunc_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -110,8 +110,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 w bread crumbs remain.)
 func veryBad(s []int) []int {
 	var result []int
@@ -960,10 +962,4 @@ func Test70035(t *testing.T) {
 		t.Errorf("got %v, want %v", got, want)
 	}
 }
-
-"""
-
-
-
-
 ```

@@ -133,15 +133,17 @@ Also, be careful not to overstate the direct connection between *this specific f
 
 总而言之，`custom_element_reaction.cc` 中定义的 `CustomElementReaction` 类是 Blink 引擎中连接自定义元素生命周期事件和 JavaScript 回调函数的关键桥梁。它负责在合适的时机调用开发者在 JavaScript 中定义的生命周期处理逻辑，确保自定义元素能够正确地响应 DOM 的变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/custom/custom_element_reaction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ void CustomElementReaction::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

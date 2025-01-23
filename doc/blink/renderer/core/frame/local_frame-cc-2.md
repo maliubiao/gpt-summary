@@ -75,16 +75,18 @@ Now let's organize this into the requested categories.
 
 这些功能都直接或间接地与网页的呈现方式和用户的交互体验相关，并与 HTML 结构、CSS 样式以及可能的 JavaScript 脚本操作相互作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-    child_local_frame->SetInvalidationForCapture(capturing);
+### 源代码
+```cpp
+child_local_frame->SetInvalidationForCapture(capturing);
     }
   }
 
@@ -922,7 +924,4 @@ void LocalFrame::WasHidden() {
   // Frame was already occluded, nothing more to do.
   if (intersection_state_.occlusion_state ==
       mo
-"""
-
-
 ```

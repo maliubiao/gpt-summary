@@ -210,7 +210,7 @@ My thought process for analyzing the `chrome_client_impl.cc` code and generating
 
 希望这个详细的解释能够帮助你理解 `ChromeClientImpl.cc` 的作用！如果你有关于第 2 部分的问题，请随时提出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/chrome_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  * Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
@@ -1044,7 +1046,4 @@ void ChromeClientImpl::OpenFileChooser(
 }
 
 void ChromeClientImpl::DidCompleteFileC
-"""
-
-
 ```

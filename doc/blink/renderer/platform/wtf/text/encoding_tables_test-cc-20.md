@@ -114,15 +114,17 @@ By following this structured approach, combining deduction, contextual awareness
 
 总而言之，`blink/renderer/platform/wtf/text/encoding_tables_test.cc` 是一个至关重要的测试文件，它通过大量的测试用例和测试数据，确保了 Chromium Blink 引擎能够正确地处理各种字符编码，从而保证用户能够正常浏览各种编码的网页，并且 JavaScript 和 CSS 也能正确地处理文本数据。 提供的代码片段很可能是该测试文件中用于验证与字符 'A' 相关的编码转换或映射规则的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第21部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 A, 0x51CC, 0x7075, 0x9675,
      0x5CAD, 0x9886, 0x53E6, 0x4EE4, 0x6E9C, 0x7409, 0x69B4, 0x786B, 0x998F,
      0x7559, 0x5218, 0x7624, 0x6D41, 0x67F3, 0x516D, 0x9F99, 0x804B, 0x5499,
@@ -550,7 +552,4 @@ A, 0x51CC, 0x7075, 0x9675,
      0x9547, 0x9635, 0x84B8, 0x6323, 0x7741, 0x5F81, 0x72F0, 0x4E89, 0x6014,
      0x6574, 0x62EF, 0x6B63, 0x653F, 0x8AE4, 0x8AE5, 0x8AE6, 0x8AE7, 0x8AE8,
      0x8AE9, 0x8
-"""
-
-
 ```

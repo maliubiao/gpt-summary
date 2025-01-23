@@ -168,14 +168,16 @@ This systematic approach, going from the general purpose to specific test cases 
 
 通过这些测试用例，开发者可以确保 `JSONParser` 的正确性和健壮性，避免在实际的 Web 浏览器中使用时出现解析错误，从而保证网页功能的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/json/json_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -925,7 +927,4 @@ TEST(JSONParserTest, LimitedDepth) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

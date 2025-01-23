@@ -143,7 +143,7 @@ SSLSocketParams {
 
 这段代码的主要功能是 **单元测试 `ConnectJobParamsFactory::ConstructConnectJobParams` 函数，验证其在各种网络连接场景下生成正确的连接参数对象。** 它通过参数化测试覆盖了不同的连接类型、代理配置和网络协议设置，确保网络栈能够根据不同的情况创建合适的连接参数，为后续的网络连接建立奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/connect_job_params_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -905,8 +907,4 @@ TEST_P(ConnectJobParamsFactoryTest, HttpEndpointViaHttpsProxyViaHttpsProxy) {
   ASSERT_TRUE(proxy_ssl_socket_params_b);
   SSLConfig proxy_ssl_config = SSLConfigForProxy();
   VerifySSLSocketParams(proxy_ssl_socket_params_b, "proxy_ssl_socket_params_b",
-      
-"""
-
-
 ```

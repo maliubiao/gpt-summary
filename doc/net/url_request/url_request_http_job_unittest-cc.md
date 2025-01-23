@@ -129,7 +129,7 @@ Content-Length: 12
 
 总而言之，这个文件的第 1 部分为 `URLRequestHttpJob` 的核心功能奠定了测试基础，验证了其在简单场景下的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_http_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -978,7 +980,4 @@ TEST_F(URLRequestHttpJobWithMockSocketsTest, TestHttpTimeToFirstByte) {
 
 TEST_F(URLRequestHttpJobWithMockSocketsTest,
        TestHttpTimeToFirstByteForCancell
-"""
-
-
 ```

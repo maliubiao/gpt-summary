@@ -121,14 +121,16 @@ By following these steps, I can systematically analyze the given code and genera
 
 `TextRun` 是 Blink 渲染引擎中处理文本的核心组件。它负责存储、操作和规范化文本数据，并参与到文本的布局和渲染过程中。理解 `TextRun` 的功能有助于理解浏览器如何处理网页上的文本，并能帮助开发者避免一些常见的文本处理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_run.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All rights reserved.
  *
@@ -251,7 +253,4 @@ void TextRun::SetDirectionFromText() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

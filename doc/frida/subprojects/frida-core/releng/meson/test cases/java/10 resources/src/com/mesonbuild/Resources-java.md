@@ -156,7 +156,7 @@ During this thought process, it's important to double-check assumptions. For ins
 
 总而言之，`Resources.java` 虽然是一个简单的 Java 文件，但在 Frida 项目中扮演着重要的角色，用于验证 Frida 对 Java 应用程序资源加载的观测和潜在的修改能力，并作为开发者理解相关概念的参考示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/java/10 resources/src/com/mesonbuild/Resources.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 import java.io.BufferedReader;
@@ -192,7 +194,4 @@ public class Resources {
         }
     }
 }
-
-"""
-
 ```

@@ -179,7 +179,7 @@ func main() {
 
 总之，`go/src/runtime/race/race_darwin_amd64.go` 是 Go 语言 Race Detector 在 macOS AMD64 平台上的关键组成部分，它通过 `cgo` 机制声明了需要动态链接的 C 函数，为 Race Detector 提供了底层操作系统交互的能力，使得 Go 开发者能够有效地检测和修复并发程序中的数据竞争问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/race/race_darwin_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -297,9 +299,4 @@ package race
 //go:cgo_import_dynamic memcpy memcpy ""
 //go:cgo_import_dynamic memmove memmove ""
 //go:cgo_import_dynamic memset memset ""
-
-"""
-
-
-
 ```

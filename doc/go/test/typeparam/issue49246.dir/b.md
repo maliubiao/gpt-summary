@@ -180,15 +180,17 @@ func Y[T any](t T) func() {
 
 这段 `b.go` 的代码片段展示了如何调用一个可能使用了泛型的函数 `a.Y`，并将一个定义在 `a` 包中的实体 `a.X` 作为参数传递，并立即执行 `a.Y` 返回的函数。它很可能是 Go 语言泛型特性测试用例的一部分，用于验证编译器在处理类型参数和高阶函数时的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue49246.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ package b
 import "./a"
 
 func Crash() { a.Y(a.X)() }
-
-"""
-
-
-
 ```

@@ -157,15 +157,17 @@ obj.property2 = 'value2';
 
 这个单元测试通过模拟并发场景，旨在验证 V8 内部对 `DescriptorArray` 的并发访问和操作进行了正确的同步和保护，从而避免了这些常见的并发编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/concurrent-descriptor-array-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/concurrent-descriptor-array-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -351,7 +353,4 @@ TEST_F(ConcurrentDescriptorArrayTest, LinearSearchFlatObject_ManyElements) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

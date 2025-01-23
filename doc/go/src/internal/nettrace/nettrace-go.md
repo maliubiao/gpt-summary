@@ -227,7 +227,7 @@ func main() {
 
 `go/src/internal/nettrace/nettrace.go` 定义了一个内部的跟踪机制，允许 `net` 包在执行网络操作时发出事件通知。它通过 `context.Context` 来传递跟踪配置，并定义了一组钩子函数来捕获 DNS 查询和连接建立等关键事件。最终用户不应该直接使用这个包，而应该依赖上层提供的、更稳定的跟踪接口（如 `net/http/httptrace`）。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/nettrace/nettrace.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -235,8 +235,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -283,9 +285,4 @@ type Trace struct {
 	// times, like ConnectStart.
 	ConnectDone func(network, addr string, err error)
 }
-
-"""
-
-
-
 ```

@@ -190,7 +190,7 @@ if (Process.platform === 'linux') {
 
 `custom.c` 文件本身是一个非常简单的 C 语言函数，但在 Frida 的上下文中，它主要被用作测试用例的组成部分，用于演示和验证 Frida 的动态插桩功能。它可以作为学习逆向工程和 Frida 的一个很好的起点，帮助理解 Hook 机制、返回值修改等基本概念。虽然自身简单，但它的存在也关联着二进制底层、操作系统和框架的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/custom.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,12 +198,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int custom_function(void) {
     return 42;
 }
-
-"""
-
 ```

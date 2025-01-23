@@ -145,7 +145,7 @@ if (Process.platform !== 'windows') {
 
 尽管 `main.c` 的代码非常简单，但它位于 Frida 的测试用例中，其存在是为了测试与链接过程和动态插桩相关的特定功能。  它简洁地展示了函数调用，以及在 Frida 的上下文中，如何利用动态插桩来观察和修改程序的行为，这与逆向工程的目标密切相关。  理解这个测试用例需要一定的二进制底层和系统知识，并且可以通过逻辑推理来预测程序的行为和 Frida 的介入效果。  同时，也需要注意常见的编程和 Frida 使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/13 pch/linkwhole/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 void func1();
@@ -164,7 +166,4 @@ int main(int argc, char **argv) {
     func1();
     return 0;
 }
-
-"""
-
 ```

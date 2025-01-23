@@ -202,7 +202,7 @@ sys.stdin.read()
 
 总结来说，这段代码片段是用于测试 `scalbn` 或 `scalbln` 函数在 Android Bionic 库中实现的测试数据，涵盖了各种不同的输入情况，以确保该函数的正确性和精度。 这与 Android 底层的数学运算能力密切相关，并最终服务于上层的 Framework 和 NDK 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/scalb_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -214,10 +214,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-    0x1.1745d1745d1770p-9,
+### 源代码
+```c
+0x1.1745d1745d1770p-9,
     0x1.1745d1745d177p-1,
     -0x1.0p3
   },
@@ -2274,7 +2275,4 @@ Prompt:
   { // Entry 789
     0x1.ffffffffffffe0p-911,
     0x1.f
-"""
-
-
 ```

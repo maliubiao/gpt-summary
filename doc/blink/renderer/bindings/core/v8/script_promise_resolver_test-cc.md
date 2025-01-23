@@ -181,15 +181,17 @@ Throughout this process, I would continually refer back to the code to confirm m
 
 作为调试线索，`script_promise_resolver_test.cc` 提供了关于 `ScriptPromiseResolver` 如何工作的清晰示例。如果开发者在自己的 JavaScript 代码中遇到 Promise 相关的 Bug，他们可以参考这些测试用例，理解在各种情况下 Promise 应该如何表现。例如，如果一个 Promise 似乎没有被正确解析或拒绝，开发者可以查看 `resolve` 和 `reject` 的测试用例，确认他们的 JavaScript 代码是否按照预期的方式调用了 `resolve` 或 `reject`，以及是否正确处理了异步执行的顺序。 此外，`stop` 测试用例可以帮助理解当页面或上下文被销毁时，Promise 的行为，这对于处理资源释放和避免内存泄漏非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_promise_resolver_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -507,7 +509,4 @@ TEST_F(ScriptPromiseResolverBaseTest, OverrideScriptStateToCurrentContext) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

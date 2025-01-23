@@ -170,7 +170,7 @@ By following this systematic approach, combining code examination with an unders
 
 **为 Meson 构建系统中 C 和 C++ 编译器提供通用的、可重用的功能，包括处理编译器参数、执行基本的编译任务（如 sanity check、头文件检查、获取宏定义等），并处理与平台和架构相关的细节（如静态库循环依赖、交叉编译）。它通过 Mixin 类的设计模式，避免了代码重复，并为更具体的 C 和 C++ 编译器类提供了基础框架。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -908,8 +910,4 @@ class CLikeCompiler(Compiler):
         main = '''
         int main(void) {{
           return {func} ();
-    
-"""
-
-
 ```

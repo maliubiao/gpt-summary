@@ -184,15 +184,17 @@ readOnlyChan := make(<-chan int) // 尝试创建一个 receive-only channel
 
 理解Go语言通道类型的发送和接收方向，以及如何正确地声明和使用嵌套通道，是避免这些错误的关键。这段代码正是通过大量示例来帮助开发者理解这些概念。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/import2.dir/import2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -235,9 +237,4 @@ var R13 chan (chan<- (chan<- int)) = (chan chan <- chan <- int)(nil)
 var F1 func() func() int
 func F2() func() func() int
 func F3(func() func() int)
-
-"""
-
-
-
 ```

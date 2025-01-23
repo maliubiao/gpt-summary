@@ -94,11 +94,13 @@ Error: Something went wrong!
 
 `v8/src/base/debug/stack_trace.cc` 文件中的 `StackTrace` 类是 V8 引擎内部用于管理和表示程序调用栈信息的关键组件。它为 JavaScript 的错误处理和调试功能提供了基础，使得开发者能够了解代码执行出错时的调用路径。 虽然 JavaScript 代码无法直接操作 `StackTrace` 类，但 JavaScript 的错误对象的 `stack` 属性就是其功能的体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -139,7 +141,4 @@ std::string StackTrace::ToString() const {
 }  // namespace debug
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

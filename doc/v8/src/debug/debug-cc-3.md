@@ -214,7 +214,7 @@ console.log(result);
 
 作为这个四部分分析的最后一部分，`v8/src/debug/debug.cc` 文件是 V8 引擎调试功能的基石。它通过一系列精心设计的函数和机制，实现了与外部调试器的协同工作，使得开发者能够有效地理解、诊断和修复 JavaScript 代码中的问题。从断点管理到动态代码修改，再到副作用检查，这个文件涵盖了现代调试器的核心能力，是 V8 引擎中一个至关重要的组成部分。它通过 `DebugDelegate` 接口将底层的调试实现与外部调试工具解耦，体现了良好的架构设计。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -222,9 +222,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- subject to debugging
+### 源代码
+```cpp
+subject to debugging
         break;
       }
 #endif  // V8_ENABLE_WEBASSEMBLY
@@ -1036,8 +1038,4 @@ void Debug::NotifyDebuggerPausedEventSent() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

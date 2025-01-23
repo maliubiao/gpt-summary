@@ -143,7 +143,7 @@ This部分代码主要集中在对 `NetworkQualityEstimator` 类的功能进行�
 
 总的来说，这部分测试用例覆盖了 `NetworkQualityEstimator` 类中关于网络状态判断、有效连接类型推断和基本网络质量指标计算的核心逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/network_quality_estimator_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ).at(0).throughput_kbps);
   EXPECT_EQ(NETWORK_QUALITY_OBSERVATION_SOURCE_DEFAULT_HTTP_FROM_PLATFORM,
             throughput_observer.observations().at(0).source);
@@ -921,7 +923,4 @@ TEST_F(NetworkQualityEstimatorTest, TestRTTAndThroughputEstimatesObserver) {
   auto context_builder = CreateTestURLRequestContextBuilder();
   context_builder->set_network_quality_estimator(&estimator);
   auto context = context_builde
-"""
-
-
 ```

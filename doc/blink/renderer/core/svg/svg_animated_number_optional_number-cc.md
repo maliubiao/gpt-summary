@@ -174,15 +174,17 @@ By following this structured approach, breaking down the code, connecting it to 
 
 总而言之，`SVGAnimatedNumberOptionalNumber.cc` 是 Blink 渲染引擎中一个重要的组成部分，它专注于处理 SVG 中可动画的、包含一个或两个数字值的属性，确保动画能够平滑、准确地执行，并将底层的 C++ 实现与上层的 JavaScript、HTML 和 CSS 协同起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_animated_number_optional_number.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) Research In Motion Limited 2011. All rights reserved.
  *
@@ -249,7 +251,4 @@ bool SVGAnimatedNumberOptionalNumber::NeedsSynchronizeAttribute() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

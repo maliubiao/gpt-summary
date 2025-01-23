@@ -132,11 +132,13 @@ setTimeout(() => {
 
 `DefaultWorkerThreadsTaskRunner` 是 V8 引擎中一个关键的组件，它负责管理 worker 线程池和调度任务的执行。它是 JavaScript 中 Web Workers 和定时器 (如 `setTimeout`) 等并发和异步特性的底层实现支撑。它允许 JavaScript 程序利用多核处理器，提高性能，避免阻塞主线程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-worker-threads-task-runner.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ void DefaultWorkerThreadsTaskRunner::WorkerThread::Notify() {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

@@ -102,11 +102,13 @@ foo(5, 10);
 
 总而言之，`live-range-unittest.cc` 是 V8 引擎内部测试代码，用于确保其寄存器分配器中关于活跃区间的逻辑正确无误，这直接关系到生成的机器码的效率和 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/regalloc/live-range-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -550,7 +552,4 @@ TEST_F(DoubleEndedSplitVectorTest, AppendGeneralCase) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

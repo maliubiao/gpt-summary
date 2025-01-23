@@ -139,7 +139,7 @@ func triggerPanic() {
 
 `go/src/runtime/signal_freebsd_riscv64.go` 文件中的代码是Go运行时环境在FreeBSD RISC-V 64位架构上处理操作系统信号的关键组成部分。它提供了访问和修改信号上下文的能力，这对于实现Go的panic/recover机制、垃圾回收和goroutine调度等功能至关重要。普通Go开发者无需直接操作这些底层的运行时代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_freebsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -147,8 +147,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ func (c *sigctxt) set_gp(x uint64) { c.regs().mc_gpregs.gp_gp = x }
 
 func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) { c.info.si_addr = x }
-
-"""
-
-
-
 ```

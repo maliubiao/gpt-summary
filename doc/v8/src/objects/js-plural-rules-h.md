@@ -221,15 +221,17 @@ console.log(resolvedOptions.pluralCategories); // 例如: ["one", "other"]
 
 总而言之，`v8/src/objects/js-plural-rules.h` 是 V8 引擎中实现 JavaScript `Intl.PluralRules` 功能的关键部分，它利用 ICU 库来提供准确的国际化复数规则处理。理解这个头文件的作用有助于深入理解 JavaScript 国际化 API 的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-plural-rules.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-plural-rules.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,7 +318,4 @@ class JSPluralRules
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_PLURAL_RULES_H_
-
-"""
-
 ```

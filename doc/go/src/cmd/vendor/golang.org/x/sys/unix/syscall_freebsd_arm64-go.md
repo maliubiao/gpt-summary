@@ -222,15 +222,17 @@ func main() {
 
 总而言之，这段代码是 Go 语言 `syscall` 包在 FreeBSD ARM64 平台上的底层实现细节，它提供了与操作系统内核进行交互的基础功能，开发者通常不需要直接编写这样的代码，而是使用 Go 标准库中更高层次的抽象，例如 `io` 包和 `os` 包提供的文件操作功能，这些高层抽象在底层会使用到 `syscall` 包提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -291,9 +293,4 @@ func sendfile(outfd int, infd int, offset *int64, count int) (written int, err e
 }
 
 func Syscall9(num, a1, a2, a3, a4, a5, a6, a7, a8, a9 uintptr) (r1, r2 uintptr, err syscall.Errno)
-
-"""
-
-
-
 ```

@@ -171,15 +171,17 @@ This step-by-step process, combining code reading, knowledge of web technologies
 
 总而言之，`LanguageTranslator.cc` 是 Blink 引擎中实现设备端翻译功能的核心组件，它连接了 JavaScript 代码和底层的翻译服务，负责处理翻译请求、管理连接和处理异步结果，并提供错误处理机制。理解它的功能有助于调试和理解 Chromium 中设备端翻译的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/on_device_translation/language_translator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ void LanguageTranslator::OnTranslateFinished(
 }
 
 }  // namespace blink
-
-"""
-
 ```

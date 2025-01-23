@@ -152,12 +152,14 @@ for (const match of iterator) {
 
 **In summary, this C++ file is a core part of V8's implementation of JavaScript's regular expression functionality. It focuses on efficiency by generating optimized machine code for common RegExp operations and managing the internal state and results of regular expression matching.** It provides the low-level mechanisms that make JavaScript's `RegExp` object work.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-regexp-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1829,7 +1831,4 @@ TNode<JSArray> RegExpBuiltinsAssembler::RegExpPrototypeSplitBody(
       regexp, JSRegExp::kDataOffset, kRegExpDataIndirectPointerTag));
   TNode<Smi> capture_count = LoadCaptureCount(data);
   TNode<Smi> register_count_p
-"""
-
-
 ```

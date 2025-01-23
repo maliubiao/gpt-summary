@@ -146,14 +146,16 @@ Another correction: "I initially thought the `AddChild` method directly added ch
 
 `layout_fieldset.cc` 文件是 Blink 引擎中实现 `<fieldset>` 元素布局的关键部分。它负责创建和管理 `<fieldset>` 的内部结构，包括匿名内容盒子，并处理 `<legend>` 元素的特殊布局。理解这个文件的功能有助于深入理解浏览器如何渲染和布局表单元素，以及如何正确地使用 HTML 和 CSS 来控制 `<fieldset>` 的外观和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/forms/layout_fieldset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -378,7 +380,4 @@ LayoutBox* LayoutFieldset::FindInFlowLegend(const LayoutBlock& fieldset) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

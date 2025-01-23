@@ -223,15 +223,17 @@ func main() {
 
 总而言之，`coretype.go` 文件中的代码是 Go 语言泛型实现的关键组成部分，负责分析和处理类型参数的约束，并确定其核心类型，这对于类型检查和类型推断至关重要。开发者在使用泛型时，需要理解核心类型的概念和 `Deref`/`MustDeref` 的行为，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/typeparams/coretype.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -382,9 +384,4 @@ func MustDeref(t types.Type) types.Type {
 	}
 	panic(fmt.Sprintf("%v is not a pointer", t))
 }
-
-"""
-
-
-
 ```

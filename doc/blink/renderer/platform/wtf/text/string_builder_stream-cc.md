@@ -140,14 +140,16 @@ By following this thought process, breaking down the code, and systematically ad
 
 总而言之，`string_builder_stream.cc` 中的 `WriteIndent` 函数是一个用于方便地向 `StringBuilder` 添加缩进的实用工具，其主要目的是为了提高生成的文本（特别是代码类文本）的可读性，这在 Blink 引擎内部生成 HTML、CSS 或其他结构化文本时可能很有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_builder_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ void WriteIndent(StringBuilder& builder, wtf_size_t indent) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

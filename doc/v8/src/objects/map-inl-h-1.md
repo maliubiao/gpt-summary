@@ -386,7 +386,7 @@ This second part of `v8/src/objects/map-inl.h` focuses on the following core res
 
 These functionalities are critical for V8's correct implementation of JavaScript's object model and its performance. They are largely internal mechanisms that ensure the smooth and secure execution of JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/map-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -394,8 +394,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ity_cell).value(), Map::kPrototypeChainValid);
     return true;
   }
@@ -556,8 +558,4 @@ DEF_HEAP_OBJECT_PREDICATE(HeapObject, IsNormalizedMapCache) {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_MAP_INL_H_
-
-"""
-
-
 ```

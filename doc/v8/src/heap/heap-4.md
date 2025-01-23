@@ -129,12 +129,14 @@ I'll choose **Detached Contexts** and **Code Location** to illustrate with JavaS
 
 这部分 `v8/src/heap/heap.cc` 代码主要关注 V8 堆的内部管理，包括跟踪已分离的上下文、控制对象迁移、提供 GC 安全的操作、查找代码对象以及管理垃圾回收的各个阶段。这些功能虽然是底层的实现细节，但直接影响着 JavaScript 程序的内存管理、性能和运行时的正确性。 例如，理解对象迁移可以帮助我们理解 JavaScript 对象的生命周期，而 GC 安全的操作则保证了 JavaScript 代码执行期间垃圾回收的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ontext>(context);
     result.push_back(Cast<WeakArrayList>(native_context->retained_maps()));
     context = native_context->next_context_link();
@@ -617,8 +619,4 @@ CodePageMemoryModificationScopeForDebugging::
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

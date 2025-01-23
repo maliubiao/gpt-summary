@@ -173,7 +173,7 @@ func main() {
 
 总而言之，这段代码提供了一个在特定条件下使用的、不依赖汇编优化的 AES 加密和解密功能的实现。 它的存在是为了在那些没有优化的汇编实现或者强制使用纯 Go 实现的场景下，仍然能够提供基本的 AES 加密能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/aes/aes_noasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ func decryptBlock(c *Block, dst, src []byte) {
 }
 
 func checkGenericIsExpected() {}
-
-"""
-
-
-
 ```

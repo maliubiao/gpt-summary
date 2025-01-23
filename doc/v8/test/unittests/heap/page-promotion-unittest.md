@@ -90,11 +90,13 @@ console.log(longLivedObject);
 
 `page-promotion-unittest.cc` 这个 C++ 文件是 V8 引擎的内部测试代码，用于验证页晋升这一垃圾回收优化机制的正确性。 虽然 JavaScript 开发者不能直接控制页晋升，但理解这个机制有助于理解 V8 如何管理内存以及为什么某些编码模式（例如，创建长时间存活的对象）可能会对性能产生影响。  上述 JavaScript 例子展示了如何创建可能触发页晋升的对象，尽管具体的晋升时机由 V8 内部决定。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/page-promotion-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ TEST_F(PagePromotionTest, PagePromotion_NewToOld) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

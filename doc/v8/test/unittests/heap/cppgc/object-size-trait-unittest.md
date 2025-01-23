@@ -101,11 +101,13 @@ let anotherObj = {
 
 `object-size-trait-unittest.cc` 这个 C++ 文件测试了 V8 内部用于获取 C++ 对象大小的工具 `ObjectSizeTrait`。这个工具对于 V8 如何管理 JavaScript 对象的内存至关重要。虽然 JavaScript 开发者不直接接触 `ObjectSizeTrait`，但它的功能直接影响着 JavaScript 程序的内存使用和性能。 理解 `ObjectSizeTrait` 的作用有助于理解 V8 引擎的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/object-size-trait-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ TEST_F(ObjectSizeTraitTest, GarbageCollectedMixin) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

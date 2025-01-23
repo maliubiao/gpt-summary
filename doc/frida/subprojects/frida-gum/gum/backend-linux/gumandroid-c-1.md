@@ -113,7 +113,7 @@ Here's a breakdown of the thought process:
 
 这部分 `gumandroid.c` 代码的核心功能是**通过更精细和更具弹性的方法，在 Android 进程的内存中定位动态链接器（linker）的关键函数（如 `dlopen`, `dlsym`）和数据结构（如 `dl_mutex`, `libdl_info`, `somain`）。** 它使用了基于字节签名的函数查找和基于内存模式的数据结构查找等“取证”式技术，以应对不同 Android 版本和设备厂商可能存在的 linker 实现差异。 这些被找到的linker内部API是Frida实现动态 instrumentation的关键基础设施，使得Frida能够在运行时操作目标应用的加载行为和符号解析过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-linux/gumandroid.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,9 +122,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-       /*  < 21 */
+### 源代码
+```c
+/*  < 21 */
 
   GUM_TRY_ASSIGN (solist_get_somain, "__dl__Z17solist_get_somainv"); /* >= 26 */
   GUM_TRY_ASSIGN_OPTIONAL (somain, "__dl__ZL6somain");               /* "any" */
@@ -592,8 +594,4 @@ gum_android_is_vdso_module_name (const gchar * name)
 {
   return strcmp (name, GUM_ANDROID_VDSO_MODULE_NAME) == 0;
 }
-
-"""
-
-
 ```

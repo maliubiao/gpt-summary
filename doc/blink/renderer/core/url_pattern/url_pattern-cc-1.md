@@ -101,7 +101,7 @@ Here’s a plan to address these points:
 
 这段代码的主要功能是实现了 `URLPattern` 类的关键方法，用于将 `URLPattern` 对象转换为安全形式、字符串表示，以及核心的 URL 匹配逻辑。`Match()` 方法能够根据 `URLPattern` 对象定义的模式，高效地判断给定的 URL (以字符串或结构化对象的形式) 是否匹配，并能提取匹配到的分组信息。这部分代码是实现 Web API `URLPattern` 的核心组成部分，为诸如 Service Workers 的路由匹配等功能提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/url_pattern/url_pattern.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nents_with_regexp);
     return std::nullopt;
   }
@@ -317,8 +319,4 @@ bool URLPattern::Match(ScriptState* script_state,
 // static
 
 }  // namespace blink
-
-"""
-
-
 ```

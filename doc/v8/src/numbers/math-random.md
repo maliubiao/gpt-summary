@@ -122,11 +122,13 @@ for (let i = 0; i < 5; i++) {
 
 `v8/src/numbers/math-random.cc` 是 V8 引擎中实现 `Math.random()` 功能的关键部分。它负责管理随机数生成器的状态、初始化、重置以及生成和缓存随机数，从而高效地为 JavaScript 代码提供伪随机数。它使用了 Xorshift128+ 算法来生成高质量的伪随机数，并采用了缓存机制来优化性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/numbers/math-random.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ Address MathRandom::RefillCache(Isolate* isolate, Address raw_native_context) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

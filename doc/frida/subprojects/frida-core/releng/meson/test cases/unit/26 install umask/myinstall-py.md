@@ -156,7 +156,7 @@ python3 myinstall.py frida/lib agent.so
 
 通过分析脚本所在的路径和名称 (`install umask`)，以及它使用的环境变量 (`MESON_INSTALL_DESTDIR_PREFIX`)，可以推断出这个脚本是 Frida 构建系统的一部分，用于测试安装过程中与文件系统操作相关的逻辑。开发者通常会在构建和测试流程中使用它来确保 Frida 的安装过程能够正确处理文件和目录的创建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/26 install umask/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -183,7 +185,4 @@ except FileExistsError:
 
 with open(os.path.join(dirname, sys.argv[2]), 'w') as f:
     f.write('')
-
-"""
-
 ```

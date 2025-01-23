@@ -133,7 +133,7 @@ code = 'int main() { return 0; }'
 
 这部分代码主要定义了 `Compiler` 抽象基类，详细描述了编译器需要实现的各种功能接口，涵盖了编译、链接、调试、优化、依赖管理、平台特定处理等多个方面。它为 Meson 构建系统提供了一个统一的方式来与各种不同的编译器进行交互，是 Frida 动态插桩工具中处理代码编译和链接的核心抽象层。通过定义这些接口，Meson 可以根据不同的编程语言和编译器自动生成正确的构建命令，简化了跨平台构建的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 sion only matters if running results; '.exe' is
         # guaranteed to be executable on every platform.
         if mode == CompileCheckMode.LINK:
@@ -764,8 +766,4 @@ def get_global_options(lang: str,
     opts: 'KeyedOptionDictType' = {argkey: cargs, largkey: largs}
 
     return opts
-
-"""
-
-
 ```

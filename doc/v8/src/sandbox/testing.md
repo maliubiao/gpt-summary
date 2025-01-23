@@ -98,11 +98,13 @@ console.log(`JS_FUNCTION_TYPE ID: ${functionTypeId}`);
 
 总而言之，`v8/src/sandbox/testing.cc` 是V8沙箱机制的关键测试组件，它通过暴露底层API和提供崩溃过滤功能，帮助开发者验证沙箱的隔离性和安全性，并在测试过程中区分预期行为和真正的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/testing.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -980,7 +982,4 @@ SandboxTesting::FieldOffsetMap& SandboxTesting::GetFieldOffsetMap() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

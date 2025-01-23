@@ -126,7 +126,7 @@ By following these steps, you can systematically analyze the provided Python scr
 
 总而言之，`blaster.py` 是 Frida 生态系统中的一个测试脚本，用于验证一个名为 `tachyon` 的扩展模块的特定功能。它的存在是为了确保该模块在特定条件下返回预期的结果，这对于保证整个 Frida 工具链的稳定性和可靠性至关重要。在逆向工程的上下文中，类似的测试脚本也常被用于验证对目标程序进行的修改和分析结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python3/2 extmodule/blaster.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import tachyon
@@ -150,7 +152,4 @@ if not isinstance(result, int):
 if result != 1:
     print(f'Returned result {result} is not 1.')
     sys.exit(1)
-
-"""
-
 ```

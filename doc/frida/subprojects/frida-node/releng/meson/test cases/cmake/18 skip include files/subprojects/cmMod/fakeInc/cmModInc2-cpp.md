@@ -104,7 +104,7 @@ By following this structured approach, combining code analysis with contextual c
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/fakeInc/cmModInc2.cpp` 这个文件是 Frida 构建系统的一个测试用例，用于验证在特定场景下（例如跳过某些包含目录）包含文件的处理是否正确。虽然它本身不直接实现逆向功能，但它是确保 Frida 能够正确构建和运行的关键组成部分，从而支持用户进行逆向工程工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/fakeInc/cmModInc2.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifndef MESON_INCLUDE_IMPL
 #error "MESON_INCLUDE_IMPL is not defined"
 #endif // !MESON_INCLUDE_IMPL
@@ -121,7 +123,4 @@ Prompt:
 string cmModClass::getStr() const {
   return getStr2();
 }
-
-"""
-
 ```

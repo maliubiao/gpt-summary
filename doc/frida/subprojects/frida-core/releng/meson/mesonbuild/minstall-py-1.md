@@ -103,7 +103,7 @@ Based on these points, I can now formulate the summary.
 
 这段代码片段的核心功能是**执行 Frida 核心组件的安装过程**。它负责将编译生成的文件复制到指定的目标位置，并进行必要的处理，例如剥离调试符号和调整运行时库路径，以确保 Frida 组件能够正确运行。同时，它还包含可选的项目重建逻辑，并在以 root 权限运行时尝试降低权限，体现了对安全性的考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/minstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tname = os.path.join(outdir, os.path.basename(fname))
             final_path = os.path.join(d.prefix, t.outdir, os.path.basename(fname))
             should_strip = t.strip or (t.can_strip and self.options.strip)
@@ -248,8 +250,4 @@ def run(opts: 'ArgumentType') -> int:
         else:
             installer.do_install(datafilename)
     return 0
-
-"""
-
-
 ```

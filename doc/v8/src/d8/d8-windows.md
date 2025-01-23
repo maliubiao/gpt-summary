@@ -83,11 +83,13 @@ console.log("从端口 8080 读取的数据:", portData);
 
 目前 `v8/src/d8/d8-windows.cc` 这个文件在功能上比较简单。它定义了两个函数，但 Windows 版本中，`AddOSMethods` 是空的，而 `ReadCharsFromTcpPort` 也未实现。  尽管如此，其目的是为了提供 Windows 平台特定的操作系统交互功能，这些功能最终会影响到在 Windows 上运行的 `d8` 工具中 JavaScript 代码的能力。  未来的开发可能会在这个文件中添加更多的 Windows 特定的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-windows.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -104,7 +106,4 @@ char* Shell::ReadCharsFromTcpPort(const char* name, int* size_out) {
 }
 
 }  // namespace v8
-
-"""
-
 ```

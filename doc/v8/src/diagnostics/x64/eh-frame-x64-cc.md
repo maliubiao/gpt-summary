@@ -149,15 +149,17 @@ main();
 
 正如你所说，如果文件名以 `.tq` 结尾，那它就是 V8 Torque 源代码。但 `v8/src/diagnostics/x64/eh-frame-x64.cc` 以 `.cc` 结尾，所以它是标准的 C++ 源代码。 Torque 是一种 V8 自研的类型化的中间语言，用于生成高效的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/eh-frame-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/x64/eh-frame-x64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ const char* EhFrameDisassembler::DwarfRegisterCodeToString(int code) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -158,7 +158,7 @@ func TestImportWithSprintf(t *testing.T) {
 
 `go/src/runtime/importx_test.go` 这段代码是 Go 语言运行时包中用于测试包导入机制的一部分。它定义了一个定制的测试接口 `TestingT`，并提供了全局变量来模拟或控制 `fmt.Sprintf` 的行为以及编译优化选项，以便更精细地测试导入过程的各个方面。普通 Go 开发者不应该直接使用这些内部测试工具。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/importx_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -201,9 +203,4 @@ type TestingT interface {
 
 var FmtSprintf func(format string, a ...any) string
 var TestenvOptimizationOff func() bool
-
-"""
-
-
-
 ```

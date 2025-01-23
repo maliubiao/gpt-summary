@@ -225,15 +225,17 @@ By following these steps, combining code analysis with an understanding of web d
 
 总而言之，`blink/renderer/bindings/core/v8/script_promise_test.cc` 是 Blink 引擎中至关重要的测试文件，它确保了 `ScriptPromise` 类的正确性和可靠性，这直接关系到网页上基于 Promise 的 JavaScript 代码的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_promise_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -681,7 +683,4 @@ TEST(ScriptPromiseTest, ChainPromisesWithDifferentResolveTypes) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

@@ -264,7 +264,7 @@ if __name__ == '__main__':
 
 `xt_cpu.h` 定义了一个用于 Netfilter 的模块，允许基于 CPU 核心匹配网络包。虽然它本身不是 `libc` 函数或动态链接器的一部分，但它与 Android 的网络功能紧密相关，并通过用户空间的工具和系统服务与内核交互。 理解其功能有助于理解 Android 底层的网络处理机制。 使用 Frida 可以帮助我们动态地分析这些交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_cpu.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -291,7 +293,4 @@ struct xt_cpu_info {
   __u32 invert;
 };
 #endif
-
-"""
-
 ```

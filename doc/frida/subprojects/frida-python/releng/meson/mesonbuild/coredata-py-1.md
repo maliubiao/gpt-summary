@@ -171,7 +171,7 @@ Here's a breakdown of the remaining functions and their purpose:
 
 This part of `coredata.py` focuses on the **management and persistence of build configuration options**, particularly those related to **compilers, language settings, and cross-compilation**. It defines how compiler-specific options are added and merged with global settings, handles language-specific arguments, and provides mechanisms for parsing and storing options from command-line files and machine description files. It also includes functionality for warning users about potential issues with certain option combinations and manages the saving and loading of the entire configuration state to disk. This ensures that Meson can remember and reuse configurations across multiple invocations. Crucially, it bridges the gap between user-provided input (command-line arguments, machine files) and the internal representation of build settings within Meson.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 values
         for key, opt in BUILTIN_OPTIONS.items():
             self.add_builtin_option(self.options, key.evolve(subproject=subproject), opt)
@@ -885,7 +887,4 @@ BUILTIN_CORE_OPTIONS: T.Dict['OptionKey', 'BuiltinOption'] = OrderedDict([
     (OptionKey('layout'),          BuiltinOption(UserComboOption, 'Build directory layout', 'mirror', choices=['mirror', 'flat'])),
     (OptionKey('optimization'),    BuiltinOption(UserComboOption, 'Optimization level', '0', choices=['plain', '0', 'g', '1', '2', '3', 's'])),
     (OptionKey('prefer_static'),   BuiltinO
-"""
-
-
 ```

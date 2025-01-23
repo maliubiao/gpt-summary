@@ -141,7 +141,7 @@ By following this structured approach, analyzing the code in context, and addres
 
 总而言之，`trivial.c` 在 Frida 的测试框架中扮演着一个简单的、可预测行为的角色，用来验证 Frida 在处理目标进程（特别是涉及文件操作和错误处理时）的能力。 它的存在于 `failing` 目录意味着它是被设计用来在特定条件下产生预期错误的，以便测试 Frida 的错误检测和处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/113 run_target in add_install_script/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
@@ -162,7 +164,4 @@ int main(int argc, char **argv) {
         return 0;
     }
 }
-
-"""
-
 ```

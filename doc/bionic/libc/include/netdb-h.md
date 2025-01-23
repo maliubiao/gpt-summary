@@ -374,7 +374,7 @@ setImmediate(hook_getaddrinfo);
 
 你可以修改 Frida 脚本来 hook 其他 `netdb.h` 中声明的函数，例如 `gethostbyname`、`getservbyname` 等，以观察它们的行为和参数。这对于理解应用程序的网络行为以及排查网络相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netdb.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -385,8 +385,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 1980, 1983, 1988, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -658,7 +660,4 @@ void setservent(int __stay_open);
 __END_DECLS
 
 #endif
-
-"""
-
 ```

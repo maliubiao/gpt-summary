@@ -208,15 +208,17 @@ DecodeResult::Ok();
 
 总之，`v8/src/wasm/function-body-decoder.h` 定义了 V8 引擎中用于解析和初步验证 WebAssembly 函数体字节码的关键组件，为后续的编译和执行奠定了基础。它确保了执行的 WebAssembly 代码是符合规范的，避免了潜在的安全风险和运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/function-body-decoder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/function-body-decoder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -402,7 +404,4 @@ class V8_EXPORT_PRIVATE BytecodeIterator : public NON_EXPORTED_BASE(Decoder) {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_FUNCTION_BODY_DECODER_H_
-
-"""
-
 ```

@@ -127,7 +127,7 @@ The user wants a summary of the functionality of the provided C++ code snippet, 
 
 这些测试确保了 `WebMediaPlayerImpl` 作为 Chromium 媒体播放器的核心组件，能够可靠且正确地处理各种媒体播放场景，并与上层的 JavaScript API 和 HTML 元素协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_media_player_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 udio_decoder_config = TestAudioConfig::Normal();
 
   EXPECT_CALL(client_, WasAlwaysMuted()).WillRepeatedly(Return(true));
@@ -990,7 +992,4 @@ TEST_F(WebMediaPlayerImplTest, RegisterFrameSinkHierarchy) {
 }
 
 TEST_F(WebMediaPlayerImplTest, O
-"""
-
-
 ```

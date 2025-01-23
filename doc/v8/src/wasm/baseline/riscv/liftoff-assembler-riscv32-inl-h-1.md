@@ -142,7 +142,7 @@ console.log(result); // 输出 15
 
 总结一下，这个代码片段是 V8 的 `Liftoff` 编译器在 RISC-V 32位架构下生成 WebAssembly 代码的关键部分，它封装了底层的 RISC-V 汇编指令，用于实现各种 Wasm 操作，直接关系到 JavaScript 中 WebAssembly 模块的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/riscv/liftoff-assembler-riscv32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/riscv/liftoff-assembler-riscv32-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 expected.high_gp());
     Mv(a3, new_value.low_gp());
     Mv(a4, new_value.high_gp());
@@ -1092,7 +1094,4 @@ void LiftoffAssembler::LoadTransform(LiftoffRegister dst, Register src_addr,
                                      LoadTransformationKind transform,
                                      uint32_t* protected_load_pc) {
   UseScratchRegisterScope t
-"""
-
-
 ```

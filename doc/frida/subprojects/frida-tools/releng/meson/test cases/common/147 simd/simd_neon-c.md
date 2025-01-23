@@ -169,7 +169,7 @@ By following this structured approach, one can systematically analyze the code a
 
 总而言之，`simd_neon.c` 是 Frida 用于测试其对 ARM NEON SIMD 指令集支持的一个简单但关键的测试用例。它演示了如何使用 NEON 指令进行基本的向量操作，并为理解 Frida 如何与使用了 NEON 指令的代码进行交互提供了基础。 逆向工程师可以借鉴这些技术，使用 Frida 来分析和理解目标程序中复杂的 NEON 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/147 simd/simd_neon.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -199,7 +201,4 @@ void increment_neon(float arr[4]) {
     vst1_f32(arr, a1);
     vst1_f32(&arr[2], a2);
 }
-
-"""
-
 ```

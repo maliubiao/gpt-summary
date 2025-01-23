@@ -165,7 +165,7 @@ substring = my_string.Substring(0, "abc")  # 错误：第二个参数应该是�
 
 `frida/subprojects/frida-clr/releng/meson/docs/refman/model.py` 文件是 Frida CLR API 参考文档的数据模型定义，它使用 Python 的 `dataclasses` 和 `enum` 模块来结构化地表示 API 的各种元素。这个模型为文档生成提供了基础，也间接地反映了 Frida CLR API 与底层二进制、操作系统和 CLR 框架的交互。虽然用户通常不会直接操作这个文件，但理解它的结构有助于理解 Frida CLR API 的设计和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/docs/refman/model.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -278,7 +280,4 @@ class Object(NamedObject, FetureCheck):
 class ReferenceManual:
     functions: T.List[Function]
     objects: T.List[Object]
-
-"""
-
 ```

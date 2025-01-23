@@ -154,11 +154,13 @@ console.log(bigIntObj.valueOf() === 100n); // 输出: true
 
 `v8/src/builtins/builtins-bigint.cc` 文件是 V8 引擎中实现 JavaScript `BigInt` 类型核心功能的关键部分。它包含了创建、转换和操作 `BigInt` 值的底层逻辑，并直接服务于 JavaScript 代码中对 `BigInt` 的使用。理解这个文件的内容有助于深入理解 JavaScript 中 `BigInt` 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-bigint.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ BUILTIN(BigIntPrototypeValueOf) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

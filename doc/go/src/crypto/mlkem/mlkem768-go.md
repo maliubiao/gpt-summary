@@ -186,7 +186,7 @@ Shared keys match!
 
 总而言之，`go/src/crypto/mlkem/mlkem768.go` 文件提供了 ML-KEM 算法 768 位变体的 Go 语言实现，包括密钥生成、封装和解封装等核心功能。开发者可以使用这个包来实现量子安全的密钥交换功能。使用时需要特别注意保护私钥和处理潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/mlkem/mlkem768.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -302,9 +304,4 @@ func (ek *EncapsulationKey768) Bytes() []byte {
 func (ek *EncapsulationKey768) Encapsulate() (ciphertext, sharedKey []byte) {
 	return ek.key.Encapsulate()
 }
-
-"""
-
-
-
 ```

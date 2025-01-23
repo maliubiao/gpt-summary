@@ -220,7 +220,7 @@ By following these steps – understanding the purpose, analyzing structures and
 
 总而言之，`guminterceptor-x86.c` 是 Frida 在 x86 平台上实现动态代码插桩的关键组成部分，它深入到二进制层面，通过精巧地修改目标代码，实现了在运行时动态地改变程序行为的能力，这对于软件逆向工程、安全分析和动态调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/guminterceptor-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -228,8 +228,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -707,7 +709,4 @@ gum_emit_epilog (GumX86Writer * cw,
         -((gssize) sizeof (gpointer)));
   }
 }
-
-"""
-
 ```

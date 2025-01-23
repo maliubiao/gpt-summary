@@ -157,15 +157,17 @@ By following this thought process, which involves understanding the code, connec
 
 通过以上分析，可以理解 `net/dns/host_resolver_mdns_listener_impl.cc` 在 Chromium 网络栈中处理 mDNS 响应的关键作用，以及它如何与 JavaScript 代码的执行产生关联，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_mdns_listener_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ void HostResolverMdnsListenerImpl::OnCachePurged() {
 }
 
 }  // namespace net
-
-"""
-
 ```

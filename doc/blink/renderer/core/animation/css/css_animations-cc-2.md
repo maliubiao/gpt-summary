@@ -138,15 +138,17 @@ Consider a potential error: The user defines two animations with the same name o
 
 这段代码片段主要负责 **更新元素的 CSS 动画状态**。它接收新的动画数据，并与当前正在运行的动画进行比较。根据比较结果，它会决定启动新的动画、更新现有动画的属性（如播放状态、时间轴等）或者取消不再需要的动画。  它还考虑了 Web Animations API 的影响，以及如何与 CSS 过渡协同工作。 `MaybeApplyPendingUpdate` 方法则负责将这些更新操作实际应用到动画对象上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tion_data &&
       (style_builder.Display() != EDisplay::kNone ||
        (old_style && old_style->Display() != EDisplay::kNone))) {
@@ -931,7 +933,4 @@ void CSSAnimations::CalculateTransitionUpdateForPropertyHandle(
       reversing_adjusted_start_value = interrupted_transition->to;
       reversing_shortening_factor =
           ClampTo((
-"""
-
-
 ```

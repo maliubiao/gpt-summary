@@ -169,15 +169,17 @@ type MyData struct {
 
 总结来说，`issue5105.go` 这个测试用例旨在确保 Go 语言链接器能够正确处理特定类型的重复定义问题，防止链接器崩溃，从而提高 Go 语言工具链的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5105.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -188,9 +190,4 @@ Prompt:
 // of a type..hash.* function.
 
 package ignored
-
-"""
-
-
-
 ```

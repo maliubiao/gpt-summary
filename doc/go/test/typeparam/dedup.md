@@ -134,15 +134,17 @@ hello
 
 `go/test/typeparam/dedup.go` 文件本身是一个辅助性文件，用于方便构建用于手动检查 Go 泛型实例化去重功能的二进制文件。它并不包含实际的测试逻辑或命令行参数处理。理解其真正的目的是为了避免对其功能产生误解。要验证去重效果，需要依赖外部工具对编译后的二进制文件进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/dedup.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -155,9 +157,4 @@ Prompt:
 // deduplication is happening. TODO: automate this somehow?
 
 package ignored
-
-"""
-
-
-
 ```

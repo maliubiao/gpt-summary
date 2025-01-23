@@ -135,15 +135,17 @@ This detailed thought process allows for a comprehensive understanding of the C+
 
 `v8/src/builtins/builtins-constructor.h` 定义了与构造函数相关的内置函数在 V8 内部实现中使用的一些重要常量和限制。这些限制主要与函数上下文的大小以及浅拷贝操作的元素/属性数量有关，旨在优化内存使用和性能。虽然用户通常不会直接操作这些常量，但理解它们有助于理解 JavaScript 中对象创建和拷贝操作的一些潜在行为和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-constructor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-constructor.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ class ConstructorBuiltins {
 }  // namespace v8
 
 #endif  // V8_BUILTINS_BUILTINS_CONSTRUCTOR_H_
-
-"""
-
 ```

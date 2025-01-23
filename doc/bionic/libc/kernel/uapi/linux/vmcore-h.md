@@ -178,7 +178,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/vmcore.h` 定义了 `vmcore` 文件的关键数据结构，用于描述内核崩溃时的内存转储。它在 Android 系统的崩溃调试和分析中扮演着重要的角色。虽然开发者通常不会直接操作这个头文件，但理解其内容对于分析 `vmcore` 文件，排查系统故障至关重要。 Frida 可以用于 hook 解析 `vmcore` 文件的相关工具或库，从而动态地观察其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/vmcore.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -189,8 +189,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -210,7 +212,4 @@ struct vmcoredd_header {
   __u8 dump_name[VMCOREDD_MAX_NAME_BYTES];
 };
 #endif
-
-"""
-
 ```

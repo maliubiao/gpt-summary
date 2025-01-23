@@ -110,7 +110,7 @@ Go 开发者应该使用标准库提供的 `time` 包来进行时间操作，例
 
 这段代码的意义在于它提升了 Go 程序在特定平台上的性能，但对最终用户来说是透明的。  直接尝试使用或理解这些底层实现可能会导致代码的不可移植性和维护困难。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_freebsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -118,8 +118,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -141,9 +143,4 @@ func (th *vdsoTimehands) getTimecounter() (uint32, bool) {
 		return 0, false
 	}
 }
-
-"""
-
-
-
 ```

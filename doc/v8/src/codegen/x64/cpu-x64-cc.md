@@ -124,15 +124,17 @@ add(3, 4);
 
 `v8/src/codegen/x64/cpu-x64.cc` 文件提供了 x64 架构特定的 CPU 操作，目前主要关注指令缓存的刷新。尽管用户通常不需要直接操作这些底层细节，但了解其功能有助于理解 V8 如何高效地执行 JavaScript 代码，并避免一些潜在的编程陷阱。在 Intel x64 架构上，V8 依赖 CPU 自身的缓存一致性机制，因此 `FlushICache` 函数在没有 Valgrind 的情况下实际上不执行任何操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/cpu-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/cpu-x64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ void CpuFeatures::FlushICache(void* start, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
 ```

@@ -149,7 +149,7 @@ Key: value_2
 
 这部分（第 3 部分）的 `balsa_headers_test.cc` 文件主要专注于测试 `BalsaHeaders` 类中**通过键来获取 HTTP 头部行的迭代器**的功能。它详细验证了 `GetIteratorForKey` 和相关方法在各种场景下的正确性，包括处理单个和多个同名头部、大小写敏感性、添加/删除/修改头部后的行为，以及与底层解析器的集成。 简而言之，这部分测试确保了开发者能够可靠地通过键来访问和遍历 HTTP 头部。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_headers_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ", key_it->first);
   EXPECT_EQ("value_1", key_it->second);
   ++key_it;
@@ -1046,8 +1048,4 @@ TEST(BalsaHeaders, Move) {
   headers3.SetResponseFirstline(version, code, reason_phrase);
 
   BalsaHeaders headers4 = std::move(headers3);
-
-"""
-
-
 ```

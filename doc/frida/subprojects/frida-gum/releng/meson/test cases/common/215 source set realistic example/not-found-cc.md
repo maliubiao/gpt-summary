@@ -113,7 +113,7 @@ Let's break down the thought process for analyzing this seemingly simple C++ fil
 
 通过分析 `not-found.cc` 以及相关的测试代码，开发者可以更好地理解 Frida 在处理“未找到”情况时的内部机制，并修复潜在的 bug。 此外，用户在报告 Frida 的 “找不到函数” 等问题时，开发者可能会参考这类测试用例来辅助诊断问题，确认是 Frida 本身的 bug，还是用户操作不当导致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/215 source set realistic example/not-found.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 
@@ -131,7 +133,4 @@ void some_random_function()
     std::cout << ANSI_START << "everything's alright"
               << ANSI_END << std::endl;
 }
-
-"""
-
 ```

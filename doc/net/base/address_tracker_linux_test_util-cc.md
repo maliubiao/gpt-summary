@@ -195,15 +195,17 @@ By following this systematic process, combining code analysis with an understand
 
 总而言之，`address_tracker_linux_test_util.cc` 是 Chromium 网络栈测试基础设施的关键组成部分，它允许开发者在受控的环境下模拟各种 Linux 网络事件，从而有效地测试和调试网络地址跟踪器的功能。它与最终用户的交互是间接的，主要体现在帮助开发者确保浏览器的网络功能正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/address_tracker_linux_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ void MakeWirelessLinkMessage(uint16_t type,
 }
 
 }  // namespace net::test
-
-"""
-
 ```

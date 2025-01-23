@@ -183,7 +183,7 @@ go tool pprof -granularity=func profile.pb.gz
 
 另一个潜在的错误是**误解 `Granularity` 参数的影响**。用户可能不清楚不同的粒度级别会对火焰图的展示产生什么影响。例如，如果设置为 `"lines"`，火焰图会显示到代码行级别，这在某些情况下可能过于详细，导致难以分析。反之，如果粒度太粗，则可能无法发现细微的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/stacks.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -253,9 +255,4 @@ func (ui *webInterface) stackView(w http.ResponseWriter, req *http.Request) {
 		UnitDefs: measurement.UnitTypes,
 	})
 }
-
-"""
-
-
-
 ```

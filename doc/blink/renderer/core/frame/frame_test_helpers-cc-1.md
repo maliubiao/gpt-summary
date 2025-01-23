@@ -114,15 +114,17 @@ Let's break down each part of the code and analyze its contributions to these fu
 
 总而言之，`frame_test_helpers.cc` 的第二部分继续提供了构建可靠的 Blink 渲染引擎 Frame 组件单元测试的基础设施，涵盖了 Frame 的生命周期、导航、渲染、输入处理以及与其他 Web 技术交互的各个方面。 通过使用这些辅助类，开发者可以编写出更加全面和精确的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 abled(true);
   // Enable (mocked) network loads of image URLs, as this simplifies
   // the completion of resource loads upon test shutdown & helps avoid
@@ -550,8 +552,4 @@ void TestWidgetInputHandlerHost::RequestMouseLock(
 
 }  // namespace frame_test_helpers
 }  // namespace blink
-
-"""
-
-
 ```

@@ -136,14 +136,16 @@ HTML 结构定义了网页的内容，而 CSS 样式应用于这些内容。`Typ
 
 总之，`typesetting_features_test.cc` 这个文件虽然是一个底层的 C++ 测试文件，但它测试的功能直接关系到网页文本的最终渲染效果，因此与前端开发者所使用的 CSS 密切相关。理解这些底层的概念有助于开发者更好地掌握 CSS 字体特性的使用，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/typesetting_features_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ TEST(TypesettingFeaturesTest, ToString) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

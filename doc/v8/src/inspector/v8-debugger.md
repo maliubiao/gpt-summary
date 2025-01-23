@@ -103,11 +103,13 @@ fetchData();
 
 总而言之，`v8/src/inspector/v8-debugger.cc` 是 V8 调试功能的核心实现，它连接了 V8 引擎的执行和前端调试工具，使得 JavaScript 开发者能够有效地调试他们的代码。它处理了从最基本的断点到复杂的异步操作调试等各种场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1564,7 +1566,4 @@ bool V8Debugger::hasScheduledBreakOnNextFunctionCall() const {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

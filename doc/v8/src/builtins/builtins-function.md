@@ -148,11 +148,13 @@ By following these steps and actively thinking about the connection between the 
 
 `builtins-function.cc` 文件是 V8 引擎中至关重要的一部分，它使用 C++ 实现了 JavaScript 中与函数对象创建和操作相关的核心内建功能。 这些 C++ 代码直接驱动了开发者在 JavaScript 中使用 `Function`, `GeneratorFunction`, `AsyncFunction`, `bind`, `toString` 等方法时的行为。理解这些底层的实现有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-function.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -427,7 +429,4 @@ BUILTIN(FunctionPrototypeToString) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

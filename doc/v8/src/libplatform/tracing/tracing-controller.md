@@ -133,11 +133,13 @@ console.log(traceData);
 
 `tracing-controller.cc` 是 V8 引擎中 tracing 功能的核心控制器。 它负责启动、停止、配置和管理 tracing 活动，并处理来自 V8 引擎各个部分的 tracing 事件。 JavaScript 通过 V8 提供的 tracing API 与 `TracingController` 交互，控制 tracing 的行为并获取 tracing 数据，用于性能分析、问题排查等目的。  `TracingController` 的实现细节，例如是否使用 Perfetto，对 JavaScript 用户是透明的，JavaScript 用户只需要使用上层的 API 即可。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/tracing-controller.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -504,7 +506,4 @@ void TracingController::RemoveTraceStateObserver(
 }  // namespace tracing
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

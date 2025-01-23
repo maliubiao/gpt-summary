@@ -331,7 +331,7 @@ sys.stdin.read()
 
 通过 Frida Hook，你可以动态地观察 `get_config_from_env_or_sysprops` 函数的调用情况，了解哪些模块在读取配置，以及读取了哪些配置信息。这对于理解 Android 系统的行为和调试问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/sysprop_helpers.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -342,8 +342,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2021 The Android Open Source Project
  * All rights reserved.
@@ -389,7 +391,4 @@ __LIBC_HIDDEN__ bool get_config_from_env_or_sysprops(const char* env_var_name,
                                                      const char* const* sys_prop_names,
                                                      size_t sys_prop_names_size, char* options,
                                                      size_t options_size);
-
-"""
-
 ```

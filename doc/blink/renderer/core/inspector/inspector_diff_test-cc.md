@@ -129,14 +129,16 @@ Let's break down the thought process for analyzing the `inspector_diff_test.cc` 
 
 总而言之，`inspector_diff_test.cc` 文件通过各种测试用例，确保 `InspectorDiff` 类能够正确地计算两个序列之间的差异和找到最长公共子序列，这对于 Chromium 开发者工具中实现代码和结构变化的比较功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_diff_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -363,7 +365,4 @@ TEST_F(InspectorDiffTest, FindLCSMappingFindsLCSMapping) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -154,7 +154,7 @@ During the analysis, we might need to revisit earlier assumptions or refine our 
 
 `gumquickscript.c` 的第一部分定义了 `GumQuickScript` 对象及其相关的结构体和枚举类型，并实现了脚本对象的基本生命周期管理和属性操作。 核心功能包括创建和管理 JavaScript 运行时环境，以及初始化一系列用于与目标进程交互的 Frida 核心 API 组件。  它为后续的脚本执行和与目标进程的交互奠定了基础。  理解这部分代码有助于深入理解 Frida 的架构和脚本加载机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickscript.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1290,7 +1292,4 @@ _gum_quick_script_make_worker (GumQuickScript * self,
   global_obj = JS_GetGlobalObject (ctx);
 
   JS_DefinePropertyValueStr (ctx, global_obj, "global",
-"""
-
-
 ```

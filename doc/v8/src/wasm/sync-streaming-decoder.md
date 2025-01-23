@@ -150,11 +150,13 @@ loadAndCompileWasm();
 
 `SyncStreamingDecoder` 是 V8 引擎中负责同步编译 WebAssembly 模块的关键组件。它的功能与 JavaScript 中 `WebAssembly.compile()` 方法的功能相对应，负责将 WebAssembly 字节码转换为可执行的模块，并处理可能的缓存机制。虽然 JavaScript API 层面没有显式的分块接收过程，但 C++ 层的 `SyncStreamingDecoder` 承担了接收和组合字节流的任务，最终提供给编译引擎。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/sync-streaming-decoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ std::unique_ptr<StreamingDecoder> StreamingDecoder::CreateSyncStreamingDecoder(
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

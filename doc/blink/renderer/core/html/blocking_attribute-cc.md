@@ -204,14 +204,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`blocking_attribute.cc` 文件定义了 Blink 引擎如何处理 HTML 中的 `blocking` 属性，特别是 "render" 这个 token。这个机制允许开发者向浏览器提示某些元素可能需要特殊处理以优化渲染过程，但需要谨慎使用以避免潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/blocking_attribute.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ void BlockingAttribute::OnAttributeValueChanged(const AtomicString& old_value,
 }
 
 }  // namespace blink
-
-"""
-
 ```

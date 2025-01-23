@@ -171,15 +171,17 @@ for (let i = 0; i < 100000; i++) {
 
 总而言之，`v8/src/compiler/pipeline-statistics.h` 是 V8 编译器内部用于监控和分析编译过程的关键组件，它记录了各个阶段的时间消耗和资源使用情况，帮助 V8 开发者优化编译器性能。普通 JavaScript 开发者虽然不直接使用它，但理解其功能有助于理解 JavaScript 执行的底层原理和常见的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline-statistics.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/pipeline-statistics.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ class V8_NODISCARD PhaseScope {
 }  // namespace v8
 
 #endif  // V8_COMPILER_PIPELINE_STATISTICS_H_
-
-"""
-
 ```

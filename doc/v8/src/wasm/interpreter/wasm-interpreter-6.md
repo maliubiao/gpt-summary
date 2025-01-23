@@ -91,12 +91,14 @@ console.log(result); // 输出 15
 
 **关于 “这是第7部分，共8部分”：** 这暗示了 `wasm-interpreter.cc` 文件被拆分成了多个部分，可能是为了组织代码、提高可读性或方便并行开发。 第 7 部分专注于指令的执行逻辑，其他部分可能负责解释器的初始化、调用栈管理、错误处理等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ##name);           \
         type##Pop();                              \
         type##Pop();                              \
@@ -1699,8 +1701,5 @@ Prompt:
     /* emit 8 bits ? */                                      \
     EmitI16Const(instr.optional.simd_loadstore_lane.lane);   \
     S128Push();                                              \
-    return RegMode::kNoReg;                           
-"""
-
-
+    return RegMode::kNoReg;
 ```

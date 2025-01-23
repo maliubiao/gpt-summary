@@ -144,7 +144,7 @@ ff        // PadLen: 255 (超出剩余 payload 长度)
 
 总而言之，这个代码片段是 Chromium 网络栈中 HTTP/2 协议实现的关键测试部分，专注于验证帧解析器的错误处理能力，确保网络通信的健壮性和符合协议规范。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/spdy_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dding(1, 4));
   }
 
@@ -950,7 +952,4 @@ TEST_P(SpdyFramerTest, CreateDataFrame) {
     const char bytes[] = "hello";
 
     SpdyDataIR da
-"""
-
-
 ```

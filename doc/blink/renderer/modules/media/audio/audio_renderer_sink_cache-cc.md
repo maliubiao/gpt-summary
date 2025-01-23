@@ -214,15 +214,17 @@ Let's trace how a user action might lead to the execution of code in `audio_rend
 
 In summary, `audio_renderer_sink_cache.cc` is a crucial component for efficient audio output in Chromium. It optimizes resource usage by caching and reusing audio output sinks, and its behavior is intricately linked to web audio features exposed through JavaScript and HTML. Understanding its functionality is essential for debugging audio-related issues in web applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media/audio/audio_renderer_sink_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -460,7 +462,4 @@ wtf_size_t AudioRendererSinkCache::GetCacheSizeForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

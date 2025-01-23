@@ -204,15 +204,17 @@ const obj = {
 
 总而言之，`v8/src/objects/slots.h` 是 V8 引擎中一个至关重要的文件，它定义了表示和操作对象内存布局的基础设施。理解其功能对于深入了解 V8 的对象模型和内存管理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/slots.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/slots.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -765,7 +767,4 @@ class WriteProtectedSlot : public SlotT {
 }  // namespace v8
 
 #endif  // V8_OBJECTS_SLOTS_H_
-
-"""
-
 ```

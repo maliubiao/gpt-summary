@@ -175,7 +175,7 @@ Interceptor.attach(libfuncAddress, {
 
 总而言之，这个简单的 `libfile.c` 文件很可能是一个用于测试 Frida 功能的最小示例，展示了 Frida 如何 hook 和拦截简单的 C 函数。在实际的逆向工程场景中，被分析的目标代码通常会复杂得多。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/osx/7 bitcode/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,14 +183,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "vis.h"
 
 int EXPORT_PUBLIC libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

@@ -166,14 +166,16 @@ Let's break down the thought process for analyzing this C++ code.
 
 总而言之，`track_observer.cc` 是 WebRTC 与 Blink 渲染引擎之间进行媒体轨道状态同步的关键组件，它利用跨线程通信和回调机制，使得 JavaScript 能够及时响应媒体轨道的变化，从而实现丰富的 WebRTC 功能。理解其功能和潜在的使用错误对于开发健壮的 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/webrtc/track_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ const scoped_refptr<webrtc::MediaStreamTrackInterface>& TrackObserver::track()
 }
 
 }  // namespace blink
-
-"""
-
 ```

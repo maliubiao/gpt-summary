@@ -201,7 +201,7 @@ Let's break down the provided C++ code:
 
 `v8/test/cctest/test-api.cc` 的第 1 部分（以及后续部分）的主要功能是 **系统地测试 V8 JavaScript 引擎的 C++ API 的正确性和稳定性**。 它涵盖了 API 的核心概念、对象操作、脚本执行、字符串处理、函数调用、异常处理等方面，并提供了一些关于如何正确使用 V8 API 以及避免常见编程错误的示例。  这些测试是确保 V8 引擎质量的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -209,8 +209,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1088,7 +1090,4 @@ THREADED_TEST(UsingExternalOneByteString) {
         String::NewExternalOneByte(
             CcTest::isolate(),
             new TestOneByteResource(i::StrDup(
-"""
-
-
 ```

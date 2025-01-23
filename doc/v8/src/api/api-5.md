@@ -181,12 +181,14 @@ console.log(largeNumber);
 
 总而言之，`v8/src/api/api.cc` 的这一部分是 V8 引擎的核心组成部分，它提供了将 JavaScript 的高级概念映射到底层 C++ 实现的关键接口，使得外部程序可以通过 C++ API 与 V8 引擎进行交互，并创建和操作 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ray> v8::Array::New(Isolate* v8_isolate, int length) {
   i::Isolate* i_isolate = reinterpret_cast<i::Isolate*>(v8_isolate);
   API_RCS_SCOPE(i_isolate, Array, New);
@@ -1786,7 +1788,4 @@ void Isolate::SetEmbedderRootsHandler(EmbedderRootsHandler* handler) {
 
 void Isolate::AttachCppHeap(CppHeap* cpp_heap) {
   i::Isolate* i_isolate = reinterpret_cast<i::Isol
-"""
-
-
 ```

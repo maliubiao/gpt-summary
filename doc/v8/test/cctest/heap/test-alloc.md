@@ -99,11 +99,13 @@ console.log(result); // 输出 true (如果 C++ 测试成功)
 
 `v8/test/cctest/heap/test-alloc.cc` 这个 C++ 文件是 V8 引擎中用于测试堆内存分配机制的关键测试文件。它通过模拟内存分配失败的情况，验证引擎的鲁棒性。 `StressJS` 测试用例巧妙地利用 JavaScript 的 getter 属性，间接地触发并验证了底层的 C++ 堆分配逻辑，展示了 C++ 和 JavaScript 在 V8 引擎中的紧密联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-alloc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -286,7 +288,4 @@ TEST(StressJS) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

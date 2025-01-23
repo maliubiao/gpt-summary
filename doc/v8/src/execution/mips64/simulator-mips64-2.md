@@ -81,12 +81,14 @@ let resultArr = arr1.map((v, i) => v + arr2[i]);
 
 **总结来说，这部分代码是MIPS64模拟器的核心执行单元，负责将MIPS64指令翻译成模拟器可以理解和执行的操作。它对于V8引擎在MIPS64架构上的运行至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 er);
       uint32_t reg = static_cast<uint32_t>(rt());
       if (kArchVariant == kMips64r6) {
@@ -2216,7 +2218,4 @@ void Msa3RFInstrHelper2(uint32_t opcode, T_reg ws, T_reg wt, T_reg* wd) {
     case MUL_Q: {
       const T_int_dbl min_fix_dbl =
           base::bit_cast<T_uint_dbl>(std::numeric_limits<T_int_dbl
-"""
-
-
 ```

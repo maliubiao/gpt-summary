@@ -155,14 +155,16 @@ By following these steps, I can systematically analyze the C++ test file and pro
 
 总而言之，`animation_time_delta_test.cc` 这个文件通过全面的单元测试，保证了 Blink 引擎内部用于表示动画时间间隔的 `AnimationTimeDelta` 类的正确性和健壮性，这对于实现流畅、精确的 Web 动画至关重要。虽然开发者不直接使用这个类，但理解其功能有助于更好地理解和使用相关的 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_time_delta_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ TEST(AnimationTimeDeltaTest, Division) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

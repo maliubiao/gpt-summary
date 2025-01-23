@@ -98,7 +98,7 @@ Based on this analysis, I can now formulate the summary.
 
 总而言之，`v8/src/objects/string.cc` 包含了 V8 引擎中字符串对象的核心实现逻辑，涵盖了字符串的创建、共享、外部化、优化 (Thin String)、类型转换以及调试打印等关键功能。它确保了 JavaScript 中字符串操作的高效性和内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string.cc以.tq结尾，那它是个v8 torque源代码，
@@ -106,8 +106,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -953,8 +955,4 @@ void String::WriteToFlat(Tagged<String> source, sinkchar* sink, uint32_t start,
                   sink + second_start,
                   Cast<SeqOneByteString>(second)->GetChars(no_gc, access_guard),
                   second_length);
- 
-"""
-
-
 ```

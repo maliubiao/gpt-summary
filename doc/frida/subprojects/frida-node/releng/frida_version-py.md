@@ -192,7 +192,7 @@ By following this thought process, I can systematically analyze the script and a
 
 通过以上步骤，开发者逐步深入到 Frida 的源代码中，并利用 `frida_version.py` 这个脚本来获取和理解 Frida 的版本信息，以便解决开发过程中遇到的问题。这个过程展示了开发者如何通过探索源代码来获取调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/frida_version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -271,7 +273,4 @@ def detect(repo: Path) -> FridaVersion:
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

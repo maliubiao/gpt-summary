@@ -52,7 +52,7 @@ Here's a breakdown of the code and how I'll approach the response:
 
 这段代码本身的处理逻辑比较复杂，涉及到对 ARM64 指令编码的理解和各种重定位类型的细节。对于一般的 Go 开发者来说，理解其原理有助于更好地理解程序的链接过程和运行时行为，但通常不需要直接操作这些底层的细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/arm64/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -61,10 +61,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-	case objabi.R_ARM64_GOT:
+### 源代码
+```go
+case objabi.R_ARM64_GOT:
 		if (val>>24)&0x9f == 0x90 {
 			// R_AARCH64_ADR_GOT_PAGE
 			// patch instruction: adrp
@@ -517,10 +518,4 @@ func gentrampgot(ctxt *ld.Link, ldr *loader.Loader, tramp *loader.SymbolBuilder,
 	r.SetSiz(8)
 	r.SetSym(target)
 }
-
-"""
-
-
-
-
 ```

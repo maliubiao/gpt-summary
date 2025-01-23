@@ -52,13 +52,15 @@ const sum = SIMD.float32x4.add(a, b); // 向量加法
 
 这个代码片段是V8引擎在非ARM硬件上模拟ARM架构执行JavaScript代码的关键组成部分。它精确地模拟了ARM处理器的指令行为，使得开发者可以在非ARM平台上测试和调试针对ARM架构优化的JavaScript代码。特别地，对于利用了 SIMD API 或大量浮点运算的 JavaScript 代码，这个模拟器提供的功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```
+{
           case Neon8:
             ShiftLeft<uint8_t, kSimd128Size>(this, Vd, Vm, shift);
             break;
@@ -951,8 +953,4 @@ V8_EXPORT_PRIVATE extern bool _v8_internal_Simulator_ExecDebugCommand(
 }
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

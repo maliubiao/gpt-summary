@@ -111,15 +111,17 @@ Let's break down the thought process for analyzing this C++ test file and provid
 
 `canvas_resource_tracker_test.cc` 是一个重要的单元测试文件，用于验证 Blink 引擎中 `CanvasResourceTracker` 类的核心功能，即跟踪和管理 HTML `<canvas>` 元素。这对于确保 canvas 元素的正确生命周期管理和资源清理至关重要，进而保证了网页中 canvas 功能的稳定性和性能。 虽然用户不会直接与这个 C++ 文件交互，但其测试的代码影响着浏览器如何处理网页中的 canvas 元素，最终影响用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/canvas_resource_tracker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ TEST_F(HTMLCanvasResourceTrackerTest, AddCanvasElement) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

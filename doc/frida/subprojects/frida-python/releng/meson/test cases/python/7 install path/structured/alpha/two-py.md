@@ -171,7 +171,7 @@ except Exception as e:
 
 因此，当开发者或测试人员遇到 `two.py` 测试失败时，他们会重点检查 Frida Python 绑定的安装过程，特别是指定的安装路径和相关的配置。这个文件路径本身就为问题的排查提供了重要的上下文信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python/7 install path/structured/alpha/two.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,9 +179,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

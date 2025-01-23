@@ -166,15 +166,17 @@ const metadataInput = new MediaMetadata({
 - 使用 Chromium 的开发者工具，可以查看网络请求，确认图片 URL 是否可访问。
 - 了解 `media_metadata_sanitizer.cc` 的工作原理可以帮助开发者理解为什么他们设置的某些元数据没有按照预期显示，并指导他们如何修改代码以符合规范。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasession/media_metadata_sanitizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ MediaMetadataSanitizer::SanitizeAndConvertToMojo(const MediaMetadata* metadata,
 }
 
 }  // namespace blink
-
-"""
-
 ```

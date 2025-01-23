@@ -95,7 +95,7 @@ By following these steps, iteratively refining understanding, and focusing on th
 
 总而言之，`bionic/libc/kernel/uapi/linux/pci_regs.h`  是 Android 系统与 PCI/PCIe 硬件设备进行底层交互的关键组成部分。它定义了访问和控制这些设备配置空间的标准接口，使得 Android 的内核驱动程序能够识别、配置和管理连接到系统的各种硬件组件。  这个头文件本身并不包含任何实现代码，它仅仅是提供了一组预定义的常量和宏，用于简化对硬件寄存器的访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/pci_regs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -107,8 +107,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1037,7 +1039,4 @@ Prompt:
 #define PCI_L1SS_CTL1_PCIPM_L1_2 0x00000001
 #define PCI_L1SS_CTL1_PCIPM_L1_1 0x00000002
 #define PCI_L1SS_CTL1_ASPM_L1_2 0x00000004
-"""
-
-
 ```

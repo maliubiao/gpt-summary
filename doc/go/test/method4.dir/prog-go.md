@@ -221,15 +221,17 @@ func main() {
 
 总而言之，这段代码是一个精心设计的测试用例，用于全面验证 Go 语言中方法表达式的各种使用场景，包括值接收者、指针接收者、以及接口类型的方法表达式。理解方法表达式对于编写更灵活和强大的 Go 代码非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/method4.dir/prog.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -341,9 +343,4 @@ func main() {
 	eq(g4(mt1, a, 42), 52)
 	eq(g4(mt2, a, 43), 53)
 }
-
-"""
-
-
-
 ```

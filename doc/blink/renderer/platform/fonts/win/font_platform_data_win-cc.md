@@ -130,14 +130,16 @@ Let's break down the thought process for analyzing this code snippet and generat
 
 总而言之，`font_platform_data_win.cc` 是 Blink 引擎中一个关键的低层模块，它桥接了 Web 技术的字体需求和 Windows 操作系统提供的字体服务，确保网页上的文本能够在 Windows 平台上正确、美观地渲染出来。理解其功能有助于开发者更好地理解浏览器字体渲染的底层机制，并避免一些常见的与字体相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/win/font_platform_data_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple Computer, Inc.
  * Copyright (c) 2006, 2007, 2008, 2009, 2012 Google Inc. All rights reserved.
@@ -244,7 +246,4 @@ WebFontRenderStyle FontPlatformData::QuerySystemForRenderStyle() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

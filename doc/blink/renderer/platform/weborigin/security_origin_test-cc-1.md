@@ -140,15 +140,17 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 总而言之，这部分测试代码深入验证了 `blink::SecurityOrigin` 类在处理各种 origin 比较场景时的正确性，特别是针对本地文件 scheme 和 opaque origin 的特殊行为，确保了 Chromium 浏览器的安全性和符合 Web 标准。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/security_origin_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :Message() << "Origin 1: `" << test.a << "` "
                                     << "Origin 2: `" << test.b << "`\n");
     scoped_refptr<SecurityOrigin> a = SecurityOrigin::CreateFromString(test.a);
@@ -616,8 +618,4 @@ INSTANTIATE_TYPED_TEST_SUITE_P(BlinkSecurityOrigin,
 
 }  // namespace test
 }  // namespace network
-
-"""
-
-
 ```

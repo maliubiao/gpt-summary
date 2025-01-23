@@ -236,7 +236,7 @@ libmath_extras.so:
 
 总而言之，`significandl.c` 中的 `significandl` 函数是 Android 数学库中的一个底层工具，用于提取 `long double` 浮点数的有效数字，它通过调用 `ilogbl` 和 `scalbnl` 来实现。虽然开发者通常不会直接调用它，但它是构建更高级数学函数的基础，并间接地被 Android 系统和应用程序所使用。理解其功能和相关的动态链接过程对于深入理解 Android 平台的底层机制和进行有效的调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/significandl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -246,8 +246,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -282,7 +284,4 @@ Prompt:
 long double significandl(long double x) {
   return scalbnl(x, -ilogbl(x));
 }
-
-"""
-
 ```

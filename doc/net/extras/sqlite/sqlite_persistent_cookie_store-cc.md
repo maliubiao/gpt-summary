@@ -122,7 +122,7 @@ By following these steps, we can generate a comprehensive and accurate summary o
 
 该文件的主要功能是 **提供一个基于 SQLite 数据库的持久化 Cookie 存储机制**。它负责将 `net::CanonicalCookie` 对象安全可靠地保存到磁盘，并在需要时加载这些 Cookie，从而保证用户在关闭和重新打开浏览器后，网站仍然能够识别用户身份或保存用户的偏好设置。它还处理与 JavaScript Cookie API 的交互，以及数据库的版本管理和潜在的加密需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_cookie_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -995,7 +997,4 @@ void SQLitePersistentCookieStore::Backend::NotifyLoadCompleteInForeground(
   {
     base::AutoLock locked(lock_);
     co
-"""
-
-
 ```

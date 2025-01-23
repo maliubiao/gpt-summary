@@ -133,15 +133,17 @@ Essentially, the process involves dissecting the code, understanding its depende
 
 `web_testing_support.cc` 是 Blink 引擎测试基础设施的关键组成部分，它提供了一系列工具函数，允许开发者编写更强大、更全面的 web 平台测试。虽然普通用户不会直接与这个文件交互，但它对于确保 Chromium 浏览器的质量和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/exported/web_testing_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -250,7 +252,4 @@ void WebTestingSupport::ResetMainFrame(WebLocalFrame* main_frame) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

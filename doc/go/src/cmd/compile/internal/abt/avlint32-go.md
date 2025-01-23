@@ -282,15 +282,17 @@ newTree2 := newTree1.Insert(10, "data10")
 
 总而言之，`avlint32.go` 提供了一个高效且线程安全的持久化键值存储结构，适用于编译器内部需要维护多个版本状态或进行复杂数据操作的场景。理解其持久化特性是避免使用错误的 key。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/abt/avlint32.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1116,9 +1118,4 @@ func (t *node32) copy() *node32 {
 	u := *t
 	return &u
 }
-
-"""
-
-
-
 ```

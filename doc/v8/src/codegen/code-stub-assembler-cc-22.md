@@ -153,7 +153,7 @@ arr.push(4);
 
 总而言之，`v8/src/codegen/code-stub-assembler.cc` 是 V8 引擎中一个非常核心和底层的组件，它允许开发者以一种结构化的方式生成高性能的机器码，是 V8 能够快速执行 JavaScript 代码的关键因素之一。 其中实现的 `ArrayList` 是一种用于在代码生成过程中管理动态数据的重要内部数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第23部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ArrayList, length_),
                                    SmiConstant(0));
 
@@ -310,8 +312,4 @@ void CodeStubAssembler::GetMarkBit(TNode<IntPtrT> object, TNode<IntPtrT>* cell,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

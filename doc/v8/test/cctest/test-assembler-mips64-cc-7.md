@@ -126,7 +126,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 这部分测试代码专注于验证 V8 引擎在 MIPS64 架构下，针对 MSA 指令集中**立即数操作**（Immediate Operands）的汇编器实现是否正确。它涵盖了按位逻辑、条件移动、移位、向量加减、向量比较、向量最大/最小值、元素计数、前导零/一计数以及浮点数分类和截断等多种涉及立即数的 MSA 指令。通过大量的测试用例，确保这些指令在 V8 引擎中的生成和执行符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 D68B3F8BC8, 0xD9u}
   };
   // clang-format on
@@ -931,7 +933,4 @@ TEST(MSA_ftrunc_s) {
     return;
 
   CcTest::Initi
-"""
-
-
 ```

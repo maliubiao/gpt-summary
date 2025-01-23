@@ -136,7 +136,7 @@ Initially, I might have focused too much on the specific tools being configured.
 
 总而言之，`env_apple.py` 是 Frida 项目中一个至关重要的文件，它负责为在各种 Apple 平台上构建 Frida 奠定基础。理解其功能和工作原理对于进行 Frida 的开发、调试以及在 Apple 平台上进行逆向工程都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/env_apple.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 import shlex
@@ -322,7 +324,4 @@ APPLE_BINARIES = [
     ("codesign",          "codesign"),
     ("lipo",              "lipo"),
 ]
-
-"""
-
 ```

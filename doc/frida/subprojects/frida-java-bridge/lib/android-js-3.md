@@ -151,7 +151,7 @@ Response:
 
 10. **异常处理与资源释放**  
     → `interceptor.deactivate()`恢复原代码，释放trampoline内存。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/android.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -161,8 +161,10 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 ,
   arm64: 16
 };
@@ -1243,8 +1245,4 @@ function recompileExceptionClearForArm (buffer, pc, exceptionClearImpl, nextFunc
     let address = block.begin;
     const end = block.end;
     let size = 0;
-  
-"""
-
-
 ```

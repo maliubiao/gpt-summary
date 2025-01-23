@@ -140,15 +140,17 @@ By following this process, I can dissect the C++ code and understand its role wi
 
 总而言之，`blink/renderer/core/xml/parser/xml_errors.cc` 是 Blink 渲染引擎中负责处理 XML 解析错误的关键组件，它在幕后默默地工作，确保当 XML 文档出现问题时，用户能够得到清晰的错误提示，帮助开发者快速定位和修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/parser/xml_errors.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -347,7 +349,4 @@ void XMLErrors::InsertErrorMessageBlock() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

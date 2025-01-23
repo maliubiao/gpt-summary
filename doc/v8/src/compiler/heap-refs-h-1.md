@@ -116,7 +116,7 @@ const obj = { x: 1, y: 2 };
 
 总而言之，`v8/src/compiler/heap-refs.h` 是 V8 编译器理解和操作 JavaScript 对象的基础，它定义了一组强大的工具来访问和分析堆对象的结构和元数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/heap-refs.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/heap-refs.h以.tq结尾，那它是个v8 torque源代码，
@@ -124,8 +124,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _type() const;
   int GetInObjectProperties() const;
   int GetInObjectPropertiesStartInWords() const;
@@ -563,8 +565,4 @@ inline bool AnyMapIsHeapNumber(const base::Vector<const MapRef>& maps) {
 }  // namespace v8
 
 #endif  // V8_COMPILER_HEAP_REFS_H_
-
-"""
-
-
 ```

@@ -154,7 +154,7 @@ Imagine a reverse engineer wants to analyze a specific Android application. They
 
 In summary, this `build.py` script is a crucial part of Frida's development infrastructure, ensuring the consistent and reliable building and testing of its core components within isolated Docker environments. It leverages fundamental Linux and containerization technologies and plays a vital role in the overall quality and stability of the Frida toolkit, which is widely used in reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/ci/ciimage/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import json
@@ -417,7 +419,4 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

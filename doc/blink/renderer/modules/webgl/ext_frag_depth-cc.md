@@ -169,15 +169,17 @@ This structured approach ensures that all aspects of the request are addressed c
 
 总而言之，`ext_frag_depth.cc` 负责在 Chromium 的 Blink 引擎中提供 `EXT_frag_depth` WebGL 扩展的功能，允许开发者在片段着色器中自定义片段的深度值，从而实现更高级的渲染效果。理解这个文件的功能需要了解 WebGL 扩展机制、GLSL 着色器编程以及 JavaScript 与 WebGL 的交互方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_frag_depth.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -227,7 +229,4 @@ const char* EXTFragDepth::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

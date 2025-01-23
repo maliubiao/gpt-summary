@@ -75,15 +75,17 @@ Here's a breakdown of the code's functionality based on the included headers and
 
 `PageContainerLayoutAlgorithm` 类的第 1 部分主要负责**初始化和构建页面容器的框架**。它处理了页面级别的属性，例如尺寸、边距，以及页面边框盒子的布局。 此外，它还开始处理页面边距盒子的布局，并初步涉及了页面计数器的管理。 简而言之，它为页面的内容和页眉页脚等元素的最终布局奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/page_container_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -790,7 +792,4 @@ void PageContainerLayoutAlgorithm::ResolveTwoEdgeMarginBoxLengths(
     }
   }
   if (preferred_m
-"""
-
-
 ```

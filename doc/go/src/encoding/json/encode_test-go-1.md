@@ -234,7 +234,7 @@ func main() {
 
 总而言之，这部分测试用例旨在确保 `encoding/json` 包的 `Marshal` 函数在各种复杂和异常情况下都能表现得健壮和可预测。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/encode_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -243,8 +243,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 arshalJSON() ([]byte, error) { panic(0xdead) }
 
 func TestMarshalPanic(t *testing.T) {
@@ -326,10 +328,4 @@ func TestIssue63379(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

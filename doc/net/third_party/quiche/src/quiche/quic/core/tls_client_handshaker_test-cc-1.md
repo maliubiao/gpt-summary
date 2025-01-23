@@ -112,7 +112,7 @@ My thinking process to analyze the provided C++ code snippet and answer the user
 
 总而言之，这部分 `tls_client_handshaker_test.cc` 文件专注于测试 `TlsClientHandshaker` 在处理一些重要的现代 TLS 特性时的正确性，包括 ECH 的支持和强制执行、ECH GREASE 的发送、以及对新密码学算法（如 Kyber）和 TLS 扩展（如 ALPS 新代码点）的支持。这些测试确保了 Chromium 的 QUIC 客户端能够安全可靠地建立连接，并与支持这些特性的服务器进行交互。这对于保障用户网络安全和支持最新的网络协议至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/tls_client_handshaker_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tErrorCodes>(
                                   CRYPTO_ERROR_FIRST + SSL_AD_ECH_REQUIRED),
                               _, _))
@@ -220,8 +222,4 @@ TEST_P(TlsClientHandshakerTest, EnableClientAlpsUseNewCodepoint) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

@@ -112,7 +112,7 @@ Finally, organize the information logically, using clear headings and bullet poi
 
 总而言之，`mixer-glue.c` 是 Frida 为了测试其与 Vala 和 C 代码交互能力而创建的一个简单的“胶水”代码示例。它模拟了一个获取音量的函数，但其核心价值在于验证 Frida 的 Hooking 机制，而不是提供实际的音频操作功能。理解这类测试用例对于深入理解 Frida 的工作原理和进行有效的逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/vala/16 mixed dependence/mixer-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,14 +120,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mixer.h"
 
 guint mixer_get_volume(Mixer *mixer) {
     return 11;
 }
-
-"""
-
 ```

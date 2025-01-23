@@ -150,7 +150,7 @@ const constraints = {
 
 **作为调试线索:**  如果开发者在 `getUserMedia` 调用中遇到了错误，例如 "NotFoundError" (找不到符合约束的设备) 或 "TypeError" (约束格式错误)，那么就可以将调试的目光投向 `media_constraints_impl.cc` 文件。  通过查看这个文件中的逻辑，可以了解浏览器是如何解析和处理媒体约束的，从而帮助开发者定位问题所在。 例如，可以检查传递的约束是否被正确解析，是否存在不支持的约束，或者约束的值是否超出了有效范围。  使用 Chromium 的开发者工具，例如设置断点或查看日志，可以跟踪 `getUserMedia` 的调用流程，并观察 `MediaTrackConstraints` 对象的内容以及 `Create` 函数的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_constraints_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 iaTrackConstraintSet* output) {
   if (!input.width.IsUnconstrained())
     output->setWidth(ConvertLong(input.width, naked_treatment));
@@ -351,8 +353,4 @@ MediaTrackConstraints* ConvertConstraints(const MediaConstraints& input) {
 
 }  // namespace media_constraints_impl
 }  // namespace blink
-
-"""
-
-
 ```

@@ -148,14 +148,16 @@ fuzzer 本身不产生直接的输出值。它的目标是观察是否会发生�
 
 `identifiable_token_builder_fuzzer.cc` 的主要功能是通过随机输入来测试 `blink::IdentifiableTokenBuilder` 类的健壮性。虽然它不直接涉及 JavaScript, HTML, CSS 的解析或执行，但它所测试的类很可能在浏览器内部被使用，并可能被 JavaScript 间接触发。 常见的编程错误在于对令牌的性质、使用场景和隐私预算的理解不足。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiable_token_builder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* fuzz_data,
   token_builder.AddBytes(base::as_bytes(base::make_span(remainder)));
   return 0;
 }
-
-"""
-
 ```

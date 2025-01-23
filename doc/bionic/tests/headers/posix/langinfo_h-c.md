@@ -219,7 +219,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/tests/headers/posix/langinfo_h.c` 文件本身是一个用于测试 `<langinfo.h>` 头文件正确性的单元测试，它并不实现 `nl_langinfo` 和 `nl_langinfo_l` 函数。理解它的作用有助于理解 Android Bionic 库中关于本地化的基础架构。 实际的函数实现以及与 dynamic linker 的交互发生在 `libc.so` 中。 通过 Frida 可以动态地监控和调试这些函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/langinfo_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -327,7 +329,4 @@ static void langinfo_h() {
   FUNCTION(nl_langinfo, char* (*f)(nl_item));
   FUNCTION(nl_langinfo_l, char* (*f)(nl_item, locale_t));
 }
-
-"""
-
 ```

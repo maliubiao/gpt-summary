@@ -186,15 +186,17 @@ console.log(result);
 
 总结来说，`v8/src/trap-handler/handler-shared.cc` 是 V8 引擎中一个至关重要的组成部分，它定义了处理运行时错误的共享基础设施。它的设计非常注重安全性和效率，特别是在处理可能由恶意代码引起的陷阱时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-shared.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/handler-shared.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ MetadataLock::~MetadataLock() {
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

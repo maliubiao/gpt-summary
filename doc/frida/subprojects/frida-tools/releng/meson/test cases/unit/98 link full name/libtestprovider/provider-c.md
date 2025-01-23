@@ -177,7 +177,7 @@ setTimeout(function() { // 稍微延迟，确保共享库加载完成
 
 因此，用户查看 `provider.c` 是为了理解目标进程中 `libtestprovider.so` 的行为，特别是 `get_checked` 函数的返回值来源。这通常是逆向工程和动态分析的典型步骤：观察行为 -> 深入代码 -> 理解机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/98 link full name/libtestprovider/provider.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 static int g_checked = 0;
 
@@ -199,7 +201,4 @@ static void __attribute__((constructor(101), used)) init_checked(void) {
 int get_checked(void) {
     return g_checked;
 }
-
-"""
-
 ```

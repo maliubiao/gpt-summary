@@ -93,11 +93,13 @@ console.log(crc1 === crc3); // true
 
 `v8/src/inspector/crc32.cc` 文件提供了一个用于计算 CRC32 校验和的功能，这个功能在 V8 JavaScript 引擎内部的 Inspector 模块中用于诸如代码标识、数据完整性校验等任务。虽然 JavaScript 本身没有内置的 CRC32 功能，但 V8 内部的 C++ 实现可以为 JavaScript 提供类似的能力。在 JavaScript 中，可以使用 CRC32 来进行简单的哈希、数据校验等操作，尽管通常会使用专门的库来实现这些功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/crc32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ int32_t computeCrc32(const String16& text) {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

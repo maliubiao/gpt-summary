@@ -220,7 +220,7 @@ go run your_program.go --secret 6d7973656372657470617373776f7264 --salt 6d797365
 
 总而言之，这段代码提供了符合 FIPS 140 标准的 HKDF 算法实现。 理解其 `Extract` 和 `Expand` 的工作原理，以及正确使用盐值和信息参数对于保证使用 HKDF 的安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/hkdf/hkdf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -228,8 +228,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -286,9 +288,4 @@ func Key[H fips140.Hash](h func() H, secret, salt []byte, info string, keyLen in
 	prk := Extract(h, secret, salt)
 	return Expand(h, prk, info, keyLen)
 }
-
-"""
-
-
-
 ```

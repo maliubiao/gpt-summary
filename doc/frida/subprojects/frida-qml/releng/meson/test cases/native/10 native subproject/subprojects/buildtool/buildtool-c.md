@@ -143,7 +143,7 @@ int i = 10;
 
 总而言之，`buildtool.c` 是 Frida 工具链中一个辅助性的代码生成工具，它的主要作用是生成一些小的、可执行的 C 代码片段，这些片段很可能被 Frida 用于注入到目标进程中执行，以实现动态 instrumentation 的目的。理解它的功能有助于深入理解 Frida 的工作原理和构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/buildtool.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 const char * gen_main(void);
@@ -162,7 +164,4 @@ int main() {
     printf("{ return 0; }\n");
     return 0;
 }
-
-"""
-
 ```

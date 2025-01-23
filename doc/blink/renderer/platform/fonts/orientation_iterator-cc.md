@@ -125,14 +125,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总之，`orientation_iterator.cc` 是 Blink 渲染引擎中一个关键的组件，它负责处理垂直混合排版模式下的字符方向问题，确保文本能够按照预期的方向进行渲染。它的工作与 CSS 的 `writing-mode` 和 `text-orientation` 属性紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/orientation_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ bool OrientationIterator::Consume(unsigned* orientation_limit,
 }
 
 }  // namespace blink
-
-"""
-
 ```

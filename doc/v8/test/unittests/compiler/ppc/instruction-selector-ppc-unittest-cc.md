@@ -152,15 +152,17 @@ TEST_F(InstructionSelectorTest, AddIntegers) {
 
 `v8/test/unittests/compiler/ppc/instruction-selector-ppc-unittest.cc` 是 V8 编译器中针对 PPC 架构的指令选择器的 C++ 单元测试文件。它负责验证指令选择器是否能够正确地将中间表示的操作转换为 PPC 机器指令，从而确保 JavaScript 代码在 PPC 架构上的正确执行。它间接地与 JavaScript 的功能相关，并且其正确性对于避免因指令选择错误导致的各种运行时问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/ppc/instruction-selector-ppc-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/ppc/instruction-selector-ppc-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ namespace internal {
 namespace compiler {}  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

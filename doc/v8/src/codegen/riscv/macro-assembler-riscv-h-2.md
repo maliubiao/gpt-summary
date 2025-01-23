@@ -184,7 +184,7 @@ CompareObjectTypeAndJump(a0, a1, a2, MAP_SPACE, kEqual, &target_label, Label::kN
 
 `v8/src/codegen/riscv/macro-assembler-riscv.h` 是 V8 引擎中至关重要的组成部分，它为 RISC-V 架构上的代码生成提供了基础框架和工具。它封装了底层的汇编指令，并提供了各种高级功能，用于实现 JavaScript 的语义、优化代码性能以及处理运行时事件。理解 `MacroAssembler` 的功能有助于深入理解 V8 引擎的工作原理和 JavaScript 的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.h以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 tructionStream generation helpers ----
 
   // ---------------------------------------------------------------------------
@@ -538,8 +540,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_RISCV_MACRO_ASSEMBLER_RISCV_H_
-
-"""
-
-
 ```

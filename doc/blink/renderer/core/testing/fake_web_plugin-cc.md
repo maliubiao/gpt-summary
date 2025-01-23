@@ -126,15 +126,17 @@ Let's break down the thought process for analyzing the `fake_web_plugin.cc` file
 
 总而言之，`fake_web_plugin.cc` 是 Blink 渲染引擎测试基础设施的一个重要组成部分，它允许开发者在不需要真实插件的情况下，测试和验证与插件交互相关的代码逻辑。开发者通常会在编写测试、调试插件相关功能或学习 Blink 插件机制时接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/fake_web_plugin.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -184,7 +186,4 @@ void FakeWebPlugin::Destroy() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

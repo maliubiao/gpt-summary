@@ -161,7 +161,7 @@ obj.toStrng(); // 应该写成 toString
 
 `v8/src/init/heap-symbols.h` 是 V8 引擎初始化阶段的关键组成部分，它定义了引擎内部使用的核心字符串常量和符号。这些常量和符号不仅用于引擎自身的运行，还与 JavaScript 语言的各种特性和用户可能遇到的错误情况紧密相连。理解这个文件的作用有助于深入理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/heap-symbols.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/heap-symbols.h以.tq结尾，那它是个v8 torque源代码，
@@ -169,9 +169,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                           \
+### 源代码
+```c
+\
   V(_, Symbol_split_string, "Symbol.split")                                   \
   V(_, Symbol_string, "Symbol")                                               \
   V(_, symbol_string, "symbol")                                               \
@@ -498,8 +500,4 @@ Prompt:
   F(SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL)
 
 #endif  // V8_INIT_HEAP_SYMBOLS_H_
-
-"""
-
-
 ```

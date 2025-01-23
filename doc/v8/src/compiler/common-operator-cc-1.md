@@ -105,7 +105,7 @@ if (condition) {
 
 作为系列的一部分，这部分代码主要关注 `CommonOperatorBuilder` 类的实现细节，展示了它是如何利用缓存机制和构造函数来创建各种通用操作符的实例。它定义了创建不同类型操作符的具体方法，并处理了具有不同输入数量的操作符的创建逻辑。这部分代码的核心目标是提供一个高效且结构化的方式来生成编译器 IR 中使用的基本操作单元。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/common-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,9 +113,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-           SparseInputMask::Dense()) {}  // parameter
+### 源代码
+```cpp
+SparseInputMask::Dense()) {}  // parameter
   };
 #define CACHED_STATE_VALUES(input_count) \
   StateValuesOperator<input_count> kStateValues##input_count##Operator;
@@ -899,8 +901,5 @@ const Operator* CommonOperatorBuilder::Chained(const Operator* op) {
 const Operator* CommonOperatorBuilder::DeadValue(MachineRepresentation rep) {
   return zone()->New<Operator1<MachineRepresentation>>(  // --
       IrOpcode::kDeadValue, Operator::kPure,             // opcode
-      "DeadValue",                            
-"""
-
-
+      "DeadValue",
 ```

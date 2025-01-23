@@ -113,15 +113,17 @@ The user wants to understand the functionality of the `insert_list_command_test.
 
 总而言之，`insert_list_command_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎在处理用户插入和移除列表操作时的正确性和健壮性，涵盖了各种复杂场景和潜在的错误情况，并与 HTML, CSS 和 JavaScript 的行为紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_list_command_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -469,7 +471,4 @@ TEST_F(InsertListCommandTest, ListItemWithSpace) {
             GetSelectionTextFromBody());
 }
 }
-
-"""
-
 ```

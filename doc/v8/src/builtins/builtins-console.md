@@ -125,11 +125,13 @@ console.log("对象信息: %o", myObject); // %o 用于显示对象信息
 
 `builtins-console.cc` 文件是 V8 引擎中实现 JavaScript `console` 对象功能的关键部分。它负责接收 JavaScript 的 `console` 方法调用，进行必要的处理（例如格式化），并将这些信息传递到 V8 的调试和日志系统，最终让开发者在控制台中看到输出。 这体现了 V8 引擎如何将 JavaScript 的高级特性映射到底层的 C++ 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-console.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -447,7 +449,4 @@ BUILTIN(ConsoleContext) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

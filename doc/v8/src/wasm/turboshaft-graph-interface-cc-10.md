@@ -151,7 +151,7 @@ try {
 
 考虑到这是倒数第二个部分，可以推测第 12 部分很可能涉及 **将 Turboshaft 图形表示转换为实际的机器码**，或者进行最后的代码优化和布局。 这个文件是连接 Wasm 语义和底层机器指令的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/turboshaft-graph-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,9 +159,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共12部分，请归纳一下它的功能
+```
 
-"""
- can cause the high
+### 源代码
+```cpp
+can cause the high
     // word of what's supposed to be an i32 to be non-zero).
     if (address_type == AddressType::kI32) {
       return __ ChangeUint32ToUintPtr(V<Word32>::Cast(index));
@@ -946,7 +948,4 @@ Prompt:
   // Used only in StartFunction();
   base::Vector<OpIndex> real_parameters_;
   // The bl
-"""
-
-
 ```

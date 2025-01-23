@@ -259,7 +259,7 @@ sys.stdin.read()
 
 这个 `nameser_compat.h` 文件虽然本身不包含复杂的逻辑，但它是 Android 系统进行域名解析的关键基础，为上层网络功能的实现提供了必要的数据结构和常量定义。理解它的内容有助于深入了解 Android 的网络层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/arpa/nameser_compat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: nameser_compat.h,v 1.1.1.2 2004/11/07 01:28:27 christos Exp $	*/
 
 /* Copyright (c) 1983, 1989
@@ -449,7 +451,4 @@ typedef struct {
 #define	PUTLONG			NS_PUT32
 
 #endif /* _ARPA_NAMESER_COMPAT_ */
-
-"""
-
 ```

@@ -250,7 +250,7 @@ if (Process.platform === 'android') {
 
 总结来说，`s_modfl.c` 实现了将 `long double` 类型浮点数分解为整数和小数部分的标准 C 库函数，它在 Android 系统中通过 `libm.so` 提供，并被 NDK 开发的 Native 代码直接使用，也可能被 Android Framework 间接调用。理解其实现原理和使用方式对于进行底层开发和调试非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_modfl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -364,7 +366,4 @@ modfl(long double x, long double *iptr)
 		}
 	}
 }
-
-"""
-
 ```

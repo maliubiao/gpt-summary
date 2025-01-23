@@ -78,12 +78,14 @@ foo(5); // 函数调用会涉及到栈的分配和参数传递
 
 总而言之，这段 C++ 代码是 V8 引擎将 JavaScript 代码高效地转化为 MIPS64 架构机器码的关键组成部分，它针对不同的 JavaScript 语言特性和操作，生成了相应的底层指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 oryOperand());
       break;
     case kMips64Ulhu:
@@ -1838,7 +1840,4 @@ oryOperand());
       CpuFeatureScope msa_scope(masm(), MIPS_SIMD);
       Simd128Register dst = i.OutputSimd128Register(),
                       src0 = i.InputSimd128Re
-"""
-
-
 ```

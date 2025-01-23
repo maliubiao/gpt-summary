@@ -134,15 +134,17 @@ Web 应用的 manifest 文件是一个 JSON 文件，它描述了 Web 应用的�
 
 **简而言之，`manifest_fuzzer.cc` 是 Chromium 开发团队用于保障 Web 应用 manifest 解析器 `ManifestParser` 健壮性和安全性的重要工具。虽然普通用户不会直接接触它，但其运行结果会间接地影响用户使用 Chrome 浏览器的 PWA 体验。当用户遇到与 PWA 相关的问题时，开发人员可能会利用模糊测试的结果作为重要的调试线索。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

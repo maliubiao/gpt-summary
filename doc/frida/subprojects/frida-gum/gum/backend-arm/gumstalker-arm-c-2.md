@@ -151,7 +151,7 @@ By combining the understanding of individual function purposes, we can arrive at
 
 这段代码是 Frida Stalker 在 ARM 架构上的核心编译模块，负责将目标进程的原始 ARM 或 Thumb 代码块转换成 Frida 可以监控和干预的新代码块。这个过程包括指令的读取、分析、修改以及探针代码的插入，为实现动态代码追踪、修改和 Hook 等功能提供了基础。它涉及到对 ARM 指令集、二进制代码重定位、函数调用约定等底层知识的运用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm/gumstalker-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 uction.start = NULL;
   iterator.instruction.end = NULL;
 
@@ -1264,7 +1266,4 @@ csh
 gum_stalker_iterator_get_capstone (GumStalkerIterator * self)
 {
   const GumGeneratorContext * g
-"""
-
-
 ```

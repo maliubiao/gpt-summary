@@ -98,7 +98,7 @@ By following this thought process, combining high-level understanding with detai
 
 这段代码片段主要负责 V8 引擎在 ARM 架构下，将中间表示的 **加载 (Load)** 和 **存储 (Store)** 操作以及 **部分位运算 (Word32And, Word32Or, Word32Xor)** 操作转换为具体的 ARM 汇编指令。它针对不同的数据类型、内存对齐方式、SIMD 操作以及是否需要写屏障等因素，选择了最合适的 ARM 指令，并进行了一些针对特定模式的优化，例如合并移位操作或使用位清除指令。它区分了 Turbofan 和 Turboshaft 两种不同的 IR 结构，并为它们提供了相应的处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-selector-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/instruction-selector-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -106,8 +106,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 inputs[2]);
   Emit(opcode, 0, nullptr, input_count, inputs);
 }
@@ -947,7 +949,4 @@ void InstructionSelectorT<Adapter>::VisitWord32Xor(node_t node) {
 
 template <typename Adapter>
 void Instructi
-"""
-
-
 ```

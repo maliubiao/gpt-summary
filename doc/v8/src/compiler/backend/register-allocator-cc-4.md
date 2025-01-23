@@ -183,7 +183,7 @@ function processArrayOptimized(arr) {
 
 作为线性扫描寄存器分配的第 5 部分，这段代码的核心功能是在控制流的汇合点（例如，基本块的入口）决定哪些虚拟寄存器应该被分配到物理寄存器。它通过分析前驱基本块的寄存器分配情况，并根据多数原则进行投票，从而做出决策。这确保了在控制流合并后，常用的变量能够继续保留在寄存器中，从而提高程序的执行效率。此外，它还处理了固定寄存器和延迟执行块的特殊情况，确保了寄存器分配的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -191,8 +191,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s[RegisterConfiguration::kMaxRegisters];
     explicit Vote(int reg) : count(1), used_registers{0} {
       used_registers[reg] = 1;
@@ -975,8 +977,4 @@ void LinearScanAllocator::FindFreeRegistersForRange(
       LifetimePosition next_intersection =
           cur_inactive->FirstIntersection(range);
       if (!next_intersection.IsValid()) continue;
- 
-"""
-
-
 ```

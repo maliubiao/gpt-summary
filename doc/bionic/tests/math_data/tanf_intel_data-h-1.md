@@ -48,7 +48,7 @@ The code snippet defines a set of test cases for the `tanf` function. Each test 
 
 总而言之，这个代码片段是 `bionic/tests/math_data/tanf_intel_data.handroid` 文件的一部分，其核心功能是 **提供了一系列用于测试 Android Bionic Libc 中 `tanf` 函数在 Intel 架构上实现的输入和期望输出值**。这些测试数据对于验证 `tanf` 函数的正确性和精度至关重要，确保 Android 系统上运行的应用程序能够获得准确的三角函数计算结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tanf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -60,8 +60,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 f3d61c54ee4f6585e9bff489c00182p-2,
     -0x1.9dd83cp-2
   },
@@ -1623,8 +1625,4 @@ f3d61c54ee4f6585e9bff489c00182p-2,
   },
   { // Entry 777
     0x1.9437b336b6b0c479b2280999b19575c7p23,
-  
-"""
-
-
 ```

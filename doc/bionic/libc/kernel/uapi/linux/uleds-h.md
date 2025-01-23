@@ -256,7 +256,7 @@ sys.stdin.read()
 
 为了更精确地 Hook 与 LED 相关的操作，你可能需要分析 Android Framework 或 HAL 层的代码，找到负责 LED 控制的具体函数，并 Hook 这些函数。例如，在 HAL 层可能会有类似 `setLedBrightness` 或 `getLedInfo` 的函数，你可以尝试 Hook 这些函数来观察参数和调用流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/uleds.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -283,7 +285,4 @@ struct uleds_user_dev {
   int max_brightness;
 };
 #endif
-
-"""
-
 ```

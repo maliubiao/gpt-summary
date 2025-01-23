@@ -229,7 +229,7 @@ func main() {
 
 `go/src/runtime/os_solaris.go` 是 Go 语言运行时在 Solaris 操作系统上的核心组成部分，它提供了调用 C 语言库函数进行系统调用的能力。普通 Go 开发者通常通过 `syscall` 包及其上层封装来间接使用这些功能，而无需直接操作这些底层的 `sysvicallN` 函数。直接操作这些底层函数容易出错，需要对系统调用和 C 语言调用约定有深入的理解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -237,8 +237,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -515,9 +517,4 @@ func sysvicall6(fn *libcFunc, a1, a2, a3, a4, a5, a6 uintptr) uintptr {
 func issetugid() int32 {
 	return int32(sysvicall0(&libc_issetugid))
 }
-
-"""
-
-
-
 ```

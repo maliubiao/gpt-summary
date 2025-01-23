@@ -257,7 +257,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/kernel/uapi/linux/netfilter_bridge/ebt_among.handroid` 定义了 Linux 内核中 `ebtables` "among" 匹配扩展的数据结构，用于基于 MAC 地址进行桥接网络流量过滤。它与 Android 的网络功能密切相关，并在底层网络配置中发挥作用。虽然这个头文件本身不包含 libc 函数的实现，但用户空间的网络工具会使用 libc 函数与内核进行交互，以配置使用这些数据结构的过滤规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_bridge/ebt_among.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -268,8 +268,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -302,7 +304,4 @@ struct ebt_among_info {
 #define ebt_among_wh_src(x) ((x)->wh_src_ofs ? (struct ebt_mac_wormhash *) ((char *) (x) + (x)->wh_src_ofs) : NULL)
 #define EBT_AMONG_MATCH "among"
 #endif
-
-"""
-
 ```

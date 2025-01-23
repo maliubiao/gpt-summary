@@ -335,7 +335,7 @@ sys.stdin.read()
 
 `fwide` 是一个用于管理文件流宽字符方向的重要函数。理解其功能和使用方式对于编写处理多语言文本的 Android 应用程序至关重要。通过使用 Frida 等工具，我们可以深入了解其在 Android 系统中的实际运行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdio/fwide.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -346,8 +346,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: fwide.c,v 1.6 2019/12/03 05:03:37 asou Exp $	*/
 /* $NetBSD: fwide.c,v 1.2 2003/01/18 11:29:54 thorpej Exp $ */
 
@@ -415,7 +417,4 @@ fwide(FILE *fp, int mode)
 	return mode;
 }
 DEF_STRONG(fwide);
-
-"""
-
 ```

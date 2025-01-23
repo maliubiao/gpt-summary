@@ -155,7 +155,7 @@ python generate.py a.py b.py c.py d.py
 
 通过这些步骤，开发者可以排查测试环境设置方面的问题，确保测试用例能够正确地模拟目标场景。这个脚本的存在是为了自动化生成简单的、可控的测试程序，从而方便 Frida 的开发和测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/273 customtarget exe for test/generate.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -179,7 +181,4 @@ for i, a in enumerate(sys.argv[1:]):
     with open(a, 'w') as f:
         print(program.format(i), file=f)
     os.chmod(a, 0o755)
-
-"""
-
 ```

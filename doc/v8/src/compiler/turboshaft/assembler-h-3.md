@@ -177,7 +177,7 @@ auto untagged_value = assembler.UntagSmi(smi_value);
 
 作为第 4 部分，这段代码主要关注的是 **值的表示和基本操作**。它提供了创建和操作各种类型值的接口，包括常量、基本数据类型以及堆上的对象。核心功能围绕着如何将高级语言的概念转化为编译器内部的低级表示，并提供进行必要转换和操作的工具。这部分是构建更复杂操作的基础，例如算术运算、对象属性访问和数组元素访问等，这些功能很可能会在后续的部分中出现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ntMaybeHole(Handle<T> value) {
     return __ HeapConstant(value);
   }
@@ -920,7 +922,4 @@ ntMaybeHole(Handle<T> value) {
   void StoreArrayBufferElement(V<Base> object, const ElementAccess& access,
                                V<WordPtr> index, V<Any> value) {
     return StoreElement(obje
-"""
-
-
 ```

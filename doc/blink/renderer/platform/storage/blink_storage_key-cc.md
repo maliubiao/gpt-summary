@@ -194,14 +194,16 @@ Understanding `BlinkStorageKey` helps in avoiding common mistakes related to web
 
 **In summary, `blink_storage_key.cc` defines a crucial data structure within the Blink rendering engine for managing and identifying storage partitions. Its attributes directly relate to web security concepts like origins, site isolation, and third-party contexts, and it underpins how Javascript, HTML, and CSS interact with browser storage mechanisms.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/storage/blink_storage_key.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -500,7 +502,4 @@ bool BlinkStorageKey::IsValid() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

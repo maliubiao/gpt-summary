@@ -161,15 +161,17 @@ By following this structured approach, combining code analysis with an understan
 
 `SimpleFileTracker` 是 Chromium 网络栈中一个重要的组件，负责管理磁盘缓存文件的打开和关闭，以控制文件描述符的使用，并使用 LRU 策略来优化缓存性能。虽然与 JavaScript 没有直接的代码关系，但它支撑着浏览器的缓存机制，直接影响着网页资源的加载效率，包括 JavaScript 资源。理解其工作原理有助于理解浏览器的缓存行为，并在调试网络相关问题时提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_file_tracker.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -540,7 +542,4 @@ bool SimpleFileTracker::FileHandle::IsOK() const {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

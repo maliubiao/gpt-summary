@@ -155,7 +155,7 @@ ADD x0, x1, x2  // 将寄存器 x1 和 x2 的值相加，结果存入 x0
 
 总而言之，`v8/src/execution/arm64/simulator-arm64.cc` 是 V8 引擎中用于在非 ARM64 架构上模拟执行 ARM64 指令的关键组件，它实现了对各种 ARM64 指令的模拟，包括算术运算、逻辑运算、内存访问、原子操作等，对于 V8 的开发、测试和在不同平台上的移植具有重要意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tyFourBits()) {
     uint64_t op2 = ExtendValue(xreg(instr->Rm()), ext, left_shift);
     AddSubHelper(instr, op2);
@@ -1186,7 +1188,4 @@ void Simulator::VisitMoveWideImmediate(Instruction* instr) {
   // Get the shifted immediate.
   int64_t shift = instr->ShiftMoveWide() * 16;
   int64_t shifted_imm16 = static_cast<int
-"""
-
-
 ```

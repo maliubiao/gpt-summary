@@ -160,7 +160,7 @@ commonIV = []byte{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x
 
 总而言之，`go/src/crypto/cipher/common_test.go` 文件是 `crypto/cipher` 包测试框架的重要组成部分，它通过提供预定义的通用测试数据，简化了各种密码算法的测试过程。它本身不实现任何功能，但为其他测试代码提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/cipher/common_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ var commonKey256 = []byte{
 }
 
 var commonIV = []byte{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f}
-
-"""
-
-
-
 ```

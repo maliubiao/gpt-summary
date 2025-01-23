@@ -100,7 +100,7 @@ add(5, 3); // V8 内部可能涉及到 JSTrampolineDescriptor 的调用来处理
 
 `v8/src/codegen/interface-descriptors.h`  是 V8 引擎中一个关键的头文件，它详细定义了 V8 内部函数调用的接口规范，确保了 V8 各个组件之间能够正确、高效地通信和协作，从而支撑 JavaScript 代码的执行。它就像一份内部 API 文档，定义了 V8 引擎的低级调用协议。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/interface-descriptors.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/interface-descriptors.h以.tq结尾，那它是个v8 torque源代码，
@@ -108,8 +108,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 kTarget */               \
                          MachineType::AnyTagged(), /* kNewTarget */            \
                          MachineType::Int32(),     /* kActualArgumentsCount */ \
@@ -964,7 +966,4 @@ class GetIteratorStackParameterDescriptor final
   DEFINE_PARAMETERS(kReceiver, kCallSlot, kFeedback, kResult)
   DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(), MachineType::AnyTagged(),
                          MachineT
-"""
-
-
 ```

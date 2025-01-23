@@ -203,7 +203,7 @@ Let's break down the thought process for analyzing this Python code snippet.
 
 这个 Python 文件在 Frida 项目的 Meson 构建系统中扮演着**核心的 D 语言编译器集成角色**。它通过定义通用的 `DCompiler` 类以及针对不同 D 语言编译器的特定实现，使得 Meson 能够**抽象并管理 D 语言的编译过程**。其主要功能包括：**定义编译器接口、处理编译器参数、生成编译命令、执行编译器检查、以及处理不同编译器之间的差异**。这对于确保 Frida 可以在不同的 D 语言环境下成功构建至关重要，同时也为 Frida 的动态插桩功能提供了必要的编译支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/d.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -1019,8 +1021,4 @@ class DmdDCompiler(DmdLikeCompilerMixin, DCompiler):
             # DMD links against D runtime only when main symbol is found,
             # so these needs to be inserted when linking static D libraries.
             if self.arch == 'x86_64':
-       
-"""
-
-
 ```

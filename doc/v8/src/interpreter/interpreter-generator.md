@@ -88,12 +88,14 @@ Response: The user wants a summary of the C++ source code file `v8/src/interpret
 
 总而言之，`v8/src/interpreter/interpreter-generator.cc` (第一部分) 负责生成解释器执行 JavaScript 代码所需的关键代码片段，将高级的 JavaScript 语法结构转换为底层的机器指令序列。这个文件中的每一个 handler 都是连接 JavaScript 代码和 V8 引擎底层实现的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1886,7 +1888,4 @@ class InterpreterCompareOpAssembler : public InterpreterAssembler {
     {
       TNode<UintPtrT> slot_index = BytecodeOperandIdx(1);
       TNode<HeapObject> maybe_feedback_
-"""
-
-
 ```

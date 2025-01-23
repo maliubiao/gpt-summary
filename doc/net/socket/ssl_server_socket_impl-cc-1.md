@@ -150,7 +150,7 @@ By following this structured approach and iteratively refining my understanding 
 
 这段代码的核心功能是**配置服务器端的 SSL/TLS 上下文 ( `SSL_CTX` )，以便安全地处理客户端发起的 HTTPS 连接。** 它涵盖了 TLS 协议版本控制、密码套件选择、客户端证书验证、ALPN 协商、OCSP Stapling、SCTs 支持和 ECH 支持等关键安全特性，确保服务器能够以安全可靠的方式与客户端建立加密连接。这些配置直接影响着客户端与服务器之间的安全连接建立过程，以及连接的安全性和功能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_server_socket_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (ssl_ctx_.get(), SSL_SESS_CACHE_SERVER);
   uint8_t session_ctx_id = 0;
   SSL_CTX_set_session_id_context(ssl_ctx_.get(), &session_ctx_id,
@@ -286,8 +288,4 @@ std::unique_ptr<SSLServerSocket> SSLServerContextImpl::CreateSSLServerSocket(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

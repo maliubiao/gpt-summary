@@ -81,11 +81,13 @@ for (let i = 0; i < 1000000; i++) {
 
 总而言之，`metric-recorder-unittest.cc` 是一个用于测试 V8 引擎内部 C++ 垃圾回收机制的单元测试文件，它通过模拟 GC 过程并检查指标记录器的行为，来保证 `MetricRecorder` 的正确性。虽然 JavaScript 开发者不能直接与之交互，但它记录的指标对于理解和优化 V8 引擎的性能至关重要，最终也会影响 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/metric-recorder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -405,7 +407,4 @@ TEST_F(MetricRecorderTest, ObjectSizeMetricsWithAllocations) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

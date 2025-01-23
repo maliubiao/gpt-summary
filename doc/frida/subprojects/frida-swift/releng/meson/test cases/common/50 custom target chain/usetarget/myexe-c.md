@@ -146,7 +146,7 @@ Here's a breakdown of the thinking process to analyze the provided C code and re
 
 总而言之，`myexe.c` 作为一个极其简单的程序，其核心作用在于为 Frida 的测试和演示提供一个可控的目标。它的简单性使得开发者能够更容易地验证 Frida 的核心功能，例如进程附加、函数 Hook 等。对于学习 Frida 和逆向工程的人来说，从这样的简单示例入手，可以更好地理解动态插桩的基本原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/50 custom target chain/usetarget/myexe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,15 +154,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I am myexe.\n");
     return 0;
 }
-
-"""
-
 ```

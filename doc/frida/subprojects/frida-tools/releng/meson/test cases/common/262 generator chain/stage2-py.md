@@ -103,7 +103,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 `stage2.py` 是一个简单的代码生成脚本，用于在 Frida 的测试环境中创建一个基本的C源代码文件。它的主要功能是验证前一个步骤的输出，并为后续的测试或构建步骤准备一个最小化的C程序。虽然脚本本身很简单，但它在理解 Frida 的构建流程和测试框架方面具有一定的意义。 它的错误排查通常围绕着文件路径和内容是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/262 generator chain/stage2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,15 +111,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
 
 assert(Path(sys.argv[1]).read_text() == 'stage2\n')
 Path(sys.argv[2]).write_text('int main(void){}\n')
-
-"""
-
 ```

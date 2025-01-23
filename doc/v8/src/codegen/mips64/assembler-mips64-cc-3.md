@@ -130,7 +130,7 @@ if (a > b) {
 
 作为一系列汇编器代码生成文件中的一部分，`v8/src/codegen/mips64/assembler-mips64.cc` 的主要功能是 **提供用于生成 MIPS64 架构上浮点运算和 MSA (SIMD) 指令的接口**。它是 V8 引擎在 MIPS64 平台上将高级代码转换为可执行机器码的关键组件，专注于处理浮点数和向量数据的运算和操作。它的存在使得 V8 能够高效地执行涉及到大量数值计算和数据并行处理的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ister ft) {
   GenInstrRegister(COP1, D, ft, fs, fd, DIV_D);
 }
@@ -1167,7 +1169,4 @@ void Assembler::CheckTrampolinePool() {
     }
   } else {
     // Number of branches t
-"""
-
-
 ```

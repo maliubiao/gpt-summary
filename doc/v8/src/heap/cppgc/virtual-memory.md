@@ -102,11 +102,13 @@ tempObj = null;
 
 `VirtualMemory` 是 V8 引擎内部用于管理虚拟内存的关键组件。虽然 JavaScript 开发者无法直接操作它，但 JavaScript 代码的执行和内存使用都依赖于 V8 引擎提供的内存管理机制，而 `VirtualMemory` 正是这个机制的底层支撑。 JavaScript 对象的创建、数组的分配、垃圾回收等操作，在幕后都可能涉及到 `VirtualMemory` 类的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/virtual-memory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ void VirtualMemory::Reset() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

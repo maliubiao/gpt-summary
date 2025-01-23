@@ -228,7 +228,7 @@ By following this systematic approach, you can thoroughly analyze the Python scr
 
 总而言之，`mcompile.py` 在 Frida 的构建系统中扮演着重要的角色，它提供了一个抽象层，简化了用户与底层构建工具的交互，并为 Frida 组件的编译提供了统一的入口。理解它的功能有助于理解 Frida 的构建流程，并在遇到编译问题时提供有价值的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/mcompile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -236,8 +236,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -618,7 +620,4 @@ def run(options: 'argparse.Namespace') -> int:
     p, *_ = mesonlib.Popen_safe(cmd, stdout=sys.stdout.buffer, stderr=sys.stderr.buffer, env=env)
 
     return p.returncode
-
-"""
-
 ```

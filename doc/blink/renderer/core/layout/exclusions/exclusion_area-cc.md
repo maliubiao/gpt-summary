@@ -177,14 +177,16 @@ By following these steps, combining code analysis with an understanding of web t
 
 总而言之，`exclusion_area.cc` 定义了 Blink 渲染引擎中用于管理布局排除区域的核心数据结构。它与 CSS 的 `float`、`shape-outside` 和 `initial-letter` 等属性紧密相关，负责在渲染过程中描述这些属性产生的布局影响。理解这个文件有助于深入了解浏览器如何处理复杂的网页布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/exclusions/exclusion_area.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ std::ostream& operator<<(std::ostream& os, const ExclusionArea* exclusion) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

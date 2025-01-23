@@ -89,11 +89,13 @@ obj1.friend = null;
 
 `v8/src/heap/slot-set.cc` 中实现的 `TypedSlotSet` 和 `TypedSlots` 是 V8 堆管理和垃圾回收的关键组成部分。 它们用于高效地存储和操作指向堆中对象的带类型信息的指针，帮助 V8 跟踪对象引用，并在垃圾回收过程中识别和清除不再使用的对象，从而实现 JavaScript 的自动内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/slot-set.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void TypedSlotSet::IterateSlotsInRanges(Callback callback,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

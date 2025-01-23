@@ -152,7 +152,7 @@ A user might encounter code within this file during debugging in several scenari
 
 This `universal.py` file provides a collection of general-purpose utility functions and classes that are essential for the Frida project's build system. It handles common tasks like path manipulation, string operations, data persistence (using pickling), progress bar display, and management of build configurations and options. It also includes platform-specific logic for handling Windows paths under Wine. These utilities contribute to a robust, cross-platform, and user-friendly build process for Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 nd(trial)
             else:
                 result[basename] = [trial]
@@ -742,8 +744,4 @@ def first(iter: T.Iterable[_T], predicate: T.Callable[[_T], bool]) -> T.Optional
         if predicate(i):
             return i
     return None
-
-"""
-
-
 ```

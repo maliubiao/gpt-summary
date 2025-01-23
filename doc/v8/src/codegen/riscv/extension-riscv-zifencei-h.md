@@ -141,15 +141,17 @@ int main() {
 
 `v8/src/codegen/riscv/extension-riscv-zifencei.h` 文件定义了用于在 V8 的 RISC-V 代码生成过程中插入 `fence.i` 指令的工具。这条指令主要用于保证指令缓存的一致性，特别是在处理自修改代码或并发场景时。虽然 JavaScript 开发者不会直接使用 `fence.i`，但理解其作用有助于理解 V8 内部如何确保代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-zifencei.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/extension-riscv-zifencei.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ class AssemblerRISCVZifencei : public AssemblerRiscvBase {
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_CODEGEN_RISCV_EXTENSION_RISCV_ZIFENCEI_H_
-
-"""
-
 ```

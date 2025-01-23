@@ -123,14 +123,16 @@ Let's break down the thought process for analyzing the `down_sampler.cc` file.
 
 总而言之，`down_sampler.cc` 是 Blink 引擎中一个关键的音频处理模块，它通过高效的滤波和抽取算法，实现了音频信号的降采样功能，为浏览器处理各种不同采样率的音频数据提供了基础支持，并最终影响了通过 Web 技术呈现给用户的音频体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/down_sampler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -286,7 +288,4 @@ size_t DownSampler::LatencyFrames() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -114,7 +114,7 @@ By following this process, the comprehensive and informative answer provided pre
 
 `frida/subprojects/frida-qml/releng/meson/test cases/cython/3 cython_args/test.py` 这个文件是一个简单的单元测试，用于验证 `cythonargs` 模块中的 `test()` 函数是否正常工作。虽然它本身不执行逆向操作，但它测试的模块很可能在 Frida 中用于处理与 Cython 代码交互相关的任务，因此与逆向方法间接相关。它涉及到二进制底层、操作系统相关的知识，并且可能因为用户环境配置错误或 Cython 代码逻辑错误而导致测试失败。用户通常不会主动运行它，除非他们是 Frida 的开发者或正在进行深入的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cython/3 cython_args/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,12 +122,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import cythonargs
 
 assert cythonargs.test() == 1
-
-"""
-
 ```

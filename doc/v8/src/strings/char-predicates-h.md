@@ -256,15 +256,17 @@ const hexString = "0xAF";
 
 `v8/src/strings/char-predicates.h` 中定义的这些函数帮助 V8 引擎准确地理解和处理各种字符，从而确保 JavaScript 代码的正确解析和执行。了解这些底层的字符分类规则对于理解 JavaScript 的行为以及避免常见的编程错误非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/char-predicates.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/char-predicates.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ inline bool IsLineTerminatorSequence(base::uc32 c, base::uc32 next);
 }  // namespace v8
 
 #endif  // V8_STRINGS_CHAR_PREDICATES_H_
-
-"""
-
 ```

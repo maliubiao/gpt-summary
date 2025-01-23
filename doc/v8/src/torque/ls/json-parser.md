@@ -152,11 +152,13 @@ try {
 
 总而言之，`json-parser.cc` 文件提供了一个 V8 内部使用的 JSON 解析器，它与 JavaScript 的数据表示格式紧密相关，并可能在 V8 的各种内部流程中使用，例如解析 Torque 语言的配置或处理与外部系统交换的 JSON 数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/json-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ JsonParserResult ParseJson(const std::string& input) {
 
 }  // namespace ls
 }  // namespace v8::internal::torque
-
-"""
-
 ```

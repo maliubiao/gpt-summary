@@ -205,7 +205,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "strftime"), {
 
 这个 `localedef.h` 文件是 Android 本地化功能的基础，它定义了程序理解和适应不同文化习惯所需的数据结构。理解这些结构及其背后的 libc 函数，对于开发国际化的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tzcode/localedef.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -216,8 +216,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: localedef.h,v 1.1 2016/05/23 00:05:15 guenther Exp $	*/
 /*	$NetBSD: localedef.h,v 1.4 1996/04/09 20:55:31 cgd Exp $	*/
 
@@ -324,7 +326,4 @@ extern const _TimeLocale  _DefaultTimeLocale;
 //__END_HIDDEN_DECLS
 
 #endif /* !_LOCALEDEF_H_ */
-
-"""
-
 ```

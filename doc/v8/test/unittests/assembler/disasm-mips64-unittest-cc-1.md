@@ -60,7 +60,7 @@ By following these steps, I can effectively analyze the provided code snippet an
 * **继续测试标准分支指令的反汇编:**  `TEST_F(DisasmMips64Test, Type3)` 也包含对标准 32 位偏移分支指令的测试，例如 `bne`, `beq`, `bltz`, `bgez`, `blez`, `bgtz`。
 
 * **测试 MIPS64r2 特有的浮点条件比较指令:** `TEST_F(DisasmMips64Test, C_FMT_DISASM)` 代码块专门针对 MIPS64r2，测试了 `c.f.s`, `c.f.d`, `c.un.s`, `c.un.d`, `c.eq.s`, `c.eq.d`, `c.ueq.s`, `c.ueq.d`, `c.olt.s`,
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-mips64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-mips64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -68,9 +68,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    f3, f4, f5");
+### 源代码
+```cpp
+f3, f4, f5");
     COMPARE(selnez(D, f3, f4, f5), "462520d7       selnez.d    f3, f4, f5");
     COMPARE(seleqz(S, f3, f4, f5), "460520d4       seleqz.s    f3, f4, f5");
     COMPARE(selnez(S, f3, f4, f5), "460520d7       selnez.s    f3, f4, f5");
@@ -742,8 +744,5 @@ TEST_F(DisasmMips64Test, MSA_2RF) {
     COMPARE(fexupl_w(w8, w0), "7b30021e       fexupl.w  w8, w0");
     COMPARE(fexupl_d(w17, w29), "7b31ec5e       fexupl.d  w17, w29");
     COMPARE(fexupr_w(w13, w4), "7b32235e       fexupr.w  w13, w4");
-    COMPARE(fexupr_d(w5, w2), "7b33115e       
-"""
-
-
+    COMPARE(fexupr_d(w5, w2), "7b33115e
 ```

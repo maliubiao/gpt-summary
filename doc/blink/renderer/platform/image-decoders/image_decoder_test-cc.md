@@ -104,14 +104,16 @@ My thinking process to analyze the C++ code and answer the user's request goes l
 
 总而言之，`image_decoder_test.cc` 是 Blink 引擎中一个至关重要的测试文件，它确保了图像解码功能的稳定性和正确性，从而保证了网页上图像的正常显示和用户体验。其测试覆盖了图像解码的多个关键方面，包括尺寸处理、动画帧管理、缓存控制以及平台特定的限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -494,7 +496,4 @@ TEST(ImageDecoderTest, hasSufficientDataToSniffMimeTypeAvif) {
 #endif  // BUILDFLAG(ENABLE_AV1_DECODER)
 
 }  // namespace blink
-
-"""
-
 ```

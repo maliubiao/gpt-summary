@@ -142,7 +142,7 @@ By following these steps, we can thoroughly analyze the seemingly simple C code 
 
 尽管 `stat.c` 中的 `statlibfunc` 函数本身非常简单，但在 Frida 的上下文中，它扮演着重要的角色，作为一个可以被 hook 和测试的目标。它帮助验证 Frida 的基本功能，并作为复杂逆向工程任务的基础。用户到达这个文件通常是因为他们正在进行 Frida 的开发、调试、学习或遇到了与 Frida 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/32 exe static shared/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,12 +150,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int statlibfunc() {
     return 42;
 }
-
-"""
-
 ```

@@ -88,7 +88,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 这部分代码专注于测试 `AudioRendererMixerManager` 在不同音频延迟类型（如 RTC 和交互式）和音频格式（如位流）下，能否正确地配置 `AudioRendererMixer` 的输出参数，特别是采样率和缓冲区大小。它确保了混音器能够根据不同的使用场景和硬件条件进行合理的调整，以提供最佳的音频播放体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 IN)
 
   ReturnMixer(mixer);
@@ -247,8 +249,4 @@ TEST_F(AudioRendererMixerManagerTest, MixerParamsBitstreamFormat) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

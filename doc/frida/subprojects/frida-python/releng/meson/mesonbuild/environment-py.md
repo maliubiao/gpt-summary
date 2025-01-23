@@ -96,7 +96,7 @@ The user wants to understand the functionality of the provided Python code. They
 
 该文件是 Meson 构建系统运行的基础，确保了构建过程能够正确地找到所需的工具，并根据目标平台进行配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -858,8 +860,4 @@ class Environment:
                         key = OptionKey('env_args', machine=for_machine, lang='c')
                         for lang in compilers.compilers.LANGUAGES_USING_CPPFLAGS:
                             key = key.evolve(lang=lang)
-     
-"""
-
-
 ```

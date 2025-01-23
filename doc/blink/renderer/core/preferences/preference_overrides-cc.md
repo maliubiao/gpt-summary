@@ -198,15 +198,17 @@ body {
 
 总之，`preference_overrides.cc` 提供了一种强大的机制来控制浏览器对 CSS 媒体特性的解释，主要用于开发者工具模拟、自动化测试以及某些高级浏览器功能。理解其工作原理对于调试与媒体查询相关的渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/preferences/preference_overrides.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ void PreferenceOverrides::SetOverride(const AtomicString& feature,
 }
 
 }  // namespace blink
-
-"""
-
 ```

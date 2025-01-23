@@ -182,14 +182,16 @@ This iterative process of examining the code, connecting it to known concepts, a
 
 总而言之，`blink/renderer/core/animation/document_animations.cc` 是 Blink 引擎中一个至关重要的组件，它负责协调和管理文档中的各种动画，确保它们能够按照 Web 标准的定义正确、高效地运行，并与 JavaScript 和 Compositor 等其他组件协同工作。理解其功能有助于开发者更好地理解浏览器如何处理动画，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/document_animations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -480,7 +482,4 @@ void DocumentAnimations::RemoveReplacedAnimations(
 }
 
 }  // namespace blink
-
-"""
-
 ```

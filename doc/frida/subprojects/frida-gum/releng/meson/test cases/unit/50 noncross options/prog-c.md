@@ -107,7 +107,7 @@ Here's a thinking process to arrive at the analysis of the provided C code snipp
 
 `prog.c` 文件是一个极其简单的 C 程序，其自身功能微乎其微。它的主要作用是作为 Frida 单元测试的一部分，用于验证 Frida 在处理非交叉编译场景时的基本功能，例如 attach 到进程、注入代码等。 虽然它本身不涉及复杂的逆向工程或底层知识，但它是 Frida 工具链中不可或缺的一环，用于确保 Frida 的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/50 noncross options/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,10 +115,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

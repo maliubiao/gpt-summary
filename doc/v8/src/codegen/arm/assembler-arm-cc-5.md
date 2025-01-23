@@ -141,7 +141,7 @@ const sum = addArrays(a, b); // sum 将会是 [6, 8, 10, 12]
 
 总而言之，`v8/src/codegen/arm/assembler-arm.cc` 是 V8 在 ARM 平台上实现高性能 JavaScript 执行的关键组成部分，它负责生成高效的机器码，特别是利用了 ARM 的 NEON SIMD 扩展来加速数据并行计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,8 +149,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 its >= shift);
       imm6 = 2 * size_in_bits - shift;
       if (is_unsigned) op_encoding |= B24;
@@ -1027,8 +1029,4 @@ LoadStoreLaneParams::LoadStoreLaneParams(MachineRepresentation rep,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
-
 ```

@@ -133,7 +133,7 @@ console.timeEnd("buildLargeString");
 
 这段代码是 V8 编译器中用于识别和优化 JavaScript 中字符串构建模式的关键组件。 它通过分析代码的中间表示，识别连续的字符串连接操作，并尝试将其转换为更高效的内部表示，从而提升字符串拼接的性能。它关注字面量字符串、字符串的字节表示，并进行控制流分析以确保优化的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/string-builder-optimizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/string-builder-optimizer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -954,7 +956,4 @@ void StringBuilderOptimizer::VisitNode(Node* node, BasicBlock* block) {
       // kBeginConcat, and increment the {string_builder_count_}. The goal of
       // the HasConcatOrPhiUse is mainly to avoid incrementing
       // {string_builder_count_} too often for things that are obviously
-"""
-
-
 ```

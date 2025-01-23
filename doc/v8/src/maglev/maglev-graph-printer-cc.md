@@ -145,7 +145,7 @@ Block b2
 
 总而言之，`v8/src/maglev/maglev-graph-printer.cc` 是一个用于 V8 引擎内部调试和理解 Maglev 优化编译器的重要工具，它可以将复杂的内部表示以一种人类可读的方式呈现出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-printer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-printer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1071,7 +1073,4 @@ ProcessResult MaglevPrintingVisitor::Process(ControlNode* control_node,
         control_node->Cast<BranchControlNode>()->if_false();
 
     s
-"""
-
-
 ```

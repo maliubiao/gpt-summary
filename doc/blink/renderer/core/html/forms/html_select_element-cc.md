@@ -270,7 +270,7 @@ void HTMLSelectElement::Trace(Visitor* visitor) const { /* ... */ }
 
 **总而言之，`html_select_element.cc` 负责 `<select>` 元素在 Blink 渲染引擎中的核心行为和逻辑实现，包括状态管理、属性处理、选项管理、选择逻辑、与表单和渲染引擎的集成，以及与 JavaScript 的交互。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_select_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
@@ -1154,7 +1156,4 @@ void HTMLSelectElement::ResetToDefaultSelection(ResetReason reason) {
       (!first_enabled_option ||
        (first_enabled_option && !first_enabled_option->Selected()))) {
     SelectOption(first_enabled_opti
-"""
-
-
 ```

@@ -116,7 +116,7 @@ By following these steps, I can provide a comprehensive and accurate answer to t
 
 这部分测试主要关注 `PictureInPictureControllerImpl` 在特定条件下的行为，特别是与创建画中画窗口相关的逻辑。它验证了安全性和稳定性方面的要求，例如需要用户手势、防止崩溃，以及确保新创建的画中画窗口能够正确继承原始文档的关键属性，如兼容模式和自动播放标记。 这些测试确保了 Document Picture-in-Picture API 在 Chrome 客户端环境下的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/document_picture_in_picture/picture_in_picture_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 trollerTestWithChromeClient,
        CreateDocumentPictureInPictureWindowThrowsExceptionWhenDomWindowNull) {
   auto& document = GetDocument();
@@ -260,8 +262,4 @@ TEST_F(PictureInPictureControllerTestWithChromeClient,
 #endif  // !BUILDFLAG(TARGET_OS_IS_ANDROID)
 
 }  // namespace blink
-
-"""
-
-
 ```

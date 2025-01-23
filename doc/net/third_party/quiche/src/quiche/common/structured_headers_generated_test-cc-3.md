@@ -163,7 +163,7 @@ Imagine a user reports an issue where a website feature relying on a specific HT
 
 This section of `structured_headers_generated_test.cc` primarily functions as a comprehensive suite of unit tests for the structured header parsing logic in Chromium's network stack. It covers various valid and invalid syntax scenarios for **lists**, **lists of lists**, **parameterized lists**, and the beginning of **dictionaries**, with a strong emphasis on validating the allowed characters in dictionary keys. These tests ensure the robustness and correctness of the parser, which is crucial for JavaScript and other parts of the browser to correctly interpret and utilize information conveyed through structured HTTP headers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -171,9 +171,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    14,
+### 源代码
+```cpp
+14,
      {{{{{Integer(1), {}}, {Integer(2), {}}}, {}},
        {{{Integer(42), {}}, {Integer(43), {}}}, {}}}},
      nullptr},
@@ -1068,7 +1070,4 @@ const struct DictionaryTestCase {
      "aua=1",
      5,
      {Dictionary{{{"aua", {Integ
-"""
-
-
 ```

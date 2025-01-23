@@ -239,7 +239,7 @@ else:
 
 `bionic/libc/kernel/uapi/linux/nfsd/stats.h` 是一个非常基础的头文件，主要为内核空间的 NFS 服务器代码提供宏定义和依赖的类型定义。它本身不包含 libc 函数或直接参与动态链接。理解其功能需要将其放在 Android 作为 NFS 服务器的背景下考虑。通过 Frida hook 监控其使用通常需要在内核层面进行，需要一定的内核调试知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nfsd/stats.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -263,7 +265,4 @@ Prompt:
 #include <linux/nfs4.h>
 #define NFSD_USAGE_WRAP (HZ * 1000000)
 #endif
-
-"""
-
 ```

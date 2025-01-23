@@ -132,7 +132,7 @@ Frida 可以基于这个逻辑进行更复杂的推理和操作，例如：
 
 总而言之，虽然 `file.c` 中的 `func2` 函数非常简单，但它为 Frida 提供了一个基本的 Instrumentation 目标，用于测试和演示 Frida 的核心功能。逆向工程师可以通过各种方式使用 Frida 与这样的函数交互，从而深入了解目标程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/47 same file name/d2/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,10 +140,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void) { return 42; }
-
-"""
-
 ```

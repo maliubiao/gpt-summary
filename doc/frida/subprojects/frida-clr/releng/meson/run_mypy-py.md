@@ -126,7 +126,7 @@ Initially, I might have focused too much on the direct reverse engineering aspec
 
 总结来说，用户直接运行这个脚本通常是为了辅助 Frida 的开发和维护工作，而不是作为逆向分析的直接步骤。它是保证 Frida 代码质量的一个重要环节，最终会提升 Frida 作为逆向工具的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/run_mypy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from pathlib import Path
@@ -298,7 +300,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

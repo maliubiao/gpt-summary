@@ -145,15 +145,17 @@ void SomeCppLogic() {
 
 总结来说，`v8/src/heap/cppgc-js/cross-heap-remembered-set.h` 定义了一个关键的内部机制，用于维护 V8 堆和 cppgc 堆之间的引用关系，确保垃圾回收的正确性，并支持 JavaScript 与 V8 内部 C++ 对象的互操作。用户虽然不直接使用它，但理解其功能有助于理解 V8 的内存管理和跨语言交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cross-heap-remembered-set.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/cross-heap-remembered-set.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ void CrossHeapRememberedSet::Visit(Isolate& isolate, F f) {
 }  // namespace v8::internal
 
 #endif  // V8_HEAP_CPPGC_JS_CROSS_HEAP_REMEMBERED_SET_H_
-
-"""
-
 ```

@@ -165,14 +165,16 @@ This systematic approach, starting with the file path and progressively analyzin
 
 `blink/common/frame/view_transition_state_mojom_traits.cc` 是 Chromium 浏览器 Blink 渲染引擎中一个关键的 C++ 文件，它负责定义视图转换状态数据的序列化和反序列化逻辑，使得浏览器能够在不同进程之间安全地传递这些信息，从而实现平滑的页面过渡效果。它与 JavaScript、HTML 和 CSS 紧密相关，因为它处理的数据直接反映了页面元素的结构、样式和状态。理解这个文件的功能有助于深入理解视图转换 API 的内部实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/view_transition_state_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ bool StructTraits<blink::mojom::ViewTransitionStateDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

@@ -167,7 +167,7 @@ int result = max_int + 1; // 发生溢出，result 的值会变成负数
 
 这部分代码主要集中在 **实现 S390 架构中大量的整数和浮点运算、加载、存储以及控制流指令的模拟**。它涵盖了基本的算术运算、逻辑运算、数据搬运以及条件分支等功能，是整个模拟器中核心的执行逻辑部分。这些指令的模拟为 V8 引擎在 s390 平台上运行 JavaScript 代码提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/s390/simulator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e size");
   bool some_zero = false;
   bool all_zero = true;
@@ -1389,9 +1391,4 @@ EVALUATE(BXH) {
 
   // update contents of register in r1 with the new incremented value
   set_register(r1, r1_val);
-
-
-"""
-
-
 ```

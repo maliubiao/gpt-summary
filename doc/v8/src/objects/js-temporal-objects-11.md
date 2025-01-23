@@ -124,12 +124,14 @@ const startOfToday = zonedDateTime1.startOfDay();
 
 总而言之，`js-temporal-objects.cc` 的第 12 部分是 V8 引擎中实现 `Temporal.ZonedDateTime` 核心逻辑的关键组成部分，它通过 C++ 代码赋予了 JavaScript 中 `Temporal.ZonedDateTime` 对象各种强大的日期和时间操作能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第12部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eTimeResult be ? InterpretTemporalDateTimeFields(calendar,
   // fields, options).
   temporal::DateTimeRecord date_time_result;
@@ -1573,7 +1575,4 @@ Handle<BigInt> RoundTemporalInstant(Isolate* isolate, Handle<BigInt> ns,
   // 8. Return ! RoundNumberToIncrementAsIfPositive(ℝ(ns), incrementNs,
   // roundingMode).
   return RoundNumberToIncrementAsIfPositive(isol
-"""
-
-
 ```

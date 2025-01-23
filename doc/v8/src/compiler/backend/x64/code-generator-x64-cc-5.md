@@ -156,7 +156,7 @@ While this code is part of the compiler, it reflects potential errors users coul
 
 This section of `v8/src/compiler/backend/x64/code-generator-x64.cc` is responsible for **generating x64 machine code for a specific set of SIMD floating-point and integer operations.** It takes intermediate representation instructions as input and emits the corresponding x64 assembly instructions, taking into account different vector lengths, data types, and required CPU features. This code is crucial for efficiently implementing JavaScript features that leverage SIMD capabilities, such as those found in Typed Arrays and WebAssembly.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/code-generator-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 4x4Pmax: {
       YMMRegister dst = i.OutputSimd256Register();
       CpuFeatureScope avx_scope(masm(), AVX);
@@ -1256,8 +1258,4 @@ Prompt:
       break;
     }
     case kX64I64x2UConvertI32x4Low: {
-   
-"""
-
-
 ```

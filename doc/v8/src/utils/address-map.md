@@ -92,11 +92,13 @@ obj.toString(); // 访问 Object.prototype.toString
 
 `v8/src/utils/address-map.cc` 中的 `RootIndexMap` 类是 V8 引擎内部用于高效管理和查找重要根对象的关键组件。它通过维护一个地址到根索引的映射，为 V8 的各种核心功能（如原型链查找、垃圾回收、快照等）提供了底层的支持和优化，从而间接地影响着 JavaScript 代码的执行效率和行为。它是一个纯粹的 V8 内部实现，JavaScript 代码无法直接访问或操作它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/address-map.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -142,7 +144,4 @@ bool RootIndexMap::Lookup(Address obj, RootIndex* out_root_list) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

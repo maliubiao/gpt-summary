@@ -97,11 +97,13 @@ runWasmSimdTest();
 
 虽然上面的 JavaScript 代码没有直接展示 shuffle 操作，但当你使用 WebAssembly 的 SIMD 指令进行类似的操作时，Turboshaft 编译器会在后台进行优化，以提高性能。 这个 C++ 测试文件确保了这些优化能够正确地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/turboshaft/wasm-simd-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ TEST_F(WasmSimdTest, AlmostPairwiseF32x4AddReduce) {
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

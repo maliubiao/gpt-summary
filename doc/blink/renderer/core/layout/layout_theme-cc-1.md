@@ -99,15 +99,17 @@ My thinking process for analyzing the `LayoutTheme.cc` code snippet went through
 
 `LayoutTheme.cc` 在 Blink 渲染引擎中扮演着重要的角色，它负责为各种 UI 控件提供基础的、平台相关的视觉样式。它与 HTML 的结构、CSS 的样式规则以及 JavaScript 的动态行为都有着密切的联系。理解其工作原理有助于开发者更好地理解浏览器如何渲染网页，并能更有效地进行 CSS 定制和处理跨浏览器兼容性问题。 其中的系统强调色支持还体现了浏览器在用户体验和隐私安全之间所做的权衡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_theme.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::AdjustControlPartStyle(ComputedStyleBuilder& builder) {
   // Call the appropriate style adjustment method based off the appearance
   // value.
@@ -189,8 +191,4 @@ Color LayoutTheme::GetAccentColorText(mojom::blink::ColorScheme color_scheme,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

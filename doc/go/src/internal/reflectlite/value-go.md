@@ -218,7 +218,7 @@ func main() {
 
 `go/src/internal/reflectlite/value.go` 是 Go 语言反射机制的关键组成部分，它定义了 `Value` 类型以及用于检查和操作 Go 语言值的核心方法。理解其功能和限制对于进行元编程和动态操作 Go 语言对象至关重要。由于是 "lite" 版本，它可能不包含完整 `reflect` 包的所有功能，开发者在使用时需要注意这一点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/reflectlite/value.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -706,9 +708,4 @@ var dummy struct {
 	b bool
 	x any
 }
-
-"""
-
-
-
 ```

@@ -118,15 +118,17 @@ let message = greet("World");
 
 `v8/src/snapshot/object-deserializer.cc` 是 V8 快照机制的核心组件，负责将持久化的对象数据恢复到运行时的堆中。它对于 V8 的快速启动至关重要，并且与 JavaScript 代码的执行有着直接的联系。理解它的功能有助于我们更好地理解 V8 的内部工作原理以及与快照相关的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/object-deserializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/object-deserializer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ MaybeDirectHandle<HeapObject> OffThreadObjectDeserializer::Deserialize(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

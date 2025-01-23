@@ -178,7 +178,7 @@ MemorySanitizer 的行为可以通过一些环境变量进行配置，而不是�
 
 总而言之，`go/src/runtime/msan/msan.go` 这段代码是 Go 语言运行时为了集成 MemorySanitizer 这个强大的内存错误检测工具而实现的底层接口。它通过 CGO 调用 MSan 的 C 接口，在 Go 程序的运行时进行内存状态的监控，以帮助开发者发现潜在的未初始化内存读取错误。要使用这个功能，需要在编译时显式地指定 `msan` 构建标签。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/msan/msan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ void __msan_free_go(void *addr, uintptr_t sz) {
 }
 */
 import "C"
-
-"""
-
-
-
 ```

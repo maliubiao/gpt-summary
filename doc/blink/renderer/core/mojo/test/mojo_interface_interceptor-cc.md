@@ -162,14 +162,16 @@ interceptor.stop();
 
 总而言之，`MojoInterfaceInterceptor` 是一个强大的测试工具，允许开发者深入了解和控制 Blink 中 Mojo 接口的绑定过程。理解其作用域、生命周期和事件机制对于有效使用它至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mojo/test/mojo_interface_interceptor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -355,7 +357,4 @@ void MojoInterfaceInterceptor::DispatchInterfaceRequestEvent(
 }
 
 }  // namespace blink
-
-"""
-
 ```

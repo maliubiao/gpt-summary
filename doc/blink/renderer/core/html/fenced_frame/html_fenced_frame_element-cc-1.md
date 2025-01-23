@@ -127,15 +127,17 @@ By following this systematic approach, including the review and refinement stage
 
 `HTMLFencedFrameElement::FencedFrameDelegate` 是 `<fencedframe>` 元素的幕后管理者，负责处理其创建、导航、生命周期管理以及与浏览器底层渲染机制的交互。它通过严格的检查确保 fenced frame 能够在安全和合规的环境下创建，并通过 Mojo 通信与浏览器进程协同工作，实现 fenced frame 的核心功能。它也负责在出现错误或不符合条件的情况下向开发者提供警告信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/fenced_frame/html_fenced_frame_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 FencedFrameDelegate
 
 // static
@@ -300,8 +302,4 @@ void HTMLFencedFrameElement::FencedFrameDelegate::Trace(
 // END HTMLFencedFrameElement::FencedFrameDelegate
 
 }  // namespace blink
-
-"""
-
-
 ```

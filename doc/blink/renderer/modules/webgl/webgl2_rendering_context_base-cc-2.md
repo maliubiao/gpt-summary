@@ -160,7 +160,7 @@ Essentially, I performed a static code analysis, combined with my knowledge of W
 
 总而言之，这段代码是 WebGL 2 规范中纹理上传和定义功能的核心实现，它负责将来自各种 Web 内容的数据转化为 GPU 可以理解的纹理格式，并在过程中进行必要的错误处理和状态管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl2_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -168,9 +168,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
-     exception_state);
+### 源代码
+```cpp
+exception_state);
 }
 
 void WebGL2RenderingContextBase::texSubImage2D(
@@ -1048,7 +1050,4 @@ void WebGL2RenderingContextBase::compressedTexSubImage3D(
     return;
   if (bound_pixel_unpack_buffer_) {
     SynthesizeGLError(GL_INVALID_OPERATION, "compresse
-"""
-
-
 ```

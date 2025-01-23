@@ -171,15 +171,17 @@ SMIL 动画会改变 SVG 元素的属性，这些属性的改变最终会影响�
 
 通过以上步骤，开发者可以深入了解浏览器如何处理 SVG 动画，并定位到 `SMILAnimationSandwich` 在动画管理和应用过程中可能出现的问题。例如，如果发现排序后的动画顺序不正确，可能是优先级比较的逻辑有问题；如果发现某些本应活跃的动画没有被包含在 `active_` 中，可能是 `IsContributing()` 的逻辑错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/animation/smil_animation_sandwich.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All rights reserved.
  *
@@ -315,7 +317,4 @@ void SMILAnimationSandwich::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

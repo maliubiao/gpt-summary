@@ -87,7 +87,7 @@ Let's break down the thought process for analyzing the provided (empty) Python f
 
 尽管 `source.py` 文件本身是空的，但在 Frida 的测试框架中，它很可能是一个占位符或一个用于特定测试目的的空模块。理解其上下文和它所处的测试用例的目标，可以帮助我们了解 Frida 如何与 Vala 共享库交互，即使在没有实际源代码的情况下。 开发者在调试与 Vala 和共享库相关的 Frida 功能时，可能会通过浏览源代码到达这个文件，并需要结合其他的构建和测试脚本来理解其作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/vala/7 shared library/lib/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,9 +95,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

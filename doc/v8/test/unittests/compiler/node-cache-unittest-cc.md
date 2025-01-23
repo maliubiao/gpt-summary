@@ -141,15 +141,17 @@ console.log(add(2, 7)); // 输出 29
 
 总而言之，`v8/test/unittests/compiler/node-cache-unittest.cc` 通过一系列测试用例，确保 V8 编译器的 `NodeCache` 组件能够正确有效地缓存常量节点，这是 V8 编译优化中一个重要的环节，能够提升编译效率和降低内存使用。 尽管用户通常不会直接与 `NodeCache` 交互，但其功能对于提高最终生成的 JavaScript 代码的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-cache-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/node-cache-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,7 +313,4 @@ TEST_F(NodeCacheTest, GetCachedNodes_int64) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

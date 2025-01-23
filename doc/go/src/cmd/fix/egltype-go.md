@@ -146,15 +146,17 @@ go fix -name egl,eglconf mycode.go
 
 这段代码的核心作用是帮助开发者迁移使用 EGL 库的 Go 代码，使其适应 `EGLDisplay` 和 `EGLConfig` 类型定义的变化，避免因错误的 `nil` 初始化而导致程序错误。它体现了 `go fix` 工具在 Go 语言生态系统中的重要作用，即帮助开发者平滑过渡到新的语言特性或标准库的更新。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/fix/egltype.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -215,9 +217,4 @@ func eglfixConfig(f *ast.File) bool {
 		return s == "C.EGLConfig"
 	})
 }
-
-"""
-
-
-
 ```

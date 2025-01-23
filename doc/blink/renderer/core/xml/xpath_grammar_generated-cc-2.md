@@ -250,7 +250,7 @@ LocationPath {
 
 `xpath_grammar_generated.cc` 文件的第三部分是 XPath 语法解析器实现的关键组成部分，负责处理解析过程中的错误、成功和失败状态，进行资源清理，并包含了驱动解析器的核心数据表。 它在浏览器处理 JavaScript 中执行的 XPath 查询时发挥着至关重要的作用。理解这部分代码的功能有助于理解 Blink 引擎如何解析和处理 XPath 表达式，并能帮助开发者调试与 XPath 相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xpath_grammar_generated.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -258,8 +258,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 NULLPTR, YY_MOVE (yylhs));
     }
     goto yynewstate;
@@ -667,9 +669,4 @@ NULLPTR, YY_MOVE (yylhs));
 #line 2021 "third_party/blink/renderer/core/xml/xpath_grammar_generated.cc"
 
 #line 498 "third_party/blink/renderer/core/xml/xpath_grammar.y"
-
-
-"""
-
-
 ```

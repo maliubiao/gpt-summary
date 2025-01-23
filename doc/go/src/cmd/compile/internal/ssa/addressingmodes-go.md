@@ -120,15 +120,17 @@ v6 = MOVQloadidx1 v1, v2, $3   // 使用基地址 + 索引 * 比例 + 偏移量 
 
 `addressingModes` 函数是Go编译器SSA优化阶段的关键组成部分，它通过合并地址计算和内存访问操作，利用目标架构提供的复杂寻址模式，来提升生成代码的效率。这是一种底层的优化，对Go开发者是透明的，但了解其原理有助于编写出更易于编译器优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/addressingmodes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -647,9 +649,4 @@ var combine = map[[2]Op]Op{
 	[2]Op{OpS390XFMOVDstore, OpS390XMOVDaddridx}: OpS390XFMOVDstoreidx,
 	[2]Op{OpS390XFMOVSstore, OpS390XMOVDaddridx}: OpS390XFMOVSstoreidx,
 }
-
-"""
-
-
-
 ```

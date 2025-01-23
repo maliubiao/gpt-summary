@@ -259,7 +259,7 @@ sys.stdin.read()
 
 这个 Frida 示例提供了一个基本的框架，你可以根据需要进一步扩展，例如 hook 接收数据的函数 (`recvfrom`)，或者解析更详细的 ARP 头部字段。通过这种方式，可以深入了解 Android 系统如何使用 `if_ether.h` 中定义的结构体进行网络通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netinet/if_ether.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: if_ether.h,v 1.34 2007/12/25 18:33:46 perry Exp $	*/
 
 /*
@@ -382,7 +384,4 @@ struct	ether_arp {
 #endif /* __USE_BSD */
 
 #endif /* !_NET_IF_ETHER_H_ */
-
-"""
-
 ```

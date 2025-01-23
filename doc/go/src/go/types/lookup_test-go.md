@@ -207,7 +207,7 @@ if publicFieldSelection != nil {
 
 另一个常见的错误是**没有正确理解 `pkg` 参数的作用**。 当类型定义或字段/方法的类型来自其他包时，`pkg` 参数用于提供上下文信息，帮助 `LookupFieldOrMethod` 正确解析类型信息。 如果 `pkg` 不正确，可能会导致查找失败或得到不正确的结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/lookup_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -215,8 +215,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func BenchmarkLookupFieldOrMethod(b *testing.B) {
 		lookup()
 	}
 }
-
-"""
-
-
-
 ```

@@ -92,7 +92,7 @@ By following these steps, the analysis addresses all aspects of the prompt, conn
 
 尽管 `trivial.cc` 代码本身非常简单，但它在 Frida-Gum 的开发和测试流程中扮演着重要的角色。它验证了 Frida-Gum 的 C++ 支持是否正常工作，为更复杂的动态插桩和逆向任务奠定了基础。理解这个简单的测试用例有助于理解 Frida-Gum 的基本架构和工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/2 cpp/trivial.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,15 +100,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(void) {
   std::cout << "C++ seems to be working." << std::endl;
   return 0;
 }
-
-"""
-
 ```

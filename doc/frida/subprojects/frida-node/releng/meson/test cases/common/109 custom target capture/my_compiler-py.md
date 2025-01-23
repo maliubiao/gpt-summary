@@ -109,7 +109,7 @@ By following these steps and engaging in self-correction, we can arrive at a com
 
 通过这个过程，用户可以理解这个脚本的简单行为，以及它在测试 Frida 的自定义目标捕获功能时所扮演的角色。如果测试失败，用户可以通过修改输入文件、调整 Frida 的配置或修改插桩代码来尝试修复问题，并重新运行测试以验证修改是否有效。这个脚本本身作为一个简单的、可预测行为的“目标”，帮助开发者隔离和调试 Frida 框架的特定功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/109 custom target capture/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -133,7 +135,4 @@ if __name__ == '__main__':
         print('Malformed input')
         sys.exit(1)
     print('This is a binary output file.')
-
-"""
-
 ```

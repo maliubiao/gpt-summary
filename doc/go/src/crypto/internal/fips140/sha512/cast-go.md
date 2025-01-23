@@ -151,7 +151,7 @@ want := []byte{
 
 这段 `cast.go` 文件的核心功能是确保 SHA-512 算法在 FIPS 140 环境下的正确性，它通过注册一个自检函数，在特定的时机执行预定义的测试用例，并将结果与预期值进行比较。这是 Go 语言标准库中为了满足安全合规性要求而采取的一种措施。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha512/cast.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -159,8 +159,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -197,9 +199,4 @@ func init() {
 		return nil
 	})
 }
-
-"""
-
-
-
 ```

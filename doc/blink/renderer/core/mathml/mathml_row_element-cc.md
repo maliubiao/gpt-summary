@@ -153,15 +153,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`mathml_row_element.cc` 是 Blink 引擎中处理 MathML 行容器的核心组件，负责其布局、对子元素变化的响应以及与 CSS 和 JavaScript 的交互，最终确保 MathML 内容能够正确地渲染在网页上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mathml/mathml_row_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ Node::InsertionNotificationRequest MathMLRowElement::InsertedInto(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -226,15 +226,17 @@ Last element: 50
 
 总而言之，`v8/include/v8-memory-span.h` 定义的 `MemorySpan` 类是 V8 引擎内部用于安全、方便地表示和操作连续内存块的重要工具，它与 JavaScript 的类型化数组等功能在概念上有所关联。理解其功能和潜在的错误用法有助于理解 V8 引擎的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-memory-span.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-memory-span.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -557,7 +559,4 @@ template <class T, std::size_t N>
 
 }  // namespace v8
 #endif  // INCLUDE_V8_MEMORY_SPAN_H_
-
-"""
-
 ```

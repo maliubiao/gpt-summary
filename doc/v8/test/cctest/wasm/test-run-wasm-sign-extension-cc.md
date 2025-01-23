@@ -158,15 +158,17 @@ console.log(dataView.getInt32(0)); // 输出 -128，DataView 默认会进行符�
 
 总而言之，`v8/test/cctest/wasm/test-run-wasm-sign-extension.cc` 是一个关键的测试文件，用于保证 V8 引擎正确实现了 WebAssembly 的符号扩展功能，这对于处理各种数据类型的 Wasm 程序至关重要。理解符号扩展的概念和潜在的错误对于编写可靠的底层代码（无论是 C++, JavaScript 或 Wasm）都是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-sign-extension.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-sign-extension.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ WASM_EXEC_TEST(I64SExtendI32) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -183,15 +183,17 @@ class MyObject {
 
 总而言之，`v8/include/cppgc/heap-state.h` 提供了一种观察 V8 垃圾回收器内部状态的机制，但由于其实验性质，应该谨慎使用，并意识到其可能在未来版本中被移除的风险。理解其功能可以帮助深入了解 V8 的内存管理机制，并间接地解释 JavaScript 代码的性能行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/heap-state.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/heap-state.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -274,7 +276,4 @@ class V8_EXPORT HeapState final {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_HEAP_STATE_H_
-
-"""
-
 ```

@@ -136,15 +136,17 @@ This iterative process of understanding the code, relating it to broader concept
 
 总而言之，`blink/renderer/core/xml/parser/xml_document_parser_scope.cc` 中的 `XMLDocumentParserScope` 类是 Blink 引擎在 XML 解析过程中管理上下文和错误处理的重要组成部分，它通过 RAII 机制确保了上下文的正确设置和清理，避免了潜在的错误和资源泄漏。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/parser/xml_document_parser_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -207,7 +209,4 @@ XMLDocumentParserScope::~XMLDocumentParserScope() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

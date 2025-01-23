@@ -91,11 +91,13 @@ function myFunction() {
 
 `char-predicates-unittest.cc` 文件是 V8 引擎的关键组成部分，它通过测试底层的字符判断函数，确保 JavaScript 引擎能够正确地解析和理解 JavaScript 代码的词法结构，包括识别空白符、换行符和合法的标识符。这些底层的判断逻辑直接影响了 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/strings/char-predicates-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TEST(CharPredicatesTest, SupplementaryPlaneIdentifiers) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

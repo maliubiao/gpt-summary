@@ -144,7 +144,7 @@ TESTCASE (create_and_destroy)
 
 总而言之，`instancetracker-fixture.c` 文件本身不是直接进行逆向操作的代码，而是 Frida 内部测试框架的一部分，用于确保 `GumInstanceTracker` 模块的功能正常。理解这个文件有助于理解 Frida 中用于跟踪对象实例的关键组件的工作原理，从而更好地利用 Frida 进行动态分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/instancetracker-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -196,7 +198,4 @@ test_instance_tracker_fixture_teardown (TestInstanceTrackerFixture * fixture,
 }
 
 #endif /* HAVE_WINDOWS */
-
-"""
-
 ```

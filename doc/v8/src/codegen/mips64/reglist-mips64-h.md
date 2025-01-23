@@ -182,15 +182,17 @@ console.log(result);
 
 总之，`v8/src/codegen/mips64/reglist-mips64.h` 是 V8 在 MIPS64 架构上进行代码生成和执行的关键组成部分，它定义了寄存器的使用约定，直接影响了 JavaScript 代码的执行效率和正确性。 开发者在与底层交互时，需要理解这些约定，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/reglist-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/reglist-mips64.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ const DoubleRegList kCallerSavedFPU = {f0,  f2,  f4,  f6,  f8,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_MIPS64_REGLIST_MIPS64_H_
-
-"""
-
 ```

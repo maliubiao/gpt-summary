@@ -211,15 +211,17 @@ func TestMyExecutable(t *testing.T) {
 
 因此，使用者需要理解这些测试代码的上下文，而不能简单地复制粘贴。他们应该参考测试代码的思想和方法，而不是直接使用测试函数本身。这个测试文件更多的是为了验证 `cgo` 和共享库功能的正确性，而不是作为通用的代码示例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testshared/shared_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1404,9 +1406,4 @@ func TestStd(t *testing.T) {
 	runWithEnv(t, "testing issue #58966", []string{"GOROOT=" + oldGOROOT},
 		filepath.Join(oldGOROOT, "bin", "go"), "run", "-linkshared", "-pkgdir="+tmpDir, "./issue58966/main.go")
 }
-
-"""
-
-
-
 ```

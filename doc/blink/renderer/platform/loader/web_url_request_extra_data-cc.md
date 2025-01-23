@@ -94,14 +94,16 @@ By following this structured approach, combining code analysis with understandin
 
 `WebURLRequestExtraData` 虽然代码简洁，但在 Chromium 的网络请求处理流程中扮演着重要的角色。它作为一个信息载体，将 blink 渲染引擎的一些关键决策和上下文信息传递给网络层，确保浏览器能够正确地加载、渲染和处理网页资源。它与 JavaScript、HTML 和 CSS 的关系是间接的，体现在它所存储的信息反映了这些技术产生的行为和状态。 理解它的功能有助于理解 Chromium 浏览器内部复杂的工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/web_url_request_extra_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -124,7 +126,4 @@ void WebURLRequestExtraData::CopyToResourceRequest(
 }
 
 }  // namespace blink
-
-"""
-
 ```

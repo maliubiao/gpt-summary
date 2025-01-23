@@ -116,11 +116,13 @@ console.log(multiply(4, 6));
 
 `baseline-batch-compiler.cc` 文件是 V8 引擎中实现 Baseline 编译器批量编译功能的核心组件。它通过管理编译任务、利用并发机制以及优化编译时机，有效地提升了 JavaScript 代码的编译效率，从而改善了 JavaScript 应用程序的性能。其目标是对 JavaScript 开发者透明的，但在后台默默地优化着代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-batch-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -516,7 +518,4 @@ void BaselineBatchCompiler::ClearBatch() {
 }  // namespace baseline
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

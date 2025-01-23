@@ -147,15 +147,17 @@ This部分代码主要负责 **WebMediaPlayerImpl** 实例的资源管理、后�
 
 总而言之，这部分 `WebMediaPlayerImpl` 的代码专注于媒体播放器的精细化管理，尤其是在资源优化和性能监控方面。它通过跟踪内存使用、根据页面可见性动态调整播放行为、记录详细的性能指标，以及与外部系统（如 WatchTimeReporter 和学习系统）集成，来提升媒体播放的效率和用户体验。同时，它也考虑了远程渲染等特殊场景，并为上层（JavaScript, HTML）提供了可靠的媒体播放基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_media_player_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ce_memory_usage
            << ", Demuxer: " << demuxer_memory_usage;
 
@@ -942,8 +944,4 @@ void WebMediaPlayerImpl::DidMediaMetadataChange() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

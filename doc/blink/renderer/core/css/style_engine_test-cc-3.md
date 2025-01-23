@@ -115,7 +115,7 @@ Ready to generate the response.
 
 总而言之，`style_engine_test.cc` 这个文件是 Blink 引擎中至关重要的组成部分，它通过大量的单元测试用例，全面地验证了样式引擎的各项核心功能。这些测试覆盖了 CSS 规则的解析和应用、样式计算、级联继承、伪类伪元素、Shadow DOM 以及各种特定 CSS 特性。它的存在确保了 Blink 引擎能够正确、高效地渲染网页样式，为用户提供一致且符合预期的浏览体验。 这些测试也帮助开发者理解样式引擎的行为，并有助于发现和预防在使用 HTML 和 CSS 时可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ).QuerySelector(AtomicString("div"));
   ASSERT_TRUE(div);
   div->SetInlineStyleProperty(CSSPropertyID::kColor, "green");
@@ -1056,7 +1058,4 @@ TEST_F(StyleEngineTest, PrintNoDarkColorScheme) {
             root->GetComputedStyle()->UsedColorScheme());
   EXPECT_EQ(
       Color::FromRGB(255, 0, 0),
-"""
-
-
 ```

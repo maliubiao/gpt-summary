@@ -87,12 +87,14 @@ Response: Let's break down the thought process for analyzing this C++ code snipp
 
 作为第四部分，这个文件主要关注 V8 解释器中一些相对深入的功能：如何按需生成源代码位置信息以优化性能，以及如何根据字节码指令选择正确的执行逻辑。这些测试确保了解释器的这些关键部分能够正确高效地工作，从而保证 JavaScript 代码的正确执行和良好的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/interpreter-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 pected_ptr);
   std::string actual(actual_ptr);
   CHECK_EQ(expected, actual);
@@ -163,8 +165,4 @@ TEST_F(InterpreterTest, InterpreterLookupNameOfBytecodeHandler) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

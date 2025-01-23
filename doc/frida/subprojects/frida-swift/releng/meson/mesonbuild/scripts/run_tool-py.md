@@ -157,7 +157,7 @@ Initially, I might have focused too much on the specifics of Frida. It's importa
 
 总而言之，`run_tool.py` 是 Frida 构建系统中一个通用的文件处理工具，它通过灵活的模式匹配和并行执行机制，简化了对源代码文件进行批量操作的过程。理解其功能和使用方式对于调试 Frida 构建过程和扩展其功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/run_tool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -225,7 +227,4 @@ def run_tool(name: str, srcdir: Path, builddir: Path, fn: T.Callable[..., subpro
         if futures:
             returncode = max(x.result().returncode for x in futures)
     return returncode
-
-"""
-
 ```

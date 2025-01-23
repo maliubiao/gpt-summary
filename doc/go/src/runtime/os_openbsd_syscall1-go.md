@@ -187,7 +187,7 @@ func main() {
 
 在这个例子中，开发者可能错误地认为 `runtime.Gosched()` 能让每个 `worker` Goroutine 在每次迭代后都让出 CPU，从而实现更“公平”的执行。但实际情况是，调度器的行为是复杂的，`runtime.Gosched()` 只能保证当前 Goroutine 让出，并不能保证其他特定 Goroutine 立即执行。 这可能导致某些 worker 执行得更多，而另一些执行得更少。 正确的做法是使用更合适的同步机制来协调 Goroutine 的行为，而不是依赖 `runtime.Gosched()` 来进行精细的控制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_openbsd_syscall1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -217,9 +219,4 @@ func osyield()
 func osyield_no_g() {
 	osyield()
 }
-
-"""
-
-
-
 ```

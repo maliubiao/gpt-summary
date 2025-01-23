@@ -158,14 +158,16 @@ console.log(sparseArray.lastIndexOf(undefined)); // 输出: -1 (空洞被跳过�
 
 总而言之，这段 Torque 代码是 V8 引擎中实现 `Array.prototype.lastIndexOf` 的核心逻辑，它考虑了性能优化、空洞处理以及严格相等等特性，确保了 JavaScript 中该方法的正确行为。 理解这段代码有助于深入了解 JavaScript 引擎的工作原理以及数组方法的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-lastindexof.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ transitioning javascript builtin ArrayPrototypeLastIndexOf(
   }
 }
 }
-
-"""
-
 ```

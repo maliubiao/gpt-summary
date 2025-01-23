@@ -127,11 +127,13 @@ When you set a breakpoint on the line `myFunction();` in your browser's DevTools
 
 **In essence, `transport.cc` acts as the silent but essential pipe through which the JavaScript developer can interact with and debug the inner workings of their WebAssembly code within the V8 engine using standard debugging tools.**  The JavaScript code itself doesn't directly call functions in `transport.cc`, but the entire debugging experience is built upon the communication channel it establishes and manages.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/transport.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -590,7 +592,4 @@ bool SocketTransport::SignalThreadEvent() {
 }  // namespace v8
 
 #undef SD_BOTH
-
-"""
-
 ```

@@ -169,7 +169,7 @@ By following these steps, I can systematically analyze the code, connect it to t
 
 总而言之，`frida-gumjs-example-windows.c` 是一个简洁但功能完整的 Frida 入门示例，它演示了动态 instrumentation 的基本原理和实现方式，对于学习 Frida 和进行 Windows 平台的逆向分析非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/devkit-assets/frida-gumjs-example-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * To build, set up your Release configuration like this:
  *
@@ -270,7 +272,4 @@ on_message (const gchar * message,
 
   g_object_unref (parser);
 }
-
-"""
-
 ```

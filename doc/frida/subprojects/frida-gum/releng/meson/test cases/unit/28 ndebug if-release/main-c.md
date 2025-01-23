@@ -100,7 +100,7 @@ Let's break down the thought process for analyzing this simple C program and gen
 
 总而言之，这个简单的 `main.c` 文件虽然功能简单，但在软件开发和逆向工程领域有着重要的意义，它直接关联着程序的编译模式、优化策略和调试信息的开关。在 Frida 这样的动态插桩工具的上下文中，确保在不同的编译模式下功能的正确性至关重要，而这个单元测试用例正是为了验证这一点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/28 ndebug if-release/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -121,7 +123,4 @@ int main(void) {
 #endif
     return 0;
 }
-
-"""
-
 ```

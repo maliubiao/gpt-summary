@@ -137,11 +137,13 @@ ret
 
 `instruction-scheduler-riscv.cc` 文件定义了 V8 引擎在 RISC-V 架构上进行指令调度的规则和延迟信息。它不直接与 JavaScript 语法或高级特性交互，而是在编译器的后端层面，对生成的机器码进行优化，最终影响 JavaScript 代码的执行性能。它通过分析指令的特性（标志）和执行时间（延迟）来智能地调整指令顺序，以提升 JavaScript 代码在 RISC-V 处理器上的运行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-scheduler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1739,7 +1741,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

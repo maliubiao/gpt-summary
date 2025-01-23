@@ -121,11 +121,13 @@ animate();
 
 `default-platform.cc` 是 V8 引擎与操作系统交互的桥梁，它提供了运行 JavaScript 代码所需的基础设施，包括任务调度、线程管理、时间管理等。  JavaScript 中常见的异步编程模式和并发模型，如 `setTimeout`、`Web Workers`、`Promises`、`async/await` 等，都离不开 `DefaultPlatform` 提供的底层支持。 简单来说，`default-platform.cc` 就像是 JavaScript 这座高楼大厦的坚实地基。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-platform.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -432,7 +434,4 @@ void DefaultPlatform::NotifyIsolateShutdown(Isolate* isolate) {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

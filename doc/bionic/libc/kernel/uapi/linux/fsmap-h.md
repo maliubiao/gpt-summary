@@ -259,7 +259,7 @@ if (Process.platform === 'linux') {
 
 这个 Frida Hook 示例可以帮助你追踪 Android 系统或应用在底层如何使用与文件系统映射相关的内核接口。记住，直接使用这些接口通常是高级操作，一般情况下应用开发者不需要直接接触这些底层的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fsmap.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -315,7 +317,4 @@ struct fsmap_head {
 #define FMR_OWN_METADATA FMR_OWNER(0, 3)
 #define FS_IOC_GETFSMAP _IOWR('X', 59, struct fsmap_head)
 #endif
-
-"""
-
 ```

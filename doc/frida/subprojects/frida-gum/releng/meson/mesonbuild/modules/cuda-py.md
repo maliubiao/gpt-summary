@@ -180,7 +180,7 @@ By following this systematic process of understanding the code's context, dissec
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/cuda.py` 是 Frida 中用于支持 CUDA 构建和提供 CUDA 相关信息的关键模块。它通过提供确定最低驱动版本和生成 `nvcc` 架构标志的功能，帮助 Frida 用户更好地与使用了 CUDA 的目标程序进行交互和逆向分析。理解这个模块的功能对于进行 CUDA 相关的 Frida 开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -567,7 +569,4 @@ class CudaModule(NewExtensionModule):
 
 def initialize(interp: Interpreter) -> CudaModule:
     return CudaModule(interp)
-
-"""
-
 ```

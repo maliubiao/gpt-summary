@@ -196,7 +196,7 @@ func main() {
 
 这段代码（作为 `verify_test.go` 的一部分）的主要功能是 **定义了用于测试 Go 语言 `crypto/x509` 包中证书验证功能的各种测试用例和辅助函数**。它通过构建不同的证书链和验证选项，模拟各种成功和失败的场景，以确保证书验证逻辑的正确性和健壮性。 这部分代码的核心是 `verifyTests` 变量，它包含了多个 `verifyTest` 结构体的实例，每个实例代表一个特定的验证场景及其预期结果。同时，它定义了一些辅助函数，用于解析 PEM 格式的证书以及检查验证过程中出现的特定错误类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/verify_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1046,9 +1048,4 @@ YWRzLnZ0LmVkdTANBgkqhkiG9w0BAQsFAAOCAgEAD79kuyZbwQJCSBOVq9lA0lj4
 juHM7RMBfp2GuWvhk5F90OMKQCNdITva3oq4uQzt013TtwposYXq/d0Jobk6RHxj
 OJzRZVvEPsXLvKm8oLhz7/qgI8gcVeJFR9WgdNhjN1upn++EnABHUdDR77fgixuH
 F
-"""
-
-
-
-
 ```

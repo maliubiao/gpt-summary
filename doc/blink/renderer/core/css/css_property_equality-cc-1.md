@@ -122,7 +122,7 @@ Here's a plan to address the user's request:
 
 整个 `css_property_equality.cc` 文件的核心功能是为 Blink 渲染引擎提供了一个详细的、针对各种 CSS 属性的相等性比较机制。它通过一个大的 `switch` 语句，针对不同的 `CSSPropertyID` 执行特定的比较逻辑。这个文件对于浏览器的样式计算、动画和过渡效果的实现至关重要，确保了在各种场景下，CSS 属性值能够被准确地比较和处理。 虽然开发者通常不直接接触这个文件，但其背后的逻辑直接影响着网页的渲染结果和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_property_equality.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dent:
       return a.TextIndent() == b.TextIndent();
     case CSSPropertyID::kTextOverflow:
@@ -745,8 +747,4 @@ dent:
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

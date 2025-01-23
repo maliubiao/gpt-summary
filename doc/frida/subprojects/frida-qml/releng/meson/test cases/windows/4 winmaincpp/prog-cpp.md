@@ -166,7 +166,7 @@ if (Process.platform === 'windows') {
 
 总而言之，`prog.cpp` 虽然代码量很少，但它是一个在 Frida 的 Windows 测试框架中用于验证基本 hook 功能的关键文件。它代表了一个最简单的 Windows GUI 应用程序的入口点，是理解 Frida 如何与 Windows 进程交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/windows/4 winmaincpp/prog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<windows.h>
 
 class Foo;
@@ -193,7 +195,4 @@ WinMain(
     ((void)nCmdShow);
     return 0;
 }
-
-"""
-
 ```

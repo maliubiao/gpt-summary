@@ -142,7 +142,7 @@ function increment() {
 
 这段代码是 V8 编译器后端的重要组成部分，它专注于将高级语言的原子操作、成对整数运算和 SIMD 浮点运算转换为高效的 RISC-V 32 位机器指令。这使得 V8 能够在 RISC-V 32 位架构上高效地执行需要这些特性的 JavaScript 代码。它处理了从基本原子操作到更复杂的成对运算和 SIMD 指令的选择和生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 atomic_op.memory_rep == MemoryRepresentation::Uint32()) {
       opcode = word32_op;
     } else {
@@ -584,8 +586,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

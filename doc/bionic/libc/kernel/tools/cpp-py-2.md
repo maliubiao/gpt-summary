@@ -219,7 +219,7 @@ int good_var = 1;
 
 `cpp.py` 是 Android Bionic 构建过程中一个重要的 C 预处理器，它负责解析和转换内核头文件，根据条件编译指令和宏定义，生成适合用户空间使用的精简且一致的头文件。它通过词法分析、表达式求值、代码块解析和优化等步骤，实现了条件编译、结构体移除、变量/函数移除和 token 替换等功能，为后续的编译链接过程做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/tools/cpp.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,8 +231,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 t an endif since we started with an elif.
                     result += blocks[j:j+1]
                 i = j + 1
@@ -1130,8 +1132,4 @@ static int another_arr[5] = {
 
 if __name__ == '__main__':
     unittest.main()
-
-"""
-
-
 ```

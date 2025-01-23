@@ -148,14 +148,16 @@ By following these steps, iteratively refining the understanding, and focusing o
 
 `blink/renderer/platform/fonts/font_fallback_map.cc` 中的 `FontFallbackMap` 类是 Blink 渲染引擎中一个核心组件，负责高效地管理字体回退策略。它接收来自 CSS 和 HTML 的字体信息，并根据系统环境和已加载的字体，生成并缓存用于渲染文本的回退字体列表。虽然开发者不能直接操作这个类，但理解其功能有助于更好地编写 CSS 和 HTML，确保网页在各种环境下都能正确且美观地显示文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_fallback_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ void FontFallbackMap::FontCacheInvalidated() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

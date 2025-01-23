@@ -152,15 +152,17 @@ console.log(calculate(10)); // 预期输出：25 + 20 = 45
 
 总结来说，`v8/src/codegen/register-configuration.h` 定义了 V8 引擎在代码生成过程中使用的寄存器配置信息，是实现高效 JavaScript 执行的关键基础设施之一。它不直接是 Torque 源代码，并且与用户编写的 JavaScript 代码的底层执行息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/register-configuration.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/register-configuration.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -335,7 +337,4 @@ class V8_EXPORT_PRIVATE RegisterConfiguration {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_REGISTER_CONFIGURATION_H_
-
-"""
-
 ```

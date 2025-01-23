@@ -172,7 +172,7 @@ func main() {
 
 在这个例子中，尝试将使用 ISO 多项式计算器的状态反序列化到使用 ECMA 多项式的计算器将会（期望地）失败，因为它们的内部状态结构不同。这是使用者需要注意的地方。应该确保序列化和反序列化操作使用相同的多项式表。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/crc64/crc64_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -399,9 +401,4 @@ func BenchmarkCrc64(b *testing.B) {
 		bench(b, 0x777, 16<<10)
 	})
 }
-
-"""
-
-
-
 ```

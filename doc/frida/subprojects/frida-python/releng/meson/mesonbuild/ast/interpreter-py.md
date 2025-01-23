@@ -139,7 +139,7 @@ endif
 
 总结来说，`frida/subprojects/frida-python/releng/meson/mesonbuild/ast/interpreter.py` 中的 `AstInterpreter` 是一个用于静态分析 Meson 构建文件的解释器，它模拟构建过程但不执行实际的构建命令。它对于理解项目的构建结构、依赖关系和配置信息非常有价值，虽然这个特定的实现很多函数是空操作，这可能是为了特定的分析目的而设计的简化版本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/ast/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -590,7 +592,4 @@ class AstInterpreter(InterpreterBase):
 
     def evaluate_testcase(self, node: TestCaseClauseNode) -> Disabler | None:
         return Disabler(subproject=self.subproject)
-
-"""
-
 ```

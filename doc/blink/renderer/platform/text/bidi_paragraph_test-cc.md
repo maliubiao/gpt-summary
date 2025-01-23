@@ -104,14 +104,16 @@ This iterative process of examining the code, understanding its purpose, connect
 
 `bidi_paragraph_test.cc` 文件通过一系列单元测试，确保 `BidiParagraph` 类能够正确地分析和处理双向文本，包括自动判断段落方向以及将文本分解成逻辑片段。这对于 Chromium 浏览器正确渲染各种语言的网页至关重要，特别是那些包含混合书写方向的文本内容。理解这些测试用例有助于开发者更好地理解浏览器如何处理双向文本，从而避免常见的排版错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/bidi_paragraph_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ TEST_P(BaseDirectionTest, Data) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

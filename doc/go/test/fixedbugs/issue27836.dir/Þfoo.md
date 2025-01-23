@@ -133,15 +133,17 @@ func main() {
 
 理解 `defer` 的执行时机和顺序是正确使用它的关键。 另外，需要注意全局变量在多处被修改时可能带来的状态管理问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue27836.dir/Þfoo.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -159,9 +161,4 @@ func Þblix(x int) int {
 	defer func() { ÞbarV += 9 }()
 	return ÞbarV + x
 }
-
-"""
-
-
-
 ```

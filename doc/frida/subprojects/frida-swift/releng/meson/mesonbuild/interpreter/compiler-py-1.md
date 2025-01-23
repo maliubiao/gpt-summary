@@ -141,7 +141,7 @@ I need to carefully read the code snippets for each function to confirm my assum
 
 总而言之，这个文件在 Frida 的构建过程中扮演着关键角色，它确保了 Frida 能够根据不同的目标平台和编译器进行正确的编译和链接，这对于 Frida 能够在各种不同的系统上运行至关重要。 这些功能与逆向工程息息相关，因为理解目标程序的构建方式、使用的编译器特性，是进行有效逆向分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,9 +150,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- having it check this seems valuable
+### 源代码
+```python
+having it check this seems valuable
         has_header_kwargs: 'HeaderKW' = {
             'required': required,
             'args': kwargs['header_args'],
@@ -379,8 +381,4 @@ Prompt:
         # other targets, list outputs, etc.
         private_dir = os.path.relpath(self.interpreter.backend.get_target_private_dir(tg), self.interpreter.subdir)
         return [build.CustomTargetIndex(tg, os.path.join(private_dir, o)) for o in tg.outputs]
-
-"""
-
-
 ```

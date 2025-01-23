@@ -110,11 +110,13 @@ const byteArray = new Uint8Array([97, 98, 99]); // 对应 'abc' 的 ASCII 码
 
 `span.cc` 文件定义了用于比较内存片段的实用函数，这些片段很可能在 V8 引擎处理与 Chrome DevTools Protocol 交互时被用来表示 JavaScript 中的字符串、二进制数据或其他需要在底层 C++ 代码中进行比较的数据。它提供了一种高效且类型安全的方式来处理这些内存区域的比较操作。虽然 JavaScript 自身不直接使用 `span` 这样的概念，但 V8 内部会使用它来优化内存操作和数据传递。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/span.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ bool SpanEquals(span<char> x, span<char> y) noexcept {
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

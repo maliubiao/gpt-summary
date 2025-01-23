@@ -131,14 +131,16 @@ Now, let's construct the detailed answer based on these observations.
 
 总而言之，`resize_observer_test.cc` 文件通过一系列单元测试，全面验证了 Blink 引擎中 `ResizeObserver` API 的实现是否正确和健壮，并覆盖了与 JavaScript、HTML 和 CSS 交互的各种场景。 这些测试也间接地揭示了用户在使用 `ResizeObserver` API 时可能遇到的常见问题和需要注意的地方。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/resize_observer/resize_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ TEST_F(ResizeObserverUnitTest, TestMemoryLeaks) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

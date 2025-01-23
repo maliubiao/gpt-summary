@@ -126,14 +126,16 @@ Let's break down the thought process for analyzing this C++ code and generating 
 
 总而言之，`layout_list_item.cc` 文件中的 `LayoutListItem` 类是 Blink 渲染引擎中处理列表项布局和渲染的关键组件，它与 HTML 的 `<li>` 元素紧密关联，并根据 CSS 样式规则来呈现列表标记，同时也会响应 JavaScript 对列表结构的动态修改。理解其功能有助于深入理解浏览器如何渲染列表。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/list/layout_list_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ const LayoutObject* LayoutListItem::FindSymbolMarkerLayoutText(
 }
 
 }  // namespace blink
-
-"""
-
 ```

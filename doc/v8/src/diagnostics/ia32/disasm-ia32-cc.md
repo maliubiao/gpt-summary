@@ -105,7 +105,7 @@ Here's a breakdown of the thought process to generate the answer:
 
    正如前面总结的，这部分代码主要负责 **IA32 指令的识别和基本的操作数解析框架的建立**。它定义了用于存储指令信息的数据结构 (`ByteMnemonic`, `InstructionDesc`) 和查找表 (`InstructionTable`)，并实现了 `DisassemblerIA32` 类的部分功能，包括操作数格式化的辅助方法和对 VEX 前缀的处理。 核心的指令解码和反汇编流程很可能在后续的部分中实现。  简单来说，**这部分搭建了反汇编 IA32 代码的基础设施**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ia32/disasm-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/ia32/disasm-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,8 +113,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1088,8 +1090,4 @@ int DisassemblerIA32::AVXInstruction(uint8_t* data) {
         current += PrintRightXMMOperand(current);
         break;
       case 0x5D:
-
-"""
-
-
 ```

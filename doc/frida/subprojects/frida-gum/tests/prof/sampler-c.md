@@ -207,7 +207,7 @@ Finally, I organize the information gathered in the previous steps into a clear 
 
 总而言之，`sampler.c` 是 Frida Gum 库中采样器功能的单元测试文件，它不仅验证了这些采样器的正确性，也为用户理解和使用这些功能提供了宝贵的参考。通过分析这些测试用例，可以深入了解 Frida 的采样机制，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/prof/sampler.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2021 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -440,7 +442,4 @@ nop_function_b (void)
 {
   dummy_variable_to_trick_optimizer -= 7;
 }
-
-"""
-
 ```

@@ -129,7 +129,7 @@ By following this systematic thought process, starting with the code itself and 
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/test cases/frameworks/22 gir link order/get-prgname/get-prgname.c` 这个文件是一个简单的 C 代码片段，其核心功能是使用 GLib 库获取当前进程的程序名称。虽然功能简单，但在 Frida 动态分析工具的上下文中，它对于识别目标进程和验证 Frida 的功能至关重要。了解其背后的原理和潜在的使用错误，有助于开发者更好地使用 Frida 进行逆向分析和动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/22 gir link order/get-prgname/get-prgname.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "get-prgname.h"
 
 #include <glib.h>
@@ -147,7 +149,4 @@ const char *get_prgname_get_name (void)
 {
   return g_get_prgname ();
 }
-
-"""
-
 ```

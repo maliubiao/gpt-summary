@@ -293,7 +293,7 @@ session.then(() => {
 
 总而言之，`bionic/libc/kernel/uapi/linux/ioam6_genl.h` 定义了与 Linux 内核 `IOAM6` 模块交互的接口，它对于理解 Android 系统中可能涉及的网络监控、资源管理或性能分析的底层机制非常重要。虽然开发者通常不会直接使用它，但理解其定义有助于理解 Android 系统更深层次的运作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ioam6_genl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -304,8 +304,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -356,7 +358,4 @@ enum ioam6_event_attr {
 };
 #define IOAM6_EVENT_ATTR_MAX (__IOAM6_EVENT_ATTR_MAX - 1)
 #endif
-
-"""
-
 ```

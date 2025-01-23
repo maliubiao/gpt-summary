@@ -133,7 +133,7 @@ Finally, the information needs to be structured logically, with clear headings a
 
 总而言之，这个 `app.c` 文件是一个精心设计的测试用例，用于验证 Frida 在处理涉及多个库的场景下的能力。它简洁明了，方便开发者理解和使用 Frida 进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/55 dedup compiler libs/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <liba.h>
 #include <libb.h>
@@ -156,7 +158,4 @@ main(void)
   printf("end value = %d\n", liba_get());
   return 0;
 }
-
-"""
-
 ```

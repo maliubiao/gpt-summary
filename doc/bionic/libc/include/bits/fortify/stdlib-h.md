@@ -332,7 +332,7 @@ session.detach()
 
 总结来说，`bionic/libc/include/bits/fortify/stdlib.handroid` 是 Bionic C 库中用于编译时安全检查的一个重要组成部分，它通过静态分析帮助开发者尽早发现 `realpath` 函数的错误使用，从而提高 Android 平台的安全性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/fortify/stdlib.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -343,8 +343,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -392,7 +394,4 @@ char* _Nullable realpath(const char* _Nonnull path, char* _Nullable resolved)
 
 #undef __PATH_MAX
 #endif /* defined(__BIONIC_FORTIFY) */
-
-"""
-
 ```

@@ -128,15 +128,17 @@ By following this systematic process of code analysis, understanding the context
 
 因此，虽然用户不直接与这个测试文件交互，但他们的日常网络使用会触发 Chromium 网络栈的运行，如果底层组件（如 `NetworkID`）存在问题，最终会影响用户体验，并引导开发者进行调试和修复，其中就包括运行和检查相关的单元测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/network_id_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ TEST(NetworkIDTest, TestSerialize) {
 }  // namespace
 
 }  // namespace net::nqe::internal
-
-"""
-
 ```

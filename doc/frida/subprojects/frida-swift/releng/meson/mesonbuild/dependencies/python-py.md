@@ -163,7 +163,7 @@ By following this structured thought process, I could effectively analyze the co
 
 总之，这个 Python 文件是 frida-swift 构建过程中至关重要的一部分，它负责定位和配置 Python 依赖，确保 frida-swift 能够正确地与 Python 运行时环境进行交互。理解其功能和工作原理对于调试 frida-swift 的构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/dependencies/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 The Meson development team
 
@@ -604,7 +606,4 @@ packages['numpy'] = numpy_factory = DependencyFactory(
     [DependencyMethods.PKGCONFIG, DependencyMethods.CONFIG_TOOL],
     configtool_class=NumPyConfigToolDependency,
 )
-
-"""
-
 ```

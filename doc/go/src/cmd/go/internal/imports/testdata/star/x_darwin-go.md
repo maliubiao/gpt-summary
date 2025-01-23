@@ -155,21 +155,18 @@ package xxxx
 
 总结来说，`go/src/cmd/go/internal/imports/testdata/star/x_darwin.go` 是 Go 工具链自身测试的一部分，用于确保在 Darwin 平台上通配符导入功能按照预期工作。它通过声明预期的导入结果来驱动测试用例。普通 Go 开发者无需直接操作此类文件，但理解通配符导入的特性和潜在问题是有益的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/star/x_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package xxxx
 
 import "import3"
-
-"""
-
-
-
 ```

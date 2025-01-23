@@ -117,7 +117,7 @@ self.build_targets[tname] = t
 
 当用户在 Xcode 中打开生成的项目并进行构建时，如果出现与文件引用、构建阶段或依赖关系相关的问题，开发者可以检查生成的 `.pbxproj` 文件，并对照 `xcodebackend.py` 的代码来理解 Meson 是如何生成这些信息的，从而找到问题的根源。例如，如果 Xcode 报告找不到某个源文件，开发者可以查看 `.pbxproj` 中该文件的 `PBXFileReference` 对象的 `path` 属性，并回溯到 `generate_pbx_file_reference` 方法中查看路径的生成逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,9 +126,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- gets removed. Maybe we can remove this part.
+### 源代码
+```python
+gets removed. Maybe we can remove this part.
         for name, idval in self.buildstylemap.items():
             styledict = PbxDict()
             objects_dict.add_item(idval, styledict, name)
@@ -755,7 +757,4 @@ Prompt:
             t = self.build_targets[name]
             objects_dict.add_item(t.buildphasemap[name], phase_dict, 'Sources')
             phase_dict.add_item('isa', 'PBXSourcesBui
-"""
-
-
 ```

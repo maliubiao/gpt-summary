@@ -159,15 +159,17 @@ By following these steps, combining code analysis with logical reasoning and con
 
 总而言之，`net/proxy_resolution/proxy_chain_util_apple.cc` 是 Chromium 在 macOS 上处理系统代理设置的关键组件，它负责将苹果的代理配置转换为 Chromium 可以使用的格式，从而影响着浏览器发起的网络请求的行为。理解其功能对于调试 macOS 上的网络连接问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_chain_util_apple.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ ProxyChain ProxyDictionaryToProxyChain(CFStringRef proxy_type,
 }
 
 }  // namespace net
-
-"""
-
 ```

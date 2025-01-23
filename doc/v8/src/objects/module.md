@@ -93,11 +93,13 @@ import('./brokenModule.js').catch(error => {
 
 `v8/src/objects/module.cc` 文件是 V8 引擎中处理 JavaScript 模块的核心组件。它定义了模块的内部表示、生命周期管理以及与 JavaScript 模块语法对应的底层实现。理解这个文件的功能有助于深入理解 JavaScript 模块的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/module.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -617,7 +619,4 @@ bool Module::IsGraphAsync(Isolate* isolate) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

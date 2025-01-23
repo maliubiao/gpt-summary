@@ -158,15 +158,17 @@ However, if someone were to mistakenly try to compile `issue8060.go` directly (w
 
 **In summary, `go/test/fixedbugs/issue8060.go` is a specific test case designed to reproduce a bug in the Go compiler. It uses the `// compiledir` directive to signal to the testing framework how it should be processed. The actual code that triggered the bug is not present in the snippet, but we can infer that it likely involved a non-trivial Go language feature where the compiler encountered an internal error.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue8060.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -176,9 +178,4 @@ Prompt:
 // Issue 8060: internal compiler error.
 
 package ignored
-
-"""
-
-
-
 ```

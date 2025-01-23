@@ -37,7 +37,7 @@ I need to synthesize these points into a concise summary.
 
 **总结来说，这部分代码主要实现了在 Go 语言中使用 `database/sql` 包进行数据库事务管理、预处理语句操作以及处理查询结果集的核心功能。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/sql.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -46,9 +46,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-	if rollbackHook != nil {
+### 源代码
+```go
+if rollbackHook != nil {
 		rollbackHook()
 	}
 
@@ -1118,9 +1120,4 @@ func (rs *Rows) Scan(dest ...any) error {
 
 	for i, sv := range rs.lastcols {
 		err := convertAssi
-"""
-
-
-
-
 ```

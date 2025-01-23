@@ -193,7 +193,7 @@ func main() {
 
 总结来说，`crypto/boring/boring.go` 的核心作用是提供一个运行时检查机制，让开发者能够知道他们的 Go 程序是否使用了 BoringSSL 提供的加密库，这得益于 Go 语言的条件编译特性。开发者应该始终使用 `boring.Enabled()` 来确保他们的代码在不同的构建环境下都能正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/boring/boring.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -224,9 +226,4 @@ import "crypto/internal/boring"
 func Enabled() bool {
 	return boring.Enabled
 }
-
-"""
-
-
-
 ```

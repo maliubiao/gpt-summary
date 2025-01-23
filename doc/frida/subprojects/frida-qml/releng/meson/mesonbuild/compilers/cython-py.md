@@ -130,7 +130,7 @@ Frida 本身就是一个动态插桩工具，广泛用于逆向工程、安全�
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/cython.py` 是 Frida 构建系统的一个关键组件，它抽象了 Cython 编译器的调用过程，使得 Frida 能够利用 Cython 的性能优势和与 C/C++ 库的互操作性，这对于实现其动态插桩和逆向工程功能至关重要。理解这个文件的功能有助于理解 Frida 的构建流程以及在遇到 Cython 相关的构建问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/cython.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 Intel Corporation
 from __future__ import annotations
@@ -231,7 +233,4 @@ class CythonCompiler(Compiler):
         if lang.value == 'cpp':
             args.append('--cplus')
         return args
-
-"""
-
 ```

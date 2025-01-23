@@ -194,14 +194,16 @@ crypto.subtle.generateKey(
 
 总而言之，`web_crypto_key_algorithm.cc` 文件定义了表示加密密钥算法的核心类，负责存储算法类型和参数，并提供了方便的工厂方法来创建不同算法的实例。它直接支撑着 JavaScript Web Cryptography API 的功能实现，确保了在 Blink 引擎内部能够正确地识别和处理各种加密算法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_crypto_key_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -397,7 +399,4 @@ void WebCryptoKeyAlgorithm::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

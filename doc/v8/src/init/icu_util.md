@@ -130,11 +130,13 @@ console.log(monthNames);
 
 总结来说，`icu_util.cc` 是 V8 引擎中负责加载和初始化 ICU 库的关键组件，它直接影响了 JavaScript 中 `Intl` 对象提供的国际化功能。如果没有它或 ICU 初始化失败，JavaScript 的国际化 API 将无法正常工作或提供错误的本地化结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/icu_util.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ bool InitializeICU(const char* icu_data_file) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

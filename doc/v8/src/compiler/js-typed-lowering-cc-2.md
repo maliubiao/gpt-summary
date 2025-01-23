@@ -213,7 +213,7 @@ By following this structured approach, breaking down the code into manageable pa
 
 这是第三部分，总共四部分。 从这个部分来看，主要关注的是 **将各种 JavaScript 语言结构降低到更底层的 IR 表示，并针对特定情况进行优化**。它处理了变量的加载和存储（包括上下文和模块），函数调用和构造，以及 `for...in` 循环等关键的语言特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-typed-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-typed-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -221,8 +221,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 text);
   }
 
@@ -978,7 +980,4 @@ Reduction JSTypedLowering::ReduceJSForInPrepare(Node* node) {
       // Load the enum length of the {enumerator} map.
       Node* bit_field3 = effect = graph()->NewNode(
           simplified()->Lo
-"""
-
-
 ```

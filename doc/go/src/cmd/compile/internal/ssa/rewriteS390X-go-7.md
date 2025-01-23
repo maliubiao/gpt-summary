@@ -200,7 +200,7 @@ By following these steps, I can systematically analyze the provided code snippet
 
 这部分 `rewriteS390X.go` 代码定义了针对 S390X 架构下半字和字操作的 SSA 重写规则，旨在通过合并地址计算、消除冗余操作、使用更高效的指令（如 `STMn` 和带内存操作数的指令）以及进行指令融合等方式来提高生成代码的性能。这些规则是 Go 编译器进行架构特定优化的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteS390X.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -209,8 +209,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第8部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 set(OpS390XMOVHload)
 		v.AuxInt = int32ToAuxInt(off1 + off2)
 		v.Aux = symToAux(sym)
@@ -1582,9 +1584,4 @@ func rewriteValueS390X_OpS390XMULLDconst(v *Value) bool {
 }
 func rewriteValueS390X_OpS390XMULLDload(v *Value) bool {
 	v_2
-"""
-
-
-
-
 ```

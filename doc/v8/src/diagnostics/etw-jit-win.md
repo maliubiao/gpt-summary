@@ -109,11 +109,13 @@ for (let i = 0; i < 10000; i++) {
 
 `etw-jit-win.cc` 是 V8 引擎为了方便 Windows 开发者进行性能分析和调试而设计的一个组件。它通过 ETW 将 V8 内部的 JIT 编译事件暴露出来，使得开发者可以清晰地了解 V8 如何优化 JavaScript 代码的执行。这个功能本身不影响 JavaScript 的语法和功能，而是提供了一种外部观察 V8 引擎行为的途径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-jit-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -408,7 +410,4 @@ void EventHandler(const JitCodeEvent* event) {
 }  // namespace ETWJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

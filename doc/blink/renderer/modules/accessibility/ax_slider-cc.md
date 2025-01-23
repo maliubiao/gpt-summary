@@ -204,15 +204,17 @@ By following these steps, we can systematically understand the purpose and funct
 
 总结来说，`ax_slider.cc` 是 Chromium Blink 引擎中负责滑块元素无障碍支持的关键文件，它连接了 HTML、CSS 和 JavaScript，使得辅助技术能够理解和操作网页上的滑块控件。理解其功能和与前端技术的关系对于开发可访问的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_slider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -323,7 +325,4 @@ HTMLInputElement* AXSlider::GetInputElement() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

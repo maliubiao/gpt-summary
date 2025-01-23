@@ -163,15 +163,17 @@ By following these steps and performing these analyses, we can generate a compre
 
 总而言之，`net/dns/record_rdata.cc` 是 Chromium 网络栈中一个关键的文件，它负责将 DNS 响应中的原始字节数据转换为可操作的 C++ 对象，这是浏览器进行网络通信的基础。 虽然它不直接与 JavaScript 交互，但它是浏览器处理 JavaScript 发起的网络请求的必要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/record_rdata.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -477,7 +479,4 @@ bool NsecRecordRdata::GetBit(unsigned i) const {
 }
 
 }  // namespace net
-
-"""
-
 ```

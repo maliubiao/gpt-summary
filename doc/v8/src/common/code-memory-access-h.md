@@ -177,15 +177,17 @@ allocation.CopyCode(address - allocation.address(),
 
 总结来说，`v8/src/common/code-memory-access.h` 是 V8 引擎中一个至关重要的头文件，它定义了用于安全地访问和修改可执行代码内存的机制，是实现代码保护和 CFI 的基础。开发者必须遵循其定义的规范，使用提供的 Scope 类和 `Writable*` 类来操作可执行内存，以避免安全漏洞和程序错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/code-memory-access.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/code-memory-access.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -820,7 +822,4 @@ using DiscardSealedMemoryScope = NopRwxMemoryWriteScope;
 }  // namespace v8
 
 #endif  // V8_COMMON_CODE_MEMORY_ACCESS_H_
-
-"""
-
 ```

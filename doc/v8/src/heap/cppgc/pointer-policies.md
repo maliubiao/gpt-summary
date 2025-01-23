@@ -133,11 +133,13 @@ By following this thought process, combining code analysis with an understanding
 
 `v8/src/heap/cppgc/pointer-policies.cc` 是 V8 引擎中 `cppgc` 垃圾回收器的一个关键组成部分，它定义了用于验证指针有效性和管理不同类型持久区域的策略。虽然 JavaScript 开发者不直接操作这些代码，但它深刻地影响着 JavaScript 的内存管理、对象生命周期以及跨线程通信等核心功能。理解这些底层的机制有助于更好地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/pointer-policies.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ WeakCrossThreadPersistentPolicy::GetPersistentRegion(const void* object) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

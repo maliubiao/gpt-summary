@@ -151,15 +151,17 @@ try {
 
 `v8/src/common/assert-scope.cc` 是 V8 内部用于精细控制断言行为的关键组件。它允许 V8 开发者在不同的代码区域和执行环境中启用或禁用特定的断言，以帮助调试、优化和确保代码的正确性。虽然普通 JavaScript 开发者不能直接使用这些 API，但了解它们有助于理解 V8 内部的运作方式以及某些错误的来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/assert-scope.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/assert-scope.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ static_assert(Internals::kDisallowGarbageCollectionSize ==
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

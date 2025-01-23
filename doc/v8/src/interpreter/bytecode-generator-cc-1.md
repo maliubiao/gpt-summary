@@ -206,7 +206,7 @@ Let's break down the thought process for analyzing this code snippet.
 
 这部分代码定义了一系列辅助类，它们在 `BytecodeGenerator` 类中被使用，用于管理字节码生成过程中的各种状态和优化。这些类涵盖了作用域管理、变量声明跟踪、反馈槽缓存、hole 检查优化、循环处理以及与 JavaScript 特定语法结构（如迭代器、可选链、`for...in` 循环）相关的状态管理。它们共同协作，使得 `BytecodeGenerator` 能够高效且正确地将 JavaScript 代码转换为字节码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -214,10 +214,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共11部分，请归纳一下它的功能
+```
 
-"""
-
-    entry_slots_ += kGlobalVariableDeclarationSize;
+### 源代码
+```cpp
+entry_slots_ += kGlobalVariableDeclarationSize;
   }
   void record_global_function_declaration() {
     entry_slots_ += kGlobalFunctionDeclarationSize;
@@ -1176,7 +1177,4 @@ void BytecodeGenerator::GenerateAsyncGeneratorFunctionBody() {
   //   %AsyncGeneratorReject(generator, .catch);
   // } finally {
   //   %_GeneratorC
-"""
-
-
 ```

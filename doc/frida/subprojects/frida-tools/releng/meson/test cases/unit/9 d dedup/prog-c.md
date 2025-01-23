@@ -108,7 +108,7 @@ Here's a thinking process to arrive at the comprehensive analysis of the `prog.c
 
 总而言之，`prog.c` 是 Frida 构建系统中的一个简单但重要的单元测试，用于确保编译环境的正确性，而这种正确性对于 Frida 的功能和稳定性至关重要。它侧重于编译时的检查，而非运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/9 d dedup/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifndef FOO
@@ -132,7 +134,4 @@ int main(int argc, char **argv) {
     printf("All is well.\n");
     return 0;
 }
-
-"""
-
 ```

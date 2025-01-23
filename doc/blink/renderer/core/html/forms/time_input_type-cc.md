@@ -63,14 +63,16 @@ The user wants to understand the functionality of the `time_input_type.cc` file 
 4. **依赖浏览器的默认行为而没有明确设置属性:**  如果没有设置 `min`、`max` 或 `step`，浏览器会有默认行为，但为了代码的清晰和可预测性，最好显式设置这些属性。
 5. **JavaScript 操作返回值时的类型错误:** 当使用 JavaScript 获取 `<input type="time">` 的 `value` 时，返回的是字符串。如果直接将其当作数字进行计算，可能会导致错误。需要先进行解析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/time_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -256,7 +258,4 @@ String TimeInputType::ReversedRangeOutOfRangeText(
 }
 
 }  // namespace blink
-
-"""
-
 ```

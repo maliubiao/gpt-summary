@@ -97,11 +97,13 @@ C++ 中的 `createDataProperty` 函数针对数组的版本在 V8 引擎内部�
 
 `v8-value-utils.cc` 文件提供了一组底层的 C++ 工具函数，用于在 V8 引擎内部安全地创建和修改 JavaScript 对象和数组的属性。这些函数是 V8 Inspector 实现其检查和修改 JavaScript 代码功能的基础。它们的功能直接对应于 JavaScript 中的对象属性赋值和数组元素赋值操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-value-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ v8::Maybe<bool> createDataProperty(v8::Local<v8::Context> context,
   return array->CreateDataProperty(context, index, value);
 }
 }  // namespace v8_inspector
-
-"""
-
 ```

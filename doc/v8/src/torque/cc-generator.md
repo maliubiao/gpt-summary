@@ -117,11 +117,13 @@ console.log(myArray); // 输出: [1, 2, 3, 4]
 
 `cc-generator.cc` 是 V8 引擎中一个关键的组件，它负责将高级的、类型化的 Torque 代码转换成低级的、可执行的 C++ 代码。这个过程对于 V8 引擎的高效运行至关重要，因为它允许 V8 使用 Torque 来实现其核心的 JavaScript 功能，并利用 C++ 的性能优势。虽然开发者不直接编写 Torque 代码，但 Torque 和 `cc-generator.cc` 的工作直接影响着 JavaScript 代码的执行效率和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/cc-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -650,7 +652,4 @@ void CCGenerator::EmitCCValue(VisitResult result,
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

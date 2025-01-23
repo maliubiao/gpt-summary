@@ -130,7 +130,7 @@ Plist response = yield client.query(request, cancellable);
 - **错误处理**：在 `ensure_closed` 方法中设置断点，观察连接关闭时的处理逻辑。
 
 通过以上步骤，用户可以逐步调试 `PlistServiceClient` 类的功能，确保与 iOS 设备的通信正常进行。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/plist-service.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class PlistServiceClient : Object {
@@ -334,7 +336,4 @@ namespace Frida.Fruity {
 		PROTOCOL
 	}
 }
-
-"""
-
 ```

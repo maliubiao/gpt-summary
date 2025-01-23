@@ -157,11 +157,13 @@ const arr4 = [1, 2, 3]; // 也会在底层使用相关的数组创建 Builtin
 
 `CodeFactory` 是 V8 引擎中一个关键的组件，它将 JavaScript 语言的各种操作映射到底层的、高效的预编译代码实现。 理解 `CodeFactory` 的作用有助于深入理解 JavaScript 引擎的内部工作原理，以及 V8 如何高效地执行 JavaScript 代码。它体现了 V8 引擎通过预编译常用操作来提升性能的设计思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-factory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -433,7 +435,4 @@ Builtin CodeFactory::GetTSANRelaxedLoadStub(SaveFPRegsMode fp_mode, int size) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

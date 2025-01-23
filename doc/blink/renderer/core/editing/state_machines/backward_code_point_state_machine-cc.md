@@ -196,15 +196,17 @@ This structured approach, moving from the code itself to its context and potenti
 
 总而言之，`BackwardCodePointStateMachine` 是 Blink 渲染引擎中一个重要的低层组件，负责确保在文本编辑过程中正确处理 Unicode 码点，避免因错误地分割字符而导致的问题。理解其工作原理有助于理解浏览器如何处理文本编辑操作，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/state_machines/backward_code_point_state_machine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ void BackwardCodePointStateMachine::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

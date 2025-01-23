@@ -256,7 +256,7 @@ ok      encoding/json 11.952s
 
 总而言之，`go/src/encoding/json/bench_test.go` 是一个重要的性能测试文件，它通过各种基准测试来衡量 `encoding/json` 包的效率，并为开发者提供优化 JSON 处理代码的参考。理解其内容可以帮助使用者更好地理解 `encoding/json` 包的工作原理和性能特性，从而避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/bench_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -264,8 +264,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -850,9 +852,4 @@ func BenchmarkUnmarshalNumber(b *testing.B) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

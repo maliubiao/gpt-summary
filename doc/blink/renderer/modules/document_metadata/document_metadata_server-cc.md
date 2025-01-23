@@ -169,15 +169,17 @@ By following this systematic approach, breaking down the code into its key compo
 
 `DocumentMetadataServer` 是 Blink 渲染引擎中一个关键的组件，负责将 HTML 文档中包含的元数据暴露给其他进程使用。它通过 Mojo IPC 进行通信，并与 HTML、JavaScript 和 CSS 在概念上存在联系，因为它的目标是提取和传递与网页内容和表现相关的信息。理解其工作原理对于调试与网页元数据处理相关的各种问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/document_metadata/document_metadata_server.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ void DocumentMetadataServer::GetEntities(GetEntitiesCallback callback) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

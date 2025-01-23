@@ -129,7 +129,7 @@ Here's a breakdown of the thinking process to address this request:
 
 这部分代码是构建一个功能完善的 MoQT 会话管理器的基础，为后续的数据传输和更复杂的流控制逻辑奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -955,7 +957,4 @@ void MoqtSession::ControlStream::OnAnnounceMessage(
   if (session_->peer_role_ == MoqtRole::kSubscriber) {
     QUIC_DLOG(INFO) << ENDPOINT << "Subscriber peer sent SUBSCRIBE";
     session_->Error(MoqtError::kProto
-"""
-
-
 ```

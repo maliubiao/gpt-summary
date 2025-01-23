@@ -200,15 +200,17 @@ func main() {
 
 这段 `dictionaryCapture-noinline.go` 代码的核心目的就是验证即使在没有立即调用的情况下，Go 的泛型机制也能正确处理类型信息的传递，这为更灵活地使用泛型提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/dictionaryCapture-noinline.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run -gcflags="-l"
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -335,9 +337,4 @@ func globals() {
 	is7(ii1())
 	is77(ii2())
 }
-
-"""
-
-
-
 ```

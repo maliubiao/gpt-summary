@@ -206,15 +206,17 @@ XSLT 的主要功能是将 XML 文档转换为其他格式，其中最常见的�
 
 总而言之，`blink/renderer/core/xml/xsl_style_sheet_libxslt.cc` 是 Blink 引擎中处理 XSLT 样式表的关键组件，负责加载、解析、编译 XSLT 代码，并处理样式表之间的依赖关系，最终为 XML 到 HTML 的转换提供支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xsl_style_sheet_libxslt.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * This file is part of the XSL implementation.
  *
@@ -543,7 +545,4 @@ void XSLStyleSheet::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

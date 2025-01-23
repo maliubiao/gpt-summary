@@ -107,14 +107,16 @@ Initially, I might have focused too much on the technical details of the C++ cod
 
 `type.cc` 文件定义了 Blink 引擎中用于管理任务执行优先级的节流类型。这些类型直接影响着 JavaScript, HTML, 和 CSS 相关任务的执行效率，尤其是在后台标签页或非活跃状态下。理解这些节流类型对于开发者来说至关重要，以便构建响应迅速且资源友好的 Web 应用。不当的节流设置可能导致性能问题和糟糕的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/throttling/type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ const char* ThrottlingTypeToString(ThrottlingType type) {
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

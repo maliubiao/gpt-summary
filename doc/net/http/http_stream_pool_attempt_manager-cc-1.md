@@ -177,7 +177,7 @@ The user wants to understand the functionality of the `HttpStreamPool::AttemptMa
 
 `HttpStreamPool::AttemptManager` 的第二部分主要负责处理连接尝试完成后的各种后续操作。它根据连接尝试的结果（成功或失败）以及协商的协议（HTTP/1.1, HTTP/2, QUIC）采取不同的行动，例如创建相应的 HTTP 流，处理预连接请求，以及在连接失败时尝试其他连接方式或通知上层。 这一部分是连接管理流程中的关键环节，确保了连接的正确建立和资源的有效利用。它还负责处理 SPDY 节流和 QUIC 会话的管理，以及在必要时标记 QUIC 为不可用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_pool_attempt_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e(ERR_PRECONNECT_MAX_SOCKET_LIMIT);
         return false;
       }
@@ -866,8 +868,4 @@ void HttpStreamPool::AttemptManager::MaybeComplete() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

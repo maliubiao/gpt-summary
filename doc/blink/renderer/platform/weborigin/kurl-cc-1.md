@@ -183,15 +183,17 @@ By following these steps, we can systematically analyze the `kurl.cc` file and p
 
 总而言之，`kurl.cc` 文件中的代码片段专注于 `KURL` 对象的内部初始化、组件访问、修改以及与其他 Chromium 类型的互操作，并特别关注了 JavaScript URL 和国际化域名相关的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/kurl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ascript:" scheme URL is always
     // valid, but that is no longer true when
     // kStandardCompliantNonSpecialSchemeURLParsing feature is enabled. e.g.
@@ -353,8 +355,4 @@ std::ostream& operator<<(std::ostream& os, const KURL& url) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

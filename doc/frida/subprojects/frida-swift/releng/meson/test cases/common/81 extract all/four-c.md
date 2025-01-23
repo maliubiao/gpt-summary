@@ -133,7 +133,7 @@ int func4(void) {
 
 总而言之，`four.c` 作为一个极其简单的 C 函数，在 Frida 的上下文中扮演着重要的测试和验证角色。它帮助开发者确保 Frida 的核心功能（例如函数 hook）能够正确地处理 C 代码，并为用户提供了一个简单易懂的示例来学习和理解 Frida 的工作原理。当遇到与 Frida Swift 集成相关的问题时，这样的基础测试用例往往是调试过程中的第一个检查点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/81 extract all/four.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,14 +141,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"extractor.h"
 
 int func4(void) {
     return 4;
 }
-
-"""
-
 ```

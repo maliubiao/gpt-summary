@@ -132,7 +132,7 @@ GOOS=wasip1 GOARCH=wasm go build your_program.go
 
 `go/src/net/http/transport_default_wasm.go` 这个代码片段的核心作用是，在 Go 程序编译到 `js/wasm` 或 `wasip1` 目标平台时，禁用 `net/http` 包中默认的网络连接建立机制。这暗示了在这些环境下，网络连接的处理方式需要由更底层的 wasm 运行时环境或者特定的库来负责。开发者需要了解这些平台的特殊性，避免直接依赖标准库在其他平台上的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport_default_wasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ import (
 func defaultTransportDialContext(dialer *net.Dialer) func(context.Context, string, string) (net.Conn, error) {
 	return nil
 }
-
-"""
-
-
-
 ```

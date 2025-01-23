@@ -129,14 +129,16 @@ By following this structured approach and continually refining the understanding
 
 总而言之，`webrtc_uma_histograms.cc` 是 Blink 引擎中一个关键的组成部分，它默默地收集着关于 WebRTC 使用情况的重要数据，这些数据对于理解用户行为、发现潜在问题以及持续改进 WebRTC 功能至关重要。它虽然不直接与前端技术交互，但其记录的指标直接反映了 JavaScript 代码中 WebRTC API 的使用模式和结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/webrtc_uma_histograms.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ void PerSessionWebRTCAPIMetrics::ResetUsage() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

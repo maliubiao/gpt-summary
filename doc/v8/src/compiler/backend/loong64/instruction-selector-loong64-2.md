@@ -136,15 +136,15 @@ Many of the operations in this code directly correspond to JavaScript language f
 
 In summary, this code is a crucial part of the V8 compiler that bridges the gap between the high-level semantics of JavaScript and the low-level instructions that the LoongArch64 processor can execute. It optimizes code execution by selecting the most appropriate and efficient machine instructions for various JavaScript operations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-selector-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-
-          case RegisterRepresentation::Float64():
+### 源代码
+```
+case RegisterRepresentation::Float64():
             switch (comparison->kind) {
               case ComparisonOp::Kind::kEqual:
                 cont->OverwriteAndNegateIfEqual(kEqual);
@@ -1561,8 +1561,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

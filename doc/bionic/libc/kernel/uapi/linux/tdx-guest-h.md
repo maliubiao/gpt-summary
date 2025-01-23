@@ -277,7 +277,7 @@ setImmediate(main);
 
 这个头文件提供了与 TDX 硬件交互的底层接口，虽然普通 Android 应用不会直接使用，但对于理解 Android 如何利用硬件安全特性以及进行底层系统调试非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tdx-guest.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -308,7 +310,4 @@ struct tdx_report_req {
 };
 #define TDX_CMD_GET_REPORT0 _IOWR('T', 1, struct tdx_report_req)
 #endif
-
-"""
-
 ```

@@ -191,15 +191,17 @@ While this header file is internal V8 code, understanding its concepts can help 
 
 In summary, `v8/src/objects/js-collection-inl.h` plays a crucial role in the efficient implementation of JavaScript's collection objects within V8. It leverages inline functions and likely interacts with Torque-generated code to provide optimized access and iteration capabilities for these fundamental data structures. Understanding its role provides insights into the inner workings of JavaScript and helps avoid common programming pitfalls.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-collection-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-collection-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ Tagged<Object> JSMapIterator::CurrentValue() {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_COLLECTION_INL_H_
-
-"""
-
 ```

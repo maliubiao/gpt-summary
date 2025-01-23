@@ -127,14 +127,16 @@ This systematic approach, starting with understanding the code, identifying patt
 
 总而言之，`window_controls_overlay_changed_delegate.cc` 文件是 Blink 渲染引擎中处理窗口控件覆盖层变化的关键组成部分，它负责监听底层状态变化并将其传递给上层，最终影响到 JavaScript、HTML 和 CSS 的行为，从而实现 PWA 更加原生化的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/window_controls_overlay_changed_delegate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -152,7 +154,4 @@ WindowControlsOverlayChangedDelegate::WindowControlsOverlayChangedDelegate(
 }
 
 }  // namespace blink
-
-"""
-
 ```

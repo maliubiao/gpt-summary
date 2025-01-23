@@ -107,7 +107,7 @@ By following these steps, I can systematically analyze the code and provide a co
 
 总而言之，这段代码片段继续完善了 `QuicConfig` 类的功能，使其能够更全面地管理 QUIC 连接的各种配置参数，特别是涉及到握手阶段的配置协商和传输参数的交换。它提供了设置默认值、编码配置到握手消息、解析对端配置、以及管理连接迁移和可靠流重置等关键功能。这些功能对于建立稳定、高效和安全的 QUIC 连接至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_config.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nd_ = retry_source_connection_id;
 }
 
@@ -643,8 +645,4 @@ bool QuicConfig::SupportsReliableStreamReset() const {
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

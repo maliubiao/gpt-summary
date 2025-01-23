@@ -165,7 +165,7 @@ This specific section (part 21 of 21) of `host_resolver_manager_unittest.cc` foc
 
 In the context of the entire `host_resolver_manager_unittest.cc` file, this section contributes to the comprehensive testing of the `HostResolverManager`'s core functionalities, its interaction with the DNS cache, its handling of secure DNS, and its adaptability to different network environments. By having thorough unit tests like these, the Chromium team ensures the reliability and correctness of a critical component of the browser's network stack.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第21部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e_context_->host_resolver_cache()->Lookup(
                   kHost, kNetworkAnonymizationKey, DnsQueryType::A,
                   HostResolverSource::DNS, /*secure=*/false),
@@ -771,8 +773,4 @@ TEST_F(HostResolverManagerTest,
 }
 
 }  // namespace net
-
-"""
-
-
 ```

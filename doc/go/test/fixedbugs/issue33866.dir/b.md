@@ -147,15 +147,17 @@ One potential point of confusion for users is understanding that `ABuilder` is n
 
 In summary, `b.go` provides a way to refer to the `Builder` type from package `a` using the name `ABuilder` and offers a function to create basic instances of it. This is a straightforward example of type aliasing in Go, often used for organizational or semantic purposes within a larger project.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue33866.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -171,9 +173,4 @@ type (
 func Bfunc() ABuilder {
 	return ABuilder{}
 }
-
-"""
-
-
-
 ```

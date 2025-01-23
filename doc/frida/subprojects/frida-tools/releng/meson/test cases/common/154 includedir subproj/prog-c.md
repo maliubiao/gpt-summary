@@ -132,7 +132,7 @@ Initially, one might be tempted to say the code does "nothing". While technicall
 
 虽然 `prog.c` 代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色。它作为一个最小化的、可执行的目标进程，用于验证 Frida 的各种核心功能，包括进程附加、内存操作、代码注入以及与构建系统的集成。分析这个文件的上下文，可以帮助我们理解 Frida 的测试策略以及它所涉及的底层技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/154 includedir subproj/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,12 +140,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

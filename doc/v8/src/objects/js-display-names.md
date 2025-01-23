@@ -118,11 +118,13 @@ console.log(resolvedOptions); // 输出类似: { locale: "zh-CN", style: "long",
 
 `js-display-names.cc` 文件是 V8 引擎中 `Intl.DisplayNames` API 的核心 C++ 实现，它利用 ICU 库提供的国际化功能，将 JavaScript 中对本地化名称的请求转化为实际的本地化文本输出。它负责对象的创建、选项解析、本地化协商以及最终的名称获取。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-display-names.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -792,7 +794,4 @@ Handle<String> JSDisplayNames::LanguageDisplayAsString() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

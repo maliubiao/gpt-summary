@@ -114,12 +114,14 @@ I will structure the summary by grouping these related functionalities and provi
 
 总而言之，这部分 `ic.cc` 代码是 V8 引擎中负责优化对象操作（特别是克隆和属性访问）的关键组成部分，它通过内联缓存和对拦截器的处理来提升 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ap> map,
                                        bool null_proto_literal,
                                        Isolate* isolate) {
@@ -1005,8 +1007,4 @@ RUNTIME_FUNCTION(Runtime_HasElementWithInterceptor) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

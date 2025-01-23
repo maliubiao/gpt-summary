@@ -177,7 +177,7 @@ Return            // 返回
 
 总而言之，这个文件通过大量的单元测试用例，确保 V8 的字节码生成器能够可靠地将各种 JavaScript 代码转换为高效的字节码，这是 V8 引擎高性能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-generator-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/bytecode-generator-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n"
       "var test = C.test;\n"
       "test();\n",
@@ -870,8 +872,4 @@ TEST_F(BytecodeGeneratorTest, ElideRedundantHoleChecks) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

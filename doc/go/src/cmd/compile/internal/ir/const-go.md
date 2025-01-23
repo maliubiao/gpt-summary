@@ -148,15 +148,17 @@ func main() {
 
 `go/src/cmd/compile/internal/ir/const.go` 是 Go 编译器中处理常量和字面量的核心组件。它提供了一组工具函数，用于创建、表示和检查常量的各种属性，是 Go 语言编译过程中的基础环节。 开发者在使用编译器内部 API 时，需要注意类型匹配和常量溢出等问题，并理解 Go 语言常量的定义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ir/const.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -318,9 +320,4 @@ func IsSmallIntConst(n Node) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

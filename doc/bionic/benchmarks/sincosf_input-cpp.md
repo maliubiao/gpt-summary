@@ -181,7 +181,7 @@ my_math_lib.so:
 
 `bionic/benchmarks/sincosf_input.cpp` 文件的主要功能是**提供一组预定义的单精度浮点数，作为测试 Android Bionic 库中 `sincosf` 函数的输入数据**，用于验证该函数的正确性和性能。它本身不包含任何逻辑运算或函数实现，只是静态数据的集合。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/sincosf_input.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -192,8 +192,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -2076,7 +2078,4 @@ static const std::vector<float> sincosf_input3 = {
   -0x1.7261ecp+1,
   0x1.712fap+0,
   -0x
-"""
-
-
 ```

@@ -188,14 +188,16 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`layout_custom.cc` 文件是 Blink 渲染引擎中实现 CSS Layout API 的关键部分，它负责管理和连接自定义布局的各个环节，从 CSS 属性的解析到 JavaScript 定义的布局逻辑的执行。理解这个文件的功能有助于深入理解 Blink 的渲染机制和 CSS Houdini 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/custom/layout_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void LayoutCustom::StyleDidChange(StyleDifference diff,
 }
 
 }  // namespace blink
-
-"""
-
 ```

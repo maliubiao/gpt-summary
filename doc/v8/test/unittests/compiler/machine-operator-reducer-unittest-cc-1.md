@@ -156,7 +156,7 @@ function rotateRight(x, n) {
 
 这部分代码主要集中测试 `MachineOperatorReducer` 对 **32 位和 64 位按位逻辑运算 (AND, OR, XOR)、循环右移 (ROR)、算术右移 (SAR)、无符号右移 (SHR)、左移 (SHL)** 以及 **相等比较 (Equal)** 和 **减法 (Sub)**、**除法 (Div)** 等操作的优化能力。它验证了在各种常量和变量组合的情况下，`MachineOperatorReducer` 能否正确地识别出可以简化的模式，并将其转换为更高效的等价形式。 这部分测试覆盖了大量的边界情况和常见的使用场景，确保了编译器在处理这些基本机器指令时能够达到最佳的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/machine-operator-reducer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/machine-operator-reducer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
     ASSERT_TRUE(r1.Changed());
     EXPECT_THAT(r1.replacement(),
@@ -1030,7 +1032,4 @@ TEST_F(MachineOperatorReducerTest, Int32DivWithConstant) {
       if (base::bits::IsPowerOfTwo(divisor)) continue;
       Reduction const r = Reduce(graph()->NewNode(
           machine()->Int32Div(), p0, Int32Constant(divisor), gra
-"""
-
-
 ```

@@ -129,15 +129,17 @@ for (let i = 0; i < 100; i++) {
 
 `v8/src/base/sanitizer/lsan.h` 是 V8 中用于集成 LeakSanitizer 的头文件。它通过条件编译，在启用 ASan 且不在 Windows 平台时，定义了用于忽略特定对象的宏，帮助 V8 开发人员检测和预防内存泄漏，从而提高 V8 引擎的稳定性和性能，最终有益于 JavaScript 应用的运行。虽然开发者不会直接修改此文件，但理解其作用有助于认识内存管理的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sanitizer/lsan.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/sanitizer/lsan.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ Prompt:
 #endif  // defined(V8_USE_ADDRESS_SANITIZER) && !defined(V8_OS_WIN)
 
 #endif  // V8_BASE_SANITIZER_LSAN_H_
-
-"""
-
 ```

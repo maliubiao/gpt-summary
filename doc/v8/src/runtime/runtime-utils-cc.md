@@ -171,15 +171,17 @@ While users don't directly interact with this C++ code, understanding its purpos
 
 While not directly caused by this specific code, users might encounter errors related to the WebAssembly execution context if they try to perform operations that are only valid in one context from the other. For example, trying to directly access JavaScript objects from WebAssembly without going through the proper import/export mechanisms. This code in `runtime-utils.cc` plays a part in ensuring that V8 itself correctly manages these context transitions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-utils.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ SaveAndClearThreadInWasmFlag::~SaveAndClearThreadInWasmFlag() = default;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

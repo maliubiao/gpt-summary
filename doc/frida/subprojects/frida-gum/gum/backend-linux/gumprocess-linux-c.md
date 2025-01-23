@@ -889,7 +889,7 @@ gum_process_modify_thread (GumThreadId thread_id,
                            GumModifyThreadFunc func,
                            gpointer user_data,
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-linux/gumprocess-linux.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -898,8 +898,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023-2024 Håvard Sørbø <havard@hsorbo.no>
@@ -2176,7 +2178,4 @@ failed_to_wait:
 failed_to_stop:
   {
     gum_put_ack (fd
-"""
-
-
 ```

@@ -180,15 +180,17 @@ v8::Isolate* isolate = v8::Isolate::New(create_params);
 
 总而言之，`v8/include/v8-embedder-heap.h` 定义了一个关键的接口，用于实现 V8 和嵌入器之间的协作，以确保在垃圾回收过程中，嵌入器持有的对 V8 堆中对象的引用能够得到正确的管理，避免内存错误和保持状态一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-embedder-heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-embedder-heap.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ class V8_EXPORT EmbedderRootsHandler {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_EMBEDDER_HEAP_H_
-
-"""
-
 ```

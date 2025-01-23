@@ -151,7 +151,7 @@ Let's assume the following input to the Frida injection process:
 
 This part of `frida/subprojects/frida-core/src/freebsd/binjector-glue.c` is responsible for the **dynamic generation of architecture-specific assembly code that forms the initial payload injected into a target process.** This payload handles setting up communication, loading libraries, calling user-specified functions within those libraries, and managing the lifecycle of the injected code. It is a crucial component enabling Frida's dynamic instrumentation capabilities for reverse engineering and security analysis.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/freebsd/binjector-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ter_flush (&cw);
   g_assert (gum_x86_writer_offset (&cw) <= worker_offset);
   while (gum_x86_writer_offset (&cw) != worker_offset - code->size)
@@ -993,8 +995,4 @@ os_failure:
     return FALSE;
   }
 }
-
-"""
-
-
 ```

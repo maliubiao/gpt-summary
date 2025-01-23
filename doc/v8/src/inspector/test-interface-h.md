@@ -169,15 +169,17 @@ console.log("Main thread");
 
 `v8/src/inspector/test-interface.h` 提供了一组 C++ 函数，用于控制和检查 V8 Inspector 在测试环境下的行为，特别是关于异步任务堆栈的跟踪。虽然不能直接从 JavaScript 调用这些函数，但它们影响着 Inspector 如何分析和呈现 JavaScript 代码中的异步操作，对于测试 Inspector 的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/test-interface.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/test-interface.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ V8_EXPORT void DumpAsyncTaskStacksStateForTest(V8Inspector* inspector);
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_TEST_INTERFACE_H_
-
-"""
-
 ```

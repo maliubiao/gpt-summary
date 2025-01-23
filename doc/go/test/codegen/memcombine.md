@@ -150,15 +150,17 @@ This assembly performs four separate byte loads and then combines them using shi
 
 In summary, this Go code is a crucial part of the Go compiler's testing infrastructure, specifically focused on verifying the correctness and effectiveness of the memory combining optimization. It uses `// asmcheck` directives to ensure that the compiler generates the expected efficient assembly code for various load and store operations with different byte orders and access patterns.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/memcombine.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -1131,9 +1133,4 @@ func issue70300Reverse(v uint64) (b [8]byte) {
 	b[0] = byte(v)
 	return b
 }
-
-"""
-
-
-
 ```

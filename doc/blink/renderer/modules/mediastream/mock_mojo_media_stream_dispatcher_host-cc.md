@@ -168,15 +168,17 @@ CSS 可以用来控制 `<video>` 或 `<audio>` 元素的样式，例如尺寸、
 
 总而言之，`mock_mojo_media_stream_dispatcher_host.cc` 是一个关键的测试辅助类，它允许 Chromium 开发者在不依赖真实硬件设备的情况下，对媒体流相关的渲染器逻辑进行隔离测试，确保代码的正确性和稳定性。它模拟了浏览器进程中媒体流管理器的行为，响应来自渲染进程的请求，并返回预定义的模拟数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/mock_mojo_media_stream_dispatcher_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ std::string MockMojoMediaStreamDispatcherHost::MaybeAppendSessionId(
 }
 
 }  // namespace blink
-
-"""
-
 ```

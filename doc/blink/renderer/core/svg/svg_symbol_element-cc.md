@@ -202,15 +202,17 @@ This step-by-step approach, combining code analysis with an understanding of the
 
 通过以上步骤，开发者可以逐步深入到 Blink 引擎的源代码层面，理解 `<symbol>` 元素的处理机制，并找出导致图标无法显示的根本原因。`svg_symbol_element.cc` 文件在这种调试过程中扮演着重要的角色，因为它直接负责 `<symbol>` 元素的表示和基本行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_symbol_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -267,7 +269,4 @@ void SVGSymbolElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

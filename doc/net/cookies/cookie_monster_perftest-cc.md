@@ -123,15 +123,17 @@ console.log(cookies); // 输出可能包含 user_id=123
 
 `net/cookies/cookie_monster_perftest.cc` 是一个关键的性能测试文件，用于评估 Chromium 中 `CookieMonster` 类的性能。它通过模拟各种 Cookie 操作场景，帮助开发者了解 `CookieMonster` 在不同情况下的表现，并为性能优化提供依据。虽然它不直接与用户操作交互，但其测试的功能是浏览器处理 Cookie 的基础，与 JavaScript 的 Cookie API 功能紧密相关。当出现与 Cookie 相关的性能问题或功能 Bug 时，这个文件可以作为重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster_perftest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -597,7 +599,4 @@ TEST_F(CookieMonsterTest, TestGCTimes) {
 }
 
 }  // namespace net
-
-"""
-
 ```

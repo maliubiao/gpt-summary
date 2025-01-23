@@ -125,7 +125,7 @@ By following this structured thought process, combining code analysis with conte
 
 `ordertest.c` 是 Frida 构建系统中的一个重要测试用例，它通过预处理器指令来验证头文件的包含顺序是否符合预期。它的存在是为了确保 Frida 在编译时能够找到正确的头文件，这对于 Frida 的正常运行至关重要。虽然用户通常不会直接与这个文件交互，但当遇到构建问题时，它会成为一个重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/130 include order/ordertest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "hdr.h"
 #include "prefer-build-dir-over-src-dir.h"
 
@@ -146,7 +148,4 @@ int main(void)
 {
   return 0;
 }
-
-"""
-
 ```

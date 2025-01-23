@@ -156,7 +156,7 @@ Java.perform(function() {
 
 总而言之，`somedll.c` 作为一个非常简单的 C 文件，其存在是为了服务于 Frida 的自动化测试，验证 Frida 在特定 Windows 环境下对 DLL 的动态分析和 Hook 能力，特别关注不同构建方式的影响。 它本身的功能并不复杂，但它在整个 Frida 测试框架中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/10 vs module defs generated custom target/subdir/somedll.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,12 +164,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int somedllfunc(void) {
     return 42;
 }
-
-"""
-
 ```

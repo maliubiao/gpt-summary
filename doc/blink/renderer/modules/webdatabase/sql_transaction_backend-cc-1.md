@@ -79,7 +79,7 @@ Here's a plan to address the user's request:
 
 这段代码专注于 SQL 事务执行过程中的 **核心控制流程和错误处理机制**。它定义了在执行 SQL 语句、处理错误、提交事务以及清理资源等关键步骤中的具体行为和状态转换。通过状态机的管理，确保了 Web SQL 数据库事务操作的正确性和可靠性，并将执行结果和错误信息适时地传递回前端 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sql_transaction_backend.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -87,8 +87,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 onMismatchedError(database_.Get());
 
   if (current_statement_backend_->Execute(database_.Get())) {
@@ -253,8 +255,4 @@ SQLTransactionState SQLTransactionBackend::SendToFrontendState() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

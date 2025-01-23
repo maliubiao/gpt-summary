@@ -246,7 +246,7 @@ rpc.exports = {
 
 这个分析涵盖了 `bionic/libc/bionic/strings_l.cpp` 文件的功能、与 Android 的关系、实现原理、动态链接、常见错误以及如何使用 Frida 进行调试。重要的是要理解，虽然文件名暗示了本地化，但当前实现只是对非本地化函数的简单转发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/strings_l.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -257,8 +257,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -297,7 +299,4 @@ int strcasecmp_l(const char* s1, const char* s2, locale_t) {
 int strncasecmp_l(const char* s1, const char* s2, size_t n, locale_t) {
   return strncasecmp(s1, s2, n);
 }
-
-"""
-
 ```

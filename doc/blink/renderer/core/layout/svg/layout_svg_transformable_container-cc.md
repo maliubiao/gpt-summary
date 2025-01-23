@@ -148,14 +148,16 @@ Let's break down the thought process for analyzing this code and generating the 
 
 总而言之，`layout_svg_transformable_container.cc` 文件中的 `LayoutSVGTransformableContainer` 类是 Blink 渲染引擎中负责处理可变换 SVG 容器元素布局和变换的核心组件。它与 HTML (SVG 元素结构)、CSS (变换属性、样式变化) 和 JavaScript (DOM 操作、样式修改) 都有密切的关系，确保 SVG 元素能够按照规范和用户的期望正确地渲染和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_transformable_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -294,7 +296,4 @@ void LayoutSVGTransformableContainer::WillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

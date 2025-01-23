@@ -150,14 +150,16 @@ dom_mutator.AsyncCall(&DOMMutator::InsertNode).WithArgs(parent_node, new_node);
 
 总而言之，`sequence_bound_test.cc` 这个文件通过单元测试验证了 `SequenceBound` 类的正确性和预期行为，确保了 Blink 引擎在多线程环境下能够安全可靠地管理对象和执行任务。理解 `SequenceBound` 的作用对于理解 Blink 引擎的线程模型和并发控制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/sequence_bound_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ TEST_F(SequenceBoundTest, CanInstantiate) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

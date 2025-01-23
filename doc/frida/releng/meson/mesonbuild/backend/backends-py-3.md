@@ -126,7 +126,7 @@ By following this thought process, breaking down the code, and connecting it to 
 
 作为系列的一部分，`backends.py` 中的这些函数主要负责 **将高级的编译目标描述转换为底层构建系统可以执行的编译命令**。它是 Meson 构建系统的一个关键组件，负责处理不同类型的编译任务，并将其转化为具体的编译器调用。这个文件确保了 Frida Agent 和其他相关组件能够被正确地编译出来，为 Frida 的动态instrumentation功能提供基础。它连接了 Meson 的抽象构建描述和实际的编译器执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rt a Compiler to a Generator.
         '''
         exelist = compiler.get_exelist()
@@ -161,8 +163,4 @@ rt a Compiler to a Generator.
         all_sources = T.cast('_ALL_SOURCES_TYPE', target.sources) + T.cast('_ALL_SOURCES_TYPE', target.generated)
         return self.compiler_to_generator(target, target.compiler, all_sources,
                                           target.output_templ, target.depends)
-
-"""
-
-
 ```

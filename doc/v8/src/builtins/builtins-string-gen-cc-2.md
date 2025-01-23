@@ -124,7 +124,7 @@ const sub4 = str.substring(0, str.length); // "Hello World"
 
 `v8/src/builtins/builtins-string-gen.cc` 的这部分代码主要负责实现 JavaScript 中与提取子字符串和处理 Unicode 相关的核心功能。它包含了 `String.prototype.substring()` 方法的生成代码，以及用于高效复制字符和处理 Unicode 代理对的底层工具函数。这些功能是 V8 引擎正确和高效地处理 JavaScript 字符串的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-string-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -132,8 +132,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 riptor::kFrom);
   auto to = UncheckedParameter<IntPtrT>(Descriptor::kTo);
 
@@ -601,8 +603,4 @@ TNode<String> StringBuiltinsAssembler::SubString(TNode<String> string,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

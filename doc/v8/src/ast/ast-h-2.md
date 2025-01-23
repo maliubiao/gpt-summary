@@ -244,7 +244,7 @@ if (x = 10) { // 错误：这里是赋值，会将 x 的值改为 10，且条件
 
 这部分 `v8/src/ast/ast.h` 定义了 V8 引擎用于表示 JavaScript 中各种表达式和部分语句的 AST 节点结构。它涵盖了条件表达式、赋值表达式、异步操作、函数和类的定义，以及与 `super` 调用、动态导入和模板字面量相关的语法结构。 此外，它还定义了一个基础的 AST 访问器，用于遍历和操作构建好的抽象语法树。这部分是理解 V8 如何解析和表示 JavaScript 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/ast.h以.tq结尾，那它是个v8 torque源代码，
@@ -252,8 +252,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ression is stored
   // inline. This Expression is reserved for ternary operations that have more
   // than one conditional chain entry. For ternary operations with only one
@@ -1206,7 +1208,4 @@ class AstNodeFactory final {
   }
 
   Block* NewBlock(bool ignore_completion_valu
-"""
-
-
 ```

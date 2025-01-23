@@ -119,7 +119,7 @@ fetch('https://example.com/image.png');
 
 这部分代码主要定义了 `QuicChromiumClientSession` 类的基本结构和关键成员，以及处理流请求的 `Handle` 和 `StreamRequest` 内部类。它涵盖了 QUIC 客户端会话的创建、基本生命周期管理和流的请求过程。此外，它也初步引入了连接迁移的概念，并定义了相关的上下文和代理类，为后续的连接迁移功能打下基础。代码中还包含了大量的日志记录和统计功能，用于监控和调试会话的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1063,7 +1065,4 @@ QuicChromiumClientSession::QuicChromiumClientSession(
     SSLConfigService* ssl_config_service,
     std::unique_ptr<QuicServerInfo> server_info,
     QuicSessionAliasKey se
-"""
-
-
 ```

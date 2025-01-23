@@ -108,7 +108,7 @@ It builds upon the foundation laid in "Part 1" which likely handled more basic f
 
 总的来说，`theme_painter_default.cc` 文件的这两部分共同构建了一个默认的主题绘制器，为各种 HTML 元素提供基本的视觉呈现，特别是在没有平台特定的主题或者需要自定义绘制时。 它与 JavaScript、HTML 和 CSS 的关系在于，它负责将这些技术描述的元素渲染到屏幕上，用户通过操作这些元素与网页进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/theme_painter_default.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eme,
       element.GetDocument().InForcedColorsMode(), color_provider,
       GetAccentColor(style, element.GetDocument()));
@@ -249,8 +251,4 @@ gfx::Rect ThemePainterDefault::ApplyZoomToRect(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

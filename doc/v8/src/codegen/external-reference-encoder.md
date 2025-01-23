@@ -88,11 +88,13 @@ Math.sin(0.5);
 
 `external-reference-encoder.cc` 文件中的代码是 V8 引擎中非常重要的一个组成部分，它负责管理和编码外部引用，使得 JavaScript 代码能够高效地调用 V8 引擎自身以及嵌入环境提供的功能。  它通过将外部地址映射到小的索引值，提高了代码的灵活性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference-encoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ const char* ExternalReferenceEncoder::NameOfAddress(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

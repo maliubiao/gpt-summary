@@ -170,15 +170,17 @@ myMap.forEach((value, key) => {
 
 `swiss-hash-table-helpers-unittest.cc` 中的测试确保了 V8 引擎内部的哈希表实现能够正确、高效地处理各种情况，从而为 JavaScript 开发者提供可靠的 `Map` 和 `Set` 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/swiss-hash-table-helpers-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/swiss-hash-table-helpers-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ TYPED_TEST(SwissTableGroupTest, MatchEmpty) {
 }  // namespace swiss_table
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

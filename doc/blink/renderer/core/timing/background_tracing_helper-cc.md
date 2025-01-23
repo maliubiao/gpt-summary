@@ -214,15 +214,17 @@ base::trace_event::EmitNamedTrigger("example.com-data_fetched");
 
 总而言之，`background_tracing_helper.cc` 是 Blink 渲染引擎中一个关键的组件，它负责根据配置将特定的 `performance.mark()` 事件集成到 Chrome 的后台追踪系统中，为性能分析和调试提供有价值的数据。理解其工作原理对于正确使用和调试基于 `performance.mark()` 的后台追踪功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/background_tracing_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -476,7 +478,4 @@ BackgroundTracingHelper::ParsePerformanceMarkSiteHashes(
 }
 
 }  // namespace blink
-
-"""
-
 ```

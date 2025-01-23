@@ -188,15 +188,17 @@ Finally, organize the information into a clear and structured format, addressing
 
 总而言之，`rtc_certificate.cc` 文件在 Blink 引擎中扮演着桥梁的角色，它将底层的证书信息安全地、方便地暴露给 JavaScript 环境，使得 Web 开发者可以利用这些信息来构建安全的 WebRTC 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_certificate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 Google Inc. All rights reserved.
  *
@@ -263,7 +265,4 @@ HeapVector<Member<RTCDtlsFingerprint>> RTCCertificate::getFingerprints() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

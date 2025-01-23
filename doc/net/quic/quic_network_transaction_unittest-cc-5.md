@@ -124,7 +124,7 @@ The code consists of several test cases (`TEST_P`) within a larger unit test cla
 
 这部分单元测试主要验证了 Chromium 网络栈在处理 HTTP 响应中的 `Alt-Svc` 头时，能够正确地建立和管理 QUIC 连接，并能够根据不同的情况 (例如已有的连接、相同的 Origin 或 Destination) 进行连接池化，以及处理连接失败的情况。 这些测试确保了浏览器能够有效地利用 QUIC 协议来提升网络性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,10 +132,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共13部分，请归纳一下它的功能
+```
 
-"""
-
-      MockRead("HTTP/1.1 200 OK\r\n"), MockRead(altsvc_header.c_str()),
+### 源代码
+```cpp
+MockRead("HTTP/1.1 200 OK\r\n"), MockRead(altsvc_header.c_str()),
       MockRead(kHttpRespData),
       MockRead(SYNCHRONOUS, ERR_TEST_PEER_CLOSE_AFTER_NEXT_MOCK_READ),
       MockRead(ASYNC, OK)};
@@ -881,7 +882,4 @@ TEST_P(QuicNetworkTransactionTest, ZeroRTTWithHttpRace) {
   base::RunLoop().RunUntilIdle();
   // Explicitly confirm the handshake.
   crypt
-"""
-
-
 ```

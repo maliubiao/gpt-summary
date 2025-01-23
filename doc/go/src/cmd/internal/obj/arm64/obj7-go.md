@@ -145,15 +145,17 @@ do_morestack:
 
 总而言之，`go/src/cmd/internal/obj/arm64/obj7.go` 是 Go 语言编译器中负责将 Go 代码转换为 ARM64 机器码的关键部分，它处理了架构特定的指令转换、栈管理和动态链接等复杂任务。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm64/obj7.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // cmd/7l/noop.c, cmd/7l/obj.c, cmd/ld/pass.c from Vita Nuova.
 // https://bitbucket.org/plan9-from-bell-labs/9-cc/src/master/
 //
@@ -1304,9 +1306,4 @@ var Linkarm64 = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: ARM64DWARFRegisters,
 }
-
-"""
-
-
-
 ```

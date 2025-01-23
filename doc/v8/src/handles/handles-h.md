@@ -167,7 +167,7 @@ processObject(obj2);
 
 `v8/src/handles/handles.h` 的主要功能是定义了 V8 引擎中用于安全管理对象引用的 **Handles 机制**。它定义了 `HandleBase`、`Handle<T>`、`HandleScope` 和 `SealHandleScope` 等核心类，这些类共同协作，确保在垃圾回收过程中，V8 引擎能够安全可靠地访问和操作 JavaScript 对象。  该文件是 V8 内存管理的基础，对于理解 V8 如何与 JavaScript 对象交互至关重要。 在启用了 `V8_ENABLE_DIRECT_HANDLE` 的情况下，还引入了 `DirectHandle<T>` 和 `DirectHandleVector<T>` 作为性能优化的替代方案，但需要更谨慎地处理垃圾回收的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/handles.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/handles/handles.h以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1083,7 +1085,4 @@ class DirectHandleVector : public std::vector<DirectHandle<T>> {
       : std::vector<DirectHandle<T>>(init) {}
 };
 #endif  // V8_ENABLE_
-"""
-
-
 ```

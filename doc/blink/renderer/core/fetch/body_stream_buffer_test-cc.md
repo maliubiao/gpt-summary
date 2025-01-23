@@ -113,7 +113,7 @@ The user wants a summary of the functionality of the `body_stream_buffer_test.cc
 
 这个测试文件的第一部分主要关注 `BodyStreamBuffer` 的基本操作，包括创建、复制 (`Tee`)、转换为不同数据类型 (`DrainAsBlobDataHandle`, `DrainAsFormData`)、以及基本的加载功能 (`StartLoading` 为 String, ArrayBuffer, Blob)。它还测试了与 JavaScript `ReadableStream` 的基本集成，以及 `AbortSignal` 和 `CachedMetadataHandler` 的初步集成。 总的来说，这部分测试覆盖了 `BodyStreamBuffer` 的核心功能和状态管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/body_stream_buffer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -979,7 +981,4 @@ TEST_F(BodyStreamBufferTest,
   EXPECT_EQ(handler, buffer->GetCachedMetadataHandler());
 
   BodyStreamBuffer* d
-"""
-
-
 ```

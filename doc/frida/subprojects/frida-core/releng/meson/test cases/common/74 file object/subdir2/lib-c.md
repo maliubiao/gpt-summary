@@ -172,7 +172,7 @@ Initially, one might focus too much on the triviality of the C code. The key is 
 
 虽然 `lib.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着一个可被操作的目标角色。理解它的上下文可以帮助我们更好地理解 Frida 的工作原理，以及如何在逆向工程中使用 Frida。 即使是这样简单的代码，在实际应用中，也涉及到许多底层的概念和可能的用户错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/74 file object/subdir2/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,12 +180,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 2;
 }
-
-"""
-
 ```

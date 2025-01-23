@@ -110,11 +110,13 @@ console.log(obj.name);
 
 `opcodes-unittest.cc` 这个文件是 V8 编译器内部实现的重要组成部分，它确保了操作码定义和分类的正确性。理解这些操作码以及它们的分类，可以帮助我们更深入地理解 V8 引擎是如何将 JavaScript 代码转换为可执行的机器代码的。  虽然我们通常不需要直接操作这些操作码，但它们是 JavaScript 引擎高效执行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/opcodes-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ TEST(IrOpcodeTest, Mnemonic) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -156,15 +156,17 @@ Initially, one might think about direct JavaScript interaction. However, realizi
 
 总而言之，`http_auth_handler_factory.cc` 文件是 Chromium 网络栈中处理 HTTP 认证的核心组件，它负责根据服务器的指示创建合适的认证处理器，使得浏览器能够与需要身份验证的服务器进行安全通信。它与 JavaScript 的联系是间接的，但对于处理需要身份验证的 Web 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_auth_handler_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -446,7 +448,4 @@ HttpAuthHandlerFactory* HttpAuthHandlerRegistryFactory::GetSchemeFactory(
 }
 
 }  // namespace net
-
-"""
-
 ```

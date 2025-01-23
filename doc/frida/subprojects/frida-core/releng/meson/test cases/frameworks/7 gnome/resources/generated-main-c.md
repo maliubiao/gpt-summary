@@ -142,7 +142,7 @@ if (ObjC.available) {
 
 总而言之，这个 C 代码文件是一个用于测试 Frida 与使用了 GLib 资源管理程序交互能力的单元测试。它可以帮助开发者验证 Frida 的功能是否正确，并在开发过程中提供调试的线索。同时，对于学习 Frida 和逆向工程的人来说，它也是一个很好的学习案例，展示了如何使用 GLib 的资源管理机制，以及如何使用 Frida 对其进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/7 gnome/resources/generated-main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<gio/gio.h>
@@ -178,7 +180,4 @@ int main(int argc, char **argv) {
     g_bytes_unref(data);
     return 0;
 }
-
-"""
-
 ```

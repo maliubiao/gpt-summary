@@ -125,7 +125,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "strlen"), {
 
 这个 Frida 脚本会在 `strlen` 函数被调用时打印其参数（字符串）和返回值（长度）。可以类似地 Hook 其他字符串函数进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/string_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -137,8 +137,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ARGE, DoMemmoveTest);
 }
 
@@ -762,8 +764,4 @@ TEST(STRING_TEST, strerrorname_np) {
   GTEST_SKIP() << "strerrorname_np not available";
 #endif
 }
-
-"""
-
-
 ```

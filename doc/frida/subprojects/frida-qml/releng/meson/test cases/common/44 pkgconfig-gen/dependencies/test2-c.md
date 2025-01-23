@@ -125,7 +125,7 @@ Let's break down the thought process for analyzing this C code snippet in the co
 
 总而言之，`test2.c` 看起来是一个非常简单的 C 程序，但它在 Frida 的构建系统中扮演着重要的角色，用于验证依赖关系管理的关键环节，确保 Frida 能够正确地构建和运行，从而支持其动态插桩的功能。它的简单性使得在构建过程中更容易排查依赖关系相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/test2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <inc1.h>
 #include <inc2.h>
 
@@ -143,7 +145,4 @@ int main(void) {
     return 1;
   return 0;
 }
-
-"""
-
 ```

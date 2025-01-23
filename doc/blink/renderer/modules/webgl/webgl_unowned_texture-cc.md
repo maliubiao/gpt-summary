@@ -161,15 +161,17 @@ By following these steps, I arrived at the comprehensive explanation provided in
 
 总而言之，`WebGLUnownedTexture.cc` 定义了一个用于表示由外部管理的 WebGL 纹理的类，它在 WebGL 与 Chromium 内部组件或某些扩展的集成中扮演着重要的角色。理解其“非拥有”的特性对于避免编程错误和进行有效调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_unowned_texture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ void WebGLUnownedTexture::DeleteObjectImpl(gpu::gles2::GLES2Interface* gl) {
 WebGLUnownedTexture::~WebGLUnownedTexture() = default;
 
 }  // namespace blink
-
-"""
-
 ```

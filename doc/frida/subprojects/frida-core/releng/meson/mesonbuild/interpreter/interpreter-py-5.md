@@ -134,7 +134,7 @@ This `interpreter.py` file is a core component of the Meson build system used by
 
 作为 Frida 构建系统 Meson 解释器的最后一部分，`interpreter.py` 的主要功能是 **解释和执行 `meson.build` 文件中的构建指令，将高级的构建描述转化为 Meson 构建系统能够理解和执行的内部表示。它负责创建和配置各种构建目标，处理源文件和依赖关系，并进行必要的错误检查，确保构建配置的正确性。**  它在整个构建流程中扮演着核心的翻译和组织角色，使得用户可以使用简洁的 `meson.build` 文件来描述复杂的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 .subdir, os.path.split(name)[0])
             if os.path.exists(os.path.join(self.source_root, pathseg)):
                 raise InvalidArguments(textwrap.dedent(f'''\
@@ -530,8 +532,4 @@ This will become a hard error in the future.''', location=self.current_node)
         if step < 1:
             raise InterpreterException('step must be >=1')
         return P_OBJ.RangeHolder(start, stop, step, subproject=self.subproject)
-
-"""
-
-
 ```

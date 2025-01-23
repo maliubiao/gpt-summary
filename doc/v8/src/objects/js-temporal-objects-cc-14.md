@@ -174,7 +174,7 @@ console.log(shanghaiTimeZone.getOffsetStringFor(instant)); // 输出 "+08:00"
 
 作为 V8 引擎中实现 ECMAScript Temporal API 的一部分，`v8/src/objects/js-temporal-objects.cc` 的这段代码主要负责 `Temporal.Calendar` 和 `Temporal.TimeZone` 对象的关键日期和时间计算、时区转换以及属性获取等核心功能。它通过 C++ 代码高效地实现了这些复杂的逻辑，为 JavaScript 开发者提供了强大的日期和时间处理能力。这部分代码是 Temporal API 实现的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,8 +182,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第15部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 j, method_name));
   // 5. Set two to ? ToTemporalDate(two).
   Handle<JSTemporalPlainDate> two;
@@ -929,8 +931,4 @@ MaybeHandle<String> JSTemporalTimeZone::GetOffsetStringFor(
       isolate, instant, ToTemporalInstant(isolate, instant_obj, method_name));
   // 4. Return ? BuiltinTimeZoneGetOffsetStringFor(timeZone, instant).
   return BuiltinTimeZoneGetOffsetStringFor(isolate, time_zone, instant,
-                       
-"""
-
-
 ```

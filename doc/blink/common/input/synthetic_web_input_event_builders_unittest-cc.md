@@ -119,14 +119,16 @@ This systematic approach, combining code analysis with knowledge of web technolo
 
 总而言之，`synthetic_web_input_event_builders_unittest.cc` 是一个重要的测试文件，它确保了 Blink 引擎能够正确地模拟用户的触摸输入，这对于各种浏览器功能 (例如触摸手势、画布交互等) 的正常运行至关重要。它也为开发者提供了如何使用 `SyntheticWebInputEventBuilders` 的示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/synthetic_web_input_event_builders_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ TEST(SyntheticWebInputEventBuilders, BuildWebTouchEvent) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

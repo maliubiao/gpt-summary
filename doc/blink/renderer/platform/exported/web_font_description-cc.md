@@ -168,14 +168,16 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`web_font_description.cc` 中定义的 `WebFontDescription` 类是 Blink 渲染引擎中处理字体信息的重要组成部分，它连接了内部的字体表示和外部的接口，使得字体信息能够在 Blink 的各个模块之间高效且一致地传递和使用。它与 CSS 定义的字体样式息息相关，并间接地受到 HTML 结构和 JavaScript 动态修改的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_font_description.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -249,7 +251,4 @@ WebFontDescription::operator FontDescription() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

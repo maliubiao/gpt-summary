@@ -158,7 +158,7 @@ WASM_I32_ADD
 
 总之，`v8/test/common/wasm/wasm-macro-gen.h` 提供了一套便捷的工具，用于在 V8 的 WebAssembly 测试中生成和管理 WebAssembly 字节码，提高了测试代码的可读性和维护性，并降低了手动编写字节码的出错率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/common/wasm/wasm-macro-gen.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/common/wasm/wasm-macro-gen.h以.tq结尾，那它是个v8 torque源代码，
@@ -166,9 +166,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-      \
+### 源代码
+```c
+\
       static_cast<uint8_t>(0b01), /*source is nullable*/ \
       static_cast<uint8_t>(depth), ToByte(sourcetype), ToByte(targettype)
 #define WASM_BR_ON_CAST_NULL(depth, sourcetype, targettype)    \
@@ -631,8 +633,4 @@ Prompt:
 #define TOP_TIER_OPTIMIZED (0x02 << 4)
 
 #endif  // V8_WASM_MACRO_GEN_H_
-
-"""
-
-
 ```

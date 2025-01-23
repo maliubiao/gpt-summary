@@ -159,7 +159,7 @@ Finalizing and cleaning up...
 
 总而言之，`frida/subprojects/frida-core/releng/progress.py` 虽然只是一个简单的 Python 文件，但它在 Frida 这个复杂的动态 instrumentation 工具中扮演着重要的角色，为用户提供操作进度的反馈，帮助用户理解 Frida 的工作流程，并在调试过程中提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/progress.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from dataclasses import dataclass
 from typing import Callable
 
@@ -183,7 +185,4 @@ ProgressCallback = Callable[[Progress], None]
 
 def print_progress(progress: Progress):
     print(f"{progress.message}...", flush=True)
-
-"""
-
 ```

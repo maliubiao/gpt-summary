@@ -218,14 +218,16 @@ brand_set_.push_back({"Chromium", "96.0.4664.45"});
 
 总而言之，`navigator_ua_data.cc` 文件是 Chromium 中实现 `navigator.userAgentData` API 的关键部分，它负责收集、存储和向网页提供结构化的用户代理信息，以便网站可以进行设备检测、功能适配等操作，同时也考虑了用户的隐私保护。开发者在使用相关 API 时需要注意兼容性、数据安全性以及避免过度依赖某些特定的用户代理信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/navigator_ua_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -516,7 +518,4 @@ void NavigatorUAData::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

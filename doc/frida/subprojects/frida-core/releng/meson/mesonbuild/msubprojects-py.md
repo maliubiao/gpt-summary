@@ -105,7 +105,7 @@ Now, let's structure the response to address the user's specific points:
 
 `msubprojects.py` 是 Frida 构建系统中负责管理外部子项目依赖的关键脚本。它提供了一组命令，允许 Frida 的开发者或用户自动化子项目的下载、更新、版本控制、清理和执行命令等操作，确保 Frida 能够正确地构建和运行所依赖的外部库。它支持多种版本控制系统（Git, Mercurial, SVN）以及直接从压缩包获取源码的方式，并与 WrapDB 集成以跟踪子项目的版本信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from dataclasses import dataclass, InitVar
@@ -866,7 +868,4 @@ def run(options: 'Arguments') -> int:
     for wrap in wraps:
         dirname = Path(source_dir, subproject_dir, wrap.directory).as_posix()
         runner = Runn
-"""
-
-
 ```

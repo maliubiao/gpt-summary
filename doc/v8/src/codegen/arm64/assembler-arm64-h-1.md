@@ -122,7 +122,7 @@ Atomics.add(sharedCounter, 0, 1);
 
 这段 `assembler-arm64.h` 代码的第二部分主要定义了用于生成 **ARM64 架构的加载/存储指令、原子操作指令（包括比较交换、加法、位操作、最大/最小值和交换操作）以及一些基本的移动和杂项指令。**  这些指令是 V8 引擎将 JavaScript 代码编译成高效机器码的关键组成部分，尤其是在处理多线程和共享内存的场景下。 这部分代码还包含了用于将立即数加载到寄存器的指令以及一些控制流和系统相关的指令。  最后，也定义了初步的 SIMD 向量运算指令，用于执行并行计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/assembler-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 & rt, const Register& rn);
 
   // Load-acquire half-word.
@@ -898,8 +900,4 @@ Prompt:
 
   // Unsigned long multiply-sub by scalar element.
   void umlsl(const VRegister& vd, const VRegister& vn, const VRegister& vm,
-     
-"""
-
-
 ```

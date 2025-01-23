@@ -76,9 +76,12 @@ This methodical approach, moving from high-level purpose to specific details and
 
 **总结来说，`run-all-unittests.cc` 是 V8 单元测试的启动脚本，它负责搭建测试所需的运行环境，包括初始化 V8 引擎、cppgc 垃圾回收器、配置 Google Mock 测试框架，并最终启动所有的测试用例。它还支持一些可选的功能，如 fuzz 测试和 Perfetto 追踪，如果相应的宏定义被启用。**
 
-Prompt: ```这是目录为v8/test/unittests/run-all-unittests.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/run-all-unittests.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,6 +148,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
-
-"""
 ```

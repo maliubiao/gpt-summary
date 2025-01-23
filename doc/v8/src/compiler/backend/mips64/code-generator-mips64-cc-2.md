@@ -208,7 +208,7 @@ console.log(b[0]);
 
 这段 `code-generator-mips64.cc` 的代码片段是 V8 编译器后端的重要组成部分，专门负责将中间代码转换为 MIPS64 架构的机器码，尤其关注内存访问、栈操作、原子操作和 SIMD 指令的生成。虽然开发者通常不直接修改此代码，但理解其功能有助于理解 JavaScript 代码的执行原理，并避免编写可能导致低效或错误机器码的程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/code-generator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -216,8 +216,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oryOperand());
       break;
     case kMips64Ulhu:
@@ -1083,7 +1085,4 @@ oryOperand());
       auto dt = static_cast<MSADataType>(MiscField::decode(instr->opcode()));
       __ ExtMulHigh(dt, i.OutputSimd128Register(), i.InputSimd128Register(0),
                     i.InputSimd
-"""
-
-
 ```

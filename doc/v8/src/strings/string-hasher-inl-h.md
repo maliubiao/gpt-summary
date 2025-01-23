@@ -169,15 +169,17 @@ If a programmer were to implement their own string hashing and didn't carefully 
 
 In summary, `v8/src/strings/string-hasher-inl.h` provides the core logic for efficient string hashing within the V8 engine, which is crucial for the performance of JavaScript object property lookups and other string-based operations. It includes optimizations for common cases like array and integer indices and handles the complexities of different string lengths and character encodings.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/string-hasher-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/string-hasher-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ std::size_t SeededStringHasher::operator()(const char* name) const {
 }  // namespace v8
 
 #endif  // V8_STRINGS_STRING_HASHER_INL_H_
-
-"""
-
 ```

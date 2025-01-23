@@ -117,15 +117,17 @@ Here's a thinking process to arrive at the explanation of `keyboard_shortcut_rec
 
 总而言之，`keyboard_shortcut_recorder.cc` 是 Chromium 在 Android 平台上用于收集物理键盘快捷键使用情况的关键组件，它为 Chromium 团队提供了宝贵的用户行为数据，用于改进浏览器的用户体验。虽然它本身不直接与 JavaScript, HTML, CSS 交互，但它记录的用户操作往往会触发这些技术实现的网页行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/keyboard_shortcut_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ void RecordKeyboardShortcutForAndroid(
 }
 #endif  // BUILDFLAG(IS_ANDROID)
 }  // namespace blink
-
-"""
-
 ```

@@ -168,7 +168,7 @@ Let's break down the thought process to analyze this C code snippet in the conte
 
 尽管 `source.c` 中的 `add` 函数本身非常简单，但它的存在于 Frida 的一个失败测试用例中，暗示了它在测试 Frida 的绑定生成器时扮演着特定的角色。通过分析这个简单的函数，我们可以理解动态 instrumentation、逆向工程的基本概念，以及在底层二进制和操作系统层面的一些知识。这个文件作为一个调试线索，可以帮助 Frida 的开发者理解绑定生成器在处理简单 C 代码时可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/111 nonsensical bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -186,7 +188,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

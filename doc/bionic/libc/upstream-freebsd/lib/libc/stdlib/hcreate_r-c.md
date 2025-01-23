@@ -256,7 +256,7 @@ sys.stdin.read()
 
 `hcreate_r` 是一个用于初始化线程安全哈希表数据结构的函数，它在 Android Bionic 中被广泛使用，尤其是在需要并发访问的数据管理场景中。虽然动态链接器不直接调用它，但其底层的符号查找机制与 `hcreate_r` 提供的哈希表初始化原理类似。理解 `hcreate_r` 的功能和使用方式对于 NDK 开发和 Android 系统分析都非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/lib/libc/stdlib/hcreate_r.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2015 Nuxi, https://nuxi.nl/
  *
@@ -332,7 +334,4 @@ hcreate_r(size_t nel, struct hsearch_data *htab)
 	htab->__hsearch = hsearch;
 	return 1;
 }
-
-"""
-
 ```

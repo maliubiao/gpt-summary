@@ -143,15 +143,17 @@ pinsets_manager.RegisterPinset(std::move(example_pinset));
 
 总而言之，`pinsets.cc` 文件在 Chromium 网络栈中扮演着重要的角色，负责存储和管理用于增强网络连接安全性的关键信息。虽然 HPKP 已被移除，但其设计思想和代码片段可能仍然对理解 Chromium 的安全架构有所帮助，并可能被用于其他类似的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/transport_security_state_generator/pinsets.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ void Pinsets::RegisterPinset(std::unique_ptr<Pinset> pinset) {
 }
 
 }  // namespace net::transport_security_state
-
-"""
-
 ```

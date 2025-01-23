@@ -149,15 +149,17 @@ Let's break down the thought process for analyzing this C++ test file and genera
 
 总而言之，`web_transport_fingerprint_proof_verifier_test.cc` 文件是确保 Chromium 网络栈中 WebTransport 指纹验证功能正确性和安全性的重要组成部分。它通过各种测试场景覆盖了验证器的核心逻辑和边界情况，帮助开发者发现和修复潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/web_transport_fingerprint_proof_verifier_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -342,7 +344,4 @@ TEST_F(WebTransportFingerprintProofVerifierTest, AddCertificate) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -147,7 +147,7 @@ RuntimeError: 'newline' is '\\r\\n' but should be '\n'
 
 总之，`check_quoting.py` 虽然是一个看似简单的 Python 脚本，但它在确保 Frida 工具链的健壮性和正确性方面发挥着重要的作用，尤其是在处理包含特殊字符的输入时。 它的存在可以帮助开发者尽早发现和修复与特殊字符处理相关的 bug，从而提高 Frida 工具的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/141 special characters/check_quoting.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -185,7 +187,4 @@ for arg in sys.argv[1:]:
 if output is not None:
     with open(output, 'w') as f:
         f.write('Success!')
-
-"""
-
 ```

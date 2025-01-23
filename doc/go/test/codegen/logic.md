@@ -131,15 +131,17 @@ func andWithUse(x, y int) int {
 
 `go/test/codegen/logic.go` 中的这段代码是 Go 编译器代码生成测试的一部分。它通过编写具有特定位运算模式的 Go 代码，并使用 `// asmcheck` 注释来断言生成的汇编代码是否符合预期，从而验证编译器的优化行为。它不直接处理命令行参数，而是由 `go test` 工具解析和执行。 理解 `asmcheck` 的语法和目标架构是避免使用错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/logic.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -181,9 +183,4 @@ func andDemorgans(x, y int) int {
 	z := ^x & ^y
 	return z
 }
-
-"""
-
-
-
 ```

@@ -57,7 +57,7 @@ Android 系统和应用中经常需要进行数学运算，例如：
 
 这段代码是 `bionic` 库中 `cos` 函数测试数据的一部分，它提供了一系列的输入输出对，用于自动化地验证 `cos` 函数的实现是否正确，这对于保证 Android 系统和依赖该函数的应用的稳定性和准确性至关重要。 它是 Android 平台数学库质量保证的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -69,8 +69,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 Entry 354
     0x1.5a5615acd0dc09bf32e903149634f999p-1,
     0x1.a7ep-1
@@ -1497,7 +1499,4 @@ Entry 354
   },
   { // Entry 710
     0x1.d6c0b125
-"""
-
-
 ```

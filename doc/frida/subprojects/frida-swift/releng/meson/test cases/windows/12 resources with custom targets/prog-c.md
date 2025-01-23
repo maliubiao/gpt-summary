@@ -132,7 +132,7 @@ By following these steps, moving from basic code understanding to contextual ana
 
 总而言之，这个 `prog.c` 文件虽然简单，但它作为一个测试用例，对于 Frida 的开发和使用都有一定的意义。它可以帮助开发者验证 Frida 的功能，也可以帮助用户理解 Frida 的工作原理和排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/12 resources with custom targets/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 #define MY_ICON 1
@@ -161,7 +163,4 @@ WinMain(
     ((void)nCmdShow);
     return hIcon ? 0 : 1;
 }
-
-"""
-
 ```

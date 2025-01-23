@@ -147,7 +147,7 @@ int static_lib_function(void) {
 
 总而言之，这个简单的 C 代码文件是 Frida 项目中一个用于测试 Windows 平台下动态链接库与静态链接库交互的测试用例的一部分。它帮助开发者验证 Frida 在处理这类场景时的行为是否符合预期。对于逆向工程师而言，这个例子展示了 DLL 导出函数和静态库调用的基本概念，这些是进行 Windows 平台逆向分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/20 vs install static lib with generated obj deps/both_lib_source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int static_lib_function(void);
 extern __declspec(dllexport) int both_lib_function(void);
 
@@ -164,7 +166,4 @@ int both_lib_function(void)
 {
     return static_lib_function();
 }
-
-"""
-
 ```

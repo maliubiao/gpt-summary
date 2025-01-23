@@ -173,7 +173,7 @@ int main(int argc, char *argv[]) {
 
 总而言之，这个 `app.c` 文件是一个用于测试目的的简单程序，展示了如何使用 GLib 的 GObject 系统创建和操作对象。它本身可以作为逆向分析的目标，并涉及到二进制底层、Linux 框架等相关知识。理解这个文件的功能和相关概念，对于使用 Frida 进行动态 instrumentation 和逆向分析非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/vala/17 plain consumer/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "badger.h"
 
 int main(int argc, char *argv[]) {
@@ -194,7 +196,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
-"""
-
 ```

@@ -153,7 +153,7 @@ test_try_and_catch_pp (guint32 * val)
 
 总而言之，这个文件是 Frida 内部测试框架的一部分，用于确保 `stalker` 组件在 x86 架构下能够正确处理各种异常情况，保证 Frida 工具的稳定性和可靠性。普通用户无需直接操作此文件，但理解其功能有助于深入理解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/stalker-x86-exceptions.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2021 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -320,7 +322,4 @@ test_try_and_dont_catch_pp_3 (guint32 * val)
 
   test_set_bit ("test_try_and_dont_catch_pp_3", val, 12);
 }
-
-"""
-
 ```

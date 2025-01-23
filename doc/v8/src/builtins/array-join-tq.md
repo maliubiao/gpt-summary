@@ -164,14 +164,16 @@ By following these steps, iteratively refining understanding, and connecting the
 
 理解这段 Torque 代码对于深入了解 V8 引擎如何高效地实现 JavaScript 的数组连接功能至关重要。它展示了 V8 如何针对不同的数据类型进行优化，并处理一些常见的边界情况和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-join.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -907,7 +909,4 @@ transitioning javascript builtin TypedArrayPrototypeToLocaleString(
       true, typedArray, Convert<Number>(length), ',', locales, options);
 }
 }
-
-"""
-
 ```

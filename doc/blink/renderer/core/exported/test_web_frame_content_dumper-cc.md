@@ -168,15 +168,17 @@ Essentially, the process involves: understanding the code's purpose through nami
 
 总而言之，`test_web_frame_content_dumper.cc` 是 Blink 引擎内部用于测试和调试的重要工具，它将 Web 页面的复杂状态转化为易于分析的文本形式，帮助开发者理解渲染过程、验证代码逻辑，并快速定位问题。 它的功能与 HTML、CSS 和 JavaScript 紧密相关，因为它反映了这些技术的最终呈现结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/test_web_frame_content_dumper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ WebString TestWebFrameContentDumper::DumpLayoutTreeAsText(
 }
 
 }  // namespace blink
-
-"""
-
 ```

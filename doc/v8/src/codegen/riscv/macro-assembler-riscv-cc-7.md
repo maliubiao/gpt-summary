@@ -710,7 +710,7 @@ void MacroAssembler::DecompressTagged(const Register& destination,
 void MacroAssembler::DecompressTagged(Register dst, Tagged_t immediate) {
   ASM_CODE_COMMENT(this);
   AddWord(dst, kPtrComprCageBaseRegister, static_cast<int32_t
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -718,8 +718,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ratch, object);
     Lbu(scratch, FieldMemOperand(scratch, Map::kBitFieldOffset));
     And(scratch, scratch, Operand(Map::Bits1::IsConstructorBit::kMask));
@@ -1572,7 +1574,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
     // {argc_operand} was loaded into {argc_reg} above.
     if (slots_to_drop_on_return != 0) {
       __ AddWord(sp, sp, Operand(slots_t
-"""
-
-
 ```

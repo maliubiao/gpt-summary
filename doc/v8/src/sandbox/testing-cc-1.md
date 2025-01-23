@@ -105,7 +105,7 @@ console.log(myArray.length); // 输出 3
 
 `GetFieldOffsets()` 函数提供了一个便捷的方式来获取这些内部结构信息，避免在测试代码中硬编码偏移量，提高了代码的可读性和维护性。 整个文件（或包含这两部分代码的模块）很可能被用于构建各种测试工具和辅助函数，以验证 V8 沙箱的正确性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/testing.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/testing.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,8 +113,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 PE]["dispatch_handle"] =
         JSFunction::kDispatchHandleOffset;
 #endif  // V8_ENABLE_LEAPTIERING
@@ -162,8 +164,4 @@ PE]["dispatch_handle"] =
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

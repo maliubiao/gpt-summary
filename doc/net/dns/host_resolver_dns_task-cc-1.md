@@ -177,7 +177,7 @@ Essentially, I approached it like reverse-engineering. I started with the code, 
 
 `HostResolverDnsTask` 的第二部分主要负责接收和处理来自底层 DNS 客户端的 DNS 事务结果，包括成功的结果和错误。它会进行诸如缓存结果、检测 HTTP 到 HTTPS 升级、处理不同类型的错误、对 IP 地址进行排序等操作。最终，它会根据所有事务的结果决定 DNS 解析任务是成功还是失败，并将最终结果通知给其委托对象，从而完成整个 DNS 解析流程的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_dns_task.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erCache) &&
       resolve_context_->host_resolver_cache() != nullptr) {
     for (const std::unique_ptr<HostResolverInternalResult>& result :
@@ -522,8 +524,4 @@ bool HostResolverDnsTask::ShouldTriggerHttpToHttpsUpgrade(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

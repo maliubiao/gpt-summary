@@ -182,7 +182,7 @@ addi x10, x10, <lower_bits_of_12345>
 
 这是 `v8/src/codegen/riscv/assembler-riscv.h` 的第一部分的功能归纳。 第二部分很可能会继续定义 `Assembler` 类中的更多方法，或者与代码生成过程相关的其他类和结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/assembler-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/assembler-riscv.h以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1071,7 +1073,4 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase,
   bool is_internal_reference(Label* L) {
     return internal_reference_positions_.find(L->pos()) !=
            inter
-"""
-
-
 ```

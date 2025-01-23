@@ -151,11 +151,13 @@ try {
 
 `builtins-reflect.cc` 文件是 V8 引擎中实现 `Reflect` 对象核心功能的 C++ 代码。它定义了 `Reflect.defineProperty`、`Reflect.ownKeys` 和 `Reflect.set` 等方法的具体行为，包括参数处理、类型检查以及调用 V8 内部的机制来完成相应的操作。这些 C++ 代码直接影响着 JavaScript 中 `Reflect` 对象的功能和行为。理解这些底层实现有助于更深入地理解 JavaScript 引擎的工作方式以及 `Reflect` 对象的用途和特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-reflect.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ BUILTIN(ReflectSet) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

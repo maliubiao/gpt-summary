@@ -172,12 +172,14 @@ isNumber(123);
 
 总而言之，这部分 `macro-assembler-loong64.cc` 代码提供了在 LoongArch64 架构上执行 JavaScript 代码所需的底层指令抽象，它将高级的 JavaScript 概念映射到具体的机器指令，是 V8 引擎实现跨平台能力的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/macro-assembler-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _cond_d(cc, cmp1, cmp2, cd);
   }
 }
@@ -2096,7 +2098,4 @@ void MacroAssembler::LeaveFrame(StackFrame::Type type) {
   ASM_CODE_COMMENT(this);
   addi_d(sp, fp, 2 * kSystemPointerSize);
   Ld_d(ra, MemOperand(fp, 1 * kSystemPoin
-"""
-
-
 ```

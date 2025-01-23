@@ -146,15 +146,17 @@ func main() {
 
 `go/test/typeparam/structinit.go` 是 Go 语言泛型功能测试套件的一部分，专门用于测试泛型结构体的初始化行为。它通过编写各种正确和错误的初始化场景，来验证 Go 语言编译器在处理泛型结构体初始化时的正确性，并帮助开发者理解和避免在使用泛型时可能遇到的错误。由于其 `ignored` 的包名，它本身不是一个可以直接执行的包，而是作为测试用例被 Go 的测试框架使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/structinit.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -162,9 +164,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

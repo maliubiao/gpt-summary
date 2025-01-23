@@ -301,15 +301,17 @@ fetch('https://example.com/api/data')
 
 总结来说，`hpack_varint_decoder_test.cc` 是一个非常重要的测试文件，它确保了 `HpackVarintDecoder` 能够正确地解码 HTTP/2 HPACK 中使用的变长整数，这对于浏览器正确地与 HTTP/2 服务器通信至关重要。尽管 JavaScript 代码不会直接调用这个解码器，但其正确性直接影响着 JavaScript Web 应用的功能和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/varint/hpack_varint_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -627,7 +629,4 @@ TEST_P(HpackVarintDecoderTest, Error) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

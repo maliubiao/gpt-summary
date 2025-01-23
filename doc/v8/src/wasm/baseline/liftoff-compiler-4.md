@@ -110,12 +110,14 @@ console.log(buffer); // 输出: Uint8Array(5) [ 42, 42, 42, 42, 42 ]
 
 总而言之，这个代码文件的第 5 部分是 Liftoff 编译器实现 WebAssembly 功能的关键组成部分，它将高级的 WebAssembly 指令转换为底层的机器码，使得 JavaScript 环境能够高效地执行 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 kMaxUint32 if the high word had any
   // bits set.
   VarState IndexToVarStateSaturating(int stack_index, LiftoffRegList* pinned) {
@@ -1685,8 +1687,4 @@ kMaxUint32 if the high word had any
                     string_var,
                 },
                 decoder->position());
- 
-"""
-
-
 ```

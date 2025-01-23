@@ -177,7 +177,7 @@ let error = new notConstructor(); // TypeError: notConstructor is not a construc
 
 总而言之，这段代码的核心目标是 **识别和转换低效的通用函数调用模式为更高效的、特定的操作序列**，从而提高 JavaScript 代码的执行速度。它涉及到对函数模板、API 调用、`arguments` 对象、spread 语法以及运行时反馈的精细处理和优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 plate_info.accept_any_receiver()) {
         DCHECK(!function_template_info.is_signature_undefined(broker()));
         builtin_name = Builtin::kCallFunctionTemplate_CheckCompatibleReceiver;
@@ -955,9 +957,4 @@ Reduction JSCallReducer::ReduceJSCall(Node* node,
                   Runtime::kThrowConstructorNonCallableError, 1));
     return Changed(node);
   }
-
-
-"""
-
-
 ```

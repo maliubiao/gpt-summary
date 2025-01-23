@@ -171,15 +171,17 @@ This detailed process, moving from a high-level understanding to specific code a
 
 `audio_track_list.cc` 文件在 Chromium Blink 引擎中扮演着管理音频轨道集合的关键角色。它负责维护轨道信息，跟踪启用状态，并响应来自 JavaScript 的操作请求。理解这个文件有助于深入了解 HTML5 媒体元素的音频轨道处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/audio_track_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ void AudioTrackList::TrackEnabled(const String& track_id, bool exclusive) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

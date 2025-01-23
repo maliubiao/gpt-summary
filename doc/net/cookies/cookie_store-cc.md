@@ -146,15 +146,17 @@ Cookie2: name="user_prefs", value="theme=dark", domain="example.com", path="/app
 
 总而言之，`net/cookies/cookie_store.cc` 定义了 Chromium 中管理 cookie 的抽象接口，具体的实现由其子类完成。它与 JavaScript 通过浏览器提供的 cookie API 紧密相连，用户的日常网络浏览行为会触发对 `CookieStore` 的操作。理解 `CookieStore` 的功能是调试网络请求和用户会话管理相关问题的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ std::optional<bool> CookieStore::SiteHasCookieInOtherPartition(
 }
 
 }  // namespace net
-
-"""
-
 ```

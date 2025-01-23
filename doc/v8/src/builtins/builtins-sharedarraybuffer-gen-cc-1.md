@@ -119,7 +119,7 @@ console.log(Atomics.load(bigInt64a, 0)); // 输出: 9007199254740991n
 
 总结来说，这段 C++ 代码是 V8 引擎中实现 `SharedArrayBuffer` 原子存储操作的核心部分，它负责处理不同数据类型的存储，进行必要的边界检查，并确保操作的原子性，这直接支撑了 JavaScript 中 `Atomics.store()` 方法的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-sharedarraybuffer-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-sharedarraybuffer-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e of the memory model.)
   int32_t case_values[] = {
       INT8_ELEMENTS,   UINT8_ELEMENTS, INT16_ELEMENTS,
@@ -200,8 +202,4 @@ e of the memory model.)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

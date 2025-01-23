@@ -197,14 +197,16 @@ Initially, I might have focused too much on the individual attribute handling in
 
 总而言之，`svg_text_layout_attributes_builder.cc` 是 Blink 渲染引擎中负责精确计算 SVG 文本布局属性的关键组件，它深入理解 SVG 规范中关于文本定位的规则，并将其转化为浏览器可以理解和执行的布局信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_text_layout_attributes_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -622,7 +624,4 @@ unsigned SvgTextLayoutAttributesBuilder::IfcTextContentOffsetAt(
 }
 
 }  // namespace blink
-
-"""
-
 ```

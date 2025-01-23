@@ -191,7 +191,7 @@ Finally, I organize the findings into the requested categories, providing clear 
 
 总而言之，`check_exists.py` 是 Frida 测试套件中一个非常小的实用工具，用于验证文件是否存在，这在自动化测试和确保系统状态符合预期方面非常有用，尤其是在进行动态分析和逆向工程时，环境和文件的状态是关键因素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/51 run target/check_exists.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -208,7 +210,4 @@ import sys
 
 if not os.path.isfile(sys.argv[1]):
     raise Exception("Couldn't find {!r}".format(sys.argv[1]))
-
-"""
-
 ```

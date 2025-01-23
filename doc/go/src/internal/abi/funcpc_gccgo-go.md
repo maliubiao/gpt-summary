@@ -175,7 +175,7 @@ go build -compiler=gccgo your_program.go
 
 这段代码是 `gccgo` 编译器下获取函数程序计数器的底层实现。它利用了 `gccgo` 编译器对接口的特定内存布局。 开发者需要注意其平台依赖性和 `unsafe` 包的使用带来的潜在风险。它主要用于 Go 语言的内部实现，普通用户通常不需要直接使用这些函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/funcpc_gccgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -206,9 +208,4 @@ func FuncPCABIInternal(f interface{}) uintptr {
 	words := (*[2]unsafe.Pointer)(unsafe.Pointer(&f))
 	return *(*uintptr)(unsafe.Pointer(words[1]))
 }
-
-"""
-
-
-
 ```

@@ -33,7 +33,7 @@ Here's a breakdown of the thought process:
 
 在整个 `atan2f_intel_data.handroid` 文件中，很可能包含了各种各样的测试用例，涵盖了正常情况、边界情况、特殊值（例如正负零、无穷大、NaN）等，以确保 `atan2f` 函数的鲁棒性和精确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan2f_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -45,9 +45,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  0x1.p0,
+### 源代码
+```c
+0x1.p0,
     0x1.p3
   },
   { // Entry 316
@@ -1747,7 +1749,4 @@ Prompt:
   },
   { // Entry 655
     -0x1.fffffa00000bfff53d55b5855374f5c
-"""
-
-
 ```

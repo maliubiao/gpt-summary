@@ -169,15 +169,17 @@ Finally, I organize the analysis into logical sections as requested by the promp
 
 总而言之，`spell_checker_test.cc` 是确保 Chromium Blink 引擎拼写检查功能正确、稳定运行的关键组成部分。它通过模拟各种用户操作和场景，验证了 `SpellChecker` 类的行为，并为开发者提供了调试和修复相关问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/spellcheck/spell_checker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -658,7 +660,4 @@ TEST_F(SpellCheckerTest, PasswordFieldsAreIgnored) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

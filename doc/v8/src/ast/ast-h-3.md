@@ -250,7 +250,7 @@ By following these steps, moving from the general purpose to specific details, a
 
 作为第4部分，结合上下文来看，`AstNodeFactory` 的核心功能是 **作为 V8 引擎中创建 JavaScript 代码抽象语法树 (AST) 节点的中心工厂**。它提供了一组丰富的 `New...` 方法，对应着 JavaScript 语言的各种语法结构（语句和表达式）。`AstNodeFactory` 负责分配内存、初始化 AST 节点对象，并为后续的编译、优化和执行阶段提供结构化的代码表示。  它在整个编译流程中扮演着至关重要的角色，将解析器生成的初步结果转化为可供进一步处理的 AST 数据结构。 它的设计目标是提供一种清晰、可维护且高效的方式来构建和管理 AST。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/ast.h以.tq结尾，那它是个v8 torque源代码，
@@ -258,8 +258,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 e, bool is_breakable) {
     return zone_->New<Block>(ignore_completion_value, is_breakable, false);
   }
@@ -844,8 +846,4 @@ FAILURE_NODE_LIST(DECLARE_NODE_FUNCTIONS)
 }  // namespace v8
 
 #endif  // V8_AST_AST_H_
-
-"""
-
-
 ```

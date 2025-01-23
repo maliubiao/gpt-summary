@@ -173,15 +173,17 @@ Essentially, I approached this like reverse engineering the purpose of the code 
 
 总之，`mapped_host_resolver_unittest.cc` 是理解 `MappedHostResolver` 工作原理的关键，它通过各种测试用例展示了该类如何处理不同的映射和排除规则，以及如何与底层的 DNS 解析器协同工作。 理解这些测试用例对于调试与域名映射相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/mapped_host_resolver_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -582,7 +584,4 @@ TEST(MappedHostResolverTest, MapHostWithSchemeToError) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

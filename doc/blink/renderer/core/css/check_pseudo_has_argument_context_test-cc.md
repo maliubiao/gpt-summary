@@ -101,7 +101,7 @@ Now, let's generate the detailed answer incorporating these points.
 
 这个测试文件的主要功能是**验证 `CheckPseudoHasArgumentContext` 类能够正确地解析 CSS `:has()` 伪类的参数选择器，并提取出用于后续 DOM 树遍历和匹配的关键上下文信息。** 这包括确定参数选择器的关系类型、遍历的深度和范围，以及是否需要考虑 Shadow DOM。  它通过一系列单元测试，针对不同的 `:has()` 选择器场景，来确保 Blink 引擎对 `:has()` 伪类的理解和处理是正确的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/check_pseudo_has_argument_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -847,7 +849,4 @@ TEST_F(CheckPseudoHasArgumentContextTest, TestTraversalIteratorCase4) {
                               {"div3", /* depth */ 0}});
 
   TestTraversalIteratorSteps(document, "div4", "
-"""
-
-
 ```

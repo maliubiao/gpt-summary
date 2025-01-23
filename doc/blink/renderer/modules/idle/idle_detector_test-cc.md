@@ -198,15 +198,17 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，`idle_detector_test.cc` 文件是 Blink 引擎中用于验证 Idle Detection API 实现正确性的关键组成部分。它通过模拟各种场景和状态变化，确保 `IdleDetector` 类能够按照预期工作，并为开发者理解和调试该 API 提供了重要的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/idle/idle_detector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -639,7 +641,4 @@ TEST(IdleDetectorTest, SetAndClearOverrides) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -101,7 +101,7 @@ This detailed thought process, moving from basic code understanding to the broad
 
 总之，这个 `prog.c` 文件本身是一个简单的测试用例，但它反映了 Frida 构建过程中对 PCH 的依赖。当涉及到 Frida 构建错误或需要深入了解 Frida 构建机制时，开发者可能会接触到这个文件。理解这个文件的功能和背后的原理，有助于诊断和解决 Frida 构建相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/13 pch/withIncludeFile/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH or explicit inclusion
 
 void func(void) {
@@ -121,7 +123,4 @@ void func(void) {
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

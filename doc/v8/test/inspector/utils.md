@@ -108,11 +108,13 @@ v8::Local<v8::String> v8String = v8::internal::ToV8String(isolate, cppString);
 
 `v8/test/inspector/utils.cc` 提供了一组低级别的实用函数，用于在 V8 引擎的 C++ 代码和 JavaScript 字符串之间进行数据转换。这对于 V8 引擎的内部运作，特别是检查器功能的实现至关重要，因为它需要在 C++ 和 JavaScript 之间传递和处理字符串数据。这些函数处理了不同的字符编码和数据表示，确保了数据在不同环境中的正确传递和解释。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/inspector/utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ std::vector<uint16_t> ToVector(v8::Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

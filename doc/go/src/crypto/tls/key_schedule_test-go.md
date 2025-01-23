@@ -139,7 +139,7 @@ This iterative process of examining the code, making deductions, and structuring
 
 `go/src/crypto/tls/key_schedule_test.go` 是 Go 标准库中用于测试 TLS 1.3 密钥调度实现正确性的重要文件。它通过 ACVP 测试向量和自定义的测试用例，确保了 TLS 连接安全性的关键部分能够按照协议规范正确运行。对于一般的 TLS 用户，不需要直接关注这个文件的细节，但对于 TLS 协议的开发者和研究者来说，理解其内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/key_schedule_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -147,8 +147,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -268,9 +270,4 @@ func TestTrafficKey(t *testing.T) {
 		t.Errorf("cipherSuiteTLS13.trafficKey() gotIV = % x, want % x", gotIV, wantIV)
 	}
 }
-
-"""
-
-
-
 ```

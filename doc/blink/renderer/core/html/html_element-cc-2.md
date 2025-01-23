@@ -116,15 +116,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这段代码的核心功能是实现 `auto` 和 `hint` 类型的 popover 的显示和隐藏机制。它负责管理 popover 的堆叠，处理相关的事件（`toggle` 和 `beforetoggle`），以及在 popover 显示和隐藏时进行焦点管理。代码还考虑了 popover 之间的关联，例如通过 `anchor` 属性和触发元素 (`invoker`) 建立的联系，并处理了在事件处理过程中可能出现的错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::kShow, exception_state,
                       /*include_event_handler_text=*/true,
                       &original_document)) {
@@ -909,7 +911,4 @@ void HTMLElement::InvokePopover(Element& invoker) {
 // usually have ancestral relationships, this function *will* check for invoker
 // and anchor relationships to form descendant edges. This is important for the
 // `popover-hide-
-"""
-
-
 ```

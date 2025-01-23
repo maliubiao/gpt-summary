@@ -117,14 +117,16 @@ Initially, I might have focused too much on the C++ specifics. Realizing the pro
 
 `same_block_word_iterator_test.cc` 文件通过一系列单元测试，详细验证了 `SameBlockWordIterator` 类在各种 HTML 结构和文本布局下的行为。这对于确保 Blink 引擎在处理页面内文本时的准确性和可靠性至关重要，并间接地影响了 JavaScript 文本操作、CSS 渲染效果以及用户与网页的交互体验。这些测试用例覆盖了常见的文本结构，包括嵌套元素、注释、空白符以及不可见元素，有助于开发者理解引擎内部的文本处理机制，并避免在前端开发中可能出现的与文本迭代相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/same_block_word_iterator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -514,7 +516,4 @@ TEST_F(SameBlockWordIteratorTest, GetNextWord_HalfWord) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -184,15 +184,17 @@ case 1
 
 理解这些限制对于避免在使用 `goto` 语句时引入错误至关重要。虽然 `goto` 在某些特定的底层编程或状态机实现中可能有用，但在大多数情况下，使用结构化的控制流语句 (如 `if`, `for`, `switch`) 会使代码更易读和维护。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/goto.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -731,9 +733,4 @@ func _() {
 		goto L // ERROR "goto L jumps into block starting at LINE-4|goto jumps into block"
 	}
 }
-
-"""
-
-
-
 ```

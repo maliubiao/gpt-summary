@@ -209,15 +209,17 @@ By following these steps and refining my understanding as I go, I can generate a
 
 总而言之，`dom_error.cc` 文件定义了用于表示配额相关错误的 `DOMError` 类，它是连接 Blink 内部配额管理和外部 JavaScript 错误处理的关键桥梁。理解它的功能有助于开发者更好地处理与存储配额相关的错误，提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/quota/dom_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All Rights Reserved.
  *
@@ -266,7 +268,4 @@ DOMError::DOMError(const String& name, const String& message)
     : name_(name), message_(message) {}
 
 }  // namespace blink
-
-"""
-
 ```

@@ -187,15 +187,17 @@ console.log(result2_js); // 输出: -58
 
 这个单元测试通过精心设计的测试用例，确保 Earley 解析器能够正确处理符合文法的输入，并间接地验证了它能够避免因用户常见的编程错误而导致的解析失败。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/torque/earley-parser-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/torque/earley-parser-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ TEST(EarleyParser, SimpleArithmetic) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

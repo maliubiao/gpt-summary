@@ -118,7 +118,7 @@ Organizing the information logically is crucial. Starting with the basic code an
 
 总而言之，虽然 `prog.c` 代码本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证与预编译头文件相关的机制，并为 Frida 的动态 instrumentation 功能提供一个简单的目标。它也间接地涉及到逆向工程中对二进制结构、内存操作和目标进程行为的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/13 pch/generated/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,14 +126,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 int main(void) {
     return FOO + BAR;
 }
-
-"""
-
 ```

@@ -161,14 +161,16 @@ params->issuers.push_back(SecurityOrigin::CreateFromString("https://issuer2.exam
 
 总而言之，`trust_token_attribute_parsing.cc` 文件扮演着一个关键的角色，它确保了传递给 Blink 引擎的 Trust Token 参数是有效且符合预期的，从而保证了 Trust Token 功能的正确执行。它通过严格的解析和验证逻辑来防止因数据错误导致的安全问题或其他异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/trust_token_attribute_parsing.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ network::mojom::blink::TrustTokenParamsPtr TrustTokenParamsFromJson(
 }
 
 }  // namespace blink::internal
-
-"""
-
 ```

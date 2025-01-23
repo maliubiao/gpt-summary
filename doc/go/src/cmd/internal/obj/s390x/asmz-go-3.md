@@ -100,7 +100,7 @@ func main() {
 
 总而言之，`go/src/cmd/internal/obj/s390x/asmz.go` 的这部分代码专注于 **S390X 架构的汇编指令编码和基本的代码生成逻辑。** 它定义了指令的操作码，并提供了一个核心函数 `asmout`，用于将抽象的程序指令转换为实际的 S390X 机器码字节序列。 这是 Go 编译器中针对特定硬件架构进行代码生成的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/asmz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -109,8 +109,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 LL     uint32 = 0x8900 // FORMAT_RS1        SHIFT LEFT SINGLE LOGICAL (32)
 	op_SLLG    uint32 = 0xEB0D // FORMAT_RSY1       SHIFT LEFT SINGLE LOGICAL (64)
 	op_SLLK    uint32 = 0xEBDF // FORMAT_RSY1       SHIFT LEFT SINGLE LOGICAL (32)
@@ -866,10 +868,4 @@ func (c *ctxtz) asmout(p *obj.Prog, asm *[]byte) {
 			opxy = op_ALG
 		case AADDE:
 			opxy = op_ALCG
-
-"""
-
-
-
-
 ```

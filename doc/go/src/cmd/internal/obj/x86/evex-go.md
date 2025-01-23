@@ -178,15 +178,17 @@ func vectorAddZeroMask(a, b, mask [8]float32) [8]float32 {
 
 总结来说，`evex.go` 是 Go 编译器中处理 x86 EVEX 指令编码的关键部分，它负责解析 EVEX 前缀和后缀信息，并将其转换为机器码指令的相应位。虽然普通 Go 开发者不会直接接触它，但了解其功能有助于理解 Go 编译器是如何支持现代 x86 指令集的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/evex.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -570,9 +572,4 @@ func (suffix opSuffix) IsValid() bool {
 func (suffix opSuffix) String() string {
 	return opSuffixTable[suffix]
 }
-
-"""
-
-
-
 ```

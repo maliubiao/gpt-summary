@@ -182,14 +182,16 @@ morphology.setAttribute('operator', 'erode'); // 动态修改操作类型
 
 总而言之，`fe_morphology.cc` 文件是 Chromium Blink 引擎中实现 SVG 形态学滤镜的核心代码，它通过膨胀和腐蚀操作来改变图像的形状和尺寸，并与 HTML、CSS 和 JavaScript 紧密配合，为网页开发者提供了丰富的视觉效果控制能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_morphology.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -318,7 +320,4 @@ StringBuilder& FEMorphology::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

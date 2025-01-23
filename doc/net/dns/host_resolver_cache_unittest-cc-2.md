@@ -91,7 +91,7 @@ Based on these observations, the main function of this code is to thoroughly tes
 
 总之，这部分代码通过一系列单元测试，详细验证了 `HostResolverCache` 在管理和淘汰 DNS 解析结果时的各种策略，以及其序列化和反序列化的功能。 虽然它是一个测试文件，但它对于确保 Chromium 网络栈中 DNS 缓存功能的正确性和可靠性至关重要，而 DNS 缓存的性能和行为直接影响着用户的浏览体验和 JavaScript 网络应用的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 esult::Source::kDns,
       kMoreStaleEndpoints,
       /*strings=*/std::vector<std::string>{},
@@ -791,8 +793,4 @@ TEST_F(HostResolverCacheTest, SerializeForLogging) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

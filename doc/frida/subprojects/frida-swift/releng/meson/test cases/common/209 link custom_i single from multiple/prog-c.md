@@ -151,7 +151,7 @@ Interceptor.attach(Module.findExportByName(null, "flob"), {
 
 这个过程表明，`prog.c` 在 Frida 的使用场景中通常是作为被分析的目标程序存在，它提供了一个简单但可观察的执行流程，允许用户使用 Frida 的强大功能来探索程序的运行时行为，尤其是那些在静态分析中难以理解的部分，例如外部函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/209 link custom_i single from multiple/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,14 +159,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int flob(void);
 
 int main(void) {
     return (flob() == 1 ? 0 : 1);
 }
-
-"""
-
 ```

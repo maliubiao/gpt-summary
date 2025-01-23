@@ -161,14 +161,16 @@ This structured approach, starting from the file name and progressively analyzin
 
 总而言之，`blink/renderer/core/events/composition_event.cc` 文件定义的 `CompositionEvent` 类是 Blink 引擎处理文本输入法组合事件的关键组成部分，它连接了底层的输入处理和上层的 JavaScript 事件机制，使得 Web 开发者能够构建支持各种语言输入的交互式 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/composition_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -254,7 +256,4 @@ void CompositionEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

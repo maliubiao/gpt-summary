@@ -199,7 +199,7 @@ And one more new_value here.
 
 `gen.py` 是一个简单的文本处理脚本，通过命令行参数指定输入文件和要替换的字符串。尽管简单，它可以在逆向工程中用于修改文本形式的二进制数据表示，例如反汇编代码、链接器脚本等。它通常不是用户直接运行的工具，而是在 Frida 的构建或测试过程中被调用。 调试时，需要结合 Frida 的构建系统和测试用例来分析其作用和可能的错误原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/216 custom target input extracted objects/libdir/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,15 +207,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/env python3
 import sys
 with open(sys.argv[1], 'r') as f:
     for l in f:
         l = l.rstrip()
         print(l.replace(sys.argv[2], sys.argv[3]))
-
-"""
-
 ```

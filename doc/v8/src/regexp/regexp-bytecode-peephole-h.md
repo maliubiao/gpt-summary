@@ -153,15 +153,17 @@ ADVANCE_CURSOR 2  // 光标前进 2 个位置
 
 `v8/src/regexp/regexp-bytecode-peephole.h` 定义了 V8 中用于优化正则表达式字节码的窥孔优化器。它通过识别并替换低效的字节码序列来提升正则表达式的执行效率。虽然用户无法直接控制这种优化，但了解其存在有助于理解 V8 引擎如何优化 JavaScript 代码的执行。 编写高效的正则表达式仍然是避免性能问题的关键，而窥孔优化是引擎在幕后所做的工作之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecode-peephole.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-bytecode-peephole.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ class RegExpBytecodePeepholeOptimization : public AllStatic {
 }  // namespace v8
 
 #endif  // V8_REGEXP_REGEXP_BYTECODE_PEEPHOLE_H_
-
-"""
-
 ```

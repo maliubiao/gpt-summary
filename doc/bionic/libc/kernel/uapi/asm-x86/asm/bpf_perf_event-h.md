@@ -193,7 +193,7 @@ sys.stdin.read()
 
 总结来说，`bpf_perf_event.h` 虽然是一个自动生成的、功能相对简单的头文件，但它在 Android 系统中扮演着重要的角色，为用户空间程序提供了访问 BPF 性能事件的必要定义，是构建性能分析、监控和安全工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/bpf_perf_event.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -213,7 +215,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/bpf_perf_event.h>
-
-"""
-
 ```

@@ -159,15 +159,17 @@ Finally, I organize the information into the requested categories: functionality
 
 总而言之，`chat_server_bin.cc` 是一个简单的 MoQT 聊天服务器的入口点，它负责初始化服务器并监听网络连接。要调试相关问题，需要从用户的操作开始，逐步排查客户端、网络和服务器端的配置和代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/tools/chat_server_bin.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ int main(int argc, char* argv[]) {
                               quiche::GetQuicheCommandLineFlag(FLAGS_port)));
   server.moqt_server().quic_server().HandleEventsForever();
 }
-
-"""
-
 ```

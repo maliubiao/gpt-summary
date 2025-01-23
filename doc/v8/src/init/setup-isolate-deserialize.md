@@ -91,11 +91,13 @@ console.log("V8 引擎启动完成!");
 
 `setup-isolate-deserialize.cc` 是 V8 引擎内部用于优化从快照启动的关键组成部分。它通过跳过不必要的初始化和编译步骤，显著提升了 JavaScript 应用程序的启动速度。 虽然 JavaScript 开发者无法直接操作这个文件，但快照机制带来的性能提升是所有 JavaScript 开发者都能感受到的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/setup-isolate-deserialize.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -124,7 +126,4 @@ void SetupIsolateDelegate::SetupBuiltins(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

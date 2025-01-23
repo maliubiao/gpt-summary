@@ -128,7 +128,7 @@ Interceptor.attach(Module.findExportByName(null, "nonExistentFunction"), {
 
 总而言之，`not-found.cc` 文件本身是一个非常简单的 C++ 源文件，其主要功能是打印一条消息。然而，它在 Frida 的测试用例目录下的存在暗示了它被用于模拟和测试当尝试访问或操作目标进程中不存在的元素时的场景，这与逆向工程中常见的 "未找到" 情况相关。它帮助验证 Frida 的错误处理机制和程序的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/215 source set realistic example/not-found.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 
@@ -146,7 +148,4 @@ void some_random_function()
     std::cout << ANSI_START << "everything's alright"
               << ANSI_END << std::endl;
 }
-
-"""
-
 ```

@@ -197,7 +197,7 @@ Interceptor.attach(Module.findExportByName("module.dll", "func"), { // 替换为
 
 这个过程模拟了逆向工程师使用 Frida 分析和操控程序行为的典型流程。`module.c` 文件作为 Frida 测试用例的一部分，旨在验证 Frida 在处理共享库和解析可执行文件符号时的正确性和能力。作为调试线索，这个文件本身简洁地展示了符号导出和调用的机制，帮助理解 Frida 如何在这种场景下工作。当调试 Frida 相关问题时，可以从这个简单的例子入手，逐步排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/148 shared module resolving symbol in executable/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -223,7 +225,4 @@ extern int func_from_executable(void);
 int DLL_PUBLIC func(void) {
    return func_from_executable();
 }
-
-"""
-
 ```

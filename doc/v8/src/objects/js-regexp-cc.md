@@ -193,15 +193,17 @@ console.log(result3.indices.groups); // 输出 { name: [0, 3] }
 
 总而言之，`v8/src/objects/js-regexp.cc` 是 V8 引擎中处理 JavaScript 正则表达式的核心部分，它实现了 `RegExp` 对象的内部表示、编译、标志处理和匹配结果索引的构建等关键功能，并直接影响着 JavaScript 中正则表达式的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-regexp.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-regexp.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -635,7 +637,4 @@ void IrRegExpData::SetBytecodeForExperimental(
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

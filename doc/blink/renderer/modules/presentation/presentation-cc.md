@@ -214,15 +214,17 @@ This systematic approach allows for a thorough understanding of the code's funct
 
 总而言之，`presentation.cc` 文件是 Chromium Blink 中 Presentation API 的核心粘合剂，它连接了 JavaScript API、内部控制器和服务，并管理着演示请求和接收器的生命周期。理解这个文件的功能对于深入了解 Web 演示功能的实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/presentation/presentation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ PresentationReceiver* Presentation::receiver() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -209,14 +209,16 @@ newPromise3.catch(error => console.error("示例 3:", error)); // 输出: 示例
 
 总而言之，`v8/src/builtins/promise-jobs.tq` 中的 `PromiseResolveThenableJob` 是 V8 引擎中处理 Promise 和 thenable 交互的关键部分，它实现了 Promise 规范中的相关逻辑，并尝试进行优化以提高性能，同时也要处理用户可能遇到的编程错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-jobs.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ transitioning builtin PromiseResolveThenableJob(
   }
 }
 }
-
-"""
-
 ```

@@ -149,7 +149,7 @@ endif
 
 总而言之，`integer.py` 文件是 Frida 构建系统中处理整数类型的基础组件，它确保了在构建脚本中对整数的各种操作能够正确执行，并提供了一定的类型安全和错误处理机制。虽然它不是 Frida 运行时插桩的核心代码，但对于理解 Frida 的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/primitives/integer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -245,7 +247,4 @@ class IntegerHolder(ObjectHolder[int]):
         if other == 0:
             raise InvalidArguments('Tried to divide by 0')
         return self.held_object % other
-
-"""
-
 ```

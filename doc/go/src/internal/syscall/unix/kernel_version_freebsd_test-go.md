@@ -183,7 +183,7 @@ func main() {
 
 总结来说，`go/src/internal/syscall/unix/kernel_version_freebsd_test.go` 的主要功能是测试 FreeBSD 系统对 `copy_file_range` 系统调用的支持情况，并通过比较直接调用和辅助函数的结果来确保判断的准确性。 这对于 Go 语言在不同平台上提供一致且健壮的系统调用抽象至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/kernel_version_freebsd_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -216,9 +218,4 @@ func TestSupportCopyFileRange(t *testing.T) {
 		t.Fatalf("SupportCopyFileRange, got %t; want %t", got, want)
 	}
 }
-
-"""
-
-
-
 ```

@@ -180,15 +180,17 @@ AllocateAndCollectBenchmark      N ns           M ns            K
 
 总而言之，`v8/test/benchmarks/cpp/cppgc/benchmark_main.cc` 是一个用于运行 cppgc 性能测试的关键入口点，它利用 Google Benchmark 框架来组织和执行各种针对 V8 C++ 垃圾回收器的基准测试。虽然它不直接执行 JavaScript 代码，但它所测试的组件对 JavaScript 的执行效率至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/benchmarks/cpp/cppgc/benchmark_main.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/benchmarks/cpp/cppgc/benchmark_main.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ int main(int argc, char** argv) {
   cppgc::internal::testing::BenchmarkWithHeap::ShutdownProcess();
   return 0;
 }
-
-"""
-
 ```

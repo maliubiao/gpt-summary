@@ -92,7 +92,7 @@ inject_library_file(1234, "/path/to/library.so", "entrypoint_function", "data")
 3. **权限检查**：在注入前检查目标进程和文件的权限，确保用户有足够的权限执行操作。
 
 通过以上步骤和调试方法，用户可以更好地理解和调试 `linjector.vala` 中的注入功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/linux/linjector.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class Linjector : Object, Injector {
 		public LinuxHelper helper {
@@ -387,7 +389,4 @@ namespace Frida {
 #endif
 	}
 }
-
-"""
-
 ```

@@ -115,12 +115,14 @@ console.log(arr[1]);
 
 **总结一下，`v8/src/ic/ic.cc` 文件是 V8 引擎中实现高性能属性访问的关键组件，它通过缓存之前的访问信息来加速 JavaScript 代码的执行。** 这是理解 V8 如何优化 JavaScript 代码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1830,9 +1832,4 @@ bool StoreIC::LookupForWrite(LookupIterator* it, DirectHandle<Object> value,
 MaybeHandle<Object> StoreGlobalIC::Store(Handle<Name> name,
                                          Handle<Object> value) {
   DCHECK(IsString(*name));
-
-  
-"""
-
-
 ```

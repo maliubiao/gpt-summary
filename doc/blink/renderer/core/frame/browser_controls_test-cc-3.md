@@ -108,15 +108,17 @@ The entire file is dedicated to testing the behavior of browser controls within 
 
 `blink/renderer/core/frame/browser_controls_test.cc` 文件的这部分主要功能是**测试 Blink 渲染引擎中浏览器控制栏的动画显示和隐藏机制，以及 Blink 内部状态与合成器（Compositor）之间关于浏览器控制栏状态同步的正确性。** 它确保了浏览器控制栏的动画效果能够平滑过渡，并且 Blink 内部对控制栏状态的理解与合成器的实际渲染行为保持一致。这对于提供流畅的用户体验至关重要，因为用户对浏览器控制栏的显示和隐藏行为有自然的预期。通过这些测试，可以验证 Blink 引擎在处理浏览器控制栏相关逻辑时的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/browser_controls_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 te(R"HTML(
           <!DOCTYPE html>
           <meta name="viewport" content="width=device-width">
@@ -266,8 +268,4 @@ TEST_F(BrowserControlsSimTest, ConstraintDoesntClampRatioInBlink) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

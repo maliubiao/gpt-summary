@@ -64,7 +64,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 `bionic/libc/dns/net/gethnamaddr.c` 是 Android Bionic 库中负责主机名和 IP 地址转换的关键组件。它实现了标准的 `gethostbyname` 和 `gethostbyaddr` 功能，并针对 Android 平台进行了扩展，例如使用了 DNS 查询代理服务，并提供了线程安全的接口。其核心目标是为 Android 系统和应用程序提供可靠和高效的 DNS 解析服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/net/gethnamaddr.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -76,8 +76,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: gethnamaddr.c,v 1.91 2014/06/19 15:08:18 christos Exp $	*/
 
 /*
@@ -1368,7 +1370,4 @@ _dns_gethtbyaddr(void *rv, void	*cb_data, va_list ap)
 	(void)memcpy(bf, uaddr, (size_t)info->hp->h_length);
 	if (info->hp->h_addrtype == AF_INET && (res->options & RES_USE_INET6)) {
 		if (bl
-"""
-
-
 ```

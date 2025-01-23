@@ -115,15 +115,17 @@ Therefore, the core function of this code is to efficiently determine the necess
 
 这段代码的主要功能是**高效地比较两个 `ComputedStyle` 对象，并根据 CSS 属性的变化情况，精确地标记出需要进行的布局和绘制失效操作**。它通过检查各种 CSS 属性的差异，并设置 `StyleDifference` 对象中的相应标志，从而指导 Blink 渲染引擎进行最小化的必要更新，提高渲染效率和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/computed_style.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 llLayout();
     diff.SetNeedsNormalPaintInvalidation();
     diff.SetZIndexChanged();
@@ -1091,7 +1093,4 @@ void ComputedStyle::ApplyMotionPathTransform(float origin_x,
       const ComputedStyle& style = box->ContainingBlock()->StyleRef();
       inset->SetTopLeftRadius(style.BorderTopLeftRadius());
       inset->SetTopRightRadius(style.BorderTopR
-"""
-
-
 ```

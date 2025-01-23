@@ -106,7 +106,7 @@ By following this thought process, we can construct the detailed summary provide
 
 这部分代码主要测试了 `HostResolverManager` 在处理基本的域名解析场景时的核心功能，包括本地主机名解析、IP 字面量解析、错误处理、异步请求取消、数字 IP 地址解析以及与 IPv6 可达性检测的集成。同时也覆盖了一些边界情况，例如无效的主机名输入。 这些测试确保了 `HostResolverManager` 能够正确、安全地执行域名解析任务，为浏览器中的网络请求提供基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共21部分，请归纳一下它的功能
+```
 
-"""
-      CreateExpected("::1", 80)));
+### 源代码
+```cpp
+CreateExpected("::1", 80)));
   EXPECT_THAT(
       v4_unsp_response.request()->GetEndpointResults(),
       testing::Pointee(testing::ElementsAre(
@@ -851,7 +853,4 @@ TEST_F(HostResolverManagerTest, BypassCache) {
       parameters, resolve_context_.get()));
   EXPECT_THAT(cache_bypassed_response.result_error(), IsOk());
   // Expect c
-"""
-
-
 ```

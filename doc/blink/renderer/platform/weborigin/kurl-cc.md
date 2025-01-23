@@ -88,15 +88,17 @@ The user wants a summary of the functionality of the `kurl.cc` file in the Chrom
 
 总而言之，`blink/renderer/platform/weborigin/kurl.cc` 文件定义了 `KURL` 类，它是 Blink 引擎中用于处理和操作 URL 的核心抽象。它负责 URL 的创建、解析、规范化、修改、比较以及提供对 URL 各个组成部分的访问。`KURL` 与 JavaScript, HTML, CSS 等 Web 技术紧密相关，为这些技术提供了 URL 处理的基础能力，确保了 Web 内容的正确加载和交互。该文件还包含了对常见 URL 使用错误的防范和处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/kurl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2007, 2008, 2011, 2012 Apple Inc. All rights reserved.
  * Copyright (C) 2012 Research In Motion Limited. All rights reserved.
@@ -1064,7 +1066,4 @@ void KURL::Init(const KURL& base,
 
   if (!url::IsUsingStandardCompliantNonSpecialSchemeURLParsing()) {
     // This assertion implicitly assumes that "jav
-"""
-
-
 ```

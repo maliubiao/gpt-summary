@@ -163,15 +163,17 @@ myFunction();
 
 总而言之，`v8/src/libplatform/tracing/trace-buffer.h` 定义的 `TraceBufferRingBuffer` 类是 V8 追踪系统的重要组成部分，它负责高效地缓冲 JavaScript 运行时产生的各种事件，为性能分析和调试提供了基础。虽然 JavaScript 开发者不会直接操作这个 C++ 类，但他们使用的追踪工具和 API 底层都依赖于这样的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/trace-buffer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/tracing/trace-buffer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ class TraceBufferRingBuffer : public TraceBuffer {
 }  // namespace v8
 
 #endif  // V8_LIBPLATFORM_TRACING_TRACE_BUFFER_H_
-
-"""
-
 ```

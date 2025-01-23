@@ -75,11 +75,13 @@ console.log(greet("World"));
 
 `platform-embedded-file-writer-base.cc` 是 V8 快照机制的关键组成部分，它负责将快照数据写入文件，从而使得 V8 引擎能够快速启动并执行 JavaScript 代码。它通过抽象基类和平台特定的子类，实现了跨平台的文件写入功能。尽管 JavaScript 开发者不会直接与这个文件交互，但它的工作直接影响了 JavaScript 的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ std::unique_ptr<PlatformEmbeddedFileWriterBase> NewPlatformEmbeddedFileWriter(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

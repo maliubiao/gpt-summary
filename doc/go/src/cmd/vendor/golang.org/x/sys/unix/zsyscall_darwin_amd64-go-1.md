@@ -165,7 +165,7 @@ func main() {
 
 **总体来说，该文件的功能是为 Go 程序提供直接访问 Darwin 系统底层操作的能力，包括文件操作、进程管理、内存管理、网络操作、设备控制等等。** 它是 Go 语言构建在操作系统之上的基础桥梁，使得 Go 程序能够执行需要操作系统内核支持的任务。 开发者通常不会直接调用这些 `zsyscall_` 开头的函数，而是使用 Go 标准库中更高级别的抽象，例如 `os`、`io`、`net` 包，这些包在底层可能会使用这里定义的函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_darwin_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 flags))
 	if e1 != 0 {
 		err = errnoErr(e1)
@@ -387,10 +389,4 @@ func Statfs(path string, stat *Statfs_t) (err error) {
 var libc_statfs64_trampoline_addr uintptr
 
 //go:cgo_import_dynamic libc_statfs64 statfs64 "/usr/lib/libSystem.B.dylib"
-
-"""
-
-
-
-
 ```

@@ -117,11 +117,13 @@ addon.myFunction(myObject);
 
 `persistent-handles-unittest.cc` 这个文件测试了 V8 引擎中用于持久化持有 JavaScript 对象引用的核心机制。虽然 JavaScript 开发者不直接使用 `PersistentHandles` 类，但该机制对于 V8 实现各种重要的 JavaScript 特性（如异步操作、跨线程通信和 Native Addons）至关重要，它确保了在不同的执行上下文和线程中，JavaScript 对象引用的有效性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/persistent-handles-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -372,7 +374,4 @@ TEST_F(PersistentHandlesTest, NewPersistentHandleFailsWhenParkedExplicit) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

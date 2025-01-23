@@ -155,7 +155,7 @@ Another occurrence of dynamic_value_123 here.
 
 总而言之，`generate_main.py` 是一个简单的模板替换工具，它利用环境变量来动态生成文件内容，在 Frida 的构建和测试流程中扮演着一个辅助角色。理解其功能和可能的错误场景有助于进行调试和故障排除。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/271 env in generator.process/generate_main.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import os
 import sys
@@ -176,7 +178,4 @@ with open(sys.argv[1], 'r') as infile, \
      open(sys.argv[2], 'w') as outfile:
     
     outfile.write(infile.read().replace('ENV_VAR_VALUE', ENV_VAR_VALUE))
-
-"""
-
 ```

@@ -186,7 +186,7 @@ func main() {
 
 这段 `xml_test.go` 代码的主要功能是**全面测试 Go 语言 `encoding/xml` 包中 XML 解码 (Decoding) 的各种功能和错误处理机制**。它涵盖了从基本的 XML 解析、令牌生成，到错误处理、数据类型转换、以及特定边界情况的处理，旨在确保 `encoding/xml` 包的解码功能能够正确、健壮地工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/xml/xml_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1493,9 +1495,4 @@ func TestTokenUnmarshaler(t *testing.T) {
 	defer func() {
 		if r := recover(); r != nil {
 			t.Error("Unexpected panic using custom toke
-"""
-
-
-
-
 ```

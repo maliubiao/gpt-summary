@@ -144,7 +144,7 @@ I need to analyze the methods in this part of the code and describe what they do
 
 这段代码集中处理了 `HttpStreamFactory::JobController` 中与连接管理、备用协议处理、错误回退以及与 `HttpStreamPool` 交互相关的逻辑。它负责orchestrating不同的连接尝试，并根据结果做出决策，以优化连接速度和可靠性，并报告备用协议的运行状况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tiveSocket() &&
                       !main_job_->HasAvailableSpdySession())))) {
     // We don't block |main_job_| when |alternative_job_| doesn't exists and
@@ -718,8 +720,4 @@ void HttpStreamFactory::JobController::CallOnSwitchesToHttpStreamPool(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -307,15 +307,17 @@ TEST_F(DocumentMarkerTest, GetShiftedMarkerPosition_DeleteBefore) {
 
 因此，当你在调试与网页编辑、拼写检查、查找功能相关的问题时，如果发现标记的位置不正确，或者标记在文本修改后消失了，那么就可以考虑检查 `DocumentMarker` 相关的代码，特别是 `ComputeOffsetsAfterShift` 方法的实现逻辑。`document_marker_test.cc` 中的测试用例可以帮助你理解这个方法的预期行为，并用于验证修复后的代码是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/document_marker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -561,7 +563,4 @@ TEST_F(DocumentMarkerTest, GetShiftedMarkerPosition_ReplaceBeforeAndEnd) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

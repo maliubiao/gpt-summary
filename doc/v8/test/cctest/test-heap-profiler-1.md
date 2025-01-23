@@ -78,12 +78,14 @@ const myObject = createAndLinkNativeObject();
 
 总而言之，这部分测试了 V8 堆分析器如何处理和表示嵌入器定义的节点和带名称的边，从而更好地理解 JavaScript 代码与底层 C++ 代码之间的内存关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-heap-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 e* isolate_;
   v8::EmbedderGraph* graph_;
   v8::EmbedderGraph::Node* classid_to_group_[3];
@@ -1762,7 +1764,4 @@ void CheckEmbedderGraphWithNamedEdges(v8::Isolate* isolate,
 
   const v8::HeapGraphEdge* b_to_c =
       GetEdgeByChildName(
-"""
-
-
 ```

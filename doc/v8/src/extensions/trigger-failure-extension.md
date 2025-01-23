@@ -77,11 +77,13 @@ triggerSlowAssertFalse(); // 在特定配置下执行到这里会导致 V8 引�
 
 总而言之，`trigger-failure-extension.cc` 提供了一种机制，允许 V8 开发者通过 JavaScript 代码主动触发 V8 引擎内部的断言失败，这对于测试和调试 V8 引擎本身至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/trigger-failure-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ void TriggerFailureExtension::TriggerSlowAssertFalse(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

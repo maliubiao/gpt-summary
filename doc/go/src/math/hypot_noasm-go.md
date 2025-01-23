@@ -175,7 +175,7 @@ Hypot(3.000000, 4.000000) = 5.000000
 
 `go/src/math/hypot_noasm.go` 文件定义了在非 `386` 和 `amd64` 架构下，`math` 包中 `Hypot` 函数的占位实现。它通过 `panic` 表明在这个文件中并没有实际的计算逻辑。这暗示了 Go 语言通过构建约束和架构特定的文件来实现对关键函数的优化，例如在 `386` 和 `amd64` 架构下可能存在汇编优化的 `Hypot` 版本。使用者无需直接与这个文件交互，只需要调用 `math.Hypot` 函数即可，Go 的构建系统会自动选择合适的实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/hypot_noasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ const haveArchHypot = false
 func archHypot(p, q float64) float64 {
 	panic("not implemented")
 }
-
-"""
-
-
-
 ```

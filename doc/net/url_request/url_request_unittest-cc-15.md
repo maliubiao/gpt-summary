@@ -163,7 +163,7 @@ console.log(document.cookie);
 
 总而言之，这个代码片段通过一系列单元测试，验证了 `URLRequest` 类在处理特定网络场景时的正确性和健壮性，特别是围绕 TLS 1.3 的 0-RTT 机制和各种网络隔离策略。这些测试对于确保 Chromium 网络栈的稳定性和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第16部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 received, true);
 }
 
@@ -1003,7 +1005,4 @@ TEST_F(URLRequestTest, RedirectClearsPerHopLoadFlags) {
   ASSERT_TRUE(https_server.Start());
 
   auto context_builder = CreateTestURLRequestContext
-"""
-
-
 ```

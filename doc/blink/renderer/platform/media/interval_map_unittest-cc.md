@@ -113,14 +113,16 @@ By following these steps, one can thoroughly analyze the C++ unittest file and u
 
 总而言之，`interval_map_unittest.cc` 通过全面的测试用例确保了 `IntervalMap` 这个用于管理整数区间的关键数据结构的正确性和健壮性，而这个数据结构在 Blink 引擎的媒体处理等模块中可能发挥着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/interval_map_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -394,7 +396,4 @@ TEST_F(IntervalMapTest, RandomSetTest) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

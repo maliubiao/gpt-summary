@@ -152,15 +152,17 @@ func main() {
 
 `go/src/cmd/vet/testdata/unused/unused.go` 这个代码片段是 `go vet` 工具中 `unusedresult` 检查器的一个测试用例，用来验证该检查器能否正确识别出函数调用后返回值未被使用的情况，特别是针对 `fmt.Errorf` 这样的返回 `error` 的函数。使用者容易犯的错误是忽略函数的返回值，尤其是 `error` 类型，这可能导致程序出现潜在的错误。 `go vet` 工具通过静态分析帮助开发者避免这类问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vet/testdata/unused/unused.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -174,9 +176,4 @@ import "fmt"
 func _() {
 	fmt.Errorf("") // ERROR "result of fmt.Errorf call not used"
 }
-
-"""
-
-
-
 ```

@@ -144,15 +144,17 @@ func main() {
 
 `go/test/directive.go` 这个文件是 Go 语言测试套件的一部分，其目的是验证 Go 编译器能够正确识别和报告编译器指令的错误放置。它通过故意将 `//go:noinline` 和 `//go:nosplit` 指令放在不合法的位置，并使用 `// ERROR` 注释来断言预期的错误信息。  理解编译器指令的正确放置位置对于编写能够被编译器正确理解和优化的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/directive.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -210,9 +212,4 @@ func f() {
 	//go:noinline // ERROR "misplaced compiler directive"
 	type T int
 }
-
-"""
-
-
-
 ```

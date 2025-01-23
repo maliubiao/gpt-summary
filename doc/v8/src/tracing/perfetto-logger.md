@@ -74,11 +74,13 @@ for (let i = 0; i < 10000; i++) {
 
 `perfetto-logger.cc` 是 V8 引擎中用于将 JavaScript 代码执行过程中的底层细节（例如代码的生成、优化、移动等）暴露给 Perfetto 跟踪系统的关键组件。这对于性能分析、理解 V8 的内部工作机制以及调试 JavaScript 应用程序的性能问题非常有帮助。 通过 Perfetto 提供的工具，开发者可以可视化这些跟踪数据，深入了解 JavaScript 代码的执行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/perfetto-logger.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -546,7 +548,4 @@ bool PerfettoLogger::is_listening_to_code_events() { return true; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

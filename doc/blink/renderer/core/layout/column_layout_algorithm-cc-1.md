@@ -76,16 +76,18 @@ Here's a breakdown of how to arrive at the summary:
 
 这段代码的核心功能是**在多列布局中，根据可用的空间、CSS 属性和内容，迭代地创建和定位一行的列片段，并处理列平衡、超出流定位元素以及分段等复杂情况。**  它确保了多列布局能够按照 CSS 规范正确地渲染内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/column_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-       // trouble for out-of-flow positioned descendants that extend past the
+### 源代码
+```cpp
+// trouble for out-of-flow positioned descendants that extend past the
         // end of in-flow content, which benefit from "full" column block-size.
         intrinsic_block_size_contribution =
             std::min(intrinsic_block_size_contribution,
@@ -792,8 +794,4 @@ LayoutUnit ColumnLayoutAlgorithm::ConstrainColumnBlockSize(
                                   : Length::FitContent();
 
   extent = ResolveMainBlockLength(space, style, BorderPadding(), block_length,
-                           
-"""
-
-
 ```

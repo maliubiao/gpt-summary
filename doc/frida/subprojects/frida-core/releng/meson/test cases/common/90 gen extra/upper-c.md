@@ -158,7 +158,7 @@ int main(void) {
 
 总而言之，`upper.c` 作为一个简单的测试用例，其主要目的是为了验证 Frida 在处理外部符号引用和动态链接等场景下的能力。它本身的功能很简单，但其存在的目的是为了支持 Frida 更复杂的功能的测试和开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/90 gen extra/upper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,14 +166,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int BOB_MCBOB(void);
 
 int main(void) {
     return BOB_MCBOB();
 }
-
-"""
-
 ```

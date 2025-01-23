@@ -255,7 +255,7 @@ sys.stdin.read()
 
 总结来说，`genfunctosyscallnrs.py` 是 Android 系统构建过程中的一个重要工具，它为 bionic 库提供了关键的系统调用映射信息，使得应用程序能够通过 libc 正确地与内核交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tools/genfunctosyscallnrs.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -339,7 +341,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

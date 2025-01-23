@@ -219,15 +219,17 @@ Instruction 4:  Store v3, [addr2] // 将 v3 的值存储到地址 addr2
 
 `register-allocator-verifier.cc` 是 V8 编译器中一个至关重要的组件，它通过在寄存器分配过程的不同阶段执行严格的检查，来确保生成的机器代码的正确性和性能。虽然用户编写的 JavaScript 代码不会直接触发验证器的检查，但验证器能够捕获编译器后端可能存在的错误，从而保证 JavaScript 代码的可靠执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator-verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator-verifier.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -860,7 +862,4 @@ void RegisterAllocatorVerifier::VerifyGapMoves() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

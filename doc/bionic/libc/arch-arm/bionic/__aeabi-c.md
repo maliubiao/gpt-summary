@@ -227,7 +227,7 @@ sys.stdin.read()
 
 运行此 Frida 脚本，当目标应用执行到 `__aeabi_atexit` 或 `memcpy` 时，Frida 会拦截调用并打印相关信息，帮助我们调试和理解代码的执行流程。  你可以根据需要 hook 其他 `__aeabi_*` 函数来观察它们的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-arm/bionic/__aeabi.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -423,7 +425,4 @@ __AEABI_SYMVERS(__aeabi_memclr4);
 __AEABI_SYMVERS(__aeabi_memclr);
 
 #undef __AEABI_SYMVERS
-
-"""
-
 ```

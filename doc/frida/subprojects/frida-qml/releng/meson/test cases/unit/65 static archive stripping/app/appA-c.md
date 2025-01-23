@@ -163,7 +163,7 @@ The answer is: 42
 
 总而言之，`appA.c` 虽然简单，但它体现了软件开发中模块化和依赖的概念。调试涉及到理解程序的结构、依赖关系以及运行时行为。对于没有源代码的依赖库，逆向工程技术，特别是动态插桩，就变得非常有用。  这个例子也展示了 Frida 在理解和调试外部库行为方面的强大能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/65 static archive stripping/app/appA.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,13 +171,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libA.h>
 
 int main(void) { printf("The answer is: %d\n", libA_func()); }
-
-"""
-
 ```

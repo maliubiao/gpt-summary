@@ -121,7 +121,7 @@ document.cookie = "__Host-mycookie=value; path=/"; // 缺少 secure
 
 总结来说，这段代码是 `CanonicalCookie::CreateSanitizedCookie` 方法的单元测试，它详细验证了该方法在处理各种 Cookie 属性组合时的正确性，特别是关于安全前缀、Partitioned 属性和长度限制等关键规则。这对于理解浏览器如何解析和验证 Cookie，以及如何避免常见的 Cookie 设置错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 our_from_now, one_hour_ago, true, false,
       CookieSameSite::NO_RESTRICTION, CookiePriority::COOKIE_PRIORITY_DEFAULT,
       std::nullopt /*partition_key*/, &status));
@@ -792,7 +794,4 @@ TEST(CanonicalCookieTest, IsSetPermittedInContext) {
                              ),
           kCookieableSchemes),
       MatchesCo
-"""
-
-
 ```

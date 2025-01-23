@@ -145,7 +145,7 @@ process.then(p => {
 
 通过以上步骤，用户从一个分析需求出发，一步步地利用 Frida 工具和编写 C 代码，最终在目标进程中执行了这段代码，为后续的深入分析提供了基础。 这段简单的代码可以作为更复杂动态分析的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/rust/13 external c dependencies/c_accessing_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <zlib.h>
@@ -165,7 +167,4 @@ void c_accessing_zlib(void) {
     memset(&zstream, 0, sizeof(zstream));
     inflateInit(&zstream);
 }
-
-"""
-
 ```

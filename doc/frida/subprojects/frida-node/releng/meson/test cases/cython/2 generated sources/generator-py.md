@@ -157,7 +157,7 @@ Finally, organize the information logically, addressing each point in the reques
 
 作为调试线索，这个路径和脚本名称暗示了问题可能出现在 Frida Node.js 绑定的构建过程中，特别是与 Cython 代码生成相关的环节。如果构建过程出现错误，并且涉及到自动生成的代码，那么就需要检查这个 `generator.py` 脚本的输入、输出以及其逻辑是否正确。例如，如果生成的代码格式不正确，或者生成的文件内容有误，就可能需要分析这个脚本是如何工作的，以及它所依赖的输入是什么。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cython/2 generated sources/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 
@@ -179,7 +181,4 @@ args = parser.parse_args()
 
 with open(args.input) as i, open(args.output, 'w') as o:
     o.write(i.read())
-
-"""
-
 ```

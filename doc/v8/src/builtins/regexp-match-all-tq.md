@@ -197,14 +197,16 @@ console.log(matchesNoGlobal.next()); // 再次调用会返回 { value: undefined
 
 总而言之，这个 Torque 代码文件是 V8 引擎中实现 `String.prototype.matchAll()` 这一强大功能的关键部分，它通过迭代器的方式高效地提供了正则表达式在字符串中的所有匹配信息，包括捕获组。理解其背后的实现有助于开发者更好地使用和调试相关的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/regexp-match-all.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -432,7 +434,4 @@ transitioning javascript builtin RegExpStringIteratorPrototypeNext(
   }
 }
 }
-
-"""
-
 ```

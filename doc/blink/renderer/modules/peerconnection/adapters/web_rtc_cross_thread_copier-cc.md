@@ -99,21 +99,20 @@ Let's break down the thought process to analyze the C++ code snippet and provide
 
 总而言之，`web_rtc_cross_thread_copier.cc` 在 WebRTC 功能的实现中扮演着幕后英雄的角色，它保证了在多线程环境下 WebRTC 数据的安全和一致性，从而使得基于 WebRTC 的应用能够稳定可靠地运行。 虽然用户不会直接接触到这个文件，但他们与 WebRTC 应用的每一次互动都间接地依赖于其提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/adapters/web_rtc_cross_thread_copier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 #include "third_party/blink/renderer/modules/peerconnection/adapters/web_rtc_cross_thread_copier.h"
-
-"""
-
 ```

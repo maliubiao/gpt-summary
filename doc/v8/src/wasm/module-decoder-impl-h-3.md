@@ -143,7 +143,7 @@ Imagine a Wasm module defines a table that should hold references to functions o
 
 As the 4th part of the description, this specific snippet within `v8/src/wasm/module-decoder-impl.h` plays a crucial role in ensuring the **type safety and validity of WebAssembly modules during the decoding process**. It specifically focuses on **validating function references within element segments**, ensuring that the types of the referenced functions are compatible with the expected types of the table elements. This validation is essential for preventing runtime errors and ensuring the reliable execution of WebAssembly code within the V8 JavaScript engine. It acts as a safeguard, catching errors made by Wasm module developers before the code is executed.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-decoder-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-decoder-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 r_->NextLine();
     if (failed()) return index;
     DCHECK_NOT_NULL(func);
@@ -209,8 +211,4 @@ r_->NextLine();
 #undef TRACE
 
 #endif  // V8_WASM_MODULE_DECODER_IMPL_H_
-
-"""
-
-
 ```

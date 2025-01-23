@@ -112,7 +112,7 @@ Finally, I need to describe how a user action leads to this code being executed,
 
 这部分 `cert_verify_proc_unittest.cc` 代码主要负责测试 Chromium 网络栈中 `CertVerifyProc` 组件在处理证书验证过程中的核心逻辑，包括处理旧版证书、重新排序和过滤中间证书、支持额外的信任锚点和中间证书、以及利用 CRLSet 进行证书吊销检查等关键功能。 这些测试确保了 `CertVerifyProc` 能够正确且安全地验证服务器证书，从而保障用户的网络安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d_result);
 
   CertVerifyResult test_result_2;
@@ -910,7 +912,4 @@ TEST_P(CertVerifyProcInternalTest, ValidityJustAfterNotBefore) {
   int flags = 0;
   CertVerifyResult verify_result;
   int error = Verify(chain.get(), "www.exa
-"""
-
-
 ```

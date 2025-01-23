@@ -107,7 +107,7 @@ During this thought process, I might refine some points. For example, initially,
 
 总的来说，`test_parser.py` 的主要功能是确保 `tomlkit` 库的 TOML 解析器能够正确地解析有效的 TOML，并且能够合理地处理各种无效的 TOML 输入，抛出相应的异常，为使用该库的开发者提供信心。虽然普通用户不会直接运行这些测试，但了解这些测试覆盖的场景可以帮助理解 TOML 解析的规则和可能出现的错误，从而辅助调试与 TOML 配置文件相关的软件问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tests/test_parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import pytest
 
 from tomlkit.exceptions import EmptyTableNameError
@@ -168,7 +170,4 @@ def test_parse_multiline_string_ignore_the_first_newline():
     content = 'a = """\r\nfoo\n"""'
     parser = Parser(content)
     assert parser.parse() == {"a": "foo\n"}
-
-"""
-
 ```

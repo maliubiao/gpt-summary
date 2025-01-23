@@ -150,11 +150,13 @@ myPromise.then(value => console.log(value));
 
 `v8/src/d8/async-hooks-wrapper.cc` 是 V8 引擎中实现 `async_hooks` 功能的关键 C++ 文件。它负责管理异步钩子的生命周期，并在适当的时机调用用户定义的 JavaScript 回调函数，从而允许开发者深入了解和监控 Node.js 或其他 V8 环境中的异步行为。它通过 V8 的 Promise 钩子机制与 JavaScript 的 Promise 集成，实现了对 Promise 生命周期事件的监听。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/async-hooks-wrapper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -461,7 +463,4 @@ void AsyncHooks::PromiseHookDispatch(PromiseHookType type,
 }
 
 }  // namespace v8
-
-"""
-
 ```

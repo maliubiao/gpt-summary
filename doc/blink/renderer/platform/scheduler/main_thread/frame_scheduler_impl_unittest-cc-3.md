@@ -96,15 +96,17 @@ By following this structured approach, we can accurately and comprehensively sum
 
 这部分单元测试主要验证了 `FrameSchedulerImpl` 中密集唤醒节流机制在各种跨域和页面可见性场景下的行为是否符合预期。它确保了 Blink 引擎能够有效地限制后台任务的唤醒频率，从而提高性能和节省资源，同时也测试了开发者可以通过特定方式禁用该机制的能力。测试覆盖了 JavaScript 定时器在这种机制下的行为，并暗示了开发者在使用后台定时器时需要注意的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/frame_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tensiveThrottlingExpected()) {
       EXPECT_THAT(
           run_times,
@@ -870,7 +872,4 @@ class FrameSchedulerImplNoThrottlingVisibleAgentTest
     // Initial state: `frame_scheduler_` is a visible frame cross-origin to its
     // main frame. Its parent page scheduler is visible. It is not throttled.
     LazyInitThrottleableTaskQueue
-"""
-
-
 ```

@@ -105,14 +105,16 @@ By following this thought process, we can provide a comprehensive answer even wh
 
 尽管提供的代码段很小，但结合其路径和命名，可以推断出 `blink/renderer/platform/audio/audio_processor.cc` 定义了一个核心的音频处理抽象概念，它是 Blink 引擎音频渲染管道的基础，并直接支撑着 Web Audio API 的功能。理解它的作用有助于理解 Web 平台上音频处理的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/audio_processor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -150,7 +152,4 @@ namespace blink {
 AudioProcessor::~AudioProcessor() = default;
 
 }  // namespace blink
-
-"""
-
 ```

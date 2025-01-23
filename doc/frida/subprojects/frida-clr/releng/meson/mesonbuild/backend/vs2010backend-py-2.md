@@ -103,7 +103,7 @@ shared_library('my_library', 'src/a.cpp', 'src/b.cpp',
 
 总而言之，这一部分代码是连接 Meson 构建描述和 Visual Studio IDE 的桥梁，使得开发者能够在 Windows 环境下使用 Visual Studio 来开发和调试 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ngs')
         ET.SubElement(root, 'ImportGroup', Label='Shared')
         prop_sheets_grp = ET.SubElement(root, 'ImportGroup', Label='PropertySheets')
@@ -639,7 +641,4 @@ ngs')
                     else:
                         lang = Vs2010Backend.lang_from_source_file(s)
                         self.add_pch(pch_sources, lang
-"""
-
-
 ```

@@ -212,7 +212,7 @@ func main() {
 
 总而言之，`go/src/go/token/token.go` 文件是 Go 语言词法分析的基础，它定义了构成 Go 语言代码的基本单元，并提供了一些操作这些单元的方法，为编译器的后续阶段提供了必要的信息。理解这个包对于深入理解 Go 语言的编译过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/token/token.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -563,9 +565,4 @@ func IsIdentifier(name string) bool {
 	}
 	return true
 }
-
-"""
-
-
-
 ```

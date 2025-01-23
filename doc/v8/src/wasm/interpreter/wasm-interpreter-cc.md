@@ -710,7 +710,7 @@ INSTRUCTION_HANDLER_FUNC s2r_GlobalGetF(const uint8_t* code, uint32_t* sp,
   uint32_t index = ReadGlobalIndex(code);
   uint8_t* src_addr = wasm_runtime->GetGlobalAddress(index);
   fp0 = base::ReadUnalignedValue<FloatT>(reinterpret_cast
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -718,8 +718,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1575,7 +1577,4 @@ static auto r2r_F64LoadMem = r2r_LoadMemF<double>;
 
 template <typename T, typename U = T>
 INSTRU
-"""
-
-
 ```

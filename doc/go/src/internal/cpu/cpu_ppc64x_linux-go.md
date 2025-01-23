@@ -132,7 +132,7 @@ func main() {
 
 总结来说，这段代码片段是 Go 运行时用于检测 ppc64x Linux 系统上 CPU 特性的底层实现，它通过读取操作系统提供的硬件能力信息来初始化 `cpu.PPC64` 结构体，供 Go 运行时内部使用。应用程序开发者应避免直接使用 `internal/cpu` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_ppc64x_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -175,9 +177,4 @@ func osinit() {
 	PPC64.HasDARN = isSet(HWCap2, hwcap2_DARN)
 	PPC64.HasSCV = isSet(HWCap2, hwcap2_SCV)
 }
-
-"""
-
-
-
 ```

@@ -157,7 +157,7 @@ Now, let's address each part of the prompt systematically:
 
 总而言之，虽然 `foo.c` 的代码极其简单，但在 Frida 的上下文中，它成为了一个重要的测试单元，用于验证 Frida 的核心功能，并可以帮助开发者理解 Frida 与底层系统交互的方式。 即使是这样简单的代码，也为我们提供了理解动态 instrumentation 工具如何工作的一个窗口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/93 new subproject in configured project/subprojects/sub/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,15 +165,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-license-identifier: Apache-2.0 */
 /* Copyright © 2021 Intel Corporation */
 
 int func(void) {
     return 1;
 }
-
-"""
-
 ```

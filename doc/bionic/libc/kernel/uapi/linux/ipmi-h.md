@@ -299,7 +299,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/ipmi.h` 定义了与 Linux 内核 IPMI 子系统交互的基础数据结构，为用户空间程序（包括 Android 系统中的某些底层组件）提供了与硬件管理控制器通信的接口。虽然在典型的消费级 Android 设备中不常见，但在服务器或具有远程管理能力的 Android 系统中发挥着重要作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ipmi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -444,7 +446,4 @@ struct ipmi_timing_parms {
 #define IPMICTL_GET_MAINTENANCE_MODE_CMD _IOR(IPMI_IOC_MAGIC, 30, int)
 #define IPMICTL_SET_MAINTENANCE_MODE_CMD _IOW(IPMI_IOC_MAGIC, 31, int)
 #endif
-
-"""
-
 ```

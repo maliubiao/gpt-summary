@@ -180,7 +180,7 @@ sys.stdin.read()
 
 总而言之， `bionic/tests/math_data/cosf_intel_data.handroid` 这个源代码文件是 Android Bionic 库中用于测试 `cosf` 函数在 Intel 架构上正确性的测试数据集合。它包含了预定义的输入和期望输出值，用于确保 Android 系统在 Intel 设备上进行余弦计算的准确性。虽然它本身不涉及 libc 函数的实现或 dynamic linker 的操作，但它是 Bionic 数学库测试的重要组成部分，对于保证 Android 平台的兼容性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cosf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -192,8 +192,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 e8deeb97p-1,
     -0x1.921fb4p2
   },
@@ -1454,8 +1456,4 @@ e8deeb97p-1,
     -0.0f
   },
 };
-
-"""
-
-
 ```

@@ -75,7 +75,7 @@ Response:
 - **过滤逻辑**：eBPF 程序通过比较 `sock->src_port`、`sock->dst` 等字段与全局变量 (`targ_sport`) 决定是否记录数据。
 - **时间单位转换**：通过 `targ_ms` 标志位控制是否将 RTT 转换为毫秒。
 - **直方图更新**：使用 `log2l` 计算 RTT 的分布区间，更新 `hist.slots` 数组。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/tcprtt.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -84,8 +84,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause)
 // Copyright (c) 2021 Wenbo Zhang
 //
@@ -427,7 +429,4 @@ cleanup:
 	tcprtt_bpf__destroy(obj);
 	return err != 0;
 }
-
-"""
-
 ```

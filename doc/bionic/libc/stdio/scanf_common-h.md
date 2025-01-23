@@ -289,7 +289,7 @@ if (Process.platform === 'android') {
 
 要调试更深层次的 `scanf_common.handroid` 内部逻辑，可能需要使用更底层的调试工具，例如 gdb 配合 Android 的 ndk-gdb，或者使用 IDA Pro 等反汇编工具进行静态分析。Frida 也可以用于 hook `scanf_common.handroid` 内部的函数（如果已知函数名或地址），但这通常需要更深入的逆向工程知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/stdio/scanf_common.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: vfscanf.c,v 1.31 2014/03/19 05:17:01 guenther Exp $ */
 /*-
  * Copyright (c) 1990, 1993
@@ -417,7 +419,4 @@ static int w_to_flag(int size, bool fast) {
 }
 
 #pragma clang diagnostic pop
-
-"""
-
 ```

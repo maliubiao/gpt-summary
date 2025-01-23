@@ -222,15 +222,17 @@ ParseResult 包含一个 int 类型的值: 168
 
 **总结:** `earley-parser.h` 中定义的解析器是 Torque 编译器的重要组成部分，它负责检查 Torque 代码的语法是否正确。通过定义语法规则和使用 Earley 算法，它可以有效地识别用户在编写 Torque 代码时可能犯的各种语法错误，为后续的编译和代码生成奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/earley-parser.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/earley-parser.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -776,7 +778,4 @@ class Grammar {
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_EARLEY_PARSER_H_
-
-"""
-
 ```

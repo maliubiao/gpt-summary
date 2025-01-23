@@ -216,7 +216,7 @@ Section Headers (描述各个段的详细信息，用于链接和调试)
 
 `s_asinhl.c` 文件实现了 `long double` 类型的反双曲正弦函数，它是 Android 系统数学库的重要组成部分。其实现考虑了不同输入范围的精度和效率，并处理了特殊情况。理解其功能和实现细节，以及动态链接的工作原理，有助于开发更健壮和高效的 Android 应用。在调试过程中，可以通过断点、日志和性能分析工具来追踪 `asinhl` 的调用路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_asinhl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* from: FreeBSD: head/lib/msun/src/e_acosh.c 176451 2008-02-22 02:30:36Z das */
 
 /*
@@ -315,7 +317,4 @@ asinhl(long double x)
 	}
 	RETURNI((hx & 0x8000) == 0 ? w : -w);
 }
-
-"""
-
 ```

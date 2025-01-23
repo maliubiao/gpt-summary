@@ -122,7 +122,7 @@ Response:
 
 10. **跨模式兼容性崩溃**  
     → `basic` 模式调用 ART 相关函数 → 检查 `mode` 返回值逻辑.
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/class-model.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -132,8 +132,10 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 nst lockSize = 8;
   const modelsSize = pointerSize;
   const javaApiSize = 6 * pointerSize;
@@ -250,8 +252,4 @@ function boolToNative (val) {
 }
 
 module.exports = Model;
-
-"""
-
-
 ```

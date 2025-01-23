@@ -107,7 +107,7 @@ Frida 是一个强大的动态 instrumentation 框架，广泛应用于软件逆
 * **断点调试 `samplefactory.py`:** 如果需要深入了解模板生成过程，可以在 `sample_generator` 函数中设置断点，查看 `options` 对象的内容以及 `_IMPL` 字典的查找过程。
 * **检查用户提供的语言参数:** 确保用户在命令行中提供的语言名称是 `_IMPL` 字典中存在的键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/templates/samplefactory.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -158,7 +160,4 @@ _IMPL: T.Mapping[str, T.Union[T.Type[ClassImpl], T.Type[FileHeaderImpl], T.Type[
 
 def sample_generator(options: Arguments) -> SampleImpl:
     return _IMPL[options.language](options)
-
-"""
-
 ```

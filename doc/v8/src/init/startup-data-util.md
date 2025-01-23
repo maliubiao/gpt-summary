@@ -100,11 +100,13 @@ console.timeEnd('startup');
 
 简而言之， `startup-data-util.cc` 的工作为 JavaScript 代码的快速执行奠定了基础，因为它加速了 V8 引擎自身的启动过程。 开发者通常不需要直接与这个文件交互，但其背后的机制对 Node.js 和 Chrome 等使用 V8 的环境的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/startup-data-util.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ void InitializeExternalStartupDataFromFile(const char* snapshot_blob) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -111,7 +111,7 @@ This systematic breakdown allows for a thorough understanding of the code and it
 
 总而言之，这个 `main.c` 文件虽然代码量很少，但它在 Frida 项目的构建和测试流程中扮演着重要的角色，用于验证构建系统的正确性，特别是在处理断言这种在调试和发布版本之间行为不同的机制时。理解它的功能有助于理解 Frida 的构建过程以及断言在软件开发和逆向工程中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/174 ndebug if-release enabled/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdlib.h>
 
@@ -136,7 +138,4 @@ int main(void) {
     assert(meson_test_set_side_effect());
     return meson_test_side_effect;
 }
-
-"""
-
 ```

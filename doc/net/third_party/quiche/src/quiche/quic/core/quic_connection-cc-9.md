@@ -160,7 +160,7 @@ Essentially, I approached this like reverse-engineering and explaining a piece o
 
 这部分 `QuicConnection` 的代码主要负责 **处理 QUIC 连接中网络路径验证的结果，并在验证失败时提供回退机制，确保连接的稳定性和可靠性**。它涉及对备用路径状态的管理、拥塞控制的调整、连接地址的更新以及连接关闭的处理。 这部分代码是 QUIC 连接管理中至关重要的一部分，确保了即使在网络环境发生变化的情况下，连接也能尽可能地维持和恢复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -168,9 +168,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共10部分，请归纳一下它的功能
+```
 
-"""
- connection_->alternative_path_.validated = true;
+### 源代码
+```cpp
+connection_->alternative_path_.validated = true;
   }
 }
 
@@ -361,8 +363,4 @@ QuicConnection::SerializeLargePacketNumberConnectionClosePacket(
 #undef ENDPOINT  // undef for jumbo builds
 
 }  // namespace quic
-
-"""
-
-
 ```

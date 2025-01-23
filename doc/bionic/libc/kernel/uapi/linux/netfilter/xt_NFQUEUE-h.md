@@ -233,7 +233,7 @@ sys.stdin.read()
 
 `xt_NFQUEUE.h` 定义了内核与用户空间在处理 Netfilter `NFQUEUE` 目标时使用的数据结构。理解这些结构体对于理解 Android 底层的网络处理机制至关重要。虽然它本身不是 libc 函数或 dynamic linker 的一部分，但它在 Android 的网络功能中扮演着关键角色，并且会被相关的用户空间程序（如 `netd`）使用。通过 Frida 可以动态地分析这些交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_NFQUEUE.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -244,8 +244,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -276,7 +278,4 @@ struct xt_NFQ_info_v3 {
 #define NFQ_FLAG_MASK 0x03
 };
 #endif
-
-"""
-
 ```

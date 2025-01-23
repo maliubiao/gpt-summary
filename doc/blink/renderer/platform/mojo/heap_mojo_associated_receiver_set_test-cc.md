@@ -99,14 +99,16 @@ By following these steps, we can systematically analyze the C++ test file and un
 
 `heap_mojo_associated_receiver_set_test.cc` 是一个关键的测试文件，用于验证 Blink 引擎中 `HeapMojoAssociatedReceiverSet` 类的功能和生命周期管理。该类在 Blink 与浏览器进程的 Mojo 通信中扮演着重要的角色，间接地支持着 JavaScript, HTML 和 CSS 的各种功能。测试用例覆盖了添加、移除、清空接收器以及在垃圾回收期间的行为，有助于确保 Blink 引擎的稳定性和资源管理的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/heap_mojo_associated_receiver_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -299,7 +301,4 @@ TEST_F(HeapMojoAssociatedReceiverSetGCWithoutContextObserverTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

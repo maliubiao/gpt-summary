@@ -153,14 +153,16 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`hrtf_elevation.cc` 是 Web Audio API 实现 3D 空间音频的关键组成部分，它负责管理和处理 HRTF 数据，并通过插值等技术提供平滑的空间定位效果。开发者在使用 Web Audio API 的 `PannerNode` 时，虽然不会直接操作这个文件，但其功能直接影响了最终的声音空间化效果。理解其内部机制有助于更好地利用 Web Audio API 实现沉浸式的音频体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/hrtf_elevation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -531,7 +533,4 @@ void HRTFElevation::GetKernelsFromAzimuth(double azimuth_blend,
 }
 
 }  // namespace blink
-
-"""
-
 ```

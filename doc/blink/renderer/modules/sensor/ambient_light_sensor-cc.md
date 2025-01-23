@@ -240,15 +240,17 @@ By following this structured thought process, combining code analysis with knowl
 
 总而言之，`blink/renderer/modules/sensor/ambient_light_sensor.cc` 文件是 Blink 引擎中实现 Web API `AmbientLightSensor` 的关键组成部分，它连接了 JavaScript 代码和底层设备传感器，负责数据的获取、处理和权限管理。理解其功能对于开发和调试使用环境光传感器的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/sensor/ambient_light_sensor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ std::optional<double> AmbientLightSensor::illuminance() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

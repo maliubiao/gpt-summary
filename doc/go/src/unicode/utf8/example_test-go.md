@@ -146,7 +146,7 @@ func main() {
 
 另一个常见的错误是在分配缓冲区时，没有考虑到 UTF-8 字符的变长特性。例如，如果要为一个包含 `n` 个 Rune 的字符串分配字节缓冲区，直接分配 `n` 个字节可能是不够的，需要根据实际情况进行分配，或者使用 `utf8.RuneLen` 计算每个 Rune 的长度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unicode/utf8/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -154,8 +154,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -382,9 +384,4 @@ func ExampleAppendRune() {
 	// 𐀀
 	// init𐀀
 }
-
-"""
-
-
-
 ```

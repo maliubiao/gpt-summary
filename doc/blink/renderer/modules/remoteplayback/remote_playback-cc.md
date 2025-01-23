@@ -213,15 +213,17 @@ By following these steps, I could systematically analyze the provided `remote_pl
 
 总而言之，`blink/renderer/modules/remoteplayback/remote_playback.cc` 是 Blink 引擎中实现 HTML5 远程播放功能的核心组件，它通过与 JavaScript 和 Presentation API 协同工作，使得网页能够将媒体内容投射到外部设备上播放。理解其功能和与 Web 技术的交互方式，有助于开发者正确使用远程播放 API，并进行问题排查和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/remoteplayback/remote_playback.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -944,7 +946,4 @@ void RemotePlayback::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

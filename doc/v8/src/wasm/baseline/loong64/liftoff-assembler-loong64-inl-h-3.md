@@ -721,7 +721,7 @@ bool LiftoffAssembler::emit_f16x8_qfma(LiftoffRegister dst,
 }
 
 bool LiftoffAssembler::emit_f16x8_qfms(Lif
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -729,8 +729,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 Register lhs,
                                         LiftoffRegister rhs) {
   bailout(kSimd, "emit_i32x4_max_u");
@@ -1627,7 +1629,4 @@ void LiftoffAssembler::TailCallIndirect(Register target) {
     Pop(kScratchReg);
     Jump(kScratchReg);
   } e
-"""
-
-
 ```

@@ -226,14 +226,16 @@ console.log(mySymbol.valueOf() === mySymbol); // 输出: true
 
 总之，这个 Torque 代码文件定义了 JavaScript `Symbol` 对象原型上的核心行为，确保了 Symbol 在 V8 引擎中的正确实现和符合规范的行为。理解这些底层的实现有助于更深入地理解 JavaScript 中 Symbol 的工作原理以及避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/symbol.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ transitioning javascript builtin SymbolPrototypeValueOf(
   return ThisSymbolValue(receiver, 'Symbol.prototype.valueOf');
 }
 }
-
-"""
-
 ```

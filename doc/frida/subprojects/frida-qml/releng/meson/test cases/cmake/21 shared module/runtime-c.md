@@ -119,7 +119,7 @@ By following these steps and engaging in this iterative refinement, I arrive at 
 
 总而言之，`runtime.c` 是 Frida 项目中一个非常基础的测试用例，用于验证 Frida 对共享库中导出函数的处理能力。它模拟了一个简单的语言运行时环境，方便开发者理解 Frida 的工作原理以及在逆向工程中如何与共享库进行交互。理解这个简单的例子有助于理解更复杂的动态分析场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/21 shared module/runtime.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -148,7 +150,4 @@ Prompt:
 int DLL_PUBLIC func_from_language_runtime(void) {
     return 86;
 }
-
-"""
-
 ```

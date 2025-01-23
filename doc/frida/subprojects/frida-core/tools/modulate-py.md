@@ -229,7 +229,7 @@ By following these steps, moving from a high-level understanding to detailed cod
 
 总而言之，`modulate.py` 是 Frida 工具链中一个强大且实用的工具，它允许逆向工程师在二进制层面灵活地控制程序的初始化和清理过程，为深入分析和调试提供了有力的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tools/modulate.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -237,8 +237,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import argparse
 import hashlib
 import os
@@ -720,7 +722,4 @@ def make_non_localized_env():
 
 
 main()
-
-"""
-
 ```

@@ -82,7 +82,7 @@ In essence, this file tests the correctness of the logic that translates the HTM
 
 总而言之，`paint_property_tree_builder_test.cc` 是一个关键的测试文件，用于确保 Blink 渲染引擎能够正确地将 HTML 和 CSS 转换为用于高效渲染的绘制属性树，这直接影响着用户最终看到的网页呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -90,9 +90,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共10部分，请归纳一下它的功能
+```
 
-"""
-     position: absolute;
+### 源代码
+```cpp
+position: absolute;
         left: 123px;
         top: 456px;
         clip: rect(10px, 80px, 70px, 40px);
@@ -959,8 +961,4 @@ TEST_P(PaintPropertyTreeBuilderTest, FlatTransformStylePropagatesToChildren) {
         transform-style: flat;
         width: 30px;
         height: 40px;
- 
-"""
-
-
 ```

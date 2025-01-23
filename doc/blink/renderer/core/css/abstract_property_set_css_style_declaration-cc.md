@@ -226,15 +226,17 @@ By following this structured approach, I can provide a comprehensive and informa
 
 总而言之，`abstract_property_set_css_style_declaration.cc` 文件是 Blink 渲染引擎中处理元素样式声明的核心组件，它连接了 JavaScript 的 CSSOM 操作和底层的 CSS 属性存储和管理机制。理解它的功能对于理解浏览器如何处理 CSS 样式至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/abstract_property_set_css_style_declaration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Apple Inc. All
@@ -580,7 +582,4 @@ void AbstractPropertySetCSSStyleDeclaration::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

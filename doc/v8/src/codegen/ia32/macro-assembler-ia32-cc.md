@@ -144,7 +144,7 @@ While developers rarely directly edit this file, understanding its purpose helps
 
 In essence, `v8/src/codegen/ia32/macro-assembler-ia32.cc` provides the building blocks for generating machine code for the IA32 architecture within the V8 JavaScript engine. It offers an abstraction layer over raw assembly, facilitating access to V8 runtime data, managing the stack, performing heap object operations (including the critical write barrier), handling function calls and optimizations, and incorporating debugging aids. It plays a crucial role in the execution of JavaScript code by translating high-level JavaScript constructs into low-level machine instructions that the processor can understand and execute.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/macro-assembler-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/macro-assembler-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1139,7 +1141,4 @@ void MacroAssembler::AssertGeneratorObject(Register object) {
 
   test(object, Immediate(kSmiTagMask));
   Check(not_equal, AbortReason::kOperandIsASmiAndNotAGenerat
-"""
-
-
 ```

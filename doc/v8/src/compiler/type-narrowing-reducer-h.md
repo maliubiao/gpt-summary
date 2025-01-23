@@ -140,15 +140,17 @@ While `TypeNarrowingReducer` works at the compiler level, user code with unclear
 
 In summary, `TypeNarrowingReducer` is a crucial component of V8's optimizing compiler that improves performance by making type information more precise during the compilation process. It analyzes the code's intermediate representation and refines types based on various factors like type guards and operation semantics.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/type-narrowing-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/type-narrowing-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ class V8_EXPORT_PRIVATE TypeNarrowingReducer final
 }  // namespace v8
 
 #endif  // V8_COMPILER_TYPE_NARROWING_REDUCER_H_
-
-"""
-
 ```

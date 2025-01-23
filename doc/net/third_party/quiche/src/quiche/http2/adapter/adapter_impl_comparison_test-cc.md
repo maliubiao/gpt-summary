@@ -148,15 +148,17 @@ fetch('https://example.com/data')
 
 总而言之，`adapter_impl_comparison_test.cc` 是 Chromium 网络栈中一个关键的测试文件，它通过对比测试不同的 HTTP/2 适配器实现，保证了 HTTP/2 协议处理的正确性和一致性，从而间接地保证了用户在使用浏览器时的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/adapter_impl_comparison_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <memory>
 #include <string>
 #include <vector>
@@ -332,7 +334,4 @@ TEST(AdapterImplComparisonTest, ServerHandlesFrames) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

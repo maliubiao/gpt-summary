@@ -114,11 +114,13 @@ async function fetchData() {
 
 `FuncNameInferrer` 是 V8 引擎中一个重要的组件，它增强了 JavaScript 的可调试性和可理解性，尤其是在处理匿名函数时。通过分析代码上下文，它为这些函数提供了有意义的名称，这些名称会在开发者工具中显示，帮助开发者更好地理解代码的执行流程和进行错误排查。它通过一个栈结构巧妙地收集和组合周围的名称信息，从而实现函数名称的推断。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/func-name-inferrer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ void FuncNameInferrer::InferFunctionsNames() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

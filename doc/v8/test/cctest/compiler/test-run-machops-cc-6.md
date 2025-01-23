@@ -162,7 +162,7 @@ let intNum = parseInt(floatNum); // 模拟 Float64ToInt64
 
 第 7 部分的 `v8/test/cctest/compiler/test-run-machops.cc` 集中测试了 V8 编译器针对 **`float64` 类型的各种超越函数、舍入操作，以及调用不同参数和返回类型的 C 函数** 生成机器码的正确性。此外，还包含了一些针对 `float32` 的舍入操作以及在 64 位架构下的类型转换测试。 这些测试是 V8 确保其编译器生成的机器码在处理浮点数运算和与 native 代码交互时符合规范和预期的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-machops.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 K_DOUBLE_EQ(-0.0, m.Call(-0.0));
   CHECK_DOUBLE_EQ(0.0, m.Call(0.0));
   FOR_FLOAT64_INPUTS(i) { CHECK_DOUBLE_EQ(base::ieee754::atan(i), m.Call(i)); }
@@ -971,7 +973,4 @@ TEST(RunBitcastInt64ToFloat64) {
   m.StoreToPointer(
       output.get_bits_address(), MachineRepresentation::kFloat64,
       m.BitcastInt64T
-"""
-
-
 ```

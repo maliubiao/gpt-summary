@@ -143,7 +143,7 @@ By following these steps, iteratively refining understanding, and considering th
 
 总而言之，`check_arch.py` 是 Frida 构建系统中的一个辅助脚本，用于确保构建出的二进制文件符合预期的架构，这对于保证 Frida 在目标平台上正确运行至关重要。它利用了 Windows 平台特定的 `dumpbin` 工具进行静态分析，并提供了一种简单的验证机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/226 link depends indexed custom target/check_arch.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import re
@@ -185,7 +187,4 @@ elif arch == 'x64':
 
 if arch != want_arch:
     raise RuntimeError(f'Wanted arch {want_arch} but exe uses {arch}')
-
-"""
-
 ```

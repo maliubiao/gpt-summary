@@ -82,7 +82,7 @@ By following these steps, the comprehensive and accurate answer can be generated
 
 总而言之，这个 `prog.c` 文件是一个刻意设计的简单示例，用于测试 Frida 构建系统在禁用预编译头的情况下是否能够正确处理缺少头文件的情况，从而确保 Frida 工具链在不同的构建环境下都能稳定工作。它揭示了 C 语言编译过程中的头文件依赖和预编译头的概念，以及这些概念在 Frida 这种复杂的动态分析工具中的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing build/2 pch disabled/c/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -90,8 +90,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 void func() {
@@ -101,7 +103,4 @@ void func() {
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

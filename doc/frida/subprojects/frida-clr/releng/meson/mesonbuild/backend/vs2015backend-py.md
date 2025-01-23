@@ -95,7 +95,7 @@ Here's a breakdown of the thinking process used to analyze the provided Python c
 
 总而言之，`vs2015backend.py` 在 Frida 的 Windows 构建过程中扮演着关键角色，它负责将抽象的构建描述转换为 Visual Studio 可以理解的具体项目文件，为后续的编译和链接过程奠定基础。理解其功能有助于排查与 Visual Studio 2015 构建相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/vs2015backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -140,7 +142,4 @@ class Vs2015Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v140'
-
-"""
-
 ```

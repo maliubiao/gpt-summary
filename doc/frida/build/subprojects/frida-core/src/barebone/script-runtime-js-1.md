@@ -71,7 +71,7 @@ Initially, I might have been tempted to over-interpret the "barebone" aspect as 
 
 `script-runtime.js` 的这部分代码定义了在 Frida 的 `barebone` 环境中操作 64 位无符号整数的核心功能。它提供了一种在没有完整 JavaScript 引擎的情况下处理底层数据类型的机制，为 Frida 的动态 instrumentation 功能奠定了基础。它通过 `BUInt64` 类提供基本的位运算、比较和类型转换，并为数值和字符串表示提供支持。 `u()` 函数则表明这是一个精简的运行时环境，某些功能可能尚未实现。 结合第一部分，可以推测这个文件的目标是为 Frida 提供一个轻量级的 JavaScript 运行时环境，支持其核心的动态 instrumentation 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-core/src/barebone/script-runtime.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -81,10 +81,9 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 v&h(t))}or(t){return new BUInt64(this.$v|h(t))}xor(t){return new BUInt64(this.$v^h(t))}shr(t){return new BUInt64(this.$v>>h(t))}shl(t){return new BUInt64(this.$v<<h(t))}not(){return new BUInt64(~this.$v)}compare(t){const r=this.$v,e=h(t);return r===e?0:r<e?-1:1}equals(t){return 0===this.compare(t)}toNumber(){return Number(this.$v)}toString(t){return this.$v.toString(t)}toJSON(){return this.$v.toString()}valueOf(){return Number(this.$v)}}function h(t){return"object"==typeof t?"$v"in t?t.$v:t.handle.$v:BigInt(t)}function u(){throw new Error("Not yet implemented by the barebone backend")}
-"""
-
-
 ```

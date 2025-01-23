@@ -163,7 +163,7 @@ By following this structured approach, breaking down the code into manageable pa
 
 通过查看 `conftest.py` 文件，开发者可以更好地理解 `tomlkit` 的测试结构，并找到可能与他们遇到的问题相关的测试用例，从而帮助他们调试问题。这个文件提供了一个入口点，让他们可以深入了解 `tomlkit` 是如何被测试的，以及可能的错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/tests/conftest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 
 import pytest
@@ -278,7 +280,4 @@ def pytest_generate_tests(metafunc):
             test_list["invalid_encode"].values(),
             ids=list(test_list["invalid_encode"].keys()),
         )
-
-"""
-
 ```

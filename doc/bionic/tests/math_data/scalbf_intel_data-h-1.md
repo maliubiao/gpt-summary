@@ -38,7 +38,7 @@ Based on the provided data, the file `scalbf_intel_data.handroid` seems to be a 
 
 作为第二部分，这份数据文件与第一部分一起，完整地定义了针对 `scalbf` 函数在 Intel 架构上的测试用例。这些测试用例覆盖了各种正常值、边界值（如 0、无穷大、NaN）以及不同的指数范围，旨在确保 `scalbf` 函数的实现符合预期，并且能处理各种可能的输入情况。  它不包含函数实现的代码，而是用于验证函数实现正确性的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/scalbf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -50,8 +50,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 c4p-1,
     0x1.p0
   },
@@ -2391,8 +2393,4 @@ c4p-1,
     -0x1.3880p15
   }
 };
-
-"""
-
-
 ```

@@ -103,11 +103,13 @@ obj2 = null; // obj1 仍然被 obj2.ref 引用
 
 总而言之，`v8/src/heap/cppgc-js/unified-heap-marking-visitor.cc` 文件中的代码是 V8 垃圾回收机制的核心组成部分，它负责在标记阶段遍历和标记堆中的对象，确保只有仍然被程序使用的对象才能存活，从而实现有效的内存管理，这直接影响了 JavaScript 代码的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/unified-heap-marking-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ bool ConcurrentUnifiedHeapMarkingVisitor::DeferTraceToMutatorThreadIfConcurrent(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

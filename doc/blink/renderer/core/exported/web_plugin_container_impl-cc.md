@@ -456,7 +456,7 @@ void WebPluginContainerImpl::HandleDragEvent(MouseEvent& event) {
 
 简而言之，`WebPluginContainerImpl` 是一个关键的组件，它封装了嵌入式插件的复杂性，并将其无缝集成到 Blink 的渲染和事件处理管道中。 它充当了插件和浏览器之间的中介，确保插件能够正确显示、接收用户输入并与页面上的其他元素交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_plugin_container_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -464,8 +464,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  * Copyright (C) 2014 Opera Software ASA. All rights reserved.
@@ -1335,7 +1337,4 @@ void WebPluginContainerImpl::HandleDragEvent(MouseEvent& event) {
                             event.AbsoluteLocation().y() - location.y());
 
   web_plugin_->HandleDragStatusU
-"""
-
-
 ```

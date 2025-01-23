@@ -121,7 +121,7 @@ My thought process for analyzing the provided C++ code snippet and generating th
 
 该文件（第一部分）主要负责测试 `WebSocketTransportClientSocketPool` 类的**连接建立、连接管理、请求排队、连接取消、连接重用、以及端点锁机制**等核心功能。它验证了在各种正常和异常情况下，连接池的行为是否符合预期，为 WebSocket 连接的稳定性和效率提供了保障。  重点在于对单个连接请求的处理和连接池的基本管理功能的验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/websocket_transport_client_socket_pool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -916,7 +918,4 @@ TEST_F(WebSocketTransportClientSocketPoolTest, IPv6InstantFail) {
   IPEndPoint endpoint;
   handle.socket()->GetPeerAddress(&endpoint);
   EXPECT
-"""
-
-
 ```

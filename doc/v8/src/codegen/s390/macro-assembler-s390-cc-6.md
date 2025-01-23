@@ -167,7 +167,7 @@ console.log(c); // 输出: Float32Array [ 6, 8, 10, 12 ]
 
 这部分 `macro-assembler-s390.cc` 的代码主要集中在 **为 s390 架构实现各种 SIMD 向量操作，包括浮点数和整数之间的转换、整数类型的打包和转换、饱和算术运算、浮点数精度转换、成对运算、截断转换、常量加载、向量元素重排、点积运算以及 Q15 定点乘法。此外，还包含了一些辅助功能，如加载堆栈限制、实现跳转表、检查代码标记以及调用 API 函数。**  这些底层的宏汇编指令是 V8 引擎在 s390 架构上执行高性能 JavaScript 代码的关键组成部分。尤其值得注意的是，这一部分还详细定义了针对 Little-Endian 架构的向量加载和存储操作，体现了对不同字节序的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/macro-assembler-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,9 +175,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
-                  Register scratch2) {
+### 源代码
+```cpp
+Register scratch2) {
   // vclgd or ConvertFloat32ToUnsignedInt32 will convert NaN to 0, negative to 0
   // automatically.
   if (CpuFeatures::IsSupported(VECTOR_ENHANCE_FACILITY_2)) {
@@ -916,7 +918,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
   __ TailCallRuntime(Runtime::kPropagateException);
 
   // HandleScope limit has change
-"""
-
-
 ```

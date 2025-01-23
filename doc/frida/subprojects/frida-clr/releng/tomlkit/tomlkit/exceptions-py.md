@@ -183,7 +183,7 @@ ports = [ 8000, "8001" ]
 
 总而言之，这个 `exceptions.py` 文件定义了 `tomlkit` 库在解析 TOML 配置文件时可能遇到的各种错误情况，这些错误对于使用 Frida 进行逆向工程的用户来说，是重要的调试线索，帮助他们诊断和修复配置文件中的问题，从而确保 Frida 和 `frida-clr` 能够正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tomlkit/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from typing import Collection
@@ -420,7 +422,4 @@ class InvalidStringError(ValueError, TOMLKitError):
             f"Invalid string: {delimiter}{repr_}{delimiter}. "
             f"The character sequences {invalid_sequences} are invalid."
         )
-
-"""
-
 ```

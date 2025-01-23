@@ -72,15 +72,17 @@ fetch('data.json')
 4. **测试在请求生命周期内取消 `BackgroundURLLoader` 的行为：** 验证在请求的不同阶段取消请求是否会导致崩溃或其他非预期行为，并确保资源得到正确清理。
 5. **为 `BackgroundURLLoader` 的开发和维护提供保障：** 通过自动化测试确保代码的正确性和稳定性，防止引入 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/background_url_loader_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -910,7 +912,4 @@ TEST_F(BackgroundResourceFecherTest, CancelAfterReceiveResponse) {
   EXPECT_TRUE(url_loader_dissconnected);
 
   // Flush all tasks posted to avoid memory lea
-"""
-
-
 ```

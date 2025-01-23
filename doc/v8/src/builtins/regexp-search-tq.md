@@ -153,14 +153,16 @@ console.log(regex2[Symbol.search](str)); // 输出: -1
 
 总而言之，这段 Torque 代码精确地实现了 JavaScript 中字符串的 `search()` 方法的功能，它通过快速和慢速两种路径优化了正则表达式的搜索过程，并确保了在搜索操作中正确处理和重置正则表达式的 `lastIndex` 属性。理解这段代码有助于深入了解 V8 引擎是如何执行 JavaScript 中常用的字符串和正则表达式操作的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/regexp-search.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ transitioning javascript builtin RegExpPrototypeSearch(
   return RegExpPrototypeSearchBodySlow(receiver, string);
 }
 }
-
-"""
-
 ```

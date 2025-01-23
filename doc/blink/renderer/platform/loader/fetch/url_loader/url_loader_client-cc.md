@@ -102,14 +102,16 @@ By following these steps, I arrived at the comprehensive answer that addresses a
 
 虽然 `url_loader_client.cc` 文件本身很小且没有实际代码，但它在 Blink 引擎的编译和链接过程中起着至关重要的作用，确保了 `URLLoaderClient` 这个核心接口能够被正确地处理。 `URLLoaderClient` 又是处理所有网络资源加载的关键，因此它与 JavaScript, HTML, CSS 的功能息息相关，是浏览器加载网页内容的基础组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/url_loader_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -120,7 +122,4 @@ Prompt:
 // URLLoaderClient is not compiled without this cc file.
 // So if we don't have this cc file, we will see unresolved symbol error when
 // constructor/destructor's address is required.
-
-"""
-
 ```

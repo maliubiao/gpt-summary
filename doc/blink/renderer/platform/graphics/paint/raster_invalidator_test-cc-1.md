@@ -64,15 +64,17 @@ I should summarize these functionalities and mention their relation to rendering
 
 总而言之，这部分测试代码旨在验证 `RasterInvalidator` 能够精确地追踪由于变换和特效属性变化而引起的栅格化失效，并能够智能地处理微小的变化以优化性能。它确保了 Blink 渲染引擎能够在各种复杂的场景下正确地决定何时以及何处需要重新绘制网页内容，从而提供流畅且高效的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/raster_invalidator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ransform1->Update(*transform0, TransformPaintPropertyNode::State{
                                       {transform1->Matrix() *
                                        MakeTranslationMatrix(-20, -30)}});
@@ -407,8 +409,4 @@ TEST_P(RasterInvalidatorTest, EffectChangeOnCachedSubsequence) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -171,15 +171,17 @@ func F[T any](val T) T {
 
 这段代码是一个 Go 语言泛型功能的测试用例，它通过比较不同包中具有相同签名的函数的返回值来验证泛型在跨包使用时的类型一致性。它不涉及命令行参数的处理，但强调了理解泛型类型实例化和跨包交互的重要性，避免做出可能导致错误的假设。 该测试用例的目的在于确保 Go 语言编译器正确处理泛型，保证代码的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue49241.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -201,9 +203,4 @@ func main() {
 		panic("bad")
 	}
 }
-
-"""
-
-
-
 ```

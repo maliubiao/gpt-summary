@@ -108,15 +108,17 @@ By following this thought process, I can generate a comprehensive and accurate s
 
 `ResponseBodyLoader` 是 Blink 引擎中负责高效、可靠地加载 HTTP 响应主体数据的关键组件。其测试覆盖了数据接收、错误处理、加载完成、取消、多种数据消费方式、状态管理以及与 BFCache 等重要特性的集成。这些测试对于确保浏览器能够正确加载各种类型的网络资源（包括 JavaScript、HTML、CSS 等）至关重要，并能防止开发者在使用相关 API 时可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/response_body_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er->DrainAsBytesConsumer();
 
   EXPECT_TRUE(body_loader->IsDrained());
@@ -535,8 +537,4 @@ TEST_F(ResponseBodyLoaderTestAllowDrainAsBytesConsumerInBFCache,
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

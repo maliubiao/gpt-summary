@@ -167,14 +167,16 @@ By following these steps, you can systematically analyze a piece of code and gen
 
 总而言之，`svg_transform_list_interpolation_type.cc` 是 Blink 引擎中至关重要的组件，它使得 SVG 的 `transform` 属性能够进行流畅的动画过渡，为网页提供丰富的视觉效果。理解其功能有助于开发者更好地使用 CSS 动画、CSS 过渡和 Web Animations API 来创建动画效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/svg_transform_list_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -517,7 +519,4 @@ void SVGTransformListInterpolationType::Composite(
 }
 
 }  // namespace blink
-
-"""
-
 ```

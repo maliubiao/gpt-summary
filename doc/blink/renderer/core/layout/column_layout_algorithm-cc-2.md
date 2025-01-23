@@ -180,16 +180,18 @@ By following this thought process, which involves understanding the code, connec
 
 这段代码片段专注于 CSS 多列布局算法中关于列高度计算和布局约束空间创建的核心逻辑。它负责根据 CSS 属性、容器的约束以及已有的内容，精确地计算每列的高度，并为不同的布局场景（如平衡列和跨列元素）创建合适的布局约束空间，以便子元素能够正确地进行布局。它确保了在多列布局中，内容能够按照指定的规则进行分列和排列。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/column_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-       &auto_length, kIndefiniteSize);
+### 源代码
+```cpp
+&auto_length, kIndefiniteSize);
   // A specified block-size will just constrain the maximum length.
   if (extent != kIndefiniteSize) {
     max = std::min(max, extent);
@@ -287,8 +289,4 @@ LayoutUnit ColumnLayoutAlgorithm::TotalColumnBlockSize() const {
 }  // namespace blink
 
 WTF_ALLOW_CLEAR_UNUSED_SLOTS_WITH_MEM_FUNCTIONS(blink::ResultWithOffset)
-
-"""
-
-
 ```

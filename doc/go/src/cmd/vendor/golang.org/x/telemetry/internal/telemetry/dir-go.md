@@ -206,15 +206,17 @@ off 2023-10-27
 
 4. **忽略错误处理：**  `SetMode` 和 `Mode` 等方法都可能返回错误，例如文件读写失败。使用者应该妥善处理这些错误，以避免程序出现意外行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/telemetry/internal/telemetry/dir.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -378,9 +380,4 @@ const DisabledOnPlatform = false ||
 	runtime.GOOS == "wasip1" || // #60971
 	runtime.GOOS == "plan9" || // https://github.com/golang/go/issues/57540#issuecomment-1470766639
 	runtime.GOARCH == "mips" || runtime.GOARCH == "mipsle" // mips lacks cross-process 64-bit atomics
-
-"""
-
-
-
 ```

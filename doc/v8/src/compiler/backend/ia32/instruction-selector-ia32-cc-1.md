@@ -89,7 +89,7 @@ Here's a breakdown of my thought process:
 
 这部分代码主要负责 V8 编译器后端在 IA-32 架构上的 **指令选择** 工作。它接收 V8 的中间表示，并根据不同的操作类型选择对应的 IA-32 机器指令，包括算术运算、逻辑运算、内存访问、栈操作以及 WebAssembly 特有的操作。它是将高级 JavaScript 代码转换为底层机器码的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/instruction-selector-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -97,8 +97,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t_at(node, 1))) {
     if (opcode == kIA32I8x16ShrS) {
       selector->Emit(opcode, output, g.UseRegister(selector->input_at(node, 0)),
@@ -1002,7 +1004,4 @@ void VisitWord32PairShift(InstructionSelectorT<Adapter>* selector,
   int32_t output_count = 0;
   int32_t temp_count = 0;
   outputs[output_count++] = g.DefineAs
-"""
-
-
 ```

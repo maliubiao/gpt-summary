@@ -201,7 +201,7 @@ Imagine a developer or reverse engineer using Frida to debug an application that
 
 In summary, this small C file serves as a concrete example of how AVX2 SIMD instructions are used for a basic operation. Understanding its functionality is crucial for anyone involved in reverse engineering, performance analysis, or debugging applications that leverage these powerful CPU features. Frida, as a dynamic instrumentation tool, provides the means to interact with this code in a running process and gain valuable insights.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/147 simd/simd_avx2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 #include<stdint.h>
@@ -253,7 +255,4 @@ void increment_avx2(float arr[4]) {
     arr[2] = (float)darr[2];
     arr[3] = (float)darr[3];
 }
-
-"""
-
 ```

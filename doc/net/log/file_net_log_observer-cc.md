@@ -187,7 +187,7 @@ This iterative process of scanning, identifying core components, tracing the dat
 
 `FileNetLogObserver` 是 Chromium 网络栈中负责将详细的网络事件记录到文件的关键组件。它支持有界和无界两种日志记录模式，使用独立的线程进行文件 I/O 操作，并通过 `WriteQueue` 管理待写入的事件，以确保性能和内存使用效率。它不直接与 JavaScript 交互，但生成的 JSON 日志文件可以被 JavaScript 代码用于分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/log/file_net_log_observer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1064,7 +1066,4 @@ std::string SerializeNetLogValueToJson(const base::ValueView& value) {
   // Omit trailing ".0" when printing a DOUBLE that is representable as a 64-bit
   // integer. This makes the values returned by NetLogNumberValue() look more
   // pleasant (for repre
-"""
-
-
 ```

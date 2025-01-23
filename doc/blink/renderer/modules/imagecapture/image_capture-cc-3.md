@@ -140,7 +140,7 @@ Based on the code, the file seems to handle capturing images from a video stream
 
 总而言之，`blink/renderer/modules/imagecapture/image_capture.cc` 文件是 Chromium 浏览器中 ImageCapture API 的核心实现，它充当了 Web 开发者通过 JavaScript 控制摄像头拍照的桥梁。该文件负责管理摄像头的能力和设置，应用用户指定的约束，并执行拍照操作，最终将捕获的图像数据返回给网页。它与 JavaScript 紧密配合，并间接地通过 HTML 和 CSS 将捕获的图像呈现给用户。理解该文件的功能对于调试与摄像头图像捕获相关的问题至关重要。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/imagecapture/image_capture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pabilities->setBackgroundSegmentationMask(ApplyValueConstraint(
         &has_setting, &setting,
         effective_capabilities->backgroundSegmentationMask(),
@@ -933,8 +935,4 @@ void ImageCapture::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

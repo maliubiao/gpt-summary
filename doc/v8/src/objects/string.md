@@ -95,12 +95,14 @@ This is the first part of a two-part file. The summary should focus on the funct
 
 总而言之，`v8/src/objects/string.cc` 的第1部分是 V8 引擎中处理字符串对象的基础设施，它实现了字符串的创建、存储、比较、查找和转换等核心功能，这些功能直接支撑着 JavaScript 中 `String` 对象的各种操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1887,8 +1889,5 @@ SeqString::DataAndPaddingSizes SeqOneByteString::GetDataAndPaddingSizes()
     const {
   int data_size = sizeof(SeqOneByteString) + length() * kOneByteSize;
   int padding_size = SizeFor(length()) - data_size;
-  return 
-"""
-
-
+  return
 ```

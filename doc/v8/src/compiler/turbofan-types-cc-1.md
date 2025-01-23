@@ -148,7 +148,7 @@ Type union_type = Type::Union(string_type, number_type, &zone);
 
 这部分 `v8/src/compiler/turbofan-types.cc` 代码专注于 `Type` 对象的输出、构造和一些辅助操作，为 Turbofan 编译器提供了重要的调试和运行时类型信息管理能力。它确保了类型信息能够以可读的形式呈现，并提供了在堆上表示类型信息的能力，这对于类型断言等高级功能至关重要。同时，通过静态断言，它保证了 C++ 和 Torque 代码中类型表示的一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-types.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turbofan-types.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e, zone);
   size = AddToUnion(type2, result, size, zone);
   return NormalizeUnion(result, size, zone);
@@ -464,8 +466,4 @@ PROPER_ATOMIC_BITSET_TYPE_HIGH_LIST(VERIFY_TORQUE_HIGH_BITSET_AGREEMENT)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

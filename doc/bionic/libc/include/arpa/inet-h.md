@@ -393,7 +393,7 @@ session.detach()
 
 这个示例展示了如何使用 Frida hook libc 中的网络函数，可以帮助你调试 Android Framework 或 NDK 应用程序中与 IP 地址处理相关的逻辑。你可以根据需要修改脚本来 hook 其他函数并观察其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/arpa/inet.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -404,8 +404,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -460,7 +462,4 @@ int inet_pton(int __af, const char* _Nonnull __src, void* _Nonnull __dst);
 __END_DECLS
 
 #endif
-
-"""
-
 ```

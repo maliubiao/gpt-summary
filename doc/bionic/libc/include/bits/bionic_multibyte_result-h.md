@@ -337,7 +337,7 @@ except KeyboardInterrupt:
 
 通过 Frida Hook，你可以观察到 `mbrtoc16` 函数何时被调用，传入了哪些参数（包括要转换的字符串和缓冲区大小），以及返回了什么值，从而理解 Android 系统或 NDK 应用是如何使用这些底层的多字节转换 API 的，以及如何处理不同的转换结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/bionic_multibyte_result.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -348,8 +348,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -419,7 +421,4 @@ enum : size_t {
 };
 
 __END_DECLS
-
-"""
-
 ```

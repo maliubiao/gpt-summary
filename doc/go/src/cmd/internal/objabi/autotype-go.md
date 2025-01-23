@@ -103,15 +103,17 @@ func main() {
 
 `go/src/cmd/internal/objabi/autotype.go` 的主要功能是定义了用于表示不同类型自动变量的常量，这些常量被 Go 编译器在编译过程中用来管理函数局部变量和参数。理解这些常量有助于深入了解 Go 编译器的内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/objabi/autotype.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/l.h and related files.
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/l.h
 //
@@ -150,9 +152,4 @@ const (
 	A_PARAM
 	A_DELETED_AUTO
 )
-
-"""
-
-
-
 ```

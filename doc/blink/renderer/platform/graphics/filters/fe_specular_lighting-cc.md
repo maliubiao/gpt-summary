@@ -208,14 +208,16 @@ Finally, I'd review the generated answer to ensure accuracy, clarity, and comple
 
 总而言之，`fe_specular_lighting.cc` 文件在 Blink 引擎中扮演着关键角色，它实现了 Web 标准中用于创建镜面光照效果的滤镜，并通过与 HTML (SVG), CSS 和 JavaScript 的交互，使得网页开发者能够在 Web 内容中添加丰富的视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_specular_lighting.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -303,7 +305,4 @@ StringBuilder& FESpecularLighting::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -178,7 +178,7 @@ Now I need to connect these functionalities to web technologies, user errors, an
 
 `ScrollableArea` 类是 Chromium Blink 引擎中负责管理可滚动区域的核心组件。它封装了滚动条的创建、更新、绘制和动画逻辑，处理用户和程序触发的滚动操作，并集成了滚动捕捉功能。它还负责处理 Overlay 滚动条的显示和隐藏，并与 Compositor 层进行交互以实现高效的渲染和动画。该类在 Web 浏览器的滚动功能中扮演着至关重要的角色，确保用户能够流畅地浏览超出视口的内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollable_area.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eVerticalScrollbar(scrollbar);
     else
       mac_scrollbar_animator_->WillRemoveHorizontalScrollbar(scrollbar);
@@ -802,8 +804,4 @@ ScrollOffset ScrollableArea::GetWebExposedScrollOffset() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

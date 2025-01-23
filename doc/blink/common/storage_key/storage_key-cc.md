@@ -156,14 +156,16 @@ By following this systematic approach, combining code analysis with an understan
 
 总而言之，`blink/common/storage_key/storage_key.cc` 文件定义了 `StorageKey` 类，它是 Blink 引擎中用于标识和管理存储的关键抽象。它包含了 Origin、Top-Level Site、Nonce 和 Ancestor Chain Bit 等信息，支持存储分区，并提供了序列化、反序列化以及与其他网络层组件交互的功能。理解 `StorageKey` 的工作原理对于理解 Blink 的存储隔离机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/storage_key/storage_key.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1110,7 +1112,4 @@ bool StorageKey::IsValid() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

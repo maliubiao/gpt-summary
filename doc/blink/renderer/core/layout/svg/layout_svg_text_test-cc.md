@@ -130,14 +130,16 @@ By following these steps, we can systematically analyze the C++ test file and ex
 
 总而言之，`layout_svg_text_test.cc` 是一个关键的测试文件，它保证了 Blink 引擎能够正确地渲染和布局 SVG 文本，并且处理各种相关的 HTML, CSS 属性和 JavaScript 可能触发的行为，从而为开发者提供一致且可靠的 Web 平台。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_text_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -327,7 +329,4 @@ TEST_F(LayoutSVGTextTest, WillBeRemovedFromTree) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

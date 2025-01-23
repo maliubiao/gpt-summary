@@ -162,15 +162,17 @@ func main() {
 
 总而言之，`insecureHandler` 是一个用于将 HTTPS 请求强制降级为 HTTP 的处理器，它在特定的、需要与不安全服务交互的场景下可能有用，但使用者必须清楚其安全风险并谨慎使用，尤其要注意避免潜在的重定向循环问题。 在 `go` 命令的上下文中，它可能用于处理通过 `-insecure` 标志请求的不安全仓库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/vcweb/insecure.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -213,9 +215,4 @@ func (h *insecureHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 	http.Redirect(w, req, u.String(), http.StatusFound)
 }
-
-"""
-
-
-
 ```

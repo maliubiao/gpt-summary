@@ -88,12 +88,14 @@ console.log(arr2.indexOf(20)); // 输出 1
 
 总而言之，这部分 C++ 代码是 V8 引擎实现 JavaScript 对象和数组在字典模式下元素管理的关键部分，它定义了各种底层操作，确保了 JavaScript 代码在处理具有稀疏数字索引或字符串键的对象时能够正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
     return dict->NumberOfElements();
   }
@@ -1683,7 +1685,4 @@ class FastDoubleElementsAccessor
                                 Tagged<FixedArrayBase> backing_store,
                                 InternalIndex entry) {
     return FixedDoubleArray::get(Cast<Fixe
-"""
-
-
 ```

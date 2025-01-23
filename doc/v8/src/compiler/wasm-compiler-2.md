@@ -106,12 +106,14 @@ console.log(wasmInstance.exports.myGlobal.value);
 
 总而言之，这段 `wasm-compiler.cc` 中的代码是 WebAssembly 代码编译的关键部分，它将 WebAssembly 的抽象指令转换为底层的机器码操作，并处理了与 JavaScript 互操作的各种细节，包括内存管理、类型转换和调用约定。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 offset));
 }
 
@@ -1527,7 +1529,4 @@ Node* WasmGraphBuilder::SimdOp(wasm::WasmOpcode opcode, Node* const* inputs) {
       return graph()->NewNode(mcgraph()->machine()->S128Xor(), inputs[0],
                               inputs[1]);
     case wasm::kExprS128Not:
-"""
-
-
 ```

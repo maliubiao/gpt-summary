@@ -154,7 +154,7 @@ In essence, `compilers.py` in Frida's build system serves as a central point for
 
 This abstraction simplifies the build process and makes it more portable across different platforms and compiler toolchains. It also provides a structured way to manage the various flags and options that influence the characteristics of the final Frida binaries.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -934,7 +936,4 @@ class Compiler(HoldableObject, metaclass=abc.ABCMeta):
     def _get_compile_output(self, dirname: str, mode: CompileCheckMode) -> str:
         assert mode != CompileCheckMode.PREPROCESS, 'In pre-processor mode, the output is sent to stdout and discarded'
         # Exten
-"""
-
-
 ```

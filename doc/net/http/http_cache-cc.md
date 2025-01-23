@@ -149,7 +149,7 @@ fetch('https://example.com/image.png');
 
 `net/http/http_cache.cc` 的第一部分主要定义了 HTTP 缓存的核心架构和基本组件，包括缓存后端的抽象和管理、活动缓存条目的管理、待处理操作的管理、工作项的处理以及缓存键的生成逻辑。它为实现 Chromium 的 HTTP 缓存功能奠定了基础，并直接影响着浏览器在处理网络请求时的行为和性能。该部分还包含了与 split cache 相关的配置和逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1133,7 +1135,4 @@ void HttpCache::DoomMainEntryForUrl(
   // AsyncDoomEntry without triggering a callback.
   if (active_entries_.count(*key)) {
     D
-"""
-
-
 ```

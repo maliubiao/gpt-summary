@@ -168,7 +168,7 @@ void MyFunction(MacroAssembler& masm) {
 
 `v8/src/codegen/riscv/macro-assembler-riscv.cc` 的主要功能是作为一个 RISC-V 架构的宏汇编器，提供了一组用于生成 RISC-V 汇编指令的高级接口。它封装了底层的汇编指令细节，使得 V8 编译器能够更方便、更高效地生成执行 JavaScript 代码所需的机器码，并支持诸如调用约定、栈管理、尾调用优化、垃圾回收屏障等关键功能。它是 V8 引擎将 JavaScript 代码转化为可在 RISC-V 处理器上执行的机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1051,7 +1053,4 @@ void MacroAssembler::Sub32(Register rd, Register rs, const Operand& rt) {
         // li handles the relocation.
         Li(scratch, rt.immediate());
         subw(rd, rs, s
-"""
-
-
 ```

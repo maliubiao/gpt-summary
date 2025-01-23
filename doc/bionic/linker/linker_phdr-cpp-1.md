@@ -55,7 +55,7 @@ Here's a breakdown of the code's key functions and how to summarize them:
 
 **总结来说，这段代码是动态链接器加载 ELF 文件并准备其在内存中执行的关键步骤，它负责将代码和数据加载到正确的内存位置，并设置必要的保护措施以确保安全和正确的执行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_phdr.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -67,9 +67,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- that will not be used.
+### 源代码
+```cpp
+that will not be used.
   if ((phdr->p_flags & PF_W) != 0 && page_offset(unextended_seg_file_end) > 0) {
     memset(reinterpret_cast<void*>(unextended_seg_file_end), 0,
            kPageSize - page_offset(unextended_seg_file_end));
@@ -873,7 +875,4 @@ bool ElfReader::FindGnuPropertySection() {
 // Ensures that our program header is actually within a loadable
 // segment. This should help catch badly-formed ELF files that
 // would cause the linker to crash later wh
-"""
-
-
 ```

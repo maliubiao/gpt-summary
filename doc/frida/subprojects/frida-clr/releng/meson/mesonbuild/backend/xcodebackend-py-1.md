@@ -123,7 +123,7 @@ Throughout this process, I paid attention to the specific wording of the prompt 
 
 **作为调试线索:**  如果生成的 Xcode 项目文件有问题 (例如缺少某些源文件、依赖库链接错误等)，开发者可以检查 Meson 的配置过程是否正确，以及 `meson.build` 文件中的定义是否准确。同时，也可以检查这部分 `xcodebackend.py` 代码的逻辑，看是否存在将 Meson 构建信息错误地转换为 Xcode 项目文件的 bug。例如，如果某个源文件在 Xcode 项目中没有被正确引用，可以查看 `generate_pbx_file_reference` 方法的逻辑是否正确处理了该类型的文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,9 +132,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- gets removed. Maybe we can remove this part.
+### 源代码
+```python
+gets removed. Maybe we can remove this part.
         for name, idval in self.buildstylemap.items():
             styledict = PbxDict()
             objects_dict.add_item(idval, styledict, name)
@@ -761,7 +763,4 @@ Prompt:
             t = self.build_targets[name]
             objects_dict.add_item(t.buildphasemap[name], phase_dict, 'Sources')
             phase_dict.add_item('isa', 'PBXSourcesBui
-"""
-
-
 ```

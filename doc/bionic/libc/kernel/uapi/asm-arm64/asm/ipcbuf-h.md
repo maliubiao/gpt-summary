@@ -288,7 +288,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm64/asm/ipcbuf.handroid` 本身是一个简单的包含文件，但它指向了定义 IPC 缓冲区结构体的关键头文件。理解它的作用需要理解 Android 的进程间通信机制以及 Bionic libc 如何作为用户空间和内核之间的桥梁。 Frida 是一个强大的工具，可以用来动态地观察和调试这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/ipcbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -308,7 +310,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/ipcbuf.h>
-
-"""
-
 ```

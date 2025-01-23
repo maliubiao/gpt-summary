@@ -69,7 +69,7 @@ Here's a plan to generate the summary:
 
 总的来说，这部分测试旨在全面覆盖 `dlfcn` API 的功能，并确保其在各种场景下（包括错误场景和边界情况）的正确性和稳定性，特别是在 Android 的 Bionic 环境中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/dlfcn_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -81,8 +81,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alpath[PATH_MAX];
   ASSERT_TRUE(realpath(info.dli_fname, dli_realpath) != nullptr);
   ASSERT_STREQ(executable_path.c_str(), dli_realpath);
@@ -863,8 +865,4 @@ TEST(dlfcn, segment_gap) {
 }
 
 #endif
-
-"""
-
-
 ```

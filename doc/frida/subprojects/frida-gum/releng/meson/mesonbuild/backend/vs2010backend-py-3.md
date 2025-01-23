@@ -152,7 +152,7 @@ By following this thought process, we systematically analyzed the code, identifi
 
 作为 Frida 构建流程的最后阶段（假设前三部分处理了其他构建系统的后端或其他构建阶段），`vs2010backend.py` 的主要职责是将之前处理过的、抽象的构建描述转化为具体的、平台特定的 Visual Studio 2010 项目文件。它确保了开发者可以使用熟悉的 IDE 来进行 Frida 的构建、调试和开发工作，弥合了 Meson 跨平台构建系统和特定 IDE 之间的 gap。对于 Frida 这样的动态 Instrumentation 工具，能够方便地在 Windows 上进行开发和调试是至关重要的。 `gen_lite` 选项的引入，正如注释中提到的，是为了在某些场景下提供更轻量级的 Visual Studio 集成体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 , inc_cl)
                         self.add_additional_options(lang, inc_cl, file_args)
                         self.add_preprocessor_defines(lang, inc_cl, file_defines)
@@ -520,8 +522,4 @@ Prompt:
 
     def generate_lang_standard_info(self, file_args: T.Dict[str, CompilerArgs], clconf: ET.Element) -> None:
         pass
-
-"""
-
-
 ```

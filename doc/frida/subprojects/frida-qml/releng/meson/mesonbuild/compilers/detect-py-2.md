@@ -175,7 +175,7 @@ Here's a breakdown of the thinking process to analyze the provided Python code s
 
 作为 `frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/detect.py` 文件的第三部分，这段代码专注于从编译器输出的预定义宏中提取有用的信息，特别是 GNU 和 LCC 编译器的版本号。它是 Frida 构建系统自动检测编译器类型和版本的重要组成部分，为后续的编译配置和构建过程提供关键信息。这段代码的设计考虑了不同编译器的特性，并提供了解析通用预定义宏和特定编译器版本信息的功能。它在逆向工程中可以帮助理解目标软件的编译环境，并且与二进制底层、Linux 和 Android 开发密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,9 +184,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if not line:
+### 源代码
+```python
+if not line:
             continue
         d, *rest = line.split(' ', 2)
         if d != '#define':
@@ -211,8 +213,4 @@ def _get_lcc_version_from_defines(defines: T.Dict[str, str]) -> str:
     major = generation_and_major[1:]
     minor = defines.get('__LCC_MINOR__', '0')
     return dot.join((generation, major, minor))
-
-"""
-
-
 ```

@@ -223,14 +223,16 @@ failingPromise.then(undefined, (error) => {
 
 总而言之，这段 Torque 代码是 V8 引擎中实现 JavaScript `Promise` 核心功能的关键部分，它确保了 `Promise` 构造函数和 `catch` 方法的行为符合 ECMAScript 规范，并处理了一些常见的编程错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-constructor.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ transitioning javascript builtin PromisePrototypeCatch(
       InvokeThen(nativeContext, receiver, Undefined, onRejected));
 }
 }
-
-"""
-
 ```

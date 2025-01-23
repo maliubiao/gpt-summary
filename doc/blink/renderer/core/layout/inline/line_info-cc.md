@@ -144,14 +144,16 @@ By following these steps, including the self-correction, a comprehensive and acc
 
 总之，`line_info.cc` 中定义的 `LineInfo` 类是 Blink 渲染引擎中处理文本行布局的核心数据结构，它承载了布局计算的关键信息，并与 HTML 结构、CSS 样式以及 JavaScript 的动态修改密切相关。理解 `LineInfo` 的功能有助于开发者更好地理解浏览器的布局过程，并避免一些常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -768,7 +770,4 @@ std::ostream& operator<<(std::ostream& ostream, const LineInfo& line_info) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

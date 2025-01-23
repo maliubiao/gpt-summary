@@ -126,13 +126,15 @@ I will organize the summary by these functional areas and provide a simple JavaS
 
 总之，这段代码是V8引擎中负责处理JavaScript代码执行流程中关键步骤的底层实现，包括解释执行、优化代码的切换、函数调用和对象构造等核心功能。它将高级的JavaScript语义转换为底层的机器指令，使得JavaScript代码能够在LoongArch64架构的CPU上高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/loong64/builtins-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  __ Alsl_d(a1, a7, kInterpreterDispatchTableRegister, kSystemPointerSizeLog2,
+### 源代码
+```
+__ Alsl_d(a1, a7, kInterpreterDispatchTableRegister, kSystemPointerSizeLog2,
             t7);
   __ Ld_d(kJavaScriptCallCodeStartRegister, MemOperand(a1, 0));
   __ Jump(kJavaScriptCallCodeStartRegister);
@@ -1917,8 +1919,5 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, wasm::OnResume on_resume) {
                       active_suspender, kRAHasBeenSaved,
                       SaveFPRegsMode::kIgnore);
   __ li(scratch, Operand(Smi::FromInt(WasmSuspenderObject::kActive)));
-  __ 
-"""
-
-
+  __
 ```

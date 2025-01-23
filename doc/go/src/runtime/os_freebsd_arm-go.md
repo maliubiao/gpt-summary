@@ -188,7 +188,7 @@ GOOS=freebsd GOARCH=arm GOARM=6 go build main.go
 
 总而言之，这段代码是 Go 运行时环境在 FreeBSD ARM 平台上的重要组成部分，负责进行必要的硬件检测和初始化，确保 Go 程序能够在该平台上稳定可靠地运行。理解这段代码的功能有助于开发者更好地理解 Go 的跨平台特性以及如何针对特定的 ARM 架构进行编译和部署。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_freebsd_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -252,9 +254,4 @@ func cputicks() int64 {
 	// runtime·nanotime() is a poor approximation of CPU ticks that is enough for the profiler.
 	return nanotime()
 }
-
-"""
-
-
-
 ```

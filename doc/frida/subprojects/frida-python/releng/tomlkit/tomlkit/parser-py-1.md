@@ -184,7 +184,7 @@ enabled = true
 
 总而言之，`frida/subprojects/frida-python/releng/tomlkit/tomlkit/parser.py` 文件的核心功能是 **解析 TOML 格式的配置文件**。它能够处理标准表格、嵌套表格和数组表格，支持 Unicode 字符，并具备一定的错误处理能力。这个模块在 Frida 中扮演着重要的角色，负责将用户提供的 TOML 配置转换成 Python 数据结构，供 Frida 的其他模块使用，从而指导 Frida 的动态 instrumentation 行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,9 +193,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    if is_aot and i == len(name_parts) - 2:
+### 源代码
+```python
+if is_aot and i == len(name_parts) - 2:
                     table.raw_append(_name, AoT([child], name=table.name, parsed=True))
                 else:
                     table.raw_append(_name, child)
@@ -347,8 +349,4 @@ Prompt:
                     value = None
 
             return value, extracted
-
-"""
-
-
 ```

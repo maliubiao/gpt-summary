@@ -106,7 +106,7 @@ Here's a breakdown of the thought process to generate the response:
 
 这部分 `gnome.py` 模块的功能是为 Frida 项目提供了一系列用于集成 GNOME 开发工具的 Meson 构建系统函数，主要集中在**代码生成**方面。它封装了 `glib-mkenums` 和 `glib-genmarshal` 工具，自动化了从定义文件生成 C 语言枚举类型和 GObject marshalling 代码的过程。此外，还包含了一个用于处理 Vala API 包的辅助函数。这些功能简化了 Frida 项目中与 GNOME 技术栈相关的构建配置和自动化流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,9 +115,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-       l_data = build.Data([m_file], m_install_dir, m_install_dir,
+### 源代码
+```python
+l_data = build.Data([m_file], m_install_dir, m_install_dir,
                                         mesonlib.FileMode(), state.subproject, install_tag='doc')
                 targets.append(l_data)
 
@@ -843,7 +845,4 @@ Prompt:
         return ModuleReturnValue(rv, rv)
 
     def _extract_vapi_packages(self, state: 'ModuleState', packages: T.List[T.Union[InternalDependen
-"""
-
-
 ```

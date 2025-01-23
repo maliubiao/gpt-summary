@@ -116,7 +116,7 @@ cpdef func():
 
 因此，到达这个 `gen.py` 脚本通常是构建 Frida 项目或调试相关测试用例的一部分。开发者可以通过查看构建日志、`meson.build` 文件以及生成的源代码来追踪到这个脚本的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cython/2 generated sources/libdir/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 
 import argparse
@@ -140,7 +142,4 @@ with open(args.output, 'w') as f:
         cpdef func():
             return "Hello, World!"
         '''))
-
-"""
-
 ```

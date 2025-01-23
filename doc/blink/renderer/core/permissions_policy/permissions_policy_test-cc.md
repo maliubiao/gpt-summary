@@ -134,7 +134,7 @@ By following these steps, we can systematically analyze the code and generate a 
 
 这个 `permissions_policy_test.cc` 文件的第一部分主要功能是 **为 Blink 引擎的权限策略解析器建立一套全面的测试框架**。它定义了测试数据结构、测试用例的组织方式，以及用于解析和验证策略字符串的基础工具。这部分代码的核心目标是确保权限策略的解析逻辑能够正确处理各种有效的和无效的策略语法，为后续更具体的权限策略行为测试奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/permissions_policy/permissions_policy_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -974,8 +976,4 @@ const PermissionsPolicyParserTestCase
                 },
             },
         },
-  
-"""
-
-
 ```

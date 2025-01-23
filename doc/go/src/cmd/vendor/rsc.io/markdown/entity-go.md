@@ -112,7 +112,7 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/rsc.io/markdown/entity.go` (第1部分) 的主要功能是**提供一个预定义的、静态的HTML实体到Unicode字符的映射表，用于在Markdown处理过程中进行实体解码。** 这个映射表是硬编码在Go代码中的，并通过 `go generate` 命令由另一个程序生成。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/entity.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -121,8 +121,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1479,10 +1481,5 @@ var htmlEntity = map[string]string{
 	"&mapstodown;":                      "\u21a7",
 	"&mapstoleft;":                      "\u21a4",
 	"&mapstoup;":                        "\u21a5",
-	"&marker;":                      
-"""
-
-
-
-
+	"&marker;":
 ```

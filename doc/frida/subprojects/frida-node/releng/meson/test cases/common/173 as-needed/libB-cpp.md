@@ -181,7 +181,7 @@ sys.stdin.read()
 
 总而言之，`libB.cpp` 作为一个 Frida 测试用例的一部分，其简洁的代码巧妙地利用了 C++ 的静态初始化机制来创建一个可观察的副作用，用于验证动态链接行为，并为 Frida 的开发者提供了一个可靠的测试点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/173 as-needed/libB.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libA.h"
 
 #undef DLL_PUBLIC
@@ -210,7 +212,4 @@ namespace meson_test_as_needed {
     return 0;
   }
 }
-
-"""
-
 ```

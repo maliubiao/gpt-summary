@@ -158,14 +158,16 @@ By following this systematic process of reading, analyzing, connecting, and illu
 
 总而言之，`resolve_node.cc` 文件是 Blink 渲染引擎与 Chrome 开发者工具之间桥梁的关键组成部分，它负责将内部的 DOM 结构暴露给开发者工具的 JavaScript 环境进行检查和操作。理解其功能和潜在的错误情况对于开发和调试 Chrome 浏览器以及基于 Blink 的应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/resolve_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ NullRemoteObject(v8_inspector::V8InspectorSession* v8_session,
 }
 
 }  // namespace blink
-
-"""
-
 ```

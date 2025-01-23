@@ -177,15 +177,17 @@ obj2 = null;
 
 总而言之，`v8/include/cppgc/internal/pointer-policies.h` 定义了一组底层的策略，用于控制 V8 的 C++ 垃圾回收器的行为，以确保内存安全和正确性。虽然普通 JavaScript 开发者不会直接接触这些策略，但它们是 V8 能够高效且安全地管理 JavaScript 对象内存的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/internal/pointer-policies.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/internal/pointer-policies.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -466,7 +468,4 @@ class BasicMember;
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_INTERNAL_POINTER_POLICIES_H_
-
-"""
-
 ```

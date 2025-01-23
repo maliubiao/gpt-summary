@@ -212,7 +212,7 @@ go run your_trace_reader.go -file my_old_trace.out
 
 总而言之，这段测试代码是 `internal/trace` 包中至关重要的一部分，它确保了 Go 能够向后兼容，正确读取和理解旧版本的运行时追踪数据，这对于性能分析和问题排查至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/oldtrace_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -311,9 +313,4 @@ func TestOldtrace(t *testing.T) {
 		t.Fatal("didn't see expected test case user_task_region_1_21_good")
 	}
 }
-
-"""
-
-
-
 ```

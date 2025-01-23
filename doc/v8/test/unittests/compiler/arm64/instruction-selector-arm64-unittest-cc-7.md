@@ -125,7 +125,7 @@ const result = SIMD.andNot(a, b);
 
 第8部分专注于测试 ARM64 指令选择器在处理 SIMD 常量 "与非" 操作时的正确性。它通过参数化的测试用例覆盖了不同的常量值和操作数位置，确保编译器能够为这些操作选择正确的 ARM64 指令并正确编码操作数，从而保证 JavaScript SIMD 代码在 ARM64 平台上的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0x00, 0x01},
      &MachineOperatorBuilder::S128AndNot,
      kArm64S128AndNot,
@@ -242,8 +244,4 @@ INSTANTIATE_TEST_SUITE_P(InstructionSelectorTest,
 #endif  // V8_ENABLE_WEBASSEMBLY
 
 }  // namespace v8::internal::compiler
-
-"""
-
-
 ```

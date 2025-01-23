@@ -96,7 +96,7 @@ By following this structured thinking process, I can systematically analyze the 
 
 **总而言之，这段代码是 Go 编译器 PowerPC64 后端的核心组成部分，负责将高级的 SSA 中间表示转换为可以直接在 PowerPC64 架构上执行的机器码，包括处理内存操作、函数调用、运行时支持以及控制流。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ppc64/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -105,8 +105,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 hen clear remaining sizes as available
 		for rem > 0 {
 			op, size := ppc64.AMOVB, int64(1)
@@ -1013,10 +1015,4 @@ func spillArgReg(pp *objw.Progs, p *obj.Prog, f *ssa.Func, t *types.Type, reg in
 	p.Pos = p.Pos.WithNotStmt()
 	return p
 }
-
-"""
-
-
-
-
 ```

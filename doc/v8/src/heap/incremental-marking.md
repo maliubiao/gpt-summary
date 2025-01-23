@@ -123,11 +123,13 @@ setInterval(() => {
 
 `incremental-marking.cc` 文件是 V8 引擎实现流畅 JavaScript 执行的关键组件之一。它通过将垃圾回收的标记过程分解为小的步骤，并与 JavaScript 的执行交织在一起，有效地减少了 GC 造成的停顿，提升了 Web 应用的性能和用户体验。虽然 JavaScript 开发者不能直接操作这个文件中的代码，但增量标记的机制直接影响了 JavaScript 程序的运行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/incremental-marking.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1148,7 +1150,4 @@ IncrementalMarking::PauseBlackAllocationScope::~PauseBlackAllocationScope() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

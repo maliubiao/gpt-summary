@@ -115,11 +115,13 @@ console.log(`Winter date offset: ${winterDate.getTimezoneOffset()}`);
 
 `date-unittest.cc` 文件是 V8 引擎中至关重要的测试文件，它确保了 JavaScript `Date` 对象在处理时区、夏令时和日期解析等方面的正确性。 文件中的测试用例模拟了各种场景，以验证 V8 引擎内部的 `DateCache` 类是否按照预期工作，从而保证了 JavaScript 日期和时间操作的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/date/date-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ TEST_F(DateTest, DateParseLegacyUseCounter) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

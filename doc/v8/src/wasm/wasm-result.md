@@ -105,11 +105,13 @@ runWasmCode();
 
 `wasm-result.cc` 文件在 V8 引擎中扮演着关键的角色，它负责统一处理 WebAssembly 相关的错误，并将这些错误转化为 JavaScript 可以理解和处理的异常。这保证了 WebAssembly 代码产生的错误可以被 JavaScript 代码捕获和处理，从而提高了 WebAssembly 与 JavaScript 代码的互操作性和整体应用的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-result.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ ErrorThrower::~ErrorThrower() {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

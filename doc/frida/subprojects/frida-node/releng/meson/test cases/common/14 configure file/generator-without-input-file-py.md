@@ -162,7 +162,7 @@ Initially, I might have focused solely on the Python code. However, by consideri
 
 总而言之，虽然 `generator-without-input-file.py` 脚本本身非常简单，但它在 Frida 的构建系统中扮演着一个角色，并与逆向工程、底层知识以及构建过程紧密相关。理解这类小工具的功能和作用，有助于更全面地理解 Frida 这一复杂系统的运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/14 configure file/generator-without-input-file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -186,7 +188,4 @@ outputf = Path(sys.argv[1])
 
 with outputf.open('w') as ofile:
     ofile.write("#define ZERO_RESULT 0\n")
-
-"""
-
 ```

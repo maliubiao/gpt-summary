@@ -130,14 +130,15 @@ console.log(import.meta.url);
 
 这个 C++ 文件是 V8 引擎测试套件的关键组成部分，它通过大量的单元测试来确保 JavaScript 语言的各种语法特性能够被正确地解析，并且在出现语法错误时能够被准确地识别和报告。 这对于保证 V8 引擎的稳定性和符合 ECMAScript 标准至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
-
-      CHECK_EQ(155, elem->position());
+### 源代码
+```
+CHECK_EQ(155, elem->position());
       CHECK(elem->import_attributes()
                 ->at(foo_string)
                 .first->IsOneByteEqualTo("bar2"));
@@ -2285,7 +2286,4 @@ TEST_F(ParsingTest, EscapedKeywords) {
     "n\\u0065w function f() {}",
     "(function() { r\\u0065turn; })()",
     "class C
-"""
-
-
 ```

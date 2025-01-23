@@ -133,11 +133,13 @@ multiply("2", "3"); // 第二次调用
 
 `feedback-vector.cc` 中定义的机制是 V8 引擎实现高性能 JavaScript 执行的关键组成部分。它通过在运行时收集关于代码执行情况的反馈信息，为内联缓存和代码优化提供了重要的依据，使得 V8 能够根据实际运行情况动态地优化 JavaScript 代码。 JavaScript 开发者通常不需要直接与这些 C++ 结构交互，但他们编写的代码的性能会受到 `FeedbackVector` 及其相关优化的显著影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/feedback-vector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1616,7 +1618,4 @@ void FeedbackIterator::AdvancePolymorphic() {
   done_ = true;
 }
 }  // namespace v8::internal
-
-"""
-
 ```

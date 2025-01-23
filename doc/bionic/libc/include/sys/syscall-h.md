@@ -251,7 +251,7 @@ if (Process.arch === 'arm64') {
 
 总而言之，`bionic/libc/include/sys/syscall.handroid` 虽然只是一个简单的头文件，但它定义了连接用户空间和内核的关键桥梁——系统调用号，对于理解 Android 底层运作机制至关重要。 通过跟踪系统调用，我们可以深入了解 Android Framework 和 NDK 如何与操作系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/syscall.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -303,7 +305,4 @@ Prompt:
 /* The syscall function itself is declared in <unistd.h>, not here. */
 
 #endif /* _SYS_SYSCALL_H_ */
-
-"""
-
 ```

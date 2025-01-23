@@ -204,7 +204,7 @@ By following these steps, including iterative analysis and connecting the code t
 
 总结来说，`frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/mesonmain.py` 是 Frida 项目中用于 Node.js 绑定构建的关键文件，它提供了 Meson 构建脚本可以调用的各种内置函数，用于配置、管理和执行构建过程。理解这个文件的功能有助于理解 Frida 的构建方式，以及可能存在的与逆向方法相关的方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/mesonmain.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2024 Intel Corporation
@@ -701,7 +703,4 @@ class MesonMain(MesonInterpreterObject):
         if options is None:
             return ''
         return coredata.format_cmd_line_options(options)
-
-"""
-
 ```

@@ -127,15 +127,17 @@ This iterative process of scanning, analyzing, connecting, illustrating, and sum
 
 总而言之，`WorkerThread` 类是 Chromium Blink 引擎中管理 Web Workers 核心的组件，它确保了 Worker 线程的正确创建、执行和清理，并提供了必要的控制机制来协调 Worker 线程与主线程以及其他渲染引擎组件之间的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/worker_thread.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ector_controller_->Dispose();
     worker_inspector_controller_.Clear();
   }
@@ -328,8 +330,4 @@ void WorkerThread::PauseOrFreezeInsidePostTaskOnWorkerThread(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

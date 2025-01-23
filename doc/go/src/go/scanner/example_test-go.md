@@ -237,7 +237,7 @@ func main() {
 
 总而言之，这段示例代码简洁地展示了 Go 语言 `go/scanner` 包的基本用法，用于将源代码分解成 Token 流，为后续的语法分析等编译过程奠定基础。理解 `FileSet` 的作用、`Init` 方法的参数以及正确的错误处理是使用 `go/scanner` 的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/scanner/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -245,8 +245,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -293,9 +295,4 @@ func ExampleScanner_Scan() {
 	// 1:20	COMMENT	"// Euler"
 	// 1:28	;	"\n"
 }
-
-"""
-
-
-
 ```

@@ -132,7 +132,7 @@ Essentially, I use a top-down and bottom-up approach, starting with the obvious 
 
 这个代码文件 `canvas_rendering_context_2d.cc` 是 Chromium Blink 引擎中实现 HTML5 Canvas 2D 渲染上下文的核心组件。它负责处理 JavaScript API 调用，管理画布的状态和资源，并与底层的 Skia 图形库进行交互以完成实际的图形绘制。它还包含了处理上下文丢失和恢复的逻辑，确保了在异常情况下的鲁棒性。该文件是连接 JavaScript Canvas API 和底层图形渲染的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 Apple Inc.
  * All rights reserved.
@@ -980,8 +982,4 @@ void CanvasRenderingContext2D::PageVisibilityChanged() {
 }
 
 void CanvasRenderingContext2D::OnPageVisibilityChangeWhenPaintable() {
-  
-"""
-
-
 ```

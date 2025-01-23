@@ -146,14 +146,16 @@ layoutWorklet.addModule('my-layout.js').then(() => {
 
 总而言之，`css_layout_worklet.cc` 文件在 Chromium Blink 引擎中扮演着连接 JavaScript 和 C++ 布局 Worklet 实现的关键角色，它使得 JavaScript 代码能够管理和使用 CSS 布局 Worklet 来实现自定义的元素布局逻辑。理解这个文件的功能有助于理解 Blink 引擎如何处理现代 CSS 布局特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/custom/css_layout_worklet.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ Worklet* CSSLayoutWorklet::layoutWorklet(ScriptState* script_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

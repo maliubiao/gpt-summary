@@ -118,7 +118,7 @@ let result = add(5, 10);
 
 这部分 `simulator-arm.cc` 代码的核心功能是 **模拟 ARM 处理器的指令执行，包括寄存器和内存管理、条件执行、标志位操作、浮点运算以及与 V8 运行时的交互**。它是 V8 在非 ARM 平台上运行或进行调试的关键组成部分，使得 JavaScript 代码能够在模拟的 ARM 环境中执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm/simulator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 gisters_, buffer, sizeof(buffer));
   }
 }
@@ -1054,7 +1056,4 @@ void Simulator::SoftwareInterrupt(Instruction* instr) {
               "%08x",
               reinterpret_cast<void*>(external), arg0, arg1, arg2, arg3, arg4,
               arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg1
-"""
-
-
 ```

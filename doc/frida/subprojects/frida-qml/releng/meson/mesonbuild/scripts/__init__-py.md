@@ -108,7 +108,7 @@ A user would typically not interact with this specific Python file directly. Ins
 
 If a user encounters issues related to file placement during Frida's installation, examining the build logs might reveal how `destdir_join` was used and what input paths were provided. Understanding how the build system constructs installation paths is crucial for troubleshooting such problems. Specifically, looking for Meson log messages related to file installation or path manipulation would be a good starting point.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -128,7 +130,4 @@ def destdir_join(d1: str, d2: str) -> str:
         return d2
     # c:\destdir + c:\prefix must produce c:\destdir\prefix
     return str(PurePath(d1, *PurePath(d2).parts[1:]))
-
-"""
-
 ```

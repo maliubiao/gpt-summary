@@ -116,7 +116,7 @@ fetch('https://example.com/data');
 
 这部分 `quic_packet_creator_test.cc` 文件的主要功能是**针对 `QuicPacketCreator` 类的核心数据包构建和序列化功能进行单元测试**。它涵盖了基本帧的序列化、填充、最大数据包长度控制以及特定类型探测包的构建。 这些测试用例旨在验证 `QuicPacketCreator` 能够按照 QUIC 协议规范正确地生成数据包。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_packet_creator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -959,8 +961,4 @@ TEST_P(QuicPacketCreatorTest, BuildPathResponsePacket1ResponsePadded) {
   };
   // clang-format on
   std::unique_ptr<char[]> buffer(new char[kMaxOutgoingPacketSize]);
-
-"""
-
-
 ```

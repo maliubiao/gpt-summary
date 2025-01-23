@@ -176,7 +176,7 @@ outer();
 
 This part of `parser.cc` focuses on the core logic for dissecting and understanding various JavaScript syntactic constructs, including functions, `eval()` calls, REPL input, and the fundamental building blocks of JavaScript modules (imports and exports). It handles the initial stage of converting raw JavaScript text into a structured representation (AST) that the V8 engine can then process further. It also plays a crucial role in detecting and reporting syntax errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -184,8 +184,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ThreadSpecific);
     if (!Rewriter::Rewrite(info) || !DeclarationScope::Analyze(info)) {
       // Null out the literal to indicate that something failed.
@@ -1045,7 +1047,4 @@ const AstRawString* Parser::NextInternalNamespaceExportName() {
   std::string s(prefix);
   s.append(std::to_string(number_of_named_namespace_exports_++));
   return ast_value_factory()->GetOneByteString(s.c_str()
-"""
-
-
 ```

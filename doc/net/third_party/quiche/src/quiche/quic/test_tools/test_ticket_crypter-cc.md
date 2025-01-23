@@ -163,15 +163,17 @@ By following these steps, the analysis becomes comprehensive and addresses all a
 
 总而言之，`test_ticket_crypter.cc` 是一个用于 QUIC 测试的辅助工具，它简化了会话票据的加密和解密过程，方便开发者编写和调试相关的网络功能。虽然它本身不直接与 JavaScript 交互，但它模拟的功能是现代 Web 通信中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/test_ticket_crypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ void TestTicketCrypter::RunPendingCallback(size_t n) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

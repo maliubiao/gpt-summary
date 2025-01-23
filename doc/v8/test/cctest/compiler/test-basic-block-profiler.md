@@ -85,11 +85,13 @@ V8 的基本块分析器会记录下类似这样的执行计数（简化表示�
 
 `test-basic-block-profiler.cc` 是一个测试 V8 编译器中基本块分析器功能的 C++ 文件。它模拟不同的代码控制流结构，并验证分析器是否能正确记录每个基本块的执行次数。这个分析器收集的数据对于 V8 优化 JavaScript 代码至关重要，例如用于内联、去优化和代码布局优化等。 JavaScript 代码的执行会触发基本块分析器的计数，V8 根据这些计数来指导代码优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-basic-block-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ TEST(ProfileLoop) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

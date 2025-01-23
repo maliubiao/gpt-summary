@@ -158,7 +158,7 @@ func main() {
 
 这两个函数都是 `reflect` 包为了提供对 Go 语言 `map` 类型更深层次的反射能力而实现的。`MapBucketOf` 根据键值类型计算桶类型，而 `CachedBucketOf` 直接从现有的 map 类型信息中获取已缓存的桶类型。 由于涉及到 `internal/abi` 和 `unsafe` 包，这些操作通常比较底层，使用者需要理解 Go 语言的内部实现细节才能更好地利用这些功能。  普通开发者在日常开发中可能不会直接用到这些函数，它们更多是为需要进行底层类型分析或操作的库或工具提供的接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/export_noswiss_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ func CachedBucketOf(m Type) Type {
 	tt := (*mapType)(unsafe.Pointer(t))
 	return toType(tt.Bucket)
 }
-
-"""
-
-
-
 ```

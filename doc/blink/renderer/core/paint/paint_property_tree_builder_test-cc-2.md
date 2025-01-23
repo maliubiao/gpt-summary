@@ -135,7 +135,7 @@ By following these steps, I can effectively analyze the code snippet, understand
 
 总而言之，这部分测试代码专注于验证 `PaintPropertyTreeBuilder` 在处理各种 CSS 属性（特别是与裁剪和变换相关的属性）时，能否正确地构建绘制属性树，这是浏览器渲染流程中至关重要的一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -143,9 +143,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共10部分，请归纳一下它的功能
+```
 
-"""
-     <svg id='container4' overflow='visible'
+### 源代码
+```cpp
+<svg id='container4' overflow='visible'
           width='30' height='30' x='20' y='30'></svg>
     </svg>
   )HTML");
@@ -1000,8 +1002,4 @@ TEST_P(PaintPropertyTreeBuilderTest, CSSClipFixedPositionDescendantNonShared) {
         overflow: scroll;
       }
       #clip {
-   
-"""
-
-
 ```

@@ -150,15 +150,17 @@ go build -gcflags="-d=gossahash=101101" mypackage.go
 
 总而言之，`hashdebug.go` 提供了一个强大但相对底层的调试工具，需要对编译器的内部机制和哈希匹配原理有一定的理解才能有效使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/base/hashdebug.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -577,9 +579,4 @@ func (d *HashDebug) log(varname string, hash uint64, text string) {
 	// TODO: Delete rest of function when we switch to bisect-only.
 	fmt.Fprintf(file, "%s triggered %s %s\n", varname, text, hashString(hash))
 }
-
-"""
-
-
-
 ```

@@ -201,15 +201,17 @@ This detailed thought process allows for a comprehensive understanding of the te
 
 总而言之，这个测试文件是 Blink 引擎确保 `OffscreenCanvasRenderingContext2D` 功能正确性的重要组成部分。它可以帮助开发者理解这个 API 的行为和限制，并作为调试的线索，当他们遇到与 `OffscreenCanvas` 相关的错误时，可以用来查找问题的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/offscreencanvas2d/offscreen_canvas_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -502,7 +504,4 @@ TEST(OffscreenCanvasRenderingContext2DTest, NoCrashOnDocumentShutdown) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

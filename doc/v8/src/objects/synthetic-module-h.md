@@ -147,15 +147,17 @@ main();
 
 `v8/src/objects/synthetic-module.h` 定义了 V8 中用于表示合成模块的关键结构。 合成模块允许宿主环境动态地创建和配置模块，这对于需要与 JavaScript 代码集成的非 JavaScript 组件非常有用。  Torque 的使用有助于提高这些核心对象的性能，而 `SetExport` 方法是宿主环境与合成模块交互的关键 API。理解这些概念有助于理解 V8 如何支持更灵活和嵌入式的模块化编程模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/synthetic-module.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/synthetic-module.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ class SyntheticModule
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_SYNTHETIC_MODULE_H_
-
-"""
-
 ```

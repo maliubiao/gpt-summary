@@ -138,15 +138,17 @@ func main() {
 
 总之，`go/test/fixedbugs/issue7310.go` 是 Go 编译器测试基础设施的一部分，用于验证编译器在遇到特定错误代码时的行为是否符合预期。它帮助确保 Go 编译器能够准确地识别并报告常见的编程错误，从而提高代码质量。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7310.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -162,9 +164,4 @@ func main() {
 	_ = copy([]int{}, nil) // ERROR "use of untyped nil|second argument must be slice or string|expects slice arguments"
 	_ = 1 + true           // ERROR "mismatched types untyped int and untyped bool|incompatible types|cannot convert"
 }
-
-"""
-
-
-
 ```

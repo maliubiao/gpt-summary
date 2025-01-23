@@ -109,16 +109,18 @@ I will go through the code section by section and synthesize a concise summary o
 
 总而言之，这段代码是 Chromium Blink 引擎中处理文本布局的核心部分，它负责将抽象的文本内容转换为可在屏幕上绘制的字形序列，并精确地控制字形之间的间距，以实现正确的文本渲染效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- < num_glyphs; ++i) {
+### 源代码
+```cpp
+< num_glyphs; ++i) {
       const HarfBuzzRunGlyphData& glyph_data = run->glyph_data_[i];
       uint16_t current_character_index =
           run->start_index_ + glyph_data.character_index + run_offset;
@@ -985,8 +987,4 @@ const ShapeResult* ShapeResult::CopyAdjustedOffset(unsigned start_index) const {
       run->start_index_ += delta;
   } else {
     unsigned delta = result->StartIndex() - start_index;
-  
-"""
-
-
 ```

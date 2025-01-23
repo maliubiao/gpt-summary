@@ -265,7 +265,7 @@ Section Headers (描述各个段的信息)
 
 **该文件是 Android Bionic 库中用于测试 `powf` 函数的关键组成部分，其主要功能是提供一组精心设计的、多样化的浮点数输入数据对。这些数据被用于自动化测试框架，以验证 `powf` 函数在各种场景下的正确性、精度和性能。它确保了 Android 系统底层的数学运算库的质量和可靠性，从而支撑上层应用和框架的正常运行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/powf_input.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -276,8 +276,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ,
   {0x1.ceada6p+5, 0x1.d1746p-1},
   {0x1.8cf03p-1, 0x1.249236p-2},
@@ -517,8 +519,4 @@ Prompt:
   {0x1.a94b56p+3, 0x1.d1746p-1},
   {0x1.1a689p+1, 0x1.99999ap-2},
 };
-
-"""
-
-
 ```

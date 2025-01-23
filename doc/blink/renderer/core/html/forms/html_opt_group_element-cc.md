@@ -177,14 +177,16 @@ This methodical approach, combining code scanning, keyword identification, infer
 
 总而言之，`html_opt_group_element.cc` 文件是 Blink 引擎中 `<optgroup>` 元素的核心实现，负责处理其属性、状态、与父 `<select>` 元素的交互以及在用户界面上的呈现。它与 HTML 结构、Javascript 的 DOM 操作和 CSS 样式都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_opt_group_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -448,7 +450,4 @@ void HTMLOptGroupElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

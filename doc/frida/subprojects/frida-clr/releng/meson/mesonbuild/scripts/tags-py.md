@@ -144,7 +144,7 @@ By following these steps, I could dissect the Python script, understand its purp
 
 总而言之，`tags.py` 是 Frida 项目中一个用于提升开发效率的小工具，它通过调用常见的代码标签生成程序，为开发者提供了更好的代码导航和理解能力。虽然它不直接参与到动态 instrumentation 的核心功能中，但对于理解 Frida 自身的代码实现非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/tags.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -198,7 +200,4 @@ def run(args: T.List[str]) -> int:
     res = globals()[tool_name]()
     assert isinstance(res, int)
     return res
-
-"""
-
 ```

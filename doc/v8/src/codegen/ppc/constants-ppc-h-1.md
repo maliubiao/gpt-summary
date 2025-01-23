@@ -91,7 +91,7 @@ function add(a, b) {
 
 这部分 `constants-ppc.h` 文件定义了 PowerPC 架构中 EVX 指令集的各种指令常量，为 V8 引擎在 PPC 平台上进行代码生成提供了必要的映射信息。它将指令的助记符、常量名和机器码关联起来，使得代码生成器能够将 JavaScript 代码高效地翻译成可以在 PPC 处理器上执行的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/constants-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/constants-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -99,8 +99,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ion */            \
   V(xstsqrtdp, XSTSQRTDP, 0xF00001A8)                                        \
   /* VSX Vector Convert Double-Precision to Signed Fixed-Point Doubleword */ \
@@ -516,8 +518,5 @@ ion */            \
   /* Vector Store Double of Double Indexed */                                 \
   V(evstddx, EVSTDDX, 0x10000320)                                             \
   /* Vector Store Double of Four Half Words */                                \
-  V(evstdh, EVSTDH, 0x10000325)                                          
-"""
-
-
+  V(evstdh, EVSTDH, 0x10000325)
 ```

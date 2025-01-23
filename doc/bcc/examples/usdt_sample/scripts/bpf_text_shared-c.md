@@ -69,7 +69,7 @@ Response:
    - 使用`bpftool prog list`确认eBPF程序已加载。
    - 通过`strace -e perf_event_open`跟踪探针绑定过程。
    - 在用户态程序中使用`bcc`的`trace.py`验证探针触发情况。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/examples/usdt_sample/scripts/bpf_text_shared.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -78,8 +78,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include <linux/blkdev.h>
 #include <uapi/linux/ptrace.h>
 
@@ -147,7 +149,4 @@ int trace_operation_start(struct pt_regs* ctx)
     start_hash.update(&start_data.operation_id, &start_data);
     return 0;
 }
-
-"""
-
 ```

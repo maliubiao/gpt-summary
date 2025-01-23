@@ -134,7 +134,7 @@ This specific file (`zerrors_windows.go`) does **not** handle command-line param
 
 This specific section of `go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go` continues the process of defining Go constants that correspond to Windows system error codes, ranging from `ERROR_ELEVATION_REQUIRED` (740) up to `ERROR_PRINTER_DELETED`. This mapping allows Go programs to handle Windows-specific system errors in a type-safe and more readable manner by using symbolic names instead of raw error numbers. It's a fundamental part of Go's low-level interaction with the Windows operating system.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -142,9 +142,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共15部分，请归纳一下它的功能
+```
 
-"""
-                                                          syscall.Errno = 739
+### 源代码
+```go
+syscall.Errno = 739
 	ERROR_ELEVATION_REQUIRED                                                  syscall.Errno = 740
 	ERROR_REPARSE                                                             syscall.Errno = 741
 	ERROR_OPLOCK_BREAK_IN_PROGRESS                                            syscall.Errno = 742
@@ -827,10 +829,5 @@ Prompt:
 	ERROR_INVALID_FORM_NAME                                                   syscall.Errno = 1902
 	ERROR_INVALID_FORM_SIZE                                                   syscall.Errno = 1903
 	ERROR_ALREADY_WAITING                                                     syscall.Errno = 1904
-	ERROR_PRINTER_DELETED                                              
-"""
-
-
-
-
+	ERROR_PRINTER_DELETED
 ```

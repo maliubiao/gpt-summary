@@ -114,7 +114,7 @@ go test -gob.fuzz
 
 总而言之，这段代码是 `encoding/gob` 包测试套件的重要组成部分，它通过多种测试方法，特别是模糊测试，来确保编码器和解码器的稳定性和可靠性。它关注于边界情况、错误处理以及处理大型数据集的能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/gob/codec_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -123,8 +123,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ecoder(buf)
 	var e any
 	if err := dec.Decode(&e); err != nil {
@@ -342,10 +344,4 @@ func TestLocalRemoteTypesMismatch(t *testing.T) {
 		t.Error("Encode/Decode: expected error but got err == nil")
 	}
 }
-
-"""
-
-
-
-
 ```

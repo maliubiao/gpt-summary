@@ -139,7 +139,7 @@ Here's a breakdown of the thought process:
 
 这个 Python 文件是 Frida 构建系统 (使用 Meson) 的核心组成部分，其主要功能是**定义和管理各种编译器的属性和行为**。它通过维护文件类型信息、编程语言特性和通用的构建选项，为 Meson 提供了必要的上下文，使其能够正确地调用编译器、链接器，并生成最终的可执行文件和库文件。它作为一个数据中心和接口定义，使得 Meson 能够以一种抽象和统一的方式处理多种不同的编译器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -919,7 +921,4 @@ class Compiler(HoldableObject, metaclass=abc.ABCMeta):
     def _get_compile_output(self, dirname: str, mode: CompileCheckMode) -> str:
         assert mode != CompileCheckMode.PREPROCESS, 'In pre-processor mode, the output is sent to stdout and discarded'
         # Exten
-"""
-
-
 ```

@@ -81,7 +81,7 @@ Here's a breakdown of the thinking process to analyze the Python file and genera
 
 虽然 `frida/subprojects/frida-qml/releng/meson/docs/refman/__init__.py` 本身是一个空文件，但它的存在具有重要的意义，因为它将 `refman` 目录标记为一个 Python 包。 这对于 Frida 项目的文档组织至关重要，虽然它不直接参与逆向、底层操作或逻辑推理，但它为构建和组织描述这些功能的文档提供了基础。 用户到达这个文件通常是出于浏览代码、调试构建问题或修改文档的目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/docs/refman/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,9 +89,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

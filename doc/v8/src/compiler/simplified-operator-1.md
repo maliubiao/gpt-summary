@@ -134,12 +134,14 @@ obj.y = 20;
 
 `v8/src/compiler/simplified-operator.cc` 的第二部分继续定义了 V8 编译器 Simplified 阶段使用的操作符，这些操作符覆盖了更广泛的 JavaScript 功能，特别是与 WebAssembly 互操作、更精细的类型处理、BigInt 支持以及更底层的对象和数组操作。这些操作符是 V8 编译器将 JavaScript 代码转换为高效机器码的关键构建块。通过这些操作符，编译器能够更好地理解和优化 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rite | Operator::kNoThrow | Operator::kIdempotent,
       "WasmTypeCastAbstract", 1, 1, 1, 1, 1, 1, config);
 }
@@ -933,8 +935,4 @@ int FastApiCallNode::SlowCallArgumentCount(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

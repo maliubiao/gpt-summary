@@ -111,7 +111,7 @@ If a user encounters issues related to Boost during the build process (e.g., lin
 
 In summary, this code snippet within Frida's build system defines the configuration for how different Boost C++ libraries should be linked during the Frida build process. It specifies compiler flags for shared and static linking, as well as considerations for single-threaded and multi-threaded builds. This information is crucial for the Meson build system to correctly link against Boost, enabling Frida to utilize the functionalities provided by these libraries for its dynamic instrumentation capabilities, which are heavily used in reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/dependencies/boost.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,9 +120,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        name='boost_exception',
+### 源代码
+```python
+name='boost_exception',
         shared=[],
         static=[],
         single=[],
@@ -377,8 +379,4 @@ Prompt:
 
 #                                           #
 ####       ---- END GENERATED ----       ####
-
-"""
-
-
 ```

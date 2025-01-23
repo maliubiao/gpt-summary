@@ -168,7 +168,7 @@ Finally, I organized the thoughts into a clear and structured answer, addressing
 
 总而言之，`privatelib.c` 中的 `internal_thingy` 函数本身非常简单，但在 Frida 项目的上下文中，它扮演着一个测试用例的角色，用于验证 Frida 构建系统处理私有库依赖的能力。它也为我们提供了一个简单的例子来理解 Frida 如何与目标进程的内部函数交互，以及在逆向工程中可能遇到的底层概念和常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/27 pkgconfig usage/dependency/privatelib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,12 +176,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int internal_thingy() {
     return 99;
 }
-
-"""
-
 ```

@@ -202,15 +202,17 @@ Finally, the information needs to be organized logically and clearly, addressing
 
 总而言之，`successful_position_fallback.cc` 文件中的 `SuccessfulPositionFallback` 类是 Blink 渲染引擎中用于管理 CSS 位置回退信息的关键组件，它确保在复杂的定位场景下，即使某些初始定位尝试失败，浏览器也能找到合适的替代方案来渲染页面。理解它的功能有助于我们更好地理解浏览器如何处理 CSS 定位，并能更有效地调试相关的布局问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/successful_position_fallback.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ void SuccessfulPositionFallback::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

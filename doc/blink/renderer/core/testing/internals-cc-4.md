@@ -162,7 +162,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 总而言之，`blink/renderer/core/testing/internals.cc` 是 Blink 引擎中一个至关重要的测试工具，它赋予测试人员强大的能力来深入了解和验证引擎的内部工作机制。虽然普通用户不会直接接触到它，但它对于保证 Blink 引擎的质量和稳定性起着至关重要的作用。它通过 JavaScript 暴露的接口，使得测试能够覆盖到 CSS 属性、HTML 结构、JavaScript 行为以及各种内部状态和事件，从而确保 Web 平台的各个方面都能按预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/internals.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -170,9 +170,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    result.push_back(property_class.GetPropertyNameString());
+### 源代码
+```cpp
+result.push_back(property_class.GetPropertyNameString());
     }
   }
   return result;
@@ -606,8 +608,4 @@ ScriptPromise<IDLUndefined> Internals::exemptUrlFromNetworkRevocation(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -145,7 +145,7 @@ struct __libc_fpxreg {
 
 `go/src/runtime/defs1_linux.go` 是一个关键的 Go 运行时文件，它通过 `cgo -cdefs` 机制，为 Go 运行时提供了与 Linux 系统底层交互所需的常量和数据结构定义。它支撑了 Go 语言的系统调用、并发管理、信号处理等重要功能。普通 Go 开发者无需直接操作此文件，但了解其作用有助于理解 Go 语言与操作系统底层的交互方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs1_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -195,9 +197,4 @@ type StackT C.stack_t
 type Mcontext C.mcontext_t
 type Ucontext C.ucontext_t
 type Sigcontext C.struct_sigcontext
-
-"""
-
-
-
 ```

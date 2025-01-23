@@ -121,7 +121,7 @@ some_build_module.generate_library_for_platform("android")
 
 尽管 `frida/releng/meson/mesonbuild/__init__.py` 文件内容为空，但它在 Python 包结构中扮演着至关重要的角色，使得 `mesonbuild` 目录成为一个可导入的包，为 Frida 的构建系统提供了基础。它与逆向方法、底层知识的关系是间接的，体现在它参与了 Frida 工具的构建过程。用户通常不会直接操作这个文件，但它可能作为调试构建问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,9 +129,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

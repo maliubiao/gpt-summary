@@ -167,14 +167,16 @@ By following these steps, combining code analysis with an understanding of web d
 
 `active_script_wrappable_manager.cc` 是 Blink 渲染引擎中负责管理与 JavaScript 交互的 C++ 对象的关键组件。它通过跟踪对象的活跃状态，并与垃圾回收机制集成，确保不再被 JavaScript 使用的对象能够被及时清理，防止内存泄漏。虽然开发者不会直接操作这个管理器，但理解其背后的原理有助于避免 JavaScript 编程中常见的内存管理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/active_script_wrappable_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ void ActiveScriptWrappableManager::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

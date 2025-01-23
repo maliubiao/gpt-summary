@@ -269,15 +269,17 @@ wasmFunction(jsArray);
 
 理解 `WasmGraphAssembler` 的功能有助于开发者理解 V8 如何处理 WebAssembly 代码，并有助于调试与类型、内存访问和数据完整性相关的 WebAssembly 错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-graph-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-graph-assembler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -630,7 +632,4 @@ class WasmGraphAssembler : public GraphAssembler {
 }  // namespace v8
 
 #endif  // V8_COMPILER_WASM_GRAPH_ASSEMBLER_H_
-
-"""
-
 ```

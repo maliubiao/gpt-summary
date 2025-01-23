@@ -177,15 +177,17 @@ By following this systematic approach, combining code analysis with domain knowl
 
 总而言之，`element_data_cache.cc` 是 Blink 引擎中一个重要的性能优化组件，它通过缓存元素属性数据来减少内存占用和提高处理效率。理解其工作原理有助于理解 Blink 如何处理 DOM 元素和属性，并为调试相关的渲染和 JavaScript 行为问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element_data_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012, 2013 Apple Inc. All Rights Reserved.
  *
@@ -262,7 +264,4 @@ void ElementDataCache::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

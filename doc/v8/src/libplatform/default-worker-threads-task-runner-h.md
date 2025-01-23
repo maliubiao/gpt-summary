@@ -254,15 +254,17 @@ myRequestIdleCallback(() => {
 
 理解 `DefaultWorkerThreadsTaskRunner` 的功能有助于理解 V8 如何在底层处理异步任务，以及在使用涉及多线程的 JavaScript API (如 Web Workers) 时需要注意的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-worker-threads-task-runner.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/default-worker-threads-task-runner.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -352,7 +354,4 @@ class V8_PLATFORM_EXPORT DefaultWorkerThreadsTaskRunner
 }  // namespace v8
 
 #endif  // V8_LIBPLATFORM_DEFAULT_WORKER_THREADS_TASK_RUNNER_H_
-
-"""
-
 ```

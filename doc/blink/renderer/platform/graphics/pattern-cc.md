@@ -140,14 +140,16 @@ Let's break down the thought process for analyzing the `pattern.cc` file and gen
 
 `pattern.cc` 文件在 Blink 渲染引擎中扮演着核心角色，负责创建和管理用于图形填充的图案。它与 CSS 的背景图像、CSS Houdini 的 `paint()` 函数以及 Canvas API 的图案创建功能紧密相关，是实现网页视觉效果的重要组成部分。理解其功能有助于我们更好地理解浏览器如何渲染网页，并避免在使用相关技术时出现常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/pattern.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008 Apple Computer, Inc.  All rights reserved.
  * Copyright (C) 2008 Eric Seidel <eric@webkit.org>
@@ -213,7 +215,4 @@ void Pattern::ApplyToFlags(cc::PaintFlags& flags,
 }
 
 }  // namespace blink
-
-"""
-
 ```

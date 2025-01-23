@@ -171,7 +171,7 @@ By following this systematic approach of reading, analyzing, connecting, and ill
 
 `frida/subprojects/frida-tools/releng/meson/mesonbuild/build.py` 文件的核心功能是定义了 Frida 构建系统中用于描述各种构建目标的 Python 类。这些类抽象了不同类型的构建产物（如可执行文件、JAR 包、数据文件等）及其构建方式，方便 Meson 构建系统进行管理和调度。该文件对于理解 Frida 的构建流程至关重要，特别是当需要自定义构建过程或排查构建错误时。它涵盖了从简单的命令执行到复杂的 Java 包管理，以及数据文件的复制和符号链接的创建。通过这些类的定义，Meson 能够理解 Frida 项目的构建意图，并生成相应的构建指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,9 +180,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- = 'run'
+### 源代码
+```python
+= 'run'
 
     def __init__(self, name: str,
                  command: T.Sequence[T.Union[str, File, BuildTargetTypes, programs.ExternalProgram]],
@@ -482,8 +484,4 @@ def save(obj: Build, filename: str) -> None:
             pickle.dump(obj, f)
     finally:
         obj.environment.coredata = cdata
-
-"""
-
-
 ```

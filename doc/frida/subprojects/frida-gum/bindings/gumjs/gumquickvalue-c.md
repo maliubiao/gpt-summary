@@ -168,7 +168,7 @@ void* arg3 = va_arg(ap, void*);      // arg3 将指向 ptr 指向的内存地址
 
 `gumquickvalue.c` 的主要功能是 **作为 Frida 框架中 JavaScript 与 native 代码之间数据类型转换的桥梁。** 它提供了一套机制，能够安全、高效地将 JavaScript 值解析和转换为 C 语言中的各种数据类型，以便在 native 代码中使用，并且能够将 native 的值转换回 JavaScript 对象。其核心函数 `_gum_quick_args_parse` 依赖于格式化字符串来指导转换过程，并提供了丰富的类型支持和错误处理机制。这个文件是 Frida 实现动态插桩功能的基础组成部分，使得 JavaScript 能够灵活地与目标进程的 native 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickvalue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2021 Abdelrahman Eid <hot3eed@gmail.com>
@@ -1724,7 +1726,4 @@ _gum_quick_thread_state_new (JSContext * ctx,
                              GumThreadState state)
 {
   return JS_NewString (ct
-"""
-
-
 ```

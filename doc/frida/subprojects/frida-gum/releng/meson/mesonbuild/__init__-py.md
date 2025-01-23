@@ -121,7 +121,7 @@ def get_target_arch():
 
 尽管 `frida/subprojects/frida-gum/releng/meson/mesonbuild/__init__.py` 文件本身是空的，但它标志着一个 Python 包的开始。这个包很可能包含用于 Frida 构建过程的辅助模块和脚本。这些模块可能会涉及到与逆向方法、二进制底层、Linux/Android 内核及框架相关的知识。用户通常不会直接与这个文件交互，但它在 Frida 的构建过程中扮演着重要的角色。当构建出现问题或需要深入了解 Frida 的构建流程时，开发者或高级用户可能会接触到这个目录及其中的文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,9 +129,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

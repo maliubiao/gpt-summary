@@ -188,7 +188,7 @@ config_dep = ConfigToolDependency(
 
 总而言之，`configtool.py` 在 Frida 的构建系统中扮演着至关重要的角色，它负责自动化地发现和管理外部依赖，确保 Frida 能够正确地编译和链接所需的组件，从而实现其强大的动态 instrumentation 功能。理解它的工作原理有助于排查构建过程中与依赖项相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/dependencies/configtool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -361,7 +363,4 @@ class ConfigToolDependency(ExternalDependency):
         if default_value is not None:
             return default_value
         raise DependencyException(f'Could not get config-tool variable and no default provided for {self!r}')
-
-"""
-
 ```

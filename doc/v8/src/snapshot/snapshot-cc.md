@@ -171,7 +171,7 @@ console.timeEnd('启动时间');
 
 `v8/src/snapshot/snapshot.cc` 的主要功能是提供 **创建、加载和管理 V8 快照的核心机制**。它定义了快照数据的结构、序列化和反序列化的流程，并包含了版本控制和校验和机制以保证快照的兼容性和完整性。这个文件是 V8 快速启动能力的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/snapshot.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,8 +179,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -994,7 +996,4 @@ v8::StartupData CreateSnapshotDataBlobInternal(
     const char* embedded_source, Snapshot::SerializerFlags serializer_flags) {
   std::unique_ptr<v8::ArrayBuffer::Allocator> array_buffer_allocator(
       v8::
-"""
-
-
 ```

@@ -221,14 +221,16 @@ By following this thought process, combining code analysis with an understanding
 
 总之，`devtools_serialization.cc` 文件在 Blink 引擎中扮演着重要的角色，它将复杂的内部数据结构转化为开发者友好的格式，方便了 Interest Group API 的调试和理解，间接地帮助开发者避免了常见的编程错误和配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/devtools_serialization.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -745,7 +747,4 @@ base::Value::Dict SerializeInterestGroupForDevtools(const InterestGroup& ig) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

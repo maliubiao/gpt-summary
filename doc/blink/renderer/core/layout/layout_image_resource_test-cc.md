@@ -120,14 +120,16 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 总而言之，`layout_image_resource_test.cc` 通过测试 `LayoutImageResource` 类，确保了 Blink 引擎在处理图片资源（特别是加载失败的情况）时的正确性和鲁棒性，这直接影响了用户在浏览器中看到的内容。测试用例中针对不同分辨率 broken image 的处理，也体现了对不同设备的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_image_resource_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ TEST_F(LayoutImageResourceTest, BrokenImageHighRes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

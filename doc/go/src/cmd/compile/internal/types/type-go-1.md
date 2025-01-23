@@ -188,7 +188,7 @@ func main() {
 
 这段代码是 Go 编译器内部类型系统的基础，提供了类型表示、比较和操作的关键功能，为编译器的类型检查、代码生成和优化等环节提供了必要的支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types/type.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -197,9 +197,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- t1.Sym.cmpsym(x1.Sym); c != CMPeq {
+### 源代码
+```go
+t1.Sym.cmpsym(x1.Sym); c != CMPeq {
 				return c
 			}
 			if c := t1.Type.cmp(x1.Type); c != CMPeq {
@@ -968,10 +970,4 @@ var SimType [NTYPE]Kind
 
 // Fake package for shape types (see typecheck.Shapify()).
 var ShapePkg = NewPkg("go.shape", "go.shape")
-
-"""
-
-
-
-
 ```

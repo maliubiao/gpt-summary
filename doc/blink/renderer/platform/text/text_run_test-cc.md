@@ -134,14 +134,16 @@ By following these steps, I can systematically analyze the given code snippet an
 
 总而言之，`text_run_test.cc` 通过单元测试确保了 `TextRun` 类中 `IndexOfSubRun` 方法的正确性和健壮性，这对于保证 Blink 引擎能够正确处理和渲染网页中的文本至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_run_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ TEST(TextRunTest, IndexOfSubRun) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -89,11 +89,13 @@ runTest();
 
 `finalize.cc` 这个 C++ 测试文件验证了 V8 引擎在管理 WebAssembly 对象的生命周期和垃圾回收时，能否正确地执行用户自定义的清理逻辑（终结器）。这对于确保资源正确释放和避免内存泄漏至关重要。虽然直接操作的是 C API，但这些测试直接保证了 JavaScript 中 WebAssembly 功能的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/finalize.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ TEST_F(WasmCapiTest, CapiFunctionLifetimes) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

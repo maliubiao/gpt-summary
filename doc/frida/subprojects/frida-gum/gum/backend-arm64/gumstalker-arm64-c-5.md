@@ -149,7 +149,7 @@ A user reports that their Frida script causes the target application to crash in
 
 In essence, `gumstalker-arm64.c` is the **core code generation engine for Frida's Stalker on ARM64**. It dynamically generates machine code to intercept and instrument program execution, enabling features like code tracing, function hooking, and runtime analysis. It manages the allocation of memory for this generated code and implements optimizations like inline caching to improve performance. This file embodies the low-level mechanics that empower Frida's dynamic instrumentation capabilities on ARM64 systems.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm64/gumstalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 )
     return;
 
@@ -831,8 +833,4 @@ gum_is_bl_imm (guint32 insn)
 }
 
 #endif
-
-"""
-
-
 ```

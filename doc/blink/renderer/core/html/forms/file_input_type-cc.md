@@ -144,14 +144,16 @@ By following this structured analysis and incorporating self-correction, I can a
 
 总而言之，`file_input_type.cc` 文件是 Blink 引擎中实现文件选择输入框功能的核心，它连接了 HTML 元素的定义、JavaScript 的交互以及底层操作系统提供的文件选择能力，并考虑了安全性和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/file_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Apple Inc. All
  * rights reserved.
@@ -764,7 +766,4 @@ void FileInputType::UpdateView() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

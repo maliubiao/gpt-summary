@@ -96,12 +96,14 @@ To explain the relation to JavaScript and provide examples, I will:
 
 总而言之，这部分单元测试专注于验证 V8 的 JavaScript 解析器在处理特定语言特性（如 `let` 作用域、私有类成员、Hashbang）以及在遇到特定错误语法时是否能按照规范正确工作。这对于确保 JavaScript 代码的正确执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 );
       i::Variable* loop_var = loop_block->LookupLocal(var_name);
       CHECK_NOT_NULL(loop_var);
@@ -327,8 +329,4 @@ TEST_F(ParsingTest, LogicalAssignmentDestructuringErrors) {
 }  // namespace test_parsing
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

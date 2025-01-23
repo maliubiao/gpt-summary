@@ -266,7 +266,7 @@ Dynamic linker (在 Android 上通常是 `linker` 或 `ld-android.so`) 的主要
 
 总而言之，`s_nexttoward.c` 中实现的 `nexttoward` 函数是 Android 系统中一个重要的底层数学工具，它提供了精确控制浮点数值的能力，被广泛应用于各种需要高精度浮点数运算的场景。理解其实现原理和使用场景，对于开发高质量的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_nexttoward.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -276,8 +276,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -346,7 +348,4 @@ nexttoward(double x, long double y)
 	INSERT_WORDS(x,hx,lx);
 	return x;
 }
-
-"""
-
 ```

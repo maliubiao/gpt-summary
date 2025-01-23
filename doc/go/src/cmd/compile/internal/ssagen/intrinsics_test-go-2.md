@@ -126,7 +126,7 @@ func main() {
 
 这部分 `intrinsics` map 定义了 `ppc64`, `ppc64le`, `riscv64` 和 `s390x` 这几种架构下的一系列可以被编译器优化处理的 intrinsic 函数。 这些函数主要集中在原子操作 (`internal/runtime/atomic`, `sync/atomic`)、一些基础数学运算 (`math`, `math/bits`) 以及运行时系统调用 (`internal/runtime/sys`, `runtime`) 相关的函数。 这意味着 Go 编译器在为这些架构编译代码时，能够利用更底层的、硬件相关的指令来提高这些特定操作的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/intrinsics_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 internal/runtime/atomic", "LoadAcquintptr"}:             struct{}{},
 	{"ppc64", "internal/runtime/atomic", "Loadint32"}:                  struct{}{},
 	{"ppc64", "internal/runtime/atomic", "Loadint64"}:                  struct{}{},
@@ -541,10 +543,5 @@ internal/runtime/atomic", "LoadAcquintptr"}:             struct{}{},
 	{"s390x", "math/bits", "RotateLeft"}:                               struct{}{},
 	{"s390x", "math/bits", "RotateLeft32"}:                             struct{}{},
 	{"s390x", "math/bits", "RotateLeft64"}:                             struct{}{},
-	{"s390x", "math/bits", "Sub"}:                         
-"""
-
-
-
-
+	{"s390x", "math/bits", "Sub"}:
 ```

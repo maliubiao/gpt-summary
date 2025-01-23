@@ -214,7 +214,7 @@ func main() {
 
 这段代码是 Go 语言 `crypto/x509` 包为了在特定 BSD 系统上自动查找和加载系统根证书而做出的平台适配。它利用了 Go 的构建约束和切片特性，定义了可能包含根证书的文件和目录路径。了解这段代码的功能有助于理解 Go 标准库如何处理跨平台问题以及如何加载系统级别的安全凭据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/root_bsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ var certDirectories = []string{
 	"/usr/local/share/certs", // FreeBSD
 	"/etc/openssl/certs",     // NetBSD
 }
-
-"""
-
-
-
 ```

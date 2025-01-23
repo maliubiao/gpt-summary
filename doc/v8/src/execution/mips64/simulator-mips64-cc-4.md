@@ -161,7 +161,7 @@ console.log(result); // 输出 15
 
 这部分代码是 MIPS64 架构模拟器的核心组成部分，它专注于 **解码和模拟各种 MIPS64 指令的执行**，包括浮点运算、通用算术和逻辑运算、跳转分支指令以及 MSA 扩展指令。它维护了模拟的 CPU 状态，并能检测某些类型的错误，为 V8 引擎在 MIPS64 平台上的正确运行提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er);
       uint32_t reg = static_cast<uint32_t>(rt());
       if (kArchVariant == kMips64r6) {
@@ -1231,7 +1233,4 @@ void Simulator::DecodeTypeMsaI8() {
         wd.w[i] = ws.w[j];
       }
       set_msa_register(instr_.WdValue(
-"""
-
-
 ```

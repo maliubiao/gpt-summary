@@ -242,7 +242,7 @@ func main() {
 
 这段代码提供了一个简单但有效的临时文件管理机制，在 `pprof` 这样的工具中，它可以帮助在数据处理过程中管理中间文件，确保程序运行结束后不会留下垃圾文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/tempfile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -250,8 +250,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -312,9 +314,4 @@ func cleanupTempFiles() error {
 	tempFiles = nil
 	return lastErr
 }
-
-"""
-
-
-
 ```

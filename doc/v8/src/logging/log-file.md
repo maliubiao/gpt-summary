@@ -154,11 +154,13 @@ d8 --trace-opt script.js
 
 `v8/src/logging/log-file.cc` 提供了一个底层的日志记录机制，是 V8 引擎的重要组成部分。它允许开发者通过命令行标志等方式来观察 V8 引擎在执行 JavaScript 代码时的内部行为，这对于调试、性能分析和理解 V8 引擎的工作原理至关重要。尽管 JavaScript 代码本身不直接调用这个 C++ 文件的代码，但 V8 引擎在执行 JavaScript 时会使用它来记录各种事件和信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/log-file.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -471,7 +473,4 @@ LogFile::MessageBuilder& LogFile::MessageBuilder::operator<<<LogSeparator>(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

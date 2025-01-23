@@ -72,9 +72,12 @@ This systematic approach, moving from high-level understanding to detailed code 
 
 这个文件对于理解和优化 cppgc 的对象追踪性能非常重要。它可以帮助开发者识别潜在的性能瓶颈，并验证对追踪机制的改进是否有效。
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/cppgc/trace_perf.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/cppgc/trace_perf.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,6 +165,4 @@ BENCHMARK_F(Trace, Dynamic)(benchmark::State& st) {
 }  // namespace
 }  // namespace internal
 }  // namespace cppgc
-
-"""
 ```

@@ -173,15 +173,17 @@ Initially, I might have focused too much on user-level actions. However, given t
 
 `CSSFontStyleRangeValue.cc` 文件是 Blink 渲染引擎中处理 CSS `font-style` 属性的关键组件，特别是针对 `oblique` 关键字及其角度值的场景。它连接了 CSS 样式定义和最终的文本渲染，并在浏览器的样式计算和渲染流程中扮演着重要的角色。 开发者在调试与字体样式相关的渲染问题时，很可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_font_style_range_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 Apple Inc. All rights reserved.
  *
@@ -242,7 +244,4 @@ void CSSFontStyleRangeValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

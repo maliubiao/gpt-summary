@@ -156,7 +156,7 @@ fetch('https://example.com', { protocol: 'quic' })
 
 这部分 `QuicDispatcher` 的代码主要负责 **QUIC 连接的后生命周期管理、连接控制、会话管理以及处理异常情况 (例如连接 ID 冲突、接收到无法处理的报文)**。它确保了连接的正常关闭和资源的清理，并提供了处理新连接请求和维护当前活跃会话状态的机制。它还负责在必要时发送无状态重置或连接关闭报文，以通知对端连接的终止。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_dispatcher.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::SEND_STATELESS_RESET;
   std::vector<std::unique_ptr<QuicEncryptedPacket>> termination_packets;
   if (connection->HasTerminationPackets()) {
@@ -917,8 +919,4 @@ size_t QuicDispatcher::NumSessions() const {
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

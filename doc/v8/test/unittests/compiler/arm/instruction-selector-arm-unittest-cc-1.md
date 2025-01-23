@@ -125,7 +125,7 @@ function test(a, b, c) {
 
 这部分代码主要测试了 **ARM 指令选择器对于算术和逻辑运算指令 (包括带标志位设置)、移位指令以及基于运算结果进行分支指令的选择是否正确**。它涵盖了操作数是寄存器、立即数以及移位操作的不同组合情况，并验证了生成的 ARM 指令的机器码、寻址模式、输入输出数量以及标志位设置是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ode());
     EXPECT_EQ(3U, s[0]->InputCount());
     EXPECT_EQ(2U, s[0]->OutputCount());
@@ -987,7 +989,4 @@ TEST_P(InstructionSelectorF64ComparisonTest, WithImmediateZeroOnRight) {
   ASSERT_EQ(1U, s[0]->OutputCount());
   EXPECT_EQ(kFlags_set, s[0]->flags_mode());
   EXPECT_EQ(cmp.flags_condition, s[0]->flags_condition()
-"""
-
-
 ```

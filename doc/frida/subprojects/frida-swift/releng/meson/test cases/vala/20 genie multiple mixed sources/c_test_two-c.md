@@ -135,7 +135,7 @@ Interceptor.replace(Module.findExportByName(null, "c_test_two_is_true"), new Nat
 
 总而言之，`c_test_two_is_true.c` 是 Frida 针对跨语言场景进行测试的一个非常简单的 C 代码示例。它本身的功能很简单，但可以作为理解 Frida 如何 hook C 代码，以及在跨语言环境中进行动态分析的一个起点。在实际逆向工作中，类似的简单函数可能不会直接成为重点，但理解其行为有助于构建更复杂的 hook 逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/vala/20 genie multiple mixed sources/c_test_two.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,14 +143,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 gboolean c_test_two_is_true (void) {
     return TRUE;
 }
-
-"""
-
 ```

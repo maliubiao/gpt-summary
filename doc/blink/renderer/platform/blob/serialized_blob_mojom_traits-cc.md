@@ -124,14 +124,16 @@ By following this thought process, I could construct a comprehensive and accurat
 
 `serialized_blob_mojom_traits.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它负责将 `Blob` 对象的元数据和数据句柄在不同的进程之间高效可靠地传递。虽然开发者不会直接操作这个文件，但它确保了 Web 平台的 `Blob` API 能够正常工作，从而支持 JavaScript 中创建和操作二进制数据，处理 HTML 文件上传，以及在 CSS 中引用 Blob 资源等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/serialized_blob_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ bool StructTraits<blink::mojom::blink::SerializedBlob::DataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

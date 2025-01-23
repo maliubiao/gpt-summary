@@ -93,15 +93,17 @@ Now, let's put it all together in the final summary.
 
 总而言之，这段代码是 WebGL 图像处理流程中至关重要的一环，它确保了不同来源和格式的图像数据能够被正确地转换成 WebGL 能够理解和处理的内部格式，从而在网页上渲染出丰富的 3D 图形效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgl_image_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ixels_per_row) {
   for (unsigned i = 0; i < pixels_per_row; ++i) {
     destination[3] = ClampMin(source[3]);
@@ -983,8 +985,4 @@ class FormatConverter {
   const int depth_;
   const int unpack_image_height_;
   const void* const src_start_;
-  
-"""
-
-
 ```

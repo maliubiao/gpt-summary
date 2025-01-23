@@ -94,11 +94,13 @@ const promise = new Promise((resolve, reject) => {
 
 `v8/src/snapshot/embedded/embedded-data.cc` 是 V8 引擎中一个关键的组件，它负责将常用的 JavaScript 内置函数预编译并嵌入到引擎中，从而极大地提升了 JavaScript 代码的执行效率和引擎的启动速度。它通过精心设计的内存布局和重定位机制，使得这些内置函数能够在不同的 V8 实例中高效可靠地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/embedded-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -576,7 +578,4 @@ void EmbeddedData::PrintStatistics() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

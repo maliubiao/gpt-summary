@@ -94,7 +94,7 @@ Based on this, I can now structure the response to address each of the user's po
 
 这部分测试用例主要关注 BBR2 算法在各种复杂场景下的行为，包括存在发送端策略器、连接空闲、从其他算法切换、以及响应外部网络参数调整等情况。 目标是验证 BBR2 在这些场景下的正确性、稳定性和自适应性。 此外，它开始引入多发送方共享瓶颈链路的测试场景，为后续部分更复杂的测试奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/bbr2_simulator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 / connection will exit low gain early if the number of bytes in flight is low.
 TEST_F(Bbr2DefaultTopologyTest, InFlightAwareGainCycling) {
   DefaultTopologyParams params;
@@ -901,7 +903,4 @@ TEST_F(Bbr2MultiSenderTest, Bbr2VsBbr2) {
   const QuicTime::Delta transfer_time =
       params.BottleneckBandwidth().TransferTime(transfer_size);
   QUIC_LOG(INFO) << "Single flow trans
-"""
-
-
 ```

@@ -170,15 +170,17 @@ The `FallThrough` method would pass the `call_id`, `method`, and `message` to an
 
 In summary, `frontend_channel.h` defines a crucial interface for communication between V8 and its clients using a protocol like CDP. It handles sending both responses to requests and unsolicited notifications, and provides a mechanism for message handling to fall through different layers of the system. Understanding this interface is important for anyone working on integrating with or extending V8's debugging and instrumentation capabilities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/frontend_channel.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/frontend_channel.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ class FrontendChannel {
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_FRONTEND_CHANNEL_H_
-
-"""
-
 ```

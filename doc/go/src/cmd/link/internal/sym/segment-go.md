@@ -204,15 +204,17 @@ func mainLinkerExample() {
 
 总而言之，`sym.Segment` 和 `sym.Section` 是 Go 链接器用于管理程序内存布局和文件结构的核心数据结构。理解它们的功能有助于深入了解 Go 程序的链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/sym/segment.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/8l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/8l/asm.c
 //
@@ -281,9 +283,4 @@ type Section struct {
 
 	Compressed bool
 }
-
-"""
-
-
-
 ```

@@ -261,7 +261,7 @@ By following this detailed breakdown, and iteratively refining understanding, we
 
 作为第二部分，这部分代码深入展现了 `GraphAssembler` 和 `JSGraphAssembler` 在 V8 编译器中构建控制流图和实现 JavaScript 语义的关键作用。`GraphAssembler` 提供了基础的图操作和控制流机制，而 `JSGraphAssembler` 则在其基础上，针对 JavaScript 语言的特性，提供了丰富的操作方法，涵盖了常量创建、类型检查、内存访问、数值运算、字符串操作、对象操作、数组操作以及与 V8 运行时环境的交互。`CatchScope` 和 `MayThrow` 的引入使得能够处理 JavaScript 中的异常情况。条件语句构建器 `IfBuilder0` 和 `IfBuilder1` 提供了更便捷的方式来生成条件代码。 掌握这些功能对于理解 V8 如何将 JavaScript 代码转换为可执行的机器码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/graph-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/graph-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -269,9 +269,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- TNode<Word32T> condition, GraphAssemblerLabel<sizeof...(Vars)>* if_true,
+### 源代码
+```c
+TNode<Word32T> condition, GraphAssemblerLabel<sizeof...(Vars)>* if_true,
     GraphAssemblerLabel<sizeof...(Vars)>* if_false, BranchHint hint,
     Vars... vars) {
   BranchImpl(BranchSemantics::kMachine, condition, if_true, if_false, hint,
@@ -851,8 +853,4 @@ class V8_EXPORT_PRIVATE JSGraphAssembler : public GraphAssembler {
 }  // namespace v8
 
 #endif  // V8_COMPILER_GRAPH_ASSEMBLER_H_
-
-"""
-
-
 ```

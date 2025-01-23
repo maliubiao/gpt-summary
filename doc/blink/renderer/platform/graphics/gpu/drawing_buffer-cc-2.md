@@ -106,16 +106,18 @@ By following these steps, I could systematically analyze the provided code snipp
 
 `blink/renderer/platform/graphics/gpu/drawing_buffer.cc` 的这部分代码，连同之前的部分，共同实现了 WebGL 渲染管线中至关重要的帧缓冲区管理和渲染结果处理功能。它连接了底层的 OpenGL API 和上层的 WebGL API，并负责处理各种复杂的渲染场景和平台特性，确保 WebGL 内容能够正确且高效地渲染到屏幕上。理解 `DrawingBuffer` 的工作原理对于深入理解 WebGL 的渲染机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/drawing_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-      state_restorer_->SetFramebufferBindingDirty();
+### 源代码
+```cpp
+state_restorer_->SetFramebufferBindingDirty();
       gl_->BindFramebuffer(GL_FRAMEBUFFER, fbo_);
       gl_->DiscardFramebufferEXT(GL_FRAMEBUFFER, 2, kAttachments);
       transient_framebuffers_discarded_ = true;
@@ -691,8 +693,4 @@ bool DrawingBuffer::ShouldUseChromiumImage() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

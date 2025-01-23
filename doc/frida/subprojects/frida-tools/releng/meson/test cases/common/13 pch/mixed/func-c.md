@@ -139,7 +139,7 @@ By following these steps, starting with the code itself and then progressively l
 
 总而言之，这个简单的 `func.c` 文件是 Frida 测试框架中一个很小的组成部分，但它专注于测试 Frida 在处理预编译头文件时，能否正确地解析和使用头文件信息，从而确保 Frida 能够准确地 hook 和分析目标程序中依赖于这些头文件的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/13 pch/mixed/func.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void tmp_func(void) {
     fprintf(stdout, "This is a function that fails if stdio is not #included.\n");
 }
@@ -156,7 +158,4 @@ void tmp_func(void) {
 int cfunc(void) {
     return 0;
 }
-
-"""
-
 ```

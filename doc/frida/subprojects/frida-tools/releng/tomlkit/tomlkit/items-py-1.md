@@ -67,7 +67,7 @@ The user wants a summary of the functionality of the provided Python code, which
 
 `items.py` 定义了 `tomlkit` 库中用于表示各种 TOML 数据类型（数组、表、内联表、字符串、数组表）的类。这些类不仅存储数据值，还维护了格式化信息，使得库能够以保留原始格式的方式读取和写入 TOML 文件。 这些类是构建和操作 TOML 文档抽象语法树的关键组成部分，为用户提供了以编程方式访问和修改 TOML 数据的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -76,8 +76,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 "
                 new_values.append(it)
                 data_values.append(it.value)
@@ -765,8 +767,4 @@ class Null(Item):
 
     def _getstate(self, protocol=3) -> tuple:
         return ()
-
-"""
-
-
 ```

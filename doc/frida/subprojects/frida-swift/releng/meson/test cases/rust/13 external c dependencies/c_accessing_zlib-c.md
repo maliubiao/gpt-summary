@@ -150,7 +150,7 @@ By following this detailed breakdown, considering the context of Frida, and iter
 
 总而言之，这个 `c_accessing_zlib.c` 文件虽然功能简单，但它是 Frida 框架测试能力的一部分，用于确保 Frida 能够有效地与使用了外部 C 库的目标程序进行交互，这对于逆向工程和动态分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/13 external c dependencies/c_accessing_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <zlib.h>
@@ -170,7 +172,4 @@ void c_accessing_zlib(void) {
     memset(&zstream, 0, sizeof(zstream));
     inflateInit(&zstream);
 }
-
-"""
-
 ```

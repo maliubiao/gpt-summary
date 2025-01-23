@@ -177,7 +177,7 @@ def __lldb_init_module(debugger, internal_dict):
 
 `fs_agent.js` 的这段代码（第 4 部分）主要提供了**读取和写入 IEEE 754 浮点数到/从字节数组的能力**。这对于在 Frida agent 中处理二进制文件数据，特别是需要解析或修改浮点数值的场景非常有用。它封装了底层的字节操作，使得开发者可以用更方便的方式处理浮点数数据。 这段代码是 Frida agent 处理文件系统操作中数据解析和序列化的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-tools/agents/fs/fs_agent.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第4部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 OAAQI,GAAK,EAAI,GAAKP,EAAIU,KAAKC,IAAI,EAAGZ,EAAIF,EAC5C,QAEO,SAASe,MAAOlB,EAAQmB,EAAOlB,EAAQC,EAAMC,EAAMC,GACxD,IAAIC,EAAGC,EAAGc,EACNb,EAAiB,EAATH,EAAcD,EAAO,EACjC,MAAMK,GAAQ,GAAKD,GAAQ,EACrBE,EAAQD,GAAQ,EAChBa,EAAe,KAATlB,EAAca,KAAKC,IAAI,GAAI,IAAMD,KAAKC,IAAI,GAAI,IAAM,EAChE,IAAIN,EAAIT,EAAO,EAAKE,EAAS,EAC7B,MAAMQ,EAAIV,EAAO,GAAK,EAChBW,EAAIM,EAAQ,GAAgB,IAAVA,GAAe,EAAIA,EAAQ,EAAK,EAAI,EAmC5D,IAjCAA,EAAQH,KAAKM,IAAIH,GAEbI,MAAMJ,IAAUA,IAAUJ,KAC5BT,EAAIiB,MAAMJ,GAAS,EAAI,EACvBd,EAAIG,IAEJH,EAAIW,KAAKQ,MAAMR,KAAKS,IAAIN,GAASH,KAAKU,KAClCP,GAASC,EAAIJ,KAAKC,IAAI,GAAIZ,IAAM,IAClCA,IACAe,GAAK,IAGLD,GADEd,EAAII,GAAS,EACNY,EAAKD,EAELC,EAAKL,KAAKC,IAAI,EAAG,EAAIR,IAEpBW,GAAK,IACff,IACAe,GAAK,GAGHf,EAAII,GAASD,GACfF,EAAI,EACJD,EAAIG,GACKH,EAAII,GAAS,GACtBH,GAAMa,EAAQC,EAAK,GAAKJ,KAAKC,IAAI,EAAGd,GACpCE,GAAQI,IAERH,EAAIa,EAAQH,KAAKC,IAAI,EAAGR,EAAQ,GAAKO,KAAKC,IAAI,EAAGd,GACjDE,EAAI,IAIDF,GAAQ,GACbH,EAAOC,EAASU,GAAS,IAAJL,EACrBK,GAAKC,EACLN,GAAK,IACLH,GAAQ,EAKV,IAFAE,EAAKA,GAAKF,EAAQG,EAClBC,GAAQJ,EACDI,EAAO,GACZP,EAAOC,EAASU,GAAS,IAAJN,EACrBM,GAAKC,EACLP,GAAK,IACLE,GAAQ,EAGVP,EAAOC,EAASU,EAAIC,IAAU,IAAJC,CAC5B"}
 ✄
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
@@ -203,7 +205,4 @@ import e from"process";const t="win32"===e.platform;function r(e){return 47===e|
 export const nextTick=Script.nextTick;export const title="Frida";export const browser=!1;export const platform=function(){const e=Process.platform;return"windows"===e?"win32":e}();export const pid=Process.id;export const env={};export const argv=[];export const version=Frida.version;export const versions={};function e(){}export const on=e;export const addListener=e;export const once=e;export const off=e;export const removeListener=e;export const removeAllListeners=e;export const emit=e;export const prependListener=e;export const prependOnceListener=e;export const listeners=function(e){return[]};export function binding(e){throw new Error("process.binding is not supported")}export function cwd(){return"windows"===Process.platform?"C:\\":"/"}export function chdir(e){throw new Error("process.chdir is not supported")}export function umask(){return 0}export default{nextTick,title,browser:false,platform,pid,env,argv,version,versions,on,addListener,once,off,removeListener,removeAllListeners,emit,prependListener,prependOnceListener,listeners,binding,cwd,chdir,umask};
 ✄
 {"version":3,"file":"errors.js","names":["format","messages","Map","codes","aggregateTwoErrors","innerError","outerError","Array","isArray","errors","push","err","AggregateError","message","code","makeNodeErrorWithCode","Base","key","args","error","self","msg","get","Reflect","apply","match","length","unshift","getMessage","Object","defineProperties","value","enumerable","writable","configurable","toString","this","name","E","sym","val","def","otherClasses","set","forEach","clazz","AbortError","Error","constructor","super","TypeError","RangeError"],"sourceRoot":"/root/frida/build/subprojects/frida-tools/agents/fs/fs_agent.js.p/node_modules/@frida/readable-stream/","sources":[""],"mappings":"iBAASA,MAAc,OAEvB,MAAMC,EAAW,IAAIC,WACd,MAAMC,MAAQ,CAAC,SAEf,SAASC,mBAAmBC,EAAYC,GAC7C,GAAID,GAAcC,GAAcD,IAAeC,EAAY,CACzD,GAAIC,MAAMC,QAAQF,EAAWG,QAG3B,OADAH,EAAWG,OAAOC,KAAKL,GAChBC,EAGT,MAAMK,EAAM,IAAIC,eAAe,CAC7BN,EACAD,GACCC,EAAWO,SAEd,OADAF,EAAIG,KAAOR,EAAWQ,KACfH,CACT,CACA,OAAON,GAAcC,CACvB,CAEA,SAASS,EAAsBC,EAAMC,GACnC,OAAO,YAAsBC,GAC3B,MAAMC,EAAQ,IAAIH,EACZH,EAkCV,SAAoBI,EAAKC,EAAME,GAC7B,MAAMC,EAAMpB,EAASqB,IAAIL,GAEzB,GAAmB,mBAARI,EACT,OAAOE,QAAQC,MAAMH,EAAKD,EAAMF,IAGVG,EAAII,MAAM,gBAAkB,IAAIC,OACxD,OAAoB,IAAhBR,EAAKQ,OACAL,GAETH,EAAKS,QAAQN,GACNE,QAAQC,MAAMxB,EAAQ,KAAMkB,GACrC,CA/CoBU,CAAWX,EAAKC,EAAMC,GAkBtC,OAjBAU,OAAOC,iBAAiBX,EAAO,CAC7BN,QAAS,CACPkB,MAAOlB,EACPmB,YAAY,EACZC,UAAU,EACVC,cAAc,GAEhBC,SAAU,CACRJ,QACE,MAAO,GAAGK,KAAKC,SAASpB,OAASmB,KAAKvB,SACxC,EACAmB,YAAY,EACZC,UAAU,EACVC,cAAc,KAGlBf,EAAML,KAAOG,EACNE,CACT,CACF,CAEA,SAASmB,EAAEC,EAAKC,EAAKC,KAAQC,GAC3BzC,EA
-"""
-
-
 ```

@@ -148,7 +148,7 @@ Frida 本身就是一个强大的动态 instrumentation 工具，广泛应用于
 
 总结来说，`frida/releng/meson/mesonbuild/backend/vs2012backend.py` 是 Frida 构建流程中至关重要的一部分，它负责生成 Visual Studio 2012 的项目文件，使得 Frida 能够在 Windows 平台上被编译和使用，从而为逆向工程提供支持。理解这个文件的功能和工作原理有助于理解 Frida 的构建过程，并在遇到构建问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/vs2012backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -193,7 +195,4 @@ class Vs2012Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v110'
-
-"""
-
 ```

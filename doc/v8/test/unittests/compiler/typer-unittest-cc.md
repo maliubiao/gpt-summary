@@ -180,15 +180,17 @@ V8 的类型推断器会分析像 `add`, `compare`, `bitwiseAnd` 这样的 JavaS
 
 总而言之，`v8/test/unittests/compiler/typer-unittest.cc` 是一个关键的测试文件，用于确保 V8 编译器中的类型推断器能够准确地理解 JavaScript 代码中值的类型，这对于代码优化和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/typer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/typer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -919,7 +921,4 @@ TEST_F(TyperTest, Manual_Operation_NumberMin) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

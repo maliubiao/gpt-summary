@@ -153,7 +153,7 @@ Let's say Meson is configured to build Frida on Windows, and the environment has
 
 In essence, while this specific script is about generating build files, its existence is crucial for enabling the development and usage of tools like Frida on Windows, which are heavily involved in reverse engineering and interacting with low-level system components. Understanding this script provides insight into the build infrastructure that supports these powerful dynamic instrumentation tools.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/vs2012backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -198,7 +200,4 @@ class Vs2012Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v110'
-
-"""
-
 ```

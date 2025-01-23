@@ -209,7 +209,7 @@ func main() {
 
 这段代码简洁而清晰地展示了 Go 语言 `encoding/gob` 包处理接口类型序列化的关键步骤，并强调了类型注册的重要性。 理解这个示例对于在实际 Go 项目中使用 `gob` 处理接口数据至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/gob/example_interface_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -217,8 +217,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -300,9 +302,4 @@ func interfaceDecode(dec *gob.Decoder) Pythagoras {
 	}
 	return p
 }
-
-"""
-
-
-
 ```

@@ -130,7 +130,7 @@ Salt (Hex): a1b2c3d4e5f678901234567890abcdef
 
 总而言之，`crypto/pbkdf2` 包提供了一个安全可靠的机制来从密码中派生密钥，但正确的使用方式至关重要，特别是要注意盐的随机性、迭代次数的选择以及错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/pbkdf2/pbkdf2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -138,8 +138,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -189,9 +191,4 @@ func Key[Hash hash.Hash](h func() Hash, password string, salt []byte, iter, keyL
 	}
 	return pbkdf2.Key(h, password, salt, iter, keyLength)
 }
-
-"""
-
-
-
 ```

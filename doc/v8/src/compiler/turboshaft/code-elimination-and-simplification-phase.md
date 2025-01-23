@@ -118,11 +118,13 @@ function exampleDuplicationAndValueNumbering(x) {
 
 `code-elimination-and-simplification-phase.cc` 中定义的阶段是 Turboshaft 编译器的核心优化阶段之一，它通过执行一系列的优化策略，有效地提升了编译后的 JavaScript 代码的性能。这些优化虽然在 JavaScript 源代码层面不可见，但对于提高 V8 引擎的整体执行效率至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/code-elimination-and-simplification-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ void CodeEliminationAndSimplificationPhase::Run(PipelineData* data,
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

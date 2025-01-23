@@ -136,7 +136,7 @@ g++ -fopenmp main.cpp -o main
 
 `frida/subprojects/frida-core/releng/meson/test cases/common/184 openmp/main.cpp` 是 Frida 项目中一个关键的测试文件，用于验证 Frida 在处理使用了 OpenMP 的目标程序时的兼容性和正确性。它通过检查 OpenMP 是否启用以及最大线程数是否为 2 来确保 Frida 的构建和运行环境配置正确。理解这个文件的功能和背后的原理，有助于 Frida 开发者诊断和解决与 OpenMP 相关的集成问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/184 openmp/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <omp.h>
 
@@ -162,7 +164,4 @@ int main(void) {
     return 1;
 #endif
 }
-
-"""
-
 ```

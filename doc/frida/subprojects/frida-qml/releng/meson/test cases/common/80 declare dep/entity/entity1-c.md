@@ -116,7 +116,7 @@ By following these steps, considering the context, analyzing the code, and conne
 
 通过这样的调试过程，用户可以定位到这个简单的测试用例，并理解其背后的目的：验证 Frida 构建系统的依赖管理和模块隔离。虽然代码本身很简单，但它在保证 Frida 构建的正确性方面扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/80 declare dep/entity/entity1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"entity.h"
 
 #ifdef USING_ENT
@@ -135,7 +137,4 @@ Prompt:
 int entity_func1(void) {
     return 5;
 }
-
-"""
-
 ```

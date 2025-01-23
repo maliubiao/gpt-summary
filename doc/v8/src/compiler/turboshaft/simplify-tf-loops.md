@@ -138,11 +138,13 @@ NewSumPhi = Phi(initial_sum, original_sum_phi, NewLoop); // 新的 Phi 依赖于
 
 总而言之，`simplify-tf-loops.cc` 是 V8 编译器中一个重要的代码优化步骤，它通过重构循环结构来提高 JavaScript 代码的执行效率，尽管这种效果对普通的 JavaScript 开发者来说是不可见的，但它对 V8 的整体性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/simplify-tf-loops.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ Reduction SimplifyTFLoops::Reduce(Node* node) {
 }
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

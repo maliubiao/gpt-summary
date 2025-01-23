@@ -112,7 +112,7 @@ Frida 是一个动态插桩工具，常用于逆向工程。这个测试用例�
 
 总而言之，这个 `prog.cc` 文件是一个简单的编译时测试，用于确保 Frida 的构建环境配置正确。它的存在是为了在早期阶段捕获由于全局参数配置错误导致的问题，从而保证最终构建出的 Frida 工具能够正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/20 global arg/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef MYTHING
 #error "Wrong global argument set"
 #endif
@@ -137,7 +139,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

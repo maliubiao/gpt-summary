@@ -92,11 +92,13 @@ console.log(globalThis.isAtomicsCondition(condition)); // 输出 true
 
 `v8/src/builtins/builtins-struct.cc` 实现了 V8 中与共享结构体和原子操作相关的核心功能，使得 JavaScript 能够创建、操作和检查这些特殊类型的对象，从而支持更高效的多线程编程和数据共享。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-struct.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ BUILTIN(AtomicsConditionIsCondition) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

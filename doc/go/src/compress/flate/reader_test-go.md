@@ -152,7 +152,7 @@ func main() {
 
 虽然这个简单的例子可能不会立即导致明显的问题，但在更复杂的应用中，不关闭 `Reader` 可能会累积资源，最终导致程序性能下降或崩溃。 因此，养成在使用完 `io.ReadCloser` 后立即关闭它的习惯是很重要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/compress/flate/reader_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -260,9 +262,4 @@ func doBench(b *testing.B, f func(b *testing.B, buf []byte, level, n int)) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

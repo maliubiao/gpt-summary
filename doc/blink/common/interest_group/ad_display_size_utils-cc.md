@@ -227,14 +227,16 @@ This detailed thought process allows for a comprehensive understanding of the co
 
 总而言之，`ad_display_size_utils.cc` 文件提供了一组核心工具，用于在 Chromium 的 Blink 引擎中可靠地处理和验证广告展示尺寸，确保与 JavaScript 中定义的广告尺寸信息能够正确地传递和应用，最终影响广告在网页上的渲染效果。 它在 Privacy Sandbox 的 Interest Group API 中扮演着重要的角色，负责解析和验证来自 JavaScript 的尺寸信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/ad_display_size_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ bool IsValidAdSize(const blink::AdSize& size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

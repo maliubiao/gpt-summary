@@ -175,7 +175,7 @@ func main() {
 
 总的来说，这段代码详细测试了 `bufio` 包中 `Writer` 和 `Reader` 的各项功能，特别是关注了缓冲机制、错误处理以及与其他 I/O 接口的交互，确保了 `bufio` 包的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/bufio/bufio_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 "x", 1000))
 	if w0 != 0 {
 		t.Fatalf("write 1000 'x's: got %d writes, want 0", w0)
@@ -951,10 +953,4 @@ func BenchmarkWriterFlush(b *testing.B) {
 		bw.Flush()
 	}
 }
-
-"""
-
-
-
-
 ```

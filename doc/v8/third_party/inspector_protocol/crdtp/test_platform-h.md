@@ -130,15 +130,17 @@ When dealing with character encoding conversions, several common errors can occu
 
 In summary, `v8/third_party/inspector_protocol/crdtp/test_platform.h` provides essential utility functions for character encoding conversion within the V8 CRDP testing framework. These functions are crucial for ensuring correct communication between V8's internal UTF-16 representation of strings and the UTF-8 often used in the DevTools Protocol. Understanding character encoding and handling conversions correctly is vital to avoid common programming errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/test_platform.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/test_platform.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 The V8 Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ std::vector<uint16_t> UTF8ToUTF16(span<uint8_t> in);
 }  // namespace v8_crdtp
 
 #endif  // V8_INSPECTOR_PROTOCOL_CRDTP_TEST_PLATFORM_H_
-
-"""
-
 ```

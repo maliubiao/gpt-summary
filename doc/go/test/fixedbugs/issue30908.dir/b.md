@@ -230,15 +230,17 @@ go run main.go -file mydata.json
 
 总之，这段代码的核心功能是读取文件并反序列化内容，而其存在的意义很可能在于测试 Go 编译器在处理函数内联和变量分配方面的特定场景。使用者需要注意错误处理和输入数据格式的匹配。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue30908.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -274,9 +276,4 @@ func CallReadValues(filename string) (map[string]interface{}, error) {
 	}
 	return ReadValues(data)
 }
-
-"""
-
-
-
 ```

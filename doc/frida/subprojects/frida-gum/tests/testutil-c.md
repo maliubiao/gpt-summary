@@ -179,7 +179,7 @@ By following this structured approach, combining high-level understanding with d
 
 因此，`testutil.c` 作为一个测试辅助工具，在 Frida 的开发过程中扮演着至关重要的角色，帮助开发者验证代码的正确性，并通过清晰的差异报告提供调试线索。当测试失败时，开发者会直接接触到 `testutil.c` 生成的输出，从而了解到期望结果和实际结果之间的差异，进而分析问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/testutil.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -1076,7 +1078,4 @@ append_indent (GString * str,
   for (i = 0; i < indent_level; i++)
     g_string_append (str, "  ");
 }
-
-"""
-
 ```

@@ -185,15 +185,17 @@ Let's break down the thought process for analyzing this C++ code snippet and gen
 
 总而言之，`image_bitmap_factories.cc` 是 Blink 引擎中实现 `createImageBitmap()` 功能的关键组件，它负责处理各种图像源，进行必要的解码和转换，最终生成可供 canvas 使用的高效 `ImageBitmap` 对象。它的工作直接影响着 Web 开发者在 JavaScript 中使用 `createImageBitmap()` API 的行为和结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/imagebitmap/image_bitmap_factories.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -638,7 +640,4 @@ void ImageBitmapFactories::ImageBitmapLoader::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

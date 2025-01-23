@@ -171,15 +171,17 @@ const sharedBuffer = new SharedArrayBuffer(32);
 
 总而言之，`v8/src/heap/array-buffer-sweeper.cc` 是 V8 引擎中一个关键的内存管理组件，它专注于清理 JavaScript 中 `ArrayBuffer` 和 `SharedArrayBuffer` 对象所占用的外部内存，确保 V8 引擎能够有效地管理内存资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/array-buffer-sweeper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/array-buffer-sweeper.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -749,7 +751,4 @@ uint64_t ArrayBufferSweeper::GetTraceIdForFlowEvent(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

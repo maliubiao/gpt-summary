@@ -116,15 +116,17 @@ By following this structured thought process, combining code examination with lo
 
 `ng_flat_tree_shorthands.cc` 文件提供了一组底层的、用于操作 Blink 引擎内部扁平树的便捷函数，主要服务于文本编辑相关的操作。它通过简化扁平树和 DOM 树之间的转换，提高了引擎内部处理文本编辑的效率。虽然普通开发者不会直接接触这些代码，但理解它们的功能有助于理解 Blink 引擎如何处理用户在网页上的文本编辑操作。 这些函数的功能与 HTML 结构、CSS 样式以及 JavaScript 的 DOM 操作都息息相关，共同构成了用户在浏览器中编辑文本的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ng_flat_tree_shorthands.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ bool InSameNGLineBox(const PositionInFlatTreeWithAffinity& position1,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -180,14 +180,16 @@ By following these steps, you can systematically analyze and understand the func
 
 总而言之，`blink/renderer/core/layout/svg/layout_svg_resource_pattern.cc` 是 Blink 渲染引擎中负责处理 SVG `<pattern>` 元素的核心组件，它连接了 HTML、CSS 和 JavaScript 对 SVG pattern 的定义和使用，并确保 pattern 能够正确地被渲染到页面上。 理解这个文件的功能有助于深入了解浏览器如何处理 SVG 图形。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_resource_pattern.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) Research In Motion Limited 2010. All rights reserved.
@@ -428,7 +430,4 @@ PaintRecord LayoutSVGResourcePattern::AsPaintRecord(
 }
 
 }  // namespace blink
-
-"""
-
 ```

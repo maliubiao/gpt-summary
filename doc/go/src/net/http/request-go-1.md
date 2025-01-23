@@ -72,7 +72,7 @@ Since this is the second part of the question, I need to summarize the functiona
 
 这部分代码主要负责 **解析和处理 HTTP 请求的各个方面**，包括请求头、请求行、请求体以及相关的认证信息和表单数据。它提供了用于服务器端接收和处理请求，以及客户端构造请求的基础功能。  核心目标是将原始的字节流转换为结构化的 `Request` 对象，方便后续的处理和逻辑实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/request.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -81,9 +81,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-	auth := r.Header.Get("Authorization")
+### 源代码
+```go
+auth := r.Header.Get("Authorization")
 	if auth == "" {
 		return "", "", false
 	}
@@ -692,10 +694,4 @@ func (r *Request) requiresHTTP1() bool {
 	return hasToken(r.Header.Get("Connection"), "upgrade") &&
 		ascii.EqualFold(r.Header.Get("Upgrade"), "websocket")
 }
-
-"""
-
-
-
-
 ```

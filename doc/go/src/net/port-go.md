@@ -185,7 +185,7 @@ func main() {
 
 总而言之，`go/src/net/port.go` 中的 `parsePort` 函数是一个用于解析端口号字符串的底层工具，它处理了多种输入情况，包括数字、正负号、空字符串以及非数字字符串，并提供了溢出保护。使用者需要注意 `needsLookup` 的返回值以及溢出处理的机制，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/port.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -257,9 +259,4 @@ func parsePort(service string) (port int, needsLookup bool) {
 	}
 	return port, false
 }
-
-"""
-
-
-
 ```

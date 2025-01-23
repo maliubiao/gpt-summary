@@ -72,7 +72,7 @@ Based on the test names and the operations being performed, the snippet focuses 
 
 总而言之，这段代码片段是 `QuicSelfIssuedConnectionIdManager` 类的单元测试的一部分，其核心功能是测试连接ID管理器在处理自身发出的连接ID的退休逻辑时的正确性和健壮性，包括定时退休、批量退休、错误处理以及与外部组件的交互。 它确保了 QUIC 连接在连接ID管理方面符合协议规范并能应对各种异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_id_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ybeReserveConnectionId(_))
       .Times(3)
       .WillRepeatedly(Return(true));
@@ -333,8 +335,4 @@ TEST_F(QuicSelfIssuedConnectionIdManagerTest,
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
-
 ```

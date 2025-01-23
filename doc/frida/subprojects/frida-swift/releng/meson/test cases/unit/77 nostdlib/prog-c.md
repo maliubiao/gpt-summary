@@ -114,7 +114,7 @@ By following this structured approach, combining direct analysis with contextual
 
 总而言之，这个简单的 `prog.c` 文件展示了一个在没有标准C库支持下进行基本输出的程序，这在逆向分析、嵌入式开发或某些特定的系统编程场景中是可能遇到的。理解这种代码需要对底层原理和系统调用有一定的了解。 作为调试线索，这个文件可能是 Frida 工具自身测试用例的一部分，用于验证 Frida 在处理不依赖标准库的代码时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/77 nostdlib/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,16 +122,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
   const char *message = "Hello without stdlib.\n";
   return simple_print(message, simple_strlen(message));
 }
-
-"""
-
 ```

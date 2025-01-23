@@ -150,7 +150,7 @@ By following these steps, we can understand the script's role within the larger 
 
 总而言之，`frida/subprojects/frida-clr/releng/env_apple.py` 是 Frida 构建系统中一个关键的配置文件，它负责为 Apple 平台设置正确的编译环境，这对于成功构建 Frida 的 CLR 组件至关重要。理解这个文件的功能和原理，对于进行 Frida 的开发、调试以及逆向分析基于 Frida 的工具都有很大的帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/env_apple.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 import shlex
@@ -336,7 +338,4 @@ APPLE_BINARIES = [
     ("codesign",          "codesign"),
     ("lipo",              "lipo"),
 ]
-
-"""
-
 ```

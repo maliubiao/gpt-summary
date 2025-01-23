@@ -147,7 +147,7 @@ By following these steps and continually considering the context of Frida and re
 
 总而言之，这个简单的 C 代码文件虽然功能单一，但在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在特定场景下的 hook 和代码注入能力。它涉及到动态链接、符号可见性等底层概念，并且是逆向工程师使用 Frida 进行动态分析的常见目标类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -171,7 +173,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

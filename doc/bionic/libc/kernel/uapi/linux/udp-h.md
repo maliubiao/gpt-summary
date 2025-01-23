@@ -298,7 +298,7 @@ if (Process.platform === 'android') {
 
 这个 `udp.h` 文件虽然小，但它是 Android 系统中网络通信的重要基础，定义了用户空间程序与内核 UDP 协议栈交互的接口。理解它的内容对于理解 Android 的底层网络机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/udp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -309,8 +309,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -340,7 +342,4 @@ struct __kernel_udphdr {
 #define UDP_ENCAP_RXRPC 6
 #define TCP_ENCAP_ESPINTCP 7
 #endif
-
-"""
-
 ```

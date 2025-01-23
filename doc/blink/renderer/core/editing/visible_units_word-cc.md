@@ -166,15 +166,17 @@ By following these steps, you can systematically analyze a complex C++ file like
 
 总而言之，`visible_units_word.cc` 是 Blink 引擎中处理文本编辑时以词为单位操作的关键组件，它连接了用户操作、JavaScript API 和底层的文本处理逻辑，确保了在网页上进行文本编辑时的行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/visible_units_word.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Apple Inc. All rights
  * reserved.
@@ -556,7 +558,4 @@ bool IsWordBreak(UChar ch) {
          U16_IS_SURROGATE(ch) || IsLineBreak(ch) || ch == kLowLineCharacter;
 }
 }  // namespace blink
-
-"""
-
 ```

@@ -32,7 +32,7 @@ To provide a concise summary, I will focus on the main categories of optimizatio
 
 总而言之，这段代码的目标是**降低RISCV64架构上执行Go代码的指令数量，提高代码执行效率。** 它属于编译器后端优化的一个重要环节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteRISCV64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -41,8 +41,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 x)
 		return true
 	}
@@ -1543,9 +1545,4 @@ func rewriteValueRISCV64_OpRsh16x8(v *Value) bool {
 		v.Type = t
 		v0 := b.NewValue0(v.Pos, OpSignExt16to64, typ.Int64)
 		v0.AddA
-"""
-
-
-
-
 ```

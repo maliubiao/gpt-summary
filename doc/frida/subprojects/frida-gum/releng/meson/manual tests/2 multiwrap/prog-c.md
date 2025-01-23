@@ -131,7 +131,7 @@ Initially, I might have focused too heavily on the `libpng` specifics. Realizing
 
 通过以上步骤，用户可以运行并调试这个程序，逐步到达代码的执行点，并根据输出或调试信息来判断程序的功能和可能存在的问题。尤其是在使用 Frida 时，可以更深入地观察程序的动态行为，这对于逆向分析非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/manual tests/2 multiwrap/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<lua.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -207,7 +209,4 @@ int main(int argc, char **argv) {
     lua_close(l);
     return 0;
 }
-
-"""
-
 ```

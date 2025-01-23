@@ -185,15 +185,17 @@ By following these steps, we can dissect the C++ code, understand its purpose, c
 
 总而言之，`ext_disjoint_timer_query_webgl2.cc` 提供了 WebGL 2 应用精确测量 GPU 执行时间的关键功能，并通过 WebGL API 暴露给 JavaScript 开发者使用。理解其内部逻辑和可能出现的错误场景对于开发高性能的 WebGL 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_disjoint_timer_query_webgl2.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ EXTDisjointTimerQueryWebGL2::EXTDisjointTimerQueryWebGL2(
 }
 
 }  // namespace blink
-
-"""
-
 ```

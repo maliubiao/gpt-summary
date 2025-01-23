@@ -302,15 +302,17 @@ func eq_MyStruct(p *MyStruct, q *MyStruct) bool {
 
 总而言之，`alg.go` 文件是 Go 编译器中一个关键的组成部分，它为反射机制提供了必要的哈希和相等性比较功能，使得 Go 语言能够在运行时对类型进行检查和操作。理解其功能有助于更深入地理解 Go 语言的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/reflectdata/alg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -978,9 +980,4 @@ func anyCall(fn *ir.Func) bool {
 func hashmem(t *types.Type) ir.Node {
 	return typecheck.LookupRuntime("memhash", t)
 }
-
-"""
-
-
-
 ```

@@ -124,11 +124,13 @@ WrapperHelper.ResetWrappableConnection(v8::Isolate.GetCurrent(), jsObject);
 *   `UnifiedHeapTest` 提供了用于测试垃圾回收和堆管理的基类。
 *   `WrapperHelper` 提供了在 JavaScript 中创建、管理和访问 C++ 对象包装器的工具，是实现 C++ 和 JavaScript 互操作的关键。 这使得单元测试能够验证统一堆在跨语言对象管理方面的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc-js/unified-heap-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ void* WrapperHelper::ReadWrappablePointer(v8::Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

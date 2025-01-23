@@ -189,7 +189,7 @@ A user would typically interact with this code indirectly through the Meson buil
 
 **As a debugging clue, if a user is experiencing issues related to Python extensions, dependencies, or installation paths in their Frida build, examining the behavior of the functions within this `python.py` file would be a crucial step in understanding the problem.**  For instance, placing print statements within these functions can help trace the execution flow and the values of important variables.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/modules/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -755,7 +757,4 @@ def initialize(interpreter: 'Interpreter') -> PythonModule:
     mod = PythonModule(interpreter)
     mod.interpreter.append_holder_map(PythonExternalProgram, PythonInstallation)
     return mod
-
-"""
-
 ```

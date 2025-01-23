@@ -151,7 +151,7 @@ table.grow(2); // 抛出 TypeError: Argument 1 must be specified for non-nullabl
 
 这部分代码主要负责实现 WebAssembly JavaScript API 中各种 WebAssembly 对象（如 Function, Instance, Table, Memory, Global, Tag, Exception）的**属性访问器 (getters) 和方法**。它将 JavaScript 的调用转发到 V8 内部的 WebAssembly 实现，并处理类型转换、错误检查等操作，使得 JavaScript 可以方便地与 WebAssembly 代码进行交互。  这部分是 WebAssembly 与 JavaScript 桥梁的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-js.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-js.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 PromiseField::decode(data->js_promise_flags());
     if (promise_flags == i::wasm::kPromise) {
       // The wrapper function returns a promise as an externref instead of the
@@ -993,7 +995,4 @@ void WasmJs::PrepareForSnapshot(Isolate* isolate) {
         isolate, webassembly, "Table", wasm::WebAssemblyTable);
     Handle<JSObject> table_proto =
         SetupConstructor(isolate, table_construct
-"""
-
-
 ```

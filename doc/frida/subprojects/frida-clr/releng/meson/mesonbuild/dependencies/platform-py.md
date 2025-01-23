@@ -174,7 +174,7 @@ frida_core_deps += dependency('appleframeworks', modules : ['UIKit'])
 
 总而言之，`platform.py` 中的 `AppleFrameworks` 类是 Frida 构建过程中处理 Apple 平台特定依赖的关键组件，它负责查找和配置 Apple Frameworks，以便 Frida 能够在 macOS 和 iOS 等平台上正常构建和运行，并进行动态 Instrumentation。理解其功能有助于理解 Frida 的构建过程以及排查与 Apple Frameworks 相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/dependencies/platform.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2017 The Meson development team
 
@@ -236,7 +238,4 @@ class AppleFrameworks(ExternalDependency):
         return 'framework'
 
 packages['appleframeworks'] = AppleFrameworks
-
-"""
-
 ```

@@ -210,15 +210,17 @@ GetConstexprName(type2); // 输出: "constexpr string"
 
 `v8/src/torque/constants.h` 是 V8 中 Torque 编译器的基石，它定义了 Torque 语言中使用的各种类型名称、注解和其他重要字符串常量。理解这个文件有助于深入了解 V8 内部的类型系统和 Torque 编译过程，虽然普通 JavaScript 开发者不会直接接触它，但其定义的概念与 JavaScript 的运行息息相关。 对于 V8 或 Torque 开发者来说，正确使用这些常量至关重要，任何拼写错误或概念混淆都可能导致编译错误或生成不正确的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/constants.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/constants.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ enum class FieldSynchronization {
 }  // namespace v8
 
 #endif  // V8_TORQUE_CONSTANTS_H_
-
-"""
-
 ```

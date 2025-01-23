@@ -233,7 +233,7 @@ go run main.go -source source.txt -dest destination.txt -roff 5 -woff 0 -length 
 
 请注意，由于 `internal/syscall/unix` 是 Go 的内部包，不建议在常规应用程序中直接使用。这个包的 API 可能会在未来的 Go 版本中发生变化，而不会有兼容性保证。如果你需要在 Go 中进行高效的文件复制，可以考虑使用 `io.Copy` 或 `io.CopyBuffer` 等更高级别的抽象，或者研究是否有标准库中更合适的工具。 只有在对性能有极致要求，并且了解底层操作系统机制的情况下，才应该考虑使用这类内部包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/copy_file_range_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -241,8 +241,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -271,9 +273,4 @@ func CopyFileRange(rfd int, roff *int64, wfd int, woff *int64, len int, flags in
 	}
 	return
 }
-
-"""
-
-
-
 ```

@@ -118,13 +118,15 @@ console.log(obj.y);
 
 这部分C++代码通过大量的单元测试，确保了V8引擎的属性拦截器功能的稳定性和正确性。 这些拦截器是JavaScript元编程的重要组成部分，允许开发者更精细地控制对象属性的行为，对于实现一些高级特性（如代理对象）至关重要。 开发者可以通过V8的C++ API注册和配置这些拦截器，从而影响JavaScript代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-   "let p = {};"
+### 源代码
+```
+"let p = {};"
                      "Object.defineProperty(p, 'x', "
                      "                      {value: 153, writable: false});"
                      "o.__proto__ = p;"
@@ -1864,7 +1866,4 @@ void UnboxedDoubleIndexedPropertyEnumerator(
 // Make sure that the the interceptor code in the runtime properly handles
 // merging property name lists for double-array-backed arrays.
 THREADED_TEST(IndexedInterceptorUnboxed
-"""
-
-
 ```

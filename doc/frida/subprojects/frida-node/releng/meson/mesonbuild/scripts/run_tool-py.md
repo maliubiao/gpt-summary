@@ -256,7 +256,7 @@ Processing: src/include/header.h
 
 总而言之，`run_tool.py` 是一个用于在 Meson 构建过程中方便地批量运行各种工具的脚本，它通过灵活的 include/ignore 模式和并行执行能力，提高了构建效率。虽然它本身不是逆向工具，但它可以被用来运行各种与逆向相关的静态分析或其他辅助工具。理解其工作原理对于调试 Frida 项目的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/scripts/run_tool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -264,8 +264,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -324,7 +326,4 @@ def run_tool(name: str, srcdir: Path, builddir: Path, fn: T.Callable[..., subpro
         if futures:
             returncode = max(x.result().returncode for x in futures)
     return returncode
-
-"""
-
 ```

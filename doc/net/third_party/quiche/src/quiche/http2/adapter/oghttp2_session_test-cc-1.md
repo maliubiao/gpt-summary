@@ -116,7 +116,7 @@ By following this structured approach and constantly refining the analysis, we a
 
 总而言之，`oghttp2_session_test.cc` 的第二部分专注于测试 `OgHttp2Session` 作为 HTTP/2 服务端时，如何正确地构建和发送 HTTP 响应，包括处理尾部帧以及在处理流结束时遇到错误的情况。这些测试用例验证了服务端在各种场景下的行为是否符合 HTTP/2 协议的预期，确保了网络通信的可靠性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 visitor, OnBeforeFrameSent(SETTINGS, 0, _, 0x1));
   EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0, _, 0x1, 0));
 
@@ -417,8 +419,4 @@ TEST(OgHttp2SessionTest, ServerSeesErrorOnEndStream) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
-
 ```

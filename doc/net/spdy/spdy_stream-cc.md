@@ -199,15 +199,17 @@ By following these steps, I can effectively analyze the given source code and pr
 
 总而言之，`net/spdy/spdy_stream.cc` 是 Chromium 网络栈中处理 HTTP/2 流的核心组件，它负责管理流的生命周期、数据传输、流控等关键功能，并与上层组件和 `SpdySession` 紧密配合，最终支持浏览器与服务器之间的 HTTP/2 通信。 理解 `SpdyStream` 的工作原理对于调试 HTTP/2 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1052,7 +1054,4 @@ std::string SpdyStream::DescribeState(State state) {
 #undef STATE_CASE
 
 }  // namespace net
-
-"""
-
 ```

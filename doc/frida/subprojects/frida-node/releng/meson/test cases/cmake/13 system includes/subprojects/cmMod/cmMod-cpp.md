@@ -122,7 +122,7 @@ int bar(const string& s) {
 
 `cmMod.cpp` 作为一个 Frida 构建系统的测试用例，其自身功能简单，主要用于验证 Frida 在 Node.js 环境下使用 CMake 构建时，能够正确处理包含来自子项目的代码和系统头文件的情况。虽然代码本身不直接涉及复杂的逆向工程技术，但它存在于 Frida 的代码库中，服务于 Frida 的核心功能——动态插桩，这与逆向分析息息相关。通过分析这个文件，我们可以了解 Frida 构建系统的一部分，并间接地了解 Frida 如何支持在各种平台和环境下进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/13 system includes/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "triggerWarn.hpp"
 
@@ -144,7 +146,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

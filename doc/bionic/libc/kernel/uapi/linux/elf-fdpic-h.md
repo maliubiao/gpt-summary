@@ -225,7 +225,7 @@ By following this structured thought process, I can address all aspects of the r
 
 总而言之，`elf-fdpic.h` 定义了 Android 系统中用于处理 FDPIC 格式共享库的关键数据结构，这些结构主要被动态链接器使用，以确定如何加载和链接这些特殊的共享库。虽然开发者通常不直接操作这些结构，但理解它们有助于深入了解 Android 系统底层的库加载机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/elf-fdpic.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -236,8 +236,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -271,7 +273,4 @@ struct elf64_fdpic_loadmap {
 };
 #define ELF64_FDPIC_LOADMAP_VERSION 0x0000
 #endif
-
-"""
-
 ```

@@ -128,7 +128,7 @@ fetch('https://www.example.com/data')
 
 这部分代码主要集中在 **`HttpStreamFactory` 的预连接 (preconnect) 功能的单元测试**。它通过模拟不同的网络配置 (直接连接、HTTP 代理、SOCKS 代理) 和使用 Mock 对象，验证了 `HttpStreamFactory` 在预先建立连接时的行为和逻辑，例如是否按照预期请求了指定数量的 sockets，以及是否正确地处理了已存在 SPDY 会话的情况。同时，它也测试了预连接到不安全端口会被取消的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1009,8 +1011,4 @@ TEST_P(HttpStreamFactoryTest, PreconnectInvalidUrls) {
 
   auto DoPreconnect = [&] {
     PreconnectHelperForURL(1, GURL(), NetworkAnonymizationKey(),
-                 
-"""
-
-
 ```

@@ -147,14 +147,16 @@ Initially, I might have focused too heavily on the technical details of each pre
 
 总而言之，`predictor_factory.cc` 负责根据配置创建合适的输入预测器，以提升网页滚动的流畅性。它通过 Chromium 的 feature flags 来灵活地选择和配置不同的预测算法，这些算法间接地影响着用户与网页的交互体验，尤其是在 JavaScript 驱动的动画和 CSS 定义的滚动行为方面。理解其功能有助于开发者和 Chromium 工程师更好地配置和优化浏览器的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/prediction/predictor_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ unsigned int PredictorFactory::GetKalmanPredictorOptions() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

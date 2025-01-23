@@ -120,11 +120,13 @@ console.log("分段类型:", wordBreakIterator.breakType()); // 可能输出 "le
 
 总而言之，`v8/src/objects/js-break-iterator.cc` 文件是 V8 引擎中 `Intl.v8BreakIterator` 对象的核心实现，它通过与 ICU 库的交互，为 JavaScript 提供了强大的国际化文本分段功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-break-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ const std::set<std::string>& JSV8BreakIterator::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

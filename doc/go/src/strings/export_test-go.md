@@ -206,7 +206,7 @@ By following this structured approach of analyzing the code, considering the fil
 
 总而言之，`go/src/strings/export_test.go` 文件是 Go 语言 `strings` 标准库为了进行更深入、更全面的内部测试而设立的特殊测试文件。它暴露了一些内部的实现细节，使得开发者可以验证内部算法和数据结构的正确性。但是，这种测试方式也需要谨慎使用，避免过度依赖内部实现，并确保对内部机制有充分的理解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -263,9 +265,4 @@ func DumpTables(pattern string) ([]int, []int) {
 	finder := makeStringFinder(pattern)
 	return finder.badCharSkip[:], finder.goodSuffixSkip
 }
-
-"""
-
-
-
 ```

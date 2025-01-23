@@ -111,7 +111,7 @@ Here's a breakdown of the thinking process used to analyze the Python script and
 
 总而言之，`envcheck.py` 是一个简单的环境检查脚本，用于确保 Frida 工具链的测试环境满足特定的前提条件。它在开发和持续集成过程中扮演着重要的角色，帮助开发者尽早发现环境配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/48 testsetup default/envcheck.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -132,7 +134,4 @@ assert 'ENV_C' in os.environ
 print('ENV_A is', os.environ['ENV_A'])
 print('ENV_B is', os.environ['ENV_B'])
 print('ENV_C is', os.environ['ENV_C'])
-
-"""
-
 ```

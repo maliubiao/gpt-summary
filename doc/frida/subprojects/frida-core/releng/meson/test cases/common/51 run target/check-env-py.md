@@ -150,7 +150,7 @@ AssertionError
 
 `check-env.py` 是 Frida 测试套件中一个重要的辅助脚本，它通过验证环境变量和命令行参数提供路径信息的一致性，来确保 Frida 的构建和测试环境的正确性。这对于保证 Frida 作为一个动态插桩工具的可靠性至关重要，并间接地影响到使用 Frida 进行逆向工程的效率和准确性。用户通常不会直接运行这个脚本，而是通过 Meson 构建和测试流程间接地执行它。当测试失败时，这个脚本的输出可以作为重要的调试线索，帮助开发者定位环境配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/51 run target/check-env.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys
@@ -188,7 +190,4 @@ print(f'{build_root} == {env_build_root}')
 assert build_root == env_build_root
 print(f'{current_source_dir} == {env_current_source_dir}')
 assert current_source_dir == env_current_source_dir
-
-"""
-
 ```

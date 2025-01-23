@@ -316,7 +316,7 @@ Frida 的控制台会输出 `fd_hook` 被调用时的信息，包括文件描述
 
 `bionic/libfdtrack/fdtrack.cpp` 是 Android Bionic 库中一个用于跟踪文件描述符创建和关闭的组件，它通过 hook 机制记录调用栈信息，帮助开发者诊断文件描述符泄漏问题。它与 Android 的底层机制紧密结合，并在动态链接器的管理下运行。通过理解其功能和实现，开发者可以更好地调试和优化 Android 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libfdtrack/fdtrack.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -327,8 +327,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -645,7 +647,4 @@ void fdtrack_dump() {
 void fdtrack_dump_fatal() {
   fdtrack_dump_impl(true);
 }
-
-"""
-
 ```

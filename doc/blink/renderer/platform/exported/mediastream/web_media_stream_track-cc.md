@@ -174,14 +174,16 @@ This systematic approach helps ensure I cover all the requirements of the prompt
 
 总而言之，`web_media_stream_track.cc` 文件是 Chromium Blink 引擎中实现 WebRTC 媒体流轨道功能的核心部分，它连接了底层的媒体处理和上层的 JavaScript API，使得 Web 开发者能够方便地访问和控制音视频流。理解这个文件的作用有助于深入理解 WebRTC 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/mediastream/web_media_stream_track.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -252,7 +254,4 @@ void WebMediaStreamTrack::Assign(const WebMediaStreamTrack& other) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

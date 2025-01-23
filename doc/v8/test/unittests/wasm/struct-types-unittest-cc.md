@@ -224,15 +224,17 @@ uint8_t correct_second_i8_value = *(instance_memory + correct_offset_second_i8);
 
 这种错误的偏移量假设通常发生在手动进行内存布局计算，而没有依赖于编译器或虚拟机提供的类型信息时。 单元测试如 `Packing` 可以帮助验证 V8 计算的偏移量是否正确，从而避免这类编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/struct-types-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/struct-types-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ TEST_F(StructTypesTest, CopyingOffsets) {
 
 }  // namespace struct_types_unittest
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

@@ -69,12 +69,14 @@ I should summarize these points and if possible, connect them to Javascript conc
 
 总而言之，这段 C++ 代码是 V8 引擎在 MIPS64 架构上生成高效机器码的关键组成部分，它处理了跳转、地址管理以及潜在的 SIMD 优化，这些都间接地支撑着 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 o unbound label at this point is zero, so we can
     // move next buffer check to maximum.
     next_buffer_check_ =
@@ -181,8 +183,4 @@ LoadStoreLaneParams::LoadStoreLaneParams(MachineRepresentation rep,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

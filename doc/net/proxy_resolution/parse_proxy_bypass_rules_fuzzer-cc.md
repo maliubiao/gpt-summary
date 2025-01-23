@@ -149,15 +149,17 @@ xhr.send();
 
 总之，`parse_proxy_bypass_rules_fuzzer.cc` 是 Chromium 用来提高网络栈代码质量和安全性的重要工具，它通过自动化地测试代理绕过规则解析器的各种边界情况和异常输入，帮助开发者发现潜在的 bug 和漏洞。 虽然用户不会直接运行这个文件，但其测试结果最终会影响到用户在使用浏览器时的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/parse_proxy_bypass_rules_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

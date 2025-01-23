@@ -125,7 +125,7 @@ function add(a, b) {
 
 这段 `v8/src/compiler/simplified-lowering.cc` 代码片段是 V8 编译器中负责将高级的、简化的操作降低到更底层的机器操作的关键部分。它处理了各种节点类型，并根据类型信息和使用情况进行优化，最终生成高效的机器代码来执行 JavaScript 程序。它不是 Torque 代码 (因为它不是以 `.tq` 结尾)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ctControlUses(node, effect, control);
     ChangeOp(node, dead_value);
   }
@@ -971,8 +973,4 @@ ctControlUses(node, effect, control);
   template <Phase T>
   void VisitSpeculativeNumberModulus(Node* node, Truncation truncation,
                                      SimplifiedLowering* lowering) {
-
-"""
-
-
 ```

@@ -184,15 +184,17 @@ console.log(bytes); // 输出 [176]  (0b10110000 的十进制表示)
 
 总而言之，`bit_writer.cc` 中的 `BitWriter` 类是 Chromium 网络栈中一个底层的、用于处理位级数据的工具，它在 Huffman 编码等场景中发挥着关键作用。当网络请求涉及到 Huffman 编码，并且出现与编码或解码相关的错误时，开发人员可能会通过调试进入这个文件来排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/huffman_trie/bit_writer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ void BitWriter::Flush() {
 }
 
 }  // namespace net::huffman_trie
-
-"""
-
 ```

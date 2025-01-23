@@ -101,16 +101,18 @@ Essentially, my process was a combination of code analysis, knowledge of web tec
 
 总而言之，`LocalFrame` 是 Blink 渲染引擎中一个非常核心的类，它承载着网页内容的显示和交互，并负责与浏览器内核的各个部分进行协调。 这最后一部分代码专注于处理与存储访问相关的权限控制和通知机制，确保用户隐私和安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                                         std::move(wrapped_callback));
+### 源代码
+```cpp
+std::move(wrapped_callback));
   } else {
     std::move(wrapped_callback).Run(true);
   }
@@ -137,8 +139,4 @@ void LocalFrame::OnStorageAccessCallback(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

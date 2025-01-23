@@ -196,12 +196,14 @@ console.log(arr); // 输出 [ 1, 2 ]
 
 总而言之，`v8/src/objects/objects.cc` 的这部分代码是 V8 引擎中实现 JavaScript 对象核心特性的关键组成部分，它直接影响着 JavaScript 代码的执行和行为。理解这些内部机制有助于更深入地理解 JavaScript 的运行原理和 V8 的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 te)) {
         constructor = isolate->factory()->undefined_value();
       }
@@ -1850,7 +1852,4 @@ Maybe<bool> JSProxy::SetPrivateSymbol(Isolate* isolate, Handle<JSProxy> proxy,
                                       PropertyDescriptor* desc,
                                       Maybe<ShouldThrow> should_throw) {
   // Despite the g
-"""
-
-
 ```

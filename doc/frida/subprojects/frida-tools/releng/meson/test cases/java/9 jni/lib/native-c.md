@@ -171,7 +171,7 @@ By following these steps, the debugger or developer would eventually arrive at t
 
 总而言之，这段简单的 `native.c` 代码虽然功能不多，但它代表了 JNI native 库的基础结构和生命周期，是理解 Java 和 native 代码交互的关键入口点，也是动态分析和逆向工程的重要目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/java/9 jni/lib/native.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <jni.h>
 
 JNIEXPORT jint JNICALL
@@ -192,7 +194,4 @@ JNI_OnLoad(JavaVM *vm, void *reserved)
 JNIEXPORT void JNICALL
 JNI_OnUnload(JavaVM *vm, void *reserved)
 {}
-
-"""
-
 ```

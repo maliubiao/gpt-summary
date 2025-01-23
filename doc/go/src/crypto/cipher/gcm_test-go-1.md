@@ -204,7 +204,7 @@ func TestGCMForSSH(t *testing.T) {
 
 总而言之，这部分 `gcm_test.go` 代码深入测试了 Go 语言 GCM 实现的各种边界情况和特定场景，确保其在不同环境和使用方式下都能保持安全和正确。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/cipher/gcm_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -213,9 +213,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```go
+{
 	testAllImplementations(t, testGCMCounterWrap)
 }
 
@@ -540,10 +542,4 @@ func decodeHex(t *testing.T, s string) []byte {
 	}
 	return b
 }
-
-"""
-
-
-
-
 ```

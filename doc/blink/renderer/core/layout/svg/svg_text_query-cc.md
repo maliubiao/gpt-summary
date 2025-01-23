@@ -138,14 +138,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`blink/renderer/core/layout/svg/svg_text_query.cc` 文件是 Blink 引擎中处理 SVG 文本布局查询的关键部分，它连接了底层的布局计算和上层的 JavaScript API，使得开发者能够获取 SVG 文本的各种渲染信息。理解其功能有助于更好地理解和使用 SVG 文本相关的 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_text_query.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -489,7 +491,4 @@ int SvgTextQuery::CharacterNumberAtPosition(const gfx::PointF& position) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -139,7 +139,7 @@ By following this systematic approach, we can thoroughly analyze the provided co
 
 总而言之，这部分测试用例的核心功能是验证 `ProxyConfigServiceLinux` 组件在处理基于 Linux 环境变量的代理配置时的正确性，确保 Chromium 能够按照用户的系统设置来处理网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_config_service_linux_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -147,9 +147,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-          // KDE_SESSION_VERSION
+### 源代码
+```cpp
+// KDE_SESSION_VERSION
               nullptr,                    // XDG_CURRENT_DESKTOP
               nullptr,                    // auto_proxy
               "www.google.com:99",        // all_proxy
@@ -991,7 +993,4 @@ TEST_F(ProxyConfigServiceLinuxTest, KDEHomePicker) {
     env->values.HOME = user_home_.value().c_str();
     SyncConfigGetter sync_config_getter(
         std::make_unique<ProxyConfigSe
-"""
-
-
 ```

@@ -148,7 +148,7 @@ recursiveFunction();
 
 `v8/src/execution/arm64/simulator-arm64.h` 头文件是 V8 JavaScript 引擎在非 ARM64 环境下模拟执行 ARM64 代码的核心组件。它定义了 `Simulator` 类，该类负责模拟 ARM64 架构的 CPU 寄存器、内存、指令执行流程以及相关的硬件特性（如浮点运算和同步原语）。这使得 V8 能够在不支持 ARM64 指令集的平台上运行和测试为 ARM64 架构编译的 JavaScript 代码，对于跨平台开发、调试和测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -156,9 +156,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- code to modify FPCR for external
+### 源代码
+```c
+code to modify FPCR for external
   // functions, or to save and restore it when entering and leaving generated
   // code.
   void AssertSupportedFPCR() {
@@ -408,8 +410,4 @@ inline float16 Simulator::FPDefaultNaN<float16>() {
 
 #endif  // defined(USE_SIMULATOR)
 #endif  // V8_EXECUTION_ARM64_SIMULATOR_ARM64_H_
-
-"""
-
-
 ```

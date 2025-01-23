@@ -77,7 +77,7 @@ let sum = a + b;
 
 `v8/src/compiler/machine-operator.h` 的主要功能是为 V8 编译器提供一个 **平台无关的机器操作抽象层**。 它定义了各种数据结构来参数化和描述机器级别的操作，并提供了一个构建器接口来创建这些操作。 这个头文件是 V8 编译器将高级 JavaScript 代码转换为低级机器指令的关键组成部分。 它不属于 Torque 源代码，而是标准的 C++ 头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator.h以.tq结尾，那它是个v8 torque源代码，
@@ -85,8 +85,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -989,7 +991,4 @@ class V8_EXPORT_PRIVATE MachineOperatorBuilder final
   const Operator* I64x2BitMask();
   const Operator* I64x2Shl();
   const Operator* I64x2ShrS();
-"""
-
-
 ```

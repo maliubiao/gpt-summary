@@ -114,15 +114,17 @@ Here's a breakdown of the thinking process to generate the explanation of `spell
 
 总而言之，`spelling_marker_list_impl.cc` 是 Blink 引擎中负责管理拼写错误标记的关键组件，它在用户与网页交互时默默地工作，确保用户能够获得良好的拼写检查体验。 了解它的功能有助于开发者理解浏览器内部如何处理拼写错误，并能更好地排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/spelling_marker_list_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -136,7 +138,4 @@ DocumentMarker::MarkerType SpellingMarkerListImpl::MarkerType() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

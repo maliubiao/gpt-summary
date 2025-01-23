@@ -181,7 +181,7 @@ double log(double z) {
 
 `v8/src/base/ieee754.cc` 文件是 V8 引擎中负责实现符合 IEEE 754 标准的浮点数基本数学运算的关键组成部分。它提供了 `exp`, `expm1`, `log`, `sinh`, 和 `tanh` 等函数的高效且精确的 C++ 实现，直接支撑着 JavaScript 中 `Math` 对象的相应方法。该文件考虑了浮点数的特殊值和精度问题，为 V8 引擎的数值计算提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ieee754.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/ieee754.cc以.tq结尾，那它是个v8 torque源代码，
@@ -189,8 +189,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 p_l <= z - p_h) return s * tiny * tiny; /* underflow */
     }
   }
@@ -359,8 +361,4 @@ double libm_cos(double x) { return glibc_cos(x); }
 }  // namespace ieee754
 }  // namespace base
 }  // namespace v8
-
-"""
-
-
 ```

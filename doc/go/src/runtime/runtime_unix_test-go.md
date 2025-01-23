@@ -203,7 +203,7 @@ n, ok := runtime.GoroutineProfile(buf)
 
 **因此，使用者需要确保提供的切片足够大，或者在调用后检查返回的 `n` 值，判断是否所有的 goroutine 信息都被成功获取。**  一种更健壮的方式是先调用 `runtime.NumGoroutine()` 获取当前 goroutine 的总数，然后分配足够大的切片。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/runtime_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -211,8 +211,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -269,9 +271,4 @@ func TestGoroutineProfile(t *testing.T) {
 	atomic.StoreUint32(&stop, 1)
 	wg.Wait()
 }
-
-"""
-
-
-
 ```

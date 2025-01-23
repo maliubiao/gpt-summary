@@ -154,7 +154,7 @@ Here's a plan:
 
 作为 `blink/renderer/core/paint/compositing/compositing_test.cc` 的最后一部分，这部分文件主要集中在测试 **合成器动画、带有亚像素偏移的图片合成、滚动容器的内容层记录边界、以及一些特定的 CSS 特性（如盒子反射和滚动条）在合成过程中的行为**。 考虑到这是第 5 部分，可以推断出之前的几个部分可能已经涵盖了更基础的合成场景，例如简单的层创建、基本变换等。 这部分的内容更加具体，关注一些可能会出现 edge case 或需要特殊处理的合成场景。  总的来说，这个文件及其之前的几个部分共同构成了一个全面的合成功能测试套件，旨在确保 Blink 引擎的合成机制的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/compositing/compositing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _effect->filters.IsEmpty());
 }
 
@@ -377,8 +379,4 @@ TEST_P(CompositingSimTest, ScrollbarLayerWithDecompositedTransform) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

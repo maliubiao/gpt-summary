@@ -106,15 +106,17 @@ Now, I need to synthesize this into a concise summary, relating the actions to w
 
 总而言之，这段代码是内联布局过程中处理文本内容细节的关键部分，它确保了文本内容能够根据 CSS 规则正确地被分解和格式化，为后续的布局计算奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_items_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 psed_length--;
     }
     if (collapsed_length)
@@ -978,7 +980,4 @@ template <typename MappingBuilder>
 bool InlineItemsBuilderTemplate<MappingBuilder>::ShouldUpdateLayoutObject()
     const {
   r
-"""
-
-
 ```

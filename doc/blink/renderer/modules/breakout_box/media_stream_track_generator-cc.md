@@ -175,15 +175,17 @@ CSS 可以用来控制 `<video>` 元素的样式，例如大小、边框等，�
 
 总而言之，`media_stream_track_generator.cc` 文件是 Blink 引擎中实现自定义可写媒体流轨道的关键部分，它连接了 JavaScript 的 Media Streams API 和底层的媒体处理管道。理解它的功能有助于开发者在需要生成或处理自定义媒体流时进行调试和开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/breakout_box/media_stream_track_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ void MediaStreamTrackGenerator::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

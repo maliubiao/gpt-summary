@@ -149,7 +149,7 @@ By following these steps, systematically analyzing the code, and addressing each
 
 总而言之，这段代码是 V8 引擎中至关重要的组成部分，负责将原始的 JavaScript 代码转化为结构化的、可以被进一步处理的 tokens，为后续的语法分析和代码生成奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/scanner.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/scanner.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r::CurrentRawSymbol(
     AstValueFactory* ast_value_factory) const {
   if (is_raw_literal_one_byte()) {
@@ -217,8 +219,4 @@ void Scanner::SeekNext(size_t position) {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

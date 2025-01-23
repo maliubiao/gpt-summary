@@ -59,11 +59,13 @@ console.log(BigInt.asIntN(4, -1n)); // 输出 -1n
 
 总而言之，`bitwise.cc` 文件是 V8 引擎中处理 BigInt 位运算的核心部分，它提供了高效且正确的实现，使得 JavaScript 能够支持对任意精度整数进行位操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/bitwise.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -410,7 +412,4 @@ void AsUintN_Neg(RWDigits Z, Digits X, int n) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

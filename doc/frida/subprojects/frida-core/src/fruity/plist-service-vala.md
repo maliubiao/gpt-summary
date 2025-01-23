@@ -142,7 +142,7 @@ Plist response = new Plist.from_xml("<dict><key>response</key><string>ok</string
    - 检查 `PlistServiceError` 错误域中的错误类型，确保所有可能的错误都被正确处理。
 
 通过这些步骤，用户可以逐步调试 `PlistServiceClient` 类的实现，确保其在与 iOS 设备通信时的正确性和稳定性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/plist-service.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class PlistServiceClient : Object {
@@ -346,7 +348,4 @@ namespace Frida.Fruity {
 		PROTOCOL
 	}
 }
-
-"""
-
 ```

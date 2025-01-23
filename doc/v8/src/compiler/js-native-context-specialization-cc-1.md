@@ -120,7 +120,7 @@ Based on this analysis, I can formulate a concise summary.
 
 这部分 `js-native-context-specialization.cc` 的核心功能是**针对与 JavaScript 原生上下文相关的操作，在编译阶段进行深入的分析和优化，以提升代码的执行效率。** 它利用类型信息、反馈数据以及对特定原生对象行为的理解，来生成更高效的目标代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-native-context-specialization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -128,9 +128,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- // ToBoolean stub that finishes the remaining work of instanceof and returns
+### 源代码
+```cpp
+// ToBoolean stub that finishes the remaining work of instanceof and returns
     // to the caller without duplicating side-effects upon a lazy deopt.
     Node* continuation_frame_state = CreateStubBuiltinContinuationFrameState(
         jsgraph(), Builtin::kToBooleanLazyDeoptContinuation, context, nullptr,
@@ -878,7 +880,4 @@ Reduction JSNativeContextSpecialization::ReduceNamedAccess(
         // will deopt when/if GlobalIsDetached becomes true.
         return ReduceGlobalAccess(node, lookup_start_object, receiver, value,
                                   feedback.name(), access_mode, key, *cell
-"""
-
-
 ```

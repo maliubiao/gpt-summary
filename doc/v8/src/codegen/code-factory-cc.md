@@ -183,15 +183,17 @@ const instance = new notAConstructor(); // TypeError: notAConstructor is not a c
 
 `v8/src/codegen/code-factory.cc` 是 V8 引擎代码生成器的核心组件之一，它充当一个代码对象的工厂，为 V8 运行时提供执行 JavaScript 代码所需的各种预编译代码片段。它与 JavaScript 的各种核心功能紧密相关，并且其行为直接影响着 JavaScript 代码的执行效率和语义。用户编写的 JavaScript 代码中的错误，往往会在 V8 执行这些底层代码时显现出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-factory.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-factory.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -463,7 +465,4 @@ Builtin CodeFactory::GetTSANRelaxedLoadStub(SaveFPRegsMode fp_mode, int size) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

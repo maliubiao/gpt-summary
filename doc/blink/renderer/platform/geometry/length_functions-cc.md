@@ -167,14 +167,16 @@ By following this step-by-step process of examining the code structure, keywords
 
 `blink/renderer/platform/geometry/length_functions.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它负责将 CSS 中声明的各种长度值转换为实际的数值，以便进行布局和渲染。理解这个文件的功能有助于深入理解浏览器如何解析和应用 CSS 样式，以及可能出现的相关错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/geometry/length_functions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 1999 Lars Knoll (knoll@kde.org)
     Copyright (C) 2006, 2008 Apple Inc. All rights reserved.
@@ -310,7 +312,4 @@ gfx::PointF PointForLengthPoint(const LengthPoint& length_point,
 }
 
 }  // namespace blink
-
-"""
-
 ```

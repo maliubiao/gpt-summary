@@ -155,7 +155,7 @@ fetch('/script.js');
 
 总而言之，这部分 `net/spdy/spdy_session_unittest.cc` 代码主要测试了 `SpdySession` 在处理并发流创建、流的取消、数据读取的效率和健壮性、`GOAWAY` 帧的处理、协议协商和流量控制、以及空闲连接管理等关键方面的功能。 这些测试确保了 `SpdySession` 能够可靠高效地管理 SPDY 连接，为上层应用提供稳定的网络传输服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -163,9 +163,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
-             NetLogWithSource(), callback3.callback(),
+### 源代码
+```cpp
+NetLogWithSource(), callback3.callback(),
                                   TRAFFIC_ANNOTATION_FOR_TESTS));
 
   EXPECT_EQ(0u, num_active_streams());
@@ -995,7 +997,4 @@ TEST_F(SpdySessionTest, CreateStreamOnStreamReset) {
   };
 
   spdy::SpdySerializedFrame rs
-"""
-
-
 ```

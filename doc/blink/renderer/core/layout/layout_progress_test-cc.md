@@ -112,14 +112,16 @@ By following this iterative process of analysis, connection, and refinement, we 
 
 总而言之，`layout_progress_test.cc` 这个文件通过单元测试确保了 Blink 引擎中处理 `<progress>` 元素动画逻辑的正确性，这直接关系到网页开发者如何使用 `<progress>` 元素以及用户最终看到的界面效果。理解这些底层的测试逻辑有助于开发者避免在使用 `<progress>` 元素时常犯的错误，并更好地掌握其行为特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_progress_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ TEST_F(LayoutProgressTest, AnimationScheduling) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

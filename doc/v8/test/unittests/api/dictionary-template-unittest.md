@@ -142,11 +142,13 @@ This structured approach allows for a systematic analysis of the C++ code, ident
 
 `v8::DictionaryTemplate` 是 V8 内部用于创建具有预定义属性的对象的一种机制。 它的行为模式与 JavaScript 中创建对象并动态添加属性类似。 单元测试主要验证了 `DictionaryTemplate` 创建对象时属性的初始化、类型转换以及原型链的正确性。 虽然 JavaScript 没有直接对应的语法来创建 `DictionaryTemplate`，但理解其功能有助于理解 V8 如何在底层高效地管理和创建 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/dictionary-template-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ TEST_F(DictionaryTemplateTest, PrototypeContext) {
 }
 
 }  // namespace v8
-
-"""
-
 ```

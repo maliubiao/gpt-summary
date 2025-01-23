@@ -108,14 +108,16 @@ My thinking process to analyze the `writing_mode_converter.cc` file and answer t
 
 总而言之，`writing_mode_converter.cc` 是 Blink 引擎中处理国际化和本地化的关键组件，它使得渲染引擎能够正确地布局和显示不同书写模式和方向的文本和元素。 开发者理解其功能有助于避免与这些特性相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/writing_mode_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ PhysicalRect WritingModeConverter::SlowToPhysical(
 }
 
 }  // namespace blink
-
-"""
-
 ```

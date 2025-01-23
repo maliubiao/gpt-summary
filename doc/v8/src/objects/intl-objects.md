@@ -80,12 +80,14 @@ console.log(formattedNumber); // 输出: "1.234.567,89 €"
 
 总而言之，`v8/src/objects/intl-objects.cc` 是 V8 引擎中实现 JavaScript 国际化功能的核心 C++ 文件，它通过与 ICU 库的紧密集成，为 JavaScript 提供了强大的多语言支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/intl-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1785,7 +1787,4 @@ Maybe<Intl::NumberFormatDigitOptions> Intl::SetNumberFormatDigitOptions(
   // 21. Let needSd be true.
   bool need_sd = true;
   // 22. Let needFd be
-"""
-
-
 ```

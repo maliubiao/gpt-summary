@@ -98,11 +98,13 @@ greet("World"); // 此时才能调用内置的 console.log 函数
 
 `setup-isolate-full.cc` 中的 `SetupIsolateDelegate` 类是 V8 引擎启动过程中至关重要的一个环节。它负责根据是否使用快照来高效地设置 Isolate 的核心组成部分——堆和内置对象，这直接影响了 JavaScript 代码的执行环境和启动速度。如果使用了快照，JavaScript 环境可以更快地就绪，反之则需要花费更多时间来构建必要的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/setup-isolate-full.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -139,7 +141,4 @@ void SetupIsolateDelegate::SetupBuiltins(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

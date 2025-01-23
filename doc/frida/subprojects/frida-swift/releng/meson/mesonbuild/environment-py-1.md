@@ -126,7 +126,7 @@ Here's a breakdown of the thought process:
 
 总而言之，`Environment` 类是 Frida 构建系统的核心组件之一，它负责管理和维护构建环境的各种配置，确保 Frida 能够被正确地编译和链接，为后续的逆向分析工作奠定基础。理解 `Environment` 类的功能有助于排查 Frida 构建过程中出现的问题，并更深入地理解 Frida 的构建流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,9 +135,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                       env_opts[key].extend(p_list)
+### 源代码
+```python
+env_opts[key].extend(p_list)
                     else:
                         key = OptionKey.from_string(keyname).evolve(machine=for_machine)
                         if evar in compilers.compilers.CFLAGS_MAPPING.values():
@@ -375,8 +377,4 @@ Prompt:
 
     def has_exe_wrapper(self) -> bool:
         return self.exe_wrapper and self.exe_wrapper.found()
-
-"""
-
-
 ```

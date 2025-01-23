@@ -318,7 +318,7 @@ if (Process.platform === 'android') {
 
 希望以上详细的解答能够帮助你理解 `recallocarray.c` 文件的功能、实现以及在 Android 中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdlib/recallocarray.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -329,8 +329,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: recallocarray.c,v 1.2 2021/03/18 11:16:58 claudio Exp $	*/
 /*
  * Copyright (c) 2008, 2017 Otto Moerbeek <otto@drijf.net>
@@ -412,7 +414,4 @@ recallocarray(void *ptr, size_t oldnmemb, size_t newnmemb, size_t size)
 	return newptr;
 }
 DEF_WEAK(recallocarray);
-
-"""
-
 ```

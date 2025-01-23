@@ -175,7 +175,7 @@ promise.then(value => console.log(value)); // Promise 的 resolve 和 then 操�
 
 总而言之，`v8/src/logging/runtime-call-stats.h` 是 V8 引擎内部用于监控和分析运行时性能的关键组件，它通过定义可跟踪的事件和提供相应的统计机制，帮助 V8 开发者了解代码执行情况，并进行性能优化。虽然普通 JavaScript 开发者不会直接使用这个头文件，但理解其背后的原理有助于编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/runtime-call-stats.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/runtime-call-stats.h以.tq结尾，那它是个v8 torque源代码，
@@ -183,8 +183,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 #name,
                       FOR_EACH_HANDLER_COUNTER(CALL_BUILTIN_COUNTER)
 #undef CALL_BUILTIN_COUNTER
@@ -408,8 +410,4 @@ class WorkerThreadRuntimeCallStatsScope {
 }  // namespace v8
 
 #endif  // V8_LOGGING_RUNTIME_CALL_STATS_H_
-
-"""
-
-
 ```

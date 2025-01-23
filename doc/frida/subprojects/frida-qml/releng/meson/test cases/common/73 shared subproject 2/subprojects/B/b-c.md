@@ -152,7 +152,7 @@ char func_c(void) {
 
 总而言之，这段简单的 C 代码片段虽然功能不多，但它揭示了动态链接、符号导出、条件控制和程序退出的基本概念，这些都是逆向工程和底层系统编程中非常重要的知识点。通过 Frida 这样的工具，我们可以动态地观察和修改程序的行为，从而更好地理解和调试这类代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/73 shared subproject 2/subprojects/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -182,7 +184,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

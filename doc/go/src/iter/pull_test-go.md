@@ -163,7 +163,7 @@ func ExamplePull2() {
 
 `go/src/iter/pull_test.go` 文件是 `iter` 包中 `Pull` 和 `Pull2` 函数的测试代码。这两个函数提供了一种将基于 `yield` 函数的生成器转换为拉取式迭代器的方式。这是一种在 Go 语言中实现惰性求值和迭代器模式的常见方法。测试用例覆盖了各种正常和异常情况，以确保 `Pull` 和 `Pull2` 的正确性和健壮性。使用者需要注意资源管理（调用 `stop()`）以及生成器函数的正确实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/iter/pull_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -666,9 +668,4 @@ func TestPull2ImmediateStop(t *testing.T) {
 		t.Fatal("next returned true after iterator was stopped")
 	}
 }
-
-"""
-
-
-
 ```

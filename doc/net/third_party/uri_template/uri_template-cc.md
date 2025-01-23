@@ -175,15 +175,17 @@ URI 模板在 Web 开发中非常常见，JavaScript 经常需要处理 URL 的�
 
 总而言之，`uri_template.cc` 是 Chromium 网络栈中一个关键的组件，负责处理 URI 模板的扩展，使得动态生成和操作 URL 更加灵活和方便。它与 JavaScript 的交互主要体现在 JavaScript 代码构建的 URL 需要被 Chromium 的网络栈处理时。理解其功能和使用方式对于调试网络相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/uri_template/uri_template.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * \copyright Copyright 2013 Google Inc. All Rights Reserved.
  * \license @{
@@ -382,7 +384,4 @@ bool Expand(const string& path_uri,
 }
 
 }  // namespace uri_template
-
-"""
-
 ```

@@ -125,15 +125,17 @@ obj.b = 2;
 
 `v8/test/unittests/objects/concurrent-transition-array-unittest.cc` 是一个关键的 V8 单元测试文件，它专注于验证在并发环境下对 `TransitionArray` 进行操作的正确性和安全性。 这对于保证 V8 引擎在多线程 JavaScript 环境下的稳定性和性能至关重要。 虽然直接操作 `TransitionArray` 是 V8 内部的行为，但其测试场景反映了并发编程中需要注意的常见问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/concurrent-transition-array-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/concurrent-transition-array-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -591,7 +593,4 @@ TEST_F(ConcurrentTransitionArrayTest,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

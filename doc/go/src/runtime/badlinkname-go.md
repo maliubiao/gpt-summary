@@ -147,7 +147,7 @@ func GetGoroutineID() int64 {
 
 `go/src/runtime/badlinkname.go` 是 Go 运行时为了兼容某些不当使用 `//go:linkname` 的外部包而存在的一个特殊文件。它通过 `//go:linkname` 将一些运行时内部的符号重新导出到 `runtime` 包中，以便这些外部包能够继续工作。**对于绝大多数 Go 开发者来说，应该避免使用 `//go:linkname` 去链接 `runtime` 或其他标准库的内部符号，而应该使用官方提供的、稳定的 API。** 模仿 `badlinkname.go` 中的做法是非常危险的，会导致代码脆弱且难以维护。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/badlinkname.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ import _ "unsafe"
 // Notable members of the hall of shame include:
 //   - gvisor.dev/gvisor (from assembly)
 //go:linkname sched
-
-"""
-
-
-
 ```

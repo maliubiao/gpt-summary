@@ -298,7 +298,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/kernel/uapi/linux/bpqether.handroid` 这个头文件定义了与 Linux 内核中 `bpqether` 协议交互的接口，虽然它不是 Android 核心功能，但在特定的硬件支持或专业应用场景下可能会被使用。通过 `ioctl` 系统调用，用户空间的程序可以配置和控制 `bpqether` 接口。使用 Frida 可以帮助我们监控和调试这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/bpqether.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -309,8 +309,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -340,7 +342,4 @@ struct bpq_req {
   int irq;
 };
 #endif
-
-"""
-
 ```

@@ -156,14 +156,16 @@ This iterative process of code analysis, connecting to web concepts, creating ex
 
 总而言之，`blink/common/permissions_policy/permissions_policy_declaration.cc` 定义的 `ParsedPermissionsPolicyDeclaration` 类是 Blink 引擎中用于表示和处理权限策略声明的核心数据结构，它在浏览器理解和执行网页的权限控制方面起着至关重要的作用，直接影响 JavaScript API 的可用性，并与 HTML 和 HTTP 头部中的权限策略配置紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_declaration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ bool operator==(const ParsedPermissionsPolicyDeclaration& lhs,
 }
 
 }  // namespace blink
-
-"""
-
 ```

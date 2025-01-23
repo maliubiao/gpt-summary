@@ -112,14 +112,16 @@ IdentifiableToken token3 = builder3.GetToken();
 
 总而言之，`identifiable_token_builder_unittest.cc` 通过各种测试用例，细致地验证了 `IdentifiableTokenBuilder` 类的各个功能点，确保其在构建用于隐私预算的 Token 时能够正确可靠地工作。 虽然它不直接与前端技术交互，但它支持着浏览器实现各种隐私保护机制，从而间接地影响着 Web 开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiable_token_builder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ TEST(IdentifiableTokenBuilderTest, LotsOfRandomPartitions) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

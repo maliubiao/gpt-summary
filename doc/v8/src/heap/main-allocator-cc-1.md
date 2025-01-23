@@ -158,7 +158,7 @@ const myArray = [1, 2, 3]; // 创建一个数组
 
 总而言之，这段代码是 V8 引擎内存管理的核心部分，负责高效地分配和管理用于存储 JavaScript 对象的内存区域。它通过使用线性分配缓冲区来优化小对象的分配速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/main-allocator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/main-allocator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 imit(start, end, size_in_bytes);
   DCHECK_LE(limit, end);
   DCHECK_LE(size_in_bytes, limit - start);
@@ -254,8 +256,4 @@ void PagedSpaceAllocatorPolicy::FreeLinearAllocationAreaUnsynchronized() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

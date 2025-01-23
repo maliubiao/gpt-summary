@@ -114,7 +114,7 @@ By following this process, I can systematically analyze the code and generate a 
 
 希望这个分析能够帮助你理解 `v8/src/compiler/pipeline.cc` 的这一部分代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/pipeline.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,9 +122,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
- tracing is not enabled,
+### 源代码
+```cpp
+tracing is not enabled,
     // because it may not yet be initialized then and doing so from the
     // background thread is not threadsafe.
     code_tracer = turboshaft_data_.GetCodeTracer();
@@ -956,7 +958,4 @@ void LowerInt64(const wasm::FunctionSig* sig, MachineGraph* mcgraph,
 base::OwnedVector<uint8_t> SerializeInliningPositions(
     const ZoneVector<WasmInliningPosition>& positions) {
   const size_t entry_size = sizeof positions[0].in
-"""
-
-
 ```

@@ -122,7 +122,7 @@ Here's a breakdown of the thought process to analyze the provided C++ code snipp
 
 总而言之，这个简单的 `main.cpp` 文件虽然功能单一，但它可以作为学习、测试和调试 NetCDF 库的基础，也可以作为 Frida 动态分析的入门示例。 它涉及了文件操作、库的使用、系统调用等概念，是理解更复杂软件行为的一个起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/26 netcdf/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "netcdf.h"
 
@@ -147,7 +149,4 @@ if ((ret = nc_close(ncid)))
 
 return EXIT_SUCCESS;
 }
-
-"""
-
 ```

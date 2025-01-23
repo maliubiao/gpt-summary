@@ -192,15 +192,17 @@ body { font-size: 16px; }
 
 通过在 `StyleSheetContents.cc` 及其相关文件中设置断点，例如在 `ParserAppendRule`, `WrapperInsertRule`, `ParseAuthorStyleSheet` 等方法中，开发者可以跟踪 CSS 规则的解析、添加和修改过程，从而定位样式问题的根源。  观察 `StyleSheetContents` 对象的内部状态，例如规则列表的内容，可以帮助理解浏览器是如何处理 CSS 的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_sheet_contents.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2006, 2007, 2012 Apple Inc. All rights reserved.
@@ -1071,7 +1073,4 @@ void StyleSheetContents::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

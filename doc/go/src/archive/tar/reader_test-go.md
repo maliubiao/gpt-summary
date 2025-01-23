@@ -27,7 +27,7 @@ Here's a plan to address the request:
 
 这段代码是 `archive/tar` 包中 `Reader` 类型的单元测试。它通过读取各种预先准备好的 tar 归档文件，并断言解析出的头部信息、文件内容校验和以及错误处理是否符合预期，从而验证 `tar.Reader` 的正确性和健壮性，确保它可以正确地读取不同格式的 tar 文件，并能处理各种异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/tar/reader_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -36,8 +36,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1195,10 +1197,5 @@ func TestReadGNUSparsePAXHeaders(t *testing.T) {
 
 	vectors := []struct {
 		inputData string
-		inputHdrs 
-"""
-
-
-
-
+		inputHdrs
 ```

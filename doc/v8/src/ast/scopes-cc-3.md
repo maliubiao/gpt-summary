@@ -182,7 +182,7 @@ new Inner();
 
 总而言之，这部分 `v8/src/ast/scopes.cc` 代码负责 V8 引擎中至关重要的作用域管理和私有成员处理功能。它通过创建和管理 `ScopeInfo` 对象来优化作用域信息的存储和访问，并实现了 JavaScript 中私有字段和方法的访问控制规则。代码中还包含对类继承场景下私有名称查找的特殊处理，以及对类相关特殊变量的管理。 这部分代码是 V8 编译和执行 JavaScript 代码的基础组成部分，确保了 JavaScript 作用域和私有特性的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/scopes.cc以.tq结尾，那它是个v8 torque源代码，
@@ -190,9 +190,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- = outer_scope;
+### 源代码
+```cpp
+= outer_scope;
 
   auto it = scope_infos_to_reuse.find(UniqueIdInScript());
   if (it != scope_infos_to_reuse.end()) {
@@ -711,8 +713,4 @@ void PrivateNameScopeIterator::AddUnresolvedPrivateName(VariableProxy* proxy) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

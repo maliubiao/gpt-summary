@@ -203,15 +203,17 @@ svgElement.preserveAspectRatio.baseVal.meetOrSlice = SVGPreserveAspectRatio.SVG_
 
 总而言之，`svg_preserve_aspect_ratio_tear_off.cc` 文件是 Blink 渲染引擎中处理 SVG `preserveAspectRatio` 属性的关键部分，负责验证和设置该属性的值，并将更改通知到渲染流程。它连接了 JavaScript 对 SVG 属性的操作和底层的渲染实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_preserve_aspect_ratio_tear_off.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -292,7 +294,4 @@ SVGPreserveAspectRatioTearOff::SVGPreserveAspectRatioTearOff(
                                                  property_is_anim_val) {}
 
 }  // namespace blink
-
-"""
-
 ```

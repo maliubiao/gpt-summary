@@ -175,14 +175,16 @@ JavaScript 本身不能直接创建或操作 `FontPalette` 对象。然而，Jav
 
 总而言之，`blink/renderer/platform/fonts/font_palette.cc` 文件是 Blink 引擎中实现字体调色板功能的核心部分，它与 CSS 的 `font-palette` 属性、`@font-palette-values` 规则和 `palette-mix()` 函数紧密相关，负责表示、管理和比较各种类型的字体调色板。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_palette.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ bool FontPalette::operator==(const FontPalette& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

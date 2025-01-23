@@ -133,11 +133,13 @@ ADD register1, register1, register1             // 将 register1 的值与自身
 
 总之，`move-optimizer.cc` 是 V8 引擎中负责提升性能的关键组件，它通过精细地管理和优化机器码中的数据移动操作，使得 JavaScript 代码在底层能够以更有效的方式执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/move-optimizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -732,7 +734,4 @@ void MoveOptimizer::FinalizeMoves(Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

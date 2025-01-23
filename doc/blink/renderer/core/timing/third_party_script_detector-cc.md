@@ -146,15 +146,17 @@ After these steps, the final step is to organize the information clearly and con
 
 `third_party_script_detector.cc` 是 Blink 引擎中一个重要的组件，它通过 URL 匹配来识别网页中加载的第三方脚本。 这对于理解网页的组成、进行性能分析、实施安全策略以及为开发者提供有用的信息至关重要。 理解其工作原理有助于我们更好地理解浏览器如何处理网页内容，并为开发和调试 Web 应用提供更深入的视角。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/third_party_script_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ ThirdPartyScriptDetector::Technology ThirdPartyScriptDetector::Detect(
 }
 
 }  // namespace blink
-
-"""
-
 ```

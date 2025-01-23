@@ -152,14 +152,16 @@ Finally, we organize the information into a clear and structured answer, address
 
 总而言之，`ipc_socket_factory_test.cc` 是 Blink 引擎中用于测试 P2P 连接底层套接字创建功能的重要单元测试，它确保了 WebRTC 等依赖于这些套接字的功能的稳定性和正确性。虽然用户不直接与这个文件交互，但其测试结果直接影响着基于 WebRTC 的 Web 应用的性能和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/ipc_socket_factory_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ TEST_F(IpcPacketSocketFactoryTest, SetOptions) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -118,11 +118,13 @@ This systematic approach allows for a comprehensive understanding of the code's 
 
 `builtins-regexp.cc` 文件是 V8 引擎中实现 JavaScript 正则表达式相关内置功能的关键部分。它定义了 `RegExp` 对象原型方法（如 `toString`）和 `RegExp` 构造函数的静态属性的底层实现，使得 JavaScript 能够高效地处理正则表达式操作并访问匹配结果的详细信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-regexp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ BUILTIN(RegExpRightContextGetter) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

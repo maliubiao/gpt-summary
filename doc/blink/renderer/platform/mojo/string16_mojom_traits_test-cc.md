@@ -91,14 +91,16 @@ This methodical process of code scanning, understanding the underlying technolog
 
 `string16_mojom_traits_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎能够可靠地通过 Mojo 与其他组件交换字符串数据。这对于浏览器正确处理网页内容（HTML, CSS）和与 JavaScript 代码进行交互至关重要。它通过测试各种字符串场景（包括不同编码和长度）来保证数据在跨进程通信时的完整性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/string16_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ TEST(String16MojomTraitsTest, BigString16_Long) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

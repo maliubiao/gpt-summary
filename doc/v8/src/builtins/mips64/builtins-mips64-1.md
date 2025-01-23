@@ -116,13 +116,15 @@ V8 会执行 `Builtins::Generate_CallApiCallbackImpl`，它会负责调用注册
 
 总而言之，这段 C++ 代码是 V8 引擎中至关重要的一部分，它实现了 JavaScript 语言的许多核心运行时行为，使得 JavaScript 代码能够在 MIPS64 架构上执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  __ bind(&enter_bytecode);
+### 源代码
+```
+__ bind(&enter_bytecode);
   // Convert new bytecode offset to a Smi and save in the stackframe.
   __ SmiTag(a2, kInterpreterBytecodeOffsetRegister);
   __ Sd(a2, MemOperand(fp, InterpreterFrameConstants::kBytecodeOffsetFromFp));
@@ -1902,7 +1904,4 @@ void Builtins::Generate_DirectCEntry(MacroAssembler* masm) {
   // making the call GC safe. The irregexp backend relies on this.
 
   // Make place for arguments to fit C c
-"""
-
-
 ```

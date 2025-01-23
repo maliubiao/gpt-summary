@@ -103,7 +103,7 @@ Response:
 5. **Frida 接收响应并解析**，如果成功则返回结果，如果失败则抛出错误。
 
 在调试过程中，可以通过观察 `request_id`、`raw_request` 等变量的值来判断请求是否正确构建和发送。如果出现问题，可以通过 LLDB 设置断点并逐步调试，找出问题所在。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/base/rpc.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class RpcClient : Object {
 		public weak RpcPeer peer {
@@ -277,7 +279,4 @@ namespace Frida {
 		public abstract async void post_rpc_message (string json, Bytes? data, Cancellable? cancellable) throws Error, IOError;
 	}
 }
-
-"""
-
 ```

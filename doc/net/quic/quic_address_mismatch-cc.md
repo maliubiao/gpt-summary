@@ -264,15 +264,17 @@ int GetAddressMismatch(const IPEndPoint& first_address,
 
 **简而言之，用户执行任何需要网络连接的操作都可能最终触发 `GetAddressMismatch` 的执行，尤其是在使用 QUIC 协议的情况下，地址的验证是其安全特性的重要组成部分。调试时，关注网络日志和 QUIC 相关的内部信息是找到 `GetAddressMismatch` 被调用的线索。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_address_mismatch.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ int GetAddressMismatch(const IPEndPoint& first_address,
 }
 
 }  // namespace net
-
-"""
-
 ```

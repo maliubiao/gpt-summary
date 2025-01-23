@@ -71,13 +71,15 @@ This code directly relates to JavaScript's string manipulation capabilities, par
 
 **In summary, this part of `unicode.cc` provides the low-level C++ implementation for fundamental Unicode string operations in JavaScript related to case conversion and canonicalization. It uses efficient lookup tables and handles special cases to correctly process a wide range of Unicode characters according to the ECMAScript standard.**  The presence of "Ecma262" in the function and table names explicitly highlights its connection to the JavaScript language specification.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- 616,        -836,   617,        -844,
+### 源代码
+```
+616,        -836,   617,        -844,
     619,        42972,  620,        169220, 623,        -844,
     625,        42996,  626,        -852,   629,        -856,
     637,        42908,  640,        -872,   643,        -872,
@@ -1057,8 +1059,4 @@ static const int32_t kEcma262UnCanonicalizeTable0[2010] = {
     254,        25,   255,        29,   256,        33,   257,        33,
     258,        37,   259,        37,   260,        41,   261,        41,
     262,        45,   263,        45,   264,        49,   265,        49,
- 
-"""
-
-
 ```

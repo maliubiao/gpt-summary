@@ -168,14 +168,16 @@ This structured approach allows for a comprehensive analysis of the code snippet
 
 总的来说，`web_media_stream_audio_sink.cc` 文件提供了一种在 Blink 引擎内部管理音频数据接收的关键机制，它连接了音频轨道的数据源和各种需要处理或消费这些数据的组件。虽然开发者通常不会直接操作这些 C++ 接口，但理解其功能有助于理解浏览器如何处理 Web Media Stream API 背后的音频流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_media_stream_audio_sink.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ media::AudioParameters WebMediaStreamAudioSink::GetFormatFromAudioTrack(
 }
 
 }  // namespace blink
-
-"""
-
 ```

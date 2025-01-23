@@ -427,7 +427,7 @@ if (Process.platform === 'android') {
 
 希望这个详细的分析能够帮助你理解 `bionic/tests/sys_shm_test.cpp` 文件的功能以及共享内存在 Android 中的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_shm_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -438,8 +438,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -527,7 +529,4 @@ TEST(sys_shm, shmget_failure) {
   ASSERT_EQ(-1, shmget(-1, 1234, 0));
   ASSERT_TRUE(errno == ENOENT || errno == ENOSYS);
 }
-
-"""
-
 ```

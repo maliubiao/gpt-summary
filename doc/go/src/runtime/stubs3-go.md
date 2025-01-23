@@ -134,7 +134,7 @@ func main() {
 
 `go/src/runtime/stubs3.go` 在特定的非 `aix`, `darwin`, `freebsd`, `openbsd`, `plan9`, `solaris`, `wasip1` 平台上，特别是 WebAssembly 环境下，通过导入外部的 `runtime.nanotime1` 函数，为 Go 运行时提供获取纳秒级时间的能力。这个功能是 Go 语言 `time` 包实现高精度时间的基础。用户应该使用 `time` 包的 API，而不是尝试直接操作 `runtime` 包的内部函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -142,8 +142,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -154,9 +156,4 @@ package runtime
 
 //go:wasmimport gojs runtime.nanotime1
 func nanotime1() int64
-
-"""
-
-
-
 ```

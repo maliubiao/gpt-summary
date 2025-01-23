@@ -226,15 +226,17 @@ Read 5 bytes after seek: ld!")
 
 总结来说，`go/src/cmd/internal/cov/mreader.go` 中的 `MReader` 旨在提供一个高效且可靠的文件读取器，特别针对代码覆盖率分析场景。它通过尝试内存映射来优化性能，并在必要时回退到标准的读取方式，为上层代码提供了便利。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/cov/mreader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -320,9 +322,4 @@ func (r *MReader) Seek(offset int64, whence int) (int64, error) {
 	}
 	panic("other modes not implemented")
 }
-
-"""
-
-
-
 ```

@@ -165,7 +165,7 @@ The user wants a summary of the C source code file `stalker-x86.c` which is part
 
 总而言之，`stalker-x86.c` 是一个非常重要的测试文件，它详细地验证了 Frida `stalker` 组件在 x86 架构下的各项功能，为开发者提供了理解和调试 `stalker` 行为的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/stalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2010-2013 Karl Trygve Kalleberg <karltk@boblycat.org>
@@ -1261,8 +1263,4 @@ TESTCASE (transformer_should_be_able_to_replace_tailjump_with_callout)
 static void
 replace_jmp_with_callout (GumStalkerIterator * iterator,
                           GumStalkerOutput * output,
-                       
-"""
-
-
 ```

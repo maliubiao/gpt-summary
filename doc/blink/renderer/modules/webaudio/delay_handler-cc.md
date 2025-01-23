@@ -163,15 +163,17 @@ Let's break down the thought process for analyzing this C++ code. The goal is to
 
 总而言之，`blink/renderer/modules/webaudio/delay_handler.cc` 是 Web Audio API 中 `DelayNode` 功能的核心 C++ 实现，负责执行实际的音频延迟处理，并与 JavaScript 层进行交互。理解这个文件的功能有助于深入了解 Web Audio API 的工作原理，并能更好地进行相关问题的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/delay_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -368,7 +370,4 @@ void DelayHandler::PullInputs(uint32_t frames_to_process) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

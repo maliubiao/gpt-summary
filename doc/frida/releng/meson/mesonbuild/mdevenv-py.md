@@ -150,7 +150,7 @@ By following this methodical process, I can comprehensively analyze the script a
 
 总而言之，`frida/releng/meson/mesonbuild/mdevenv.py` 是 Frida 开发流程中的一个重要工具，它通过创建一个预配置的开发环境，简化了 Frida 的构建、调试和分析过程，并涉及到操作系统底层、构建系统、调试器等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/mdevenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os, subprocess
@@ -394,7 +396,4 @@ def run(options: argparse.Namespace) -> int:
         return e.returncode
     except FileNotFoundError:
         raise MesonException(f'Command not found: {args[0]}')
-
-"""
-
 ```

@@ -162,14 +162,16 @@ By following this kind of detailed analysis and connecting the code to the broad
 
 总而言之，`fe_component_transfer.cc` 文件是 Blink 渲染引擎中实现强大且灵活的颜色分量转换功能的核心部分，它直接服务于 Web 标准中的 SVG 滤镜，并对网页的视觉效果有着重要的影响。理解其功能和使用方式对于前端开发者来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_component_transfer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -392,7 +394,4 @@ StringBuilder& FEComponentTransfer::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

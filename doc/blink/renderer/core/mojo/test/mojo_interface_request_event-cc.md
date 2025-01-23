@@ -140,14 +140,16 @@ This systematic approach, from high-level understanding to detailed analysis and
 
 `mojo_interface_request_event.cc` 定义的 `MojoInterfaceRequestEvent` 类是 Blink 引擎中用于表示 Mojo 接口请求事件的核心组件。它在浏览器内部的进程间通信中扮演着重要的角色，并且与 JavaScript 通过底层的 API 调用和事件机制紧密相连。虽然普通 Web 开发者不太会直接操作此类事件，但理解其功能有助于深入了解浏览器内部的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mojo/test/mojo_interface_request_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ MojoInterfaceRequestEvent::MojoInterfaceRequestEvent(
       handle_(initializer->handle()) {}
 
 }  // namespace blink
-
-"""
-
 ```

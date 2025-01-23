@@ -160,7 +160,7 @@ Frida 本身就是一个动态插桩工具，广泛应用于软件逆向工程�
 
 总而言之，`frida/subprojects/frida-core/tests/pipe/main.c` 是一个用于测试 Frida 管道通信功能的简单而重要的工具。它演示了如何创建、连接和使用 Frida 管道进行数据传输，这对于理解 Frida 的工作原理以及进行逆向工程和调试都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/pipe/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <frida-pipe.h>
 
 int
@@ -244,7 +246,4 @@ main (int argc, char * argv[])
 
   return 0;
 }
-
-"""
-
 ```

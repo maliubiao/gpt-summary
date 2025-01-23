@@ -110,14 +110,16 @@ This methodical approach, starting with understanding the code's structure and p
 
 `filter_factory.cc` 是 Blink 引擎中一个重要的组成部分，它负责创建输入事件过滤器，用于改善用户与网页的交互体验。它通过 Feature Flag 进行配置，可以根据需要启用不同的过滤器并调整其参数。理解其功能和潜在的配置错误对于开发高质量的 Web 应用至关重要。虽然它不直接操作 JavaScript, HTML 或 CSS 代码，但它处理的输入事件是这些技术交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/prediction/filter_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -209,7 +211,4 @@ void FilterFactory::GetFilterParams(const FilterType filter_type,
 }
 
 }  // namespace blink
-
-"""
-
 ```

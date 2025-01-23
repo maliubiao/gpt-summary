@@ -183,15 +183,17 @@ func main() {
 
 `go/src/cmd/compile/internal/syntax/dumper.go` 提供了一个用于调试 Go 编译器内部语法分析器生成 AST 的功能。它通过 `Fdump` 函数将 AST 结构以易于阅读的格式输出。虽然普通 Go 开发者不应该直接使用它，但理解其功能可以帮助理解 Go 编译过程的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/syntax/dumper.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -404,9 +406,4 @@ func isExported(name string) bool {
 	ch, _ := utf8.DecodeRuneInString(name)
 	return unicode.IsUpper(ch)
 }
-
-"""
-
-
-
 ```

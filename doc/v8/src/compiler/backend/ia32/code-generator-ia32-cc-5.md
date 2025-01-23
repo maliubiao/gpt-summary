@@ -110,7 +110,7 @@ While users don't directly interact with this C++ code, understanding its purpos
 
 This final part of `v8/src/compiler/backend/ia32/code-generator-ia32.cc` focuses on the core data movement and manipulation operations required for generating IA-32 machine code. It provides functions to move data between registers, memory (stack), and constants, as well as to swap the contents of memory locations and construct jump tables for control flow. This code is crucial for translating the optimized representation of JavaScript code into executable machine instructions for IA-32 processors, forming a fundamental component of V8's compilation pipeline.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/code-generator-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -118,8 +118,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::cast(source)->representation();
         if (rep == MachineRepresentation::kFloat32) {
           __ Movss(dst, src);
@@ -336,8 +338,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

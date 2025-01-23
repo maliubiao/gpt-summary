@@ -126,11 +126,13 @@ loadAndRunWasm();
 
 `start.cc` C++ 示例通过 WebAssembly C++ API 演示了如何加载、编译和故意实例化一个会产生陷阱的 WebAssembly 模块，并展示了如何获取和打印陷阱的信息。这与 JavaScript 中实例化 WebAssembly 模块时可能出现的 `WebAssembly.RuntimeError` 异常概念上是相似的，都是处理 WebAssembly 运行时错误的方式。C++ 代码更底层地展示了如何通过 API 获取陷阱的详细信息，而 JavaScript 则通过标准的异常处理机制来处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/start.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -218,8 +220,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

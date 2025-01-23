@@ -109,11 +109,13 @@ for (let i = 0; i < 1000000; i++) {
 
 `v8/src/heap/cppgc/platform.cc` 文件为 V8 引擎的 C++ 垃圾回收器 `cppgc` 提供了平台相关的抽象层，包括内存分配、错误处理和性能跟踪等核心功能。 虽然 JavaScript 代码不会直接调用这个文件中的函数，但它的存在和功能是 JavaScript 代码能够安全、高效运行的关键基础。 它在幕后默默地管理着 V8 引擎自身所需的 C++ 内存，确保 JavaScript 程序的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/platform.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ void InitializeProcess(PageAllocator* page_allocator,
 void ShutdownProcess() { internal::g_page_allocator = nullptr; }
 
 }  // namespace cppgc
-
-"""
-
 ```

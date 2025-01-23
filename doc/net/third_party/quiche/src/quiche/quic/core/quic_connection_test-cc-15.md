@@ -176,7 +176,7 @@ Let's break down the code sections and their functionalities:
 
 本部分主要集中在 QUIC 连接的 **健壮性和适应性** 方面。它测试了连接在不同网络条件下的行为，例如空闲状态、丢包情况以及网络路径变化时的处理。通过这些测试，可以确保 QUIC 连接能够在各种复杂网络环境中保持稳定和高效。作为测试套件的一部分，这部分确保了 QUIC 连接的核心机制（超时、保活、丢包检测、路径验证）的正确实现，为用户提供可靠的网络连接体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第16部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rsion().UsesTls()) {
     QuicConfigPeer::SetReceivedOriginalConnectionId(
         &config, connection_.connection_id());
@@ -919,7 +921,4 @@ TEST_P(QuicConnectionTest,
           connection_.self_address(), kNewPeerAddress, writer_.get()),
       std::make_unique<TestValidationResultDelegate>(
           &connection_, connection_.self_addres
-"""
-
-
 ```

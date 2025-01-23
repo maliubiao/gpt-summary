@@ -403,7 +403,7 @@ Finally, I'd organize the information logically using headings and bullet points
 
 总而言之，这段测试代码覆盖了 Go 语言运行时系统中栈管理的各个重要方面，确保了 goroutine 栈的正确分配、增长、收缩以及与语言特性的良好集成。理解这些测试用例有助于深入了解 Go 语言的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stack_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -411,8 +411,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1371,9 +1373,4 @@ func growAndShrinkStack(n int, stackBallast [1024]byte) {
 	growAndShrinkStack(n-1, stackBallast)
 	ShrinkStackAndVerifyFramePointers()
 }
-
-"""
-
-
-
 ```

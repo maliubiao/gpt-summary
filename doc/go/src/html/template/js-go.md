@@ -235,7 +235,7 @@ func main() {
 
 总而言之，`go/src/html/template/js.go` 的核心功能是提供必要的工具，以确保在 Go 语言的 HTML 模板中嵌入 JavaScript 代码时，能够有效地防止安全漏洞，特别是 XSS 攻击。理解每个转义函数的用途并正确使用它们是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/js.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -243,8 +243,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -733,9 +735,4 @@ func isJSType(mimeType string) bool {
 		return false
 	}
 }
-
-"""
-
-
-
 ```

@@ -159,7 +159,7 @@ By following this structured approach, combining code analysis with contextual i
 
 总而言之，这个 `main.c` 文件虽然代码量很少，但它在一个更大的软件项目（Frida）的上下文中，充当了一个重要的测试用例，用于验证动态链接器在不同路径配置下的行为。理解这个测试用例的功能和背后的原理，有助于我们深入理解动态链接、共享库以及 Frida 这样的动态插桩工具的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/linuxlike/11 runpath rpath ldlibrarypath/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int some_symbol (void);
@@ -180,7 +182,4 @@ int main (void) {
   fprintf (stderr, "ret was %i instead of 1\n", ret);
   return -1;
 }
-
-"""
-
 ```

@@ -149,11 +149,13 @@ worker.onmessage = (event) => {
 
 `platform-win32.cc` 是 V8 引擎在 Windows 平台上的基石，它封装了底层的 Windows API，使得 V8 能够跨平台运行，并为 JavaScript 提供了在 Windows 上正常运行所需的各种系统服务接口，例如时间、内存、线程和 I/O 等。虽然 JavaScript 代码本身不能直接调用这个文件中的函数，但这些 C++ 代码是 JavaScript 功能在 Windows 平台上得以实现的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-win32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2034,7 +2036,4 @@ Stack::StackSlot Stack::GetCurrentStackPosition() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

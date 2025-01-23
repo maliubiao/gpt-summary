@@ -104,7 +104,7 @@ Let's break down the thought process for analyzing this simple Python script and
 
 总而言之，`mygen.py` 自身是一个非常简单的文件复制工具，但在 Frida 这样一个复杂的动态 instrumentation 工具的构建和测试流程中，它可以扮演一个基础但重要的角色，用于准备测试环境和生成必要的测试文件。它与逆向工程、底层知识的关联体现在它所处理的文件内容以及它在 Frida 项目中的应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/129 build by default/mygen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -122,7 +124,4 @@ ifile = open(sys.argv[1])
 ofile = open(sys.argv[2], 'w')
 
 ofile.write(ifile.read())
-
-"""
-
 ```

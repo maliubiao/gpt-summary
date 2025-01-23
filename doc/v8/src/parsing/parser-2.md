@@ -149,12 +149,14 @@ Now I will organize these functionalities into a coherent summary and provide re
 
 总而言之，这部分代码专注于解析和构建 JavaScript 代码中的各种复杂语法结构，例如类、模板字面量，并处理与作用域、模块化和代码优化相关的任务。它将源代码转换成抽象语法树 (AST)，为后续的编译和执行阶段奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 atic_initializer = CreateStaticElementsInitializer(name, class_info);
   }
 
@@ -528,8 +530,4 @@ void Parser::SetFunctionName(Expression* value, const AstRawString* name,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

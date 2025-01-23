@@ -140,7 +140,7 @@ Finally, I organized the information logically, using clear headings and bullet 
 
 总而言之，这个简单的 `provider.c` 文件是一个很好的例子，展示了共享库的基本结构和初始化机制，以及 Frida 如何作为逆向工具来观察和操纵这些结构和机制。 它的简单性使得它成为理解 Frida 基础用法的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/98 link full name/libtestprovider/provider.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 static int g_checked = 0;
 
@@ -162,7 +164,4 @@ static void __attribute__((constructor(101), used)) init_checked(void) {
 int get_checked(void) {
     return g_checked;
 }
-
-"""
-
 ```

@@ -131,7 +131,7 @@ handleInput(1);
 **归纳总结 (第 2 部分):**
 
 总的来说，`v8/test/cctest/test-assembler-ia32.cc` 的第二部分继续深入测试了 IA-32 汇编器的功能，重点测试了特定的 CPU 功能指令集 (如 POPCNT 和 BMI2) 的正确实现，以及跳转表等控制流机制。它还包含了回归测试，以防止之前修复的 bug 再次出现。这些测试确保了 V8 引擎在 IA-32 架构上能够生成正确且高效的机器码，从而保证 JavaScript 代码的正确执行和性能。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 atedCode<F0>::FromCode(isolate, *code);
   CHECK_EQ(0, f.Call());
 }
@@ -529,8 +531,4 @@ TEST(CpuFeatures_ProbeImpl) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

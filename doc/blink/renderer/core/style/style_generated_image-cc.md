@@ -167,14 +167,16 @@ This systematic approach allows for a thorough understanding of the code and its
 
 理解 `StyleGeneratedImage` 的功能有助于开发者更好地理解浏览器如何处理 CSS 生成的图像，从而避免一些常见的错误并优化网页性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_generated_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2000 Lars Knoll (knoll@kde.org)
  *           (C) 2000 Antti Koivisto (koivisto@kde.org)
@@ -298,7 +300,4 @@ void StyleGeneratedImage::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

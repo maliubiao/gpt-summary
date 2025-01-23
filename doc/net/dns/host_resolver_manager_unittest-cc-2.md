@@ -108,7 +108,7 @@ Now, I can proceed with generating the detailed explanation.
 
 总而言之，这部分测试代码主要关注 `HostResolverManager` 在动态网络环境下的健壮性和正确性。它验证了当网络状态发生变化（尤其是 IP 地址变化）时，`HostResolverManager` 能够正确地管理 DNS 缓存和请求，并且能够根据请求的优先级和系统资源限制来有效地处理 DNS 解析任务。这些测试确保了 Chromium 网络栈在各种网络条件下都能稳定可靠地工作，为用户提供流畅的网络浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 all to |proc_| because cache was bypassed.
   EXPECT_EQ(2u, proc_->GetCaptureList().size());
 }
@@ -825,7 +827,4 @@ TEST_F(HostResolverManagerTest, LocalOnly_StaleEntry) {
   EXPECT_THAT(stale_request.request()->GetAddressResults(),
               AnyOf(nullptr, Pointee(IsEmpty())));
   EXPECT_THAT(stale_request.request()->GetEndp
-"""
-
-
 ```

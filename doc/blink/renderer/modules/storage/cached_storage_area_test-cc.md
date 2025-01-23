@@ -106,7 +106,7 @@ The user wants to understand the functionality of the `cached_storage_area_test.
 
 总而言之，`cached_storage_area_test.cc` 是理解 Blink 引擎中本地存储和会话存储实现细节的重要入口，它可以帮助开发者验证自己的假设，定位问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage/cached_storage_area_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -889,7 +891,4 @@ TEST_F(CachedStorageAreaTest, RevertOnChangeFailedAfterNonLocalClear) {
 
   // Even after a non-local clear is observed, |kValue2| remains cached because
   // pending local mutations are replayed over a non-local cl
-"""
-
-
 ```

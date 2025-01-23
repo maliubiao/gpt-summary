@@ -170,12 +170,13 @@ getElement(myArray, 1);
 
 `access-info.cc` 在 V8 编译器的代码生成过程中扮演着至关重要的角色。它通过收集和表示 JavaScript 对象属性和元素访问的详细信息，使得编译器能够进行更深层次的优化，从而显著提升 JavaScript 代码的执行效率。它将 JavaScript 灵活的动态特性转换为编译器可以理解和优化的静态信息，是 V8 引擎实现高性能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/access-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
-
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1392,7 +1393,4 @@ PropertyAccessInfo AccessInfoFactory::LookupTransition(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

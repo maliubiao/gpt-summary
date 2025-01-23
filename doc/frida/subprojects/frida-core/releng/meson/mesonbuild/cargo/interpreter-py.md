@@ -208,7 +208,7 @@ meson.override_dependency('my-frida-module-0-rs', dep)
 
 In summary, `interpreter.py` is a vital bridge between the Rust/Cargo ecosystem and the Meson build system used by Frida. It automates the process of incorporating Rust code into the Frida build, making it easier for developers to extend Frida's capabilities with Rust. Understanding its functionality is crucial for anyone working with Frida's build system or developing Rust-based Frida modules.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/cargo/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,8 +216,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2024 Intel Corporation
 
@@ -951,7 +953,4 @@ def interpret(subp_name: str, subdir: str, env: Environment) -> T.Tuple[mparser.
             ast.extend(_create_lib(cargo, build, crate_type))
 
     return build.block(ast), options
-
-"""
-
 ```

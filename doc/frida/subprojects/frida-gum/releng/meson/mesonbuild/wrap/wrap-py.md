@@ -102,7 +102,7 @@ The user wants a summary of the Python code provided, focusing on its functional
 
 如果构建过程中出现与外部依赖项相关的问题，例如下载失败、补丁应用失败等，开发者可能会查看此 `wrap.py` 脚本的日志或进行断点调试，以了解依赖项管理过程中的具体细节，从而找到问题的原因。 例如，可以检查下载的 URL 是否正确，`revision` 是否存在，以及补丁文件是否与源代码匹配等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -835,7 +837,4 @@ class Resolver:
         return hashvalue, tmpfile.name
 
     def check_hash(self, what: str, path: str, hash_required:
-"""
-
-
 ```

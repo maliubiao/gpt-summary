@@ -169,7 +169,7 @@ Interceptor.attach(Module.findExportByName(null, "sum"), {
 
 总而言之，`sum.c` 是 Frida 项目中一个清晰且独立的示例，用于测试和演示 LLVM C API 的基本用法，并为理解 Frida 的动态 instrumentation 技术提供了基础。 它涉及到编译器原理、底层代码生成和操作系统的一些基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/15 llvm/sum.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /** This code is public domain, and taken from
  * https://github.com/paulsmith/getting-started-llvm-c-api/blob/master/sum.c
  */
@@ -255,7 +257,4 @@ int main(int argc, char const *argv[]) {
     LLVMDisposeBuilder(builder);
     LLVMDisposeExecutionEngine(engine);
 }
-
-"""
-
 ```

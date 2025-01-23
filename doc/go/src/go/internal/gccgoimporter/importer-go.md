@@ -209,7 +209,7 @@ func main() {
 
 总而言之，`go/internal/gccgoimporter/importer.go` 是 Go 工具链中一个重要的组成部分，它弥合了标准 Go 编译器和 `gccgo` 编译器之间的差异，使得用户可以在同一个 Go 项目中混合使用两种编译器编译的代码。 理解其工作原理有助于解决与导入 `gccgo` 编译的包相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/internal/gccgoimporter/importer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -217,8 +217,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -480,9 +482,4 @@ func readMagic(reader io.ReadSeeker) (string, error) {
 	}
 	return string(magic[:]), nil
 }
-
-"""
-
-
-
 ```

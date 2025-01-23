@@ -296,7 +296,7 @@ By following these steps, combining high-level understanding with detailed code 
 
 总的来说，`v8/src/inspector/v8-debugger.cc` 的主要功能是 **为 JavaScript 调试器提供底层支持，使其能够检查和控制 JavaScript 代码的执行状态**。它涵盖了作用域检查、对象属性查看（包括内部属性和私有成员）、集合内容检查、堆栈跟踪管理（包括异步操作）、以及控制脚本执行流程等关键调试特性。这个文件是 V8 Inspector 架构的核心组成部分，连接了 V8 引擎和前端调试工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-debugger.cc以.tq结尾，那它是个v8 torque源代码，
@@ -304,8 +304,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 NCTION);
 }
 
@@ -884,8 +886,4 @@ bool V8Debugger::hasScheduledBreakOnNextFunctionCall() const {
 }
 
 }  // namespace v8_inspector
-
-"""
-
-
 ```

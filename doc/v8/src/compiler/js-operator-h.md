@@ -174,7 +174,7 @@ Essentially, the process involved a combination of:
 
 `v8/src/compiler/js-operator.h` 是 V8 编译器中定义 JavaScript 操作符抽象表示的核心头文件。它不仅定义了各种操作符的类型，还包含了与这些操作符执行相关的丰富信息，例如参数、反馈和语言模式。 这些定义是编译器进行代码生成和优化的基础，并且与常见的 JavaScript 语法结构和潜在的编程错误紧密相关。 该文件本身是 C++ 头文件，而不是 Torque 源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-operator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-operator.h以.tq结尾，那它是个v8 torque源代码，
@@ -182,8 +182,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1105,7 +1107,4 @@ class V8_EXPORT_PRIVATE JSOperatorBuilder final
 
   const Operator* BitwiseOr(FeedbackSource const& feedback);
   const Operator* BitwiseXor(FeedbackSource const& feedback)
-"""
-
-
 ```

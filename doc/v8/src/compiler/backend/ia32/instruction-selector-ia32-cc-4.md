@@ -122,7 +122,7 @@ console.log(result); // 输出: [1.5, 1.9, 0.8, 2.5]
 
 作为指令选择过程的第五部分，这段代码主要负责 **将 IR 中表示的 SIMD (向量) 操作转换为 IA-32 架构特定的机器指令**。它涵盖了浮点、整数、逻辑、混洗等多种 SIMD 操作，并且能够根据处理器是否支持 AVX 指令集来选择不同的指令。此外，它还处理了一些非 SIMD 但与指令选择相关的操作（例如，设置堆栈指针）。这段代码是 V8 编译器后端优化的关键组成部分，直接影响 JavaScript 和 WebAssembly 代码在 IA-32 处理器上的执行效率。它体现了 V8 对现代处理器 SIMD 特性的利用，以提升性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/instruction-selector-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -130,9 +130,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
- IA32OperandGeneratorT<Adapter> g(this);
+### 源代码
+```cpp
+IA32OperandGeneratorT<Adapter> g(this);
   static const int kUint32Immediates = kSimd128Size / sizeof(uint32_t);
   uint32_t val[kUint32Immediates];
   if constexpr (Adapter::IsTurboshaft) {
@@ -968,8 +970,4 @@ void VisitMinOrMax(InstructionSelectorT<Adapter>* selector,
                                ? g.DefineAsRegister(node)
                                : g.DefineSameAsFirst(node);
   if (flip_inputs) {
-    
-"""
-
-
 ```

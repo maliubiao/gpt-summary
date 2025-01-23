@@ -142,15 +142,17 @@ Change detected in struct T, field X: from 1 to 4
 
 总而言之，这段代码片段定义了一个带有特殊标签的结构体，暗示了对特定字段的追踪需求。具体的追踪逻辑需要在其他地方实现，例如示例代码中的 `SetX` 和 `SetY` 方法，以及 `logChange` 函数。  `go:"track"` 标签本身只是一个元数据，用于标记需要特殊处理的字段。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue20014.dir/a/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -172,9 +174,4 @@ func (t *T) GetY() int {
 func (t *T) GetZ() int {
 	return t.Z
 }
-
-"""
-
-
-
 ```

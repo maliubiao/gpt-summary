@@ -161,14 +161,16 @@ Absolute Capture Time: { absolute_capture_timestamp: UQ32x32 from NTP time, esti
 
 总而言之，`rtc_rtp_source.cc` 文件中的 `RTCRtpSource` 类是 Blink 引擎中处理 WebRTC RTP 源信息的核心组件，它连接了底层的 WebRTC 库和上层的 JavaScript API，为开发者提供了访问和理解媒体流来源的关键信息。理解其功能和潜在的使用陷阱对于开发健壮的 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_rtp_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ std::optional<int64_t> RTCRtpSource::SenderCaptureTimeOffset() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

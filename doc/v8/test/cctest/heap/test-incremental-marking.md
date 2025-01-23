@@ -106,11 +106,13 @@ setInterval(() => {
 
 `test-incremental-marking.cc` 这个 C++ 文件是 V8 引擎内部测试的一部分，它通过模拟环境和控制任务执行的方式，验证了增量标记垃圾回收机制的正确性和有效性。虽然 JavaScript 开发者无法直接触及这些底层的 C++ 代码，但增量标记作为 V8 的核心特性，直接影响着 JavaScript 应用的性能和用户体验，特别是对于需要处理大量数据和保持 UI 响应的应用来说，其重要性不言而喻。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-incremental-marking.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ TEST_WITH_PLATFORM(IncrementalMarkingUsingTasks, MockPlatform) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

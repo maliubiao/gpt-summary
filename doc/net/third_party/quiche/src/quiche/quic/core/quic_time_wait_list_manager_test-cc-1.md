@@ -126,7 +126,7 @@ Finally, the information gathered is organized into the different sections of th
 
 你提供的第二部分代码专门测试了 `QuicTimeWaitListManager` 在底层写入器被阻塞时，发送 Public Reset 数据包的策略。它验证了即使在需要发送大量 Public Reset 数据包的情况下，`QuicTimeWaitListManager` 也会限制待发送数据包的队列大小，防止资源耗尽。这体现了 QUIC 协议栈在处理网络拥塞和异常情况时的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_time_wait_list_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,9 +134,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  const size_t kNumOfUnProcessablePackets = 2048;
+### 源代码
+```cpp
+const size_t kNumOfUnProcessablePackets = 2048;
   EXPECT_CALL(visitor_, OnWriteBlocked(&time_wait_list_manager_))
       .Times(testing::AnyNumber());
   // Write block for the next packets.
@@ -161,8 +163,4 @@ Prompt:
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

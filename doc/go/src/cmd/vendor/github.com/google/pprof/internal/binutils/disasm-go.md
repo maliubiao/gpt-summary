@@ -197,7 +197,7 @@ objdump -d myprogram
 
 `disasm.go` 是 `pprof` 工具中一个重要的组成部分，它负责解析二进制工具的输出，提取符号和指令信息，为性能分析提供基础数据。它通过正则表达式匹配和字符串处理来实现这些功能，是 `pprof` 实现代码到性能数据映射的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/binutils/disasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -387,9 +389,4 @@ func nextSymbol(buf *bytes.Buffer) (uint64, string, error) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

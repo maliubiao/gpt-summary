@@ -142,15 +142,17 @@ My thinking process to answer the request goes like this:
 
 通过这种方式，`quic_crypto_server_config_peer.cc` 作为一个测试辅助工具，可以帮助开发者在本地环境中重现和调试生产环境中遇到的复杂网络问题，特别是在涉及到 QUIC 协议的加密和握手过程时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_crypto_server_config_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ uint32_t QuicCryptoServerConfigPeer::source_address_token_lifetime_secs() {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -148,15 +148,17 @@ func F[T any](x T) {
 
 总而言之，这段代码简洁地演示了 Go 泛型的基本用法：在 `main` 包中调用另一个使用类型参数定义的函数，并传递不同类型的值，由编译器根据传入的参数类型进行类型推断。使用者需要注意正确的包导入路径和被调用函数是否正确地使用了泛型来支持多种类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/recoverimp.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -169,9 +171,4 @@ func main() {
 	a.F(5.3)
 	a.F("hello")
 }
-
-"""
-
-
-
 ```

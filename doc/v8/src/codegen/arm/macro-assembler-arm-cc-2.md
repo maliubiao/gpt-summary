@@ -89,7 +89,7 @@ Considering this is part 3 of 4, I should focus on summarizing the functionality
 
 总而言之，这部分代码是 ARM 架构宏汇编器的核心组成部分，提供了构建 V8 引擎在 ARM 平台上运行所需的各种底层指令和操作。它体现了 V8 为了实现高性能所进行的精细化控制，包括内联优化、运行时回调和对特定硬件特性的利用。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/macro-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/macro-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -97,8 +97,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mpIfIsInRange(Register value, Register scratch,
                                      unsigned lower_limit,
                                      unsigned higher_limit,
@@ -1027,7 +1029,4 @@ int MacroAssembler::CallCFunction(Register function, int num_reg_arguments,
     ldr(sp, MemOperand(sp, stack_passed_arguments * kPointerSize));
   } else {
     add(sp
-"""
-
-
 ```

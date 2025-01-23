@@ -177,15 +177,17 @@ console.log(arr[5]); // 访问不存在的索引，可能导致 undefined 或错
 
 `v8/src/sandbox/check.h` 这个头文件定义了一套用于沙箱环境的安全断言机制。它通过条件编译和宏定义，在沙箱启用时提供更严格的运行时检查，帮助 V8 开发者在 C++ 代码层面防止潜在的沙箱绕过和安全漏洞。这些检查与 JavaScript 的安全性息息相关，因为它们保护着 V8 内部数据结构和操作的完整性，从而确保 JavaScript 代码在沙箱内的安全执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/check.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/check.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ Prompt:
 #endif
 
 #endif  // V8_SANDBOX_CHECK_H_
-
-"""
-
 ```

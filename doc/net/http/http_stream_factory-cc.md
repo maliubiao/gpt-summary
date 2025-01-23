@@ -184,15 +184,17 @@ fetch('https://example.com/data.json')
 
 总而言之，`http_stream_factory.cc` 是 Chromium 网络栈中至关重要的一个环节，它直接影响着网页加载的性能、安全性和稳定性。 理解它的功能对于进行网络相关的调试和性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -480,7 +482,4 @@ void HttpStreamFactory::OnJobControllerComplete(JobController* controller) {
 }
 
 }  // namespace net
-
-"""
-
 ```

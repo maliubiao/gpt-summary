@@ -171,14 +171,16 @@ void TestSomethingThatHandlesTrees() {
 
 总而言之，`blink/renderer/platform/wtf/pod_tree_test_helpers.cc` 是一个提供基础随机数生成功能的辅助文件，主要用于 Blink 引擎内部各种涉及树形数据结构的测试。虽然它不直接操作 JavaScript, HTML 或 CSS，但它可以帮助创建模拟的场景，以测试引擎在处理这些 Web 技术时的行为。理解其功能和潜在的误用可以帮助开发人员编写更有效和可靠的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/pod_tree_test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -222,7 +224,4 @@ int32_t NextRandom(const int32_t maximum_value) {
 
 }  // namespace tree_test_helpers
 }  // namespace WTF
-
-"""
-
 ```

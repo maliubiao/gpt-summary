@@ -145,14 +145,16 @@ By following these steps, we can systematically analyze the C++ unittest file an
 
 总而言之，`layer_tree_settings_unittest.cc` 通过测试 `LayerTreeSettings` 相关的计算，确保 Blink 引擎能够根据不同的设备和场景，合理地管理 GPU 内存，从而为用户提供流畅的 Web 体验。理解这些背后的原理有助于开发者编写更高效、更友好的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/layer_tree_settings_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ TEST(LayerTreeSettings, LargeScreensUseMoreMemory) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

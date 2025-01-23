@@ -121,7 +121,7 @@ console.log("Math.exp(1):", result_exp); // 输出接近 2.718281828459045
 
 总而言之，这部分 `v8/src/base/ieee754.cc` 代码是 V8 引擎中实现基础数学运算的关键部分，直接支持了 JavaScript 中 `Math` 对象的许多方法。它遵循 IEEE 754 标准，力求提供精确可靠的浮点数运算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ieee754.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/ieee754.cc以.tq结尾，那它是个v8 torque源代码，
@@ -129,8 +129,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0.5] by
  *              asin(x) = x + x*x^2*R(x^2)
  *      where
@@ -1087,7 +1089,4 @@ double log1p(double x) {
  *      Here ln2 is split into two floating point number:
  *          ln2_hi + ln2_lo,
  *      where n*ln2_h
-"""
-
-
 ```

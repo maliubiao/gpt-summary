@@ -149,15 +149,17 @@ Node 11: Branch(Node 10, Block C, Block D) // 第二个 if 使用复制的条件
 
 `BranchConditionDuplicator` 是 V8 编译器中一个重要的优化步骤，它通过复制被多次使用的分支条件，使得指令选择器能够生成更高效的机器码，从而提升 JavaScript 代码的执行性能。它主要解决了由于虚拟寄存器分配和 SSA 约束导致的无法直接复用某些指令结果的问题。虽然这个优化对用户是透明的，但理解其原理可以帮助开发者更好地理解 V8 的工作方式以及编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/branch-condition-duplicator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/branch-condition-duplicator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ class V8_EXPORT_PRIVATE BranchConditionDuplicator final {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BRANCH_CONDITION_DUPLICATOR_H_
-
-"""
-
 ```

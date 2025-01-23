@@ -303,7 +303,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/upstream-netbsd/lib/libc/stdlib/nrand48.c` 文件的功能和在 Android 中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/stdlib/nrand48.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -314,8 +314,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: nrand48.c,v 1.10 2013/10/22 08:08:51 matt Exp $	*/
 
 /*
@@ -354,7 +356,4 @@ nrand48(unsigned short xseed[3])
 	__dorand48(xseed);
 	return xseed[2] * 32768 + (xseed[1] >> 1);
 }
-
-"""
-
 ```

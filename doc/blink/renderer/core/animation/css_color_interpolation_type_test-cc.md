@@ -166,14 +166,16 @@ By following these steps, we can systematically analyze the C++ test file and un
 
 总而言之，`css_color_interpolation_type_test.cc` 这个文件通过一系列单元测试，确保了 Chromium Blink 引擎在进行 CSS 颜色插值时的正确性和健壮性，这对于保证网页动画和过渡的视觉效果至关重要。开发者虽然不会直接与这个文件交互，但它所测试的功能直接影响着用户在网页上看到的视觉体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_color_interpolation_type_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ TEST(CSSColorInterpolationTypeTest, Oklab) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

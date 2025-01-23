@@ -139,7 +139,7 @@ Given that the prompt explicitly requests me to consider the provided code snipp
 
 作为调试线索，如果代码执行到 `gpu_queue.cc` 文件，通常意味着 WebGPU 的 JavaScript API 已经被调用，并且 Blink 引擎正在处理这些调用，与 Chromium 的 GPU 进程进行交互以执行 GPU 命令。如果出现错误，可以检查 JavaScript 代码中传递给 `GPUQueue` 方法的参数是否正确，以及 HTML 元素的状态（例如，是否已加载，是否存在跨域问题）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_queue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -909,7 +911,4 @@ void GPUQueue::CopyFromVideoElement(
       .srcAlphaMode = wgpu::AlphaMode::Premultiplied,
       .dstAlphaMode = dst_premultiplied_alpha
                           ? wgpu::Alpha
-"""
-
-
 ```

@@ -318,7 +318,7 @@ Let's break down the thought process for analyzing this Go test code snippet.
 
 总而言之，这部分测试代码深入地检验了 `net/http` 包在各种边界场景下的健壮性和正确性，覆盖了 HTTP 协议的多个重要特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/clientserver_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -327,9 +327,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-	res, err := cst.c.Do(req)
+### 源代码
+```go
+res, err := cst.c.Do(req)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -923,10 +925,4 @@ func testEarlyHintsRequest(t *testing.T, mode testMode) {
 		t.Errorf("Read body %q; want Hello", body)
 	}
 }
-
-"""
-
-
-
-
 ```

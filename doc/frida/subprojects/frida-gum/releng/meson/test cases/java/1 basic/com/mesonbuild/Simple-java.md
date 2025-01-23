@@ -150,7 +150,7 @@ Frida is here! After printing...
 
 这个简单的例子是 Frida 入门和测试环境配置的常见步骤。它帮助用户验证 Frida 是否正确安装和配置，并了解如何使用 Frida 连接到 Java 进程并进行基本的代码修改。在更复杂的逆向场景中，用户会重复类似的步骤，但目标程序和 Frida 脚本会更加复杂。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/java/1 basic/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -167,7 +169,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

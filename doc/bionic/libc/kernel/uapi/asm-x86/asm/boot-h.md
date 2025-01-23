@@ -254,7 +254,7 @@ if (set_vga_mode_address !== "0xXXXXXXXX") {
 
 `bionic/libc/kernel/uapi/asm-x86/asm/boot.handroid` 是一个非常底层的头文件，定义了 x86 架构早期启动时的 VGA 模式常量。它主要被 Bootloader 和 Recovery 镜像等底层组件使用，与 Android Framework 和 NDK 的关系较为间接。要调试其使用情况，需要针对 Bootloader 或 Recovery 程序的 Native 代码进行分析和 hook。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/boot.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -279,7 +281,4 @@ Prompt:
 #define EXTENDED_VGA 0xfffe
 #define ASK_VGA 0xfffd
 #endif
-
-"""
-
 ```

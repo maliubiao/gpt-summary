@@ -203,15 +203,17 @@ By iteratively examining the code, relating it to SVG concepts, and considering 
 
 总而言之，`svg_fe_convolve_matrix_element.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它负责将 SVG 标准中的 `<feConvolveMatrix>` 元素转化为内部的 C++ 对象，并管理其属性和行为，最终驱动图像滤镜效果的渲染。理解这个文件的工作原理，有助于理解浏览器如何处理 SVG 滤镜，并能帮助开发者调试相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_convolve_matrix_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
  *
@@ -487,7 +489,4 @@ void SVGFEConvolveMatrixElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

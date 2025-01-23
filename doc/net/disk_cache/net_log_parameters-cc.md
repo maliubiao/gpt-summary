@@ -170,15 +170,17 @@ This iterative process of scanning, analyzing, connecting concepts, and refining
 
 通过分析这些日志参数，开发者可以了解磁盘缓存操作的细节，例如读取是否成功，读取了多少数据，是否发生了错误，从而帮助诊断缓存相关的问题。 例如，如果看到大量的 `NetLogReadWriteComplete` 事件带有负的 `net_error` 值，可能表明磁盘缓存存在问题或资源无法从缓存中正确加载。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/net_log_parameters.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ base::Value::Dict CreateNetLogGetAvailableRangeResultParams(
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

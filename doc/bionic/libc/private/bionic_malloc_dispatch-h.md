@@ -368,7 +368,7 @@ sys.stdin.read()
 
 `bionic_malloc_dispatch.h` 定义了一个内存分配器操作的函数表，它是 Android Bionic C 库中实现内存管理的关键抽象层。Android Framework 和 NDK 最终都会通过这个函数表来调用实际的内存分配器实现。使用 Frida 可以方便地 Hook 这些函数，从而调试和分析 Android 应用的内存分配行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_malloc_dispatch.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -379,8 +379,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -462,7 +464,4 @@ struct MallocDispatch {
 } __attribute__((aligned(32)));
 
 #endif
-
-"""
-
 ```

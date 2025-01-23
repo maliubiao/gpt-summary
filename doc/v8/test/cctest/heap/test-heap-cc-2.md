@@ -136,7 +136,7 @@ By following this process, the detailed and informative summary of the code's fu
 
 这部分 `test-heap.cc` 集中测试了 V8 堆管理的多个核心方面，涵盖了编译缓存的生命周期管理、内部弱引用的处理、对象内存占用和对齐、以及防止跨 Context 泄漏等关键功能。这些测试确保了 V8 堆的正确性、效率和安全性，对于保证 JavaScript 程序的稳定运行至关重要。 它主要关注的是**编译缓存的再生机制、堆内部数据结构的正确性（例如弱列表）、内存分配的对齐策略以及防止跨上下文信息泄露的机制**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -144,8 +144,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 olate());
 
     // The lazy function should still not be compiled.
@@ -1031,7 +1033,4 @@ TEST(InstanceOfStubWriteBarrier) {
   if (v8_flags.force_marking_deque_overflows) return;
   v8::HandleScope outer_scope(CcTest::isolate());
   v8::Local<v8::Context> ctx = CcTest::isola
-"""
-
-
 ```

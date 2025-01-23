@@ -287,7 +287,7 @@ if (Process.platform === 'android') {
 
 要 Hook `fstatvfs`，只需将脚本中的 `statvfs` 替换为 `fstatvfs`，并在 `onEnter` 回调中读取文件描述符参数，在 `onLeave` 回调中根据文件描述符对应的文件系统读取 `statvfs` 结构体信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_statvfs_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -355,7 +357,4 @@ static void sys_statvfs_h() {
   FUNCTION(fstatvfs, int (*f)(int, struct statvfs*));
   FUNCTION(statvfs, int (*f)(const char*, struct statvfs*));
 }
-
-"""
-
 ```

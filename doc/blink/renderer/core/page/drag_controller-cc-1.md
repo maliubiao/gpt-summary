@@ -186,7 +186,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，这部分 `drag_controller.cc` 代码是 Chromium Blink 引擎中处理拖放操作的核心组件，它负责识别可拖动的元素，管理拖放过程中的数据传输，并与操作系统的拖放机制进行交互。它与 HTML、CSS 和 JavaScript 的拖放 API 紧密相关，共同实现了网页上的拖放功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/drag_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 onsMask src_op_mask = drag_data->DraggingSourceOperationMask();
   data_transfer->SetSourceOperation(src_op_mask);
 
@@ -815,8 +817,4 @@ void DragController::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

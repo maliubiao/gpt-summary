@@ -194,15 +194,17 @@ By following this systematic approach, I can effectively analyze the C++ code an
 
 通过以上步骤，开发者可以逐步排查问题，最终定位到 `traffic_policer.cc` 文件，理解其流量控制逻辑，并判断是否是其导致了观察到的网络请求速度缓慢的问题。 这通常发生在网络协议的开发、测试和调试阶段，特别是在使用网络模拟器进行性能分析时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/simulator/traffic_policer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ bool TrafficPolicer::FilterPacket(const Packet& packet) {
 
 }  // namespace simulator
 }  // namespace quic
-
-"""
-
 ```

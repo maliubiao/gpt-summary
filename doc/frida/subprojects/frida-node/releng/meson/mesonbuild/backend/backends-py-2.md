@@ -209,7 +209,7 @@ For each relevant method, I'll provide examples, particularly focusing on how th
 
 这段代码是 Frida 构建系统中至关重要的一部分，它负责将高层次的构建意图转换为低层次的构建指令。它处理了各种构建目标的细节，并为不同后端提供了统一的接口。理解这段代码的功能对于调试构建问题、理解 Frida 的构建过程以及进行与构建系统相关的逆向分析都是非常有帮助的。它涉及到编译、链接、文件系统操作、环境变量等多个方面的知识，是构建系统复杂性的一个体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 = arg
             for dep in t.depends:
                 assert isinstance(dep, (build.CustomTarget, build.BuildTarget))
@@ -831,7 +833,4 @@ Prompt:
         '''
         Some backends don't support custom compilers. This is a convenience
         method to conve
-"""
-
-
 ```

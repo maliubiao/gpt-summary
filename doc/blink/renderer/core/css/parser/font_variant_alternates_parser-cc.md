@@ -189,15 +189,17 @@ By following these steps, I was able to analyze the C++ code and provide a compr
 * **查看控制台错误:**  虽然 CSS 解析错误通常不会抛出 JavaScript 异常，但 Blink 引擎可能会在控制台中输出相关的警告或错误信息。
 * **检查字体支持:**  即使 CSS 解析正确，如果所使用的字体不支持指定的 alternate 特性（例如 `ss01` 风格集），那么效果也不会显示出来。可以使用字体编辑器或其他工具检查字体中包含的 OpenType 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/font_variant_alternates_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ CSSValue* FontVariantAlternatesParser::FinalizeValue() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -138,11 +138,13 @@ var innerFunc = f();
 
 `background-compile-task-unittest.cc` 这个 C++ 文件通过各种测试用例，确保 V8 引擎的后台编译功能能够正确、高效地工作，这直接影响到 JavaScript 代码的加载速度和执行性能。 它验证了 V8 如何利用后台线程优化 JavaScript 代码的编译过程，以及如何处理各种编译场景，包括错误和不同的函数结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/tasks/background-compile-task-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -390,7 +392,4 @@ TEST_F(BackgroundCompileTaskTest, LazyInnerFunctions) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

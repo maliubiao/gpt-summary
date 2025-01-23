@@ -63,15 +63,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，这段代码是 Chromium 渲染引擎中负责将 CSS 多列布局规范转化为实际像素绘制的关键部分，它处理了各种与多列布局相关的复杂逻辑和边缘情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/column_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -857,8 +859,4 @@ const LayoutResult* ColumnLayoutAlgorithm::LayoutRow(
         // the block-size of the column fragment (in
         // FinishFragmentationForFragmentainer()) instead of just cropping the
         // block-size of the multicol container here, but that would cause
- 
-"""
-
-
 ```

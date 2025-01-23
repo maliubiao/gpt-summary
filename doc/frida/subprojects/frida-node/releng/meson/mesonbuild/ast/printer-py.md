@@ -227,7 +227,7 @@ endif
 
 总而言之，`printer.py` 是 Frida 用于处理和呈现 Meson 构建文件 AST 的一个重要工具，虽然用户通常不会直接调用它，但它是 Frida 内部处理构建相关任务的关键组成部分。了解其功能有助于理解 Frida 如何与构建系统交互，并在开发或调试 Frida 扩展时提供帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/ast/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -235,8 +235,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -857,7 +859,4 @@ class AstJSONPrinter(AstVisitor):
             kwargs_list += [{'key': key_res, 'val': val_res}]
         self.current['kwargs'] = kwargs_list
         self.setbase(node)
-
-"""
-
 ```

@@ -108,7 +108,7 @@ Strategizing complete. I will now generate the response based on these insights.
 
 作为 17 个部分中的第 4 部分，这个代码片段主要专注于 **`URLRequest` 对 `SameSite` Cookie 的核心处理逻辑测试**。它深入测试了在各种基本场景下，`SameSite=Strict` 和 `SameSite=Lax` 的 Cookie 是否会被正确地发送和设置。这为后续更复杂的测试场景（例如涉及重定向、特殊 scheme）奠定了基础，并确保了 Chromium 对 `SameSite` Cookie 这一重要安全特性的正确实现。  可以理解为这是 `SameSite` Cookie 功能测试的 **基础核心用例部分**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
     EXPECT_EQ(0, default_network_delegate().blocked_set_cookie_count());
   }
@@ -898,7 +900,4 @@ TEST_P(URLRequestSameSiteCookiesTest, SettingSameSiteCookies_Redirect) {
 
   // Verify that SameSite cookies can be set for a same-site redirected
   // top-l
-"""
-
-
 ```

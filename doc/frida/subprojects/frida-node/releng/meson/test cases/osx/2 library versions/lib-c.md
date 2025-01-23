@@ -177,7 +177,7 @@ By following this detailed thought process, we can generate a comprehensive and 
 
 在这个调试过程中，查看 `lib.c` 的源代码能够帮助用户确认他们的假设，理解 `myFunc` 的基本功能，并为进一步的分析和调试提供基础。即使 `myFunc` 非常简单，它也可能是测试框架的一部分，用于验证 Frida 的 hook 功能是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/osx/2 library versions/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,12 +185,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc(void) {
     return 55;
 }
-
-"""
-
 ```

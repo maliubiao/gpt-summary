@@ -155,7 +155,7 @@ func GetConcurrentLimit() int {
 
 总结来说，`go/src/net/rlimit_js.go` 通过条件编译，为 JavaScript 平台下的 `net` 包设定了一个并发执行 DNS 查询操作的限制。这个限制有助于在单线程的 JavaScript 环境中管理并发请求，避免资源竞争和性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/rlimit_js.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -163,8 +163,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ package net
 func concurrentThreadsLimit() int {
 	return 500
 }
-
-"""
-
-
-
 ```

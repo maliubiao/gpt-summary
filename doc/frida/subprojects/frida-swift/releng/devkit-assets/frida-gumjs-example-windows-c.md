@@ -150,7 +150,7 @@ By following this structured approach, considering the specific components of th
 
 总而言之，这个示例代码是一个学习 Frida 在 Windows 平台进行动态 instrumentation 的良好起点，展示了如何使用 C 语言宿主程序加载和执行 Frida 的 JavaScript 脚本，从而实现对目标进程中特定函数的拦截和观察。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/devkit-assets/frida-gumjs-example-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * To build, set up your Release configuration like this:
  *
@@ -251,7 +253,4 @@ on_message (const gchar * message,
 
   g_object_unref (parser);
 }
-
-"""
-
 ```

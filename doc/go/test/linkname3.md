@@ -139,15 +139,17 @@ var hiddenVariable int
 
 总而言之，这段代码的核心价值在于它是一个针对 Go 编译器错误处理的测试用例，帮助确保 `//go:linkname` 在被错误使用时能够产生清晰的错误信息，从而帮助开发者避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkname3.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -177,9 +179,4 @@ func F[T any](T) {}
 //go:linkname t notvarfunc
 //go:linkname x duplicate
 //go:linkname i F[go.shape.int]
-
-"""
-
-
-
 ```

@@ -207,7 +207,7 @@ Finally, organize the gathered information into the requested categories:
 
 在提供的代码片段中，`net/reporting/reporting_cache_unittest.cc` 的主要功能是 **测试 `ReportingCache` 类的基本报告管理功能**，包括报告的添加、查询、更新和删除。它还测试了缓存观察者机制，以及在没有持久化存储的情况下 `ReportingCache` 的内存缓存行为。 此外，它开始涉及 Reporting Endpoint 的基本管理，但更深入的 Endpoint 和 Client 测试可能在后续的部分。  这个部分的核心是验证 `ReportingCache` 作为内存缓存，能否正确地存储和操作 Reporting Report 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1005,7 +1007,4 @@ TEST_P(ReportingCacheTest, ReportingCacheImplConstructionWithFeatureDisabled) {
 TEST_P(ReportingCacheTest, ClientsKeyedByEndpointGroupKey) {
   // Raise the endpoint limits for this test.
   // (This needs to first remove the cache observer because th
-"""
-
-
 ```

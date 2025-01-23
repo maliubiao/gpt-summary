@@ -123,14 +123,16 @@ Let's break down the thought process for analyzing the provided `script_state.cc
 
 总而言之，`ScriptState` 是 Blink 渲染引擎中一个至关重要的内部组件，它负责管理 JavaScript 代码的执行环境，并将其与浏览器的其他部分连接起来。理解其功能和生命周期对于理解 Blink 的工作原理以及避免一些常见的 Web 开发错误非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/script_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ void ScriptState::OnV8ContextCollectedCallback(
 }
 
 }  // namespace blink
-
-"""
-
 ```

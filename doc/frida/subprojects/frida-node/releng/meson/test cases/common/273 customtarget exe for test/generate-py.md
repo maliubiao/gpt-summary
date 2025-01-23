@@ -169,7 +169,7 @@ By following this structured thought process, we can dissect the script's functi
 
 因此，这个脚本通常不是用户直接交互的对象，而是 Frida 开发和测试流程中的一个幕后工具，用于辅助测试 Frida 的各项功能。调试线索会指向这个脚本，是因为它是设置测试环境的关键一步，理解它的作用有助于理解整个测试用例的目的和实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/273 customtarget exe for test/generate.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -193,7 +195,4 @@ for i, a in enumerate(sys.argv[1:]):
     with open(a, 'w') as f:
         print(program.format(i), file=f)
     os.chmod(a, 0o755)
-
-"""
-
 ```

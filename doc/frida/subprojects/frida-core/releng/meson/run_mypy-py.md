@@ -97,7 +97,7 @@ By following these steps, I can provide a comprehensive and accurate answer that
 
 `run_mypy.py` 是 Frida 项目中一个重要的代码质量保证工具，它通过静态类型检查来提高 Meson 构建系统代码的可靠性和可维护性。虽然它本身不是一个逆向工具，也不直接操作二进制或内核，但它确保了构建系统的正确性，这对于理解和分析 Frida 的构建过程是有帮助的。开发者在开发、测试和集成代码时会使用这个脚本，以尽早发现并修复类型错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/run_mypy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from pathlib import Path
@@ -269,7 +271,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

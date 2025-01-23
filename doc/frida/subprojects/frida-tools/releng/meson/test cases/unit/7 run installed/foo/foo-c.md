@@ -101,7 +101,7 @@ By following these steps, the detailed explanation addressing all the prompt's r
 
 总而言之，`foo.c` 是一个非常基础的测试用例，用于验证 Frida 动态 instrumentation 的基本功能。它本身并没有复杂的逻辑或逆向操作，但它是 Frida 进行更复杂逆向工程的基础。  它的简单性使其成为理解 Frida 如何与二进制代码交互的一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/7 run installed/foo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,12 +109,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo() {
     return 0;
 }
-
-"""
-
 ```

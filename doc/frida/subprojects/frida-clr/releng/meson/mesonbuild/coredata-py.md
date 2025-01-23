@@ -148,7 +148,7 @@ By following these steps, we can arrive at a comprehensive summary of the provid
 
 `coredata.py` 文件的主要功能是定义和实现 `CoreData` 类，该类作为 Meson 构建系统的核心数据容器，负责存储和管理构建配置信息、依赖关系缓存、CMake 状态缓存、编译和运行检查结果，以及处理构建目录的生命周期。 它也定义了用于抽象和管理用户可配置构建选项的类。  该文件是 Meson 构建系统持久化配置信息和优化构建过程的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2024 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -922,8 +924,5 @@ class CoreData:
         return value.as_posix()
 
     def init_builtins(self, subproject: str) -> None:
-        # Create builtin options with default 
-"""
-
-
+        # Create builtin options with default
 ```

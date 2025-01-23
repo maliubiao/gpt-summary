@@ -126,15 +126,17 @@ const myObject = { key: 'value' };
 
 总而言之，`v8/test/unittests/heap/cppgc/garbage-collected-unittest.cc` 是一个关键的测试文件，用于确保 V8 的 C++ 垃圾回收机制中与 `GarbageCollected` 相关的特性能够正常工作，并且有助于开发者避免一些常见的与对象生命周期管理相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/garbage-collected-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/garbage-collected-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ static_assert(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

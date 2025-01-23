@@ -209,7 +209,7 @@ By following these steps, we can systematically analyze the C++ code and generat
 
 这部分代码通过大量的测试用例，确保了 Cookie SameSite 策略在各种复杂场景下的正确性和一致性，对于维护 Chromium 网络栈的稳定性和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ithout_chain,
                       test_case.expected_context_type_for_main_frame_navigation,
                       test_case.expected_redirect_type_with_chain)))
@@ -605,8 +607,4 @@ TEST(CookieUtilTest, IsCookieAccessResultInclude) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

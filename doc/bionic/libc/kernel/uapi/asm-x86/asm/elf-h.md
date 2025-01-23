@@ -246,7 +246,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/asm-x86/asm/elf.handroid` 是一个定义了用于描述 x86 架构下 ELF 文件扩展特征组件的结构体的头文件。它在 Android 系统中主要被动态链接器使用，用于解析和处理包含此类信息的 ELF 文件段。普通开发者通常不会直接使用它，但理解其作用有助于深入了解 Android 系统加载和链接 native 代码的过程。通过 Frida 可以 Hook 动态链接器的相关函数，观察 ELF 文件的解析过程，从而验证 `x86_xfeat_component` 结构体的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/elf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -257,8 +257,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -275,7 +277,4 @@ struct x86_xfeat_component {
   __u32 flags;
 } __attribute__((__packed__));
 #endif
-
-"""
-
 ```

@@ -178,7 +178,7 @@ func main() {
 
 `go/src/go/types/expr.go` 的第 1 部分主要负责 Go 语言表达式的 **类型推断、常量求值和运算符类型检查**。它遍历 AST 中的表达式节点，根据 Go 的类型规则，确定表达式的类型、值，并验证其操作的合法性。这是 Go 语言静态类型检查的核心组成部分，旨在在编译时发现类型错误，提高代码质量。它还处理了 untyped 常量的特殊情况，并为后续的编译阶段记录类型信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/expr.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1300,10 +1302,4 @@ func (check *Checker) exprInternal(T *target, x *operand, e ast.Expr, hint Type)
 				}
 				base = p.base
 				return true
-		
-"""
-
-
-
-
 ```

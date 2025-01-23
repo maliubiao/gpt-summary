@@ -135,7 +135,7 @@ Initially, I might have focused too much on the Python code itself. The key insi
 
 总而言之，虽然 `printer.py` 自身功能极其简单，但在 Frida 动态 instrumentation 工具的上下文中，它作为一个轻量级的验证工具，可以帮助逆向工程师确认代码执行路径，并为理解 Frida 的工作机制和测试流程提供线索。  它涉及到二进制、操作系统底层和框架的知识，并通过简单的逻辑推理来验证假设。理解这类简单的测试脚本有助于用户更好地使用 Frida 进行复杂的逆向分析工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python/2 extmodule/subinst/submod/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,12 +143,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('subinst.submod')
-
-"""
-
 ```

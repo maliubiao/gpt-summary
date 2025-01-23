@@ -161,15 +161,17 @@ This detailed thought process allows for a comprehensive understanding of the co
 
 总而言之，`blink/renderer/modules/ml/ml.cc` 是连接 JavaScript 和底层机器学习能力的关键桥梁，它负责创建和管理机器学习上下文，并与独立的 WebNN 服务进行通信以执行实际的计算。理解这个文件的功能和交互方式对于开发和调试 WebML 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/ml.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,7 +313,4 @@ void ML::EnsureWebNNServiceConnection() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -170,7 +170,7 @@ compiler_args = CompilerArgs(compiler, ['-I/usr/include', '-DFOO'])
 
 总而言之，`frida/releng/meson/mesonbuild/arglist.py` 是 Frida 构建系统中一个关键的组件，它负责管理和优化编译器及链接器的命令行参数，对于理解 Frida 的构建过程以及排查相关的编译链接问题至关重要。对于逆向工程师来说，理解编译和链接选项本身也是一项重要的技能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/arglist.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 # Copyright © 2020-2023 Intel Corporation
@@ -501,7 +503,4 @@ class CompilerArgs(T.MutableSequence[str]):
     def __repr__(self) -> str:
         self.flush_pre_post()
         return f'CompilerArgs({self.compiler!r}, {self._container!r})'
-
-"""
-
 ```

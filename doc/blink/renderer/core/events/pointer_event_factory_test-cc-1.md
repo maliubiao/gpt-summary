@@ -70,15 +70,17 @@ My plan is to:
 
 这部分测试代码专门验证了 `PointerEventFactory` 在生成和管理 `PointerEvent` 对象时，对于设备唯一 ID (`persistentDeviceId()`) 的处理逻辑是否符合预期。它确保了在不同的文档上下文中，即使是相同的物理输入设备也会有不同的标识符，而在同一文档中，相同的设备会保持相同的标识符。同时，它也测试了对于特定类型的输入设备（如擦除器和鼠标）的特殊处理情况，并验证了 JavaScript 代码访问该属性时，Blink 内部使用计数器的更新机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/pointer_event_factory_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ter_event, coalesced_events,
                                          predicted_events, window);
   }
@@ -206,8 +208,4 @@ TEST_F(PointerEventFactoryDeviceIdTest, PersistentDeviceIdUseCounterUpdated) {
       WebFeature::kV8PointerEvent_PersistentDeviceId_AttributeGetter));
 }
 }  // namespace blink
-
-"""
-
-
 ```

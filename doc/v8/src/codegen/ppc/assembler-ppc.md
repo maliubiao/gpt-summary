@@ -69,12 +69,14 @@ _Z3addii:
 
 **总结来说， `assembler-ppc.cc` 是 V8 引擎的核心低级组件，负责将高级的 JavaScript 代码转化为 PowerPC 处理器能够理解和执行的机器指令。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/assembler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -2044,8 +2046,5 @@ void Assembler::lxsibzx(const Simd128Register rt, const MemOperand& src) {
        src.rb().code() * B11 | TX);
 }
 
-void Assembler::lxsihzx(const Simd128Register rt, const MemOperand& src) 
-"""
-
-
+void Assembler::lxsihzx(const Simd128Register rt, const MemOperand& src)
 ```

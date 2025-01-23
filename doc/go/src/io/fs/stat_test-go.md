@@ -185,7 +185,7 @@ func main() {
 
 在这个例子中，`MyFS` 并没有 `Stat` 方法。 当我们调用 `fs.Stat(myfs, "my_resource")` 时，`fs.Stat` 会调用 `MyFS` 的 `Open` 方法（如输出所示）。  开发者需要理解这种降级行为，并在设计自己的文件系统实现时考虑是否需要提供 `Stat` 方法以获得更高效的实现。 只有在实现了 `StatFS` 接口的情况下，`fs.Stat` 才会直接调用文件系统的 `Stat` 方法，否则会退而求其次使用 `Open` 方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/io/fs/stat_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -231,9 +233,4 @@ func TestStat(t *testing.T) {
 	info, err = Stat(openOnly{testFsys}, "hello.txt")
 	check("openOnly", info, err)
 }
-
-"""
-
-
-
 ```

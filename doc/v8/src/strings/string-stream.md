@@ -139,11 +139,13 @@ By following this iterative process of skimming, identifying key components, und
 
 `StringStream` 是 V8 引擎内部用于高效构建和格式化字符串的关键组件。虽然 JavaScript 开发者不直接使用它，但其功能直接影响了 JavaScript 中字符串操作、调试输出和错误处理等方面的性能和行为。它体现了 V8 引擎在底层对字符串处理的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/string-stream.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -623,7 +625,4 @@ char* HeapStringAllocator::grow(unsigned* bytes) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

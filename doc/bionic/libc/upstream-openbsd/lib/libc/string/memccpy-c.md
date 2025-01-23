@@ -285,7 +285,7 @@ if (Process.platform === 'android') {
 
 总而言之，`memccpy` 是一个基础但重要的内存操作函数，虽然它不直接对应于某个特定的 Android 功能，但作为 `libc` 的一部分，它被 Android 系统的各个层面广泛使用，为高效的内存操作提供了基础。了解其功能和使用方法对于理解 Android 系统的底层运作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/string/memccpy.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -296,8 +296,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: memccpy.c,v 1.7 2015/08/31 02:53:57 guenther Exp $	*/
 
 /*-
@@ -347,7 +349,4 @@ memccpy(void *t, const void *f, int c, size_t n)
 	return (0);
 }
 DEF_WEAK(memccpy);
-
-"""
-
 ```

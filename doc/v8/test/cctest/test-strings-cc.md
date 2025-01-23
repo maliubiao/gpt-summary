@@ -671,7 +671,7 @@ static void VerifyCharacterStream(Tagged<String> flat_string,
     int offset = length * j / outer_iterations;
     if (offset < 0) offset = 0;
     // Want to test
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-strings.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-strings.cc以.tq结尾，那它是个v8 torque源代码，
@@ -679,8 +679,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1612,8 +1614,4 @@ TEST(Utf8ConversionPerf) {
   v8::Local<v8::String> ascii_string =
       CompileRun("'abc'.repeat(1E6)").As<v8::String>();
   v8::Local<v8::String> one_byte_string =
-      
-"""
-
-
 ```

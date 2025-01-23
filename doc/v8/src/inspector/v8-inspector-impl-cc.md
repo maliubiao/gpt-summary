@@ -204,15 +204,17 @@ console.log(totalPrice); // 输出 15，期望输出 50
 
 总而言之，`v8-inspector-impl.cc` 是 V8 Inspector 功能的核心，它连接了 V8 引擎和调试客户端，使得开发者可以有效地调试和分析 JavaScript 代码，从而解决各种编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-inspector-impl.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-inspector-impl.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2010-2011 Google Inc. All rights reserved.
  *
@@ -772,7 +774,4 @@ V8InspectorImpl::getAssociatedExceptionDataForProtocol(
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

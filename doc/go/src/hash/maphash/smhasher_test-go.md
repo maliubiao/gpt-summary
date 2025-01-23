@@ -238,7 +238,7 @@ func main() {
 
 这段代码是 `maphash` 包的重要组成部分，它通过一系列严谨的测试确保了该包提供的哈希函数具有高质量的特性，例如良好的分布性、雪崩效应以及对不同模式输入的鲁棒性。理解这段代码有助于深入理解 `maphash` 包的设计和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/maphash/smhasher_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -246,8 +246,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -749,9 +751,4 @@ func TestSmhasherSeed(t *testing.T) {
 	}
 	h.check(t)
 }
-
-"""
-
-
-
 ```

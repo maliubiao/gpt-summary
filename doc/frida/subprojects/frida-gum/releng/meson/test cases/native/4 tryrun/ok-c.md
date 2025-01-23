@@ -116,7 +116,7 @@ This detailed breakdown shows how to move from a basic understanding of the code
 
 总而言之，`ok.c` 作为一个极其简单的 C 程序，其存在的主要目的是作为 Frida 功能测试的基础用例。它帮助开发者和用户验证 Frida 是否能够正确地与目标进程交互，特别是观察和干预其标准输出和标准错误输出的行为。它的简单性使其成为调试和理解 Frida 工作原理的理想起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/4 tryrun/ok.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
@@ -133,7 +135,4 @@ int main(void) {
   fprintf(stderr, "%s\n", "stderr");
   return 0;
 }
-
-"""
-
 ```

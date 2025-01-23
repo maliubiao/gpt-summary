@@ -76,12 +76,14 @@ Now, I'll provide JavaScript examples to illustrate the connection for some of t
 
 总而言之，这部分 C++ 代码是 V8 引擎中实现 JavaScript 正则表达式相关功能的关键组成部分，它直接关联并支撑着 JavaScript 中 `String.prototype.split()`, `String.prototype.match()` (在全局匹配情况下) 和 `String.prototype.replace()` (在简单替换场景下) 等方法的运行。它通过底层的 C++ 代码实现了高效的正则表达式匹配和字符串操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-regexp-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 er_match = RegistersForCaptureCount(capture_count);
   TNode<RawPtrT> result_offsets_vector;
   TNode<BoolT> result_offsets_vector_is_dynamic;
@@ -605,8 +607,4 @@ TNode<String> RegExpBuiltinsAssembler::RegExpReplaceGlobalSimpleString(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

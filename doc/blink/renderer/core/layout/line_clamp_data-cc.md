@@ -176,14 +176,16 @@ By following this thought process, we arrive at a comprehensive and accurate ans
 
 总而言之，`blink/renderer/core/layout/line_clamp_data.cc` 这个文件是 Blink 渲染引擎中负责实现 CSS `line-clamp` 属性的关键组成部分，它存储了布局和渲染过程中需要的关键数据，并与 HTML、CSS 和 JavaScript 协同工作，最终呈现出用户期望的截断效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/line_clamp_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ ASSERT_SIZE(LineClampData, SameSizeAsLineClampData);
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

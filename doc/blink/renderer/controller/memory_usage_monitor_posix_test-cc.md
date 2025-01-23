@@ -157,15 +157,17 @@ This detailed breakdown demonstrates a systematic approach to understanding and 
 
 总而言之，`memory_usage_monitor_posix_test.cc` 虽然是一个单元测试文件，但它对于理解和调试 Blink 渲染引擎的内存管理至关重要。它可以帮助开发者验证内存监控功能的正确性，并在排查性能问题和内存泄漏时提供重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/memory_usage_monitor_posix_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST(MemoryUsageMonitorPosixTest, CalculateProcessFootprint) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

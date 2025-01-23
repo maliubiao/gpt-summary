@@ -132,11 +132,13 @@ Node.js 或 Chrome 等 V8 的嵌入环境可能会使用 `SetFatalFunction` 来�
 
 `v8/src/base/logging.cc` 文件是 V8 引擎的底层基础设施之一，提供了关键的错误报告和调试功能。虽然用户编写的 JavaScript 代码通常不会直接调用这些 C++ 函数，但当 JavaScript 代码执行过程中发生错误（特别是导致 V8 引擎内部状态异常或内存溢出时），这些日志记录机制就会发挥作用，帮助开发者诊断问题和确保引擎的稳定性。 嵌入环境还可以利用提供的接口自定义错误处理行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/logging.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -365,7 +367,4 @@ void V8_Dcheck(const char* file, int line, const char* message) {
 
   v8::base::g_dcheck_function(file, line, message);
 }
-
-"""
-
 ```

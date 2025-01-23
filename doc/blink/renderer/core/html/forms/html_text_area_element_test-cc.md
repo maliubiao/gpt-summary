@@ -185,14 +185,16 @@ By following this structured approach, I can systematically analyze the C++ test
 
 总而言之，`html_text_area_element_test.cc` 文件通过细致的测试用例，确保了 Blink 引擎中 `HTMLTextAreaElement` 的各项功能（特别是与用户输入清理、硬换行和默认工具提示相关的行为）的正确性和可靠性，同时也间接反映了开发者在使用 `<textarea>` 元素时需要注意的一些关键点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_text_area_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ TEST_F(HTMLTextAreaElementTest, DefaultToolTip) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

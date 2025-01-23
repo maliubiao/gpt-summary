@@ -122,7 +122,7 @@ Given the directory structure `frida/subprojects/frida-tools/releng/meson/test c
 
 **In summary, while this specific Python script is very simple, it plays a small but potentially important role in a larger software project's build and test process. The generated C code, even in its simplicity, represents the kind of target that reverse engineers often analyze.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/11 cmake_module_path/subprojects/cmMod/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 with open('main.c', 'w') as fp:
   print('''
 #include <stdio.h>
@@ -141,7 +143,4 @@ int main(void) {
   return 0;
 }
 ''', file=fp)
-
-"""
-
 ```

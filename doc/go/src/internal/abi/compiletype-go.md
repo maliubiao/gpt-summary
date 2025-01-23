@@ -152,7 +152,7 @@ func main() {
 
 `go/src/internal/abi/compiletype.go` 中的函数是 Go 编译器内部用于计算类型数据结构大小和偏移量的关键组成部分。它们确保了在不同的目标平台上，编译器能够正确地生成代码，并为反射和接口等功能提供了基础。普通 Go 开发者不应该直接使用它们，而应该依赖 Go 语言提供的类型系统和反射机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/compiletype.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -190,9 +192,4 @@ func TFlagOff(ptrSize int) int { return 2*ptrSize + 4 }
 
 // ITabTypeOff returns the offset of ITab.Type for a compilation target with a given ptrSize
 func ITabTypeOff(ptrSize int) int { return ptrSize }
-
-"""
-
-
-
 ```

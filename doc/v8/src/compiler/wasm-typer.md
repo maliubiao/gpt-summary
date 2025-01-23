@@ -148,11 +148,13 @@ By following these steps, I can effectively analyze the C++ code and generate a 
 
 `wasm-typer.cc` 是 V8 编译器中负责 Wasm 类型分析的关键组件。它通过在编译时推断和细化 Wasm 代码的类型信息，为后续的编译器优化提供了基础。虽然 JavaScript 是动态类型的，但理解 `WasmTyper` 的功能可以帮助我们更好地理解 Wasm 的类型系统及其与 JavaScript 的交互方式，以及 Wasm 如何能在 V8 中高效执行。  它确保了 Wasm 代码的类型安全性，并允许编译器进行更深层次的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-typer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -384,7 +386,4 @@ Reduction WasmTyper::Reduce(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

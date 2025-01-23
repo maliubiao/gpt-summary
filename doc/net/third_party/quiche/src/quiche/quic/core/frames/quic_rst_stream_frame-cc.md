@@ -168,15 +168,17 @@ QuicRstStreamFrame frame(123, 4, QUIC_STREAM_CANCELLED, 1024);
 
 总而言之，`quic_rst_stream_frame.cc` 定义了 QUIC 协议中用于单方面终止流的 `RST_STREAM` 帧的表示，它在浏览器与服务器的 QUIC 通信中起着重要的错误处理和流控制作用。虽然 JavaScript 不直接操作这个类，但其发起的网络请求的行为会间接地导致 `RST_STREAM` 帧的发送和接收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/frames/quic_rst_stream_frame.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +232,4 @@ bool QuicRstStreamFrame::operator!=(const QuicRstStreamFrame& rhs) const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

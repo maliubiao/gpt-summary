@@ -171,12 +171,14 @@ async function myFunction() {
 
 **In summary, this part of `maglev-graph-builder.cc` is a critical component responsible for translating JavaScript's dynamic call semantics, constructor behavior, type conversions, and specific operators into the static structure of the Maglev graph, applying optimizations wherever possible based on runtime feedback.** It bridges the gap between the JavaScript language and the compiler's internal representation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 er_info->possible_maps_are_known()) {
     // No info about receiver, can't infer API holder.
     return not_found;
@@ -1804,7 +1806,4 @@ void MaglevGraphBuilder::VisitToObject() {
   // ToObject <dst>
   ValueNode* value = GetAccumulator();
   interpreter::Reg
-"""
-
-
 ```

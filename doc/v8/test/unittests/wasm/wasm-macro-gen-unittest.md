@@ -59,9 +59,12 @@ By following these steps, we arrive at the detailed and accurate summary provide
 
 该文件通过使用 `EXPECT_SIZE` 宏来简化测试编写，该宏可以方便地验证生成的字节数组的大小。 每个测试用例都针对特定的 WebAssembly 构造或操作码，从而提供细粒度的测试覆盖。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/wasm-macro-gen-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/wasm-macro-gen-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,6 +382,4 @@ TEST_F(WasmMacroGenTest, LoadsAndStoresWithOffset) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

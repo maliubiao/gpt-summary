@@ -179,15 +179,17 @@ WebAssembly.instantiateStreaming(fetch('my_wasm_module.wasm'), importObject)
 
 `v8/src/wasm/wasm-import-wrapper-cache.cc` 是 V8 中一个关键的性能优化组件，它通过缓存 WebAssembly 导入函数的调用包装器来减少重复编译的开销，从而提升 WebAssembly 与 JavaScript 互操作的效率。虽然用户不会直接修改此文件，但理解其功能有助于理解 WebAssembly 导入机制以及与之相关的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-import-wrapper-cache.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-import-wrapper-cache.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ size_t WasmImportWrapperCache::EstimateCurrentMemoryConsumption() const {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

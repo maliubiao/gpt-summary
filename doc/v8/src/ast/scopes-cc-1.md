@@ -163,7 +163,7 @@ function withEval(str) {
 
 希望这个归纳对您有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/scopes.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 le (scope->sibling_ != nullptr) {
       scope = scope->sibling_;
       scope->outer_scope_ = outer_scope();
@@ -1047,7 +1049,4 @@ void DeclarationScope::AnalyzePartially(Parser* parser,
     // which cannot be resolved inside. It doesn't make sense to try to resolve
     // them in the outer Scopes here, because they are incomplete.
     Scope::AnalyzePartially(this, ast_node_fac
-"""
-
-
 ```

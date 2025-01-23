@@ -101,14 +101,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总而言之，`layout_theme_android.cc` 是 Blink 引擎中负责实现 Android 平台特定布局和样式主题的关键组成部分，它确保了网页在 Android 设备上能够以符合平台规范和用户期望的方式呈现。它与 CSS 的系统颜色和选中效果等特性紧密相关，并间接影响了基于 HTML 和 JavaScript 构建的网页的最终视觉呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_theme_android.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ Color LayoutThemeAndroid::PlatformActiveSelectionForegroundColor(
 }
 
 }  // namespace blink
-
-"""
-
 ```

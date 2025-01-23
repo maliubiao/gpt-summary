@@ -271,7 +271,7 @@ Dynamic linker (在 Android 上通常是 `linker` 或 `lld`) 负责在程序运�
 
 总而言之，`s_erff.c` 是 Android 系统中提供基础数学计算能力的关键组成部分，其高效的实现方式保证了 Android 应用在执行涉及误差函数计算时的性能和精度。理解其功能和实现原理对于进行 Android 系统级或 NDK 开发都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_erff.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -281,8 +281,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* s_erff.c -- float version of s_erf.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -461,7 +463,4 @@ erfcf(float x)
 	    if(hx>0) return tiny*tiny; else return two-tiny;
 	}
 }
-
-"""
-
 ```

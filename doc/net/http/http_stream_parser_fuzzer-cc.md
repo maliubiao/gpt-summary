@@ -169,15 +169,17 @@ Content-Length: 10\r\n
 
 `net/http/http_stream_parser_fuzzer.cc` 是一个重要的安全工具，它通过自动化地生成各种输入来测试 `HttpStreamParser` 的健壮性，帮助开发者发现和修复潜在的漏洞，从而提高 Chromium 浏览器的安全性和稳定性。虽然它与 Javascript 没有直接的执行关系，但它保护了浏览器免受恶意 HTTP 响应的攻击，最终也保护了 Javascript 代码的执行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_parser_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

@@ -75,12 +75,14 @@ function add(a, b) {
 
 In essence, the `Simulator` acts as a virtual ARM64 processor, allowing developers to test and debug the generated machine code for V8 without needing physical ARM64 hardware. It's a crucial tool for V8 development and testing on different platforms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2006,7 +2008,4 @@ void Simulator::VisitAddSubExtended(Instruction* instr) {
   Extend ext = static_cast<Extend>(instr->ExtendMode());
   unsigned left_shift = instr->ImmExtendShift();
   if (instr->Six
-"""
-
-
 ```

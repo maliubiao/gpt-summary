@@ -215,7 +215,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言 `net` 包中用于测试 Solaris 平台 TCP Keep-Alive 功能实现的关键组成部分。它通过定义一系列测试用例，确保在 Solaris 上能够正确配置和使用 TCP Keep-Alive 功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpconn_keepalive_conf_solaris_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -223,8 +223,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -340,9 +342,4 @@ var testConfigs = []KeepAliveConfig{
 		Count:    0,
 	},
 }
-
-"""
-
-
-
 ```

@@ -259,7 +259,7 @@ WebAssembly.instantiate(wasmCode).then(wasmModule => {
 
 这段 `liftoff-assembler-x64-inl.h` 代码片段是 V8 引擎中 Liftoff 编译器在 x64 架构上生成汇编指令的关键部分，它实现了 WebAssembly 规范中定义的各种基本操作，包括原子操作、内存访问、数据移动以及整数和浮点数运算。理解这些底层操作有助于理解 WebAssembly 的执行方式以及可能出现的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/x64/liftoff-assembler-x64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/x64/liftoff-assembler-x64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -267,8 +267,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 sult} register in the code below.
     movq(result.gp(), value.gp());
     value = result;
@@ -1254,7 +1256,4 @@ void LiftoffAssembler::emit_f64_div(DoubleRegister dst, DoubleRegister lhs,
     divsd(dst, kScratchDoubleReg);
   } else {
     if (
-"""
-
-
 ```

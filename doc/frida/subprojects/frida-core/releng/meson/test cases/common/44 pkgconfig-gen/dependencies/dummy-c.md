@@ -112,7 +112,7 @@ Finally, organize the information logically, starting with the basic function, t
 
 总之，`dummy.c` 本身的功能非常简单，但它在 Frida 的构建系统中扮演着重要的角色，用于测试依赖项处理的基础功能。  它的存在更多是为了确保构建系统的健壮性，从而间接地支持 Frida 的核心逆向功能。 用户通常不会直接操作这个文件，但在调试构建问题时可能会注意到它作为调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,12 +120,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dummy(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -205,15 +205,17 @@ While `v8-value-serializer.h` is a C++ interface, the common errors occur when u
 
 In summary, `v8/include/v8-value-serializer.h` is a crucial part of V8's infrastructure for enabling the structured clone algorithm, which is fundamental for various web platform features involving object copying and communication. It provides a low-level C++ interface for serialization and deserialization, with extensibility through delegates for handling environment-specific objects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-value-serializer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-value-serializer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -530,7 +532,4 @@ class V8_EXPORT ValueDeserializer {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_VALUE_SERIALIZER_H_
-
-"""
-
 ```

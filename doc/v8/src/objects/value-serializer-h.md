@@ -243,15 +243,17 @@ MaybeHandle<Object> deserialized_obj = deserializer.ReadObjectWrapper();
 
 总而言之，`v8/src/objects/value-serializer.h` 定义了 V8 中实现结构化克隆的核心机制，用于在 V8 内部以及与外部环境（如浏览器）之间安全地传输和克隆 JavaScript 对象。理解其功能对于深入了解 V8 的对象模型和跨上下文通信至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/value-serializer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/value-serializer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -600,7 +602,4 @@ class ValueDeserializer {
 }  // namespace v8
 
 #endif  // V8_OBJECTS_VALUE_SERIALIZER_H_
-
-"""
-
 ```

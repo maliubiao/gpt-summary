@@ -130,7 +130,7 @@ if errno, ok := err.(syscall.Errno); ok && errno == windows.ERROR_FILE_EXISTS {
 
 这段 `zerrors_windows.go` 代码片段是Go语言 `golang.org/x/sys/windows` 包的一部分， 其主要功能是**定义了大量的Windows操作系统相关的错误码和状态码常量， 用于在Go程序中处理Windows系统调用或API调用时返回的错误信息，提高代码的可读性和错误处理的准确性。**  它是Go语言与底层Windows系统交互的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -138,9 +138,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第11部分，共15部分，请归纳一下它的功能
+```
 
-"""
-                         Handle        = 0x88010003
+### 源代码
+```go
+Handle        = 0x88010003
 	WEP_E_LOCK_NOT_CONFIGURED                                                 Handle        = 0x88010004
 	WEP_E_PROTECTION_SUSPENDED                                                Handle        = 0x88010005
 	WEP_E_NO_LICENSE                                                          Handle        = 0x88010006
@@ -783,10 +785,4 @@ Prompt:
 	STATUS_DUPLICATE_NAME                                                     NTStatus      = 0xC00000BD
 	STATUS_BAD_NETWORK_PATH                                                   NTStatus      = 0xC00000BE
 	STATUS_NETWORK_BUSY                                                       NTStatus      = 0xC00000BF
-
-"""
-
-
-
-
 ```

@@ -180,15 +180,17 @@ While end-users don't directly interact with `HeapAllocator`, V8 developers work
 
 **In summary, `v8/src/heap/heap-allocator.h` defines the core memory allocation mechanism within the V8 JavaScript engine. It's responsible for managing the allocation of memory for JavaScript objects and internal data structures across different memory spaces, interacting with garbage collection, and providing mechanisms for observing allocation events.**  The fact that it's a `.h` file confirms it's a standard C++ header file, not a Torque file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-allocator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-allocator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -402,7 +404,4 @@ class V8_EXPORT_PRIVATE HeapAllocator final {
 }  // namespace v8
 
 #endif  // V8_HEAP_HEAP_ALLOCATOR_H_
-
-"""
-
 ```

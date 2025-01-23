@@ -146,7 +146,7 @@ func rewriteValueWasm_OpRsh64x64(v *Value) bool {
 
 总而言之，这段代码是Go语言编译器为了更好地支持WASM目标平台而进行底层优化的关键部分，它通过模式匹配和转换，将Go语言的高级概念映射到WASM的低级指令，从而提升最终WASM代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteWasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 writeValueWasm_OpRsh64x16(v *Value) bool {
 	v_1 := v.Args[1]
 	v_0 := v.Args[0]
@@ -1638,10 +1640,4 @@ func rewriteValueWasm_OpWasmI64ShrU(v *Value) bool {
 		x := auxIntToInt64(v_0.AuxInt)
 		if v_1.Op != OpWasmI64Const {
 			break
-	
-"""
-
-
-
-
 ```

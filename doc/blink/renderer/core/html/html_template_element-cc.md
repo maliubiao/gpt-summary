@@ -269,14 +269,16 @@ void HTMLTemplateElement::Trace(Visitor* visitor) const {
 
 总而言之，`html_template_element.cc` 文件是 Blink 引擎中实现 `<template>` 元素核心功能的重要组成部分，它负责管理模板内容的生命周期，并与 JavaScript 和 HTML 紧密协作，实现了模板的惰性渲染和复用特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_template_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -361,7 +363,4 @@ void HTMLTemplateElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -192,7 +192,7 @@ To reach this code, a developer working on the Frida project (specifically the `
 
 **As a debugging clue:** If a developer is experiencing issues with the structure or content of newly generated C files within `frida-clr`, this `ctemplates.py` file would be a primary suspect. They would investigate if the templates themselves are correct, if the placeholder values are being generated correctly, and if the Meson configuration is correctly instructing Meson to use these templates. For instance, if the generated header file lacks the necessary export declarations, they would check `lib_h_template`. If the shared library isn't being built correctly, `lib_c_meson_template` would be a starting point for investigation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/templates/ctemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -328,7 +330,4 @@ class CProject(FileHeaderImpl):
     lib_header_template = lib_h_template
     lib_test_template = lib_c_test_template
     lib_meson_template = lib_c_meson_template
-
-"""
-
 ```

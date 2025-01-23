@@ -314,7 +314,7 @@ func main() {
 
 作为第 11 部分，这段代码主要关注 **HTTP/2 客户端连接中接收数据并将其转换为 Go 的 `net/http` 抽象的过程**。它实现了客户端接收循环的核心逻辑，负责解析和处理各种类型的 HTTP/2 帧，并将这些底层帧数据转化为上层可以理解的 HTTP 响应和事件。  它是客户端 HTTP/2 实现中至关重要的一部分，连接了底层的帧处理和上层的 HTTP 请求/响应模型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -323,8 +323,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第11部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 err = rl.processSettings(f)
 		case *http2PushPromiseFrame:
 			err = rl.processPushPromise(f)
@@ -1501,9 +1503,4 @@ func (http2writeSettingsAck) staysWithinBuffer(max int) bool { return http2frame
 
 // splitHeaderBlock splits headerBlock into fragments so that each fragment fits
 // in a single frame, then calls fn for
-"""
-
-
-
-
 ```

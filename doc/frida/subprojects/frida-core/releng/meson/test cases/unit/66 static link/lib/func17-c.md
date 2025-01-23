@@ -141,7 +141,7 @@ Interceptor.attach(Module.findExportByName(null, "func17"), {
 
 总而言之，尽管 `func17.c` 中的函数本身非常简单，但在 Frida 动态 instrumentation 工具的上下文中，它具有重要的意义，可以用来测试和演示 Frida 在静态链接场景下的功能，并且与逆向工程、底层系统知识以及用户操作等多个方面都有联系。 它的简单性使其成为理解更复杂概念的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func17.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,13 +149,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17()
 {
   return 1;
 }
-
-"""
-
 ```

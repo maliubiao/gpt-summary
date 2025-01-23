@@ -134,7 +134,7 @@ By following this structured approach, considering the different components of t
 
 总而言之，`query.go` 是 `go` 命令模块管理功能中负责**模块版本解析、查找和错误处理**的关键组成部分。它确保了 `go get`, `go list -m` 等命令能够正确地找到和管理项目依赖的模块版本。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/query.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 e auth package recheck the failed paths.
 	// If we obtain new credentials for any of them, re-run the above loop.
 
@@ -533,10 +535,4 @@ func (e *QueryMatchesPackagesInMainModuleError) Error() string {
 
 	return fmt.Sprintf("package %s is in the main module, so can't request version %s", e.Packages[0], e.Query)
 }
-
-"""
-
-
-
-
 ```

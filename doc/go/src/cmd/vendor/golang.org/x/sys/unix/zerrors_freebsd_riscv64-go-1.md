@@ -69,7 +69,7 @@ By following this structured thought process, breaking down the problem, and ite
 
 由于这是第二部分，结合第一部分可能包含了更广泛的常量定义，这个部分主要集中在网络（TCP）、终端 I/O、定时器、文件时间以及进程管理相关的常量定义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_freebsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -77,8 +77,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 RTT_GAIN         = 0x44d
 	TCP_BBR_PROBE_RTT_INT          = 0x430
 	TCP_BBR_PROBE_RTT_LEN          = 0x44e
@@ -602,10 +604,4 @@ var signalList = [...]struct {
 	{32, "SIGTHR", "unknown signal"},
 	{33, "SIGLIBRT", "unknown signal"},
 }
-
-"""
-
-
-
-
 ```

@@ -178,15 +178,17 @@ Function: add_example
 
 `v8/src/compiler/turboshaft/wasm-dead-code-elimination-phase.h` 定义了 V8 引擎中 Turboshaft 编译器管道中用于 WebAssembly 代码死代码消除的阶段。它的目的是移除不会影响程序执行结果的代码，从而优化 WebAssembly 模块的性能和大小。这与 JavaScript 有着间接的联系，因为优化的 WebAssembly 代码可以在 JavaScript 环境中更高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-dead-code-elimination-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-dead-code-elimination-phase.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ struct WasmDeadCodeEliminationPhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_WASM_DEAD_CODE_ELIMINATION_PHASE_H_
-
-"""
-
 ```

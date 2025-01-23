@@ -171,7 +171,7 @@ By following this structured approach, combining code analysis with contextual a
 
 虽然 `cmMod.cpp` 本身的代码非常简单，但它作为 Frida 项目的一部分，尤其是在 `test cases` 目录下，其意义在于测试 Frida 的构建系统和依赖项处理机制。`MESON_MAGIC_FLAG` 的检查是用于验证构建过程的关键手段。在逆向工程的上下文中，这样的模块可以作为 Frida instrumentation 的目标，用于理解程序的行为。调试此类问题通常涉及到对构建系统、依赖项管理以及编译过程的深入理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/27 dependency fallback/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -196,7 +198,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

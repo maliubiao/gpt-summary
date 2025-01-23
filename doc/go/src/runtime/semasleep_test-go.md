@@ -124,7 +124,7 @@ func main() {
 
 这段 `semasleep_test.go` 的代码旨在测试 Go 语言运行时环境在处理由操作系统引起的虚假唤醒时，其内部的休眠机制是否健壮可靠，能够避免因虚假唤醒而导致的程序卡死或延迟。它通过构建一个外部程序并发送特定的信号来模拟虚假唤醒的场景进行测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/semasleep_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -255,9 +257,4 @@ func TestSpuriousWakeupsNeverHangSemasleep(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

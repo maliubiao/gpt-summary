@@ -153,15 +153,17 @@ The comments within the header file highlight potential errors:
 
 In summary, `v8/src/utils/hex-format.h` provides a low-level utility function for converting byte arrays to hexadecimal strings within the V8 engine. While not directly used in typical JavaScript programming, it serves as a fundamental building block for internal V8 functionalities related to debugging, data inspection, and potentially serialization. Understanding potential buffer overflows is crucial when working with such functions in C/C++.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/hex-format.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/hex-format.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ void FormatBytesToHex(char* formatted, size_t size_of_formatted,
 }  // namespace v8
 
 #endif  // V8_UTILS_HEX_FORMAT_H_
-
-"""
-
 ```

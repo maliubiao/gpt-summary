@@ -124,15 +124,17 @@ By following these steps, I could systematically dissect the C++ code and extrac
 
 `blink/renderer/platform/fonts/shaping/shape_result.cc` (第 1 部分) 的主要功能是 **定义了用于存储和组织文本 shaping 结果的数据结构** (`ShapeResult`, `RunInfo`, `HarfBuzzRunGlyphData`)，并提供了一些 **基本的查询和管理方法**，例如获取安全打断点，以及在字符偏移量和像素位置之间进行映射。 它是 Blink 渲染引擎中处理文本显示的关键组件，为后续的文本绘制、光标定位、文本选择等功能提供了基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2012 Google Inc. All rights reserved.
  * Copyright (C) 2013 BlackBerry Limited. All rights reserved.
@@ -1023,7 +1025,4 @@ float ShapeResult::ForEachGraphemeClusters(const StringView& text,
 
     const unsigned num_glyphs = run->glyph_data_.size();
     for (unsigned i = 0; i
-"""
-
-
 ```

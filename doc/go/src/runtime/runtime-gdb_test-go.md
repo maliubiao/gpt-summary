@@ -204,7 +204,7 @@ args := []string{"-nx", "-q", "--batch",
 
 这段测试代码通过自动化地检查 GDB 在各种场景下的行为，确保了 Go 语言的调试体验的质量和一致性。它模拟了用户在使用 GDB 调试 Go 程序时可能遇到的情况，并验证了 GDB 是否能够提供正确的调试信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/runtime-gdb_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1082,9 +1084,4 @@ func TestGdbInfCallstack(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

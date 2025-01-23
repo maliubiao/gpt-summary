@@ -275,7 +275,7 @@ except Exception as e:
 
 通过这种 Frida Hook 的方式，你可以观察到系统或应用何时以及如何与 14 段显示器相关的内核机制进行交互，从而理解 `map_to_14segment.handroid` 在实际 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/map_to_14segment.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -332,7 +334,4 @@ struct seg14_conversion_map {
 #define MAP_ASCII14SEG_ALPHANUM _MAP_0_32_ASCII_SEG14_NON_PRINTABLE _MAP_33_47_ASCII_SEG14_SYMBOL _MAP_48_57_ASCII_SEG14_NUMERIC _MAP_58_64_ASCII_SEG14_SYMBOL _MAP_65_90_ASCII_SEG14_ALPHA_UPPER _MAP_91_96_ASCII_SEG14_SYMBOL _MAP_97_122_ASCII_SEG14_ALPHA_LOWER _MAP_123_126_ASCII_SEG14_SYMBOL
 #define SEG14_DEFAULT_MAP(_name) SEG14_CONVERSION_MAP(_name, MAP_ASCII14SEG_ALPHANUM)
 #endif
-
-"""
-
 ```

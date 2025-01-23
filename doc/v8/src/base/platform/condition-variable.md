@@ -112,11 +112,13 @@ processData();
 
 `condition-variable.cc` 文件实现了 V8 引擎中用于线程同步的关键机制——条件变量。虽然 JavaScript 开发者不会直接操作条件变量，但理解其背后的原理有助于理解 JavaScript 异步编程模型的底层机制，例如 Promise 和 async/await 如何在 V8 引擎中高效地实现并发。  条件变量允许 V8 内部的线程在等待某些事件发生时休眠，从而提高资源利用率和程序效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/condition-variable.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ bool ConditionVariable::WaitFor(Mutex* mutex, const TimeDelta& rel_time) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

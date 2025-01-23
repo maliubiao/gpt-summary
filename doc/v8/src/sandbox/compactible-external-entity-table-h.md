@@ -146,15 +146,17 @@ uint8Array[0] = 42;
 
 `v8/src/sandbox/compactible-external-entity-table.h` 定义了一个关键的内部数据结构，用于高效地管理 V8 堆外内存的引用，并通过压缩技术优化内存利用率。它与 JavaScript 通过管理诸如 `ArrayBuffer` 和 WebAssembly 内存等外部资源紧密相关。理解这类内部机制有助于深入理解 V8 的内存管理和垃圾回收行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/compactible-external-entity-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/compactible-external-entity-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ class V8_EXPORT_PRIVATE CompactibleExternalEntityTable
 #endif  // V8_COMPRESS_POINTERS
 
 #endif  // V8_SANDBOX_COMPACTIBLE_EXTERNAL_ENTITY_TABLE_H_
-
-"""
-
 ```

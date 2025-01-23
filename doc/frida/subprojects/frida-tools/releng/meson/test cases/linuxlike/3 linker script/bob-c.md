@@ -138,7 +138,7 @@ Here's a breakdown of the thinking process to analyze the C code and answer the 
 
 总而言之，`bob.c` 作为一个简单的测试用例，可以帮助 Frida 的开发者验证其在处理具有不同可见性函数的代码时的行为，并为理解 Frida 的内部工作原理提供了一个清晰的起点。对于逆向工程师来说，这个例子也体现了在实际逆向工作中经常遇到的隐藏功能和间接调用的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/linuxlike/3 linker script/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hiddenFunction(void) {
@@ -157,7 +159,4 @@ int hiddenFunction(void) {
 int bobMcBob(void) {
     return hiddenFunction();
 }
-
-"""
-
 ```

@@ -113,9 +113,12 @@ console.log(globalSym1 === globalSym2); // 输出 true
 
 `v8/test/unittests/objects/symbols-unittest.cc` 这个 C++ 文件中的测试用例，实际上是在 V8 引擎的底层实现层面验证 JavaScript `Symbol` 的核心行为和特性，例如它的创建、唯一性以及在内存管理中的表现。  JavaScript 开发者可以直接使用 `Symbol()` 构造函数来创建和使用 Symbol，而 V8 的这个单元测试则保证了这些 JavaScript 层面的行为在引擎内部的正确实现。
 
-Prompt: ```这是目录为v8/test/unittests/objects/symbols-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/symbols-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -196,6 +199,4 @@ TEST_F(SymbolsTest, Create) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

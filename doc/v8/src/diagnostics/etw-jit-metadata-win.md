@@ -81,11 +81,13 @@ for (let i = 0; i < 10000; i++) {
 
 `etw-jit-metadata-win.cc` 文件是 V8 引擎为了提供更好的性能分析和诊断能力而实现的一个关键组件。它通过 ETW 系统暴露了 JIT 编译器的内部信息，使得开发者能够更深入地理解 V8 的工作原理和性能特征。虽然 JavaScript 代码本身不能直接操作这个文件中的函数，但 JavaScript 代码的执行是触发这些功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-jit-metadata-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -113,7 +115,4 @@ void SetMetaDescriptors(EVENT_DATA_DESCRIPTOR* data_descriptor,
 }  // namespace ETWJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

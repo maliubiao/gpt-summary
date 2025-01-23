@@ -129,7 +129,7 @@ By following these steps, the detailed and informative answer provided earlier c
 
 总而言之，`postconf.py` 虽然简单，但在 Frida Gum 的构建流程中扮演着配置角色，通过读取一个输入文件来动态生成 C/C++ 头文件，从而影响最终编译出的 Frida Gum 库的行为。这与逆向工程中分析常量、理解程序行为密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/99 postconf/postconf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -155,7 +157,4 @@ with open(input_file, encoding='utf-8') as f:
     data = f.readline().strip()
 with open(output_file, 'w', encoding='utf-8') as f:
     f.write(template.format(data))
-
-"""
-
 ```

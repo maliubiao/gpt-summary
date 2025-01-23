@@ -222,7 +222,7 @@ Here's a breakdown of the thought process to answer the request:
 
 总而言之，这部分代码是 V8 Maglev 编译器的核心组成部分，它定义了用于生成高效 ARM64 机器码的底层操作，直接支撑着 JavaScript 代码的执行。理解这些函数的行为有助于深入理解 V8 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/arm64/maglev-assembler-arm64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/arm64/maglev-assembler-arm64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -230,8 +230,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 cratch = temps.AcquireScratch();
   AssertNotSmi(heap_object);
   IsObjectTypeInRange(heap_object, scratch, lower_limit, higher_limit);
@@ -732,8 +734,4 @@ inline void MaglevAssembler::MaybeEmitPlaceHolderForDeopt() {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_ARM64_MAGLEV_ASSEMBLER_ARM64_INL_H_
-
-"""
-
-
 ```

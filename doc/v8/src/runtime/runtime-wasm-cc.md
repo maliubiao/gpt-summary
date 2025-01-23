@@ -148,7 +148,7 @@ instance.exports.takeNullRef(null); // 假设导出一个接收 nullref 的函�
 
 `v8/src/runtime/runtime-wasm.cc` 的第一部分主要负责实现 V8 引擎中支持 WebAssembly 运行时环境的关键底层函数，包括 WebAssembly 和 JavaScript 对象之间的转换、内存管理、错误处理、栈管理、延迟编译和代码优化等功能。它在 JavaScript 与 WebAssembly 代码的互操作中扮演着至关重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-wasm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-wasm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -964,7 +966,4 @@ RUNTIME_FUNCTION(Runtime_TierUpWasmToJSWrapper) {
 }
 
 RUNTIME_FUNCTION(Runtime_WasmT
-"""
-
-
 ```

@@ -79,7 +79,7 @@ Response:
 
 ### **总结**
 该模块是 Frida 的 Java 层动态插桩核心，负责 Java 类的加载、方法/字段的动态访问、Dex 注入、线程安全及资源管理。通过 JNI 与 JS 类型转换，实现 Java 与 JS 的无缝交互，并提供了方法替换、重载处理等高级调试功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/class-factory.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -89,8 +89,10 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 lassHandle (value, env) {
   this.value = env.newGlobalRef(value);
   env.deleteLocalRef(value);
@@ -1200,8 +1202,4 @@ function makeSourceFileName (className) {
 }
 
 module.exports = ClassFactory;
-
-"""
-
-
 ```

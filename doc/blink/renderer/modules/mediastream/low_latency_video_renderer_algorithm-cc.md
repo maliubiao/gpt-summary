@@ -224,15 +224,17 @@ This systematic approach, combining code analysis, domain knowledge, and a focus
 
 总而言之，`blink/renderer/modules/mediastream/low_latency_video_renderer_algorithm.cc` 文件是实现低延迟视频渲染的核心逻辑，它通过精细的帧队列管理、渲染时机决策和动态模式切换，努力在各种条件下提供流畅的视频播放体验，直接关系到用户在网页上观看视频的质量。 理解其功能和与前端技术的关系，对于诊断和优化 Web 视频播放性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/low_latency_video_renderer_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -524,7 +526,4 @@ void LowLatencyVideoRendererAlgorithm::RecordAndResetStats() {
   stats_ = {};
 }
 }  // namespace blink
-
-"""
-
 ```

@@ -216,14 +216,16 @@ Finally, I organize my findings into a clear and structured answer, covering the
 
 总而言之，`web_audio_source_provider_impl.cc` 是 Blink 引擎中一个关键的音频基础设施组件，它负责连接不同来源的音频数据到 Web Audio API 的处理流程中，并提供了诸如音频复制和跨域安全控制等重要功能。理解它的作用有助于深入理解 Web Audio API 的底层实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_audio_source_provider_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -586,7 +588,4 @@ void WebAudioSourceProviderImpl::OnSetFormat() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

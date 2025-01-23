@@ -149,7 +149,7 @@ When these JavaScript code snippets are executed, V8 will call the corresponding
 
 This code snippet is a fundamental part of the V8 implementation for the Temporal API, ensuring that Temporal objects are created correctly and that invalid input is handled appropriately, mirroring the expected behavior of the JavaScript API.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ct->set_calendar(*calendar);
   // 10. Set object.[[ISOYear]] to referenceISOYear.
   object->set_iso_year(reference_iso_year);
@@ -921,8 +923,4 @@ void FormatSecondsStringPart(IncrementalStringBuilder* builder, int32_t second,
     DCHECK_GE(9, precision_len);
     for (int32_t len = 0; len < precision_len; len++) {
       builder->AppendInt(static_cast<int32_t>(fraction / divisor));
-
-"""
-
-
 ```

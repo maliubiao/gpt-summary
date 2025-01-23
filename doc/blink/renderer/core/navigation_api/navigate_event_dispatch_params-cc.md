@@ -139,14 +139,16 @@ During this process, I might refine my initial understanding. For example, I ini
 
 总而言之，`NavigateEventDispatchParams` 是 Blink 渲染引擎中用于传递和管理导航事件信息的核心数据结构。虽然开发者不直接操作它，但他们编写的 HTML 和 JavaScript 代码的正确性直接影响着这个类的内容，并最终决定了用户的导航体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/navigation_api/navigate_event_dispatch_params.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ void NavigateEventDispatchParams::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

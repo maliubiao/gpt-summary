@@ -85,7 +85,7 @@ cc.preprocess('my_source.c', output: 'my_preprocessed_source.i')
 
 总而言之，`compiler.py` 文件是 Frida 构建过程中与编译器交互的关键部分，它提供了丰富的功能来查询和利用编译器的特性，确保 Frida 能够正确地在目标平台上构建。理解这个文件的功能对于 Frida 的开发者和对 Frida 构建过程感兴趣的用户来说都非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -94,9 +94,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- having it check this seems valuable
+### 源代码
+```python
+having it check this seems valuable
         has_header_kwargs: 'HeaderKW' = {
             'required': required,
             'args': kwargs['header_args'],
@@ -323,8 +325,4 @@ Prompt:
         # other targets, list outputs, etc.
         private_dir = os.path.relpath(self.interpreter.backend.get_target_private_dir(tg), self.interpreter.subdir)
         return [build.CustomTargetIndex(tg, os.path.join(private_dir, o)) for o in tg.outputs]
-
-"""
-
-
 ```

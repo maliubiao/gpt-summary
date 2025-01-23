@@ -122,7 +122,7 @@ The provided code snippet contains several test cases within the `QuicFramerTest
 
 这表明在整个 `quic_framer_test.cc` 文件中，前面的部分可能覆盖了更基础的帧解析和处理，而这一部分则专注于更精细、更具挑战性的场景，确保 `QuicFramer` 在各种情况下都能稳定可靠地工作。 剩下的第 16 部分可能涵盖一些边缘情况、错误处理的更深入测试，或者是一些不常用的帧类型或特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第15部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tionIdGenerator generator;
   EXPECT_CALL(generator, ConnectionIdLength(_)).Times(0);
   EXPECT_EQ(QUIC_NO_ERROR,
@@ -950,7 +952,4 @@ TEST_P(QuicFramerTest, KeyUpdatePacketsOutOfOrder) {
   EXPECT_TRUE(framer_.ProcessPacket(*encrypted));
   EXPECT_EQ(1u, visitor_.key_update_count());
   EXPECT_EQ(1, visitor_.derive_next_key_coun
-"""
-
-
 ```

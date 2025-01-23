@@ -167,15 +167,17 @@ fetch('https://expired.example.com')
 
 总而言之，`net/cert/cert_verify_proc_ios.cc` 是 Chromium 在 iOS 平台上实现安全连接的关键组件，它负责利用 iOS 的安全框架来验证服务器的身份，确保用户与网站之间的通信安全。它虽然不直接与 JavaScript 交互，但其验证结果直接影响到 JavaScript 代码的网络请求行为和页面的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_ios.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -694,7 +696,4 @@ int CertVerifyProcIOS::VerifyInternal(X509Certificate* cert,
 }
 
 }  // namespace net
-
-"""
-
 ```

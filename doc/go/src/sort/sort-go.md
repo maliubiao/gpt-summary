@@ -288,7 +288,7 @@ go run your_program.go -input "5, 2, 8, 1, 9" -reverse
 
 总而言之，`go/src/sort/sort.go` 文件定义了 Go 语言中进行排序操作的核心接口和算法，通过接口实现了对不同类型数据的通用排序功能，并提供了方便的工具函数来简化常见类型的排序操作。 理解 `Interface` 的作用和 `sort.Sort` 与 `sort.Stable` 的区别是使用这个包的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/sort/sort.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -296,8 +296,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -584,9 +586,4 @@ Calls to Less O((log(n)-t) * n + bs*n) = O(log(n)*n + (bs-t)*n)
 Calls to Swap O(n * log^2(n) - (t^2+t)/2*n) = O(n * log^2(n))
 
 */
-
-"""
-
-
-
 ```

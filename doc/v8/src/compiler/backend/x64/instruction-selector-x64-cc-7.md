@@ -184,7 +184,7 @@ addps xmm0, xmm2         ; 将第二个输入加到输出寄存器
 
 总而言之，`v8/src/compiler/backend/x64/instruction-selector-x64.cc` 的这一部分是 V8 引擎中至关重要的组件，它直接影响了 JavaScript 中 SIMD 代码的执行效率，体现了 V8 在性能优化方面的努力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , FNe, kL32, kV128)                              \
   V(F32x8Ne, FNe, kL32, kV256)                              \
   V(F64x4Ne, FNe, kL64, kV256)                              \
@@ -853,7 +855,4 @@ static bool MatchSimd128Constant(
   if (m.HasResolvedValue()) {
     // If the indices vector is a const, check if they are in range, or if the
     // top bit is set, then we can avoid th
-"""
-
-
 ```

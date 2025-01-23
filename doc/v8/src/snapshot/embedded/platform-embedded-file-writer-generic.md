@@ -122,11 +122,13 @@ console.timeEnd("Second call");
 
 `platform-embedded-file-writer-generic.cc` 是 V8 引擎中一个关键的底层组件，负责生成用于嵌入快照的汇编代码。它通过将预编译的 JavaScript 代码和数据嵌入到可执行文件中，显著提升了 V8 引擎的启动速度，尽管这个过程对 JavaScript 开发者是透明的。  该文件生成的汇编代码直接对应了 V8 引擎内部的一些实现细节，例如内置函数的机器码表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ DataDirective PlatformEmbeddedFileWriterGeneric::ByteChunkDataDirective()
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

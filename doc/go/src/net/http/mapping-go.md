@@ -170,7 +170,7 @@ func main() {
 
 总而言之，`go/src/net/http/mapping.go` 中定义的 `mapping` 结构体是一个用于存储少量键值对并进行高效查找的内部工具，它通过动态地选择使用切片或哈希表来优化性能。使用者应该将其视为一个普通的键值对集合，而无需过多关注其内部实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/mapping.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,8 +178,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -258,9 +260,4 @@ func (h *mapping[K, V]) eachPair(f func(k K, v V) bool) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

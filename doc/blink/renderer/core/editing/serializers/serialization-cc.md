@@ -134,7 +134,7 @@ This iterative process of scanning, identifying, analyzing, connecting, and refi
 
 总的来说，这份代码片段主要负责 **Blink 渲染引擎中 DOM 结构的序列化与反序列化**。它提供了将 DOM 树转换为 HTML 字符串的功能，以及将 HTML 字符串解析为可操作的 DOM 片段的功能。这对于实现诸如复制粘贴、动态更新页面内容以及支持 JavaScript 的 DOM 操作至关重要。它也初步涉及了如何处理文本内容并将其转换为合适的 HTML 结构。由于这是第 1 部分，可能后续的部分会涉及到更复杂的序列化场景，例如处理 Shadow DOM 或 SVG 等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/serializers/serialization.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Apple Inc. All rights
  * reserved.
@@ -962,7 +964,4 @@ void ReplaceChildrenWithFragment(ContainerNode* container,
   }
 
   // FIXME: No need to replace the child it is a text node an
-"""
-
-
 ```

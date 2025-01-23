@@ -151,7 +151,7 @@ public class Config {
 
 `Simple.java` 虽然代码量很少，但它清晰地展示了条件执行和依赖外部配置的概念，这在实际的软件开发中非常常见。结合其在 Frida 测试用例中的位置，我们可以推断出它主要用于验证 Frida 在 Java 环境下的代码插桩和动态分析能力。理解这个简单的例子可以帮助用户更好地掌握 Frida 的基本用法，并为分析更复杂的 Java 应用程序打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/java/8 codegen custom target/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 import com.mesonbuild.Config;
@@ -173,7 +175,4 @@ class Simple {
         }
     }
 }
-
-"""
-
 ```

@@ -203,7 +203,7 @@ func TestIncorrectPrivateKeyForCSR(t *testing.T) {
 
 这部分测试代码的核心功能是**全面地验证 Go 语言 `crypto/x509` 包中关于证书签名请求（CSR）和 X.509 证书的创建、解析以及关键属性处理的正确性**。它通过构造不同的测试用例，包括成功场景和各种错误场景，来确保该包的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/x509_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ganization) != len(template.Subject.Organization) {
 			t.Errorf("%s: output subject organisation and template subject organisation don't match", test.name)
 		} else if len(out.DNSNames) != len(template.DNSNames) {
@@ -1036,9 +1038,4 @@ MT0wOwYDVQQDDDRNaW5pc3RlcmllIHZhbiBEZWZlbnNpZSBDZXJ0aWZpY2F0aWUg
 QXV0b3JpdGVpdCAtIEcyMB4XDTEzMDMwNjEyMDM0OVoXDTEzMTEzMDEyMDM1MFow
 bDELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUNlcnRpUGF0aCBMTEMxIjAgBgNVBAsT
 GUNlcnRpZmljYXRpb24gQXV0aG9yaXRpZXM
-"""
-
-
-
-
 ```

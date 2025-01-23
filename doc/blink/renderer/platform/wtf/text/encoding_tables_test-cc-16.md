@@ -87,15 +87,17 @@ My thought process to answer the request goes like this:
 
 希望以上分析能够帮助你理解 `blink/renderer/platform/wtf/text/encoding_tables_test.cc` 文件的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第17部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 609B}, {20895, 0x6230}, {20896, 0x6813}, {20897, 0x6BBF},
     {20898, 0x6C08}, {20899, 0x6FB1}, {20996, 0x714E}, {20997, 0x7420},
     {20998, 0x7530}, {20999, 0x7538}, {21000, 0x7551}, {21001, 0x7672},
@@ -548,7 +550,4 @@ constexpr Gb18030EncodeTable kGb18030_2022Reference{
      0x5379, 0x537B, 0x537C, 0x537D, 0x537E, 0x5380, 0x5381, 0x5383, 0x5387,
      0x5388, 0x538A, 0x538E, 0x538F, 0x5390, 0x5391, 0x5392, 0x5393, 0x5394,
      0x5396, 0x5397, 0x5399, 0x539B, 0x539C, 0x539E, 0x53A0, 0x53A1, 0x53A4
-"""
-
-
 ```

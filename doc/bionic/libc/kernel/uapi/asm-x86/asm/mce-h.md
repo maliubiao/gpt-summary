@@ -175,7 +175,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 通过这种方式，你可以观察到哪些进程在与内核的 MCE 驱动程序进行交互，以及传递的具体命令和参数，从而帮助理解 MCE 相关的功能在 Android 系统中的运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/mce.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -186,8 +186,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -229,7 +231,4 @@ struct mce {
 #define MCE_GET_LOG_LEN _IOR('M', 2, int)
 #define MCE_GETCLEAR_FLAGS _IOR('M', 3, int)
 #endif
-
-"""
-
 ```

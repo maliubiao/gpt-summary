@@ -252,7 +252,7 @@ if (dl_unwind_find_exidx_addr) {
 
 通过以上分析和 Frida Hook 示例，你可以深入了解 `bionic/libc/arch-arm/bionic/exidx_static.c` 文件在 Android 异常处理机制中的作用，以及如何在实际环境中调试和验证其行为。记住，这个特定的文件是针对静态链接的，动态链接的场景会有不同的实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-arm/bionic/exidx_static.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -318,7 +320,4 @@ _Unwind_Ptr dl_unwind_find_exidx(_Unwind_Ptr pc __attribute__((unused)), int* pc
 _Unwind_Ptr __gnu_Unwind_Find_exidx(_Unwind_Ptr pc, int *pcount) {
   return dl_unwind_find_exidx(pc, pcount);
 }
-
-"""
-
 ```

@@ -254,7 +254,7 @@ let { prop } = notAnObject; // This will cause a TypeError
 
 `v8/src/execution/messages.cc` 的主要功能是作为 V8 引擎中消息处理的核心组件，尤其专注于错误和警告消息的处理流程。它定义了消息的结构、创建了消息对象、格式化了消息内容、并提供了报告消息给 JavaScript 环境和注册消息监听器的机制。 该文件还负责处理和格式化 JavaScript 错误的堆栈跟踪信息，并提供了创建各种 JavaScript 错误对象的方法。 简而言之，它是 V8 引擎向 JavaScript 开发者和嵌入环境传递运行时信息 (尤其是错误信息) 的关键模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/messages.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/messages.cc以.tq结尾，那它是个v8 torque源代码，
@@ -262,8 +262,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1089,8 +1091,4 @@ bool ComputeLocation(Isolate* isolate, MessageLocation* target) {
   if (!it.done()) {
     // Compute the location from the function and the relocation info of the
     // baseline code. For optimized code this will use the deoptimization
-
-"""
-
-
 ```

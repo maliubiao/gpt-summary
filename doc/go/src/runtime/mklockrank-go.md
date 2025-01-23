@@ -212,7 +212,7 @@ func main() {
 
 总而言之，`mklockrank.go` 是 Go 运行时用来维护和生成锁依赖关系信息的工具，它对于确保 Go 运行时内部锁操作的正确性和避免死锁至关重要。虽然普通 Go 开发者不会直接使用它，但它所生成的代码影响着 Go 程序的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mklockrank.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -634,9 +636,4 @@ func generateDot(w io.Writer, g *dag.Graph) {
 
 	fmt.Fprintf(w, "}\n")
 }
-
-"""
-
-
-
 ```

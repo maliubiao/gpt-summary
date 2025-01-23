@@ -113,14 +113,16 @@ This methodical approach, moving from understanding the high-level goal to analy
 
 总而言之，`image_decoder_base_test.cc` 提供了一个结构化的方法来确保 Chromium 的图像解码器能够正确可靠地工作，这对于保证 Web 内容的正常显示至关重要。 它通过比较解码结果和预期结果来验证解码器的正确性，并能帮助开发者发现和修复潜在的 bug 和安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/image_decoder_base_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ void ImageDecoderBaseTest::TestImageDecoder(const base::FilePath& image_path,
 }
 
 }  // namespace blink
-
-"""
-
 ```

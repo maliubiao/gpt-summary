@@ -183,7 +183,7 @@ Initially, I might focus too much on the specific functions used. It's important
 
 总而言之，`schemaprog.c` 是 Frida 工具链中一个用于自动化测试的小而重要的组成部分，用于验证 Frida 在处理 GNOME 设置时的正确性。它的执行是 Frida 开发和测试流程中的一个环节，如果测试失败，它会提供调试线索，帮助开发人员定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/7 gnome/schemas/schemaprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<gio/gio.h>
 #include<stdio.h>
 #include<string.h>
@@ -240,7 +242,4 @@ int main(int argc, char **argv) {
     g_settings_schema_source_unref(src);
     return 0;
 }
-
-"""
-
 ```

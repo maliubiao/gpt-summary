@@ -156,16 +156,18 @@ This part of the test file continues to verify the correct conversion of paint c
 
 这些测试确保了 Blink 渲染引擎能够正确地将复杂的 CSS 样式和 HTML 结构转换为高效的渲染指令，从而保证网页的正确显示和流畅的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_chunks_to_cc_layer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                /*antialias=*/true),  // <c7>
+### 源代码
+```cpp
+/*antialias=*/true),  // <c7>
                   PaintOpIs<cc::DrawRecordOp>(),                   // <p0/>
                   PaintOpIs<cc::RestoreOp>(),                      // </c7>
                   PaintOpIs<cc::RestoreOp>(),                      // </c6>
@@ -882,7 +884,4 @@ TEST_P(PaintChunksToCcLayerTest,
                  FloatRoundedRect(0.f, 0.f, 1.f, 1.f));
   // The effect has null OutputClip because some contents need to escape the
   // clip. This happens when an absolute-positioned element not containe
-"""
-
-
 ```

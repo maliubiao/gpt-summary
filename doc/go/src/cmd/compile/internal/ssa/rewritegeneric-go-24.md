@@ -187,7 +187,7 @@ v3 = OpConst16 {val: 0}
 
 作为 `rewritegeneric.go` 文件的一部分，并且是倒数第二部分，这段代码的功能是 **完成针对整数截断和异或运算的最后一批通用优化**。它通过模式匹配和重写规则，在编译的 SSA 阶段对这些运算进行精简和改进，为后续的架构特定代码生成奠定基础，提高最终生成代码的效率。 考虑到这是接近尾声的部分，它可能涵盖了一些更复杂或不那么常见的优化场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第25部分，共26部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 result: x
 	for {
 		if v_0.Op != OpSignExt8to32 {
@@ -1654,10 +1656,5 @@ func rewriteValuegeneric_OpXor64(v *Value) bool {
 		break
 	}
 	// match: (Xor64 left:(Lsh64x32 x y) right:(Rsh64Ux32 x (Sub32 (Const32 [64]) y)))
-	// cond: 
-"""
-
-
-
-
+	// cond:
 ```

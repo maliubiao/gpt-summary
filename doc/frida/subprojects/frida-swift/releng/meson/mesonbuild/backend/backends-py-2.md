@@ -191,7 +191,7 @@ This detailed thought process, including the self-correction, illustrates how to
 
 这部分代码主要负责 **构建过程中的目标管理和安装数据的生成**。它包含了获取目标信息（依赖、源文件、输出目录）、评估和执行自定义构建命令、以及生成用于安装的文件列表、目录结构和符号链接等信息。 简而言之，它定义了如何将 `meson.build` 文件中描述的构建目标转化为实际的构建操作和安装步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 = arg
             for dep in t.depends:
                 assert isinstance(dep, (build.CustomTarget, build.BuildTarget))
@@ -813,7 +815,4 @@ Prompt:
         '''
         Some backends don't support custom compilers. This is a convenience
         method to conve
-"""
-
-
 ```

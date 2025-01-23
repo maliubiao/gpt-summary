@@ -129,7 +129,7 @@ Frida 的核心功能是动态 instrumentation，即在程序运行时修改其�
 
 因此，查看 `source3.c` 通常是理解 Frida 如何处理动态加载代码的一部分，或者是在调试 Frida 自身功能时遇到的一个环节。它本身作为一个非常基础的测试用例，用来验证 Frida 的核心 instrumentation 功能在简单场景下的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/121 object only target/source3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,12 +137,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

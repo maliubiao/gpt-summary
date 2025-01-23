@@ -123,7 +123,7 @@ Let's break down the thought process for analyzing the provided C code snippet w
 
 总而言之，`func6.c` 虽然是一个非常简单的示例，但在 Frida 的测试框架中，它扮演着验证静态链接场景下函数 hook 功能的重要角色。对于逆向工程师来说，理解这类简单的代码有助于掌握 Frida 的基本使用方法，并为分析更复杂的程序打下基础。 用户在调试过程中遇到与静态链接相关的函数时，很可能会接触到类似的测试用例代码，这有助于他们理解 Frida 是如何处理这种情况的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/66 static link/lib/func6.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,15 +131,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func5();
 
 int func6()
 {
   return func5() + 1;
 }
-
-"""
-
 ```

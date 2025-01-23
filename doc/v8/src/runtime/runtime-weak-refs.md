@@ -125,11 +125,13 @@ target2 = null;
 
 `v8/src/runtime/runtime-weak-refs.cc` 文件包含了 V8 引擎中实现 JavaScript 弱引用相关功能的底层运行时函数。这些函数负责管理 `FinalizationRegistry` 的注册和取消注册，以及 `WeakRef` 的内部行为，确保 JavaScript 的弱引用机制能够正确地工作。虽然开发者不能直接调用这些运行时函数，但了解它们的功能有助于理解 JavaScript 弱引用 API 的内部实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-weak-refs.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ RUNTIME_FUNCTION(Runtime_JSWeakRefAddToKeptObjects) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

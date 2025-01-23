@@ -88,12 +88,14 @@ Here's how the C++ code relates to the JavaScript examples:
 
 **In essence, this `factory.cc` code is the low-level mechanism that brings JavaScript functions to life within the V8 engine. It handles the crucial steps of allocating memory, linking compiled code, setting up metadata, and preparing for runtime optimizations.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
 #ifdef V8_ENABLE_LEAPTIERING
   // If the FeedbackCell doesn't have a dispatch handle, we need to allocate a
@@ -176,8 +178,4 @@ void Factory::JSFunctionBuilder::PrepareFeedbackCell() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

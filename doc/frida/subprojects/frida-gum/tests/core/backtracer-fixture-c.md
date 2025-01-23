@@ -161,7 +161,7 @@ Interceptor.attach(targetFunctionAddress, {
 
 总而言之，`backtracer-fixture.c` 是 Frida 内部测试的重要组成部分，它通过定义测试用例和模拟场景，来验证 `GumBacktracer` 模块的功能是否正常。用户虽然不会直接接触这个文件，但他们使用的 Frida 功能（如获取调用栈）的正确性是由这些测试用例来保证的。开发者可以通过分析这些测试用例来理解和调试 Frida 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/backtracer-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -300,7 +302,4 @@ backtrace_collector_on_leave (GumInvocationListener * listener,
   gum_backtracer_generate (self->backtracer, context->cpu_context,
       &self->last_on_leave);
 }
-
-"""
-
 ```

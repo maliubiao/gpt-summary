@@ -410,7 +410,7 @@ if __name__ == '__main__':
 
 希望这个详细的分析能够帮助你理解 `setvbuf` 函数的功能、实现以及在 Android 中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdio/setvbuf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -421,8 +421,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: setvbuf.c,v 1.15 2022/09/28 16:44:14 gnezdo Exp $ */
 /*-
  * Copyright (c) 1990, 1993
@@ -585,7 +587,4 @@ nbf:
 	return (ret);
 }
 DEF_STRONG(setvbuf);
-
-"""
-
 ```

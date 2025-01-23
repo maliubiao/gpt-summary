@@ -245,15 +245,17 @@ JavaScript 本身不会直接导致这种错误，因为 V8 会负责选择合�
 
 理解 RISC-V C 扩展指令的限制（如立即数范围、寄存器限制和对齐要求）对于避免编程错误至关重要。虽然 V8 引擎负责将 JavaScript 转换为机器码，但了解底层指令的特性可以帮助理解性能瓶颈和潜在的错误来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-c.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/extension-riscv-c.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -530,7 +532,4 @@ int AssemblerRISCVC::CJumpOffset(Instr instr) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

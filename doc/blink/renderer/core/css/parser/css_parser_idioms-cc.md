@@ -197,15 +197,17 @@ During the process, I might have initially focused too much on the low-level det
 
 总而言之，`css_parser_idioms.cc` 是 Blink 引擎中 CSS 解析器的基础工具箱，它通过提供一组简洁高效的字符处理函数，为浏览器正确理解和渲染网页样式奠定了基础。 尽管用户不会直接操作这个文件，但理解其功能有助于理解浏览器如何处理 CSS 代码，并在开发和调试过程中提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_idioms.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ bool NextCharsAreIdentifier(UChar first, const CSSTokenizerInputStream& input) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

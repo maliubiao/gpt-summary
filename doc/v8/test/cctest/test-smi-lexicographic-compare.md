@@ -88,11 +88,13 @@ console.log("10" < "2"); // 输出 true，都是字符串，进行字典序比�
 
 **总结来说，`test-smi-lexicographic-compare.cc` 这个 C++ 文件是为了确保 V8 引擎在比较小整数对象时，如果需要进行类似字符串的字典序比较，其实现是正确的。这与 JavaScript 中字符串的比较方式以及某些情况下数字的字符串形式比较行为是相关的。** 开发者需要确保 V8 引擎的这种底层实现与 JavaScript 的行为预期一致。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-smi-lexicographic-compare.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ TEST(TestSmiLexicographicCompare) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

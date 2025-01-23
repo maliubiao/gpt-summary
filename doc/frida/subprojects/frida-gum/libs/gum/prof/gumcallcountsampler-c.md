@@ -191,7 +191,7 @@ By following this detailed analysis, combining code-level inspection with higher
 
 总而言之，`gumcallcountsampler.c` 提供了一个强大且灵活的机制来统计函数调用次数，是 Frida 进行动态分析的重要组成部分。理解其功能和实现原理对于有效地使用 Frida 进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/prof/gumcallcountsampler.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -475,7 +477,4 @@ gum_call_count_sampler_on_leave (GumInvocationListener * listener,
 
   gum_interceptor_unignore_current_thread (self->interceptor);
 }
-
-"""
-
 ```

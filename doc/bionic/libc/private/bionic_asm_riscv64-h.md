@@ -204,7 +204,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/private/bionic_asm_riscv64.handroid` 虽然代码量少，但它为 Android RISC-V 64 位平台的 Bionic 库提供了必要的底层汇编支持配置，确保了代码的性能、稳定性和正确的链接。 理解其作用有助于开发者避免一些底层的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_asm_riscv64.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -215,8 +215,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: asm.h,v 1.1 2004/02/01 05:09:49 drahn Exp $	*/
 /*	$NetBSD: asm.h,v 1.4 2001/07/16 05:43:32 matt Exp $	*/
 
@@ -260,7 +262,4 @@ Prompt:
 
 #undef __bionic_asm_function_type
 #define __bionic_asm_function_type %function
-
-"""
-
 ```

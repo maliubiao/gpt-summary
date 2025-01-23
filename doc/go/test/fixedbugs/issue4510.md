@@ -130,15 +130,17 @@ In this scenario, the developer might have initially used the `time` package for
 
 The `issue4510.go` file (or the part we see) is a compiler test case that verifies Go's behavior of flagging unused imports as errors. It uses the `// errorcheckdir` directive to signal to the testing framework that compilation errors are expected. The core functionality being tested is a fundamental aspect of Go's design, promoting clean and efficient code by preventing unnecessary dependencies. A common mistake developers make is leaving unused imports after modifying their code.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4510.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckdir
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -146,9 +148,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

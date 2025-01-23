@@ -200,15 +200,17 @@ When working directly with a `MacroAssembler` (which is typically done within V8
 
 In essence, errors when using the `MacroAssembler` often manifest as crashes, unpredictable behavior, or performance problems due to incorrect low-level code generation. The header file aims to provide a safer and more structured way to generate this code, but developers still need to be careful and understand the underlying architecture and calling conventions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/macro-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/macro-assembler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -443,7 +445,4 @@ class V8_NODISCARD NoRootArrayScope {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_MACRO_ASSEMBLER_H_
-
-"""
-
 ```

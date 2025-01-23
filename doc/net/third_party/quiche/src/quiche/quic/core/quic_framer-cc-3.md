@@ -109,7 +109,7 @@ The request explicitly asks for a summary of the *current* code snippet, which f
 
 这段代码的核心功能是 **解析接收到的 QUIC 数据包中的帧，识别帧类型并提取帧数据，然后将解析出的帧信息传递给上层模块进行处理。**  它处理了 QUIC 协议中定义的各种控制帧和数据帧，并具备基本的错误处理能力，能够识别格式错误的帧数据。对于支持 IETF QUIC 的版本，它还负责解析 IETF QUIC 定义的帧类型并进行加密级别的校验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -117,9 +117,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
-   uint8_t frame_type;
+### 源代码
+```cpp
+uint8_t frame_type;
     if (!reader->ReadBytes(&frame_type, 1)) {
       set_detailed_error("Unable to read frame type.");
       return RaiseError(QUIC_INVALID_FRAME_DATA);
@@ -983,7 +985,4 @@ bool QuicFramer::ProcessResetStreamAtFrame(QuicDataReader& reader,
     return false;
   }
   if (!reader.
-"""
-
-
 ```

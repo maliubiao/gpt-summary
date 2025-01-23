@@ -178,15 +178,17 @@ func main() {
 
 `modload/stat_windows.go` 中的 `hasWritePerm` 函数是 Go 模块加载机制在 Windows 平台上用于快速判断文件是否可写的一个简单但重要的检查。它依赖于 Windows 特有的只读属性，而不是更复杂的 ACL 机制。理解这一点对于避免在 Windows 上进行 Go 模块操作时遇到权限问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/stat_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -208,9 +210,4 @@ func hasWritePerm(_ string, fi fs.FileInfo) bool {
 	// controls whether the file's read-only attribute is set or cleared.”
 	return fi.Mode()&0200 != 0
 }
-
-"""
-
-
-
 ```

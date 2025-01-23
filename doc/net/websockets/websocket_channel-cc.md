@@ -245,7 +245,7 @@ Here's a breakdown of the analysis:
 `net/websockets/websocket_channel.cc` 的主要功能是作为 Chromium 网络栈中 WebSocket 连接的核心管理模块。它负责 WebSocket 连接的建立、数据帧的发送和接收（包括 UTF-8 验证）、以及连接关闭握手的处理。 它将上层（通常是渲染进程中的 JavaScript WebSocket API）的请求转换为底层的 WebSocket 协议操作，并与 `WebSocketStream` 协同工作来完成实际的网络数据传输。此外，它还处理连接过程中的错误和状态管理，并提供日志记录以辅助调试。
 ```
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_channel.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -253,8 +253,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1141,7 +1143,4 @@ ChannelState WebSocketChannel::RespondToClosingHandshake() {
       CHANNEL_DELETED)
     return CHANNEL_DELETED;
   DCHECK_EQ(RECV_CLOSED, state_
-"""
-
-
 ```

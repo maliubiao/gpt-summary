@@ -130,7 +130,7 @@ func main() {
 
 这部分 `go/src/go/constant/value.go` 的代码片段提供了 Go 语言编译器用于处理常量值的基本操作，包括位移、与零比较以及通用比较。这些功能是 Go 编译器在编译期间进行常量求值和类型检查的关键组成部分，确保了代码的正确性和性能。它定义了如何对不同类型的常量进行操作和比较，为编译器的静态分析和优化提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/constant/value.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,9 +139,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```go
+{
 			return x
 		}
 		z := newInt()
@@ -252,10 +254,4 @@ func Compare(x_ Value, op token.Token, y_ Value) bool {
 
 	panic(fmt.Sprintf("invalid comparison %v %s %v", x_, op, y_))
 }
-
-"""
-
-
-
-
 ```

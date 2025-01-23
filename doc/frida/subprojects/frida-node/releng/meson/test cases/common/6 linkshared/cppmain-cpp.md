@@ -161,7 +161,7 @@ Here's a breakdown of the thinking process used to analyze the provided C++ code
 
 因此，`cppmain.cpp` 文件本身就是一个调试的线索。它的存在表明有人正在测试 `cpplib` 库中的 `cppfunc()` 函数，而这个特定的测试用例的目标是验证 `cppfunc()` 是否返回 42。如果开发者最终查看到了这个 `cppmain.cpp` 文件，很可能是因为与 `cppfunc()` 的行为有关的测试失败了，需要进一步调查原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/6 linkshared/cppmain.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,14 +169,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpplib.h"
 
 int main(void) {
     return cppfunc() != 42;
 }
-
-"""
-
 ```

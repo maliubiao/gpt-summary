@@ -163,14 +163,16 @@ By following this kind of systematic decomposition and analysis, we can thorough
 
 总而言之，`option_list.cc` 中的 `OptionListIterator` 是 Blink 引擎内部用于管理和遍历 `<select>` 元素选项的关键组件，它需要精确地理解 HTML 结构并根据配置处理不同的 `<option>` 元素组织方式。理解其工作原理有助于开发者避免在使用 HTML 表单元素时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/option_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ void OptionListIterator::Retreat(HTMLOptionElement* next) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

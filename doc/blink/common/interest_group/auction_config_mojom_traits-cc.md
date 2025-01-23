@@ -208,14 +208,16 @@ out.non_shared_params.seller_timeout = base::Milliseconds(100);
 
 总而言之，`auction_config_mojom_traits.cc` 文件在 Chromium 中扮演着关键的角色，负责将 JavaScript 中定义的广告竞价配置转换为 C++ 可以理解和处理的数据结构，并确保这些数据的有效性，从而支撑 Privacy Sandbox 中的 Protected Audience API 的功能。它通过 Mojo 机制实现了跨进程的数据传递和转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/auction_config_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -665,7 +667,4 @@ bool StructTraits<blink::mojom::AuctionAdConfigDataView, blink::AuctionConfig>::
 }
 
 }  // namespace mojo
-
-"""
-
 ```

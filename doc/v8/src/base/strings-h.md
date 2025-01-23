@@ -254,15 +254,17 @@ This methodical approach, combining code analysis, understanding of the underlyi
 
 总而言之，`v8/src/base/strings.h` 提供了一组底层的、用于字符串操作的基础工具函数，这些函数在 V8 引擎的内部实现中被广泛使用，为 JavaScript 字符串操作提供了基础支持。理解这些函数的功能和潜在的错误用法对于理解 V8 引擎的工作原理以及编写可靠的 C++ 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/strings.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/strings.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ inline char HexCharOfValue(int value) {
 }  // namespace v8
 
 #endif  // V8_BASE_STRINGS_H_
-
-"""
-
 ```

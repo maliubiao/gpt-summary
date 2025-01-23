@@ -102,11 +102,13 @@ for (let i = 0; i < 10; i++) {
 
 虽然 JavaScript 开发者不必直接关心 `cppgc` 的细节，但 `explicit-management-unittest.cc` 这个文件所测试的 `cppgc` 显式内存管理功能是 V8 引擎高效运行的关键组成部分。它确保了 V8 内部 C++ 对象的生命周期和内存布局能够得到精细的管理，从而提升 JavaScript 代码的执行效率。这些底层机制使得 JavaScript 的自动垃圾回收能够更加高效和流畅地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/explicit-management-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ TEST_F(ExplicitManagementTest, ResizeBailsOutDuringGC) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

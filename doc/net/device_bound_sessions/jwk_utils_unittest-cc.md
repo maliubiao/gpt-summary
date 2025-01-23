@@ -181,15 +181,17 @@ JWK 是一种用于表示加密密钥的 JSON 数据格式，广泛应用于 Web
 
 因此，`jwk_utils_unittest.cc` 文件作为网络栈的一部分，其目的是确保 `ConvertPkeySpkiToJwk` 函数的正确性，这对于设备绑定会话等安全功能的正常运行至关重要。用户在进行涉及设备身份验证的操作时，如果底层的公钥转换逻辑出现问题，可能会触发对相关代码的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/jwk_utils_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -274,7 +276,4 @@ TEST(JWKUtilsTest, ES256) {
 }  // namespace
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

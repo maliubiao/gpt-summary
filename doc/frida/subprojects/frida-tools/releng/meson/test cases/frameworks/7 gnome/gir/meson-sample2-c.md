@@ -145,7 +145,7 @@ Message: Hello
 
 通过以上步骤，用户能够使用 Frida 动态地观察和分析 `meson_sample2_print_message` 函数的执行，从而进行调试。如果出现问题，例如 Frida 脚本找不到函数，用户可能需要检查函数名是否正确、共享库是否被加载等，这可以作为调试的线索。这个 `meson-sample2.c` 文件就是他们调试的目标程序的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/7 gnome/gir/meson-sample2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample2.h"
 
 struct _MesonSample2
@@ -200,7 +202,4 @@ meson_sample2_print_message (MesonSample2 *self)
 {
   g_print ("Message: Hello\n");
 }
-
-"""
-
 ```

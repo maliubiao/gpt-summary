@@ -180,11 +180,13 @@ By following these steps, one can effectively analyze the C++ code and generate 
 
 `interpreter-intrinsics-generator.cc` 文件是 V8 解释器中一个关键的组件，它负责生成高效调用内置函数的代码。这些内置函数是 JavaScript 语言许多核心特性和内置对象方法的基础。虽然开发者不会直接接触到这些 intrinsic，但理解它们的作用有助于更深入地了解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-intrinsics-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -457,7 +459,4 @@ void IntrinsicsGenerator::AbortIfArgCountMismatch(int expected,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

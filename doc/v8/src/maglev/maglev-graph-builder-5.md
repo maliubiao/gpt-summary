@@ -115,12 +115,14 @@ This code directly relates to the implementation and optimization of core JavaSc
 
 **In summary, this part of the Maglev graph builder is crucial for achieving performance in V8 by recognizing common JavaScript operations and implementing them in a highly optimized manner within the Maglev intermediate representation.** It acts as a bridge between the high-level semantics of JavaScript and the lower-level operations required for efficient execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
   RETURN_IF_ABORT(subgraph.Branch(
       {&is_done, &ret_value},
@@ -1737,7 +1739,4 @@ compiler::HolderLookupResult MaglevGraphBuilder::TryInferApiHolderValue(
 
   auto receiver_info = known_node_aspects().TryGetInfoFor(receiver);
   if (!receiver_info || !receiv
-"""
-
-
 ```

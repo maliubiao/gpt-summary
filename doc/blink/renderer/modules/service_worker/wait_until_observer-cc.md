@@ -186,15 +186,17 @@ Initially, I might have focused solely on the promise tracking aspect. However, 
 
 总而言之，`wait_until_observer.cc` 是 Service Worker 机制中一个至关重要的组成部分，它确保了 Service Worker 能够可靠地完成异步操作，并正确地管理事件的生命周期，这对于构建离线应用和提供丰富的 Web 应用体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/wait_until_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -504,7 +506,4 @@ void WaitUntilObserver::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

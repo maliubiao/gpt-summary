@@ -185,7 +185,7 @@ int number_returner(void) {
 
 总而言之，`main2.c` 虽然代码简单，但在 Frida 的测试框架中扮演着关键的角色，用于验证 Frida 的函数覆盖功能是否正常工作。它的简洁性使得测试能够专注于 Frida 的动态插桩能力，而不是被复杂的程序逻辑所干扰。通过分析这个文件，开发人员可以理解测试的目的，并在测试失败时找到调试的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/182 find override/otherdir/main2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,14 +193,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int number_returner(void);
 
 int main(void) {
     return number_returner() == 100 ? 0 : 1;
 }
-
-"""
-
 ```

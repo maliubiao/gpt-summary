@@ -119,7 +119,7 @@ By following these steps and iteratively refining the analysis, I can construct 
 
 因此，`gumprocess-linux.c` 中的代码通常是在 Frida 框架处理用户发起的 instrumentation 请求时被间接调用的，作为与目标进程进行底层交互的桥梁。当调试 Frida 脚本或分析目标进程行为时，理解这个文件的功能可以帮助你更好地理解 Frida 的工作原理和定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-linux/gumprocess-linux.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 EG_RIP];
 
   ctx->r15 = gr[REG_R15];
@@ -1229,8 +1231,4 @@ gum_libc_syscall_4 (gsize n,
 
   return result;
 }
-
-"""
-
-
 ```

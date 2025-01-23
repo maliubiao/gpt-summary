@@ -453,7 +453,7 @@ return x;
 
 总而言之，`v8/src/compiler/turboshaft/copying-phase.h` 定义了 Turboshaft 编译器的核心组件，负责将程序代码的中间表示（图）从一种形式复制到另一种形式。这个复制过程是编译器进行各种优化的基础，它不仅复制了图的结构和操作，还维护了新旧图之间的映射关系，并处理了诸如循环、异常和内联等复杂情况。`CopyingPhase` 的目标是创建一个新的、可能经过修改或优化的图，以便后续的编译阶段可以继续处理。它在 V8 优化 JavaScript 代码的过程中扮演着至关重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/copying-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/copying-phase.h以.tq结尾，那它是个v8 torque源代码，
@@ -461,8 +461,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ndex())) {
       OpIndex index = Asm().output_graph().Index(op);
       const char* prefix;
@@ -746,8 +748,4 @@ class CopyingPhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_COPYING_PHASE_H_
-
-"""
-
-
 ```

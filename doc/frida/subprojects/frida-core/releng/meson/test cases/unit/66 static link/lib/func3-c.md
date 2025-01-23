@@ -122,7 +122,7 @@ By following these steps, the comprehensive analysis provided earlier can be con
 
 总而言之，`func3.c` 虽然是一个非常简单的函数，但它作为 Frida 测试用例的一部分，可以用来验证 Frida 在处理静态链接代码时的基本功能。通过分析这个简单的例子，开发者可以更好地理解 Frida 的工作原理，而逆向工程师可以学习如何使用 Frida 对静态链接库进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,13 +130,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3()
 {
   return 1;
 }
-
-"""
-
 ```

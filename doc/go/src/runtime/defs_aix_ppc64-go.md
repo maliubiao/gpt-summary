@@ -181,7 +181,7 @@ func main() {
 
 `go/src/runtime/defs_aix_ppc64.go` 文件是 Go 语言运行时在 AIX ppc64 平台上的基石，它定义了与操作系统交互所需的各种常量和数据结构，支撑着 Go 语言的各种核心功能，例如错误处理、信号处理、系统调用、时间管理和内存管理。普通 Go 开发者不需要直接操作这个文件，但理解其内容有助于更深入地理解 Go 程序的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_aix_ppc64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -403,9 +405,4 @@ type pthread uint32
 type pthread_attr *byte
 
 type semt int32
-
-"""
-
-
-
 ```

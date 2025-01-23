@@ -108,11 +108,13 @@ This systematic approach, moving from the general to the specific and continuall
 
 `platform-qnx.cc` 是 V8 在 QNX 平台上的一个关键组件，它提供了操作系统级别的抽象，使得 V8 能够与 QNX 系统进行交互，完成诸如时间处理、共享库加载、内存管理等任务。虽然 JavaScript 开发者通常不会直接接触到这些底层的 C++ 代码，但这些代码的正确性和效率直接影响着 JavaScript 代码在 QNX 系统上的运行表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-qnx.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ std::optional<OS::MemoryRange> OS::GetFirstFreeMemoryRangeWithin(
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

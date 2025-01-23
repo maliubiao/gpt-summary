@@ -157,15 +157,17 @@ extern GoInt64 ignored_MyMethod(ignored_MyStruct m);
 
 总而言之，`go/test/asmhdr.go` 是 Go 编译器 `-asmhdr` 功能的测试文件，它通过声明一些可导出的 Go 符号，并期望编译器能够正确生成包含这些符号声明的汇编头文件，来验证该功能的正确性。实际使用中，开发者可以利用 `-asmhdr` 将 Go 代码暴露给汇编代码，实现更底层的控制和优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/asmhdr.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // buildrundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -175,9 +177,4 @@ Prompt:
 // Test the -asmhdr output of the compiler.
 
 package ignored
-
-"""
-
-
-
 ```

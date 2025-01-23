@@ -154,15 +154,17 @@ void executeCallback(void (*callback)()) {
 
 `v8/src/execution/arm64/pointer-authentication-arm64.h` 是 V8 引擎在 ARM64 平台上实现指针认证的关键组成部分，它通过封装底层的硬件指令或模拟实现，提供了签名、认证和操作程序计数器地址的功能，从而增强了 V8 引擎的安全性，防止恶意代码通过篡改指针来劫持程序执行流程。虽然 JavaScript 开发者不会直接使用这些函数，但指针认证在幕后默默地保护着 JavaScript 代码的执行安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/pointer-authentication-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/pointer-authentication-arm64.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ V8_INLINE Address PointerAuthentication::MoveSignedPC(Isolate* isolate,
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_EXECUTION_ARM64_POINTER_AUTHENTICATION_ARM64_H_
-
-"""
-
 ```

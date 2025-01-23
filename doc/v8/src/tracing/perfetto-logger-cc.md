@@ -242,15 +242,17 @@ machine_code: "\x55\x48\x89\xe5..." // 假设的机器码
 
 总而言之，`v8/src/tracing/perfetto-logger.cc` 是 V8 引擎中一个至关重要的组件，它将 V8 的内部运作透明化，为开发者提供了强大的性能分析工具。通过分析 Perfetto 记录的事件，开发者可以更好地理解他们的 JavaScript 代码在 V8 中的执行情况，并识别潜在的性能瓶颈和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/perfetto-logger.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tracing/perfetto-logger.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -718,7 +720,4 @@ bool PerfettoLogger::is_listening_to_code_events() { return true; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

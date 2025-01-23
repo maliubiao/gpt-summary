@@ -108,7 +108,7 @@ The user wants to understand the functionality of the `dawn_enum_conversions.cc`
 
 `blink/renderer/modules/webgpu/dawn_enum_conversions.cc` 文件的第二部分延续了其核心功能，即 **作为 Blink WebGPU 模块和 Dawn 库之间的桥梁，负责双向转换各种 WebGPU 相关的枚举类型。**  它涵盖了图元拓扑、混合模式、顶点格式、纹理寻址和过滤、背面剔除、错误处理等多个 WebGPU 概念的枚举转换，确保了 JavaScript 中定义的 WebGPU 行为能够被底层的 Dawn 图形库正确理解和执行。 同时，它也提供了将 Dawn 内部的一些状态和类型转换回 JavaScript 可以理解的形式的能力。 这个文件是 WebGPU 在 Chromium 中实现的关键组成部分，保证了 Web 开发者使用的 JavaScript WebGPU API 和底层的图形库能够顺畅地协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/dawn_enum_conversions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :
         kChromiumExperimentalTimestampQueryInsidePasses:
       return wgpu::FeatureName::ChromiumExperimentalTimestampQueryInsidePasses;
@@ -497,8 +499,4 @@ bool FromDawnEnum(wgpu::WGSLFeatureName dawn_enum, V8WGSLFeatureName* result) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

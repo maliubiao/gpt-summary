@@ -149,15 +149,17 @@ Here's a breakdown of the code's purpose and how it relates to web technologies:
 
 总而言之，这部分代码通过大量的单元测试，细致地验证了 `MainThreadSchedulerImpl` 在各种复杂场景下的任务调度行为，确保了Blink引擎在处理用户交互、页面渲染和JavaScript执行时的性能和稳定性。这些测试覆盖了与Web前端技术（JavaScript, HTML, CSS）密切相关的各种场景，旨在预防潜在的性能问题和错误行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 refptr<base::SingleThreadTaskRunner> throttleable_queue) {
   task_runner->AdvanceMockTickClock(base::Milliseconds(task_duration));
   if (++(*count) < 500) {
@@ -966,8 +968,5 @@ TEST_F(MainThreadSchedulerImplTest, MicrotaskCheckpointTiming) {
   // task.
   ASSERT_EQ(1u, observer.result().size());
   EXPECT_EQ(start_time, observer.result().front().first);
-  EXPECT_EQ(start_time + kTaskTime + 
-"""
-
-
+  EXPECT_EQ(start_time + kTaskTime +
 ```

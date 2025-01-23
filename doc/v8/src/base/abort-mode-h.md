@@ -194,15 +194,17 @@ processArray(myArray);
 
 总而言之，`v8/src/base/abort-mode.h` 是一个关键的内部文件，用于控制 V8 在遇到错误时的行为。虽然普通 JavaScript 开发者不会直接操作它，但它定义的机制会影响 JavaScript 程序的健壮性和调试体验。对于 V8 的开发者和测试人员来说，理解和配置这些中断模式至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/abort-mode.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/abort-mode.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ V8_INLINE bool DcheckFailuresAreIgnored() {
 }  // namespace v8
 
 #endif  // V8_BASE_ABORT_MODE_H_
-
-"""
-
 ```

@@ -163,7 +163,7 @@ WebAssembly.instantiateStreaming(fetch('my_module.wasm'), {
 
 本部分代码专注于 **WebAssembly 运行时的栈管理和切换**。它提供了用于创建特殊浮点数、同步栈限制以及在 WebAssembly 栈和 V8 引擎的中心栈之间进行切换的关键功能。这些功能是支持 WebAssembly 与 JavaScript 互操作以及进行动态栈管理的核心组成部分。`grow_stack` 和 `shrink_stack` 提供了动态调整 WebAssembly 栈大小的能力，以适应不同的内存需求，而栈切换相关的函数则确保了跨语言调用的正确执行上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-external-refs.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-external-refs.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 quiet_NaN());
 }
 
@@ -336,8 +338,4 @@ Address load_old_fp(Isolate* isolate) {
 
 #undef V8_WITH_SANITIZER
 #undef RESET_THREAD_IN_WASM_FLAG_FOR_ASAN_ON_WINDOWS
-
-"""
-
-
 ```

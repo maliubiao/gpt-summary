@@ -109,15 +109,17 @@ Based on this, I can now formulate a summary of the file's functionality, relati
 
 作为第 1 部分，此代码文件主要负责 **构建和测试 `CSPDirectiveList` 类的核心功能，特别是针对资源加载控制方面的策略指令的解析和执行逻辑验证。**  它侧重于验证 CSP 如何根据配置的指令（如 `script-src`、`style-src`、`nonce`、SRI 等）来决定是否允许加载特定类型的资源。它不涉及更高级的 CSP 功能，例如报告机制的完整测试或与浏览器其他组件的集成测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/csp_directive_list_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -879,7 +881,4 @@ TEST_F(CSPDirectiveListTest, ReasonableObjectRestriction) {
         CreateList(test.list, ContentSecurityPolicyType::kReport);
     EXPECT_EQ(test.expected,
               CSPDirectiveListIsObjectRestrictionReasonable(*dir
-"""
-
-
 ```

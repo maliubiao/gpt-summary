@@ -234,7 +234,7 @@ go test -v -run TestTransportServerProtocols  -exec 'env GODEBUG=http2client=0'
 
 总而言之，这段代码通过一系列详尽的测试用例，确保 `http.Transport` 能够可靠、安全、高效地处理各种 HTTP 通信场景，并能正确处理各种边界情况和潜在的错误。 它是 `net/http` 包稳定性的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -243,9 +243,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
- r1c := <-reqc:
+### 源代码
+```go
+r1c := <-reqc:
 		close(r1c)
 	}
 	var idlec chan struct{}
@@ -724,10 +726,4 @@ func TestTransportServerProtocols(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
-
 ```

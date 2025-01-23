@@ -117,7 +117,7 @@ Here's a breakdown of the steps:
 
 总而言之，`counter_style.cc` 是 Blink 渲染引擎中负责实现 CSS Counter Styles 核心逻辑的关键文件，它连接了 CSS 的定义和 HTML 的呈现，并能被 JavaScript 间接影响。理解它的功能对于调试与列表标记相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/counter_style.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1087,7 +1089,4 @@ String CounterStyle::GenerateInitialRepresentation(int value) const {
       return IndexesToString(SymbolicAlgorithm(abs_value, symbols_.size()));
     case CounterStyleSystem::kAlphabetic:
       return IndexesToString(AlphabeticAlgorithm(abs_value, symbols_.size
-"""
-
-
 ```

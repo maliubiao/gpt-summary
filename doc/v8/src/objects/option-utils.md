@@ -197,11 +197,13 @@ setTimer(1000, { precision: 0 }); // V8 内部的 GetNumberOption 可能会抛�
 
 `option-utils.cc` 文件提供了一组底层的、高性能的 C++ 工具函数，用于安全可靠地处理 JavaScript 函数接收的选项对象。这些工具函数实现了 ECMAScript 规范中关于选项对象处理的最佳实践，并在 V8 引擎内部被广泛使用，确保了 JavaScript 选项处理的一致性和正确性。虽然 JavaScript 开发者通常不会直接调用这些 C++ 函数，但了解它们的功能有助于理解 V8 引擎是如何处理 JavaScript 代码中的选项对象的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/option-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ Maybe<double> GetNumberOptionAsDouble(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

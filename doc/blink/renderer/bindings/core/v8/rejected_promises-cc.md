@@ -219,15 +219,17 @@ setTimeout(() => {
 
 `rejected_promises.cc` 是 Chromium Blink 引擎中一个关键的组件，它确保了 JavaScript Promise 的拒绝状态不会被忽略，并提供了机制来通知开发者潜在的错误，并允许在后续添加处理程序时进行修正。理解这个文件的功能有助于开发者更好地理解 Promise 的工作原理以及浏览器如何处理异步操作中的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/rejected_promises.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -520,7 +522,4 @@ void RejectedPromises::RevokeNow(std::unique_ptr<Message> message) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

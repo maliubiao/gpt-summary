@@ -117,7 +117,7 @@ fetch('https://example.com/data.json')
 
 这段代码主要用于对 Chromium 网络栈中 DNS 解析模块的 DoH (使用 POST 方法) 功能进行单元测试，特别是针对各种可能出现的错误场景进行细致的测试和验证。它确保了在 DoH POST 请求过程中，各种失败情况能够被正确处理，并验证了系统在这些情况下的回退机制和错误处理逻辑的健壮性。 这些测试是保证 Chromium 网络栈稳定性和可靠性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Request* request,
     SocketDataProvider* data) {
   URLRequestMockDohJob::MatchQueryData(request, data);
@@ -843,7 +845,4 @@ class CookieCallback {
 TEST_F(DnsTransactionTest, HttpsPostTestNoCookies) {
   ConfigureDohServers(true /* use_post */);
   AddQueryAn
-"""
-
-
 ```

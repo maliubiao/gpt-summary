@@ -178,7 +178,7 @@ By following these steps, breaking down the problem into smaller parts, and iter
 
 总之，`simd_neon.c` 作为 Frida Core 的一个测试用例，主要用于确保 Frida 在处理 ARM NEON 指令集时的正确性。开发者通常会在开发、调试、移植或贡献 Frida 代码时接触到这个文件。用户在分析使用了 NEON 优化的目标应用时，也可能会参考这个文件来理解 NEON 指令的使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/147 simd/simd_neon.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -208,7 +210,4 @@ void increment_neon(float arr[4]) {
     vst1_f32(arr, a1);
     vst1_f32(&arr[2], a2);
 }
-
-"""
-
 ```

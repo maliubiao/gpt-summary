@@ -360,7 +360,7 @@ sys.stdin.read()
 
 这个详细的解释涵盖了文件功能、Android 相关性、libc 函数、动态链接器、逻辑推理、常见错误以及 Frida 调试，希望能帮助你深入理解这个测试文件的作用和相关技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_check_init_fini_root.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -371,8 +371,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -419,7 +421,4 @@ static void __attribute__((constructor)) init() {
 static void __attribute__((destructor)) fini() {
   record_fini("(root)");
 }
-
-"""
-
 ```

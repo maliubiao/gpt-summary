@@ -147,7 +147,7 @@ Initially, one might focus too much on the *specifics* of `gluoninate()` without
 
 总而言之，这个简单的 Python 脚本虽然功能不多，但在 Frida-Node 的开发和测试流程中扮演着基础性的角色。它的成功运行是其他更复杂功能能够正常工作的前提。通过分析这个脚本，我们可以窥探到 Frida 动态 instrumentation 工具的一些底层原理和运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python3/1 basic/prog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from gluon import gluonator
@@ -166,7 +168,4 @@ print('Running mainprog from root dir.')
 
 if gluonator.gluoninate() != 42:
     sys.exit(1)
-
-"""
-
 ```

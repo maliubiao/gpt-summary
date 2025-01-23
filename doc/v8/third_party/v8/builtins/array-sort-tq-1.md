@@ -163,7 +163,7 @@ console.log(objects); // 输出: [{value: 1}, {value: 3}, {value: 4}]
 
 这部分 `array-sort.tq` 代码的核心功能是实现了高效的 TimSort 算法，用于在 V8 引擎中对 JavaScript 数组进行排序。它包含了合并已排序子数组的关键逻辑（`MergeLow` 和 `MergeHigh`），以及用于优化排序过程的辅助功能，如计算最小运行长度、维护运行不变量、以及将数组元素复制到工作数组和写回接收器。`ArrayPrototypeSort` 方法作为 JavaScript `Array.prototype.sort()` 的底层实现，使得 V8 能够高效地执行数组排序操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/v8/builtins/array-sort.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/v8/builtins/array-sort.tq以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ts[cursorB]),
             UnsafeCast<JSAny>(tempArray.objects[cursorTemp]));
 
@@ -660,8 +662,4 @@ transitioning javascript builtin ArrayPrototypeSort(
   return obj;
 }
 }
-
-"""
-
-
 ```

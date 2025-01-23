@@ -143,15 +143,17 @@ This iterative process of examining the tests, inferring functionality, and cons
 
 `go/src/cmd/internal/src/xpos_test.go` 是 Go 语言编译器内部用于测试扩展位置信息功能的单元测试文件。它主要验证了 `Pos` 和 `XPos` 之间的转换以及 `PosTable` 在管理这些信息方面的作用。这个功能对于支持内联函数、提供更精确的错误报告和调试信息至关重要。普通 Go 开发者通常不需要直接使用这些内部 API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/src/xpos_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -260,9 +262,4 @@ func TestSetBase(t *testing.T) {
 		t.Fatalf("wrong inlining index: %d", inl)
 	}
 }
-
-"""
-
-
-
 ```

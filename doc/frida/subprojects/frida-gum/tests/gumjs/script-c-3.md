@@ -229,7 +229,7 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 因此，这些测试用例虽然是 Frida 内部的测试代码，但它们也为用户提供了理解 Frida API 工作原理和进行调试的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 IPT (
       "const val = new Uint8Array(ArrayBuffer.wrap(" GUM_PTR_CONST ", 2));"
       "send(val.length);"
@@ -1383,7 +1385,4 @@ TESTCASE (socket_type_can_be_inspected)
   {
     COMPILE_AND_LOAD_SCRIPT ("send(Socket.type(%d));", fd);
     EXPECT_SEND_M
-"""
-
-
 ```

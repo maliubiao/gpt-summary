@@ -143,11 +143,13 @@ worker.onmessage = (event) => {
 
 `default-worker-threads-task-runner-unittest.cc` 文件测试了 V8 引擎中用于管理 worker 线程任务调度的核心组件。这个组件的功能与 JavaScript 的异步编程模型密切相关，特别是在处理需要延迟或并发执行的任务时。虽然底层的实现机制不同，但它们都旨在解决相似的问题：允许程序在不阻塞主线程的情况下执行耗时操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libplatform/default-worker-threads-task-runner-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -427,7 +429,4 @@ TEST(DefaultWorkerThreadsTaskRunnerUnittest, NoIdleTasks) {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

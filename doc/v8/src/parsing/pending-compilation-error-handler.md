@@ -101,11 +101,13 @@ Warning: Variable 'x' is declared but never used.
 
 `pending-compilation-error-handler.cc` 是V8引擎中负责编译阶段错误和警告处理的关键组件。它在幕后工作，收集并整理编译过程中发现的问题，并将这些问题转化为开发者能够理解的JavaScript错误和警告，帮助开发者发现并修复代码中的问题。它确保了在JavaScript代码真正执行之前，一些基本的语法和潜在问题能够被及时发现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/pending-compilation-error-handler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -325,7 +327,4 @@ Handle<String> PendingCompilationErrorHandler::FormatErrorMessageForTest(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

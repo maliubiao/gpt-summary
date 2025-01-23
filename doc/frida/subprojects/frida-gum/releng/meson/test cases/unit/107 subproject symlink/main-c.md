@@ -132,7 +132,7 @@ By following this systematic approach, considering the context of Frida, and foc
 
 总而言之，这个 `main.c` 文件虽然代码简单，但在 Frida 的测试框架中扮演着验证特定功能的角色。理解它的功能以及它与 Frida 的交互，有助于开发者确保 Frida 的稳定性和正确性。  对于逆向工程师来说，这个简单的例子也展示了 Frida 动态分析的基本原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/107 subproject symlink/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,15 +140,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int foo(void);
 
 int main(void)
 {
     return foo();
 }
-
-"""
-
 ```

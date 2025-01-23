@@ -117,14 +117,16 @@ By following these steps, we can systematically analyze the provided C++ code an
 
 总而言之，`widget_compositor.cc` 文件中的 `WidgetCompositor` 类是 Blink 渲染引擎中一个关键的合成管理组件，它连接了 Widget 的渲染需求和 Chromium 的合成器，确保用户最终看到的是正确且流畅的网页内容。虽然开发者通常不会直接操作这个类，但理解其功能有助于理解浏览器渲染流程和性能优化的相关概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/widget_compositor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ bool WidgetCompositor::CalledOnValidCompositorThread() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -155,7 +155,7 @@ processItem(invalidItem2); // 输出: Invalid item format
 
 提供的第二部分代码专注于测试 V8 编译器类型系统中 **类型交集** 和 **获取范围** 的功能。它还展示了 V8 的类型系统 **不满足分配律**。 结合第一部分的推断，整个 `types-unittest.cc` 文件旨在全面测试 V8 编译器中类型系统的各种操作和属性，确保类型推断和优化的正确性，这对于 V8 引擎高效执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/types-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/types-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Is(type2) && type1.Is(type3)) || type1.Is(intersect23));
         }
       }
@@ -261,8 +263,4 @@ TEST_F(TypesTest, GetRange) { GetRange(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

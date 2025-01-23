@@ -138,7 +138,7 @@ Essentially, I started with a simple understanding of the code, then systematica
 
 尽管 `sub.c` 文件非常简单，但它在 Frida 的测试环境中扮演着一定的角色。通过分析这个简单的函数，我们可以理解逆向工程的基本方法、涉及到的一些底层概念以及可能出现的编程错误。文件路径本身提供了宝贵的调试线索，暗示了用户是在 Frida 的开发或测试环境中接触到这个文件的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/112 subdir subproject/subprojects/sub/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,14 +146,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "sub.h"
 
 int sub(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -142,7 +142,7 @@ func main() {
 
 `go/src/net/cgo_linux.go` 是 Go 语言 `net` 包在 Linux 系统上使用 Cgo 进行地址解析的关键组成部分。它通过配置和调用 C 标准库的 `getaddrinfo` 函数，实现了主机名到 IP 地址的转换。理解其功能有助于深入理解 Go 网络库在特定平台上的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -172,9 +174,4 @@ import "C"
 // getaddrinfo to return the wrong canonical name on Linux.
 // So definitely leave it out.
 const cgoAddrInfoFlags = C.AI_CANONNAME | C.AI_V4MAPPED | C.AI_ALL
-
-"""
-
-
-
 ```

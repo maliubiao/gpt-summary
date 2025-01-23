@@ -164,7 +164,7 @@ I will address each point in the user's request:
 
 作为 `dlmalloc.c` 的一部分，这段代码负责 **高效地分配小尺寸的内存块**。 它通过维护 `smallbins` 这种优化的空闲链表结构，可以快速地找到并分配精确大小的空闲块。 如果没有精确匹配，它还会尝试分割较大的空闲块来满足请求，并将剩余部分重新管理起来。 这是 `dlmalloc` 内存分配器中一个核心的性能优化环节，对于提高小对象分配的效率至关重要。 它与逆向工程、底层系统知识以及用户错误都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/dlmalloc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,9 +173,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
-   bindex_t i;
+### 源代码
+```c
+bindex_t i;
           binmap_t leftbits = (smallbits << idx) & left_bits(idx2bit(idx));
           binmap_t leastbit = least_bit(leftbits);
           compute_bit2idx(leastbit, i);
@@ -928,8 +930,4 @@ History:
          structure of old version,  but most details differ.)
 
 */
-
-"""
-
-
 ```

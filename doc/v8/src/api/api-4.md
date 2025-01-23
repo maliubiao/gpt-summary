@@ -175,12 +175,14 @@ console.log(regex.source);
 
 总而言之，这个文件是 V8 引擎提供给外部环境进行交互的核心接口，使得宿主环境能够创建、配置和操作 JavaScript 运行环境和对象。 JavaScript 代码最终调用的各种内置对象和功能，很多都是通过这个文件定义的 C++ API 实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 cks = true;
 #else
   const bool kV8EnableChecks = false;
@@ -1842,7 +1844,4 @@ MaybeLocal<v8::Object> v8::RegExp::Exec(Local<Context> context,
 }
 
 Local<v8::Ar
-"""
-
-
 ```

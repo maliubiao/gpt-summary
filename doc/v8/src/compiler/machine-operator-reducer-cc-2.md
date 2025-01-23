@@ -161,7 +161,7 @@ function testBitfieldCheck(flags) {
 
 这部分 `machine-operator-reducer.cc` 代码专注于**优化 V8 编译器中针对 32 位和 64 位整数的位运算（移位、与、或、异或）和比较操作**。它通过模式匹配和代数简化，将复杂的或冗余的机器操作替换为更简单、更高效的等价形式，从而提升生成的机器代码的执行效率。 尤其关注将 64 位操作尽可能降级为 32 位操作，以及识别和优化特定的位运算组合模式，包括循环移位和位域检查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sResolvedValue()) {
       auto shift = mright.right().ResolvedValue();
       if (CanRevertLeftShiftWithRightShift<int32_t>(left, shift)) {
@@ -985,7 +987,4 @@ Reduction MachineOperatorReducer::ReduceWordNOr(Node* node) {
 
 Reduction MachineOperatorReducer::ReduceWord32Or(Node* node) {
   DCH
-"""
-
-
 ```

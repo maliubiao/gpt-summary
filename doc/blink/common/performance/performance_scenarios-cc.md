@@ -117,14 +117,16 @@ This step-by-step process allows for a systematic analysis of the code, moving f
 
 总而言之，`blink/common/performance/performance_scenarios.cc` 是 Blink 引擎中一个关键的基础设施组件，它实现了跨进程共享性能数据的机制，为各种性能监控、分析和优化工具提供了数据基础。虽然它本身不直接操作 JavaScript, HTML, CSS，但它提供的性能数据深刻反映了这些 Web 技术在浏览器中的运行状况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/performance/performance_scenarios.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ SharedAtomicRef<InputScenario> GetInputScenario(ScenarioScope scope) {
 }
 
 }  // namespace blink::performance_scenarios
-
-"""
-
 ```

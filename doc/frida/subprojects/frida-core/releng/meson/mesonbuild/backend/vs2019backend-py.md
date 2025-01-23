@@ -144,7 +144,7 @@ This systematic approach, combining code analysis, domain knowledge (Frida, Visu
 
 **作为调试线索:** 如果用户在 Frida 的构建过程中遇到与 Visual Studio 相关的错误，例如找不到编译器、链接器错误、SDK 版本不匹配等，那么查看 `vs2019backend.py` 的代码可以帮助理解 Meson 是如何生成项目文件的，从而找到可能的配置问题。例如，检查环境变量 `WindowsSDKVersion` 是否正确设置，或者检查 Meson 是否正确检测到了 Visual Studio 2019 的编译器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/vs2019backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2019 The Meson development team
 
@@ -208,7 +210,4 @@ class Vs2019Backend(Vs2010Backend):
             optargs = [x for x in file_args['c'] if x.startswith('/std:c')]
             if optargs:
                 ET.SubElement(clconf, 'LanguageStandard_C').text = optargs[0].replace("/std:c", "stdc")
-
-"""
-
 ```

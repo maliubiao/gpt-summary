@@ -163,7 +163,7 @@ Let's focus on the Android scenario and the `JNI_OnLoad` function.
 
 Therefore, if you're debugging an issue within the Frida agent on Android and suspect problems during the initial loading phase, setting breakpoints within the `JNI_OnLoad` function in `agent-glue.c` would be a crucial first step to investigate how the agent is being loaded and initialized. You could inspect the `JavaVM` pointer and the contents of the `reserved` data to understand the context of the agent's loading.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/agent/agent-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-agent.h"
 
 #include "frida-base.h"
@@ -253,7 +255,4 @@ JNI_OnLoad (JavaVM * vm, void * reserved)
 }
 
 #endif
-
-"""
-
 ```

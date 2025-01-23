@@ -272,7 +272,7 @@ sys.stdin.read()
 
 这个头文件本身是内核的一部分，并通过 bionic libc 提供给用户空间使用。它的功能在于定义了用于配置 Netfilter 速率估计匹配器的数据结构，从而允许基于网络流量速率进行灵活的过滤和策略控制。在 Android 中，它主要通过 `netd` 守护进程和底层的网络配置工具（如 `iptables` 或 `nftables`）来间接使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_rateest.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -283,8 +283,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -322,7 +324,4 @@ struct xt_rateest_match_info {
   struct xt_rateest * est2 __attribute__((aligned(8)));
 };
 #endif
-
-"""
-
 ```

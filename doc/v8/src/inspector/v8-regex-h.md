@@ -155,15 +155,17 @@ if (matchResult) {
 
 总而言之，`v8/src/inspector/v8-regex.h` 提供了一个在 V8 Inspector 模块中使用正则表达式的便捷接口，它封装了 V8 引擎的正则表达式功能，并处理了与 Inspector 上下文相关的细节。理解这个类的功能有助于理解 V8 Inspector 中与正则表达式相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-regex.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-regex.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ class V8Regex {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_REGEX_H_
-
-"""
-
 ```

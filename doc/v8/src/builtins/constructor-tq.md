@@ -165,14 +165,16 @@ By following this structured approach, we can systematically analyze a complex p
 
 `constructor.tq` 是 V8 引擎中负责高效创建各种 JavaScript 核心对象的关键模块。它定义了底层的创建机制，支撑着 JavaScript 的构造函数调用和字面量语法。理解这部分代码有助于深入理解 JavaScript 对象的创建过程和 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/constructor.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -343,7 +345,4 @@ javascript builtin GenericLazyDeoptContinuation(
 }
 
 }  // namespace constructor
-
-"""
-
 ```

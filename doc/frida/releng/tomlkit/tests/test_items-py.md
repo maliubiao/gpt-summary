@@ -221,7 +221,7 @@ Let's take the `test_array_behaves_like_a_list()` function as an example:
 
 For instance, if a user is struggling with modifying an array within a TOML configuration, they might look at the `test_array_behaves_like_a_list()` function to see how array elements are added, deleted, and accessed using `tomlkit`. The tests serve as a form of documentation and a way to understand the expected behavior of the library.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tests/test_items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -229,8 +229,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import copy
 import math
 import pickle
@@ -1202,7 +1204,4 @@ def test_custom_encoders():
 
     assert api.dumps({"foo": decimal.Decimal("1.23")}) == "foo = 1.23\n"
     api.unregister_encoder(encode_decimal)
-
-"""
-
 ```

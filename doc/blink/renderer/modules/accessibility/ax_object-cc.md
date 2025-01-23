@@ -84,7 +84,7 @@ The user wants to understand the functionality of the `ax_object.cc` file in the
 
 `blink/renderer/modules/accessibility/ax_object.cc` 文件定义了 `AXObject` 类，它是 Blink 引擎中可访问性树的基本构建块。它负责表示页面元素的可访问性信息，包括角色、属性和状态，并管理可访问性树的更新过程。该文件与 HTML 结构、CSS 渲染以及 JavaScript 的 DOM 操作紧密相关，确保了网页内容能够被辅助技术正确地理解和访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009, 2011 Apple Inc. All rights reserved.
  *
@@ -846,8 +848,4 @@ void AXObject::Init(AXObject* parent) {
   role_ = DetermineRoleValue();
 #if DCHECK_IS_ON()
   DCHECK(IsValidRole(role_)) << "Illegal " << role_ << " for\n"
-          
-"""
-
-
 ```

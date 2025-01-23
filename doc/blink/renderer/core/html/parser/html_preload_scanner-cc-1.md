@@ -133,15 +133,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，`TokenPreloadScanner` 就像一个细致的侦探，专门检查 HTML 标签的各种细节，找出所有值得预先加载的宝贵资源，从而加速网页的加载速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_preload_scanner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TypeAtPrepare::kModule:
           if (ScriptLoader::BlockForNoModule(script_type,
                                              nomodule_attribute_value_)) {
@@ -756,8 +758,4 @@ void CachedDocumentParameters::SetLcppPreloadLazyLoadImageTypeForTesting(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

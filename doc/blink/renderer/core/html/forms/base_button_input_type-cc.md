@@ -185,15 +185,17 @@ During the process, I might have initially focused too much on low-level details
 
 总而言之，`BaseButtonInputType.cc` 是 Blink 渲染引擎中处理基本按钮类型 input 元素的核心组件，它负责按钮的创建、渲染、以及响应属性变化等基本行为，并与 HTML、CSS 和 Javascript 紧密协作，共同构建用户看到的网页界面和交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/base_button_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  * Copyright (C) 2011 Apple Inc. All rights reserved.
@@ -304,7 +306,4 @@ bool BaseButtonInputType::MatchesDefaultPseudoClass() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

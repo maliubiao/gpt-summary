@@ -131,14 +131,16 @@ By following these steps, we can systematically analyze the code and generate a 
 
 `interpolation_space.cc` 文件在 Chromium Blink 渲染引擎中扮演着关键角色，它提供了在不同颜色插值空间之间进行颜色转换的基础设施。虽然它不是开发者直接操作的 API，但其功能直接影响着浏览器如何渲染和处理网页上的颜色，包括 CSS 动画、Canvas 绘图以及其他与颜色相关的操作。理解颜色空间的概念对于避免与颜色相关的渲染错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/interpolation_space.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2008, Google Inc. All rights reserved.
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
@@ -221,7 +223,4 @@ sk_sp<cc::ColorFilter> CreateInterpolationSpaceFilter(
 }  // namespace interpolation_space_utilities
 
 }  // namespace blink
-
-"""
-
 ```

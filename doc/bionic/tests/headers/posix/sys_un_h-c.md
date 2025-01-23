@@ -299,7 +299,7 @@ if __name__ == "__main__":
 
 总而言之，`bionic/tests/headers/posix/sys_un_h.c` 是 Android bionic 库的一个内部测试文件，用于确保 `sys/un.h` 头文件的定义正确，这对于依赖 Unix 域套接字进行进程间通信的 Android 系统至关重要。 开发者通常不会直接接触这个文件，但会间接地通过使用相关的系统调用和 NDK API 来利用其中定义的结构体和类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_un_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -351,7 +353,4 @@ static void sys_un_h() {
 
   TYPE(sa_family_t);
 }
-
-"""
-
 ```

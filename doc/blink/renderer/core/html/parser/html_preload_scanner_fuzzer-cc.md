@@ -144,14 +144,16 @@ Let's break down the thought process for analyzing this fuzzer code.
 
 总而言之，`html_preload_scanner_fuzzer.cc` 是一个用于测试 Chromium Blink 引擎中 HTML 预加载扫描器健壮性和安全性的重要工具。它通过生成各种各样的随机输入，尽可能地覆盖代码的各种执行路径和边界情况，以发现潜在的 bug 和安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_preload_scanner_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

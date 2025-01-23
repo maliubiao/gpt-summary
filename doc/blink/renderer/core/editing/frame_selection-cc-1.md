@@ -203,7 +203,7 @@ Here's a breakdown of the code's functionality:
 
 总而言之，`FrameSelection` 是 Blink 引擎中负责管理和操作文本或元素选择的核心模块，它与用户的交互行为以及 JavaScript 和 CSS 的渲染紧密相关。这部分代码涵盖了从基本的选择操作到复杂的跨框架选择、事件通知和视觉更新等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/frame_selection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -211,8 +211,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d()))
     return;
 
@@ -968,8 +970,4 @@ void ShowTree(const blink::FrameSelection* sel) {
 }
 
 #endif
-
-"""
-
-
 ```

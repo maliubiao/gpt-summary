@@ -185,7 +185,7 @@ Now, let's address the specific requirements:
 
 这部分代码主要负责 **RTCPeerConnection 对象的核心操作和状态管理**。它实现了大部分用于控制连接生命周期、管理媒体流和轨道、处理 ICE 协商、以及获取连接状态的关键方法。简单来说，它是 `RTCPeerConnection` 在 JavaScript 中暴露的功能在 C++ 层的具体实现，负责与底层的 WebRTC 库进行交互，并维护连接的内部状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_peer_connection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tImpl>(
       GetExecutionContext(), this, success_callback, error_callback);
   peer_handler_->AddIceCandidate(request, std::move(platform_candidate));
@@ -1058,7 +1060,4 @@ void RTCPeerConnection::DidModifyTransceivers(
       remove_list;
   HeapVector<std::pair<Member<MediaStream>, Member<MediaStreamTrack>>> add_list;
   HeapVe
-"""
-
-
 ```

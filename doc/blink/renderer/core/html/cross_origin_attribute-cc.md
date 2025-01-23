@@ -144,14 +144,16 @@ img.onload = function() {
 
 总而言之，`cross_origin_attribute.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它负责解析 HTML 中 `crossorigin` 属性的值，并将这些值转化为内部表示，以便浏览器在加载跨域资源时采取正确的 CORS 策略。 这直接影响了 JavaScript 和 CSS 如何访问和使用这些资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/cross_origin_attribute.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ CrossOriginAttributeValue GetCrossOriginAttributeValue(const String& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

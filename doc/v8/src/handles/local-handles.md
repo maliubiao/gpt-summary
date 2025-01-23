@@ -97,11 +97,13 @@ console.log(sum);
 
 总而言之，`local-handles.cc` 中的代码是 V8 引擎实现高效内存管理和垃圾回收的关键基础设施，它通过局部句柄作用域来管理 JavaScript 对象的生命周期，确保程序的稳定性和性能。JavaScript 开发者通常不需要直接与这些 C++ 代码交互，但他们编写的 JavaScript 代码的行为会受到这些底层机制的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/local-handles.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ void LocalHandles::ZapRange(Address* start, Address* end) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

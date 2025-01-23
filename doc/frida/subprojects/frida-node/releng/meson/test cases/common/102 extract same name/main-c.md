@@ -129,7 +129,7 @@ By following these steps, systematically analyzing the code from its basic synta
 
 总而言之，这个 `main.c` 文件是一个简单的 C 代码片段，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理函数 hook 和返回值方面的功能。它的简洁性使得开发者能够快速理解测试的意图，并作为调试 Frida 功能的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/102 extract same name/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,15 +137,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1(void);
 int func2(void);
 
 int main(void) {
     return !(func1() == 23 && func2() == 42);
 }
-
-"""
-
 ```

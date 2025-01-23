@@ -112,12 +112,14 @@ while (current_instruction < code_end) {
 
 总结来说，`v8/src/diagnostics/x64/disasm-x64.cc` 是 V8 引擎中负责将 x64 机器码转换为可读汇编代码的关键组件，它对于理解 V8 如何执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/disasm-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2053,7 +2055,4 @@ int DisassemblerX64::TwoByteOpcodeInstruction(uint8_t* data) {
       current += PrintOperands("movq", XMMOPER_XMMREG_OP_ORDER, current);
     } else if (opcode == 0x50) {
       App
-"""
-
-
 ```

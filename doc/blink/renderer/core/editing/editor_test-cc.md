@@ -107,15 +107,17 @@ By following this structured approach, you can effectively analyze a test file a
 
 总而言之，`editor_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎的编辑功能的正确性和稳定性，涵盖了各种用户操作和潜在的错误场景。通过阅读和理解这个文件，开发者可以更好地理解编辑功能的内部机制，并能有效地调试和修复相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/editor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -333,7 +335,4 @@ TEST_F(EditorTest, UndoWithInvalidSelection) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

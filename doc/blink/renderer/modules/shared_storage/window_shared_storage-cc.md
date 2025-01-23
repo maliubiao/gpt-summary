@@ -175,15 +175,17 @@ Let's consider a hypothetical scenario and trace the logic:
 
 By understanding these steps, a developer debugging issues with the Shared Storage API can set breakpoints in this C++ code to inspect the state of the `SharedStorage` object, how it's being created, and the interactions between JavaScript and the underlying storage mechanism.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/window_shared_storage.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ SharedStorage* WindowSharedStorage::sharedStorage(
 }
 
 }  // namespace blink
-
-"""
-
 ```

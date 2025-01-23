@@ -546,7 +546,7 @@ Here's a breakdown of the thinking process:
   double FPRecipSqrtEstimate(double a);
   double FPRecipEstimate(double a);
   double FixedToDouble(int64_t src, int
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -554,9 +554,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    const LogicVRegister& src2, int index);
+### 源代码
+```c
+const LogicVRegister& src2, int index);
   LogicVRegister sub(VectorFormat vform, LogicVRegister dst,
                      const LogicVRegister& src1, const LogicVRegister& src2);
   LogicVRegister and_(VectorFormat vform, LogicVRegister dst,
@@ -1178,7 +1180,4 @@ Prompt:
   //
   // This is checked when floating-point instructions are executed, not when
   // FPCR is set. This allows generated
-"""
-
-
 ```

@@ -102,11 +102,13 @@ console.log(output); // 输出 -15
 
 **总结来说，`instruction-scheduler-ppc.cc` 文件定义了 V8 引擎在 PPC 架构上如何优化指令执行顺序的规则。 虽然 JavaScript 开发者无法直接接触到这些底层的调度细节，但指令调度器的优化工作直接影响着 JavaScript 代码在 PPC 架构上的运行性能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/instruction-scheduler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -545,7 +547,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

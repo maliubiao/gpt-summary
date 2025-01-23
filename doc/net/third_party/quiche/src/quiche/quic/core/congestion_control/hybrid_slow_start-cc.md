@@ -191,15 +191,17 @@ This systematic approach, combining code analysis, knowledge of networking conce
 
 总而言之，`hybrid_slow_start.cc` 文件是 QUIC 协议中一个关键的拥塞控制模块，它通过监控网络状况并动态调整发送速率，旨在提供更快更稳定的网络连接体验，而这最终会影响到用户与 Web 应用的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/hybrid_slow_start.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ bool HybridSlowStart::ShouldExitSlowStart(QuicTime::Delta latest_rtt,
 }
 
 }  // namespace quic
-
-"""
-
 ```

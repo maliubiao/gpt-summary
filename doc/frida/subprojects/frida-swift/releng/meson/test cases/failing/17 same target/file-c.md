@@ -115,7 +115,7 @@ Frida 会抛出一个错误，表明存在多个具有相同名称或标识符�
 
 总而言之，尽管 `file.c` 本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理特定边界情况（例如同名目标）时的健壮性。它可以帮助用户理解在使用 Frida 时可能遇到的问题，并为他们提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/17 same target/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,10 +123,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func() { return 0; }
-
-"""
-
 ```

@@ -157,15 +157,17 @@ Initially, I might have just focused on the validation aspects. But realizing th
 
 总而言之，`payment_request_respond_with_observer.cc` 是 Blink 引擎中连接 `PaymentRequest` API 和 Service Worker 支付处理程序的关键组件，负责验证和传递支付响应，确保支付流程的正确性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/payment_request_respond_with_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -355,7 +357,4 @@ void PaymentRequestRespondWithObserver::BlankResponseWithError(
 }
 
 }  // namespace blink
-
-"""
-
 ```

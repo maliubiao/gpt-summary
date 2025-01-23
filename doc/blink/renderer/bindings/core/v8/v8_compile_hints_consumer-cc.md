@@ -127,15 +127,17 @@ This iterative process of scanning, hypothesizing, analyzing, connecting, reason
 
 总而言之，`v8_compile_hints_consumer.cc` 文件在 Chromium 的 Blink 渲染引擎中扮演着关键的角色，它负责接收、存储和应用 JavaScript 编译提示，以提升网页的性能。理解这个文件的功能和相关流程对于调试 JavaScript 性能问题以及理解浏览器如何优化代码执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_compile_hints_consumer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ V8CrowdsourcedCompileHintsConsumer::GetDataWithScriptNameHash(
 }
 
 }  // namespace blink::v8_compile_hints
-
-"""
-
 ```

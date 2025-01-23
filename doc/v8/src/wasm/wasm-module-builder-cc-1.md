@@ -133,7 +133,7 @@ builder.AddDataSegment(100, data); // 假设内存大小不足以容纳从偏移
 
 作为 `WasmModuleBuilder` 的一部分，这段代码的核心功能是将内存中构建好的 WebAssembly 模块的各种结构化信息，严格按照 WebAssembly 二进制格式的规范，序列化到 `ZoneBuffer` 中。它负责生成最终的 `.wasm` 文件内容的各个段，包括类型、导入、函数、代码、数据、导出和名称等。这个过程是 WebAssembly 编译流程的关键步骤，将高级的模块表示转换为虚拟机可以执行的二进制代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-module-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-module-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ==
                 WasmElemSegment::kRelativeToDeclaredFunctions &&
             entry.kind == WasmElemSegment::Entry::kRefFuncEntry;
@@ -273,8 +275,4 @@ void WasmModuleBuilder::WriteAsmJsOffsetTable(ZoneBuffer* buffer) const {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

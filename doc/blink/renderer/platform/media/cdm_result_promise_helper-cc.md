@@ -158,14 +158,16 @@ This iterative process of scanning, analyzing, connecting, and refining allowed 
 
 `cdm_result_promise_helper.cc` 是 Blink 渲染引擎中处理 CDM 操作结果的关键辅助文件。它专注于不同层级之间的错误和状态转换，确保 CDM 内部的细节能够以标准化的方式暴露给 Web API 并用于内部监控。它不直接包含业务逻辑，而是提供基础设施来处理异步 CDM 操作的结果，并将其转化为 Web 开发者可以理解和处理的形式，以及 Chromium 可以用于分析的指标数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/cdm_result_promise_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ void ReportCdmResultUMA(const std::string& uma_name,
 }
 
 }  // namespace blink
-
-"""
-
 ```

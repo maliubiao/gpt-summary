@@ -179,15 +179,17 @@ func main() {
 
 总而言之，这段代码展示了 Go 语言中定义和使用泛型类型别名的基本语法，涵盖了数组、结构体、指针和 map 这些常用的数据结构。理解这些概念对于编写可复用的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48962.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -200,9 +202,4 @@ type (
 	P[P any]               *P
 	M[K comparable, V any] map[K]V
 )
-
-"""
-
-
-
 ```

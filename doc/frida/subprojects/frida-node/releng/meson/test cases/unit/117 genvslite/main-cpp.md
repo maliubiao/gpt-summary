@@ -117,7 +117,7 @@ Initially, I might have focused too much on the code's direct functionality. How
 
 尽管 `main.cpp` 代码本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证基本的程序执行和 Frida 的注入能力。它简洁明了的特性使其成为一个理想的最小化测试目标，可以帮助开发者快速定位和解决 Frida 核心功能中的问题。通过分析这个文件，我们可以理解 Frida 测试流程的一个侧面，以及 Frida 如何与底层操作系统和二进制代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/117 genvslite/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<stdio.h>
 
 int main() {
@@ -137,7 +139,4 @@ int main() {
 #endif
     return 0;
 }
-
-"""
-
 ```

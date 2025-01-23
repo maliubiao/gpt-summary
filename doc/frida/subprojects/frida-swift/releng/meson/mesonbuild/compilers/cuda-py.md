@@ -117,7 +117,7 @@ flags = ['-O2', '-I/usr/include', '-DDEBUG', '-lstdc++', '-Werror']
 
 `frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/cuda.py` 文件的核心功能是作为 Meson 构建系统中 CUDA 编译器的接口。它封装了 `nvcc` 编译器的调用，负责管理和转换编译选项，处理 `nvcc` 特有的参数格式，并进行编译器的健全性检查。其目标是让 Meson 能够方便可靠地编译包含 CUDA 代码的项目。它通过 `_to_host_flags` 方法实现了从通用编译选项到 NVCC 特定选项的映射，并使用其他辅助方法处理了 NVCC 的特殊性，例如逗号分隔的参数和 `-Xcompiler` 的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -751,7 +753,4 @@ class CudaCompiler(Compiler):
         #include <{header}>
         using {symbol};
         int main(vo
-"""
-
-
 ```

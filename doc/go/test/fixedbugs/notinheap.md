@@ -131,15 +131,17 @@ Go 的 `map` 和 `chan` 需要能够复制和比较其元素。对于包含 `cgo
 
 通过使用指针 (`*nih`) 或切片 (`[]nih`)，Go 可以间接地引用这些不能直接在堆上管理的类型。 指针本身是可以在堆上管理的，并且它存储了指向实际数据的地址，而实际数据可能位于 Go 堆之外。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/notinheap.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -+
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -177,9 +179,4 @@ func f() {
 	type embed8 map[int]nih // ERROR "incomplete \(or unallocatable\) map value not allowed"
 	type emebd9 chan nih    // ERROR "chan of incomplete \(or unallocatable\) type not allowed"
 }
-
-"""
-
-
-
 ```

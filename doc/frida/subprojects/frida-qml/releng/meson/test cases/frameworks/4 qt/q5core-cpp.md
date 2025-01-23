@@ -180,7 +180,7 @@ Translate me!
 
 因此，这个文件更多的是作为开发和测试 Frida 本身的一部分而存在，而不是最终用户直接交互的对象。 理解这个测试用例的功能，可以帮助 Frida 开发者确保他们的工具能够有效地与 Qt 应用程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/4 qt/q5core.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QCoreApplication>
 #include <QtGlobal>
 #include <QString>
@@ -218,7 +220,4 @@ int main(int argc, char **argv) {
   //return app.exec();
   return 0;
 }
-
-"""
-
 ```

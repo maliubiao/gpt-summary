@@ -163,15 +163,17 @@ By following these steps, combining code analysis, logical deduction, and knowle
 
 `MockPolicyContainerHost` 是 Blink 渲染引擎中一个用于测试的关键组件。它模拟了真实的策略容器宿主，允许开发者在隔离且可控的环境中测试与安全策略相关的渲染功能。虽然普通用户不会直接接触到它，但它在保证浏览器安全性和功能正确性方面发挥着重要作用，并且是开发者进行相关模块调试的重要工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/mock_policy_container_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void MockPolicyContainerHost::BindWithNewEndpoint(
 }
 
 }  // namespace blink
-
-"""
-
 ```

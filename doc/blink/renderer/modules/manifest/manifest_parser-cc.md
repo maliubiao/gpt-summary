@@ -171,7 +171,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 `manifest_parser.cc` 文件的主要功能是**解析 Web App Manifest 文件**，将 Manifest 文件中的 JSON 数据转换为 Blink 引擎内部使用的 `mojom::blink::Manifest` 数据结构，并对 Manifest 文件中的各种属性进行**验证**，同时记录解析过程中遇到的**错误**。这是浏览器理解和处理 Web App Manifest 的关键步骤，为后续 PWA 功能的实现提供了必要的数据基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1112,7 +1114,4 @@ Vector<mojom::blink::ManifestScreenshotPtr> ManifestParser::ParseScreenshots(
     const JSONObject* object) {
   Vector<mojom::blink::ManifestScreenshotPtr> screenshots;
   JSONVal
-"""
-
-
 ```

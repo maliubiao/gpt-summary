@@ -101,7 +101,7 @@ Here's a thinking process to arrive at the detailed analysis of the `foo.c` file
 
 这个简单的 `foo.c` 文件通常是作为测试 Frida 基础功能的基石。它的简单性使得开发者可以专注于测试 Frida 框架本身，而不是被复杂的本地代码逻辑分散注意力。当测试涉及到调用本地函数、hook 函数、修改返回值等基本操作时，这样的简单函数是理想的选择。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/169 source in dep/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,12 +109,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void) {
     return 42;
 }
-
-"""
-
 ```

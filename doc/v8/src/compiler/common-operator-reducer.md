@@ -156,11 +156,13 @@ handleInput(1); // 在某些情况下，编译器可能知道 inputCode 的值
 
 `CommonOperatorReducer` 是 V8 引擎中一个重要的优化组件，它通过分析和转换 Turbofan IR 中的常见操作符，来提高生成的机器码的效率，从而提升 JavaScript 代码的执行性能。它与 JavaScript 的功能息息相关，因为它直接作用于 JavaScript 代码的编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-operator-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -741,7 +743,4 @@ Reduction CommonOperatorReducer::Change(Node* node, Operator const* op, Node* a,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

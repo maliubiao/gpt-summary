@@ -199,7 +199,7 @@ int main() {
 
 作为 `v8/test/cctest/wasm/test-run-wasm-simd.cc` 的第 5 部分，这部分代码的主要功能是 **全面测试 WebAssembly SIMD 指令中的加载和存储操作，以及一些基本的 SIMD 运算和常量操作。** 它涵盖了不同数据类型、通道操作、内存对齐、边界检查以及一些特定的指令行为。这些测试旨在确保 V8 引擎正确地实现了 WebAssembly SIMD 规范，并且能够安全可靠地执行这些指令。 结合其他部分，这个文件旨在提供一个完整的 WebAssembly SIMD 功能的测试套件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -207,8 +207,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (int i = 1; i < lanes_s; i++) {
       CHECK_EQ(S{0}, LANE(global, i));
     }
@@ -1090,7 +1092,4 @@ TEST(RunWasmTurbofan_S256Or) {
 }
 
 TEST(RunWasmTu
-"""
-
-
 ```

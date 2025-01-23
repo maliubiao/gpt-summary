@@ -144,15 +144,17 @@ Initially, I might focus too much on the technical details of the C++ code. I ne
 
 总而言之，`text_fragment_painter_test.cc` 是 Blink 渲染引擎中一个非常重要的测试文件，它确保了文本渲染功能的正确性和稳定性。通过模拟各种 HTML 结构和 CSS 样式，它帮助开发者发现和修复与文本渲染相关的 bug，最终保证用户能够正常浏览网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/text_fragment_painter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ TEST_P(TextFragmentPainterTest, WheelEventListenerOnInlineElement) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

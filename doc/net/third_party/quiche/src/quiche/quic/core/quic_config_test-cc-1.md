@@ -119,7 +119,7 @@ fetch('https://example.com/data.json')
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_config_test.cc` 的第二部分主要负责测试 `QuicConfig` 类在接收和处理特定 QUIC 传输层参数时的正确性，确保 QUIC 连接的配置能够按照预期进行，从而保证基于 QUIC 的网络连接的稳定性和性能。这些配置直接影响着用户通过浏览器访问网站和运行 JavaScript 应用时的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_config_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,9 +127,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- EXPECT_EQ(config_.ReceivedAckDelayExponent(), kAckDelayExponentForTest);
+### 源代码
+```cpp
+EXPECT_EQ(config_.ReceivedAckDelayExponent(), kAckDelayExponentForTest);
 
   ASSERT_TRUE(config_.HasReceivedActiveConnectionIdLimit());
   EXPECT_EQ(config_.ReceivedActiveConnectionIdLimit(),
@@ -206,8 +208,4 @@ TEST_P(QuicConfigTest, SendPreferredIPv4Address) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

@@ -131,7 +131,7 @@ func main() {
 
 总结来说， `go/src/internal/syscall/unix/getrandom_freebsd.go` 文件是 Go 语言在 FreeBSD 系统上安全生成随机数的基石，它定义了访问 `getrandom` 系统调用所需的常量。开发者通常通过 `crypto/rand` 包间接地使用其功能。 理解这种底层实现有助于更好地理解 Go 语言如何与操作系统进行交互，并避免在使用随机数时犯下安全错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/getrandom_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,8 +139,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -157,9 +159,4 @@ const (
 	// GRND_RANDOM is only set for portability purpose, no-op on FreeBSD.
 	GRND_RANDOM GetRandomFlag = 0x0002
 )
-
-"""
-
-
-
 ```

@@ -170,7 +170,7 @@ Strategizing complete. Proceeding with response generation.
 
 这部分 `flag-definitions.h` 文件主要负责定义和配置 V8 引擎在编译、优化和内存管理等方面的行为。它提供了大量的命令行标志，允许开发者和 V8 开发者精细地控制引擎的内部工作方式，用于性能调优、调试、实验性功能开启以及压力测试等目的。 这些标志直接影响 JavaScript 代码的执行效率和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flag-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/flags/flag-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ition or Sparkplug.
 DEFINE_NEG_IMPLICATION(disable_optimizing_compilers, turbofan)
 DEFINE_NEG_IMPLICATION(disable_optimizing_compilers, turboshaft)
@@ -833,7 +835,4 @@ DEFINE_BOOL(turbo_collect_feedback_in_generic_lowering, false,
 DEFINE_BOOL(turboshaft, true, "enable TurboFan's Turboshaft phases for JS")
 
 // Can't use Turbofan without Turboshaft
-"""
-
-
 ```

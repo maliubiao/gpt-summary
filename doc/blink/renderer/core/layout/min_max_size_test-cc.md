@@ -118,14 +118,16 @@ By following this detailed process, I was able to generate a comprehensive and a
 
 总而言之，`min_max_size_test.cc` 是 Blink 渲染引擎中一个重要的测试文件，它确保了 CSS 中尺寸限制属性（`min-width`, `max-width` 等）的正确实现和行为，这直接影响了网页的布局和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/min_max_size_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ TEST(MinMaxSizesTest, ShrinkToFit) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

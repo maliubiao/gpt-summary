@@ -275,7 +275,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/include/sys/klog.h` 定义了与内核日志缓冲区交互的底层接口，虽然应用程序不应该直接使用它，但它是 Android 系统日志机制的重要组成部分，被像 `logd` 这样的系统服务使用来读取和管理内核日志。通过 Frida 这样的工具，我们可以深入观察这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/klog.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -359,7 +361,4 @@ __BEGIN_DECLS
 int klogctl(int __type, char* __BIONIC_COMPLICATED_NULLNESS __buf, int __buf_size);
 
 __END_DECLS
-
-"""
-
 ```

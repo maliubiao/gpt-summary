@@ -221,7 +221,7 @@ int say(void) {
 
 总而言之，`rejected_main.c` 作为一个简单的 Frida 测试用例，虽然自身功能简单，但对于理解 Frida 的基本 hook 原理、验证 Frida 环境以及作为调试复杂问题的基准点都具有重要的意义。它体现了动态 instrumentation 的核心思想，即在程序运行时观察和修改其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/17 prebuilt shared/rejected_main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -229,15 +229,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rejected.h"
 
 int main(void) {
     say();
     return 0;
 }
-
-"""
-
 ```

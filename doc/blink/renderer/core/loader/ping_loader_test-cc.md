@@ -122,15 +122,17 @@ My thinking process to answer the request about `ping_loader_test.cc` goes throu
 
 总而言之，`ping_loader_test.cc` 通过单元测试确保 `PingLoader` 能够正确处理各种 ping 请求场景，包括不同协议之间的 ping、不同触发方式的 ping (HTML 属性和 JavaScript API)，以及设置正确的请求头和优先级。这对于保证浏览器行为的正确性和符合 Web 标准至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/ping_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ TEST_F(PingLoaderTest, BeaconPriority) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

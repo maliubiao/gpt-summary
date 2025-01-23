@@ -161,7 +161,7 @@ By systematically analyzing the code, considering its purpose within the Frida p
 
 总而言之，`main.py` 是 Frida 项目中至关重要的文档生成工具，它连接了文档源数据和最终用户查阅的参考手册，对于理解和使用 Frida 这一动态 instrumentation 工具起着关键作用。其功能看似简单，但其背后涉及到对多种文档格式的理解、对 Frida 内部结构的映射，以及对构建流程的整合。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/refman/main.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -250,7 +252,4 @@ def main() -> int:
 
     generator.generate()
     return 0
-
-"""
-
 ```

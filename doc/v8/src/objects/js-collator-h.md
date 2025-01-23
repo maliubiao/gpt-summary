@@ -160,15 +160,17 @@ console.log(supportedLocales); // 输出包含 'en', 'fr', 'de' 中 V8 支持的
 
 这些错误最终会影响到 `JSCollator` 对象的操作，例如在调用 `compare` 方法时会产生意想不到的结果，或者在创建 `Intl.Collator` 实例时抛出异常。`JSCollator` 的实现需要处理这些潜在的错误情况，并提供符合 ECMA-402 规范的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-collator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-collator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ class JSCollator : public TorqueGeneratedJSCollator<JSCollator, JSObject> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_COLLATOR_H_
-
-"""
-
 ```

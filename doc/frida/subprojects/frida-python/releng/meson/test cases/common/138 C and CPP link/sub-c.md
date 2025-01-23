@@ -104,7 +104,7 @@ A user might arrive at this file while debugging issues related to:
 
 In summary, while the `sub.c` file itself is simple, it plays a role in testing fundamental aspects of Frida's ability to interact with C code, which is crucial for dynamic instrumentation and reverse engineering tasks. Its presence in the test suite provides insights into the underlying mechanisms of code injection, linking, and function calling that Frida relies upon.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/138 C and CPP link/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -133,7 +135,4 @@ Prompt:
 float a_half(void) {
     return .5;
 }
-
-"""
-
 ```

@@ -147,15 +147,17 @@ If a developer suspects issues with database operations (e.g., performance probl
 
 Breakpoints set within this file, particularly in `ScheduleTask()`, `CleanupDatabaseThread()`, and the methods managing `open_database_set_`, can provide valuable insights into the flow of database operations and potential problems. For example, observing the contents of the task queue or the `open_database_set_` at different points can help diagnose issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/database_thread.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008, 2013 Apple Inc. All rights reserved.
  *
@@ -335,7 +337,4 @@ void DatabaseThread::ScheduleTask(std::unique_ptr<DatabaseTask> task) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

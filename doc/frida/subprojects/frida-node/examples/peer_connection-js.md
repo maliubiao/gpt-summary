@@ -123,7 +123,7 @@ By following these steps, including the self-correction process, a comprehensive
 
 总而言之，这个 `peer_connection.js` 示例展示了 Frida 如何利用底层的网络能力，在动态 instrumentation 的框架下建立对等连接，这为逆向工程、安全分析等提供了更强大的工具。它涉及到网络协议、操作系统底层机制以及 Frida 的核心功能。理解这个脚本可以帮助用户更好地利用 Frida 进行更深入的系统分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/peer_connection.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('..');
 
 async function main() {
@@ -169,7 +171,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

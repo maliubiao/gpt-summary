@@ -82,13 +82,15 @@ const value = Atomics.load(view, 0); // Guaranteed to see the updated value
 
 **In summary, this part of the `code-generator-x64.cc` file is responsible for the low-level details of translating high-level SIMD and atomic operations (originating from JavaScript or WebAssembly) into efficient x64 machine code, enabling V8 to execute these features effectively on x64 processors.**  It bridges the gap between the abstract operations defined in the language specifications and the concrete instructions understood by the CPU.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-   __ Pmovzxdq(i.OutputSimd128Register(), i.InputSimd128Register(0));
+### 源代码
+```
+__ Pmovzxdq(i.OutputSimd128Register(), i.InputSimd128Register(0));
       break;
     }
     case kX64I64x2UConvertI32x4High: {
@@ -2018,7 +2020,4 @@ constexpr Condition FlagsConditionToCondition(FlagsCondition condition) {
 }  // namespace
 
 // Assembl
-"""
-
-
 ```

@@ -170,7 +170,7 @@ color = "yellow"
 
 这段代码是 TOML 解析器中负责解析表格和数组表格的核心部分。它能够识别不同类型的表格定义，包括嵌套表格和数组表格，并将解析出的数据结构化地存储起来。通过向前查看的功能，它能够更智能地处理复杂的 TOML 结构。整体而言，这段代码确保了 Frida 能够正确读取和理解使用 TOML 格式的配置文件，从而为 Frida 的动态插桩功能提供必要的配置信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,9 +179,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    if is_aot and i == len(name_parts) - 2:
+### 源代码
+```python
+if is_aot and i == len(name_parts) - 2:
                     table.raw_append(_name, AoT([child], name=table.name, parsed=True))
                 else:
                     table.raw_append(_name, child)
@@ -333,8 +335,4 @@ Prompt:
                     value = None
 
             return value, extracted
-
-"""
-
-
 ```

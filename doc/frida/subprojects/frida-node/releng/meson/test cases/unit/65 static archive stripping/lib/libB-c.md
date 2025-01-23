@@ -138,7 +138,7 @@ int main() {
 
 **总结:**  `libB.c` 文件本身功能简单，但在 Frida 的构建系统中，它是用于测试静态库符号剥离功能的关键组成部分。它的存在是为了验证构建系统能够正确地处理静态库的符号信息，这对于减小最终产物的大小和增加逆向难度都有重要意义。开发者查看这个文件通常是因为他们正在调试 Frida 的构建过程，或者需要深入了解 Frida 如何处理静态库的符号。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/65 static archive stripping/lib/libB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,14 +146,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libB.h>
 
 static int libB_func_impl(void) { return 0; }
 
 int libB_func(void) { return libB_func_impl(); }
-
-"""
-
 ```

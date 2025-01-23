@@ -176,7 +176,7 @@ By following this structured thought process, addressing each part of the prompt
 
 因此，用户不太可能直接手动调用 `genprog.py`，它更多的是作为 Frida 自动化测试流程的一部分被执行。如果用户需要调试与此相关的错误，他们可能需要查看 Frida 的测试代码，了解如何调用 `genprog.py`，并检查测试用例的输入和预期输出。他们也可能需要检查构建目录下的临时文件，查看 `genprog.py` 实际生成了哪些文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/168 preserve gendir/genprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys, argparse
@@ -232,7 +234,4 @@ for i, ifile_name in enumerate(ifiles):
     os.makedirs(os.path.split(ofile_bases[i])[0], exist_ok=True)
     open(h_out, 'w').write(h_templ % (proto_name))
     open(c_out, 'w').write(c_templ % (proto_name, proto_name))
-
-"""
-
 ```

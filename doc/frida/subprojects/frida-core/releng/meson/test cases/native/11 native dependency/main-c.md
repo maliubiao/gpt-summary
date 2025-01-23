@@ -177,7 +177,7 @@ int foo(void) {
 
 因此，用户操作到达 `main.c` 这个源代码文件的路径是：**Frida 的开发者或贡献者为了测试 Frida 的特定功能（处理本地依赖），创建并使用了这个简单的 C 程序作为测试目标。**  这个文件本身不是用户直接操作的对象，而是 Frida 内部测试流程的一部分。 当开发者在调试相关的 Frida 功能时，他们可能会检查这个 `main.c` 的代码，以理解测试用例的逻辑和预期行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/11 native dependency/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,15 +185,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "lib.h"
 
 int main(void) {
     const int v = foo() - 1;
     return v;
 }
-
-"""
-
 ```

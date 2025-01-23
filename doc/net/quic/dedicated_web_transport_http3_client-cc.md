@@ -195,7 +195,7 @@ wt.datagrams.readable.getReader().read().then(({ value, done }) => {
 
 代码的第 1 部分尚未涉及到发送实际的 WebTransport `CONNECT` 请求 (这通常发生在 `DoSendRequest()` 方法中，该方法在提供的代码片段的末尾附近)，以及后续的会话管理和数据传输。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/dedicated_web_transport_http3_client.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1132,7 +1134,4 @@ void DedicatedWebTransportHttp3Client::OnConnectionClosed(
   // If the session is already in a terminal state due to reasons other than
   // connection close, we should ignore it; otherwise we risk re-entering the
   // connection te
-"""
-
-
 ```

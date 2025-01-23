@@ -173,7 +173,7 @@ By following these steps, I can create a comprehensive and accurate summary of t
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/compilers.py` 中的 `Compiler` 类是 Meson 构建系统的核心组件之一，它抽象了不同编译器的操作，使得 Meson 能够跨平台和跨编译器工作。 理解这个类的功能对于理解 Meson 的构建流程至关重要，并且有助于调试构建问题，尤其是在涉及到逆向工程、底层系统和特定平台特性时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 sion only matters if running results; '.exe' is
         # guaranteed to be executable on every platform.
         if mode == CompileCheckMode.LINK:
@@ -804,8 +806,4 @@ def get_global_options(lang: str,
     opts: 'KeyedOptionDictType' = {argkey: cargs, largkey: largs}
 
     return opts
-
-"""
-
-
 ```

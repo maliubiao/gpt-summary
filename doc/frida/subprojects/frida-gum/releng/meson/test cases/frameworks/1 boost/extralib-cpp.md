@@ -130,7 +130,7 @@ By following these steps and continually relating the specific code to the broad
 
 因此，`extralib.cpp` 作为 Frida 测试用例的一部分，很可能是为了验证 Frida 在 hook 使用 Boost.Log 库的程序时的能力。开发者或测试人员通过编写和运行这个简单的程序，可以测试 Frida 是否能够正确地识别和 hook Boost.Log 的相关函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/1 boost/extralib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include <iostream>
@@ -167,7 +169,4 @@ int main(int argc, char **argv) {
   BOOST_LOG_TRIVIAL(trace) << "SOMETHING";
   return 0;
 }
-
-"""
-
 ```

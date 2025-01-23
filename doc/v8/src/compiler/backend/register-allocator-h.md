@@ -162,7 +162,7 @@ function complexCalculation() {
 
 `v8/src/compiler/backend/register-allocator.h` 定义了 V8 编译器后端进行寄存器分配的关键数据结构和基础类。它提供了表示程序值生命周期、管理寄存器分配数据、表示值用法以及支持高效区间操作的工具。这个头文件是 V8 优化编译器的核心组成部分，尽管它本身是 C++ 代码，但其目的是为了高效地执行 JavaScript 代码。它通过精细地管理程序值的生命周期和硬件寄存器的分配，来提升 JavaScript 的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator.h以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1150,8 +1152,5 @@ struct LiveRangeOrdering {
   }
 };
 // Bundle live ranges that are connected by phis and do not overlap. This tries
-// to restore some 
-"""
-
-
+// to restore some
 ```

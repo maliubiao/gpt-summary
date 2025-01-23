@@ -151,14 +151,16 @@ This detailed thought process, moving from the general to the specific, analyzin
 
 总结来说，`public_url_manager_test.cc` 是一个至关重要的测试文件，用于确保 Chromium Blink 引擎中 `PublicURLManager` 组件的正确性和稳定性，该组件负责管理与 JavaScript, HTML, CSS 中广泛使用的 `blob:` URL 相关的核心功能和安全策略。理解这个测试文件有助于开发者更好地理解 `blob:` URL 的工作原理以及如何避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fileapi/public_url_manager_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -353,7 +355,4 @@ TEST_F(PublicURLManagerTest, RevokeInvalidURL) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

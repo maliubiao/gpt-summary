@@ -93,7 +93,7 @@ Frida 是一个动态插桩工具，广泛应用于逆向工程。虽然这个�
 
 总而言之，`blaster.py` 是 Frida 框架中的一个简单测试用例，它通过调用 `tachyon.phaserize('shoot')` 并验证其返回值，来确保 Frida 内部的某个功能模块能够正常工作。 它反映了动态插桩工具在底层可能涉及的二进制、操作系统内核以及框架层面的技术，并可以通过分析其逻辑来推断被测试功能的预期行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python3/2 extmodule/blaster.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import tachyon
@@ -117,7 +119,4 @@ if not isinstance(result, int):
 if result != 1:
     print(f'Returned result {result} is not 1.')
     sys.exit(1)
-
-"""
-
 ```

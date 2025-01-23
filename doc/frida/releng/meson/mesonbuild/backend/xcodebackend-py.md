@@ -63,7 +63,7 @@ The user is asking for a summary of the provided Python code, which is a part of
 
 这段代码的主要功能是作为 Frida 构建系统的一部分，负责将 Meson 的项目构建定义转换成 Xcode 可以理解的项目文件格式。它通过生成 Xcode 项目所需的各种 section 和元素，并管理它们的唯一 ID，使得用户可以使用 Xcode IDE 来查看、构建和调试 Frida 项目或依赖于 Frida 的项目。这对于需要在 macOS 或 iOS 平台上进行逆向分析和动态 instrumentation 的场景尤其重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -72,8 +72,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2021 The Meson development team
 
@@ -787,7 +789,4 @@ class XCodeBackend(backends.Backend):
 
     def generate_pbx_build_style(self, objects_dict: PbxDict) -> None:
         # FIXME: Xcode 9 and later does not uses PBXBuildStyle and it
-"""
-
-
 ```

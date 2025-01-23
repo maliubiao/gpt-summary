@@ -219,15 +219,17 @@ By following this structured approach, combining code analysis with conceptual u
 
 `quic_server.cc` 是一个关键的 QUIC 服务器实现，它负责处理底层的 QUIC 协议细节，并与应用程序后端进行交互。理解其功能和可能出现的问题，对于开发和调试基于 QUIC 的网络应用至关重要。虽然它本身不用 JavaScript 编写，但它是现代 Web 技术栈中不可或缺的一部分，直接影响着使用 JavaScript 的 Web 应用的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/tools/quic_server.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -467,7 +469,4 @@ void QuicServer::OnSocketEvent(QuicEventLoop* /*event_loop*/,
 }
 
 }  // namespace quic
-
-"""
-
 ```

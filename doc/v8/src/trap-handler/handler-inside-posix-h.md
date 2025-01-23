@@ -130,15 +130,17 @@ try {
 
 总而言之，`v8/src/trap-handler/handler-inside-posix.h` 定义了 V8 如何处理底层的内存访问错误信号，确保即使在发生这些错误时，V8 也能以一种更可控的方式运行，并尽可能提供有用的错误信息给开发者，而不是直接崩溃。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-inside-posix.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/handler-inside-posix.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ bool TryHandleSignal(int signum, siginfo_t* info, void* context);
 }  // namespace v8
 
 #endif  // V8_TRAP_HANDLER_HANDLER_INSIDE_POSIX_H_
-
-"""
-
 ```

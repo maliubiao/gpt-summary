@@ -98,7 +98,7 @@ padding: {
 
 第 1 部分主要负责 **处理 WebNN 图构建过程中的基础数据转换和校验**。它定义了用于记录操作使用情况的枚举，提供了将 JavaScript WebNN API 类型转换为底层服务类型的方法，以及将 JavaScript 操作选项转换为底层属性结构体的函数。这部分代码是连接 JavaScript WebNN API 和底层 WebNN 服务的关键桥梁，负责确保用户提供的参数正确有效，并将其转换为服务可以理解的形式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -916,8 +918,4 @@ webnn::LayerNormalizationAttributes ConvertToLayerNormalizationAttributes(
   if (options->hasScale()) {
     attributes.scale = options->scale()->Descriptor();
   }
-
-"""
-
-
 ```

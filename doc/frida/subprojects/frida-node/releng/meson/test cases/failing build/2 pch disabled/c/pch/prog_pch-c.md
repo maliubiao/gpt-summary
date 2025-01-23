@@ -101,7 +101,7 @@ prog_pch.c:2:2: error: "This file is only for use with MSVC."
 
 这个文件作为一个失败构建的测试用例，其目的是验证 Frida 构建系统在遇到特定约束条件（例如只能用 MSVC 编译）时的行为。用户到达这里通常是遇到了一个构建错误，而这个文件恰好是导致错误的原因。通过查看这个文件的内容，用户可以快速定位问题所在：尝试用非 MSVC 编译器编译了一个只能用 MSVC 编译的文件。 这也可能指示 Frida 的构建系统在处理 PCH 禁用场景时可能存在一些问题或需要特殊的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing build/2 pch disabled/c/pch/prog_pch.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,14 +109,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if !defined(_MSC_VER)
 #error "This file is only for use with MSVC."
 #endif
 
 #include "prog.h"
-
-"""
-
 ```

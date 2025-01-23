@@ -137,14 +137,16 @@ Initially, I might focus too heavily on the technical details of the C++ code. I
 
 `enabled_client_hints_unittest.cc` 文件是 Chromium 中用于测试客户端提示启用管理的核心组件。它虽然是 C++ 代码，但直接关系到 Web 开发者如何利用客户端提示优化其网站性能和用户体验。理解 `EnabledClientHints` 的工作原理有助于开发者更好地理解客户端提示的启用机制以及可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/client_hints/enabled_client_hints_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST_F(EnabledClientHintsTest, GetEnabledHints) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -191,7 +191,7 @@ func main() {
 
 `go/src/runtime/map_swiss.go` 是 Go 语言 `map` 数据结构的一个底层实现，提供了创建、访问、赋值、删除、迭代和清空 map 的核心功能。它与 `reflect` 包紧密集成，为反射操作提供了基础。用户不应该直接调用此文件中定义的函数，而应该使用 Go 语言提供的标准 `map` 操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/map_swiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -651,9 +653,4 @@ func values(m any, p unsafe.Pointer) {
 	// Currently unused in the maps package.
 	panic("unimplemented")
 }
-
-"""
-
-
-
 ```

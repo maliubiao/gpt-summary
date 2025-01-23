@@ -70,7 +70,7 @@ Here's a breakdown of how to approach the request:
 
 第二部分的代码主要负责解码和格式化 PowerPC 架构中一部分特定的 Load/Store 指令、浮点运算指令、以及一些扩展指令 (通过 `DecodeExt2` 到 `DecodeExt6` 方法实现)。它延续了第一部分建立的反汇编框架，并具体实现了对更多指令的支持，使得 V8 引擎能够将 PowerPC 的机器码指令转换为人类可读的汇编代码。 `InstructionDecode` 方法是整个解码过程的入口点，负责根据指令的操作码将控制权分发给相应的解码函数。 文件末尾还定义了用于反汇编的辅助类 `NameConverter` 和 `Disassembler`，用于控制输出格式和进行实际的反汇编操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ppc/disasm-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/ppc/disasm-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -78,10 +78,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-    case STBX: {
+### 源代码
+```cpp
+case STBX: {
       Format(instr, "stbx    'rs, 'ra, 'rb");
       return;
     }
@@ -877,8 +878,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
-
 ```

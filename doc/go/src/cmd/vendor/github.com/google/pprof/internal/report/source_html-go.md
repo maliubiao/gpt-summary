@@ -182,7 +182,7 @@ htmlContent := `
 
 总而言之，`source_html.go` 文件在 `pprof` 工具中扮演着提供源代码 HTML 页面渲染基础结构的角色，它定义了页面的样式和交互行为，供其他模块在生成最终报告时使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/report/source_html.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -190,8 +190,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -263,9 +265,4 @@ function pprof_toggle_asm(e) {
   }
 }
 </script>`
-
-"""
-
-
-
 ```

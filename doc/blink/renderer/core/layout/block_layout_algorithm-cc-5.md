@@ -119,15 +119,17 @@ By following this structured approach, I could systematically analyze the code s
 
 这个文件是构建网页布局的基础，它确保了 HTML 元素能够按照 CSS 的指示正确地渲染在浏览器中。 提供的代码片段侧重于处理一些特殊的布局场景，例如列表标记的精细定位和表单控件的特定元素的布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (auto content_baseline =
           list_marker.ContentAlignmentBaseline(space, baseline_type, content)) {
     // TODO: We are reusing the ConstraintSpace for LI here. It works well for
@@ -299,8 +301,4 @@ LogicalOffset BlockLayoutAlgorithm::AdjustSliderThumbInlineOffset(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

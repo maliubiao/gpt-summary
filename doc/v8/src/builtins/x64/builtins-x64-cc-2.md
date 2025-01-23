@@ -227,7 +227,7 @@ Here's a breakdown of what I need to do:
 
 这段 `v8/src/builtins/x64/builtins-x64.cc` 代码片段是 V8 引擎中 x64 架构下实现多种核心内置函数的关键部分。它包含了对象构造、解释器入口和执行、基线编译的序言和去优化处理，以及 `Function.prototype.call`、`apply` 和 `Reflect` API 的实现。这些内置函数是 JavaScript 语言运行的基础，提供了诸如函数调用、对象创建等核心能力。这段代码直接操作底层的机器指令，以实现最高的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/x64/builtins-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -235,8 +235,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ot(rax, RootIndex::kUndefinedValue, &check_result,
                    Label::kNear);
 
@@ -1104,8 +1106,5 @@ void Builtins::Generate_CallOrConstructForwardVarargs(MacroAssembler* masm,
 // static
 void Builtins::Generate_CallFunction(MacroAssembler* masm,
                                      ConvertReceiverMode mode) {
-  // ----------- S t a 
-"""
-
-
+  // ----------- S t a
 ```

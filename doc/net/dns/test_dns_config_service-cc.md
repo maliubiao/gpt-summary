@@ -158,15 +158,17 @@ By following these steps of code analysis, logical deduction, and considering th
 
 总而言之，`test_dns_config_service.cc` 提供了在测试环境中灵活控制 DNS 配置和 hosts 文件行为的能力，这对于验证 Chromium 网络栈的正确性和健壮性至关重要。它与 JavaScript 的联系是间接的，主要体现在影响 JavaScript 发起的网络请求的行为。理解这些测试类的功能和使用场景，对于开发和调试 Chromium 的网络功能非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/test_dns_config_service.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ bool HostsReadingTestDnsConfigService::Watcher::Watch() {
 }
 
 }  // namespace net
-
-"""
-
 ```

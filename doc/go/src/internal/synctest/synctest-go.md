@@ -172,7 +172,7 @@ Task executed in a bubble
 
 `internal/synctest` 包提供了一种用于测试并发代码的内部机制，通过 "bubble" 的概念来控制并发执行的环境。它允许测试框架更精细地控制并发行为，以便进行更深入和可靠的并发测试。由于它是内部包，普通 Go 开发者通常不会直接使用它，而是通过 Go 的标准测试工具来间接利用其功能。理解其工作原理有助于理解 Go 内部是如何进行并发测试的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/synctest/synctest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ func (b *Bubble) Run(f func()) {
 		inBubble(b.b, f)
 	}
 }
-
-"""
-
-
-
 ```

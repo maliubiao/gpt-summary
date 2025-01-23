@@ -121,15 +121,17 @@ console.log(sub);
 
 `v8/src/objects/torque-defined-classes.tq` 是一个关键的 V8 Torque 文件，它主要负责管理非导出的 Torque 类的 C++ 头文件生成。它本身不包含具体的代码逻辑，而是作为一种“索引”或“清单”，确保 V8 内部使用的、不需要外部接口的 Torque 类也能被 C++ 代码所使用，这对于 V8 的内部实现至关重要，并间接影响着 JavaScript 的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/torque-defined-classes.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/torque-defined-classes.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ Prompt:
 // The corresponding C++ headers are:
 //  - src/objects/torque-defined-classes.h
 //  - src/objects/torque-defined-classes-inl.h
-
-"""
-
 ```

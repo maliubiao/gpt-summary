@@ -182,7 +182,7 @@ go build -tags=goexperiment.swissmap your_program.go
 
 `runtime_fast32_swiss.go` 是 Go 语言运行时中针对 `map[uint32]T` 的一种优化实现，使用了 Swiss table 算法。它的启用需要通过构建标签来控制。理解这一点对于想要利用或测试这种优化的开发者至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/maps/runtime_fast32_swiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -190,8 +190,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -662,9 +664,4 @@ func runtime_mapdelete_fast32(typ *abi.SwissMapType, m *Map, key uint32) {
 
 	m.Delete(typ, abi.NoEscape(unsafe.Pointer(&key)))
 }
-
-"""
-
-
-
 ```

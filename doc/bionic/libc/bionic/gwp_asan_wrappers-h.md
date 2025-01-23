@@ -325,7 +325,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "malloc"), {
 
 通过这些分析和示例，可以更深入地理解 `bionic/libc/bionic/gwp_asan_wrappers.handroid` 文件在 Android 系统中的作用以及 GWP-ASan 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/gwp_asan_wrappers.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -336,8 +336,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -386,7 +388,4 @@ bool MaybeInitGwpAsanFromLibc(libc_globals* globals);
 // heapprofd's signal-initialization sequence to determine the intermediate
 // dispatch pointer to use when initing.
 bool DispatchIsGwpAsan(const MallocDispatch* dispatch);
-
-"""
-
 ```

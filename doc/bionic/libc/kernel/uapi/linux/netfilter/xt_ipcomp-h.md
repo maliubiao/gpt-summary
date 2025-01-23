@@ -175,7 +175,7 @@ sys.stdin.read()
 
 总结来说，`xt_ipcomp.h` 本身只是一个定义，它的作用体现在内核中 `netfilter` 模块对 IPComp 数据包的处理上。用户空间的程序通常通过更高级的 API 或库与内核交互，间接地使用到这些定义。Frida 可以用来 Hook 用户空间库函数或内核函数，以观察和调试与 IPComp 相关的网络操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_ipcomp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -186,8 +186,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -205,7 +207,4 @@ struct xt_ipcomp {
 #define XT_IPCOMP_INV_SPI 0x01
 #define XT_IPCOMP_INV_MASK 0x01
 #endif
-
-"""
-
 ```

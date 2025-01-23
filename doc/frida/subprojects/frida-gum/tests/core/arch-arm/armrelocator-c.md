@@ -120,7 +120,7 @@ By following these steps, we can provide a comprehensive answer to the prompt, c
 
 总而言之，`armrelocator.c` 是 Frida 中保证代码动态修改正确性的关键组成部分的测试代码，它验证了在 ARM 架构下处理 PC 相对寻址指令时的重定位逻辑，这对于 Frida 的 hook 和代码注入功能至关重要。理解这段代码可以帮助开发者调试 Frida 的相关问题，并帮助用户更好地理解 Frida 的工作原理以及避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/armrelocator.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -887,7 +889,4 @@ show_disassembly (const guint32 * input,
   cs_free (insn, 1);
   cs_close (&capstone);
 }
-
-"""
-
 ```

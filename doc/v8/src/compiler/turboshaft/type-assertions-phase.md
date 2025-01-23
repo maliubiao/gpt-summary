@@ -104,11 +104,13 @@ let result = process(myObj);
 
 总结来说，`type-assertions-phase.cc` 中定义的功能虽然是 V8 引擎内部的实现细节，但它通过在编译时进行类型推断和断言，显著地提高了 JavaScript 代码的执行效率。它允许 V8 编译器在动态类型的 JavaScript 中进行类似于静态类型语言的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/type-assertions-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -139,7 +141,4 @@ void TypeAssertionsPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

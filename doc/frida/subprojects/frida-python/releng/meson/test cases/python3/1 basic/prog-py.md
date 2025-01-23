@@ -108,7 +108,7 @@ By following this structured approach, the comprehensive and informative answer 
 
 总而言之，这个 `prog.py` 脚本虽然简单，但它是 Frida 测试框架的一部分，用于验证 Frida Python 绑定的基本功能。理解其功能有助于理解 Frida 的整体架构和测试流程，并为更复杂的 Frida 脚本开发奠定基础。  当测试失败时，开发者可以通过检查 `gluoninate()` 的实现，Frida 核心引擎的日志，以及目标进程的状态来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python3/1 basic/prog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from gluon import gluonator
@@ -127,7 +129,4 @@ print('Running mainprog from root dir.')
 
 if gluonator.gluoninate() != 42:
     sys.exit(1)
-
-"""
-
 ```

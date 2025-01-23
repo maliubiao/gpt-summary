@@ -195,7 +195,7 @@ By following this systematic approach, breaking down the problem into smaller pa
 
 因此，到达 `generator.py` 脚本是 Frida 开发和测试流程的一部分。开发者使用它来自动化生成测试用例所需的代码，确保 Frida 的功能按预期工作。  当测试失败时，这个脚本就是需要检查的关键环节之一，以确保生成的测试代码是正确的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/170 generator link whole/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -235,7 +237,4 @@ int {name}(void) {{
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

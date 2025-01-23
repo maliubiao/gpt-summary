@@ -128,11 +128,13 @@ oldObject.youngRef = youngObject;
 
 `remembered-set.cc` 文件在 V8 的 cppgc 中扮演着至关重要的角色，它通过高效地跟踪老年代到新生代的指针，使得分代垃圾回收成为可能，极大地提升了 JavaScript 程序的性能和内存管理效率。尽管 JavaScript 开发者无法直接操作它，但理解其背后的原理有助于更好地理解 JavaScript 引擎的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/remembered-set.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -525,7 +527,4 @@ void OldToNewRememberedSet::RememberedInConstructionObjects::Reset() {
 }  // namespace cppgc
 
 #endif  // defined(CPPGC_YOUNG_GENERATION)
-
-"""
-
 ```

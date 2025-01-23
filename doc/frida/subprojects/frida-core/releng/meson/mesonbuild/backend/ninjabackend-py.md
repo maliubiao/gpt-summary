@@ -101,7 +101,7 @@ build source.o: cxx source.cpp
 
 该部分代码是 Frida 构建系统中使用 Ninja 后端的实现，其主要功能是将 Meson 的高级构建描述转换为 Ninja 构建系统可以理解的 `build.ninja` 文件，包括定义构建规则、描述构建步骤、处理平台差异、支持响应文件以及管理构建依赖关系。它为 Frida 项目的自动化构建提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -880,8 +882,4 @@ class NinjaBackend(backends.Backend):
     def create_target_source_introspection(self, target: build.Target, comp: compilers.Compiler, parameters, sources, generated_sources,
                                            unity_sources: T.Optional[T.List[mesonlib.FileOrString]] = None):
         '''
-  
-"""
-
-
 ```

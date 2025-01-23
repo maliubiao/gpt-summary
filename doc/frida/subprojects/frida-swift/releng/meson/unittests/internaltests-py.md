@@ -117,7 +117,7 @@ Meson 构建系统会自动执行 `frida/subprojects/frida-swift/releng/meson/un
 
 `internaltests.py` 文件的主要功能是作为 Frida Swift 集成的内部单元测试套件，用于验证其核心工具函数和内部逻辑的正确性。测试覆盖了版本号解析、文件模式转换、编译器参数处理、字符串模板替换、交叉编译配置、列表操作、库文件查找模式以及 `pkg-config` 集成等多个关键方面。这些测试对于确保 Frida 在不同平台和编译环境下的稳定性和可靠性至关重要，并且间接反映了 Frida 在逆向工程中需要处理的底层细节和与操作系统及构建系统的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -790,7 +792,4 @@ class InternalTests(unittest.TestCase):
                     for link_arg in link_args:
                         for lib in ('pthread', 'm', 'c', 'dl', 'rt'):
                             self.assertNotIn(f'lib{lib}.a', link_arg, msg=lin
-"""
-
-
 ```

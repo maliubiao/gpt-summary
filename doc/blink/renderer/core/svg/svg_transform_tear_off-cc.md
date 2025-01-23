@@ -186,15 +186,17 @@ By following this structured approach, combining code analysis with knowledge of
 
 `svg_transform_tear_off.cc` 文件是 Blink 渲染引擎中一个重要的组成部分，它负责将 SVG 变换功能暴露给 JavaScript。理解其功能有助于理解浏览器如何处理 SVG 元素的变换，以及如何调试相关的 Web 开发问题。 它在 JavaScript 操作 SVG `transform` 属性，以及 CSS `transform` 属性应用到 SVG 元素的过程中扮演着核心角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_transform_tear_off.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -325,7 +327,4 @@ void SVGTransformTearOff::setSkewY(float y, ExceptionState& exception_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

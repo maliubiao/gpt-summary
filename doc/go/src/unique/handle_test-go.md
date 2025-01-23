@@ -331,7 +331,7 @@ func TestHandleUnsafeString(t *testing.T) {
 
 `go/src/unique/handle_test.go` 文件通过一系列测试用例，验证了 `unique` 包中 `Make` 函数的正确性和内存管理机制。 它主要测试了对于相同的可比较值，`Make` 函数是否返回相同的句柄，以及与垃圾回收相关的清理工作是否正常进行。  它还特别关注了 `strings.Clone` 创建的字符串和使用 `unsafe.String` 创建的字符串的处理情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unique/handle_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -339,8 +339,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -505,9 +507,4 @@ func TestHandleUnsafeString(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

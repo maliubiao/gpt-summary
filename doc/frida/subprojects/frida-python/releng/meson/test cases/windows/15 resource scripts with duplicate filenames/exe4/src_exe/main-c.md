@@ -131,7 +131,7 @@ Interceptor.attach(Module.getBaseAddress("exe4.exe").add(0xXXXX), { // 0xXXXX �
 
 因此，虽然 `main.c` 代码本身非常简单，但其在 Frida 测试框架中的位置和测试用例的名称提供了重要的上下文信息，帮助开发人员理解测试的目的和可能出现的问题。这个简单的 `main.c` 文件是构建一个用于测试 Frida 资源处理能力的最小化可执行文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/15 resource scripts with duplicate filenames/exe4/src_exe/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,12 +139,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

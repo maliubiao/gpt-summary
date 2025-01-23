@@ -167,14 +167,16 @@ Let's break down the thought process for analyzing this `unicode_utilities.cc` f
 
 总而言之，`unicode_utilities.cc` 提供了一组底层的、高性能的 Unicode 处理工具，Blink 引擎的许多上层功能都依赖于它来正确处理各种文本相关的操作。理解这些功能有助于更好地理解浏览器如何渲染和处理网页上的文本内容，以及在开发 Web 应用时如何避免与 Unicode 相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/unicode_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Apple Inc. All
  * rights reserved.
@@ -617,7 +619,4 @@ bool CheckKanaStringsEqual(base::span<const UChar> first_data,
 }
 
 }  // namespace blink
-
-"""
-
 ```

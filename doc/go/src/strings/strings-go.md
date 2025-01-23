@@ -404,7 +404,7 @@ Essentially, I followed a process of understanding the code, categorizing its co
 
 这部分 `strings` 包的代码实现了 Go 语言中用于处理和操作 UTF-8 编码字符串的基础功能。它提供了丰富的函数来完成字符串的搜索、查找、分割、连接、判断、转换、裁剪和替换等常见任务，是 Go 语言文本处理的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/strings.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -413,8 +413,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1700,9 +1702,4 @@ func Cut(s, sep string) (before, after string, found bool) {
 // and reports whether it found the prefix.
 // If s doesn't start with prefix, CutPrefix returns s, false.
 // If prefix is the empty string, CutPref
-"""
-
-
-
-
 ```

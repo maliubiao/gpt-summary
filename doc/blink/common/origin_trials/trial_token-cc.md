@@ -184,14 +184,16 @@ This iterative process of scanning, deducing, connecting, illustrating, and refi
 
 总而言之，`trial_token.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它负责 Origin Trial Token 的生命周期管理，确保只有在提供有效、未过期的 token 的情况下，实验性 Web 平台功能才会被启用。这对于 Web 技术的迭代和演进至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/trial_token.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -533,7 +535,4 @@ std::unique_ptr<TrialToken> TrialToken::CreateTrialTokenForTesting(
 }
 
 }  // namespace blink
-
-"""
-
 ```

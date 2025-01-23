@@ -151,7 +151,7 @@ By following these steps,  we move from a basic understanding of the code to a c
 
 总而言之，虽然 `func19.c` 的代码非常简单，但它在软件开发和逆向工程的上下文中扮演着重要的角色。它展示了基本的函数调用和加法运算，并引出了关于静态链接、动态链接、函数调用约定以及使用动态分析工具（如 Frida）进行调试和逆向分析的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/66 static link/lib/func19.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17();
 int func18();
 
@@ -168,7 +170,4 @@ int func19()
 {
   return func17() + func18();
 }
-
-"""
-
 ```

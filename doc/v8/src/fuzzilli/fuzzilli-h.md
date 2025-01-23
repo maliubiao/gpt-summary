@@ -131,15 +131,17 @@ void FuzzilliExtension::Fuzzilli(const v8::FunctionCallbackInfo<v8::Value>& info
 
 总而言之，`v8/src/fuzzilli/fuzzilli.h` 定义了一个 V8 扩展，用于在 Fuzzilli 模糊测试框架中将 C++ 代码暴露给 JavaScript 环境，并建立与其他 V8 进程的通信通道，以便进行测试和分析。理解这个头文件需要了解 V8 扩展机制和进程间通信的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/fuzzilli/fuzzilli.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/fuzzilli/fuzzilli.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ class FuzzilliExtension : public v8::Extension {
 }  // namespace v8
 
 #endif  // V8_FUZZILLI_FUZZILLI_H_
-
-"""
-
 ```

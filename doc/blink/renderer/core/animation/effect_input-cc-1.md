@@ -160,15 +160,17 @@ ExceptionState exception_state;
 
 第二部分的代码主要关注于将 **缓动函数** 从 JavaScript 传递的字符串形式解析为内部的 `TimingFunction` 对象。 它处理了多个缓动函数字符串，并在遇到无法解析的字符串时抛出异常。这部分与 CSS 的 `transition-timing-function` 和 animation 的 `easing` 属性紧密相关，确保了 Blink 能够理解和应用开发者在 JavaScript 中定义的缓动效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/effect_input.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // for easing property of the AnimationEffectTimingReadOnly interface, and if
   // any of the values fail to parse, throw a TypeError and abort this
   // procedure.
@@ -250,8 +252,4 @@ StringKeyframeVector EffectInput::ParseKeyframesArgument(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

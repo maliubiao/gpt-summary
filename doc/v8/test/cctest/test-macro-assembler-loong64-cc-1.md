@@ -141,7 +141,7 @@ This detailed thought process allows for a systematic understanding of the code 
 
 希望这个更详细的归纳对您有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,8 +149,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ff
   static const uint64_t kValues[] = {
       0x2180F18A06384414, 0x000A714532102277, 0xBC1ACCCF180649F0,
@@ -1082,7 +1084,4 @@ TEST(SUB_D) {
       {             0x800, 0xFFFFFFFFFFFFF800,         1},  // max_int12 + 1
       // Generates addi_d
       // max_int12 + 1 is not int12 but is uint12, just
-"""
-
-
 ```

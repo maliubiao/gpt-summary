@@ -218,7 +218,7 @@ func main() {
 
 总结来说，`transition.go` 文件是 Go 语言 `html/template` 包实现 HTML 模板安全且正确解析的关键部分。它通过状态机的方式，根据不同的上下文状态应用不同的解析规则，确保模板中的各种内容（文本、标签、属性、JavaScript、CSS 等）得到正确的处理和转义。理解其工作原理可以帮助开发者更好地使用模板引擎，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/transition.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -914,9 +916,4 @@ func eatWhiteSpace(s []byte, i int) int {
 	}
 	return len(s)
 }
-
-"""
-
-
-
 ```

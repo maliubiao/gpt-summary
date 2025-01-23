@@ -129,14 +129,16 @@ PageState 序列化捕捉了页面的状态，这些状态很多都与 JavaScrip
 
 `blink/common/page_state/page_state_serialization.cc` 是 Blink 引擎中至关重要的一个文件，它负责将 Web 页面的状态转换为可存储和传输的格式，以及将这些格式转换回可用的状态。这使得浏览器的前进和后退功能得以实现，并且与 JavaScript, HTML 和 CSS 的行为紧密相关。 理解其功能和潜在的陷阱对于开发 Web 应用程序和维护 Chromium 浏览器都是很重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page_state/page_state_serialization.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1210,7 +1212,4 @@ std::string EncodeResourceRequestBody(
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

@@ -94,11 +94,13 @@ let result = add(x, y);
 
 `state-values-utils.cc` 文件中的代码是 V8 编译器内部基础设施的关键组成部分，它负责高效地管理和访问程序状态信息。这些信息对于编译器的各种优化和调试功能至关重要，从而最终提升 JavaScript 代码的执行效率。 虽然 JavaScript 开发者不能直接操作这些底层的 `StateValues` 节点，但它们的存在和高效管理对 JavaScript 的性能和可调试性有着深远的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/state-values-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -538,7 +540,4 @@ size_t StateValuesAccess::size() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

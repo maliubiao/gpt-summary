@@ -190,7 +190,7 @@ Let's break down the thought process for analyzing the C++ header file `scopes.h
 
 `v8/src/ast/scopes.h` 定义了 V8 引擎中用于表示和管理 JavaScript 作用域的核心数据结构和方法。它负责跟踪变量的声明、解析变量引用、维护作用域链，并支持作用域信息的序列化和反序列化。该头文件是 V8 理解和执行 JavaScript 代码中作用域规则的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/scopes.h以.tq结尾，那它是个v8 torque源代码，
@@ -198,8 +198,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1061,7 +1063,4 @@ class V8_EXPORT_PRIVATE DeclarationScope : public Scope {
   FunctionKind function_kind() const { return function_kind_; }
 
   // Inform the scope that the corresp
-"""
-
-
 ```

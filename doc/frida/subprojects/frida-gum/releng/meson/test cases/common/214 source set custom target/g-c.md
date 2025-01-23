@@ -124,7 +124,7 @@ print(f"Return value: {return_value}")
 
 `g.c` 本身是一个非常简单的空函数，它的主要作用是作为 Frida 测试套件的一部分，用于验证 Frida 的某些底层功能，例如代码注入或 Hook。  它与逆向工程、二进制底层、操作系统知识都有间接的联系，因为它所在的 Frida 工具正是利用这些技术来实现动态分析的。 用户通常不会直接操作这个文件，但它可能在 Frida 的开发、测试和问题调试过程中起到重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/214 source set custom target/g.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,14 +132,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void g(void)
 {
 }
-
-"""
-
 ```

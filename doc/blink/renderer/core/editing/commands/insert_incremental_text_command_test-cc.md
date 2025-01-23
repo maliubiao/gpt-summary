@@ -164,15 +164,17 @@ Finally, organize the findings into a clear and structured response, as demonstr
 
 总而言之， `insert_incremental_text_command_test.cc` 是一个至关重要的测试文件，用于确保 Blink 引擎在处理增量文本插入时的正确性和健壮性，特别是在涉及复杂的文本和 HTML 结构时。 它与 HTML 紧密相关，并通过浏览器事件和 JavaScript API 间接地与用户交互联系起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_incremental_text_command_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ TEST_F(InsertIncrementalTextCommandTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

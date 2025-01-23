@@ -173,15 +173,17 @@ const firstElement = arr[0]; // 访问数组的第一个元素
 
 总而言之，`v8/src/compiler/turboshaft/access-builder.h` 是 V8 内部编译器的一个重要组成部分，它定义了如何精确地描述和构建对 JavaScript 对象成员的访问，这对于代码的优化和正确执行至关重要。虽然普通 JavaScript 开发者不会直接使用它，但它背后的机制直接影响着 JavaScript 代码的执行效率和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/access-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/access-builder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ class AccessBuilderTS : public AllStatic {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_ACCESS_BUILDER_H_
-
-"""
-
 ```

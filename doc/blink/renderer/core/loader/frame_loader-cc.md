@@ -72,7 +72,7 @@ My plan is to:
 
 总而言之，`blink/renderer/core/loader/frame_loader.cc` 的第一部分主要负责处理 frame 的导航和加载的初始化阶段，包括接收导航请求、判断导航类型、创建 `DocumentLoader`、执行基本的安全检查以及处理与 JavaScript 和 HTML 相关的事件。它是 Blink 引擎中负责页面加载流程控制的核心组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/frame_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011 Apple Inc. All rights
  * reserved.
@@ -825,7 +827,4 @@ void FrameLoader::StartNavigation(FrameLoadRequest& request,
   // fragment. In this case, we want to propagate this to the next document to
   // allow text-fragments across client-side redirects.
   bool text_fragment_token = GetDoc
-"""
-
-
 ```

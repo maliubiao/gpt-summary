@@ -219,7 +219,7 @@ br  x16                    // 跳转到 x16 寄存器指向的地址
 
 总而言之，`gumarm64relocator.c` 是 Frida 在 ARM64 架构上实现动态代码修改的关键组件，它涉及到深入的 ARM64 指令集理解、内存管理知识以及与逆向工程密切相关的技术。理解它的工作原理对于进行 Frida 相关的开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-arm64/gumarm64relocator.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -227,8 +227,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1009,7 +1011,4 @@ gum_arm64_relocator_rewrite_tbz (GumArm64Relocator * self,
 
   return TRUE;
 }
-
-"""
-
 ```

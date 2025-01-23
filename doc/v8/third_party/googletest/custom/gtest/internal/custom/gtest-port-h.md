@@ -153,15 +153,17 @@ C++ 的 `std::tuple` 提供了一种类型安全的、固定大小的数据结�
 
 总之，`v8/third_party/googletest/custom/gtest/internal/custom/gtest-port.h` 是一个在 V8 项目中用于平滑 `std::tr1::tuple` 到 `std::tuple` 迁移的临时性桥梁，它通过简单的命名空间转发来提供兼容性支持，从而避免了在迁移过程中出现大规模的代码修改。虽然它本身是 C++ 代码，但作为 V8 测试框架的一部分，它间接地影响着 JavaScript 引擎的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/googletest/custom/gtest/internal/custom/gtest-port.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/googletest/custom/gtest/internal/custom/gtest-port.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,6 +191,4 @@ using std::tuple;
 }  // namespace std
 
 #endif  // THIRD_PARTY_GOOGLETEST_CUSTOM_GTEST_INTERNAL_CUSTOM_GTEST_PORT_H_
-"""
-
 ```

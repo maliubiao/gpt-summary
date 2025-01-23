@@ -99,7 +99,7 @@ Initially, I considered focusing solely on the code's lack of functionality. How
 
 虽然 `main.c` 文件本身非常简单，不执行任何实质性的操作，但它在 Frida 的构建和测试流程中扮演着确保构建系统基本功能正常运作的角色。它的存在反映了软件开发中单元测试的重要性，即使是最简单的代码也需要被验证。对于逆向工程师来说，理解工具的构建过程有助于更深入地理解工具的局限性和可能性。而对于 Frida 开发者来说，这样的简单测试用例是构建一个健壮可靠的动态 instrumentation 工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/47 reconfigure/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,13 +107,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char *argv[])
 {
   return 0;
 }
-
-"""
-
 ```

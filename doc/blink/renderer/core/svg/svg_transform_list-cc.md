@@ -189,15 +189,17 @@ By following these steps, a comprehensive and accurate answer can be constructed
 
 总而言之，`svg_transform_list.cc` 是 Blink 引擎中处理 SVG 变换的核心组件，它连接了 HTML 中声明的 `transform` 属性、CSS 中可能应用的变换样式以及 JavaScript 对 SVG 变换的动态操作，确保 SVG 元素能够按照预期进行几何变换。理解这个文件的功能对于深入理解 SVG 的渲染机制和进行相关的调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_transform_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007 Rob Buis <buis@kde.org>
@@ -732,7 +734,4 @@ float SVGTransformList::CalculateDistance(const SVGPropertyBase* to_value,
 }
 
 }  // namespace blink
-
-"""
-
 ```

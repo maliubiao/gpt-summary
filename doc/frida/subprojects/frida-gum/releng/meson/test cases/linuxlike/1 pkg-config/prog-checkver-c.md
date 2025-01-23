@@ -138,7 +138,7 @@ By following this thought process, we can thoroughly analyze the provided code s
 
 总而言之，`prog-checkver.c` 是 Frida 构建过程中的一个小型但关键的测试程序，用于确保 zlib 依赖项的正确性，从而保证 Frida 工具本身的稳定性和可靠性，这对使用 Frida 进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/linuxlike/1 pkg-config/prog-checkver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <zlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -163,7 +165,4 @@ int main(void) {
     printf("Couldn't find 'deflate'\n");
     return 1;
 }
-
-"""
-
 ```

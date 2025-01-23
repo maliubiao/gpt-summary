@@ -125,11 +125,13 @@ console.log(result); // 输出 8
 
 `MacroAssemblerBase` 是 V8 引擎中生成可执行机器码的基石。它提供了访问 V8 内部结构、加载常量和外部引用、以及调用内置函数的关键能力。  所有 JavaScript 代码的执行最终都要转化为机器码，而 `MacroAssemblerBase` 及其子类就在这个转换过程中扮演着至关重要的角色。它使得 V8 引擎能够高效地将高级的 JavaScript 代码翻译成底层硬件可以理解和执行的指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/macro-assembler-base.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ Tagged_t MacroAssemblerBase::ReadOnlyRootPtr(RootIndex index) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

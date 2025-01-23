@@ -76,15 +76,17 @@ I should also check for connections to HTML, CSS, and JavaScript features, provi
 
 这部分代码主要关注 **在一个块级元素完成布局并准备分片到下一个片段容器时，以及在决定是否在子元素之前进行分片时的逻辑处理**。它详细地描述了如何计算剩余空间，判断是否需要分片，并记录分片状态和相关信息，例如消耗的块大小和早期分片点。 核心目标是根据 CSS 分片属性和布局约束，精确地确定分片的位置和时机，并为后续的布局过程提供必要的信息。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/fragmentation_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t
     // fragmentainer as well. This only happens when printing monolithic
     // content.
@@ -798,8 +800,4 @@ BoxFragmentBuilder CreateContainerBuilderForMulticol(
     const FragmentGeometry& fragment_geometry) {
   const ComputedStyle* style = &multicol.Style();
   BoxFragmentBuilder multicol_container_builder(
-
-"""
-
-
 ```

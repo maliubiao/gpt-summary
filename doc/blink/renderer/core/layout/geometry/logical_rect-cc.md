@@ -139,14 +139,16 @@ Let's break down the thought process for analyzing this `logical_rect.cc` file.
 
 总而言之，`logical_rect.cc` 定义了一个核心的数据结构，用于在 Blink 渲染引擎中抽象地表示元素的几何信息，并考虑了国际化和多语言环境下的布局需求。理解 `LogicalRect` 的功能和与 CSS 的关系对于理解 Blink 的布局机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/logical_rect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ std::ostream& operator<<(std::ostream& os, const LogicalRect& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

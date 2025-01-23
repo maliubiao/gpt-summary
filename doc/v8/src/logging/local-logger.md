@@ -131,11 +131,13 @@ const obj3 = { b: 3 };
 
 `local-logger.cc` 中定义的 `LocalLogger` 类是 V8 引擎内部日志记录系统的一个本地接口，它负责接收各种日志记录请求并将它们转发到真正的日志记录器 `v8_file_logger_`。 虽然 JavaScript 代码不能直接使用 `LocalLogger`，但 V8 引擎在执行 JavaScript 代码的过程中会使用它来记录关键事件，这些日志对于理解 V8 的内部工作原理、性能分析和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/local-logger.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ void LocalLogger::MapDetails(Tagged<Map> map) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -116,7 +116,7 @@ Frida 本身是一个与底层系统交互密切的工具，其 Python 绑定也
 
 尽管没有实际的代码内容，我们可以推断出 `frida/subprojects/frida-python/releng/meson/mesonbuild/__init__.py` 文件是 Frida Python 绑定构建过程中的一个关键组成部分。它很可能定义了 Meson 构建系统所需的构建逻辑和配置，负责将 Frida 的核心功能与 Python 接口连接起来。理解这个文件的作用有助于理解 Frida 的构建过程，并为解决构建问题提供线索。对于逆向工程师而言，成功构建 Frida Python 绑定是使用 Frida 工具进行动态分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,9 +124,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

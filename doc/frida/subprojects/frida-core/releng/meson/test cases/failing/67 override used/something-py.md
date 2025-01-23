@@ -147,7 +147,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 `something.py` 本身只是一个非常简单的打印脚本，但它在 Frida 的测试框架中扮演着关键的角色，用于测试 Frida 的代码覆盖能力。它的存在以及所在的 "failing" 目录表明，这是一个已知预期会失败的测试用例，用于检验 Frida 在特定覆盖场景下的行为或用于调试覆盖功能的问题。 开发人员通过分析这个失败的测试用例，可以发现 Frida 的 Bug、测试脚本的问题或环境配置的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/67 override used/something.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,12 +155,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('Doing something.')
-
-"""
-
 ```

@@ -139,7 +139,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 总而言之，这部分代码是 Blink 引擎样式系统中不可或缺的一部分，它专注于提高性能、处理边缘情况以及提供开发支持，确保网页样式的正确和高效渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 These flags will be cause the element to be marked for layout
     // tree rebuild traversal during style recalc to make sure we revisit
     // whitespace text nodes and list items.
@@ -326,8 +328,4 @@ void StyleEngine::RevisitStyleRulesForInspector(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

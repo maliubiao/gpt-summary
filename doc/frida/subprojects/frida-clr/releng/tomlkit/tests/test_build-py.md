@@ -176,7 +176,7 @@ hosts = [
 
 总之，`test_build.py` 文件是 `tomlkit` 库功能正确性的重要保障，同时也为理解 `tomlkit` 的使用方法和排查相关问题提供了有价值的参考。它通过一系列精心设计的测试用例，覆盖了 `tomlkit` 构建 TOML 文档的各种场景和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tests/test_build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import datetime
 
 from tomlkit import aot
@@ -330,7 +332,4 @@ name = "test"
 """
 
     assert doc.as_string() == expected
-
-"""
-
 ```

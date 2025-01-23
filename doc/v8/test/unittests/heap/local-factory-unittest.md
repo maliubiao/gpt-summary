@@ -166,11 +166,13 @@ console.log(myFunc.name); // 输出 "myFunc"
 
 `v8/test/unittests/heap/local-factory-unittest.cc` 这个文件通过一系列单元测试，详细验证了 `LocalFactory` 类在 V8 引擎中创建和管理各种与 JavaScript 代码表示相关的核心对象的功能，包括字符串、抽象语法树节点和函数元信息。这些功能直接支撑着 V8 对 JavaScript 代码的解析、编译和执行过程。了解这些内部机制有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/local-factory-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -506,7 +508,4 @@ TEST_F(LocalFactoryTest, GCDuringPublish) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

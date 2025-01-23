@@ -158,7 +158,7 @@ func main() {
 
 `go/src/runtime/traceregion.go` 中实现的 `traceRegionAlloc` 是 Go 语言运行时为了高效地支持执行跟踪功能而设计的一个非堆 bump-pointer 分配器。它允许运行时快速分配和管理用于存储跟踪事件的内存，而无需垃圾回收器的干预。这对于性能敏感的跟踪操作至关重要。普通 Go 开发者不需要直接使用它，但可以通过使用 `go tool trace` 命令来间接地利用其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/traceregion.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -280,9 +282,4 @@ func (a *traceRegionAlloc) drop() {
 	}
 	a.dropping.Store(false)
 }
-
-"""
-
-
-
 ```

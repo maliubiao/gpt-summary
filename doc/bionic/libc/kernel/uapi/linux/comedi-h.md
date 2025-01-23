@@ -349,7 +349,7 @@ if (Process.platform === 'linux') {
 
 **注意:**  直接 Hook 系统调用可能会比较底层，需要仔细处理参数和内存访问。 对于 Framework 层的交互，可能需要 Hook 相应的 HAL 接口函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/comedi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -360,8 +360,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1019,7 +1021,4 @@ enum ke_counter_clock_source {
   KE_CLK_EXT
 };
 #endif
-
-"""
-
 ```

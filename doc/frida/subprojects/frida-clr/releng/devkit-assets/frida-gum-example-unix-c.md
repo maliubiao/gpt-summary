@@ -200,7 +200,7 @@ By following these steps, systematically examining the code, and connecting it t
 
 通过这个过程，开发者最终能够利用 Frida 的动态插桩能力，监控目标进程的文件访问行为。`frida-gum-example-unix.c` 这个 C 代码示例可以作为理解 Frida 底层原理和 Gum 库用法的一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/devkit-assets/frida-gum-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gum.h"
 
 #include <fcntl.h>
@@ -332,7 +334,4 @@ static void
 example_listener_init (ExampleListener * self)
 {
 }
-
-"""
-
 ```

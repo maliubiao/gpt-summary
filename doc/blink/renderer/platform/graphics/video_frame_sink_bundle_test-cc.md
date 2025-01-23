@@ -105,14 +105,16 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 总而言之， `video_frame_sink_bundle_test.cc` 这个测试文件通过各种测试用例，确保 `VideoFrameSinkBundle` 类能够正确地管理渲染帧的提交和 `BeginFrame` 信号的处理，这对于 Chromium 浏览器高效且流畅地渲染网页内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/video_frame_sink_bundle_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ TEST_F(VideoFrameSinkBundleTest,
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

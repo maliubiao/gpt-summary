@@ -118,7 +118,7 @@ ret               // 返回
 
 这部分代码主要负责解码和格式化 RISC-V 架构中 **原子操作** 和 **浮点运算** 相关的指令，以及 **I 型指令** 和 **S 型指令**。它通过分析指令的二进制位，识别出具体的指令类型和操作数，并将其转换为易于理解的汇编语言表示形式。这对于理解 V8 引擎生成的机器码、调试和性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/riscv/disasm-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/riscv/disasm-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 al. No
   // Memory address lock or other synchronizaiton behaviors.
   switch (instr->InstructionBits() & kRATypeMask) {
@@ -1259,7 +1261,4 @@ void Decoder::DecodeRvvIVV(Instruction* instr) {
     case RO_V_VADC_VV:
       if (!instr->RvvVM()) {
         Format(instr, "vadc.vvm  'vd, 'vs2, '
-"""
-
-
 ```

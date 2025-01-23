@@ -127,7 +127,7 @@ Initially, I might have focused too much on the specifics of the `gpgme` library
 
 总而言之，这个 `gpgme_prog.c` 文件虽然功能简单，但在 Frida 的上下文中扮演着重要的角色，用于测试 Frida 与 GPGME 库的交互能力，并为开发者提供了一个简单的目标进行调试和学习。用户到达这里通常是为了理解或调试 Frida 的相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/27 gpgme/gpgme_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <gpgme.h>
 
 int
@@ -145,7 +147,4 @@ main()
     printf("gpgme-v%s", gpgme_check_version(NULL));
     return 0;
 }
-
-"""
-
 ```

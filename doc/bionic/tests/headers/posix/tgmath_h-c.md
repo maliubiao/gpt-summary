@@ -305,7 +305,7 @@ sys.stdin.read()
 
 `bionic/tests/headers/posix/tgmath_h.c` 是一个关键的测试文件，用于验证 Android Bionic 库中 `<tgmath.h>` 头文件的实现是否符合标准。它通过调用各种数学函数并覆盖不同的数据类型，来确保类型泛型宏的正确展开和底层数学函数的正常工作，从而保证了 Android 系统中基础数学运算的可靠性。 虽然普通应用程序开发者不会直接运行或接触到这个测试文件，但它的存在对于保证 Android 系统的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/tgmath_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -316,8 +316,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -436,7 +438,4 @@ static void tgmath_h() {
   TGMATHCONLY(cproj);
   TGMATHCONLY(creal);
 }
-
-"""
-
 ```

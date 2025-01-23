@@ -83,9 +83,12 @@ This step-by-step approach, starting from the high-level purpose and gradually d
 
 **总结来说，`v8/test/unittests/test-helpers.cc` 文件提供了一组便捷的工具函数，用于在 V8 引擎的单元测试中创建和操作关键的 V8 内部对象，例如 `ScriptResource` 和 `SharedFunctionInfo`，以及模拟源代码的字符流。这些工具函数简化了测试用例的编写，使得开发者可以专注于测试特定的 V8 功能，而无需从头开始构建复杂的 V8 对象结构。**
 
-Prompt: ```这是目录为v8/test/unittests/test-helpers.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/test-helpers.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,6 +160,4 @@ std::unique_ptr<Utf16CharacterStream> SourceCharacterStreamForShared(
 }  // namespace test
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

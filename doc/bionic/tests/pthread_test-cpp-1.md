@@ -142,7 +142,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "pthread_mutex_lock"), {
 
 总而言之，这段代码是 Android bionic 库中关于 `pthread` 读写锁、`pthread_once` 初始化、`pthread_atfork`、部分线程属性和条件变量功能的单元测试。它通过各种测试用例验证了这些 API 的正确性和在不同场景下的行为，确保了 Android 系统中多线程编程的可靠性。 这些测试覆盖了基本操作、超时机制、不同时钟源的使用以及与 `fork` 相关的处理，同时也考虑了非便携的扩展功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/pthread_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -154,8 +154,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rwlock_timedwrlock_monotonic_np not available";
 #endif  // __BIONIC__
 }
@@ -1078,7 +1080,4 @@ TEST(pthread, pthread_attr_getstack_in_signal_handler) {
   pthread_attr_t attr;
   ASSERT_EQ(0, pthread_getattr_np(pthread_self(), &attr));
   void
-"""
-
-
 ```

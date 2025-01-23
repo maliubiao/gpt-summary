@@ -166,15 +166,17 @@ Let's assume a simple test scenario:
 
 In summary, `pending-optimization-table.h` defines a testing utility for V8 that allows developers to precisely control the optimization of JavaScript functions during tests, ensuring the correctness of the optimization pipeline. It is not part of the normal optimization process in a production environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/pending-optimization-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/pending-optimization-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ class ManualOptimizationTable {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_PENDING_OPTIMIZATION_TABLE_H_
-
-"""
-
 ```

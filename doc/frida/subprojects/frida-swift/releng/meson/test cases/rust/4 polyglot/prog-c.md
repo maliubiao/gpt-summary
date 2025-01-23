@@ -179,7 +179,7 @@ By following these steps, we arrive at a comprehensive analysis that addresses a
 
 总而言之，`prog.c` 在 Frida 的测试环境中作为一个简单的目标程序存在，它的目的是用来验证 Frida 在处理 C 代码时的动态插桩能力，特别是 hook 未在本文件中定义的函数。开发者通过编写 Frida 脚本与这个程序交互，并进行调试，最终可能会回到 `prog.c` 文件来理解程序的结构和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/4 polyglot/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 void f();
@@ -197,7 +199,4 @@ int main(void) {
     printf("Hello from C!\n");
     f();
 }
-
-"""
-
 ```

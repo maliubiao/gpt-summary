@@ -146,15 +146,17 @@ processData([1, 2, 3]);
 
 `v8/src/compiler/late-escape-analysis.h` 定义了 V8 编译器中的一个优化过程，用于移除那些除了初始化存储之外没有其他用途的已分配对象。  这是一种提高 JavaScript 代码执行效率的重要技术，尤其是在处理临时对象时。虽然它不直接捕获编程错误，但它可以优化由于编写潜在低效代码而产生的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/late-escape-analysis.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/late-escape-analysis.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ class LateEscapeAnalysis final : public AdvancedReducer {
 }  // namespace v8
 
 #endif  // V8_COMPILER_LATE_ESCAPE_ANALYSIS_H_
-
-"""
-
 ```

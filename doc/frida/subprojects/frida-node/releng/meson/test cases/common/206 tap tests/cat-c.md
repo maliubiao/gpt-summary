@@ -234,7 +234,7 @@ Opening nonexistent.txt: errno=2  // errno=2 通常表示 "No such file or direc
 
 总而言之，尽管 `cat.c` 是一个非常基础的工具，但它涉及到文件 I/O 操作的核心概念，并且可以作为逆向分析的辅助工具或目标。理解其工作原理有助于理解更复杂的程序如何与文件系统交互，以及如何利用 Frida 等动态分析工具进行观察和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/206 tap tests/cat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -242,8 +242,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <errno.h>
 #include <stdio.h>
 
@@ -270,7 +272,4 @@ int main(int argc, char **argv) {
     fclose(fh);
     return 0;
 }
-
-"""
-
 ```

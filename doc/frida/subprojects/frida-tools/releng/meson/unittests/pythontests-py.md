@@ -135,7 +135,7 @@ A developer or user might end up looking at this test file for debugging if they
 
 In essence, this `pythontests.py` file serves as a quality assurance measure for Frida's build system, ensuring the correct and robust integration of Python components, which is critical for Frida's functionality and its use in reverse engineering tasks.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/pythontests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -233,7 +235,4 @@ python = pymod.find_installation('python3', required: true)
         if shutil.which('python2') or PythonModule._get_win_pythonpath('python2'):
             raise self.skipTest('python2 installed, already tested')
         self._test_bytecompile()
-
-"""
-
 ```

@@ -134,7 +134,7 @@ By following this thought process, we can systematically analyze the code and pr
 
 这部分代码的核心功能是定义了 Frida 项目中不同类型的构建目标，并规定了它们的属性、构建方式和与其他目标的依赖关系。它涵盖了静态库、共享库、共享模块、同时构建两种库、以及自定义编译目标。这些定义是 Meson 构建系统理解如何构建 Frida 项目的关键。 代码中还处理了特定于平台（Linux, Windows, macOS）和编程语言（如 Rust）的细节，并包含了对用户常见错误的预防和处理。  这对于确保 Frida 项目能够正确地在各种平台上构建至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 get(self):
         return self.is_linkwithable
 
@@ -909,7 +911,4 @@ class CompileTarget(BuildTarget):
 class RunTarget(Target, CommandBase):
 
     typename
-"""
-
-
 ```

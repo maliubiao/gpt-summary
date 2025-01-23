@@ -168,15 +168,17 @@ By following these steps, we can systematically analyze the C++ test file and ge
 
 这个测试文件提供了一系列针对 `MediaStreamVideoTrackUnderlyingSource` 关键功能的测试用例，可以帮助开发者理解其内部工作原理，并为调试相关问题提供线索。通过分析这些测试用例，可以了解在各种场景下 `MediaStreamVideoTrackUnderlyingSource` 的行为和预期结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/breakout_box/media_stream_video_track_underlying_source_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -817,7 +819,4 @@ TEST_F(MediaStreamVideoTrackUnderlyingSourceTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -200,15 +200,17 @@ Unix 域套接字本身不能直接被浏览器中的 JavaScript 代码访问。
 
 通过理解 `UnixDomainServerSocket` 的功能和可能的使用场景，结合代码中的日志和断点调试，可以有效地定位和解决与 Unix 域套接字相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/unix_domain_server_socket_posix.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -425,7 +427,4 @@ void UnixDomainServerSocket::CancelCallback() {
 }
 
 }  // namespace net
-
-"""
-
 ```

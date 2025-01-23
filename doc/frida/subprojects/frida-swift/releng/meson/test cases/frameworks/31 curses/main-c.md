@@ -183,7 +183,7 @@ Since the C code itself doesn't take input or produce specific output beyond ter
 
 尽管 `main.c` 的代码非常简单，但在 Frida 的上下文中，它作为一个测试目标，用于验证 Frida 对使用了 `curses` 库的程序的动态分析能力。它涵盖了 Hooking 基本的 `curses` 函数，并间接涉及到与操作系统终端交互的底层知识。理解这个简单的例子有助于理解 Frida 如何应用于更复杂的、使用了图形界面或终端交互的应用程序的逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/31 curses/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "curses.h"
 
 int main(void) {
@@ -200,6 +202,4 @@ initscr();
 endwin();
 return 0;
 }
-"""
-
 ```

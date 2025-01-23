@@ -107,7 +107,7 @@ scommon_broken.c:1:2: error: This file must not be used. The other scommon one s
 
 这会引导用户去检查他们的构建配置，查找正确的 `scommon` 文件，并修复构建脚本或配置错误。例如，用户可能会检查 `frida/subprojects/frida-swift/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/meson.build` 文件，看看 `scommon_broken.c` 是如何被错误地包含进来的，并将其替换为正确的 `scommon` 源文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/scommon/scommon_broken.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,10 +115,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #error This file must not be used. The other scommon one should be instead.
-
-"""
-
 ```

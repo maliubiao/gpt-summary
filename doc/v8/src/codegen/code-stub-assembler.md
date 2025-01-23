@@ -109,12 +109,14 @@ add(1, 2);
 
 `CodeStubAssembler` 是 V8 引擎中一个核心的底层工具，它负责生成高效的机器码来执行各种内部操作，这些操作是 JavaScript 代码执行的基础。尽管 JavaScript 开发者不会直接接触 `CodeStubAssembler`，但其生成的代码对 JavaScript 的性能至关重要。这个文件的第一部分主要关注提供构建 code stubs 的基础工具和操作 V8 内部类型的基本功能。后面的部分很可能会扩展到更具体的操作和优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1886,7 +1888,4 @@ TNode<RawPtrT> CodeStubAssembler::EmptyBackingStoreBufferConstant() {
 
 TNode<UintPtrT> CodeStubAssembler::LoadBoundedSizeFromObject(
     TNode<Hea
-"""
-
-
 ```

@@ -138,7 +138,7 @@ try {
 
 作为第 4 部分，这段代码主要关注 **WebAssembly 核心算术和逻辑运算以及一些基本控制流和内存访问指令的 Liftoff 编译实现**。它展示了如何将各种 WebAssembly 操作码映射到 `LiftoffAssembler` 的指令生成方法，并处理了一些需要特殊处理的情况，例如除零错误和类型检查。  这部分代码构建了 Liftoff 编译器处理基本 Wasm 操作的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,9 +146,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共13部分，请归纳一下它的功能
+```
 
-"""
- fn](LiftoffRegister dst, LiftoffRegister src,
+### 源代码
+```cpp
+fn](LiftoffRegister dst, LiftoffRegister src,
                    LiftoffRegister amount) {
           CallEmitFn(fn, dst, src,
                      amount.is_gp_pair() ? amount.low_gp() : amount.gp());
@@ -899,7 +901,4 @@ Prompt:
     LiftoffRegister true_value = __ PopToRegister(pinned);
     LiftoffRegister dst = __ GetUnusedRegister(true_value.reg_class(),
                                                {true_val
-"""
-
-
 ```

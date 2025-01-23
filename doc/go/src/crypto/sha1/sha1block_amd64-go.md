@@ -170,7 +170,7 @@ func main() {
 
 总而言之，这段代码是 `crypto/sha1` 包中针对 AMD64 架构优化的 SHA1 块处理实现，它利用 CPU 的 AVX2 指令集来提高性能，并通过动态选择合适的处理函数来兼顾不同 CPU 特性和数据大小的情况。使用者应该通过包提供的标准接口使用 SHA1 功能，避免直接调用内部的 `blockAVX2` 或 `blockAMD64` 函数，以防止潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha1/sha1block_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,8 +178,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -216,9 +218,4 @@ func block(dig *digest, p []byte) {
 		blockAMD64(dig, p)
 	}
 }
-
-"""
-
-
-
 ```

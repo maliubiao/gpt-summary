@@ -99,15 +99,17 @@ By following these steps, including iterative refinement, we can arrive at a com
 * **`Promise`:**  当一个 Promise 进入 pending 状态时，等待该 Promise resolve 或 reject 的回调函数可能会被放入一个等待队列中。`WaiterQueueNode` 可以用于实现这种等待队列。
 * **`async/await`:** `async/await` 语法是基于 Promise 的。当一个 `async` 函数执行到 `await` 关键字时，它会暂停执行，并将当前的状态保存在某个地方，等待被 `await` 的 Promise 完成。`WaiterQueueNode` 可以参与管理这种暂停和恢复的机制。
 * **SharedArrayBuffer 和 Atomics:** 这些特性允许在多个 JavaScript 线程之间
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/waiter-queue-node.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/waiter-queue-node.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ class V8_NODISCARD WaiterQueueNode {
 }  // namespace v8
 
 #endif  // V8_OBJECTS_WAITER_QUEUE_NODE_H_
-
-"""
-
 ```

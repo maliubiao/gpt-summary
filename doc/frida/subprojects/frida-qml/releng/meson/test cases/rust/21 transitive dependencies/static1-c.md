@@ -113,7 +113,7 @@ By following this thought process, systematically breaking down the request and 
 
 总而言之，`static1.c` 是一个非常简单的示例代码，用于在 Frida 的测试框架中验证其功能，特别是在处理静态链接的依赖关系时。尽管代码本身功能简单，但它可以用来演示逆向工程的基本概念，涉及二进制表示和操作系统层面的知识，并且其简单的行为也容易被误解，从而导致编程错误。通过查看这个文件，开发者可以了解 Frida 如何与这种简单的函数进行交互，从而为调试更复杂的场景提供基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/rust/21 transitive dependencies/static1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,14 +121,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int static1(void);
 
 int static1(void){
     return 1;
 }
-
-"""
-
 ```

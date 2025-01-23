@@ -59,12 +59,14 @@ loadAndCompileWasm('my_module.wasm');
 
 **这个 C++ 测试文件中的测试，例如 `TestCompileErrorFunctionName`，就是为了确保当 `WebAssembly.compileStreaming()` 在遇到编译错误时，能够提供有用的错误信息，即使在名称信息尚未完全接收的情况下。**  `TestBackgroundCaching` 则是为了验证 V8 引擎在后台编译完成后能够正确利用缓存机制，提高后续实例化相同模块的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-streaming-compilation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 r (int i = 0; i < 100; ++i) {
     Execution::Call(i_isolate, func_a, receiver, 0, nullptr).Check();
   }
@@ -241,8 +243,4 @@ STREAM_TEST(Regress1334651) {
 #undef STREAM_TEST
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

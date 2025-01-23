@@ -208,7 +208,7 @@ Finally, I structure the analysis clearly, using headings and bullet points to a
 
 总而言之，`x86relocator-fixture.c` 是 Frida 中用于测试 x86 代码重定位功能的重要组成部分，它通过一系列预定义的测试用例，验证 `GumX86Relocator` 组件在各种场景下的正确性，对于确保 Frida 的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/x86relocator-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,8 +216,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -327,7 +329,4 @@ static const guint8 cleared_outbuf[TEST_OUTBUF_SIZE] = { 0, };
         sizeof (cleared_outbuf) - OFF), ==, 0)
 #define assert_output_equals(e) test_relocator_fixture_assert_output_equals \
     (fixture, e, sizeof (e))
-
-"""
-
 ```

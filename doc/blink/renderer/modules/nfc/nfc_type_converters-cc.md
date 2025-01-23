@@ -165,15 +165,17 @@ mojo_record->payload = {'H', 'e', 'l', 'l', 'o'};
 
 通过跟踪数据在这些不同层级之间的转换，可以帮助理解 NFC 功能的实现流程以及定位可能出现的问题。 `nfc_type_converters.cc` 是理解 Blink 如何将 Web API 的抽象概念转换为底层系统调用和数据结构的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/nfc/nfc_type_converters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ TypeConverter<NDEFWriteOptionsPtr, const blink::NDEFWriteOptions*>::Convert(
 }
 
 }  // namespace mojo
-
-"""
-
 ```

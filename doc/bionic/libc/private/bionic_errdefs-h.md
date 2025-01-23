@@ -243,7 +243,7 @@ session.detach()
 
 这个 Frida 脚本演示了如何 Hook Bionic libc 的函数，并在其执行过程中获取错误信息，帮助开发者理解 Android 系统底层的错误处理机制，并定位应用中出现问题的根源。通过观察 `errno` 的值和对应的错误描述，我们可以更好地理解为什么某个操作失败了。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_errdefs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -427,7 +429,4 @@ __BIONIC_ERRDEF(ERFKILL, "Operation not possible due to RF-kill")
 __BIONIC_ERRDEF(EHWPOISON, "Memory page has hardware error")
 
 #undef __BIONIC_ERRDEF
-
-"""
-
 ```

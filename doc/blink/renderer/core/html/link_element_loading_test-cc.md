@@ -168,14 +168,16 @@ body {
 
 总之，`link_element_loading_test.cc` 这个测试文件在 Chromium Blink 引擎中扮演着重要的角色，它确保了浏览器在处理 `<link>` 元素的加载和卸载时具有正确的行为，这对于构建稳定可靠的 Web 应用至关重要。它验证了当动态操作 DOM 时，浏览器能够进行必要的资源管理和优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/link_element_loading_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ TEST_F(LinkElementLoadingTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

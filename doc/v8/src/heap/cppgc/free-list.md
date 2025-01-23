@@ -113,11 +113,13 @@ let obj2 = { name: "world" };
 
 `free-list.cc` 中实现的空闲链表是 V8 引擎中一个底层的内存管理机制。它负责维护可用的空闲内存块，使得 V8 引擎能够高效地为 JavaScript 代码创建的对象分配内存，并在垃圾回收后重新利用这些内存。虽然 JavaScript 开发者通常不需要直接与空闲链表交互，但它的存在对 JavaScript 程序的性能和内存使用有着重要的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/free-list.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -348,7 +350,4 @@ void FreeList::CollectStatistics(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -140,7 +140,7 @@ Let's consider the `build` function as an example:
 
 `agent-entrypoint.js` is a crucial starting point for the Frida agent compilation pipeline. It exposes the core compilation functionalities via an RPC mechanism, allowing other parts of Frida to initiate the process of turning user-written JavaScript code into an executable agent that can perform dynamic instrumentation within a target process. While this file itself is JavaScript, the underlying logic it triggers interacts deeply with low-level system concepts and platform-specific details, particularly when dealing with operating systems like Linux and Android.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/compiler/agent-entrypoint.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,14 +148,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const { init, build, watch } = FridaCompilerAgentCore;
 
 init();
 
 rpc.exports = { build, watch };
-
-"""
-
 ```

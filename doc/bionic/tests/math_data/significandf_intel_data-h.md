@@ -254,7 +254,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/math_data/significandf_intel_data.handroid` 是 Android Bionic 库中一个重要的测试数据文件，用于验证浮点数尾数相关运算的正确性，它间接保证了 Android 系统和应用程序中浮点数运算的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/significandf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -793,7 +795,4 @@ static data_1_1_t<float, float> g_significandf_intel_data[] = {
     -0.0f
   }
 };
-
-"""
-
 ```

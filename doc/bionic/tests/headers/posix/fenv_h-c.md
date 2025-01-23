@@ -252,7 +252,7 @@ sys.stdin.read()
 
 这个 Frida 示例展示了如何跟踪 `libc.so` 中 `fenv.h` 相关函数的调用，帮助理解 Android Framework 或 NDK 代码是如何与这些底层库交互的。通过 Hook 其他 `fenv.h` 中的函数，你可以进一步分析浮点异常的处理流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/fenv_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -328,7 +330,4 @@ static void fenv_h() {
   FUNCTION(fetestexcept, int (*f)(int));
   FUNCTION(feupdateenv, int (*f)(const fenv_t*));
 }
-
-"""
-
 ```

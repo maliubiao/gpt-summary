@@ -173,7 +173,7 @@ Hello from l1!
 
 总而言之，虽然 `prog.c` 代码量很少，但它在 Frida 的测试体系中扮演着重要的角色，用于验证 Frida 核心 hook 功能的正确性，并模拟了逆向工程中常见的需要动态分析才能理解函数行为的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/osx/10 global variable ar/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // Source: https://lists.gnu.org/archive/html/libtool/2002-07/msg00025.html
 
 extern void l1(void);
@@ -190,7 +192,4 @@ int main(void)
 {
   l1();
 }
-
-"""
-
 ```

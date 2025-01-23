@@ -145,7 +145,7 @@ Something went wrong.
 
 总而言之，`eftest.cpp` 作为一个简单的测试用例，其核心功能是验证一个基本的条件判断逻辑是否按预期工作。它的存在是为了辅助 Frida 开发者进行单元测试，确保 Frida 的底层插桩能力能够正确地作用于这类简单的程序结构。  用户直接编写代码不太可能直接到达这个文件，除非他们正在参与 Frida 的开发、调试或者深入研究其内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/89 default library/eftest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"ef.h"
 
 #include<iostream>
@@ -169,7 +171,4 @@ int main(int, char **) {
         return 1;
     }
 }
-
-"""
-
 ```

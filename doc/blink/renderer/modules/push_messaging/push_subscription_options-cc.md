@@ -253,15 +253,17 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 * **断点调试 C++ 代码:** 如果是 Chromium 的开发者，可以在 `PushSubscriptionOptions::FromOptionsInit` 和 `BufferSourceToVector` 函数中设置断点，逐步查看 JavaScript 传递过来的值以及 C++ 代码的执行流程，从而定位问题所在。
 * **查看浏览器控制台的错误信息:** 当 `BufferSourceToVector` 抛出异常时，浏览器控制台通常会显示相应的错误信息，例如 "The provided applicationServerKey is not encoded as base64url without padding." 或 "The provided applicationServerKey is not valid."，这些信息可以帮助开发者快速定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/push_messaging/push_subscription_options.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -366,7 +368,4 @@ void PushSubscriptionOptions::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

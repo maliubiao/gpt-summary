@@ -168,15 +168,17 @@ console.log(Object.keys(obj1)[0] === Object.keys(obj2)[0]); // true - "key" 字�
 
 `v8/src/objects/string-table.cc` 文件实现了 V8 引擎中至关重要的字符串表，负责字符串的内部化和高效查找。这对于 JavaScript 的内存管理和性能至关重要。理解字符串表的工作原理可以帮助开发者编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-table.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string-table.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -930,7 +932,4 @@ void StringTable::NotifyElementsRemoved(int count) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

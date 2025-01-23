@@ -218,7 +218,7 @@ func main() {
 
 总而言之，这段 `itoa.go` 文件是 Go 语言中用于高效且灵活地将整数转换为字符串的核心组件。理解其各个函数的功能和使用方法对于编写涉及字符串和数字转换的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strconv/itoa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -427,9 +429,4 @@ func formatBits(dst []byte, u uint64, base int, neg, append_ bool) (d []byte, s 
 func isPowerOfTwo(x int) bool {
 	return x&(x-1) == 0
 }
-
-"""
-
-
-
 ```

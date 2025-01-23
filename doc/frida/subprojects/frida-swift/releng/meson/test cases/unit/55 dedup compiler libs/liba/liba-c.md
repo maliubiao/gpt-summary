@@ -171,7 +171,7 @@ By following this thought process, which involves understanding the code, placin
 
 总而言之，这个简单的 `liba.c` 文件虽然功能简单，但作为一个清晰的目标，非常适合用于演示和测试 Frida 的动态插桩能力，也能够帮助理解逆向工程的一些基本概念。它在 Frida 的测试框架中存在，表明了其在 Frida 开发和验证过程中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/55 dedup compiler libs/liba/liba.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "liba.h"
 
 static int val;
@@ -199,7 +201,4 @@ int liba_get(void)
 {
   return val;
 }
-
-"""
-
 ```

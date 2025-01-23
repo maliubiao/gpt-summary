@@ -177,15 +177,17 @@ Initially, I might have just described the individual components. The key to a g
 
 `v8/include/cppgc/internal/caged-heap-local-data.h` 定义了 V8 引擎中用于管理分代垃圾回收关键数据结构（`AgeTable`）的 C++ 代码。它负责跟踪笼式堆中内存区域的年龄状态，以便垃圾回收器能够高效地识别和回收不再使用的对象。虽然开发者通常不会直接操作这些底层结构，但理解分代垃圾回收的原理对于编写高性能的 JavaScript 代码至关重要。如果存在同名的 `.tq` 文件，它将包含使用 Torque 语言定义的与此头文件相关的内置函数逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/internal/caged-heap-local-data.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/internal/caged-heap-local-data.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ struct CagedHeapLocalData final {
 #endif  // defined(CPPGC_CAGED_HEAP)
 
 #endif  // INCLUDE_CPPGC_INTERNAL_CAGED_HEAP_LOCAL_DATA_H_
-
-"""
-
 ```

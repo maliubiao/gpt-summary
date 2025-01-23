@@ -149,11 +149,13 @@ sumRest(1, 2, 3, 4); // 可能会触发 RestLength 节点
 
 `maglev-ir-riscv.cc` 是 Maglev 编译器将 JavaScript 代码高效地转换为 RISC-V 机器码的关键组成部分。它定义了各种 JavaScript 操作在 RISC-V 架构上的具体实现方式，并处理了性能优化和错误处理（通过去优化机制）。理解这个文件有助于深入了解 V8 引擎的编译和代码生成过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/riscv/maglev-ir-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1093,7 +1095,4 @@ void Return::GenerateCode(MaglevAssembler* masm, const ProcessingState& state) {
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

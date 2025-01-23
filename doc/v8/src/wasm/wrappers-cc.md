@@ -227,7 +227,7 @@ WebAssembly.instantiateStreaming(fetch('my_module_with_import.wasm'), importObje
 
 这是 V8 引擎中一个关键的源代码文件，它利用 Turboshaft 编译器框架，负责生成 JavaScript 和 WebAssembly 之间互操作所需的包装器代码。这些包装器处理了跨语言边界的参数和返回值转换、执行上下文管理以及错误处理，使得 JavaScript 和 WebAssembly 能够无缝地相互调用。该文件的第一部分主要定义了用于构建这些包装器的核心类和一些辅助功能，涵盖了从 JavaScript 调用 WebAssembly 的包装器生成逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wrappers.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wrappers.cc以.tq结尾，那它是个v8 torque源代码，
@@ -235,8 +235,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -996,7 +998,4 @@ class WasmWrapperTSGraphBuilder : public WasmGraphBuilderBase {
     }
 
     DCHECK_LT(sig_->r
-"""
-
-
 ```

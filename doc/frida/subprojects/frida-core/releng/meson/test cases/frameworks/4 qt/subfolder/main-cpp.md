@@ -145,7 +145,7 @@ By following these steps, starting from a high-level understanding of the code a
 
 总而言之，这段代码是 Frida 测试框架的一部分，用于确保 Frida 能够正确地与 Qt 应用程序交互，特别是处理 Qt 的资源系统。通过分析其功能，我们可以理解它与逆向分析的关联，以及涉及到的底层知识和可能出现的错误。调试过程通常是从发现测试失败开始，逐步深入到代码和资源文件，最终定位问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/4 qt/subfolder/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QImage>
 #include <QFile>
 #include <QString>
@@ -184,6 +186,4 @@ int main(int argc, char **argv) {
   }
   return 0;
 }
-"""
-
 ```

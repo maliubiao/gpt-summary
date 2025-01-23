@@ -154,15 +154,17 @@ extnValue:  OCTET STRING containing the serialized SCT list
 
 为了调试，可以在 Chromium 的网络栈中设置断点，例如在 `ExtractEmbeddedSCTList` 函数的入口处，然后复现用户访问该网站的操作。通过查看调用栈，可以确认 `ExtractEmbeddedSCTList` 是从哪个更高级别的网络组件调用的。 此外，Chromium 提供了网络相关的日志记录功能 (例如使用 `chrome://net-export/`)，可以用来追踪证书和 CT 相关的事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/ct_objects_extractor.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -590,7 +592,4 @@ bool ExtractSCTListFromOCSPResponse(const CRYPTO_BUFFER* issuer,
 }
 
 }  // namespace net::ct
-
-"""
-
 ```

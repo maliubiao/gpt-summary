@@ -176,15 +176,17 @@ let result = maxInt + 1;
 
 **In summary,** `instruction-codes-loong64.h` is a crucial file that defines the vocabulary of machine instructions that the V8 compiler uses to translate JavaScript code into executable form on LOONG64 processors. Understanding these opcodes provides insight into the low-level operations that underpin JavaScript execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-codes-loong64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/instruction-codes-loong64.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -607,7 +609,4 @@ namespace compiler {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_LOONG64_INSTRUCTION_CODES_LOONG64_H_
-
-"""
-
 ```

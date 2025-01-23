@@ -176,15 +176,17 @@ By following this structured approach, combining code analysis with knowledge of
 
 `custom_element_construction_stack.cc` 是 Blink 引擎中一个关键的组成部分，负责管理自定义元素的构造过程。它通过维护一个构造堆栈来跟踪元素的嵌套关系，防止无限递归，并确保构造过程的正确性。这与 JavaScript 中自定义元素的定义、HTML 中自定义元素的使用以及 CSS 对自定义元素样式的应用都有密切关系。理解其功能有助于开发者避免与自定义元素构造相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/custom/custom_element_construction_stack.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ CustomElementConstructionStackScope::~CustomElementConstructionStackScope() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

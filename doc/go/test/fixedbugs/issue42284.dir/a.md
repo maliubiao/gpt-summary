@@ -152,15 +152,17 @@ func main() {
 
 这段 Go 代码片段是一个精心设计的测试用例，用于验证 Go 编译器在处理接口、内联和逃逸分析时的正确性。它通过嵌入特定的 `// ERROR` 注释来断言编译器的行为，特别是关注了可能导致不期望的堆分配和去虚化失败的场景。 理解这种类型的测试用例可以帮助 Go 开发者更深入地了解 Go 编译器的内部工作原理，从而编写出更高效和可靠的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue42284.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ func g() {
 	// Testing that we do NOT devirtualize here:
 	i.M()
 }
-
-"""
-
-
-
 ```

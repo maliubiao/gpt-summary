@@ -146,15 +146,17 @@ func main() {
 
 `go/src/cmd/internal/telemetry/telemetry_bootstrap.go` 是 Go 命令行工具遥测功能的早期引导部分。它定义了一些基本的函数签名，但尚未实现具体的功能。 它的主要作用是为后续的遥测功能实现提供一个基础框架。 当遥测功能被完全启用后，这些函数会被实际的实现所替换，并通过命令行参数或环境变量进行配置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/telemetry/telemetry_bootstrap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -168,9 +170,4 @@ func MaybeChild()               {}
 func Mode() string              { return "" }
 func SetMode(mode string) error { return nil }
 func Dir() string               { return "" }
-
-"""
-
-
-
 ```

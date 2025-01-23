@@ -266,7 +266,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/tests/libs/dlsym_from_this_symbol.cpp` 是一个简单的但重要的测试用例，用于验证 Android Bionic 库中 `dlsym` 函数的基本功能，这对于理解 Android 的动态链接机制至关重要。 通过 Frida 等工具，我们可以进一步观察和调试动态链接过程，了解 Android Framework 和 NDK 如何利用这些底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlsym_from_this_symbol.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -296,7 +298,4 @@ Prompt:
  */
 
 int test_dlsym_symbol = 42;
-
-"""
-
 ```

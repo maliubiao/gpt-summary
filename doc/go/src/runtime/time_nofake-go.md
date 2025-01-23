@@ -164,7 +164,7 @@ func runtime_write(fd uintptr, p unsafe.Pointer, n int32) int32
 
 这段代码是 Go 运行时库为了提供可靠的时间和底层 I/O 操作所做的底层实现。 理解它的功能有助于理解 Go 程序在操作系统层面是如何工作的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/time_nofake.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -232,9 +234,4 @@ func write(fd uintptr, p unsafe.Pointer, n int32) int32 {
 	}
 	return write1(fd, p, n)
 }
-
-"""
-
-
-
 ```

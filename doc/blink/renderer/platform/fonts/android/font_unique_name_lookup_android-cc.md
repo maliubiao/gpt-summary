@@ -158,14 +158,16 @@ By following this structured approach, I can systematically analyze the code and
 
 总而言之，`font_unique_name_lookup_android.cc` 是 Blink 引擎在 Android 平台上实现字体查找的关键组件，它连接了 Web 页面的字体需求和 Android 系统的字体资源管理，涉及到同步异步处理、IPC 通信和性能优化等多个方面。开发者需要理解其工作原理和异步特性，才能正确地使用和调试相关的字体问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/android/font_unique_name_lookup_android.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -430,7 +432,4 @@ void FontUniqueNameLookupAndroid::FontsPrefetched(
 }
 
 }  // namespace blink
-
-"""
-
 ```

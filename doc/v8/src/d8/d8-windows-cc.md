@@ -132,15 +132,17 @@ if (data) {
 
 `v8/src/d8/d8-windows.cc` 文件负责提供 `d8` 工具在 Windows 平台上的特定功能。 目前，它并没有向全局 `os` 对象添加额外的方法，并且从 TCP 端口读取数据的功能也未实现。 这意味着依赖这些功能的 JavaScript 代码在 Windows 上的 `d8` 环境中将无法正常工作。开发者需要注意平台差异，并避免依赖尚未实现的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-windows.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8-windows.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ char* Shell::ReadCharsFromTcpPort(const char* name, int* size_out) {
 }
 
 }  // namespace v8
-
-"""
-
 ```

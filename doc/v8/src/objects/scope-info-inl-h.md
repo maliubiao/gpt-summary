@@ -151,15 +151,17 @@ closure(); // 调用 closure 时，仍然可以访问 exampleFunction 的 localV
 
 总而言之，`v8/src/objects/scope-info-inl.h` 定义了 `ScopeInfo` 类的内联方法，该类是 V8 引擎中表示和管理 JavaScript 代码作用域信息的关键数据结构。它存储了作用域的各种元数据，并提供了访问和操作这些数据的方法，对于理解 V8 如何处理作用域和闭包至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/scope-info-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/scope-info-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,7 +318,4 @@ ScopeInfo::LocalNamesRange<Tagged<ScopeInfo>> ScopeInfo::IterateLocalNames(
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_SCOPE_INFO_INL_H_
-
-"""
-
 ```

@@ -164,7 +164,7 @@ func main() {
 
 总而言之，这个测试文件验证了 Go 语言在 Windows 平台上模拟 Unix 域套接字功能的正确性，特别是关于地址解析和套接字类型标记方面的功能。理解这些测试用例有助于开发者在使用 Go 在 Windows 上进行 Unix 域套接字编程时避免常见的误解和错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/unixsock_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -268,9 +270,4 @@ func TestModeSocket(t *testing.T) {
 		t.Fatalf("%v should have ModeSocket", mode)
 	}
 }
-
-"""
-
-
-
 ```

@@ -223,7 +223,7 @@ publicKey1.Equal(publicKeyFromPrivate): true
 
 总而言之，`go/src/crypto/rsa/equal_test.go` 的主要目的是确保 RSA 公钥和私钥的 `Equal` 方法能够正确判断两个密钥是否在数学上相等。它通过各种测试用例覆盖了自我比较、从私钥获取公钥后的比较以及不同密钥之间的比较。使用者在使用 `Equal` 方法时需要注意区分指针相等和值相等，并确保比较的双方是相同类型的密钥对象。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/rsa/equal_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -231,8 +231,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -285,9 +287,4 @@ func TestEqual(t *testing.T) {
 		t.Errorf("different private keys are Equal")
 	}
 }
-
-"""
-
-
-
 ```

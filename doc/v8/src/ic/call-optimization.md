@@ -110,11 +110,13 @@ element.addEventListener('click', function() {
 
 `v8/src/ic/call-optimization.cc` 是 V8 引擎中负责优化函数调用的关键组件，特别是针对 C++ 实现的 API 函数。 它通过进行类型检查、接收者验证和跨上下文处理等操作，确保 JavaScript 与 C++ 代码能够高效且安全地交互。 虽然开发者通常不会直接与这个文件打交道，但它的优化工作直接影响着 JavaScript 代码的性能表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/call-optimization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void CallOptimization::AnalyzePossibleApiFunction(
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

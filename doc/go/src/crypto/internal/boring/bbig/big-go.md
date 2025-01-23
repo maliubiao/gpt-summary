@@ -176,7 +176,7 @@ func main() {
 
 总而言之，这段代码是 Go 标准库中为了与 BoringSSL 集成而实现的大整数类型转换工具。它利用了 `unsafe` 包来实现高效的内存映射，但在使用时需要注意潜在的副作用，特别是不要直接修改 `Enc` 函数返回的切片。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/bbig/big.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -219,9 +221,4 @@ func Dec(b boring.BigInt) *big.Int {
 	x := unsafe.Slice((*big.Word)(&b[0]), len(b))
 	return new(big.Int).SetBits(x)
 }
-
-"""
-
-
-
 ```

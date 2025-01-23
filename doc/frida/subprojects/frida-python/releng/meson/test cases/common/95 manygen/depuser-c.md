@@ -138,7 +138,7 @@ if (ObjC.available) {
 
 这个测试用例的设计目的是为了验证 Frida 在处理各种依赖关系时的正确性和稳定性，帮助开发者确保 Frida 能够可靠地 hook 不同类型的函数。对于学习 Frida 的用户来说，这是一个很好的起点，可以了解 Frida 如何与不同类型的代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/95 manygen/depuser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"gen_func.h"
 
 int main(void) {
@@ -156,7 +158,4 @@ int main(void) {
     unsigned int k = (unsigned int) gen_func_in_src();
     return (int)(i + j + k);
 }
-
-"""
-
 ```

@@ -247,7 +247,7 @@ func main() {
 
 总而言之，`defs_openbsd_ppc64.go` 是 Go 运行时环境的关键组成部分，它定义了与 OpenBSD/PPC64 操作系统交互的基础元素。虽然普通开发者不需要直接操作它，但理解其背后的概念有助于更好地理解 Go 语言的底层机制以及如何安全地进行系统调用编程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_openbsd_ppc64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -255,8 +255,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -441,9 +443,4 @@ type pthreadcond uintptr
 type pthreadcondattr uintptr
 type pthreadmutex uintptr
 type pthreadmutexattr uintptr
-
-"""
-
-
-
 ```

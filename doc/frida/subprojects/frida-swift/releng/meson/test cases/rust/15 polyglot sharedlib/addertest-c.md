@@ -162,7 +162,7 @@ By following this structured approach and constantly considering the context and
 
 总而言之，`addertest.c` 虽然代码简单，但在 Frida 的上下文中扮演着重要的角色，它既是一个功能测试用例，也是一个理解和调试 Frida 行为的良好起点。它涵盖了动态链接、函数调用、内存管理等底层概念，并且体现了逆向分析的基本思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/15 polyglot sharedlib/addertest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 #include<adder.h>
 
@@ -184,7 +186,4 @@ int main(int argc, char **argv) {
     adder_destroy(a);
     return 0;
 }
-
-"""
-
 ```

@@ -363,15 +363,17 @@ func main() {
 
 总而言之，这段代码是 Go `cmd/go` 工具处理 SVN 仓库的核心逻辑，它通过调用系统底层的 `svn` 命令行工具来实现版本信息获取和代码导出功能，并做了额外的处理来解决文件名编码等问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modfetch/codehost/svn.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -540,9 +542,4 @@ func svnReadZip(ctx context.Context, dst io.Writer, workDir, rev, subdir, remote
 
 	return zw.Close()
 }
-
-"""
-
-
-
 ```

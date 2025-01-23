@@ -130,11 +130,13 @@ console.log("新 buffer 的值:", uint8ArrayNew[0]); // 输出 10
 
 `test-backing-store.cc` 文件通过 C++ 单元测试，深入测试了 V8 引擎在处理 Wasm 模块和 `ArrayBuffer` 交互时，底层 backing store 的管理细节，特别是关于 detach 操作和内存增长对 backing store 的影响，确保了内存安全和程序的稳定性。这些测试反映了 JavaScript 中 `ArrayBuffer` 和 `WebAssembly.Memory` 的行为和限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-backing-store.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ TEST(BackingStore_Reclaim) {
 #endif
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

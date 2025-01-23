@@ -168,12 +168,14 @@ In essence, this C++ file provides the foundational, architecture-specific (x64)
 
 总而言之，这个 C++ 文件中的代码是 V8 引擎的核心组成部分，它以机器码的形式实现了 JavaScript 语言的关键运行时机制。它直接响应 JavaScript 代码的执行，并在底层驱动着 JavaScript 代码的运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1876,7 +1878,4 @@ void Builtins::Generate_InterpreterPushArgsThenFastConstructFunction(
   // do a smi check and fall through to check if the return value is a valid
   // receiver.
   __ JumpIfNotRo
-"""
-
-
 ```

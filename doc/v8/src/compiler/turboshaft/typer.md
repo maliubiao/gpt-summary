@@ -132,11 +132,13 @@ console.log(foo("hello")); // 输出 "not a small number"
 
 **总结来说，`typer.cc` 中的代码是 Turboshaft 编译器进行类型推断和优化的重要组成部分，它通过分析条件分支中的比较操作，尽可能地为变量赋予更精确的类型信息，从而为后续的编译优化提供基础，最终提升 JavaScript 代码的执行效率。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/typer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ void Typer::BranchRefinements::RefineTypes(const Operation& condition,
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

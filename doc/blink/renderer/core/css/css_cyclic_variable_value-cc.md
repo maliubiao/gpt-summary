@@ -142,15 +142,17 @@ By following these steps, the detailed and comprehensive explanation provided pr
 
 总而言之，`css_cyclic_variable_value.cc` 的核心作用是在 Blink 渲染引擎中优雅地处理 CSS 自定义属性的循环依赖，防止无限递归，并为相关的属性提供一个占位符，以便后续的处理（例如，使用默认值或初始值）。它与 CSS 直接相关，并通过 JavaScript 和 HTML 间接影响用户体验和开发过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_cyclic_variable_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ String CSSCyclicVariableValue::CustomCSSText() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

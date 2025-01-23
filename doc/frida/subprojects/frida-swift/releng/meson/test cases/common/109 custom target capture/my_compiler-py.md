@@ -118,7 +118,7 @@ By following this structured approach, considering the context (Frida test case)
 
 `my_compiler.py` 是一个非常简单的 Python 脚本，它模拟了一个基本的输入验证和条件输出过程。尽管功能简单，但在 Frida 的测试框架中，它被用作验证 Frida 处理自定义构建目标能力的一个测试用例。 理解这个脚本的功能和它在测试流程中的作用，有助于理解 Frida 的构建和测试机制，以及它与底层系统和二进制文件的交互方式。  用户通常是作为 Frida 开发或调试流程的一部分接触到这个脚本的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/109 custom target capture/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -142,7 +144,4 @@ if __name__ == '__main__':
         print('Malformed input')
         sys.exit(1)
     print('This is a binary output file.')
-
-"""
-
 ```

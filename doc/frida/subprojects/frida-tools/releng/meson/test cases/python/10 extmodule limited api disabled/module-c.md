@@ -108,7 +108,7 @@ Initially, I might have focused too much on what the module *does* as a function
 
 总而言之，`module.c` 这个文件本身的功能很小，但它的存在对于保证 Frida 构建系统的正确性至关重要。它通过一个简单的编译时检查，确保了当需要禁用 Python Limited API 时，该 API 确实被禁用了。这体现了软件开发中测试的重要性，特别是对于像 Frida 这样复杂的工具，其正确构建依赖于各种配置选项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/10 extmodule limited api disabled/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <Python.h>
 
 #if defined(Py_LIMITED_API)
@@ -135,7 +137,4 @@ static struct PyModuleDef my_module = {
 PyMODINIT_FUNC PyInit_my_module(void) {
     return PyModule_Create(&my_module);
 }
-
-"""
-
 ```

@@ -166,14 +166,16 @@ This iterative process of skimming, focusing, connecting, illustrating, and refi
 
 总而言之，`blink/renderer/platform/graphics/filters/filter_effect.cc` 文件定义了 Blink 引擎中处理图形滤镜效果的基础框架，它连接了上层的 CSS/SVG 规范和底层的 Skia 图形库，使得浏览器能够高效且灵活地渲染各种视觉效果。理解这个文件的功能对于深入了解浏览器渲染机制以及排查与滤镜相关的 bug 非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/filter_effect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Alex Mathews <possessedpenguinbob@gmail.com>
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
@@ -361,7 +363,4 @@ void FilterEffect::SetImageFilter(InterpolationSpace interpolation_space,
 }
 
 }  // namespace blink
-
-"""
-
 ```

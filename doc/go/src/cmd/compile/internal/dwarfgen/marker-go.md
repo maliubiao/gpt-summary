@@ -156,15 +156,17 @@ pos2 := src.Pos{} // 假设的结束位置
 
 总而言之，`marker.go` 中的 `ScopeMarker` 结构体及其方法是 Go 编译器用于精确跟踪代码作用域的关键组件，为生成可靠的 DWARF 调试信息提供了基础。它通过维护作用域的层级关系和边界信息，使得调试器能够在源代码级别准确地定位变量和执行上下文。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/dwarfgen/marker.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -259,9 +261,4 @@ func (m *ScopeMarker) compactMarks() {
 	}
 	m.marks = m.marks[:n]
 }
-
-"""
-
-
-
 ```

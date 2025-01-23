@@ -155,15 +155,17 @@ Let's break down the thought process for analyzing the provided C++ code.
 
 总而言之，`RendererResourceCoordinatorImpl.cc` 是 Blink 渲染引擎中一个重要的性能监控组件，它通过跟踪 JavaScript 上下文和 iframe 的生命周期，以及报告主线程的负载状态，为浏览器进程的性能管理器提供了关键的渲染器进程内部信息，以便进行性能分析和优化。它与 JavaScript 和 HTML 有着直接的联系，并能间接地反映与 CSS 相关的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/performance_manager/renderer_resource_coordinator_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -477,7 +479,4 @@ void RendererResourceCoordinatorImpl::DispatchOnV8ContextDestroyed(
 }
 
 }  // namespace blink
-
-"""
-
 ```

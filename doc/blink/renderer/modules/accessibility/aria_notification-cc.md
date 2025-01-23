@@ -192,15 +192,17 @@ Initially, I might have focused solely on the C++ code. However, realizing the c
 
 总而言之，`aria_notification.cc` 文件是 Blink 引擎中处理 ARIA 通知的关键组成部分，它负责管理待发送给辅助技术的通知数据。它的工作依赖于 JavaScript 的触发，并与 HTML 中的 ARIA 属性密切相关。理解这个文件的功能对于开发可访问的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/aria_notification.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ void AriaNotifications::Add(const String& announcement,
 }
 
 }  // namespace blink
-
-"""
-
 ```

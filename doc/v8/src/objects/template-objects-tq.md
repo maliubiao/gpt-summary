@@ -112,15 +112,17 @@ console.log(rawFilePath); // 输出: C:\newline\file.txt
 
 `v8/src/objects/template-objects.tq` 文件定义了 `TemplateObjectDescription` 类，它是 V8 内部用于表示 JavaScript 模板字面量的核心数据结构。它存储了模板字面量的原始和加工后的字符串片段，这对于正确执行和处理模板字面量至关重要。理解这个类的作用有助于我们更好地理解 JavaScript 模板字面量的工作原理，并避免一些潜在的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/template-objects.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/template-objects.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ extern class TemplateObjectDescription extends Struct {
   raw_strings: FixedArray;
   cooked_strings: FixedArray;
 }
-
-"""
-
 ```

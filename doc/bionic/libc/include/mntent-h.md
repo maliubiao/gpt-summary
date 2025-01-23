@@ -330,7 +330,7 @@ except Exception as e:
 
 运行此 Frida 脚本后，每当目标应用程序调用 `getmntent` 函数时，你将在控制台中看到相应的日志信息，包括读取到的挂载点信息。你可以根据需要修改脚本来 Hook 其他函数或执行更复杂的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/mntent.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -341,8 +341,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -416,7 +418,4 @@ char* _Nullable hasmntopt(const struct mntent* _Nonnull __entry, const char* _No
 __END_DECLS
 
 #endif
-
-"""
-
 ```

@@ -204,15 +204,17 @@ console.log(JSON.isRawJSON({})); // 输出: false
 
 总而言之，`v8/src/builtins/builtins-json.cc` 是 V8 引擎中至关重要的文件，它负责实现 JavaScript 中 `JSON` 对象的关键功能，使得 JavaScript 能够方便地处理 JSON 格式的数据。 了解其背后的实现有助于更深入地理解 JavaScript 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-json.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-json.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ BUILTIN(JsonIsRawJson) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

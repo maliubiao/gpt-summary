@@ -136,15 +136,17 @@ cat compressed_data | content_decoder_tool br gzip > decoded_data
 
 总结来说，`content_decoder_tool.cc` 提供了一个用于解码 HTTP 内容编码的实用工具，虽然它本身不是 JavaScript，但其功能是浏览器处理网络请求和响应的关键组成部分，直接影响着 JavaScript 代码能否正常获取和处理网络资源。理解它的功能有助于调试网络相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/content_decoder_tool/content_decoder_tool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ bool ContentDecoderToolProcessInput(std::vector<std::string> content_encodings,
 }
 
 }  // namespace net
-
-"""
-
 ```

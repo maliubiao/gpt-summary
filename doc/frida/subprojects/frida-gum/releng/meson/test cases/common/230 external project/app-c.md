@@ -189,7 +189,7 @@ int call_foo(void) {
 
 因此，这个 `app.c` 文件很可能是一个更复杂调试过程中的一个测试或演示环节，用于验证 Frida 的特定功能或隔离某个特定的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/230 external project/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,15 +197,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libfoo.h>
 
 int main(void)
 {
     return call_foo() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

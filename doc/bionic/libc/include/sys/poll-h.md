@@ -296,7 +296,7 @@ int timeout = 1000; // 1 秒超时
 
 `bionic/libc/include/sys/poll.handroid` 是一个为了兼容性而存在的头文件，它简单地包含了标准的 `<poll.h>`。 真正的功能由 `<poll.h>` 声明的 `poll` 系统调用提供，它允许程序监控多个文件描述符的状态。Android 的网络、输入系统以及 IPC 机制都广泛使用了 `poll` 及其变种。动态链接器负责在程序运行时找到 `poll` 函数的实际地址并进行链接。理解 `poll` 的工作原理和常见错误对于开发高性能的 Android 应用至关重要。通过 Frida 可以方便地 hook 和调试 `poll` 函数的调用过程，无论是从 Java 层还是 Native 层发起的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/poll.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -307,8 +307,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /**
@@ -319,7 +321,4 @@ Prompt:
  */
 
 #include <poll.h>
-
-"""
-
 ```

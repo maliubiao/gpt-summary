@@ -154,15 +154,17 @@ Essentially, I used a combination of code reading, domain knowledge (how browser
 
 总而言之，`IsolatedSVGDocumentHost` 是 Blink 引擎中一个专门用于安全高效地加载和渲染 SVG 图像资源的关键组件，它通过创建一个隔离的环境来限制 SVG 的能力，主要用于 `<img>` 标签和 CSS 背景图像等场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/graphics/isolated_svg_document_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Eric Seidel <eric@webkit.org>
  * Copyright (C) 2008, 2009 Apple Inc. All rights reserved.
@@ -430,7 +432,4 @@ void IsolatedSVGDocumentHost::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -121,7 +121,7 @@ Initially, I might have focused too much on what the *code* does. The prompt, ho
 
 因此，到达 `prog.c` 的路径，以及文件的内容，都暗示着这是一个用于测试 Frida 在 Windows 环境下动态 instrumentation 功能的最小化测试用例。开发者通过运行 Frida 脚本来操作这个程序，并可能通过查看源代码来理解程序的行为，以便调试 Frida 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/2 winmain/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 int APIENTRY
@@ -146,7 +148,4 @@ WinMain(
     ((void)nCmdShow);
     return 0;
 }
-
-"""
-
 ```

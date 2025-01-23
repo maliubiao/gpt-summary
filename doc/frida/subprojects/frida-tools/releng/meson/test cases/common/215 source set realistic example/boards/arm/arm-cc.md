@@ -112,7 +112,7 @@ Frida 作为一个动态插桩工具，其核心功能是允许用户在运行�
 
 总而言之，尽管 `arm.cc` 文件中的代码非常简洁，但它代表了 Frida 对 ARM 架构的抽象和支持，是 Frida 在 ARM 设备上进行动态插桩的基础组成部分。随着 Frida 的发展，`some_arm_thing()` 方法很可能会被用于实现更多 ARM 特有的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/215 source set realistic example/boards/arm/arm.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "arm.h"
 
 const char *ARMBoard::target()
@@ -132,7 +134,4 @@ const char *ARMBoard::target()
 void ARMBoard::some_arm_thing()
 {
 }
-
-"""
-
 ```

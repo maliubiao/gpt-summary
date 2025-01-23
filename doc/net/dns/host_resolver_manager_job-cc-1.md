@@ -130,7 +130,7 @@ fetch('https://www.example.com/api/data');
 
 总而言之，这段代码是 Chromium 网络栈中负责执行 DNS 解析任务的核心组件，它处理了包括 NAT64 转换在内的复杂逻辑，并将解析结果传递给需要这些结果的网络请求，同时记录了重要的性能指标。它的运行直接影响着用户浏览网页的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rNat64Task>(
       key_.host.GetHostnameWithoutBrackets(), key_.network_anonymization_key,
       net_log_, &*key_.resolve_context, resolver_);
@@ -338,8 +340,4 @@ RequestPriority HostResolverManager::Job::priority() const {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

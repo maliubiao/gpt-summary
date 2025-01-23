@@ -151,15 +151,17 @@ By following these steps, I arrive at a comprehensive understanding of the code 
 
 这部分测试代码的核心功能是验证 `AuctionConfig` 对象中 `direct_from_seller_signals` 字段在不同配置下的序列化和反序列化过程的正确性。它通过覆盖多种场景，包括不同的信号来源和 URL 字段，以及非法 URL 的情况，来确保 FLEDGE 功能的关键配置能够被正确地存储和传输。这有助于防止开发者在使用 FLEDGE API 时犯常见的配置错误，并保证了竞价过程的安全性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/auction_config_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 fig.direct_from_seller_signals
           .mutable_value_for_testing()
           ->prefix;
@@ -223,8 +225,4 @@ INSTANTIATE_TEST_SUITE_P(All,
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

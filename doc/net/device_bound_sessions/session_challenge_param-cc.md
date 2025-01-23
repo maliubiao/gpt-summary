@@ -184,15 +184,17 @@ navigator.deviceBoundSession.getChallenge("example.com")
 
 总而言之，`session_challenge_param.cc` 文件在 Chromium 的网络栈中扮演着解析和表示服务器发送的设备绑定会话挑战信息的关键角色，为后续的设备认证流程提供了基础数据。虽然它本身是 C++ 代码，但其处理的信息可能会影响到 JavaScript 环境下的网页行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/session_challenge_param.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ std::vector<SessionChallengeParam> SessionChallengeParam::CreateIfValid(
 }
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

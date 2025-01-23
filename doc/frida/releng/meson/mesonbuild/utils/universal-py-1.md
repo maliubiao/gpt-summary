@@ -143,7 +143,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，`frida/releng/meson/mesonbuild/utils/universal.py` 提供了一组基础的、跨平台的工具函数，支撑着 Frida 的构建过程，涵盖了从操作系统检测到进程执行的多个方面，并处理了构建过程中常见的任务，例如配置文件生成和命令行参数处理。了解这些函数的功能有助于理解 Frida 的构建系统，并在遇到构建问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n that happens, it can be
     # considered an achievement in itself.
     #
@@ -1043,7 +1045,4 @@ def detect_subprojects(spdir_name: str, current_dir: str = '',
         if append_this:
             if basename in result:
                 result[basename].appe
-"""
-
-
 ```

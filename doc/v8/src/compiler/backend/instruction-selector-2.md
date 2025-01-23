@@ -124,12 +124,14 @@ let c = a.add(b);
 
 **总结来说，这部分代码是 V8 引擎将平台无关的中间表示转换为特定硬件平台可执行的机器指令的关键组件，它直接影响着 JavaScript 和 WebAssembly 代码的执行性能。** 这段代码处理了大量的基本运算和类型转换，是 V8 编译器后端的核心部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 turn MarkAsWord32(node), VisitWord32Shr(node);
     case IrOpcode::kWord32Sar:
       return MarkAsWord32(node), VisitWord32Sar(node);
@@ -1554,7 +1556,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitNode(
           return VisitTruncateInt64ToInt32(node);
         case ChangeOp::Kind::kBitcast:
           switch (multi(change.from, change.to)) {
-"""
-
-
 ```

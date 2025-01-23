@@ -184,15 +184,17 @@ By following these steps, I can systematically analyze the provided C++ code and
 
 `ScrollButtonPseudoElement` 是 Blink 渲染引擎中负责处理特定滚动场景下自动生成的滚动按钮的核心类。它通过事件拦截和处理，以及与 `ScrollMarkerGroupPseudoElement` 的协作，实现了基于滚动标记的导航功能。理解这个类的功能有助于我们更好地理解浏览器如何处理复杂的滚动交互，以及如何通过 CSS 和 JavaScript 与这些机制进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/scroll_button_pseudo_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ void ScrollButtonPseudoElement::Trace(Visitor* v) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

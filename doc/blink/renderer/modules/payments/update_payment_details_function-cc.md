@@ -199,15 +199,17 @@ By following these steps, a debugger could be used to trace the execution flow a
 
 通过在浏览器开发者工具中设置断点，可以跟踪 JavaScript 代码的执行流程，查看 `onshippingaddresschange` 或 `onpaymentmethodchange` 事件处理函数的调用情况，以及 `evt.updateWith()` 方法的参数。如果怀疑问题出在 C++ 层，可以编译 Chromium 的调试版本，并在 `UpdatePaymentDetailsResolve::React` 或 `UpdatePaymentDetailsReject::React` 方法中设置断点，查看传入的 `value` 或 `script_state` 和 `value` 的内容，以及 `delegate_` 的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/update_payment_details_function.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void UpdatePaymentDetailsReject::React(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
 ```

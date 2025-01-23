@@ -233,14 +233,16 @@ By following these steps, a comprehensive understanding of the `v8/src/builtins/
 
 `v8/src/builtins/reflect.tq` 文件使用 V8 的 Torque 语言实现了 `Reflect` 对象的多个核心方法。这些方法提供了对 JavaScript 对象进行元编程的能力，例如检查对象的可扩展性，获取和设置原型，获取和删除属性，以及获取属性描述符。理解这些方法的功能和使用场景对于编写更高级和灵活的 JavaScript 代码至关重要。  V8 团队使用 Torque 这样的语言来确保这些内置函数的性能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/reflect.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ transitioning javascript builtin ReflectGetOwnPropertyDescriptor(
   return object::FromPropertyDescriptor(desc);
 }
 }  // namespace reflect
-
-"""
-
 ```

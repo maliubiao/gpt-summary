@@ -186,14 +186,16 @@ By following this process, which involves understanding the code's purpose, iden
 
 `harfbuzz_face.cc` 是 Blink 渲染引擎中至关重要的一个文件，它将 Blink 的字体系统与强大的文本塑形引擎 HarfBuzz 连接起来。它负责字形的查找、属性的获取，并处理复杂的文本特性，如连字和变体选择。理解这个文件的功能有助于理解浏览器如何将文本内容转化为最终在屏幕上呈现的图像。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_face.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2012 Google Inc. All rights reserved.
  *
@@ -927,7 +929,4 @@ void HarfBuzzFace::Init() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

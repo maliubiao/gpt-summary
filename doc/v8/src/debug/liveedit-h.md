@@ -173,15 +173,17 @@ V8 的 LiveEdit 功能会检测到这个变化，并尝试在不中断程序执�
 
 `v8/src/debug/liveedit.h` 定义了 V8 中实现实时代码编辑的关键机制，允许在运行时动态更新 JavaScript 代码。理解其功能有助于深入了解 V8 的调试能力和动态特性。虽然 LiveEdit 非常方便，但在使用时需要注意潜在的编程错误，以避免引入不一致的状态或导致程序崩溃。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/liveedit.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/liveedit.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ class V8_EXPORT_PRIVATE LiveEdit : AllStatic {
 }  // namespace v8
 
 #endif  // V8_DEBUG_LIVEEDIT_H_
-
-"""
-
 ```

@@ -223,15 +223,17 @@ go test go/test/fixedbugs/issue6295.go
 
 `go/test/fixedbugs/issue6295.go` 本身是一个简单的包声明，但它背后的目的是验证 Go 语言编译器在处理导入包含未导出方法的包时，能够正确地维护这些未导出方法的元数据信息。这个测试文件是 Go 语言开发流程中确保编译器正确性和稳定性的重要组成部分。它侧面反映了 Go 语言在处理包的可见性规则和元数据信息方面的细节考虑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6295.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -242,9 +244,4 @@ Prompt:
 // is corrupted during import.
 
 package ignored
-
-"""
-
-
-
 ```

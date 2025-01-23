@@ -166,14 +166,16 @@ By following these steps, we can construct a comprehensive and accurate response
 
 `blink/renderer/platform/network/server_timing_header.cc` 文件在 Chromium 渲染引擎中扮演着解析和存储 HTTP `Server-Timing` 头信息的关键角色。虽然它本身是 C++ 代码，但其解析的结果直接影响到 JavaScript 中 Performance API 提供的数据，从而帮助开发者进行前端性能监控和分析。了解其工作原理可以帮助开发者在服务器端正确地生成 `Server-Timing` 头部，避免常见的错误，并最终提升 Web 应用的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/server_timing_header.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void ServerTimingHeader::SetParameter(StringView name, String value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

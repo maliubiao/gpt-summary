@@ -145,7 +145,7 @@ Parse error
 
 总而言之，`prog.c` 是一个用于解析特定输入格式的简单程序，它在 Frida 的测试环境中扮演着验证 Frida 功能是否正确处理这些输入格式的角色。 理解其工作原理需要对 C 语言编程、Linux 系统调用、编译器构造 (特别是 `lex` 和 `yacc`) 以及 Frida 的基本概念有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/8 flex/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"parser.tab.h"
 #include<unistd.h>
 #include<sys/types.h>
@@ -185,7 +187,4 @@ int yyerror(void) {
      printf("Parse error\n");
      exit(1);
 }
-
-"""
-
 ```

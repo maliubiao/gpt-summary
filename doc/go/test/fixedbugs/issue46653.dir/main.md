@@ -120,15 +120,17 @@ func main() {
 
 在这个例子中，即使键不存在，`val` 也不会是 `nil`，而是 `MyStruct` 的零值，即 `{Data:[0 0 0]}`。  理解这种零值行为对于正确处理 map 的返回值非常重要。 在 `issue46653.dir/main.go` 的上下文中，理解 `L` 和 `Data` 的零值尤其重要，因为 `Data` 包含一个数组 `[22][]string`，其零值是包含 22 个 `nil` 切片的数组，而不是一个 `nil` 的数组或切片。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue46653.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -156,9 +158,4 @@ type L struct {
 type Data struct {
 	F1 [22][]string
 }
-
-"""
-
-
-
 ```

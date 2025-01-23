@@ -122,7 +122,7 @@ process.Continue()
 3. **返回值检查**：在每次调用 `next_value()` 后检查返回值，确保没有越界或空指针异常。
 
 通过这些步骤，用户可以逐步调试 `CFArray<T>` 类的功能，确保其正常工作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/base/corefoundation.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class CFArray<T> {
 		private CoreFoundation.Array handle;
@@ -167,7 +169,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

@@ -104,7 +104,7 @@ By following this kind of structured thought process, combining knowledge of C, 
 
 总而言之，`prog.c` 是一个简单的 C 程序，它利用 `flex` 和 `yacc`/`bison` 来解析输入文件。它在 Frida 项目中作为一个测试用例存在，用于验证 Frida 与这类程序的交互能力，这对于动态插桩和逆向分析具有重要的意义。通过分析这个程序及其相关的 `flex` 和 `bison` 文件，可以了解 Frida 如何处理目标程序的数据输入和解析过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/8 flex/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"parser.tab.h"
 #include<unistd.h>
 #include<sys/types.h>
@@ -144,7 +146,4 @@ int yyerror(void) {
      printf("Parse error\n");
      exit(1);
 }
-
-"""
-
 ```

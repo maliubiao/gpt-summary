@@ -171,15 +171,17 @@ Based on this analysis, I can now construct the summary.
 
 总结来说，`ResourceFetcher` 是 Blink 引擎中负责资源获取和管理的关键组件，它处理了从发起请求到加载完成（或失败）的整个生命周期，并包含了诸如预加载优化、优先级控制、缓存管理等重要功能，直接关系到 Web 页面的加载性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 State::kWarnedUnused;
   }
 
@@ -1031,7 +1033,4 @@ bool ResourceFetcher::IsPotentiallyUnusedPreload(
     const FetchParameters& params) const {
   static const bool kDeferUnusedPreload =
       b
-"""
-
-
 ```

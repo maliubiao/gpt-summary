@@ -113,7 +113,7 @@ func main() {
 
 `go/src/internal/bytealg/index_generic.go` 提供了一个在缺乏特定架构优化时使用的通用的字节切片和字符串查找功能的接口定义。它本身并没有实际的实现，而是作为一种回退机制存在。在实际编程中，开发者应该使用 `bytes.Index` 和 `strings.Index`，而不用直接操作 `internal` 包中的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/index_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -121,8 +121,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -152,9 +154,4 @@ func IndexString(a, b string) int {
 func Cutover(n int) int {
 	panic("unimplemented")
 }
-
-"""
-
-
-
 ```

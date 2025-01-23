@@ -170,15 +170,17 @@ JavaScript 代码虽然不能直接调用 `HttpAuthChallengeTokenizer`，但是�
 
 总而言之，`http_auth_challenge_tokenizer.cc` 在 Chromium 的网络栈中扮演着关键的角色，负责将服务器发送的认证质询字符串解析成结构化的数据，供浏览器后续的认证流程使用。虽然 JavaScript 代码不能直接调用它，但其功能直接影响了基于 JavaScript 的 Web 应用的身份验证体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_auth_challenge_tokenizer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ void HttpAuthChallengeTokenizer::Init(std::string_view challenge) {
 }
 
 }  // namespace net
-
-"""
-
 ```

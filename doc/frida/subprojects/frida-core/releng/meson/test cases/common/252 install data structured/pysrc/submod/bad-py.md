@@ -81,7 +81,7 @@ Here's a breakdown of the thinking process to analyze the given Python code snip
 
 总而言之，`bad.py` 虽然代码简单，但在 Frida 的持续集成和质量保证流程中扮演着重要的角色，确保了最终用户获得的 Frida 工具是可靠且符合预期的。它是一个微小的细节，但反映了软件工程中对细节的关注和对潜在问题的防范。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/252 install data structured/pysrc/submod/bad.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,10 +89,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.submod.bad should not be installed'''
-
-"""
-
 ```

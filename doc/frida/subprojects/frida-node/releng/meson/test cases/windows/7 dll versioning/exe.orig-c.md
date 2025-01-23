@@ -159,7 +159,7 @@ Once these points are clear, the next step is to structure the answer logically,
 
 总而言之，用户之所以会查看 `exe.orig.c` 的源代码，通常是因为在调试过程中，需要理解程序的结构和它所依赖的外部组件，以便进一步分析问题。  尤其是在处理动态链接和版本控制相关的问题时，理解程序如何调用外部函数是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/7 dll versioning/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main(void)
@@ -177,7 +179,4 @@ int main(void)
     return 0;
   return 1;
 }
-
-"""
-
 ```

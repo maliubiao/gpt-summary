@@ -644,7 +644,7 @@ MaybeHandle<JSReceiver> ToTemporalTimeZone(
     }
     // c. Set temporalTimeZoneLike to ?
     // Get(temporalTimeZoneLike
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -652,10 +652,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共25部分，请归纳一下它的功能
+```
 
-"""
-
-        isolate, NewRangeError(MessageTemplate::kInvalidCalendar, identifier));
+### 源代码
+```cpp
+isolate, NewRangeError(MessageTemplate::kInvalidCalendar, identifier));
   }
   // 5. Return ? CreateTemporalCalendar(identifier).
   return CreateTemporalCalendar(isolate, identifier);
@@ -1386,7 +1387,4 @@ Handle<String> FormatTimeZoneOffsetString(Isolate* isolate,
   // 9. Let m be ToZeroPaddedDecimalString(minutes, 2).
   builder.AppendCharacter(':');
   ToZeroPadde
-"""
-
-
 ```

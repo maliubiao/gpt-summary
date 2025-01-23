@@ -178,15 +178,17 @@ V8 引擎在内部实现 `toFixed()` 方法时，很可能使用了类似的底�
 
 `v8/test/unittests/base/fixed-dtoa-unittest.cc` 是一个用于测试 V8 引擎中 `FastFixedDtoa` 函数的单元测试文件。该函数的功能是将浮点数转换为固定精度的字符串表示，类似于 JavaScript 中的 `Number.prototype.toFixed()` 方法。 理解这个测试文件可以帮助开发者更好地理解 V8 内部是如何处理数字字符串转换的，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/fixed-dtoa-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/fixed-dtoa-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -699,7 +701,4 @@ TEST_F(FixedDtoaTest, FastFixedDtoaGayFixed) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

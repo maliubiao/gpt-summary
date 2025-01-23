@@ -273,7 +273,7 @@ By following this structured approach, I can systematically analyze the code and
 
 总而言之，`fileapi.py` 是 Frida 与 CMake 构建系统交互的关键桥梁，它使得 Frida 能够理解目标程序的构建方式，为后续的动态分析和插桩提供必要的信息。理解这个文件的功能和工作原理，对于解决 Frida 在处理 CMake 构建项目时可能遇到的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/cmake/fileapi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -281,8 +281,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -607,7 +609,4 @@ class CMakeFileAPI:
         for i in data.keys():
             assert isinstance(i, str)
         return data
-
-"""
-
 ```

@@ -77,15 +77,17 @@ CSP 与 JavaScript, HTML, CSS 的功能紧密相关，因为它直接控制了�
 
 总而言之，`content_security_policy_test.cc` 的这一部分主要关注于测试 `ContentSecurityPolicy` 类解析和应用各种基本 CSP 指令的能力，以及它与网页中 JavaScript, HTML 和 CSS 元素交互时的行为。它通过各种测试用例来验证 CSP 功能的正确性，为 Chromium 浏览器的安全机制提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/content_security_policy_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -767,7 +769,4 @@ TEST_F(ContentSecurityPolicyTest, FilesystemAllowedWhenBypassingCSP) {
   execution_context->GetSecurityContext().SetSecurityOrigin(
       secure_origin);                     // https://example.com
   execution_context->SetURL(se
-"""
-
-
 ```

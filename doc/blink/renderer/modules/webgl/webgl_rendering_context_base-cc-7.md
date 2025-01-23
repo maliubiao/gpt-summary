@@ -143,7 +143,7 @@ Therefore, the core functionality revolves around getting data into textures and
 
 这部分代码主要负责 **将各种来源的图像、视频和像素数据加载到 WebGL 纹理中，设置纹理的过滤和环绕等参数，以及将数据传递给 WebGL shader 中的 uniform 变量**。它是 WebGL 渲染管线中至关重要的一部分，负责为 GPU 提供渲染所需的纹理数据和控制参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ge> image = context_host->GetSourceImageForCanvas(
       FlushReason::kWebGLTexImage, &source_image_status,
       gfx::SizeF(*params.width, *params.height), kPremultiplyAlpha);
@@ -981,7 +983,4 @@ void WebGLRenderingContextBase::uniformMatrix2fv(
     return;
   }
   ContextGL()->Unifor
-"""
-
-
 ```

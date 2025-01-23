@@ -134,7 +134,7 @@ func Appendp(last *Prog, pa ProgAlloc) *Prog {
 
 总而言之，这段代码是 Go 语言链接器的核心组成部分，负责管理链接过程中的状态，处理基本的链接操作，并为特定架构的链接行为提供抽象。它为后续的链接阶段提供了必要的数据结构和方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/link.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ks
 	Bso                *bufio.Writer
 	Pathname           string
@@ -255,10 +257,4 @@ type LinkArch struct {
 	UnaryDst       map[As]bool // Instruction takes one operand, a destination.
 	DWARFRegisters map[int16]int16
 }
-
-"""
-
-
-
-
 ```

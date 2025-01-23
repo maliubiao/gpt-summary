@@ -188,15 +188,17 @@ The comment in the code correctly points out that if a file ends with `.tq`, it'
 
 `late-load-elimination-reducer.h` defines a crucial optimization pass in V8's Turboshaft compiler. It leverages sophisticated techniques to track memory state, understand aliasing, and safely remove redundant load operations, leading to more efficient JavaScript execution. The code uses data structures like `MemoryContentTable` and snapshot tables to manage the complexity of load elimination in the presence of aliasing and dynamic behavior.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/late-load-elimination-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/late-load-elimination-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1034,7 +1036,4 @@ class V8_EXPORT_PRIVATE LateLoadEliminationReducer : public Next {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_LATE_LOAD_ELIMINATION_REDUCER_H_
-
-"""
-
 ```

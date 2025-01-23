@@ -138,15 +138,17 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 在这种情况下，开发者可能会查看 `shared_buffer_reader_test.cc` 的相关测试用例，以了解 `SharedBufferReader` 的正确使用方式和边界条件。通过断点调试或日志输出，可以跟踪数据是如何从网络传输到 `SharedBuffer`，然后如何被 `SharedBufferReader` 读取，从而定位问题所在。例如，可以检查 `ReadData` 的返回值，以及读取到的数据内容是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/parser/shared_buffer_reader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -262,7 +264,4 @@ TEST(SharedBufferReaderTest, clearSharedBufferBetweenCallsToReadData) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

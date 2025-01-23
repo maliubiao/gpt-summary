@@ -300,7 +300,7 @@ if (subscribeAddress) {
 
 通过这种方式，你可以使用 Frida 动态地分析 Native 代码与 Netfilter 的交互，理解其如何使用 `nfnetlink.h` 中定义的常量和结构体。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nfnetlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -378,7 +380,4 @@ enum nfnl_batch_attributes {
 };
 #define NFNL_BATCH_MAX (__NFNL_BATCH_MAX - 1)
 #endif
-
-"""
-
 ```

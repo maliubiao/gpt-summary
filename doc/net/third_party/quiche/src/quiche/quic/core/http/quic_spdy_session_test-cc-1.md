@@ -124,7 +124,7 @@ The provided code snippet focuses on testing various aspects of the `QuicSpdySes
 
 这段代码是 `QuicSpdySession` 类的单元测试，涵盖了其在各种网络场景下的核心功能，特别是与流管理、拥塞控制、数据发送和错误处理相关的逻辑。理解这些测试用例有助于理解 QUIC 协议和 Chromium 网络栈的工作原理，并能帮助开发者排查网络相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 illRepeatedly(Return(WriteResult(WRITE_STATUS_OK, 0)));
 
   TestStream* stream2 = session_->CreateOutgoingBidirectionalStream();
@@ -935,7 +937,4 @@ TEST_P(QuicSpdySessionTestServer, InvalidStreamFlowControlWindowInHandshake) {
   // the peer results in the connection being torn down.
   const uint32_t kInvalidWindow = kMinimumFlowControlSendWindow - 1;
   QuicConfigPeer::SetRec
-"""
-
-
 ```

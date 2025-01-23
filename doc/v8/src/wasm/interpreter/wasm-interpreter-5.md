@@ -111,13 +111,15 @@ runWasm();
 
 考虑到这是第6部分，可以推测之前的模块可能负责 WebAssembly 模块的加载、解析、验证等前期工作。 这部分 `wasm-interpreter.cc` 作为核心的执行引擎，负责具体的指令翻译和模拟执行。  后续的模块可能涉及优化、编译或其他运行时支持。  因此，第6部分专注于 **WebAssembly 解释器的核心执行逻辑和状态管理**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
- ctype, type, op_ctype, op_type, operation) \
+### 源代码
+```
+ctype, type, op_ctype, op_type, operation) \
   case kExpr##name: {                                                       \
     MachineType memtype = MachineType::Type();                              \
     MemoryAccessImmediate imm(decoder, code->at(pc + *len),                 \
@@ -1962,7 +1964,4 @@ RegMode WasmBytecodeGenerator::EncodeInstruction(const WasmInstruction& instr,
         return RegMode::kNoReg;                   \
       case kS2R:                                  \
         EMIT_INSTR_HANDLER(s2r_
-"""
-
-
 ```

@@ -109,11 +109,13 @@ simulateProfiling();
 
 `signals-and-mutexes-unittest.cc` 这个 C++ 测试文件是 V8 引擎质量保证的一部分，它确保了在并发环境下，当涉及到性能分析和对共享资源的访问时，V8 内部使用的信号处理和互斥锁机制能够可靠地工作，从而保证 JavaScript 代码的正确性和性能。  它侧重于 V8 引擎的底层实现，而 JavaScript 开发者通常不需要直接关心这些细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libsampler/signals-and-mutexes-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ TEST_F(SignalAndMutexTest, SignalsPlusSharedMutexes) {
 
 }  // namespace sampler
 }  // namespace v8
-
-"""
-
 ```

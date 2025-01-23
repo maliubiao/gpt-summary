@@ -132,7 +132,7 @@ if cmplx.IsNaN(c) { // This is the correct way to check for NaN
 
 Therefore, always use functions like `cmplx.IsNaN()` to check for NaN components in complex numbers when writing tests or comparisons.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmplxdivide1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ex(inf, -1), complex(zero, -1), complex(nan, inf)},
 	{complex(inf, -1), complex(zero, 2), complex(nan, -inf)},
 	{complex(inf, -1), complex(nan, nan), complex(nan, nan)},
@@ -972,10 +974,4 @@ ex(inf, -1), complex(zero, -1), complex(nan, inf)},
 	{complex(nan, -inf), complex(nan, inf), complex(nan, nan)},
 	{complex(nan, -inf), complex(nan, -inf), complex(nan, nan)},
 }
-
-"""
-
-
-
-
 ```

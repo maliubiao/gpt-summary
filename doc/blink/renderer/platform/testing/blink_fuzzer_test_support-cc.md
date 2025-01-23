@@ -115,14 +115,16 @@ This structured approach helps to systematically analyze the code, connect its c
 
 `blink_fuzzer_test_support.cc` 是 Blink 引擎模糊测试的关键支撑代码。它负责建立和清理一个适合测试 Blink 组件的环境。虽然它不直接处理 JavaScript、HTML 或 CSS，但它是为了能够有效地测试处理这些技术的 Blink 代码而存在的。理解其功能对于编写和调试 Blink 相关的模糊测试用例至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/blink_fuzzer_test_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ BlinkFuzzerTestSupport::~BlinkFuzzerTestSupport() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

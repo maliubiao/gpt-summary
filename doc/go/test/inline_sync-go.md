@@ -181,15 +181,17 @@ go test -gcflags='-m' go/test/inline_sync.go
 
 总而言之，`go/test/inline_sync.go` 是 Go 编译器测试套件的一部分，用于验证 `sync` 包中某些函数的快速路径是否能够被成功内联，从而提高性能。 它通过检查编译器的诊断输出来实现这一目的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_sync.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m
 
 //go:build !nacl && !386 && !wasm && !arm && !gcflags_noopt
@@ -243,9 +245,4 @@ func small9() { // ERROR "can inline small9"
 	// the RLock fast path should be inlined
 	rwmutex.RLock() // ERROR "inlining call to sync\.\(\*RWMutex\)\.RLock" "inlining call to atomic\.\(\*Int32\)\.Add"
 }
-
-"""
-
-
-
 ```

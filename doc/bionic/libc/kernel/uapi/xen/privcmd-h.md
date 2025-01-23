@@ -310,7 +310,7 @@ if __name__ == "__main__":
 
 总结来说，这个头文件定义了 Android 作为 Xen 虚拟机 guest OS 与 hypervisor 进行特权通信的底层接口。它本身不包含 libc 函数的实现，而是定义了与 `ioctl` 系统调用一起使用的数据结构和命令码。理解这些定义对于分析和调试 Android 在 Xen 环境中的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/xen/privcmd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -321,8 +321,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -417,7 +419,4 @@ struct privcmd_pcidev_get_gsi {
 #define IOCTL_PRIVCMD_IOEVENTFD _IOW('P', 9, struct privcmd_ioeventfd)
 #define IOCTL_PRIVCMD_PCIDEV_GET_GSI _IOC(_IOC_NONE, 'P', 10, sizeof(struct privcmd_pcidev_get_gsi))
 #endif
-
-"""
-
 ```

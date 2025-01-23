@@ -221,15 +221,17 @@ const doubled = arr.map(x => x * 2);
 
 `v8/src/compiler/js-call-reducer.h` 定义了 V8 编译器中负责优化 JavaScript 函数调用的关键组件。它通过识别常见的调用模式并将其转换为更高效的内部操作来实现性能提升。理解 `JSCallReducer` 的工作原理可以帮助开发者编写更易于 V8 优化的 JavaScript 代码。记住，提供的文件是 `.h` 结尾，表明它是 C++ 头文件，定义了 `JSCallReducer` 类的接口。 如果以 `.tq` 结尾，则会是 Torque 源代码，包含具体的实现逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -548,7 +550,4 @@ class V8_EXPORT_PRIVATE JSCallReducer final : public AdvancedReducer {
 }  // namespace v8
 
 #endif  // V8_COMPILER_JS_CALL_REDUCER_H_
-
-"""
-
 ```

@@ -194,15 +194,17 @@ By following this structured approach, I can effectively analyze the code and pr
 
 总而言之，`transport_security_state.cc` 是 Chromium 中一个关键的安全组件，它通过管理 HSTS 和 (过去的) HPKP 策略，强制浏览器尽可能使用安全的 HTTPS 连接，并防止某些类型的中间人攻击。 理解它的功能对于 Web 开发者和网络安全研究人员来说都非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/transport_security_state.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1150,7 +1152,4 @@ bool TransportSecurityState::IsStaticPKPListTimely() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

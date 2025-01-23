@@ -86,15 +86,17 @@ Here's a thinking process to arrive at the explanation of `websocket_deflate_pre
 
 总而言之，`websocket_deflate_predictor_impl.cc` 提供了一个最基础的 WebSocket DEFLATE 压缩预测实现，它简单地强制启用压缩。在实际使用中，Chromium 可能会有更复杂的预测器实现来根据实际情况进行更智能的压缩决策。 开发者在调试 WebSocket 压缩相关问题时，理解这个简单的实现有助于理解整个压缩流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_deflate_predictor_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -118,7 +120,4 @@ void WebSocketDeflatePredictorImpl::RecordWrittenDataFrame(
     const WebSocketFrame* frame) {}
 
 }  // namespace net
-
-"""
-
 ```

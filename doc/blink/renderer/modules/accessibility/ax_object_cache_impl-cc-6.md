@@ -174,7 +174,7 @@ Here's a breakdown of how to analyze the code and address each of the user's req
 
 这部分 `AXObjectCacheImpl.cc` 的代码主要负责 **Accessibility 树的增量更新和序列化**。它的核心任务是监听 Blink 渲染引擎中发生的 DOM 变化和其他相关事件，并高效地将这些变化转化为 Accessibility 树的更新信息，最终通过序列化机制发送到浏览器进程，以便浏览器能够将最新的 Accessibility 信息传递给辅助技术。它涉及到标记需要更新的对象、收集位置变化、处理用户交互引起的焦点和内容变化，以及管理序列化过程。 这部分是 Accessibility 功能的核心组成部分，确保了辅助技术能够及时准确地获取网页的最新状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 anged_bounds_ids_.clear();
   cached_bounding_boxes_.clear();
 
@@ -1086,7 +1088,4 @@ void AXObjectCacheImpl::SetCachedBoundingBox(AXID id,
                                              const int scroll_x,
                                              const int scroll_y) {
   // When a bounding box of a node is serial
-"""
-
-
 ```

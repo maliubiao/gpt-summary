@@ -123,14 +123,16 @@ By following this structured approach, breaking down the code, connecting it to 
 
 `PollableThreadSafeFlag` 是 Chromium 渲染引擎中用于线程间同步的一个基础构建块。它通过原子操作和显式的锁机制，提供了一种安全的方式来管理和查询共享的布尔状态。虽然 JavaScript, HTML, CSS 开发者不会直接操作这个类，但它的存在对于保证浏览器内部各个组件的正确协作至关重要，从而支持了 Web 应用的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/pollable_thread_safe_flag.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ void PollableThreadSafeFlag::SetWhileLocked(bool value) {
 bool PollableThreadSafeFlag::IsSet() const {
   return flag_.load(std::memory_order_acquire);
 }
-
-"""
-
 ```

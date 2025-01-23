@@ -74,7 +74,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `dtx.vala` 文件实现了 DTX 协议的序列化和反序列化功能，支持多种数据类型的处理。通过 LLDB 调试工具，用户可以观察和验证这些功能的正确性。用户在使用时需要注意数据类型匹配和内存管理，以避免常见的错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/dtx.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -84,8 +84,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 blic DTXArgumentListBuilder () {
 			blob.seek (PRIMITIVE_DICTIONARY_HEADER_SIZE);
 		}
@@ -316,8 +318,4 @@ blic DTXArgumentListBuilder () {
 		}
 	}
 }
-
-"""
-
-
 ```

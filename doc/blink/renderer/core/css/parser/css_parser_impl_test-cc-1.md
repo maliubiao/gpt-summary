@@ -103,7 +103,7 @@ I need to:
 
 总而言之，这部分测试代码专注于验证 `CSSParserImpl` 类对于一些相对较新或特定的 CSS 特性的解析能力，确保 Blink 引擎能够正确理解和处理这些 CSS 代码。 这对于保证 Web 页面的正常渲染和开发者能够使用最新的 CSS 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 RT_EQ(2u, barbaz->GetNames().size());
     ASSERT_EQ(1u, barbaz->GetNames()[0].size());
     EXPECT_EQ("bar", barbaz->GetNames()[0][0]);
@@ -731,8 +733,4 @@ TEST(CSSParserImplTest, InvalidRuleError) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

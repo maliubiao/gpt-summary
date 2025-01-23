@@ -143,14 +143,16 @@ By following these steps, we can systematically dissect the code and provide a c
 
 总之，`foreign_layer_display_item.cc` 文件定义了 Blink 渲染引擎中用于表示外部合成层的关键数据结构，它在连接 Web 技术（HTML, CSS, JavaScript）与底层渲染实现方面发挥着重要的作用，确保了各种复杂的页面元素能够被高效地渲染出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/foreign_layer_display_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ void RecordForeignLayer(GraphicsContext& context,
 }
 
 }  // namespace blink
-
-"""
-
 ```

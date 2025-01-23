@@ -189,15 +189,17 @@ setInterval(() => {
 
 `v8/src/objects/js-struct.h` 定义了 V8 内部用于表示共享结构化数据的关键类。它与 Torque 集成，利用 Torque 生成高效的代码。虽然普通 JavaScript 开发者不会直接接触到这些类，但理解其背后的原理有助于理解 V8 如何处理共享数据，并避免在使用共享内存等特性时出现常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-struct.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-struct.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ class SharedStructTypeRegistry final {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_STRUCT_H_
-
-"""
-
 ```

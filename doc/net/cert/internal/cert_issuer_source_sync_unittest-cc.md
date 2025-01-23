@@ -129,15 +129,17 @@ By following these steps, we can construct a detailed and accurate answer that a
 
 总而言之， `net/cert/internal/cert_issuer_source_sync_unittest.cc`  虽然是一个幕后的测试文件，但它对于保证 Chromium 网络栈在处理 HTTPS 连接时的安全性和可靠性至关重要。 它通过严格的测试来确保 `CertIssuerSource` 组件能够在各种场景下正确地同步证书签发者信息，从而保护用户的网络安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/cert_issuer_source_sync_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST(
 GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST(CertIssuerSourceSyncTest);
 
 }  // namespace net
-
-"""
-
 ```

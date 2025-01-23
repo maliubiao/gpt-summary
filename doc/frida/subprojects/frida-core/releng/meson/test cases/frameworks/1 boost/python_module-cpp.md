@@ -211,7 +211,7 @@ script.load()
 
 当用户在调试过程中遇到问题，例如模块无法加载或行为不符合预期时，可能会回到 `python_module.cpp` 文件，检查 C++ 代码的逻辑，确认 Boost.Python 的使用是否正确，以及方法是否正确地暴露给了 Python。  理解这个文件的功能和它在 Frida 框架中的作用，是解决相关问题的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/1 boost/python_module.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -219,8 +219,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #include <boost/python.hpp>
@@ -243,7 +245,4 @@ BOOST_PYTHON_MODULE(MOD_NAME)
         .def("version", &World::version)
     ;
 }
-
-"""
-
 ```

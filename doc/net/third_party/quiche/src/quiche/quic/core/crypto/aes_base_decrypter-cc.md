@@ -160,15 +160,17 @@ Let's break down the thought process for analyzing the given C++ code snippet.
 
 总而言之，`aes_base_decrypter.cc` 是 Chromium QUIC 协议实现中一个至关重要的组成部分，负责提供基础的 AES 解密能力，特别是用于保护 QUIC 数据包的头部信息，确保通信的安全性和完整性。虽然它不直接与 JavaScript 交互，但它支撑着基于 JavaScript 的 Web 应用的网络通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/aes_base_decrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ QuicPacketCount AesBaseDecrypter::GetIntegrityLimit() const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

@@ -141,7 +141,7 @@ This systematic approach allows me to cover all aspects of the prompt, from unde
 
 `prog.py` 脚本本身是一个非常简单的 Python 程序，其主要目的是调用 `gluon.gluonator.gluoninate()` 并断言其返回值是否为 42。它的存在是为了在 Frida 的测试框架中作为一个目标程序，验证 Frida 的动态插桩能力。理解这个脚本的功能以及它可能涉及的底层技术，有助于理解 Frida 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python/1 basic/prog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from gluon import gluonator
@@ -159,7 +161,4 @@ print('Running mainprog from root dir.')
 
 if gluonator.gluoninate() != 42:
     raise ValueError("!= 42")
-
-"""
-
 ```

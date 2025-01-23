@@ -125,11 +125,13 @@ TEST(FunctionTesterTest, SimpleAddition) {
 
 `function-tester.cc` 提供了一个强大的工具，允许 V8 开发人员在 C++ 环境中方便地测试 JavaScript 代码的编译和执行过程。它通过模拟 JavaScript 的执行环境，并提供创建和操作 V8 内部对象的能力，使得对编译器各个环节的单元测试成为可能，从而保证 V8 引擎的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/function-tester.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ Handle<JSFunction> FunctionTester::Optimize(Handle<JSFunction> function,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

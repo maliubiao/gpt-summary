@@ -101,12 +101,14 @@ console.log(obj.z); // V8 内部使用 GetProperty 沿着原型链查找属性 z
 
 总而言之，`v8/src/builtins/builtins-internal-gen.cc` 文件定义了 V8 引擎执行 JavaScript 代码时所需的核心、底层的操作，这些操作是 JavaScript 语言特性的幕后功臣。开发者虽然不直接调用它们，但所有的 JavaScript 代码执行都依赖于这些内置函数的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-internal-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1797,7 +1799,4 @@ TF_BUILTIN(InstantiateAsmJs, CodeStubAssembler) {
   TNode<Code> code = LoadJSFunctionCode(function);
   TailCallJSCode(code, context, function, new_target, arg_count,
                  disp
-"""
-
-
 ```

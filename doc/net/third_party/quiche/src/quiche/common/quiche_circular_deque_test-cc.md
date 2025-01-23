@@ -175,15 +175,17 @@ EXPECT_THAT(dq, ElementsAre(Foo(2), Foo(3), Foo(4), Foo(1)));
 
 总而言之，`quiche_circular_deque_test.cc` 是确保 `QuicheCircularDeque` 类正确性和可靠性的关键部分。它通过各种测试用例覆盖了该类的主要功能和边界情况，为 Chromium 网络栈的稳定运行提供了保障。 尽管用户不会直接与这个文件交互，但这个文件中测试的 `QuicheCircularDeque` 类在底层支撑着浏览器的网络通信功能，最终影响用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/quiche_circular_deque_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -985,7 +987,4 @@ TEST_F(QuicheCircularDequeTest, Swap) {
   EXPECT_QUICHE_DEBUG_DEATH(swap(dq5, dq6), "Undefined swap behavior");
 }
 }  // namespace
-
-"""
-
 ```

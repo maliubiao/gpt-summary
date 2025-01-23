@@ -102,7 +102,7 @@ Let's break down the thought process to analyze this seemingly simple C code sni
 
 调试人员会查看相关的 Frida 代码，特别是负责进程监控和错误处理的部分，以及测试框架中关于这个特定测试用例的断言逻辑，来定位问题的原因。 他们可能会使用 GDB 或其他调试工具来跟踪 Frida 的执行流程，观察其如何与目标进程交互，并分析其如何处理目标进程的退出事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/68 should fail/failing.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,12 +110,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 1;
 }
-
-"""
-
 ```

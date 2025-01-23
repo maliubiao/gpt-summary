@@ -294,7 +294,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以观察到目标应用何时调用了 `clock_gettime` 函数，以及传递的参数和返回值，从而了解 Android Framework 或 NDK 代码是如何一步步地使用到 Bionic 的时间相关函数的。你可以修改脚本来 Hook 其他 `time.h` 中声明的函数，以调试不同的时间相关操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/time_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -417,7 +419,4 @@ static void time_h() {
   long l = timezone;
   char** sp = tzname;
 }
-
-"""
-
 ```

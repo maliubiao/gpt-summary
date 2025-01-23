@@ -91,14 +91,16 @@ By following this detailed thought process, we can arrive at a comprehensive and
 
 `blink/common/rust_crash/rust_crash.cc` 是一个专门为测试目的而设计的工具，用于模拟和验证 Blink 引擎在混合语言环境下处理 Rust 代码崩溃的能力。它通过提供一个简单的 C++ 入口点来触发 Rust 代码中的故意崩溃，从而帮助开发者确保 Blink 在面对潜在的 Rust 代码错误时能够保持稳定和健壮。它与 JavaScript, HTML, CSS 的关系是间接的，服务于保证处理这些技术相关功能的 Rust 代码的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/rust_crash/rust_crash.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -116,7 +118,4 @@ void EnterCppForRustCrash() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

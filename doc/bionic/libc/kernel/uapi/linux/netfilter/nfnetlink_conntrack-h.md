@@ -301,7 +301,7 @@ Structure.add('sockaddr_nl', sockaddr_nl_layout);
 
 通过运行这个 Frida 脚本，你可以观察目标进程是否发送了类型为 `IPCTNL_MSG_CT_GET` 的 Netlink 消息，从而验证 Android Framework 或 NDK 如何使用这个头文件中定义的常量与内核进行交互。你可以根据需要扩展这个脚本来解析消息体中的具体属性，以了解传递的具体连接信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nfnetlink_conntrack.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -581,7 +583,4 @@ enum ctattr_filter {
 };
 #define CTA_FILTER_MAX (__CTA_FILTER_MAX - 1)
 #endif
-
-"""
-
 ```

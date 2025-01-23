@@ -213,15 +213,17 @@ By following these steps, including the iterative process of refinement, we arri
 
 总而言之，`svg_metadata_element.cc` 文件在 Blink 渲染引擎中扮演着关键的角色，它负责将 SVG `<metadata>` 标签在内部表示为一个 C++ 对象，使得 Blink 能够正确处理和利用 SVG 文档的元数据信息。了解这个文件的功能和它与 Web 技术的关系，对于理解 Blink 如何渲染 SVG 以及调试相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_metadata_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -251,7 +253,4 @@ namespace blink {
 SVGMetadataElement::SVGMetadataElement(Document& document)
     : SVGElement(svg_names::kMetadataTag, document) {}
 }
-
-"""
-
 ```

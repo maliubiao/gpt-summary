@@ -199,15 +199,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 通过以上分析，我们可以看到 `SVGTransformableElement.cc` 文件在 Blink 渲染引擎中负责处理 SVG 元素变换的核心逻辑，它与 HTML、CSS 和 JavaScript 紧密相关，是理解 SVG 渲染机制的关键部分。对于开发者来说，理解这个文件的功能有助于排查与 SVG 变换相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_transformable_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -298,7 +300,4 @@ void SVGTransformableElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

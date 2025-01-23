@@ -149,14 +149,16 @@ By following this systematic process, examining the code structure, test cases, 
 
 `layout_shift_region_test.cc` 是一个测试文件，用于验证 `LayoutShiftRegion` 类的正确性和效率。`LayoutShiftRegion` 类是 Blink 渲染引擎中用于跟踪和计算布局偏移区域的关键组件。虽然前端开发者不直接操作这个类，但理解其功能有助于他们编写更高效、用户体验更好的网页，避免不必要的布局偏移。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_shift_region_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ TEST_F(LayoutShiftRegionTest, Waffle) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

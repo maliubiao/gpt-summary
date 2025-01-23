@@ -106,11 +106,13 @@ untrustedCode();
 
 `v8/src/execution/clobber-registers.cc` 文件定义了一个用于清除 CPU 浮点寄存器的功能，它在 V8 引擎内部被用于提高安全性和隔离性，防止信息泄露，尤其是在执行不同来源的 JavaScript 代码时。虽然 JavaScript 开发者无法直接调用这个功能，但它在幕后默默地保障着 JavaScript 代码的执行安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/clobber-registers.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ double ClobberDoubleRegisters(double x1, double x2, double x3, double x4) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

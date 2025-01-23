@@ -75,7 +75,7 @@ Here's a plan to address the user's request:
 
 `interpreter.py` 是 Frida 构建过程中至关重要的组成部分，它作为 Meson 构建系统的解释器，负责将用户在 `meson.build` 文件中定义的项目构建蓝图转换为构建系统可以理解的指令。它处理各种构建目标、依赖关系、编译选项，并进行必要的验证，以确保构建定义的正确性。对于 Frida 这样的动态 instrumentation 工具来说，它负责构建用于注入目标进程的共享库以及 Frida 的各种命令行工具。  它还涉及处理不同操作系统和架构的特定构建细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -84,8 +84,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 .subdir, os.path.split(name)[0])
             if os.path.exists(os.path.join(self.source_root, pathseg)):
                 raise InvalidArguments(textwrap.dedent(f'''\
@@ -471,8 +473,4 @@ This will become a hard error in the future.''', location=self.current_node)
         if step < 1:
             raise InterpreterException('step must be >=1')
         return P_OBJ.RangeHolder(start, stop, step, subproject=self.subproject)
-
-"""
-
-
 ```

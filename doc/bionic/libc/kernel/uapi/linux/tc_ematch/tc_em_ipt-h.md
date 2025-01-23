@@ -233,7 +233,7 @@ setImmediate(main);
 
 总结来说，`tc_em_ipt.h` 是一个定义内核 TC 框架中 `ematch` 模块与 iptables 集成相关的常量的头文件。它在 Android 的网络功能中扮演着重要的角色，用于配置精细的网络数据包匹配规则。虽然它本身不是 libc 的一部分，也不直接参与用户空间的动态链接，但它定义的常量在内核中被使用，并且用户空间的网络相关库可能会通过系统调用间接地与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_ematch/tc_em_ipt.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -244,8 +244,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -267,7 +269,4 @@ enum {
 };
 #define TCA_EM_IPT_MAX (__TCA_EM_IPT_MAX - 1)
 #endif
-
-"""
-
 ```

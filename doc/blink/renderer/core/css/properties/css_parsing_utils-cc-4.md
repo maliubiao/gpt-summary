@@ -106,7 +106,7 @@ I will create examples focusing on the functions present in this specific code s
 
 第 5 部分的 `css_parsing_utils.cc` 主要负责 **解析和消费各种具体的 CSS 属性值和语法结构**。它提供了一系列工具函数，用于从 CSS 令牌流中提取、验证和创建代表不同 CSS 值的对象。这部分代码覆盖了包括布局、动画、背景、遮罩等多种 CSS 特性，并且包含了用于记录特性使用情况和警告无效用法的机制。 它是 CSS 解析流程中至关重要的一部分，将文本形式的 CSS 转换为浏览器可以理解和应用的内部数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
-   } else {
+### 源代码
+```cpp
+} else {
           feature = WebFeature::kCSSValueAppearanceOthers;
         }
       }
@@ -1062,7 +1064,4 @@ CSSValue* ParseBackgroundSize(CSSParserTokenStream& stream,
       static_cast<CSSValue* (*)(CSSParserTokenStream&, const CSSParserContext&,
                                 std::optional<WebFeature>, ParsingStyle)>(
           ConsumeBackgroundSize)
-"""
-
-
 ```

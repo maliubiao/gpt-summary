@@ -207,15 +207,17 @@ frame.data_length = 512;
 
 总而言之，`net/quic/quic_event_logger.cc` 是 Chrome QUIC 实现中一个关键的组件，它提供了详细的事件记录功能，极大地帮助开发者理解 QUIC 连接的行为，诊断网络问题，并进行性能优化。 虽然它本身是 C++ 代码，但其输出可以通过 JavaScript 构建的开发者工具进行查看和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_event_logger.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1028,7 +1030,4 @@ void QuicEventLogger::OnEncryptedClientHelloSent(
 }
 
 }  // namespace net
-
-"""
-
 ```

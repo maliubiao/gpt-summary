@@ -107,7 +107,7 @@ gnome.generate_vapi('MyLib',
 
 `frida/subprojects/frida-python/releng/meson/mesonbuild/modules/gnome.py` 模块是 Frida 项目中用于构建 GNOME 相关组件的关键部分。它提供了一系列 Meson 构建函数，用于生成 GIR、GResource 和 VAPI 文件，方便了 Frida 与基于 GLib/GObject 的应用程序进行交互。理解这个模块的功能对于开发 Frida 的 Python 绑定以及进行基于 GNOME 应用程序的逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 cy, str]],
                                ) -> T.Tuple[T.List[str], T.List[VapiTarget], T.List[str], T.List[str], T.List[str]]:
         '''
@@ -261,8 +263,4 @@ def initialize(interp: 'Interpreter') -> GnomeModule:
     mod.interpreter.append_holder_map(TypelibTarget, interpreter.CustomTargetHolder)
     mod.interpreter.append_holder_map(VapiTarget, interpreter.CustomTargetHolder)
     return mod
-
-"""
-
-
 ```

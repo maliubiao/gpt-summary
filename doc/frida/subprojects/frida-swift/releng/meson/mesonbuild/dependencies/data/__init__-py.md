@@ -96,7 +96,7 @@ This step-by-step thought process, moving from direct observation to contextual 
 
 虽然这个特定的 `__init__.py` 文件内容为空，它仍然是 Python 包结构的必要组成部分。它将 `data` 目录标记为一个 Python 包，使得 Frida 的其他模块可以方便地访问该目录下存储的数据文件。这些数据文件在 Frida 进行动态插桩、逆向分析等操作时可能发挥着重要的作用，并可能涉及到二进制底层、操作系统内核及框架等方面的知识。用户到达这里通常是为了探索 Frida 的代码结构、调试构建问题或与依赖项加载相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/dependencies/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,9 +104,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -163,15 +163,17 @@ This iterative process of code scanning, method analysis, connecting to web tech
 - **在 `usb_interface.cc` 中添加日志或断点:**  如果需要深入了解底层实现，可以在 `usb_interface.cc` 文件的关键方法（如 `Create`, `Info`, `alternate`) 中添加 `LOG` 输出或断点，以便在代码执行到这些地方时进行检查。需要重新编译 Chromium 来应用这些修改。
 - **检查设备描述符:**  使用 USB 分析工具（如 Wireshark 配合 USBPcap）捕获 USB 通信，可以查看设备的描述符，确认接口和备用设置的信息是否符合预期。这有助于排查设备本身的问题或驱动程序的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webusb/usb_interface.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ void USBInterface::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

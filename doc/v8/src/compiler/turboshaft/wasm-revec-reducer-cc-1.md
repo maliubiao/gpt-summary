@@ -116,7 +116,7 @@ Let's break down the thought process for analyzing this C++ code.
 
 `v8/src/compiler/turboshaft/wasm-revec-reducer.cc` 是 V8 引擎中 Turboshaft 编译器的关键组件，负责对 WebAssembly 代码中的 SIMD 操作进行向量化优化。它通过构建 SLP 树来识别可以并行执行的相邻 SIMD 指令，并将它们分组到 `PackNode` 中，以便后续的代码生成阶段可以将这些操作合并为更宽、更高效的向量指令（例如，从 128 位 SIMD 操作到 256 位 SIMD 操作）。该组件还处理操作之间的部分重叠情况，并针对特定的 SIMD 操作模式进行优化，以最大限度地提高 WebAssembly 代码在支持 SIMD 扩展的硬件上的执行效率。最终，它通过成本效益分析来决定是否进行向量化，确保优化能够带来实际的性能提升。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-revec-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-revec-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -124,8 +124,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t pack node #%d,%s, #%d\n",
                 node0.id(), GetSimdOpcodeName(op).c_str(), node1.id());
           return intersect_pnode;
@@ -714,8 +716,4 @@ void WasmRevecAnalyzer::Print(const char* info) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
-
 ```

@@ -146,15 +146,17 @@ By following these steps and engaging in some self-correction, we arrive at a co
 
 因此，虽然用户本身不会直接接触到 `ntlm_buffer_reader_unittest.cc` 这个文件，但他们遇到的 NTLM 认证问题可能会促使开发人员使用这个单元测试文件来诊断和解决底层 C++ 代码中的问题。这个文件是开发人员保证 `NtlmBufferReader` 功能正确性的重要工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ntlm/ntlm_buffer_reader_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -876,7 +878,4 @@ TEST(NtlmBufferReaderTest, ReadAvPairHeaderPastEob) {
 }
 
 }  // namespace net::ntlm
-
-"""
-
 ```

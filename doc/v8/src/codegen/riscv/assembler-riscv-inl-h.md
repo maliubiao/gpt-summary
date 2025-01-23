@@ -189,15 +189,17 @@ While developers don't directly interact with this header file, errors in their 
 
 **In summary, `v8/src/codegen/riscv/assembler-riscv-inl.h` is a low-level but essential component of the V8 engine. It provides the building blocks for converting JavaScript code into executable RISC-V machine code, handling relocation, constants, and other architecture-specific details.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/assembler-riscv-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/assembler-riscv-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -547,7 +549,4 @@ void Assembler::set_uint32_constant_at(Address pc, Address constant_pool,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_RISCV_ASSEMBLER_RISCV_INL_H_
-
-"""
-
 ```

@@ -146,7 +146,7 @@ The user wants to understand the functionality of the given C++ code snippet fro
 
 总而言之，这个代码片段是 V8 堆管理功能的一组详尽的测试，涵盖了对象分配、垃圾回收的各个阶段（包括 Scavenge 和 Mark-Compact）、内存压力处理、以及一些边缘情况和回归测试。这些测试对于确保 V8 的内存管理机制的正确性和健壮性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rking_state = heap->non_atomic_marking_state();
   CHECK(marking_state->IsMarked(*array));
   CHECK(page->marking_bitmap()->AllBitsSetInRange(
@@ -1027,7 +1029,4 @@ UNINITIALIZED_TEST(RestoreHeapLimit) {
 #endif
   ManualGCScope manual_gc_scope;
   const siz
-"""
-
-
 ```

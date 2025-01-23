@@ -117,11 +117,13 @@ I can use the `WebAssembly` API in JavaScript to demonstrate how the information
 
 总而言之，`v8/src/wasm/wasm-module.cc` 文件是 V8 引擎中 WebAssembly 模块的核心表示层，它负责存储和管理模块的各种元数据，并提供了将这些信息暴露给 JavaScript 的机制，使得 JavaScript 可以与 WebAssembly 模块进行交互和内省。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-module.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -929,7 +931,4 @@ int NumFeedbackSlots(const WasmModule* module, int func_index) {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

@@ -165,7 +165,7 @@ By following these steps and iteratively refining the analysis, a comprehensive 
 
 总而言之，`entrypoint-v8.js` 文件虽然代码量不大，但在 Frida 的架构中扮演着至关重要的角色，它是将用户编写的 JavaScript 代码注入到目标进程并执行的桥梁，是实现动态 instrumentation 的关键组件。理解其功能有助于更好地利用 Frida 进行逆向分析和安全研究。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/runtime/entrypoint-v8.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 require('./core');
 require('./error-handler-v8');
 
@@ -182,7 +184,4 @@ Script.load = async (name, source) => {
   Script._load(name, source);
   return await import(name);
 };
-
-"""
-
 ```

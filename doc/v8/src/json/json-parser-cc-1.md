@@ -130,7 +130,7 @@ console.log(parsedArray[1]); // 输出 "hello"
 
 这部分 `v8/src/json/json-parser.cc` 代码是 V8 引擎中负责将解析后的 JSON 数据转换为实际 JavaScript 对象和数组的关键组件。它使用了多种优化技术来提高性能，并且直接关联着 JavaScript 中常用的 `JSON.parse()` 功能。理解这部分代码有助于深入理解 V8 引擎如何高效地处理 JSON 数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/json/json-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/json/json-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 N);
     Handle<Map> next_map;
     if (!maybe_map.ToHandle(&next_map)) return false;
@@ -1032,7 +1034,4 @@ MaybeHandle<Object> JsonParser<Char>::ParseJsonValue() {
           property_stack_.back().value = value;
           if constexpr (should_track_json_source) {
             property_val_no
-"""
-
-
 ```

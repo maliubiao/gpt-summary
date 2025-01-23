@@ -465,7 +465,7 @@ ppendDescriptor(isolate(), &d);
 
 作为第 10 部分（共 11 部分），这段代码在 V8 引擎的启动过程中扮演着关键的角色，**负责构建和初始化一些核心的 JavaScript 语言特性所需的内部数据结构（Maps）和对象**。这些初始化工作为后续 JavaScript 代码的执行奠定了基础，确保了诸如属性描述符、模板字面量、正则表达式结果和 `arguments` 对象等功能能够按照预期运行。它是 V8 引擎自举过程中的一个重要步骤，用于建立基本的 JavaScript 对象模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -473,8 +473,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ppendDescriptor(isolate(), &d);
     }
     {  // writable
@@ -1266,8 +1268,4 @@ Genesis::Genesis(Isolate* isolate,
     if (Snapshot::NewContextFromSnapshot(isolate, global_proxy,
                                          context_snapshot_index,
                                          embedder_fields_deserializer)
-      
-"""
-
-
 ```

@@ -173,7 +173,7 @@ By systematically examining the code, considering its context, and thinking abou
 
 通过分析像 `sum.c` 这样的简单测试用例，Frida 用户可以更好地掌握 Frida 的 LLVM 支持能力，并为调试更复杂的基于 LLVM 的应用程序打下基础。 这个文件可以作为 Frida 功能的一个基本验证，确保 Frida 能够正确处理和分析简单的 LLVM 代码结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/15 llvm/sum.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /** This code is public domain, and taken from
  * https://github.com/paulsmith/getting-started-llvm-c-api/blob/master/sum.c
  */
@@ -259,7 +261,4 @@ int main(int argc, char const *argv[]) {
     LLVMDisposeBuilder(builder);
     LLVMDisposeExecutionEngine(engine);
 }
-
-"""
-
 ```

@@ -157,14 +157,16 @@ By following this structured approach and constantly refining understanding thro
 
 总而言之，`float_rounded_rect_test.cc` 文件通过大量的单元测试，确保 `FloatRoundedRect` 类在各种场景下都能正确地表示和操作带有圆角的矩形，这对于 Blink 渲染引擎正确渲染网页内容至关重要。它直接关联到 CSS 的圆角、外边距、阴影和 CSS Shapes 等特性，并间接地受到 JavaScript 对样式操作的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/geometry/float_rounded_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Adobe Systems Incorporated. All rights reserved.
  *
@@ -569,7 +571,4 @@ TEST(FloatRoundedRectTest, ToString) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

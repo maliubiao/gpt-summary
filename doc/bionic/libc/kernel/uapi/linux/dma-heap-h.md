@@ -245,7 +245,7 @@ if (Process.platform === 'linux') {
 
 总结来说，`bionic/libc/kernel/uapi/linux/dma-heap.handroid` 文件定义了用户空间程序与 Linux 内核 DMA heap 子系统交互的接口，这对于 Android 中需要高性能内存共享的场景至关重要。虽然它本身不定义 libc 函数或直接参与动态链接，但它的功能被 libc 的 `ioctl` 函数所使用，并且可能被动态链接的共享库所调用。通过理解其功能和使用场景，以及使用 Frida 等工具进行调试，可以更好地理解 Android 系统底层的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dma-heap.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -279,7 +281,4 @@ struct dma_heap_allocation_data {
 #define DMA_HEAP_IOC_MAGIC 'H'
 #define DMA_HEAP_IOCTL_ALLOC _IOWR(DMA_HEAP_IOC_MAGIC, 0x0, struct dma_heap_allocation_data)
 #endif
-
-"""
-
 ```

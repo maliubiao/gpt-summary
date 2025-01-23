@@ -112,14 +112,16 @@ This systematic approach, moving from the general purpose of the file to specifi
 
 `text_codec_replacement_test.cc` 测试了 Chromium Blink 引擎中一个特殊的文本编解码器—— "replacement" 编解码器。这个编解码器的主要功能是在解码时将任何输入替换为 Unicode 替换字符 U+FFFD，并在编码时将任何 Unicode 字符编码为 UTF-8。虽然它不是用于常规的文本处理，但在浏览器处理各种来源的文本内容时，作为一种错误处理的回退机制发挥着重要的作用，与 HTML、JavaScript 和 CSS 的字符编码处理都有着间接的联系。理解其功能和限制有助于开发者避免常见的编码错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_replacement_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ TEST(TextCodecReplacement, EncodesToUTF8) {
 }  // namespace
 
 }  // namespace WTF
-
-"""
-
 ```

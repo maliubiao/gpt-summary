@@ -211,7 +211,7 @@ sys.stdin.read()
 
 通过这个 Frida Hook 示例，你可以观察到 Android 系统在底层是如何使用 `mknod` 系统调用以及 `MAJOR` 和 `MINOR` 宏来处理设备文件的。 这可以帮助你理解 Android Framework 或 NDK 的操作最终如何触及到这个底层的设备管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kdev_t.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -222,8 +222,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -236,7 +238,4 @@ Prompt:
 #define MINOR(dev) ((dev) & 0xff)
 #define MKDEV(ma,mi) ((ma) << 8 | (mi))
 #endif
-
-"""
-
 ```

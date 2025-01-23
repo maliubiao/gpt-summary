@@ -103,15 +103,17 @@ By following these steps, we can systematically analyze the given C++ unittest f
 
 这部分代码通过一系列单元测试，主要验证了 `BackgroundURLLoader` 在不同取消时机和异常完成情况下的资源管理和错误处理能力，特别是它与 `BackgroundResponseProcessor` 的生命周期管理以及向客户端报告错误状态的机制。 这些测试确保了 `BackgroundURLLoader` 的健壮性，能够正确处理各种边界情况，避免资源泄漏和错误状态的蔓延。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/background_url_loader_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rLimit);
   EXPECT_EQ(kBodySize, bfcache_loader_helper_->total_bytes_buffered());
   EXPECT_TRUE(bfcache_loader_helper_->process_wide_count_updated());
@@ -211,8 +213,4 @@ TEST_F(BackgroundResourceFecherTest,
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

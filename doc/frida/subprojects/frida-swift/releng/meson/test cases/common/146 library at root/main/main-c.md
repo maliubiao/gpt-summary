@@ -207,7 +207,7 @@ if (fnPtr) {
 
 总而言之，这段简单的C代码在Frida的上下文中成为了一个学习和实践动态Instrumentation技术的良好起点。它涉及了程序的基本结构、外部函数调用、动态链接以及Frida的hook机制等关键概念。理解这段代码的功能和潜在的调试点，有助于我们更好地利用Frida进行逆向工程和安全分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/146 library at root/main/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,14 +215,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int fn(void);
 
 int main(void) {
     return 1 + fn();
 }
-
-"""
-
 ```

@@ -132,13 +132,15 @@ By following these steps, we can systematically analyze the C++ test file and ge
 
 总而言之，这个测试文件的第7部分专注于验证 V8 的解析器对于一些相对新的和复杂的 JavaScript 语法特性的正确理解和处理，以及对各种非法语法的有效识别。 它是确保 V8 引擎能够准确解析 JavaScript 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
- extends function() {} { constructor() { sup\\u0065r() } }",
+### 源代码
+```
+extends function() {} { constructor() { sup\\u0065r() } }",
     "class C extends function() {} { constructor() { sup\\u0065r.a = 1 } }",
     "sw\\u0069tch (this.a) {}",
     "var x = th\\u0069s;",
@@ -2052,7 +2054,4 @@ TEST_F(ParsingTest, LexicalLoopVariable) {
 
       const i::AstRawString* var_name =
           info.ast_value_factory()->GetOneByteString("loop_var"
-"""
-
-
 ```

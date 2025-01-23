@@ -194,7 +194,7 @@ Stack trace:
 
 总而言之，`symbolicate.py` 是 Frida 生态系统中一个非常有用的工具，它通过调用系统提供的符号化工具，将抽象的内存地址转化为具体的函数名和代码位置，极大地提升了逆向分析和调试的效率。理解其工作原理和依赖关系有助于更好地利用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tools/symbolicate.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -324,7 +326,4 @@ def compute_module_size(path: Path) -> int:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

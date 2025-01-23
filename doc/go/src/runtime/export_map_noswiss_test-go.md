@@ -186,7 +186,7 @@ go test -tags=!goexperiment.swissmap runtime
 
 总之，`go/src/runtime/export_map_noswiss_test.go` 是 Go 运行时为了测试非 `swissmap` 构建下的 `map` 实现细节而提供的辅助工具，它允许测试代码访问和检查 `map` 的内部状态，例如桶的数量和 tombstone 标记的分布。普通 Go 开发者不应该直接使用这些函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_map_noswiss_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -260,9 +262,4 @@ func MapTombstoneCheck(m map[int]int) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

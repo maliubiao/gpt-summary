@@ -72,7 +72,7 @@ Here's a breakdown of the code and its functionalities:
 
 这段代码主要负责接收和处理 HTTP 请求。它管理着单个请求的生命周期，包括检查请求头、执行请求处理器、管理连接状态以及支持连接劫持。同时，它实现了请求的多路复用功能，能够根据预定义的模式将不同的请求路由到不同的处理器。此外，它还提供了一些辅助功能和常用的 HTTP 处理器，简化了 HTTP 服务器的开发。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/server.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -81,8 +81,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 th one that replies on the connection
 				req.Body = &expectContinueReader{readCloser: req.Body, resp: w}
 				w.canWriteContinue.Store(true)
@@ -1003,10 +1005,5 @@ type Server struct {
 	// WriteTimeout is the maximum duration before timing out
 	// writes of the response. It is reset whenever a new
 	// request's header is read. Like ReadTimeout, it does not
-	// let Handlers make decisions on a per-request 
-"""
-
-
-
-
+	// let Handlers make decisions on a per-request
 ```

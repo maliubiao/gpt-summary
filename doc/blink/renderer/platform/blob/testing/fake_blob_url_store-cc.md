@@ -191,14 +191,16 @@ While this file itself is a testing tool, understanding its function helps illus
 
 In summary, `fake_blob_url_store.cc` is a simplified, in-memory implementation used for testing the registration and revocation mechanisms of Blob URLs within the Blink rendering engine. It doesn't handle the actual resolution and fetching of Blob data, which is a key distinction when considering its use in testing and its relationship to web technologies.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/testing/fake_blob_url_store.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ void FakeBlobURLStore::ResolveForWorkerScriptFetch(
 }
 
 }  // namespace blink
-
-"""
-
 ```

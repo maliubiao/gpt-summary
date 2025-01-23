@@ -86,11 +86,13 @@ fuzzilli("FUZZILLI_PRINT", "Hello from JavaScript!");
 
 `v8/src/fuzzilli/fuzzilli.cc` 文件是 V8 引擎中用于集成 Fuzzilli 模糊测试器的关键组件。它通过注册本地函数到 JavaScript 环境，为 fuzzer 提供了可控的崩溃触发和信息输出机制，从而帮助开发者发现 V8 引擎中的潜在错误和漏洞。模糊测试器会生成各种各样的 JavaScript 代码，其中就可能包含对这里注册的 `fuzzilli` 函数的调用，以探索 V8 的各种代码路径和边界条件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/fuzzilli/fuzzilli.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ void FuzzilliExtension::Fuzzilli(const FunctionCallbackInfo<Value>& info) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

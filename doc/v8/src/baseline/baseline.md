@@ -101,11 +101,13 @@ console.log(result); // 输出 8
 
 `baseline.cc` 文件是 V8 引擎中 Baseline 编译器的核心实现，它负责判断哪些 JavaScript 函数可以使用 Baseline 编译，并负责生成相应的机器码，从而在保证较低编译成本的前提下，提升 JavaScript 代码的执行效率。这对于构建高性能的 JavaScript 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ void EmitReturnBaseline(MacroAssembler* masm) { UNREACHABLE(); }
 }  // namespace v8
 
 #endif
-
-"""
-
 ```

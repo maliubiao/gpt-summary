@@ -136,15 +136,17 @@ console.log(js_array); // 输出可能类似：[10, 20, 30, 40]
 
 `blink/renderer/bindings/modules/v8/webgl_any.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它负责将 C++ 的 WebGL 实现产生的数据转换为 JavaScript 能够使用的格式。理解这个文件的功能对于调试 WebGL 相关的 bug，尤其是涉及数据传递和类型转换的问题至关重要。 通过分析 `WebGLAny` 函数的输入输出，以及它与 JavaScript WebGL API 的交互，开发者可以更好地理解 Blink 引擎的内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/modules/v8/webgl_any.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ ScriptValue WebGLAny(ScriptState* script_state, DOMUint32Array* value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

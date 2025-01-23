@@ -117,11 +117,13 @@ Also, I need to be careful not to oversimplify. The connection isn't always a on
 
 `v8/src/heap/cppgc/heap-object-header.cc` 定义了 `HeapObjectHeader` 结构，它是 V8 的 C++ 垃圾回收器 (cppgc) 用来管理堆上 C++ 对象元数据的核心组件。它存储了对象的 GC 信息、是否完成构造等关键信息，并提供了获取对象名称和执行 finalization 等操作。虽然 JavaScript 代码不能直接访问 `HeapObjectHeader`，但它的功能间接地影响着 JavaScript 对象的生命周期管理和垃圾回收行为，例如体现在 `FinalizationRegistry` API 和对象类型信息的获取上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-object-header.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ HeapObjectName HeapObjectHeader::GetName(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

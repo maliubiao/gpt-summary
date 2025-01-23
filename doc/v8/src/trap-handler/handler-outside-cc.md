@@ -136,15 +136,17 @@ view[10] = 1; // 越界写入 ArrayBuffer
 
 总而言之，`v8/src/trap-handler/handler-outside.cc` 是 V8 引擎中一个幕后英雄，它默默地维护着关键的数据结构和状态，为安全可靠的 JavaScript 和 WebAssembly 执行环境提供了基础支持。它并不直接处理陷阱本身，而是为陷阱处理器的运行做准备和善后工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-outside.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/handler-outside.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -430,7 +432,4 @@ void SetLandingPad(uintptr_t landing_pad) { gLandingPad.store(landing_pad); }
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

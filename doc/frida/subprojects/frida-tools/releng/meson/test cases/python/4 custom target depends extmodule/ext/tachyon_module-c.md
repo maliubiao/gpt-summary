@@ -141,7 +141,7 @@ Here's a breakdown of the thinking process to arrive at the detailed explanation
 
 总而言之，`tachyon_module.c` 虽然是一个简单的示例，但它展示了 Python 扩展模块的基本结构和功能，并且与 Frida 这样的动态分析工具以及逆向工程的实践密切相关。理解其功能和背后的技术原理有助于我们更好地使用 Frida 进行软件分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/4 custom target depends extmodule/ext/tachyon_module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
   Copyright 2016 The Meson development team
 
@@ -202,7 +204,4 @@ static struct PyModuleDef tachyonmodule = {
 PyMODINIT_FUNC PyInit_tachyon(void) {
     return PyModule_Create(&tachyonmodule);
 }
-
-"""
-
 ```

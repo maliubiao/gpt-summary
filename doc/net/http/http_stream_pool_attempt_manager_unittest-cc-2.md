@@ -108,7 +108,7 @@ fetch('https://www.example.com/data.json')
 5. **`HttpStreamPoolAttemptManager` 负责管理建立新连接的尝试。**
 6. **如果需要建立新的 HTTP 流连接，`HttpStreamPoolAttemptManager` 会根据连接池的当前状态、连接限制、以及是否存在可复用的连接（包括 SPDY 会话）来决定如何进行连接尝试。**
 7.
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_pool_attempt_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CreateGroupForTesting(requester.GetStreamKey());
   group.AddIdleStreamSocket(std::make_unique<FakeStreamSocket>());
 
@@ -885,7 +887,4 @@ TEST_F(HttpStreamPoolAttemptManagerTest,
   spdy_session_pool()->CloseAllSessions();
 
   //
-"""
-
-
 ```

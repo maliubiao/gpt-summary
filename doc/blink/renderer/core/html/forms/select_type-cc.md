@@ -105,15 +105,17 @@ By following this process, I can generate a comprehensive and accurate summary o
 
 `blink/renderer/core/html/forms/select_type.cc` 文件中的 `MenuListSelectType` 类是 Chromium Blink 引擎中负责实现 HTML `<select>` 元素默认下拉列表行为的关键组件。它处理用户交互事件、管理下拉列表的显示和隐藏、处理选项的选择、利用 Shadow DOM 封装内部结构，并与浏览器的无障碍功能和 CSS 样式系统进行交互。 此外，它还为实验性的自定义外观功能提供支持。 该文件是理解 `<select>` 元素在浏览器中如何工作的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/select_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
@@ -936,7 +938,4 @@ void MenuListSelectType::ShowPicker() {
   // some element to none which will cause a layout tree detach.
   select_->GetDocument().UpdateStyleAndLayoutTree();
   // Save t
-"""
-
-
 ```

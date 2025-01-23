@@ -128,7 +128,7 @@ By following these steps, the detailed and informative answer provided earlier c
 
 总而言之，`cmMod.cpp` 演示了一个简单的异步操作，虽然功能简单，但它包含了多线程编程的关键概念，这些概念在逆向工程中经常遇到。理解这些概念对于分析复杂的软件行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/16 threads/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <chrono>
@@ -153,7 +155,4 @@ void CmMod::asyncIncrement() {
 
   t1.join();
 }
-
-"""
-
 ```

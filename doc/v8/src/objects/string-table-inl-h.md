@@ -134,15 +134,17 @@ console.log(obj1.valueOf() === obj2.valueOf()); // 输出 true，比较的是它
 
 总之，`v8/src/objects/string-table-inl.h` 定义了 V8 内部字符串表使用的键结构，是实现高效字符串存储和复用的关键组成部分。虽然 JavaScript 开发者不能直接操作它，但了解其背后的机制有助于更好地理解 JavaScript 中字符串的行为和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-table-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string-table-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ uint32_t StringTableKey::hash() const {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_STRING_TABLE_INL_H_
-
-"""
-
 ```

@@ -172,15 +172,17 @@ s2 := ctxt.Lookup(name)
 
 总而言之，`sym.go` 是 Go 语言链接器中负责符号管理的关键组件，它提供了创建、查找、索引和操作符号的各种功能，是理解 Go 语言链接过程的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/sym.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/obj.c and utils/6l/span.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/span.c
@@ -691,9 +693,4 @@ func (ctxt *Link) traverseAuxSyms(flag traverseFlag, fn func(parent *LSym, aux *
 		}
 	}
 }
-
-"""
-
-
-
 ```

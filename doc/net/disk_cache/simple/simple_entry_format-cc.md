@@ -75,15 +75,17 @@ This is about tracing the path to this code during debugging.
 * **Cache Miss/Write:** If the resource isn't cached or needs updating, the network stack fetches it from the server.
 * **Disk Cache Write:** The fetched resource (or parts of it) is written to the disk cache. *This is where `simple_entry_format.cc` comes into play*. The code in this file defines the structure used to organize the cached data on disk.
 * **Debugging:** A developer might examine the disk cache contents directly (if the cache location is known) or use Chromium's internal debugging tools to inspect the cache
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_entry_format.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -110,7 +112,4 @@ SimpleFileSparseRangeHeader::SimpleFileSparseRangeHeader() {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

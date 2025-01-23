@@ -139,15 +139,17 @@ This code snippet is part of the unit tests for the `CompositorAnimations` featu
 
 这部分测试代码的核心功能是**验证 Blink 引擎在将 CSS 动画转换为合成器动画方面的能力和正确性**。它涵盖了各种动画场景，包括不同类型的 timing function、合成模式、目标属性以及自定义属性，并测试了转换过程中关键属性的映射和处理。此外，还测试了在存在不兼容动画时，Blink 引擎的取消和回退机制，以及基于元素合成原因来判断是否可以启动合成器动画的逻辑。  这部分测试是确保浏览器动画性能和流畅度的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/compositor_animations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t2_),
             CompositorAnimations::kNoFailure);
 
@@ -859,7 +861,4 @@ TEST_P(AnimationCompositorAnimationsTest,
       CompositorAnimations::kTargetHasInvalidCompositingState);
 
   // Clearing
-"""
-
-
 ```

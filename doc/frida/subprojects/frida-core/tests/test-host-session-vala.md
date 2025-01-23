@@ -118,7 +118,7 @@ attach_and_debug(1234)
 5. **结束调试**：用户结束调试并释放资源，确保系统资源不被泄漏。
 
 通过以上步骤，用户可以逐步使用 Frida 进行动态插桩和调试，最终到达 `test-host-session.vala` 中所描述的测试场景。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida.HostSessionTest {
 	public static void add_tests () {
 		GLib.Test.add_func ("/HostSession/Service/provider-available", () => {
@@ -1254,7 +1256,4 @@ namespace Frida.HostSessionTest {
 
 				var options = new SessionOptions ();
 				options.persist_timeout = 5
-"""
-
-
 ```

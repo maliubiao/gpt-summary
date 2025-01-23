@@ -230,7 +230,7 @@ After calling l1: l2 = 999
 
 总而言之，这个 `libfile.c` 文件是 Frida 项目中用于验证其在 macOS 上动态操作全局变量功能的测试代码片段。它可以作为理解 Frida 功能、学习逆向技术以及调试相关问题的宝贵资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/osx/10 global variable ar/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // Source: https://lists.gnu.org/archive/html/libtool/2002-07/msg00025.html
 
 #include <stdio.h>
@@ -249,7 +251,4 @@ void l1(void)
 {
   printf("l1 %d\n", l2);
 }
-
-"""
-
 ```

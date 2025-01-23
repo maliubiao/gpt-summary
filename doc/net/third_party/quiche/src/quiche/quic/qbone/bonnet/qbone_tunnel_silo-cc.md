@@ -116,15 +116,17 @@ Essentially, my approach was to:
 
 总而言之，`QboneTunnelSilo.cc` 负责 Qbone 隧道的生命周期管理，它在浏览器的网络服务中默默地工作，为使用 Qbone 技术的网络连接提供支持。虽然 JavaScript 代码不会直接与之交互，但用户的网络请求最终会触发它的执行。理解它的功能对于调试与 Qbone 相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/bonnet/qbone_tunnel_silo.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ bool QboneTunnelSilo::ShouldRun() {
 }
 
 }  // namespace quic
-
-"""
-
 ```

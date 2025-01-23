@@ -145,7 +145,7 @@ Frida 可以改变这个程序的 "输出"（例如，通过修改返回值）�
 
 `prog.cpp` 作为一个非常基础的 Windows C++ 程序，其自身功能简单。然而，在 Frida 的上下文中，它作为一个简单的 **测试目标**，用于验证 Frida 在 Windows 平台上的基本插桩能力。它的简单性使得开发者可以专注于测试 Frida 的核心功能，例如 hook 函数、修改内存等，而无需担心目标程序复杂的逻辑干扰测试结果。  用户到达这里很可能是为了理解 Frida 如何与简单的 C++ 程序交互，或者在 Frida 的开发和测试过程中遇到问题，需要查看相关的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/3 cpp/prog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<windows.h>
 
 class Foo;
@@ -162,7 +164,4 @@ class Foo;
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

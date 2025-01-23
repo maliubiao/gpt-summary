@@ -263,7 +263,7 @@ By following this structured approach, you can effectively analyze the code and 
 
 总而言之，`allplatformstests.py` 文件是 frida-python 项目的关键测试套件，专注于验证其在各种平台上的构建和安装过程的正确性和一致性。它涵盖了 Meson 构建系统的各种功能，从基本的编译流程到复杂的安装场景，包括对不同类型的文件、目录、Python 包和模块的处理，以及对各种构建选项和用户可能遇到的错误情况的测试。该文件对于确保 frida-python 项目的跨平台兼容性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -272,8 +272,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 DCXXFLAG'}
         srcdir = os.path.join(self.unit_test_dir, '88 multiple envvars')
         self.init(srcdir, override_envvars=envs)
@@ -1010,8 +1012,4 @@ DCXXFLAG'}
             # The first supported std should be selected
             self.setconf('-Dcpp_std=c++11,gnu++11,vc++11')
             self.assertEqual(self.getconf('cpp_std'), 'c++11')
-
-"""
-
-
 ```

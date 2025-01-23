@@ -228,15 +228,17 @@ console.log(myList); // 输出 LinkedList { head: LinkedListNode { data: 1, next
 
 这些测试用例通过各种场景验证了 `ThreadedList` 类的正确性，帮助开发者避免这些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/threaded-list-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/threaded-list-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -594,7 +596,4 @@ TEST_F(ThreadedListTest, RemoveAt) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

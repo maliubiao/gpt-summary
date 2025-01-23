@@ -103,7 +103,7 @@ By following these steps, combining code analysis with contextual understanding 
 
 总而言之，虽然 `prog.c` 本身是一个简单的失败程序，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的各种动态插桩能力，并涉及到逆向工程、二进制底层知识、操作系统原理以及用户使用等方面。 它的存在和 "failing" 的标签本身就是一种调试线索，提示开发者在相关测试失败时需要检查的方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/50 slashname/sub/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,15 +111,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("I should not be run ever.\n");
     return 1;
 }
-
-"""
-
 ```

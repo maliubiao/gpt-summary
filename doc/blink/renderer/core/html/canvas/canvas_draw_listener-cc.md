@@ -115,15 +115,17 @@ By following these steps, the detailed and informative explanation provided earl
 
 尽管 `canvas_draw_listener.cc` 文件本身很小，但它定义了一个重要的抽象接口，用于在 Blink 引擎内部监听和响应 canvas 的绘制事件。  它连接了 JavaScript 的绘制指令和 Blink 引擎的底层渲染机制，允许引擎的其他部分在 canvas 内容发生变化时执行相应的逻辑。 普通 Web 开发者不会直接接触到 `CanvasDrawListener`，但他们编写的 JavaScript canvas 代码会间接地触发与该接口相关的内部流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/canvas_draw_listener.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ CanvasDrawListener::~CanvasDrawListener() = default;
 CanvasDrawListener::CanvasDrawListener() = default;
 
 }  // namespace blink
-
-"""
-
 ```

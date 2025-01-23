@@ -100,7 +100,7 @@ By following this thinking process, which involves understanding the context, an
 
 总而言之，`prog.c` 自身的功能非常简单，但其在 Frida 测试套件中的角色是为了验证构建系统在缺少 PCH 文件时的行为，这与软件构建流程和编译器优化等底层知识相关。 开发者遇到这个文件相关的错误，通常是因为 Frida 构建过程中缺少了必要的预编译头文件，或者是因为他们正在运行一个故意设计为在这种情况下失败的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/86 missing pch file/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,12 +108,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

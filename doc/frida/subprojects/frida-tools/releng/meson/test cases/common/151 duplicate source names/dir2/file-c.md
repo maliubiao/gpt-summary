@@ -93,7 +93,7 @@ int dir2 = 20;
 
 `frida/subprojects/frida-tools/releng/meson/test cases/common/151 duplicate source names/dir2/file.c` 本身是一个非常简单的 C 文件，其主要作用是作为 Frida 构建系统的一个测试用例。它旨在验证构建系统在遇到同名源文件位于不同目录时，能够正确地处理，避免编译错误和符号冲突。虽然它本身不直接涉及到逆向方法、二进制底层、内核等知识，但它的存在对于确保 Frida 工具的稳定性和可靠性至关重要，而 Frida 正是一个强大的逆向工程工具，需要深入到这些底层领域进行操作。 用户通常不会直接接触到这个文件，但当构建系统出现与同名文件处理相关的问题时，这个文件会成为调试的线索之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/151 duplicate source names/dir2/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,10 +101,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dir2 = 20;
-
-"""
-
 ```

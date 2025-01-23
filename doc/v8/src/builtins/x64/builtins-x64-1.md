@@ -461,12 +461,14 @@ These functions are fundamental to how JavaScript code is executed within the V8
 
 In essence, this section of the code defines how V8 manages the execution flow when constructing objects and entering/exiting different execution tiers (interpreter and baseline compiler) for JavaScript code. It ensures proper stack frame setup, handles potential errors like stack overflow, and facilitates the process of optimizing code execution over time.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ot(rax, RootIndex::kUndefinedValue, &check_result,
                    Label::kNear);
 
@@ -2221,7 +2223,4 @@ void LoadTargetJumpBuffer(MacroAssembler* masm, Register target_continuation,
       target_jmpbuf,
       FieldOperand(target_continuation, WasmContinuationObject::kJmpbufOffset),
       kW
-"""
-
-
 ```

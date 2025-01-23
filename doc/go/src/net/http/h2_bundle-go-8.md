@@ -195,7 +195,7 @@ func (cs *http2clientStream) abortStream(err error) {
 
 总的来说，这段代码定义了 Go 语言 `net/http` 包中 HTTP/2 客户端连接和流的核心数据结构和管理逻辑，为实现高效的 HTTP/2 通信奠定了基础。 它利用了 Go 语言的并发特性 (goroutine, channel)，同步机制 (mutex, condition variable, sync.Once) 以及标准库提供的网络和 HTTP 相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第9部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // closed when seenSettings is true or frame reading fails
 	wantSettingsAck  bool                          // we sent a SETTINGS frame and haven't heard back
 	goAway           *http2GoAwayFrame             // if non-nil, the GoAwayFrame we received
@@ -1198,9 +1200,4 @@ func (cc *http2ClientConn) roundTrip(req *Request, streamf func(*http2clientStre
 		!cs.isHead {
 		// Request gzip only, not deflate. Deflate is ambiguous and
 		// not as unive
-"""
-
-
-
-
 ```

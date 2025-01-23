@@ -92,15 +92,17 @@ const link = document.getElementById('link1');
 
 总而言之，`anchor_element_metrics_sender_test.cc` 的主要目的是确保 `AnchorElementMetricsSender` 能够可靠地监控和报告页面中锚点元素的各种状态和交互信息，这对于 Chromium 收集用户行为数据和进行性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/anchor_element_metrics_sender_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -996,7 +998,4 @@ TEST_F(AnchorElementMetricsSenderTest,
   ProcessEvents(1);
   EXPECT_EQ(1u, hosts_.size());
   EXPECT_EQ(0u, mock_host->clicks_.
-"""
-
-
 ```

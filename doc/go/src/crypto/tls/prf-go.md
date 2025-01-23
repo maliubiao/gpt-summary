@@ -145,7 +145,7 @@ func main() {
 
 总而言之，`prf.go` 文件实现了 TLS 协议中关键的密钥派生功能，为 TLS 连接的安全性提供了基础保障。开发者在使用 `crypto/tls` 包时，通常不需要直接调用 `prf.go` 中的函数，而是通过配置 `tls.Config` 或使用 `net/http` 等更上层的包来间接使用这些功能。理解这些底层实现有助于更好地理解 TLS 的工作原理和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/prf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -451,9 +453,4 @@ func ekmFromMasterSecret(version uint16, suite *cipherSuite, masterSecret, clien
 		return prfForVersion(version, suite)(masterSecret, label, seed, length), nil
 	}
 }
-
-"""
-
-
-
 ```

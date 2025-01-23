@@ -125,15 +125,17 @@ process("hello");
 
 `v8/src/deoptimizer/mips64/deoptimizer-mips64.cc` 是 V8 引擎中处理 MIPS64 架构下代码反优化的关键组件。它负责管理反优化过程中的寄存器状态、栈帧信息，以及提供跳转到反优化处理入口点的机制。虽然用户无法直接操作这个文件中的代码，但理解反优化的概念有助于编写更利于 V8 引擎优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/mips64/deoptimizer-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/mips64/deoptimizer-mips64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

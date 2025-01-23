@@ -206,7 +206,7 @@ This iterative process of analyzing individual functions, connecting them to web
 
 这部分 `element.cc` 代码主要负责处理元素在样式、渲染、Shadow DOM 和自定义元素方面的各种状态变化和管理任务。它连接了 HTML 结构、CSS 样式和 JavaScript 行为，确保浏览器能够正确地渲染和更新页面，并支持 Web Components 等高级特性。它涉及到样式的重算、合成层的管理、Shadow DOM 的生命周期管理以及自定义元素的状态维护。  它在整个渲染流程中扮演着至关重要的角色，确保用户与页面的交互能够得到正确的视觉反馈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t();
   if (document.InStyleRecalc()) {
     return;
@@ -1053,7 +1055,4 @@ void Element::ChildrenChanged(const ChildrenChange& change) {
   // ContainerNode::ChildrenChanged may run SynchronousMutationObservers which
   // want to do flat tree traversals. If we SetNeedsAssignmentRecalc after those
   // mutation observers
-"""
-
-
 ```

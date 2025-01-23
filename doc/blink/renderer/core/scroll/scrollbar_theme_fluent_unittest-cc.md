@@ -132,15 +132,17 @@ Let's break down the thought process to analyze the C++ unittest file.
 
 总而言之，`scrollbar_theme_fluent_unittest.cc` 是 Chromium 引擎中保证 Fluent 风格滚动条正确实现的关键组成部分，它通过各种测试用例覆盖了滚动条的渲染逻辑，与 Web 前端技术息息相关，并能帮助开发者诊断和解决与滚动条相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollbar_theme_fluent_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -484,7 +486,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          ::testing::Values(1.f, 1.25f, 1.5f, 1.75f, 2.f));
 
 }  // namespace blink
-
-"""
-
 ```

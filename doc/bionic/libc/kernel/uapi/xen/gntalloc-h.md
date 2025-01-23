@@ -296,7 +296,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 通过这个 Frida 脚本，你可以观察到目标进程是否以及如何使用这些 Xen grant 管理接口，从而帮助你调试和理解 Android 系统中与 Xen 相关的行为。请注意，实际的 `IOCTL_GNTALLOC_ALLOC_GREF` 的值需要根据你的系统头文件确定，通常可以使用预处理器或者查看编译输出得到。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/xen/gntalloc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -307,8 +307,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -344,7 +346,4 @@ struct ioctl_gntalloc_unmap_notify {
 #define UNMAP_NOTIFY_CLEAR_BYTE 0x1
 #define UNMAP_NOTIFY_SEND_EVENT 0x2
 #endif
-
-"""
-
 ```

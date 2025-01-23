@@ -179,15 +179,17 @@ func main() {
 
 这段代码提供了一个基本的启动和停止框架。`Start()` 函数创建并返回一个可以被停止的对象，而 `Stop()` 方法则作为一个停止的信号或触发器。 真正的停止逻辑需要在调用 `Start()` 的地方以及被启动的任务中进行实现。 理解 `Stop()` 方法仅仅是一个信号是避免常见错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue58563.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -201,9 +203,4 @@ func Start() interface{ Stop() } {
 type Stopper struct{}
 
 func (s *Stopper) Stop() {}
-
-"""
-
-
-
 ```

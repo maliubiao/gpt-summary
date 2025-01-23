@@ -238,7 +238,7 @@ if (Process.platform === 'android') {
 
 这个测试文件虽然简单，但它验证了 Android Bionic 库中一个重要的系统信息获取接口的正确性，保证了上层应用能够可靠地获取到系统信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_utsname_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -249,8 +249,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -293,7 +295,4 @@ static void sys_utsname_h() {
 
   FUNCTION(uname, int (*f)(struct utsname*));
 }
-
-"""
-
 ```

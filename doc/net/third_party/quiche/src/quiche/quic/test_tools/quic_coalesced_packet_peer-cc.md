@@ -133,15 +133,17 @@ Finally, organize the information logically, addressing each part of the user's 
 
 总而言之，`quic_coalesced_packet_peer.cc` 是一个测试工具，它通过提供对 `QuicCoalescedPacket` 内部状态的访问权限，帮助开发者编写更全面和细致的 QUIC 协议测试用例。它本身不直接与 JavaScript 交互，但通过确保 QUIC 协议的正确性，间接地影响着使用 QUIC 的 Web 应用的性能和稳定性。开发者通常会在进行 QUIC 协议的底层开发和调试时才会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_coalesced_packet_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ std::string* QuicCoalescedPacketPeer::GetMutableEncryptedBuffer(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

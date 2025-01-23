@@ -203,7 +203,7 @@ By analyzing each of these functions and considering the user's requests, I can 
 
 这段代码是 Frida Stalker 在 ARM 架构下的核心组成部分，主要负责控制和管理目标进程线程的执行流程，是实现动态 instrumentation 的关键。它通过修改 CPU 上下文、注入代码、管理内存和缓存等底层操作，实现了对目标线程的追踪、监控和修改。这些功能与逆向工程中的动态分析、hook 技术、代码注入等方法紧密相关，为逆向工程师提供了强大的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm/gumstalker-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 context = user_data;
   GumStalker * self = infect_context->stalker;
   GumExecCtx * ctx;
@@ -1475,7 +1477,4 @@ gum_exec_ctx_compile_arm_block (GumExecCtx * ctx,
 
   iterator.instruction.ci = NULL;
   iterator.instr
-"""
-
-
 ```

@@ -272,7 +272,7 @@ except Exception as e:
 
 总结来说，`bionic/tests/libs/ld_preload_test_helper_lib1.cpp` 提供了一个简单的函数，其主要目的是作为测试 `LD_PRELOAD` 功能的辅助工具，验证动态链接器在处理预加载库时的行为。 它本身并没有复杂的逻辑或直接使用 libc 函数，但其存在和使用深刻地体现了动态链接在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/ld_preload_test_helper_lib1.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -283,12 +283,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 int get_value_from_lib() {
   return 12345;
 }
-
-"""
-
 ```

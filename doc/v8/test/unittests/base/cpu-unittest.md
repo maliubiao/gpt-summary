@@ -114,11 +114,13 @@ console.timeEnd("calculateSum");
 
 `cpu-unittest.cc` 中测试的 `base::CPU` 类虽然是 C++ 代码，但它对于 V8 引擎高效、安全地执行 JavaScript 代码至关重要。V8 利用它来了解底层硬件的能力，并据此进行优化。JavaScript 开发者虽然不能直接操作这些底层 CPU 特性，但他们的代码性能和安全性却间接受益于 V8 引擎对这些特性的有效利用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/cpu-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ TEST(CPUTest, RequiredFeatures) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

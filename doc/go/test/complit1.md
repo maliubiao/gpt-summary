@@ -218,15 +218,17 @@ _ = &T{i: 0, f: 0, s: "", next: {}} // ERROR "missing type in composite literal|
 
 总而言之，这段代码是 Go 编译器测试套件中的一个片段，用于确保编译器能够准确地检测和报告关于复合字面量的非法用法，从而帮助开发者避免这些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/complit1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -292,9 +294,4 @@ type S struct{ s [1]*M1 }
 type M1 map[S]int
 
 var _ = M1{{s: [1]*M1{&M1{{}: 1}}}: 2}
-
-"""
-
-
-
 ```

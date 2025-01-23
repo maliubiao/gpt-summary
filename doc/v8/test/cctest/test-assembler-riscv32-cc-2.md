@@ -196,7 +196,7 @@ console.log(sum); // 输出: [9, 9, 9, 9, 9, 9, 9, 9]
 
 总而言之，这段 `v8/test/cctest/test-assembler-riscv32.cc` 代码片段是 V8 JavaScript 引擎测试套件的一部分，专门用于验证 RISC-V 32 位架构上汇编器生成 RVV（向量扩展）指令的正确性。它覆盖了向量加载/存储、浮点移动、浮点算术、整数算术以及扩展浮点算术和融合乘加等多种类型的 RVV 指令，并通过一系列单元测试确保这些指令在 V8 中的实现符合预期。这对于保证 V8 在 RISC-V 平台上高效且正确地执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dleScope scope(isolate);                                              \
     int8_t src[16];                                                          \
     for (size_t i = 0; i < sizeof(src); i++) src[i] = arry[i % arry.size()]; \
@@ -780,7 +782,4 @@ UTEST_RVV_VFW_VF_FORM_WITH_OP(vfwmul_vf, *, false, is_invalid_fmul)
           double rs2_dval = static_cast<double>(rs2_fval);            \
           double rs3_dval = static_cast<double>(rs3_fval);            \
           GenAndRunTest<i
-"""
-
-
 ```

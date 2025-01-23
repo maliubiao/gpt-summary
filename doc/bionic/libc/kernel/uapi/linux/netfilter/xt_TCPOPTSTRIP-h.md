@@ -259,7 +259,7 @@ if (setStripOptionsFunc) {
 
 通过这些步骤，你可以深入了解 Android 系统如何使用 `xt_TCPOPTSTRIP` 来控制 TCP 选项的剥离。记住，内核相关的 Hook 需要 root 权限和对内核内部机制的深入理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_TCPOPTSTRIP.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -287,7 +289,4 @@ struct xt_tcpoptstrip_target_info {
   __u32 strip_bmap[8];
 };
 #endif
-
-"""
-
 ```

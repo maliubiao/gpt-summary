@@ -166,7 +166,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 该文件实现了 Plist 数据结构的核心功能，包括字典、数组、唯一标识符等数据类型的操作。它通过严格的类型检查和错误处理机制，确保数据的完整性和一致性。虽然不直接涉及二进制底层或 Linux 内核，但其内存管理和二进制数据处理功能为底层操作提供了基础支持。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/plist.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ic unowned PlistDict get_dict (string key) throws PlistError {
 			return (PlistDict) get_value (key, typeof (PlistDict)).get_object ();
 		}
@@ -513,8 +515,4 @@ ic unowned PlistDict get_dict (string key) throws PlistError {
 		assert_not_reached ();
 	}
 }
-
-"""
-
-
 ```

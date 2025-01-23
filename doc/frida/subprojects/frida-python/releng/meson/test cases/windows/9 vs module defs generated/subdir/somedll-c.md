@@ -160,7 +160,7 @@ sys.stdin.read()
 
 如果 Frida 在处理 Windows DLL 时出现问题，例如无法找到函数或 hook 失败，开发者可能会查看类似的测试用例，比如这个 `somedll.c`，来理解预期的行为，并对比实际的运行情况，从而找到 bug 的原因。 这个简单的测试用例可以作为一个基准，帮助开发者隔离问题，判断是 Frida 的核心功能问题还是特定场景下的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/9 vs module defs generated/subdir/somedll.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,12 +168,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int somedllfunc(void) {
     return 42;
 }
-
-"""
-
 ```

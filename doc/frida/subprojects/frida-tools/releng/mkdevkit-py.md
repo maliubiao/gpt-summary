@@ -196,7 +196,7 @@ Frida 本身就是一个强大的动态 instrumentation 工具，广泛应用于
 
 通过理解 `mkdevkit.py` 的功能和它接受的参数，用户可以更好地排查 Frida Server 构建过程中遇到的问题。调试线索通常会指向命令行参数、构建环境配置、依赖项是否满足等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/mkdevkit.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -313,7 +315,4 @@ def parse_array_option_value(val: str, ool_optvals: dict[str, list[str]]) -> Opt
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

@@ -106,11 +106,13 @@ console.log(result);
 
 `v8/src/objects/code.cc` 中定义的 `Code` 对象是 V8 引擎执行 JavaScript 代码的基石。它封装了编译后的机器码以及相关的元数据，使得 V8 能够高效地执行、调试和优化 JavaScript 代码。该文件中的代码负责管理和操作这些 `Code` 对象，是 V8 引擎核心功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/code.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -443,7 +445,4 @@ void Code::SetMarkedForDeoptimization(Isolate* isolate, const char* reason) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

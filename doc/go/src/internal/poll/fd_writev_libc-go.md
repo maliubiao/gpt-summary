@@ -161,7 +161,7 @@ func main() {
 
 `go/src/internal/poll/fd_writev_libc.go` 是 Go 语言在特定操作系统上实现高效批量写入操作的关键组成部分。它通过 `go:linkname` 指令将内部的 `writev` 函数连接到系统的 `writev` 系统调用，从而提升了网络和文件 I/O 的性能。普通 Go 开发者不需要直接操作这个文件或其中的函数，而是通过标准库提供的更高级接口来间接利用其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_writev_libc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -186,9 +188,4 @@ import (
 
 //go:linkname writev syscall.writev
 func writev(fd int, iovecs []syscall.Iovec) (uintptr, error)
-
-"""
-
-
-
 ```

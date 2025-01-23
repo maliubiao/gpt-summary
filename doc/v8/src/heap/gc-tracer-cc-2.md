@@ -240,7 +240,7 @@ allocateLargeObjects(); // 分配大量对象，可能导致老年代内存增�
 
 `v8/src/heap/gc-tracer.cc` 作为 V8 引擎垃圾回收机制的关键组成部分，负责**细致地追踪和记录 GC 过程中的各种事件和性能数据**。它收集时间、内存、对象和效率等关键指标，并将这些信息报告给 V8 的指标系统。这些数据对于理解和优化 JavaScript 应用程序的性能至关重要，可以帮助开发者识别潜在的内存泄漏、高 GC 压力等问题。虽然是用 C++ 实现，但其功能直接服务于 JavaScript 的自动内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/gc-tracer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/gc-tracer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -248,8 +248,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _us;
 
     if (total_duration_since_last_mark_compact_.IsZero()) {
@@ -581,8 +583,4 @@ bool GCTracer::IsSweepingInProgress() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

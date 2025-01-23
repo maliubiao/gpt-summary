@@ -165,7 +165,7 @@ Now I can formulate the detailed explanation.
 
 总而言之，这部分代码是 Chromium Blink 引擎中负责向开发者工具暴露页面可访问性信息的关键组件，它响应来自前端的请求，并维护和更新可访问性树的状态，以便开发者能够理解和调试其网页的无障碍特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/inspector_accessibility_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ce& name_source : name_sources) {
         name_source_properties->emplace_back(CreateValueSource(name_source));
         if (name_source.text.IsNull() || name_source.superseded)
@@ -797,8 +799,4 @@ void InspectorAccessibilityAgent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

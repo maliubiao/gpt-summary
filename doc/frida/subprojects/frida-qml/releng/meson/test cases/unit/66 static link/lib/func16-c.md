@@ -142,7 +142,7 @@ Interceptor.attach(Module.findExportByName(null, "func16"), {
 
 尽管 `func16.c` 的代码非常简单，但它在 Frida 动态插桩工具的上下文中具有重要的意义。它可以作为理解更复杂代码的基础，也是学习逆向工程和底层系统知识的良好起点。通过 Frida，我们可以动态地观察和修改这个函数的行为，从而深入了解程序的运行机制。作为单元测试的一部分，它也体现了软件开发过程中测试和调试的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/66 static link/lib/func16.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,15 +150,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func15();
 
 int func16()
 {
   return func15() + 1;
 }
-
-"""
-
 ```

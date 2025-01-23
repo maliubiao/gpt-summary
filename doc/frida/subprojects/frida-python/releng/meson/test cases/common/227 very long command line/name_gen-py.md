@@ -148,7 +148,7 @@ A user would typically not run this script directly. It's part of Frida's intern
 
 In essence, this script is a small but crucial piece of infrastructure within Frida's build system, ensuring compatibility across different platforms and avoiding common pitfalls related to operating system limitations. Users wouldn't typically interact with it directly, but its existence and functionality are vital for a smooth Frida installation and usage experience.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/227 very long command line/name_gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 """
 generate sequence of filename that does not exceed MAX_LEN=260
@@ -181,7 +183,4 @@ base = base[: name_len - max_num_len]
 
 for i in range(int(sys.argv[1])):
     print("{base}{i:0{max_num_len}d}".format(base=base, max_num_len=max_num_len, i=i))
-
-"""
-
 ```

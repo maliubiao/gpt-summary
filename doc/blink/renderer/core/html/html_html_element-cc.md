@@ -112,14 +112,16 @@ By following this systematic approach of examining the file structure, included 
 
 总而言之，`html_html_element.cc` 文件是 Blink 渲染引擎中一个至关重要的组成部分，它负责实现 HTML 文档根元素的核心行为，并与 CSS 样式系统和 JavaScript 执行环境紧密相连，确保网页能够被正确解析、渲染和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_html_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -292,7 +294,4 @@ void HTMLHtmlElement::PropagateWritingModeAndDirectionFromBody() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

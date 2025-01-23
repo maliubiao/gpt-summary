@@ -106,7 +106,7 @@ By following these steps, I could systematically analyze the provided C++ code s
 
 第 7 部分的测试主要集中在 `HostResolverManager` 与 **DNS 客户端**的交互，以及对 **DNS 配置变更**的响应。它涵盖了非安全 DNS 客户端的启用/禁用、私有 DNS 的影响、`localhost` 解析的特殊处理，以及在不同情况下 `DnsTask` 的行为，包括成功、失败和回退。这部分测试旨在确保 `HostResolverManager` 能够正确地管理和使用 DNS 客户端，并能根据 DNS 配置的变化做出相应的调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共21部分，请归纳一下它的功能
+```
 
-"""
-         IPAddress(127, 0, 53, 53), false /* delay */);
+### 源代码
+```cpp
+IPAddress(127, 0, 53, 53), false /* delay */);
   AddDnsRule(&rules, "4collision", dns_protocol::kTypeAAAA,
              MockDnsClientRule::ResultType::kEmpty, false /* delay */);
   AddDnsRule(&rules, "6collision", dns_protocol::kTypeA,
@@ -811,8 +813,4 @@ TEST_F(HostResolverManagerDnsTest, DnsTaskUnspec) {
   EXPECT_THAT(responses[3]->request()->GetAddressResults()->endpoints(),
               testing::ElementsAre(CreateExpected("192.168.1.101", 80)));
   EXPECT_THAT(responses[3]->request()->GetEndpointResults(),
-         
-"""
-
-
 ```

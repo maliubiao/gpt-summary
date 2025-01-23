@@ -214,7 +214,7 @@ Interceptor.attach(Module.findExportByName("lib.so", "TheFunction"), {
 
 总而言之，`frida/subprojects/frida-python/releng/meson/test cases/unit/41 rpath order/subprojects/sub1/lib.c` 这个文件是 Frida 为了测试其在处理运行时库搜索路径（RPATH）顺序方面的能力而创建的一个简单的共享库。逆向工程师可以利用 Frida 的 hook 功能来观察和修改这个库的行为，这涉及到对二进制底层、动态链接、操作系统和 Android 框架的深入理解。用户在使用 Frida 进行逆向分析时，也可能因为对这些概念理解不足而遇到各种错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/41 rpath order/subprojects/sub1/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -222,9 +222,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

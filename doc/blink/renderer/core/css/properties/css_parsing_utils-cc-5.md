@@ -125,7 +125,7 @@ Token(COLOR, "red")
 
 这部分代码主要集中在 **解析与背景、遮罩、边框图像、阴影以及一些布局相关的 CSS 属性值**。它提供了一系列工具函数，用于从 CSS token 流中提取并转换成内部表示 (CSSValue 对象)。这些函数是 CSS 解析器的核心组成部分，负责将 CSS 文本转化为浏览器可以理解和使用的结构化数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ,
       stream, context, negative_size,
       local_context.UseAliasParsing() ? ParsingStyle::kLegacy
@@ -1065,7 +1067,4 @@ CSSValueList* ConsumeNonGenericFamilyNameList(CSSParserTokenStream& stream) {
       return nullptr;
     }
     parsed_va
-"""
-
-
 ```

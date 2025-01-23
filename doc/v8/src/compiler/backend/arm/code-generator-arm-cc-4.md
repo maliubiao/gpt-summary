@@ -139,7 +139,7 @@ function atomicIncrement() {
 
 作为第 5 部分，这段代码主要关注于 **生成 ARM 汇编代码以实现 JavaScript 中 `Atomics` 对象提供的原子操作功能**。它针对不同的原子操作类型和数据大小提供了相应的代码生成逻辑，确保在多线程环境下对共享内存的访问是安全和一致的。这段代码是 V8 编译器后端的重要组成部分，使得 JavaScript 能够利用底层的硬件原子指令来实现高性能的并发编程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/code-generator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/code-generator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -147,8 +147,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 changeUint16:
       __ add(i.TempRegister(1), i.InputRegister(0), i.InputRegister(1));
       __ uxth(i.TempRegister(2), i.InputRegister(2));
@@ -976,7 +978,4 @@ void CodeGenerator::MoveTempLocationTo(InstructionOperand* dest,
                                        MachineRepresentation rep) {
   int scratch_reg_code = move_cycle_.scratch_reg_code;
   DCHECK(move_cycle_.temps.h
-"""
-
-
 ```

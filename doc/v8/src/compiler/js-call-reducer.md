@@ -64,12 +64,14 @@ numbers.forEach(function(number) {
 
 总而言之，这个文件的核心功能是作为 V8 编译器的一部分，通过在编译阶段对 JavaScript 函数调用进行分析和优化，最终提升 JavaScript 代码的执行效率。这部分代码是 V8 引擎高性能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1721,8 +1723,5 @@ TNode<Object> IteratingArrayBuiltinReducerAssembler::ReduceArrayPrototypeReduce(
   TNode<Context> context = ContextInput();
   TNode<Object> target = TargetInput();
   TNode<JSArray> receiver = ReceiverInputAs<JSArray>();
-  TNode<Object> fncallback = 
-"""
-
-
+  TNode<Object> fncallback =
 ```

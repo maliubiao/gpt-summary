@@ -244,7 +244,7 @@ func main() {
 
 总而言之，这段 `protomem_test.go` 文件是 Go 语言运行时 `pprof` 包中至关重要的测试组件，它确保了内存 profile 功能的正确性，特别是对于现代 Go 语言特性如泛型的支持。理解其功能有助于开发者更好地利用 `pprof` 工具进行性能分析和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/protomem_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -252,8 +252,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -485,9 +487,4 @@ func TestGenericsInlineLocations(t *testing.T) {
 		t.Errorf("expected a location with at least 3 functions\n%s\ngot\n%s\n", expectedLocation, actual)
 	}
 }
-
-"""
-
-
-
 ```

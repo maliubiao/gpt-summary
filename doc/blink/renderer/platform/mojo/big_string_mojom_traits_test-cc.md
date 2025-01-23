@@ -107,14 +107,16 @@ Let's break down the thought process to analyze the provided C++ test file.
 
 `big_string_mojom_traits_test.cc` 是 Blink 引擎中一个关键的测试文件，它确保了 `BigString` 类型在进程间通信时能够正确地进行序列化和反序列化。这对于保障 Web 应用中涉及大量文本处理功能的正确性和性能至关重要。它间接地关系到 JavaScript、HTML 和 CSS 的正确渲染和执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/big_string_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ TEST(BigStringMojomTraitsTest, BigString_Long) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

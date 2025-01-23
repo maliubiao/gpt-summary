@@ -153,7 +153,7 @@ main.main()
 
 总而言之，`go/src/runtime/signal_freebsd_arm64.go` 这部分代码是 Go 运行时在 FreeBSD ARM64 系统上实现信号处理的关键组成部分，它使得 Go 能够捕获和处理操作系统信号，为 panic/recover 机制和 Goroutine 栈回溯等功能提供了必要的底层支持。普通 Go 开发者无需直接操作这些代码，但理解其功能有助于更深入地理解 Go 运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_freebsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -229,9 +231,4 @@ func (c *sigctxt) set_r28(x uint64) { c.regs().mc_gpregs.gp_x[28] = x }
 
 func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) { c.info.si_addr = x }
-
-"""
-
-
-
 ```

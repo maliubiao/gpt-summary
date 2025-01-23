@@ -153,7 +153,7 @@ If you encounter an error originating from `_unholder`, it suggests the followin
 
 In summary, `_unholder` is a utility function within the Meson build system that ensures arguments passed to functions are in the expected format (either unwrapped or properly wrapped). It helps maintain consistency and catch type errors during the build process. While not directly involved in runtime reverse engineering, understanding its role can be valuable for comprehending how software is built and configured.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreterbase/_unholder.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -188,7 +190,4 @@ def _unholder(obj: InterpreterObject) -> TYPE_var:
     elif isinstance(obj, InterpreterObject):
         raise InvalidArguments(f'Argument {obj} of type {type(obj).__name__} cannot be passed to a method or function')
     raise MesonBugException(f'Unknown object {obj} of type {type(obj).__name__} in the parameters.')
-
-"""
-
 ```

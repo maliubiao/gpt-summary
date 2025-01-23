@@ -131,14 +131,16 @@ This systematic approach, breaking down the code into smaller parts and understa
 
 总而言之，`blob_data.cc` 是 Blink 引擎中 `Blob` 功能的核心实现，负责 `Blob` 数据的存储、管理和与其他 Web 技术的集成。理解其功能有助于开发者更好地理解和使用 `Blob` API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/blob_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -571,7 +573,4 @@ void BlobDataHandle::SetBlobRegistryForTesting(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -327,7 +327,7 @@ if (Process.platform === 'android') {
 
 通过这个 Frida 脚本，你可以在 Android 设备上运行你的目标进程，并观察到系统或应用程序注册的信号处理函数，从而理解信号处理机制的运作方式。你可以针对特定的 Android 组件或应用进行 hook，例如 hook `zygote` 进程启动时对关键信号的处理函数的注册，或者 hook 特定应用中 NDK 部分的信号处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/signal_types.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -338,8 +338,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -452,7 +454,4 @@ struct sigaction64 {
 };
 
 #endif
-
-"""
-
 ```

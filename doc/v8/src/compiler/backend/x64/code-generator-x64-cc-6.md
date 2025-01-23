@@ -183,7 +183,7 @@ console.log(minResult); // 输出: SIMD.int32x4(1, 2, 2, 1)
 
 **为 x64 架构生成执行 SIMD 整数运算和类型转换的机器代码。** 它涵盖了多种 SIMD 数据类型的转换、基本的算术和比较操作（如最小值、最大值、大于等于）、点积运算、扩展加法、移位和零扩展、常量加载、元素提取和插入、饱和运算、平均值运算、扩展乘法、Q15 乘法以及按位逻辑运算和混洗操作。这部分代码是 V8 引擎优化 JavaScript 中 SIMD 相关操作的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/code-generator-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -191,9 +191,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共10部分，请归纳一下它的功能
+```
 
-"""
-   __ Pmovzxdq(i.OutputSimd128Register(), i.InputSimd128Register(0));
+### 源代码
+```cpp
+__ Pmovzxdq(i.OutputSimd128Register(), i.InputSimd128Register(0));
       break;
     }
     case kX64I64x2UConvertI32x4High: {
@@ -1240,7 +1242,4 @@ Prompt:
         __ Pshufb(kScratchDoubleReg, tmp_simd);
         uint32_t mask2[4] = {};
         if (instr->I
-"""
-
-
 ```

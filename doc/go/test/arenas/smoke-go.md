@@ -213,15 +213,17 @@ go build -goexperiment=arenas smoke.go
 
 总而言之，这段代码是 Go 语言中 arenas 特性的一个基本的功能性测试，演示了如何在 arena 中分配基本类型和切片，以及如何使用反射进行分配。 使用者需要注意 arena 的生命周期管理，避免内存泄漏和访问已释放的内存。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/arenas/smoke.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // build -goexperiment arenas
 
 // Copyright 2023 The Go Authors. All rights reserved.
@@ -287,9 +289,4 @@ func main() {
 		log.Fatalf("bad i2 value: got %d, want %d", *i2, iValue)
 	}
 }
-
-"""
-
-
-
 ```

@@ -120,12 +120,14 @@ Response: The user has provided the last part of a C++ source code file (`v8/src
 
 这部分 `objects-printer.cc` 提供了强大的底层调试工具，允许 V8 开发者和高级用户深入了解 JavaScript 代码在引擎内部的表示和执行机制。它通过导出一系列内部函数，方便调试器进行更细粒度的对象检查和状态分析，是理解 V8 引擎工作原理的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 os << "\n - enum length: ";
   if (EnumLength() == kInvalidEnumCacheSentinel) {
     os << "invalid";
@@ -668,8 +670,4 @@ V8_EXPORT_PRIVATE void _v8_internal_Print_PropertyCallbackInfo(
   i::PrintPropertyCallbackInfo(property_callback_info);
 #endif
 }
-
-"""
-
-
 ```

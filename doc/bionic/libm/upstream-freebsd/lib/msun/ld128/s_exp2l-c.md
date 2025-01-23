@@ -215,7 +215,7 @@ Section Headers:
 
 通过以上分析，我们可以理解 `s_exp2l.c` 在 Android 系统中的作用，以及如何从上层应用逐步追踪到这个底层的数学函数实现。这对于理解 Android 系统的底层机制以及调试相关的数学问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/s_exp2l.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -225,8 +225,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -653,7 +655,4 @@ exp2l(long double x)
 		return (r * twopkp10000 * twom10000);
 	}
 }
-
-"""
-
 ```

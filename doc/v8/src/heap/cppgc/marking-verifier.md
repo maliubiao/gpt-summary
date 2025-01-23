@@ -122,11 +122,13 @@ head.next = null; // 断开 head 到 second 的连接
 
 `marking-verifier.cc` 是 V8 内部用于验证垃圾回收标记阶段正确性的 C++ 代码。它的正确性对于 V8 的稳定性和可靠性至关重要，间接地影响着 JavaScript 代码的执行和内存管理。虽然 JavaScript 开发者不能直接操作这个文件，但 JavaScript 代码的执行依赖于其背后的垃圾回收机制的正确运作，而 `marking-verifier.cc` 正是用来保障这一点的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marking-verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ MarkingVerifier::MarkingVerifier(HeapBase& heap_base,
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

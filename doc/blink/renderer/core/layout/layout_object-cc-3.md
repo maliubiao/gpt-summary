@@ -162,18 +162,18 @@ Throughout this process, I paid close attention to the code comments and naming 
 
 总而言之，`LayoutObject` 在 Blink 渲染引擎中扮演着至关重要的角色，它是连接 HTML 结构、CSS 样式和最终渲染结果的关键桥梁。这个代码片段详细展示了 `LayoutObject` 如何细致地处理样式变化，并确保页面的正确渲染和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-
-  if (IsText() && Parent() && Parent()->IsInitialLetterBox()) [[unlikely]] {
+### 源代码
+```cpp
+if (IsText() && Parent() && Parent()->IsInitialLetterBox()) [[unlikely]] {
     // Note: `Parent()` can be null for text for generated contents.
     // See "accessibility/css-generated-content.html"
     const ComputedStyle* initial_letter_text_style =
@@ -992,7 +992,4 @@ void LayoutObject::MapLocalToAncestor(const LayoutBoxModelObject* ancestor,
   if (skip_info.AncestorSkipped()) {
     // There can't be a transform between |ancestor| and |o|, because transforms
     // create containe
-"""
-
-
 ```

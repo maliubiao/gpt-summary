@@ -147,7 +147,7 @@ Unix domain sockets are not supported on Plan 9.
 
 这段 `unixsock_plan9.go` 代码的核心作用是明确告知 Go 开发者，Unix 域套接字功能在 Plan 9 操作系统上是不被支持的。 它通过让所有相关的 Unix 域套接字操作函数都返回 `syscall.EPLAN9` 错误来实现这一点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/unixsock_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -208,9 +210,4 @@ func (sl *sysListener) listenUnix(ctx context.Context, laddr *UnixAddr) (*UnixLi
 func (sl *sysListener) listenUnixgram(ctx context.Context, laddr *UnixAddr) (*UnixConn, error) {
 	return nil, syscall.EPLAN9
 }
-
-"""
-
-
-
 ```

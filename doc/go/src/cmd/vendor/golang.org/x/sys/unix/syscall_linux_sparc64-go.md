@@ -265,15 +265,17 @@ func main() {
 
 总之，`syscall_linux_sparc64.go` 文件是 Go 语言与 Linux SPARC64 操作系统进行交互的桥梁，它提供了访问底层系统调用的能力。虽然功能强大，但直接使用需要谨慎，并充分理解操作系统和 Go 语言的底层机制。通常建议使用 Go 标准库中更高级的抽象，这些抽象在 `syscall` 之上提供了更安全和易用的接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_sparc64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -386,9 +388,4 @@ func (cmsg *Cmsghdr) SetLen(length int) {
 func (rsa *RawSockaddrNFCLLCP) SetServiceNameLen(length int) {
 	rsa.Service_name_len = uint64(length)
 }
-
-"""
-
-
-
 ```

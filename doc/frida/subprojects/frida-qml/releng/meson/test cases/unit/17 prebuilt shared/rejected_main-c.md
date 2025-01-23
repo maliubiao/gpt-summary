@@ -122,7 +122,7 @@ This structured thinking process allows for a comprehensive analysis, even with 
 
 `rejected_main.c` 文件本身是一个非常简单的 C 程序，但它作为 Frida 单元测试的一部分，其目的是测试 Frida 在尝试 hook 或 instrument 一个“被拒绝”的场景下的行为。这与逆向工程中可能遇到的各种限制和失败情况相关，并间接反映了用户在使用 Frida 时可能遇到的错误。通过分析这样的测试用例，可以帮助理解 Frida 的工作原理以及它在遇到错误时的处理方式。要更深入地理解其具体功能，需要查看 `rejected.h` 文件的内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/17 prebuilt shared/rejected_main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,15 +130,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rejected.h"
 
 int main(void) {
     say();
     return 0;
 }
-
-"""
-
 ```

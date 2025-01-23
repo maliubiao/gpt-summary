@@ -76,15 +76,17 @@ By following these steps, we can construct a comprehensive and accurate summary 
 
 总而言之，这部分测试是确保 Blink 引擎的多列布局功能稳定、可靠且符合规范的重要组成部分。 它通过模拟各种DOM操作和渲染场景，帮助开发者发现和修复潜在的bug，并保证了Web开发者能够正确地使用CSS多列布局特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_multi_column_flow_thread_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 re("mc"), "cs");
   DestroyLayoutObject("spanner");
   EXPECT_EQ(ColumnSetSignature("mc"), "c");
@@ -780,8 +782,4 @@ TEST_F(MultiColumnRenderingTest, FlowThreadUpdateGeometryCrash) {
 }  // anonymous namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

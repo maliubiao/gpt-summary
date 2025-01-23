@@ -173,15 +173,17 @@ CSS 本身不直接控制 SMIL 动画的播放时间，但 CSS 的某些属性�
 
 `smil_time_container.cc` 是 Blink 渲染引擎中实现 SVG SMIL 动画的核心，它负责动画的时间管理、调度和执行。理解这个文件的功能对于深入了解 SVG 动画的工作原理以及调试相关问题至关重要。它与 HTML (声明动画), JavaScript (交互控制动画), 以及 CSS (间接影响渲染) 都有密切的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/animation/smil_time_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All rights reserved.
  *
@@ -909,7 +911,4 @@ void SMILTimeContainer::DidAttachLayoutObject() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

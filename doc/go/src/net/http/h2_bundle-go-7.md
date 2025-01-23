@@ -205,7 +205,7 @@ func myHandler(w http.ResponseWriter, r *http.Request) {
 
 总之，这段代码是 Go HTTP/2 服务器端响应处理的核心部分，它实现了 `http.ResponseWriter` 接口，并提供了诸如 Server Push 和 Trailers 等 HTTP/2 特有的功能。 理解 `http2responseWriter` 和 `http2responseWriterState` 的作用是理解 Go HTTP/2 服务器实现的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第8部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ngth && clen == "" && rws.handlerDone && http2bodyAllowedForStatus(rws.status) && (len(p) > 0 || !isHeadResp) {
 			clen = strconv.Itoa(len(p))
 		}
@@ -1230,10 +1232,5 @@ type http2ClientConn struct {
 	closing          bool
 	closed           bool
 	seenSettings     bool                          // true if we've seen a settings frame, false otherwise
-	seenSettingsChan chan struct{}                 
-"""
-
-
-
-
+	seenSettingsChan chan struct{}
 ```

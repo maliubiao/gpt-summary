@@ -134,7 +134,7 @@ If there's an error at any stage (e.g., an invalid frame, a header the server re
 
 In summary, this part of the `oghttp2_adapter_test.cc` file specifically focuses on rigorously testing the **server-side logic** of the `OgHttp2Adapter`. It covers a wide range of scenarios, from handling malformed client requests and rejecting specific headers to managing response generation errors and correctly implementing various HTTP/2 features like trailers and padding. It ensures the server-side adapter is robust and correctly implements the HTTP/2 protocol.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -142,9 +142,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共12部分，请归纳一下它的功能
+```
 
-"""
-  .Serialize();
+### 源代码
+```cpp
+.Serialize();
 
   testing::InSequence s;
 
@@ -878,7 +880,4 @@ TEST_P(OgHttp2AdapterDataTest, ServerSubmitsTrailersWhileDataDeferred) {
     EXPECT_CALL(visitor, OnBeforeFrameSent(SETTINGS, 0, _, 0x0));
     EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0, _, 0x0, 0));
     EXPECT_CALL(visitor, OnBeforeFrameSent(SETTINGS
-"""
-
-
 ```

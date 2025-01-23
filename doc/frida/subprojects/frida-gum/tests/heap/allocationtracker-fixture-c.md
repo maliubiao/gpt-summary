@@ -139,7 +139,7 @@ Here's how a user's actions might indirectly lead to the execution of code simil
 
 So, while a user doesn't directly touch `allocationtracker-fixture.c`, the tests within this file ensure that the core logic of `GumAllocationTracker` functions correctly. When a user uses Frida's heap tracking features, they are indirectly relying on the correctness of the code being tested here. If a bug exists in `GumAllocationTracker`, the tests in this file (if written correctly) should ideally catch that bug before it affects users.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/allocationtracker-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -209,7 +211,4 @@ static const GumReturnAddress dummy_return_addresses_b[] =
 
 static gboolean filter_cb (GumAllocationTracker * tracker, gpointer address,
     guint size, gpointer user_data);
-
-"""
-
 ```

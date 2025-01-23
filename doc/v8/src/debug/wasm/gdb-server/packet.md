@@ -106,11 +106,13 @@ Essentially, this C++ code is part of the low-level machinery that enables the d
 
 `packet.cc` 中定义的 `Packet` 类是 V8 引擎中用于实现 WebAssembly 调试功能的关键组件。它负责处理 GDB 远程调试协议的底层数据包构建和解析，使得开发者可以使用 GDB 这样的标准调试器来调试 JavaScript 环境中的 Wasm 代码。虽然 JavaScript 代码本身不会直接调用这个 C++ 类，但它支持了 JavaScript 开发者的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/packet.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -475,7 +477,4 @@ std::string Packet::GetPacketData() const {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

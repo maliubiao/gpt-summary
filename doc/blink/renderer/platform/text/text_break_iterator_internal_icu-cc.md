@@ -101,14 +101,16 @@ By following these steps, the comprehensive and accurate explanation of the `tex
 
 `text_break_iterator_internal_icu.cc` 文件是 Blink 引擎中一个基础组件，它负责提供当前浏览器的 UI 语言信息，并将其用于文本断句和搜索等操作。虽然它不直接与前端代码交互，但它提供的区域设置信息会间接地影响 JavaScript 的国际化 API 和浏览器的文本渲染行为。理解这个文件的功能有助于开发者更好地理解浏览器如何处理不同语言的文本，并避免一些常见的国际化错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_break_iterator_internal_icu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc. All rights reserved.
  * Copyright (C) 2008, 2009 Google Inc.
@@ -155,7 +157,4 @@ const char* CurrentTextBreakLocaleID() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -207,15 +207,17 @@ func main() {
 
 总而言之，`syscall_freebsd_riscv64.go` 文件是 Go 语言在 FreeBSD RISC-V 64位平台上进行底层系统调用的重要组成部分，它提供了必要的类型定义和辅助函数，使得 Go 程序能够与操作系统进行交互。 理解其功能和潜在的陷阱对于编写高效且可靠的系统级 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -276,9 +278,4 @@ func sendfile(outfd int, infd int, offset *int64, count int) (written int, err e
 }
 
 func Syscall9(num, a1, a2, a3, a4, a5, a6, a7, a8, a9 uintptr) (r1, r2 uintptr, err syscall.Errno)
-
-"""
-
-
-
 ```

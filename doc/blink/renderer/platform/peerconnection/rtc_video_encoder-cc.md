@@ -102,15 +102,17 @@ Let's break down the provided code snippet to understand its core functions and 
 
 `blink/renderer/platform/peerconnection/rtc_video_encoder.cc` 文件的主要功能是作为 Chromium Blink 引擎中 WebRTC 视频编码的实现核心，负责将原始视频帧高效地压缩成适合网络传输的格式。它通过与硬件加速器交互、管理编码参数和缓冲区、处理编码完成事件以及错误处理等机制，为浏览器中的实时音视频通信提供了关键的编码能力。同时，它也具备软件编码回退机制，以确保在各种环境下都能提供视频编码服务。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1783,7 +1785,4 @@ void RTCVideoEncoder::Impl::BitstreamBufferReady(
   if (ps_tracker_.get()) {
     H265ParameterSetsTracker::FixedBitstream fixed =
         ps_tracker_->MaybeFi
-"""
-
-
 ```

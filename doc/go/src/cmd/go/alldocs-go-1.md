@@ -118,7 +118,7 @@ A common mistake is to manually edit the `go.work` file without using `go work e
 
 This section of the `go` command documentation primarily describes the functionalities related to **Go Workspaces**. The `go work` command and its subcommands (`edit`, `init`, `sync`, `use`, `vendor`) provide tools to manage and configure multi-module development environments. It allows developers to define a workspace with a `go.work` file, including multiple local Go modules, and manage dependencies and replacements across those modules. This simplifies development and testing when working on related modules simultaneously.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/alldocs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -126,9 +126,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- is
+### 源代码
+```go
+is
 // primarily intended to override conflicting replaces in different workspace
 // modules.
 //
@@ -1717,10 +1719,5 @@ Prompt:
 // denoting remote repositories begin with the path to the code,
 // such as 'github.com/user/repo'. Package patterns should include this prefix.
 // For instance, a package called 'http' residing under 'github.com/user/repo',
-// would be addressed with the fully-qualified 
-"""
-
-
-
-
+// would be addressed with the fully-qualified
 ```

@@ -148,15 +148,17 @@ func main() {
 
 总而言之，`go/src/cmd/internal/src/pos.go` 提供了一套精巧的机制来表示和管理 Go 源代码的位置信息，这对于编译器的错误报告、调试信息的生成以及代码内联等优化至关重要。理解 `Pos` 和 `PosBase` 的关系以及 `lico` 的编码方式是正确使用和理解这段代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/src/pos.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -635,9 +637,4 @@ func (x lico) lineNumberHTML() string {
 func (x lico) atColumn1() lico {
 	return makeLico(x.Line(), 1).withIsStmt()
 }
-
-"""
-
-
-
 ```

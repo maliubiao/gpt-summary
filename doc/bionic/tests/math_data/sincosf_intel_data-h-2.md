@@ -68,7 +68,7 @@ Here's a breakdown of the thought process:
 
 请注意，由于这只是数据文件，它本身并不包含函数的实现逻辑或动态链接信息。它只是测试过程中的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincosf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -80,8 +80,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 0eacd9521377p-1,
     0x1.58ad76p1,
   },
@@ -1335,7 +1337,4 @@ Prompt:
     0x1.6a09b2b17b741050a6cfd64b81c76485p-1,
     -0x1.2106c8p4,
   },
-"""
-
-
 ```

@@ -184,15 +184,17 @@ timestamp = 1678886400.0
 
 通过在 `blink/renderer/modules/xr/xr_plane.cc` 中添加日志 (例如使用 `DVLOG`)，可以追踪 `XRPlane` 对象的创建、更新过程，以及接收到的底层数据，帮助定位问题所在。同时，也可以在 JavaScript 代码中打印 `XRPlane` 对象的属性，对比 Web 端看到的数据和 C++ 层的数据，进一步缩小问题范围。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_plane.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ void XRPlane::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

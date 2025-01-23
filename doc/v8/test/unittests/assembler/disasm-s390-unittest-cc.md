@@ -132,15 +132,17 @@ COMPARE(ar(r3, r10), "1a3a           ar\tr3,r10");
 
 虽然用户不会直接编写 S390 汇编代码，但理解 V8 如何将 JavaScript 转换为机器码，以及如何反汇编这些代码，有助于更好地理解 JavaScript 的执行原理和性能特点。这个单元测试正是为了确保 V8 在 S390 架构上的底层代码处理是正确的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-s390-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-s390-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -373,7 +375,4 @@ TEST_F(DisasmS390Test, SixBytes) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

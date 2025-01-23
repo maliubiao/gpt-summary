@@ -153,14 +153,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`ExecutionContextLifecycleStateObserver` 是 Blink 渲染引擎中一个重要的组件，它允许其他模块监控 JavaScript 执行上下文的生命周期状态，这对于管理资源、处理页面生命周期事件以及支持调试功能至关重要。开发者在使用时需要注意及时更新观察者状态，并确保在 `ExecutionContext` 销毁后不再持有相关的观察者对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/execution_context/execution_context_lifecycle_state_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  *
@@ -243,7 +245,4 @@ void ExecutionContextLifecycleStateObserver::SetExecutionContext(
 }
 
 }  // namespace blink
-
-"""
-
 ```

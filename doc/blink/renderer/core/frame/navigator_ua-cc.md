@@ -265,14 +265,16 @@ The `NavigatorUAData` object created by `userAgentData()` would have the followi
 
 In summary, `navigator_ua.cc` plays a vital role in providing structured user agent information to JavaScript, enabling web developers to adapt their websites based on the user's browser and environment in a more reliable and standardized way than relying on parsing the raw user agent string. However, developers should use this information judiciously and combine it with feature detection for robust and future-proof web development.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/navigator_ua.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ NavigatorUAData* NavigatorUA::userAgentData() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

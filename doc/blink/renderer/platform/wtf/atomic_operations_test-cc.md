@@ -104,14 +104,16 @@ This systematic approach, breaking down the code into smaller parts, understandi
 
 `atomic_operations_test.cc` 文件是 Blink 渲染引擎中用于验证原子内存操作功能正确性的关键测试文件。虽然它本身是底层的 C++ 代码，但它所测试的功能对于确保 Web 应用在多线程环境下的稳定性和数据一致性至关重要，间接地与 JavaScript, HTML, CSS 的正确执行息息相关。理解原子操作的原理可以帮助开发者避免与并发相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/atomic_operations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ TEST_F(AtomicOperationsTest, AtomicMemzero_127Bytes) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -111,7 +111,7 @@ obj.b = 2;
 
 作为第二部分，这段代码专注于 **验证对象 Map 转换过程中的内存布局一致性**。 它通过比较转换前后对象的 slots 信息来确保转换操作的正确性。这部分是 V8 堆验证机制中的一个重要环节，用于在开发和测试阶段发现潜在的内存管理和对象表示错误。它依赖于第一部分中可能定义的其他验证工具和数据结构，共同维护 V8 堆的健康状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-verifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -119,8 +119,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d re-setting of maps below
     // can race when there are parallel internalization operations, causing
     // CHECKs to fail.
@@ -153,8 +155,4 @@ d re-setting of maps below
 }  // namespace internal
 }  // namespace v8
 #endif  // VERIFY_HEAP
-
-"""
-
-
 ```

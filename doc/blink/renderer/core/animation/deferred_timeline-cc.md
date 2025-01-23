@@ -182,14 +182,16 @@ By following this process of reading, analyzing, connecting to known concepts, c
 
 `DeferredTimeline` 是 Blink 渲染引擎中一个用于管理和代理 `ScrollSnapshotTimeline` 对象的关键组件。它允许动态地附加和分离 timeline，并负责在 timeline 变化时通知动画系统进行更新。虽然 Web 开发者不会直接操作它，但它的正确运行对于实现各种基于时间线的动画效果（尤其是滚动驱动的动画）至关重要。 常见的“错误”更多是 Blink 内部实现上的问题，可能导致动画行为异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/deferred_timeline.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ void DeferredTimeline::OnAttachedTimelineChange() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

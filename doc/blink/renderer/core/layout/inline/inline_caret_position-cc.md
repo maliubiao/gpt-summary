@@ -149,14 +149,16 @@ By following this structured thought process, combining code inspection with an 
 
 `inline_caret_position.cc` 是 Blink 渲染引擎中一个至关重要的文件，它负责精确地计算和定位 inline 格式化上下文中的光标。它需要理解 HTML 结构、CSS 样式，并为 JavaScript 的光标操作提供底层支持。理解其功能有助于我们更好地理解浏览器是如何渲染和交互文本内容的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_caret_position.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -699,7 +701,4 @@ PositionWithAffinity InlineCaretPosition::ToPositionInDOMTreeWithAffinity()
 }
 
 }  // namespace blink
-
-"""
-
 ```

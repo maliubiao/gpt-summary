@@ -99,11 +99,13 @@ createObjects();
 
 `worklist.cc` 文件定义了 V8 引擎中用于管理待处理任务的基础结构，特别是用于垃圾回收等关键操作。虽然 JavaScript 代码不能直接访问这些 C++ 结构，但 JavaScript 的对象生命周期和垃圾回收机制的运作，很大程度上依赖于像工作列表这样的底层机制。 工作列表帮助垃圾回收器高效地追踪和处理堆中的对象，从而确保 JavaScript 程序的内存得到有效管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/worklist.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -128,7 +130,4 @@ SegmentBase* SegmentBase::GetSentinelSegmentAddress() {
 
 }  // namespace internal
 }  // namespace heap::base
-
-"""
-
 ```

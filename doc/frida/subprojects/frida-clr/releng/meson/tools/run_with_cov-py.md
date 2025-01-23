@@ -176,7 +176,7 @@ if __name__ == '__main__':
 
 总而言之，`run_with_cov.py` 是一个用于自动化代码覆盖率收集的实用工具，它通过设置环境和运行命令，帮助 Frida 开发者更好地测试和理解他们的代码，同时也为逆向分析提供了有价值的执行路径信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/tools/run_with_cov.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
@@ -228,7 +230,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

@@ -150,7 +150,7 @@ Finally, organize the information logically, using clear headings and bullet poi
 
 总而言之，虽然 `compare.py` 本身的代码非常简单，但它在保证 Frida 构建和测试的正确性方面发挥着至关重要的作用，特别是在验证配置文件输出格式的场景下。它连接了 Frida 的高级功能和底层的配置细节，并通过简单的比较操作，为开发者提供了有效的反馈和调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/269 configure file output format/compare.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,14 +158,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 
 with open(sys.argv[1], 'r', encoding='utf-8') as f, open(sys.argv[2], 'r', encoding='utf-8') as g:
     if f.read() != g.read():
         sys.exit('contents are not equal')
-
-"""
-
 ```

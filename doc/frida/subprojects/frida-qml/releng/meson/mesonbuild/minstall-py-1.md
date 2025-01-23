@@ -141,7 +141,7 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，这个脚本负责将编译好的 Frida 组件正确地部署到目标系统中，使其能够正常运行。它是 Frida 构建和部署流程中至关重要的一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/minstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tname = os.path.join(outdir, os.path.basename(fname))
             final_path = os.path.join(d.prefix, t.outdir, os.path.basename(fname))
             should_strip = t.strip or (t.can_strip and self.options.strip)
@@ -286,8 +288,4 @@ def run(opts: 'ArgumentType') -> int:
         else:
             installer.do_install(datafilename)
     return 0
-
-"""
-
-
 ```

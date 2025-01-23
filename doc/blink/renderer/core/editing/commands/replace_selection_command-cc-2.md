@@ -140,7 +140,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，`ReplaceSelectionCommand` 是 Blink 引擎中处理内容替换的核心类，它需要考虑各种复杂的场景和边界情况，以确保用户在进行编辑操作时获得一致且符合预期的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/replace_selection_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,9 +148,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- first paragraph of inserted content with the content that
+### 源代码
+```cpp
+first paragraph of inserted content with the content that
     // came before the selection that was pasted into would also move content
     // after the selection that was pasted into if: only one paragraph was being
     // pasted, and it was not wrapped in a block, the selection that was pasted
@@ -728,8 +730,4 @@ void ReplaceSelectionCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

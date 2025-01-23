@@ -146,15 +146,17 @@ This detailed breakdown shows how analyzing the code structure, understanding th
 
 总而言之，`TestWebRTCStatsReportObtainer.cc` 是 Blink 引擎中用于测试 WebRTC 统计报告获取功能的辅助类。它不直接与最终用户的操作交互，而是服务于开发和测试过程，确保 WebRTC 功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/test_webrtc_stats_report_obtainer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ void TestWebRTCStatsReportObtainer::OnStatsDelivered(
 }
 
 }  // namespace blink
-
-"""
-
 ```

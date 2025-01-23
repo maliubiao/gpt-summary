@@ -198,7 +198,7 @@ console.log(result); // 输出 15
 
 作为第 5 部分，这段代码主要关注 **WebAssembly 解释器中用于数据操作、引用类型处理、内存和表操作以及基本控制流指令的处理逻辑**。它定义了执行这些核心指令的具体步骤，包括从指令流中读取操作数，在栈上操作数据，以及与 WebAssembly 运行时环境进行交互。  考虑到这是 15 部分中的一部分，可以推测之前的部分可能涉及指令的解码、调用栈管理等，而后续部分可能会涵盖更复杂的控制流、函数调用、以及与其他 V8 内部机制的交互。  这一部分是解释器执行 WebAssembly 代码的核心构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -206,8 +206,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   uint32_t from0 = ReadI32(code);
   uint32_t from1 = ReadI32(code);
@@ -1034,7 +1036,4 @@ INSTRUCTION_HANDLER_FUNC s2s_AtomicFence(const uint8_t* code, uint32_t* sp,
   V(I64AtomicOr32U, Uint32, uint32_t, I32, uint64_t, I64,                      \
     std::atomic_fetch_or)                                                      \
   V(I64AtomicXor, Uint64, uint64_t, I64, uint
-"""
-
-
 ```

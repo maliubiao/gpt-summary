@@ -70,11 +70,13 @@ V8 引擎是 Google Chrome 浏览器和 Node.js 的 JavaScript 引擎。JavaScri
 
 总而言之，`double-unittest.cc` 文件确保了 V8 引擎在底层正确地处理双精度浮点数，这对于 JavaScript 语言的数值计算的准确性和可靠性至关重要。  这个单元测试保证了 V8 引擎能够按照 IEEE 754 标准正确地表示和操作 JavaScript 中的数字。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/double-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -298,7 +300,4 @@ TEST_F(DoubleTest, NextDouble) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

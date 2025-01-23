@@ -133,15 +133,17 @@ console.log(Number(10000.3).toLocaleString()); // 输出: "10 000,3"
 
 `v8/test/unittests/api/api-icu-unittest.cc` 是一个重要的单元测试，用于确保 V8 引擎在处理国际化功能时能够正确地响应 ICU 库的区域设置变化，这对于构建全球化的 Web 应用程序至关重要。它通过模拟区域设置的变更并验证 JavaScript 中与区域设置相关的 API 的输出来实现其测试目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/api-icu-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/api/api-icu-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ TEST_F(ApiIcuTest, LocaleConfigurationChangeNotification) {
 }
 
 #endif  // V8_INTL_SUPPORT
-
-"""
-
 ```

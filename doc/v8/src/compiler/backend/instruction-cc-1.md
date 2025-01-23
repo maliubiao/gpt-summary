@@ -160,7 +160,7 @@ By following this process, we can systematically analyze the code and provide a 
 
 总而言之，`v8/src/compiler/backend/instruction.cc` 的第二部分继续构建了 V8 编译器后端的核心数据结构，并实现了关键的指令排序和管理功能，为最终生成高效的机器代码奠定了基础。它与 JavaScript 代码的性能和正确执行息息相关，但对于普通的 JavaScript 开发者来说是不可见的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,9 +168,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  }
+### 源代码
+```cpp
+}
 }
 
 void InstructionSequence::ComputeAssemblyOrder() {
@@ -642,8 +644,4 @@ void StateValueDescriptor::Print(std::ostream& os) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

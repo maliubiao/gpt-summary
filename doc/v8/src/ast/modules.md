@@ -106,11 +106,13 @@ export { notDefined }; // 会被检测为导出未定义的变量
 
 总而言之，`v8/src/ast/modules.cc` 中的 `SourceTextModuleDescriptor` 类是 V8 引擎处理 JavaScript 模块的关键组件，它负责管理模块的静态结构信息，为后续的模块加载、链接和执行奠定基础。理解它的功能有助于深入理解 JavaScript 模块在 V8 引擎中的实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/modules.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -491,7 +493,4 @@ bool SourceTextModuleDescriptor::Validate(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

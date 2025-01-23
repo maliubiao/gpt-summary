@@ -132,7 +132,7 @@ python gen1.py input.txt output.txt
 
 总而言之，`gen1.py` 是一个简单的文件复制脚本，但在 Frida 的构建和测试环境中扮演着确保依赖关系和准备测试环境的角色。它的存在反映了软件开发中构建系统、依赖管理和测试的重要性。理解这个脚本的功能可以帮助开发者理解 Frida 项目的构建流程，并在遇到相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/71 ctarget dependency/gen1.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import time, sys
@@ -154,7 +156,4 @@ with open(sys.argv[1]) as f:
     contents = f.read()
 with open(sys.argv[2], 'w') as f:
     f.write(contents)
-
-"""
-
 ```

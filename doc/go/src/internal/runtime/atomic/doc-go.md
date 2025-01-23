@@ -164,7 +164,7 @@ func main() {
 
 `go/src/internal/runtime/atomic/doc.go` 描述了一个为 Go 运行时环境提供底层原子操作的包。这个包通过平台特定的优化来提高性能，并在所有支持的平台上提供顺序一致的原子操作。它主要用于 Go 运行时的内部实现，用户代码不应该直接使用它，以避免潜在的兼容性问题和风险。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/atomic/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -192,9 +194,4 @@ specifically, operations that happen in a specific order on one thread,
 will always be observed to happen in exactly that order by another thread.
 */
 package atomic
-
-"""
-
-
-
 ```

@@ -154,7 +154,7 @@ StyleRule {
 *   **查看 `CreateCSSOMWrapper` 的调用:**  检查何时以及如何将 C++ 的 `StyleRuleBase` 对象转换为 JavaScript 可以访问的 `CSSRule` 对象，以排查 CSSOM 交互中的问题。
 *   **分析垃圾回收过程:** 检查 `Trace` 和 `FinalizeGarbageCollectedObject` 方法，了解 CSS 规则对象是如何被垃圾回收的，以及是否存在内存泄漏的风险。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * (C) 2002-2003 Dirk Mueller (mueller@kde.org)
@@ -1056,7 +1058,4 @@ void StyleRuleContainer::SetConditionText(
   ContainerQueryParser parser(*context);
 
   if (const MediaQueryExpNode* exp_node = parser.ParseCondit
-"""
-
-
 ```

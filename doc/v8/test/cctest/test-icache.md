@@ -92,11 +92,13 @@ console.log(add(3, 4)); // 第二次调用
 
 总之，`v8/test/cctest/test-icache.cc`  测试了 V8 引擎中至关重要的底层机制，该机制保证了 JavaScript 代码动态修改和优化的正确执行。 它确保了在代码发生变化时，CPU 能够获取并执行最新的指令，这是 V8 引擎性能和正确性的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-icache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,7 +318,4 @@ TEST(TestFlushICacheOfWritableAndExecutable) {
 }  // namespace test_icache
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

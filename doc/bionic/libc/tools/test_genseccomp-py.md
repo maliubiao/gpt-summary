@@ -215,7 +215,7 @@ Frida 脚本会 hook `prctl` 系统调用，并在 `system_server` 进程尝试�
 
 `test_genseccomp.py` 是一个用于测试 `genseccomp.py` 功能的单元测试文件。`genseccomp.py` 是 Android 构建系统中用于生成 seccomp BPF 规则的关键工具，这些规则用于增强系统的安全性，限制进程可以执行的系统调用。理解这个文件及其背后的机制对于理解 Android 的安全模型至关重要。 通过 Frida 可以动态地观察和调试 seccomp 策略的应用过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tools/test_genseccomp.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # Unit tests for genseccomp.py
 
@@ -302,7 +304,4 @@ class TestGenseccomp(unittest.TestCase):
 
 if __name__ == '__main__':
   unittest.main()
-
-"""
-
 ```

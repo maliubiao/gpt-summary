@@ -203,15 +203,17 @@ Finally, I organize the information logically, using headings and bullet points 
 
 总而言之，`notification_manager.cc` 是 Blink 渲染引擎中管理 Web Notifications 的关键模块，负责处理权限请求、显示和关闭通知，并作为 JavaScript 通知 API 和浏览器底层通知系统之间的桥梁。 理解它的功能和交互方式对于调试和理解 Web Notifications 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/notifications/notification_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -528,7 +530,4 @@ void NotificationManager::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

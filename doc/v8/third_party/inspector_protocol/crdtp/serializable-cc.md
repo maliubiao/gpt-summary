@@ -138,15 +138,17 @@ std::vector<uint8_t> outputBytes = serializable->Serialize();
 
 总而言之，`v8/third_party/inspector_protocol/crdtp/serializable.cc` 定义了一个基础的序列化机制，主要用于在 V8 内部，特别是与 Chrome DevTools Protocol 相关的场景下，将数据表示为字节序列进行传输和处理。用户在使用时需要理解其基本原理，并根据具体的序列化需求选择合适的实现方式或自定义继承类。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/serializable.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/serializable.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ std::unique_ptr<Serializable> Serializable::From(std::vector<uint8_t> bytes) {
   return std::make_unique<PreSerialized>(std::move(bytes));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

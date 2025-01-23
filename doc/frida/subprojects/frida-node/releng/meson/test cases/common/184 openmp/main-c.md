@@ -153,7 +153,7 @@ By following this structured approach, moving from understanding the code itself
 
 总而言之，这个 `main.c` 文件是一个简洁的测试用例，用于验证 Frida 在处理使用了 OpenMP 的程序时的基本能力。 它通过简单的断言来检查 OpenMP 的编译和运行时环境是否符合预期。 对于逆向工程师来说，理解这种测试用例的原理有助于他们更好地利用 Frida 来分析和修改目标程序中与 OpenMP 相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/184 openmp/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <omp.h>
 
@@ -179,7 +181,4 @@ int main(void) {
     return 1;
 #endif
 }
-
-"""
-
 ```

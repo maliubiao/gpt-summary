@@ -178,7 +178,7 @@ func main() {
 
 总而言之，`go/src/runtime/defs_linux_riscv64.go` 是 Go 语言运行时环境在特定平台上的基石，它提供了与操作系统底层交互的必要元素，使得 Go 程序能够在 Linux RISC-V 64 位系统上正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_linux_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Generated using cgo, then manually converted into appropriate naming and code
 // for the Go runtime.
 // go tool cgo -godefs defs_linux.go defs1_linux.go defs2_linux.go
@@ -423,9 +425,4 @@ type ucontext struct {
 	uc_pad_cgo_0 [8]byte
 	uc_mcontext  sigcontext
 }
-
-"""
-
-
-
 ```

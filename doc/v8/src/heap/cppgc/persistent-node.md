@@ -165,11 +165,13 @@ function thread2Access() {
 
 `persistent-node.cc` 中的代码是 V8 引擎中用于管理需要长期存在的 C++ 对象的底层机制。它通过 `PersistentNode` 结构体和相关的管理类，实现了对象的注册、内存管理和与垃圾回收器的集成。虽然 JavaScript 代码不能直接操作这些 C++ 类，但这些机制对于 V8 引擎实现某些高级功能 (如持有全局对象、跨线程共享资源) 至关重要。 `cppgc::Persistent` 和 `cppgc::CrossThreadPersistent` 是连接 JavaScript 和这些底层 C++ 机制的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/persistent-node.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -329,7 +331,4 @@ void CrossThreadPersistentRegion::ClearAllUsedNodes() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

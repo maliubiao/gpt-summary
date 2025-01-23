@@ -137,11 +137,13 @@ V8 引擎在执行 `instanceof` 操作时，会根据对象的内部表示（其
 
 总而言之，`instance-type-generator.cc` 是 Torque 编译过程中的一个重要组成部分，它负责生成 V8 运行时用于对象类型识别的关键信息，从而支撑 JavaScript 的类型系统和面向对象特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/instance-type-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -651,7 +653,4 @@ void ImplementationVisitor::GenerateInstanceTypes(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

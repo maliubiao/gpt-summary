@@ -130,7 +130,7 @@ Let's consider the `ConnectionStatsRetransmission_WithMixedFrames` test:
 
 This specific part of the `quic_connection_test.cc` file primarily focuses on verifying the correct implementation of **retransmission statistics tracking** and **efficient frame packing** within the `QuicConnection` class. It also extensively tests the connection's behavior when dealing with **stream resets** in various scenarios (queued data, NACKs, RTOs, pending retransmissions). Furthermore, it covers how the connection handles **write blocking** and the interaction of the **send alarm** with packet processing.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 PECT_CALL(*send_algorithm_, OnPacketSent(_, _, _, _, _)).Times(1);
   }
 
@@ -898,7 +900,4 @@ TEST_P(QuicConnectionTest, SendAlarmNonZeroDelay) {
   const uint64_t received_packet_num = 1;
   const bool has_stop_waiting = false;
   const EncryptionLevel level = ENCRYPTIO
-"""
-
-
 ```

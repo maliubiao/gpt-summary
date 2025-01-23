@@ -148,15 +148,17 @@ console.log(person2.hasOwnProperty("age"));  // 输出 true
 
 总而言之，`v8/test/unittests/api/dictionary-template-unittest.cc` 通过一系列单元测试，确保 `v8::DictionaryTemplate` API 能够按照预期工作，为 V8 引擎的使用者提供一种创建具有预定义属性结构的高效对象的方式。理解这些测试用例有助于开发者正确使用这个 API，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/dictionary-template-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/api/dictionary-template-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ TEST_F(DictionaryTemplateTest, PrototypeContext) {
 }
 
 }  // namespace v8
-
-"""
-
 ```

@@ -142,7 +142,7 @@ By following this structured approach and iteratively refining the understanding
 
 那么，检查用户在运行 `meson setup` 命令时是否使用了 `--wrap-mode` 参数，以及使用的具体值是什么，就是一个重要的调试线索。了解不同 wrap mode 的作用，可以帮助开发者和用户诊断和解决构建问题。例如，如果构建过程中意外地尝试下载 wrap 文件，可以检查是否错误地使用了默认的 `default` 模式，而预期是使用 `nodownload`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/wrap/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from enum import Enum
 
 # Used for the --wrap-mode command-line argument
@@ -211,7 +213,4 @@ class WrapMode(Enum):
     def from_string(mode_name: str) -> 'WrapMode':
         g = string_to_value[mode_name]
         return WrapMode(g)
-
-"""
-
 ```

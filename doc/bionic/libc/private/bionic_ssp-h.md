@@ -313,7 +313,7 @@ sys.stdin.read()
 
 `bionic/libc/private/bionic_ssp.handroid` 头文件虽然很小，但它定义了 Android 系统中关键的安全机制——栈溢出保护 (SSP) 所需的符号。理解它的作用有助于我们更好地理解 Android 平台的安全性以及如何编写更安全的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_ssp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -324,8 +324,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -369,7 +371,4 @@ extern uintptr_t __stack_chk_guard;
 extern void __stack_chk_fail();
 
 __END_DECLS
-
-"""
-
 ```

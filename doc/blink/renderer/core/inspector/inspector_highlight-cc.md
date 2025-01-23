@@ -130,15 +130,17 @@ This methodical approach, starting broad and then narrowing down to specifics wi
 
 总而言之，提供的代码片段主要负责构建用于高亮显示 DOM 元素以及其基本属性和样式信息的叠加层数据。它涉及几何图形的处理、CSS 样式的提取和格式化，并且为后续在 DevTools 前端渲染高亮奠定了基础。特别是 `PathBuilder` 相关的类和函数，以及 `BuildElementInfo` 和 `AppendStyleInfo` 函数，是理解这部分代码功能的核心。 这部分代码是实现 "检查元素" 功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_highlight.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -941,7 +943,4 @@ std::unique_ptr<protocol::ListValue> BuildGridNegativeLineNumberPositions(
     GridTrackSizingDirection direction,
     float scale,
     Layou
-"""
-
-
 ```

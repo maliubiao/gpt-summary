@@ -174,7 +174,7 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 这部分代码是 Frida 在 Darwin 系统上进行动态 instrumentation 的重要组成部分，它提供了访问和操作目标进程的模块信息、内存布局以及线程状态的底层能力。理解这些代码有助于深入了解 Frida 的工作原理，并在进行更复杂的逆向分析和动态 instrumentation 时提供帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/gumprocess-darwin.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ,
                                    gpointer user_data)
 {
@@ -581,8 +583,4 @@ gum_symbol_name_from_darwin (const char * s)
 {
   return (s[0] == '_') ? s + 1 : s;
 }
-
-"""
-
-
 ```

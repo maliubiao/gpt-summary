@@ -179,7 +179,7 @@ By following this structured approach, I can systematically analyze the code and
 
 总而言之，这部分代码的核心功能是将 WebGPU 渲染的结果桥接到 Blink 的渲染流程中，使得画布内容可以被进一步处理和展示，或者导出为图像数据。它涉及了复杂的 GPU 资源管理、跨进程同步以及不同图像格式之间的转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_canvas_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 )) {
     return false;
   }
@@ -319,8 +321,4 @@ GPUCanvasContext::GetContextProviderWeakPtr() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

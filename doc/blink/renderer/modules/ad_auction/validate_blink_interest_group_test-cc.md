@@ -65,7 +65,7 @@ The user wants a summary of the functionality of the provided C++ test file. I n
 
 `validate_blink_interest_group_test.cc` 文件的第一部分主要负责测试 Blink 引擎中用于验证兴趣组数据结构 (`mojom::blink::InterestGroup`) 的 `ValidateBlinkInterestGroup` 函数。这些测试旨在确保该函数能够正确识别出符合规范的兴趣组，并有效地拒绝不合规的配置，从而保证 Fenced Frames 和 Protected Audience API 的安全性和正确性。它间接地与 JavaScript API 相关联，因为该函数验证的数据正是通过 JavaScript API 传递到 Blink 引擎的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/validate_blink_interest_group_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -834,7 +836,4 @@ TEST_F(ValidateBlinkInterestGroupTest, TooLargeSellerCapabilities) {
   // 51000 bytes.
   for (int i = 0; i < 510; ++i) {
     // Use a unique 100-byt
-"""
-
-
 ```

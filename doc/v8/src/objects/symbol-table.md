@@ -87,11 +87,13 @@ console.log(keyForNormalSymbol); // 输出 undefined
 
 `RegisteredSymbolTable::SlowReverseLookup` 是 V8 引擎内部用于反向查找已注册的 Symbol 的关键函数。它支撑了 JavaScript 中 `Symbol.for()` 创建的全局注册 Symbol 的管理，使得可以通过 Symbol 值找到其对应的注册字符串键。虽然 JavaScript 代码不能直接调用这个 C++ 函数，但 `Symbol.keyFor()` 方法在内部实现上可能依赖于类似的反向查找机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/symbol-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -114,7 +116,4 @@ Tagged<Object> RegisteredSymbolTable::SlowReverseLookup(Tagged<Object> value) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

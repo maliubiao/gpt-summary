@@ -167,15 +167,17 @@ If you were debugging issues related to sections of the DOM not rendering correc
 
 In summary, `part.cc` defines a core concept in Blink for managing logical parts of the DOM, likely used as a foundation for features like shadow DOM and potentially future component models. While developers don't directly interact with the `Part` class in JavaScript, understanding its role is crucial for understanding how the browser engine manages and renders web page content.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/part.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ bool Part::IsAcceptableNodeType(Node& node) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

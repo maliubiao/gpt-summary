@@ -276,7 +276,7 @@ const (
 	STATUS_FWP_CALLOUT_NOTIFICATION_FAILED                                    NTStatus      = 0xC0220037
 	STATUS_FWP_INVALID_AUTH_TRANSFORM                                         NTStatus      = 0xC0220038
 	STATUS_FWP_INVALID_CIPHER_TRANSFORM                                       NTStatus      = 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -284,8 +284,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第14部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 TATUS_GRAPHICS_FREQUENCYRANGE_ALREADY_IN_SET                             NTStatus      = 0xC01E031F
 	STATUS_GRAPHICS_STALE_MODESET                                             NTStatus      = 0xC01E0320
 	STATUS_GRAPHICS_INVALID_MONITOR_SOURCEMODESET                             NTStatus      = 0xC01E0321
@@ -928,10 +930,5 @@ TATUS_GRAPHICS_FREQUENCYRANGE_ALREADY_IN_SET                             NTStatu
 	STATUS_VOLMGR_INCOMPLETE_REGENERATION                                     NTStatus      = 0x80380001
 	STATUS_VOLMGR_INCOMPLETE_DISK_MIGRATION                                   NTStatus      = 0x80380002
 	STATUS_VOLMGR_DATABASE_FULL                                               NTStatus      = 0xC0380001
-	STATUS_VOLMGR_DISK_CONFIGURATION_CORRUPTED           
-"""
-
-
-
-
+	STATUS_VOLMGR_DISK_CONFIGURATION_CORRUPTED
 ```

@@ -246,7 +246,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/mempolicy.handroid` 定义了用于控制 Linux 内存策略的常量和枚举类型。这些定义被 Android 的 Bionic 库使用，间接地影响着应用程序的内存分配行为，尤其是在 NUMA 架构的设备上。理解这些概念有助于优化 Android 应用程序的性能和资源管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/mempolicy.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -257,8 +257,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -298,7 +300,4 @@ enum {
 #define RECLAIM_WRITE (1 << 1)
 #define RECLAIM_UNMAP (1 << 2)
 #endif
-
-"""
-
 ```

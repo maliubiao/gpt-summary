@@ -224,7 +224,7 @@ session.detach()
 
 这个示例提供了一个基本的思路。实际调试可能需要更复杂的Frida脚本和对目标代码的深入理解。 你可能需要结合反汇编工具（如IDA Pro或Ghidra）来分析HAL的实现，找到关键的函数和 `ioctl` 调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/skl-tplg-interface.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -235,8 +235,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -349,7 +351,4 @@ enum skl_tuple_type {
   SKL_TYPE_DATA
 };
 #endif
-
-"""
-
 ```

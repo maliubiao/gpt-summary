@@ -149,7 +149,7 @@ By following this systematic approach, you can thoroughly understand the code an
 
 总而言之，`refman_links.py` 是 Frida 文档生成流程中的一个重要组件，它通过自定义的链接标记和外部的 JSON 数据文件，实现了文档中引用链接的自动化生成和管理，提高了文档的可读性和导航性，对于 Frida 这样复杂的工具来说，高质量的文档对于用户理解和使用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/docs/extensions/refman_links.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from pathlib import Path
 from json import loads
 import re
@@ -270,7 +272,4 @@ class RefmanLinksExtension(Extension):
 
 def get_extension_classes() -> T.List[T.Type[Extension]]:
     return [RefmanLinksExtension]
-
-"""
-
 ```

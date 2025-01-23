@@ -698,7 +698,7 @@ std::unique_ptr<ObjectPropertiesResult> GetHeapObjectPropertiesMaybeCompressed(
 std::unique_ptr<ObjectPropertiesResult> GetObjectProperties(
     uintptr_t address, d::MemoryAccessor memory_accessor,
     const d::HeapAddresses& heap_addresses
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/debug_helper/get-object-properties.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/debug_helper/get-object-properties.cc以.tq结尾，那它是个v8 torque源代码，
@@ -706,8 +706,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1489,7 +1491,4 @@ std::unique_ptr<StackFrameResult> GetStackFrame(
                   d::MemoryAccessResult::kOk) {
                 props.push_back(std::make_unique<ObjectProperty>(
                     "function_name", kObjectAsStoredInH
-"""
-
-
 ```

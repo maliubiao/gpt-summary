@@ -157,14 +157,16 @@ By following these steps and constantly refining the understanding, we can gener
 
 `resource_response.cc` 中定义的 `ResourceResponse` 类是 Blink 引擎处理网络响应的核心组件。它负责存储和管理响应的各种元数据，并直接影响着浏览器如何解析、渲染和缓存从网络加载的资源。理解 `ResourceResponse` 的功能对于理解浏览器的工作原理以及排查与网络加载相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_response.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2009 Google Inc. All rights reserved.
@@ -692,7 +694,4 @@ STATIC_ASSERT_ENUM(WebURLResponse::kHTTPVersion_1_1,
 STATIC_ASSERT_ENUM(WebURLResponse::kHTTPVersion_2_0,
                    ResourceResponse::kHTTPVersion_2_0);
 }  // namespace blink
-
-"""
-
 ```

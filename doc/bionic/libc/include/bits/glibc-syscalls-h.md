@@ -68,7 +68,7 @@ int main() {
 
 **接下来，在第 2 部分中，我们将深入探讨每一个 libc 函数的实现，dynamic linker 的功能，以及 Frida Hook 的使用等更深入的内容。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/glibc-syscalls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -80,8 +80,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /* Generated file. Do not edit. */
 #pragma once
 #if defined(__NR__llseek)
@@ -1387,7 +1389,4 @@ Prompt:
   #define SYS_timer_gettime64 __NR_timer_gettime64
 #endif
 #if defined(_
-"""
-
-
 ```

@@ -61,7 +61,7 @@ By following these steps, the generated summary effectively captures the essence
 
 在后续的部分中，很可能会继续深入探讨如何利用这些类来获取更详细的 Swift 运行时信息，例如对象的属性、方法调用等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-gum/bindings/gumjs/runtime.bundle.p/out-qjs/swift.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -71,8 +71,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
@@ -1031,7 +1033,4 @@ function v(e) {
     return r;
   }
   return x(e.$metadata) ? e.handle : (0, g.makeValueFromBuffer)(e.handle, e.$metadata.get
-"""
-
-
 ```

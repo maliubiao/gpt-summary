@@ -146,11 +146,13 @@ consumer();
 
 `js-atomics-synchronization.cc` 是 V8 引擎中实现 JavaScript `Atomics` API 核心同步机制的关键文件。它使用 C++ 实现了互斥锁和条件变量的底层逻辑，包括管理等待队列、处理同步和异步操作、以及与 JavaScript Promise 的集成，使得 JavaScript 开发者可以使用 `Atomics.Mutex` 和 `Atomics.Condition` 来进行多线程或异步任务间的同步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-atomics-synchronization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1544,7 +1546,4 @@ void JSAtomicsCondition::HandleAsyncNotify(WaitAsyncWaiterQueueNode* waiter) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

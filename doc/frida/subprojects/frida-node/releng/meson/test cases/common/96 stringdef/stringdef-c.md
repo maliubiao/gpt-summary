@@ -157,7 +157,7 @@ int main(void) {
 
 总而言之，`stringdef.c` 是一个简单的但重要的测试用例，用于确保 Frida 构建过程中的一个关键宏定义是正确的。它的存在帮助开发者在早期发现潜在的配置错误，避免这些错误影响到 Frida 工具的正常功能。它简洁地展示了软件开发中验证和测试的基本原则，并且与逆向工程中验证假设的思想有共通之处。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/96 stringdef/stringdef.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 
@@ -177,7 +179,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

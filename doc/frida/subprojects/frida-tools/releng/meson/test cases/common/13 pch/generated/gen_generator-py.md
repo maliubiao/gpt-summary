@@ -140,7 +140,7 @@ By following these steps, combining direct analysis of the code with knowledge o
 
 总而言之，`gen_generator.py` 自身是一个简单的文件复制工具，但它在 Frida 的构建过程中发挥着作用，可能用于准备生成预编译头文件等，从而间接地服务于 Frida 的逆向工程功能。它的错误通常与文件路径、权限或构建系统的配置有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/13 pch/generated/gen_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
@@ -157,7 +159,4 @@ with open(sys.argv[1]) as f:
     content = f.read()
 with open(sys.argv[2], 'w') as f:
     f.write(content)
-
-"""
-
 ```

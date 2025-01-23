@@ -156,7 +156,7 @@ Hello world 10
 
 总而言之，这个简单的 `test.c` 文件是 Frida 项目质量保证的一部分，用于验证其核心功能之一的函数包装是否稳定可靠。开发者通过编写和运行这样的测试用例，可以及早发现和修复潜在的问题，确保 Frida 在实际使用中的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/153 wrap file should not failed/src/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int bar_dummy_func(void);
@@ -175,7 +177,4 @@ int main(void) {
     printf("Hello world %d\n", bar_dummy_func() + dummy_func());
     return 0;
 }
-
-"""
-
 ```

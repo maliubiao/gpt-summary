@@ -153,7 +153,7 @@ sys.stdin.read()
 
 总而言之，这个代码片段是 Bionic libc 中 `nextafter` 函数的测试数据，用于确保该函数在各种输入情况下都能给出正确的结果，这对于 Android 系统的稳定性和应用程序的正确运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/nextafter_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -165,8 +165,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 1.0p-1074
   },
   { // Entry 371
@@ -385,8 +387,4 @@ Prompt:
     -HUGE_VAL
   }
 };
-
-"""
-
-
 ```

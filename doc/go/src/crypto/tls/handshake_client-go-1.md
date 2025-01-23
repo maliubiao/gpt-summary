@@ -36,7 +36,7 @@ Therefore, the main functionalities in this part revolve around:
 
 总而言之，这部分代码主要负责TLS握手过程中客户端关于证书处理、客户端身份验证以及会话管理的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_client.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -45,8 +45,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 are willing
 // to verify the signatures of during a TLS handshake.
 const defaultMaxRSAKeySize = 8192
@@ -292,10 +294,4 @@ func computeAndUpdatePSK(m *clientHelloMsg, binderKey []byte, transcript hash.Ha
 	pskBinders := [][]byte{finishedHash(binderKey, transcript)}
 	return m.updateBinders(pskBinders)
 }
-
-"""
-
-
-
-
 ```

@@ -148,7 +148,7 @@ By following this structured approach and constantly considering the context pro
 
 总而言之，`bobuser.c` 在 Frida 的测试套件中扮演着一个负面用例的角色，用于模拟和测试 Frida 在面对程序构建失败（由于缺少符号）时的能力和行为。它揭示了逆向工程中常见的挑战，并展示了 Frida 如何帮助分析即使是存在问题的二进制程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing build/1 hidden symbol/bobuser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,14 +156,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int main(int argc, char **argv) {
     return hidden_function();
 }
-
-"""
-
 ```

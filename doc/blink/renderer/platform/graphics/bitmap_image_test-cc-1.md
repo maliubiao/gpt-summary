@@ -85,15 +85,17 @@ Let's break down the thought process for analyzing this code snippet and generat
 
 这段代码主要负责测试 Blink 渲染引擎在处理位图图像时，**能否正确识别图像格式并准确度量解码后图像的密度**。这是保证网页图像能够正确渲染和高效加载的关键基础。它通过加载不同格式的图像并断言相关的图像类型和密度指标是否被正确记录到直方图中来实现测试目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/bitmap_image_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ImageMetrics::DecodedImageType::kAVIF);
 #endif  // BUILDFLAG(ENABLE_AV1_DECODER)
 }
@@ -147,8 +149,4 @@ TEST_F(BitmapHistogramTest, DecodedImageDensityKiBWeighted) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

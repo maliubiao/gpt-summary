@@ -156,15 +156,17 @@ A developer might think that if they have a large struct with many methods, and 
 
 **In summary, `go/test/reflectmethod4.go` is a test case designed to verify that the Go linker correctly handles methods accessed via `reflect.Value.Method`, ensuring they are not pruned even if they are not directly called.** It serves as a check on the compiler and linker's behavior in specific scenarios involving reflection.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/reflectmethod4.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -195,9 +197,4 @@ func main() {
 		panic("UniqueMethodName not called")
 	}
 }
-
-"""
-
-
-
 ```

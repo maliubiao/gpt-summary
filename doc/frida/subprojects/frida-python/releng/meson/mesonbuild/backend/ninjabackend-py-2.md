@@ -129,7 +129,7 @@ The code focuses on generating Ninja build rules for various programming languag
 
 作为调试线索，如果用户在构建过程中遇到问题，例如编译错误或链接错误，可以检查生成的 `build.ninja` 文件中对应的构建规则，了解具体的编译器命令和参数，从而定位问题所在。例如，如果 C# 编译失败，可以查看 `generate_cs_target` 生成的规则中是否有错误的编译器参数或缺失的依赖项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,9 +138,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-         elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
+### 源代码
+```python
+elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
                 self.add_build(elem)
                 deps.append(ofilename)
                 a = '-resource:' + ofilename
@@ -771,8 +773,4 @@ Prompt:
                                        self.environment.get_build_dir(),
                                        target_slashname_workaround_dir,
                                        self.determine_rpath_dirs(target),
-                  
-"""
-
-
 ```

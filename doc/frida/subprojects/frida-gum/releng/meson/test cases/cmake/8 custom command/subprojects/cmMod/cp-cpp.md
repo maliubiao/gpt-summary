@@ -175,7 +175,7 @@ By following these steps and considering the context, the detailed and informati
 
 `cp.cpp` 是一个简单的文件复制工具，虽然本身不是逆向工具，但在逆向工程的流程中可以作为辅助工具使用。 它的实现涉及到基本的 C++ 文件操作，底层依赖于操作系统提供的文件系统接口。 理解其功能和潜在的错误场景有助于更好地理解 Frida 的测试框架和使用方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cp.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -207,7 +209,4 @@ int main(int argc, char *argv[]) {
   dst << src.rdbuf();
   return 0;
 }
-
-"""
-
 ```

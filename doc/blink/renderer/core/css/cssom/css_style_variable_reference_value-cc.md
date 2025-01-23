@@ -191,15 +191,17 @@ This systematic approach ensures that all aspects of the prompt are addressed co
 
 因此，理解 `CSSStyleVariableReferenceValue` 的功能可以帮助你理解 Blink 引擎是如何处理 CSS 变量的，从而更有效地调试相关的样式问题。 当你在调试器中单步执行 Blink 渲染引擎的代码时，你可能会进入这个文件，观察 `Create` 方法的执行过程，以及 `variable_` 和 `fallback` 成员的赋值情况，从而更好地理解 CSS 变量引用的处理流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/css_style_variable_reference_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ void CSSStyleVariableReferenceValue::setVariable(
 }
 
 }  // namespace blink
-
-"""
-
 ```

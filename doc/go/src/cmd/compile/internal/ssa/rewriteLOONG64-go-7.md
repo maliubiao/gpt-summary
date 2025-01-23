@@ -220,7 +220,7 @@ This structured approach allows for a thorough understanding of the code's funct
 
 这个文件是 Go 编译器针对 LOONG64 架构进行代码优化的核心组成部分。它定义了一系列的规则，用于在 SSA 中间表示层面上将通用的操作转换成更高效、更贴合 LOONG64 硬件特性的指令序列。这些优化涵盖了函数调用、内存操作、位运算、控制流等多个方面，最终目的是提升 Go 程序在 LOONG64 架构上的执行效率。作为最后一部分，它与其他部分的 `rewriteLOONG64.go` 文件共同完成了针对 LOONG64 架构的 SSA 重写工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteLOONG64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -229,8 +229,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 (call_2.AuxInt)
 		if !(sz >= 0 && isSameCall(sym, "runtime.memmove") && call.Uses == 1 && isInlinableMemmove(dst, src, sz, config) && clobber(call)) {
 			break
@@ -1187,10 +1189,4 @@ func rewriteBlockLOONG64(b *Block) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

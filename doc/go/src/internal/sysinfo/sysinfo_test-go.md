@@ -221,7 +221,7 @@ func XosCPUInfoName() string {
 
 `go/src/internal/sysinfo/sysinfo_test.go` 这个测试文件用于验证 `internal/sysinfo` 包中获取 CPU 名称相关信息的两个函数 `CPUName()` 和 `XosCPUInfoName()` 的功能是否正常。这些函数很可能通过操作系统调用或读取系统文件的方式来实现跨平台地获取 CPU 信息。普通 Go 开发者不应该直接使用 `internal/sysinfo` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/sysinfo/sysinfo_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -229,8 +229,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ func TestCPUName(t *testing.T) {
 	t.Logf("CPUName: %s", CPUName())
 	t.Logf("osCPUInfoName: %s", XosCPUInfoName())
 }
-
-"""
-
-
-
 ```

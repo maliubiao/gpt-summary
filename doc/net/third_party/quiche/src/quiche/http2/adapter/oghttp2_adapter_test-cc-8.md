@@ -86,7 +86,7 @@ ThisC++源代码文件 `oghttp2_adapter_test.cc` 是 Chromium 网络栈中 `OgHt
 
 作为系列测试的第 9 部分，这个文件继续深入测试 `OgHttp2Adapter` 的服务端行为，特别是**服务端在接收到客户端请求后的处理逻辑和错误处理机制**。它涵盖了服务端如何解析各种类型的帧，如何处理错误，以及如何在不同的情况下发送响应或错误指示。 这一部分可能侧重于服务端作为接收方时，对客户端行为的健壮性处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -94,9 +94,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共12部分，请归纳一下它的功能
+```
 
-"""
-          }),
+### 源代码
+```cpp
+}),
                                testing::Return(true)));
   // The rest of the metadata is not delivered to the visitor.
 
@@ -826,7 +828,4 @@ TEST_P(OgHttp2AdapterInteractionDataTest, ClientServerInteractionTest) {
   // Sets up the client to create a new stream automatically when receiving a
   // response.
   EXPECT_CALL(client_visitor, OnEndHeadersForS
-"""
-
-
 ```

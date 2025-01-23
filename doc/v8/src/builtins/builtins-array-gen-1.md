@@ -83,12 +83,14 @@ I need to summarize these functionalities and provide JavaScript examples to ill
 
 总而言之，这段 C++ 代码是 V8 引擎实现 JavaScript `Array` 构造函数的核心部分，它通过优化的汇编代码来高效地创建和初始化各种类型的数组，并处理了字面量创建中可能出现的复杂情况，例如嵌套的对象和数组的克隆。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-array-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 jectFieldNoWriteBarrier(
           *allocation_site, AllocationSite::kTransitionInfoOrBoilerplateOffset,
           SmiOr(transition_info, SmiConstant(fast_elements_kind_holey_mask)));
@@ -663,8 +665,4 @@ TF_BUILTIN(CreateObjectFromSlowBoilerplateHelper,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

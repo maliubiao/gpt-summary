@@ -348,7 +348,7 @@ By following these steps, combining code analysis with knowledge of Go and web t
 
 总而言之，这段代码通过一系列测试用例，验证了 `html/template` 包中用于处理 CSS 字符串的实用工具函数的正确性，包括判断关键字结尾、识别标识符字符、解码转义字符、十六进制解码、跳过空白以及进行转义和过滤等功能。这些功能对于在 Go 模板中安全地处理和渲染 CSS 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/css_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -356,8 +356,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -641,9 +643,4 @@ func BenchmarkCSSValueFilterOk(b *testing.B) {
 		cssValueFilter(`Times New Roman`)
 	}
 }
-
-"""
-
-
-
 ```

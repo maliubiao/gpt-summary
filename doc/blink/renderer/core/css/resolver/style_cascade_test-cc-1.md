@@ -249,7 +249,7 @@ TEST_F(StyleCascadeTest, SubstituteRegisteredCustomSyntaxNestedVarFallbackAllInv
 
 总而言之，`blink/renderer/core/css/resolver/style_cascade_test.cc` 的这部分代码主要用于测试 Blink 引擎在解析和处理 CSS 自定义属性时的各种边界情况和复杂场景，特别是关于循环依赖、`var()` 函数的行为、CSS 关键字以及 `revert` 关键字在不同层叠上下文中的作用。这些测试确保了样式解析的正确性和健壮性，防止了因不正确的自定义属性使用而导致的意外行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_cascade_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -257,8 +257,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .CycleEnd());
     EXPECT_FALSE(resolver.InCycle());
   }
@@ -1274,7 +1276,4 @@ TEST_F(StyleCascadeTest, SubstituteRegisteredUniversalInitial) {
 
   TestCascade cascade(GetDocument());
   casca
-"""
-
-
 ```

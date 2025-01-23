@@ -105,7 +105,7 @@ This step-by-step scenario illustrates how a user arrives at a point where under
 
 在这个过程中，`exe.orig.c` 作为程序的入口点和核心逻辑所在，自然成为了调试的起点之一。开发者需要理解这段代码的功能，才能更好地理解程序的行为并定位问题。 特别是当涉及到动态链接库时，理解 `exe.orig.c` 如何调用外部函数是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/osx/2 library versions/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main (void) {
@@ -122,7 +124,4 @@ int main (void) {
     return 0;
   return 1;
 }
-
-"""
-
 ```

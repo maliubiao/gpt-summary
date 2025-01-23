@@ -116,7 +116,7 @@ This code snippet from `box_border_painter.cc` is responsible for **managing and
 
 总而言之，这段代码的功能是 **初始化并组织 HTML 元素边框的绘制过程**。它识别可见的边，并根据它们的不透明度、样式和位置进行分组和排序，为后续的实际绘制操作做准备。这部分代码主要关注的是 **数据的组织和预处理**，为高效且正确的边框渲染奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/box_border_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -958,7 +960,4 @@ struct BoxBorderPainter::ComplexBorderInfo {
       BoxSide side = static_cast<BoxSide>(i);
 
       if (IncludesEdge(border_pa
-"""
-
-
 ```

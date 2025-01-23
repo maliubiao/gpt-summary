@@ -190,7 +190,7 @@ assert result.exit_code == 123
 
 如果测试失败，调试人员可能会查看 Frida 的日志、测试脚本的输出，以及 `returncode.py` 的代码，以理解为何出现了非预期的退出状态码。  `returncode.py` 本身很简单，所以重点是理解它在 Frida 测试框架中的作用以及如何被调用。  测试框架可能会运行许多类似的测试用例，每个用例可能会调用 `returncode.py` 并传递不同的退出状态码，以覆盖各种场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/68 run_command unclean exit/returncode.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,13 +198,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 exit(int(sys.argv[1]))
-
-"""
-
 ```

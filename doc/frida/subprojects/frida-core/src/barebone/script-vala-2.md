@@ -92,7 +92,7 @@ if data:
 ### 总结
 
 该源代码文件实现了 Frida 与 GDB 的深度集成，提供了强大的内存读写、断点管理和线程控制功能。通过这些功能，用户可以在目标进程中进行精细的动态插桩操作。同时，该文件还处理了各种错误情况，并提供了丰富的调试线索，帮助用户快速定位和解决问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/barebone/script.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 uickJS.Value on_gdb_read_float (QuickJS.Context ctx, QuickJS.Value this_val, QuickJS.Value[] argv) {
 			BareboneScript * script = ctx.get_opaque ();
 			return script->do_gdb_read (ctx, this_val, argv, 4, script->parse_raw_float);
@@ -1244,7 +1246,4 @@ uickJS.Value on_gdb_read_float (QuickJS.Context ctx, QuickJS.Value this_val, Qui
 
 					var name_str = name.to_cstring (ctx);
 					script.throw_js_error ("expected %s to be either a function or a pointer".p
-"""
-
-
 ```

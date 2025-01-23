@@ -201,15 +201,17 @@ std::cout << oss.str() << std::endl;
 
 总而言之，`net/cert/signed_tree_head.cc` 定义了 Chromium 网络栈中用于处理证书透明度关键数据结构 `SignedTreeHead` 的类，虽然不直接与 JavaScript 交互，但其功能对于确保 HTTPS 连接的安全性和透明度至关重要，最终会影响到 JavaScript 代码的运行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/signed_tree_head.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -270,7 +272,4 @@ bool operator!=(const SignedTreeHead& lhs, const SignedTreeHead& rhs) {
 }
 
 }  // namespace net::ct
-
-"""
-
 ```

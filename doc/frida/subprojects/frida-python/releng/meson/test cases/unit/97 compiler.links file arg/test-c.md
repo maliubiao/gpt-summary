@@ -133,7 +133,7 @@ Initially, I might have focused too much on the C code itself. The key realizati
 
 虽然 `test.c` 本身是一个非常简单的 C 程序，但在 Frida 的构建和测试流程中扮演着验证编译和链接能力的角色。 它的存在是为了确保 Frida 作为一个复杂的逆向工具能够被正确地构建出来。 用户通常不会直接操作这个文件，但与这个文件相关的构建错误可以作为调试构建问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/97 compiler.links file arg/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,10 +141,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

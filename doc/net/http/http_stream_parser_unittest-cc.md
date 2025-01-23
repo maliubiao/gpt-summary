@@ -149,7 +149,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 总而言之，`net/http/http_stream_parser_unittest.cc` 文件的主要功能是**全面测试 `HttpStreamParser` 类的各种请求发送功能，包括处理不同类型的请求方法、请求头、请求体，以及模拟各种同步和异步的网络操作和错误场景。** 它是保证 Chromium 网络栈 HTTP 请求发送功能正确性和健壮性的重要组成部分。虽然 JavaScript 开发者不会直接接触到这个 C++ 文件，但它所测试的功能是支撑 JavaScript 发起网络请求的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_parser_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1005,7 +1007,4 @@ TEST(HttpStreamParser, AsyncChunkAndAsyncSocketWithMultipleChunks) {
       base::MakeRefCounted<GrowableIOBuffer>();
   HttpStreamParser parser(stream_socket.get(), false /* is_reused */,
                           GURL("http://localhost"), "GET", &u
-"""
-
-
 ```

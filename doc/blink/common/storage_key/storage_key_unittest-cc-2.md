@@ -155,15 +155,17 @@ By following this detailed thought process, I could accurately analyze the provi
 
 你提供的代码片段（第 3 部分）主要集中在测试 `StorageKey` 类的**反序列化**功能，特别是针对各种**无效的**序列化字符串进行测试，以确保 `Deserialize()` 方法的健壮性，能够正确识别并拒绝错误的输入。此外，也测试了在启用和禁用第三方存储分区功能时，序列化和反序列化的一致性。这部分测试对于保证 `StorageKey` 类的正确性和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/storage_key/storage_key_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ird-party key.
       "https://example.com/^0https://example.com/",
       // We cannot add a first path in a third-party key.
@@ -278,8 +280,4 @@ TEST_F(StorageKeyTest,
   }
 }
 }  // namespace blink
-
-"""
-
-
 ```

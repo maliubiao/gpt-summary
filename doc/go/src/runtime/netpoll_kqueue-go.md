@@ -239,7 +239,7 @@ func main_internal() {
 
 总而言之，`netpoll_kqueue.go` 是 Go 语言运行时实现高性能并发网络编程的关键组成部分，它利用了 kqueue 机制高效地管理网络 I/O 事件。开发者通过 Go 的标准网络库（如 `net` 包）间接地使用这些功能，而无需直接操作底层的 `runtime` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/netpoll_kqueue.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -247,8 +247,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -432,9 +434,4 @@ retry:
 	}
 	return toRun, delta
 }
-
-"""
-
-
-
 ```

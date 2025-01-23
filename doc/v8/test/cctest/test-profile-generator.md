@@ -553,7 +553,7 @@ TEST(SampleIds) {
   sample2.timestamp = v8::base::TimeTicks::Now();
   sample2.pc = ToPointer(0x1925);
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-profile-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-profile-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -561,8 +561,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1417,7 +1419,4 @@ TEST(ProfileNodeScriptId) {
   current = PickChild(current, "b");
   CHECK(const_cast<v8::CpuProfileNode*>(current));
   CHECK_EQ(script_b->Get
-"""
-
-
 ```

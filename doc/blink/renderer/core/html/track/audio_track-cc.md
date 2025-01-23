@@ -167,15 +167,17 @@ By following this thought process, combining code analysis with an understanding
 
 总而言之，`audio_track.cc` 文件是 Blink 引擎中负责管理和表示音频轨道的关键组件，它连接了 HTML 结构（`<track>` 标签）和 JavaScript API (`HTMLMediaElement.audioTracks`)，使得 Web 开发者能够控制网页中的音频播放行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/audio_track.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ bool AudioTrack::IsValidKindKeyword(const String& kind) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

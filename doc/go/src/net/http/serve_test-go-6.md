@@ -254,7 +254,7 @@ func TestEarlyHintsExample(t *testing.T) {
 
 由于这是最后一部分，结合之前几部分的内容，整个 `go/src/net/http/serve_test.go` 文件旨在对 `net/http` 包的 HTTP 服务器功能进行全面和细致的测试，覆盖了请求处理的各个方面，包括请求头的解析、请求体的读取、响应头的生成、错误处理以及各种边缘情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/serve_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -263,8 +263,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Closer{
 				Reader: strings.NewReader(body),
 				wg:     &wg,
@@ -637,10 +639,4 @@ func testServerReadAfterHandlerAbort100Continue(t *testing.T, mode testMode) {
 	readyc <- struct{}{} // server starts reading from the request body
 	readyc <- struct{}{} // server finishes reading from the request body
 }
-
-"""
-
-
-
-
 ```

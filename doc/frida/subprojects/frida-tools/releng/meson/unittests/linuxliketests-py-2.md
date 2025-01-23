@@ -101,7 +101,7 @@ Here's a breakdown of how to approach each point:
 
 这个文件的主要功能是 **对 Frida 工具在 Linux 或类 Unix 系统下的构建过程进行细致的单元测试，特别是关注链接器行为、依赖管理、编译选项和子项目处理等方面。** 它通过模拟各种构建场景，验证 Meson 构建系统生成的构建指令和最终产物的正确性，确保 Frida 工具能够在该类系统上可靠地构建和运行。这些测试覆盖了与逆向工程相关的链接特性、底层系统库的使用、以及用户可能遇到的配置错误，为 Frida 的稳定性和正确性提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf):
         testdir = os.path.join(self.unit_test_dir, '51 ldflagdedup')
         if is_cygwin() or is_osx():
@@ -490,8 +492,4 @@ lf):
         self.assertIn('build t9-e1: c_LINKER t9-e1.p/main.c.o | libt9-s1.a libt9-s2.a libt9-s3.a\n', content)
         self.assertIn('build t12-e1: c_LINKER t12-e1.p/main.c.o | libt12-s1.a libt12-s2.a libt12-s3.a\n', content)
         self.assertIn('build t13-e1: c_LINKER t13-e1.p/main.c.o | libt12-s1.a libt13-s3.a\n', content)
-
-"""
-
-
 ```

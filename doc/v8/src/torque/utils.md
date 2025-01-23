@@ -133,11 +133,13 @@ Here are some examples:
 
 **In essence, `utils.cc` provides the foundational tools and helpers that the Torque compiler needs to perform its job of translating Torque code into efficient C++ code for V8. While the functions themselves don't directly execute within a JavaScript runtime, they are crucial for the *process* of creating and optimizing the JavaScript engine itself.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -532,7 +534,4 @@ std::ostream& operator<<(std::ostream& os, const ResidueClass& a) {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

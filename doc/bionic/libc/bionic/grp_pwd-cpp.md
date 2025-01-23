@@ -299,7 +299,7 @@ if (Process.platform === 'android') {
 
 通过 Frida Hook，你可以动态地观察 Android Framework 或 NDK 应用如何调用 `getpwuid` 等函数，并了解它们在运行时如何获取用户和组信息，从而帮助你理解 Android 的权限管理和安全机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/grp_pwd.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -1158,7 +1160,4 @@ group* getgrent() {
   // We are not reporting u1_a* and higher or we will be here forever
   return nullptr;
 }
-
-"""
-
 ```

@@ -150,7 +150,7 @@ This iterative process of understanding, connecting, and refining is key to prov
 
 总而言之，`sdl2prog.c` 作为一个测试用例，其目的是确保 Frida 能够在处理依赖于特定版本库的程序时保持正确和稳定的行为。它模拟了版本不一致的情况，帮助 Frida 开发者发现和解决潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/16 sdl2/sdl2prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* vim: set sts=4 sw=4 et : */
 
 #include <stdio.h>
@@ -193,7 +195,4 @@ int main(int argc, char *argv[]) {
 #endif
     return 0;
 }
-
-"""
-
 ```

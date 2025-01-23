@@ -200,15 +200,17 @@ let isGreaterThanOrEqual = (x >= 5); // Operation::kGreaterThanOrEqual
 
 总而言之，`v8/src/common/operation.h` 文件虽然是一个底层的 C++ 头文件，但它定义了 JavaScript 运行时使用的核心操作类型，理解这些操作类型有助于更好地理解 JavaScript 运算符的行为，从而避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/operation.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/operation.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ inline std::ostream& operator<<(std::ostream& os, const Operation& operation) {
 }
 
 #endif  // V8_COMMON_OPERATION_H_
-
-"""
-
 ```

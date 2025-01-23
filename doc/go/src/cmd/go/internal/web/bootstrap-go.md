@@ -208,15 +208,17 @@ Browser opened: true
 
 `go/src/cmd/go/internal/web/bootstrap.go` 中的代码是 bootstrap 版本 `go` 命令中网络相关功能的占位符。它避免了引入复杂的网络库，保证了 bootstrap 版本的精简和易于构建。在完整的 `go` 命令中，这些函数会被赋予实际的网络操作能力，用于下载依赖、访问远程资源等。普通用户需要了解 bootstrap 版本的局限性，避免期望它能执行需要完整网络功能的命令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/web/bootstrap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -242,9 +244,4 @@ func get(security SecurityMode, url *urlpkg.URL) (*Response, error) {
 func openBrowser(url string) bool { return false }
 
 func isLocalHost(u *urlpkg.URL) bool { return false }
-
-"""
-
-
-
 ```

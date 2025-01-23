@@ -170,7 +170,7 @@ By following these steps, combining code analysis with an understanding of Frida
 
 总而言之，这个 `main.c` 文件虽然简单，但它是 Frida 项目中用于验证 HDF5 支持的一个基础测试用例，可以作为动态逆向分析的目标，并涉及到许多底层系统和库的知识。理解这个文件有助于理解 Frida 的工作原理以及如何使用 Frida 进行动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/25 hdf5/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -210,7 +212,4 @@ if (ier) {
 }
 return EXIT_SUCCESS;
 }
-
-"""
-
 ```

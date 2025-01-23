@@ -160,7 +160,7 @@ Here's a breakdown of how to approach this:
 
 `v8/src/codegen/loong64/macro-assembler-loong64.cc` 的这段代码是 LoongArch64 架构 V8 引擎的核心组成部分，它提供了一组用于生成汇编指令的高级接口，涵盖了浮点数操作、通用寄存器操作、位操作、条件分支、内存访问、函数调用等多个方面。它是 V8 将 Javascript 代码转换为可执行机器码的关键工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/loong64/macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,8 +168,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _cond_d(cc, cmp1, cmp2, cd);
   }
 }
@@ -1128,7 +1130,4 @@ void MacroAssembler::LoadEntryFromBuiltinIndex(Register builtin_index,
   SmiUntag(target, builtin_index);
   Alsl_d(target, target, kRootRegister, kSystemPointerSizeLog2, t7);
   Ld_d(target, MemOperan
-"""
-
-
 ```

@@ -119,7 +119,7 @@ Based on this analysis, we can structure a clear and detailed answer, covering a
 
 **因此，用户会看到错误信息中指向这个特定的文件，这表明构建过程在处理禁用预编译头文件的测试用例时，由于编译器不匹配（预期是 MSVC）而失败。** 这就为用户提供了一个重要的调试线索，他们需要检查 Frida 的构建配置，确保在编译这个特定的文件时，使用了正确的 MSVC 编译器。 这也可能暗示用户正在尝试在非 Windows 平台上构建特定的 Frida 组件，而这些组件可能只支持 MSVC。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing build/2 pch disabled/c/pch/prog_pch.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,14 +127,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if !defined(_MSC_VER)
 #error "This file is only for use with MSVC."
 #endif
 
 #include "prog.h"
-
-"""
-
 ```

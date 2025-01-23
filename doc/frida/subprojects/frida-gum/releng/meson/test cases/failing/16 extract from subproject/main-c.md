@@ -162,7 +162,7 @@ Let's break down the thought process for analyzing the provided C code snippet w
 
 总而言之，这个 `main.c` 文件是 Frida 自动化测试框架中的一个组成部分，用于验证 Frida 的特定功能（在这种情况下，很可能是对子项目库函数的 Hook 和修改）。开发者通过编写和运行测试用例来确保 Frida 的稳定性和正确性。 文件路径中的 `failing` 表明这是一个已知会失败的测试用例，可能用于跟踪某个 Bug 或者作为未来修复的目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/16 extract from subproject/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,14 +170,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int sub_lib_method(void);
 
 int main(void) {
     return 1337 - sub_lib_method();
 }
-
-"""
-
 ```

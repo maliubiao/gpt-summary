@@ -155,15 +155,17 @@ console.log(myObject);
 
 总而言之，`v8/src/inspector/remote-object-id.h` 定义了 V8 Inspector 用于在调试过程中唯一标识远程对象和调用帧的关键数据结构，使得调试器可以有效地与 V8 引擎进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/remote-object-id.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/remote-object-id.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ class RemoteCallFrameId final : public RemoteObjectIdBase {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_REMOTE_OBJECT_ID_H_
-
-"""
-
 ```

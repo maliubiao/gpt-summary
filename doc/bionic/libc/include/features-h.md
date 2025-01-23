@@ -219,7 +219,7 @@ sys.stdin.read()
 
 **注意：**  由于 `<features.handroid>` 和 `<sys/cdefs.h>` 主要影响编译时的行为，Frida 这种运行时 hook 工具不能直接观察到头文件的包含过程。我们只能通过 hook 具体的函数，并分析这些函数在运行时可能受到的宏定义的影响来间接地理解它们的作用。更直接地理解 `<sys/cdefs.h>` 的影响需要查看 Bionic 的源代码和编译配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/features.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -268,7 +270,4 @@ Prompt:
  */
 
 #include <sys/cdefs.h>
-
-"""
-
 ```

@@ -175,14 +175,16 @@ This iterative process of scanning, understanding, connecting, and exemplifying 
 
 `layout_font_accessor_win.cc` 在 Chromium/Blink 引擎中扮演着重要的角色，它能够准确地识别出最终用于渲染网页内容的字体。这对于调试字体相关的渲染问题、进行性能分析（了解哪些字体被频繁使用）以及进行辅助功能开发（例如，需要知道文本实际使用的字体以便进行正确的文本处理）都非常有价值。 它连接了 HTML、CSS 的声明和最终渲染的实现，并能反映出 JavaScript 动态修改带来的变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_font_accessor_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void GetFontsUsedByFrame(const LocalFrame& frame, FontFamilyNames& result) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

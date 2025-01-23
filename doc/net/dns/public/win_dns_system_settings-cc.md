@@ -143,15 +143,17 @@ By following this structured approach, combining code analysis with an understan
 
 `win_dns_system_settings.cc` 是 Chromium 网络栈中一个关键的组件，它负责从 Windows 操作系统中读取底层的 DNS 配置信息。这些信息对于浏览器进行域名解析至关重要，直接影响到用户浏览网页和访问网络资源的能力。理解这个文件的功能有助于理解 Chromium 如何与操作系统进行网络交互，并能帮助排查与 DNS 相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/public/win_dns_system_settings.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -464,7 +466,4 @@ ReadWinSystemDnsSettings() {
 }
 
 }  // namespace net
-
-"""
-
 ```

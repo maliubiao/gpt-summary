@@ -96,14 +96,16 @@ By following this thought process, breaking down the code, making logical deduct
 
 `MultiBufferDataSourceFactory` 是 Blink 渲染引擎中负责创建媒体数据源的关键组件。它隐藏了异步数据获取的复杂性，并为后续的媒体处理提供了统一的数据访问接口。虽然用户和前端开发者不会直接操作这个类，但它的正确运行对于网页上媒体内容的正常播放至关重要。理解其功能有助于理解浏览器如何加载和处理媒体资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/multi_buffer_data_source_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ void MultiBufferDataSourceFactory::OnUrlData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

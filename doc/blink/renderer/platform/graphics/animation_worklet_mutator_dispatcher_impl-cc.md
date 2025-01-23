@@ -168,14 +168,16 @@ Animation Worklet 允许开发者使用 JavaScript 代码直接控制 CSS 动画
 
 总而言之，`animation_worklet_mutator_dispatcher_impl.cc` 是 Blink 引擎中连接 Animation Worklet (JavaScript 代码) 和渲染管道 (C++ 代码) 的关键桥梁，负责高效地管理和应用自定义的动画逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/animation_worklet_mutator_dispatcher_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -554,7 +556,4 @@ bool AnimationWorkletMutatorDispatcherImpl::ApplyMutationsOnHostThread() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

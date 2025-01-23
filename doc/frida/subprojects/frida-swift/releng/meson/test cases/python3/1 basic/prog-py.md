@@ -178,7 +178,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/test cases/python3/1 basic/prog.py` 是一个非常基础的 Frida 功能测试用例，它通过调用一个自定义的 `gluonator.gluoninate()` 函数并检查其返回值来验证 Frida 的核心机制是否正常工作。虽然它本身不直接进行逆向分析，但它体现了 Frida 动态插桩的基本原理，并依赖于底层的系统知识。理解这个测试用例有助于开发者理解 Frida 的基本功能和调试 Frida 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python3/1 basic/prog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from gluon import gluonator
@@ -197,7 +199,4 @@ print('Running mainprog from root dir.')
 
 if gluonator.gluoninate() != 42:
     sys.exit(1)
-
-"""
-
 ```

@@ -169,7 +169,7 @@ A user would typically arrive at this script indirectly as part of the Frida bui
 
 **Debugging Clue:** If a user encounters errors related to building Rust subprojects within Frida, examining the Meson log output will often reveal if `interpreter.py` was involved and if any errors occurred during its execution (e.g., TOML parsing errors, feature mismatches). Looking at the generated Meson files in the build directory can also provide insights into how the `Cargo.toml` was translated.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/cargo/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2024 Intel Corporation
 
@@ -912,7 +914,4 @@ def interpret(subp_name: str, subdir: str, env: Environment) -> T.Tuple[mparser.
             ast.extend(_create_lib(cargo, build, crate_type))
 
     return build.block(ast), options
-
-"""
-
 ```

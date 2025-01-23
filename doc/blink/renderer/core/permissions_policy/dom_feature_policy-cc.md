@@ -182,15 +182,17 @@ Feature Policy 是一种 Web 平台机制，允许开发者控制浏览器中特
 
 总而言之，`DOMFeaturePolicy.cc` 是 Blink 引擎中实现 Feature Policy JavaScript API 的核心组件，它负责将底层的策略信息暴露给 Web 开发者，并提供相关的查询和调试功能。理解其功能和与 Web 技术的关系对于开发安全和可控的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/permissions_policy/dom_feature_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ void DOMFeaturePolicy::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

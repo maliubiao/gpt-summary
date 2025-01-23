@@ -125,7 +125,7 @@ func main() {
 
 总而言之，`tostring_test.go` 文件提供了一种将 `internal/reflectlite` 包中的反射值转换为字符串的方法，主要用于调试目的。它利用 Go 语言的反射功能来检查变量的类型和值，并将其格式化为人类可读的字符串。需要注意的是，它对某些类型的处理可能不完整（例如 map），并且由于其位于 `internal` 包中，不适合在生产代码中直接使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/reflectlite/tostring_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -133,8 +133,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -233,9 +235,4 @@ func valueToStringImpl(val reflect.Value) string {
 		panic("valueToString: can't print type " + typ.String())
 	}
 }
-
-"""
-
-
-
 ```

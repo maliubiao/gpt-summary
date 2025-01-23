@@ -146,7 +146,7 @@ This systematic approach, combining code analysis, domain knowledge (Frida, reve
 
 总而言之，虽然当前的代码片段功能有限，但它揭示了一个基于 Frida 和 macOS GUI 框架的 CPU 监控工具的雏形。要理解其完整功能，需要查看更完整的代码实现，包括 Frida Agent 的逻辑以及 GUI 界面的构建部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/cpushark/CpuShark.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 
 sys.path.insert(0, "/Users/oleavr/src/frida/build/frida-macos-universal/lib/python2.7/site-packages")
@@ -164,7 +166,4 @@ if __name__ == "__main__":
     from PyObjCTools import AppHelper
 
     AppHelper.runEventLoop()
-
-"""
-
 ```

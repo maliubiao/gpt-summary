@@ -108,7 +108,7 @@ Frida 作为一款动态 instrumentation 工具，其核心功能之一就是在
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/linkers/__init__.py` 文件虽然小巧，但它在 Frida 的构建过程中扮演着关键角色，负责链接器的抽象、检测和管理，这对于最终生成可用的 Frida 工具至关重要。理解链接器的工作原理对于逆向工程和理解 Frida 的内部机制都有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/linkers/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 
@@ -138,7 +140,4 @@ __all__ = [
     'guess_win_linker',
     'guess_nix_linker',
 ]
-
-"""
-
 ```

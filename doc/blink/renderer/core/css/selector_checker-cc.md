@@ -99,7 +99,7 @@ The user wants to understand the functionality of the `selector_checker.cc` file
 
 总而言之，`selector_checker.cc` 是 Blink 渲染引擎中一个至关重要的组件，它负责将 CSS 样式应用于正确的 HTML 元素，是实现网页样式渲染的核心逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/selector_checker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2004-2005 Allan Sandfeld Jensen (kde@carewolf.com)
@@ -874,7 +876,4 @@ static bool AnyAttributeMatches(Element& element,
                                 CSSSelector::MatchType match,
                                 const CSSSelector& selector) {
   const QualifiedName& selector_attr = selector.Attribu
-"""
-
-
 ```

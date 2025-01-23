@@ -145,7 +145,7 @@ Frida 本身就是一个动态插桩工具，是逆向工程中非常强大的�
 
 总之，`frida/subprojects/frida-core/src/linux/linjector-glue.c` 中的 `_frida_agent_descriptor_clone_so` 函数目前的功能是克隆 Frida Agent 共享库的描述符（实际上只是增加引用计数），但其注释表明未来可能用于修改 Agent 的身份信息。这个文件是 Frida 注入机制的关键组成部分，涉及到二进制文件处理、Linux 进程注入等底层技术。理解它的功能有助于理解 Frida 的内部工作原理，并为调试注入相关的问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/linjector-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 GBytes *
@@ -163,7 +165,4 @@ _frida_agent_descriptor_clone_so (GBytes * so)
   /* TODO: update .so identity */
   return g_bytes_ref (so);
 }
-
-"""
-
 ```

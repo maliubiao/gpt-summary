@@ -190,15 +190,17 @@ By following these steps – from understanding the basics to considering edge c
 
 总而言之，`undo_stack.cc` 文件是 Blink 引擎实现撤销和重做功能的核心，它通过维护两个栈来记录用户的编辑历史，并提供相应的接口来执行撤销和重做操作。虽然它不直接操作 JavaScript、HTML 或 CSS 代码，但用户的编辑行为最终会通过它来管理。理解这个文件的工作原理对于调试与编辑功能相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/undo_stack.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple, Inc.  All rights reserved.
  * Copyright (C) 2012 Google, Inc.  All rights reserved.
@@ -341,7 +343,4 @@ void UndoStack::ElementRemoved(Element* element) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

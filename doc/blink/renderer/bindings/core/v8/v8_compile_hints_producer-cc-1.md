@@ -110,7 +110,7 @@ Initially, I might have overemphasized the direct influence of CSS on compile hi
 
 这段代码片段是 `v8_compile_hints_producer.cc` 文件中负责提取大量原始字节数据并将其转换为结构化编译提示信息的一部分。它专注于从 `raw_data` 数组的特定区域（索引 656 到 1499）读取双字节数据，并将这些数据组合成 64 位整数，然后将这些整数分别设置到目标对象的 `Data328` 到 `Data749` 属性中。这个过程是为 V8 JavaScript 引擎的编译优化提供信息支持的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_compile_hints_producer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 << 32 | raw_data[658])
       .SetData330(static_cast<int64_t>(raw_data[661]) << 32 | raw_data[660])
       .SetData331(static_cast<int64_t>(raw_data[663]) << 32 | raw_data[662])
@@ -539,8 +541,5 @@ Prompt:
       .SetData745(static_cast<int64_t>(raw_data[1491]) << 32 | raw_data[1490])
       .SetData746(static_cast<int64_t>(raw_data[1493]) << 32 | raw_data[1492])
       .SetData747(static_cast<int64_t>(raw_data[1495]) << 32 | raw_data[1494])
-      .SetData748(static_cast<int64_t>(raw_data[1497]) << 32 | 
-"""
-
-
+      .SetData748(static_cast<int64_t>(raw_data[1497]) << 32 |
 ```

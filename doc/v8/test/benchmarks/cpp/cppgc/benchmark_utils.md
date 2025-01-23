@@ -55,9 +55,12 @@ This systematic approach, focusing on includes, namespaces, class members, and m
 
 **总而言之，`benchmark_utils.cc` 中的 `BenchmarkWithHeap` 类提供了一种标准的、方便的方式来在 `cppgc` 基准测试中管理 `cppgc` 的生命周期，确保每次测试都在一个干净和一致的环境中运行。** 这简化了基准测试的编写，并提高了测试结果的可靠性。
 Error: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.
-Prompt: ```这是目录为v8/test/benchmarks/cpp/cppgc/benchmark_utils.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/cppgc/benchmark_utils.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -89,6 +92,4 @@ void BenchmarkWithHeap::ShutdownProcess() {
 }  // namespace testing
 }  // namespace internal
 }  // namespace cppgc
-
-"""
 ```

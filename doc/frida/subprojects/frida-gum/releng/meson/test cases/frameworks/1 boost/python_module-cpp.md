@@ -196,7 +196,7 @@ print(version_info)
 
 总而言之，这个简单的 C++ 文件是 Frida 生态系统中一个典型的组成部分，它允许用户以高性能的方式扩展 Frida 的功能，或者用于分析目标应用程序中使用的 Python 扩展模块。理解其功能和背后的技术原理对于进行有效的动态分析和逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/1 boost/python_module.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #include <boost/python.hpp>
@@ -228,7 +230,4 @@ BOOST_PYTHON_MODULE(MOD_NAME)
         .def("version", &World::version)
     ;
 }
-
-"""
-
 ```

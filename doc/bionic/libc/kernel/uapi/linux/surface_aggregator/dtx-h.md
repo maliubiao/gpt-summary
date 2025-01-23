@@ -326,7 +326,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以观察到目标应用程序在与内核 `surface_aggregator` 驱动交互时调用的 `ioctl` 命令、传递的参数以及返回值，从而帮助你调试和理解其工作原理。你需要根据实际情况调整 Frida 脚本中的包名和 ioctl 命令码的映射。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/surface_aggregator/dtx.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -337,8 +337,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -408,7 +410,4 @@ struct sdtx_base_info {
 #define SDTX_IOCTL_GET_DEVICE_MODE _IOR(0xa5, 0x2a, __u16)
 #define SDTX_IOCTL_GET_LATCH_STATUS _IOR(0xa5, 0x2b, __u16)
 #endif
-
-"""
-
 ```

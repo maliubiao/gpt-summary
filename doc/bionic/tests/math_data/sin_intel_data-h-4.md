@@ -214,7 +214,7 @@ sys.stdin.read()
 
 `bionic/tests/math_data/sin_intel_data.handroid` 文件是 Android Bionic 库中用于测试 `sin` 函数实现正确性的关键数据文件。它包含了一系列的输入输出对，用于验证 `sin` 函数在各种边界条件和正常情况下的计算结果。这个文件对于确保 Android 系统的数学运算能力和依赖于三角函数的应用程序的正确性至关重要。 虽然它本身不涉及动态链接的具体操作，但它测试的 `sin` 函数位于动态链接库 `libm.so` 中，其正确性也依赖于动态链接的正确完成。 理解这个文件的作用有助于我们更好地理解 Android 底层库的测试机制和数学函数的实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sin_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 },
   { // Entry 1426
     -0x1.0000000000000fffffffffffffffffffp-1022,
@@ -282,8 +284,4 @@ Prompt:
     -0.0
   },
 };
-
-"""
-
-
 ```

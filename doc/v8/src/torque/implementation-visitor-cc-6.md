@@ -212,7 +212,7 @@ Tagged<Rectangle> TorqueGeneratedFactory<Factory>::MakeRectangle(double width, d
 
 作为代码生成流程的最后阶段或重要阶段，`implementation-visitor.cc` 的功能是将高层次的 Torque 抽象描述转化为可以直接被 V8 引擎使用的 C++ 代码。 它涵盖了对象创建、内存布局、调试支持和运行时验证等多个方面。  可以认为它是将 Torque 的蓝图变成可执行代码的关键步骤，弥合了 Torque 语言和底层 C++ 实现之间的鸿沟。 通过生成各种辅助代码（如工厂、打印函数、验证器），它增强了 V8 的可维护性、可调试性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -220,9 +220,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        "result->init_self_indirect_pointer(factory()->"
+### 源代码
+```cpp
+"result->init_self_indirect_pointer(factory()->"
                             "isolate());\n";
           } else if (!f.index) {
             factory_impl << "  result->TorqueGeneratedClass::set_"
@@ -915,8 +917,4 @@ void ReportAllUnusedMacros() {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
-
 ```

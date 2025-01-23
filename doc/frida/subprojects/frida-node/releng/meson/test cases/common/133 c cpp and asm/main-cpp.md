@@ -148,7 +148,7 @@ Initially, I might have focused too much on the simple C++ code itself. The key 
 
 总而言之，这个 `main.cpp` 文件虽然本身代码很简单，但它是 Frida 功能测试的重要组成部分，体现了 Frida 与底层代码交互的能力，并能作为学习和调试 Frida 的切入点。理解它的功能和背后的相关知识，有助于更好地理解 Frida 的工作原理和应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/133 c cpp and asm/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 extern "C" {
@@ -169,7 +171,4 @@ int main(void) {
   std::cout << "C++ seems to be working." << std::endl;
   return get_retval();
 }
-
-"""
-
 ```

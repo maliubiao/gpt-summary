@@ -93,7 +93,7 @@ Here's a thinking process to arrive at the analysis of the `qt4.py` file:
 
 **作为调试线索：** 如果用户在构建 Frida 时遇到与 Qt 4 相关的错误，例如找不到 Qt 4 或者链接错误，那么可以查看这个 `qt4.py` 模块的代码，了解 Meson 是如何尝试查找和配置 Qt 4 的。例如，可以查看 `QtBaseModule` 中与查找 Qt 安装路径相关的方法，或者检查 Meson 的输出日志，看它在执行哪些 Qt 相关的操作。  确认 Qt 4 是否已安装，并且其安装路径是否在系统的 PATH 环境变量中，或者 Meson 是否提供了配置 Qt 4 路径的选项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/qt4.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -126,7 +128,4 @@ class Qt4Module(QtBaseModule):
 
 def initialize(interp: Interpreter) -> Qt4Module:
     return Qt4Module(interp)
-
-"""
-
 ```

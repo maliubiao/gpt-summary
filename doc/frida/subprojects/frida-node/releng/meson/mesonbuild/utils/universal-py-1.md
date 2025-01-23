@@ -101,7 +101,7 @@ print(lib_dir) # 在 Debian/Ubuntu x86_64 系统上可能输出: lib/x86_64-linu
 
 `frida/subprojects/frida-node/releng/meson/mesonbuild/utils/universal.py` 的第二部分主要包含了一系列用于 Meson 构建系统的通用工具函数，涵盖了版本号处理、路径管理、命令行参数处理、配置文件处理、子进程管理等多个方面。这些函数旨在提供跨平台的一致性，并简化构建过程中的常见任务。它们在 Frida 的构建过程中扮演着重要的角色，例如处理配置文件，生成配置头文件，以及执行外部构建命令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n that happens, it can be
     # considered an achievement in itself.
     #
@@ -1001,7 +1003,4 @@ def detect_subprojects(spdir_name: str, current_dir: str = '',
         if append_this:
             if basename in result:
                 result[basename].appe
-"""
-
-
 ```

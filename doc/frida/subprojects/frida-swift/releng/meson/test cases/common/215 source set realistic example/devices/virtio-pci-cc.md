@@ -166,7 +166,7 @@ By following these steps, moving from the concrete code to the abstract concepts
 
 总而言之，`virtio-pci.cc` 是 Frida 测试框架中的一个简单但具有代表性的示例，用于模拟 VirtIO PCI 设备。它可以作为 Frida 进行动态逆向分析的目标，也展示了底层二进制、内核和框架相关的概念。理解这样的测试用例有助于用户更好地掌握 Frida 的使用方法和原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/215 source set realistic example/devices/virtio-pci.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
@@ -192,7 +194,4 @@ void VirtioPCIDevice::say_hello()
 }
 
 static VirtioPCIDevice virtio_pci;
-
-"""
-
 ```

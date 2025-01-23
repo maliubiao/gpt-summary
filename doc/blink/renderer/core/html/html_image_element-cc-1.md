@@ -162,15 +162,17 @@ Now I can synthesize these observations into a comprehensive explanation.
 
 `HTMLImageElement` 类的这部分代码主要负责实现与图像加载、显示、响应式处理以及与 HTML、CSS 和 JavaScript 交互相关的核心功能。它处理了图像的各种属性，管理了图像的加载状态和布局，并为开发者提供了通过 JavaScript 控制图像行为的能力。该类是 Blink 引擎中渲染和管理 `<img>` 元素的核心组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_image_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 entUpdateReason::kJavaScript);
   LayoutObject* r = GetLayoutObject();
   if (!r)
@@ -474,8 +476,4 @@ void HTMLImageElement::AssociateWith(HTMLFormElement* form) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

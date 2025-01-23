@@ -139,7 +139,7 @@ By following these steps, analyzing the code in its context, and iteratively ref
 
 **总结:**  这个 `main.c` 文件本身非常简单，它的主要作用是作为 Frida 构建系统依赖关系生成测试用例的一部分。它的存在是为了确保 Frida 的构建系统能够正确处理即使是最简单的 C 文件的依赖关系，这对于 Frida 的正常构建和运行至关重要。在逆向工程的上下文中，理解程序的依赖关系是非常重要的，因此这个测试用例虽然简单，但其目标与逆向工程的需求是相关的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/124 dependency file generation/main .c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,12 +147,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

@@ -46,7 +46,7 @@ These missing pieces will need to be addressed in the response to the full promp
 
 在接下来的第 2 部分，我们可以期待看到如何使用这些测试数据来实际测试 `cbrtf` 函数的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cbrtf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -58,8 +58,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1615,7 +1617,4 @@ static data_1_1_t<float, float> g_cbrtf_intel_data[] = {
   },
   { // Entry 384
     0x1.000000aaaaaa38e38eb74f02808
-"""
-
-
 ```

@@ -65,15 +65,17 @@ The primary function tested is likely related to methods like `MapLocalToAncesto
 
 这部分代码主要用于测试 Chromium Blink 引擎在各种复杂的 HTML 和 CSS 布局场景下，进行精确的坐标映射功能。它通过创建不同的布局结构，并使用 `MapLocalToAncestor` 和 `MapAncestorToLocal` 函数进行正向和反向的坐标转换，以此验证引擎的坐标计算逻辑是否正确。这对于确保网页元素在不同布局下的正确渲染和交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/map_coordinates_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ' style='columns:2; column-gap:20px; width:400px;
     line-height:50px; padding:5px; orphans:1; widows:1;'>
         <span id='target'><br>text</span>
@@ -874,7 +876,4 @@ TEST_F(MapCoordinatesTest, LocalToAbsoluteTransform) {
       <div id='scale' style='transform: scale(2.0); transform-origin: left
     top;'>
         <
-"""
-
-
 ```

@@ -147,7 +147,7 @@ By following these steps, combining a top-down (understanding the overall goal) 
 
 **总结:** `ClikeCompiler` Mixin 的这一部分主要提供了用于查找和链接库和框架、处理编译器和链接器参数以及检查代码属性和特性的功能。这些功能对于 Frida 这样的动态 instrumentation 工具至关重要，因为它需要在运行时与目标进程进行交互，并可能需要编译和链接少量的代码片段。这些功能也与逆向工程中的常见任务紧密相关，例如识别和利用目标程序的依赖库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,9 +156,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    }}'''
+### 源代码
+```python
+}}'''
         return head, main
 
     @staticmethod
@@ -761,8 +763,4 @@ Prompt:
             self.preprocessor.mode = 'PREPROCESSOR'
             self.modes.append(self.preprocessor)
         return self.preprocessor
-
-"""
-
-
 ```

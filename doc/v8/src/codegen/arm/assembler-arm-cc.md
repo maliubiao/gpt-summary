@@ -119,7 +119,7 @@ MOV pc, lr      // 返回 (假设 lr 寄存器存储了返回地址)
 
 总而言之，`v8/src/codegen/arm/assembler-arm.cc` 是一个底层的代码生成模块，为 V8 引擎在 ARM 架构上执行 JavaScript 代码奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1056,8 +1058,5 @@ void Assembler::print(const Label* L) {
     while (l.is_linked()) {
       PrintF("@ %d ", l.pos());
       Instr instr = instr_at(l.pos());
-      if ((instr 
-"""
-
-
+      if ((instr
 ```

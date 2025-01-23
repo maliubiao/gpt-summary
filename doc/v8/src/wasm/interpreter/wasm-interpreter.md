@@ -116,12 +116,14 @@ console.log(result); // 输出 15
 
 该文件是 V8 中 WebAssembly 解释器的核心组成部分，定义了其基本架构、代码管理、线程管理、执行状态跟踪以及性能监控等关键功能。它直接参与了在 JavaScript 环境中解释执行 WebAssembly 代码的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1686,7 +1688,4 @@ FOREACH_ARITHMETIC_BINOP(DEFINE_BINOP)
     NextOp();                                                               \
   }
 FOREACH_SIGNED_DIV_BINOP(DEFI
-"""
-
-
 ```

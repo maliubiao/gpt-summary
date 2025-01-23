@@ -396,7 +396,7 @@ sys.stdin.read()
 
 `bionic/libc/bionic/pthread_cond.cpp` 文件实现了 Android Bionic 库中的条件变量功能，为多线程编程提供了重要的同步机制。理解其功能和实现细节对于开发高效且稳定的 Android 应用和系统服务至关重要。正确使用条件变量需要与互斥锁配合，并注意避免常见的编程错误，例如死锁和信号丢失。Frida 这样的工具可以帮助开发者在运行时动态地分析和调试条件变量的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/pthread_cond.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -407,8 +407,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -695,7 +697,4 @@ extern "C" int pthread_cond_timeout_np(pthread_cond_t* cond_interface,
   return pthread_cond_timedwait_relative_np(cond_interface, mutex, &ts);
 }
 #endif
-
-"""
-
 ```

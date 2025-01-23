@@ -96,15 +96,17 @@ This section of `css_animations.cc` is responsible for calculating the necessary
 
 这部分代码主要负责 **计算和启动 CSS 过渡动画**。它处理不同类型的 CSS 属性，包括标准属性和自定义属性。核心在于确定过渡的起始和结束状态，创建用于执行动画的模型，并处理 `transition: all` 这种特殊情况。此外，它还负责计算过渡开始前的元素样式，这对于确保平滑过渡至关重要，尤其是在存在其他动画影响的情况下。它为后续的动画执行和事件分发奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 interrupted_progress.value() *
                    interrupted_transition->reversing_shortening_factor) +
                       (1 - interrupted_transition->reversing_shortening_factor),
@@ -907,7 +909,4 @@ bool CSSAnimations::IsAnimatingRevert(
 
 bool CSSAnimations::IsAnimatingDisplayProperty(
     const ElementAnimations* eleme
-"""
-
-
 ```

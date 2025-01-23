@@ -117,7 +117,7 @@ By following these steps, I can provide a comprehensive and structured answer to
 
 总而言之，这段代码是 Frida 测试框架的一部分，用于验证测试配置和测试套件选择功能的正确性，这对于保证 Frida 的开发质量和可靠性至关重要。它虽然不直接执行逆向操作，但其测试的功能是逆向工程工作流中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,9 +126,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        self.assertNotIn('TEST_ENV is set', basic_log)
+### 源代码
+```python
+self.assertNotIn('TEST_ENV is set', basic_log)
         self.assertNotIn('Memcheck', basic_log)
         self.assertIn('TEST_ENV is set', vg_log)
         self.assertIn('Memcheck', vg_log)
@@ -774,8 +776,4 @@ Prompt:
         if cc.get_id() != 'clang':
             raise SkipTest('Only clang currently supports thinLTO')
         if cc.linker.id not in {'ld.lld', 'ld.gold', 'ld64', 'lld-link'}:
-    
-"""
-
-
 ```

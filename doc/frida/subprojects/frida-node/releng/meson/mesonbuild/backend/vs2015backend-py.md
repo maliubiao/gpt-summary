@@ -171,7 +171,7 @@ Frida 是一个动态插桩工具，广泛应用于软件逆向工程。这个�
 
 总而言之，`vs2015backend.py` 是 Frida Node.js 绑定构建过程中的一个关键组件，它负责将抽象的构建描述转换为 Visual Studio 2015 可以理解的具体构建指令。理解它的功能对于调试构建问题和理解 Frida 的构建流程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/vs2015backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -216,7 +218,4 @@ class Vs2015Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v140'
-
-"""
-
 ```

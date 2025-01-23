@@ -73,11 +73,13 @@ console.log(doubledArr);
 
 **总结来说，`platform-embedded-file-writer-mac.cc` 是 V8 引擎为了在 macOS 上高效启动和运行 JavaScript 代码而进行底层汇编代码生成的重要组成部分。它将 V8 的内部结构和预编译代码转换为平台特定的汇编指令，使得这些核心功能可以直接集成到 V8 引擎中，从而提升性能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-mac.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ int PlatformEmbeddedFileWriterMac::IndentedDataDirective(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

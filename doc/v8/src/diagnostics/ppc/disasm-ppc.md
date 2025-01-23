@@ -117,11 +117,13 @@ v8::internal::Builtin v8::internal::Builtin_Impl_<v8::internal::Builtin_Argument
 
 `v8/src/diagnostics/ppc/disasm-ppc.cc` 是 V8 引擎中用于将 PowerPC 架构的机器码反汇编成汇编语言的关键组件，它主要用于 V8 的内部调试、性能分析和代码生成跟踪等功能。虽然 JavaScript 代码本身不能直接调用它，但可以通过 V8 的命令行选项或开发者工具间接地观察到它的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ppc/disasm-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2079,7 +2081,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
 ```

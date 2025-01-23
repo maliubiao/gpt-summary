@@ -123,7 +123,7 @@ Finally, organize the thoughts into a clear and structured answer, using heading
 
 `copyfile.py` 是一个简单的文件复制脚本，它在 Frida 的 Windows 测试环境中扮演着辅助角色，可能用于准备测试环境，例如复制目标程序、库文件或配置文件。虽然脚本本身不涉及复杂的底层操作，但它的存在是为了支持 Frida 更高层次的动态分析和逆向工程功能。了解这个脚本的功能可以帮助开发者理解 Frida 的构建和测试流程，并在遇到相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/20 vs install static lib with generated obj deps/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,13 +131,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from shutil import copyfile
 import sys
 
 copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

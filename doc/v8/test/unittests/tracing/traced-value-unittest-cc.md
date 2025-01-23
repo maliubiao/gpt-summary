@@ -170,15 +170,17 @@ value->AppendAsTraceFormat(&json);
 
 总结来说，`v8/test/unittests/tracing/traced-value-unittest.cc` 测试了 `TracedValue` 类构建和序列化结构化数据为 JSON 字符串的功能，这在 V8 内部用于生成跟踪信息，并且与 JavaScript 中操作对象和数组的概念密切相关。 开发者在使用类似机制时需要注意 JSON 格式、特殊字符转义和 UTF-8 编码等常见问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/tracing/traced-value-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/tracing/traced-value-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ TEST_F(TracedValueTest, Utf8) {
       "\u0435\",\"b\":\"\u2600\u2600\u26FF\",\"c\":\"\xf0\x9f\x98\x81\"}";
   CHECK_EQ(expected, json);
 }
-
-"""
-
 ```

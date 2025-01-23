@@ -180,15 +180,17 @@ processObject(obj2); // V8 需要进行类型检查，或者可能抛出错误
 
 `v8/src/objects/turboshaft-types-inl.h` 定义了 V8 内部用于优化 JavaScript 代码的关键类型系统。 虽然普通用户不会直接操作这些代码，但理解 JavaScript 的类型特性以及 V8 如何处理类型对于编写高性能的 JavaScript 代码仍然非常重要。 避免不必要的类型转换和保持对象属性类型的一致性可以帮助 V8 进行更有效的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/turboshaft-types-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/turboshaft-types-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ TQ_OBJECT_CONSTRUCTORS_IMPL(TurboshaftFloat64SetType)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_TURBOSHAFT_TYPES_INL_H_
-
-"""
-
 ```

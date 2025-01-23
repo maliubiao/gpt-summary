@@ -168,14 +168,16 @@ if (navigator.platform.startsWith('Mac')) {
 
 `navigator_id.cc` 文件是 Blink 引擎中负责提供浏览器身份信息的重要组成部分。它通过 `NavigatorID` 类实现，并将这些信息暴露给 JavaScript 的 `navigator` 对象。了解这个文件的功能有助于理解浏览器如何向网页脚本提供自身的信息，以及在进行前端开发时如何正确地使用这些信息。开发者需要注意避免常见的错误用法，例如不正确的浏览器检测和过度依赖 `navigator` 信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/navigator_id.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  * Copyright (C) 2013 Samsung Electronics. All rights reserved.
@@ -266,7 +268,4 @@ String NavigatorID::product() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

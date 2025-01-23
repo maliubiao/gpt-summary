@@ -122,7 +122,7 @@ void f(void)
 
 因此，`f.c` 文件本身是一个非常小的组成部分，但它在Frida Gum库的测试和验证流程中扮演着角色。开发者可能会直接查看这个文件来理解测试用例的目的，或者在调试与source set和custom target相关的Frida功能时，将其作为一个简单的入口点进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/214 source set custom target/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,14 +130,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void f(void)
 {
 }
-
-"""
-
 ```

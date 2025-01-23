@@ -164,7 +164,7 @@ This detailed breakdown and iterative refinement process allows me to generate a
 
 这些功能是 `reflect` 包的基础，对于运行时检查和操作 Go 程序的类型信息至关重要。 这部分测试确保了这些核心功能的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 afe.Pointer(&x)), t)
 
 	x1 := T2{T2inner{2, 3}, 17}
@@ -1441,9 +1443,4 @@ func TestMethod(t *testing.T) {
 	i = v.Call([]Value{ValueOf(19)})[0].Int()
 	if i != 475 {
 		t.Errorf("Interface MethodByName returned %d; want 475", i)
-"""
-
-
-
-
 ```

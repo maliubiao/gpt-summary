@@ -128,7 +128,7 @@ Essentially, I tried to "think like a developer" who wrote or is trying to under
 
 总而言之，`blink/renderer/core/paint/theme_painter_default.cc` 的第一部分定义了 `ThemePainterDefault` 类，它负责使用操作系统或平台的默认主题来绘制各种基本的 HTML 表单控件。它考虑了元素的状态、缩放级别、书写模式和强调色等因素，并利用平台提供的原生主题引擎来实现绘制。它的核心作用是提供用户界面控件的基础视觉呈现，并在没有或很少自定义样式的情况下确保用户界面的一致性和平台原生感。 它通过与 `WebThemeEngine` 接口交互，充当了 Blink 渲染引擎和底层平台绘制能力之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/theme_painter_default.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc.
  * Copyright (C) 2007 Alp Toker <alp@atoker.com>
@@ -882,7 +884,4 @@ bool ThemePainterDefault::PaintProgressBar(const Element& element,
   WebThemeEngineHelper::GetNativeThemeEngine()->Paint(
       paint_info.context.Canvas(), WebThemeEngine::kPartProgressBar,
       GetWebThemeState(element), rect, &extra_params, color_sch
-"""
-
-
 ```

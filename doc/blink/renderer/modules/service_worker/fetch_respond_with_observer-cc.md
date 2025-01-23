@@ -210,15 +210,17 @@ Finally, I organize my findings into the requested categories: functionality, re
 
 总而言之，`blink/renderer/modules/service_worker/fetch_respond_with_observer.cc` 是 Service Worker 拦截和处理网络请求的核心 C++ 组件，它桥接了 JavaScript 的 `respondWith()` 调用和浏览器的网络处理机制，确保了 Service Worker 能够按照预期控制页面的网络行为。 理解这个文件的工作原理对于调试 Service Worker 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/fetch_respond_with_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -703,7 +705,4 @@ void FetchRespondWithObserver::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

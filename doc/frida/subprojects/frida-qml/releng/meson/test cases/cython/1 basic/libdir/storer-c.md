@@ -172,7 +172,7 @@ int main() {
 
 总而言之，这个 `storer.c` 文件虽然简单，但它提供了一个基本的构建块，用于理解更复杂的程序中的数据存储和操作机制。在 Frida 的上下文中，它可以作为目标，演示如何使用 Frida 进行动态插桩和逆向分析。用户之所以会查看这个文件，很可能是因为他们正在开发、测试或逆向分析使用这个库的应用程序，并需要理解其内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cython/1 basic/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -206,7 +208,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

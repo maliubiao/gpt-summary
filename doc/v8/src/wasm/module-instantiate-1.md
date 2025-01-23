@@ -111,12 +111,14 @@ const exportedMemory = instance.exports.memory;
 
 总而言之，这段代码在 WebAssembly 模块实例化过程中起着至关重要的作用，它连接了 WebAssembly 模块的二进制表示和 JavaScript 环境，使得 JavaScript 可以与 WebAssembly 模块进行交互。它处理了模块实例化后期的关键步骤，例如数据和表的初始化以及导出项的暴露。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-instantiate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 has_exception());
   TRACE("Successfully built instance for module %p\n",
         module_object_->native_module());
@@ -1672,7 +1674,4 @@ void InstanceBuilder::LoadTableSegments(
         ValueOrError computed_element = ConsumeElementSegmentEntry(
             &init_expr_zone_, isolate_, trusted_instance_data,
             shared_trusted_instance_data, elem_segment, decoder,
-"""
-
-
 ```

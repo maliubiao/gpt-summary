@@ -123,7 +123,7 @@ The user has provided a Python source code file for the Frida dynamic instrument
 
 该 Python 源代码文件的主要功能是 **将 Frida 项目的构建配置信息转换为 Visual Studio 2010 可以理解的项目文件格式 (.vcxproj)**。它负责生成包含了编译选项、链接器设置、源文件列表、依赖关系等信息的 XML 文件，从而允许用户在 Visual Studio IDE 中构建和调试 Frida 的各个组件。在 `gen_lite` 模式下，它生成 Makefile 风格的项目，依赖于外部的 Meson 构建命令来完成实际的编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ngs')
         ET.SubElement(root, 'ImportGroup', Label='Shared')
         prop_sheets_grp = ET.SubElement(root, 'ImportGroup', Label='PropertySheets')
@@ -659,7 +661,4 @@ ngs')
                     else:
                         lang = Vs2010Backend.lang_from_source_file(s)
                         self.add_pch(pch_sources, lang
-"""
-
-
 ```

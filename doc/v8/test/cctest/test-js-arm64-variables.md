@@ -135,11 +135,13 @@ f5(5); // 调用函数并传入参数 5
 
 `test-js-arm64-variables.cc` 文件是 V8 JavaScript 引擎的测试套件的一部分，专门用于验证在 ARM64 架构下，V8 对各种 JavaScript 变量的处理是否符合预期。它通过执行一系列简单的 JavaScript 代码片段并检查其结果来实现这一目标，确保了 V8 在该架构上的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-js-arm64-variables.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -261,7 +263,4 @@ TEST(lookup_slots) {
 }  // namespace test_js_arm64_variables
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

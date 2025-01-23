@@ -127,14 +127,16 @@ This detailed breakdown demonstrates the thinking process involved in understand
 
 `css_custom_length_interpolation_type.cc` 文件的核心职责是处理 CSS 动画和过渡中非百分比长度值的平滑过渡。它负责将 CSS 值转换为可插值的形式，计算中间值，并将最终值转换回 CSS 值以供渲染引擎使用。 它与 CSS, JavaScript, HTML 都有着密切的关系，共同构建了网页的动态视觉效果。开发者需要理解不同类型的 CSS 值可能由不同的插值逻辑处理，以避免在创建动画和过渡时出现意外的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_custom_length_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ const CSSValue* CSSCustomLengthInterpolationType::CreateCSSValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

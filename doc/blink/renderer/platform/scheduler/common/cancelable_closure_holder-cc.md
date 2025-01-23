@@ -125,14 +125,16 @@ By following this thought process, combining code analysis with knowledge of web
 
 总而言之，`CancelableClosureHolder` 是 Blink 引擎中一个用于管理可取消的异步任务的重要工具，它与 JavaScript 中的异步机制、HTML 和 CSS 的渲染生命周期管理等密切相关。理解其功能有助于理解 Blink 内部如何处理需要被取消的异步操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/cancelable_closure_holder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ base::RepeatingClosure CancelableClosureHolder::GetCallback() const {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

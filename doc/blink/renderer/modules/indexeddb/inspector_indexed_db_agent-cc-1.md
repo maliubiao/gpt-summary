@@ -87,7 +87,7 @@ I need to:
 
 这些用户操作在 DevTools 的前端界面触发相应的事件，DevTools 前端会通过 Chrome 的 DevTools 协议 (CDP) 发送指令给浏览器内核的相应模块，最终路由到 `InspectorIndexedDBAgent` 中的对应方法进行处理。  调试时，可以通过在这些 C++ 方法中设置断点，或者查看 DevTools 的 Network 面板中与 "Inspector.IndexedDB" 相关的请求和响应，来追踪问题的发生。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/inspector_indexed_db_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -95,9 +95,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   [](std::unique_ptr<RequestDatabaseNamesCallback> request_callback,
+### 源代码
+```cpp
+[](std::unique_ptr<RequestDatabaseNamesCallback> request_callback,
              LocalFrame* frame, protocol::Response response,
              IDBFactory* idb_factory) {
             if (!response.IsSuccess()) {
@@ -578,8 +580,4 @@ void InspectorIndexedDBAgent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

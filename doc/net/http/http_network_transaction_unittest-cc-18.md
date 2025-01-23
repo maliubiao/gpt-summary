@@ -196,7 +196,7 @@ Content-Length: 0  // 如果请求体为空
 
 作为 34 个测试文件中的第 19 个，这个文件 `http_network_transaction_unittest.cc` 的这段代码主要专注于 **`HttpNetworkTransaction` 类在构建各种类型的 HTTP 请求头方面的单元测试**。它验证了在不同场景下（例如，使用代理、设置特定请求头、缓存控制、SOCKS 代理），`HttpNetworkTransaction` 是否能够正确生成符合 HTTP 规范的请求头。这部分测试是确保 Chromium 网络栈正确发起网络请求的关键组成部分。后续的测试部分可能会涵盖请求体的发送、响应的接收和处理、错误处理等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第19部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TRAFFIC_ANNOTATION_FOR_TESTS);
 
       HttpNetworkTransaction trans(DEFAULT_PRIORITY, session.get());
@@ -1088,7 +1090,4 @@ TEST_P(HttpNetworkTransactionTest, GroupIdForHTTPProxyConnections) {
           "https://www.example.org/http_connect_ssl",
           ClientSocketPool::GroupId(
               url::SchemeHo
-"""
-
-
 ```

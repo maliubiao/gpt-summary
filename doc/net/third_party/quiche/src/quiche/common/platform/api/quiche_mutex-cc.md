@@ -193,15 +193,17 @@ int main() {
 
 在 Chromium 的代码中，可以通过断点调试、日志记录等方式来跟踪 `QuicheMutex` 的获取和释放，以及观察被保护的共享变量的状态，从而定位问题。  了解用户操作是如何触发网络请求，以及 QUIC 协议的处理流程，有助于缩小调试范围，找到可能涉及互斥锁的代码路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/api/quiche_mutex.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ QuicheWriterMutexLock::QuicheWriterMutexLock(QuicheMutex* lock) : lock_(lock) {
 QuicheWriterMutexLock::~QuicheWriterMutexLock() { lock_->WriterUnlock(); }
 
 }  // namespace quiche
-
-"""
-
 ```

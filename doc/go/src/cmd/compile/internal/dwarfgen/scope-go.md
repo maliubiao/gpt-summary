@@ -181,15 +181,17 @@ func main() {
 
 `go/src/cmd/compile/internal/dwarfgen/scope.go` 是 Go 编译器生成 DWARF 调试信息中关于代码作用域的关键组成部分。它将编译器内部的抽象表示转换为调试器可以理解的格式，从而支持对 Go 程序进行有效的调试。理解其功能有助于开发者更好地理解程序的运行机制和调试信息的含义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/dwarfgen/scope.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -326,9 +328,4 @@ func (v varsByScope) Swap(i, j int) {
 	v.vars[i], v.vars[j] = v.vars[j], v.vars[i]
 	v.scopes[i], v.scopes[j] = v.scopes[j], v.scopes[i]
 }
-
-"""
-
-
-
 ```

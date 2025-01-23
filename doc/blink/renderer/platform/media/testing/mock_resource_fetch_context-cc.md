@@ -124,14 +124,16 @@ By following this systematic approach, even a simple file like this can be analy
 
 总之，`mock_resource_fetch_context.cc` 文件定义了一个用于测试的工具，它通过模拟资源获取过程，帮助开发者编写更可靠、更快速的 Blink 引擎媒体相关功能的单元测试和集成测试。它间接地影响了与媒体资源相关的 JavaScript, HTML, CSS 代码在测试环境下的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/testing/mock_resource_fetch_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ MockResourceFetchContext::MockResourceFetchContext() = default;
 MockResourceFetchContext::~MockResourceFetchContext() = default;
 
 }  // namespace blink
-
-"""
-
 ```

@@ -256,7 +256,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/upstream-openbsd/android/include/machine/ieee.handroid` 本身是一个简单的包含头文件，其关键功能在于引入了 `private/bionic_ieee.h` 中定义的与 IEEE 754 浮点数标准相关的底层定义，这些定义对于 Android 系统中正确处理浮点数至关重要。虽然它不直接参与动态链接，但其定义的类型和宏会影响到 `libc.so` 的内容，并被动态链接器加载和使用。 通过 Frida 可以 hook 相关的 libc 函数来观察其行为，从而更好地理解 Android 系统中浮点数的处理流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/android/include/machine/ieee.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,10 +267,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include "private/bionic_ieee.h"
-
-"""
-
 ```

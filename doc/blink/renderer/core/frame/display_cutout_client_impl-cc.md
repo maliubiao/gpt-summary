@@ -126,14 +126,16 @@ This structured approach, moving from understanding the code to connecting it to
 
 `display_cutout_client_impl.cc` 在 Blink 渲染引擎中扮演着关键角色，它桥接了操作系统或浏览器进程提供的硬件信息（显示屏凹口）和网页的渲染过程。通过设置安全区域信息，它间接地影响了 CSS 的环境变，最终允许开发者创建能够适应不同屏幕形状的网页。理解这个文件的功能有助于我们理解浏览器如何处理现代移动设备的显示特性，以及如何利用 CSS 和 JavaScript 来构建更好的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/display_cutout_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ void DisplayCutoutClientImpl::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

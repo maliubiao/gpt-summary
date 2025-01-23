@@ -97,12 +97,14 @@ function swap(arr, i, j) { // 对应 AssembleSwap (交换数组元素)
 
 总而言之， `code-generator-arm.cc` 的这一部分是 V8 引擎将 JavaScript 的高级语义转换为底层 ARM 机器指令的关键桥梁，它直接影响着 JavaScript 代码在 ARM 架构上的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/code-generator-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 changeUint16:
       __ add(i.TempRegister(1), i.InputRegister(0), i.InputRegister(1));
       __ uxth(i.TempRegister(2), i.InputRegister(2));
@@ -1122,8 +1124,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

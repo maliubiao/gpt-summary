@@ -140,15 +140,17 @@ console.log(process.versions.v8);
 
 总之，`v8/test/unittests/utils/version-unittest.cc` 通过一系列测试用例，确保 V8 能够正确地生成和管理版本信息，这对于 V8 自身的稳定性和开发者理解 V8 环境至关重要。 虽然用户不会直接操作这些 C++ 代码，但理解 V8 的版本信息及其格式对于编写与特定 V8 版本兼容的 JavaScript 代码仍然很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/version-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/utils/version-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -246,7 +248,4 @@ TEST_F(VersionTest, VersionString) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

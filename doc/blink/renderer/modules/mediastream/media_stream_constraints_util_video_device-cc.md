@@ -90,7 +90,7 @@ The user wants to understand the functionality of the given C++ code file `media
 
 这个 C++ 代码文件的主要功能是作为 Chromium Blink 引擎处理视频设备媒体流约束的核心部分。它负责接收来自 JavaScript 的视频约束条件，并根据这些约束，从可用的视频设备能力中选择最佳的视频捕获格式和设备设置。这包括表示和操作约束、表示设备能力、计算匹配度、应用约束集等关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_device.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -851,7 +853,4 @@ class ImageCaptureDeviceState {
            NumericRangeSetFitness(basic_constraint_set.contrast,
                                   contrast_set_) +
            NumericRangeSetF
-"""
-
-
 ```

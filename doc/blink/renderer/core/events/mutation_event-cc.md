@@ -187,14 +187,16 @@ By following this systematic approach of analyzing the code, connecting it to we
 
 总之，`blink/renderer/core/events/mutation_event.cc` 文件定义了 Blink 引擎中用于处理 DOM 结构变化的底层事件机制。虽然这个 API 仍然存在，但现代 Web 开发中更推荐使用 `MutationObserver` API 来监控 DOM 变化。 了解 `MutationEvent` 的工作原理有助于理解浏览器如何响应和通知 JavaScript 代码关于 DOM 的修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/mutation_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2001 Peter Kelly (pmk@post.com)
  * Copyright (C) 2001 Tobias Anton (anton@stud.fbi.fh-darmstadt.de)
@@ -303,7 +305,4 @@ void MutationEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

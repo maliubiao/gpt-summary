@@ -173,11 +173,13 @@ myAsyncFunc().catch(e => console.error(e.stack));
 
 `v8/src/objects/call-site-info.cc` 中定义的 `CallSiteInfo` 类是 V8 引擎中用于捕获和描述 JavaScript 函数调用信息的关键数据结构。它为生成详细的堆栈跟踪提供了基础，帮助开发者理解代码的执行流程和定位错误发生的位置。虽然 JavaScript 开发者不能直接操作 `CallSiteInfo` 对象，但他们通过查看堆栈跟踪来间接地利用其提供的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/call-site-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1071,7 +1073,4 @@ MaybeHandle<String> SerializeCallSiteInfo(Isolate* isolate,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

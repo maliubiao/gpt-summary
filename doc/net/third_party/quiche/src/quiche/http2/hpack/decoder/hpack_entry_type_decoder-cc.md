@@ -120,15 +120,17 @@ fetch('https://example.com/data')
 
 总而言之，`hpack_entry_type_decoder.cc` 是 HTTP/2 头部解压缩的关键组成部分，它负责识别 HPACK 编码的头部条目的类型，为后续的解码步骤奠定基础。虽然 JavaScript 开发者不会直接操作它，但它的正确运行对于基于 HTTP/2 的 Web 应用的性能和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_entry_type_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -494,7 +496,4 @@ DecodeStatus HpackEntryTypeDecoder::Start(DecodeBuffer* db) {
 }
 
 }  // namespace http2
-
-"""
-
 ```

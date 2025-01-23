@@ -148,15 +148,17 @@ Finally, the information gathered needs to be organized into a clear and compreh
 
 总而言之，`image_resource_type_converters_test.cc` 是 Blink 引擎中一个至关重要的测试文件，它确保了浏览器能够正确地解析和处理 Web App Manifest 和 HTML 中定义的图像资源属性，从而保证了网页图标的正确显示和功能。对于开发者来说，理解这个文件所测试的内容，有助于排查与网页图标相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/image_resource_type_converters_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -383,7 +385,4 @@ TEST(ImageResourceConverter, BlinkToMojoTypeTest) {
 }  // namespace
 
 }  // namespace mojo
-
-"""
-
 ```

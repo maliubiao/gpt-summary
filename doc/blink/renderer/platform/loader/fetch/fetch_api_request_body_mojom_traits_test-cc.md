@@ -124,14 +124,16 @@ By following this structured approach, we can effectively analyze and understand
 
 `fetch_api_request_body_mojom_traits_test.cc` 是 Blink 引擎中一个重要的测试文件，它确保了 `ResourceRequestBody` 对象在跨进程通信时的正确序列化和反序列化。这对于保证浏览器网络请求功能的正确性至关重要，直接影响到 JavaScript 的 Fetch API、HTML 表单提交以及其他需要构建和发送 HTTP 请求的功能。它通过覆盖各种 `ResourceRequestBody` 的状态和数据类型，提高了代码的健壮性，并帮助开发者避免与网络请求体数据处理相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/fetch_api_request_body_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ TEST_F(FetchApiRequestBodyMojomTraitsTest, RoundTripStreamBody) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

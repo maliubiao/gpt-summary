@@ -91,15 +91,17 @@ Let's break down each test case:
 
 总而言之，`blink/renderer/core/dom/text_test.cc` 是一个非常重要的测试文件，它确保了 `Text` 节点在各种场景下的行为符合预期，涵盖了与 JavaScript DOM 操作、HTML 结构以及 CSS 样式相关的各种情况，对于理解 Blink 渲染引擎如何处理文本内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/text_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -343,7 +345,4 @@ TEST_F(TextTest, TextLayoutObjectIsNeeded_PreserveNewLine) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

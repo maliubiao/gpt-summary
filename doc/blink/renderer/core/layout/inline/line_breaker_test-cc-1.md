@@ -64,15 +64,17 @@ Let's break down the code snippet and address each of these points.
 
 总而言之，这部分 `line_breaker_test.cc` 文件专注于测试 Blink 引擎中 `LineBreaker` 类的各种边缘情况和特定场景，确保其能够正确地根据 HTML 结构和 CSS 样式进行行断开，避免出现布局错误、崩溃等问题。它涵盖了从简单的文本断行到复杂的 Ruby 布局，以及对空格和原子内联元素的处理，旨在提高浏览器的稳定性和渲染质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_breaker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ML(
     <!DOCTYPE html>
     <style>
@@ -372,8 +374,4 @@ TEST_P(CanBreakInsideTest, Data) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

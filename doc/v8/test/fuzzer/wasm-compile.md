@@ -89,11 +89,13 @@ WebAssembly.compile(wasmBytes)
 
 `v8/test/fuzzer/wasm-compile.cc` 通过随机生成符合 WebAssembly MVP 规范的二进制模块，并交给 V8 的 WebAssembly 编译器处理，来对编译器进行模糊测试。这有助于发现编译器在处理各种可能的输入时可能出现的错误。生成的模块与 JavaScript 的 `WebAssembly.compile()` 方法直接相关，因为它们是旨在通过该方法编译的 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-compile.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -125,7 +127,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

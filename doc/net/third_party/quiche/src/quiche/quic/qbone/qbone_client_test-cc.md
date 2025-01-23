@@ -119,15 +119,17 @@ fetch('https://qbone.example.com/data', {
 
 **简而言之，`qbone_client_test.cc` 是一个用于验证 QBONE 客户端功能是否正确实现的测试文件，它模拟了客户端和服务端的交互，并对数据包的发送和接收进行了详细的检查。虽然它本身不直接涉及 JavaScript，但它测试的代码是浏览器实现 QBONE 协议的关键部分，而 QBONE 协议可能会被 JavaScript 通过浏览器 API 间接使用。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/qbone_client_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -387,7 +389,4 @@ TEST_P(QboneClientTest, SendDataFromClient) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

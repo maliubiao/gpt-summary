@@ -152,15 +152,17 @@ By following these steps, analyzing the code structure, the test cases, and conn
 
 总而言之，`net/server/web_socket_encoder_unittest.cc` 是一个关键的测试文件，它确保了 Chromium 网络栈中 WebSocket 编码器功能的正确性，涵盖了握手、编码、解码、分片和压缩等核心方面，对于理解和调试 WebSocket 相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/server/web_socket_encoder_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -676,7 +678,4 @@ TEST_F(WebSocketEncoderCompressionTest, CheckCloseFrameNotCompressed) {
 }
 
 }  // namespace net
-
-"""
-
 ```

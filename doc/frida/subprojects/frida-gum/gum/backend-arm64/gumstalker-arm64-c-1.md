@@ -95,7 +95,7 @@ By focusing on these key areas and their interconnections, a comprehensive summa
 
 这部分 `gumstalker-arm64.c` 代码实现了 `GumStalker` 对 C++ 异常处理机制的集成，通过提供自定义的 Personality 例程、FDE 查找和 IP 获取函数，使得 Frida 能够在被插桩的 ARM64 程序抛出异常时进行感知和干预，从而支持更复杂的动态分析和修改场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm64/gumstalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,9 +104,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- exception_class,
+### 源代码
+```c
+exception_class,
         unwind_exception, context);
   }
 
@@ -1379,8 +1381,5 @@ gum_exec_ctx_free (GumExecCtx * ctx)
   }
 
   code_slab = ctx->code_slab;
-  while (code_slab 
-"""
-
-
+  while (code_slab
 ```

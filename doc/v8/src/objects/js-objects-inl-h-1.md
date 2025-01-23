@@ -153,7 +153,7 @@ for (let i = 10000; i < 10100; i++) {
 
 `v8/src/objects/js-objects-inl.h` 的这部分代码定义了 `JSReceiver` 及其子类用于管理对象属性、获取创建上下文以及进行属性查找等操作的关键内联方法。它直接关联到 JavaScript 中对象属性的访问、原型继承、作用域和数组的内部实现机制。理解这部分代码有助于深入理解 V8 引擎如何高效地管理和操作 JavaScript 对象。它也揭示了 V8 如何在运行时根据对象的属性结构动态地选择最佳的存储方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-objects-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 nYoungGeneration(roots.empty_property_dictionary()));
   DCHECK(!HeapLayout::InYoungGeneration(
       roots.empty_ordered_property_dictionary()));
@@ -365,8 +367,4 @@ static inline bool ShouldConvertToSlowElements(Tagged<JSObject> object,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_OBJECTS_INL_H_
-
-"""
-
-
 ```

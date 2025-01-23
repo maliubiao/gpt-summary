@@ -144,15 +144,17 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，`v8/src/maglev/maglev.h` 是 V8 引擎中 Maglev 编译器的核心声明文件，它定义了触发 JavaScript 函数编译的关键接口。理解它的作用有助于我们更好地理解 V8 如何优化 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ class Maglev : public AllStatic {
 
 #endif  // V8_ENABLE_MAGLEV
 #endif  // V8_MAGLEV_MAGLEV_H_
-
-"""
-
 ```

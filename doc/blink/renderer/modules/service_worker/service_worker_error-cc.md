@@ -190,15 +190,17 @@ By following these steps, I can systematically analyze the code, connect it to w
 
 总而言之，`service_worker_error.cc` 是 Blink 引擎中处理 Service Worker 错误的关键组件，它负责将内部的错误表示转换为 Web 标准的异常对象，使得开发者能够使用标准的 JavaScript 错误处理机制来处理 Service Worker 相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/service_worker_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -356,7 +358,4 @@ v8::Local<v8::Value> ServiceWorkerErrorForUpdate::Take(
 }
 
 }  // namespace blink
-
-"""
-
 ```

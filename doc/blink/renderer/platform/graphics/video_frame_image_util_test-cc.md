@@ -149,14 +149,16 @@ By following these steps, analyzing the code, and making connections to broader 
 
 总而言之，`video_frame_image_util_test.cc` 通过各种测试用例，确保了 Blink 能够正确且高效地将视频帧转换为图像，这对于 Web 浏览器中视频的播放和处理至关重要。它涵盖了不同的视频帧类型、硬件加速、图像方向处理以及资源管理等方面，间接地保障了基于 JavaScript、HTML 和 CSS 构建的 Web 应用中视频功能的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/video_frame_image_util_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -517,7 +519,4 @@ TEST(VideoFrameImageUtilTest, CanvasResourceProviderDestRect) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

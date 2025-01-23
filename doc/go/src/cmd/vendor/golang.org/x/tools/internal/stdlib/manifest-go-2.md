@@ -132,7 +132,7 @@ For the `Func` entries in the `encoding/json` section of the manifest, the integ
 
 This specific part of `manifest.go` defines a **static manifest that catalogs the exported elements (constants, types, functions, etc.) of various Go standard library packages**. It serves as a pre-computed index or inventory, likely used by other parts of the `golang.org/x/tools` suite for analysis or code generation related to the standard library. The integer associated with each element provides additional, context-dependent information.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/stdlib/manifest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 onst, 10},
 		{"FlagNoFixPrebinding", Const, 10},
 		{"FlagNoHeapExecution", Const, 10},
@@ -2188,10 +2190,5 @@ onst, 10},
 		{"(*Func).Scope", Method, 5},
 		{"(*Func).Signature", Method, 23},
 		{"(*Func).String", Method, 5},
-		{"(*Func).Type", 
-"""
-
-
-
-
+		{"(*Func).Type",
 ```

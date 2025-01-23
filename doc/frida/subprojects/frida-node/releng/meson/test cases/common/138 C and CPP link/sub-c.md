@@ -137,7 +137,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，`sub.c` 虽然自身功能简单，但在 Frida 的生态系统中，它可以作为逆向分析的目标，并且其编译和链接过程涉及到二进制底层和操作系统相关的知识。查看这个文件通常是开发者或逆向工程师在调试或理解 Frida Node.js 绑定如何处理 C/C++ 代码时的步骤之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/138 C and CPP link/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -166,7 +168,4 @@ Prompt:
 float a_half(void) {
     return .5;
 }
-
-"""
-
 ```

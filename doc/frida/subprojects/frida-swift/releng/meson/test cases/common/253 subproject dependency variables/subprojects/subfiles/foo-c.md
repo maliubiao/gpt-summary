@@ -105,7 +105,7 @@ int main(void) { return 0; }
 
 总而言之，尽管 `foo.c` 本身是一个非常简单的 C 文件，但在 Frida 这样复杂的项目中，它通常用于 **测试构建系统的特定功能**，特别是关于子项目依赖处理的部分。 它的存在是为了确保构建系统的健壮性和正确性，从而最终支持 Frida 核心功能的实现。 用户通常会在遇到构建错误并尝试调试时，通过查看构建日志和源代码来接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/253 subproject dependency variables/subprojects/subfiles/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,10 +113,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

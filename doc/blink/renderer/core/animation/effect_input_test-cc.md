@@ -125,14 +125,16 @@ Let's break down the thought process for analyzing this test file.
 
 总而言之，`effect_input_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎能够正确地解析和处理来自 JavaScript 的动画关键帧数据，并且能够有效地捕获开发者在使用 Web 动画 API 时可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/effect_input_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ TEST(AnimationEffectInputTest, Invalid) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

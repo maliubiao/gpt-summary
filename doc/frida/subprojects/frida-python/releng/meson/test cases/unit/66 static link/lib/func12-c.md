@@ -138,7 +138,7 @@ By following these steps,  the detailed and comprehensive answer provided earlie
 
 总而言之，`func12.c` 中的 `func12` 函数虽然简单，但它在动态插桩、逆向工程和软件测试的上下文中扮演着重要的角色。通过分析这样的简单函数，可以帮助我们理解更复杂的程序行为和底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func12.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func10();
 int func11();
 
@@ -155,7 +157,4 @@ int func12()
 {
   return func10() + func11();
 }
-
-"""
-
 ```

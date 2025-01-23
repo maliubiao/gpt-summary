@@ -212,7 +212,7 @@ console.log(Temporal.PlainYearMonth.compare(yearMonth1, yearMonth2)); // 输出:
 
 总而言之，`v8/src/objects/js-temporal-objects.cc` 的这段代码是 V8 引擎中实现 JavaScript Temporal API 中 `Temporal.PlainMonthDay` 和 `Temporal.PlainYearMonth` 功能的关键部分，它负责对象的创建、属性访问、比较、转换和格式化等核心操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -220,8 +220,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第19部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 angeError* exception.
     THROW_NEW_ERROR_RETURN_VALUE(isolate,
                                  NEW_TEMPORAL_INVALID_ARG_RANGE_ERROR(),
@@ -945,7 +947,4 @@ AddDurationToOrSubtractDurationFromPlainYearMonth(
   // 11. Perform ! CreateDataPropertyOrThrow(fields, "day", day).
   CHECK(JSReceiver::CreateDataProperty(isolate, fields, factory->day_string(),
                                        day, Just(kThrowO
-"""
-
-
 ```

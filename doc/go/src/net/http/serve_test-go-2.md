@@ -69,7 +69,7 @@ I will now generate the summary in Chinese.
 
 总而言之，这段代码覆盖了 `net/http` 服务器在处理各种正常和异常情况下的行为，确保其稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/serve_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -78,9 +78,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
- int
+### 源代码
+```go
+int
 		go Serve(ln, HandlerFunc(func(_ ResponseWriter, req *Request) {
 			numReqs++
 			if strings.Contains(req.URL.Path, "secret") {
@@ -1232,9 +1234,4 @@ func testCloseNotifierPipelined(t *testing.T, mode testMode) {
 		select {
 		case <-cc:
 			t.Error("unexpecte
-"""
-
-
-
-
 ```

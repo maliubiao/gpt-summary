@@ -145,7 +145,7 @@ Now, let's organize the summary.
 
 **总结来说，这部分代码着重于测试 `disk_cache::BackendImpl` (以及 `SimpleBackendImpl`) 在处理禁用、驱逐和删除缓存条目时的内部逻辑和 API 行为，并特别关注了 `SimpleCache` 的功能和与 JavaScript 缓存 API 的潜在关联。** 这些测试用例确保了缓存的稳定性和可靠性，防止了常见的错误和崩溃情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/backend_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r = CreateIterator();
   EXPECT_EQ(2, cache_->GetEntryCount());
   ASSERT_THAT(iter->OpenNextEntry(&entry1), IsOk());
@@ -1153,7 +1155,4 @@ TEST_F(DiskCacheBackendTest, DISABLED_SimpleCachePrioritizedEntryOrder) {
   // Set the SimpleCache's worker pool to a sequenced type for testing
   // priority order.
   disk
-"""
-
-
 ```

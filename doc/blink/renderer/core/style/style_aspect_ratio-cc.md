@@ -134,14 +134,16 @@ Essentially, my approach was to understand the code's *inner workings* first, th
 
 总而言之，`style_aspect_ratio.cc` 文件在 Blink 渲染引擎中扮演着关键的角色，它确保了 CSS `aspect-ratio` 属性能够被正确地解析和转换为布局引擎可以理解和使用的格式，尤其是在处理非精确的浮点数比例时，通过连分数逼近提供了一种有效的解决方案。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_aspect_ratio.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ StyleAspectRatio::StyleAspectRatio(EAspectRatioType type, gfx::SizeF ratio)
       layout_ratio_(LayoutRatioFromSizeF(ratio)) {}
 
 }  // namespace blink
-
-"""
-
 ```

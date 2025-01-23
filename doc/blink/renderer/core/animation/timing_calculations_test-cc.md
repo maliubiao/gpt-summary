@@ -142,14 +142,16 @@ Now I can structure the response based on these identified functionalities and t
 
 总而言之，`timing_calculations_test.cc` 这个文件通过一系列细致的测试用例，确保了 Blink 引擎在处理各种动画 timing 计算时的正确性，这对于保证 Web 开发者创建的动画在不同浏览器和设备上行为一致至关重要。它也间接反映了开发者在使用 Web 动画技术时需要注意的一些细节和潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/timing_calculations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -682,7 +684,4 @@ TEST(AnimationTimingCalculationsTest, AlignmentHistogram) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

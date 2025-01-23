@@ -172,7 +172,7 @@ This iterative refinement process is crucial for generating a comprehensive and 
 
 总而言之，`someret.c` 作为一个非常简单的 C 代码文件，其主要作用是作为 Frida 动态分析工具的测试用例，用于验证 Frida 是否能够正确地 hook 和操作基本的函数调用和返回值。通过分析这个简单的例子，我们可以理解 Frida 如何与目标进程进行交互，并涉及到一些底层的操作系统和二进制知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/38 pkgconfig format/someret.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,12 +180,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_returnvalue (void) {
   return 0;
 }
-
-"""
-
 ```

@@ -104,16 +104,18 @@ Let's break down the code block by block to confirm the details:
 
 总而言之，这段测试代码深入验证了 Blink 引擎在处理自定义滚动条样式和鼠标交互时的正确性和一致性，确保开发者能够通过 CSS 精确控制滚动条的外观和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/scrollbars_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
- height: 5px;
+### 源代码
+```cpp
+height: 5px;
       width: 5px;
       cursor: pointer;
     }
@@ -1268,7 +1270,4 @@ TEST_P(ScrollbarsTestWithVirtualTimer, TestNonCompositedOverlayScrollbarsFade) {
 
   MainFrame().ExecuteScript(WebScriptSource(
       "doc
-"""
-
-
 ```

@@ -161,15 +161,17 @@ By following these steps, we can systematically analyze the given C++ code and p
 
 因此，`tcp_socket_unittest.cc` 文件是开发过程中用于确保 `TCPSocket` 类正确性和稳定性的重要工具。它模拟了各种场景，包括正常操作和错误情况，以验证代码的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/direct_sockets/tcp_socket_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -375,7 +377,4 @@ INSTANTIATE_TEST_SUITE_P(/**/,
                          testing::Combine(testing::Bool(), testing::Bool()));
 
 }  // namespace blink
-
-"""
-
 ```

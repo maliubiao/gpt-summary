@@ -132,14 +132,16 @@ The test file uses two helper functions, `ExpectToSucceed` and `ExpectToFail`, w
 
 In summary, `email_input_type_test.cc` is a crucial part of ensuring the reliability and correctness of email address handling within the Chromium browser. It specifically focuses on the conversion of internationalized email addresses to ASCII and the validation of email address formats, which directly impacts the user experience with HTML forms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/email_input_type_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ TEST(EmailInputTypeTest, ConvertEmailAddressToASCIIUTS46) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

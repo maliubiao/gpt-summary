@@ -152,14 +152,16 @@ By following these steps, combining code analysis with an understanding of web d
 
 总而言之，`css_interpolation_types_map.cc` 是 Blink 引擎中实现 CSS 动画和过渡效果的关键组件，它确保了各种 CSS 属性能够以符合其语义的方式进行平滑过渡，并考虑了用户可访问性设置和自定义属性的支持。理解其功能有助于开发者更好地掌握 CSS 动画的原理，避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_interpolation_types_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -712,7 +714,4 @@ CSSInterpolationTypesMap::CreateInterpolationTypesForCSSSyntax(
 }
 
 }  // namespace blink
-
-"""
-
 ```

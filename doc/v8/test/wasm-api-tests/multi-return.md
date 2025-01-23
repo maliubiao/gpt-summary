@@ -118,11 +118,13 @@ runWasm();
 
 `multi-return.cc` 这个 C++ 测试文件验证了 V8 引擎正确处理 WebAssembly 函数返回多个值的能力。它通过定义一个导入函数（在 C++ 中实现其逻辑），并在 WebAssembly 模块中调用该导入函数，最后通过导出的函数将多个返回值传递出来。在 JavaScript 中，可以通过提供与导入声明匹配的 JavaScript 函数，并使用数组解构来接收 WebAssembly 函数的多个返回值，从而实现与 WebAssembly 的互操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/multi-return.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ TEST_F(WasmCapiTest, MultiReturn) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -83,14 +83,16 @@ Let's break down the thought process for analyzing this fuzzing code.
 
 `h265_parameter_sets_tracker_fuzzer.cc` 是一个用于测试 Blink 引擎中 H.265 参数集处理模块健壮性的工具。它的目的是通过输入随机数据来发现潜在的错误和漏洞，从而提高浏览器在处理 H.265 视频时的稳定性和安全性，这直接关系到用户在 Web 上播放视频和进行实时通信的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/h265_parameter_sets_tracker_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -112,7 +114,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       rtc::ArrayView<const uint8_t>(data, size));
   return 0;
 }
-
-"""
-
 ```

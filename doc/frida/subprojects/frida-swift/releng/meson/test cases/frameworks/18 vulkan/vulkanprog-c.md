@@ -133,7 +133,7 @@ By following this detailed thought process, considering the context of Frida, an
 
 总而言之，`vulkanprog.c` 是一个非常精简的测试程序，其主要目的是作为 Frida 测试框架的一部分，用于验证 Frida 在处理 Vulkan API 调用时的基本功能和稳定性。它本身并不复杂，但可以作为逆向工程师使用 Frida 分析更复杂的、基于 Vulkan 的应用程序的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/18 vulkan/vulkanprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <vulkan/vulkan.h>
 #include <stdio.h>
 
@@ -169,7 +171,4 @@ int main(void)
 
     return 0;
 }
-
-"""
-
 ```

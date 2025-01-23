@@ -148,7 +148,7 @@ const value = arr[index]; // 如果 Torque 代码直接转换为加载引用，�
 
 `CSAGenerator` 是 V8 Torque 编译过程中的一个关键组件，它负责将高级的 Torque 指令转换成底层的、可执行的 C++ 代码，这些代码利用了 `CodeStubAssembler` 提供的 API。它处理各种类型的指令，包括控制流、错误处理、类型转换以及关键的内存和位域操作。其生成的代码直接影响 JavaScript 的执行效率和底层行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/csa-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/csa-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on.destination << ");\n";
 }
 
@@ -384,8 +386,4 @@ void CSAGenerator::EmitCSAValue(VisitResult result,
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
-
 ```

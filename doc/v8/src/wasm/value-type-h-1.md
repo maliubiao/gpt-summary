@@ -184,7 +184,7 @@ wasmFunction(123);
 
 `v8/src/wasm/value-type.h` 定义了 V8 中用于表示和操作 WebAssembly 值类型的核心结构和类。它提供了创建、比较、转换值类型的方法，并与 V8 的底层机器类型系统紧密结合。这个头文件是 V8 理解和执行 WebAssembly 代码的关键组成部分，并且在 JavaScript 与 WebAssembly 的互操作中扮演着重要的角色。它确保了类型安全和正确的内存访问，是 WebAssembly 功能实现的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/value-type.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/value-type.h以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 stexpr ValueType AsNullable() const {
     return is_non_nullable() ? RefNull(heap_type()) : *this;
   }
@@ -553,8 +555,4 @@ V8_EXPORT_PRIVATE const wasm::FunctionSig* GetI32Sig(
 }  // namespace v8
 
 #endif  // V8_WASM_VALUE_TYPE_H_
-
-"""
-
-
 ```

@@ -163,11 +163,13 @@ console.log(descriptorC);
 
 `v8/src/objects/property-descriptor.cc` 文件是 V8 引擎中处理 JavaScript 属性描述符的核心组件。它负责在 C++ 层面表示和操作属性的各种特性，并提供了与 JavaScript 对象之间相互转换的功能。这使得 V8 能够正确地实现 JavaScript 的属性行为，例如属性的读写、枚举、配置以及 getter/setter 的工作方式。 理解这个文件有助于深入理解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/property-descriptor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -547,7 +549,4 @@ Handle<PropertyDescriptorObject> PropertyDescriptor::ToPropertyDescriptorObject(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

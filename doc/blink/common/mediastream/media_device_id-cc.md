@@ -126,14 +126,16 @@ navigator.mediaDevices.getUserMedia({
 
 `blink/common/mediastream/media_device_id.cc` 文件中的 `IsValidMediaDeviceId` 函数在 Chromium 浏览器引擎中扮演着重要的角色，它确保了传递给底层媒体系统的设备 ID 的有效性。这对于保证 Web 应用能够正确访问用户的媒体设备至关重要，并帮助开发者避免因使用无效设备 ID 而导致的问题。它通过长度和字符集检查来验证设备 ID 的格式，并允许一些预定义的特殊值。该功能直接关联到 JavaScript 的 `navigator.mediaDevices` API，特别是 `getUserMedia()` 和 `enumerateDevices()`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mediastream/media_device_id.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ bool IsValidMediaDeviceId(const std::string& device_id) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

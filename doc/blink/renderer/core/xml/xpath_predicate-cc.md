@@ -158,15 +158,17 @@ XPath 主要用于在 XML 和 HTML 文档中选取节点。在 Web 开发中，�
 * **使用简单的 XPath 表达式逐步调试:**  对于复杂的 XPath 表达式，可以先从简单的部分开始调试，逐步增加复杂性，找出问题所在。
 * **检查 JavaScript 代码中传入 `document.evaluate()` 的 XPath 表达式:**  确保 JavaScript 代码传递了正确的 XPath 表达式，避免语法错误或逻辑错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xpath_predicate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright 2005 Frerich Raabe <raabe@kde.org>
  * Copyright (C) 2006 Apple Computer, Inc.
@@ -454,7 +456,4 @@ bool Predicate::Evaluate(EvaluationContext& context) const {
 }  // namespace xpath
 
 }  // namespace blink
-
-"""
-
 ```

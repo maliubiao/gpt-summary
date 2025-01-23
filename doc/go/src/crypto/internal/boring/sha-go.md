@@ -154,7 +154,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言中利用 BoringSSL 库提供高性能 SHA 哈希算法的一个底层实现。它通过 `hash.Hash` 接口为 Go 开发者提供了标准的哈希计算方式，并支持哈希状态的持久化。使用者需要注意构建标签的限制以及正确使用 `hash.Hash` 接口进行高效的哈希计算。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/sha.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -742,9 +744,4 @@ func consumeUint64(b []byte) ([]byte, uint64) {
 func consumeUint32(b []byte) ([]byte, uint32) {
 	return b[4:], byteorder.BEUint32(b)
 }
-
-"""
-
-
-
 ```

@@ -106,14 +106,16 @@ By following these steps, we can systematically analyze the C++ code and provide
 
 总而言之，`blink/renderer/platform/graphics/crossfade_generated_image.cc` 文件定义了一个底层的图像处理机制，用于在 Blink 渲染引擎中实现图像的平滑过渡效果，这对于实现各种 Web 页面的视觉效果至关重要。虽然它本身不直接与 JavaScript、HTML 或 CSS 交互，但它是实现这些技术中图像淡入淡出效果的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/crossfade_generated_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All rights reserved.
  *
@@ -223,7 +225,4 @@ void CrossfadeGeneratedImage::DrawTile(cc::PaintCanvas* canvas,
 }
 
 }  // namespace blink
-
-"""
-
 ```

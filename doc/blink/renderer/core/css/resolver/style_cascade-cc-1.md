@@ -149,7 +149,7 @@ I will structure the response as follows:
 
 这部分 `StyleCascade` 代码的核心功能是**处理 CSS 属性值中可能包含的各种复杂情况，特别是与 CSS 变量、`revert` 和 `revert-layer` 关键字、`flip-revert` 函数、数学函数、自定义 CSS 函数、`env()` 函数以及 `attr()` 函数相关的解析和计算。** 它负责将这些复杂的值解析为最终可以应用到元素上的具体值，并处理可能出现的循环依赖和错误情况。`TokenSequence` 类则辅助完成了 CSS 变量值的构建和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_cascade.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -157,9 +157,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- are used for explicit defaulting,
+### 源代码
+```cpp
+are used for explicit defaulting,
   // see StyleCascade::AddExplicitDefaults.
   const CSSValue* value = (origin == CascadeOrigin::kNone)
                               ? cssvalue::CSSUnsetValue::Create()
@@ -987,7 +989,4 @@ bool StyleCascade::ResolveAttrInto(CSSParserTokenStream& stream,
 
     TokenSequence fallback;
     if (!ResolveTokensInto(stream, resolver, context, Functio
-"""
-
-
 ```

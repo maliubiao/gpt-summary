@@ -152,7 +152,7 @@ RegExpClassSetExpression {
 
 总而言之，这段代码是 V8 引擎正则表达式解析器的核心组成部分，专门负责解析正则表达式中字符类的语法，包括基本字符、范围、预定义类、Unicode 属性以及字符类集合运算。它将这些语法结构转化为 V8 内部的 AST 表示，为后续的正则表达式编译和执行奠定基础。它还负责检测和报告与字符类相关的常见语法错误，帮助开发者编写正确的正则表达式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 may_contain_strings |= !strings->empty();
           operands->Add(
               zone()->template New<RegExpClassSetOperand>(ranges, strings),
@@ -566,8 +568,4 @@ template bool RegExpParser::VerifyRegExpSyntax<base::uc16>(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

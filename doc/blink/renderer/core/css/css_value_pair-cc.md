@@ -148,15 +148,17 @@ By following this structured approach, incorporating domain knowledge about CSS 
 
 总结来说，`CSSValuePair` 是 Blink 渲染引擎中用于表示由两个 CSS 值组成的属性值的核心组件。它在 CSS 解析、样式计算和渲染过程中发挥着重要作用。理解它的功能有助于理解浏览器引擎如何处理和管理 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_value_pair.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ void CSSValuePair::TraceAfterDispatch(blink::Visitor* visitor) const {
   CSSValue::TraceAfterDispatch(visitor);
 }
 }  // namespace blink
-
-"""
-
 ```

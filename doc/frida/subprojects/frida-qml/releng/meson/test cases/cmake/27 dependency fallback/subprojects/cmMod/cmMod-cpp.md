@@ -114,7 +114,7 @@ This systematic approach, starting with understanding the code's basic function 
 
 总而言之，这个 `cmMod.cpp` 文件虽然功能简单，但其存在是为了支持 Frida 的构建和测试流程，特别是涉及到 CMake 集成和依赖项回退的场景。其中的编译时检查是一种常见的软件工程实践，用于确保代码在正确的环境下编译。用户遇到与此相关的错误通常是由于构建环境配置不当引起的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/27 dependency fallback/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -139,7 +141,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

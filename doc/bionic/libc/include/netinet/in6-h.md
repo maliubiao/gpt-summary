@@ -294,7 +294,7 @@ sys.stdin.read()
 
 请注意，这只是一个简单的示例，实际调试可能需要更复杂的 Hook 逻辑来捕获更详细的信息或修改函数行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netinet/in6.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -411,7 +413,4 @@ Prompt:
 #define ipv6mr_interface ipv6mr_ifindex
 
 #endif /* _NETINET_IN6_H */
-
-"""
-
 ```

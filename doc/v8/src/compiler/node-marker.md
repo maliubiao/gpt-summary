@@ -83,11 +83,13 @@ let result = add(5, 10);
 
 虽然我们看不到直接的 JavaScript 代码来调用 `NodeMarkerBase`，但它的功能是 V8 内部编译优化的基础，最终提升了 JavaScript 代码的执行效率。 这段 C++ 代码是 V8 引擎将 JavaScript 代码转化为高效机器码过程中的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-marker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -109,7 +111,4 @@ NodeMarkerBase::NodeMarkerBase(Graph* graph, uint32_t num_states)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -125,14 +125,16 @@ By following these steps, one can systematically analyze the code, understand it
 
 总而言之，`legacy_dom_snapshot_agent.cc` 是 Blink 引擎中一个关键的组件，它为开发者提供了强大的 DOM 快照功能，帮助他们理解页面的结构、样式和行为，从而进行性能分析和问题排查。理解其功能和使用场景对于高效地使用 Chrome DevTools 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/legacy_dom_snapshot_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -641,7 +643,4 @@ int LegacyDOMSnapshotAgent::GetStyleIndexForNode(Node* node) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

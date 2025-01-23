@@ -136,15 +136,17 @@ let p2 = createPoint(3, 4);
 
 `v8/src/objects/allocation-site.tq` 定义了 V8 内部用于跟踪对象分配的关键数据结构。`AllocationSite` 代表分配位置和上下文，而 `AllocationMemento` 则记录了每个对象的分配来源。这些信息对于 V8 的性能优化（如内联缓存）至关重要。理解这些概念有助于开发者编写更易于 V8 优化的 JavaScript 代码，避免动态修改对象结构等可能导致性能下降的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/allocation-site.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/allocation-site.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ extern class AllocationSite extends Struct;
 extern class AllocationMemento extends Struct {
   allocation_site: AllocationSite;
 }
-
-"""
-
 ```

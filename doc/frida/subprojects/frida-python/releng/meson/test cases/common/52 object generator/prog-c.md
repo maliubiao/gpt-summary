@@ -144,7 +144,7 @@ int func4_in_obj(void) { return 40; }
 
 `prog.c` 文件本身是一个非常简单的 C 程序，但它在 Frida 的测试框架中扮演着重要的角色。它模拟了一个典型的程序结构，即调用了在其他地方定义的函数，这为测试 Frida 的动态 instrumentation 能力提供了一个基础的场景。通过这个简单的例子，可以验证 Frida 是否能够正确地识别和操作来自不同编译单元的代码，这是 Frida 进行更复杂的逆向分析和动态修改的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/52 object generator/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void);
 int func2_in_obj(void);
 int func3_in_obj(void);
@@ -162,7 +164,4 @@ int func4_in_obj(void);
 int main(void) {
     return func1_in_obj() + func2_in_obj() + func3_in_obj() + func4_in_obj();
 }
-
-"""
-
 ```

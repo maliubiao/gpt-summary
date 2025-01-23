@@ -108,14 +108,16 @@ This iterative process, starting with basic understanding and gradually building
 
 总而言之，`scheduling_lifecycle_state.cc` 文件虽然代码简洁，但它所定义的生命周期状态对于理解浏览器如何管理资源以及如何编写高效的 Web 应用程序至关重要。开发者需要了解这些状态以及它们对 JavaScript、HTML 和 CSS 的影响，以避免常见的性能问题和用户体验问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/scheduling_lifecycle_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ const char* SchedulingLifecycleStateToString(SchedulingLifecycleState state) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

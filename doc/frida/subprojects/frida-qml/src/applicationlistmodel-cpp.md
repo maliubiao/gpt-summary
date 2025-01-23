@@ -182,7 +182,7 @@ By following these steps, moving from a broad overview to specific details, and 
 
 总而言之，`ApplicationListModel` 在 Frida 工具中扮演着至关重要的角色，它连接了底层的进程枚举机制和用户友好的 UI 界面，使得用户可以方便地选择要分析的目标应用程序。 理解它的工作原理对于调试 Frida 相关的问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/applicationlistmodel.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <frida-core.h>
 
 #include "applicationlistmodel.h"
@@ -515,7 +517,4 @@ void ApplicationListModel::onError(QString message)
 {
     Q_EMIT error(message);
 }
-
-"""
-
 ```

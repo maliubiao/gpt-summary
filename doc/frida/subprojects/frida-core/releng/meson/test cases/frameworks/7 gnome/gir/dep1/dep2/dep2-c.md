@@ -229,7 +229,7 @@ g_print("Message 2: %s\n", msg2);
 
 总而言之，`dep2.c` 定义了一个简单的 GObject 类，它在 Frida 的上下文中主要作为被 hook 和分析的目标，用于测试 Frida 的动态插桩能力。理解其功能有助于逆向工程师或开发者在使用 Frida 进行动态分析时，更好地理解程序的行为和状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/7 gnome/gir/dep1/dep2/dep2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -237,8 +237,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "dep2.h"
 
 struct _MesonDep2
@@ -363,7 +365,4 @@ meson_dep2_return_message (MesonDep2 *self)
 
   return (const gchar*) self->msg;
 }
-
-"""
-
 ```

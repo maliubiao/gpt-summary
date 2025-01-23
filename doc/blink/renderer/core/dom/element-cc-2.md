@@ -217,7 +217,7 @@ Based on the functions, this section of `element.cc` primarily deals with **elem
 
 这部分 `element.cc` 代码主要负责实现 `Element` 类的核心几何属性和滚动相关的底层逻辑。它提供了获取和设置元素的位置、大小、边框、滚动位置和滚动范围的方法，并与相应的 JavaScript 属性和方法相对应。此外，它还涉及一些与布局和渲染相关的内部机制，例如记住元素大小和记录滚动条大小。 这些功能是构建和操作网页元素的基础，直接影响着网页的布局、渲染和用户交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -225,8 +225,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eReason::kJavaScript);
 
   LayoutObject* layout_object = GetLayoutObject();
@@ -1171,7 +1173,4 @@ gfx::RectF Element::GetBoundingClientRectNoLifecycleUpdateNoAdjustment() const {
 }
 
 gfx::RectF Element::GetBoundingClientRectNoLife
-"""
-
-
 ```

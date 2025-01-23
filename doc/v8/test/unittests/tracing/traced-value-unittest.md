@@ -105,11 +105,13 @@ let data = {
 
 总而言之，`TracedValue` 是 V8 引擎内部用于高效且结构化地表示数据的工具，其设计理念和功能与 JavaScript 中处理对象和数组非常相似，方便了在引擎内部进行数据追踪和记录，最终这些数据可能会被序列化成 JSON 格式进行输出和分析。 `traced-value-unittest.cc` 这个文件则是用来确保 `TracedValue` 能够正确地完成这些任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/tracing/traced-value-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ TEST_F(TracedValueTest, Utf8) {
       "\u0435\",\"b\":\"\u2600\u2600\u26FF\",\"c\":\"\xf0\x9f\x98\x81\"}";
   CHECK_EQ(expected, json);
 }
-
-"""
-
 ```

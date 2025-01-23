@@ -251,7 +251,7 @@ IP 地址 8.8.8.8 的主机名是: dns.google
 
 总而言之，`cgoNameinfoPTR` 是 `net` 包在特定操作系统上进行反向 DNS 查询的底层 Cgo 实现，它依赖于操作系统的 `getnameinfo` 函数。使用者应该尽量使用 `net` 包提供的高级 API，避免直接操作底层的 Cgo 函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_resold.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -259,8 +259,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -283,9 +285,4 @@ func cgoNameinfoPTR(b []byte, sa *C.struct_sockaddr, salen C.socklen_t) (int, er
 	gerrno, err := C.getnameinfo(sa, salen, (*C.char)(unsafe.Pointer(&b[0])), C.size_t(len(b)), nil, 0, C.NI_NAMEREQD)
 	return int(gerrno), err
 }
-
-"""
-
-
-
 ```

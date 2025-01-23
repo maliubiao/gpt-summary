@@ -283,7 +283,7 @@ frida -U <process_name_or_pid> -l your_frida_script.js
 
 请注意，由于 `eventlib_p.h` 是私有头文件，直接使用的函数可能不在其中声明，需要查看相关的 `.c` 文件才能找到具体的函数实现和调用关系。 此外，实际的函数名称可能与宏定义有关，需要仔细分析代码才能确定。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/isc/eventlib_p.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: eventlib_p.h,v 1.3 2009/04/12 17:07:17 christos Exp $	*/
 
 /*
@@ -579,7 +581,4 @@ evWait *evFreeWait(evContext_p *ctx, evWait *old);
 extern int	__evOptMonoTime;
 
 #endif /*_EVENTLIB_P_H*/
-
-"""
-
 ```

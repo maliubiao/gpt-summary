@@ -167,7 +167,7 @@ To address the user's request, I need to:
 
 总而言之，这部分代码是 WebNN 计算图构建的核心，它将用户在 JavaScript 中定义的高级机器学习操作转化为底层可以执行的计算图结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -175,9 +175,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- ExceptionState& exception_state) {
+### 源代码
+```cpp
+ExceptionState& exception_state) {
   THROW_AND_RETURN_IF_ERROR(ValidateGraphBuilderState(), nullptr);
   THROW_AND_RETURN_TYPE_IF_ERROR(ValidateInput(input), nullptr);
 
@@ -942,7 +944,4 @@ MLOperand* MLGraphBuilder::pad(ScriptState* script_state,
   // tensor of pad has the same data type as its input.
   MLOperand* output =
       MLOperand::CreateOutput(this, std::move(output_descriptor), pad);
-"""
-
-
 ```

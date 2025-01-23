@@ -159,7 +159,7 @@ Finally, I organize the information into the requested format, addressing each p
 
 这段代码是 Go 语言调试能力的重要组成部分，它使得开发者可以使用诸如 `gdb` 或 `dlv` 这样的调试器来调试 Go 程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/dwarf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,9 +168,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- with no type, unless it's a dictionary
+### 源代码
+```go
+with no type, unless it's a dictionary
 		gt := d.ldr.SymGoType(idx)
 		if gt == 0 {
 			if t == sym.SRODATA {
@@ -568,10 +570,4 @@ func addDwsectCUSize(sname string, pkgname string, size uint64) {
 	defer dwsectCUSizeMu.Unlock()
 	dwsectCUSize[sname+"."+pkgname] += size
 }
-
-"""
-
-
-
-
 ```

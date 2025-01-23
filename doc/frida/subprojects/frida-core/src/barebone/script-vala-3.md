@@ -126,7 +126,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 该文件实现了Frida核心的JavaScript引擎与底层系统的交互功能，包括属性解析、函数调用、异常处理、内存管理等。通过LLDB调试工具，用户可以复现并分析其调试功能。常见错误包括未正确处理异常和内存泄漏，用户操作路径从加载脚本到触发异常，最终通过调试工具定位问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/barebone/script.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rintf (name_str));
 					ctx.free_cstring (name_str);
 
@@ -334,8 +336,4 @@ rintf (name_str));
 		}
 	}
 }
-
-"""
-
-
 ```

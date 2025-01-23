@@ -167,15 +167,17 @@ go test -run=TestSmallIntIface  # 假设有一个包含这些函数的测试文�
 
 这段代码是 Go 编译器用于验证其在处理小整数和布尔值到接口转换时代码生成行为的测试用例。 它展示了编译器如何利用静态分配来优化性能。 普通 Go 开发者无需直接关注这些代码，但了解其背后的原理有助于更深入地理解 Go 语言的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/smallintiface.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 package codegen
@@ -198,9 +200,4 @@ func smalluint8iface() interface{} {
 	// amd64:`LEAQ\truntime.staticuint64s\+24\(SB\)`
 	return uint8(3)
 }
-
-"""
-
-
-
 ```

@@ -172,7 +172,7 @@ By following this systematic approach, combining code analysis with an understan
 
 总而言之，`main.cpp` 是一个 Qt GUI 应用程序的起点，它负责初始化应用程序环境，加载资源，创建主窗口，并启动事件循环。理解其功能对于逆向工程分析、底层原理学习以及调试应用程序问题都至关重要。Frida 可以作为一种强大的工具，在运行时对这个应用程序进行检查和修改，从而帮助我们更深入地理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/4 qt/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QApplication>
 #include <QTranslator>
 #include <QDebug>
@@ -237,7 +239,4 @@ int main(int argc, char **argv) {
   return app.exec();
   return 0;
 }
-
-"""
-
 ```

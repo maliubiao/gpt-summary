@@ -87,11 +87,13 @@ V8 引擎在内部使用 `sys-info.cc` 提供的信息来做出各种决策，�
 
 `v8/src/base/sys-info.cc` 是 V8 引擎的一个基础组件，负责获取底层操作系统的关键信息。虽然 JavaScript 代码本身不能直接调用这个 C++ 文件中的函数，但 V8 引擎会利用这些信息来优化 JavaScript 的执行，并间接地通过 `navigator` 对象的一些属性将部分信息暴露给 JavaScript 环境。这体现了 V8 如何深入底层系统以提供高性能的 JavaScript 执行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sys-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ uintptr_t SysInfo::AddressSpaceEnd() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

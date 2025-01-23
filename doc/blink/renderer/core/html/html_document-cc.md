@@ -138,14 +138,16 @@ By following this iterative process of examination, analysis, and refinement, I 
 
 总而言之，`blink/renderer/core/html/html_document.cc` 文件是 Blink 引擎中处理 HTML 文档的核心，它负责文档的创建、初始化、命名项管理以及 HTML 属性大小写敏感性的判断。它与 JavaScript, HTML, CSS 都有着密切的联系，是 Web 页面正常渲染和交互的基础。理解其功能有助于我们更好地理解浏览器的工作原理以及避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -345,7 +347,4 @@ bool HTMLDocument::IsCaseSensitiveAttribute(
 }
 
 }  // namespace blink
-
-"""
-
 ```

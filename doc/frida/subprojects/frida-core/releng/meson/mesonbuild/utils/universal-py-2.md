@@ -99,7 +99,7 @@ Now, I will elaborate on the points raised in the prompt for each relevant funct
 
 这部分代码主要负责 **管理和加载 Frida 构建系统的配置选项**。它定义了用于表示和分类构建选项的 `OptionKey` 类和相关的枚举类型 `OptionType`，并提供了加载持久化构建配置信息的 `pickle_load` 函数。这些功能对于 Frida 构建系统的正常运行至关重要，确保了构建过程能够正确地解析和应用用户提供的配置选项，并在后续构建步骤中能够恢复之前的构建状态。此外，它还包含一个通用的查找工具函数 `first`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 nd(trial)
             else:
                 result[basename] = [trial]
@@ -689,8 +691,4 @@ def first(iter: T.Iterable[_T], predicate: T.Callable[[_T], bool]) -> T.Optional
         if predicate(i):
             return i
     return None
-
-"""
-
-
 ```

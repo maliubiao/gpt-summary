@@ -93,11 +93,13 @@ console.log(upperHexBigInt); // 输出: 18364758527183690389n
 
 `v8/src/bigint/fromstring.cc` 文件是 V8 引擎中实现 JavaScript `BigInt()` 从字符串创建功能的核心组件。它提供了多种优化的算法来高效地将不同进制的字符串表示转换为内部的 `BigInt` 对象，从而使得 JavaScript 能够处理任意精度的整数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/fromstring.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ Status Processor::FromString(RWDigits Z, FromStringAccumulator* accumulator) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

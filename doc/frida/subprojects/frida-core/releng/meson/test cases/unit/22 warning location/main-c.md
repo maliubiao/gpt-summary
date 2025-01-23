@@ -142,7 +142,7 @@ By understanding this test case, the user gains insight into how Frida's warning
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/unit/22 warning location/main.c` 是一个确保 Frida 能够正确处理带有位置信息的 JavaScript 警告消息的单元测试，它对于保证 Frida 功能的正确性和帮助用户调试注入的脚本都具有重要意义。作为一个调试线索，它可以帮助用户理解 Frida 如何工作，并排查自己在编写 Frida 脚本时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/22 warning location/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,9 +150,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

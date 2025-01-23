@@ -177,14 +177,16 @@ This systematic approach allows for a thorough understanding of the code and its
 
 理解 `web_icon_sizes_parser.cc` 的功能对于前端开发者和对浏览器渲染机制感兴趣的人都很有帮助，因为它揭示了浏览器如何处理 HTML 和 Web App Manifest 中定义的图标尺寸信息，从而为用户提供最佳的视觉体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_icon_sizes_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -299,7 +301,4 @@ WebVector<gfx::Size> WebIconSizesParser::ParseIconSizes(
 }
 
 }  // namespace blink
-
-"""
-
 ```

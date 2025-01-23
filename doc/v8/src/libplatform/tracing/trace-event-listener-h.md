@@ -151,15 +151,17 @@ function optimizedProcessData(data) {
 
 总之，`v8/src/libplatform/tracing/trace-event-listener.h` 定义了一个核心接口，用于接收和处理 V8 引擎产生的跟踪事件，是 V8 跟踪机制的重要组成部分，为性能分析、调试和测试提供了基础。虽然 JavaScript 开发者不直接编写或修改这个头文件，但他们通过 V8 提供的跟踪工具和 API 来间接地利用其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/trace-event-listener.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/tracing/trace-event-listener.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ class V8_PLATFORM_EXPORT TraceEventListener {
 }  // namespace v8
 
 #endif  // V8_LIBPLATFORM_TRACING_TRACE_EVENT_LISTENER_H_
-
-"""
-
 ```

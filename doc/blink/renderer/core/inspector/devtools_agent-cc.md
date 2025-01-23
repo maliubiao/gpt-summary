@@ -136,14 +136,16 @@ By following these steps, I was able to dissect the `devtools_agent.cc` file, un
 
 总而言之，`devtools_agent.cc` 是 Blink 渲染引擎与 Chrome DevTools 之间进行交互的关键枢纽，它处理连接管理、命令转发、事件通知以及与 JavaScript 调试、HTML/CSS 检查等核心 DevTools 功能的集成。 理解这个文件的功能对于理解 Chromium 开发者工具的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/devtools_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -616,7 +618,4 @@ void DevToolsAgent::BringDevToolsWindowToFocus() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

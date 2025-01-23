@@ -142,7 +142,7 @@ Here's a plan:
 
 总而言之，`CLikeCompiler` 类及其方法在 Frida 的构建过程中扮演着关键角色，负责进行各种编译时检查，确保构建过程的正确性和生成适用于目标平台的二进制文件。 这对于像 Frida 这样的跨平台动态注入工具尤其重要，因为它需要在各种不同的操作系统和架构上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,9 +151,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    }}'''
+### 源代码
+```python
+}}'''
         return head, main
 
     @staticmethod
@@ -756,8 +758,4 @@ Prompt:
             self.preprocessor.mode = 'PREPROCESSOR'
             self.modes.append(self.preprocessor)
         return self.preprocessor
-
-"""
-
-
 ```

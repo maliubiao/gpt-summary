@@ -159,15 +159,17 @@ This structured approach allows for a thorough analysis of the C++ code and the 
 
 总而言之，`v8/test/unittests/objects/global-object-unittest.cc` 是 V8 引擎中一个重要的测试文件，它确保了全局对象相关功能的正确性和稳定性，并间接地帮助开发者避免一些常见的 JavaScript 编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/global-object-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/global-object-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -301,7 +303,4 @@ TEST_F(GlobalObjectTest, KeysGlobalObject_SetPrototype) {
 END_ALLOW_USE_DEPRECATED()
 
 }  // namespace v8
-
-"""
-
 ```

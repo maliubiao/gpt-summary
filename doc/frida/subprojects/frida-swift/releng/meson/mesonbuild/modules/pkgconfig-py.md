@@ -174,7 +174,7 @@ Cflags: -I${includedir}
 
 这个 Python 代码文件是 Frida 项目的 Meson 构建系统中负责生成 `pkg-config` 文件的模块。它的核心功能是根据项目配置信息（包括库、依赖、头文件路径等）生成符合 `pkg-config` 规范的 `.pc` 文件。它能够处理不同类型的库依赖、管理编译和链接参数、支持未安装的构建、允许自定义变量、处理版本和冲突信息，并支持生成只包含数据的 `.pc` 文件。 该模块在 Frida 的构建过程中扮演着重要的角色，为其他项目提供关于如何使用 Frida Swift 库的必要信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2022 The Meson development team
 
@@ -833,7 +835,4 @@ class PkgConfigModule(NewExtensionModule):
             if any(kwargs[k] for k in blocked_vars):  # type: ignore
                 raise mesonlib.MesonException(f'Cannot combine dataonly with any of {blocked_vars}')
             default_install_dir = os.path.join(state.environment.get_da
-"""
-
-
 ```

@@ -171,7 +171,7 @@ This detailed breakdown and thought process allows for a comprehensive understan
 
 `deps.py` 的第一部分代码主要定义了脚本的入口 (`main` 函数)，以及处理命令行参数和分发到不同子命令的逻辑。它还定义了一些核心的辅助函数，例如解析 bundle 类型、解析操作系统和架构、查询工具链和 SDK 的路径，以及执行同步操作的 `sync` 函数。 核心概念如 `Bundle` 枚举和 `MachineSpec` 类也在这一部分被定义，为后续的依赖项管理操作提供了基础。  总而言之，这部分代码构建了脚本的骨架，并实现了最基础的依赖项同步功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from __future__ import annotations
 import argparse
@@ -1001,8 +1003,4 @@ class Builder:
             print("\n".join([
                 "",
                 f"# Done",
-  
-"""
-
-
 ```

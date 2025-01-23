@@ -170,7 +170,7 @@ Frida 的 hook 代码会记录下连接的地址和发送的数据。
 
 当用户遇到与这些模块相关的问题时，查看 `vue.config.js` 文件可以帮助他们理解模块是如何被解析和加载的，以及是否使用了自定义的 shim 文件。这可以作为调试的起点，例如检查别名配置是否正确，shim 文件是否存在，以及 shim 文件的逻辑是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/web_client/vue.config.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const path = require('path');
 
 module.exports = {
@@ -192,7 +194,4 @@ module.exports = {
     }
   }
 };
-
-"""
-
 ```

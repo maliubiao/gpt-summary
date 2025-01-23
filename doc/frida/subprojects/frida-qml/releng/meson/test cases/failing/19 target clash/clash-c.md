@@ -127,7 +127,7 @@ Use --pid=1234 or --pid=5678 to specify the target.
 
 总而言之，`clash.c` 作为一个极其简单的 C 程序，其本身的功能并不复杂。但它在 Frida 的测试框架中扮演着重要的角色，用于模拟和验证 Frida 在处理目标命名冲突时的行为，确保 Frida 的健壮性和用户友好性。它提醒用户在指定目标进程时，需要考虑名称冲突的可能性，并在必要时使用更精确的指定方式，例如 PID。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/19 target clash/clash.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,15 +135,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("Clash 2.\n");
     return 0;
 }
-
-"""
-
 ```

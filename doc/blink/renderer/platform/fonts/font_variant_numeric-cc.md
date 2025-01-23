@@ -221,14 +221,16 @@ numeric_figure=LiningNums, numeric_spacing=TabularNums, numeric_fraction=Diagona
 
 总而言之，`font_variant_numeric.cc` 文件是 Blink 渲染引擎中处理 `font-variant-numeric` CSS 属性的关键组成部分，它负责将 CSS 中声明的数值特性转换为内部表示，以便在渲染文本时能够正确地选择和显示相应的字形。虽然不直接与 JavaScript 和 HTML 交互，但它是实现现代 Web 样式功能不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_variant_numeric.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ String FontVariantNumeric::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

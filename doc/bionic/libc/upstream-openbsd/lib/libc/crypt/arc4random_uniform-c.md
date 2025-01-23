@@ -292,7 +292,7 @@ setImmediate(hook_arc4random_uniform);
 
 通过这个 Frida Hook 示例，你可以在目标 Android 应用运行时，实时观察 `arc4random_uniform` 函数的调用情况，包括传入的 `upperBound` 值和返回的随机数，从而帮助调试和理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/crypt/arc4random_uniform.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: arc4random_uniform.c,v 1.3 2019/01/20 02:59:07 bcook Exp $	*/
 
 /*
@@ -362,7 +364,4 @@ arc4random_uniform(uint32_t upper_bound)
 	return r % upper_bound;
 }
 DEF_WEAK(arc4random_uniform);
-
-"""
-
 ```

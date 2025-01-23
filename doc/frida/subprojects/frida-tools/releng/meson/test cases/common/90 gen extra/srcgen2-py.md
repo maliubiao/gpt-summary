@@ -165,7 +165,7 @@ int myfun(void) {
 
 `srcgen2.py` 是 Frida 构建过程中的一个辅助脚本，用于生成 C 源代码和头文件，主要用于支持测试用例的构建。虽然它本身不直接执行逆向操作，但它生成的代码可以作为 Frida 进行动态插桩和分析的目标。理解这个脚本的功能有助于理解 Frida 工具链的构建流程和测试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/90 gen extra/srcgen2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -207,7 +209,4 @@ int myfun(void);
 '''
 with open(output_h, 'w') as f:
     f.write(h_content)
-
-"""
-
 ```

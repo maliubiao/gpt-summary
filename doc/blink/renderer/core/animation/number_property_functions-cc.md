@@ -142,14 +142,16 @@ Finally, review the explanation for clarity, accuracy, and completeness. Ensure 
 
 `number_property_functions.cc` 是 Blink 引擎中处理数值 CSS 属性的核心组件，它确保了这些属性在样式计算和动画过程中的正确获取、范围限制和设置，为网页的正确渲染和动态效果提供了基础支持。它与 CSS 属性紧密相关，并在 JavaScript 修改样式时发挥作用，最终影响用户在 HTML 页面上看到的效果。理解这个文件有助于深入理解浏览器渲染引擎如何处理样式和动画。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/number_property_functions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ bool NumberPropertyFunctions::SetNumber(const CSSProperty& property,
 }
 
 }  // namespace blink
-
-"""
-
 ```

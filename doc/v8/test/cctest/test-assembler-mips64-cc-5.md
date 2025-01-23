@@ -647,7 +647,7 @@ uint64_t run_ldpc(int offset) {
   // ...
   // addiu a7, a4, 0xFFFF;  (0x250BFFFF)
   uint32_t
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -655,9 +655,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共13部分，请归纳一下它的功能
+```
 
-"""
-  uint32_t addiu_new = addiu_start_2 + i;
+### 源代码
+```cpp
+uint32_t addiu_new = addiu_start_2 + i;
     __ dd(addiu_new);
   }
 
@@ -1830,7 +1832,4 @@ uint64_t run_Subu(uint64_t imm, int32_t num_instr) {
   __ bind(&code_start);
   __ Subu(v0, zero_reg, Operand(imm));
   CHECK_EQ(assm.InstructionsGeneratedSince(&code_start),
-"""
-
-
 ```

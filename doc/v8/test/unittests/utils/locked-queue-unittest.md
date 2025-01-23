@@ -142,11 +142,13 @@ console.log("Peek on empty:", queue.peek());    // 输出: Peek on empty: undefi
 
 虽然 JavaScript 的原生 `Array` 可以模拟队列的基本行为，但它本身不具备线程安全特性。 C++ 的 `LockedQueue` 提供了线程安全的队列实现，这在并发编程中非常重要。 在 JavaScript 中实现真正的线程安全队列需要额外的机制或使用特定的 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/locked-queue-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ TEST(LockedQueue, MultipleRecords) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

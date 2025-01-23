@@ -172,15 +172,17 @@ By following this structured approach, combining code analysis with domain knowl
 
 总之，`v8/src/utils/ostreams.cc` 是 V8 引擎中一个重要的基础设施文件，它提供了灵活和可定制的输出流功能，用于调试、日志记录和格式化输出，这对于引擎的开发、调试和运行时行为都至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/ostreams.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/ostreams.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -382,7 +384,4 @@ std::ostream& operator<<(std::ostream& os, const AsHexBytes& hex) {
 
 #undef snprintf
 #undef LOG_TAG
-
-"""
-
 ```

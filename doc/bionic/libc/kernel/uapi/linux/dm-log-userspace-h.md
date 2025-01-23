@@ -327,7 +327,7 @@ sys.stdin.read()
 
 通过这个 Frida 脚本，你可以在应用运行时动态地观察 `ioctl` 调用，并分析传递给内核的 DM 日志请求，从而了解 Android Framework 或 NDK 是如何一步步地使用这些接口的。请注意，你需要根据实际的 Android 版本和内核配置来调整脚本中的常量和结构体偏移量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dm-log-userspace.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -338,8 +338,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -382,7 +384,4 @@ struct dm_ulog_request {
   char data[];
 };
 #endif
-
-"""
-
 ```

@@ -66,11 +66,13 @@ TEST(TestAddFunctionRegisterUsage) {
 
 总而言之，`v8/test/cctest/test-disasm-regex-helper.cc` 提供了一种强大的机制来验证V8引擎生成的机器码，这对于确保JavaScript执行的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-disasm-regex-helper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -363,7 +365,4 @@ TEST(RegexParserMultiLines) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

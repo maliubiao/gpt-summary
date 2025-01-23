@@ -150,7 +150,7 @@ volatile int *p = 0; *p = 1;{ return 0; }
 
 `frida/subprojects/frida-python/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/buildtool.c`  这个文件是 Frida Python 绑定测试框架中的一个辅助工具，用于生成简单的 C 代码 `main` 函数框架，以便后续编译和使用 Frida 进行动态插桩测试。它本身不执行逆向操作，而是为逆向测试提供基础代码。 理解它的功能有助于开发者理解 Frida 测试用例的构建流程和结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/buildtool.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 const char * gen_main(void);
@@ -169,7 +171,4 @@ int main() {
     printf("{ return 0; }\n");
     return 0;
 }
-
-"""
-
 ```

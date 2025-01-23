@@ -240,14 +240,16 @@ promise.then(
 
 总结来说，这段 Torque 代码是 V8 引擎中实现 Promise 核心反应机制的关键部分，它负责调度和执行与 Promise 状态变化相关的回调函数，并处理各种可能的情况，包括成功解决、拒绝以及处理函数中可能发生的错误。理解这段代码有助于深入理解 JavaScript Promise 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-reaction-job.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -366,7 +368,4 @@ transitioning builtin PromiseRejectReactionJob(
       context, reason, handler, promiseOrCapability, kPromiseReactionReject);
 }
 }
-
-"""
-
 ```

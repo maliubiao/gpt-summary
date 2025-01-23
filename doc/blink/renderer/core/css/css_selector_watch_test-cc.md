@@ -152,15 +152,17 @@ By following these steps, we can systematically analyze the C++ test file and ge
 
 总之，`css_selector_watch_test.cc` 是一个用于验证 Blink 引擎中 CSS 选择器监听机制的关键测试文件，它确保了当 HTML 结构或元素属性发生变化时，相关的 CSS 选择器的匹配状态能够被正确追踪，并触发必要的样式重计算，从而保证网页渲染的正确性。它与 JavaScript, HTML, CSS 紧密相关，是理解浏览器如何动态更新样式的基石之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_selector_watch_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ TEST_F(CSSSelectorWatchCQTest, ContainerQueryDisplayNone) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

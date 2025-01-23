@@ -203,15 +203,17 @@ vec.push_back(40); // 此时会发生从栈到堆的切换
 
 总而言之，`v8/src/base/small-vector.h` 提供了一个在性能敏感的 V8 引擎中用于存储小型数据集的优化容器，它通过内联存储来减少堆分配的开销。理解其行为和限制对于阅读和理解 V8 源代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/small-vector.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/small-vector.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -493,7 +495,4 @@ class SmallVector {
 }  // namespace v8
 
 #endif  // V8_BASE_SMALL_VECTOR_H_
-
-"""
-
 ```

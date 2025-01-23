@@ -106,7 +106,7 @@ func main() {
 
 总而言之，`xorBytes` 是一个针对特定架构优化的、执行字节数组 XOR 操作的底层函数，它通常被用在对性能和安全性有较高要求的密码学实现中。使用时需要注意切片的长度和潜在的内存重叠问题。由于它位于 `internal` 包下，一般不建议直接使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/subtle/xor_ppc64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -126,9 +128,4 @@ package subtle
 
 //go:noescape
 func xorBytes(dst, a, b *byte, n int)
-
-"""
-
-
-
 ```

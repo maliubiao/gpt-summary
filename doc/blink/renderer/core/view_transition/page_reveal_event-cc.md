@@ -133,14 +133,16 @@ By following these steps, including careful examination of the code and its cont
 
 总而言之，`page_reveal_event.cc` 定义的 `PageRevealEvent` 类是 Blink 渲染引擎中用于通知开发者页面即将被揭示的关键事件，它与 `DOMViewTransition` 对象紧密相连，并通过 JavaScript 与 Web 开发者进行交互，共同实现了平滑的页面视图过渡效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/page_reveal_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ void PageRevealEvent::SetViewTransition(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -85,7 +85,7 @@ While this is a low-level engine test, understanding its purpose can help diagno
 
 By writing these tests, Blink developers ensure that the `TextIterator` works correctly across a wide range of HTML structures and CSS styles, leading to a better user experience when interacting with text on web pages.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/iterators/text_iterator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ().GetTextForTesting());
   EXPECT_EQ(text, iter.CurrentContainer());
   EXPECT_EQ(Position(text, 0), iter.StartPositionInCurrentContainer());
@@ -448,8 +450,4 @@ TEST_F(TextIteratorTest, BasicIterationWithoutLayoutBetweenTextNode) {
 
 }  // namespace text_iterator_test
 }  // namespace blink
-
-"""
-
-
 ```

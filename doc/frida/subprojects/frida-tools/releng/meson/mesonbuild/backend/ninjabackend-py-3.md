@@ -166,7 +166,7 @@ build src/libmy_rust_lib.rlib: RUST_COMPILER src/lib.rs
 
 This part of `ninjabackend.py` is responsible for **translating Meson's build definitions for Rust and Swift projects into concrete Ninja build rules**. It handles the specifics of compiling and linking these languages, including setting up compiler arguments, managing dependencies, and configuring runtime library paths (RPATH). This ensures that Frida's Rust and Swift components are built correctly as part of the overall project.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,9 +175,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                     target.build_rpath,
+### 源代码
+```python
+target.build_rpath,
                                        target.install_rpath))
             # ... but then add rustc's sysroot to account for rustup
             # installations
@@ -841,8 +843,5 @@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=47485'''))
         #
         # PDB files also lead to filename collisions. A target foo.exe
         # has a corresponding foo.pdb. A shared library foo.dll _also_
-        # has pdb 
-"""
-
-
+        # has pdb
 ```

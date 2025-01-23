@@ -335,7 +335,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 这个 Frida Hook 示例可以帮助你动态地观察 `clogf` 函数的调用情况，验证输入输出，并调试相关问题。请注意，具体的参数和返回值读取方式可能因 Android 版本、架构和 ABI 而有所不同，可能需要进行适当调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_clogf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -346,8 +346,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2013 Bruce D. Evans
  * All rights reserved.
@@ -496,7 +498,4 @@ clogf(float complex z)
 	_2sumF(sh, t);
 	return (CMPLXF(log1pf(ay2l + t + sh) / 2, v));
 }
-
-"""
-
 ```

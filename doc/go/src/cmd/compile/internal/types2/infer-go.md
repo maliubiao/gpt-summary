@@ -236,15 +236,17 @@ func main() {
 
 总而言之，`infer.go` 中的 `infer` 函数是 Go 语言泛型类型推断的核心实现，它根据函数调用时提供的参数信息和类型参数的约束来自动确定泛型类型参数的具体类型，极大地简化了泛型代码的使用。理解其工作原理有助于更好地理解和使用 Go 语言的泛型特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/infer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1038,9 +1040,4 @@ func (w *cycleFinder) varList(list []*Var) {
 		w.typ(v.typ)
 	}
 }
-
-"""
-
-
-
 ```

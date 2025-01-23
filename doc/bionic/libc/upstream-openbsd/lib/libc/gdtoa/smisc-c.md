@@ -303,7 +303,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你观察 `s2b` 函数的调用情况，了解传递给它的参数，从而更好地理解其在程序执行过程中的作用。你可以根据需要修改脚本来 hook 其他函数或提取更多信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gdtoa/smisc.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -314,8 +314,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /****************************************************************
 
 The author of this software is David M. Gay.
@@ -517,7 +519,4 @@ any_on(Bigint *b, int k)
 			return 1;
 	return 0;
 	}
-
-"""
-
 ```

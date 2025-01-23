@@ -114,7 +114,7 @@ Here's a breakdown of the code's functions:
 
 总而言之，`ninjabackend.py` 是 Frida 构建系统的关键组成部分，它负责将高级的构建描述转换为底层的构建指令，使得实际的编译和链接过程可以顺利进行。它涉及到编译器、链接器、操作系统、构建工具等多个方面的知识，对于理解 Frida 的构建过程和排查构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 [:]
         cmd += prelinker.get_prelink_args(prelink_name, obj_list)
 
@@ -577,8 +579,4 @@ def _scan_fortran_file_deps(src: Path, srcdir: Path, dirname: Path, tdeps, compi
                     mod_name = compiler.module_name_to_filename(ancestor_child)
                     mod_files.append(str(dirname / mod_name))
     return mod_files
-
-"""
-
-
 ```

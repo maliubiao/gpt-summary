@@ -110,7 +110,7 @@ Interceptor.attach(Module.findExportByName(null, "func5_in_obj"), { // 注意：
 
 总而言之，`source5.c` 虽然代码简单，但在 Frida 的测试框架中扮演着一个重要的角色，它作为一个简单的、可控的目标函数，用于验证 Frida 在处理只存在于 object 文件中的代码时的功能。通过分析这个文件，我们可以更好地理解 Frida 的内部机制和工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/121 object only target/objdir/source5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,12 +118,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func5_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

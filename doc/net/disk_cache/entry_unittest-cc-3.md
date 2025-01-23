@@ -150,7 +150,7 @@ Now, let's put it all together.
 
 这部分代码主要专注于 `SimpleCache` 模式下 `disk_cache::Entry` 的 **健壮性和可靠性测试**。它涵盖了各种异常情况，例如缓存文件损坏、校验和错误、并发操作以及不同操作模式（乐观与非乐观）下的行为。这些测试旨在确保在各种复杂和异常场景下，缓存系统能够正确运行，保证数据的完整性，并能从错误中恢复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/entry_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 k_cache::File>(true /* want sync ops*/);
   ASSERT_TRUE(key_file->Init(cache_impl_->GetFileName(key_addr)));
 
@@ -1105,7 +1107,4 @@ TEST_F(DiskCacheEntryTest, SimpleCacheDoomCreateOptimistic) {
 
   net::TestCompletionCallback doom_callback;
   cache_->DoomEntry(kKey, net::HIGHEST, doo
-"""
-
-
 ```

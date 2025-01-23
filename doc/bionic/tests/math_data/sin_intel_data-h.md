@@ -185,7 +185,7 @@ if (testSinWithData) {
 
 请继续提供后续部分，我会尽力分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sin_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -197,8 +197,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1630,7 +1632,4 @@ static data_1_1_t<double, double> g_sin_intel_data[] = {
   },
   { // Entry 353
     -0x1.950bcfc0f3d50850941a41d6
-"""
-
-
 ```

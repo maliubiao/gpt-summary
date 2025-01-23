@@ -107,7 +107,7 @@ Here's a breakdown of the code's functionality and how to address the user's spe
 
 `GCDuringMerge` 测试用例专注于验证 V8 的后台编译合并机制在并发的垃圾回收事件下的正确性。它模拟了一个复杂的生命周期场景，包括脚本的首次编译、部分执行、垃圾回收导致部分信息失效，以及后台重新编译和合并。该测试旨在确保 V8 能够在这些复杂的情况下保持数据一致性和稳定性，特别是在处理函数元数据（如 `SharedFunctionInfo`）时。它模拟了在后台编译合并期间可能发生的竞争条件，确保 V8 的内部机制能够正确处理这种情况，防止崩溃或产生不一致的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/compiler-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/compiler-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -115,8 +115,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 8::ScriptCompiler::kEagerCompile)
       .ToLocalChecked();
 
@@ -411,8 +413,4 @@ TEST_F(BackgroundMergeTest, GCDuringMerge) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

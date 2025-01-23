@@ -148,7 +148,7 @@ Essentially, I performed a combination of static code analysis (reading and unde
 
 总而言之，`media_constraints_impl.cc` 是 Blink 引擎中处理 WebRTC 媒体约束的关键组件，它连接了 JavaScript 的约束定义和底层媒体设备的配置。理解它的工作原理对于调试和理解 WebRTC 应用的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_constraints_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -1000,7 +1002,4 @@ V8ConstrainBoolean* ConvertBoolean(const BooleanConstraint& input,
 void ConvertConstraintSet(const MediaTrackConstraintSetPlatform& input,
                           NakedValueDisposition naked_treatment,
                           Med
-"""
-
-
 ```

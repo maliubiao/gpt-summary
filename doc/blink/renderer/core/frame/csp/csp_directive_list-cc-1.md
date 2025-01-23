@@ -144,16 +144,18 @@ Initially, I might broadly categorize everything under "security checks."  Howev
 
 总而言之，这段代码是 Chromium Blink 引擎中负责执行细粒度 CSP 策略检查的关键部分，它与 JavaScript, HTML, CSS 的资源加载和执行行为紧密相关，并且开发者在使用 CSP 时容易犯各种配置和使用上的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/csp_directive_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-       type == CSPDirectiveName::FontSrc ||
+### 源代码
+```cpp
+type == CSPDirectiveName::FontSrc ||
          type == CSPDirectiveName::FormAction ||
          // FrameSrc and ChildSrc enabled here only for the resource hint check
          type == CSPDirectiveName::ChildSrc ||
@@ -316,8 +318,4 @@ CSPOperativeDirective CSPDirectiveListOperativeDirective(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

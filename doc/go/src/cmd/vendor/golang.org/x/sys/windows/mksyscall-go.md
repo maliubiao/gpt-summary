@@ -191,15 +191,17 @@ func CreateFileW(lpFileName *uint16, dwDesiredAccess uint32, dwShareMode uint32,
 
 `go/src/cmd/vendor/golang.org/x/sys/windows/mksyscall.go` 文件的作用是作为 `go generate` 的一个入口点，它通过运行 `golang.org/x/sys/windows/mkwinsyscall` 工具，并指定输入文件和输出文件，来自动化生成 Go 语言调用 Windows 系统调用的绑定代码。这大大简化了在 Go 语言中与 Windows 系统 API 交互的过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/mksyscall.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ Prompt:
 package windows
 
 //go:generate go run golang.org/x/sys/windows/mkwinsyscall -output zsyscall_windows.go eventlog.go service.go syscall_windows.go security_windows.go setupapi_windows.go
-
-"""
-
-
-
 ```

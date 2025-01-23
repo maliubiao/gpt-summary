@@ -276,7 +276,7 @@ Interceptor.attach(Module.getExportByName(null, "stat"), {
 
 `bionic/libc/include/cpio.h` 提供了解析和创建 `cpio` 归档文件所需的常量。虽然它本身不包含函数实现，但这些常量被 `bionic` 库中的其他代码使用。理解这些常量对于分析 Android 底层系统如何处理归档文件至关重要。虽然 Framework 和 NDK 应用不太可能直接使用它，但在某些系统服务和工具中，它扮演着重要的角色。使用 Frida 可以帮助我们动态地观察和调试这些底层代码的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/cpio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -287,8 +287,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -369,7 +371,4 @@ Prompt:
 
 /** cpio file magic. */
 #define MAGIC "070707"
-
-"""
-
 ```

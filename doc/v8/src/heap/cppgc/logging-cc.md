@@ -167,15 +167,17 @@ try {
 
 `v8/src/heap/cppgc/logging.cc` 是 V8 垃圾回收器内部用于调试断言和处理致命错误的 C++ 文件。它与 JavaScript 的功能间接相关，因为 JavaScript 代码的执行依赖于垃圾回收器的正常运行。虽然用户不能直接调用这些日志函数，但用户的编程错误可能导致 V8 内部状态异常，从而间接地触发这些错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/logging.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/logging.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ void FatalImpl(const char* message, const SourceLocation& loc) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -148,14 +148,16 @@ By following this structured thought process, I can thoroughly analyze the code 
 
 **注意:**  这只是对该文件功能的初步分析，每个 Feature Flag 的具体实现细节可能更加复杂，需要结合相关的代码和文档进行深入了解。 Chromium 的代码库非常庞大，各个模块之间相互关联，因此理解一个文件的功能通常需要一定的上下文知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ BASE_FEATURE(kPrioritizeCompositingAfterDelayTrials,
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

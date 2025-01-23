@@ -188,15 +188,17 @@ By following this structured approach, which includes understanding the code, id
 
 **简而言之，虽然用户不会直接操作到这个文件，但与 Cookie 相关的网络请求问题、性能瓶颈或对浏览器内部 Cookie 处理机制的深入理解都可能引导开发者查看或调试与 `net/http/http_cookie_indices.cc` 相关的代码。** 他们通常会从观察网络请求头和响应头开始，然后根据现象追踪到更底层的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cookie_indices_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -358,7 +360,4 @@ TEST(CookieIndicesTest, IgnoresOrderOfDuplicateCookies) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

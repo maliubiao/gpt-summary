@@ -171,15 +171,17 @@ Finally, I organize the information logically, using clear headings and bullet p
 
 总而言之，`svg_animated_angle.cc` 文件在 Blink 引擎中扮演着关键角色，它负责管理 SVG 元素的动画角度属性，并将其与 HTML、CSS 和 JavaScript 的操作同步起来，确保 SVG 元素的动画效果能够正确呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_animated_angle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -256,7 +258,4 @@ void SVGAnimatedAngle::SetAnimatedValue(SVGPropertyBase* value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

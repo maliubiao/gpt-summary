@@ -146,14 +146,16 @@ By following this systematic thought process, we can effectively analyze and und
 
 总而言之，`html_olist_element.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它负责解析、管理和渲染 HTML 有序列表元素，并将其与 CSS 样式和 JavaScript 交互联系起来。理解这个文件有助于深入了解浏览器如何处理 HTML 结构和样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_olist_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -272,7 +274,4 @@ void HTMLOListElement::RecalculateItemCount() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

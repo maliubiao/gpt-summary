@@ -211,7 +211,7 @@ Here's a plan to address the request:
 
 作为 12 个部分中的第 7 部分，`v8/src/wasm/turboshaft-graph-interface.cc` 专注于 **实现 Wasm 中关于数组、字符串和引用操作的指令到 Turboshaft 图的转换**。  它构建了 Wasm 代码到 Turboshaft 中间表示的关键部分，为后续的优化和代码生成奠定了基础。 考虑到它处理的是数组和字符串这类核心数据结构的操作，可以推测之前的几个部分可能涉及了更基础的 Wasm 指令（如算术运算、控制流等），而后续的部分可能会涉及更高级的特性（如函数调用、内存管理、多线程等）以及优化和代码生成过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/turboshaft-graph-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -219,9 +219,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共12部分，请归纳一下它的功能
+```
 
-"""
-     __ ArraySet(dst_array, dst_index_loop, value, element_type);
+### 源代码
+```cpp
+__ ArraySet(dst_array, dst_index_loop, value, element_type);
 
             IF_NOT (__ Uint32LessThan(src_index.op, src_index_loop)) BREAK;
 
@@ -930,8 +932,5 @@ Prompt:
   }
 
   void StringAsIter(FullDecoder* decoder, const Value& str, Value* result) {
-    V<String> string 
-"""
-
-
+    V<String> string
 ```

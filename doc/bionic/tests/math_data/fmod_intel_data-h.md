@@ -255,7 +255,7 @@ setImmediate(hook_fmod);
 
 `bionic/tests/math_data/fmod_intel_data.handroid` 文件是 Android Bionic 库中用于测试 `fmod` 函数在 Intel 架构上实现的一组关键测试数据。它对于确保 Android 平台数学运算的正确性和稳定性至关重要。虽然它本身不涉及动态链接的直接操作，但 `fmod` 函数作为 `libc` 的一部分，其加载和链接依赖于 dynamic linker。通过理解这个文件的作用，我们可以更好地理解 Android 底层库的测试和开发流程。 使用 Frida 等工具可以帮助我们深入调试这些底层函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmod_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1596,7 +1598,4 @@ static data_1_2_t<double, double, double> g_fmod_intel_data[] = {
     -0x1.b148e36fdec2fp-964
   }
 };
-
-"""
-
 ```

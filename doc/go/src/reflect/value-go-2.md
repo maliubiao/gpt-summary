@@ -161,7 +161,7 @@ Based on this analysis, the core function of this code snippet is to provide mec
 
 由于这是第 3 部分，我们可以推测，前面的部分可能涉及 `reflect.Value` 的创建、获取值等只读操作，而后面的部分可能会涉及更高级的反射用法，例如调用方法、访问结构体字段等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/value.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -170,9 +170,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- is not [Bool] or if [Value.CanSet] returns false.
+### 源代码
+```go
+is not [Bool] or if [Value.CanSet] returns false.
 func (v Value) SetBool(x bool) {
 	v.mustBeAssignable()
 	v.mustBe(Bool)
@@ -1277,9 +1279,4 @@ func (v Value) Equal(u Value) bool {
 		return v.Uint() == u.Uint()
 	case Float32, Float64:
 		return v.Float() == u.F
-"""
-
-
-
-
 ```

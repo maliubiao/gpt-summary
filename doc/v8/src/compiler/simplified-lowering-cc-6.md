@@ -156,7 +156,7 @@ Phi node to combine the Float64 results
 
 总而言之，`simplified-lowering.cc` 是 V8 编译器中至关重要的一个环节，它将相对抽象的 JavaScript 操作转化为可以在目标机器上高效执行的指令。它通过选择合适的表示形式和插入必要的转换来弥合高级语言和底层硬件之间的差距。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 broker_;
   Zone* zone_;                      // Temporary zone.
   // Map from node to its uses that might need to be revisited.
@@ -1023,7 +1025,4 @@ void SimplifiedLowering::DoSigned32ToUint8Clamped(Node* node) {
 
 void SimplifiedLowering::DoUnsigned32ToUint8Clamped(Node* node) {
   Node* const input = node->InputAt(0
-"""
-
-
 ```

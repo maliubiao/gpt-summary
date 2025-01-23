@@ -151,11 +151,13 @@ console.log('Invalid data errors:', validateData(invalidData));
 
 `v8/third_party/inspector_protocol/crdtp/error_support_test.cc` 文件测试的 `ErrorSupport` 类是一个用于在处理结构化数据时，跟踪和记录错误路径的工具。它在 V8 引擎或 CRDP 中可能被用于提供更详细的错误报告，帮助开发者定位问题。JavaScript 中虽然没有直接对应的类，但可以通过手动维护路径信息来实现类似的功能，例如在数据验证或解析过程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/error_support_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ TEST(ErrorSupportTest, Nesting) {
   EXPECT_EQ("foo.42.bar: something wrong; foo.bang: one last error", out);
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

@@ -106,7 +106,7 @@ Here's a breakdown of the thought process:
 
 总而言之，这段代码的第二部分专注于实现 `Observable` 的不同操作符的订阅逻辑。它提供了处理订阅生命周期事件的机制 (通过 `OperatorObserveOnSubscribeDelegate`)，以及实现了两种常见的转换操作符 (`switchMap` 和 `flatMap`)，它们允许将 `Observable` 发出的值映射为新的 `Observable` 并以不同的方式处理这些内部 `Observable` 的值。此外，它还提供了从 JavaScript 异步可迭代对象创建 `Observable` 的能力。这些功能都是构建复杂异步数据流和响应式编程模式的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/observable.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rCallback* error_callback,
       V8ObserverCompleteCallback* complete_callback,
       V8VoidFunction* subscribe_callback,
@@ -919,7 +921,4 @@ class OperatorFromAsyncIterableSubscribeDelegate final
 
       // "Run |nextAlgorithm| given |subscriber| and |iteratorRecord|."
       GetNextValue(subscr
-"""
-
-
 ```

@@ -141,7 +141,7 @@ console.log(counter.increment());
 
 总而言之，这部分代码是 V8 逃逸分析的核心实现，负责执行对编译器图中各个节点的分析，并为后续的优化提供关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/escape-analysis.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/escape-analysis.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,9 +149,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  default: {
+### 源代码
+```cpp
+default: {
       // For unknown nodes, treat all value inputs as escaping.
       int value_input_count = op->ValueInputCount();
       for (int i = 0; i < value_input_count; ++i) {
@@ -221,8 +223,4 @@ VirtualObject::VirtualObject(VariableTracker* var_states, VirtualObject::Id id,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

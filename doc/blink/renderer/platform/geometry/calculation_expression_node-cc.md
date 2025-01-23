@@ -117,14 +117,16 @@ Self-Correction Example during the process:  Initially, I might focus too much o
 
 总而言之，`calculation_expression_node.cc` 是 Blink 渲染引擎中一个至关重要的文件，它负责解析、表示和计算 CSS 数学表达式，直接影响着网页的布局和渲染效果。理解其功能有助于开发者更好地理解 CSS `calc()` 以及相关函数的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/geometry/calculation_expression_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -870,7 +872,4 @@ CalculationExpressionOperationNode::ResolvedResultType() const {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

@@ -96,12 +96,14 @@ To illustrate the connection with JavaScript, we can show how some of these buil
 
 这段 C++ 代码是 V8 引擎启动和初始化阶段的关键部分，它负责创建和设置 JavaScript 内置功能的基础设施。这些内置函数和访问器信息使得 JavaScript 语言的各种特性得以在 V8 引擎中高效地运行。  可以说，这段代码是 JavaScript 功能在 V8 引擎底层实现的“蓝图”。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/setup-heap-internal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ared_fun(*info);
   }
 
@@ -218,8 +220,4 @@ void Heap::CreateInternalAccessorInfoObjects() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

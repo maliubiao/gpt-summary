@@ -168,15 +168,17 @@ This iterative process of scanning, analyzing, connecting concepts, and consider
 
 总之，`v8_gc_controller.cc` 是 Blink 引擎中负责 V8 垃圾回收协调的关键组件，它确保 JavaScript 的内存管理与 DOM 对象的生命周期保持同步，避免内存泄漏和访问已回收对象等问题，从而保证浏览器的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_gc_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -323,7 +325,4 @@ void V8GCController::GcEpilogue(v8::Isolate* isolate,
 }
 
 }  // namespace blink
-
-"""
-
 ```

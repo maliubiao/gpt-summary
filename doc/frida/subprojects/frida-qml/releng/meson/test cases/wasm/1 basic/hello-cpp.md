@@ -207,7 +207,7 @@ By following this structured thought process, incorporating the context of Frida
 
 总而言之，即使是最简单的代码，也可以作为 Frida 学习和测试的起点。通过对它的操作，用户可以逐步了解 Frida 的工作原理、脚本编写以及在动态 Instrumentation 中可能遇到的问题。这段代码在 Frida 的测试用例中出现，很可能是为了验证 Frida 的基本 hook 功能在 WASM 环境下的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/wasm/1 basic/hello.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,15 +215,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(void) {
   std::cout << "Hello World" << std::endl;
   return 0;
 }
-
-"""
-
 ```

@@ -151,15 +151,17 @@ getProperty(anotherObject); // 第二次调用
 
 `v8/src/ic/handler-configuration.h` 是 V8 引擎中一个关键的头文件，它定义了用于优化属性加载和存储操作的各种处理器类型。这些处理器是内联缓存机制的核心，通过高效地编码和重用属性访问的信息，显著提高了 JavaScript 代码的执行性能。理解这些内部机制有助于开发者编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/handler-configuration.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/handler-configuration.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -558,7 +560,4 @@ std::ostream& operator<<(std::ostream& os, WasmValueType type);
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_IC_HANDLER_CONFIGURATION_H_
-
-"""
-
 ```

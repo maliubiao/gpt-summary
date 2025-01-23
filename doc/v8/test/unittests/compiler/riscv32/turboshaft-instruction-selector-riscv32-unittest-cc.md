@@ -158,7 +158,7 @@ console.log(y);
 
 这个 C++ 源代码文件是 V8 JavaScript 引擎中 Turboshaft 编译器针对 RISC-V 32 位架构的指令选择器单元测试的**第一部分**。它的主要功能是**验证 Turboshaft 编译器能否正确地将各种中间表示的操作映射到对应的 RISC-V 汇编指令**，并确保生成的指令具有正确的属性（如输入输出数量、标志位等）。 通过参数化测试和预定义的指令映射关系，它系统地测试了算术、逻辑、比较、移位、乘除法、取模以及类型转换等多种操作的指令选择逻辑的正确性。 它是确保 V8 在 RISC-V 平台上生成正确且高效机器代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/riscv32/turboshaft-instruction-selector-riscv32-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/riscv32/turboshaft-instruction-selector-riscv32-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -987,8 +989,5 @@ const MemoryAccessImm2 kMemoryAccessesImmUnaligned[] = {
      {-4095, -3340, -3231, -3224, -3088, -1758, -1203, -123, -117, -91,
       -89,   -87,   -86,   -82,   -44,   -23,   -3,    0,    7,    10,
       39,    52,    69,    71,    91,    92,    107,   109,  115,  124,
-      286,   655,   1362,  
-"""
-
-
+      286,   655,   1362,
 ```

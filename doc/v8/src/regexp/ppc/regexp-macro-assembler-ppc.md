@@ -105,11 +105,13 @@ while ((match = regex.exec(str)) !== null) {
 
 `regexp-macro-assembler-ppc.cc` 文件是 V8 引擎中至关重要的组件，它负责将 JavaScript 正则表达式编译成高效的 PPC64 架构机器码，从而使得 JavaScript 能够高效地进行字符串模式匹配。 它定义了用于匹配的寄存器约定、栈结构和各种匹配操作的汇编代码生成逻辑。 用户的 JavaScript 正则表达式操作最终会转化为这个文件中的代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/ppc/regexp-macro-assembler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1609,7 +1611,4 @@ void RegExpMacroAssemblerPPC::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  //  V8_TARGET_ARCH_PPC64
-
-"""
-
 ```

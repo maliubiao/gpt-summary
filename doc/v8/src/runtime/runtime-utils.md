@@ -101,11 +101,13 @@ instance.exports.call_javascript_callback();
 
 `SaveAndClearThreadInWasmFlag` 是 V8 引擎内部用于管理线程 WebAssembly 执行状态的一个工具类。 它确保在特定的代码段执行期间，线程的状态能够正确地反映当前的执行上下文，尤其是在 JavaScript 和 WebAssembly 互相调用的复杂场景中。 JavaScript 开发者通常不需要直接关心这个类，但理解它的作用有助于理解 V8 引擎如何管理 JavaScript 和 WebAssembly 的集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ SaveAndClearThreadInWasmFlag::~SaveAndClearThreadInWasmFlag() = default;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

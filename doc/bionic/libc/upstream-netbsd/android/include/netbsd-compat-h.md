@@ -249,7 +249,7 @@ sys.stdin.read()
 
 总结来说，`netbsd-compat.handroid` 头文件是 Android Bionic 库为了兼容 NetBSD 特性而引入的一个组件。它通过宏定义和函数声明来提供一些 NetBSD 特有的功能，并在必要时修改或禁用某些 NetBSD 的默认行为。 理解这个文件的作用有助于我们深入了解 Android 系统底层的实现细节和兼容性策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/android/include/netbsd-compat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -312,7 +314,4 @@ int reallocarr(void*, size_t, size_t);
 /* Use appropriate shell depending on process's executable. */
 __LIBC_HIDDEN__ extern const char* __bionic_get_shell_path();
 #define _PATH_BSHELL __bionic_get_shell_path()
-
-"""
-
 ```

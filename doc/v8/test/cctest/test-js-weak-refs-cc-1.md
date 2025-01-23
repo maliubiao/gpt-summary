@@ -159,7 +159,7 @@ registry.unregister(token2);
 
 这段代码片段主要负责测试 V8 引擎中 `FinalizationRegistry` 的 `unregister` 功能以及 `JSWeakRef` 在垃圾回收过程中的行为。它通过创建各种场景，例如使用相同或不同的 unregister token 注册多个对象，并在不同的垃圾回收阶段检查内部状态，来确保这些功能的正确性和稳定性。此外，它还包含了对堆校验器的测试，以确保在涉及 unregister token 的复杂场景下，堆内存的完整性能够得到保证。这些测试对于确保 V8 引擎在处理弱引用和终结器方面的正确性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-js-weak-refs.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-js-weak-refs.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 le<JSObject> token1 = CreateKey("token1", isolate);
   Handle<JSObject> token2 = CreateKey("token2", isolate);
   Handle<HeapObject> undefined =
@@ -426,8 +428,4 @@ TEST(UnregisteredAndUnclearedCellHeapVerifier) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

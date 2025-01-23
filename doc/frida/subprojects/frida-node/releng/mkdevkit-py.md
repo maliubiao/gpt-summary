@@ -192,7 +192,7 @@ By following this systematic approach, combining code analysis with understandin
 
 通过以上步骤，用户逐渐深入到 Frida Node.js 绑定的构建过程，而 `mkdevkit.py` 脚本成为了他们调试和解决问题的关键环节。理解这个脚本的功能和工作原理对于成功使用 Frida Node.js 绑定至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/mkdevkit.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -309,7 +311,4 @@ def parse_array_option_value(val: str, ool_optvals: dict[str, list[str]]) -> Opt
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

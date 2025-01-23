@@ -148,7 +148,7 @@ PASS
 
 总而言之，`cryptotest.SkipTestAllocations` 是一个用于提高内存分配相关测试可靠性的实用工具，它通过识别并跳过可能引入干扰的环境，确保测试结果的准确性。使用者需要注意在相关的测试用例中正确地调用它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/cryptotest/allocations.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,8 +156,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -201,9 +203,4 @@ func SkipTestAllocations(t *testing.T) {
 	// Some APIs rely on inliner and devirtualization to allocate on the stack.
 	testenv.SkipIfOptimizationOff(t)
 }
-
-"""
-
-
-
 ```

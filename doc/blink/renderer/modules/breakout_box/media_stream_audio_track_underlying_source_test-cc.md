@@ -171,15 +171,17 @@ This detailed thought process allows us to thoroughly understand the purpose and
 
 通过查看这个测试文件，开发者可以了解 `MediaStreamAudioTrackUnderlyingSource` 的预期行为，并在出现问题时更好地定位和解决错误。 例如，如果怀疑是缓冲区溢出的问题，可以检查相关代码逻辑，并参考测试用例 `DropOldFramesWhenQueueIsFull` 的实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/breakout_box/media_stream_audio_track_underlying_source_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -591,7 +593,4 @@ TEST_F(MediaStreamAudioTrackUnderlyingSourceTest, BufferPooling_FormatChange) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

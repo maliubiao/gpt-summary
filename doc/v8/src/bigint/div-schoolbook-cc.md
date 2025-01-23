@@ -152,15 +152,17 @@ console.log("Remainder:", remainder);
 
 总而言之，`v8/src/bigint/div-schoolbook.cc` 是 V8 引擎中实现高性能大整数除法的关键组成部分，它采用了经典的“小学生除法”算法，并借鉴了 Go 语言的实现经验。理解这段代码有助于深入了解 JavaScript BigInt 的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/div-schoolbook.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/bigint/div-schoolbook.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ void ProcessorImpl::DivideSchoolbook(RWDigits Q, RWDigits R, Digits A,
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

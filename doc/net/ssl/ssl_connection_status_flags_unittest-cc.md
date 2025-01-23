@@ -136,15 +136,17 @@ After drafting the initial analysis, reread the prompt and ensure all aspects ar
 
 因此，虽然用户操作不会直接调用这些 C++ 函数，但用户的行为（例如访问 HTTPS 网站）会触发底层的网络连接建立过程，而这些函数正是用于管理和记录这个过程中的关键状态信息。 在调试网络问题时，了解这些函数的用途和 `connection_status` 的结构对于理解问题的根源至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_connection_status_flags_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ TEST(SSLConnectionStatusTest, SetVersion) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

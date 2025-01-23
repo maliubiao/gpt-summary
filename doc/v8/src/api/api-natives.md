@@ -119,11 +119,13 @@ console.log(result); // 输出: 8
 
 总而言之，`v8/src/api/api-natives.cc` 是 V8 引擎中一个至关重要的文件，它弥合了 C++ 和 JavaScript 之间的鸿沟，使得通过 C++ API 定义的 native 对象和函数能够在 JavaScript 环境中被创建和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api-natives.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -818,7 +820,4 @@ Handle<JSFunction> ApiNatives::CreateApiFunction(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

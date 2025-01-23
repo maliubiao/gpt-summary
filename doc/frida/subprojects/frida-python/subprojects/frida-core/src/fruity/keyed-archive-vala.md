@@ -108,7 +108,7 @@ dict.set_value("key", new NSNumber.from_integer(42));
 ### 总结
 
 `keyed-archive.vala` 文件实现了 Frida 工具中用于处理 NSKeyedArchiver 格式的序列化和反序列化功能。它定义了一系列类和方法，支持多种数据类型的编码和解码。用户在使用时需要注意类型匹配和键的存在性，以避免常见的错误。通过调试工具（如 LLDB），用户可以进一步分析和复现问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/keyed-archive.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class NSObject {
@@ -839,7 +841,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

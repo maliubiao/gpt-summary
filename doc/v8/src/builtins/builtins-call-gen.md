@@ -142,11 +142,13 @@ console.log(findMax(1, 5, 2, 8)); // 这会涉及到 CallOrConstructBuiltinsAsse
 
 `v8/src/builtins/builtins-call-gen.cc` 文件是 V8 引擎中至关重要的组成部分，它定义了 JavaScript 函数调用的底层实现。它通过生成高效的内置函数来处理各种函数调用场景，直接影响着 JavaScript 代码的执行效率和行为。 理解这个文件有助于深入了解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-call-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1068,7 +1070,4 @@ TF_BUILTIN(HandleApiCallOrConstruct, CallOrConstructBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

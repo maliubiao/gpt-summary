@@ -196,7 +196,7 @@ console.log(matchResult); // 输出: ['abbc', index: 0, input: 'abbc', groups: u
 
 `v8/src/regexp/mips64/regexp-macro-assembler-mips64.cc` 文件的核心职责是为 V8 JavaScript 引擎在 MIPS64 架构下高效地执行正则表达式匹配生成底层的机器代码。它通过提供一组抽象的宏指令，简化了汇编代码的生成过程，并处理了匹配过程中的各种细节，包括成功匹配、回溯、全局匹配、栈管理和异常处理等。 这段代码是 V8 正则表达式引擎在特定硬件架构上的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/mips64/regexp-macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/mips64/regexp-macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oad_char_start_regexp;
     {
       Label start_regexp;
@@ -785,8 +787,4 @@ void RegExpMacroAssemblerMIPS::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

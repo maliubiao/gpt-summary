@@ -309,7 +309,7 @@ if __name__ == '__main__':
 
 这个 Frida 示例会 hook `ioctl` 系统调用，并过滤出与 `VIDIOC_OMAP3ISP_` 相关的命令。然后，它会尝试读取并打印出与这些命令关联的配置结构体的内容，帮助开发者理解 Android 框架是如何配置 OMAP3 ISP 的。你需要根据具体的 `ioctl` 命令和对应的数据结构调整 `readByteArray` 的大小。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/omap3isp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -649,7 +651,4 @@ struct omap3isp_prev_update_config {
   struct omap3isp_prev_gtables  * gamma;
 };
 #endif
-
-"""
-
 ```

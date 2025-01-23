@@ -298,7 +298,7 @@ console.log(sum); // 输出 30n
 
 总而言之，`v8/src/codegen/s390/constants-s390.h` 是 V8 引擎中一个关键的组成部分，它为 S390 架构的代码生成提供了必要的指令操作码常量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/constants-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/constants-s390.h以.tq结尾，那它是个v8 torque源代码，
@@ -306,8 +306,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 )  */     \
   V(lfh, LFH, 0xE3CA)     /* type = RXY_A LOAD HIGH (32)  */                   \
   V(stfh, STFH, 0xE3CB)   /* type = RXY_A STORE HIGH (32)  */                  \
@@ -750,7 +752,4 @@ Prompt:
   V(agr, AGR, 0xB908)     /* type = RRE   ADD (64)  */                         \
   V(sgr, SGR, 0xB909)     /* type = RRE   SUBTRACT (64)  */                    \
   V(algr, ALGR,
-"""
-
-
 ```

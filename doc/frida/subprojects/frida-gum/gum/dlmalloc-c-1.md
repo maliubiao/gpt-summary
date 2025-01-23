@@ -199,7 +199,7 @@ Interceptor.attach(Module.findExportByName(null, "free"), {
 
 总而言之，`frida/subprojects/frida-gum/gum/dlmalloc.c` 的这段代码是 `dlmalloc` 内存分配器的核心组成部分，定义了其配置、数据结构和公共接口，为 Frida 在目标进程中进行动态插桩提供了必要的内存管理功能。理解这段代码对于深入理解 Frida 的工作原理以及排查与内存相关的错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/dlmalloc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 IZE_T
 #endif  /* HAVE_MMAP */
 #endif  /* DEFAULT_MMAP_THRESHOLD */
@@ -1095,7 +1097,4 @@ unsigned char _BitScanReverse(unsigned long *index, unsigned long mask);
 
 /* The byte and bit size of a size_t */
 #define SIZE_T_SIZE         (sizeof(size
-"""
-
-
 ```

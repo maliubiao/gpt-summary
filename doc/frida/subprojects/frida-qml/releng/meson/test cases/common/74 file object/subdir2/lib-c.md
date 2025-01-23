@@ -181,7 +181,7 @@ Finally, the thought process involves organizing the identified points into a cl
 
 这个简单的 `lib.c` 文件作为 Frida 测试用例的一部分，很可能是为了验证 Frida 对基本 C 函数的 Hook 功能是否正常工作。开发者会创建一个简单的库，编译后，在测试程序中加载并调用这个函数，然后使用 Frida 脚本来 hook 它，检查 Frida 是否能够成功拦截并按预期执行脚本中的逻辑。这有助于确保 Frida 的核心功能在各种情况下都能稳定可靠地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/74 file object/subdir2/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,12 +189,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 2;
 }
-
-"""
-
 ```

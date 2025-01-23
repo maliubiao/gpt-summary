@@ -188,15 +188,17 @@ By following this iterative process of examination, analysis, inference, and ref
 
 总之，`quic_socket_data_provider_unittest.cc` 是一个非常重要的测试文件，它确保了 `QuicSocketDataProvider` 能够正确地模拟各种 QUIC socket 交互场景，这对于测试和验证 Chromium 网络栈中 QUIC 协议的实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_socket_data_provider_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -674,7 +676,4 @@ TEST_F(QuicSocketDataProviderTest, MultipleReadsReady) {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

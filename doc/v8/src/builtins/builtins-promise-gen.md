@@ -80,11 +80,13 @@ myPromise.then((result) => {
 
 `builtins-promise-gen.cc` 文件中的代码是 V8 引擎实现 JavaScript Promise 功能的基石。 它负责 Promise 对象的创建、内存管理以及一些底层的初始化工作。虽然 JavaScript 开发者无法直接访问这些 C++ 代码，但他们的 Promise 使用最终会通过 V8 引擎调用这些底层的实现。  这个文件属于代码生成阶段，意味着它可能使用模板或者宏等技术来生成实际执行的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-promise-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -121,7 +123,4 @@ TNode<HeapObject> PromiseBuiltinsAssembler::AllocateJSPromise(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

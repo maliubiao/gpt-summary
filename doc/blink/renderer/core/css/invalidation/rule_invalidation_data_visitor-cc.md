@@ -74,7 +74,7 @@ The user wants a summary of the functionality of the provided C++ code file. I n
 
 `rule_invalidation_data_visitor.cc` 的核心功能是 **分析 CSS 规则并提取用于 CSS 样式失效优化的关键信息**。 它深入解析 CSS 选择器的各个组成部分，判断哪些元素的变化会影响这些规则的应用。这个过程是浏览器渲染引擎优化性能的关键环节，确保只在必要时才进行样式重计算，与 HTML 结构和 JavaScript 的动态修改密切相关。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -885,8 +887,5 @@ void RuleInvalidationDataVisitor<VisitorType>::
   //
   // For the :not() pseudo class, we should not use the inner features for
   // invalidation because we should invalidate elements _without_ that
-  // feature. On the other hand, we should 
-"""
-
-
+  // feature. On the other hand, we should
 ```

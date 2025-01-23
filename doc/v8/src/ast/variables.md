@@ -146,11 +146,13 @@ const myConst = 10;
 
 `variables.cc` 文件是 V8 引擎中处理 JavaScript 变量声明和管理的关键部分。它定义了 `Variable` 类，该类存储了关于变量的重要信息，并提供方法来判断变量的特性和在特定环境（如 REPL）下处理变量。这直接关系到 JavaScript 语言中变量的声明、作用域、生命周期和初始化等核心概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/variables.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ void Variable::AssignHoleCheckBitmapIndex(ZoneVector<Variable*>& list,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

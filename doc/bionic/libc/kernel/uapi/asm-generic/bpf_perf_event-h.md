@@ -238,7 +238,7 @@ if __name__ == '__main__':
 
 总而言之，`bpf_perf_event.h` 虽然只是一个小小的头文件，但它在 Android 系统中扮演着重要的角色，为用户空间的程序提供了访问底层硬件信息的桥梁，使得性能监控、安全策略和系统跟踪等功能得以实现。理解它的作用和使用方式对于深入理解 Android 系统的底层机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/bpf_perf_event.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -249,8 +249,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -262,7 +264,4 @@ Prompt:
 #include <linux/ptrace.h>
 typedef struct pt_regs bpf_user_pt_regs_t;
 #endif
-
-"""
-
 ```

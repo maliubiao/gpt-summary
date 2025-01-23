@@ -135,7 +135,7 @@ endif
 
 这部分代码主要负责定义 Meson 构建系统中用于表示各种构建实体（如功能选项、外部进程、环境变量、配置数据、依赖项、外部程序/库、目标机器信息）的 Python 对象。这些对象封装了对这些实体进行操作的方法，是 Meson 解释器执行构建脚本的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/interpreterobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 import os
 import shlex
@@ -897,8 +899,4 @@ class Test(MesonInterpreterObject):
                  env: mesonlib.EnvironmentVariables,
                  should_fail: bool, timeout: int, workdir: T.Optional[str], protocol: str,
                  priority: int, verbose: bool):
-     
-"""
-
-
 ```

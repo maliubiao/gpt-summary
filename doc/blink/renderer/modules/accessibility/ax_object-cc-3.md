@@ -144,7 +144,7 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 这段代码是 Chromium Blink 引擎可访问性实现的关键部分，它负责将 `AXObject` 对象的状态和属性（包括基本的名称、描述、角色，以及 ARIA 属性和特定于 HTML 元素的属性）转换为 `ui::AXNodeData` 结构，以便将这些信息传递给辅助技术，从而使网页内容对残障人士更易访问。它特别关注表单控件、ARIA 属性以及对象之间的可访问性关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 node_data, ax::mojom::blink::StringAttribute::kUrl, Url().GetString());
 
   if (Element* element = GetElement()) {
@@ -1125,7 +1127,4 @@ bool AXObject::IsIncludedInTree() const {
 bool AXObject::IsIncludedInTree() {
   return !IsIgnored() || IsIgnoredButIncludedInTree();
 }
-"""
-
-
 ```

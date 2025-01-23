@@ -168,7 +168,7 @@ func main() {
 
 总而言之，`internal/gover/gover.go` 包是Go工具链内部用于处理和比较Go版本号的关键组件，它提供了细粒度的版本号解析和比较功能，以便Go生态系统中的各种工具能够正确地理解和处理不同的Go版本。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/gover/gover.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -401,9 +403,4 @@ func DecInt(decimal string) string {
 	}
 	return string(digits)
 }
-
-"""
-
-
-
 ```

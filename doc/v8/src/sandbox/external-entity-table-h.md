@@ -183,15 +183,17 @@ accessExternalDOMElement(5);
 
 理解 `ExternalEntityTable` 的作用有助于开发者编写更安全和可靠的 JavaScript 代码，特别是当涉及到与外部环境（如浏览器 API 或 Node.js 原生模块）交互时。虽然开发者通常不需要直接操作这个类，但其设计思想和功能是理解 V8 沙箱机制的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/external-entity-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/external-entity-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -482,7 +484,4 @@ class V8_EXPORT_PRIVATE ExternalEntityTable
 #endif  // V8_COMPRESS_POINTERS
 
 #endif  // V8_SANDBOX_EXTERNAL_ENTITY_TABLE_H_
-
-"""
-
 ```

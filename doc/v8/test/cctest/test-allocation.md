@@ -128,11 +128,13 @@ try {
 
 总而言之，`v8/test/cctest/test-allocation.cc` 是 V8 引擎的内部测试，用于确保其内存管理机制的正确性和在内存不足情况下的可靠性，这对于 JavaScript 代码的正常执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-allocation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,7 +313,4 @@ TEST_WITH_PLATFORM(AlignedAllocVirtualMemoryOOM, AllocationPlatform) {
 
 #endif  // !defined(V8_USE_ADDRESS_SANITIZER) && !defined(MEMORY_SANITIZER) &&
         // !defined(THREAD_SANITIZER)
-
-"""
-
 ```

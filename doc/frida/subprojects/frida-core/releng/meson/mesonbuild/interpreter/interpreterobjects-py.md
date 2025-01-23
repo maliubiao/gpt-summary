@@ -204,7 +204,7 @@ By following this structured approach, combining code reading with domain knowle
 
 `interpreterobjects.py` 文件在 Frida 的 Meson 构建系统中扮演着至关重要的角色，它定义了用于表示和操作各种构建相关实体的 Python 对象。这些对象涵盖了构建选项、进程执行、环境变量、配置数据、依赖项、外部程序和库、机器信息以及构建输出等多个方面。理解这些对象的功能对于理解 Frida 的构建过程、排查构建问题以及进行更高级的 Frida 开发和定制都非常有帮助。虽然这个文件本身不直接参与目标程序的逆向，但它构建了 Frida 这个逆向工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreter/interpreterobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,8 +213,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 import os
 import shlex
@@ -966,8 +968,4 @@ class Test(MesonInterpreterObject):
                  env: mesonlib.EnvironmentVariables,
                  should_fail: bool, timeout: int, workdir: T.Optional[str], protocol: str,
                  priority: int, verbose: bool):
-     
-"""
-
-
 ```

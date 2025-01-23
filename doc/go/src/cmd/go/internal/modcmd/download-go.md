@@ -175,15 +175,17 @@ go mod download -json
 
 这段代码的核心逻辑在于与 `modload` 和 `modfetch` 包的交互，它们负责解析模块依赖、从模块源拉取数据以及管理本地模块缓存。`runDownload` 函数 orchestrates these operations，处理命令行参数，并根据不同的场景执行相应的下载逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modcmd/download.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -573,9 +575,4 @@ func DownloadModule(ctx context.Context, m *ModuleJSON) error {
 	m.Dir, err = modfetch.Download(ctx, mod)
 	return err
 }
-
-"""
-
-
-
 ```

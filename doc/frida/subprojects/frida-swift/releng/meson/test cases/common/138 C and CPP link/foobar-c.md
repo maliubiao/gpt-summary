@@ -157,7 +157,7 @@ By following this structured approach, combining code analysis with contextual u
 
 总而言之，`foobar.c` 虽然代码量不多，但在 Frida 的上下文中扮演着测试 C 和 C++ 代码链接的重要角色。它可以作为逆向分析的目标，涉及到操作系统底层知识，并能帮助理解用户在使用 Frida 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/138 C and CPP link/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -194,7 +196,4 @@ void mynumbers(int nums[]) {
     nums[0] = forty_two();
     nums[1] = six_one();
 }
-
-"""
-
 ```

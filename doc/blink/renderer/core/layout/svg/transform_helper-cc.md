@@ -136,14 +136,16 @@ By following this systematic process, we can comprehensively analyze the provide
 
 `transform_helper.cc` 是 Blink 渲染引擎中处理 SVG 变换的关键组件。它负责计算、管理和优化 SVG 元素的变换，确保浏览器能够正确地渲染具有各种复杂变换的 SVG 图形。它与 CSS 的变换属性紧密相关，并通过 Blink 内部机制与 HTML 和 JavaScript 的动态修改进行交互。理解这个文件的功能有助于深入理解浏览器如何处理 SVG 图形的渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/transform_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ gfx::PointF TransformHelper::ComputeTransformOrigin(
 }
 
 }  // namespace blink
-
-"""
-
 ```

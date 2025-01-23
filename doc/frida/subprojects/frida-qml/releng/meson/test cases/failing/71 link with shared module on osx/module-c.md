@@ -179,7 +179,7 @@ int func(void) {
 
 总而言之，虽然 `module.c` 本身非常简单，但在 Frida 的上下文中，它是用于测试 Frida 功能的最小单元之一。通过分析这类简单的示例，可以帮助理解 Frida 的工作原理，以及在实际逆向工程中可能遇到的各种情况和错误。 `failing` 目录的存在也说明了软件开发是一个不断测试和修复 bug 的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/71 link with shared module on osx/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,12 +187,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 1496;
 }
-
-"""
-
 ```

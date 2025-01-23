@@ -101,7 +101,7 @@ Let's break down the code and analyze each aspect.
 
 这段代码是 Frida 构建系统的一部分，负责将 Meson 构建定义转换为 Xcode 项目文件。它精确地定义了 Xcode 如何编译 Frida 的源代码，如何链接不同的组件，以及如何管理构建配置。这使得开发者可以使用 Xcode IDE 来构建、调试和管理 Frida 项目，同时也为理解 Frida 的构建过程和最终的二进制文件提供了关键信息。对于逆向工程师来说，分析这些构建设置可以深入了解 Frida 的内部结构和编译方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ldPhase')
             phase_dict.add_item('buildActionMask', 2147483647)
             file_arr = PbxArray()
@@ -555,8 +557,4 @@ ldPhase')
 
     def generate_suffix(self, pbxdict: PbxDict) -> None:
         pbxdict.add_item('rootObject', self.project_uid, 'Project object')
-
-"""
-
-
 ```

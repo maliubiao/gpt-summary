@@ -148,7 +148,7 @@ const regex5 = /[\u4E00-\u9FA5]/; // 匹配中文字符的字符类
 
 这段代码是 V8 正则表达式编译器中负责将正则表达式中的原子和字符类编译成高效机器码的关键部分。它包含了多种优化策略，例如针对特定字符对的快捷匹配、使用查找表进行字符类匹配，以及针对 Unicode 字符类的特殊处理。其目标是提高 JavaScript 中正则表达式的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on_failure, check);
     bound_checked = true;
   }
@@ -967,7 +969,4 @@ void TextNode::GetQuickCheckDetails(QuickCheckDetails* details,
     TextElement elm = elements()->at(k);
     if (elm.text_type() == TextElement::ATOM) {
       base::Vector<const base::uc16>
-"""
-
-
 ```

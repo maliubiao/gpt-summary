@@ -174,15 +174,17 @@ value: "very_long_cookie_value_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
 总而言之，`net/cookies/canonical_cookie_fuzzer.cc` 是一个关键的工具，用于确保 Chromium 处理 Cookie 的代码的健壮性和安全性。它通过模拟各种可能的（包括恶意的）Cookie 数据，来发现潜在的错误，并帮助开发者提高代码质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return 0;
 }
 }  // namespace net
-
-"""
-
 ```

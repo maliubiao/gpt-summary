@@ -131,14 +131,16 @@ body {
 
 总而言之，`blink/renderer/platform/fonts/web_font_render_style.cc` 文件是 Blink 引擎中负责字体渲染配置的关键组件，它通过一系列的设置来控制字体的显示效果，并受到 CSS 属性的影响。理解其功能有助于理解浏览器如何渲染网页上的文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/web_font_render_style.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ void WebFontRenderStyle::ApplyToSkFont(SkFont* font) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

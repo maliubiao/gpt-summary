@@ -134,14 +134,16 @@ By following these steps, I aimed to provide a comprehensive and understandable 
 
 总而言之，`graphics_context_3d_utils.cc` 中的 `Accelerated2DCanvasFeatureEnabled()` 函数是 Blink 渲染引擎中一个重要的决策点，它决定了 `<canvas>` 元素的 2D 渲染是否能够利用 GPU 加速，从而直接影响了 Web 页面的性能和用户体验。开发者在进行 Canvas 开发时，应该对这种潜在的性能差异有所了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/graphics_context_3d_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ bool GraphicsContext3DUtils::Accelerated2DCanvasFeatureEnabled() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

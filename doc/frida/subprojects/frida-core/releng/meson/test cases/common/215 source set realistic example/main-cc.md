@@ -159,7 +159,7 @@ Hello from Device!
 
 总而言之，这个 `main.cc` 文件是一个用于 Frida 内部测试的示例代码，它模拟了一个简单的系统结构，用于验证 Frida 核心功能的正确性。虽然它本身不直接执行逆向操作，但其设计理念与逆向工程中分析目标系统和组件的方式有共通之处。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/215 source set realistic example/main.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <vector>
 #include "common.h"
@@ -201,7 +203,4 @@ int main(void)
     for (auto d = devices; d; d = d->next)
         d->say_hello();
 }
-
-"""
-
 ```

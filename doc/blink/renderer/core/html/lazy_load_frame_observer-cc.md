@@ -89,14 +89,16 @@ Finally, I organized the information logically with clear headings and bullet po
 4. **处理“可能隐藏”的 iframe:**  该代码包含一些启发式逻辑来判断 iframe 是否可能被隐藏（例如，尺寸非常小，完全超出屏幕范围，或者 CSS `visibility` 属性为 `hidden` 或 `collapse`）。对于这些“可能隐藏”的 iframe，即使没有进入视口，也会立即加载，因为延迟加载可能会破坏它们的预期功能（例如，用于分析或通信的 iframe）。
 
 5. **考虑网络连接状况:**  `LazyLoadFrameObserver` 会根据用户的网络连接状况动态调整触发加载的视口 margin。在较慢的网络连接下，会提前加载 iframe，以改善
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/lazy_load_frame_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ void LazyLoadFrameObserver::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

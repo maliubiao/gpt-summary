@@ -107,7 +107,7 @@ Project specifies a minimum meson_version '0.50.0' but uses features which were 
 
 作为调试线索，如果用户报告构建过程中出现了关于新特性或废弃特性的警告，开发者可以检查 `frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreterbase/decorators.py` 文件中相关的装饰器定义，确认是否正确地标记了该特性，以及警告信息的生成逻辑是否正确。同时，也可以检查该特性是在哪个 Meson 版本引入或废弃的，帮助用户解决构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n f'Project specifies a minimum meson_version \'{tv}\' but uses features which were added in newer versions:'
 
     @staticmethod
@@ -238,8 +240,4 @@ class FeatureNewKwargs(FeatureCheckKwargsBase):
 
 class FeatureDeprecatedKwargs(FeatureCheckKwargsBase):
     feature_check_class = FeatureDeprecated
-
-"""
-
-
 ```

@@ -124,7 +124,7 @@ This file defines mixin classes that provide common functionality for C-like com
 
 总而言之，`frida/releng/meson/mesonbuild/compilers/mixins/clike.py` 提供了 Frida 的 Meson 构建系统中 C 和 C++ 编译器通用的功能抽象和实现，包括编译器参数处理、常用编译操作、环境探测和类型信息获取等，为 Frida 能够正确地编译和 instrument 目标程序提供了基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -862,8 +864,4 @@ class CLikeCompiler(Compiler):
         main = '''
         int main(void) {{
           return {func} ();
-    
-"""
-
-
 ```

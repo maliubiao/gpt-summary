@@ -156,7 +156,7 @@ wasm_v256_store(ptr + 64, result_merged);
 
 **总而言之，这部分代码是 `WasmRevecReducer` 的核心实现，负责识别和执行从 128 位 SIMD 操作到 256 位 SIMD 操作的转换过程，从而优化 WebAssembly 代码的性能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-revec-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-revec-reducer.h以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 lse {
           return extract_op_index;
         }
@@ -706,8 +708,4 @@ lse {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_WASM_REVEC_REDUCER_H_
-
-"""
-
-
 ```

@@ -129,15 +129,17 @@ myObject = null; //  让 myObject 变为垃圾回收的候选者
 
 总而言之， `v8/test/unittests/heap/cppgc/stats-collector-unittest.cc`  全面测试了 `StatsCollector` 类的功能，确保它能够准确地收集和报告 `cppgc` 垃圾回收器的各种统计信息，并通过观察者模式将这些信息传递出去，这对于 V8 引擎的性能监控和调优至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/stats-collector-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/stats-collector-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -413,7 +415,4 @@ TEST_F(StatsCollectorTest, ResidentMemorySizeWithDiscarded) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

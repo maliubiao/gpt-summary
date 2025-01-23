@@ -199,7 +199,7 @@ sys.stdin.read()
 
 `frida/subprojects/frida-python/releng/meson/test cases/common/24 library versions/lib.c` 是一个用于 Frida 动态插桩工具测试的简单动态库示例。它定义并导出一个返回固定值的函数 `myFunc`，用于验证 Frida 的基本 hook 功能。理解这个文件的功能和相关的底层知识对于进行动态逆向工程和使用 Frida 工具至关重要。用户通常不会直接操作这个文件，但理解其背后的概念可以帮助他们更好地使用 Frida 和解决遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/24 library versions/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -223,7 +225,4 @@ Prompt:
 int DLL_PUBLIC myFunc(void) {
     return 55;
 }
-
-"""
-
 ```

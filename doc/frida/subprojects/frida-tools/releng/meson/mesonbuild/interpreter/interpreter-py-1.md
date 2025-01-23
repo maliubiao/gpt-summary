@@ -107,7 +107,7 @@ Frida 本身是一个动态插桩工具，常用于逆向工程。虽然这段�
 
 这段代码的功能是定义了 Meson 构建系统中用于描述构建过程的核心指令，使得开发者可以使用声明式的方式来定义项目的依赖、构建步骤和配置选项。它在 Frida 这样的复杂项目中扮演着至关重要的角色，确保了项目的正确构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 not v:
                 FeatureNew.single_use('empty variable value in declare_dependency', '1.4.0', self.subproject, location=node)
             try:
@@ -741,7 +743,4 @@ not v:
             # vs backend version we need. But after setting default_options in case
             # the project sets vs backend by default.
             backend = self.coredata.get_option(OptionKey(
-"""
-
-
 ```

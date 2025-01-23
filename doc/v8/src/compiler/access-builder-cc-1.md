@@ -128,7 +128,7 @@ Here's a breakdown of the thought process to generate the response:
 
 `v8/src/compiler/access-builder.cc` 是 V8 编译器中一个至关重要的组件，它定义了访问 V8 堆中各种 JavaScript 对象内部数据的方式。它通过提供 `FieldAccess` 和 `ElementAccess` 结构体，为编译器的后续阶段 (如类型推断、代码生成) 提供了必要的元数据，使得 V8 能够高效且安全地操作 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/access-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/access-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dle<Name>(),       OptionalMapRef(),
                         Type::String(),       MachineType::TaggedPointer(),
                         kPointerWriteBarrier, "ThinStringActual"};
@@ -795,8 +797,4 @@ FieldAccess AccessBuilder::ForContextSideProperty() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -162,15 +162,17 @@ Vary: Accept-Language
 
 总而言之，`net/http/http_vary_data.cc` 是 Chromium 网络栈中负责确保 HTTP 缓存正确性的一个关键组件，它通过对比基于 `Vary` 头部的请求特征来决定是否可以使用缓存的响应，从而提高网页加载速度和减少网络带宽消耗。 虽然它本身是 C++ 代码，但其功能直接影响着 JavaScript 发起的网络请求的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_vary_data.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ void HttpVaryData::AddField(const HttpRequestInfo& request_info,
 }
 
 }  // namespace net
-
-"""
-
 ```

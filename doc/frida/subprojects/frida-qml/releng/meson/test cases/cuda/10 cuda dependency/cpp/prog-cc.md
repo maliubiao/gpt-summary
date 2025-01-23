@@ -128,7 +128,7 @@ Finally, the information needs to be organized logically, using headings and bul
 
 因此，`prog.cc` 文件在 Frida 的上下文中，可以作为一个简单而直接的测试用例，用于验证 CUDA 依赖项的检测，以及 Frida 对 CUDA 相关函数的 hook 能力。 用户可能在调试更复杂的程序时，为了隔离问题，会先在这个简单的程序上进行尝试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cuda/10 cuda dependency/cpp/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <iostream>
 
@@ -157,7 +159,4 @@ int main(void) {
     std::cout << "Found " << n << " CUDA devices.\n";
     return 0;
 }
-
-"""
-
 ```

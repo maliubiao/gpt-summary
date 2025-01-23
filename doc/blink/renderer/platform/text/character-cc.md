@@ -121,14 +121,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`character.cc` 是 Blink 引擎中一个核心的底层文件，它提供了对 Unicode 字符属性进行高效查询和判断的基础设施，这些功能对于正确渲染和处理网页上的文本至关重要，并直接或间接地影响着 JavaScript, HTML 和 CSS 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/character.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -461,7 +463,4 @@ bool Character::IsVerticalMathCharacter(UChar32 text_content) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

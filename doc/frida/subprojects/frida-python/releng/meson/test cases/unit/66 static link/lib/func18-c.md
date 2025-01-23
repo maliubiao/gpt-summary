@@ -130,7 +130,7 @@ Here's a thinking process to arrive at the comprehensive explanation:
 
 总而言之，`func18.c` 虽然代码简单，但在 Frida 动态 Instrumentation 和逆向工程的背景下，它可以用来演示基本的函数 hook 和行为分析技术。理解其功能和相关的底层知识，有助于更好地使用 Frida 进行软件分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func18.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,15 +138,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17();
 
 int func18()
 {
   return func17() + 1;
 }
-
-"""
-
 ```

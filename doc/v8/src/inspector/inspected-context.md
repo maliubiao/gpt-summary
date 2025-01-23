@@ -132,11 +132,13 @@ By following these steps of scanning, dissecting, connecting, and refining, you 
 
 `InspectedContext` 是 V8 Inspector 的一个关键组成部分，它在 C++ 层面负责管理和维护 JavaScript 执行上下文的各种信息，并提供与调试器交互的能力。它通过注入特定的 API 到 JavaScript 的全局 `console` 对象，以及通过 `InjectedScript` 机制，间接地影响着 JavaScript 代码的行为和调试体验。  JavaScript 代码可以直接使用 `InspectedContext` 注入的 API，而 `InjectedScript` 则主要在调试器的后台工作，用于执行调试命令和评估表达式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/inspected-context.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -299,7 +301,4 @@ V8InternalValueType InspectedContext::getInternalType(
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

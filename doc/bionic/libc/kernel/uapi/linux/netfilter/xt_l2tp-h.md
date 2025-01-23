@@ -260,7 +260,7 @@ setImmediate(hookL2tpFilterRule);
 
 总结来说，`xt_l2tp.h` 虽然是一个底层的头文件，但它在 Android 的网络功能中扮演着重要的角色，特别是在 VPN 和网络安全方面。它定义了与 L2TP 协议相关的关键信息，使得 Android 系统能够灵活地控制和管理 L2TP 流量。用户空间的程序通常不直接使用这个头文件，而是通过 Android Framework 提供的 API，最终由系统服务和 `netd` 守护进程来与内核的 netfilter 子系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_l2tp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -300,7 +302,4 @@ enum {
   XT_L2TP_TYPE = (1 << 3),
 };
 #endif
-
-"""
-
 ```

@@ -112,7 +112,7 @@ Finally, I organize the thoughts into a clear and structured answer, using headi
 
 `lib1.c` 虽然代码简单，但在 Frida 这样的动态插桩工具的上下文中，它扮演着重要的角色，用于处理平台差异，为后续的 hook 和分析线程创建行为提供基础。逆向工程师可以通过理解这段代码，更好地利用 Frida 进行目标应用程序的动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/194 static threads/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
 #include<windows.h>
 #else
@@ -135,7 +137,4 @@ void *f(void) {
   return pthread_create;
 #endif
 }
-
-"""
-
 ```

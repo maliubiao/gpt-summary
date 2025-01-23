@@ -176,15 +176,17 @@ By following these steps, we move from a basic understanding of the code to a co
 
 通过结合 `style_resolver_stats.cc` 提供的统计信息和 Chromium 的性能分析工具，开发者可以更深入地理解样式解析器的行为，识别性能瓶颈，并优化他们的 CSS 和 JavaScript 代码，从而提高网页的渲染性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver_stats.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -262,7 +264,4 @@ std::unique_ptr<TracedValue> StyleResolverStats::ToTracedValue() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

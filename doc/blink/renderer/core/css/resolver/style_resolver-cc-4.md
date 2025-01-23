@@ -180,7 +180,7 @@ Here's a breakdown of the thought process to analyze the code and generate the s
 
 总而言之，`blink/renderer/core/css/resolver/style_resolver.cc` 是 Blink 引擎中负责将 CSS 样式转化为页面最终渲染结果的关键组件。本部分代码专注于处理视口样式、首字母样式以及 `@position-try` 规则的解析和应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lor) {
         changed = true;
         new_viewport_style_builder.SetInternalForcedBackgroundColor(
@@ -446,8 +448,4 @@ StyleRulePositionTry* StyleResolver::ResolvePositionTryRule(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

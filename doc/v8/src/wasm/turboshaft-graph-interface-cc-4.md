@@ -147,7 +147,7 @@ console.log(result); // 输出: Int32x4 {0: 6, 1: 8, 2: 10, 3: 12}
 
 这段代码（作为 Turboshaft 图接口的一部分）专注于将 WebAssembly 的 **SIMD 相关的操作码** 转换为 Turboshaft 编译器内部图表示。它涵盖了多种 SIMD 操作，包括二元运算、一元运算、移位、测试、splat 和三元运算，并且特别处理了 `float16` 类型的 SIMD 操作，在不支持该特性时会进行降级处理。这部分代码是 V8 引擎支持 WebAssembly SIMD 功能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/turboshaft-graph-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ),   \
                         V<compiler::turboshaft::Simd128>::Cast(args[1].op),   \
                         compiler::turboshaft::Simd128BinopOp::Kind::k##kind); \
@@ -847,8 +849,4 @@ Prompt:
   void AtomicNotify(FullDecoder* decoder, const MemoryAccessImmediate& imm,
                     OpIndex index, OpIndex num_waiters_to_wake, Value* result) {
     V<WordPtr> converted_index;
-    
-"""
-
-
 ```

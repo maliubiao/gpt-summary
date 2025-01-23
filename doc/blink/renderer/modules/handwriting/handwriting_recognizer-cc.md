@@ -153,15 +153,17 @@ By following this systematic approach, I can thoroughly analyze the C++ code and
 
 总而言之，`handwriting_recognizer.cc` 是 Blink 引擎中手写识别功能的核心组件，它负责连接 JavaScript API 和底层的手写识别服务，并管理手写识别的整个过程。理解它的功能和与 web 技术的关系对于开发和调试相关功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/handwriting/handwriting_recognizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ void HandwritingRecognizer::Invalidate() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

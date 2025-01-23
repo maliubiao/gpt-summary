@@ -191,7 +191,7 @@ str2 的值将会是:
 
 总而言之，`cmMod.cpp` 文件本身是一个相对简单的 C++ 模块，主要用于演示和测试 CMake 构建系统在处理自定义命令和子项目时的功能。在 Frida 的上下文中，它可以作为动态分析的目标，通过 Frida 可以观察和修改其行为。理解这个文件的功能有助于理解 Frida 的工作原理以及如何使用 Frida 进行逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "genTest.hpp"
 #include "cpyBase.txt"
@@ -225,7 +227,4 @@ string cmModClass::getStr() const {
 string cmModClass::getOther() const {
   return "Strings:\n - " + getStrCpy() + "\n - " + getStrNext() + "\n - " + getStrCpyTest();
 }
-
-"""
-
 ```

@@ -263,7 +263,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/stdio_nofortify_test.cpp` 是一个用于测试 Bionic C 库中标准 I/O 函数在禁用安全强化情况下的行为的测试文件，它通过包含并执行 `stdio_test.cpp` 中的测试用例来实现其功能。这有助于理解在没有额外安全检查的情况下，这些函数的性能和行为，并确保在特定场景下的兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stdio_nofortify_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,9 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
-
+### 源代码
+```cpp
 #ifdef _FORTIFY_SOURCE
 #undef _FORTIFY_SOURCE
 #endif
@@ -288,7 +289,4 @@ Prompt:
 #if defined(_FORTIFY_SOURCE)
 #error "_FORTIFY_SOURCE has been redefined, fix the code to remove this redefinition."
 #endif
-
-"""
-
 ```

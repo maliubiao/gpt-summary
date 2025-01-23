@@ -317,15 +317,17 @@ This methodical approach of identifying the core purpose, dissecting the test fu
 
 总而言之，`go/src/cmd/link/link_test.go` 是一个非常全面的测试文件，覆盖了 Go 语言链接器的各种重要功能、边界情况以及需要修复的 bug。通过阅读和理解这些测试用例，可以深入了解 Go 链接器的工作原理和设计考虑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/link_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1869,9 +1871,4 @@ func TestCheckLinkname(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

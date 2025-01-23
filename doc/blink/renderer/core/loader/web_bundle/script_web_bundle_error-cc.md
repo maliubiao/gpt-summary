@@ -152,15 +152,17 @@ This detailed thought process, starting from basic code analysis and progressing
 
 总而言之，`script_web_bundle_error.cc` 这个文件在 Blink 引擎中扮演着重要的角色，它确保了 Web Bundle 处理过程中发生的错误能够以标准的 JavaScript 异常形式暴露出来，方便开发者进行调试和错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/web_bundle/script_web_bundle_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ v8::Local<v8::Value> ScriptWebBundleError::ToV8(ScriptState* script_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

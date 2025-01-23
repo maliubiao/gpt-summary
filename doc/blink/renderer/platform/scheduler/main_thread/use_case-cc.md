@@ -104,14 +104,16 @@ By following this systematic approach, we can thoroughly analyze the provided co
 
 总而言之，`use_case.cc` 文件定义了一个关键的枚举类型，用于标识 Blink 渲染引擎主线程中不同类型的任务，这对于理解和分析引擎的行为至关重要，并且与前端开发者熟悉的 JavaScript, HTML, CSS 的事件处理、页面加载等概念紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/use_case.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ const char* UseCaseToString(UseCase use_case) {
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

@@ -150,15 +150,17 @@ By following these steps, including careful analysis of the code and addressing 
 
 因此，这个 `parse_number_unittest.cc` 文件对于确保 Chromium 网络栈在处理各种网络相关的数字输入时能够正确可靠地工作至关重要。它帮助开发者验证数字解析逻辑的正确性，并及早发现潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/parse_number_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -409,7 +411,4 @@ TEST(ParseNumberTest, ParseUint64) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

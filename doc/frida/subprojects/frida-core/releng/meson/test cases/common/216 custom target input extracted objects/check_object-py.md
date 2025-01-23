@@ -126,7 +126,7 @@ By following these steps, focusing on the context provided by the file path, and
 
 通过分析构建日志中 `check_object.py` 的输出和错误代码，开发者可以定位问题，并检查相关的构建规则和代码，最终修复 Frida 构建过程中的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/216 custom target input extracted objects/check_object.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -153,7 +155,4 @@ if __name__ == '__main__':
             sys.exit(1)
     with open(sys.argv[2], 'wb') as out:
         pass
-
-"""
-
 ```

@@ -120,7 +120,7 @@ By following these steps, I can effectively analyze the provided code snippet an
 
 总之，`frida/subprojects/frida-python/releng/meson/mesonbuild/mesonlib.py` 是 Frida Python 绑定构建过程中的一个关键辅助文件，它提供了平台抽象和通用的构建工具函数，帮助 Meson 构建系统在不同的操作系统上正确地构建 Frida 的 Python 绑定。虽然它不直接参与逆向过程或底层操作，但它是构建出强大逆向工具 Frida 的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/mesonlib.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-license-identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -153,7 +155,4 @@ elif os.name == 'nt':
     from .utils.win32 import *
 else:
     from .utils.platform import *
-
-"""
-
 ```

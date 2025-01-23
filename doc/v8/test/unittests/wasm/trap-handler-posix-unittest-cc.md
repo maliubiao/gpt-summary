@@ -170,15 +170,17 @@ int main() {
 
 在 WebAssembly 中，类似的内存访问错误会触发一个陷阱。V8 的陷阱处理器负责捕获这些陷阱，并将信息传递给 JavaScript 环境。`trap-handler-posix-unittest.cc` 确保即使在存在自定义信号处理器的情况下，V8 也能正确处理这些陷阱，避免程序直接崩溃，并允许 JavaScript 代码捕获并处理这些错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/trap-handler-posix-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/trap-handler-posix-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ TEST_F(SignalHandlerFallbackTest, DoTest) {
 #endif
 
 }  //  namespace
-
-"""
-
 ```

@@ -206,7 +206,7 @@ build mylib.so: rust_LINKER subprojects/frida-clr/releng/meson/mesonbuild/backen
 
 作为 Frida 构建过程的第 4 部分，`ninjabackend.py` 的核心功能是 **将 Meson 构建系统的抽象描述转化为 Ninja 构建工具的具体指令**。它负责生成 `build.ninja` 文件，这个文件是 Ninja 执行构建操作的蓝图。`ninjabackend.py` 需要理解各种编程语言的编译和链接过程，处理依赖关系，并为不同的构建目标生成相应的 Ninja 规则和构建语句。它的正确性和效率直接影响着 Frida 工具的构建速度和最终生成物的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,9 +215,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                     target.build_rpath,
+### 源代码
+```python
+target.build_rpath,
                                        target.install_rpath))
             # ... but then add rustc's sysroot to account for rustup
             # installations
@@ -881,8 +883,5 @@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=47485'''))
         #
         # PDB files also lead to filename collisions. A target foo.exe
         # has a corresponding foo.pdb. A shared library foo.dll _also_
-        # has pdb 
-"""
-
-
+        # has pdb
 ```

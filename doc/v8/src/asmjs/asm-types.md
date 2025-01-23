@@ -159,11 +159,13 @@ This iterative process of analysis, connection, and refinement allows for a comp
 
 `asm-types.cc` 文件是 V8 引擎中用于处理 asm.js 代码类型系统的核心部分。它定义了各种 asm.js 类型，并提供了用于操作和比较这些类型的方法。这些类型直接对应于 JavaScript 中用于 asm.js 的数据类型和函数特征，使得 V8 引擎能够对 asm.js 代码进行有效的静态分析和优化，从而提高其执行性能。虽然 JavaScript 本身是动态类型的，但 asm.js 引入了静态类型的概念，而这个 C++ 文件就是实现这一概念的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-types.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ void AsmOverloadedFunctionType::AddOverload(AsmType* overload) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

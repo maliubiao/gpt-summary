@@ -64,7 +64,7 @@ By following these steps, I could systematically analyze the C++ header file and
 
 **总结来说，`v8/src/objects/object-macros.h` 是 V8 引擎中一个核心的基础设施文件，它提供了一组强大的工具，用于安全、高效地管理 JavaScript 对象的内存布局和访问，是 V8 引擎实现 JavaScript 语言特性的基石。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/object-macros.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/object-macros.h以.tq结尾，那它是个v8 torque源代码，
@@ -72,9 +72,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                                           \
+### 源代码
+```c
+\
   void holder::set_##name(typename BitField::FieldType value) {            \
     set_##set_field(BitField::update(set_field(), value));                 \
   }
@@ -405,8 +407,4 @@ static_assert(sizeof(unsigned) == sizeof(uint32_t),
 
 #define TQ_CPP_OBJECT_DEFINITION_ASSERTS(_class, parent) \
   template class TorqueGenerated##_class##Asserts<_class, parent>;
-
-"""
-
-
 ```

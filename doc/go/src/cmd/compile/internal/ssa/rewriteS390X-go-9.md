@@ -189,7 +189,7 @@ Args:
 
 这部分 `rewriteS390X.go` 代码的主要功能是针对S390X架构，对**移位操作**和部分**存储操作**进行细致的模式匹配和优化转换。它通过识别特定的操作数模式（例如，移位量是常量），并将其转换为更高效的S390X指令，从而提升最终生成代码的性能。例如，将通用的移位操作转换为带立即数的移位操作，或者尝试合并连续的存储操作。 此外，它还包含对减法和异或等基本算术逻辑操作的优化重写。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteS390X.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 c rewriteValueS390X_OpS390XSLWconst(v *Value) bool {
 	v_0 := v.Args[0]
 	// match: (SLWconst x [0])
@@ -1752,9 +1754,4 @@ func rewriteValueS390X_OpS390XXORWconst(v *Value) bool {
 			break
 		}
 		d := auxIntToInt64(v_0.Au
-"""
-
-
-
-
 ```

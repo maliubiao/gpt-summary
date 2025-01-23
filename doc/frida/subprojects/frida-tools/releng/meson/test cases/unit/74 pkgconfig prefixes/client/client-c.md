@@ -209,7 +209,7 @@ int val2() {
 
 通过在一个简单的、可控的环境中进行调试，用户可以更容易地定位问题，然后再应用于更复杂的场景。此外，这个测试用例本身可能旨在验证 Frida 在处理具有特定 `pkg-config` 前缀的库时的正确性，因此也是 Frida 开发人员进行内部测试的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/74 pkgconfig prefixes/client/client.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <val2.h>
 #include <stdio.h>
 
@@ -227,7 +229,4 @@ int main(int argc, char **argv)
   printf("%d\n", val2());
   return 0;
 }
-
-"""
-
 ```

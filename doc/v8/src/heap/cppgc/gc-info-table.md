@@ -97,11 +97,13 @@ set.add(1);
 
 `gc-info-table.cc` 中实现的 `GCInfoTable` 是 V8 引擎中 cppgc 的核心组件之一，它负责存储和管理被垃圾回收的 C++ 对象的元数据。虽然 JavaScript 开发者不能直接访问或操作它，但每当 JavaScript 代码创建需要 C++ 实现支持的对象时，`GCInfoTable` 就在幕后发挥着作用，帮助 V8 引擎有效地管理内存并避免内存泄漏。 它的存在对于 JavaScript 引擎的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/gc-info-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ GCInfoIndex GCInfoTable::RegisterNewGCInfo(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

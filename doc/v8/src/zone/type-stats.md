@@ -97,11 +97,13 @@ function foo() {
 
 `#ifdef V8_ENABLE_PRECISE_ZONE_STATS` 表明这个功能只有在定义了 `V8_ENABLE_PRECISE_ZONE_STATS` 宏时才会被编译，这通常用于开发和调试版本，以便进行更精细的性能分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/type-stats.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ void TypeStats::Dump() const {
 }  // namespace v8
 
 #endif  // V8_ENABLE_PRECISE_ZONE_STATS
-
-"""
-
 ```

@@ -184,14 +184,16 @@ By following these steps, you can systematically dissect the code, understand it
 
 总而言之，`savable_resources.cc` 是 Chromium Blink 引擎中一个重要的组件，它负责识别网页中需要保存的资源，确保用户在离线状态下或者保存网页后能够正常访问其内容。它与 HTML, CSS, JavaScript 紧密相关，通过解析 HTML 结构来定位需要保存的资源链接。然而，它也有其局限性，例如对动态加载的资源和 CSS 文件内部引用的资源的支持可能不完整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/savable_resources.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -368,7 +370,4 @@ void SavableResources::Result::AppendResourceLink(const KURL& url) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

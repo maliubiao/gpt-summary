@@ -153,7 +153,7 @@ Here's a breakdown of the classes and their potential functions:
 
 总而言之，`interpreterobjects.py` 文件定义了 Frida-node 项目中 Meson 构建系统解释器用于封装和操作各种构建系统对象的 "Holder" 类。这些 Holder 类提供了一种结构化的、面向对象的方式来访问和控制构建过程中的各种元素，例如可执行文件、库、自定义构建步骤和代码生成器。这使得 `meson.build` 构建脚本更加清晰和易于维护，并为用户提供了更方便的方式来定义和管理项目的构建过程。这些 Holder 类也直接服务于 Frida 的构建需求，例如获取构建产物的信息以便进行后续的打包和发布。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/interpreterobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,9 +162,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   super().__init__()
+### 源代码
+```python
+super().__init__()
         self.name = name
         self.suite = listify(suite)
         self.project_name = project
@@ -509,8 +511,4 @@ class StructuredSourcesHolder(ObjectHolder[build.StructuredSources]):
 
     def __init__(self, sources: build.StructuredSources, interp: 'Interpreter'):
         super().__init__(sources, interp)
-
-"""
-
-
 ```

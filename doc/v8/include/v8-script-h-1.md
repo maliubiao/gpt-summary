@@ -123,7 +123,7 @@ v8::ModuleRequest* request = v8::ModuleRequest::Cast(some_data);
 
 这段代码片段定义了用于将基类 `Data` 指针安全地（在启用检查的情况下）转换为派生类 `ModuleRequest` 或 `Module` 指针的静态方法。这些方法是 V8 引擎内部处理 JavaScript 模块加载和管理的关键组成部分。它们利用了 C++ 的强制类型转换机制，并在调试构建中提供了类型检查以提高安全性。然而，不当使用这些方法（例如，在类型不匹配的情况下进行转换）可能会导致严重的运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-script.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-script.h以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 8_ENABLE_CHECKS
   CheckCast(data);
 #endif
@@ -149,8 +151,4 @@ Module* Module::Cast(Data* data) {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_SCRIPT_H_
-
-"""
-
-
 ```

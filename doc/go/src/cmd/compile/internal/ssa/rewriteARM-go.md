@@ -188,7 +188,7 @@ v5 = Store v4 v3
 
 总而言之，这第一部分奠定了将 Go 语言抽象操作转换为具体 ARM 指令的基础，并实现了大量核心的算术、逻辑、内存访问和控制流相关的转换规则。后续的部分可能会涉及更复杂的转换、特定的优化以及对其他 ARM 指令的支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/ARM.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -3009,9 +3011,4 @@ func rewriteValueARM_OpARMANDshiftRL(v *Value) bool {
 		}
 		c := auxIntToInt32(v_1.AuxInt)
 		v.reset(OpAR
-"""
-
-
-
-
 ```

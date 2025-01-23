@@ -187,15 +187,17 @@ func main() {
 
 `go/test/codegen/arithmetic.go` 是 Go 语言代码生成测试套件的关键组成部分，用于验证编译器在处理整数算术运算时的优化能力。它通过对比生成的汇编代码与预期指令来确保编译器的正确性。理解其背后的原理有助于 Go 开发者编写更高效且符合语言习惯的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/arithmetic.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -863,9 +865,4 @@ func Uint64Max(a, b uint64) uint64 {
 	// riscv64/rva22u64:"MAXU"
 	return max(a, b)
 }
-
-"""
-
-
-
 ```

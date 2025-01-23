@@ -174,15 +174,17 @@ if (pdfPlugin) {
 
 总而言之，`blink/renderer/modules/plugins/dom_plugin_array.cc` 是连接浏览器底层插件信息和 JavaScript 世界的关键桥梁，它负责管理和提供插件的元数据，使得网页能够检测和利用浏览器中安装的插件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/plugins/dom_plugin_array.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  *  Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies)
  *  Copyright (C) 2008 Apple Inc. All rights reserved.
@@ -411,7 +413,4 @@ void DOMPluginArray::PluginsChanged() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

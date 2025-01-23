@@ -169,15 +169,17 @@ HPACK 解码器接收到一段表示压缩头部列表的字节流，例如：`\
 
 总而言之，`net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_decoder_listener.cc` 文件定义了用于监听 HTTP/2 HPACK 解码事件的接口，为 Chromium 网络栈提供了灵活的机制来处理和观察头部解码过程。虽然它本身不直接与 JavaScript 交互，但它是实现 HTTP/2 功能的关键组成部分，而 HTTP/2 是现代 Web 应用程序的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_decoder_listener.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ HpackDecoderNoOpListener* HpackDecoderNoOpListener::NoOpListener() {
 }
 
 }  // namespace http2
-
-"""
-
 ```

@@ -115,7 +115,7 @@ Here's a breakdown of the thinking process to analyze the provided C code and an
 
 `foobar.c` 尽管代码简单，但在 Frida 的测试框架中扮演着一个角色：**快速生成一个简单的C源代码文件**。这个生成的文件可以作为后续测试用例的目标，用于验证 Frida 的动态插桩功能或其他相关特性。它的存在反映了 Frida 开发过程中对自动化测试和创建可控测试环境的需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/9 override with exe/subprojects/sub/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 
@@ -138,7 +140,4 @@ int main(int argc, char* argv[]) {
   assert(r == 0);
   return 0;
 }
-
-"""
-
 ```

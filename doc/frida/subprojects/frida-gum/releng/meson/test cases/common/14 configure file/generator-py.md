@@ -143,7 +143,7 @@ By following these steps, I can generate a comprehensive and helpful answer that
 
 通过这样的步骤，用户就可能一步步地到达 `generator.py` 的源代码，试图理解它是如何工作的，以及它生成的配置是否与他们遇到的问题有关。这个文件路径本身就提供了一个很好的调试线索，因为它清晰地指明了脚本在 Frida-gum 项目结构中的位置，以及它与 Meson 构建系统和测试用例的关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/14 configure file/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -170,7 +172,4 @@ assert inputf.exists()
 
 with outputf.open('w') as ofile:
     ofile.write("#define ZERO_RESULT 0\n")
-
-"""
-
 ```

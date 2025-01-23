@@ -178,15 +178,17 @@ function processDataOptimized(arr) {
 
 `v8/src/compiler/backend/s390/instruction-scheduler-s390.cc` 文件的主要功能是为 s390 架构实现指令调度器。它负责判断指令是否为加载操作或具有副作用，并提供指令延迟信息（目前较为简单）。指令调度器是 V8 编译器中优化代码性能的关键组件，它通过重新排列指令执行顺序来减少处理器流水线的停顿，从而提高 JavaScript 代码的执行效率。 该文件是 C++ 源代码，与用户编写的 JavaScript 代码间接相关，用户无需直接关心指令调度，但编写高质量的代码有助于编译器进行更好的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-scheduler-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/instruction-scheduler-s390.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -617,7 +619,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

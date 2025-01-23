@@ -70,15 +70,17 @@ I will now formulate a summary based on this analysis.
 
 `blink/renderer/core/layout/layout_shift_tracker_test.cc` 文件的主要功能是为 Chromium Blink 引擎的 `LayoutShiftTracker` 类提供全面的单元测试。 这些测试旨在验证 `LayoutShiftTracker` 能够准确地检测和计算各种场景下的布局偏移，并能够正确区分用户预期和非预期的布局变化。测试覆盖了由 HTML、CSS 和 Javascript 引起的各种布局变化，包括复合层、SVG 元素、iframe 以及不同类型的用户输入和导航事件。 此外，测试还涵盖了诸如视口大小变化、缩放级别变化以及 `content-visibility: auto` 等特定场景对布局偏移计算的影响。 这些测试帮助确保 `LayoutShiftTracker` 能够可靠地衡量 Cumulative Layout Shift (CLS) 指标，从而帮助开发者优化网页的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_shift_tracker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1067,7 +1069,4 @@ TEST_F(LayoutShiftTrackerTest,
   // intersection observation takes effect on the subsequent frame.
   GetDocument().domWindow()->scrollTo(0, 100000);
   UpdateAllLifecyclePhas
-"""
-
-
 ```

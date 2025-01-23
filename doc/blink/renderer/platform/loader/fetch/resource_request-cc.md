@@ -193,14 +193,16 @@ By following this process, we can systematically analyze the C++ header file and
 
 总而言之，`resource_request.cc` (或 `.h`) 文件定义了 Blink 引擎中网络请求的核心数据结构，它将前端的 Web 技术与底层的网络通信连接起来，是理解浏览器如何发起和处理网络请求的关键。开发者在使用 JavaScript, HTML, CSS 进行网络交互时，实际上是在幕后操作着这些 `ResourceRequest` 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2003, 2006 Apple Computer, Inc.  All rights reserved.
  * Copyright (C) 2009, 2012 Google Inc. All rights reserved.
@@ -716,7 +718,4 @@ bool ResourceRequest::IsFeatureEnabledForSubresourceRequestAssumingOptIn(
 }
 
 }  // namespace blink
-
-"""
-
 ```

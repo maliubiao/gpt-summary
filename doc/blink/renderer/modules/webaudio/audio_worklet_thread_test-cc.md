@@ -191,15 +191,17 @@ By following these steps, we can systematically analyze the code and provide a c
 
 `audio_worklet_thread_test.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎能够正确地创建、管理和销毁 AudioWorklet 线程。它覆盖了多种场景，包括不同类型的 AudioWorklet、不同的框架上下文以及线程优先级等。理解这个文件的功能有助于理解 AudioWorklet 的底层实现，并在遇到相关问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_worklet_thread_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -788,7 +790,4 @@ TEST_F(AudioWorkletRealtimePeriodTestMac, CheckRealtimePeriod) {
 }  // namespace blink
 
 #endif  // BUILDFLAG(IS_APPLE)
-
-"""
-
 ```

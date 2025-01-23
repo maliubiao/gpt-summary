@@ -140,7 +140,7 @@ Initially, one might focus solely on the `simple_function` itself. However, reco
 
 总而言之，`simple.c` 文件本身的功能很简单，但它在 Frida 的测试框架中用于验证 Frida Core 在处理外部工具（如 `pkg-config`）的非标准输出时的行为。这涉及到构建系统、依赖管理以及潜在的用户配置错误等多个方面，并与 Frida 作为动态 instrumentation 工具的底层原理和应用场景相关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/47 pkgconfig variables not key value/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,14 +148,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int simple_function() {
     return 42;
 }
-
-"""
-
 ```

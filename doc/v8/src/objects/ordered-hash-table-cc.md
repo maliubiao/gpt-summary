@@ -151,7 +151,7 @@ console.log(myObject.name); // 访问属性
 
 `v8/src/objects/ordered-hash-table.cc` 文件定义了 V8 引擎中用于实现有序哈希表的核心数据结构和操作。它提供了通用的哈希表框架以及针对集合 (`OrderedHashSet`)、映射 (`OrderedHashMap`) 和对象属性存储 (`OrderedNameDictionary`) 的特定实现。这些数据结构在 V8 引擎内部用于高效地存储和检索数据，并为 JavaScript 中的 `Set` 和 `Map` 等内置对象提供底层支持。该文件包含了内存管理、哈希计算、冲突解决、容量调整等关键的哈希表功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/ordered-hash-table.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/ordered-hash-table.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1029,7 +1031,4 @@ void SmallOrderedNameDictionary::SetEntry(InternalIndex entry,
                                           Tagged<Object> value,
                                           PropertyDetails details) {
   in
-"""
-
-
 ```

@@ -168,7 +168,7 @@ func ExampleFuzzReader() {
 
 解决这个问题需要确保系统中安装了 `zstd`，并且其可执行文件的路径已经添加到系统的 PATH 环境变量中。  具体的安装方式和 PATH 环境变量的配置方法取决于使用的操作系统。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/zstd/fuzz_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -318,9 +320,4 @@ func FuzzReverse(f *testing.F) {
 		}
 	})
 }
-
-"""
-
-
-
 ```

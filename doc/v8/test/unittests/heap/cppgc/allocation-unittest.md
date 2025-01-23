@@ -107,11 +107,13 @@ This iterative process of scanning, analyzing, relating to known concepts, and t
 
 总而言之，`allocation-unittest.cc` 测试的是 V8 引擎中 C++ 层的内存管理机制，这为 JavaScript 对象的创建和回收提供了基础。 虽然 JavaScript 开发者通常不需要直接接触这些底层细节，但理解这些机制有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/allocation-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ TEST_F(CppgcAllocationTest, AlignToDoubleWordFromAligned) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -80,7 +80,7 @@ I need to:
 
 这段代码是 Chromium Blink 引擎 CSS 解析器的核心部分，负责解析各种类型的 CSS 规则（包括 at-rules 和 qualified rules），并构建相应的内部数据结构 ( `StyleRule` 及其子类 )，以便后续的样式计算和渲染。它深入处理了 CSS 的各种语法细节，并能识别和处理一些常见的 CSS 错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ID(name);
   return ConsumeAtRuleContents(id, stream, allowed_rules, nesting_type,
                                parent_rule_for_nesting, is_within_scope);
@@ -968,7 +970,4 @@ StyleRuleFontFeature* CSSParserImpl::ConsumeFontFeatureRule(
       stream.UncheckedConsume();
     }
     stream.ConsumeWh
-"""
-
-
 ```

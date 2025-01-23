@@ -189,14 +189,16 @@ LayoutSVGRoot {svg}  [x=0 y=0 width=... height=...]
 
 `blink/renderer/core/layout/svg/svg_layout_tree_as_text.cc` 是一个关键的内部调试工具，用于生成 SVG 布局树的文本表示。它帮助开发者理解 Blink 引擎如何处理和渲染 SVG 内容，以及 CSS 样式和 SVG 属性如何影响布局。虽然用户不会直接使用它，但理解其输出对于使用 Blink 引擎进行开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_layout_tree_as_text.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007, 2009 Apple Inc. All rights reserved.
  *           (C) 2005 Rob Buis <buis@kde.org>
@@ -871,7 +873,4 @@ void WriteResources(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

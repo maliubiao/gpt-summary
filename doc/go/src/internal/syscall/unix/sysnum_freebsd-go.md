@@ -238,7 +238,7 @@ func main() {
 
 **请注意:** 直接导入 `internal` 包不是推荐的做法，因为这些包的 API 可能在 Go 的未来版本中发生变化。 通常，应该使用 Go 标准库提供的更高级别的抽象，例如 `io.Copy` 或 `os.Link`，除非有非常特殊的需求需要直接调用系统调用。  `internal` 包主要供 Go 自身使用。 如果你需要在生产代码中使用 `copy_file_range`，可能需要查阅是否有更稳定的、标准库提供的封装。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/sysnum_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -246,8 +246,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -255,9 +257,4 @@ Prompt:
 package unix
 
 const copyFileRangeTrap uintptr = 569
-
-"""
-
-
-
 ```

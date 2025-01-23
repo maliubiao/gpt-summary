@@ -244,7 +244,7 @@ libm.so:
 
 总而言之，`e_jnf.c` 文件是 Android 数学库 `libm` 中实现单精度贝塞尔函数的关键组成部分，通过不同的数值计算方法提供了在各种科学计算和工程应用中所需的功能。了解其实现细节有助于理解 Android 系统底层数学运算的工作方式，并在开发和调试相关应用时提供有价值的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_jnf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* e_jnf.c -- float version of e_jn.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -457,7 +459,4 @@ ynf(int n, float x)
 	}
 	if(sign>0) return b; else return -b;
 }
-
-"""
-
 ```

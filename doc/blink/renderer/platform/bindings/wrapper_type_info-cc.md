@@ -136,14 +136,16 @@ This iterative process of code analysis, deduction, and organization leads to th
 
 总而言之，`wrapper_type_info.cc` 是 Blink 渲染引擎中一个基础且关键的文件，它通过 `WrapperTypeInfo` 结构和相关函数，实现了 C++ 对象到 JavaScript 对象的映射和管理，使得 JavaScript 能够有效地操作和控制底层的 HTML、CSS 和其他 Web API 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/wrapper_type_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ const WrapperTypeInfo* ToWrapperTypeInfo(v8::Local<v8::Object> wrapper) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

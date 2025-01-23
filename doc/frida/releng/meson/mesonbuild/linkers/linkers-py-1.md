@@ -121,7 +121,7 @@ This file provides an abstraction layer for interacting with different dynamic l
 
 This Python code defines a set of classes that act as **adapters or wrappers for various dynamic linkers**. Its primary function is to **abstract away the platform-specific details of how to invoke and configure different linkers** so that the Meson build system can handle linking executables and shared libraries in a consistent way across different operating systems and toolchains. It encapsulates the necessary command-line arguments for common linker operations like setting output paths, specifying library search directories, and creating shared libraries. This abstraction is crucial for the Frida project to build successfully on a wide range of platforms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -803,8 +805,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

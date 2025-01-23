@@ -215,15 +215,17 @@ v8::internal::HeapNumber number;
 
 总而言之，`v8/src/objects/heap-number.h` 定义了 V8 中用于表示 JavaScript `Number` 类型的重要组成部分，特别是处理那些不能用高效的 `Smi` 表示的数值。理解 `HeapNumber` 的作用有助于深入理解 V8 如何处理数字以及与之相关的性能和精度问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/heap-number.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/heap-number.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -302,7 +304,4 @@ V8_OBJECT class HeapNumber : public PrimitiveHeapObject {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_HEAP_NUMBER_H_
-
-"""
-
 ```

@@ -98,7 +98,7 @@ instance_params.additional_trust_anchors_and_leafs.push_back(internal_ca_with_co
 
 这段代码负责初始化 `CertVerifyProcBuiltin` 实例，使其能够识别和使用除了系统默认信任存储之外的自定义信任锚点、带有约束的证书以及不受信任的授权机构。这使得 Chromium 能够适应各种特殊的证书验证需求，例如企业内部 PKI 或开发者测试环境。它通过遍历 `InstanceParams` 中提供的不同类型的证书集合，并将这些证书添加到内部的信任存储和约束列表中来实现这一功能，并在过程中使用 `net_log` 记录相关事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_builtin.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,9 +106,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-   .WithEnforceAnchorExpiry();
+### 源代码
+```cpp
+.WithEnforceAnchorExpiry();
 
   for (const auto& cert_with_possible_constraints :
        instance_params.additional_trust_anchors_and_leafs) {
@@ -680,8 +682,4 @@ base::TimeDelta GetCertVerifyProcBuiltinTimeLimitForTesting() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

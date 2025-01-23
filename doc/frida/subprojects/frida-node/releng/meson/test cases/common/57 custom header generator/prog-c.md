@@ -171,7 +171,7 @@ Initially, I might have focused too much on the simplicity of `prog.c` and misse
 
 总而言之，`prog.c` 作为一个简单的测试程序，其存在是为了验证 Frida 动态插桩工具在处理包含自定义生成头文件的目标程序时的能力。它涉及到编译、链接、进程注入、内存访问等底层概念，是 Frida 自动化测试流程中的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/57 custom header generator/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,14 +179,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"myheader.lh"
 
 int main(void) {
     return RET_VAL;
 }
-
-"""
-
 ```

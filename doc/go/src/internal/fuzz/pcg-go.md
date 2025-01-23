@@ -190,7 +190,7 @@ GODEBUG=fuzzseed=12345 go run your_fuzzing_program.go
 
 总而言之，`go/src/internal/fuzz/pcg.go` 实现了用于 Go 语言模糊测试的快速且可控的伪随机数生成器，它允许通过环境变量指定种子以实现可复现性，并采取措施防止使用者错误地复制其状态。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/pcg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -345,9 +347,4 @@ type noCopy struct{}
 // Lock is a no-op used by -copylocks checker from `go vet`.
 func (*noCopy) Lock()   {}
 func (*noCopy) Unlock() {}
-
-"""
-
-
-
 ```

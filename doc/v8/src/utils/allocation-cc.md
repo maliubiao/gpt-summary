@@ -222,15 +222,17 @@ let arr = new Array(10000);
 
 总结来说，`v8/src/utils/allocation.cc` 是 V8 引擎中至关重要的内存管理模块，提供了各种底层的内存分配和释放工具，支撑着 JavaScript 代码的运行。了解这个文件的功能有助于理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/allocation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/allocation.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -596,7 +598,4 @@ void VirtualMemoryCage::Free() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -149,15 +149,17 @@ This systematic approach allows for a comprehensive understanding of the code's 
 
 总而言之，`ext_shader_texture_lod.cc` 文件是 Blink 引擎中实现 `EXT_shader_texture_lod` WebGL 扩展的关键部分，它负责将底层 OpenGL 的纹理 LOD 控制能力暴露给 JavaScript 和 GLSL 着色器，从而允许开发者更精细地控制纹理的采样过程。 调试与此扩展相关的问题可能需要查看这个文件以了解其基本机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_shader_texture_lod.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ const char* EXTShaderTextureLOD::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

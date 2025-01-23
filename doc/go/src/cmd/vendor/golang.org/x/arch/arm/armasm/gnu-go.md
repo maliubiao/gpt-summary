@@ -320,15 +320,17 @@ func gnuArg(inst *Inst, argIndex int, arg Arg) string {
 
 如果 `inst.Args` 中包含一个 `ImmAlt` 类型的参数，例如表示 `#10, 5`，那么由于 `gnuArg` 中缺少 `case ImmAlt:` 的处理，会进入 `default` 分支，调用 `arg.String()` (假设 `ImmAlt` 的 `String()` 方法返回类似 "ImmAlt{Val:10, Rot:5}")，最终输出可能是 "immalt{val:10, rot:5}"，而不是期望的 "#10, 5"。这会导致生成的汇编代码语法错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/arm/armasm/gnu.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors.  All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -493,9 +495,4 @@ func gnuArg(inst *Inst, argIndex int, arg Arg) string {
 	}
 	return strings.ToLower(arg.String())
 }
-
-"""
-
-
-
 ```

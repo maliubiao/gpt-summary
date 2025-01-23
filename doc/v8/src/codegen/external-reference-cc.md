@@ -649,7 +649,7 @@ FUNCTION_REFERENCE(wasm_f64x2_nearest_int, wasm::f64x2_nearest_int_wrapper)
 FUNCTION_REFERENCE(wasm_f32x4_ceil, wasm::f32x4_ceil_wrapper)
 FUNCTION_REFERENCE(wasm_f32x4_floor, wasm::f32x4_floor_wrapper)
 FUNCTION_REFERENCE(wasm_f32x4_trunc, wasm::f32x
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference.cc以.tq结尾，那它是个v8 torque源代码，
@@ -657,8 +657,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1552,7 +1554,4 @@ ExternalReference ExternalReference::address_of_float_neg_constant() {
 ExternalReference ExternalReference::address_of_double_abs_constant() {
   return ExternalReference(
       reinterpret_cast<Address>(&double_absolute_cons
-"""
-
-
 ```

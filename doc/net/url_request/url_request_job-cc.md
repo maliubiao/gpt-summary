@@ -169,15 +169,17 @@ fetch('https://example.com/data.json')
 
 `URLRequestJob.cc` 定义了一个核心的抽象类，负责管理和协调网络请求的生命周期。它与 JavaScript 的交互是间接的，但至关重要，因为它处理了 JavaScript 发起的网络请求的底层细节。理解 `URLRequestJob` 的功能对于调试网络问题、理解 Chromium 的网络栈架构至关重要。 通过分析 NetLog 和开发者工具的网络面板，我们可以追踪用户操作如何一步步地触发 `URLRequestJob` 的各种方法，从而定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -935,7 +937,4 @@ void URLRequestJob::RecordBytesRead(int bytes_read) {
 }
 
 }  // namespace net
-
-"""
-
 ```

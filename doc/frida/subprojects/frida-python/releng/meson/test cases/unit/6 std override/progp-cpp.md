@@ -143,7 +143,7 @@ Interceptor.attach(Module.findExportByName(null, "_ZStlsISt11char_traitsIcEERSt1
 
 通过以上步骤，用户可以逐步缩小问题范围，找出导致测试失败的原因，例如 Frida 脚本的错误、目标符号的错误、权限问题等。 `progp.cpp` 作为测试目标，其简单的功能使得调试过程相对容易，能够帮助开发者验证 Frida 的特定功能（例如 std override）是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/6 std override/progp.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,15 +151,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(int argc, char **argv) {
     std::cout << "I am a test program of undefined C++ standard.\n";
     return 0;
 }
-
-"""
-
 ```

@@ -142,7 +142,7 @@ Essentially, the process involves understanding the context, analyzing the code,
 
 总而言之，`foo.cpp` 自身是一个非常简单的 C++ 文件，其主要功能是作为一个测试用例的一部分，用于验证 Frida 在处理具有特定依赖关系的场景下的行为。虽然它不直接涉及复杂的逆向技术或底层操作，但它在 Frida 的测试框架中扮演着重要的角色，而 Frida 本身是与逆向、二进制分析和底层系统交互密切相关的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/1 boost/partial_dep/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -172,7 +174,4 @@ Prompt:
 vec Foo::vector() {
     return myvec;
 }
-
-"""
-
 ```

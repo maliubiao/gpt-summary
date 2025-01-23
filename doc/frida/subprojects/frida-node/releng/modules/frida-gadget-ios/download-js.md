@@ -166,7 +166,7 @@ By following these steps, combining careful reading with knowledge of the underl
 
 `download.js` 是 Frida 项目中一个关键的辅助脚本，负责管理和下载在 iOS 平台上进行动态 instrumentation 所需的 Frida Gadget 动态库。它利用 Node.js 的文件系统、HTTPS 和压缩模块，实现了版本管理、下载、解压缩等功能。虽然脚本本身不直接执行逆向操作，但它是 Frida 逆向工具链的基础组成部分，为逆向工程师提供了必要的运行时环境。理解这个脚本的功能有助于理解 Frida 的内部工作机制和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/modules/frida-gadget-ios/download.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const fs = require('fs');
 const gadget = require('.');
 const https = require('https');
@@ -323,7 +325,4 @@ function onError(error) {
   console.error(error.message);
   process.exitCode = 1;
 }
-
-"""
-
 ```

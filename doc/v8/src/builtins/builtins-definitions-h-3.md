@@ -189,7 +189,7 @@ By following these steps, systematically analyzing the structure, and connecting
 
 `v8/src/builtins/builtins-definitions.h` 文件是 V8 引擎的核心组成部分，它定义了 JavaScript 内置函数的接口。虽然它本身不包含具体的实现逻辑，但它为理解 JavaScript 功能的底层实现提供了重要的线索。通过分析这个文件，我们可以了解 V8 引擎是如何将 JavaScript 代码映射到高效的 C++ 或 Torque 代码执行的。 文件中大量的 `Temporal` API 定义也反映了 V8 对最新 ECMAScript 标准的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 unt(0))                        \
   CPP(AtomicsConditionAcquireLock, JSParameterCount(0))                        \
   CPP(AtomicsConditionIsCondition, JSParameterCount(1))                        \
@@ -605,7 +607,4 @@ unt(0))                        \
   CPP(TemporalZonedDateTimePrototypeWithTimeZone, kDontAdaptArgumentsSentinel) \
   /* Temporal #sec-temporal.zoneddatetime.prototype.withcalendar */            \
   CPP(Tempo
-"""
-
-
 ```

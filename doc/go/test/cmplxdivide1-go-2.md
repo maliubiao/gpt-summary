@@ -155,7 +155,7 @@ func abs(f float64) float64 {
 
 这些测试用例旨在确保 `math/cmplx` 包中的复数除法函数 (`cmplx.Div`) 在各种情况下都能返回正确的结果。  它为复数除法的正确性提供了详尽的验证基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmplxdivide1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -163,8 +163,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 plex(2, -zero), complex(nan, nan), complex(nan, nan)},
 	{complex(2, -zero), complex(nan, inf), complex(-zero, -zero)},
 	{complex(2, -zero), complex(nan, -inf), complex(zero, zero)},
@@ -1268,9 +1270,4 @@ plex(2, -zero), complex(nan, nan), complex(nan, nan)},
 	{complex(inf, -1), complex(zero, -zero), complex(inf, -inf)},
 	{complex(inf, -1), complex(zero, 1), complex(nan, -inf)},
 	{compl
-"""
-
-
-
-
 ```

@@ -122,15 +122,17 @@ By following this systematic approach, we can dissect the C++ code and effective
 
 总而言之，`blink/renderer/modules/screen_details/screen_detailed.cc` 文件是 Blink 引擎中负责提供详细屏幕信息的关键组件，它直接支撑了 JavaScript 中 `screen` 对象的相关属性，特别是关于多显示器和 HDR 显示能力的信息，并且与 CSS 媒体查询等前端技术有着紧密的联系。 理解这个文件的功能有助于开发者更好地利用屏幕信息进行 Web 开发，并能帮助调试与屏幕显示相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/screen_details/screen_detailed.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ float ScreenDetailed::whitePointY() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

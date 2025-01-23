@@ -128,7 +128,7 @@ This step-by-step process, starting with understanding the request and the code,
 
 总而言之，`bob.c` 文件本身是一个非常小的单元，它的主要价值在于作为 Frida 项目中一个精心设计的测试用例，用于验证构建系统在处理特定边缘情况（即隐藏符号）时的行为。它对于理解 Frida 的构建过程和处理符号的能力具有重要的意义，尤其是在调试和开发阶段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing build/1 hidden symbol/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,14 +136,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hidden_function() {
     return 7;
 }
-
-"""
-
 ```

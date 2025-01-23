@@ -173,15 +173,17 @@ gl.bindVertexArray(null); // 解绑
 
 总而言之，`webgl_vertex_array_object.cc` 文件是 WebGL VAO 功能的核心实现，它响应 JavaScript 的 API 调用，并在 C++ 层管理 VAO 对象的生命周期和状态。理解这个文件有助于深入理解 WebGL 的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_vertex_array_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ WebGLVertexArrayObject::WebGLVertexArrayObject(WebGLRenderingContextBase* ctx,
     : WebGLVertexArrayObjectBase(ctx, type) {}
 
 }  // namespace blink
-
-"""
-
 ```

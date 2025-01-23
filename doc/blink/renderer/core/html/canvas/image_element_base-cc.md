@@ -190,15 +190,17 @@ By following this systematic process, I can create a comprehensive and informati
    ```html
    <img src="https://other-domain.com/image.png">
    <canvas id="myCanvas" width="200" height
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/image_element_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ Image::ImageDecodingMode ImageElementBase::GetDecodingModeForPainting(
 }
 
 }  // namespace blink
-
-"""
-
 ```

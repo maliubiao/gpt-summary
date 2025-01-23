@@ -110,7 +110,7 @@ console.log(result);
 
 这段代码片段是 V8 引擎中 RISC-V 架构指令调度器的一部分，专门负责提供各种 RISC-V 指令的执行延迟信息。`GetInstructionLatency` 函数通过一个 `switch` 语句，根据不同的指令代码，返回相应的延迟值。这些延迟信息对于指令调度器优化指令顺序至关重要，最终目的是提升 JavaScript 代码在 RISC-V 架构上的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-scheduler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-scheduler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -118,8 +118,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cvZeroExtendWord:
 #endif
       return 2;
@@ -421,8 +423,4 @@ cvZeroExtendWord:
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -106,15 +106,17 @@ for (const key in counters) {
 
 总而言之，`v8/src/extensions/ignition-statistics-extension.h` 定义了一个 V8 扩展，旨在提供关于 Ignition 执行引擎内部运行状态的统计信息，这些信息可以通过 JavaScript 调用原生函数来获取。理解其提供的具体统计指标以及正确使用这些信息对于进行性能分析和理解 V8 的内部工作机制非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/ignition-statistics-extension.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/extensions/ignition-statistics-extension.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ class IgnitionStatisticsExtension : public v8::Extension {
 }  // namespace v8
 
 #endif  // V8_EXTENSIONS_IGNITION_STATISTICS_EXTENSION_H_
-
-"""
-
 ```

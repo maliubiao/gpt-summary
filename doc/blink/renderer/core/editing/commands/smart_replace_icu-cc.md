@@ -133,15 +133,17 @@ By following this structured analysis, combining code inspection with reasoning 
 
 总而言之，`smart_replace_icu.cc` 是 Blink 引擎中一个重要的组成部分，它通过定义一套基于 ICU 字符集的规则，来微调文本替换操作的行为，以提升用户在非 macOS 平台上的文本编辑体验。尽管用户和前端开发者不会直接操作这个文件，但它的逻辑直接影响着网页文本编辑的最终效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/smart_replace_icu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc.  All rights reserved.
  * Copyright (C) 2008 Tony Chang <idealisms@gmail.com>
@@ -257,7 +259,4 @@ bool IsCharacterSmartReplaceExempt(UChar32 c, bool is_previous_character) {
 }
 
 #endif  // !BUILDFLAG(IS_MAC)
-
-"""
-
 ```

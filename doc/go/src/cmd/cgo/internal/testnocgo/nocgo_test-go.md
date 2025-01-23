@@ -108,15 +108,17 @@ func NoCgo() int {
 
 这段代码是一个简单的 Go 测试用例，用于验证 `nocgo` 包中的 `NoCgo` 函数在不使用 Cgo 的情况下返回预期的整数值 42。  它没有涉及到复杂的命令行参数处理，主要的目的是进行单元测试。  使用者需要注意不要对 `NoCgo` 函数的功能做过多的假设，尤其是在没有更多上下文的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testnocgo/nocgo_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -131,9 +133,4 @@ func TestNop(t *testing.T) {
 		t.Errorf("got %d, want %d", i, 42)
 	}
 }
-
-"""
-
-
-
 ```

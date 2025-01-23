@@ -106,15 +106,17 @@ This iterative process of understanding the code, connecting it to the broader w
 
 这段代码片段中的 `UnblockTouchMoves()` 方法是 Blink 引擎中处理触摸事件优化的一部分。它的主要功能是在检测到未被 JavaScript 消费的阻塞型触摸事件序列（`touchstart` 或第一个 `touchmove`）时，主动解除后续阻塞型 `touchmove` 事件的阻塞，并立即执行它们的回调，通知这些回调事件未被消费。这样做可以提高页面的响应性，避免因长时间阻塞触摸事件而导致的用户界面卡顿。这体现了浏览器引擎为了提升用户体验，在底层对事件处理流程进行的优化和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/main_thread_event_queue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 = false;
       } else {
         // `event` is the first touch move.
@@ -183,8 +185,4 @@ MainThreadEventQueue::GetCompositorThreadOnly() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

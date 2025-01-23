@@ -95,15 +95,17 @@ By following these steps, I can effectively analyze the code and generate the re
 
 总而言之，`avif_image_decoder_test.cc` 的主要功能是**全面测试 Chromium Blink 引擎中 AVIF 图像解码器的各个方面，包括静态图像和动画图像的解码、不同颜色空间和 Alpha 通道的处理、错误处理以及性能指标的记录，以确保浏览器能够正确可靠地渲染 AVIF 图像。**  它通过大量的测试用例，验证解码器在各种场景下的行为是否符合预期，从而保障用户在浏览包含 AVIF 图像的网页时的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/avif_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1003,7 +1005,4 @@ constexpr AVIFImageParam kAnimatedTestParams[] = {
      kAnimationLoopInfinite},
     {"/images/resources/avif/star-animated-10bpc.avif", 5u, 0},
     {"/images/resources/avif/star-animated-10bpc-wi
-"""
-
-
 ```

@@ -179,14 +179,16 @@ By following this thought process, systematically analyzing the code, and connec
 
 总而言之，`webgpu_swap_buffer_provider.cc` 是 Blink 渲染引擎中连接 WebGPU 和 Chromium 合成器的关键纽带，它负责管理渲染缓冲区，并确保 WebGPU 渲染的内容能够正确、高效地显示在屏幕上。 理解其功能有助于理解 WebGPU 在 Chromium 中的渲染流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgpu_swap_buffer_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -600,7 +602,4 @@ gpu::Mailbox WebGPUSwapBufferProvider::GetCurrentMailboxForTesting() const {
   return current_swap_buffer_->GetSharedImage()->mailbox();
 }
 }  // namespace blink
-
-"""
-
 ```

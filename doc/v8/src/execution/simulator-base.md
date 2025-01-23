@@ -163,11 +163,13 @@ console.log(`${num} doubled is ${doubledNum}`); // 输出: 5 doubled is 10
 
 `simulator-base.cc` 文件是 V8 模拟器实现的核心部分，它通过管理外部函数重定向和指令缓存等机制，使得 V8 能够在不支持目标架构的平台上执行 JavaScript 代码，并且能够与底层的 C++ 代码进行交互。这对于跨平台支持、测试以及某些特定的嵌入式环境至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/simulator-base.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,7 +298,4 @@ const EncodedCSignature& SimulatorData::GetSignatureForTarget(Address target) {
 }  // namespace v8
 
 #endif  // defined(USE_SIMULATOR)
-
-"""
-
 ```

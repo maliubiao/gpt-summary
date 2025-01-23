@@ -183,15 +183,17 @@ live at call to printpointer: x$
 
 `go/test/live_regabi.go` 是 Go 编译器测试套件的一部分，专门用于验证在启用了 `regabiargs` 特性后，编译器对变量生命周期分析的正确性。它通过一系列精心设计的测试用例，检查编译器在各种场景下是否能准确地识别变量的生命周期，并报告预期的错误信息。这对于保证 Go 语言的正确性和性能至关重要。普通 Go 开发者虽然不会直接使用这个文件，但可以通过理解其测试的场景，更好地理解 Go 语言中变量生命周期的一些重要概念。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/live_regabi.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckwithauto -0 -l -live -wb=0 -d=ssa/insert_resched_checks/off
 
 //go:build (amd64 && goexperiment.regabiargs) || (arm64 && goexperiment.regabiargs)
@@ -935,9 +937,4 @@ func f45(a, b, c, d, e, f, g, h, i, j, k, l *byte) { // ERROR "live at entry to 
 //go:noinline
 func f46(a, b, c, d, e, f, g, h, i, j, k, l *byte) {
 }
-
-"""
-
-
-
 ```

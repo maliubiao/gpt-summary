@@ -152,7 +152,7 @@ req.Header: map[string][]string{
 
 这段 Go 代码是 Go HTTP 服务器实现的关键部分，它负责接收客户端的 HTTP/1.x 请求，进行初步的解析和验证，并创建一个用于构建和发送响应的 `response` 对象。它是处理 HTTP 请求生命周期的起始环节，为后续的请求处理和响应生成奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/server.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 il, errTooLarge
 		}
 		return nil, err
@@ -1190,9 +1192,4 @@ func (c *conn) serve(ctx context.Context) {
 		if req.expectsContinue() {
 			if req.ProtoAtLeast(1, 1) && req.ContentLength != 0 {
 				// Wrap the Body reader wi
-"""
-
-
-
-
 ```

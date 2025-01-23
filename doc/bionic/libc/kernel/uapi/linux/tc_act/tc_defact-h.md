@@ -251,7 +251,7 @@ sys.stdin.read()
 
 通过这种方式，可以逐步追踪 Android Framework 如何通过 NDK 和 Netlink Socket 与内核的流量控制子系统交互，并观察 `tc_defact` 结构体在其中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_act/tc_defact.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -286,7 +288,4 @@ enum {
 };
 #define TCA_DEF_MAX (__TCA_DEF_MAX - 1)
 #endif
-
-"""
-
 ```

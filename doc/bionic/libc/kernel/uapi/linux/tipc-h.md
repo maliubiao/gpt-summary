@@ -312,7 +312,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/tipc.handroid` 这个头文件定义了 TIPC 协议的接口，虽然在典型的 Android 应用开发中不常用，但在 Android 系统底层或某些特定的子系统中可能扮演着重要的角色。 通过 NDK，开发者可以更直接地使用 TIPC 进行进程间通信。 Frida 可以作为强大的调试工具，帮助我们理解 Android 系统或应用如何与 TIPC 协议栈进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tipc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -323,8 +323,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -484,7 +486,4 @@ struct tipc_aead_key {
 #define tipc_name tipc_service_addr
 #define tipc_name_seq tipc_service_range
 #endif
-
-"""
-
 ```

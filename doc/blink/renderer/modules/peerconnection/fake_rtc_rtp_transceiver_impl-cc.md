@@ -118,15 +118,17 @@ This step-by-step breakdown allows for a comprehensive analysis of the code, eve
 
 总而言之，`fake_rtc_rtp_transceiver_impl.cc` 是一个重要的测试和开发工具，它允许在不依赖真实网络和媒体设备的情况下，对 WebRTC 相关的功能进行验证和调试。理解其功能和局限性对于开发和维护 Chromium 以及基于 Chromium 的浏览器至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/fake_rtc_rtp_transceiver_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -385,7 +387,4 @@ FakeRTCRtpTransceiverImpl::GetHeaderExtensionsToNegotiate() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

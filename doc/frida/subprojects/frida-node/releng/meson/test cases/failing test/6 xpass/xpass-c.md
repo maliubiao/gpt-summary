@@ -82,7 +82,7 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 尽管 `xpass.c` 的源代码非常简单，它在 Frida 的测试框架中扮演着一个重要的角色，作为一个预期成功的占位符测试用例。它帮助验证测试基础设施的正确性，并可能作为未来测试的起点。 理解其存在的原因需要结合 Frida 的项目结构、构建系统和测试流程的知识。 普通用户通常不会直接与这个文件交互，但开发者在调试和维护 Frida 时可能会遇到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing test/6 xpass/xpass.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -90,10 +90,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

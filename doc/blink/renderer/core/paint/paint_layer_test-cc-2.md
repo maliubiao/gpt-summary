@@ -158,7 +158,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 理解 `PaintLayer` 的工作原理和这些测试用例覆盖的场景，可以帮助开发者更好地理解浏览器渲染引擎的行为，并更有效地调试和优化网页性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_layer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -166,9 +166,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-               svg->GetLayoutObject());
+### 源代码
+```cpp
+svg->GetLayoutObject());
   result = HitTestResult(request, location);
   GetDocument().GetLayoutView()->HitTest(location, result);
   EXPECT_EQ(svg, result.InnerNode());
@@ -884,8 +886,4 @@ TEST_P(PaintLayerTest, HitTestScrollMarkerPseudoElement) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -168,7 +168,7 @@ xhr.send();
 
 总而言之，`net/url_request/url_request.cc` 的这部分代码定义了网络请求的核心抽象，并负责管理请求的创建、配置、生命周期以及与网络栈其他组件的交互，是 Chromium 网络功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1180,7 +1182,4 @@ void URLRequest::AbortAndCloseConnection() {
 }
 
 void URLRequ
-"""
-
-
 ```

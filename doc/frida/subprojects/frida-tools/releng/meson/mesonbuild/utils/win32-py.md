@@ -117,7 +117,7 @@ By following these steps, breaking down the code, and connecting it to the vario
 
 作为调试线索，如果用户报告构建失败并看到这个错误信息，这通常意味着他们不小心启动了多个构建过程。  解决办法是关闭其他正在进行的构建进程，然后重新尝试构建。  或者，如果怀疑锁文件没有被正常释放（例如，之前的构建进程被强制终止），可以尝试手动删除锁文件（但需要谨慎）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/utils/win32.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -156,7 +158,4 @@ class BuildDirLock(BuildDirLockBase):
     def __exit__(self, *args: T.Any) -> None:
         msvcrt.locking(self.lockfile.fileno(), msvcrt.LK_UNLCK, 1)
         self.lockfile.close()
-
-"""
-
 ```

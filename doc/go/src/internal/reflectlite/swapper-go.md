@@ -259,7 +259,7 @@ go run main.go -slice "1, 2, 3, 4, 5" -i 0 -j 4
 
 总而言之，`reflectlite.Swapper` 提供了一种高效且底层的机制来交换切片中的元素，它被 Go 语言内部用于实现各种切片操作。用户通常不会直接使用它，而是通过更高层次的抽象，如 `sort.Slice` 来间接使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/reflectlite/swapper.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -267,8 +267,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -347,9 +349,4 @@ func Swapper(slice any) func(i, j int) {
 		typedmemmove(typ, val2, tmp)
 	}
 }
-
-"""
-
-
-
 ```

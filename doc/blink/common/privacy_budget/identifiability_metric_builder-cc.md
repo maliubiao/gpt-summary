@@ -103,14 +103,16 @@ By following these steps, I was able to dissect the C++ code, understand its pur
 
 总而言之，`identifiability_metric_builder.cc` 文件在 Chromium 的隐私保护工作中扮演着关键角色，它负责收集和整理用于衡量用户在网络上被识别的风险程度的数据，这些数据最终用于评估和改进浏览器的隐私特性。 虽然它本身是 C++ 代码，但它记录的指标直接反映了 JavaScript, HTML, CSS 等 Web 技术的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_metric_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ void IdentifiabilityMetricBuilder::Record(ukm::UkmRecorder* recorder) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

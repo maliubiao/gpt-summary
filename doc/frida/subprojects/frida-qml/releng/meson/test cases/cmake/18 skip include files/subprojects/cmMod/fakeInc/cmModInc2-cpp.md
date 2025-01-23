@@ -110,7 +110,7 @@ By following these steps, we can dissect the code, infer its purpose within the 
 
 总而言之，`cmModInc2.cpp` 是 Frida 构建系统的一个小的但重要的组成部分，用于确保在处理包含文件和子项目依赖时，CMake 的行为符合预期。它通过一个简单的示例来验证构建系统的正确性，帮助开发者尽早发现潜在的构建问题。用户通常不会直接操作这个文件，但在调试构建问题时，它会作为一个重要的线索出现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/fakeInc/cmModInc2.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifndef MESON_INCLUDE_IMPL
 #error "MESON_INCLUDE_IMPL is not defined"
 #endif // !MESON_INCLUDE_IMPL
@@ -127,7 +129,4 @@ Prompt:
 string cmModClass::getStr() const {
   return getStr2();
 }
-
-"""
-
 ```

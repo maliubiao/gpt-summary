@@ -217,7 +217,7 @@ if (Process.arch === 'arm64') {
 
 请注意，hook 系统库函数可能需要 root 权限或在可调试的进程中进行。 实际的偏移量会因 Android 版本和设备而异，需要根据具体情况进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/mte_utils.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -228,8 +228,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -279,7 +281,4 @@ static void* mte_tls() {
 }
 
 #endif
-
-"""
-
 ```

@@ -144,7 +144,7 @@ callWasmFunction();
 
 这段代码片段主要关注 **JavaScript 和 WebAssembly 之间的互操作**，特别是 **处理异步操作 (Promises) 和错误**。它定义了从 JavaScript 调用 WebAssembly，以及从 WebAssembly 调用 JavaScript 的底层机制。此外，它还包括了 WebAssembly 内部的控制流操作，如挂起和恢复，以及处理异常和栈溢出的机制。这些内置函数是 V8 引擎执行 WebAssembly 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ia32/builtins-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r_buffer,
           JSToWasmWrapperFrameConstants::kWrapperBufferSigRepresentationArray +
               4));
@@ -1029,7 +1031,4 @@ void Builtins::Generate_WasmHandleStackOverflow(MacroAssembler* masm) {
   __ sub(ebp, esp);
   __ add(ebp, kReturnRegister0);
   __ mov(esp
-"""
-
-
 ```

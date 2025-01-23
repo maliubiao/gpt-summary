@@ -131,15 +131,17 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 `animation.cc` 文件的这部分主要负责实现 Web Animations API 中 `Animation` 对象的关键控制方法，包括播放、暂停、反向、完成以及播放速率的更新。它管理着动画的状态、时间和与 Promise 相关的异步操作。 此外，它还处理了与 Compositor 相关的交互，以便将动画卸载到 GPU 上进行硬件加速渲染。  这部分代码是连接 JavaScript 动画操作和底层渲染机制的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 imeline is true,
   //          * Set animation’s start time to seek time.
   //          * Let animation’s hold time be unresolved.
@@ -972,7 +974,4 @@ void Animation::SetCompositorPending(CompositorPendingReason reason) {
       !compositor_state_->start_time || !start_time_) {
     compositor_pending_ = true;
     document_->GetPendingAnimations().Add(t
-"""
-
-
 ```

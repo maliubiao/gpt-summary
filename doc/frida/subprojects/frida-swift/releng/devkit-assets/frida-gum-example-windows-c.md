@@ -181,7 +181,7 @@ By following these steps, breaking down the code into its components, and connec
 
 因此，这个代码文件对于学习 Frida 的用户来说是一个很好的起点，它展示了 Frida 的基本 hook 功能，同时也可能成为用户调试 Frida 脚本的线索。通过理解代码的逻辑和 Frida 的工作原理，用户可以逐步解决遇到的问题，并构建更复杂的 Frida 脚本来进行更深入的逆向分析和动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/devkit-assets/frida-gum-example-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * To build, set up your Release configuration like this:
  *
@@ -323,7 +325,4 @@ static void
 example_listener_init (ExampleListener * self)
 {
 }
-
-"""
-
 ```

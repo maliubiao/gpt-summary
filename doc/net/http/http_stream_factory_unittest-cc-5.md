@@ -97,7 +97,7 @@ Here's a breakdown of how to address each of the user's requests:
 1. **用户在浏览器地址栏输入一个 HTTPS 网址，例如 `https://a.example.org`。**
 2. **浏览器首先进行 DNS 查询，解析 `a.example.org` 的 IP 地址。**
 3. **浏览器
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 IORITY,
                                   /*allowed_bad_certs=*/{},
                                   /*enable_ip_based_pooling=*/true,
@@ -654,8 +656,4 @@ TEST_F(ProcessAlternativeServicesTest, ProcessAltSvcHttp2) {
 }  // namespace
 
 }  // namespace net::test
-
-"""
-
-
 ```

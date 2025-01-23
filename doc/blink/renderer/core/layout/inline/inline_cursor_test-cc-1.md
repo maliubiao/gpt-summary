@@ -81,15 +81,17 @@ By following these steps, we can create a comprehensive and informative summary 
 
 这部分测试代码专注于 **`InlineCursor` 在各种布局场景下的精细化光标定位和移动能力** 的验证，特别是针对不同书写模式、双向文本以及分栏布局等复杂情况。它确保了浏览器内核能够准确地计算和操作文本光标的位置，这是实现正确的文本渲染、选择和编辑等功能的基础。特别强调了在分片布局中对光标移动的测试，保证了在多列等复杂布局下光标行为的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_cursor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ion(text, 0)),
             cursor.PositionForPointInChild(left_top));
   EXPECT_EQ(PositionWithAffinity(Position(text, 0)),
@@ -572,8 +574,4 @@ TEST_F(InlineCursorBlockFragmentationTest, MoveToLayoutObject) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

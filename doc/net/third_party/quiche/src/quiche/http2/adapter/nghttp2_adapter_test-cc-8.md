@@ -119,7 +119,7 @@ By following this systematic approach, I aimed to provide a comprehensive and in
 
 **总结来说，这个代码文件的第 9 部分主要关注 `NgHttp2Adapter` 作为 HTTP/2 服务器时，对各种非法或超出协议限制的客户端行为的处理，以及一些特定的协议细节 (如自动 PING ACK 和协议伪头)。这些测试确保了 Chromium 的 HTTP/2 实现的健壮性和符合标准。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 T_TRUE(adapter->want_write());
 
   EXPECT_CALL(visitor, OnBeforeFrameSent(SETTINGS, 0, 0, 0x1));
@@ -976,7 +978,4 @@ TEST_P(NgHttp2AdapterDataTest, ServerQueuesMetadataWithStreamReset) {
   EXPECT_CALL(visitor, OnFrameHeader(1, _, RST_STREAM, 0x0));
   EXPECT_CALL(visitor, OnRstStream(1, Http2ErrorCode::CANCEL));
   EXPECT_CALL(visitor, OnClose
-"""
-
-
 ```

@@ -104,7 +104,7 @@ By following these steps, I aimed to provide a comprehensive and accurate answer
 
 作为第三部分，这个文件主要集中测试了 Meson 构建系统中用于增强函数关键字参数处理的装饰器 `@typed_kwargs` 的各种功能。它通过大量的单元测试用例，覆盖了类型检查、默认值处理、引入/弃用机制、值验证、类型转换等多个方面，确保了这个装饰器能够按照预期工作，从而提高了 Frida 构建系统的健壮性和可靠性。虽然该文件本身不直接涉及 Frida 的运行时行为或底层细节，但它对于确保 Frida 项目构建过程的正确性至关重要，间接地支持了 Frida 作为一款强大的逆向工程工具的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rtIsNot(kwargs['input'], default)
 
         _(None, mock.Mock(), [], {})
@@ -503,8 +505,4 @@ rtIsNot(kwargs['input'], default)
         for raw, expected in cases:
             with self.subTest(raw):
                 self.assertEqual(OptionKey.from_string(raw), expected)
-
-"""
-
-
 ```

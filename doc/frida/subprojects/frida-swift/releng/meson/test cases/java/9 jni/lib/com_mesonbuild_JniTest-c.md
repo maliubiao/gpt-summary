@@ -145,7 +145,7 @@ By following these steps, we can systematically analyze the C code and provide a
 
 总而言之，这个简单的 C 代码文件是 Java JNI 技术的一个基本示例，它展示了如何通过本地代码扩展 Java 的功能。在逆向工程中，理解和分析这类 JNI 代码是至关重要的，因为很多应用程序的核心逻辑会放在本地代码中以提高性能或进行安全保护。Frida 这样的动态插桩工具则为分析和操控这些本地代码提供了强大的手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/java/9 jni/lib/com_mesonbuild_JniTest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <jni.h>
 
 #include "com_mesonbuild_JniTest.h"
@@ -164,7 +166,4 @@ JNIEXPORT jint JNICALL Java_com_mesonbuild_JniTest_jni_1test
 {
     return (jint)0xdeadbeef;
 }
-
-"""
-
 ```

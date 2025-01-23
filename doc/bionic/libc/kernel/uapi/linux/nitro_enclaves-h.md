@@ -298,7 +298,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 总结来说，`bionic/libc/kernel/uapi/linux/nitro_enclaves.handroid` 是 Android 系统中用于与 Linux 内核 Nitro Enclaves 功能进行交互的底层接口定义，它通过 `ioctl` 系统调用实现用户空间程序对安全隔离环境的管理和控制。理解这个文件对于分析 Android 系统中安全相关的功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nitro_enclaves.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -309,8 +309,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -366,7 +368,4 @@ struct ne_enclave_start_info {
   __u64 enclave_cid;
 };
 #endif
-
-"""
-
 ```

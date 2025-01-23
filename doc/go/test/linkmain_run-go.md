@@ -188,15 +188,17 @@ go tool link -importcfg <临时目录>/importcfg -o <临时目录>/linkmain.exe 
 
 总而言之，`go/test/linkmain_run.go` 通过模拟编译和链接过程，特别是针对缺少 `main` 函数的 `package main` 的情况，来确保 Go 语言工具链的正确性。理解这个测试的功能有助于开发者避免在实际 Go 项目中犯类似的链接错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkmain_run.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 //go:build !nacl && !js && !wasip1
@@ -281,9 +283,4 @@ func main() {
 	runFail("go tool link -importcfg", tmp("importcfg"), "-o", tmp("linkmain.exe"), tmp("linkmain1.a"))
 	cleanup()
 }
-
-"""
-
-
-
 ```

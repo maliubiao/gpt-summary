@@ -132,7 +132,7 @@ By following these steps, combining code analysis with knowledge of operating sy
 
 总而言之，`pipe-sddl.c` 虽然代码量不大，但在 Frida 的运行过程中扮演着至关重要的角色，它确保了 Frida 的客户端和服务端能够安全可靠地进行通信，并且能够适应不同的 Windows 操作系统环境。理解它的功能有助于我们更深入地理解 Frida 的工作原理，并为调试和安全分析提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/pipe/pipe-sddl.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "pipe-sddl.h"
 
 static BOOL frida_pipe_is_windows_vista_or_greater (void);
@@ -205,7 +207,4 @@ frida_pipe_is_windows_version_or_greater (DWORD major, DWORD minor, DWORD servic
 
   return VerifyVersionInfoW (&osvi, VER_MAJORVERSION | VER_MINORVERSION | VER_SERVICEPACKMAJOR, condition_mask) != FALSE;
 }
-
-"""
-
 ```

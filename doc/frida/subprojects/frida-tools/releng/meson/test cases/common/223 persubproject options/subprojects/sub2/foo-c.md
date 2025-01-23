@@ -120,7 +120,7 @@ By following this systematic approach, the analysis covers all aspects of the re
 
 尽管 `foo.c` 的功能非常基础，但在动态分析、逆向工程和软件测试的上下文中，它仍然可以作为观察程序行为、验证模块加载或测试构建系统功能的简单示例。  理解其存在的意义需要结合其所在的目录结构和 Frida 工具的整体目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/223 persubproject options/subprojects/sub2/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void);
 
 #ifdef __GNUC__
@@ -139,7 +141,4 @@ int foo(void);
 int foo(void) {
   return 0;
 }
-
-"""
-
 ```

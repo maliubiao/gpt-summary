@@ -191,15 +191,17 @@ Imagine a scenario within V8's C++ code where a function incorrectly assumes a p
 
 This test file plays a crucial role in ensuring the stability and correctness of V8's memory management optimizations, which ultimately benefits JavaScript developers by providing a more efficient and performant runtime environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-ptr-compr-cage.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-ptr-compr-cage.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -370,7 +372,4 @@ UNINITIALIZED_TEST(SharedPtrComprCageImpliesSharedReadOnlyHeap) {
 }  // namespace v8
 
 #endif  // V8_COMPRESS_POINTERS
-
-"""
-
 ```

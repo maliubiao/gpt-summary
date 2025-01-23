@@ -95,7 +95,7 @@ The user wants a summary of the Python code provided. I need to identify the mai
 
 总而言之，这部分代码是 Meson 构建系统的核心组成部分，它定义了各种构建目标的抽象表示，Meson 基于这些抽象表示来生成实际的构建指令。对于 Frida 这样的复杂项目，理解这些类的功能有助于理解其构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 get(self):
         return self.is_linkwithable
 
@@ -870,7 +872,4 @@ class CompileTarget(BuildTarget):
 class RunTarget(Target, CommandBase):
 
     typename
-"""
-
-
 ```

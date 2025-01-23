@@ -215,15 +215,17 @@ wasm_func_t* my_wasm_func = wasm_func_new(store, func_type, my_add_callback);
 
 理解 `wasm.h` 中定义的 API 和所有权模型对于正确地在 C/C++ 中嵌入和使用 WebAssembly 非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/wasm.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/wasm-api/wasm.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // WebAssembly C API
 
 #ifndef __WASM_H
@@ -921,7 +923,4 @@ static inline void* wasm_val_ptr(const wasm_val_t* val) {
 #endif
 
 #endif  // #ifdef __WASM_H
-
-"""
-
 ```

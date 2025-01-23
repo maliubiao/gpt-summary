@@ -211,15 +211,17 @@ stale mypackage
 
 `scriptcmds_test.go` 文件定义了一组用于测试 `go` 命令的自定义脚本命令。这些命令允许测试人员在脚本中模拟执行 C 编译器、`go` 命令本身以及检查构建目标的过期状态。这为编写更全面和细致的 `go` 命令集成测试提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/scriptcmds_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -344,9 +346,4 @@ func scriptStale(cmdGo script.Cmd) script.Cmd {
 			return nil, nil
 		})
 }
-
-"""
-
-
-
 ```

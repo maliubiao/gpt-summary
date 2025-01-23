@@ -155,7 +155,7 @@ The final step is to organize the thoughts into a coherent and well-structured a
 
 总而言之，这个简单的 `source.c` 文件很可能是 Frida 测试框架中的一个组成部分，用于验证 Frida 能够正确地与编译后的 C 代码进行交互，特别是在涉及到自定义构建目标和对象文件提取的场景下。它作为一个基础示例，帮助开发者理解 Frida 的核心功能，例如 hooking 和代码注入，并涉及了编译、链接、加载等底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/216 custom target input extracted objects/libdir/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,12 +163,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

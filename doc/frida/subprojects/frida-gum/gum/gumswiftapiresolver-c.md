@@ -144,7 +144,7 @@ Here's a plan to address the request:
 
 `gumswiftapiresolver.c` 的主要功能是 **提供一种机制，用于在 Frida 动态instrumentation 工具中查找和解析已加载的 Swift 模块中的函数和方法**。它通过解析 Swift 模块的元数据段，结合用户提供的查询字符串，实现对 Swift API 的动态定位，为 Frida 对 Swift 代码进行 hook 和分析奠定了基础。 它涉及到操作系统模块加载机制、二进制文件结构、Swift 语言的元数据结构以及符号反混淆等技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumswiftapiresolver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Håvard Sørbø <havard@hsorbo.no>
@@ -1394,9 +1396,4 @@ gum_compute_context_descriptor_name (const GumContextDescriptor * cd)
         g_free (parent);
 
         g_string_append (part, "):");
-
-     
-"""
-
-
 ```

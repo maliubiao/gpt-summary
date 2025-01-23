@@ -90,12 +90,14 @@ console.log(result);
 
 **总结来说， `simulator-arm.cc` 文件的主要作用是提供一个软件层面的ARM处理器模拟器，使得V8引擎能够在非ARM平台上运行为ARM架构编译的JavaScript代码，这对于开发、测试和调试V8引擎本身至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1967,7 +1969,4 @@ void Simulator::SoftwareInterrupt(Instruction* instr) {
               "%08x",
               reinterpret_cast<void*>(external), arg0, arg1, arg2, arg3, arg4,
               arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg1
-"""
-
-
 ```

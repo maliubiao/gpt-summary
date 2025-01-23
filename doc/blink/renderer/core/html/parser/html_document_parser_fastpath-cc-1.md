@@ -115,16 +115,18 @@ The summary should cover:
 
 这段代码是 Blink 引擎中 HTML 解析器的一个**性能优化模块**，它通过实现一个**轻量级的快速解析通道**，处理常见的、简单的 HTML 结构，从而加速 HTML 文档的解析过程。当遇到快速通道无法处理的情况时，它会优雅地回退到完整的、更健壮的 HTML 解析器，保证解析的正确性。 它的核心在于**快速扫描 HTML 结构、构建简化的 DOM 树、处理基本的 HTML 实体**，并具备**错误检测和回退机制**，同时会**判断是否适合使用快速通道**以实现性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser_fastpath.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- This path could handle other valid attribute name chars, but they
+### 源代码
+```cpp
+This path could handle other valid attribute name chars, but they
     // are not as common, so it only looks for lowercase.
     const Char* start = pos_;
     while (pos_ != end_ && ((*pos_ >= 'a' && *pos_ <= 'z') || *pos_ == '-')) {
@@ -1007,7 +1009,4 @@ bool TryParsingHTMLFragmentImpl(const base::span<const Char>& source,
     // UnsupportedTagTypeValueForNode() will return kSupported. For now this is
     // really only <br>. I suspect this is extremely rare, so don't log for now.
     if (context_tag_type != UnsupportedTagType::kSupport
-"""
-
-
 ```

@@ -140,7 +140,7 @@ My thinking process to analyze the provided code snippet goes like this:
 
 总而言之，这段代码是 `AudioContext` 实现的核心部分，负责管理音频渲染的生命周期、与底层音频设备和浏览器服务交互，并为 JavaScript 开发者提供控制音频行为的接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 xtState::Enum::kClosed) &&
           BaseAudioContext::HasPendingActivity()) ||
          permission_receiver_.is_bound();
@@ -673,8 +675,4 @@ void AudioContext::SendLogMessage(const char* const function_name,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -187,14 +187,16 @@ console.log(filteredArrayWithThisArg); // 输出: Int32Array [ 4, 5 ]
 
 这段 Torque 代码的实现逻辑与 JavaScript 的 `TypedArray.prototype.filter` 功能完全一致，确保了 V8 引擎中类型化数组的 `filter` 方法能够按照 ECMAScript 规范正确执行。理解这段代码有助于深入了解 JavaScript 内置方法的底层实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-filter.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ transitioning javascript builtin TypedArrayPrototypeFilter(
   }
 }
 }
-
-"""
-
 ```

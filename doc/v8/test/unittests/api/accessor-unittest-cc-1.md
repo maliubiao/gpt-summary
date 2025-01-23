@@ -130,7 +130,7 @@ try {
 
 第二部分的测试代码主要验证了当使用 `WrapFunctionTemplateSetNativeDataProperty` 创建的函数模板在 `ShadowRealm` 中被实例化后，尝试访问其属性时会抛出异常。 这暗示了通过这种方式设置的访问器或关联的原生数据在 `ShadowRealm` 的隔离环境中可能无法直接访问。  这个测试旨在确保 V8 在处理 `ShadowRealm` 和带有原生数据属性的函数模板时的行为符合预期，即保持了 `ShadowRealm` 的隔离性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/accessor-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/api/accessor-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , nullptr, global_template);
 }
 }  // namespace
@@ -163,8 +165,4 @@ TEST_F(AccessorTest, WrapFunctionTemplateSetNativeDataProperty) {
     CHECK(try_catch.HasCaught());
   }
 }
-
-"""
-
-
 ```

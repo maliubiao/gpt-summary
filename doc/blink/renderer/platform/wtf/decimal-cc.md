@@ -139,14 +139,16 @@ This iterative process of scanning, identifying, relating, exemplifying, inferri
 
 `blink/renderer/platform/wtf/decimal.cc` 文件实现了 Blink 引擎内部使用的高精度定点数类。虽然开发者通常不会直接使用它，但它在引擎内部的运用有助于提高数值计算的精度，从而间接地影响 JavaScript 的行为、HTML 的渲染以及 CSS 的计算结果。理解其功能有助于理解 Blink 引擎在处理数值时的严谨性，并提醒开发者在需要高精度计算时注意浮点数的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/decimal.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -1141,7 +1143,4 @@ std::ostream& operator<<(std::ostream& ostream, const Decimal& decimal) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

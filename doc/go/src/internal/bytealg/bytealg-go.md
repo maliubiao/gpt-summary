@@ -161,7 +161,7 @@ func main() {
 
 总而言之，`internal/bytealg/bytealg.go` 提供了一些底层的、高性能的字节和字符串操作算法，主要用于 Go 语言内部优化字符串和字节切片的处理。它利用了 CPU 特性进行优化，并实现了诸如 Rabin-Karp 这样的高效搜索算法，以及提供了避免零值初始化的内存分配方式。使用者需要了解其特性和潜在的风险，才能正确地使用这些功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/bytealg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -289,9 +291,4 @@ func LastIndexRabinKarp[T string | []byte](s, sep T) int {
 // It is the caller's responsibility to ensure uninitialized bytes
 // do not leak to the end user.
 func MakeNoZero(n int) []byte
-
-"""
-
-
-
 ```

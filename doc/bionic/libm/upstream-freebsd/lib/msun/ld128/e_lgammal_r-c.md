@@ -236,7 +236,7 @@ libm.so:
 
 `e_lgammal_r.c` 是 Android 系统中计算长双精度伽玛函数对数的关键组成部分。它通过精巧的数学逼近方法实现了高精度和效率。理解其功能和实现方式，以及与 Android 系统和 NDK 的联系，对于进行底层开发、性能优化和问题排查都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/e_lgammal_r.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -246,8 +246,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -574,7 +576,4 @@ lgammal_r(long double x, int *signgamp)
 	if(hx&0x8000) r = nadj - r;
 	return r;
 }
-
-"""
-
 ```

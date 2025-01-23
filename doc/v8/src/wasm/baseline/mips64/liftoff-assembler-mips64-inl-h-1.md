@@ -92,7 +92,7 @@ console.log(view[0]); // 可能读取到 10 或 20，取决于线程执行顺序
 
 总而言之，这段 C++ 代码是 V8 引擎 Liftoff 编译器的核心部分，负责在 MIPS64 架构上生成执行 WebAssembly 代码所需的低级指令，涵盖了原子操作、栈管理、数据移动、整数和浮点数运算以及类型转换等关键功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -100,9 +100,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-          \
+### 源代码
+```c
+\
     InsertBits(temp2, value.gp(), temp1, size);                              \
     store_conditional(temp2, MemOperand(temp0, 0));                          \
     BranchShort(&exchange, eq, temp2, Operand(zero_reg));                    \
@@ -1000,7 +1002,4 @@ bool LiftoffAssembler::emit_type_conversion(WasmOpcode opcode,
             static_cast<float>(std::numeric_limits<int32_t>::min()));
         CompareF32(OLT, src.fp(), kScratchDoubleReg);
         BranchTr
-"""
-
-
 ```

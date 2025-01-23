@@ -185,7 +185,7 @@ This systematic approach, combining code analysis with knowledge of the surround
 
 通过这样的步骤，用户可以逐步追踪问题的根源，从观察 `func_b` 的异常退出，到分析其内部逻辑，最终定位到 `func_c` 的返回值是导致问题的关键。这个例子中的源代码文件 `b.c` 正是为这种调试场景提供了一个简单的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -215,7 +217,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

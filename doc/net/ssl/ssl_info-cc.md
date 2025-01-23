@@ -127,15 +127,17 @@ Here's a breakdown of the thinking process to analyze the provided C++ code and 
 
 总而言之，`net/ssl/ssl_info.cc` 定义的 `SSLInfo` 类虽然代码简单，但它是 Chromium 网络栈中用于管理和存储关键 SSL/TLS 连接信息的核心数据结构，为浏览器的安全功能和开发者调试提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ void SSLInfo::Reset() {
 }
 
 }  // namespace net
-
-"""
-
 ```

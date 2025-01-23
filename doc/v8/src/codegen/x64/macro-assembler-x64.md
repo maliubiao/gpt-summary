@@ -81,12 +81,14 @@ const result = a + b;
 
 `v8/src/codegen/x64/macro-assembler-x64.cc` 的第1部分是构建V8 JavaScript引擎在x64架构上执行代码的基础。它提供了一组底层的指令生成工具，使得V8可以将高级的JavaScript代码转化为处理器可以理解和执行的机器码。它涵盖了内存访问、数据操作、控制流、垃圾回收支持等关键功能，是 V8 代码生成器的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/macro-assembler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1991,7 +1993,4 @@ void MacroAssembler::I64x4Mul(YMMRegister dst, YMMRegister lhs, YMMRegister rhs,
   CpuFeatureScope avx_scope(this, AVX2);
   // 1. Multiply high dword of each qword of left with right.
   vpsrlq(t
-"""
-
-
 ```

@@ -167,15 +167,17 @@ Finally, I organize the findings into the requested categories: functionality, r
 
 总而言之， `thread_safe_script_container_test.cc` 文件通过详尽的单元测试，确保了 `ThreadSafeScriptContainer` 能够在多线程环境下安全可靠地管理 Service Worker 的 JavaScript 脚本，这是 Service Worker 功能正常运行的关键基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/thread_safe_script_container_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -403,7 +405,4 @@ TEST_F(ThreadSafeScriptContainerTest, WaitNonExistingKey) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

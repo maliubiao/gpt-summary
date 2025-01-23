@@ -93,12 +93,14 @@ console.log(sqrtResult);
 
 总而言之，这部分代码是 V8 引擎在非 MIPS64 平台上运行和测试 MIPS64 代码的关键组成部分，它使得开发者能够在没有实际硬件的情况下进行开发和调试，并验证 V8 生成的 MIPS64 代码的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 >::min()) >>
           1U;
       const T_int_dbl max_fix_dbl = std::numeric_limits<T_int_dbl>::max() >> 1U;
@@ -1976,7 +1978,4 @@ bool Simulator::GlobalMonitor::LinkedAddress::NotifyStoreConditional_Locked(
         // behavior of hardware, which can randomly fail due to background
         // cache evictions.
         if (failure_counter_++ >= kMaxFailureCounter) {
-"""
-
-
 ```

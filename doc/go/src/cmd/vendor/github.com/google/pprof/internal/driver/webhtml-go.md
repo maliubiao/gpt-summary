@@ -205,7 +205,7 @@ func main() {
 
 `webhtml.go` 是 `pprof` 工具中负责管理 Web 报告 HTML 模板的关键部分。它利用 Go 的 `embed` 功能将静态资源嵌入到程序中，并通过 `html/template` 包实现模板的加载和解析，为生成动态的 Web 报告提供了基础。它不直接处理命令行参数，但其加载的模板会被上层处理逻辑用于生成最终的报告。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/webhtml.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -213,8 +213,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -300,9 +302,4 @@ func addTemplates(templates *template.Template) {
 	def("stacks_css", loadCSS("html/stacks.css"))
 	def("stacks_js", loadJS("html/stacks.js"))
 }
-
-"""
-
-
-
 ```

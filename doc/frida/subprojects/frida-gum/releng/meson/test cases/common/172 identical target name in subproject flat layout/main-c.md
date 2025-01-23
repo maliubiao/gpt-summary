@@ -123,7 +123,7 @@ Finally, the information needs to be organized logically to address all parts of
 
 总的来说，`main.c` 是 Frida 项目中一个重要的测试用例，它专注于验证构建系统在处理同名目标时的正确性。虽然代码本身很简单，但它间接地关联着逆向工程、二进制底层知识和构建系统配置等多个方面。理解这个测试用例的功能和目的，有助于开发者更好地理解 Frida 的构建机制，并避免潜在的构建错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/172 identical target name in subproject flat layout/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int meson_test_main_foo(void);
@@ -149,7 +151,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

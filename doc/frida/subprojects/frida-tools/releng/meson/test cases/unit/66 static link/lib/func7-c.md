@@ -145,7 +145,7 @@ By following these steps, including the self-correction, the comprehensive and a
 
 总而言之，即使 `func7.c` 中的函数功能非常简单，它仍然可以在逆向工程、底层分析和调试过程中扮演一定的角色，帮助用户理解程序的行为和结构。它的简单性也使得它成为测试和学习 Frida 功能的一个很好的例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/66 static link/lib/func7.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,13 +153,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func7()
 {
   return 1;
 }
-
-"""
-
 ```

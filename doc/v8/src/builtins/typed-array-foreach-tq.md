@@ -177,14 +177,16 @@ typedArray.forEach(function(value, index, array) {
 
 总结来说，这段 Torque 代码实现了 JavaScript 中 `TypedArray.prototype.forEach` 方法的核心逻辑，包括遍历元素、调用回调函数、处理 `thisArg` 以及处理底层的 `ArrayBuffer` 分离的情况。理解这段代码有助于深入了解 V8 引擎是如何实现 JavaScript 内置方法的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-foreach.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ transitioning javascript builtin TypedArrayPrototypeForEach(
   }
 }
 }
-
-"""
-
 ```

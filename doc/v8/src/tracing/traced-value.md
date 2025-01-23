@@ -170,11 +170,13 @@ console.log(JSON.stringify(traceData));
 
 总而言之，`v8/src/tracing/traced-value.cc` 中的 `TracedValue` 类是 V8 引擎内部用于高效构建和格式化 tracing 数据的工具，其生成的数据结构和格式与 JavaScript 中的对象和数组以及 JSON 格式密切相关，方便 V8 记录和分析 JavaScript 代码的执行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/traced-value.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -401,7 +403,4 @@ void TracedValue::Add(
 
 }  // namespace tracing
 }  // namespace v8
-
-"""
-
 ```

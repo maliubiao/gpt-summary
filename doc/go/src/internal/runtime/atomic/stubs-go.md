@@ -184,7 +184,7 @@ func main() {
 
 总而言之，`go/src/internal/runtime/atomic/stubs.go` 定义了 Go 运行时用于实现原子操作的基础接口，这些操作是构建安全可靠的并发程序的重要组成部分。理解其功能和潜在的陷阱对于编写高质量的 Go 并发代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/atomic/stubs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -253,9 +255,4 @@ func Xchgint32(ptr *int32, new int32) int32
 
 //go:noescape
 func Xchgint64(ptr *int64, new int64) int64
-
-"""
-
-
-
 ```

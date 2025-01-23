@@ -234,7 +234,7 @@ By following these steps, I can systematically analyze the code snippet and arri
 
 总而言之，这段 `rewriteAMD64.go` 代码的特定部分专注于优化 AMD64 架构下的 `SETNEstore` 指令。 它通过模式匹配，将一些常见的基于比较和逻辑运算的 `SETNEstore` 模式，转换为更有效率的位测试指令、直接的存储指令或者合并地址计算，从而提升最终生成代码的性能。 这是 Go 编译器进行低级代码优化的一个典型例子。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -243,8 +243,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第15部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 h: (SETNEstore [off] {sym} ptr (TESTLconst [c] x) mem)
 	// cond: isUint32PowerOfTwo(int64(c))
 	// result: (SETBstore [off] {sym} ptr (BTLconst [int8(log32(c))] x) mem)
@@ -1732,9 +1734,4 @@ func rewriteValueAMD64_OpAMD64SHRQ(v *Value) bool {
 	// match: (SHRQ x (NEGQ <t> (ADDQconst [c] y)))
 	// cond: c & 63 == 0
 	/
-"""
-
-
-
-
 ```

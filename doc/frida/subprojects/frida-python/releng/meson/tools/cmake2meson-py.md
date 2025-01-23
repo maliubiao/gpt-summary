@@ -184,7 +184,7 @@ endif
 
 总而言之，`cmake2meson.py` 是一个用于将 CMake 项目迁移到 Meson 的实用工具，它通过词法分析、语法分析和转换，将 CMake 构建描述转换为 Meson 的等效形式。理解其内部机制有助于用户更好地使用它，并解决迁移过程中可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/tools/cmake2meson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014 Jussi Pakkanen
@@ -512,7 +514,4 @@ if __name__ == '__main__':
     P = p.parse_args()
 
     Converter(P.cmake_root).convert()
-
-"""
-
 ```

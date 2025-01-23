@@ -127,14 +127,16 @@ This structured approach, starting with a basic understanding and gradually infe
 
 `blink/renderer/platform/graphics/image_observer.cc` 定义了 `ImageObserver` 类，这是一个核心接口，用于观察和处理 Blink 渲染引擎中图像相关的事件。它在 HTML、CSS 和 JavaScript 中使用的图像加载和渲染过程中扮演着重要的角色，负责通知各个组件图像状态的变化，并可能参与错误处理。虽然提供的代码片段非常简洁，但我们可以推断其在整个渲染流程中至关重要的地位。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/image_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -171,7 +173,4 @@ namespace blink {
 ImageObserver::~ImageObserver() = default;
 
 }  // namespace blink
-
-"""
-
 ```

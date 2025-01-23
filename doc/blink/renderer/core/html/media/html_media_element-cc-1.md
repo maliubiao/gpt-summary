@@ -172,16 +172,18 @@ This section of `HTMLMediaElement` code focuses on the **lifecycle management an
 
 总而言之，这部分代码是 `HTMLMediaElement` 实现的核心，负责媒体元素的生命周期管理和资源加载的启动和初步管理，为后续的媒体解码、渲染和播放奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```cpp
+{
     HTMLElement::ParseAttribute(params);
   }
 }
@@ -1070,8 +1072,4 @@ bool HTMLMediaElement::LoadIsDeferred() const {
 }
 
 void HTMLMediaElement::DeferLoad() {
-  
-"""
-
-
 ```

@@ -128,7 +128,7 @@ By following these steps, we arrive at a comprehensive understanding of the `myi
 
 总而言之，`myinstall.py` 是一个简单的辅助脚本，用于在 Frida 的安装过程中创建特定的空文件。虽然它本身不执行复杂的逻辑，但它在构建过程中扮演着确保文件结构正确的角色，这对于 Frida 及其组件的正常运行至关重要，也可能为逆向工程师提供一些关于 Frida 内部结构的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/53 install script/src/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -152,7 +154,4 @@ if not os.path.exists(dirname):
 
 with open(os.path.join(dirname, sys.argv[2] + '.in'), 'w') as f:
     f.write('')
-
-"""
-
 ```

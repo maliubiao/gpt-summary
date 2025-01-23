@@ -171,15 +171,17 @@ console.log(obj2.value);
 
 总而言之，`v8/src/heap/cppgc/caged-heap.h` 定义了一个用于管理堆内存的 "Caged Heap" 机制，它将堆内存划分为固定大小的区域，并提供了相关的操作方法。虽然用户无法直接在 JavaScript 中操作这些底层机制，但它对 JavaScript 运行时的内存管理和性能有着重要的影响。理解这种机制有助于理解 V8 引擎是如何高效地管理内存的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/caged-heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/caged-heap.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ class V8_EXPORT_PRIVATE CagedHeap final {
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_CAGED_HEAP_H_
-
-"""
-
 ```

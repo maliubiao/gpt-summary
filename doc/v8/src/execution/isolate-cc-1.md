@@ -196,7 +196,7 @@ Error: Error in c
 
 作为第 2 部分，这段代码主要关注 V8 引擎中**捕获和构建调用栈信息**的核心机制。它定义了用于遍历栈帧、提取信息、处理异步操作以及生成不同类型的调用栈表示（简单和详细）的关键类和函数。这些功能是 V8 错误处理和调试能力的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ary code, and stack depth tends to be more than
     // a dozen frames, so we over-allocate a bit here to avoid growing
     // the elements array in the common case.
@@ -1023,7 +1025,4 @@ bool Isolate::GetStackTraceLimit(Isolate* isolate, int* result) {
 
   if (*result != v8_flags.stack_trace_limit) {
     isolate->CountU
-"""
-
-
 ```

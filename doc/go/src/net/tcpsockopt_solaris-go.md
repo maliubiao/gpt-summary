@@ -191,7 +191,7 @@ func handleConnection(conn net.Conn) {
 
 5. **期望精确的 Keep-Alive 行为:**  Keep-Alive 机制依赖于底层的操作系统实现。即使设置了特定的参数，实际的行为也可能受到系统内核配置的影响，不一定完全精确。例如，网络拥塞可能会导致探测包延迟发送或丢失。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpsockopt_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -320,9 +322,4 @@ func setKeepAliveIdleAndIntervalAndCount(fd *netFD, idle, interval time.Duration
 
 	return nil
 }
-
-"""
-
-
-
 ```

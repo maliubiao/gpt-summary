@@ -167,14 +167,16 @@ This detailed thought process, moving from understanding the code to its broader
 
 `variable_axes_names.cc` 文件中的 `GetVariationAxes` 函数是 Chromium 浏览器引擎中一个核心组件，它负责解析 OpenType 字体文件，提取其可变轴的元数据。这些元数据对于浏览器正确解释和应用 CSS 的 `font-variation-settings` 至关重要，从而实现了可变字体的动态控制和渲染。虽然用户无法直接与之交互，但它的功能直接影响了网页上可变字体的显示效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/variable_axes_names.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ Vector<VariationAxis> VariableAxesNames::GetVariationAxes(
 }
 
 }  // namespace blink
-
-"""
-
 ```

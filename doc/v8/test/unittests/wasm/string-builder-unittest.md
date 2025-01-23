@@ -45,9 +45,12 @@ This systematic process of understanding the purpose, analyzing the code, synthe
 
 **总而言之，这个单元测试文件的目的是确保 `StringBuilder` 类作为一个高效的字符串构建工具，能够在各种情况下正确工作，包括基本拼接、内存管理以及处理大型字符串，从而保证 V8 引擎在 WASM 模块中构建字符串的可靠性。**
 
-Prompt: ```这是目录为v8/test/unittests/wasm/string-builder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/string-builder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -91,6 +94,4 @@ TEST(StringBuilder, SuperLongStrings) {
 
 }  // namespace string_builder_unittest
 }  // namespace v8::internal::wasm
-
-"""
 ```

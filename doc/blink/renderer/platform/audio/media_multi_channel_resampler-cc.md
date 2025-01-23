@@ -115,14 +115,16 @@ By following this thought process, systematically analyzing the code, and connec
 
 总而言之，`MediaMultiChannelResampler` 是 Chromium 中一个关键的音频处理组件，负责在需要时调整音频数据的采样率，以确保各种音频源可以在浏览器中正确播放和处理。理解其功能有助于理解浏览器如何处理来自不同来源的音频内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/media_multi_channel_resampler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ void MediaMultiChannelResampler::ProvideResamplerInput(
 }
 
 }  // namespace blink
-
-"""
-
 ```

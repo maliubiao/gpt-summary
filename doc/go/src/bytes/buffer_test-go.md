@@ -229,7 +229,7 @@ Error or EOF: EOF
 
 总而言之，`go/src/bytes/buffer_test.go` 是 `bytes` 包中 `Buffer` 类型功能和正确性的重要保障，它通过各种测试用例覆盖了 `Buffer` 的核心行为和边缘情况。理解这些测试用例有助于更深入地理解 `bytes.Buffer` 的工作原理和正确使用方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/bytes/buffer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -237,8 +237,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -986,9 +988,4 @@ func BenchmarkBufferAppendNoCopy(b *testing.B) {
 		bb.Write(b)    // should be nearly infinitely fast
 	}
 }
-
-"""
-
-
-
 ```

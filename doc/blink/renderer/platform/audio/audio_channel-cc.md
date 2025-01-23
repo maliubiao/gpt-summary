@@ -168,14 +168,16 @@ This structured approach allows for a comprehensive understanding of the code's 
 
 总而言之，`audio_channel.cc` 定义了 Blink 引擎中音频通道的基本操作，这些操作是构建更高级的音频处理功能的基础，并通过 Web Audio API 暴露给 JavaScript 开发者。理解这些底层概念有助于开发者更有效地使用 Web Audio API 并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/audio_channel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -304,7 +306,4 @@ float AudioChannel::MaxAbsValue() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -126,7 +126,7 @@ Let's break down the thought process to analyze the provided Python script for t
 
 总而言之，虽然 `generator.py` 脚本本身功能简单，但它在 Frida Python 绑定的构建过程中扮演着一个小而重要的角色，并且与逆向工程、底层开发等领域有着间接的联系。理解它的功能和潜在的错误有助于开发者更好地调试和理解 Frida 的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/14 configure file/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -153,7 +155,4 @@ assert inputf.exists()
 
 with outputf.open('w') as ofile:
     ofile.write("#define ZERO_RESULT 0\n")
-
-"""
-
 ```

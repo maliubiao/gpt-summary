@@ -51,9 +51,12 @@ Essentially, I started with the high-level purpose and then drilled down into th
 
 该文件使用了 Google Test 框架来组织和执行单元测试，并使用了 V8 内部的一些工具类，例如 `Utf16CharacterStream` 和 `UnoptimizedCompileFlags` 来创建和配置 `Scanner` 对象。
 
-Prompt: ```这是目录为v8/test/unittests/parser/scanner-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/parser/scanner-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,6 +216,4 @@ TEST_F(ScannerTest, PeekAheadAheadAwaitExpression) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

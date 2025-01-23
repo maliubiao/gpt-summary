@@ -155,15 +155,17 @@ By following these steps, moving from high-level understanding to detailed code 
 
 通过调试器，开发者可以在 `gpu_external_texture.cc` 中的关键方法设置断点，例如 `ExternalTextureCache::Import`、`GPUExternalTexture::FromHTMLVideoElement` 等，来跟踪 `GPUExternalTexture` 的创建过程，查看传入的参数，以及了解缓存的管理情况。 这有助于诊断与外部纹理相关的 WebGPU 问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_external_texture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -688,7 +690,4 @@ bool GPUExternalTexture::destroyed() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

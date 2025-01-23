@@ -126,15 +126,17 @@ jr      ra        # 返回
 
 `v8/src/codegen/mips64/constants-mips64.cc` 是 V8 引擎中一个基础性的文件，它为 MIPS64 架构的代码生成提供了必要的常量和工具，使得 V8 能够将 JavaScript 代码高效地转换为该架构的机器码。它定义了寄存器名称和编号，并提供了它们之间的转换机制，这对于理解 V8 的内部工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/constants-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/constants-mips64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ int MSARegisters::Number(const char* name) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
 ```

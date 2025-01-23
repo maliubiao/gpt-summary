@@ -132,11 +132,13 @@ instance.dynamicProp = 'value12'; // 对应 StoreMode::kSet 或其他 IC 优化
 
 总而言之，`keyed-store-generic.cc` 文件是 V8 引擎中处理 JavaScript 属性赋值操作的核心组件，它根据不同的场景和优化策略，选择合适的存储模式和执行路径，以确保 JavaScript 代码的高效运行。它直接影响了 JavaScript 中对对象属性的读写性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/keyed-store-generic.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1484,7 +1486,4 @@ void KeyedStoreGenericAssembler::StoreProperty(TNode<Context> context,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -201,7 +201,7 @@ func main() {
 
 在这个例子中，由于使用了 `syscall.O_NONBLOCK`，`tty.Read` 操作会立即返回，即使没有数据可读，并返回 `syscall.EAGAIN` 或 `syscall.EWOULDBLOCK` 错误。 如果使用者没有正确处理这些非阻塞的情况，可能会导致程序行为不符合预期。  而测试代码通过默认的阻塞方式来避免这种混淆，专注于 `io.Copy` 在阻塞 TTY 上的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sendfile_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -209,8 +209,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -297,9 +299,4 @@ func TestCopyFromTTY(t *testing.T) {
 		t.Error(err)
 	}
 }
-
-"""
-
-
-
 ```

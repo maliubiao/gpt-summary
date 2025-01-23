@@ -223,14 +223,16 @@ Let's break down the thought process for analyzing this code.
 
 总而言之，`css_basic_shape_interpolation_type.cc` 是 Blink 渲染引擎中一个关键的组件，它确保了 CSS 基本形状属性在动画和过渡期间能够平滑地变化，从而为用户提供更丰富的视觉体验。它与 CSS 属性紧密相关，并通过 JavaScript 和 HTML 来驱动。理解其功能有助于开发者更好地利用 CSS 动画和过渡来创建动态的 Web 界面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_basic_shape_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -469,7 +471,4 @@ void CSSBasicShapeInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

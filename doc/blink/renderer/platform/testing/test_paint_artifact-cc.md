@@ -152,14 +152,16 @@ TEST(PaintArtifactTest, StackedDivs) {
 
 总而言之，`test_paint_artifact.cc` 是一个强大的测试工具，它允许 Blink 开发者以精细的方式控制和验证渲染过程中的关键数据结构 `PaintArtifact` 的生成，从而确保渲染的正确性和性能。它通过提供高层次的抽象，简化了测试代码的编写，使其更易于理解和维护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/test_paint_artifact.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -399,7 +401,4 @@ void TestPaintArtifact::DidAddDisplayItem() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

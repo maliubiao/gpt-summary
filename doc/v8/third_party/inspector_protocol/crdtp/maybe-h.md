@@ -202,15 +202,17 @@ if (objectInfo.hasOwnProperty('name')) {
 
 In summary, `v8/third_party/inspector_protocol/crdtp/maybe.h` provides a robust and type-safe way to represent optional values in the V8 codebase, particularly within the context of the Chrome DevTools Protocol. It helps to avoid null pointer errors and makes the intent of potentially missing data explicit. The specializations using `std::optional` for primitive types demonstrate an effort towards efficiency and leveraging standard library features where appropriate.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/maybe.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/maybe.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ using Maybe = typename detail::MaybeTypedef<T>::type;
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_MAYBE_H_
-
-"""
-
 ```

@@ -146,14 +146,16 @@ network::mojom::blink::CSPSourceListPtr mojo_source_list = ConvertToMojoBlink(pu
 
 总而言之，`conversion_util.cc` 是 Blink 渲染引擎中一个关键的实用工具文件，它负责在不同的 CSP 数据表示形式之间进行桥接，确保 CSP 信息能够在 Blink 内部和 Chromium 网络服务之间正确传递和使用，从而保障 Web 内容的安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/conversion_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ Vector<network::mojom::blink::ContentSecurityPolicyPtr> ConvertToMojoBlink(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -119,15 +119,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 **总而言之，`crypto_utils_test.cc` 是 QUIC 协议安全性的重要保障，它通过单元测试确保了核心加密工具函数的正确性，从而间接地保障了基于 QUIC 的 Web 应用的安全稳定运行。当用户遇到网络连接问题，特别是与安全协议相关的错误时，开发人员可能会通过检查此类测试文件来理解问题的根源。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/crypto_utils_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -407,7 +409,4 @@ TEST_F(CryptoUtilsTest, GetSSLErrorStack) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

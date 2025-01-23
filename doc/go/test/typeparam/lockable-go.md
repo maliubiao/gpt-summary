@@ -217,15 +217,17 @@ func main() {
 
 `go/test/typeparam/lockable.go` 中的 `Lockable` 结构体是一个使用 Go 泛型实现的线程安全的数据容器。它通过互斥锁保护内部数据，确保在并发环境下对数据的安全访问。使用者应该始终通过 `get()` 和 `set()` 方法来操作 `Lockable` 实例中的数据，以保证线程安全。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/lockable.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -276,9 +278,4 @@ func main() {
 		panic(got)
 	}
 }
-
-"""
-
-
-
 ```

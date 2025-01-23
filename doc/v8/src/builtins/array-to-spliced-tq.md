@@ -159,14 +159,16 @@ console.log(yetAnotherNewArray); // 输出: [1, 'x', 'y', 2, 3, 4, 5]
 
 总而言之，`v8/src/builtins/array-to-spliced.tq`  的核心是高效且符合规范地实现了 `Array.prototype.toSpliced` 方法，确保在不修改原始数组的前提下，创建并返回一个新的修改后的数组副本。它针对不同的数组类型和操作场景进行了优化，例如快速处理 packed array。理解这段代码有助于深入了解 V8 引擎如何实现 JavaScript 的内置方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-to-spliced.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -409,7 +411,4 @@ transitioning javascript builtin ArrayPrototypeToSpliced(
   }
 }
 }
-
-"""
-
 ```

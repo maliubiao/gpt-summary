@@ -118,7 +118,7 @@ Initially, I focused solely on the C code. However, the directory path is paramo
 
 总而言之，这个简单的 `main.c` 文件在一个更大的 Frida 项目的上下文中，作为一个故意设计成失败的测试用例，用于验证 Frida 工具在处理依赖缺失等错误情况下的行为或用于测试构建系统的正确性。 它简洁地展示了程序依赖、链接和运行时错误的概念，并为使用 Frida 进行动态分析提供了场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/16 extract from subproject/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,14 +126,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int sub_lib_method(void);
 
 int main(void) {
     return 1337 - sub_lib_method();
 }
-
-"""
-
 ```

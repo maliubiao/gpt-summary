@@ -219,7 +219,7 @@ sys.stdin.read()
 
 通过这些 Frida hook 示例，可以在运行时观察 `sin` 和 `cos` 函数的调用情况，包括输入参数和返回值，从而帮助理解 Framework、NDK 以及 bionic 库之间的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,9 +231,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- { // Entry 235
+### 源代码
+```c
+{ // Entry 235
     -0x1.2383ca8078e58477cd5fb1d9de031dcep-2,
     0x1.ead07cc6356964e27a1036d2f8b158f7p-1,
     -0x1.279a74590331ap-2,
@@ -1427,7 +1429,4 @@ Prompt:
     -0x1.175059bf0d42f1d6b391f07f96f2353dp-1,
     -0x1.ad19e2535aa8ffb40066d78aef71fabdp-1,
     0x1
-"""
-
-
 ```

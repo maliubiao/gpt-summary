@@ -212,7 +212,7 @@ By following these steps, we can systematically analyze the code and arrive at a
 
 通过以上分析，可以看出 `gnu.py` 文件在 Frida 的构建系统中扮演着重要的角色，它负责封装 GNU 风格编译器的特性，并根据用户的构建配置生成相应的编译和链接参数，这直接影响着最终生成的可执行文件和动态库的特性，也与逆向分析的方法和难度息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/mixins/gnu.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -220,8 +220,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019-2022 The meson development team
 
@@ -851,7 +853,4 @@ class GnuCompiler(GnuLikeCompiler):
 
     def get_profile_use_args(self) -> T.List[str]:
         return super().get_profile_use_args() + ['-fprofile-correction']
-
-"""
-
 ```

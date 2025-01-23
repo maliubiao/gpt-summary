@@ -237,7 +237,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/tty.h` 这个文件虽然小，但它定义了底层系统通信的关键常量，这些常量在 Android 系统的各种组件中都有潜在的应用，尤其是在涉及串口通信、蓝牙、RIL 等功能的场景下。理解这些常量对于进行底层的系统调试和开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tty.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -248,8 +248,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -291,7 +293,4 @@ Prompt:
 #define N_CAN327 30
 #define NR_LDISCS 31
 #endif
-
-"""
-
 ```

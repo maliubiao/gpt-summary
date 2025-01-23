@@ -140,7 +140,7 @@ Now, let's address the user's specific requests.
 
 作为 `v8/test/cctest/test-api.cc` 的一部分，这段代码片段专注于测试 V8 引擎 C++ API 中与字符串处理（特别是 UTF-16）、符号、类型转换（如字符串到数组索引）、异常创建和捕获、跨上下文安全以及上下文管理相关的核心功能。这些测试确保了 V8 提供的 API 的正确性和健壮性，以便开发者能够安全有效地在 C++ 代码中嵌入和操作 V8 JavaScript 引擎。这是整个测试套件中的一部分，用于验证 V8 引擎的各个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 [5] -= 2;"  // Here the surrogate pairs match up.
       "var a2 = [];"
       "var b2 = [];"
@@ -1088,7 +1090,4 @@ TEST(DetachGlobal) {
     v8::Context::Scope context_scope(env3);
     CHECK(env3->Global()
               ->Set(env3, v8_str("p"), v8::Integer::New(env3->GetIsolate(), 24)
-"""
-
-
 ```

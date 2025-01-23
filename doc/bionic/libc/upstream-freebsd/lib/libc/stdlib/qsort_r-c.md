@@ -371,7 +371,7 @@ sys.stdin.read()
 
 总结来说，`qsort_r.c` 虽然代码量很少，但它所包含的快速排序算法是 Android 系统和应用中不可或缺的一部分。理解其功能、实现方式以及与 Android 系统的交互，对于进行 Android 开发和调试都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/lib/libc/stdlib/qsort_r.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -382,15 +382,14 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is in the public domain.  Originally written by Garrett
  * A. Wollman.
  */
 #define I_AM_QSORT_R
 #include "qsort.c"
-
-"""
-
 ```

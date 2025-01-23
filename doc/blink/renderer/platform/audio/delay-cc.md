@@ -166,14 +166,16 @@ By following these steps, we can thoroughly analyze the C++ code and generate a 
 
 总而言之，`blink/renderer/platform/audio/delay.cc` 是 Blink 引擎中实现音频延迟效果的关键组件，它通过环形缓冲区和插值技术来存储和回放音频，并提供了处理不同速率延迟变化的机制，最终通过 Web Audio API 暴露给 Web 开发者使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/delay.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -484,7 +486,4 @@ void Delay::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

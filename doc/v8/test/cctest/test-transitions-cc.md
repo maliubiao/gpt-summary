@@ -154,15 +154,17 @@ While this test file focuses on V8 internals, the scenarios it tests can indirec
 
 **In summary, `v8/test/cctest/test-transitions.cc` is a crucial part of V8's testing infrastructure, specifically focused on verifying the correctness of object property transition mechanisms. It uses C++ to directly manipulate V8's internal data structures and ensures that adding and modifying object properties in JavaScript behaves as expected under various conditions.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-transitions.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-transitions.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -483,7 +485,4 @@ TEST(TransitionArray_SameFieldNamesDifferentAttributes) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

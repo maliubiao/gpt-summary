@@ -186,15 +186,17 @@ calculate(30); // 可能会再次触发优化
 
 `v8/src/profiler/profiler-listener.cc` 是 V8 引擎中一个至关重要的组件，它负责监听和记录各种代码事件，并将这些信息传递给 profiler，为开发者进行性能分析和优化提供了基础数据。 它深入参与了 JavaScript 代码的生命周期，从编译到执行，再到优化和反优化，都留下了它的足迹。理解其功能有助于我们更好地理解 V8 引擎的内部工作原理以及如何进行有效的 JavaScript 性能分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/profiler-listener.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/profiler-listener.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -641,7 +643,4 @@ void ProfilerListener::AttachDeoptInlinedFrames(DirectHandle<Code> code,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

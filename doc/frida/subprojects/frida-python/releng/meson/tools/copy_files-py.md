@@ -208,7 +208,7 @@ python copy_files.py my_frida_script.js -C /home/user/frida_scripts --output-dir
 
 通过这样的调试过程，用户可能会逐步深入到 Frida 的构建系统，最终定位到 `copy_files.py` 脚本，并分析其行为，以找到导致问题的根本原因，例如文件没有被复制到预期位置，或者复制过程中发生了错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/tools/copy_files.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,8 +216,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # Copyright 2018 The Meson development team
 
@@ -259,7 +261,4 @@ if __name__ == '__main__':
     copy_files(files=args.files,
                input_dir=args.input_dir,
                output_dir=args.output_dir)
-
-"""
-
 ```

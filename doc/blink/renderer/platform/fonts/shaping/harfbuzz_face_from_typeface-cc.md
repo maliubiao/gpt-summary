@@ -174,14 +174,16 @@ body {
 
 总而言之，`harfbuzz_face_from_typeface.cc` 文件在 Blink 引擎中扮演着至关重要的角色，它负责将 Blink 内部的字体表示转换为 HarfBuzz 可以使用的格式，为后续的文字排版奠定了基础，最终影响着网页上文本的正确显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_face_from_typeface.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ hb::unique_ptr<hb_face_t> HbFaceFromSkTypeface(sk_sp<SkTypeface> typeface) {
   return return_face;
 }
 }  // namespace blink
-
-"""
-
 ```

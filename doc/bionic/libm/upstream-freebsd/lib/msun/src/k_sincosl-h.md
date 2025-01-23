@@ -250,7 +250,7 @@ Dynamic Linker (在 Android 上主要是 `linker64` 或 `linker`) 的主要功�
 
 总而言之，`k_sincosl.handroid` 是 Android 数学库中用于高精度正弦和余弦计算的核心组件，它通过泰勒级数展开等数学方法来实现功能，并在 Android 系统和 NDK 开发中扮演着重要的角色。 理解其功能和调用路径对于调试与数学运算相关的 Android 问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/k_sincosl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -396,7 +398,4 @@ __kernel_sincosl(long double x, long double y, int iy, long double *sn,
 #else
 #error "Unsupported long double format"
 #endif
-
-"""
-
 ```

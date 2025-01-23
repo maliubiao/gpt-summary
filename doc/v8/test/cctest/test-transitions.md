@@ -59,11 +59,13 @@ Object.defineProperty(obj, 'foo', { writable: false });
 
 `v8/test/cctest/test-transitions.cc` 测试文件深入验证了 V8 引擎内部管理对象属性动态变化的机制。这些测试确保了 V8 在 JavaScript 代码动态添加和修改属性时，能够正确、高效地维护对象的内部结构，这对于 V8 的性能至关重要。JavaScript 开发者虽然通常不需要直接与这些底层的转换机制打交道，但理解这些机制有助于更好地理解 JavaScript 对象的行为和 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-transitions.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -384,7 +386,4 @@ TEST(TransitionArray_SameFieldNamesDifferentAttributes) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

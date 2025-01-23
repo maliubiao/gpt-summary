@@ -167,7 +167,7 @@ console.log(view[0]); // 如果 buffer 被分离，这里可能会抛出异常
 
 总而言之，这段代码是 V8 编译器中至关重要的一部分，它负责将 JavaScript 中对 `ArrayBufferView` 的操作转换为可以在底层机器上执行的指令，并确保在处理这些对象时考虑到各种边缘情况和潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/graph-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/graph-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,9 +175,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          return RoundDownToElementSize(
+### 源代码
+```cpp
+return RoundDownToElementSize(
                 a.UintPtrSub(byte_length, byte_offset));
           })
           .Else([&]() { return a.UintPtrConstant(0); })
@@ -663,8 +665,4 @@ Operator const* JSGraphAssembler::PlainPrimitiveToNumberOperator() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

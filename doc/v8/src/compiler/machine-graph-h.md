@@ -183,15 +183,17 @@ Node* correct_constant2 = graph->Int32Constant(10);
 
 这个例子展示了没有利用 `MachineGraph` 的常量缓存机制，直接使用 `CommonOperatorBuilder` 创建了两个相同的常量节点。正确的做法是使用 `MachineGraph` 提供的 `Int32Constant` 方法，它会自动处理缓存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-graph.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-graph.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ class V8_EXPORT_PRIVATE MachineGraph : public NON_EXPORTED_BASE(ZoneObject) {
 }  // namespace v8
 
 #endif  // V8_COMPILER_MACHINE_GRAPH_H_
-
-"""
-
 ```

@@ -156,15 +156,17 @@ This file defines the `CanMakePaymentEvent` class, which is an event specificall
 
 In summary, `can_make_payment_event.cc` is a fundamental component in the browser's implementation of the Payment Request API, facilitating communication between web pages and Service Workers to determine the user's payment capabilities before initiating a full payment flow.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/can_make_payment_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ CanMakePaymentEvent::CanMakePaymentEvent(
       observer_(respond_with_observer) {}
 
 }  // namespace blink
-
-"""
-
 ```

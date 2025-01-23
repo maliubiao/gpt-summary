@@ -191,7 +191,7 @@ func main() {
 
 **总结来说，`gostartcall` 是 Go 运行时用于初始化新 Goroutine 执行上下文的关键函数。它模拟了函数调用的过程，为 Goroutine 的启动做准备。普通 Go 开发者应该使用 `go` 关键字来创建和启动 Goroutine，而不需要直接接触 `gostartcall` 这样的底层函数。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sys_x86.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -224,9 +226,4 @@ func gostartcall(buf *gobuf, fn, ctxt unsafe.Pointer) {
 	buf.pc = uintptr(fn)
 	buf.ctxt = ctxt
 }
-
-"""
-
-
-
 ```

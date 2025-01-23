@@ -115,7 +115,7 @@ Initially, I might have focused too much on the direct reverse engineering aspec
 
 `frida/subprojects/frida-python/releng/meson/test cases/common/21 target arg/func.c` 这个文件本身是一个非常简单的 C 代码，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在编译目标代码时处理宏定义参数的能力。它的功能虽然看似简单，但与 Frida 的核心功能（动态代码注入）以及底层的编译过程紧密相关，对于确保 Frida 的稳定性和可靠性至关重要。对于最终用户而言，理解这类测试用例背后的原理有助于理解 Frida 的工作方式，并在遇到注入代码编译问题时提供一些调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/21 target arg/func.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifndef CTHING
 #error "Local argument not set"
 #endif
@@ -134,7 +136,4 @@ Prompt:
 #endif
 
 int func(void) { return 0; }
-
-"""
-
 ```

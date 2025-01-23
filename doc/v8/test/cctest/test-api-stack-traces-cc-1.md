@@ -174,7 +174,7 @@ v8::base::SNPrintF(code, source, "//# sourceURL=source_url");
 
 这部分 `v8/test/cctest/test-api-stack-traces.cc` 的核心功能是验证 V8 引擎在处理动态生成的 JavaScript 代码时，能够正确地生成和提供包含源 URL 和脚本名称的堆栈跟踪信息。这对于提高动态代码的可调试性至关重要，并确保在发生错误（包括堆栈溢出）时，开发者能够获得足够的上下文信息来定位和解决问题。同时，它也测试了 V8 提供的 C++ API，允许开发者在 V8 内部获取当前的脚本名称或源 URL。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-stack-traces.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-stack-traces.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,8 +182,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 uals(info.GetIsolate()->GetCurrentContext(), name).FromJust());
   }
 }
@@ -317,8 +319,4 @@ TEST(CurrentScriptNameOrSourceURL_SourceURL) {
 
   CHECK(CompileRunWithOrigin(source, "")->IsUndefined());
 }
-
-"""
-
-
 ```

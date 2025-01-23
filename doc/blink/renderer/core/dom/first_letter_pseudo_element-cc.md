@@ -158,15 +158,17 @@ By following these steps, iteratively analyzing the code, and relating it back t
 
 `blink/renderer/core/dom/first_letter_pseudo_element.cc` 文件是 Chromium Blink 渲染引擎中实现 CSS `::first-letter` 伪元素的核心组件。它负责识别首字母，创建相应的布局对象，并应用相关的 CSS 样式。理解这个文件的功能对于理解浏览器如何渲染带有 `::first-letter` 样式的网页至关重要，并且在调试相关问题时提供重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/first_letter_pseudo_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -732,7 +734,4 @@ Node* FirstLetterPseudoElement::InnerNodeForHitTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

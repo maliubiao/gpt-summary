@@ -209,7 +209,7 @@ try {
 
 `v8/src/wasm/wasm-code-manager.h` 是 V8 引擎中一个至关重要的头文件，它定义了用于管理已编译 WebAssembly 代码的核心结构和功能。它负责表示、分配、释放和组织 WebAssembly 代码，以及处理与代码相关的元数据。`WasmCode` 类代表单个已编译的代码单元，`WasmCodeAllocator` 管理代码内存分配，而 `NativeModule` 则负责管理整个 WebAssembly 模块的本地代码。这个文件是 V8 成功运行 WebAssembly 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-manager.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-code-manager.h以.tq结尾，那它是个v8 torque源代码，
@@ -217,8 +217,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1037,7 +1039,4 @@ class V8_EXPORT_PRIVATE NativeModule final {
   // Free a set of functions of this module. Uncommits whole pages if possible.
   // The given vector must be ordered by the instruction start address, and all
   // {WasmCode} objects must not be used any more.
-"""
-
-
 ```

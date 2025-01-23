@@ -119,7 +119,7 @@ fetch('https://foo.test/data.json')
 
 这段代码是 `HttpServerPropertiesManager` 的单元测试的一部分，专门测试了在启用 `NetworkAnonymizationKey` 特性后，服务器属性（SPDY 支持、备用服务、QUIC 服务器信息）如何根据 `NetworkAnonymizationKey` 进行隔离、持久化和恢复。它涵盖了普通来源和不透明来源，以及在不同 `NetworkAnonymizationKeyMode` 下的行为，确保了该特性在存储和检索服务器属性时的正确性和隐私性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_server_properties_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pServerPropertiesManagerTest, NetworkAnonymizationKeyIntegration) {
   const SchemefulSite kSite(GURL("https://foo.test/"));
   const auto kNetworkAnonymizationKey =
@@ -773,7 +775,4 @@ TEST_F(HttpServerPropertiesManagerTest,
                                                 kNetworkAnonymizationKey1));
         EXPECT_EQ(kQuicServerInfo2,
                   *properties->GetQuicServerInfo(kSer
-"""
-
-
 ```

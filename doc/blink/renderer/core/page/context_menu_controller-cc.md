@@ -184,7 +184,7 @@ My thought process to answer the request involves several steps:
 
 总的来说，`blink/renderer/core/page/context_menu_controller.cc` 文件的第一部分主要负责 **接收和处理用户的上下文菜单触发事件，并通过执行命中测试和分析目标元素的信息，构建用于生成上下文菜单的数据结构 (ContextMenuData)。**  它深入地与 HTML DOM 结构交互，识别不同类型的元素 (链接、图像、媒体、可编辑内容等)，并提取相关信息，以便为用户提供相应的上下文菜单选项。该部分还处理了图像元素的特殊逻辑，即使图像被其他元素遮挡也尝试获取图像信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/context_menu_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple Inc. All rights reserved.
  * Copyright (C) 2010 Igalia S.L
@@ -916,8 +918,4 @@ bool ContextMenuController::ShowContextMenu(LocalFrame* frame,
             misspelled_length, &web_suggestions);
         WebVector<std::u16string> suggestions(web_suggestions.size());
         base::ranges::transform(web_suggestions, suggestions.begin(),
-                            
-"""
-
-
 ```

@@ -187,15 +187,17 @@ By following these steps, you can systematically analyze C++ unit test code, und
 
 总之，`tcp_writable_stream_wrapper_unittest.cc` 文件通过一系列单元测试，确保了 `TCPWritableStreamWrapper` 类的各项功能正常运行，为 Chromium 中 Direct Sockets 功能的稳定性和可靠性提供了保障。理解这个文件的内容有助于理解 Blink 引擎中 TCP 可写流的实现细节，以及 JavaScript 如何通过 Web Streams API 与底层的网络通信机制进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/direct_sockets/tcp_writable_stream_wrapper_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -553,7 +555,4 @@ TEST_P(TCPWritableStreamWrapperCloseTestWithMaybePendingWrite,
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

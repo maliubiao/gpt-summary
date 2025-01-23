@@ -191,15 +191,17 @@ func recursiveFunc() {
 
 总而言之，这段代码是 Go 语言在 `loong64` 架构上实现其核心功能（如函数调用、栈管理、动态链接等）的关键组成部分，它负责将高级的 Go 代码转换为能在该架构上高效执行的机器指令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/loong64/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1075,9 +1077,4 @@ var Linkloong64 = obj.LinkArch{
 	Progedit:       progedit,
 	DWARFRegisters: LOONG64DWARFRegisters,
 }
-
-"""
-
-
-
 ```

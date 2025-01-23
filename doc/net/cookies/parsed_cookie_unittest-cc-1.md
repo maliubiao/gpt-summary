@@ -130,7 +130,7 @@ HTTP Cookie 是 Web 开发中重要的组成部分，JavaScript 可以通过 `do
 
 `parsed_cookie_unittest.cc` 的第二部分专注于测试 `ParsedCookie` 类对 Cookie 特定属性（如 `SameSite`，`secure`，`httponly`）以及各种边缘情况（如无效字符，特殊 token）的处理逻辑，确保 Cookie 的解析和操作符合 HTTP Cookie 规范，并且能够有效地防止由于不规范的 Cookie 字符串导致的错误。这些测试对于保证 Chromium 浏览器正确地处理和管理 HTTP Cookie 至关重要，从而维护用户的会话状态、安全性和隐私。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/parsed_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 value is returned for the SameSite attribute
 // string.
 TEST(ParsedCookieTest, CookieSameSiteStringEnum) {
@@ -481,8 +483,4 @@ TEST(ParsedCookieTest, HtabInNameOrValue) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

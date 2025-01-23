@@ -171,15 +171,17 @@ This systematic approach allows for a comprehensive understanding of the code's 
 
 总而言之，`webgl_debug_shaders.cc` 提供了 WebGL 开发者一个强大的调试工具，让他们能够深入了解 GPU 驱动程序对 Shader 代码的处理，从而诊断一些难以追踪的渲染问题。 它与 JavaScript 通过 WebGL API 直接交互，并且是 Chromium 浏览器中实现 `WEBGL_debug_shaders` 扩展的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_debug_shaders.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -246,7 +248,4 @@ const char* WebGLDebugShaders::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

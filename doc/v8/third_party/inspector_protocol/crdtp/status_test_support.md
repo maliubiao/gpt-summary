@@ -104,11 +104,13 @@ console.log("Hello World"  // 缺少闭合的括号
 
 `status_test_support.cc` 文件提供了用于测试 V8 引擎中 `Status` 对象功能的工具。这些 `Status` 对象很可能在 Chrome DevTools Protocol 的实现中使用，用于表示处理 CDP 命令时的状态和错误信息。虽然这个文件本身是 C++ 代码，但它间接地支持了 JavaScript 的调试和开发体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/status_test_support.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ testing::Matcher<Status> StatusIs(Error error, size_t pos) {
   return MakeMatcher(new StatusIsMatcher(Status(error, pos)));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

@@ -118,15 +118,17 @@ This structured approach of understanding the file's purpose, examining dependen
 
 `blink/renderer/core/page/page_test.cc` 文件是 Blink 引擎中至关重要的测试文件，它确保了 `Page` 类的核心功能（包括页面创建、浏览上下文组管理和颜色提供器处理）的正确性。理解这个文件的内容有助于理解 Blink 引擎如何管理网页以及这些机制如何与 JavaScript、HTML 和 CSS 相互作用。对于开发者来说，这个文件也是调试和理解页面加载和渲染流程的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/page_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,7 +298,4 @@ TEST(PageTest, CreateNonOrdinaryColorProviders) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

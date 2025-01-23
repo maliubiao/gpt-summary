@@ -192,7 +192,7 @@ func main() {
 
 总结来说， `go/src/go/types/check.go` 是 Go 语言类型检查的核心实现，负责对 Go 源代码进行静态类型分析，确保代码符合 Go 语言的类型规则。它维护了类型检查的状态，处理包和文件，进行符号解析、类型推断和检查，并处理一些复杂的语言特性，例如延迟操作和 Go 版本控制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/check.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -789,9 +791,4 @@ func instantiatedIdent(expr ast.Expr) *ast.Ident {
 	// extra debugging of go.dev/issue/63933
 	panic(sprintf(nil, nil, true, "instantiated ident not found; please report: %s", expr))
 }
-
-"""
-
-
-
 ```

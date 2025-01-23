@@ -130,7 +130,7 @@ By following these steps, combining code analysis with contextual understanding 
 
 `foo.c` 文件本身不是一个功能性的源代码文件，而是一个 **测试用例**，用于验证 Frida 的构建系统在处理特定类型的依赖关系和目录结构时是否能够正确地检测并报告错误。它通过使用 `#error` 预处理指令来模拟错误的场景，并期望构建系统能够因此而失败，从而确保构建过程的健壮性。 这与逆向工程中保证工具链的正确性息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/183 partial dependency/declare_dependency/headers/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -156,7 +158,4 @@ Prompt:
  */
 
 #error "Included C sources that shouldn't be."
-
-"""
-
 ```

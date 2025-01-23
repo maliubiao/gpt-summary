@@ -164,7 +164,7 @@ main.main()
 
 总而言之，`callbacks_traceback.go` 是 Go 运行时为了支持 Cgo 回调期间的完整栈回溯所做的底层工作的一部分。它通过与 C 代码共享变量的方式，让 Go 运行时能够访问 C 语言的栈信息，从而提供更全面的错误诊断能力。理解这个文件的作用需要对 Cgo 的内部机制有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/callbacks_traceback.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ import _ "unsafe" // for go:linkname
 //go:linkname _cgo_callers _cgo_callers
 var x_cgo_callers byte
 var _cgo_callers = &x_cgo_callers
-
-"""
-
-
-
 ```

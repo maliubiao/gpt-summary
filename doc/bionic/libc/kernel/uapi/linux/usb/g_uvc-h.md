@@ -317,7 +317,7 @@ if __name__ == "__main__":
 
 请注意，这只是一个基本的示例。实际的 Android UVC 实现可能涉及更复杂的交互和更多的系统组件。你需要根据具体的场景进行更深入的分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/usb/g_uvc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -328,8 +328,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -364,7 +366,4 @@ struct uvc_event {
 };
 #define UVCIOC_SEND_RESPONSE _IOW('U', 1, struct uvc_request_data)
 #endif
-
-"""
-
 ```

@@ -162,11 +162,13 @@ By following this systematic approach, combining code analysis with domain knowl
 
 `bytes-unittest.cc` 中的代码是 V8 引擎内部用于跟踪和处理字节数和时间间隔的底层机制的测试。这些机制对于 V8 的性能监控、资源管理（例如，追踪内存分配和垃圾回收的效率）至关重要。虽然 JavaScript 没有直接对应的 API，但我们可以使用 `performance` API 和其他技术来模拟和观察类似的性能指标，从而理解 V8 内部是如何进行性能优化的。这些测试确保了 V8 引擎在处理与时间和数据量相关的操作时能够正确地进行统计和计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/base/bytes-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -299,7 +301,4 @@ TEST(SmoothedBytesAndDuration, Update) {
 }
 
 }  // namespace heap::base
-
-"""
-
 ```

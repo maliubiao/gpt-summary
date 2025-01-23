@@ -157,15 +157,17 @@ By following these steps, we can systematically analyze the C++ code and connect
 
 在调试过程中，如果发现 `ondataavailable` 事件没有被触发，或者 `event.data` 中的 `Blob` 对象不符合预期，那么就需要检查从用户操作到 `BlobEvent` 生成的整个流程，包括权限请求、`MediaRecorder` 的初始化和配置，以及是否有错误导致录制过程提前终止。查看浏览器的开发者工具中的控制台和网络面板可以帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/blob_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ BlobEvent::BlobEvent(const AtomicString& type, Blob* blob, double timecode)
       timecode_(timecode) {}
 
 }  // namespace blink
-
-"""
-
 ```

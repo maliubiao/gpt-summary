@@ -147,7 +147,7 @@ if (ObjC.available) {
 
 总而言之，即使是这样一个小程序，在 Frida 的上下文中也扮演着重要的角色，用于测试、验证和理解动态插桩技术与系统库的交互。它为逆向工程师提供了一个简单的入口点，来学习如何使用 Frida hook 系统函数，并观察程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/20 cups/cups_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <cups/cups.h>
 
 int
@@ -165,7 +167,4 @@ main()
     cupsGetDefault();
     return 0;
 }
-
-"""
-
 ```

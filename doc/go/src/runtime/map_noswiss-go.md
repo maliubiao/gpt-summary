@@ -213,7 +213,7 @@ m[20] = "B"
 
 `go/src/runtime/map_noswiss.go` 文件的主要功能是实现了 Go 语言中非 `swissmap` 版本的 `map` 数据结构的核心逻辑。这包括了 map 的内部存储结构 (哈希表、bucket、溢出桶)，以及对 map 进行创建、访问、插入、删除和迭代等基本操作的实现。此外，它还处理了哈希冲突和 map 的动态扩容机制，并包含了一些用于检测并发读写冲突的基础设施。简而言之，它是 Go 语言 `map` 功能的基石。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/map_noswiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1245,10 +1247,5 @@ next:
 				// bit of tophash to decide which way NaNs go.
 				// NOTE: this case is why we need two evacuate tophash
 				// values, evacuatedX and evacuatedY, that differ in
-				// 
-"""
-
-
-
-
+				//
 ```

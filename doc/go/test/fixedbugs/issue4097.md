@@ -159,15 +159,17 @@ func main() {
 
 `issue4097.go` 这段代码的核心目的是测试Go编译器对常量表达式的静态检查。它故意构造了一个尝试用运行时才能确定的值来初始化常量的场景，以验证编译器是否能正确地报告错误。这有助于确保Go语言的类型系统和编译时检查的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4097.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -177,11 +179,5 @@ Prompt:
 package foo
 
 var s [][10]int
-const m = len(s[len(s)-1]) // ERROR "is not a constant|is not constant" 
-
-
-"""
-
-
-
+const m = len(s[len(s)-1]) // ERROR "is not a constant|is not constant"
 ```

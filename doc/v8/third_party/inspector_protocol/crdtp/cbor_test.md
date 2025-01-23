@@ -190,11 +190,13 @@ console.log(decodedData); // 输出与原始 data 对象相同
 
 `cbor_test.cc` 文件是 V8 引擎中用于测试 CBOR 编码和解码功能的重要组成部分。它的存在是为了确保 CBOR 库的正确性和健壮性，这对于 V8 与 Chrome DevTools 之间的高效通信至关重要。CBOR 作为一种二进制序列化格式，相比 JSON 具有更小的数据体积和更快的解析速度，因此在对性能敏感的场景下（如网络传输）非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/cbor_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1644,7 +1646,4 @@ TEST(AppendString8EntryToMapTest, InvalidEnvelope_Error) {
 }
 }  // namespace cbor
 }  // namespace v8_crdtp
-
-"""
-
 ```

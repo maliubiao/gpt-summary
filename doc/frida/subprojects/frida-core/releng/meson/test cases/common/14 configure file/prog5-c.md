@@ -144,7 +144,7 @@ By following these steps, systematically breaking down the code, and considering
 
 总而言之，`prog5.c` 作为一个简单的测试用例，用于验证 Frida 构建系统中配置文件处理的正确性。它涉及了字符串比较、宏定义、编译过程、以及程序退出状态等基本概念，也与逆向工程中分析程序行为和配置的思想密切相关。理解这个小程序的目的是帮助 Frida 的开发者确保其配置管理功能的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/14 configure file/prog5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,15 +152,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 #include <config5.h>
 
 int main(void) {
     return strcmp(MESSAGE, "@var2@");
 }
-
-"""
-
 ```

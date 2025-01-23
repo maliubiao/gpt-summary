@@ -164,7 +164,7 @@ b.Controls = [
 
 作为 `rewriteARM.go` 的第 13 部分，这段代码专注于对 ARM 架构的 SSA 图中的条件分支进行细粒度的优化。 它通过模式匹配和条件判断，将一些常见的比较操作模式转换为更底层的、更高效的 ARM 指令序列。 重点在于简化比较零的操作，以及利用标志位常量直接进行跳转判断，从而提升最终生成代码的执行效率。 这一部分主要处理 `LT`, `LE`, `GE`, `GT` 等比较操作相关的控制流块，并尝试将它们转换为 `LTnoov`, `LEnoov`, `GEnoov`, `GTnoov` 等无溢出版本的块，或者直接使用底层的比较指令。同时，它也负责简化通用的 `If` 块，将其转换为特定 ARM 条件码的控制流块。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第13部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 IntToInt32(l.AuxInt)
 			x := l.Args[0]
 			if !(l.Uses == 1) {
@@ -1501,9 +1503,4 @@ IntToInt32(l.AuxInt)
 		// match: (If (GreaterEqual cc) yes no)
 		// result: (GE cc yes no)
 		for
-"""
-
-
-
-
 ```

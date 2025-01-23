@@ -84,11 +84,13 @@ myFunction(5, 3);
 
 因此，虽然 JavaScript 代码不能直接操作这些常量，但它们是 JavaScript 运行时环境的关键组成部分。这个文件是 V8 引擎在特定硬件架构上实现其功能的具体体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/x64/frame-constants-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ intptr_t MaglevFrame::StackGuardFrameSize(int register_input_count) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
 ```

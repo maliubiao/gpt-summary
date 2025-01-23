@@ -165,7 +165,7 @@ int main() {
 
 尽管 `c.c` 文件中的 `func_c` 函数本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的基本功能，例如符号查找和函数 hook。  理解这个简单的例子有助于理解 Frida 如何与动态链接库进行交互，以及动态 instrumentation 的基本概念。 它的简单性也使其成为学习和调试 Frida 的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/75 custom subproject dir/custom_subproject_dir/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -189,7 +191,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

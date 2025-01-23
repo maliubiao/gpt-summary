@@ -151,7 +151,7 @@ Let's consider the Intel C++ compiler logic:
 
 In summary, `vs2012backend.py` is a crucial component for enabling Frida's build on Windows using Visual Studio 2012. It handles the specific configuration needed for this environment and demonstrates how build systems manage platform-specific details while contributing to the functionality of powerful tools like Frida used in reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/vs2012backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -196,7 +198,4 @@ class Vs2012Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v110'
-
-"""
-
 ```

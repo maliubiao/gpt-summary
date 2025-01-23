@@ -52,7 +52,7 @@ Here's a plan to summarize the functionality:
 
 这段 `reader_test.go` 的代码片段主要负责对 `archive/zip` 包中的 zip 文件读取功能进行全面的测试，包括各种正常和异常情况，特别是针对潜在的安全漏洞进行了细致的测试，确保 zip 包的读取器能够安全可靠地处理各种类型的 zip 文件。 它还测试了 `zip.Reader` 作为 `fs.FS` 接口实现的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/zip/reader_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -61,8 +61,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 0\x00\x00\x00\x00\x00" +
 		"0000PK\x05\x06000000000000" +
 		"0000\v\x00000\x00\x00\x00\x00\x00\x00\x000")
@@ -769,10 +771,4 @@ func TestBaseOffsetPlusOverflow(t *testing.T) {
 	// as the section reader offset & size were < 0.
 	NewReader(bytes.NewReader(data), int64(len(data))+1875)
 }
-
-"""
-
-
-
-
 ```

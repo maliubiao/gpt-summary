@@ -494,7 +494,7 @@ TEST_F(WebSocketChannelStreamTest, InvalidUtf8TextFrameNotSent) {
 
 **总结来说，这部分代码主要测试了 `WebSocketChannel` 在处理数据帧（包括控制帧和数据帧）时的正确性，以及对 UTF-8 编码的强制执行。它涵盖了发送和接收两个方向的逻辑，并确保了 WebSocket 协议规范的正确实现。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_channel_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -502,9 +502,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-  OnFailChannel(
+### 源代码
+```cpp
+OnFailChannel(
           "Received a broken close frame containing a reserved status code.", _,
           _));
 
@@ -1277,7 +1279,4 @@ TEST_F(WebSocketChannelStreamTest, InvalidUtf8TextFrameNotSent) {
 // The rest of the tests for receiving invalid UTF-8 test the communication with
 // the server. Since there is only one code path, it would be redundant to
 // perform the same tests on th
-"""
-
-
 ```

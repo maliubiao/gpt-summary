@@ -119,7 +119,7 @@ int main(void) {
 
 `maingen.c` 是 Frida 构建系统中的一个小工具，用于生成一个简单的 C 函数框架。它本身不执行逆向操作，但它生成的代码可以作为 Frida 动态分析和代码注入过程的基础。理解这类代码生成工具可以帮助开发者深入了解 Frida 的内部机制和构建流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/10 native subproject/maingen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(void) {
@@ -137,7 +139,4 @@ int main(void) {
     printf("}\n");
     return 0;
 }
-
-"""
-
 ```

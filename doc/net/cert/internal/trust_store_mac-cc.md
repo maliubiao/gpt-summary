@@ -75,7 +75,7 @@ The user wants me to analyze a C++ source code file for the Chromium network sta
 
 `net/cert/internal/trust_store_mac.cc` 的第一部分主要负责**管理和缓存 macOS 系统中证书的信任状态，并提供证书的颁发者信息**。它通过与 macOS Security Framework 交互，监听 Keychain 事件，并维护不同信任域的证书缓存，为 Chromium 的证书验证过程提供基础支持。这部分代码的核心目标是高效、准确地确定证书的信任与否，以便安全地建立 HTTPS 连接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/trust_store_mac.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -83,8 +83,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -882,7 +884,4 @@ class TrustStoreMac::TrustImplDomainCacheFullCerts
       // including it in the intermediates cache.
       SHA256HashValue cert_hash =
           x509_util::CalculateFingerprin
-"""
-
-
 ```

@@ -197,7 +197,7 @@ let anotherResult = safeDivide(0, 0); // anotherResult 的值是 NaN
 
 这个头文件是 V8 Turboshaft 编译器中类型推断的核心组件。它定义了表示和操作类型信息的结构，并实现了对各种运算进行类型分析的逻辑。其目的是为了更精确地理解 JavaScript 代码中变量和表达式的类型，从而使编译器能够进行更有效的代码优化。它处理了包括基本类型、范围、浮点数的特殊值以及类型拓宽等复杂场景，并在编译时为潜在的运行时错误提供了一定的分析能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/typer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/typer.h以.tq结尾，那它是个v8 torque源代码，
@@ -205,8 +205,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1073,7 +1075,4 @@ struct FloatOperationTyper {
   static Type Max(type_t l, type_t r, Zone* zone) {
     if (l.is_only_nan() || r.is_only_nan()) return type_t::NaN();
     bool maybe_n
-"""
-
-
 ```

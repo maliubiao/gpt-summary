@@ -392,7 +392,7 @@ Page size: 4096 // Solaris 的页大小可能不同
 
 总之，`os3_solaris.go` 是 Go 运行时在 Solaris 上的基石，提供了与操作系统交互的关键功能。理解它的作用有助于更深入地理解 Go 程序的运行机制。然而，普通 Go 开发者应尽量使用 Go 标准库提供的更高级别的抽象，避免直接操作底层的系统调用，以减少出错的可能性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os3_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -400,8 +400,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1044,9 +1046,4 @@ const sigPerThreadSyscall = 1 << 31
 func runPerThreadSyscall() {
 	throw("runPerThreadSyscall only valid on linux")
 }
-
-"""
-
-
-
 ```

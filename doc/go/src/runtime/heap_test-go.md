@@ -162,7 +162,7 @@ func AccessObject() interface{} {
 
 `go/src/runtime/heap_test.go` 中的 `TestHeapObjectsCanMove` 函数是一个关键的测试，它验证了 Go 运行时的一个重要特性：堆上的 Go 对象不会被垃圾回收器移动。这个特性对于某些底层编程和与 C 代码互操作的场景非常重要，并且被一些依赖于此假设的库所使用。理解这个测试及其背后的含义，可以帮助开发者更好地理解 Go 的内存管理模型，并避免在使用 `unsafe` 包时可能遇到的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/heap_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -170,8 +170,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ func TestHeapObjectsCanMove(t *testing.T) {
 		t.Fatalf("heap objects can move!")
 	}
 }
-
-"""
-
-
-
 ```

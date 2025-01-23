@@ -138,7 +138,7 @@ if __name__ == '__main__':
 
 总而言之，`gen.py` 是 Frida 项目中用于生成一个简单 C 代码文件的工具，这个文件通常被用作自动化测试的一部分，以验证 Frida 或其相关组件的功能，尤其是在涉及与其他构建系统（如 CMake）集成时。虽然脚本本身很简单，但它在 Frida 的开发和测试流程中扮演着一个角色，并且其生成的文件可以作为逆向分析的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/11 cmake_module_path/subprojects/cmMod/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 with open('main.c', 'w') as fp:
   print('''
 #include <stdio.h>
@@ -157,7 +159,4 @@ int main(void) {
   return 0;
 }
 ''', file=fp)
-
-"""
-
 ```

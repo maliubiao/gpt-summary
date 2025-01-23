@@ -121,14 +121,16 @@ This structured approach helps in thoroughly understanding the test file and its
 
 `atomic_string_test.cc` 文件是 Blink 引擎中用于测试 `AtomicString` 核心功能的单元测试。它验证了数值到字符串的转换以及 `AtomicString` 对象内部实现的共享机制。虽然用户不直接使用 `AtomicString`，但它的高效字符串管理机制对于提升浏览器性能，特别是处理 HTML、CSS 和 JavaScript 相关的字符串操作至关重要，并能帮助避免常见的字符串处理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/atomic_string_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Samsung Electronics. All rights reserved.
  *
@@ -207,7 +209,4 @@ TEST(AtomicStringTest, ImplEquality) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

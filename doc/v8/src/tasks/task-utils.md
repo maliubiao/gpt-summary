@@ -121,11 +121,13 @@ if (shouldCancelIdleCallback) {
 
 总而言之，`task-utils.cc` 文件定义了 V8 引擎内部用于管理和执行可取消任务的基础设施，这些基础设施是 JavaScript 异步编程模型（如 `setTimeout` 和 `requestIdleCallback`）的底层支撑。 开发者虽然在 JavaScript 中不会直接操作这些 C++ 类，但 JavaScript 的异步行为正是建立在这些底层的任务管理机制之上的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tasks/task-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ std::unique_ptr<CancelableIdleTask> MakeCancelableIdleTask(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -92,13 +92,15 @@ console.log(resultArray); // 输出类似 [6, 8, 10, 12]
 
 这部分 `instruction-selector-ia32.cc` 代码是 V8 引擎中至关重要的一部分，它负责将高级的 SIMD 操作 (无论是来自 JavaScript 的 WebAssembly 还是 V8 内部的优化) 转换为实际可以在 IA-32 架构的 CPU 上执行的机器指令，从而实现高性能的计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- IA32OperandGeneratorT<Adapter> g(this);
+### 源代码
+```
+IA32OperandGeneratorT<Adapter> g(this);
   static const int kUint32Immediates = kSimd128Size / sizeof(uint32_t);
   uint32_t val[kUint32Immediates];
   if constexpr (Adapter::IsTurboshaft) {
@@ -1309,8 +1311,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

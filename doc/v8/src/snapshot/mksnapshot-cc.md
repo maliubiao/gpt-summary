@@ -207,15 +207,17 @@ console.log(greetFunction("World"));   // 输出: Hello, World!
 
 理解 `mksnapshot.cc` 的功能对于深入了解 V8 引擎的启动过程和性能优化至关重要。通过生成和使用快照，V8 能够显著缩短启动时间，提高应用程序的响应速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/mksnapshot.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/mksnapshot.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -546,7 +548,4 @@ int main(int argc, char** argv) {
   v8::V8::DisposePlatform();
   return 0;
 }
-
-"""
-
 ```

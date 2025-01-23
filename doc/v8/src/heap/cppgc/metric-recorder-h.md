@@ -163,15 +163,17 @@ GCCycle event = {
 
 `v8/src/heap/cppgc/metric-recorder.h` 是 V8 内部用于报告 C++ 垃圾回收器统计信息的重要组件。它通过定义数据结构和虚函数，为 V8 的嵌入者提供了一种标准的方式来监控和分析 GC 行为，从而帮助理解和优化 JavaScript 应用的内存管理和性能。虽然 JavaScript 开发者不能直接操作它，但其背后的 GC 机制直接影响着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/metric-recorder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/metric-recorder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ class MetricRecorder {
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_METRIC_RECORDER_H_
-
-"""
-
 ```

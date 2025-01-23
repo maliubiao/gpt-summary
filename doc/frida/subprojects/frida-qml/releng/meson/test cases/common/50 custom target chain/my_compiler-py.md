@@ -149,7 +149,7 @@ Here's a breakdown of the thought process to analyze the Python script and answe
 
 总而言之，`my_compiler.py` 作为一个简单的模拟脚本，在 Frida QML 的测试框架中扮演着一个构建步骤的角色，用于验证 Frida QML 处理自定义构建流程的能力。开发者接触到它是为了确保 Frida QML 在处理这类场景时能够正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/50 custom target chain/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -174,7 +176,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('This is a binary output file.\n')
-
-"""
-
 ```

@@ -225,7 +225,7 @@ go/src/cmd/compile/internal/ssa/prove.go:52:1: Disproved GreaterThan (v3)
 
 这段 `prove.go` 代码的核心功能是**对SSA形式的Go代码进行静态分析，以证明值是常量或者控制流的某些分支是不可达的**。  通过这些证明，编译器可以进行诸如常量传播和死代码消除之类的优化，从而提高生成代码的效率和质量。它通过维护一个事实表，并在分析过程中添加和检查约束来实现这些证明。调试级别的控制允许开发者在开发和调试编译器时观察证明过程的细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/prove.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,8 +233,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 c.pass.debug > 1 {
 				b.Func.Warnl(v.Pos, "Proved %v's arg %d (%v) is constant %d", v, i, arg, constValue)
 			}
@@ -348,10 +350,4 @@ func isCleanExt(v *Value) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

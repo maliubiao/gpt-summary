@@ -390,7 +390,7 @@ except Exception as e:
 
 这个 Frida 脚本会 hook `socket`, `bind`, `mmap`, 和 `getsockopt` 这几个关键的系统调用。当应用程序执行到这些函数时，Frida 会打印出相应的参数信息，帮助开发者理解 XDP 的使用流程。需要注意的是，`AF_XDP` 和 `SOL_XDP` 的具体数值可能会因系统而异，可能需要根据实际情况调整 hook 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_xdp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -401,8 +401,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -496,7 +498,4 @@ struct xdp_desc {
 #define XDP_PKT_CONTD (1 << 0)
 #define XDP_TX_METADATA (1 << 1)
 #endif
-
-"""
-
 ```

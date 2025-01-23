@@ -177,7 +177,7 @@ except Exception as e:
 
 总而言之，`frida/subprojects/frida-core/src/windows/system-windows.c` 是 Frida 在 Windows 平台上实现系统交互的关键模块，为 Frida 的各种功能提供了基础的系统信息获取和进程管理能力，这些能力对于动态 instrumentation 和逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/windows/system-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 #include "icon-helpers.h"
@@ -595,7 +597,4 @@ frida_filetime_to_unix (const FILETIME * ft)
 
   return (u.QuadPart - G_GUINT64_CONSTANT (116444736000000000)) / 10;
 }
-
-"""
-
 ```

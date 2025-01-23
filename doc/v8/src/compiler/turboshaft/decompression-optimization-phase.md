@@ -101,11 +101,13 @@ console.log(manyObjects.length);
 
 `decompression-optimization-phase.cc` 文件实现了 Turboshaft 编译器中的一个阶段，该阶段负责在必要时解压缩指针，以便进行后续的编译优化。这种优化是 V8 引擎为了提高 JavaScript 代码的执行效率和降低内存消耗而采取的一种技术手段，虽然 JavaScript 开发者不会直接接触到这个过程，但它是 V8 引擎高效运行的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/decompression-optimization-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -122,7 +124,4 @@ void DecompressionOptimizationPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

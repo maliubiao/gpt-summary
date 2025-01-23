@@ -194,7 +194,7 @@ By following these steps, you can systematically analyze the Python script and p
 
 总而言之，`mkdevkit.py` 是 Frida Python 绑定构建过程中的一个关键脚本，它涉及到操作系统、编译器、链接器等底层知识，并为 Frida 的逆向分析能力提供了基础的开发环境。理解其功能和运行机制对于 Frida 的开发者和高级用户至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/mkdevkit.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -311,7 +313,4 @@ def parse_array_option_value(val: str, ool_optvals: dict[str, list[str]]) -> Opt
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

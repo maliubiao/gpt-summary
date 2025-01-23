@@ -57,12 +57,14 @@ ret                ; 返回，返回值在 eax 中
 
 总结来说，`v8/src/codegen/ia32/assembler-ia32.cc` 是 V8 引擎将 JavaScript 代码转化为可执行的 IA-32 机器码的关键组成部分，它直接影响着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/assembler-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -2767,7 +2769,4 @@ void Assembler::pshufhw(XMMRegister dst, Operand src, uint8_t shuffle) {
 }
 
 void Assembler::pshuflw(XMMRegister dst, Operan
-"""
-
-
 ```

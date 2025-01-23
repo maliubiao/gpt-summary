@@ -183,15 +183,17 @@ By following these steps, combining code analysis with an understanding of testi
 
 总而言之，`wire_serialization_test.cc` 是 QUIC 协议栈中至关重要的单元测试文件，它确保了关键的线上传输序列化功能的正确性，从而保证了 QUIC 协议的稳定可靠运行，并间接地支持了 Chrome 浏览器中 JavaScript 发起的网络通信。当出现网络问题时，这个测试文件可以作为调试的起点和验证修复的手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/wire_serialization_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -460,7 +462,4 @@ TEST(SerializationTest, Empty) { ExpectEncodingHex("nothing", ""); }
 
 }  // namespace
 }  // namespace quiche::test
-
-"""
-
 ```

@@ -135,15 +135,17 @@ MIME 类型与 JavaScript 的执行密切相关。浏览器依赖于正确的 MI
 
 总之，`mime_sniffer_unittest.cc` 是保证 Chromium 网络栈正确处理各种内容类型的关键组成部分，它通过大量的测试用例覆盖了各种场景，确保了 MIME 嗅探的准确性和安全性。理解这个文件的功能对于调试网络相关问题以及深入了解浏览器行为非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/mime_sniffer_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -727,7 +729,4 @@ INSTANTIATE_TEST_SUITE_P(MimeSnifferControlCodesEdgeCaseTest,
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

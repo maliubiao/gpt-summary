@@ -186,7 +186,7 @@ Atomics.add(view, 0, 5); // 原子地将 5 加到 view[0]
 
 总而言之，`machine-operator.cc` 提供了构建可执行机器代码的基础构建块，是 V8 将 JavaScript 代码高效地运行在各种硬件平台上的核心机制之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,10 +194,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-      && params.kind() == MemoryAccessKind::k##Kind) {      \
+### 源代码
+```cpp
+&& params.kind() == MemoryAccessKind::k##Kind) {      \
     return &cache_.kWord64AtomicExchange##kType##Kind;      \
   }
 #define OP(kType)             \
@@ -422,8 +423,4 @@ const Operator* MachineOperatorBuilder::SetStackPointer() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

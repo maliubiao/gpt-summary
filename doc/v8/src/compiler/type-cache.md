@@ -82,11 +82,13 @@ add("hello", " world"); // 第三次调用
 
 最后，`DEFINE_LAZY_LEAKY_OBJECT_GETTER(const TypeCache, TypeCache::Get)` 这行代码表明 `TypeCache` 是一个单例模式的实现，并且是延迟初始化的。 这意味着只有在第一次需要使用 `TypeCache` 时才会创建它的实例，并且在程序的生命周期内只会存在一个实例。 "Leaky" 在这里通常意味着这个对象不会被显式地销毁，这在某些情况下对于全局单例对象是可接受的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/type-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -104,7 +106,4 @@ DEFINE_LAZY_LEAKY_OBJECT_GETTER(const TypeCache, TypeCache::Get)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

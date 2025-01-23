@@ -196,7 +196,7 @@ Here's a breakdown of the code's actions and what I need to cover:
 
 这段代码的主要职责是**响应 `RTCPeerConnection` 对象接收到的远程会话描述的变化，同步更新本地状态，并触发相应的事件以通知 JavaScript 层状态的变更**。它负责管理 `RTCRtpTransceiver` 的生命周期，关联远程媒体流和轨道，并确保本地的 `RTCPeerConnection` 对象的状态与远程描述保持一致。这对于建立和维护 WebRTC 连接至关重要，因为它确保了双方对媒体会话的理解同步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_peer_connection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ctor<Member<RTCRtpTransceiver>> track_events;
   MediaStreamVector previous_streams = getRemoteStreams();
   // Remove transceivers and update their states to reflect that they are
@@ -766,8 +768,4 @@ void RTCPeerConnection::DisableBackForwardCache(ExecutionContext* context) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

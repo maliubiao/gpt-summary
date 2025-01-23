@@ -127,15 +127,17 @@ While regular users don't directly interact with this C++ code, developers debug
 
 In essence, while end-users don't directly cause execution of this testing utility code, their reports of certificate issues can indirectly lead developers to use this code as a crucial tool for debugging and verifying the correctness of Chromium's network security features.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/cert_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ ScopedTestEVPolicy::~ScopedTestEVPolicy() {
 }
 
 }  // namespace net
-
-"""
-
 ```

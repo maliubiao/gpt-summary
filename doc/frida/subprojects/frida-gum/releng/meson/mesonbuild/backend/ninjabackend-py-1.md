@@ -161,7 +161,7 @@ If a user encounters a build error, examining the generated `build.ninja` file a
 
 This section of `ninjabackend.py` is responsible for the crucial step of **translating the abstract build description provided by Meson into the concrete build instructions that the Ninja build system understands.** It handles the compilation and linking of various source file types, manages dependencies, supports custom build steps, and generates the `build.ninja` file that drives the actual build process. It's a core component that bridges the gap between a high-level build configuration and the low-level execution of build tools.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,9 +170,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      Adds the source file introspection information for a language of a target
+### 源代码
+```python
+Adds the source file introspection information for a language of a target
 
         Internal introspection storage format:
         self.introspection_data = {
@@ -848,8 +850,4 @@ Prompt:
                 ofilename = os.path.join(self.get_target_private_dir(target), ofilebase)
                 elem = NinjaBuildElement(self.all_outputs, ofilename, "CUSTOM_COMMAND", rel_sourcefile)
                 elem.add_item('COMMAND', ['resgen', rel_sourcefile, ofilename])
-       
-"""
-
-
 ```

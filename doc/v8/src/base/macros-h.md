@@ -263,15 +263,17 @@ By following these steps, the goal is to provide a comprehensive and helpful ana
 
 总而言之，`v8/src/base/macros.h` 是 V8 项目中一个非常重要的头文件，它提供了一系列强大的宏工具，用于简化 C++ 代码编写、提高代码质量和进行编译时检查，这些都对 V8 引擎的性能和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/macros.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/macros.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -804,7 +806,4 @@ bool is_inbounds(float_t v) {
 #endif
 
 #endif  // V8_BASE_MACROS_H_
-
-"""
-
 ```

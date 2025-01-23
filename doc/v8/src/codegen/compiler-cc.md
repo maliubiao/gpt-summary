@@ -327,7 +327,7 @@ function square(x) {
 
 作为第 1 部分，`v8/src/codegen/compiler.cc` 的主要功能是**定义和管理 V8 引擎中代码编译的核心流程和数据结构**。它负责将 JavaScript 源代码转化为可执行的字节码（用于解释执行）和高度优化的机器码（用于提高性能）。 该文件包含了处理不同编译阶段（未优化和优化）的类和逻辑，并提供了性能追踪和日志记录机制。它与 V8 的其他组件紧密协作，共同实现了 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -335,8 +335,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1143,7 +1145,4 @@ CompilationJob::Status FinalizeSingleUnoptimizedCompilationJob(
 
 std::unique_ptr<UnoptimizedCompilationJob>
 ExecuteS
-"""
-
-
 ```

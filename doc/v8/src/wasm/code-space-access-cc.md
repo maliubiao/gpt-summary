@@ -122,15 +122,17 @@ loadAndRunWasmWithError();
 
 总结来说，`v8/src/wasm/code-space-access.cc` 提供了一个用于安全控制对 WebAssembly 代码空间写访问的机制，这是 V8 引擎执行 WebAssembly 代码的关键组成部分。 虽然开发者不会直接操作这个类，但理解其作用有助于理解 V8 如何管理 WebAssembly 代码的执行，并间接地帮助开发者避免与 WebAssembly 相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/code-space-access.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/code-space-access.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ CodeSpaceWriteScope::CodeSpaceWriteScope()
     : rwx_write_scope_("For wasm::CodeSpaceWriteScope.") {}
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

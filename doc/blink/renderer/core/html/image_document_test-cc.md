@@ -106,14 +106,16 @@ This systematic approach, moving from the general purpose to specific details, a
 
 总而言之，`image_document_test.cc` 通过一系列单元测试，细致地检验了 `ImageDocument` 类在各种场景下的行为，确保其能够正确、高效地显示图像，并与浏览器的其他组件（如视口、缩放功能）以及 Web 标准（HTML, CSS）良好地协同工作。这些测试有助于预防和发现潜在的 bug 和性能问题，从而提升用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/image_document_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -605,7 +607,4 @@ TEST_F(ImageDocumentViewportTest, DivWidth) {
 
 #undef MAYBE
 }  // namespace blink
-
-"""
-
 ```

@@ -160,7 +160,7 @@ gobject.message = "New intercepted message";
 
 总而言之，`meson-subsample.c` 文件作为一个简洁的示例，帮助 Frida 的开发者和用户理解 Frida 如何与基于 GLib 的对象系统进行交互，并提供了一个可以用来测试和学习的基础案例。在逆向分析中，理解目标程序使用的框架和库（如 GLib）是非常重要的，而这类测试用例可以帮助我们更好地掌握这些技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/11 gir subproject/gir/meson-subsample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 struct _MesonSubSample
@@ -294,7 +296,4 @@ meson_sub_sample_print_message (MesonSubSample *self)
 
   g_print ("Message: %s\n", self->msg);
 }
-
-"""
-
 ```

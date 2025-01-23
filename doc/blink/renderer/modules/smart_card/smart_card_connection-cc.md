@@ -172,15 +172,17 @@ Let's trace a user interaction that leads to the `transmit()` method being calle
 
 By understanding these steps, developers can set breakpoints in this C++ file (e.g., in the `transmit()` method) during debugging to inspect the data being sent, the state of the connection, and the interaction with the smart card service. They can also use browser developer tools to observe the JavaScript calls and promise resolutions/rejections.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/smart_card/smart_card_connection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -923,7 +925,4 @@ void SmartCardConnection::EndTransaction(SmartCardDisposition disposition) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

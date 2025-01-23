@@ -210,7 +210,7 @@ First argument is wrong.
 
 这个过程就是一个典型的开发和调试流程。 程序的简单性使其成为一个很好的基础示例，用于理解命令行参数处理、错误处理以及如何使用调试工具进行分析。而其作为 Frida 测试用例的一部分，也表明 Frida 可以用于分析和操作这类基础的命令行程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/41 test args/cmd_args.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 
@@ -238,7 +240,4 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
-
-"""
-
 ```

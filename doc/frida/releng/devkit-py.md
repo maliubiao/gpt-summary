@@ -239,7 +239,7 @@ python devkit.py --kit frida-gum --output-dir /tmp/frida-gum-devkit --host-arch 
 
 理解 `devkit.py` 的功能和实现细节，可以帮助开发者更好地利用 Frida 进行逆向工程和安全研究，并能有效地解决在生成和使用 devkit 过程中遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/devkit.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -247,8 +247,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from collections import OrderedDict
 import itertools
 import locale
@@ -785,7 +787,4 @@ def tweak_flags(cflags, ldflags):
 
 def deduplicate(items):
     return list(OrderedDict.fromkeys(items))
-
-"""
-
 ```

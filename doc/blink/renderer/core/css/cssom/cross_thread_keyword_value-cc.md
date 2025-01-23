@@ -135,15 +135,17 @@ By following these steps, breaking down the code, and connecting it to the large
 
 总而言之，`CrossThreadKeywordValue` 是 Blink 引擎为了高效且安全地处理 CSS 关键字值而设计的一个内部类，它在 CSS 解析、样式计算以及 JavaScript 与 CSSOM 交互等环节中发挥着重要作用。虽然前端开发者不会直接操作它，但理解其功能有助于理解浏览器引擎处理 CSS 的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/cross_thread_keyword_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ std::unique_ptr<CrossThreadStyleValue> CrossThreadKeywordValue::IsolatedCopy()
 }
 
 }  // namespace blink
-
-"""
-
 ```

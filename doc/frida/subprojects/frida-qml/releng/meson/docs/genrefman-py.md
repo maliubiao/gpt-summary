@@ -148,7 +148,7 @@ By following this structured analysis, we can address all aspects of the prompt 
 
 `frida/subprojects/frida-qml/releng/meson/docs/genrefman.py` 是 Frida 项目中用于生成参考手册的关键脚本。虽然它本身不直接进行逆向操作或涉及底层细节，但它生成的文档是逆向工程师使用 Frida 进行动态分析的重要资源，并间接地关联着二进制底层、操作系统内核及框架的知识。用户通常不会直接运行此脚本，而是将其作为 Frida 开发和构建流程的一部分。当出现文档生成问题时，开发人员或贡献者可能会需要关注和调试这个脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/docs/genrefman.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
@@ -173,7 +175,4 @@ from refman.main import main
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

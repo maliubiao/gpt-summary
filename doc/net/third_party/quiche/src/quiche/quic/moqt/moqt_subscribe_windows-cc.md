@@ -195,15 +195,17 @@ By following these steps, I can construct a detailed and accurate answer that ad
 
 总而言之，`moqt_subscribe_windows.cc` 文件是 MoQT 协议在 Chromium 中的核心组件，负责管理客户端的订阅范围和服务器发送数据所使用的流映射，确保媒体数据能够按照客户端的请求正确地传输。理解这个文件的功能对于调试和理解 MoQT 协议在浏览器中的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_subscribe_windows.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,7 +298,4 @@ std::vector<webtransport::StreamId> SendStreamMap::GetAllStreams() const {
 }
 
 }  // namespace moqt
-
-"""
-
 ```

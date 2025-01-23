@@ -139,7 +139,7 @@ Here's a breakdown of how I'll approach this:
 
 总而言之，`rewriter.py` 是 Frida Node 构建系统中一个关键的自动化工具，它负责根据预定义的指令来修改 Meson 构建文件，这对于 Frida Node 的开发、维护和高级用户自定义构建至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ['operation'] == 'target_add':
             if target is not None:
                 mlog.error('Can not add target', mlog.bold(cmd['target']), 'because it already exists', *self.on_error())
@@ -418,8 +420,4 @@ def run(options):
         raise e
     finally:
         mlog.set_verbose()
-
-"""
-
-
 ```

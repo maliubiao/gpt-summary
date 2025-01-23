@@ -215,7 +215,7 @@ if (Process.platform === 'linux') {
 
 通过这个 Frida Hook 示例，你可以在 Android 设备上运行程序，观察其调用的 `openat` 系统调用，并识别出是否尝试访问 QNX4 文件系统中的文件。这可以帮助理解 Android Framework 或 NDK 代码如何与内核进行交互，以及在什么情况下可能会涉及到 QNX4 文件系统的处理 (尽管这种情况相对少见)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/qnx4_fs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -301,7 +303,4 @@ struct qnx4_super_block {
   struct qnx4_inode_entry AltBoot;
 };
 #endif
-
-"""
-
 ```

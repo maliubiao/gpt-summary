@@ -64,12 +64,14 @@ loadWasmModule('my_module.wasm')
 
 `v8/test/cctest/wasm/test-streaming-compilation.cc` 文件是 V8 引擎中用于测试 WebAssembly 流式编译功能的 C++ 代码。它通过模拟各种字节流接收和错误场景，确保 `WebAssembly.compileStreaming()` API 在 JavaScript 中的行为符合预期，能够提高 Web 应用的加载速度和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-streaming-compilation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1742,7 +1744,4 @@ STREAM_TEST(TestHardCachingThreshold) {
       testing::GetExportedFunction(i_isolate, instance, "a").ToHandleChecked();
   Handle<Object> receiver = ReadOnlyRoots{i_isolate}.undefined_value_handle();
   fo
-"""
-
-
 ```

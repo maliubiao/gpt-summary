@@ -169,15 +169,17 @@ The JavaScript examples above directly illustrate common programming errors that
 
 **In summary, `v8/src/execution/protectors.cc` is a crucial part of V8's optimization strategy. It defines and manages flags that represent optimistic assumptions about the JavaScript environment. When these assumptions are violated due to certain JavaScript actions (often related to modifying built-ins or using dynamic features), the corresponding protectors are invalidated, potentially causing V8 to fall back to less optimized execution paths.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/protectors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/protectors.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ DECLARED_PROTECTORS_ON_ISOLATE(INVALIDATE_PROTECTOR_ON_ISOLATE_DEFINITION)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -107,12 +107,14 @@ const char = str.charAt(1); // 获取索引为 1 的字符
 
 **总结来说，这部分 `js-call-reducer.cc` 的功能是持续对 JavaScript 的内置方法调用进行精细化的分析和优化，旨在将常见的、可以被高效实现的 JavaScript 操作在编译时转换为更底层的、性能更高的操作，从而提升整体 JavaScript 代码的执行效率。** 它依赖于类型推断、内联、常量折叠等多种编译优化技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 count),
                          count + 1, &values_to_merge.front());
   }
@@ -1770,7 +1772,4 @@ Reduction JSCallReducer::ReduceCollectionIteration(
   Control control{NodeProperties::GetControlInput(node)};
 
   InstanceType type = InstanceType
-"""
-
-
 ```

@@ -237,7 +237,7 @@ if (Process.arch === 'x64' || Process.arch === 'ia32') {
 
 要真正监控到与 `asm/perf_regs.h` 中定义的寄存器相关的调用，你可能需要 hook 更高层次的性能分析库或工具函数，这些函数会使用这些常量来配置 `perf_event`。直接 hook 系统调用可以让你看到系统调用的发生，但解析其详细参数可能需要更多背景知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/perf_regs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -248,8 +248,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -305,7 +307,4 @@ enum perf_event_x86_regs {
 };
 #define PERF_REG_EXTENDED_MASK (~((1ULL << PERF_REG_X86_XMM0) - 1))
 #endif
-
-"""
-
 ```

@@ -148,7 +148,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`frida/subprojects/frida-core/lib/payload/unwind-sitter-glue.c` 是 Frida 实现动态代码修改和程序流程控制的关键组成部分，它通过 Hook `libunwind` 库，介入栈回溯过程，并能够修改栈帧信息，从而为逆向工程师提供了强大的动态分析能力。理解其工作原理对于深入使用 Frida 进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/payload/unwind-sitter-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-payload.h"
 
 #ifdef HAVE_DARWIN
@@ -679,7 +681,4 @@ frida_has_first_match (GumAddress address, gsize size, gboolean * matches)
 #endif
 
 #endif
-
-"""
-
 ```

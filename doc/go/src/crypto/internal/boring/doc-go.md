@@ -131,7 +131,7 @@ func main() {
 
 总而言之，`go/src/crypto/internal/boring/doc.go` 文件主要定义了 `boring` 包的接口和一些基本类型，核心功能是提供对 BoringCrypto 库的访问，并利用条件编译机制来控制其在特定平台上的可用性。使用者需要注意检查 `Enabled` 标志，以避免在 BoringCrypto 不可用时发生 panic。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,8 +139,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -160,9 +162,4 @@ const Enabled = available
 // This definition allows us to avoid importing math/big.
 // Conversion between BigInt and *big.Int is in crypto/internal/boring/bbig.
 type BigInt []uint
-
-"""
-
-
-
 ```

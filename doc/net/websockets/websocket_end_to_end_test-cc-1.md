@@ -148,7 +148,7 @@ By following this structured approach, breaking down the code, and considering t
 
 这些测试用例对于确保 Chromium 网络栈在不断发展的网络标准下能够正确且安全地处理 WebSocket 连接至关重要。它们模拟了真实的网络环境和潜在的错误情况，帮助开发者发现并修复潜在的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_end_to_end_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 itAndEnableFeature(features::kUseDnsHttpsSvcb);
 
   SpawnedTestServer wss_server(SpawnedTestServer::TYPE_WSS,
@@ -243,8 +245,4 @@ TEST_F(WebSocketEndToEndTest, EncryptedClientHello) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

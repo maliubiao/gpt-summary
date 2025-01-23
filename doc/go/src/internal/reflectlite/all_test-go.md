@@ -261,7 +261,7 @@ go test -v -run Types internal/reflectlite
 
 总而言之，`go/src/internal/reflectlite/all_test.go` 这个文件全面地测试了 `reflectlite` 包的核心反射功能，涵盖了类型信息的获取、值的创建和操作、以及结构体字段的访问和设置等多个方面。 通过分析这些测试用例，可以深入了解 `reflectlite` 包的设计和实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/reflectlite/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -269,8 +269,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1310,9 +1312,4 @@ func TestAliasNames(t *testing.T) {
 		t.Errorf("Talias2 print:\nhave: %s\nwant: %s", out, want)
 	}
 }
-
-"""
-
-
-
 ```

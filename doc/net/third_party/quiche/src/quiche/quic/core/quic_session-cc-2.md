@@ -192,7 +192,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 在调试 QUIC 连接问题时，可以通过查看网络日志、抓包分析 QUIC 帧，以及在 `QuicSession` 的关键函数中设置断点来跟踪代码的执行流程，从而理解连接的状态变化和数据传输过程。例如，如果发现连接建立失败，可以检查密钥交换和传输参数处理的相关函数。如果发现数据传输缓慢或有丢包，可以检查流控、拥塞控制以及帧的 ACK 和重传处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dow " << new_window;
     if (!kv.second->MaybeConfigSendWindowOffset(new_window,
                                                 was_zero_rtt_rejected_)) {
@@ -1122,7 +1124,4 @@ QuicByteCount QuicSession::GetFlowControlSendWindowSize(QuicStreamId id) {
   if (it == stream_map_.end()) {
     // No flow control for invalid or inactive stream ids. Returning uint64max
     // allows QuicPacketCreator to write as much da
-"""
-
-
 ```

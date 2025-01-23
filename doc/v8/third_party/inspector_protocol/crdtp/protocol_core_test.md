@@ -128,11 +128,13 @@ const compositeObject = {
 
 总而言之，`protocol_core_test.cc` 这个文件是 V8 引擎中非常重要的一个测试文件，它确保了用于与开发者工具通信的 CRDP 协议能够正确地序列化和反序列化各种数据结构，从而保证了开发者工具功能的正常运作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/protocol_core_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -609,7 +611,4 @@ TEST(ProtocolCoreTest, TestDeferredMessage) {
 
 }  // namespace
 }  // namespace v8_crdtp
-
-"""
-
 ```

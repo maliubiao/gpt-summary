@@ -120,15 +120,17 @@ document.cookie = "myCookie=value; SameSite=Strict";
 
 总而言之，`net/cookies/cookie_options_unittest.cc` 是 Chromium 网络栈中至关重要的测试文件，它确保了浏览器能够正确地处理 Cookie 的各种选项，特别是与 `SameSite` 属性相关的行为，这直接影响到用户的浏览体验和网络安全。虽然普通用户不会直接接触到这个文件，但其背后的逻辑会影响用户与网页的互动。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_options_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ TEST(CookieOptionsTest, SameSiteCookieContext) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

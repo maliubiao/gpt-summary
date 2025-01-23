@@ -135,7 +135,7 @@ ArgumentNode (lineno, colno, filename)
 
 通过构建 AST，`mparser.py` 为 Meson 理解项目的构建意图奠定了基础，使得 Meson 能够根据构建描述生成实际的构建系统文件（如 Ninja 构建文件），最终完成软件的编译和链接过程。虽然它本身不直接参与 Frida 的运行时逆向，但它是 Frida Python 绑定构建过程中的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf.create_node(SymbolNode, block_start)
             key_values = self.key_values()
             self.block_expect('rcurl', block_start)
@@ -348,8 +350,4 @@ lf.create_node(SymbolNode, block_start)
         self.current_ws = []
 
         return block
-
-"""
-
-
 ```

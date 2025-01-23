@@ -185,15 +185,17 @@ add(myObject); // V8 可能会发现之前的优化不再适用，需要进行�
 
 `v8/src/objects/dependent-code-inl.h` 是 V8 引擎中一个关键的组成部分，它负责管理和触发代码的反优化，以确保在 JavaScript 对象发生动态变化时，已编译代码的正确性。理解其功能有助于开发者编写更高效的 JavaScript 代码，避免导致频繁反优化的模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/dependent-code-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/dependent-code-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ bool DependentCode::MarkCodeForDeoptimization(Isolate* isolate,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_DEPENDENT_CODE_INL_H_
-
-"""
-
 ```

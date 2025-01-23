@@ -176,15 +176,17 @@ By following this methodical approach, breaking down the code, and considering t
 
 因此，开发者查看这个 `.cc` 文件的目的是深入了解 `WEBGL_compressed_texture_s3tc_srgb` 扩展的内部工作原理，以确定为什么在特定用户的环境下该扩展不可用，或者在使用过程中出现问题。这通常是高级 WebGL 开发者在遇到与特定扩展相关的问题时会采取的步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_compressed_texture_s3tc_srgb.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ const char* WebGLCompressedTextureS3TCsRGB::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

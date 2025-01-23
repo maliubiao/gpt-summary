@@ -168,15 +168,17 @@ func main() {
 
 `util_gc.go` 中的这些函数是Go语言构建工具链内部使用的低级工具，用于探测目标ARM平台的硬件特性。它们通过尝试执行特定的指令，并在不支持时导致程序崩溃来实现探测。普通Go开发者不应直接使用这些函数。  它们是构建过程的一部分，帮助Go编译器根据目标环境生成优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/dist/util_gc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -197,9 +199,4 @@ func useVFPv3()
 // It will crash the current process if it doesn't implement
 // ARMv6K or above.
 func useARMv6K()
-
-"""
-
-
-
 ```

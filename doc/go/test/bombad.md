@@ -108,15 +108,17 @@ When they try to compile this code using `go build mycode.go` or `go run mycode.
 
 **In summary:** The `bombad.go` file is a test case within the Go compiler's test suite. It aims to verify that the compiler correctly identifies and flags the presence of Byte Order Marks (BOMs) in various parts of Go source code, highlighting a potential source of errors for users who might unintentionally include BOMs in their files.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/bombad.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -135,9 +137,4 @@ func main() {
 	/*﻿ And here.*/	// ERROR "BOM"
 	println("hi﻿ there") // and here	// ERROR "BOM"
 }
-
-"""
-
-
-
 ```

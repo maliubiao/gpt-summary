@@ -171,14 +171,16 @@ This systematic approach, combining code analysis, understanding of web technolo
 
 总而言之，`static_bitmap_image.cc` 文件定义了 Blink 渲染引擎中处理静态位图图像的核心逻辑，它负责图像数据的存储、复制和绘制，并且与网页的 HTML 结构、CSS 样式以及 JavaScript 脚本都有着紧密的联系。理解其功能对于深入了解浏览器如何渲染图像至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/static_bitmap_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ void StaticBitmapImage::DrawHelper(cc::PaintCanvas* canvas,
 }
 
 }  // namespace blink
-
-"""
-
 ```

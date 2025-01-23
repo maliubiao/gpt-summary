@@ -243,7 +243,7 @@ exit status 1
 
 `go/src/runtime/defs_plan9_amd64.go` 文件为 Go 运行时在 Plan 9 AMD64 平台上处理信号和管理程序执行上下文提供了底层的支持。它定义了关键的数据结构，使得 Go 运行时能够捕获、检查和在某些情况下修改程序在接收到信号时的状态。普通 Go 开发者不需要直接操作这些底层结构，但理解它们的存在可以帮助更好地理解 Go 程序的运行机制，尤其是在处理错误和信号方面。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_plan9_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -251,8 +251,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -334,9 +336,4 @@ func dumpregs(u *ureg) {
 }
 
 func sigpanictramp()
-
-"""
-
-
-
 ```

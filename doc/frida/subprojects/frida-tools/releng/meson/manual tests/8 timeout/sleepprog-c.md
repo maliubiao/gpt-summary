@@ -140,7 +140,7 @@ if (Process.platform === 'linux') {
 
 因此，`sleepprog.c` 作为 Frida 测试套件的一部分，帮助开发者验证 Frida 在处理各种时间相关的场景下的稳定性和正确性。 调试线索指向 Frida 的超时处理逻辑和它与目标进程交互的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/manual tests/8 timeout/sleepprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,15 +148,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<unistd.h>
 
 int main(void) {
     sleep(1000);
     return 0;
 }
-
-"""
-
 ```

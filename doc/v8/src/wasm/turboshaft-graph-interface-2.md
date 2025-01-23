@@ -79,12 +79,14 @@ console.log(result_array); // 输出: Float32Array [6, 8, 10, 12]
 
 总而言之，`v8/src/wasm/turboshaft-graph-interface.cc` 的这部分代码是 V8 引擎将 Wasm SIMD 功能转化为底层可执行代码的关键桥梁，使得 JavaScript 可以有效地利用 WebAssembly 提供的 SIMD 并行计算能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ),   \
                         V<compiler::turboshaft::Simd128>::Cast(args[1].op),   \
                         compiler::turboshaft::Simd128BinopOp::Kind::k##kind); \
@@ -1465,8 +1467,4 @@ Prompt:
           WHILE(__ Word32Constant(1)) {
             V<Any> value = __ ArrayGet(src_array, src_index_loop,
                                        src_imm.array_type, true);
-       
-"""
-
-
 ```

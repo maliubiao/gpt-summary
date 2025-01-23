@@ -127,14 +127,16 @@ This systematic approach, combining code analysis with knowledge of web technolo
 
 总而言之，`transformed_string.cc` 是 Blink 引擎中处理 CSS `text-transform` 的关键组成部分，它负责表示转换后的字符串并维护必要的映射信息，以便进行后续的布局和渲染操作。  普通 Web 开发者不会直接与这个文件交互，但它的功能对于正确渲染网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/transformed_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ TransformedString TransformedString::Substring(unsigned start,
 }
 
 }  // namespace blink
-
-"""
-
 ```

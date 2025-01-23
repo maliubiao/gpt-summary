@@ -169,11 +169,13 @@ task2();
 
 `condition-variable-unittest.cc` 文件测试了 C++ 中用于线程同步的 `ConditionVariable` 类的功能。虽然 JavaScript 是单线程的，没有直接的等价物，但理解 `ConditionVariable` 的概念有助于理解 JavaScript 中处理异步操作和协调多个异步任务的模式，例如使用 Promise 和 async/await。  更底层的模拟则需要手动维护共享状态和使用 Promise 进行通知。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/platform/condition-variable-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -473,7 +475,4 @@ TEST(ConditionVariable, LoopIncrement) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

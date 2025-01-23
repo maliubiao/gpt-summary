@@ -562,7 +562,7 @@ void InstructionSelectorT<Adapter>::VisitI8x16Shuffle(node_t node) {
     if (wasm::SimdShuffle::TryMatchByteToDwordZeroExtend(shuffle)) {
       opcode = kX64I32X4ShiftZeroExtendI8x16;
       no
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -570,8 +570,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e paddusb in the codegen and simply
     // emit a pshufb.
     *constant = m.ResolvedValue().immediate();
@@ -1419,7 +1421,4 @@ void InstructionSelectorT<Adapter>::VisitI32x8ExtAddPairwiseI16x16S(
 template <typename Adapter>
 void InstructionSelectorT<Adapter>::VisitI32x4ExtAddPairwiseI16x8U(
     node_t node) {
-"""
-
-
 ```

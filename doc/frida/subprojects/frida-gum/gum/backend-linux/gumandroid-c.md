@@ -165,7 +165,7 @@ Throughout this process, I iteratively refined my understanding by cross-referen
 
 `gumandroid.c` 的主要功能是作为 Frida 在 Android 平台上运行的桥梁，它负责与 Android 系统的动态链接器进行交互，获取关键的模块信息和链接器 API，从而为 Frida 提供动态插桩所需的基础能力，包括模块枚举、获取模块句柄以及辅助实现动态加载和符号解析。它需要深入理解 Android 的底层机制，包括 ELF 文件格式、进程内存管理、动态链接过程以及不同 Android 版本之间的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-linux/gumandroid.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1486,7 +1488,4 @@ gum_store_linker_symbol_if_needed (const GumElfSymbolDetails * details,
   GUM_TRY_ASSIGN (solist_get_head, "__dl__Z15solist_get_headv"); /* >= 26 */
   GUM_TRY_ASSIGN_OPTIONAL (solist, "__dl__ZL6solist");           /* >= 21 */
   GUM_TRY_ASSIGN_OPTIONAL (libdl_info, "__dl_libdl_info");
-"""
-
-
 ```

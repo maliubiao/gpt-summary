@@ -139,7 +139,7 @@ By following these steps, we can systematically analyze even a seemingly simple 
 
 总而言之，`val2.c` 自身是一个非常简单的 C 函数，但在 Frida 的上下文中，它是一个用于测试 Frida 处理库依赖关系的重要组成部分，与逆向工程、二进制底层知识、操作系统原理以及常见的编程错误都有着间接或直接的联系。 开发者通过编写和分析这样的测试用例，可以确保 Frida 的稳定性和功能正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/74 pkgconfig prefixes/val2/val2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,13 +147,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "val1.h"
 #include "val2.h"
 
 int val2(void) { return val1() + 2; }
-
-"""
-
 ```

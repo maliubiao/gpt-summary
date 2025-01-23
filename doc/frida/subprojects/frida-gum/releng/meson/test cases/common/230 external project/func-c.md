@@ -107,7 +107,7 @@ Initially, I might have focused too much on the triviality of the function. Howe
 
 因此，查看 `func.c` 文件通常是用户为了理解 Frida 如何处理外部项目的基本函数调用而进行的探索的一部分，可能是为了调试 Frida 本身，或者是为了学习如何使用 Frida hook 外部代码。这个简单的文件提供了一个清晰且易于理解的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/230 external project/func.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,15 +115,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "func.h"
 
 int func(void)
 {
     return 1;
 }
-
-"""
-
 ```

@@ -128,7 +128,7 @@ func _Cfunc_sin(p0 _Ctype_double) (r1 _Ctype_double) {
 
 `go/src/cmd/cgo/doc.go` 的这一部分详细阐述了 `cgo` 如何在链接阶段与 Go 的链接器 `cmd/link` 协同工作，通过内部和外部链接模式以及特殊的链接指令，实现了 Go 代码与 C 代码的无缝集成，并解释了 `cmd/link` 工具在处理 cgo 代码时的行为和可配置性。 这使得开发者能够构建既能利用 Go 的强大功能，又能调用 C 代码以访问底层系统资源或利用现有 C 库的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -137,8 +137,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ead.so.0"
 	//go:cgo_import_dynamic _ _ "libc.so.6"
 
@@ -431,10 +433,4 @@ changes and keep running plain 'cmd/link' and get reasonable results, but
 they can also control the linking details if desired.
 
 */
-
-"""
-
-
-
-
 ```

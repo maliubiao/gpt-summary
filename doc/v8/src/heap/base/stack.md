@@ -137,11 +137,13 @@ Error: ...
 
 `v8/src/heap/base/stack.cc` 文件中的代码是 V8 引擎底层堆管理的关键组成部分，它提供了操作和遍历程序调用栈的能力。这项能力直接支撑了 JavaScript 的垃圾回收、错误处理和调试等核心功能。虽然 JavaScript 开发者通常不会直接与这些 C++ 代码交互，但它们默默地在幕后工作，确保了 JavaScript 代码的正确执行和内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/stack.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ void Stack::TrampolineCallbackHelper(void* argument,
 }
 
 }  // namespace heap::base
-
-"""
-
 ```

@@ -122,15 +122,17 @@ OS Version: Linux 5.15.0-76-generic #83-Ubuntu SMP Tue Jun 20 14:34:14 UTC 2023 
 
 总而言之，这段代码的功能是为 Go 内部工具链提供一种获取和格式化操作系统版本信息的方法，它利用了系统调用和底层的内存操作。普通用户应该避免直接使用这个内部包，而是应该使用 Go 标准库提供的更稳定和安全的方式来获取系统信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/osinfo/os_uname.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ func Version() (string, error) {
 
 	return sb.String(), nil
 }
-
-"""
-
-
-
 ```

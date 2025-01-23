@@ -291,7 +291,7 @@ Host: example.com
 
 理解 `ReverseProxy` 的工作原理和各个配置项的作用，可以有效地避免这些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/httputil/reverseproxy.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -299,8 +299,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1147,9 +1149,4 @@ func ishex(c byte) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

@@ -180,15 +180,17 @@ If a programmer were to try and implement these float16 to float32 or vice-versa
 
 In summary, `v8/third_party/v8/codegen/fp16-inl.h` provides crucial low-level functionality within the V8 engine to handle conversions between half-precision and single-precision floating-point numbers in software, enabling JavaScript to interact efficiently with systems and data that utilize float16.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/v8/codegen/fp16-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/v8/codegen/fp16-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 2017 Facebook Inc.
 // Copyright (c) 2017 Georgia Institute of Technology
 // Copyright 2019 Google LLC
@@ -428,7 +430,4 @@ TNode<Float16RawBitsT> CodeStubAssembler::TruncateFloat32ToFloat16(
 }  // namespace v8
 
 #endif  // THIRD_PARTY_V8_CODEGEN_FP16_INL_H_
-
-"""
-
 ```

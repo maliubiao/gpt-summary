@@ -164,7 +164,7 @@ new myObject.myNativeFunction(); // 如果 myNativeFunction 被设计为构造�
 
 这段代码是 V8 引擎中至关重要的一部分，它实现了 JavaScript 调用由 C++ 代码定义的函数的核心机制。它处理了不同类型的调用（普通调用和构造调用），并包含了用于确保安全性和正确性的检查。它连接了 JavaScript 的执行环境和 V8 的 C++ 内部实现，使得通过 V8 API 扩展 JavaScript 功能成为可能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-call-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-call-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 see
   // HandleApiCallHelper).
   {
@@ -315,8 +317,4 @@ TF_BUILTIN(HandleApiCallOrConstruct, CallOrConstructBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -263,7 +263,7 @@ if __name__ == '__main__':
 
 总结来说，这个文件定义了与网络接口管理相关的底层数据结构，这些结构体被 Android 系统底层的 native 代码和内核驱动程序用于配置和查询网络接口的状态。虽然应用开发者不会直接使用这些定义，但理解它们有助于深入了解 Android 网络功能的实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ethtool.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _LOC_ANY 0xffffffff
 #define RX_CLS_LOC_FIRST 0xfffffffe
 #define RX_CLS_LOC_LAST 0xfffffffd
@@ -327,8 +329,4 @@ enum phy_upstream {
   PHY_UPSTREAM_PHY,
 };
 #endif
-
-"""
-
-
 ```

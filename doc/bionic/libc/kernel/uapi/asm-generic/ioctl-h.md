@@ -280,7 +280,7 @@ sys.stdin.read()
 
 通过分析 Frida 的输出，你可以观察到 Android Framework 和 HAL 如何构建和使用 `ioctl` 命令与内核驱动程序进行交互，从而验证这个头文件中宏定义的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/ioctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -291,8 +291,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -345,7 +347,4 @@ Prompt:
 #define IOCSIZE_MASK (_IOC_SIZEMASK << _IOC_SIZESHIFT)
 #define IOCSIZE_SHIFT (_IOC_SIZESHIFT)
 #endif
-
-"""
-
 ```

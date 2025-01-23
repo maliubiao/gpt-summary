@@ -126,7 +126,7 @@ Let's break down the thought process for analyzing this code snippet.
 
 这份代码是 Chromium Blink 引擎中用于实现**替换选区内容**功能的关键部分。它定义了 `ReplaceSelectionCommand` 类，该类负责接收要插入的内容，并根据不同的选项和上下文，智能地替换掉当前用户选中的内容。 这个部分的代码主要关注于 **`ReplacementFragment` 辅助类的定义和 `ReplaceSelectionCommand` 的基本构造和一些预处理逻辑**，例如处理剪贴板的特殊换行符，以及判断是否需要合并插入位置的开头部分。它为后续的实际插入和样式处理奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/replace_selection_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2009, 2010, 2011 Google Inc. All rights reserved.
@@ -957,7 +959,4 @@ static inline bool NodeHasVisibleLayoutText(Text& text) {
 
 void ReplaceSelectionCommand::RemoveUnrenderedTextNodesAtEnds(
     InsertedNodes& insert
-"""
-
-
 ```

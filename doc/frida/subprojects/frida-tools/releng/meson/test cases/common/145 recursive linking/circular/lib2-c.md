@@ -177,7 +177,7 @@ This detailed thought process, moving from basic code understanding to the nuanc
 
 `lib2.c` 的这段代码虽然简单，但它很好地展示了软件模块之间的依赖关系，以及在逆向工程中如何利用动态 instrumentation 工具来观察和分析程序的运行时行为。理解这些基本的概念和工具使用方法是进行更复杂逆向分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/145 recursive linking/circular/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,15 +185,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_st1_prop (void);
 int get_st3_prop (void);
 
 int get_st2_value (void) {
   return get_st1_prop () + get_st3_prop ();
 }
-
-"""
-
 ```

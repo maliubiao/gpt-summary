@@ -190,15 +190,17 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/sys/plan9/const_plan9.go` 这个文件是 Go 语言中与 Plan 9 操作系统交互的基础，它定义了各种系统调用所需的常量，使得 Go 程序能够以更易读和维护的方式进行 Plan 9 平台的编程。 理解这些常量的含义对于进行底层的 Plan 9 系统编程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/plan9/const_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package plan9
 
 // Plan 9 Constants
@@ -269,9 +271,4 @@ const (
 	MCACHE  = 0x0010
 	MMASK   = 0x0017
 )
-
-"""
-
-
-
 ```

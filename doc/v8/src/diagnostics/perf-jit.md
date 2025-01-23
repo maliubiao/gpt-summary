@@ -119,11 +119,13 @@ for (let i = 0; i < 1000000; i++) {
 
 `v8/src/diagnostics/perf-jit.cc` 是 V8 引擎中一个至关重要的组件，它专门为 Linux 平台上的 `perf` 工具提供 JIT 编译代码的元数据，从而使得开发者能够利用强大的 `perf` 工具来分析和优化 JavaScript 代码的性能。它通过记录代码加载、调试信息和栈展开信息，实现了性能数据到 JavaScript 源代码的精确映射。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/perf-jit.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -686,7 +688,4 @@ void LinuxPerfJitLogger::LogWriteHeader() {
 }  // namespace v8
 
 #endif  // V8_OS_LINUX
-
-"""
-
 ```

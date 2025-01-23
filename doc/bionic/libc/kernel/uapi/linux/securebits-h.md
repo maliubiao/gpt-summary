@@ -266,7 +266,7 @@ sys.stdin.read()
 
 这个例子展示了如何通过 hook 系统调用来追踪 securebits 的操作，从而理解 Android Framework 或 NDK 应用如何间接地与 securebits 功能进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/securebits.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -308,7 +310,4 @@ Prompt:
 #define SECURE_ALL_BITS (issecure_mask(SECURE_NOROOT) | issecure_mask(SECURE_NO_SETUID_FIXUP) | issecure_mask(SECURE_KEEP_CAPS) | issecure_mask(SECURE_NO_CAP_AMBIENT_RAISE))
 #define SECURE_ALL_LOCKS (SECURE_ALL_BITS << 1)
 #endif
-
-"""
-
 ```

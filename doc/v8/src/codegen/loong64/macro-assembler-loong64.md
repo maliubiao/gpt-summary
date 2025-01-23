@@ -99,12 +99,14 @@ obj.y = 20;
 
 In essence, this `macro-assembler-loong64.cc` file provides the building blocks for translating JavaScript code into the low-level instructions that the LoongArch64 processor can understand and execute. It handles the intricacies of the architecture, allowing the higher layers of V8 to focus on the semantics of JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/macro-assembler-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2238,7 +2240,4 @@ void MacroAssembler::CompareF(FPURegister cmp1, FPURegister cmp2,
     fcmp_cond_s(cc, cmp1, cmp2, cd);
   } else {
     fcmp
-"""
-
-
 ```

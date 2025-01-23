@@ -114,14 +114,16 @@ Here's a breakdown of the thinking process to arrive at the analysis of the `fon
 
 **需要注意的是，`font_data_cache.cc` 是 Blink 渲染引擎的内部实现，普通 Web 开发者不会直接与其交互。 理解其功能有助于理解浏览器如何优化字体加载和渲染，从而写出更高效的网页。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_data_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -201,7 +203,4 @@ const SimpleFontData* FontDataCache::Get(const FontPlatformData* platform_data,
 }
 
 }  // namespace blink
-
-"""
-
 ```

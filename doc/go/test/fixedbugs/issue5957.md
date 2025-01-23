@@ -120,15 +120,17 @@ go/test/fixedbugs/issue5957.go:3:6: cannot convert "abc" to type int
 
 `go/test/fixedbugs/issue5957.go` 是一个 `errorcheckdir` 类型的测试文件，用于验证 Go 编译器是否能在特定（通常是错误的）代码片段中产生预期的错误报告。它不是一个可直接运行的程序，而是 Go 语言测试框架的一部分，用于确保编译器的健壮性和准确性。使用者需要理解其作为测试文件的特殊性质，并使用 `go test` 命令来执行它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5957.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckdir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -136,9 +138,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

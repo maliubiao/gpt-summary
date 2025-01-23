@@ -106,7 +106,7 @@ I'll go through each test case in this section and describe its purpose, relate 
 
 这部分主要测试了 HTTP 缓存处理 **大型资源**、**中断下载**、**不完整响应** 以及与 **底层网络事务交互** 的能力，包括 **优先级设置**、**WebSocket 握手** 和 **网络流量统计**。这些测试确保了缓存能够有效地管理资源，即使在复杂或异常的情况下也能保持稳定和正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第15部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ed_headers = base::StringPrintf(
       "HTTP/1.1 200 OK\n"
       "Last-Modified: Sat, 18 Apr 2007 01:10:43 GMT\n"
@@ -957,7 +959,4 @@ TEST_F(HttpCacheTest, CachePreservesSSLInfo) {
 
   // The request should have been reused without hitting the network.
   EXPECT_EQ(1, cache.network_lay
-"""
-
-
 ```

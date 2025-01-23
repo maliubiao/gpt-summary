@@ -80,7 +80,7 @@ By following these steps, we can systematically analyze the C++ code and arrive 
 
 总而言之，第二部分延续了第一部分的工作，通过大量的测试用例，确保 V8 引擎能够正确地将 LoongArch 64 位机器码反汇编成可读的汇编指令，这对于 V8 引擎在 LoongArch 架构上的正确运行和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-loong64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-loong64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -88,9 +88,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  fmaxa.s      f12, f13, f14");
+### 源代码
+```cpp
+fmaxa.s      f12, f13, f14");
   COMPARE(fmina_s(f15, f16, f17), "010ec60f       fmina.s      f15, f16, f17");
 
   COMPARE(fmaxa_d(f18, f19, f20), "010d5272       fmaxa.d      f18, f19, f20");
@@ -296,8 +298,4 @@ TEST_F(DisasmLoong64Test, TypeOp22) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

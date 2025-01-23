@@ -139,7 +139,7 @@ executable('my_frida_module',
 
 总而言之，`scommon_broken.c` 不是一个功能性的代码文件，它的存在是为了防止错误的编译，并提醒开发者应该使用正确的 `scommon.c` 文件。在调试与此文件相关的错误时，重点是检查构建配置和文件路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/scommon/scommon_broken.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,10 +147,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #error This file must not be used. The other scommon one should be instead.
-
-"""
-
 ```

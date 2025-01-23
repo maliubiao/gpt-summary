@@ -195,7 +195,7 @@ b1:
 
 总而言之，`go/src/cmd/compile/internal/ssa/rewriteAMD64.go` 文件的作用是 **在 Go 编译器的 SSA 阶段，针对 AMD64 架构的特定指令模式进行优化和重写，以生成更高效的机器码**。 这最后一部分处理的是一些与控制流和特定指令组合相关的最终优化步骤。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第23部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 v_0_0
 				if z1.Op != OpAMD64SHLLconst || auxIntToInt8(z1.AuxInt) != 31 {
 					continue
@@ -753,10 +755,4 @@ v_0_0
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

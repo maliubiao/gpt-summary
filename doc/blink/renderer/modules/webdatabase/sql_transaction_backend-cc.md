@@ -142,7 +142,7 @@ Here's a plan:
 
 `SQLTransactionBackend` 的主要功能是**在 Chromium Blink 引擎的数据库线程上，负责执行由 JavaScript Web SQL API 发起的 SQL 事务**。它作为一个状态机，管理事务的生命周期，包括获取数据库锁、开启 SQLite 事务、执行 SQL 语句队列、处理事务和语句的回调、处理错误和配额问题，并最终提交或回滚事务，以及清理相关资源。它扮演着前端 JavaScript 代码与后端 SQLite 数据库之间的桥梁角色。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sql_transaction_backend.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008, 2013 Apple Inc. All rights reserved.
  *
@@ -888,7 +890,4 @@ SQLTransactionBackend::RunCurrentStatementAndGetNextState() {
 
   if (has_version_mismatch_)
     current_statement_backend_->SetVersi
-"""
-
-
 ```

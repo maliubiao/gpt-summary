@@ -140,15 +140,17 @@ Here's a breakdown of the thought process to generate the response:
 
 总而言之，`AVIFImageDecoder` 在 Blink 渲染引擎中扮演着至关重要的角色，它使得浏览器能够理解和显示 AVIF 这种现代高效的图像格式。它涉及到复杂的数据处理、颜色管理和图像变换，以确保用户在网页上看到正确的图像内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/avif_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 orProfile> profile = ColorProfile::Create(
           base::span(container->icc.data, container->icc.size));
       if (!profile) {
@@ -585,8 +587,4 @@ AVIFImageDecoder::AvifIOData::AvifIOData(
 AVIFImageDecoder::AvifIOData::~AvifIOData() = default;
 
 }  // namespace blink
-
-"""
-
-
 ```

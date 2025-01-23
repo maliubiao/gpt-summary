@@ -138,7 +138,7 @@ console.log(result);
 
 `v8/src/maglev/maglev-regalloc.cc` 作为 Maglev 编译器的关键组成部分，负责**高效地将程序中的逻辑值分配到物理寄存器和栈槽中**。它通过维护寄存器状态、实现不同的分配和释放策略、处理寄存器提示和值的生命周期，以及管理跨基本块的寄存器状态，最终目标是**生成能够充分利用 CPU 寄存器资源的高性能机器码**，从而提升 JavaScript 代码的执行效率。代码中还包含了对循环的特定优化，以进一步提升性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-regalloc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-regalloc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n()) {
       CHECK_EQ(double_slot, it->double_slot);
       CHECK_GT(start, it->freed_at_position);
@@ -878,8 +880,4 @@ void StraightForwardRegisterAllocator::MergeRegisterValues(ControlNode* control,
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -93,7 +93,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`nope.c` 虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 及其底层库 `frida-gum` 在处理未定义或无效函数指针时的行为。这对于确保 Frida 的稳定性和可靠性至关重要，尤其是在进行动态插桩这种可能遇到各种复杂和不可预测情况的环境中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/213 source set dictionary/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,12 +101,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

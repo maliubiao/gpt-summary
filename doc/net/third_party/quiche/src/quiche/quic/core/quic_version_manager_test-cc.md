@@ -151,15 +151,17 @@ Initially, I might have focused too much on trying to find a direct link to Java
 
 总而言之，`quic_version_manager_test.cc` 是保证 `QuicVersionManager` 正确性的关键测试文件，而 `QuicVersionManager` 的正确性直接影响着基于 QUIC 协议的网络连接的建立和性能。虽然用户和 JavaScript 开发者不直接操作它，但它的功能是网络栈正常运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_version_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ TEST_F(QuicVersionManagerTest, QuicVersionManager) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

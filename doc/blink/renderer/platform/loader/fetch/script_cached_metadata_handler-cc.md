@@ -144,14 +144,16 @@ Essentially, I simulated how a developer would approach understanding a new piec
 
 总而言之，`script_cached_metadata_handler.cc` 文件中的类是 Blink 引擎中用于优化 JavaScript 加载和执行性能的关键组件，它通过管理和持久化脚本的元数据来实现这一目标，并且可以通过哈希校验来保证缓存的有效性。理解其功能对于理解浏览器如何高效加载网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/script_cached_metadata_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -383,7 +385,4 @@ void ScriptCachedMetadataHandlerWithHashing::ResetForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

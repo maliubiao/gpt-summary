@@ -144,15 +144,17 @@ Here's a breakdown of the thought process to analyze the provided C++ code and g
 
 通过分析 `BackForwardCacheRestoration` 类收集的性能数据，开发者可以了解页面从 bfcache 恢复的速度，从而优化页面以提高用户体验。例如，如果 `pageshowEventEnd - startTime` 的值过大，可能意味着页面在恢复后执行了一些耗时的操作，需要进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/back_forward_cache_restoration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ void BackForwardCacheRestoration::BuildJSONValue(
   builder.AddNumber("pageshowEventEnd", pageshow_event_end_);
 }
 }  // namespace blink
-
-"""
-
 ```

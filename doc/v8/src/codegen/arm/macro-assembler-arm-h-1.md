@@ -213,7 +213,7 @@ masm->bind(&not_smi);
 
 总的来说，这部分的功能更加底层和细致，涵盖了 JavaScript 执行过程中的关键环节，例如函数调用、类型检查、异常处理和性能优化，是 V8 引擎高效执行 JavaScript 代码的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/macro-assembler-arm.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/macro-assembler-arm.h以.tq结尾，那它是个v8 torque源代码，
@@ -221,8 +221,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 xt.
   void LoadGlobalProxy(Register dst);
 
@@ -542,8 +544,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_ARM_MACRO_ASSEMBLER_ARM_H_
-
-"""
-
-
 ```

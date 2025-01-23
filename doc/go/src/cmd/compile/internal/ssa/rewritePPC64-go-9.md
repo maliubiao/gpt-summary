@@ -212,7 +212,7 @@ v10 = SRWconst (ZeroExt16to32 v8), [4]
 
 作为 `rewritePPC64.go` 的一部分，这段代码专注于 **优化 PPC64 架构下的右移操作**。它通过模式匹配和条件判断，将通用的 Go 语言右移操作转换为更高效的 PPC64 汇编指令，包括常量移位、有符号/无符号移位的区分、以及对移位量边界情况的处理。  这部分是编译器后端代码生成和优化的重要组成部分，旨在提升在 PPC64 架构上运行的 Go 程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritePPC64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -221,8 +221,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第10部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Func.Config.Types
 	// match: (Rsh16Ux64 x (MOVDconst [c]))
 	// cond: uint64(c) < 16
@@ -1630,10 +1632,4 @@ func rewriteValuePPC64_OpRsh8x8(v *Value) bool {
 		v.reset(OpPPC64SRAD)
 		v0 := b.NewValue0(v.Pos, OpPPC64MOVBreg, typ.Int64)
 		v0.AddArg(x)
-		
-"""
-
-
-
-
 ```

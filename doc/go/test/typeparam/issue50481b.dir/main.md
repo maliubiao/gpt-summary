@@ -147,15 +147,17 @@ func (f *Foo[T1, T2, _]) String() string {
 
 总而言之，这段代码是一个用于测试 Go 语言泛型特性的例子，它验证了泛型类型在跨包使用和处理未使用类型参数时的正确性。使用者在使用泛型时需要注意类型参数的数量和约束，以及跨包使用时的可见性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue50481b.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ func main() {
 		panic(fmt.Sprintf("got %s, want %s", got, want))
 	}
 }
-
-"""
-
-
-
 ```

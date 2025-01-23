@@ -57,9 +57,12 @@ By following these steps, I can systematically analyze the code, understand its 
 
 `empty.cc` 文件本身并不衡量任何实际的性能指标。它的存在是为了确保 V8 的基准测试基础设施能够正常工作，相当于一个“hello world”级别的基准测试，用于验证环境搭建和框架运行的正确性。  如果这个空的基准测试能够成功运行，就意味着基准测试框架的基础设施是健全的，可以开始编写更复杂的、用于衡量实际性能的基准测试用例。
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/empty.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/empty.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -76,6 +79,4 @@ static void BM_Empty(benchmark::State& state) {
 // Register the function as a benchmark. The empty benchmark ensures that the
 // framework compiles and links as expected.
 BENCHMARK(BM_Empty);
-
-"""
 ```

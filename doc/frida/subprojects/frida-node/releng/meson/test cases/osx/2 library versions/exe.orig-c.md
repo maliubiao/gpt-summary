@@ -168,7 +168,7 @@ Let's break down the thought process for analyzing the provided C code snippet i
 
 这个文件本身很简单，但它的存在和上下文（在 Frida 的测试环境中，并且涉及到多个库版本）使其成为一个有意义的调试线索，帮助开发者理解 Frida 在特定场景下的行为和预期。开发者可以通过修改这个文件、相关的库代码或者 Frida 脚本来调试问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/osx/2 library versions/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main (void) {
@@ -185,7 +187,4 @@ int main (void) {
     return 0;
   return 1;
 }
-
-"""
-
 ```

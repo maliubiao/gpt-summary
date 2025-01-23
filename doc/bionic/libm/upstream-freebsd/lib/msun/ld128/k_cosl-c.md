@@ -235,7 +235,7 @@ int main() {
 
 `bionic/libm/upstream-freebsd/lib/msun/ld128/k_cosl.c` 是 Android 系统中用于高精度余弦计算的关键底层函数。它通过泰勒级数展开进行近似计算，并在上层函数的辅助下处理各种输入情况。理解它的功能和实现方式有助于深入了解 Android 数学库的工作原理以及进行相关的性能优化和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/k_cosl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -302,7 +304,4 @@ __kernel_cosl(long double x, long double y)
 	w  = one-hz;
 	return w + (((one-w)-hz) + (z*r-x*y));
 }
-
-"""
-
 ```

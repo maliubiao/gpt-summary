@@ -193,14 +193,16 @@ By following these steps, we can systematically analyze the C++ code and generat
 
 总而言之，`WebHTTPBody.cc` 文件定义了一个核心的 Blink 类，负责处理浏览器发送 HTTP 请求时的请求体数据，它与 JavaScript 的网络 API 和 HTML 表单提交机制紧密相关，是浏览器网络功能的重要组成部分。理解它的功能有助于我们更好地理解浏览器如何处理 HTTP 请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_http_body.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -383,7 +385,4 @@ void WebHTTPBody::EnsureMutable() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

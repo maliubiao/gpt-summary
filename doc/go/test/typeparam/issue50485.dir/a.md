@@ -230,15 +230,17 @@ func main() {
 
 4. **不熟悉 Applicative Functor 的使用方式:**  Applicative Functor 提供了一种组合操作的方式，但需要理解其背后的概念，才能正确地利用 `ApOption` 等方法。初学者可能会觉得这种方式比直接的条件判断更复杂。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue50485.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 package a
 
 import "fmt"
@@ -477,9 +479,4 @@ func OrdOption[T any](m Ord[T]) Ord[Option[T]] {
 func Given[T ImplicitOrd]() Ord[T] {
 	return LessGiven[T]()
 }
-
-"""
-
-
-
 ```

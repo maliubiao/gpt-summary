@@ -173,7 +173,7 @@ Let's take the `DelayTCPOnStartNoConfirmation` test as an example:
 
 As part 8 of 13, this section of `quic_network_transaction_unittest.cc` focuses on comprehensively testing the behavior of the `QuicNetworkTransaction` class in a variety of scenarios where QUIC is either the primary or an alternative transport protocol. It covers successful QUIC connections, delayed TCP connections when QUIC is anticipated, various QUIC error conditions and the fallback to TCP, handling secure connections over QUIC, managing data uploads, testing connection retry mechanisms after errors, and ensuring proper handling of specific error codes. Essentially, it validates the robustness and correctness of the `QuicNetworkTransaction` in managing network requests with QUIC as a potential transport.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ck_quic_data.AddRead(ASYNC, ERR_IO_PENDING);  // Pause.
   mock_quic_data.AddRead(
       ASYNC, ConstructServerResponseHeadersPacket(
@@ -963,7 +965,4 @@ TEST_P(QuicNetworkTransactionTest, HostInAllowlist) {
   CreateSession();
 
   SendRequestAndExpectHtt
-"""
-
-
 ```

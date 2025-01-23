@@ -112,7 +112,7 @@ By following these steps and engaging in self-correction, we arrive at the compr
 
 虽然 `prog.c` 代码非常简单，但它作为一个测试用例，体现了 Frida 如何与使用了预编译头文件的代码进行交互。通过 Frida，我们可以在运行时观察和修改程序的行为，这对于逆向工程、漏洞分析和动态调试非常有用。 理解其背后的编译机制和操作系统原理，能让我们更有效地利用 Frida 这样的动态插桩工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/13 pch/generated/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,14 +120,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 int main(void) {
     return FOO + BAR;
 }
-
-"""
-
 ```

@@ -207,7 +207,7 @@ Decoded number (incorrect): 0x78563412
 
 `go/src/encoding/binary/native_endian_big.go` 这部分代码是 `encoding/binary` 包中针对大端字节序原生架构的实现。 它定义了 `NativeEndian` 变量，使得在这些架构上使用 `binary.NativeEndian` 时，实际上是在使用大端字节序进行数据的编码和解码。 使用者需要注意字节序的一致性，避免在编码和解码时使用不同的字节序导致数据错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/binary/native_endian_big.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -215,8 +215,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -231,9 +233,4 @@ type nativeEndian struct {
 
 // NativeEndian is the native-endian implementation of [ByteOrder] and [AppendByteOrder].
 var NativeEndian nativeEndian
-
-"""
-
-
-
 ```

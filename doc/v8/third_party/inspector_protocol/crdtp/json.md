@@ -124,11 +124,13 @@ CBOR 是一种二进制的 JSON 替代品，通常用于需要更高效的数据
 
 `v8/third_party/inspector_protocol/crdtp/json.cc` 文件是 V8 引擎中处理 JSON 数据序列化和反序列化的关键组件，它使得 C++ 和 JavaScript 之间能够有效地交换结构化数据，这对于 Chrome 开发者工具的正常运作至关重要。它还提供了与 CBOR 格式的转换能力，以满足不同的数据交换需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1182,7 +1184,4 @@ Status ConvertJSONToCBOR(span<uint16_t> json, std::vector<uint8_t>* cbor) {
 }
 }  // namespace json
 }  // namespace v8_crdtp
-
-"""
-
 ```

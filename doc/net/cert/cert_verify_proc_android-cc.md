@@ -152,15 +152,17 @@ By following this thought process, systematically analyzing the code, and explic
 
 因此，当用户访问任何 HTTPS 网站时，如果涉及到证书验证，`net/cert/cert_verify_proc_android.cc` 中的代码都有可能被执行。 在调试与 Android 平台上的 HTTPS 连接问题相关的证书错误时，这是一个关键的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_android.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -542,7 +544,4 @@ int CertVerifyProcAndroid::VerifyInternal(X509Certificate* cert,
 }
 
 }  // namespace net
-
-"""
-
 ```

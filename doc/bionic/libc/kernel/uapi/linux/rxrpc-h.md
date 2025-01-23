@@ -245,7 +245,7 @@ Interceptor.attach(Module.getExportByName(null, "connect"), {
 
 总结来说， `bionic/libc/kernel/uapi/linux/rxrpc.h` 定义了 Linux 内核 RxRPC 协议的用户空间 API。虽然 Android 应用层开发通常不直接使用它，但某些底层系统服务或守护进程可能会利用它进行内部通信。要确定 Android Framework 或 NDK 如何到达这里，需要对 Android 系统的具体实现进行深入分析，并可能需要使用 Frida 等工具进行动态调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/rxrpc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -338,7 +340,4 @@ enum rxrpc_cmsg_type {
 #define RXKADDATALEN 19270411
 #define RXKADILLEGALLEVEL 19270412
 #endif
-
-"""
-
 ```

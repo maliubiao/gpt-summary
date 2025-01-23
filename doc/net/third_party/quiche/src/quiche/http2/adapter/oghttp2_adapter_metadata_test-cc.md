@@ -131,15 +131,17 @@ OnDataForStream(1, "Hello, world!")
 
 总而言之，`oghttp2_adapter_metadata_test.cc` 是确保 Chromium 的 HTTP/2 适配器能正确处理元数据的关键组成部分，它通过大量的测试用例覆盖了各种场景，帮助开发者发现和修复与元数据处理相关的 Bug，从而保证用户能够正常体验使用 HTTP/2 元数据功能的网站。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_metadata_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cstdint>
 #include <memory>
 #include <string>
@@ -817,7 +819,4 @@ TEST_P(MetadataApiTest, ServerQueuesMetadataThenTrailers) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

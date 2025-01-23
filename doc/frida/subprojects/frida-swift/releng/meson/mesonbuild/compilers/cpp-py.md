@@ -98,7 +98,7 @@ Now, let's consider the specific questions:
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/cpp.py` 文件的核心功能是 **抽象和管理 C++ 编译器的配置和调用，以便 Meson 构建系统能够跨平台、灵活地处理 C++ 项目的构建过程。** 它负责将用户在高层次配置中指定的 C++ 选项转换为底层编译器能够理解的命令行参数，并处理不同编译器之间的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/cpp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -861,7 +863,4 @@ class VisualStudioLikeCPPCompilerMixin(CompilerMixinBase):
             args.append('/GR-')
 
         permissive, ver = self.VC_VERSION_MAP[
-"""
-
-
 ```

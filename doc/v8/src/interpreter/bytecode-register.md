@@ -108,11 +108,13 @@ obj.getValue(); // 调用 obj 的方法
 
 `bytecode-register.cc` 文件是 V8 引擎内部实现的重要组成部分，它定义了用于表示和调试字节码解释器中寄存器的方式。这些寄存器是执行 JavaScript 代码的关键，它们存储着执行过程中的各种数据。了解这些寄存器有助于理解 JavaScript 代码在 V8 引擎中的执行过程。虽然开发者通常不需要直接操作这些寄存器，但它们的行为影响着 JavaScript 代码的性能和特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-register.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ std::string Register::ToString() const {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

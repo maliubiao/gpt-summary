@@ -151,7 +151,7 @@ This systematic approach allows me to break down the problem into manageable par
 
 总而言之，`test_core.py`  是 Frida Python 绑定的基础测试，它验证了设备管理这一核心功能的正确性，并且它的存在可以帮助开发者理解 Frida 的 API 用法，排查与设备连接相关的错误。  通过阅读和分析这些测试用例，开发者可以更好地理解 Frida 的内部工作原理以及如何正确地使用它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/tests/test_core.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import threading
 import time
 import unittest
@@ -210,7 +212,4 @@ class TestCore(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-"""
-
 ```

@@ -92,11 +92,13 @@ console.log(result);
 
 `disasm-s390.cc` 是 V8 引擎中用于将 s390 架构的机器码转换为可读汇编代码的关键组件。它对于理解 V8 如何在底层执行 JavaScript 代码，以及进行性能分析和调试非常有帮助。虽然 JavaScript 开发者通常不需要直接使用它，但它是保证 JavaScript 代码在 s390 架构上正确高效运行的基础设施的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/s390/disasm-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1197,7 +1199,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
 ```

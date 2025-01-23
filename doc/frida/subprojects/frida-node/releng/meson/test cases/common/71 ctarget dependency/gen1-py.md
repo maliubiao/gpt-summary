@@ -126,7 +126,7 @@ python gen1.py input.txt output.txt
 
 作为调试线索，理解 `gen1.py` 的功能可以帮助用户理解 Frida 的测试框架是如何模拟依赖关系的，从而更好地理解他们在实际逆向过程中遇到的问题是否与目标应用的依赖加载有关。例如，如果用户发现自己的 Frida 脚本在目标应用加载配置文件失败时也无法正常工作，那么 `gen1.py` 这样的测试用例可以帮助他们验证 Frida 是否能够处理这种情况，或者他们是否需要在 Frida 脚本中添加额外的逻辑来处理依赖加载失败的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/71 ctarget dependency/gen1.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import time, sys
@@ -148,7 +150,4 @@ with open(sys.argv[1]) as f:
     contents = f.read()
 with open(sys.argv[2], 'w') as f:
     f.write(contents)
-
-"""
-
 ```

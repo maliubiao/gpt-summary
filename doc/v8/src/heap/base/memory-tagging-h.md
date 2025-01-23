@@ -178,15 +178,17 @@ console.log(value);
 
 `v8/src/heap/base/memory-tagging.h` 是一个用于辅助 ARM MTE 功能的 C++ 头文件。它定义了 `SuspendTagCheckingScope` 类，用于在需要时临时禁用 MTE 标签检查，例如在垃圾回收期间。虽然 JavaScript 开发者不直接操作 MTE，但 MTE 作为 V8 的底层安全机制，提高了 JavaScript 运行时的安全性。了解 MTE 的作用有助于理解 V8 如何在底层保护内存安全，并意识到可能导致内存相关问题的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/memory-tagging.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/memory-tagging.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ class V8_EXPORT SuspendTagCheckingScope final {
 }  // namespace heap::base
 
 #endif  // V8_HEAP_BASE_MEMORY_TAGGING_H_
-
-"""
-
 ```

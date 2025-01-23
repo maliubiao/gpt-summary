@@ -155,7 +155,7 @@ end
 
 总而言之，`v8/src/wasm/baseline/liftoff-compiler.cc` 的第三部分专注于 **生成 WebAssembly 代码以处理控制流结构（如 `if` 语句）、异常处理（`try...catch`）、执行基本的一元和二元运算，以及进行各种类型之间的转换**。它还负责生成调用外部 C 函数的代码。这部分是 Liftoff 编译器将 WebAssembly 指令转换为目标机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,9 +163,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共13部分，请归纳一下它的功能
+```
 
-"""
- JSTag.
+### 源代码
+```cpp
+JSTag.
       LiftoffRegister undefined =
           pinned.set(__ GetUnusedRegister(kGpReg, pinned));
       __ LoadFullPointer(
@@ -911,7 +913,4 @@ Prompt:
   void EmitI64Shift(EmitFn fn, EmitFnImm fnImm) {
     return EmitBinOpImm<kI64, kI64>(
         [this,
-"""
-
-
 ```

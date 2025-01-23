@@ -133,14 +133,16 @@ CSS 本身不直接与 `TransferredMediaStreamComponent` 交互。CSS 主要负�
 
 `TransferredMediaStreamComponent` 是 Blink 引擎中处理 MediaStream 组件跨越不同上下文或异步初始化场景的关键机制。它通过延迟初始化和操作队列的方式，确保了即使在真正的组件尚未准备好时，相关的操作也能被正确处理。虽然开发者通常不会直接与此类交互，但理解其作用有助于理解 MediaStream 在 Blink 内部的工作原理，以及可能遇到的与异步初始化相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/transferred_media_stream_component.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -394,7 +396,4 @@ void TransferredMediaStreamComponent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

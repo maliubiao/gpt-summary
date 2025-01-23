@@ -200,7 +200,7 @@ By following these steps, considering the context, and iteratively refining the 
 
 总而言之，`cmMod.cpp` 提供了一个简单的 C++ 类，主要用于在 Frida 的 CMake 集成测试中，验证头文件包含路径的处理。它本身的功能简单，但可以作为 Frida 动态 instrumentation 的一个目标，帮助理解 Frida 在不同环境下的工作方式。 用户到达这里通常是出于调试构建问题、理解测试逻辑或进行 Frida 动态分析的目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/17 include path order/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -221,7 +223,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

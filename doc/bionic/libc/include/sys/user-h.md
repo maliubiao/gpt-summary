@@ -211,7 +211,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/libc/include/sys/user.handroid.h` 虽然只是一个头文件，但它定义了 Android 系统中表示用户进程状态的关键数据结构，为调试、跟踪和进程管理等核心功能提供了基础。理解这个文件的内容有助于深入了解 Android 系统的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/user.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -222,8 +222,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -469,7 +471,4 @@ struct user_fpsimd_struct {
 #endif
 
 __END_DECLS
-
-"""
-
 ```

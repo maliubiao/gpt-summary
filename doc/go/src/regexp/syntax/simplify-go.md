@@ -140,7 +140,7 @@ func main() {
 
 因此，在使用 `Simplify` 之后，如果你的代码依赖于特定的捕获组编号，需要注意这种变化。简化操作的目的是为了提高正则表达式的执行效率和减少状态机的复杂性，而不是为了保持语法树的完全一致性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/regexp/syntax/simplify.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -301,9 +303,4 @@ func simplify1(op Op, flags Flags, sub, re *Regexp) *Regexp {
 	re.Sub = append(re.Sub0[:0], sub)
 	return re
 }
-
-"""
-
-
-
 ```

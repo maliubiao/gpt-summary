@@ -132,15 +132,17 @@ By following these steps, the detailed and comprehensive explanation of `v8/src/
 
 `v8/src/base/sys-info.h` 提供了一种获取底层系统信息的机制，这些信息对于 V8 引擎的内部运作至关重要，用于性能优化、资源管理和确保稳定性。 尽管 JavaScript 开发者不能直接访问这些信息，但了解其存在和作用有助于编写更高效、更健壮的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sys-info.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/sys-info.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ class V8_BASE_EXPORT SysInfo final {
 }  // namespace v8
 
 #endif  // V8_BASE_SYS_INFO_H_
-
-"""
-
 ```

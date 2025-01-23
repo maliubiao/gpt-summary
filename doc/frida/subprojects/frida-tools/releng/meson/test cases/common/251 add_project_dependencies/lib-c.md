@@ -117,7 +117,7 @@ By following this structured approach, considering the context, and iteratively 
 
 这个测试用例的作用就是确保在处理项目依赖项时，相关的编译参数能够正确地传递下去，这是保证 Frida 工具链正常工作的基本要求。通过这种简单的检查，可以尽早发现构建配置中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/251 add_project_dependencies/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <zlib.h>
 #include <math.h>
 
@@ -141,7 +143,4 @@ int ok(void) {
         return 0;
     return (int)cos(zero);
 }
-
-"""
-
 ```

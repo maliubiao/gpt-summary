@@ -187,7 +187,7 @@ By following these steps, I can construct a detailed and accurate summary of the
 
 `WebRtcAudioRenderer` 的主要功能是作为 Chromium Blink 引擎中 WebRTC 音频渲染的核心组件。它负责接收、处理来自 WebRTC 音频源的音频数据，并将其输出到用户的音频设备。它管理音频播放状态、音量，并提供设备切换功能。其设计支持共享实例以优化资源利用。 这部分代码涵盖了渲染器的初始化、播放控制、音频数据的处理和输出管理的基本框架。后续部分可能涉及更细节的音频处理逻辑或者与其他模块的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webrtc/webrtc_audio_renderer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1063,7 +1065,4 @@ void WebRtcAudioRenderer::PrepareSink() {
         String::Format("%s => (WARNING: sink falls back to stereo)", __func__));
     channels = 2;
     channel_layout = media::CHANNE
-"""
-
-
 ```

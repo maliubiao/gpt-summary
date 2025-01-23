@@ -167,7 +167,7 @@ console.log(anotherDestination); // 输出: Int32Array [ 100, 0 ]
 
 这段代码的核心功能是 **提供高效且安全的机制，用于将数据从一个数组（尤其是 Typed Array）复制到另一个数组**。它考虑了不同的数据类型、内存布局（包括共享内存和重叠区域），并针对常见的场景进行了优化。对于无法快速复制的情况，它也提供了通用的慢速路径处理。这部分代码是 V8 引擎处理数组操作，特别是 Typed Array 操作的关键组成部分，直接影响着 JavaScript 代码的性能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nalArrayType source_type = source->type();
     ExternalArrayType destination_type = destination->type();
 
@@ -1107,8 +1109,4 @@ class SloppyArgumentsElementsAccessor
   }
 
   static uint32_t GetCapacityImpl(Tagged<JSObject> holder,
-     
-"""
-
-
 ```

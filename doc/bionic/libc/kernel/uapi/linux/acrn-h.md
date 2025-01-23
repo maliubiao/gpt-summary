@@ -356,7 +356,7 @@ session.detach()
 
 请注意，直接使用这些底层 ACRN 接口通常需要系统级别的权限，并且在标准的 Android 应用开发中并不常见。 这些接口主要用于构建 Android 系统本身或运行在其上的特权组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/acrn.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -367,8 +367,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -647,7 +649,4 @@ struct acrn_irqfd {
 #define ACRN_IOCTL_IOEVENTFD _IOW(ACRN_IOCTL_TYPE, 0x70, struct acrn_ioeventfd)
 #define ACRN_IOCTL_IRQFD _IOW(ACRN_IOCTL_TYPE, 0x71, struct acrn_irqfd)
 #endif
-
-"""
-
 ```

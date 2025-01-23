@@ -121,7 +121,7 @@ from frida.subprojects.frida_qml.releng.meson.mesonbuild.dependencies.data impor
 
 虽然 `frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/data/__init__.py` 文件本身是空的，它的存在至关重要，因为它将 `data` 目录标记为一个 Python 包，使得该目录下的数据文件可以被 Frida 的其他 Python 代码访问。这些数据文件很可能与 Frida 的逆向分析功能相关，例如存储目标程序的地址偏移量、API 信息等。开发者在理解 Frida 的构建系统、排查依赖问题或研究 Frida-QML 子项目时可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,9 +129,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

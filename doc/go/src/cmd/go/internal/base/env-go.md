@@ -143,15 +143,17 @@ func main() {
 
 总而言之，`env.go` 中的这两个函数是 `go` 命令内部管理子进程环境变量的关键工具，它们确保了子进程在执行时拥有正确的上下文环境。理解它们的功能有助于理解 `go` 命令的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/base/env.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ func AppendPATH(base []string) []string {
 	}
 	return append(base, pathVar+"="+cfg.GOROOTbin+string(os.PathListSeparator)+path)
 }
-
-"""
-
-
-
 ```

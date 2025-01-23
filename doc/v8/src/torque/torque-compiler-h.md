@@ -188,15 +188,17 @@ options.output_directory = "/tmp/torque_output";
 
 总而言之，`v8/src/torque/torque-compiler.h` 定义了 V8 中 Torque 编译器的核心接口和配置，它负责将 `.tq` 结尾的 Torque 源代码转换成 V8 引擎可以执行的代码，从而支撑着 JavaScript 的各种底层功能。虽然普通 JavaScript 开发者不会直接接触到这个文件，但理解它的作用有助于更深入地理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-compiler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/torque-compiler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ V8_EXPORT_PRIVATE TorqueCompilerResult CompileTorqueForKythe(
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_TORQUE_COMPILER_H_
-
-"""
-
 ```

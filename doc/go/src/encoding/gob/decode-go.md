@@ -193,7 +193,7 @@ func main() {
 
 总而言之，这段代码是 `encoding/gob` 包解码功能的核心实现，负责将 `gob` 格式的字节流转换回 Go 语言的数据结构。它处理了各种基本类型、复合类型（如数组、切片、map、结构体和接口）的解码，并提供了一种机制来处理实现了特定接口的自定义类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/gob/decode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -202,8 +202,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1253,9 +1255,4 @@ func (dec *Decoder) compatibleType(fr reflect.Type, fw typeId, inProgress map[re
 	case reflect.Complex64, reflect.Complex128:
 		return fw == tComplex
 	c
-"""
-
-
-
-
 ```

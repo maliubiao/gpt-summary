@@ -255,15 +255,17 @@ Deferred: 5
 
 这种错误也可能影响逃逸分析，因为闭包捕获外部变量的地址可能会导致该变量逃逸到堆上。理解逃逸分析对于编写高效且无 bug 的 Go 代码至关重要，尤其是在使用闭包和指针时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_closure.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -457,9 +459,4 @@ func ClosureIndirect2() {
 }
 
 func nopFunc2(p *int) *int { return p } // ERROR "leaking param: p to result ~r0 level=0"
-
-"""
-
-
-
 ```

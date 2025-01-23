@@ -172,7 +172,7 @@ patch_filename = example.patch
 
 `wrap.py` 是 Frida 构建系统中用于自动化管理外部依赖项的关键工具。它通过声明式的 `.wrap` 文件配置，实现了依赖项的下载、完整性校验、本地缓存和补丁应用等功能，确保了 Frida 能够可靠地集成所需的外部库。这对于构建像 Frida 这样复杂的工具至关重要，因为它简化了对多个外部组件的管理，并提高了构建过程的可重复性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,9 +181,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- bool = True) -> None:
+### 源代码
+```python
+bool = True) -> None:
         if what + '_hash' not in self.wrap.values and not hash_required:
             return
         expected = self.wrap.get(what + '_hash').lower()
@@ -308,8 +310,4 @@ Prompt:
                         os.chmod(dst_file, stat.S_IWUSR)
                         os.remove(dst_file)
                 shutil.copy2(src_file, dst_dir)
-
-"""
-
-
 ```

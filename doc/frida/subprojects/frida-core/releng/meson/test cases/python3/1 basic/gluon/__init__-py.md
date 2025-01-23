@@ -104,7 +104,7 @@ Frida作为一个动态 instrumentation 工具，其核心功能涉及到与操�
 
 因此，当开发者在调试与 Frida 核心功能相关的 Python 测试时，可能会查看或修改这个空的 `__init__.py` 文件，以确保测试环境的正确配置。  例如，如果测试用例依赖于 `gluon` 包的存在，那么这个 `__init__.py` 文件的存在就是至关重要的。 如果测试出现 `ModuleNotFoundError: gluon` 的错误，开发者可能会检查这个文件是否存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python3/1 basic/gluon/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,9 +112,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

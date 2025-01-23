@@ -116,7 +116,7 @@ __ vpsubq(ymm15, ymm1, ymm2);
 
 作为第 4 部分，这个文件（`assembler-x64-unittest.cc`）延续了之前部分的功能，专注于测试 V8 引擎在 x64 架构下汇编器生成机器码的正确性。它通过一系列细粒度的单元测试，覆盖了各种 x86-64 指令集扩展（如 SSE、AVX、FMA、F16C、AVX_VNNI 等）的指令编码。每个测试用例都针对特定的指令或指令组合，验证汇编器生成的二进制代码是否与预期完全一致。这对于确保 V8 引擎在 x64 平台上正确、高效地执行 JavaScript 代码至关重要。 这种细致的测试方法有助于及早发现汇编器实现中的错误，从而提高 V8 引擎的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/assembler-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/assembler-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -124,9 +124,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- // vpsubq ymm15,ymm1,ymm2
+### 源代码
+```cpp
+// vpsubq ymm15,ymm1,ymm2
                           0xc5, 0x75, 0xfb, 0xfa,
                           // vpmullw ymm6,ymm7,ymm8
                           0xc4, 0xc1, 0x45, 0xd5, 0xf0,
@@ -258,8 +260,4 @@ TEST_F(AssemblerX64Test, CpuFeatures_ProbeImpl) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

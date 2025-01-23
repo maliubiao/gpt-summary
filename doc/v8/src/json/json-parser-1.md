@@ -73,12 +73,14 @@ console.log(parsedObject.hobbies[0]); // 输出: reading
 
 总而言之，这部分 C++ 代码是 V8 引擎中 `JSON.parse()` 功能的核心实现，它负责将 JSON 格式的字符串转换成 JavaScript 可以直接使用的对象或数组。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/json/json-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 de_stack.back() = val_node;
           }
 
@@ -536,8 +538,4 @@ template class JsonParser<uint16_t>;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

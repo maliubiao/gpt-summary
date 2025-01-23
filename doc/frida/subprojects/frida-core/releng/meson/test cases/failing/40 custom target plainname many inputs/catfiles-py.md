@@ -170,7 +170,7 @@ World!
 
 因此，到达这个脚本的执行通常是 Frida 构建和测试流程的一部分，而不是用户直接操作的结果。 调试线索应该着重于查看相关的 `meson.build` 文件，了解这个测试用例的预期行为和失败原因，以及查看 Frida 的构建日志，了解脚本执行时的具体参数和输出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/40 custom target plainname many inputs/catfiles.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -189,7 +191,4 @@ with open(out, 'wb') as o:
     for infile in sys.argv[1:-1]:
         with open(infile, 'rb') as f:
             o.write(f.read())
-
-"""
-
 ```

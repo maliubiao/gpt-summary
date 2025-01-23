@@ -198,24 +198,21 @@ GOOS=illumos GOARCH=<target_architecture> go build main.go
 
 总而言之，这段代码片段是 Go 语言构建系统为了支持平台特定功能和进行测试而设计的一部分。它本身并没有提供一个可以直接被最终用户调用的功能，而是作为 Go 内部机制的一部分运作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/illumos/e.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 //go:build illumos
 // +build illumos
 
 package illumos
 
 import _ "e"
-
-"""
-
-
-
 ```

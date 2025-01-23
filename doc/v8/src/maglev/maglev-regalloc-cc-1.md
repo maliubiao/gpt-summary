@@ -219,7 +219,7 @@ node4: Return [input: node3]            // 代表返回运算结果
 
 这段代码主要负责 **为 Maglev IR 中的节点分配存储位置（寄存器或栈槽）**。它实现了寄存器分配的核心逻辑，包括为不同类型的节点分配位置、释放寄存器、处理分支目标和 Phi 节点、插入数据移动指令以及处理寄存器的溢出和快照。其目标是高效地利用寄存器，从而优化 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-regalloc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-regalloc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -227,8 +227,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 locateNodeResult(ValueNode* node) {
   DCHECK(!node->Is<Phi>());
 
@@ -1079,7 +1081,4 @@ void StraightForwardRegisterAllocator::AllocateSpillSlot(ValueNode* node) {
     }
 
     if (it != slots.free_slots.begi
-"""
-
-
 ```

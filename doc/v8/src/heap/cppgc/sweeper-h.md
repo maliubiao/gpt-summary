@@ -217,15 +217,17 @@ While developers don't directly interact with `sweeper.h`, understanding its pur
 
 In summary, `v8/src/heap/cppgc/sweeper.h` defines the `Sweeper` class, a critical component responsible for reclaiming unused memory in V8's C++ heap. While not directly manipulated by JavaScript developers, its efficient operation is essential for the performance and stability of JavaScript applications. Understanding its role helps appreciate the complexities of automatic memory management in V8.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/sweeper.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/sweeper.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ class V8_EXPORT_PRIVATE Sweeper final {
 }  // namespace cppgc::internal
 
 #endif  // V8_HEAP_CPPGC_SWEEPER_H_
-
-"""
-
 ```

@@ -176,14 +176,16 @@ By following this thought process, combining code inspection with knowledge of a
 
 理解这些潜在的错误可以帮助开发者在使用 Web Audio API 或研究 Blink 引擎代码时更好地理解音频重采样的原理和可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/sinc_resampler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -688,7 +690,4 @@ void SincResampler::Process(AudioSourceProvider* source_provider,
 }
 
 }  // namespace blink
-
-"""
-
 ```

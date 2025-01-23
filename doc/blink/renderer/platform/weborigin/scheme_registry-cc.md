@@ -149,14 +149,16 @@ Initially, I might have just said "Registers schemes for Service Workers."  Howe
 
 `blink/renderer/platform/weborigin/scheme_registry.cc` 是 Blink 引擎中一个核心的配置中心，它定义了 URL scheme 的各种属性和行为规则，直接影响着 JavaScript, HTML 和 CSS 的运行和安全。理解 `SchemeRegistry` 的作用对于理解浏览器的行为和避免潜在的错误至关重要。开发者在处理不同 URL scheme 时，需要意识到这些潜在的差异，并遵循浏览器的安全和功能限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/scheme_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Apple Inc. All Rights Reserved.
  *
@@ -654,7 +656,4 @@ bool SchemeRegistry::SchemeSupportsCodeCacheWithHashing(const String& scheme) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -178,15 +178,17 @@ ReturnFalse:
 
 `fuseBranchRedirect` 是 Go 编译器 SSA 阶段的一个优化，它通过分析条件分支之间的关系，消除冗余的中间 `If` 块，从而优化程序的控制流，提高执行效率。它依赖于事实表来跟踪和推理条件，并根据推理结果进行 CFG 的重定向。普通的 Go 开发者无需直接操作它，但了解其原理有助于编写更易于编译器优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/fuse_branchredirect.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -299,9 +301,4 @@ func fuseBranchRedirect(f *Func) bool {
 	ft.cleanup(f)
 	return changed
 }
-
-"""
-
-
-
 ```

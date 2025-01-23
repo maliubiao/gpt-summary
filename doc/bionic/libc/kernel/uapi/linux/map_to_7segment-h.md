@@ -253,7 +253,7 @@ rpc.exports = {
 
 总而言之，`bionic/libc/kernel/uapi/linux/map_to_7segment.handroid` 这个头文件虽然小巧，但对于需要在 Android 系统中控制 7 段数码管的场景来说非常重要。它提供了一种标准化的方式来表示和映射字符到 7 段码，方便了驱动程序、HAL 和应用开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/map_to_7segment.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -301,7 +303,4 @@ struct seg7_conversion_map {
 #define MAP_ASCII7SEG_ALPHANUM_LC _MAP_0_32_ASCII_SEG7_NON_PRINTABLE _MAP_33_47_ASCII_SEG7_SYMBOL _MAP_48_57_ASCII_SEG7_NUMERIC _MAP_58_64_ASCII_SEG7_SYMBOL _MAP_97_122_ASCII_SEG7_ALPHA_LOWER _MAP_91_96_ASCII_SEG7_SYMBOL _MAP_97_122_ASCII_SEG7_ALPHA_LOWER _MAP_123_126_ASCII_SEG7_SYMBOL
 #define SEG7_DEFAULT_MAP(_name) SEG7_CONVERSION_MAP(_name, MAP_ASCII7SEG_ALPHANUM)
 #endif
-
-"""
-
 ```

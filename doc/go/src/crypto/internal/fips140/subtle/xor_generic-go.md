@@ -136,7 +136,7 @@ func main() {
 
 总之，`xor_generic.go` 提供了一个通用的字节数组异或操作实现，它尝试利用对齐优化来提高性能，但同时也涉及到一些底层的内存操作，使用者需要注意潜在的风险。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/subtle/xor_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -210,9 +212,4 @@ func xorLoop[T byte | uintptr](dst, x, y []T) {
 		dst[i] = x[i] ^ y[i]
 	}
 }
-
-"""
-
-
-
 ```

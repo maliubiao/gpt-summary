@@ -105,7 +105,7 @@ from .target_info import TargetInfoMixin
 
 `frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/mixins/__init__.py` 文件主要用于将 `mixins` 目录标记为一个 Python 包，并可能用于导入和组织其中的 mixin 模块。这些 mixins 包含了编译器实现的通用功能，与逆向工程中涉及的目标架构、ABI、调试信息等密切相关，并涉及到二进制底层、操作系统内核及框架的知识。用户通常不会直接操作此文件，但与 Frida 工具的编译相关的操作会间接地使用到它。理解这个文件的作用有助于理解 Frida 工具的构建过程和内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/mixins/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,9 +113,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -221,7 +221,7 @@ example_listener_on_enter (GumInvocationListener * listener,
 
 这个示例代码可以作为学习 Frida Gum 基础用法的起点，帮助用户理解如何进行函数拦截和动态分析。在实际的逆向工程中，用户会根据具体的需求，编写更复杂的 Frida 脚本来分析程序的行为、修改程序的执行流程或提取敏感信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/devkit-assets/frida-gum-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -229,8 +229,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gum.h"
 
 #include <fcntl.h>
@@ -353,7 +355,4 @@ static void
 example_listener_init (ExampleListener * self)
 {
 }
-
-"""
-
 ```

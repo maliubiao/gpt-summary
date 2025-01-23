@@ -111,12 +111,14 @@ Functions like `ElementOffsetFromIndex` and `StoreElementTypedArray` in the C++ 
 
 **In summary,** `code-stub-assembler.cc` provides the tools and implementations for generating highly optimized machine code for fundamental JavaScript operations. This is essential for the performance of the V8 engine and directly impacts how quickly JavaScript code executes these core operations. Being part 8 of 12 suggests this file focuses on a specific subset of these code generation capabilities within the larger V8 codebase.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第8部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 E_SWISS_NAME_DICTIONARY_BOOL) {
         TNode<Smi> flags =
             GetNameDictionaryFlags<NameDictionary>(CAST(properties));
@@ -1831,8 +1833,4 @@ TNode<FixedArrayBase> CodeStubAssembler::CopyElementsOnWrite(
 void CodeStubAssembler::TransitionElementsKind(TNode<JSObject> object,
                                                TNode<Map> map,
                                                ElementsKind from_kind,
-                    
-"""
-
-
 ```

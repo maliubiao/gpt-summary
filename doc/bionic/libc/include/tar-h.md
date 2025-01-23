@@ -338,7 +338,7 @@ sys.stdin.read()
 
 `bionic/libc/include/tar.h` 定义了用于处理 `.tar` 文件格式的关键常量。虽然它本身不包含函数实现或直接涉及动态链接，但这些常量被 libc 库中实现 `.tar` 文件操作的函数所使用，并在 Android 系统的软件包管理、更新和备份恢复等多个方面发挥作用。通过理解这些常量以及它们在系统中的使用方式，可以更好地理解 Android 底层的运作机制。Frida 这样的工具可以帮助我们动态地观察和调试这些底层的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/tar.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -349,8 +349,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -440,7 +442,4 @@ Prompt:
 #define TOWRITE 00002
 /** Executable by other mode field bit. */
 #define TOEXEC 00001
-
-"""
-
 ```

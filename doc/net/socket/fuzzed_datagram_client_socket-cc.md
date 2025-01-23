@@ -125,15 +125,17 @@ This systematic approach, moving from the high-level purpose to the details of i
 
 `FuzzedDatagramClientSocket` 是一个专门为模糊测试设计的组件，它通过随机模拟网络行为和错误条件，帮助 Chromium 开发者发现网络栈中的潜在问题。它不直接参与用户的日常网络浏览，而是作为一种强大的测试工具存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/fuzzed_datagram_client_socket.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -385,7 +387,4 @@ DscpAndEcn FuzzedDatagramClientSocket::GetLastTos() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

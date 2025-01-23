@@ -135,15 +135,17 @@ Here's a breakdown of the thinking process used to analyze the provided C++ fuzz
 
 总而言之，`structured_headers_fuzzer.cc` 是 Chromium 用来确保其结构化头部解析器健壮性和安全性的重要工具。它通过大量的随机测试，帮助开发者在实际用户遇到问题之前发现并修复潜在的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/structured_headers_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
 }  // namespace structured_headers
 }  // namespace net
-
-"""
-
 ```

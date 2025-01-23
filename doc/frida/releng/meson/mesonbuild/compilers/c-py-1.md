@@ -154,7 +154,7 @@ By going through this breakdown, we arrive at a comprehensive understanding of t
 
 `MwcceppcCompiler` 类的核心功能是作为 Frida 框架中一个关键的桥梁，它封装了与 Metrowerks CodeWarrior PowerPC 编译器交互的复杂性。通过提供管理指令集参数和编译选项的能力，它确保了 Frida 能够针对特定的 PowerPC 目标平台，准确地编译和注入代码，从而实现有效的动态分析和逆向工程。它使得 Frida 用户无需深入了解特定编译器的细节，即可方便地进行跨平台的动态插桩操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ksCompiler, CCompiler):
     id = 'mwcceppc'
 
@@ -191,8 +193,4 @@ ksCompiler, CCompiler):
         if std.value != 'none':
             args.append('-lang ' + std.value)
         return args
-
-"""
-
-
 ```

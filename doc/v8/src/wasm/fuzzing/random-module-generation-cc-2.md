@@ -254,7 +254,7 @@ br_on_cast 1 ;; 可空性标志 (假设源和目标都可空)
 
 `v8/src/wasm/fuzzing/random-module-generation.cc` 的第 3 部分主要负责定义 `BodyGen` 类中用于 **生成各种 WebAssembly 表达式** 的成员函数，特别是那些涉及 **引用类型操作、结构体、数组以及与 JavaScript 互操作的字符串操作** 的表达式。 这部分代码提供了生成 `ref.cast`、`br_on_cast`、`struct.get`、`struct.set` 等 WebAssembly 指令的能力，并且能够生成调用导入的 JavaScript 字符串操作函数的指令。 它的核心目标是为 WebAssembly 模糊测试提供生成随机但合法的指令序列的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/fuzzing/random-module-generation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -262,8 +262,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rate<wanted_kind>(data);
     }
   }
@@ -1061,7 +1063,4 @@ rate<wanted_kind>(data);
         &BodyGen::loop<kI64>,            //
         &BodyGen::finite_loop<kI64>,     //
         &BodyGen::if_<kI64, kIfEl
-"""
-
-
 ```

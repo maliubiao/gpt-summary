@@ -136,14 +136,16 @@ By following these steps, combining code analysis with an understanding of the p
 
 总而言之，`sparse_vector_test.cc` 通过一系列精心设计的测试用例，全面验证了 `SparseVector` 类的功能和健壮性，确保它能在 Blink 引擎的各种场景下正确可靠地工作。这些测试也揭示了 `SparseVector` 的设计意图和潜在的使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/sparse_vector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -389,7 +391,4 @@ TEST(SparseVectorInlineCapacityTest, Basic) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

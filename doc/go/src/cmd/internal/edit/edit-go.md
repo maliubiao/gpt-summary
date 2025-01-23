@@ -212,15 +212,17 @@ func main() {
 
 总而言之，这段 `edit.go` 代码提供了一个方便且结构化的方式来对字节切片进行编辑，它通过缓冲编辑操作并排序应用来确保一致性。使用者需要注意不要在创建 `Buffer` 后修改原始数据，并避免创建重叠的编辑操作以及使用无效的编辑位置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/edit/edit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -314,9 +316,4 @@ func (b *Buffer) Bytes() []byte {
 func (b *Buffer) String() string {
 	return string(b.Bytes())
 }
-
-"""
-
-
-
 ```

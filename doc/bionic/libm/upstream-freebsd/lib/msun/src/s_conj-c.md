@@ -312,7 +312,7 @@ conj@plt:
 
 总而言之，无论从 NDK 还是 Framework 层面，当涉及到复数运算时，最终都会依赖于 Android 系统提供的数学库 `libm.so`，而 `s_conj.c` 文件就是 `libm.so` 中 `conj` 函数的实现来源。调试时，需要结合具体的应用场景和调用链，使用相应的工具来跟踪函数的执行路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_conj.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -322,8 +322,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -362,7 +364,4 @@ conj(double complex z)
 
 	return (CMPLX(creal(z), -cimag(z)));
 }
-
-"""
-
 ```

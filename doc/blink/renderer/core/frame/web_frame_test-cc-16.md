@@ -117,15 +117,17 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 总而言之，`web_frame_test.cc` 的第 17 部分着重测试了 `WebFrame` 组件在处理用户交互（如查找、聚焦、点击）、DOM 操作、以及在不同布局和视口状态下正确渲染和呈现页面的能力。尤其关注了**滚动到视野内**这个核心功能在各种复杂场景下的正确性和鲁棒性，并涵盖了 iframe 的特殊行为以及一些与移动端特性相关的测试。这些测试旨在确保浏览器的稳定性和符合预期的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第17部分，共19部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
   const int kFindIdentifier = 12345;
   EXPECT_TRUE(frame->GetFindInPage()->FindInternal(kFindIdentifier, search_text,
@@ -1036,7 +1038,4 @@ TEST_F(WebFrameTest, ClearClosedOpener) {
 
   opener_helper.Reset();
   EXPECT_EQ(nullptr, helper.LocalM
-"""
-
-
 ```

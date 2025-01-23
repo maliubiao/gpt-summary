@@ -150,14 +150,16 @@ By following these steps, moving from the high-level understanding to the specif
 
 `css_var_cycle_interpolation_type.cc` 文件在 Blink 引擎中扮演着关键角色，它确保了 CSS 自定义属性动画的健壮性，避免了因循环依赖导致的浏览器崩溃或其他异常行为。通过检测并处理循环依赖，并将受影响的属性设置为 `unset`，它提供了一种合理的默认行为来应对这种错误情况，并帮助开发者更容易地调试和修复相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_var_cycle_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ void CSSVarCycleInterpolationType::Apply(
 }
 
 }  // namespace blink
-
-"""
-
 ```

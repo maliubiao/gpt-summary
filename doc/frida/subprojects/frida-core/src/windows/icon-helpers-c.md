@@ -253,7 +253,7 @@ A user would typically interact with Frida through its API, often in Python or J
 
 In essence, this `icon-helpers.c` file acts as a low-level utility within Frida to provide a richer user experience by displaying visual representations of processes and files. When a user interacts with Frida in ways that require displaying or working with process or file information, this code is likely to be involved.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/windows/icon-helpers.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -261,8 +261,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "icon-helpers.h"
 
 #include <psapi.h>
@@ -543,7 +545,4 @@ inspect_window (HWND hwnd, LPARAM lparam)
 
   return TRUE;
 }
-
-"""
-
 ```

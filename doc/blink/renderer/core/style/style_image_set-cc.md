@@ -194,14 +194,16 @@ By following this systematic approach, breaking down the code into manageable pa
 
 `style_image_set.cc` 文件是 Blink 引擎中处理 CSS `image-set()` 函数的核心组件。它负责表示 `image-set()` 的数据，存储选定的最佳匹配图片，并提供访问该图片信息的接口，从而使浏览器能够根据不同的设备特性选择合适的图片进行渲染。理解这个文件有助于深入了解浏览器如何处理响应式图片。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_image_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Apple Inc. All rights reserved.
  *
@@ -370,7 +372,4 @@ void StyleImageSet::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

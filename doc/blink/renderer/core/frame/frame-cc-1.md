@@ -83,15 +83,17 @@ The code deals with operations related to the `Frame` class in the Chromium Blin
 
 `SwapImpl` 是一个关键的函数，用于执行帧的替换操作。它不仅需要替换底层的 `Frame` 对象，还需要细致地维护帧之间的层级关系（父子、兄弟），处理打开者 (opener) 关系，并同步与页面相关的状态。对于 `LocalFrame` 之间的替换，它还需要处理可能涉及的不同 `Page` 对象之间的转换，确保主帧的正确设置和页面属性的迁移。这个过程涉及到对 HTML 结构、JavaScript 行为以及 CSS 渲染状态的更新。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt_->first_child_ = new_frame;
     }
     if (parent_->last_child_ == this) {
@@ -281,8 +283,4 @@ HeapVector<Member<Resource>> Frame::AllResourcesUnderFrame() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

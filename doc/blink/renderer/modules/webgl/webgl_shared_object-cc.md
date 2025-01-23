@@ -162,15 +162,17 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([1, 2, 3]), gl.STATIC_DRAW); // 
 
 总而言之，`webgl_shared_object.cc` 文件中的 `WebGLSharedObject` 类是 WebGL 功能的幕后英雄，它确保了 WebGL 对象能够在多个上下文之间正确地共享和管理，并能在上下文丢失的情况下提供必要的保护机制，防止程序崩溃或产生未定义的行为。理解这个类的功能对于深入理解 WebGL 的实现原理和调试相关的错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_shared_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All rights reserved.
  *
@@ -230,7 +232,4 @@ void WebGLSharedObject::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

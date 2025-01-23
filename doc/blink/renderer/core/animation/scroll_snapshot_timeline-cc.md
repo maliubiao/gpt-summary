@@ -172,14 +172,16 @@ By following these steps, a comprehensive understanding of the `ScrollSnapshotTi
 
 总之，`ScrollSnapshotTimeline` 是 Blink 引擎中一个专门用于处理基于滚动快照的动画时间轴的组件，它为实现某些特定的动画效果提供了基础，并与 Web 标准中的滚动动画概念有所关联。理解其快照行为对于正确使用和调试相关功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/scroll_snapshot_timeline.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ void ScrollSnapshotTimeline::UpdateCompositorTimeline() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

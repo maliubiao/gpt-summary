@@ -98,7 +98,7 @@ By following these steps, the explanation provided in the initial prompt can be 
 
 这部分代码的主要功能是**为 Chromium 的 Cookie SameSite 上下文计算逻辑提供全面的、结构化的测试数据**。它定义了各种类型的 URLs、`SiteForCookies` 和发起者 Origin，并提供了便捷的方法来获取同站和跨站的组合，以及模拟重定向链。这些数据被用于编写单元测试，以验证 `cookie_util` 模块在各种场景下是否能正确判断 SameSite 上下文，从而确保 Chromium 的 Cookie 安全策略能够正确执行。 简单来说，它就像一个精心准备的测试数据集生成器，用于全面测试 Cookie 的 SameSite 相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 GetCrossSiteUrls() const {
     std::vector<GURL> cross_site_urls;
     std::vector<GURL> same_site_urls = GetSameSiteUrls();
@@ -750,7 +752,4 @@ TEST_P(CookieUtilComputeSameSiteContextTest, ForRequest_Redirect) {
                       cookie_util::HttpMethodStringToEnum(test_case.method),
                       test_case
                           .expected_context_type_for_main_frame_navigation_w
-"""
-
-
 ```

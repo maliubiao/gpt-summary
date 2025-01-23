@@ -254,7 +254,7 @@ frida -U -f <目标进程名称或PID> -l your_script.js --no-pause
 
 总而言之，`bionic/libc/kernel/uapi/linux/kexec.handroid` 这个头文件定义了用户空间程序与 Linux 内核 `kexec` 功能交互的接口。Android 系统在快速重启和崩溃恢复等场景下会使用 `kexec`，涉及到 Framework 层、系统服务和 Native 代码的协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kexec.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -309,7 +311,4 @@ struct kexec_segment {
   __kernel_size_t memsz;
 };
 #endif
-
-"""
-
 ```

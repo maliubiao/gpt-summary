@@ -161,15 +161,17 @@ func doSomething() error {
 
 `likelyadjust.go` 是 Go 编译器中一个重要的优化步骤，它通过分析控制流图和应用启发式规则，为分支指令提供预测信息，从而提高程序的执行效率。理解其工作原理有助于开发者编写出更易于编译器优化的代码，但应避免过度依赖或臆测编译器的具体行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/likelyadjust.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -736,9 +738,4 @@ func (l *loop) setDepth(d int16) {
 func (l *loop) iterationEnd(b *Block, b2l []*loop) bool {
 	return b == l.header || b2l[b.ID] == nil || (b2l[b.ID] != l && b2l[b.ID].depth <= l.depth)
 }
-
-"""
-
-
-
 ```

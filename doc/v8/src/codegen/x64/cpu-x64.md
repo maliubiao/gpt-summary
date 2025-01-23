@@ -87,11 +87,13 @@ console.log(result); // 输出 8
 
 因此，虽然 JavaScript 代码无法直接控制指令缓存的刷新，但 V8 引擎在底层使用像 `FlushICache` 这样的机制来管理编译后的代码，确保 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/cpu-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ void CpuFeatures::FlushICache(void* start, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
 ```

@@ -191,14 +191,16 @@ This structured approach, starting with a broad overview and then drilling down 
 
 总而言之，`web_scheduler_tracked_feature.cc` 文件定义了一个关键的枚举和相关的辅助函数，用于跟踪 Blink 引擎中各种与 Web 标准相关的特性和状态，这些信息对于调度器进行智能的资源管理和优化至关重要。理解这些追踪特性的含义和生命周期对于开发和调试 Blink 引擎的相关功能非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/scheduler/web_scheduler_tracked_feature.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -457,7 +459,4 @@ bool IsAlignWakeUpsDisabledForProcess() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

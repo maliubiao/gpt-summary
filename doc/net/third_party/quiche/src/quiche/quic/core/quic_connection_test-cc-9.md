@@ -127,7 +127,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 考虑到这是整个测试套件的第 10 部分，且前面已经涉及了连接建立、加密握手等基础功能的测试，可以推断这部分重点关注 **连接的健壮性和错误处理能力**，特别是针对版本协商和连接关闭这两个关键阶段。它确保了 `QuicConnection` 在面对不兼容的版本或异常关闭时能够正确、安全地处理，并提供相应的错误反馈。此外，也开始涉及一些更深入的功能，例如拥塞控制（通过 `Pacing` 测试推断）和路径探测 (`PathDegradingDetectionForNonCryptoPackets`)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ctionClosed(_, ConnectionCloseSource::FROM_SELF))
       .WillOnce(Invoke(this, &QuicConnectionTest::SaveConnectionCloseFrame));
   // Verify no connection close packet gets sent.
@@ -898,7 +900,4 @@ TEST_P(QuicConnectionTest, NoPathDegradingDetectionIfPathIsDegrading) {
   EXPECT_TRUE(connection_.IsPathDegrading());
 
   clock_.AdvanceTime(QuicTime::Delta::FromMillisecon
-"""
-
-
 ```

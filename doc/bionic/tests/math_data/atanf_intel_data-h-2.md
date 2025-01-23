@@ -27,7 +27,7 @@ Therefore, the primary function of this file is to provide test cases for verify
 
 这就是对 `bionic/tests/math_data/atanf_intel_data.handroid` 文件功能的归纳。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atanf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -39,9 +39,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  },
+### 源代码
+```c
+},
   { // Entry 771
     0x1.7dcb7c4be6b4be644d7db098c68e6e5ep0,
     0x1.921fb4p3
@@ -1291,8 +1293,4 @@ Prompt:
     -0.0f
   }
 };
-
-"""
-
-
 ```

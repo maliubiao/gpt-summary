@@ -206,7 +206,7 @@ var ptr *int32
 
 总而言之，`rewriteLOONG64.go` 的这部分代码是 Go 语言编译器针对 LOONG64 架构进行 **后端代码生成和优化的关键组成部分**，它确保了生成的机器码能够充分利用 LOONG64 硬件的特性，从而提高程序的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteLOONG64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 PopCount16(v *Value) bool {
 	v_0 := v.Args[0]
 	b := v.Block
@@ -2357,10 +2359,4 @@ func rewriteBlockLOONG64(b *Block) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

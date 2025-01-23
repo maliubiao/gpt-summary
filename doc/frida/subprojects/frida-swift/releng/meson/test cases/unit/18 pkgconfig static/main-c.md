@@ -138,7 +138,7 @@ By following these steps, one can effectively analyze the code snippet within th
 
 这个文件之所以存在于这个特定的路径下，是因为它是 Frida 项目中用于确保 Frida-Swift 在特定场景下正常工作的自动化测试套件的一部分。通过编写像这样的简单测试用例，Frida 的开发者可以有效地验证他们的工具在各种配置和使用场景下的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/18 pkgconfig static/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <foo.h>
 #include <stdio.h>
 
@@ -162,7 +164,4 @@ main (int argc, char * argv[])
     printf ("IT'S OVER 9000!!!\n");
     return 0;
 }
-
-"""
-
 ```

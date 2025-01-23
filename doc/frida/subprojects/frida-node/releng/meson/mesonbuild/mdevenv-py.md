@@ -199,7 +199,7 @@ Let's consider the `run` function:
 
 By understanding these steps, if a user reports an issue with their Frida development environment, one of the first things to check is whether they are using `mdevenv.py` correctly. If they are not, guiding them to use it properly can often resolve many common setup problems. If they are using it and still encountering issues, examining the environment variables set by `mdevenv.py` can provide valuable debugging clues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/mdevenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os, subprocess
@@ -443,7 +445,4 @@ def run(options: argparse.Namespace) -> int:
         return e.returncode
     except FileNotFoundError:
         raise MesonException(f'Command not found: {args[0]}')
-
-"""
-
 ```

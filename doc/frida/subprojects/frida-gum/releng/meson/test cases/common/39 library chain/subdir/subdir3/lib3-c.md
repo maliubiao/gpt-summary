@@ -129,7 +129,7 @@ sys.stdin.read()
 
 这个简单的 `lib3.c` 文件虽然功能简单，但在 Frida 项目中扮演着验证和测试基础 hooking 功能的角色。它帮助开发者确保 Frida 能够正确处理动态链接库中的导出函数。作为调试线索，如果 Frida 在更复杂的场景中无法 hook 到某个函数，可以先尝试用这种简单的测试用例来排除基本的配置和代码问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/39 library chain/subdir/subdir3/lib3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -153,7 +155,4 @@ Prompt:
 int DLL_PUBLIC lib3fun(void)  {
   return 0;
 }
-
-"""
-
 ```

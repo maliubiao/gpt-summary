@@ -207,15 +207,17 @@ console.log(decodedString); // 输出: 你好
 
 理解 UTF-8 的编码规则和解码过程，并使用合适的 API（如 `TextEncoder` 和 `TextDecoder`）是避免这些错误的 best practice。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/utf8-decoder/utf8-decoder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/utf8-decoder/utf8-decoder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // See http://bjoern.hoehrmann.de/utf-8/decoder/dfa/ for details.
 // The remapped transition table is justified at
 // https://docs.google.com/spreadsheets/d/1AZcQwuEL93HmNCljJWUwFMGqf7JAQ0puawZaUgP0E14
@@ -291,7 +293,4 @@ struct Utf8DfaDecoder {
 };
 
 #endif /* __UTF8_DFA_DECODER_H */
-
-"""
-
 ```

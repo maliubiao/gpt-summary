@@ -1,5 +1,5 @@
 Response: 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritePPC64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -7,9 +7,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
- [0])
+### 源代码
+```go
+[0])
 	for {
 		if auxIntToInt32(v.AuxInt) != 0 || v_0.Op != OpPPC64FlagGT {
 			break
@@ -2826,10 +2828,4 @@ func rewriteValuePPC64_OpRsh8x8(v *Value) bool {
 		v.reset(OpPPC64SRAD)
 		v0 := b.NewValue0(v.Pos, OpPPC64MOVBreg, typ.Int64)
 		v0.AddArg(x)
-		
-"""
-
-
-
-
 ```

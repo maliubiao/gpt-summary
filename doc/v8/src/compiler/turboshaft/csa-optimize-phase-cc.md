@@ -195,15 +195,17 @@ then_block = ... // 现在直接连接到 then_block
 
 总而言之，`v8/src/compiler/turboshaft/csa-optimize-phase.cc` 文件定义了 Turboshaft 编译器的关键优化步骤，旨在提高 JavaScript 代码的执行效率。它通过应用各种优化 reducer 来改进中间表示，从而生成更高效的机器码。 这些优化与 JavaScript 的功能息息相关，并且可以帮助缓解一些常见的编程错误带来的性能影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/csa-optimize-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/csa-optimize-phase.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ void CsaOptimizePhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

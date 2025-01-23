@@ -185,14 +185,16 @@ By following this structured approach, and continually refining the understandin
 
 总而言之，`layout_theme_font_provider.cc` 文件在 Blink 渲染引擎中扮演着提供基础默认字体信息的角色。虽然开发者通常会使用 CSS 来覆盖这些默认值，但理解其功能对于理解浏览器如何处理未明确指定样式的文本至关重要，并能帮助开发者避免一些常见的与字体相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_theme_font_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc.  All rights reserved.
  *
@@ -258,7 +260,4 @@ float LayoutThemeFontProvider::DefaultFontSize(const Document* document) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

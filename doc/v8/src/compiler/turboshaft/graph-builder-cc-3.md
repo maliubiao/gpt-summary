@@ -153,7 +153,7 @@ This final part of the `graph-builder.cc` code focuses on handling a diverse set
 
 Overall, this code snippet demonstrates the complex and detailed work involved in translating a higher-level intermediate representation into the lower-level graph representation used by the Turboshaft compiler for optimization and code generation. It bridges the gap between the abstract operations defined by Turbofan and the concrete operations that Turboshaft can work with.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,9 +161,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-      DCHECK(dominating_frame_state.valid());
+### 源代码
+```cpp
+DCHECK(dominating_frame_state.valid());
       const GrowFastElementsParameters& params =
           GrowFastElementsParametersOf(node->op());
       return __ MaybeGrowFastElements(
@@ -549,8 +551,4 @@ std::optional<BailoutReason> BuildGraph(
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
-
 ```

@@ -354,7 +354,7 @@ func runTestProg(t *testing.T, progName, testCase string) string {
 
 总而言之，这段代码是Go运行时为了保证协程与操作系统线程以及CGO回调的正确性和稳定性而编写的测试用例。它通过执行独立的测试程序并验证其输出来实现测试目的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/coro_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -362,8 +362,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -437,9 +439,4 @@ func checkCoroTestProgOutput(t *testing.T, output string) {
 		t.Fatalf("expected %q in the output, got:\n%s", expect, rest)
 	}
 }
-
-"""
-
-
-
 ```

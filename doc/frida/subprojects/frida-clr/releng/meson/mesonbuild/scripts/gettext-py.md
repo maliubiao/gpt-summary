@@ -195,7 +195,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`gettext.py` 是 Frida CLR 构建过程中一个关键的本地化处理脚本，它通过调用 `gettext` 工具链来生成和更新翻译文件。理解其功能和依赖可以帮助逆向工程师了解程序的文本信息，同时也能帮助开发者在构建过程中调试与本地化相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/gettext.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -291,7 +293,4 @@ def run(args: T.List[str]) -> int:
     else:
         print('Unknown subcommand.')
         return 1
-
-"""
-
 ```

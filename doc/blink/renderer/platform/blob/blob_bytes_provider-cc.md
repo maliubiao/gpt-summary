@@ -126,14 +126,16 @@ By following this iterative process of understanding, analyzing, connecting, and
 
 总而言之，`blob_bytes_provider.cc` 文件定义了 `BlobBytesProvider` 类，它是 Blink 引擎中处理 Blob 对象字节数据的核心组件，负责存储、管理和以多种方式提供 Blob 的数据，直接支撑了 Web 平台中 Blob 相关的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/blob_bytes_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ void BlobBytesProvider::DecreaseChildProcessRefCount() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -178,7 +178,7 @@ ksCompiler, CCompiler):
 
 总而言之，这个代码片段是 Frida 构建系统中一个关键的组成部分，它抽象了特定 C 编译器的细节，使得构建系统能够以统一的方式处理不同编译器的 C 代码编译过程，并支持针对特定 PowerPC 架构进行构建。这对于 Frida 能够跨平台和跨架构运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ksCompiler, CCompiler):
     id = 'mwcceppc'
 
@@ -215,8 +217,4 @@ ksCompiler, CCompiler):
         if std.value != 'none':
             args.append('-lang ' + std.value)
         return args
-
-"""
-
-
 ```

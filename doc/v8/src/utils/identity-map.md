@@ -127,11 +127,13 @@ console.log(map.size); // 输出: 1
 
 总而言之，`v8/src/utils/identity-map.cc` 中的 `IdentityMapBase` 类是 V8 引擎内部用于管理基于对象身份的键值对的关键工具，它在实现 JavaScript 语言的各种特性中发挥着重要作用。虽然 JavaScript 提供了 `Map` 对象，但在 V8 引擎的底层实现中，需要一种更底层的、直接操作内存地址的机制来满足性能和垃圾回收的需求，这就是 `IdentityMapBase` 的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/identity-map.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -490,7 +492,4 @@ void IdentityMapBase::Resize(int new_capacity) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

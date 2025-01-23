@@ -90,15 +90,17 @@ By following these steps, I can systematically analyze the code snippet and prov
 
 这段 `PageSchedulerImpl` 的代码片段专注于管理网页的冻结状态。它根据页面的可见性和后台状态，以及配置的延迟时间，来决定何时冻结或解冻页面。其目的是优化资源使用，特别是针对后台标签页，通过暂停不必要的操作（例如 JavaScript 执行和渲染）来节省 CPU 和内存。它还提供了访问管理页面唤醒预算的接口，进一步控制冻结页面的行为。 这部分代码是浏览器优化策略的关键组成部分，直接影响用户在浏览多个标签页时的性能体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/page_scheduler_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 elay_for_background_tab_freezing_;
       }
     }
@@ -139,8 +141,4 @@ PageSchedulerImpl::AllWakeUpBudgetPools() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

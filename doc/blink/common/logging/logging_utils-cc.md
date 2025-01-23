@@ -90,14 +90,16 @@ Response: Let's break down the thought process for analyzing this code snippet a
 
 `blink/common/logging/logging_utils.cc` 文件中的 `ConsoleMessageLevelToLogSeverity` 函数是一个关键的工具，它负责将 Blink 引擎中表示控制台消息级别的枚举值转换为内部日志系统可以理解的通用日志级别。这使得 Blink 能够统一处理和记录来自 JavaScript、HTML、CSS 以及引擎自身的各种信息，并最终在开发者工具的控制台中呈现给用户。虽然用户不会直接操作这个文件，但理解其功能有助于更好地理解浏览器控制台输出的含义和重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/logging/logging_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -130,7 +132,4 @@ logging::LogSeverity ConsoleMessageLevelToLogSeverity(
 }
 
 }  // namespace blink
-
-"""
-
 ```

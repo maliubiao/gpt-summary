@@ -170,15 +170,17 @@ This iterative process of understanding the code, relating it to the request, an
 
 总而言之，`synchronous_host_resolver.cc` 提供了一个在 Chromium 网络栈中执行同步 DNS 解析的功能，它在特定的工具、测试或内部任务中可能被使用，但在通常的浏览器主进程中为了避免阻塞 UI 线程，会优先使用异步的 DNS 解析方式。理解它的功能和使用场景有助于调试相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/quic/synchronous_host_resolver.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ int SynchronousHostResolver::Resolve(url::SchemeHostPort scheme_host_port,
 }
 
 }  // namespace net
-
-"""
-
 ```

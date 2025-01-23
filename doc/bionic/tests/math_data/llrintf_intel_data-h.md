@@ -237,7 +237,7 @@ sys.stdin.read()
 
 总结来说，`llrintf_intel_data.handroid` 是 Android Bionic 库中用于确保 `llrintf` 函数正确性的关键组成部分，它通过提供精确的测试用例来保障 Android 平台数学运算的准确性。虽然它本身不涉及 dynamic linker 的功能，但 `llrintf` 函数作为 `libc.so` 的一部分，其链接和加载过程是 dynamic linker 的职责。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/llrintf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -248,8 +248,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -1492,6 +1494,4 @@ static data_llong_1_t<float> g_llrintf_intel_data[] = {
     -0x1.7ffff0p0
   }
 };
-"""
-
 ```

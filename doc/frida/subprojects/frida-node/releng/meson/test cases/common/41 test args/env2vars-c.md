@@ -104,7 +104,7 @@ Let's break down the thought process to analyze this C code snippet in the conte
 
 总而言之，`env2vars.c` 是一个简单的但很重要的测试用例，用于验证 Frida 在处理环境变量方面的正确性。它的设计涵盖了常见的环境变量使用场景，并能够帮助开发者及时发现与环境变量相关的 bug。  对于逆向工程师来说，理解这类测试用例有助于更好地理解 Frida 的工作原理以及如何利用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/41 test args/env2vars.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -137,7 +139,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

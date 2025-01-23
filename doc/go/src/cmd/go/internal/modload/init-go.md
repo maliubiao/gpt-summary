@@ -132,7 +132,7 @@ This detailed breakdown allows for a comprehensive understanding of the code's p
 
 总而言之，`go/src/cmd/go/internal/modload/init.go` 的第一部分代码是 Go 模块功能的基础，负责模块模式的开启、主模块的定位和配置文件的加载，为后续的依赖解析、构建等操作奠定了基础。它也初步支持了 Go 1.18 引入的工作区模式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/init.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2122,9 +2124,4 @@ func commitRequirements(ctx context.Context, opts WriteOpts) (err error) {
 			// The contents of the go.mod file have changed. In theory we could add all
 			// of the new modules to the build list, recompute, and check whether any
 			// module in *our* build list go
-"""
-
-
-
-
 ```

@@ -110,14 +110,16 @@ Essentially, I approached this by dissecting the code, understanding its purpose
 
 总而言之，`blink/renderer/platform/language.cc` 文件是 Blink 引擎中处理语言设置的核心组件，它直接影响着网页如何根据用户的语言偏好进行渲染和交互，并与 JavaScript、HTML 和 CSS 紧密相关。理解其功能对于进行国际化 Web 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/language.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, 2013 Apple Inc. All rights reserved.
  *
@@ -280,7 +282,4 @@ wtf_size_t IndexOfBestMatchingLanguageInList(
 }
 
 }  // namespace blink
-
-"""
-
 ```

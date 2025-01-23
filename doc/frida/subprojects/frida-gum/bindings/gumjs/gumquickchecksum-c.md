@@ -178,7 +178,7 @@ This systematic approach, combining code analysis, domain knowledge (reverse eng
 
 总而言之，`gumquickchecksum.c` 提供了一个方便且高效的方式，让 Frida 用户能够在运行时计算各种数据的校验和，这在逆向工程、安全分析等领域具有重要的应用价值。 理解其功能和使用方式，能够帮助用户更好地利用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickchecksum.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -493,7 +495,4 @@ invalid_type:
   _gum_quick_throw_literal (ctx, "unsupported checksum type");
   return FALSE;
 }
-
-"""
-
 ```

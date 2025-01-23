@@ -219,15 +219,17 @@ By following these steps, combining code analysis with knowledge of the HTML Can
 
 总而言之，`canvas_pattern.cc` 文件是 Blink 引擎中实现 HTML5 Canvas 2D API 模式功能的核心部分，它负责管理模式对象的创建、配置和变换，并与 JavaScript API 紧密相连。 理解这个文件的功能有助于开发者深入理解 canvas 模式的工作原理，并进行更有效的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_pattern.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008 Apple Inc. All rights reserved.
  *
@@ -337,7 +339,4 @@ void CanvasPattern::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -113,7 +113,7 @@ Interceptor.attach(Module.findExportByName(null, "func1"), {
 
 尽管 `func1.c` 中的 `func1` 函数非常简单，但在 Frida 的上下文中，它可以作为理解动态插桩、逆向工程和底层系统概念的基础。通过分析这个简单的例子，我们可以学习如何使用 Frida hook 函数、观察其行为，并了解动态链接库、内存地址和函数调用约定等底层知识。同时，也需要注意常见的编程和使用错误，并理解调试过程中的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/137 whole archive/func1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define BUILDING_DLL
 
 #include<mylib.h>
@@ -130,7 +132,4 @@ Prompt:
 int func1(void) {
     return 42;
 }
-
-"""
-
 ```

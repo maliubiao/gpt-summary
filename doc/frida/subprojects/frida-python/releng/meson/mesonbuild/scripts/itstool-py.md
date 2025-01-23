@@ -150,7 +150,7 @@ By following these steps – understanding the code, breaking it down, connectin
 
 总而言之，`itstool.py` 是 Frida 构建系统中一个重要的本地化处理脚本，它简化了将翻译文件合并到原始文件的过程。虽然它本身是高层次的 Python 代码，但它所处理的文件格式和所处的构建环境涉及到底层系统和工具的知识。理解其功能和工作原理有助于理解 Frida 的构建过程以及如何处理本地化资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/scripts/itstool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -237,7 +239,4 @@ def run(args: T.List[str]) -> int:
     else:
         print('Unknown subcommand.')
         return 1
-
-"""
-
 ```

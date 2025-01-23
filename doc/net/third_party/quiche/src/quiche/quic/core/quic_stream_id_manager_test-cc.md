@@ -158,15 +158,17 @@ Let's break down the thought process for analyzing the C++ test file and generat
 
 总而言之，`quic_stream_id_manager_test.cc` 是 QUIC 协议实现的关键测试文件，它确保了流 ID 管理的正确性和健壮性，这对于 QUIC 连接的稳定性和性能至关重要。虽然与 JavaScript 没有直接的代码关联，但其功能直接支撑着基于 QUIC 的网络应用（包括 JavaScript 发起的网络请求）的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream_id_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -798,7 +800,4 @@ TEST_P(QuicStreamIdManagerTest, ExtremeMaybeIncreaseLargestPeerStreamId) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

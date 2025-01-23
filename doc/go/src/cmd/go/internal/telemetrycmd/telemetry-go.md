@@ -265,15 +265,17 @@ Current telemetry mode: on
 
 这个代码片段的功能相对简单直接，主要负责处理命令行参数和调用底层的遥测设置功能。 错误处理也比较清晰，能够有效地引导用户使用正确的命令格式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/telemetrycmd/telemetry.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -371,9 +373,4 @@ To disable telemetry uploading, but keep local data collection, run
 “go telemetry local”.
 To disable both collection and uploading, run “go telemetry off“.`
 }
-
-"""
-
-
-
 ```

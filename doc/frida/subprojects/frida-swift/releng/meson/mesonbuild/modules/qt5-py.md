@@ -114,7 +114,7 @@ By following these steps, we can comprehensively analyze the provided code snipp
 
 `frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/qt5.py` 是 Frida 构建系统中一个重要的模块，它负责为使用 Qt5 框架的项目提供 Meson 构建支持。它本身不直接进行逆向操作，但为 Frida 与 Qt5 应用程序的交互奠定了基础，从而间接地支持了各种逆向分析技术。理解这个模块的功能有助于理解 Frida 的构建过程以及它如何与 Qt5 应用程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/qt5.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -147,7 +149,4 @@ class Qt5Module(QtBaseModule):
 
 def initialize(interp: Interpreter) -> Qt5Module:
     return Qt5Module(interp)
-
-"""
-
 ```

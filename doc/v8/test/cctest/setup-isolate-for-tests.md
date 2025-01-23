@@ -79,11 +79,13 @@ console.log(doubled);
 
 `setup-isolate-for-tests.cc` 是 V8 单元测试框架的关键组成部分，它提供了一种灵活的方式来创建用于测试的 JavaScript 执行环境。通过可选择地初始化堆和编译内置函数，它可以根据不同的测试需求优化测试过程。它虽然不直接执行 JavaScript 代码，但为 JavaScript 代码的执行提供了必要的底层基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/setup-isolate-for-tests.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -110,7 +112,4 @@ void SetupIsolateDelegateForTests::SetupBuiltins(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

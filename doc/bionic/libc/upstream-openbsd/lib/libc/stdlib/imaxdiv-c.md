@@ -278,7 +278,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 总结来说，`imaxdiv.c` 定义了一个用于执行最大整型数除法并同时返回商和余数的标准 C 库函数。它在 Android Bionic 中作为基础功能被提供，并可能被 Android Framework、NDK 应用以及其他系统库使用。理解其实现细节、与 dynamic linker 的关系，以及可能出现的错误，对于进行 Android native 开发非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdlib/imaxdiv.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: imaxdiv.c,v 1.1 2006/01/13 17:58:09 millert Exp $	*/
 /*
  * Copyright (c) 1990 Regents of the University of California.
@@ -341,7 +343,4 @@ imaxdiv(intmax_t num, intmax_t denom)
 	}
 	return (r);
 }
-
-"""
-
 ```

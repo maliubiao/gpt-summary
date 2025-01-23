@@ -218,7 +218,7 @@ DecodeTestFutureVersions(
 
 这段代码主要测试了 V8 引擎的 `ValueSerializer` 在反序列化 **对象** 和 **数组** 时的各种场景。它涵盖了不同类型的对象属性、Getter 的影响、不同版本的序列化格式、以及各种类型的数组结构。这些测试用例旨在确保 `ValueSerializer` 能够正确地将序列化的数据还原为原始的 JavaScript 值，并能有效地处理各种边界情况和潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/value-serializer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/value-serializer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -226,9 +226,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-   [this](Local<Value> value) {
+### 源代码
+```cpp
+[this](Local<Value> value) {
         ExpectScriptTrue(
             "Object.getOwnPropertyNames(result).toString() === "
             "'1,4294967294,a,4294967295'");
@@ -1027,7 +1029,4 @@ TEST_F(ValueSerializerTest, DecodeRegExp) {
   DecodeTestFutureVersions(
       {0xFF, 0x0C, 0x52, 0x22, 0x06, 'Q', 'u', 0xE9, 'b', 'e', 'c', 0x02},
       [this](Local<Value> value) {
-"""
-
-
 ```

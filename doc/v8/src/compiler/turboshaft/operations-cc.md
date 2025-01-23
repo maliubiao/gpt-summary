@@ -177,7 +177,7 @@ let result = add(5, 10);
 
 `v8/src/compiler/turboshaft/operations.cc` 文件是 Turboshaft 编译器的核心，它定义了 Turboshaft IR 中所有可用的操作类型。这些操作是 V8 优化和生成机器码的基础，直接反映了 JavaScript 语言的各种操作和语义。该文件通过定义 `Operation` 类及其子类，以及相关的属性和方法，提供了一种结构化的方式来表示程序在编译过程中的各种步骤。虽然它不直接处理用户 JavaScript 代码的错误，但用户代码中的错误最终会影响 Turboshaft 生成的 IR 以及运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.cc以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1238,8 +1240,5 @@ std::ostream& operator<<(std::ostream& os, BlockIndex b) {
   return os << 'B' << b.id();
 }
 
-std::ostream& operator<<(std::ostream& os, 
-"""
-
-
+std::ostream& operator<<(std::ostream& os,
 ```

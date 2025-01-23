@@ -158,7 +158,7 @@ By following these steps, we can systematically understand the purpose and funct
 
 `paint_and_raster_invalidation_test.cc` 的主要功能是 **测试 Blink 渲染引擎的绘制和栅格化失效机制的正确性**。 它通过模拟各种由 HTML、CSS 和 JavaScript 引起的变化，验证引擎能否精确地识别需要更新的渲染区域，并区分不同的失效原因。 这对于保证浏览器的渲染性能和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_and_raster_invalidation_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -900,7 +902,4 @@ TEST_P(PaintAndRasterInvalidationTest, CompositedSolidBackgroundResize) {
                            ->GetScrollingBackgroundDisplayItemClient();
   EXPECT_THAT(contents_raster_invalidation_tracking->Invalidations(),
               UnorderedElementsAre(RasterInvalidationIn
-"""
-
-
 ```

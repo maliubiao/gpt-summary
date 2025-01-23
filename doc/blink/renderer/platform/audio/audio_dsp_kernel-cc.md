@@ -111,14 +111,16 @@ Here's a breakdown of the thought process used to analyze the provided code snip
 
 虽然 `audio_dsp_kernel.cc` 文件本身只定义了一个简单的析构函数，但它代表了 Chromium Blink 引擎中音频处理的关键底层组件。它很可能是一个定义了音频 DSP 内核接口的基类，被更高级的音频处理模块和 Web Audio API 所使用。理解其功能有助于理解浏览器如何处理音频，以及在开发 Web 音频应用时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/audio_dsp_kernel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -156,7 +158,4 @@ namespace blink {
 AudioDSPKernel::~AudioDSPKernel() = default;
 
 }  // namespace blink
-
-"""
-
 ```

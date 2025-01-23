@@ -115,13 +115,15 @@ This code is a fundamental part of how JavaScript code is executed on LoongArch6
 
 In summary, this code snippet is a crucial part of the V8 engine's ability to execute JavaScript code efficiently on LoongArch64 processors. It bridges the gap between the high-level semantics of JavaScript and the low-level instructions understood by the hardware.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/code-generator-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-     __ movfcsr2gr(output2, FCSR2);
+### 源代码
+```
+__ movfcsr2gr(output2, FCSR2);
         // Check for overflow and NaNs.
         __ And(output2, output2,
                kFCSROverflowCauseMask | kFCSRInvalidOpCauseMask);
@@ -1658,8 +1660,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

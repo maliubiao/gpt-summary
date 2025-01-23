@@ -126,7 +126,7 @@ Based on this analysis, I can now summarize the code's functions and address the
 
 总的来说，这段 C++ 代码是 Shared Storage Worklet 功能实现的关键部分，它连接了浏览器进程和 Worklet 的 JavaScript 执行环境，使得 Worklet 能够访问必要的数据和功能，并执行其预定的任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage_worklet_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _signals_slot_size_mode_string;
               switch (mojom_group->interest_group
                           ->trusted_bidding_signals_slot_size_mode) {
@@ -579,8 +581,4 @@ SharedStorageWorkletGlobalScope::GetOrCreatePrivateAggregation() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

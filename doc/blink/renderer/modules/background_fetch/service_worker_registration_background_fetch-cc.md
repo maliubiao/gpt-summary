@@ -169,15 +169,17 @@ By following these steps – code inspection, deduction, addressing specific que
 
 通过以上步骤，开发者可以从用户界面的问题逐步深入到浏览器的底层实现，而 `service_worker_registration_background_fetch.cc` 文件就处于理解 Background Fetch 功能在 Blink 中如何实现的路径上。 开发者可能需要理解这个文件如何管理 `BackgroundFetchManager`，以及它在整个 Background Fetch 流程中的作用，以便定位潜在的 bug 或性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/background_fetch/service_worker_registration_background_fetch.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ void ServiceWorkerRegistrationBackgroundFetch::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

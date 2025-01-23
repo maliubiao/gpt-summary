@@ -172,14 +172,16 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`web_thread_safe_data_test.cc` 这个文件通过一系列单元测试，确保了 `WebThreadSafeData` 类作为 Blink 引擎中处理线程安全数据的关键组件，能够正确地完成其构造、修改和访问数据的任务，为上层的功能（包括与 JavaScript, HTML, CSS 相关的特性）提供可靠的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_thread_safe_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ TEST(WebThreadSafeDataTest, Access) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -135,7 +135,7 @@ Let's break down the thought process to analyze this simple C code snippet from 
 
 因此，到达这个文件的路径，说明它很可能是 Frida 的一个内部测试用例，用于验证 Frida 在处理包含简单函数调用的程序时的行为，特别是与文件对象相关的场景。开发人员可能会逐步创建、编译、运行目标程序，然后使用 Frida 进行各种形式的动态分析和修改，以确保 Frida 功能的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/74 file object/subdir1/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int func(void);
@@ -158,7 +160,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

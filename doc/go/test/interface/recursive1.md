@@ -202,15 +202,17 @@ func main() {
 
 总结来说，`go/test/interface/recursive1.go` 的这个代码片段定义了一个名为 `ignored` 的包，其目的是提供将被测试文件 `recursive1.go` 使用的相互递归类型定义。这通常用于测试 Go 语言编译器在处理这类复杂类型关系时的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/recursive1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -220,9 +222,4 @@ Prompt:
 // Mutually recursive type definitions imported and used by recursive1.go.
 
 package ignored
-
-"""
-
-
-
 ```

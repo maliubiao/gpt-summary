@@ -143,15 +143,17 @@ perf report -g
 
 `v8/src/diagnostics/perf-jit.h` 是 V8 引擎中一个关键的组件，它允许开发者利用 Linux 平台上的 `perf` 工具来深入了解 V8 的 JIT 编译行为，从而进行性能分析和优化。虽然它本身不直接涉及到用户编写的 JavaScript 代码的语法错误，但它对于理解和调试 JavaScript 程序的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/perf-jit.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/perf-jit.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -299,7 +301,4 @@ class LinuxPerfJitLogger : public CodeEventLogger {
 #endif  // V8_OS_LINUX
 
 #endif  // V8_DIAGNOSTICS_PERF_JIT_H_
-
-"""
-
 ```

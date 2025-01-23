@@ -171,15 +171,17 @@ By following this structured approach, starting with a high-level understanding 
 
 总而言之，`quic_buffered_packet_store.cc` 是 Chromium QUIC 协议栈中处理早期连接和乱序数据包的关键组件，确保了连接建立的可靠性和效率。尽管它本身是用 C++ 编写的，但它处理的连接建立过程是由客户端的 JavaScript 发起的，因此与 JavaScript 的网络通信有着密切的关系。 理解其功能有助于理解 QUIC 连接的底层工作原理，并能帮助调试相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_buffered_packet_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -796,7 +798,4 @@ bool QuicBufferedPacketStore::IngestPacketForTlsChloExtraction(
 }
 
 }  // namespace quic
-
-"""
-
 ```

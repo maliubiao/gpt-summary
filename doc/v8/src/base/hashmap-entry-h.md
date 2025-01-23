@@ -208,15 +208,17 @@ console.log(setLikeStructure.has("orange")); // 输出: false
 
 理解 `v8/src/base/hashmap-entry.h` 对于深入了解 V8 内部如何实现高效的数据结构至关重要。它展示了 C++ 模板的强大功能，可以根据不同的需求创建专门的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/hashmap-entry.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/hashmap-entry.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ struct TemplateHashMapEntry<Key*, NoHashMapValue> {
 }  // namespace v8
 
 #endif  // V8_BASE_HASHMAP_ENTRY_H_
-
-"""
-
 ```

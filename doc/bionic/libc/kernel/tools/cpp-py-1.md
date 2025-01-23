@@ -181,7 +181,7 @@ sys.stdin.read()
 
 提供的代码片段主要实现了 C/C++ 代码的块状解析和处理，为后续的编译过程提供基础。`Block` 和 `BlockList` 类提供了对代码结构的抽象表示和操作能力，能够进行代码优化和修改，例如移除条件编译块、移除结构体和声明等。`BlockParser` 类则负责将原始的 token 流转化为结构化的代码块列表。这些功能是 Android Bionic 库构建过程中的关键环节，用于处理头文件和源代码，以适应不同的构建配置和优化目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/tools/cpp.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -193,8 +193,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 qual(self.get_expr_string("1"), "1")
         self.assertEqual(self.get_expr_string("1 && 1"), "1 && 1")
         self.assertEqual(self.get_expr_string("1 && 0"), "1 && 0")
@@ -1039,7 +1041,4 @@ def optimize_if01(blocks):
                               blocks[i].lineno, blocks[j].lineno)
                 if start_dir == "elif":
                     # Pu
-"""
-
-
 ```

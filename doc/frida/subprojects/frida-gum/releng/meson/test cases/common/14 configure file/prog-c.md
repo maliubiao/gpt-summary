@@ -134,7 +134,7 @@ During this process, I might revisit earlier points and refine them. For example
 
 总而言之，这段代码虽然简单，但它在 Frida 项目的上下文中扮演着重要的角色，用于验证构建系统的配置是否正确，确保在不同的构建配置下，Frida 的组件能够正确编译和运行。理解这段代码的功能和背后的逻辑有助于开发者和测试人员诊断构建和配置相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/14 configure file/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 /* config.h must not be in quotes:
  * https://gcc.gnu.org/onlinedocs/cpp/Search-Path.html
@@ -161,7 +163,4 @@ int main(void) {
     return strcmp(MESSAGE, "mystring");
 #endif
 }
-
-"""
-
 ```

@@ -307,7 +307,7 @@ Android Framework 本身主要使用 Java 编写，通常不会直接调用 `get
 
 通过这个 Frida 脚本，你可以动态地观察 `gethostname` 函数的执行过程，了解其输入参数和返回结果，这对于调试和理解 Android 系统的行为非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/gethostname.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -318,8 +318,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -366,7 +368,4 @@ int gethostname(char* buf, size_t n) {
   memcpy(buf, name.nodename, name_length);
   return 0;
 }
-
-"""
-
 ```

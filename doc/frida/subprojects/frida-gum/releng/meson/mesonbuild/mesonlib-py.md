@@ -158,7 +158,7 @@ Initially, I might have focused too much on the direct functionalities of the *i
 
 `mesonlib.py` 是 Frida 构建系统的核心辅助文件，它通过平台抽象、通用工具函数等功能，确保 Frida 能够在不同的操作系统上顺利构建。虽然用户通常不会直接操作它，但理解其功能对于调试 Frida 的构建过程以及理解其跨平台特性至关重要。它间接地支持了 Frida 的逆向功能，并涉及到二进制底层、操作系统内核等方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/mesonlib.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-license-identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -191,7 +193,4 @@ elif os.name == 'nt':
     from .utils.win32 import *
 else:
     from .utils.platform import *
-
-"""
-
 ```

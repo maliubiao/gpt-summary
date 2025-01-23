@@ -161,15 +161,17 @@ By following these steps, I can systematically analyze the code, understand its 
 
 `go/test/abi/leaf2.go` 这段代码是一个用于测试 Go 语言编译器中 `//go:registerparams` 指令的示例。它定义了一个简单的结构体和函数，并使用该指令来影响函数参数的传递方式。通过运行这个测试，可以验证编译器在处理带有 `//go:registerparams` 指令的函数时的行为是否符合预期。 该代码清晰地展示了如何使用这个编译器指令，并通过一个简单的断言来验证其结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/abi/leaf2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 //go:build !wasm
@@ -212,9 +214,4 @@ func main() {
 		fmt.Printf("y=%v, z=%v\n", y, z)
 	}
 }
-
-"""
-
-
-
 ```

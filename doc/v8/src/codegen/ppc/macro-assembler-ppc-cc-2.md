@@ -171,7 +171,7 @@ int main() {
 
 这些功能是 V8 引擎在 PowerPC 架构上生成高效、正确的 JavaScript 执行代码的基础构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,9 +179,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
- InstanceType type) {
+### 源代码
+```cpp
+InstanceType type) {
   ASM_CODE_COMMENT(this);
 
 #if V8_STATIC_ROOTS_BOOL
@@ -1090,8 +1092,4 @@ int MacroAssembler::CallCFunction(Register function, int num_reg_arguments,
 }
 
 int MacroAssembler::CallCFunction(ExternalReference function, int num_arguments,
-
-"""
-
-
 ```

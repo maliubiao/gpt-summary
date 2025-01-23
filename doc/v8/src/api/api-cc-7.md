@@ -141,7 +141,7 @@ Regarding the format and potential questions:
 
 第 8 部分的 `v8/src/api/api.cc` 主要提供了 V8 API 中用于操作 **函数、字符串和对象** 的核心功能。它涵盖了字符串的属性获取、编码转换、内容写入，以及对外部字符串的管理。此外，它还包括了访问对象内部字段、关联 C++ 对象与 JavaScript 对象的功能，以及对基本原始值类型的操作。这些功能是 V8 引擎暴露给嵌入器（如 Node.js 或 Chrome）的关键接口，用于实现 JavaScript 的底层操作和与 C++ 代码的互操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,10 +149,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共15部分，请归纳一下它的功能
+```
 
-"""
-
-  if (!is_compiled_scope.is_compiled() &&
+### 源代码
+```cpp
+if (!is_compiled_scope.is_compiled() &&
       !i::Compiler::Compile(i_isolate, i::handle(sfi, i_isolate),
                             i::Compiler::CLEAR_EXCEPTION, &is_compiled_scope)) {
     return false;
@@ -1011,7 +1012,4 @@ bool v8::V8::Initialize(const int build_config) {
   const bool kEmbedderEnableChecks = (build_config & kEnableChecks) != 0;
 #ifdef V8_ENABLE_CHECKS
   const bool kV8EnableChe
-"""
-
-
 ```

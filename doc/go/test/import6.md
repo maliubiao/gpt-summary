@@ -145,14 +145,16 @@ go test go/test/
 
 这段代码通过列举各种错误的import形式，帮助开发者避免在编写Go程序时犯类似的错误。  它强调了Go编译器对import路径的严格要求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/import6.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -192,9 +194,4 @@ import `\xFFFD`   // ERROR "import path"
 // types2 adds extra "not used" error.
 import "/foo"  // ERROR "import path cannot be absolute path|not used"
 import "c:/foo"  // ERROR "import path contains invalid character|invalid character"
-
-"""
-
-
-
 ```

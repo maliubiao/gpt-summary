@@ -218,15 +218,17 @@ Let's consider the `fromBase64` function in the `Binary` class:
 
 In summary, `v8/src/inspector/string-util.h` is a crucial header for the V8 Inspector, providing the necessary tools to manipulate strings in various encodings, handle binary data, and facilitate communication with the JavaScript environment and the Chrome DevTools Protocol.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/string-util.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/string-util.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -359,7 +361,4 @@ struct MaybeTypedef<v8_inspector::protocol::Binary> {
 }  // namespace v8_crdtp
 
 #endif  // V8_INSPECTOR_STRING_UTIL_H_
-
-"""
-
 ```

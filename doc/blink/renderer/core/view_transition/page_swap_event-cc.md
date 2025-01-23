@@ -163,14 +163,16 @@ By following this structured approach and being open to refining initial assumpt
 
 总而言之，`blink/renderer/core/view_transition/page_swap_event.cc` 定义的 `PageSwapEvent` 类是 Blink 引擎中一个关键的组件，它将页面替换事件和视图过渡机制连接起来，并允许 JavaScript 代码获取相关信息，从而为开发者提供更丰富的页面交互和过渡控制能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/page_swap_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ NavigationActivation* PageSwapEvent::activation() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

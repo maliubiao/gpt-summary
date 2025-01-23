@@ -193,7 +193,7 @@ Now, let's formulate the response based on these observations.
 
 总而言之，这部分 `maglev-ir.cc` 代码定义了 Maglev 编译器在生成机器码时处理 JavaScript 类型、对象属性、迭代和基本数值操作的关键步骤，并处理了一些潜在的运行时错误和优化机会。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.cc以.tq结尾，那它是个v8 torque源代码，
@@ -201,9 +201,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
- ToRegister(input()));
+### 源代码
+```cpp
+ToRegister(input()));
 }
 
 void CheckMaps::SetValueLocationConstraints() {
@@ -1027,7 +1029,4 @@ void LoadHoleyFixedDoubleArrayElementCheckedNotHole::
   UseRegister(elements_input());
   UseRegister(index_input());
   D
-"""
-
-
 ```

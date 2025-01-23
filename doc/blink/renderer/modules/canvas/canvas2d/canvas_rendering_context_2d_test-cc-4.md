@@ -121,7 +121,7 @@ Here's a breakdown of the thinking process:
 
 总而言之，这个测试文件的目的是确保 Chromium Blink 引擎中 `CanvasRenderingContext2D` 接口的实现符合规范，并且能够正确处理各种 Canvas 操作，包括状态管理、硬件加速以及低延迟渲染等高级特性。这保证了网页开发者可以依赖 Canvas 2D API 在各种浏览器中获得一致且正确的渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 OpEq<SaveLayerAlphaOp>(1.0f),
                          PaintOpEq<DrawRectOp>(SkRect::MakeXYWH(10, 20, 30, 40),
                                                FillFlags()),
@@ -308,8 +310,4 @@ TEST_P(CanvasRenderingContext2DTestSwapChain, LowLatencyIsSingleBuffered) {
   EXPECT_EQ(frame1_resource.get(), frame2_resource.get());
 }
 }  // namespace blink
-
-"""
-
-
 ```

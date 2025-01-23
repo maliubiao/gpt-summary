@@ -144,15 +144,17 @@ Let's analyze the code:
 
 总而言之，`blink/renderer/core/layout/column_layout_algorithm_test.cc` 作为一个测试文件，其核心功能是**确保 Blink 渲染引擎能够正确地实现 CSS 多列布局规范，处理各种布局场景和断点规则，并为开发者提供符合预期的多列布局效果。** 它通过大量的测试用例，覆盖了多列布局的各种特性和边缘情况，有效地验证了算法的健壮性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/column_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ent, followed by a
   // spanner. Everything won't fit in the same outer column, and we don't want
   // to break inside the spanner. Break between the row of columns and the
@@ -1010,8 +1012,4 @@ TEST_F(ColumnLayoutAlgorithmTest, TallReplacedContent) {
 
 }  // anonymous namespace
 }  // namespace blink
-
-"""
-
-
 ```

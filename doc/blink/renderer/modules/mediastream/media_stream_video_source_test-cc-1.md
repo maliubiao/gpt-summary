@@ -102,7 +102,7 @@ Now, I'll structure the response based on the user's requirements, drawing infor
 
 总的来说，`blink/renderer/modules/mediastream/media_stream_video_source_test.cc` 的第二部分专注于测试 `MediaStreamVideoSource` 在更复杂的场景下的行为，特别是关于资源生命周期管理（暂停、停止）、编码数据流的处理、安全连接状态以及 Alpha 通道和帧率的优化处理。这些测试用例确保了当 JavaScript 代码以各种方式操作 `MediaStreamTrack` 时，底层的 C++ 代码能够正确地管理视频源的状态和资源，并且能够根据消费者的需求进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_video_source_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ult, MediaStreamVideoSource::RestartResult::IS_STOPPED);
       }));
   base::RunLoop().RunUntilIdle();
@@ -412,8 +414,4 @@ TEST_F(MediaStreamVideoSourceTest, ConfiguredFrameRate) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

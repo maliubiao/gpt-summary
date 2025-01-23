@@ -148,7 +148,7 @@ console.log(year);
 **假设输出:**
 
 如果 `temporal_date_like` 是一个表示 2023 年 10 月 27 日
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.h以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -906,8 +908,4 @@ class JSTemporalPlainTime
 
   TQ_OBJECT_CONSTRUCTORS(JSTemporalPlainTime)
 };
-
-"""
-
-
 ```

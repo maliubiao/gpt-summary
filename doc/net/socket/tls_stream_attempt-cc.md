@@ -165,15 +165,17 @@ By following these steps and continually refining the understanding, we arrive a
 
 总而言之，`tls_stream_attempt.cc` 是 Chromium 网络栈中一个核心的、专注于建立安全 TLS 连接的组件，它在用户访问 HTTPS 网站的过程中扮演着至关重要的角色。 理解它的工作原理对于诊断和解决网络连接问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tls_stream_attempt.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ void TlsStreamAttempt::OnTlsHandshakeTimeout() {
 }
 
 }  // namespace net
-
-"""
-
 ```

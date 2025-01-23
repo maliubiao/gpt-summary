@@ -107,15 +107,17 @@ This iterative process of understanding, connecting concepts, and refining the e
 
 总而言之，`blink/renderer/modules/webaudio/audio_sink_info.cc` 文件目前定义了一个基础的音频输出目标信息类，但其功能相对简单，主要用于表示一个“无”类型的音频输出。在未来的发展中，这个类可能会扩展以支持更丰富的音频输出设备信息，从而让 Web Audio API 能够更好地控制音频的输出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_sink_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ V8AudioSinkType AudioSinkInfo::type() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

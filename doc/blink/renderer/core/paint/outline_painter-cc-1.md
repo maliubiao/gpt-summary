@@ -148,7 +148,7 @@ By following these steps, I arrived at the detailed and comprehensive explanatio
 
 总之，`OutlinePainter` 负责在 Blink 渲染引擎中实现元素轮廓和焦点环的绘制，它深入集成到浏览器的样式计算、布局和绘制流程中，并受 CSS 属性的驱动。理解其工作原理有助于开发者更好地控制网页元素的视觉呈现和用户交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/outline_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 radii,
                           const Color& color,
                           const AutoDarkMode& auto_dark_mode) {
@@ -309,8 +311,4 @@ void OutlinePainter::IterateRightAnglePathForTesting(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

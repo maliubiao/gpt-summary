@@ -104,7 +104,7 @@ Here's a breakdown of the thinking process to generate the detailed explanation:
 
 `prop2.c` 文件虽然代码简单，但在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理涉及循环依赖的动态链接场景时的正确性。它体现了 Frida 的逆向能力，并间接涉及到操作系统底层的动态链接和内存管理知识。 理解这类简单的测试用例有助于用户更好地理解 Frida 的工作原理和解决相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/145 recursive linking/circular/prop2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,12 +112,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_st2_prop (void) {
   return 2;
 }
-
-"""
-
 ```

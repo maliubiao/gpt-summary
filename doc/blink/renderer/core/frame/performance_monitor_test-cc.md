@@ -127,14 +127,16 @@ By following these steps, systematically analyzing the code, and making logical 
 
 `performance_monitor_test.cc` 通过一系列单元测试，验证了 `PerformanceMonitor` 类在监控和记录浏览器主线程性能相关事件方面的功能。这些事件与 JavaScript 执行、HTML 结构和 CSS 样式处理密切相关。通过这些测试，可以确保 `PerformanceMonitor` 能够准确地捕捉到各种性能事件，并帮助开发者识别潜在的性能问题，从而避免用户或编程中常见的性能错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/performance_monitor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ TEST_F(PerformanceMonitorTest, UpdateLayoutWithDocument) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

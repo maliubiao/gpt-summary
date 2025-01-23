@@ -147,16 +147,18 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 `InlineNode` 的工作是构建内联格式化上下文的基础，它确保了文本和内联元素能够按照 CSS 规则正确地排列和渲染在页面上。它与 JavaScript、HTML 和 CSS 紧密相关，共同构建了网页的视觉呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- // breaking.
+### 源代码
+```cpp
+// breaking.
   data->is_score_line_break_disabled_ = true;
 }
 
@@ -713,8 +715,4 @@ String InlineNode::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

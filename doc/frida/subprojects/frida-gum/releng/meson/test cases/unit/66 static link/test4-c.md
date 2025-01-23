@@ -148,7 +148,7 @@ Imagine a developer working on Frida and encountering a failure in this unit tes
 
 In summary, `test4.c` is a deliberately simple test case designed to verify Frida's fundamental ability to inject code and control the execution flow of a statically linked binary. It directly relates to core reverse engineering techniques and highlights the importance of understanding binary structures and operating system mechanisms in dynamic analysis.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/66 static link/test4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,15 +156,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func9();
 
 int main(int argc, char *argv[])
 {
   return func9() == 3 ? 0 : 1;
 }
-
-"""
-
 ```

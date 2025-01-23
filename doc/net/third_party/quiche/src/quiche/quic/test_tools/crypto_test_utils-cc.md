@@ -175,7 +175,7 @@ std::vector<CryptoHandshakeMessage> ReadHandshakeMessagesFromStream(
 
 `net/third_party/quiche/src/quiche/quic/test_tools/crypto_test_utils.cc` 文件的主要功能是提供一套用于测试 QUIC 协议中加密和握手过程的 C++ 工具函数和类。它允许开发者方便地模拟客户端和服务器的握手交互，创建和解析握手消息，移动和处理加密数据包，以及比较客户端和服务器的加密状态。这些工具简化了 QUIC 加密相关功能的单元测试和集成测试的编写，帮助开发者验证 QUIC 实现的正确性和可靠性。 文件的核心在于模拟网络通信和加密协商的关键步骤，以便在隔离的环境中测试 QUIC 的加密机制，而无需实际的网络连接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/crypto_test_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -995,9 +997,4 @@ CryptoHandshakeMessage CreateCHLO(
   for (const auto& tag_and_value : tags_and_values) {
     const std::string& tag = tag_and_value.first;
     const std::string& value = tag_and_value.second;
-
-  
-"""
-
-
 ```

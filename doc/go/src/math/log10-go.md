@@ -125,7 +125,7 @@ func main() {
 
 总而言之，这段代码提供了计算常用对数和二进制对数的基础功能，是 Go 语言进行数学运算的重要组成部分。使用者需要注意输入值的有效性，避免传入负数或零，并正确理解不同对数函数的底数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/log10.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -133,8 +133,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -172,9 +174,4 @@ func log2(x float64) float64 {
 	}
 	return Log(frac)*(1/Ln2) + float64(exp)
 }
-
-"""
-
-
-
 ```

@@ -180,15 +180,17 @@ case objabi.R_CALLMIPS, objabi.R_JMPMIPS:
 
 总而言之，`go/src/cmd/link/internal/mips/asm.go` 是 Go 链接器中 MIPS 架构支持的关键组成部分，它负责处理与 MIPS 架构特性相关的代码重定位和布局，确保最终生成的可执行文件能够在 MIPS 平台上正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/mips/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/asm.c
 //
@@ -344,9 +346,4 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r loader.Reloc, s loader.Sy
 	}
 	return loader.ExtReloc{}, false
 }
-
-"""
-
-
-
 ```

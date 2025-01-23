@@ -166,7 +166,7 @@ Hello, world!
 
 这部分 `fs_test.go` 代码主要集中测试了 `net/http.ServeFile` 函数，验证了其在基本文件服务、处理不同 HTTP 方法、处理 `Range` 请求以及路径安全性等方面的功能。这些测试用例帮助开发者理解 `ServeFile` 的行为和使用方式，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/fs_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1311,9 +1313,4 @@ func testServeContent(t *testing.T, mode testMode) {
 				"If-Unmodified-Since": htmlModTime.UTC().Format(TimeFormat),
 			},
 			wantStat
-"""
-
-
-
-
 ```

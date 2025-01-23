@@ -189,7 +189,7 @@ v8::Local<v8::Value> value = data.As<v8::Value>();
 
 这部分代码主要集中在测试 V8 C++ API 中关于**对象属性 (包括原生数据属性和访问器)、原型继承、拦截器以及内部字段和嵌入器数据的基本操作和特性**。它验证了通过 C++ API 创建和操作 JavaScript 对象的关键功能，确保了这些 API 的行为符合预期，为 V8 引擎的正确运行奠定了基础。这些测试覆盖了对象模型的核心概念，是 V8 API 测试套件中的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
 
   CHECK(env->Global()
@@ -1037,7 +1039,4 @@ TEST(StringIdentityHash) {
   LocalContext env;
   v8::Isolate* isolate = env->GetIsolate();
   v8::H
-"""
-
-
 ```

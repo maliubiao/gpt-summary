@@ -170,7 +170,7 @@ Let's break down its functionalities with specific examples related to reverse e
 
 This `python.py` file is a crucial part of Frida's build system, responsible for integrating Python into the build process. It handles the discovery of Python interpreters, the compilation of extension modules that form the bridge between Frida's core and its Python API, and the installation of Python components. Its functionalities are deeply intertwined with the underlying operating system, compilers, and Python's internal structure, making it relevant to understanding how Frida, a reverse engineering tool, is built and how it interacts with target systems.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -736,7 +738,4 @@ def initialize(interpreter: 'Interpreter') -> PythonModule:
     mod = PythonModule(interpreter)
     mod.interpreter.append_holder_map(PythonExternalProgram, PythonInstallation)
     return mod
-
-"""
-
 ```

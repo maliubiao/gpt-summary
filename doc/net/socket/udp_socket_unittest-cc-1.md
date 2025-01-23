@@ -105,7 +105,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 总而言之，这部分代码是 Chromium 中关于 UDP socket 功能的关键单元测试，它着重验证了 DSCP 和 ECN 标记在各种场景下的正确设置和传输，特别是在 Windows 平台和 Android 平台上进行了针对性的测试。这对于确保 Chromium 浏览器在网络通信中能够正确处理服务质量参数至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erver_address(IPAddress::IPv4Localhost(), 0);
   UDPServerSocket server(nullptr, NetLogSource());
   server.AllowAddressReuse();
@@ -930,9 +932,4 @@ TEST_F(UDPSocketTest, ReadWithSocketOptimization) {
   ASSERT_THAT(server.Listen(server_address), IsOk());
   // Get bound port.
   ASSERT_THAT(server.GetLocalAddress(&server_address), IsOk());
-
-  
-"""
-
-
 ```

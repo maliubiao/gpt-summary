@@ -175,7 +175,7 @@ urls.map(fetchData);
 
 总而言之，这个代码片段集中测试了 `QuicSession` 在服务器端处理流创建、管理和关闭的各种场景，包括正常情况和异常情况，确保 QUIC 连接的稳定性和可靠性。这些测试直接关系到基于 QUIC 协议的 Web 应用的性能和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -183,9 +183,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
- CheckClosedStreams();
+### 源代码
+```cpp
+CheckClosedStreams();
 }
 
 TEST_P(QuicSessionTestServer, MaximumAvailableOpenedBidirectionalStreams) {
@@ -937,8 +939,4 @@ TEST_P(QuicSessionTestServer, OnStreamFrameFinStaticStreamId) {
 }
 
 TEST_P(QuicSessionTestServer, OnStreamFrameInvalidStreamId) {
-
-"""
-
-
 ```

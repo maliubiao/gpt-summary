@@ -136,7 +136,7 @@ By following this thought process, focusing on deconstruction, context, and addr
 
 总而言之，`write_file.py` 是一个用于测试环境准备的简单工具，它的主要作用是在指定位置创建一个包含特定内容的文件，以便后续的测试用例能够依赖这个文件进行验证。虽然它本身很简单，但它在保证 Frida 项目质量的自动化测试流程中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/128 build by default targets in tests/write_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,15 +144,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write('Test')
-
-"""
-
 ```

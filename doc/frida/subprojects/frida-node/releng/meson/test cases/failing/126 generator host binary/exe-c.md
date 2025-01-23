@@ -81,7 +81,7 @@ By following these steps, we can arrive at a comprehensive and accurate understa
 
 尽管 `exe.c` 的代码本身非常简单，但它在 Frida 的测试框架中扮演着特定的角色，用于测试构建系统对某些特定场景（例如，预期会失败的二进制生成）的处理能力。它为 Frida 的构建和测试提供了重要的负面测试用例，帮助确保系统的健壮性和错误处理能力。逆向工程师在研究 Frida 的构建流程时可能会接触到这类文件，理解其在整个系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/126 generator host binary/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,10 +89,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

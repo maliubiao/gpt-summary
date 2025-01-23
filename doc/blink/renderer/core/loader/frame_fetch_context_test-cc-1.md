@@ -101,7 +101,7 @@ Sec-CH-Device-Memory: 4
 
 总而言之，这部分测试代码细致地验证了 Blink 引擎在处理客户端提示方面的各种场景，确保浏览器能够正确地发送这些提示信息，从而帮助 Web 开发者构建更高效、更用户友好的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/frame_fetch_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pdateFrom(preferences);
   ApproximatedDeviceMemory::SetPhysicalMemoryMBForTesting(4096);
   ExpectHeader("https://www.example.com/1.gif", "Device-Memory", true, "4");
@@ -761,7 +763,4 @@ TEST_P(FrameFetchContextHintsTest, DisabledDataSaver) {
 }
 
 // Tests if reload variants can reflect the
-"""
-
-
 ```

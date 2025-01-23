@@ -135,15 +135,17 @@ By following this structured approach and iterating through potential interpreta
 
 总而言之，`NullExecutionContext.cc` 提供了一个用于单元测试的关键构建块，它允许开发者在不启动完整浏览器的情况下测试 Blink 渲染引擎的核心功能。理解它的作用和局限性对于理解 Blink 的测试框架和进行引擎开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/null_execution_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ NullExecutionContext::GetBrowserInterfaceBroker() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

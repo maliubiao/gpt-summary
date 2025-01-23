@@ -177,7 +177,7 @@ By following this methodical approach, combining code analysis with knowledge of
 
 这段代码是 `WebGLRenderingContextBase` 类的核心组成部分，它实现了 WebGL API 中关于纹理操作和资源对象管理的关键功能。 它负责创建、删除和操作 WebGL 的各种资源对象，并维护和验证 WebGL 的状态，是 WebGL 功能实现的基础。 通过与底层 OpenGL/OpenGL ES 的交互，它最终驱动 GPU 完成 WebGL 内容的渲染。 这部分代码对保证 WebGL 功能的正确性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tName)) {
     ADD_VALUES_TO_SET(supported_internal_formats_copy_tex_image_,
                       kSupportedInternalFormatsCopyTexImageFloatES3);
@@ -1101,7 +1103,4 @@ static const GLenum kIdentifiableGLParams[] = {
     GL_ALPHA_BITS,                        // GetIntParameter
     GL_BLUE_BITS,                         // GetIntParameter
     GL_DEPTH_BITS,                        // GetIntParame
-"""
-
-
 ```

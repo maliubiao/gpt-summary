@@ -164,15 +164,17 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 
 总而言之，`box_shadow_paint_image_generator.cc` 是 Blink 渲染引擎中一个关键的优化组件，它通过预先生成阴影图像来提高带有 `box-shadow` 属性的元素的渲染性能。它与 CSS 紧密相关，并通过 HTML 和 JavaScript 的操作间接被触发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/box_shadow_paint_image_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ BoxShadowPaintImageGenerator* BoxShadowPaintImageGenerator::Create(
 }
 
 }  // namespace blink
-
-"""
-
 ```

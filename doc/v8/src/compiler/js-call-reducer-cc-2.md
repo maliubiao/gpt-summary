@@ -197,7 +197,7 @@ myPromise.then(() => {
 
 总而言之，`v8/src/compiler/js-call-reducer.cc` 的这一部分是 V8 引擎为了提升 JavaScript 代码性能而进行的关键优化工作，它针对常见的数组和 Promise 操作进行高效的内部转换。 开发者了解这些优化有助于更好地理解 JavaScript 代码的执行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -205,8 +205,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ArgumentOrUndefined(0);
 
   ReduceFrameStateParams frame_state_params{
@@ -990,7 +992,4 @@ TNode<Object> PromiseBuiltinReducerAssembler::ReducePromiseConstructor(
   // 8. CreatePromiseResolvingFunctions
   // Allocate a promise context for the closures below.
   TNode<Context> promise_context = Cr
-"""
-
-
 ```

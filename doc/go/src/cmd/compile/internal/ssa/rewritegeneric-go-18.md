@@ -113,7 +113,7 @@ func main() {
 
 这段 `rewritegeneric.go` 的第 19 部分，其核心功能是**优化包含布尔 OR 运算的比较表达式**，特别是针对无符号整数的比较，并且比较中包含常量的情况。 此外，还包括一些 `Phi` 节点的简化和 `PtrIndex` 到更底层操作的转换，并开始涉及位旋转操作的优化。 总体目标是提高生成代码的效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -122,8 +122,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第19部分，共26部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 nst32 [c]) x) (Less32U x (Const32 [d])))
 	// cond: uint32(c) >= uint32(d)
 	// result: (Leq32U (Const32 <x.Type> [c-d]) (Sub32 <x.Type> x (Const32 <x.Type> [d])))
@@ -1606,10 +1608,4 @@ func rewriteValuegeneric_OpRotateLeft32(v *Value) bool {
 			}
 			v.reset(OpRotateLeft32)
 			v0 := b.NewValue0(v.Pos, OpNeg8, y.Type)
-
-"""
-
-
-
-
 ```

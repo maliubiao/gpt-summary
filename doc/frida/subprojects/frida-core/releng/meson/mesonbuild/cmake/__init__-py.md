@@ -156,7 +156,7 @@ A user would reach this file indirectly during the Frida build process, especial
 
 In summary, while `frida/subprojects/frida-core/releng/meson/mesonbuild/cmake/__init__.py` is primarily an organizational file, it plays a vital role in making the CMake integration within Frida's Meson build system modular and accessible. It is indirectly crucial for building the Frida tool that reverse engineers rely on, and understanding its structure is helpful for debugging build-related issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/cmake/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -194,7 +196,4 @@ from .interpreter import CMakeInterpreter
 from .toolchain import CMakeToolchain, CMakeExecScope
 from .traceparser import CMakeTarget, CMakeTraceParser
 from .tracetargets import resolve_cmake_trace_targets
-
-"""
-
 ```

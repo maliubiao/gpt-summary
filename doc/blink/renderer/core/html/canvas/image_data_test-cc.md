@@ -139,15 +139,17 @@ This detailed thought process allows for a comprehensive understanding of the te
 
 总而言之，`image_data_test.cc` 通过单元测试确保了 Blink 引擎在处理 `ImageData` 对象的创建和管理时能够正确地处理各种边界情况和错误，从而保证了网页的稳定性和安全性。 它模拟了当 JavaScript 代码尝试创建过大的 `ImageData` 对象时，底层 C++ 代码的行为，防止出现崩溃等严重问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/image_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ TEST_F(ImageDataTest, ImageDataTooBigToAllocateDoesNotCrash) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

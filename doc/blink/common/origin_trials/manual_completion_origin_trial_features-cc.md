@@ -85,14 +85,16 @@ This detailed thinking process ensures a thorough analysis of the code and gener
 
 `manual_completion_origin_trial_features.cc` 文件中的 `FeatureHasExpiryGracePeriod` 函数是一个关键的内部机制，用于管理 Origin Trials 的生命周期，特别是决定哪些实验性功能在正式到期后会拥有一个额外的宽限期。这直接影响了 Web 开发者在使用 Origin Trials 时需要注意的事项，以及他们代码的迁移策略。了解这个函数的功能有助于更好地理解 Chrome 浏览器如何处理 Origin Trials 的到期和过渡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/manual_completion_origin_trial_features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ bool FeatureHasExpiryGracePeriod(blink::mojom::OriginTrialFeature feature) {
 }
 
 }  // namespace blink::origin_trials
-
-"""
-
 ```

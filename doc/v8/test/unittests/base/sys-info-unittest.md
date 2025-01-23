@@ -72,11 +72,13 @@ JavaScript 可以使用 Web Workers 来创建独立的执行线程。  V8 引擎
 
 `v8/test/unittests/base/sys-info-unittest.cc` 这个 C++ 文件测试了 V8 引擎获取系统信息的核心功能。 这些信息虽然 JavaScript 代码不能直接访问，但对 V8 引擎的运行和优化至关重要。 V8 引擎会利用这些信息来调整内存管理、垃圾回收策略、线程调度等，从而更好地执行 JavaScript 代码。  `navigator.hardwareConcurrency` 是一个 JavaScript API 的例子，它可以间接地反映 V8 引擎获取的 CPU 信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/sys-info-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -102,7 +104,4 @@ TEST(SysInfoTest, AmountOfVirtualMemory) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

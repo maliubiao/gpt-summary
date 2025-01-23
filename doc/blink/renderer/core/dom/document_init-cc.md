@@ -135,15 +135,17 @@ This methodical approach, starting with the big picture and drilling down into s
 
 总而言之，`blink/renderer/core/dom/document_init.cc` 是 Blink 渲染引擎中一个至关重要的文件，它负责根据资源类型和上下文信息，创建出合适的 `Document` 对象，这是网页渲染和脚本执行的基础。理解它的功能有助于深入理解浏览器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_init.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -490,7 +492,4 @@ Document* DocumentInit::CreateDocument() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

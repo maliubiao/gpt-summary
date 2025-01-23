@@ -249,7 +249,7 @@ func main() {
 
 总而言之，`go/src/internal/abi/map_swiss.go` 是 Go 语言 `map` 数据类型的一种高效内部实现的关键组成部分，它定义了 map 的结构、常量和相关操作所需的元数据。理解这些内部机制可以帮助我们更好地理解和使用 Go 的 `map` 类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/map_swiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -257,8 +257,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -323,9 +325,4 @@ func (mt *SwissMapType) IndirectKey() bool { // store ptr to key instead of key 
 func (mt *SwissMapType) IndirectElem() bool { // store ptr to elem instead of elem itself
 	return mt.Flags&SwissMapIndirectElem != 0
 }
-
-"""
-
-
-
 ```

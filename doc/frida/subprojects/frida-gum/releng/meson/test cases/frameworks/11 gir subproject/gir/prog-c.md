@@ -118,7 +118,7 @@ By following this systematic approach, breaking down the prompt, and considering
 
 总而言之，这个 `prog.c` 文件虽然简单，但它清晰地展示了如何在 C 程序中使用 GObject 框架，并为理解 Frida 如何对这类程序进行动态插桩提供了基础。它是一个很好的学习 Frida 功能和逆向分析技术的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/11 gir subproject/gir/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 gint
@@ -140,7 +142,4 @@ main (gint   argc,
 
   return 0;
 }
-
-"""
-
 ```

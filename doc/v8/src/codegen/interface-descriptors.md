@@ -121,11 +121,13 @@ Math.sin(1.0);
 
 `interface-descriptors.cc` 定义了 V8 引擎中 C++ 函数调用的“规则”。它充当了 JavaScript 和 V8 引擎的 C++ 代码之间的桥梁，确保了 JavaScript 代码能够安全有效地调用底层的 C++ 功能。没有这些描述符，V8 就无法正确地执行许多核心的 JavaScript 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/interface-descriptors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,7 +313,4 @@ void IndirectPointerWriteBarrierDescriptor::Verify(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

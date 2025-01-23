@@ -172,7 +172,7 @@ This step-by-step breakdown, moving from code understanding to contextual awaren
 
 `foo.c` 虽然是一个简单的测试用例，但它清晰地展示了动态链接的特性，以及如何使用 Frida 这样的动态插桩工具进行逆向分析，理解程序与外部库的交互。它的存在为测试 Frida 的功能，特别是处理动态链接的场景，提供了基础。  在实际的逆向工程中，我们会遇到更复杂的代码，但基本的分析思路是类似的：观察、理解依赖关系、hook 关键函数、分析数据流动和逻辑判断。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/256 subproject extracted objects/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -193,7 +195,4 @@ int DLL_IMPORT cppfunc(void);
 int otherfunc(void) {
     return cppfunc() != 42;
 }
-
-"""
-
 ```

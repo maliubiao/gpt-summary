@@ -80,13 +80,15 @@ The second part of the code introduces a `RegExpExpansionLimiter` class, likely 
 
 总而言之，这段 C++ 代码是 V8 引擎中实现 JavaScript 正则表达式核心功能的关键部分，它负责高效地处理字符范围和量词，使得 JavaScript 能够执行强大的模式匹配操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler-tonode.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- int n = character_ranges->length();
+### 源代码
+```
+int n = character_ranges->length();
   base::uc32 max = character_ranges->at(0).to();
   int i = 1;
   while (i < n) {
@@ -477,8 +479,4 @@ RegExpNode* RegExpQuantifier::ToNode(int min, int max, bool is_greedy,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

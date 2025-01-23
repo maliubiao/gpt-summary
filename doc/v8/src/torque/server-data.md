@@ -100,11 +100,13 @@ Torque 代码主要用于实现 V8 引擎中内置的 JavaScript 功能，例如
 
 总而言之，`v8/src/torque/server-data.cc` 就像一个地图，存储着 Torque 代码中各种符号和定义的位置信息，以便开发者能够更方便地理解和维护 V8 引擎中内置的 JavaScript 功能的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/server-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ void LanguageServerData::PrepareAllDeclarableSymbols() {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

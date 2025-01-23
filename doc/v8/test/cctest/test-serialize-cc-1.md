@@ -182,7 +182,7 @@ console.log(f()); // 输出 true，证明正则表达式对象和使用它的函
 
 作为 `test-serialize.cc` 的第 2 部分，这段代码延续了对 V8 序列化机制的测试，并且更加深入地探索了**自定义快照数据 (Custom Snapshot Data Blob)** 的各种应用场景和细节。它涵盖了从简单的代码序列化到复杂的对象状态（包括类型化数组、正则表达式、内部字段等）的序列化和反序列化，并测试了相关的错误处理和优化策略（如快照校验和和预热）。 这部分主要关注使用 C++ API 来创建和加载自定义快照，并验证其在不同场景下的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-serialize.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-serialize.cc以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :Isolate* isolate1 = TestSerializer::NewIsolate(params1);
   {
     v8::Isolate::Scope i_scope(isolate1);
@@ -1096,9 +1098,4 @@ static DirectHandle<SharedFunctionInfo> CompileScriptAndProduceCache(
   (*out_cached_data)->AcquireDataOwnership();
   return sfi;
 }
-
-
-"""
-
-
 ```

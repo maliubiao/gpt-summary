@@ -157,15 +157,17 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`net/cert/signed_certificate_timestamp.cc` 文件在 Chromium 的网络安全体系中扮演着关键角色，它定义了表示 SCT 的数据结构，并实现了 SCT 的序列化和反序列化功能，为后续的 SCT 验证和 Certificate Transparency 功能提供了基础。虽然 JavaScript 代码不能直接操作它，但它的功能直接影响着用户浏览器的安全性和开发者可以观察到的安全信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/signed_certificate_timestamp.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ bool DigitallySigned::SignatureParametersMatch(
          (signature_algorithm == other_signature_algorithm);
 }
 }  // namespace net::ct
-
-"""
-
 ```

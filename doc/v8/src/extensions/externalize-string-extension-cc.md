@@ -184,15 +184,17 @@ console.log("twoByteString 是单字节的:", isOneByteString(twoByteString)); /
 
 总而言之，`v8/src/extensions/externalize-string-extension.cc` 提供了一组底层的 API，允许 JavaScript 代码更精细地控制 V8 字符串的内存管理，特别是在处理大型字符串时，可以有效地减少内存占用。理解这些 API 的作用和限制对于优化 V8 应用的内存使用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/externalize-string-extension.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/extensions/externalize-string-extension.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -444,7 +446,4 @@ void ExternalizeStringExtension::IsOneByte(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

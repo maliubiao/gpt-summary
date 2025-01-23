@@ -111,15 +111,17 @@ V8 引擎会利用这些差异信息，只更新 `greet` 函数中字符串常�
 
 总而言之，`v8/src/debug/liveedit-diff.cc` 是 V8 引擎中一个重要的组成部分，它使用 Myer's 算法来高效地计算代码差异，为 JavaScript 的热重载和实时编辑功能提供了基础。理解其功能有助于开发者更好地利用这些工具，并避免一些与热重载相关的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/liveedit-diff.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/liveedit-diff.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -532,7 +534,4 @@ void Comparator::CalculateDifference(Comparator::Input* input,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

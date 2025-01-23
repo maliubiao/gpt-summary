@@ -133,15 +133,17 @@ By following this structured thought process, combining code analysis with an un
 
 `dummy_page_holder.cc` 中定义的 `DummyPageHolder` 类是 Blink 渲染引擎测试框架中的一个重要组成部分。它提供了一种轻量级的方式来创建和管理模拟的网页环境，方便开发者编写和调试各种与页面相关的测试用例。虽然它与 JavaScript、HTML 和 CSS 功能间接相关，因为它提供了运行这些代码的基础设施，但它本身并不直接实现这些语言的解析或执行。理解 `DummyPageHolder` 的工作原理对于理解 Blink 的测试框架以及调试 Blink 渲染引擎的内部行为非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/dummy_page_holder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -309,7 +311,4 @@ Document& DummyPageHolder::GetDocument() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

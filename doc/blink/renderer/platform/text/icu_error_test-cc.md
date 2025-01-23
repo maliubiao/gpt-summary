@@ -96,14 +96,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `icu_error_test.cc` 是一个测试文件，用于确保 Blink 引擎能够正确地封装和处理来自 ICU 库的错误。虽然前端开发者不会直接操作 `ICUError` 类，但 ICU 库的功能直接影响着浏览器处理文本、国际化等方面的能力，因此与 JavaScript, HTML, 和 CSS 的正常运行息息相关。底层 ICU 的错误处理不当最终会体现在前端用户体验和 JavaScript 代码的执行结果上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/icu_error_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -128,7 +130,4 @@ TEST(ICUErrorTest, assignToAutomaticReference) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

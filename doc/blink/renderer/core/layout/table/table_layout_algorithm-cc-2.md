@@ -153,16 +153,18 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，`table_layout_algorithm.cc` 的 `Layout` 函数是 Blink 引擎中至关重要的组成部分，它负责将 HTML 表格的逻辑结构转化为可渲染的物理布局，并需要考虑各种复杂的场景，包括分片、可重复区域、边框和间距等。第三部分的代码主要负责处理可重复表尾、表格边框盒的结尾、计算最终大小以及处理分片完成等关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/table_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  // alone would make the table child iterator skip any preceding sections).
+### 源代码
+```cpp
+// alone would make the table child iterator skip any preceding sections).
     auto entry = child_iterator.NextChild();
     for (; BlockNode child = entry.GetNode();
          entry = child_iterator.NextChild()) {
@@ -427,8 +429,4 @@ Prompt:
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

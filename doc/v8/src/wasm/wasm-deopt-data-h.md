@@ -194,15 +194,17 @@ WebAssembly.instantiate(wasmCode)
 
 总而言之，`v8/src/wasm/wasm-deopt-data.h` 是 V8 WebAssembly 实现中一个关键的头文件，它定义了用于管理和利用去优化过程所需的数据结构。这对于确保 WebAssembly 代码的健壮性和正确性至关重要，即使在优化的代码需要回退到未优化状态时也能正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-deopt-data.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-deopt-data.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ struct LiftoffFrameDescriptionForDeopt {
 
 }  // namespace v8::internal::wasm
 #endif  // V8_WASM_WASM_DEOPT_DATA_H_
-
-"""
-
 ```

@@ -210,7 +210,7 @@ Initially, I might have focused solely on the output. However, the prompt specif
 
 总而言之，`cttest.cpp` 作为一个简单的单元测试用例，旨在验证 C++ 中布尔类型到整数类型的转换行为，并可能被用于 Frida 项目的开发和测试过程中，同时也用于静态代码分析工具的验证。  通过分析这个简单的例子，我们可以窥探到逆向工程中动态分析、静态分析以及底层系统调用的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/68 clang-tidy/cttest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 int main(int, char**) {
@@ -227,7 +229,4 @@ int main(int, char**) {
     printf("Intbool is %d\n", (int)intbool);
     return 0;
 }
-
-"""
-
 ```

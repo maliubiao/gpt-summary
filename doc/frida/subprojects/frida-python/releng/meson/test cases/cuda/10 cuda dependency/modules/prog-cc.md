@@ -148,7 +148,7 @@ By following these steps, I arrived at the detailed explanation covering functio
 
 总而言之，`prog.cc` 虽然是一个简单的 CUDA 检测程序，但它在 Frida 的测试框架中扮演着重要的角色，帮助开发者验证 Frida 对 CUDA 依赖的处理能力。 理解其功能以及背后的底层原理，对于逆向分析 CUDA 应用以及调试相关问题都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cuda/10 cuda dependency/modules/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 #include <iostream>
@@ -191,7 +193,4 @@ int main(void) {
 
     return 0;
 }
-
-"""
-
 ```

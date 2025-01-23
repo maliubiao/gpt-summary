@@ -733,7 +733,7 @@ func TestMethodPkgPath(t *testing.T) {
 		if got, want := m.IsExported(), test.exported; got != want {
 			t.Errorf("MethodByName(%q).IsExported = %v, want %v", test.name, got, want)
 		
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -742,10 +742,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
-
-	}
+### 源代码
+```go
+}
 }
 
 func TestMethodValue(t *testing.T) {
@@ -2092,9 +2093,4 @@ func TestSetPanic(t *testing.T) {
 	bad(func() { clear(v.Field(6)) })                   // .namedT2
 	bad(func() { clear(v.Field(6).Field(0)) })          // .namedT2.Z
 	bad(func() { clear(v.Field(6).Field(1)) })          // .namedT
-"""
-
-
-
-
 ```

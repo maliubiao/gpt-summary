@@ -95,7 +95,7 @@ Now, let's address each of the user's requests.
 
 总而言之，这段代码是 Frida 构建系统 Meson 中负责管理和查询构建环境配置的关键部分，特别是涉及到目录路径、编译器信息和交叉编译执行包装器的处理。理解这段代码的功能有助于理解 Frida 的构建过程以及排查相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,9 +104,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                       env_opts[key].extend(p_list)
+### 源代码
+```python
+env_opts[key].extend(p_list)
                     else:
                         key = OptionKey.from_string(keyname).evolve(machine=for_machine)
                         if evar in compilers.compilers.CFLAGS_MAPPING.values():
@@ -344,8 +346,4 @@ Prompt:
 
     def has_exe_wrapper(self) -> bool:
         return self.exe_wrapper and self.exe_wrapper.found()
-
-"""
-
-
 ```

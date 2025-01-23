@@ -174,7 +174,7 @@ Interceptor.attach(Module.getExportByName(null, "rOne"), {
 
 尽管 `main.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着验证基本构建功能（如 include 目录处理）的角色。分析这个文件及其上下文可以帮助理解 Frida 的构建流程、测试方法，以及与底层操作系统和二进制文件的交互。对于逆向工程师来说，即使是最简单的程序也是理解程序执行流程的起点。理解用户是如何一步步到达这个文件的，可以为调试构建、测试等方面的问题提供宝贵的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/218 include_dir dot/src/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,14 +182,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rone.h"
 
 int main(void) {
     return rOne();
 }
-
-"""
-
 ```

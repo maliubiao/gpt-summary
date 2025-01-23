@@ -279,7 +279,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/libs/dl_preempt_library_2.cpp` 是一个专门用于测试 Android Bionic 动态链接器符号抢占和可见性机制的测试文件。理解它的功能有助于理解 Android 系统中动态链接的工作原理，这对于进行 Native 开发和系统调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dl_preempt_library_2.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -328,8 +330,4 @@ extern "C" int lib_global_default_get_serial() {
 extern "C" int lib_global_protected_get_serial() {
   return lib_global_protected_serial();
 }
-
-
-"""
-
 ```

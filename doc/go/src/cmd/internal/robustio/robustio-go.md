@@ -213,15 +213,17 @@ func removeAll(path string) error {
 
 `go/src/cmd/internal/robustio/robustio.go` 提供了一种在 Windows 系统上增强文件 I/O 操作鲁棒性的方法，通过透明地重试某些特定类型的临时错误来减少因并发问题导致的失败。开发者在使用时需要理解其适用范围和限制，并始终进行适当的错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/robustio/robustio.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func RemoveAll(path string) error {
 func IsEphemeralError(err error) bool {
 	return isEphemeralError(err)
 }
-
-"""
-
-
-
 ```

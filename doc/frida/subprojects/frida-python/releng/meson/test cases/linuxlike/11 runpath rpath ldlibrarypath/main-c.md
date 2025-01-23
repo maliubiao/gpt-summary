@@ -130,7 +130,7 @@ Initially, I might have focused too much on the simple functionality of the C co
 
 总而言之，这个 `main.c` 文件虽然代码简单，但其目的是测试 Linux 系统中关键的动态链接机制，这对于理解程序的运行方式以及进行逆向工程都是至关重要的。在 Frida 的上下文中，它更是用于验证 Frida 在动态插桩时与共享库的交互是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/linuxlike/11 runpath rpath ldlibrarypath/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int some_symbol (void);
@@ -151,7 +153,4 @@ int main (void) {
   fprintf (stderr, "ret was %i instead of 1\n", ret);
   return -1;
 }
-
-"""
-
 ```

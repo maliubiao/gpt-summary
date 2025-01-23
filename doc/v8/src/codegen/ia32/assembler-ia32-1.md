@@ -83,12 +83,14 @@ const data = [1, 2, 3, 4];
 
 这部分 `assembler-ia32.cc` 代码是 V8 引擎将高级 JavaScript 代码转换为底层高效机器码的关键组成部分。 它专注于实现 SIMD 和 AVX 指令的生成，使得 JavaScript 引擎能够利用现代处理器提供的并行计算能力，显著提升数值计算和数据密集型 JavaScript 应用的性能。 这些指令对于优化诸如数组操作、图形处理、音视频处理等场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/assembler-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 d src, uint8_t shuffle) {
   EnsureSpace ensure_space(this);
   EMIT(0xF2);
@@ -871,8 +873,4 @@ void Assembler::RecordRelocInfo(RelocInfo::Mode rmode, intptr_t data) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

@@ -105,7 +105,7 @@ const instance = new MyClass();
 
 作为 `v8/test/cctest/test-api.cc` 文件的第 14 部分，这段代码主要集中在 **测试 V8 引擎处理函数调用、对象可调用性、特殊对象行为（如不可检测对象）、HandleScope 管理、以及 C++ API 和 JavaScript 之间的互操作性，特别是涉及到直接调用优化和异常处理** 的能力。  它深入测试了 V8 的底层机制，确保引擎在各种场景下都能正确地执行 JavaScript 代码并与 C++ 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,8 +113,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第14部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 loppy"))
             .ToLocalChecked());
     Local<Function> ReturnThisStrict = Local<Function>::Cast(
@@ -1008,8 +1010,4 @@ v8::Intercepted ShouldThrowOnErrorDeleter(
   CHECK(context->Global()
             ->Set(isolate->GetCurrentContext(), v8_str("should_throw_deleter"),
                   should_throw_on_error_value)
-           
-"""
-
-
 ```

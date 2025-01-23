@@ -47,7 +47,7 @@ Let's break down the thought process for summarizing the provided C code snippet
 
 在后续的部分，我们可以更深入地探讨这些测试数据的具体内容，以及它们与 Android 功能、libc 函数实现、动态链接等方面的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/hypotf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -59,8 +59,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1784,7 +1786,4 @@ static data_1_2_t<float, float, float> g_hypotf_intel_data[] = {
     -0x1.032a76p0
   },
   {
-"""
-
-
 ```

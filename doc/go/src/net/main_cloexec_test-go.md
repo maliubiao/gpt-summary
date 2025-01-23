@@ -107,7 +107,7 @@ func Accept4(sockfd int, addr *syscall.Sockaddr, addrlen *syscall.Socklen_t, fla
 
 总之，这段代码的核心在于提供了一种灵活的方式来测试 `net` 包在处理网络连接时的底层行为，特别是关注了 `accept4` 系统调用以及 `O_CLOEXEC` 标志的使用。这对于保证网络编程的安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/main_cloexec_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -115,8 +115,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -144,9 +146,4 @@ func installAccept4TestHook() {
 func uninstallAccept4TestHook() {
 	poll.Accept4Func = origAccept4
 }
-
-"""
-
-
-
 ```

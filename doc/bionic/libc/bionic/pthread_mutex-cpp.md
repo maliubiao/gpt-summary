@@ -260,7 +260,7 @@ By following these steps, we move from a basic understanding of the file's locat
 
 这部分内容是对 `bionic/libc/bionic/pthread_mutex.cpp` 文件功能的归纳总结，涵盖了其提供的核心互斥锁功能以及与 Android 系统和 NDK 开发的关联。后续部分会深入探讨更细节的实现和机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/pthread_mutex.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -272,8 +272,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -1099,7 +1101,4 @@ int pthread_mutex_lock(pthread_mutex_t* mutex_interface) {
     pthread_mutex_internal_t* mutex = __get_internal_mutex(mutex_interface);
     uint16_t old_state = atomic_load_explicit(&mutex->state, memory_order_relaxed);
     uint16_t mtype = (old_state & MUTEX_TYPE_MASK)
-"""
-
-
 ```

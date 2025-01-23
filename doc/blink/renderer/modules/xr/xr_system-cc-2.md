@@ -99,7 +99,7 @@ Finally, I need to ensure the overall summary correctly captures the core functi
 
 总而言之，`XRSystem` 是 Blink 引擎中 WebXR 功能的核心管理类，负责与浏览器进程中的 XR 服务通信，管理 XR 会话的生命周期，处理功能支持查询和会话请求，以及处理上下文销毁等事件。它充当了 JavaScript WebXR API 和底层 XR 服务之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_system.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (!receiver_.is_bound())
       service_->SetClient(receiver_.BindNewPipeAndPassRemote(task_runner));
   }
@@ -267,8 +269,4 @@ XRSystem::GetWebXrInternalsRendererListener() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

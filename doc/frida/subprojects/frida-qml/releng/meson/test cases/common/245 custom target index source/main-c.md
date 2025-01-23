@@ -144,7 +144,7 @@ By following this structured approach, we can analyze even a small code snippet 
 
 `frida/subprojects/frida-qml/releng/meson/test cases/common/245 custom target index source/main.c` 文件是一个在 Frida 构建过程中用于生成索引文件的辅助程序。它断言接收两个命令行参数，并调用 `genfunc()` 函数来完成实际的索引生成工作。这个程序与逆向工程密切相关，因为它生成的索引可以帮助 Frida 在运行时更有效地分析和操作目标进程。用户通常不会直接与这个文件交互，它主要是 Frida 构建系统的一部分。如果在这个文件中发生断言失败，通常意味着构建配置或参数传递存在问题，是开发者调试构建过程的一个线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/245 custom target index source/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include "gen.h"
 
@@ -164,7 +166,4 @@ int main(int argc, char **argv)
   assert(argc == 3);
   return genfunc();
 }
-
-"""
-
 ```

@@ -196,7 +196,7 @@ function multiply(x) {
 
 到目前为止，根据提供的代码片段，`v8/src/maglev/maglev-graph-builder.h` 的功能主要集中在 **数据流和值的处理，以及函数调用和对象创建的中间表示构建**。它提供了将 JavaScript 操作转换为 Maglev 图节点的工具，并开始处理更复杂的语义，如函数调用、构造函数和基本数据类型的操作。  它还在为后续的优化阶段准备基础，例如通过类型转换和值表示的管理。 前面的部分（我们未看到）可能涵盖了图构建的初始化和基本框架，而后续部分可能会涉及更高级的优化和代码生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.h以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 HasOutputRegister(interpreter::Register reg) const;
 #endif
 
@@ -898,7 +900,4 @@ HasOutputRegister(interpreter::Register reg) const;
   ReduceResult BuildHasInPrototypeChain(ValueNode* object,
                                         compiler::HeapObjectRef prototype);
   ReduceResult TryBuildFastOrdina
-"""
-
-
 ```

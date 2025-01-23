@@ -184,7 +184,7 @@ Interceptor.attach(Module.findExportByName(null, "my_wonderful_function"), {
 
 因此，这个简单的 C 代码文件很可能是一个自动化测试套件的一部分，用于验证 Frida 的功能。开发者通过编写和运行这个测试用例，确保 Frida 能够正确地插桩和操作目标进程中的函数。文件名中的路径信息 `frida/subprojects/frida-swift/releng/meson/test cases/common/169` 也印证了这一点，它指明了文件在 Frida 项目的测试目录结构中的位置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/169 source in dep/generated/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,14 +192,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"funheader.h"
 
 int main(void) {
     return my_wonderful_function() != 42;
 }
-
-"""
-
 ```

@@ -89,11 +89,13 @@ add("hello", "world"); // 假设不再成立，需要进行反优化
 
 `deoptimizer-riscv.cc` 文件是 V8 引擎在 RISC-V 架构上实现反优化的关键组成部分。它定义了反优化过程中的数据结构和操作，确保当优化假设失效时，JavaScript 代码能够安全地回退到解释执行，保证程序的正确性。虽然用户通常不会直接与这些代码交互，但反优化机制是 V8 引擎实现高性能和动态特性的重要支撑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/riscv/deoptimizer-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

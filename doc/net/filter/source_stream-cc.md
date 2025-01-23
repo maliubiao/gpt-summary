@@ -146,15 +146,17 @@ fetch('https://example.com/data.json')
 
 总而言之，`net/filter/source_stream.cc` 定义了一个核心的抽象概念，用于表示 Chromium 网络栈中的各种数据来源，它为网络过滤和其他数据处理机制提供了基础。 虽然 JavaScript 开发者不能直接操作它，但 `SourceStream` 的行为直接影响着浏览器执行 JavaScript 网络操作的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/filter/source_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ std::string SourceStream::Description() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

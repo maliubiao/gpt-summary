@@ -96,11 +96,13 @@ console.log(string1 === string4); // true - StringComparator 可以处理 ConsSt
 
 `v8/src/objects/string-comparator.cc` 中的 `StringComparator` 类是 V8 引擎中用于高效比较字符串相等性的核心组件。它处理了 V8 内部不同类型的字符串表示和字符编码，并通过逐段比较和短路优化来提高性能。在 JavaScript 中，当你使用 `===` 或 `==` 比较字符串时，实际上会间接地用到这个类或类似的机制来完成比较操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-comparator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ bool StringComparator::Equals(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

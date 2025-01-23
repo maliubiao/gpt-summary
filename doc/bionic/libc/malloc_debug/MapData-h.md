@@ -336,7 +336,7 @@ if (Process.arch === 'arm64') {
 
 请注意，实际的符号名称可能会因 Android 版本和编译选项而异。 你可能需要使用符号查找工具来确定确切的符号名称。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/MapData.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -347,8 +347,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -452,7 +454,4 @@ class MapData {
 
   BIONIC_DISALLOW_COPY_AND_ASSIGN(MapData);
 };
-
-"""
-
 ```

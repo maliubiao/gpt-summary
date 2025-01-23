@@ -115,7 +115,7 @@ By following these steps, a comprehensive and accurate answer can be constructed
 
 总而言之，这部分代码是 V8 编译器后端将高级语言操作转换为底层硬件指令的关键组成部分，它确保了 JavaScript 代码能够在 LoongArch 64 位架构上正确高效地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-selector-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/instruction-selector-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,9 +123,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- switch (rep) {
+### 源代码
+```cpp
+switch (rep) {
     case MachineRepresentation::kFloat32:
       return kLoong64Fst_s;
     case MachineRepresentation::kFloat64:
@@ -993,7 +995,4 @@ void InstructionSelectorT<TurbofanAdapter>::VisitInt32Mul(Node* node) {
     if (left->opcode() == IrOpcode::kWord64Sar &&
         right->opcode() == IrOpcode::kWord64Sar) {
       Int64BinopM
-"""
-
-
 ```

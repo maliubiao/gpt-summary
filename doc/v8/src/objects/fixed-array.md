@@ -116,11 +116,13 @@ By following this structured approach of analyzing the C++ code, identifying key
 
 总而言之，`fixed-array.cc` 文件是 V8 引擎中关于数组实现的底层核心代码，它定义了用于高效存储和操作 JavaScript 数组的基础数据结构和算法。理解这些内部机制有助于更深入地理解 JavaScript 数组的行为和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/fixed-array.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ bool WeakArrayList::Contains(Tagged<MaybeObject> value) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

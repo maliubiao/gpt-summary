@@ -163,14 +163,16 @@ console.log(indexWithThisArg); // 输出: 3 (因为 40 是第一个大于 search
 
 总而言之，这段 Torque 代码是 V8 引擎中实现 `TypedArray.prototype.findIndex` 功能的核心逻辑，它严格按照 ECMAScript 规范进行操作，并包含了必要的类型检查和错误处理机制。理解这段代码有助于深入了解 JavaScript 类型化数组的内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-findindex.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ transitioning javascript builtin TypedArrayPrototypeFindIndex(
   }
 }
 }
-
-"""
-
 ```

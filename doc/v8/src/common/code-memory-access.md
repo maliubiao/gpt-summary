@@ -145,11 +145,13 @@ wasmInstance.exports.myWasmFunction();
 
 `v8/src/common/code-memory-access.cc` 是 V8 引擎中一个关键的文件，它负责管理和保护 JIT 编译生成的代码内存。它通过线程隔离和精细的内存权限控制来提高安全性和可靠性，确保 JavaScript 和 WebAssembly 代码能够安全有效地执行。虽然开发者无法直接在 JavaScript 中调用这些 C++ 函数，但这些底层机制是 JavaScript 代码运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/code-memory-access.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -868,7 +870,4 @@ void ThreadIsolation::CheckTrackedMemoryEmpty() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

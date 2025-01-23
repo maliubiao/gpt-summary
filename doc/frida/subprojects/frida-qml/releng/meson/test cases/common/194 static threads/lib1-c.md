@@ -102,7 +102,7 @@ Let's break down the thought process for analyzing this C code snippet and answe
 
 总的来说，`lib1.c` 文件是一个简单的工具函数，用于提供平台独立的线程创建函数指针，这在需要跨平台支持的软件开发中非常有用。在逆向工程的场景下，理解这种平台差异性以及如何获取和使用线程创建函数是分析程序行为的关键一步。 作为 Frida 的测试用例，它帮助确保 Frida 能够正确处理各种线程创建的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/194 static threads/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
 #include<windows.h>
 #else
@@ -125,7 +127,4 @@ void *f(void) {
   return pthread_create;
 #endif
 }
-
-"""
-
 ```

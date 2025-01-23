@@ -93,12 +93,14 @@ console.log(sum); // 输出 [6, 8, 10, 12]
 
 这部分 `assembler-ppc.cc` 代码是 V8 引擎中用于生成高效 PowerPC 机器码的关键组成部分，特别是针对 SIMD 操作和动态代码管理的方面。它直接影响了 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/assembler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 {
   CHECK(src.rb().is_valid());
   int TX = 1;
@@ -348,8 +350,4 @@ PatchingAssembler::~PatchingAssembler() {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
-
 ```

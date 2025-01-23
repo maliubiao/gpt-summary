@@ -159,7 +159,7 @@ A developer or a more advanced Frida user might encounter this file during debug
 
 In essence, this `manifest.py` file is a foundational piece for Frida's ability to understand and work with Rust projects. It provides the necessary structure for parsing and validating the metadata that defines a Rust crate and its dependencies. While not directly involved in low-level operations, it's crucial for enabling higher-level tools (like Frida) to interact effectively with software built using Rust.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/cargo/manifest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -396,7 +398,4 @@ class VirtualManifest(TypedDict):
     """
 
     workspace: Workspace
-
-"""
-
 ```

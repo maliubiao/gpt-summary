@@ -157,14 +157,16 @@ By following this detailed thought process, systematically analyzing the code, a
 
 总而言之，`static_bitmap_image_to_video_frame_copier.cc` 是 Blink 渲染引擎中一个关键的组件，负责将静态图像数据转换为视频帧格式，以便在视频处理流程中使用。它涉及到 GPU 加速、异步操作、多种像素格式转换和颜色空间管理，与 JavaScript, HTML, CSS 的交互主要体现在它处理的图像数据来源于网页内容的渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/static_bitmap_image_to_video_frame_copier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -457,7 +459,4 @@ void StaticBitmapImageToVideoFrameCopier::OnReleaseMailbox(
 }
 
 }  // namespace blink
-
-"""
-
 ```

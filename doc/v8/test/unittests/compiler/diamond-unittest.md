@@ -95,11 +95,13 @@ function testNested(x, y) {
 
 `diamond-unittest.cc` 是 V8 编译器中用于测试 `Diamond` 类功能的单元测试文件。`Diamond` 类是表示条件分支这种基本控制流模式的关键组件，它直接对应于 JavaScript 中的 `if...else` 语句。理解 `Diamond` 类的功能有助于理解 V8 编译器如何将 JavaScript 代码转换成可执行的内部表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/diamond-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ TEST_F(DiamondTest, BranchHint) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

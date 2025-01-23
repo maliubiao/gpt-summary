@@ -85,7 +85,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 总而言之，虽然 `generator.py` 本身功能很简单，但它在 Frida 的测试体系中扮演着创建测试数据文件的角色，这与逆向工程中准备测试环境和观察程序行为是相关的。它的位置和命名也暗示了它在 Frida 与 Qt 框架交互测试中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/4 qt/subfolder/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -93,15 +93,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 if len(sys.argv) > 1:
     with open(sys.argv[1], "w") as output:
         output.write("Hello World")
-
-"""
-
 ```

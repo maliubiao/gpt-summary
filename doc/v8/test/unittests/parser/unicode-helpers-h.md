@@ -177,15 +177,17 @@ console.log(getUtf8Length(str)); // 输出 7
 
 总之，`v8/test/unittests/parser/unicode-helpers.h` 提供了一些底层的 Unicode 辅助函数，用于 V8 内部测试字符长度等操作，这与 JavaScript 中处理 Unicode 字符串的概念紧密相关，但 JavaScript 提供了更高层次的 API 来完成类似的任务。理解这些底层的概念有助于更好地理解 JavaScript 如何处理文本数据，并避免常见的 Unicode 相关编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/unicode-helpers.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/unicode-helpers.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ int Ucs2CharLength(unibrow::uchar c);
 int Utf8LengthHelper(const char* s);
 
 #endif  // V8_UNITTESTS_PARSER_UNICODE_HELPERS_H_
-
-"""
-
 ```

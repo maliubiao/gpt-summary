@@ -113,7 +113,7 @@ By systematically going through each property handler, I can build a comprehensi
 
 总而言之，`longhands_custom.cc` 是 Blink 引擎中一个关键的文件，它负责将 CSS 规范中定义的各种属性（特别是那些不太常见的属性）转化为浏览器可以理解和应用的内部表示，从而实现网页的最终渲染效果。它在 CSS 解析、样式计算和 JavaScript 与 CSS 交互的各个环节都发挥着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第13部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 entStyle()->GetTextEmphasisFill());
   builder.SetTextEmphasisMark(state.ParentStyle()->GetTextEmphasisMark());
   builder.SetTextEmphasisCustomMark(
@@ -756,8 +758,4 @@ const CSSValue* InternalEmptyLineHeight::ParseSingleValue(
 
 }  // namespace css_longhand
 }  // namespace blink
-
-"""
-
-
 ```

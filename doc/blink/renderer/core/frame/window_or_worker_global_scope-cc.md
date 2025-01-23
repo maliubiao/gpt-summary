@@ -171,14 +171,16 @@ This methodical approach, combining code scanning, keyword identification, funct
 
 总而言之，`window_or_worker_global_scope.cc` 文件中定义的功能是构建现代 Web 应用的基础，涉及到字符串处理、错误报告和安全策略等方面，与 JavaScript 和 HTML 紧密相关。理解这些功能的工作原理和潜在的错误用法对于开发健壮和安全的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/window_or_worker_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)
@@ -339,7 +341,4 @@ ScriptValue WindowOrWorkerGlobalScope::structuredClone(
 }
 
 }  // namespace blink
-
-"""
-
 ```

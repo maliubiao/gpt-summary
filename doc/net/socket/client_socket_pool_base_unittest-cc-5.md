@@ -97,7 +97,7 @@ I need to summarize these functionalities, mention if there's a relation to Java
 
 总而言之，这段代码主要测试了 `ClientSocketPoolBase` 在处理预连接和连接任务分配时的各种场景，确保了网络连接的有效管理和复用，这对于浏览器的网络性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/client_socket_pool_base_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nGroupForTesting(TestGroupId("b")));
   EXPECT_EQ(0u, pool_->NumNeverAssignedConnectJobsInGroupForTesting(
                     TestGroupId("b")));
@@ -795,7 +797,4 @@ TEST_F(ClientSocketPoolBaseTest, HigherPriorityRequestStealsJob) {
 TEST_F(ClientSocketPoolBaseTest, RequestStealsJobFromLowestRequestWithJob) {
   CreatePool(3, 3);
   connect_job_factory_->set_job_type(TestConnectJob::kMockWaitingJo
-"""
-
-
 ```

@@ -180,14 +180,16 @@ This iterative process of understanding the code, connecting it to web technolog
 
 总而言之，`BaseTemporalInputType` 在 Blink 引擎中扮演着处理 HTML 时间和日期输入的核心角色，它连接了 HTML 的声明式定义、JavaScript 的动态操作以及 CSS 的样式呈现，确保了用户能够方便且正确地输入和操作时间日期信息。理解其功能有助于开发者更好地利用 HTML 表单特性并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/base_temporal_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -414,7 +416,4 @@ bool BaseTemporalInputType::ShouldHaveSecondField(
 }
 
 }  // namespace blink
-
-"""
-
 ```

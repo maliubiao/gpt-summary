@@ -164,7 +164,7 @@ This is text.
 
 `frida/subprojects/frida-qml/releng/meson/test cases/unit/90 devenv/main.c` 这个文件很可能是一个用于测试 Frida 动态插桩功能的简单C程序。它的主要功能是打印一段文本并调用一个外部函数 `foo()`。 在逆向工程的上下文中，它可以作为Frida的测试目标，用于演示hooking、修改返回值等技术。它涉及到动态链接、操作系统底层机制以及Frida的使用方法等知识。理解这个文件的作用有助于理解 Frida 在软件安全和逆向分析领域的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/90 devenv/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #ifdef _WIN32
@@ -188,7 +190,4 @@ int main(void) {
     printf("This is text.\n");
     return foo();
 }
-
-"""
-
 ```

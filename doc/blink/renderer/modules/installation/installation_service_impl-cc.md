@@ -127,15 +127,17 @@ Essentially, I approached the problem by dissecting the code, identifying its co
 
 总而言之，`installation_service_impl.cc` 就像一个幕后工作者，在 Web 应用成功安装后，负责通知网页（通过触发 `appinstalled` 事件），从而让开发者有机会在安装完成后执行自定义的逻辑。它连接了浏览器的底层安装机制和前端 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/installation/installation_service_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ void InstallationServiceImpl::OnInstall() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

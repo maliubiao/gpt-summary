@@ -156,7 +156,7 @@ int func1(void) { return 42; }
 
 总而言之，这个简单的 `file.c` 文件虽然自身功能有限，但它是使用 Frida 进行动态分析的一个基础构建块。通过对这类简单函数的分析和操作，用户可以逐步掌握 Frida 的使用方法，并为分析更复杂的软件打下基础。  在调试过程中，查看这样的源代码可以帮助用户排除一些可能性，并将注意力集中在更可能存在问题的部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/47 same file name/d1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,10 +164,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1(void) { return 42; }
-
-"""
-
 ```

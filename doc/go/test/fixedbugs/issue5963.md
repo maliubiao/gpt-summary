@@ -220,15 +220,17 @@ func main() {
 
 总而言之，这个代码片段是一个用于测试 Go 运行时特定行为的 Corner Case。它强调了理解 `init` 函数的生命周期和 `runtime.Goexit()` 的影响的重要性，特别是在并发编程的上下文中。  在日常开发中，应该谨慎使用 `runtime.Goexit()`，尤其是在 `init` 函数中。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5963.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -279,9 +281,4 @@ created by main.init·1
 	/Users/rsc/g/go/test/fixedbugs/issue5963.go:24 +0xb9
 exit status 2
 */
-
-"""
-
-
-
 ```

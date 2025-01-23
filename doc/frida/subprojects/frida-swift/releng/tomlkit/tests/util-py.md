@@ -161,7 +161,7 @@ By following this thought process, breaking down the prompt, and iteratively ref
 
 总而言之，`util.py` 虽然是一个测试辅助文件，但它揭示了 `tomlkit` 库处理 TOML 数据的核心概念，包括如何表示不同的 TOML 类型以及如何将它们转换为 Python 原生类型。 对于使用 `frida-swift` 进行 Swift 应用逆向的工程师来说，理解这些概念对于正确地操作应用的配置文件至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tests/util.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.items import AoT
 from tomlkit.items import Array
 from tomlkit.items import Bool
@@ -228,7 +230,4 @@ def assert_is_ppo(v_unwrapped, unwrapped_type):
 def elementary_test(v, unwrapped_type):
     v_unwrapped = v.unwrap()
     assert_is_ppo(v_unwrapped, unwrapped_type)
-
-"""
-
 ```

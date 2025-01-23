@@ -135,15 +135,17 @@ counter(); // count 的值 (1) 可能会被 V8 表示为一个 HeapNumber 对象
 
 总而言之，`v8/src/objects/heap-number.tq` 是 V8 引擎中一个关键的定义文件，它规定了 JavaScript 中数字类型在底层是如何表示和存储的，这直接影响了 JavaScript 程序的执行和性能。理解其功能有助于开发者更好地理解 JavaScript 的数值行为，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/heap-number.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/heap-number.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ extern class HeapNumber extends PrimitiveHeapObject {
 
 // The HeapNumber value NaN
 type NaN extends HeapNumber;
-
-"""
-
 ```

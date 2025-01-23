@@ -151,7 +151,7 @@ Let's say a Swift component in Frida depends on the `Foundation` framework on ma
 5. **Meson Invokes `tracetargets.py`:** Meson, as the overall build orchestrator, would then invoke this `tracetargets.py` script, passing it the relevant `target_name` and the parsed CMake trace data. This script would be used to extract the necessary build information for the Swift components.
 6. **Debugging Scenario:** If the build fails due to linking errors or missing headers related to a specific Swift module, a developer might investigate the output of this script or examine the CMake trace log to understand how dependencies were being resolved and where things might have gone wrong. They might even modify this script temporarily to add more logging or adjust the dependency resolution logic for debugging purposes.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/cmake/tracetargets.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -322,7 +324,4 @@ def resolve_cmake_trace_targets(target_name: str,
     # see eg. #11113
 
     return res
-
-"""
-
 ```

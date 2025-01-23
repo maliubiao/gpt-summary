@@ -95,7 +95,7 @@ int main(void) {
 
 虽然 `main.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于模拟一个故意出错的目标进程，以验证 Frida 是否能够正确处理这类情况。这涉及到操作系统底层的进程管理、退出状态码的概念，以及 Frida 作为动态插桩工具与目标进程的交互。对于 Frida 的用户来说，理解这种测试用例有助于他们更好地理解 Frida 的工作原理以及如何使用 Frida 来分析和调试目标程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing test/4 hard error/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,12 +103,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 99;
 }
-
-"""
-
 ```

@@ -149,14 +149,16 @@ console.log(lessThanZeroIndex); // 输出: -1
 
 这段 Torque 代码专注于实现 `findIndexLast` 的核心逻辑，并处理了一些基本的错误情况，例如 `predicate` 不是函数以及数组 detached 的情况。它体现了 V8 引擎在执行 JavaScript 内置方法时的底层实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-findlastindex.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ transitioning javascript builtin TypedArrayPrototypeFindLastIndex(
   }
 }
 }
-
-"""
-
 ```

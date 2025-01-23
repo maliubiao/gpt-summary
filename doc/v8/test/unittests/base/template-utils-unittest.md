@@ -120,11 +120,13 @@ console.log(obj2); // 输出: TestClass2 with value: 10 (使用了 toString 方�
 
 `v8/test/unittests/base/template-utils-unittest.cc` 文件是 V8 引擎的内部测试代码，用于验证一些通用的 C++ 模板工具函数的正确性。这些工具函数旨在提高 V8 引擎内部代码的效率和可维护性。虽然 C++ 的模板和静态编译特性在 JavaScript 中没有直接对应，但我们可以通过 JavaScript 的特性来理解这些工具函数所解决的问题和提供的便利性。 例如，`make_array` 简化了静态大小数组的创建和初始化，而 `has_output_operator` 可以在编译时检查类型是否支持输出操作，这有助于在开发阶段发现潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/template-utils-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ static_assert(has_output_operator<const TestClass3>,
 }  // namespace template_utils_unittest
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

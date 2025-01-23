@@ -174,7 +174,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 考虑到这是一个单元测试文件，它的主要目的是确保 `ReportingCache` 类的**健壮性和正确性**，为 Chromium 网络栈中 Reporting 功能的稳定运行提供保障。很可能之前的几部分测试了 `ReportingCache` 的基础功能，而这一部分则更侧重于边界情况、复杂数据结构的处理以及特定特性的验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 solation_info_for_network.request_type(),
             IsolationInfo::RequestType::kOther);
   EXPECT_EQ(isolation_info_for_network.network_anonymization_key(),
@@ -275,8 +277,4 @@ INSTANTIATE_TEST_SUITE_P(ReportingCacheStoreTest,
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

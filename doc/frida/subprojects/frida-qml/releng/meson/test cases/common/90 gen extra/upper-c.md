@@ -140,7 +140,7 @@ By following these steps, I can systematically analyze the code snippet within i
 
 总而言之，这个 `upper.c` 文件作为一个简单的测试用例，可以帮助 Frida 的开发者验证 Frida 框架的基本功能，并且对于正在学习 Frida 或进行逆向工程的用户来说，也是一个很好的起点，可以用来理解函数调用的基本原理以及 Frida 如何进行 hook 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/90 gen extra/upper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,14 +148,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int BOB_MCBOB(void);
 
 int main(void) {
     return BOB_MCBOB();
 }
-
-"""
-
 ```

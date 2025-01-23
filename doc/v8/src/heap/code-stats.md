@@ -149,11 +149,13 @@ function add(a, b) {
 
 `v8/src/heap/code-stats.cc` 是 V8 引擎内部用于监控 JavaScript 代码内存使用情况的关键组件。它跟踪不同类型的代码和相关元数据的大小，为 V8 的内存管理、性能分析和调试提供了重要的信息。虽然 JavaScript 开发者通常不会直接与这个文件交互，但它的功能直接影响着 JavaScript 代码的执行效率和内存占用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/code-stats.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ void CodeStatistics::ResetCodeStatistics(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

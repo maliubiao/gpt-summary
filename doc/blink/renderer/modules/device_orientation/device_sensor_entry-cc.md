@@ -188,15 +188,17 @@ CSS 也没有直接的联系。 CSS 用于样式化网页元素，而 `DeviceSen
 
 总而言之，`DeviceSensorEntry.cc` 是 Blink 渲染引擎中连接 Web 标准设备传感器 API 和底层传感器服务的关键组件，负责管理传感器的生命周期和数据流动。理解它的功能有助于理解浏览器如何将设备传感器信息暴露给 Web 开发者。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/device_orientation/device_sensor_entry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ void DeviceSensorEntry::HandleSensorError() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

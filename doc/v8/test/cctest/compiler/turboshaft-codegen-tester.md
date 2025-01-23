@@ -101,11 +101,13 @@ console.log(testAdd(12, arr[2]));
 
 总结来说，`turboshaft-codegen-tester.cc` 是一个底层的、专注于代码生成正确性的测试工具，它通过细致地测试各种输入组合，来保证 V8 引擎在编译 JavaScript 代码时能够正确处理 int32 类型的二元运算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/turboshaft-codegen-tester.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void Int32BinopInputShapeTester::RunRight(
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

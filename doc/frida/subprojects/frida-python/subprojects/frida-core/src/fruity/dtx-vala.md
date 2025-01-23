@@ -115,7 +115,7 @@ foreach (var process in processes) {
    - 用户在处理过程中捕获并处理可能出现的异常，确保程序的健壮性。
 
 通过这些步骤，用户可以逐步获取设备上的进程信息，并进行进一步的分析或操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/dtx.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class DeviceInfoService : Object, AsyncInitable {
@@ -1294,7 +1296,4 @@ namespace Frida.Fruity {
 		private PrimitiveBuilder blob = new PrimitiveBuilder ();
 
 		pu
-"""
-
-
 ```

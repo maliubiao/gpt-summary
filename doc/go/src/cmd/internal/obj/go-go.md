@@ -166,15 +166,17 @@ After Nopout: {As:0 Scond:0 From:{} RestArgs:<nil> Reg:0 To:{}}
 
 总而言之，`go/src/cmd/internal/obj/go.go` 中的 `Nopout` 函数是 Go 语言编译器内部的一个工具，用于将程序指令转换为空操作指令，这在代码优化、对齐和调试等场景中非常有用。 普通 Go 开发者无需关心这个函数，它的使用完全在编译器的内部流程中。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/go.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ func Nopout(p *Prog) {
 	p.Reg = 0
 	p.To = Addr{}
 }
-
-"""
-
-
-
 ```

@@ -161,7 +161,7 @@ runWasm();
 
 总而言之，此代码片段是 V8 的 WebAssembly 解释器核心执行引擎的一部分，负责将 WebAssembly 的高级指令转换为底层的操作，使得 WebAssembly 代码能够在 V8 引擎中执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   }
 
@@ -1049,7 +1051,4 @@ INSTRUCTION_HANDLER_FUNC s2s_RefI31(const uint8_t* code, uint32_t* sp,
   uint32_t value = pop<int32_t>(sp, code, wasm_runtime);
 
   // Trunc
-"""
-
-
 ```

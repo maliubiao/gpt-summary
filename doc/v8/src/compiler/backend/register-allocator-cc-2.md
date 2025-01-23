@@ -154,7 +154,7 @@ By following this structured approach, combining high-level scanning with focuse
 
 总而言之，这部分代码是 V8 寄存器分配器的核心，它通过分析代码的结构和变量的生命周期，为后续的寄存器分配决策提供必要的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , &gap_move->source()};
         data()->delayed_references().push_back(delayed_reference);
       }
@@ -941,7 +943,4 @@ void LiveRangeBuilder::Verify() const {
           // interval, where it doesn't apply.
           DCHECK(
               NextIntervalStartsInDifferentBlocks(*interval, *next_inte
-"""
-
-
 ```

@@ -176,15 +176,17 @@ const headers = new Headers({ 'Host': 'example.com' }); // 假设这是请求的
 
 总结来说，`blink/renderer/core/fetch/headers.cc` 文件是 Blink 引擎中处理 HTTP 头部的重要组成部分，它实现了 JavaScript Fetch API 的 `Headers` 接口，负责存储、操作和管理 HTTP 头部信息，并受到 guard 机制的约束，以符合 Web 标准和安全要求。它在浏览器发起网络请求和处理服务器响应的整个过程中都发挥着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/headers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -568,7 +570,4 @@ PairSyncIterable<Headers>::IterationSource* Headers::CreateIterationSource(
 }
 
 }  // namespace blink
-
-"""
-
 ```

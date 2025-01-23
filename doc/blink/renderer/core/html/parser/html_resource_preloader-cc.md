@@ -155,14 +155,16 @@ During the process, I might review the code again to ensure accuracy and catch a
 
 总结来说，`blink/renderer/core/html/parser/html_resource_preloader.cc` 是 Blink 渲染引擎中负责在 HTML 解析阶段进行资源预加载和预连接的关键组件，它直接影响着页面的加载性能，并与 HTML 中声明的预加载指令紧密相关。 理解其工作原理有助于开发者更有效地利用预加载技术来优化网站性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_resource_preloader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All Rights Reserved.
  *
@@ -305,7 +307,4 @@ bool HTMLResourcePreloader::AllowPreloadRequest(PreloadRequest* preload) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -213,7 +213,7 @@ go test -test.trace=trace.out
 
 这段代码是 Go 语言运行时执行跟踪功能的核心实现，它负责捕获程序运行时的各种事件，管理跟踪数据的缓冲区，并提供启动、停止和读取跟踪数据的功能。它通过精细的同步机制，包括停止世界 (stop-the-world)，来保证跟踪数据的一致性和准确性。它为开发者提供了一种强大的工具来分析和理解 Go 程序的运行行为，例如性能瓶颈、并发问题等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/trace.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1113,9 +1115,4 @@ func readTrace0() (buf []byte, park bool) {
 		//
 		// We don't simply use a note because the scheduler
 		// executes this goroutine directl
-"""
-
-
-
-
 ```

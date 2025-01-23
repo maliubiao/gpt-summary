@@ -171,15 +171,17 @@ greet("Alice");
 
 总之，`v8/src/logging/local-logger.h` 定义了一个用于 V8 内部事件记录的关键组件，它提供了关于脚本加载、代码编译和对象结构等重要信息的记录能力，这些信息对于理解和调试 V8 引擎的行为至关重要。虽然开发者通常不直接使用这个类，但理解其功能可以帮助更好地理解 V8 的内部运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/local-logger.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/local-logger.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ class LocalLogger {
 }  // namespace v8
 
 #endif  // V8_LOGGING_LOCAL_LOGGER_H_
-
-"""
-
 ```

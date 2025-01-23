@@ -127,15 +127,17 @@ By following these steps, we arrive at a comprehensive and accurate explanation 
 
 `net/cert/ct_policy_enforcer.cc` 提供的 `DefaultCTPolicyEnforcer` 本身是一个功能上被禁用的实现。它的存在主要是为了定义接口，实际的 CT 策略执行逻辑应该在其他实现中。理解这个文件的作用，需要结合 Chromium 中其他与 CT 相关的组件和配置来分析。 当需要调试 CT 相关问题时，需要关注网络日志、开发者工具以及可能的源代码调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/ct_policy_enforcer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ bool DefaultCTPolicyEnforcer::IsCtEnabled() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

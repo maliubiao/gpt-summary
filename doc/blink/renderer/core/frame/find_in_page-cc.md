@@ -181,14 +181,16 @@ By following this systematic process, combining code analysis with an understand
 
 总而言之，`find_in_page.cc` 文件是 Blink 渲染引擎中实现核心查找功能的重要组成部分，它协调了文本搜索、插件处理、结果报告以及与浏览器 UI 的通信。理解这个文件的功能有助于我们理解浏览器是如何实现“在页面中查找”这一常用特性的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/find_in_page.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -567,7 +569,4 @@ void FindInPage::ReportFindInPageSelection(
 }
 
 }  // namespace blink
-
-"""
-
 ```

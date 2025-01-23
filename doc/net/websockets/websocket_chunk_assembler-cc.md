@@ -145,15 +145,17 @@ By following this structured approach, we can systematically analyze the code an
 
 总而言之，`websocket_chunk_assembler.cc` 在 Chromium 的 WebSocket 实现中扮演着至关重要的角色，它负责将接收到的低级别数据块转换成应用程序可以理解的完整 WebSocket 帧，并进行基本的协议验证，确保通信的可靠性。它与 JavaScript 的 `WebSocket` API 紧密相关，是实现 Web 页面实时通信的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_chunk_assembler.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ WebSocketChunkAssembler::HandleChunk(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -140,14 +140,16 @@ By following this thought process, combining code analysis with knowledge of web
 
 总而言之，`NullResourceFetcherProperties` 虽然是一个幕后的 C++ 类，但它定义了资源获取的默认行为，理解这些默认行为对于 web 开发者来说很重要，可以避免一些潜在的误解和问题。 开发者可以通过显式地设置请求属性（例如在 `fetch()` API 中或通过 HTML 属性）来覆盖这些默认值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/null_resource_fetcher_properties.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ void NullResourceFetcherProperties::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

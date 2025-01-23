@@ -267,7 +267,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm/asm/posix_types.handroid` 这个文件虽然自身没有复杂的逻辑，但它定义了 Android 系统中至关重要的基本数据类型，这些类型在内核接口和用户空间之间传递信息，涉及到进程管理、文件系统操作、权限控制等核心功能。理解这些类型及其用途是深入理解 Android 系统底层运作原理的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/posix_types.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -299,7 +301,4 @@ typedef unsigned short __kernel_old_dev_t;
 #define __kernel_old_dev_t __kernel_old_dev_t
 #include <asm-generic/posix_types.h>
 #endif
-
-"""
-
 ```

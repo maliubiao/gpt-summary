@@ -206,15 +206,17 @@ const ray = new XRRay(origin, direction);
 
 因此，当开发者在调试 WebXR 应用中与射线相关的逻辑时，例如射线投射检测不准确，或者在创建 `XRRay` 对象时遇到错误，他们可能会需要查看 `blink/renderer/modules/xr/xr_ray.cc` 这个文件，以了解 `XRRay` 的内部实现和参数校验逻辑，从而找到问题的根源。例如，他们可能会检查传入 `XRRay` 构造函数的 `XRRigidTransform` 对象是否正确表示了手柄的姿态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_ray.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -422,7 +424,4 @@ void XRRay::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -129,7 +129,7 @@ Interceptor.attach(Module.findExportByName(null, "getLibStr"), { // 注意：这
 
 总而言之，`libA.cpp` 虽然代码简单，但在 Frida 项目中扮演着测试构建系统关于对象库特性的重要角色，确保了 Frida 能够正确处理和操作目标进程中的库文件，从而支持其强大的动态 instrumentation 功能。开发者查看这个文件通常是作为调试 Frida 构建系统或理解其对象库处理机制的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/15 object library advanced/subprojects/cmObjLib/libA.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libA.hpp"
 
 #if not BUILD_AS_OBJ
@@ -148,7 +150,4 @@ Prompt:
 std::string getLibStr(void) {
   return "Hello World";
 }
-
-"""
-
 ```

@@ -110,7 +110,7 @@ By following these steps, we move from a basic understanding of the code to a co
 
 总而言之，这个 `main.c` 文件虽然简单，但它是 Frida 工具链中一个重要的组成部分，用于验证 Frida 在处理共享库链接时的正确性。理解这个文件的功能和背后的概念，有助于理解 Frida 的工作原理以及在逆向工程中处理共享库的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/30 shared_mod linking/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -131,7 +133,4 @@ int DLL_IMPORT func();
 int main(int argc, char **arg) {
     return func();
 }
-
-"""
-
 ```

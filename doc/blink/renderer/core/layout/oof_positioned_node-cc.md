@@ -206,14 +206,16 @@ This systematic approach, starting with a broad overview and progressively drill
 
 总而言之，`oof_positioned_node.cc` 是 Chromium Blink 渲染引擎中负责管理 out-of-flow 定位元素的核心组件，它与 CSS 的 `position` 属性紧密相关，并在浏览器的布局和渲染过程中扮演着关键角色。理解其功能有助于深入了解浏览器如何处理复杂的页面布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/oof_positioned_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ void LogicalOofNodeForFragmentation::TraceAfterDispatch(
 }
 
 }  // namespace blink
-
-"""
-
 ```

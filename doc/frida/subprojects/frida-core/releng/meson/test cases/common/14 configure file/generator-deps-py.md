@@ -154,7 +154,7 @@ Interceptor.attach(Address("0x12345"), {
 
 因此，用户通常不会直接手动运行这个脚本。 它是 Frida 构建过程中的一个自动化步骤，由 Meson 构建系统负责调用和管理。如果构建过程中出现与这个脚本相关的错误，调试线索应该从 Meson 的构建日志开始，查看 Meson 是如何调用这个脚本，以及传递了哪些参数。 检查环境变量是否正确设置也是一个重要的调试步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/14 configure file/generator-deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -183,7 +185,4 @@ depf = Path(sys.argv[2])
 if not depf.exists():
     with depf.open('w') as ofile:
         ofile.write(f"{outputf.name}: depfile\n")
-
-"""
-
 ```

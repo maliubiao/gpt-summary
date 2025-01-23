@@ -62,12 +62,14 @@ console.log(sum); // 输出: Float32x4(6, 8, 10, 12)
 
 **总结来说，`v8/src/compiler/backend/x64/instruction-selector-x64.cc` 文件的这最后一部分以及整个文件，是 V8 编译器将高级的、平台无关的中间表示代码转换为可以在 x64 架构上高效执行的机器代码的关键组成部分，特别是对于 JavaScript 的 SIMD 功能和 WebAssembly 的支持至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 e paddusb in the codegen and simply
     // emit a pshufb.
     *constant = m.ResolvedValue().immediate();
@@ -1319,8 +1321,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

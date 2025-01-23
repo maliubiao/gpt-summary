@@ -203,7 +203,7 @@ gnome.generate_gir(
 
 `generate_gir` 函数是 `gnome` Meson 模块中用于生成 GObject Introspection (GIR) 文件和 Typelib 文件的核心功能。它接收一个或多个可执行文件或库作为目标，以及命名空间、版本、源文件、include 目录等信息，并使用 `g-ir-scanner` 和 `g-ir-compiler` 工具来生成描述 C 语言库接口的元数据文件。这些文件对于其他语言绑定和动态分析工具非常重要。该函数还负责处理依赖关系、设置正确的编译和链接标志，以及处理文件的安装。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 self._gir_has_option('--extra-library'):
             def fix_ldflags(ldflags: T.Iterable[T.Union[str, T.Tuple[str, str]]]) -> OrderedSet[T.Union[str, T.Tuple[str, str]]]:
                 fixed_ldflags: OrderedSet[T.Union[str, T.Tuple[str, str]]] = OrderedSet()
@@ -838,8 +840,4 @@ self._gir_has_option('--extra-library'):
                         m_file = mesonlib.File.from_source_file(state.environment.source_dir, l_subdir, m)
                     except MesonException:
                         m_file = media_files[i]
-             
-"""
-
-
 ```

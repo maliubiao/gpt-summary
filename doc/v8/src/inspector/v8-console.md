@@ -166,11 +166,13 @@ console.log($0); // 最近检查的 DOM 节点或 JavaScript 对象
 
 `v8-console.cc` 是 V8 引擎中连接 JavaScript 的 `console` 对象和底层调试机制的关键组件。它使得开发者能够在调试过程中方便地输出信息、分析性能、设置断点以及检查对象，极大地提高了 JavaScript 开发的效率。 它的实现细节涉及到 V8 内部的结构和与调试器的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-console.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1212,7 +1214,4 @@ V8Console::CommandLineAPIScope::~CommandLineAPIScope() {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

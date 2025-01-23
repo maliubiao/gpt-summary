@@ -121,14 +121,16 @@ Let's break down the thought process for analyzing the `HTMLNoEmbedElement.cc` f
 
 总而言之，`html_no_embed_element.cc` 文件在 Blink 渲染引擎中扮演着处理 HTML `<noembed>` 标签的关键角色，确保在浏览器不支持或无法加载嵌入内容时，能够提供合适的替代方案。理解其与 HTML、CSS、JavaScript 的交互方式以及常见的误用情况，有助于开发者更有效地使用这个标签。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_no_embed_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -178,7 +180,4 @@ bool HTMLNoEmbedElement::LayoutObjectIsNeeded(const DisplayStyle& style) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

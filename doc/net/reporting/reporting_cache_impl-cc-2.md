@@ -170,7 +170,7 @@ This code doesn't deal with *writing* to the cache or the core logic of deciding
 
 这部分代码的核心功能是**提供将 ReportingCacheImpl 的内部状态以结构化的方式导出**，方便在调试和监控过程中查看缓存的内容。它定义了如何将 `Client`、`CachedReportingEndpointGroup` 和 `ReportingEndpoint` 对象转换为 `base::Value` 结构，这些结构易于序列化和展示，是 Chromium 网络栈中 Reporting 功能的重要组成部分，尤其在开发者工具中扮演着关键角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_cache_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 endpoint_it) {
   const GURL& url = endpoint_it->second.info.url;
   auto url_range = endpoint_its_by_url_.equal_range(url);
@@ -258,8 +260,4 @@ base::Value ReportingCacheImpl::GetEndpointAsValue(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

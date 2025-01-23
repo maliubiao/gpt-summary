@@ -170,15 +170,17 @@ By following these steps, analyzing the code carefully, and considering the broa
 
 总而言之，`session_store.cc` 文件是 Chromium 中负责创建设备绑定会话数据存储的关键组件，虽然它不直接与 JavaScript 交互，但其功能是实现设备绑定会话这一特性的基础，而该特性可能会被网站的 JavaScript 代码通过浏览器提供的 API 间接使用。理解它的功能有助于调试与设备绑定会话相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/session_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ std::unique_ptr<SessionStore> SessionStore::Create(
 }
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

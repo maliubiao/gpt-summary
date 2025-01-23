@@ -125,7 +125,7 @@ import mod.submod.baz  # 这里会抛出 ImportError
 
 `baz.py` 本身的功能很小，主要作为 Frida Python 绑定测试套件的一部分，用于验证安装过程中嵌套模块结构的正确性。 它的重要性在于确保整个 Frida 框架的 Python 部分能够被正确安装和使用，从而支持用户进行动态分析和逆向工程。 当用户遇到导入错误时，检查这类结构性文件可以帮助他们诊断安装问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/252 install data structured/pysrc/submod/baz.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,10 +133,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.submod.baz module'''
-
-"""
-
 ```

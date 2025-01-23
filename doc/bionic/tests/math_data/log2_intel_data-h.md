@@ -292,7 +292,7 @@ if (Process.arch === "arm64" || Process.arch === "x64") {
 
 通过这种方式，你可以动态地观察 `log2` 函数的调用情况，这对于理解 Android Framework 或 NDK 如何使用底层的数学函数非常有用。而 `log2_intel_data.handroid` 文件则是在开发和测试 Bionic 库时，确保这些底层函数正确性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/log2_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1727,7 +1729,4 @@ static data_1_1_t<double, double> g_log2_intel_data[] = {
     0x1.0p-1
   }
 };
-
-"""
-
 ```

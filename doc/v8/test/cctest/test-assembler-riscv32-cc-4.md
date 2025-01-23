@@ -150,7 +150,7 @@ console.log(result);
 
 总而言之，`v8/test/cctest/test-assembler-riscv32.cc` 是 V8 质量保证体系中的重要组成部分，确保了 V8 能够在 RISC-V 平台上正确且高效地执行 JavaScript 代码，尤其是在利用到 RVV 指令的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 RISCV_SIMD)) return;                        \
     constexpr uint32_t n = kRvvVLEN / width;                                  \
     CcTest::InitializeVM();                                                   \
@@ -363,8 +365,4 @@ TEST(RISCV_UTEST_WasmRvvS128const) {
 #undef __
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -156,7 +156,7 @@ Symbol main.GlobalVarA already exists
 
 `loader.go` 的第一部分主要负责**构建和维护链接过程中的核心数据结构，特别是全局符号表**。它定义了表示符号及其相关信息的各种类型，并提供了添加、查找和管理符号的基本功能。这是链接器实现的基础，为后续的符号解析、重定位和代码生成等步骤提供了必要的符号信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/loader/loader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,8 +164,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2361,9 +2363,4 @@ func (st *loadState) preloadSyms(r *oReader, kind int) {
 		if kind == nonPkgDef && osym.IsLinkname() && r.DataSize(i) == 0 && strings.Contains(name, ".") {
 			// This is a linknamed "var" "reference" (var x T with no data and //go:linkname x).
 			// We want to check if a link
-"""
-
-
-
-
 ```

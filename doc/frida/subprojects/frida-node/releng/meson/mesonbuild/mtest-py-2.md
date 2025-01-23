@@ -114,7 +114,7 @@ The user wants a summary of the functionality of the Python code provided, which
 
 总而言之， `mtest.py` 是 Frida 测试框架的核心执行引擎，负责管理和驱动测试的整个生命周期，并提供了丰富的配置选项和报告功能，方便开发者进行测试和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 metadata()
 
         ss = set()
@@ -720,8 +722,4 @@ def run_with_args(args: T.List[str]) -> int:
     add_arguments(parser)
     options = parser.parse_args(args)
     return run(options)
-
-"""
-
-
 ```

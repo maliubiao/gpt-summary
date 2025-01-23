@@ -141,7 +141,7 @@ By following these steps, we can systematically analyze even a trivial piece of 
 
 总而言之，`alexandria.c` 虽然本身功能简单，但在 Frida 的上下文中，它作为一个可被注入和Hook的目标，是理解 Frida 工作原理和进行动态分析的良好起点。它的简洁性使得开发者能够专注于 Frida 的核心功能，而不是被复杂的业务逻辑所干扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/17 prebuilt shared/alexandria.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,15 +149,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"alexandria.h"
 #include<stdio.h>
 
 void alexandria_visit() {
     printf("You are surrounded by wisdom and knowledge. You feel enlightened.\n");
 }
-
-"""
-
 ```

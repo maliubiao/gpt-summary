@@ -161,11 +161,13 @@ processTasks();
 
 `DelayedTaskQueue` 是 V8 引擎中用于管理延迟执行任务的一个底层机制。它与 JavaScript 中的 `setTimeout` 和事件循环的概念密切相关，为 JavaScript 异步操作提供了基础支持。理解 `DelayedTaskQueue` 的工作原理有助于更深入地理解 JavaScript 运行时环境的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/delayed-task-queue.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ void DelayedTaskQueue::Terminate() {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

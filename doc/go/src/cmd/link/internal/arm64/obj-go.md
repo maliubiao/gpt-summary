@@ -173,15 +173,17 @@ go build -ldflags="-round=4" -o myapp main.go
 
 总而言之，`go/src/cmd/link/internal/arm64/obj.go` 是 Go 链接器中针对 ARM64 架构的关键配置文件，它定义了架构特定的链接行为和参数，确保生成的 ARM64 可执行文件符合目标操作系统的规范。普通 Go 开发者通常不需要直接修改或关心这个文件，但理解其背后的概念有助于诊断一些底层的链接问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/arm64/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/obj.c
 //
@@ -304,9 +306,4 @@ func archinit(ctxt *ld.Link) {
 		return
 	}
 }
-
-"""
-
-
-
 ```

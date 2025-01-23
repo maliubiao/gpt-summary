@@ -110,11 +110,13 @@ setInterval(createLeak, 100);
 
 `v8/src/base/sanitizer/lsan-virtual-address-space.cc` 通过包装底层的虚拟地址空间管理，并利用 Leak Sanitizer 提供的接口，为 V8 引擎提供了一种检测内存泄漏的机制。这有助于开发者发现和修复 V8 引擎自身以及由 JavaScript 代码引起的内存泄漏问题，从而提高应用程序的稳定性和性能。  虽然 JavaScript 具有垃圾回收机制，但 LSan 仍然可以在某些特定场景下发挥重要作用，特别是在开发和测试阶段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sanitizer/lsan-virtual-address-space.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ std::unique_ptr<VirtualAddressSpace> LsanVirtualAddressSpace::AllocateSubspace(
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -179,7 +179,7 @@ By following these steps, including the iterative refinement, we can generate a 
 
 总而言之，`frida/subprojects/frida-python/releng/meson/test cases/common/206 tap tests/cat.c` 这个文件是 Frida 项目中用于测试其功能的一个简单但重要的组成部分，它帮助开发者验证 Frida 的插桩能力，特别是在处理基本的文件操作方面。它简洁的逻辑使其成为理解 Frida 如何与目标程序交互的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/206 tap tests/cat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <errno.h>
 #include <stdio.h>
 
@@ -215,7 +217,4 @@ int main(int argc, char **argv) {
     fclose(fh);
     return 0;
 }
-
-"""
-
 ```

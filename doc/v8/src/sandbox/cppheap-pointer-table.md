@@ -99,11 +99,13 @@ for (let i = 0; i < 50000; i++) {
 
 `v8/src/sandbox/cppheap-pointer-table.cc` 中的 `CppHeapPointerTable` 类是 V8 引擎内部用于管理 C++ 堆中对象指针的关键组件，尤其是在启用指针压缩的情况下。它通过清理和压缩操作来支持 V8 的垃圾回收机制，从而影响 JavaScript 程序的内存使用和性能。虽然 JavaScript 开发者无法直接操作这个类，但它的高效运作是 JavaScript 应用程序高效执行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/cppheap-pointer-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -281,7 +283,4 @@ void CppHeapPointerTable::ResolveEvacuationEntryDuringSweeping(
 }  // namespace v8
 
 #endif  // V8_COMPRESS_POINTERS
-
-"""
-
 ```

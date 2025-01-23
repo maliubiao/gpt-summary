@@ -209,7 +209,7 @@ Interceptor.attach(Module.findExportByName("libinput_handler.so", "handleKeyEven
 
 `bionic/libc/kernel/uapi/linux/input-event-codes.h` 是 Android 输入子系统中最基础的头文件之一，它定义了各种用于描述输入事件的常量。虽然它本身不包含可执行代码，但它的定义被广泛用于 Android framework、NDK 以及 Linux 内核中处理用户输入。理解这个头文件的内容对于深入理解 Android 输入机制至关重要。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/input-event-codes.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -220,8 +220,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1009,7 +1011,4 @@ Prompt:
 #define SND_MAX 0x07
 #define SND_CNT (SND_MAX + 1)
 #endif
-
-"""
-
 ```

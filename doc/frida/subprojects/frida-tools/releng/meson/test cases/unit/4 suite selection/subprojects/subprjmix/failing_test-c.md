@@ -85,7 +85,7 @@ By following these steps, and particularly by focusing on the *context* provided
 
 尽管 `failing_test.c` 文件非常简单，但它在 Frida 的测试体系中扮演着关键角色，用于验证 Frida 能够正确处理进程失败的情况。它虽然不直接涉及复杂的逆向技术或内核编程，但它的存在反映了对进程生命周期管理和错误处理的重视，这些都是理解底层系统行为的关键方面。 用户一般不会直接操作这个文件，而是通过 Frida 的构建和测试流程间接地接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/4 suite selection/subprojects/subprjmix/failing_test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -93,10 +93,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return -1 ; }
-
-"""
-
 ```

@@ -120,14 +120,16 @@ console.log("abc\uD800def".isWellFormed()); // false (字符串中间有单独�
 
 总而言之，这段 Torque 代码高效地实现了 JavaScript 的 `String.prototype.isWellFormed()` 方法，通过优化路径和宏的使用来快速判断字符串是否包含未配对的代理项，确保了 JavaScript 中对 Unicode 字符串处理的正确性。理解其背后的逻辑有助于开发者避免与 Unicode 代理对相关的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/string-iswellformed.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ transitioning javascript builtin StringPrototypeIsWellFormed(
   }
 }
 }
-
-"""
-
 ```

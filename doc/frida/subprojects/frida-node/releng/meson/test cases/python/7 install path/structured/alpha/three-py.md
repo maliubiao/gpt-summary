@@ -97,7 +97,7 @@ By following this structured thinking process, we can effectively analyze even s
 
 总而言之，虽然 `three.py` 本身是一个空文件，但它在 Frida Node.js 绑定包的安装路径测试中扮演着关键的角色。它的存在与否，以及它所在的路径，是验证软件构建和安装过程正确性的一个重要指标，最终确保了 Frida 工具的正常使用，包括在逆向工程等领域的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python/7 install path/structured/alpha/three.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,9 +105,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

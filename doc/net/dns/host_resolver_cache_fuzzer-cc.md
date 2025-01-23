@@ -265,15 +265,17 @@ size: 某个大小
 
 `net/dns/host_resolver_cache_fuzzer.cc` 是一个重要的测试工具，用于确保 Chromium 网络栈中 `HostResolverCache` 组件的健壮性和安全性。它通过提供各种各样的随机输入来发现潜在的 bug，间接地保障了用户在使用浏览器进行网络访问时的稳定性和安全性，也为开发人员提供了重要的调试线索。它与 JavaScript 的关系在于，它所测试的组件是 JavaScript 发起网络请求的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_cache_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -343,7 +345,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace net
-
-"""
-
 ```

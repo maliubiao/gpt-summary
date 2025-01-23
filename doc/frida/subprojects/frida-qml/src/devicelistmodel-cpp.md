@@ -169,7 +169,7 @@ By following these steps, I can create a comprehensive explanation covering all 
 
 总之，`devicelistmodel.cpp` 是 Frida 用户界面中至关重要的一个组件，它桥接了 Frida 核心的设备发现能力和用户界面的设备选择功能，为用户使用 Frida 进行逆向分析提供了基础。理解它的功能有助于理解 Frida 工具的工作流程，并在出现问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/devicelistmodel.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <frida-core.h>
 
 #include "devicelistmodel.h"
@@ -257,7 +259,4 @@ void DeviceListModel::onDeviceRemoved(Device *device)
     endRemoveRows();
     Q_EMIT countChanged(m_devices.count());
 }
-
-"""
-
 ```

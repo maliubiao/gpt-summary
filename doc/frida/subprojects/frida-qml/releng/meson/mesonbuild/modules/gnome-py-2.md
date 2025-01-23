@@ -146,7 +146,7 @@ Here's a plan to address the request:
 
 这段代码片段是 Frida 项目中 `frida-qml` 子项目的一部分，它提供了 Meson 构建系统的模块，用于集成各种 GNOME 开发工具。其主要功能是**简化和自动化使用 GNOME 工具（如 `gtkdoc`, `gdbus-codegen`, `glib-mkenums`, `glib-genmarshal`）生成文档、代码和 marshaller 的过程**。它允许开发者在 Meson 构建文件中声明式地配置这些工具的使用，并由 Meson 负责处理底层的命令执行和依赖管理。总而言之，这个模块旨在**提高基于 GNOME 技术栈的 Frida 组件的构建效率和可维护性**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,9 +155,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-       l_data = build.Data([m_file], m_install_dir, m_install_dir,
+### 源代码
+```python
+l_data = build.Data([m_file], m_install_dir, m_install_dir,
                                         mesonlib.FileMode(), state.subproject, install_tag='doc')
                 targets.append(l_data)
 
@@ -883,7 +885,4 @@ Prompt:
         return ModuleReturnValue(rv, rv)
 
     def _extract_vapi_packages(self, state: 'ModuleState', packages: T.List[T.Union[InternalDependen
-"""
-
-
 ```

@@ -214,7 +214,7 @@ By following these steps, iterating, and refining the connections, we arrive at 
 
 总而言之，`storer.c` 作为一个简单的 C 库，其主要目的是作为 Frida 测试框架的一部分，用于验证 Frida 及其 Cython 绑定的基本功能。 用户直接接触到它的可能性不高，除非他们正在进行 Frida 本身的开发、调试或者学习其工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cython/1 basic/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -222,8 +222,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -248,7 +250,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

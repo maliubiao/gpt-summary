@@ -149,7 +149,7 @@ endforeach
 
 这段 `mparser.py` 代码的核心功能是 **解析 Meson 构建描述文件**。它通过一系列的方法，递归下降地分析 `meson.build` 文件的语法结构，将其转换为抽象语法树 (AST)。这个过程涉及到识别各种 Meson 语言元素，包括数据类型、数据结构、表达式、函数调用、控制流语句等。  虽然它本身不直接参与逆向操作或底层交互，但它是构建 Frida 工具链的必要组成部分，确保 Frida 能够按照配置进行编译。 代码中包含了错误处理机制，用于捕获 `meson.build` 文件中的语法错误，并向用户提供调试信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf.create_node(SymbolNode, block_start)
             key_values = self.key_values()
             self.block_expect('rcurl', block_start)
@@ -362,8 +364,4 @@ lf.create_node(SymbolNode, block_start)
         self.current_ws = []
 
         return block
-
-"""
-
-
 ```

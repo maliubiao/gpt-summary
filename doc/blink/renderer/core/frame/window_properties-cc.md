@@ -165,14 +165,16 @@ Let's break down the thought process to analyze this C++ code for `window_proper
 
 总而言之，`window_properties.cc` 文件是 Blink 渲染引擎中处理 `window` 对象动态属性访问的核心组件，它直接关联到 JavaScript 的动态属性访问机制、HTML 元素的命名属性以及浏览器的同源安全策略。理解其功能有助于开发者避免常见的跨域访问错误和命名冲突问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/window_properties.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ v8::Local<v8::Value> WindowProperties::AnonymousNamedGetter(
 }
 
 }  // namespace blink
-
-"""
-
 ```

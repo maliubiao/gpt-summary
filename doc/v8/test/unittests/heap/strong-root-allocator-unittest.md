@@ -137,11 +137,13 @@ console.log("C++ 释放强引用后，对象应该被回收");
 
 `StrongRootAllocator` 是 V8 内部用于管理某些需要保证不被过早回收的 JavaScript 对象地址的机制。它为 V8 的 C++ 内部组件提供了一种创建“人为”强引用的方式，即使 JavaScript 代码层面已经失去了对这些对象的引用。这对于 V8 引擎内部的某些操作和数据结构的管理至关重要。 JavaScript 开发者虽然不能直接使用它，但需要理解它的存在以及它对垃圾回收可能产生的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/strong-root-allocator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -393,7 +395,4 @@ TEST_F(StrongRootAllocatorTest, LocalVectorWithDirect) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

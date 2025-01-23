@@ -322,14 +322,16 @@ By following this process, I can systematically analyze the Torque code and gene
 
 理解这些内置函数的功能和潜在的错误情况对于在 WebAssembly 中正确处理字符串至关重要。它们为 Wasm 提供了与 JavaScript 类似的字符串操作能力，但需要在类型和边界检查方面更加谨慎。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/wasm-strings.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ transitioning javascript builtin WebAssemblyStringCompare(
     Trap(context, MessageTemplate::kWasmTrapIllegalCast);
   }
 }
-
-"""
-
 ```

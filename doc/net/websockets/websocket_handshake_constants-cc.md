@@ -177,15 +177,17 @@ if (upgrade_value == kWebSocketLowercase) {
 
 总而言之，`websocket_handshake_constants.cc` 虽然只是定义了一些常量字符串，但它们是 WebSocket 握手过程中的基石，确保客户端和服务器能够按照标准协议进行通信。 理解这些常量的作用有助于理解 WebSocket 连接建立的底层机制，并能更好地排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_handshake_constants.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ const char kWebSocketGuid[] = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
 const char kWebSocketLowercase[] = "websocket";
 
 }  // namespace net::websockets
-
-"""
-
 ```

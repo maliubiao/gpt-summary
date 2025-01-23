@@ -125,7 +125,7 @@ The user wants a summary of the functionality of the C++ source code file `net/d
 
 该文件通过一系列单元测试，全面地验证了 `net/dns/dns_response.h` 中 `DnsResponse` 和 `DnsRecordParser` 类的核心功能，特别是对 DNS 记录的解析和各种错误处理情况进行了细致的测试，确保了 Chromium 网络栈在处理 DNS 响应时的健壮性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_response_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1084,7 +1086,4 @@ TEST(DnsResponseTest, InitParseWithoutQueryPacketTooShort) {
 }
 
 TEST(DnsResponseTest, InitParseAllowsQuestionWithL
-"""
-
-
 ```

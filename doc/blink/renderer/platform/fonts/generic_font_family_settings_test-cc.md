@@ -129,14 +129,16 @@ By following this systematic approach, you can effectively analyze and explain t
 
 总而言之，`generic_font_family_settings_test.cc` 通过测试 `GenericFontFamilySettings` 类的各种功能，确保 Blink 渲染引擎能够正确地管理和应用字体设置，这对于网页的正常显示和用户体验至关重要。它涵盖了通用字体族的处理、语言特定的字体设置以及对用户输入（例如逗号分隔的字体列表）的正确解析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/generic_font_family_settings_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ TEST(GenericFontFamilySettingsTest, TestFontListNotChanged) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

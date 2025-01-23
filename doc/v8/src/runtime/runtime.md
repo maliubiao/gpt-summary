@@ -110,11 +110,13 @@ throw new Error("Something went wrong"); // 这会调用 runtime.cc 中与抛出
 
 `runtime.cc` 文件是 V8 引擎的骨架，它定义了执行 JavaScript 代码所需的核心操作。JavaScript 代码的各种行为，从基本的对象操作到复杂的错误处理，都依赖于这些底层 C++ 运行时函数的实现。虽然开发者通常不会直接调用这些运行时函数，但理解它们的存在和功能有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -494,7 +496,4 @@ int g_num_isolates_for_testing = 1;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

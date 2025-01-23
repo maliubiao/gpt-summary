@@ -169,15 +169,17 @@ fetch('https://example.com/data.json')
 
 例如，如果用户在访问某个网站时遇到连接错误或者数据传输异常，网络工程师可能会检查浏览器底层的 QUIC 连接状态，查看加密协商是否成功，并检查加密和解密过程中是否有错误发生。这时，对 `Aes128Gcm12Encrypter` 的测试代码的理解就变得很有价值，因为它提供了验证该组件功能正确性的依据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/aes_128_gcm_12_encrypter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ TEST_F(Aes128Gcm12EncrypterTest, GetCiphertextSize) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

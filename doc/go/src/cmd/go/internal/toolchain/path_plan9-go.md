@@ -182,15 +182,17 @@ func (m mockFileInfo) Sys() syscall.Stat_t { return syscall.Stat_t{} }
 2. **`gover.FromToolchain` 的解析逻辑:**  `pathVersion` 函数依赖于 `gover.FromToolchain` 函数能够正确解析 Go 工具链的文件名，任何对 `gover.FromToolchain` 逻辑的修改都需要谨慎，以避免影响版本识别。
 3. **执行权限的判断:** 确保 `pathVersion` 函数正确地检查了文件的执行权限，避免将没有执行权限的文件误认为 Go 工具链。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/toolchain/path_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ func pathVersion(dir string, de fs.DirEntry, info fs.FileInfo) (string, bool) {
 	}
 	return v, true
 }
-
-"""
-
-
-
 ```

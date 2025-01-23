@@ -101,15 +101,17 @@ Now, let's connect these functions to web technologies and identify logical reas
 
 这段代码片段是 Chromium Blink 引擎中处理 HTML 表单 `<input>` 元素步进逻辑的核心部分。它负责读取和解析 HTML 属性，执行数值的增加和减少操作，并考虑了各种边界情况和错误处理。它与 JavaScript 通过 DOM API 紧密相连，并受到 HTML 属性的驱动。虽然不直接处理 CSS，但会利用 CSS 属性来判断元素的状态，从而影响某些功能的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SupportsInputModeAttribute() const {
   return false;
 }
@@ -442,8 +444,4 @@ void InputType::AddWarningToConsole(const char* message_format,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

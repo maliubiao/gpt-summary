@@ -158,7 +158,7 @@ IC 机制的优化依赖于运行时收集的类型信息。以下是一些可�
 
 作为第 6 部分，`accessor-assembler.cc` 的主要功能是 **定义和实现了生成各种类型对象属性访问 IC 代码的具体逻辑**。  它涵盖了读取、设置和定义属性的多种场景，包括命名属性和索引属性，以及对全局变量和 `super` 关键字的访问。 这一部分的代码详细描述了如何根据反馈信息生成不同优化级别的 IC 代码，以及如何处理 Megamorphic 状态和回退到更通用的机制。 可以推断，前几部分可能定义了相关的接口、数据结构和辅助函数，而最后一部分可能会包含一些收尾工作或更高层次的抽象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/accessor-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,10 +166,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
-
-                            &if_handler, &var_handler, &miss);
+### 源代码
+```cpp
+&if_handler, &var_handler, &miss);
     }
 
     BIND(&try_megamorphic);
@@ -1004,7 +1005,4 @@ void AccessorAssembler::GenerateDefineKeyedOwnICTrampoline() {
 
   auto receiver = Parameter<Object>(Descriptor::kReceiver);
   auto name = Parameter<Object>(Descript
-"""
-
-
 ```

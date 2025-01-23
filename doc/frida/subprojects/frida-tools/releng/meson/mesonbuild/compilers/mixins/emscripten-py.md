@@ -169,7 +169,7 @@ By following these steps, we can effectively analyze the provided Python code an
 
 总而言之，`emscripten.py` 文件是 Meson 构建系统中一个关键的组件，它确保了 Frida 项目在使用 Emscripten 编译器时能够正确地处理 JavaScript 库、线程以及其他特定于 Emscripten 的配置。理解这个文件的功能对于调试与 Emscripten 构建相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/mixins/emscripten.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The meson development team
 
@@ -268,7 +270,4 @@ class EmscriptenMixin(Compiler):
             if os.path.exists(abs_path):
                 return [abs_path]
         return None
-
-"""
-
 ```

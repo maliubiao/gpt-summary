@@ -124,15 +124,17 @@ By applying this process to each test case, a comprehensive understanding of the
 
 这部分的代码主要集中在对 Origin Trial Token 进行更细致的提取和验证测试，特别是针对不同版本的签名、子域名和非子域名、第三方和非第三方上下文以及不同 Usage Restriction 的 Token 进行了详尽的测试。 这些测试确保了 `TrialToken` 类能够准确地解析和验证各种类型的有效 Token，并能够正确地处理各种错误情况，从而保证了 Origin Trial 功能的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/trial_token_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ydXJtZzN2dG5pd3FxbTI4emZoOGp2bTR1MnZhMGhsb2huaW"
     "81dGl0empxenp3dmxiZHpmN3pseXdsZ2JpbHB5eG5tbWlpcnk4Zzdpc3o0dm0zc3ZuanR5YXlj"
     "bm9wOWhzd25ta3Njc2E1NmwwZTlqcjN5eXk5dzd0d2pycTdmcnFkempraHNyMGl1NmFucmFtbW"
@@ -813,8 +815,4 @@ TEST_F(TrialTokenTest, FromMalformedToken) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

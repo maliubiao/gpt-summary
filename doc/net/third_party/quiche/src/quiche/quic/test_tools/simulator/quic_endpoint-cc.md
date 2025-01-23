@@ -162,15 +162,17 @@ By following this thought process, we can systematically analyze the code and ad
 
 总而言之，`net/third_party/quiche/src/quiche/quic/test_tools/simulator/quic_endpoint.cc` 是一个用于测试 QUIC 协议的重要工具，它允许开发者在可控的环境中模拟 QUIC 端点的行为，从而更容易地理解、调试和验证 QUIC 的实现。尽管它本身不是 JavaScript 代码，但它在浏览器网络栈中扮演着关键角色，支持着 JavaScript 发起的网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/simulator/quic_endpoint.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ void QuicEndpoint::WriteStreamData() {
 
 }  // namespace simulator
 }  // namespace quic
-
-"""
-
 ```

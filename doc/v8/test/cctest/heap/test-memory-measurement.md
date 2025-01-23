@@ -118,11 +118,13 @@ v8::Local<v8::String> jsString = v8::String::NewExternalTwoByte(isolate, externa
 
 这个 C++ 测试文件对于保证 V8 引擎内存管理的准确性和可靠性至关重要。通过测试各种场景下的内存测量功能，可以确保 V8 引擎能够正确地报告 JavaScript 程序的内存使用情况，这对于性能分析、内存泄漏检测以及资源管理等方面都非常重要。它通过 C++ 的单元测试框架来验证 V8 内部的实现细节，这些细节直接影响着 JavaScript 程序的运行效率和资源消耗。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-memory-measurement.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -412,7 +414,4 @@ TEST(PartiallyInitializedContext) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

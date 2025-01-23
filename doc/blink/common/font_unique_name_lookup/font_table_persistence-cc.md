@@ -151,14 +151,16 @@ By following these steps, breaking down the code, connecting it to broader conce
 
 总而言之，`font_table_persistence.cc` 文件通过将字体唯一名称查找表持久化到磁盘，显著提升了 Blink 引擎在加载和渲染网页时处理字体的效率。它与 JavaScript, HTML, 和 CSS 的关系体现在幕后，通过优化字体加载过程，最终提升了用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/font_unique_name_lookup/font_table_persistence.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ bool PersistToFile(const base::MappedReadOnlyRegion& name_table_region,
 }  // namespace font_table_persistence
 
 }  // namespace blink
-
-"""
-
 ```

@@ -161,15 +161,17 @@ text_style.shadow->MutableShadows().push_back(shadow2);
 
 总而言之，`text_shadow_painter.cc` 是 Blink 渲染引擎中负责将 CSS `text-shadow` 属性转化为实际屏幕绘制效果的关键组件。它通过创建和应用 Skia 滤镜来实现文本阴影，并考虑了单个和多个阴影的情况，以及性能优化。 调试该模块通常涉及到检查 CSS 样式、断点调试 C++ 代码以及利用浏览器提供的渲染调试工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/text_shadow_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ void ScopedTextShadowPainter::ApplyShadowList(
 }
 
 }  // namespace blink
-
-"""
-
 ```

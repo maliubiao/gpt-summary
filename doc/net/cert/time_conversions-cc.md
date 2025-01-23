@@ -134,15 +134,17 @@ This detailed thinking process, involving code analysis, conceptual linking, and
 
 总结来说，`net/cert/time_conversions.cc` 虽然不直接被 JavaScript 调用，但它在后台默默地支撑着浏览器处理安全连接的关键环节，确保用户访问的网站证书是有效的，从而保障用户的安全。理解这个文件的功能有助于理解浏览器如何处理时间相关的安全信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/time_conversions.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ bool GeneralizedTimeToTime(const bssl::der::GeneralizedTime& generalized,
 }
 
 }  // namespace net
-
-"""
-
 ```

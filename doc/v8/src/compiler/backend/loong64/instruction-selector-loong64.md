@@ -60,12 +60,14 @@ When the V8 engine compiles this JavaScript code for the LoongArch64 architectur
 
 In essence, this C++ file is a translator, converting the abstract operations of JavaScript into the concrete instructions that the LoongArch64 hardware understands. It's a crucial link in the chain that allows JavaScript code to run efficiently on this specific processor architecture.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-selector-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1821,7 +1823,4 @@ void InstructionSelectorT<TurbofanAdapter>::VisitInt32Mul(Node* node) {
     if (left->opcode() == IrOpcode::kWord64Sar &&
         right->opcode() == IrOpcode::kWord64Sar) {
       Int64BinopM
-"""
-
-
 ```

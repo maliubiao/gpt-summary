@@ -105,11 +105,13 @@ console.log(num8.toPrecision(20)); // 输出 "4.1855804968213567225e+298"
 
 `v8/test/unittests/base/bignum-dtoa-unittest.cc` 文件是 V8 引擎中一个重要的测试文件，它专门用于验证将双精度浮点数转换为字符串的关键函数 `BignumDtoa` 的正确性。这个函数的正确性直接影响了 JavaScript 中数字到字符串转换的结果，而 JavaScript 的字符串表示在很多场景下都至关重要（例如，用户界面显示、数据序列化等）。 通过各种详尽的测试用例，V8 开发者可以确保 JavaScript 在处理数字时能够提供准确可靠的字符串表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/bignum-dtoa-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -417,7 +419,4 @@ TEST_F(BignumDtoaTest, BignumDtoaGayPrecision) {
 }  // namespace test_bignum_dtoa
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

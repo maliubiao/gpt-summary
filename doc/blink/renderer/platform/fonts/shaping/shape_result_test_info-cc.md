@@ -145,14 +145,16 @@ By following these steps, one can effectively dissect and explain the functional
 
 总而言之，`shape_result_test_info.cc` 提供了一组用于深入检查字体排版结果的工具，这对于确保 Blink 引擎正确地渲染各种语言和字符组合的文本至关重要。理解这个文件的功能有助于理解 Blink 引擎中字体排版的内部机制，以及如何针对相关的逻辑编写有效的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_test_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ bool CompareResultGlyphs(const Vector<ShapeResultTestGlyphInfo>& test,
 }
 
 }  // namespace blink
-
-"""
-
 ```

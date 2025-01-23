@@ -180,7 +180,7 @@ By following these steps, combining careful code reading with general knowledge 
 
 总而言之，这个文件是 Meson 构建系统中处理 Python 相关任务的核心组件，它连接了 Meson 的构建逻辑和 Python 的生态系统，使得 Frida 这样的项目能够方便地构建和管理其 Python 接口。理解这个文件的功能对于调试 Frida 的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -746,7 +748,4 @@ def initialize(interpreter: 'Interpreter') -> PythonModule:
     mod = PythonModule(interpreter)
     mod.interpreter.append_holder_map(PythonExternalProgram, PythonInstallation)
     return mod
-
-"""
-
 ```

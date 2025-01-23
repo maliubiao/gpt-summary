@@ -152,7 +152,7 @@ notAFunction(); // TypeError: notAFunction is not a function
 
 总而言之，`BytecodeArrayBuilder` 的功能是至关重要的，它将高级的 JavaScript 代码转换为 V8 解释器可以理解和执行的低级字节码指令。理解它的功能有助于深入了解 JavaScript 代码的执行过程和 V8 引擎的内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-array-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-array-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,9 +160,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          language_mode);
+### 源代码
+```cpp
+language_mode);
   OutputSetKeyedProperty(object, key, feedback_slot);
   return *this;
 }
@@ -952,8 +954,4 @@ std::ostream& operator<<(std::ostream& os,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

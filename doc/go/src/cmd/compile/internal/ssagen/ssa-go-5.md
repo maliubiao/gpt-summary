@@ -195,7 +195,7 @@ func main() {
 
 总的来说，`ssa.go` 的第 6 部分专注于将 Go 语言中一些更高级的特性（如切片、类型转换、类型断言）以及内置函数的操作转换为底层的 SSA 指令。它涵盖了安全性和性能优化的重要方面，例如边界检查、nil 检查以及针对特定硬件漏洞的缓解措施。这部分代码是 Go 编译器将高级语言语义映射到可执行代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ) != ir.ONAME {
 		return false
 	}
@@ -1224,9 +1226,4 @@ func (s *state) dottype1(pos src.XPos, src, dst *types.Type, iface, source, targ
 				s.vars[hashVar] = hash
 				// Load mask from cache.
 				mask := s.newValue2(s
-"""
-
-
-
-
 ```

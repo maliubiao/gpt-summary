@@ -173,7 +173,7 @@ if (Process.platform === 'linux') {
 
 `bionic/libc/kernel/uapi/linux/if_phonet.h` 是一个定义了 `phonet` 网络接口相关 MTU 常量的内核头文件。它在 Android 系统中可能被用于进程间通信、特定硬件驱动的通信以及 USB tethering 等场景。虽然它本身不包含可执行代码，但其定义的常量会被内核和用户空间的网络相关组件使用。通过 Frida hook 相关的系统调用，我们可以观察 Android 系统如何与 `phonet` 接口进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_phonet.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -198,7 +200,4 @@ Prompt:
 #define PHONET_MAX_MTU 65541
 #define PHONET_DEV_MTU PHONET_MAX_MTU
 #endif
-
-"""
-
 ```

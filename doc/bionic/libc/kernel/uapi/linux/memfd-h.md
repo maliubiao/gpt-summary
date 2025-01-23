@@ -302,7 +302,7 @@ if (Process.platform === 'linux') {
 
 通过这种方式，你可以追踪 Android Framework 或 NDK 中的代码如何一步步地调用到 `memfd_create`，并了解其使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/memfd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -344,7 +346,4 @@ Prompt:
 #define MFD_HUGE_2GB HUGETLB_FLAG_ENCODE_2GB
 #define MFD_HUGE_16GB HUGETLB_FLAG_ENCODE_16GB
 #endif
-
-"""
-
 ```

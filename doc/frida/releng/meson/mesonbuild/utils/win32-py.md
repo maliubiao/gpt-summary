@@ -110,7 +110,7 @@ This code itself isn't directly involved in the act of reverse engineering. Howe
 
 **As a debugging clue:** If a user reports issues with concurrent builds on Windows, or receives the "Some other Meson process is already using this build directory" error, this code is the first place to investigate to understand how the locking mechanism is intended to work and whether there might be any platform-specific issues. You would examine whether the lock file is being created and released correctly, and whether the `msvcrt.locking` calls are behaving as expected.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/utils/win32.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -149,7 +151,4 @@ class BuildDirLock(BuildDirLockBase):
     def __exit__(self, *args: T.Any) -> None:
         msvcrt.locking(self.lockfile.fileno(), msvcrt.LK_UNLCK, 1)
         self.lockfile.close()
-
-"""
-
 ```

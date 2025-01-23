@@ -156,15 +156,17 @@ navigator.bluetooth.requestDevice({
 
 总而言之，`bluetooth_attribute_instance_map.cc` 是 Blink 引擎中管理蓝牙 GATT 属性对象的核心组件，它确保了在 Web Bluetooth API 的使用过程中，对于同一个物理蓝牙设备，相关的服务、特征和描述符对象在 Blink 内部被高效且一致地管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/bluetooth/bluetooth_attribute_instance_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ void BluetoothAttributeInstanceMap::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

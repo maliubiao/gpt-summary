@@ -157,14 +157,16 @@ By following these steps, we can systematically dissect the source code and arri
 
 总而言之，`WorkerThreadScheduler` 是 Blink 引擎中管理 Worker 线程任务执行的关键组件，它负责任务的排队、调度、性能监控以及资源管理（通过节流）。理解它的功能对于开发高性能的 Web 应用，特别是涉及到 Web Workers 的应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/worker_thread_scheduler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -534,7 +536,4 @@ void WorkerThreadScheduler::SetV8Isolate(v8::Isolate* isolate) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

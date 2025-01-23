@@ -177,15 +177,17 @@ func sumC(args ...int) int { return func() int { return sum(args...) }() }
 
 总而言之，这个 `ddd.go` 文件是一个很好的学习和理解 Go 语言可变参数特性的示例，通过各种测试用例覆盖了可变参数的不同使用场景和调用方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/ddd.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -416,9 +418,4 @@ func main() {
 		panic("fail")
 	}
 }
-
-"""
-
-
-
 ```

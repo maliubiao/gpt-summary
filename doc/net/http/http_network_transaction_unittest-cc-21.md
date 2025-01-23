@@ -121,7 +121,7 @@ A user action that triggers network requests to a server that supports and adver
 
 This specific section of `http_network_transaction_unittest.cc` focuses on rigorously testing the `HttpNetworkTransaction`'s ability to correctly handle and utilize alternative network protocols like SPDY/HTTP/2, as advertised by servers using the `Alt-Svc` header. It covers various scenarios, including initial negotiation, late binding, handling of failures, interaction with proxies, and the reuse of existing connections. This ensures the reliability and performance benefits of alternative protocols in Chromium's network stack.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第22部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lback.WaitForResult(), IsOk());
 
   const HttpResponseInfo* response = trans.GetResponseInfo();
@@ -1039,8 +1041,4 @@ TEST_P(HttpNetworkTransactionTest, GenerateAuthToken) {
        kProxy,
        AUTH_NONE,
        OK,
-    
-"""
-
-
 ```

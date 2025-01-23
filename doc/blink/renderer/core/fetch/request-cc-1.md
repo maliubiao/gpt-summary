@@ -194,7 +194,7 @@ const request = new Request('https://api.example.com/resource', requestInit);
 
 总而言之，`blink/renderer/core/fetch/request.cc` 文件的第二部分主要负责 **具体实现 `Request` 对象的创建过程和提供访问其属性的方法**。 它接收来自 JavaScript 和 Blink 内部其他模块的请求，根据提供的参数创建和配置 `Request` 对象，并处理一些常见的用户错误。 这部分代码是 Blink 中 Fetch API 实现的核心组成部分，它连接了 JavaScript 的 `Request` 对象和底层网络请求的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t->method())) {
       exception_state.ThrowTypeError("'" + init->method() +
                                      "' HTTP method is unsupported.");
@@ -784,8 +786,4 @@ void Request::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

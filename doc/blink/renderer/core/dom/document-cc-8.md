@@ -177,7 +177,7 @@ This structured approach allowed me to systematically analyze the code, connect 
 
 这些功能是 Blink 引擎处理 HTML 文档的基础组成部分，确保了文档结构的正确性、字符的正确显示以及为辅助技术提供必要的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 aNotify(const String& announcement,
                           const AriaNotificationOptions* options) {
   DCHECK(RuntimeEnabledFeatures::AriaNotifyEnabled());
@@ -1067,8 +1069,4 @@ void Document::SupportsReducedMotionMetaChanged() {
                                "supports-reduced-motion")) {
       SpaceSplitString split_content(
           AtomicString(meta_element.Content().GetString().LowerASCII()));
-      
-"""
-
-
 ```

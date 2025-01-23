@@ -169,15 +169,17 @@ Let's break down the thought process to analyze the `web_node.cc` file.
 
 通过这样的调试流程，开发者可以逐步定位问题是出在 JavaScript 代码、DOM 结构，还是 Blink 引擎的内部实现。 `web_node.cc` 文件作为 Blink 暴露给外部操作 DOM 的接口，是调试过程中非常重要的一个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -539,7 +541,4 @@ std::ostream& operator<<(std::ostream& ostream, const WebNode& node) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

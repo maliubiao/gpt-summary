@@ -147,15 +147,17 @@ Finally, structure the analysis clearly, addressing each point in the prompt: fu
 
 总而言之，`qpack_encoder_stream_receiver_fuzzer.cc` 是一个重要的测试工具，用于提高 Chromium 网络栈中 QPACK 解码器的健壮性和安全性，间接地保障了用户在使用 Chrome 浏览器访问支持 HTTP/3 的网站时的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/fuzzer/qpack_encoder_stream_receiver_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

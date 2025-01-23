@@ -174,7 +174,7 @@ builder.LoadLiteral(heap_num_1)
 
 总而言之，`v8/test/unittests/interpreter/bytecode-array-builder-unittest.cc` 的主要功能是 **全面测试 V8 JavaScript 引擎中 `BytecodeArrayBuilder` 类的正确性，确保其能为各种 JavaScript 代码结构生成正确的字节码指令和具有正确结构的字节码数组**。  这个测试覆盖了字节码生成的核心功能，包括指令生成、常量池管理、寄存器使用和跳转指令的正确性，为 V8 解释器的稳定运行提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-array-builder-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/bytecode-array-builder-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,8 +182,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1038,7 +1040,4 @@ TEST_F(BytecodeArrayBuilderTest, SmallSwitch) {
   builder.Return();
 
   Handle<BytecodeArray> array = builder.ToByte
-"""
-
-
 ```

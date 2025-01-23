@@ -84,11 +84,13 @@ try {
 
 `builtins-shared-array.cc` 文件是 V8 引擎中实现 JavaScript `SharedArrayBuffer` 构造器和 `isSharedArray()` 静态方法的关键 C++ 源代码。它负责创建和类型检查共享数组缓冲区，并确保创建时提供的长度是有效的。 当你在 JavaScript 中使用 `SharedArrayBuffer` API 时，V8 引擎会调用这个文件中的 C++ 代码来执行相应的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-shared-array.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -130,7 +132,4 @@ BUILTIN(SharedArrayIsSharedArray) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

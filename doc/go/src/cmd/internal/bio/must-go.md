@@ -172,15 +172,17 @@ func main() {
 
 `go/src/cmd/internal/bio/must.go` 提供了一种 "必须成功" 的 I/O 操作方式。它的设计理念是，某些 I/O 操作的失败是不可接受的，应该立即终止程序。这种策略适用于对可靠性要求极高，且 I/O 错误被认为是灾难性故障的内部工具或系统组件。然而，在通用的应用程序开发中，过度使用这种策略可能会降低程序的健壮性和可维护性。开发者应该谨慎评估是否真的需要这种激进的错误处理方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/bio/must.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -224,9 +226,4 @@ func (w mustWriter) WriteString(s string) (int, error) {
 	}
 	return n, nil
 }
-
-"""
-
-
-
 ```

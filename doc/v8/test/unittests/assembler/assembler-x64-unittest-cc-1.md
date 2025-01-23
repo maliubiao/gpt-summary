@@ -61,7 +61,7 @@ By following these steps, I can systematically analyze the provided code snippet
 
 这段代码片段专注于**验证 x64 汇编器在处理浮点数运算（FMA, SSE, AVX）和位操作（BMI）相关指令时的正确性**，是 V8 代码质量保证的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/assembler-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/assembler-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -69,8 +69,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 m8, xmm0);
     __ movsd(Operand(rsp, 0), xmm1);
     __ vfnmsub132sd(xmm8, xmm2, Operand(rsp, 0));
@@ -1251,7 +1253,4 @@ TEST_F(AssemblerX64Test, AssemblerX64BMI2) {
 
     // rorx
     __ incq(rax);
-"""
-
-
 ```

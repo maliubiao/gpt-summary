@@ -178,7 +178,7 @@ console.log(counter()); // 2
 
 `v8/src/compiler/common-operator.cc` 的第三部分专注于处理 `FrameState` 操作符。`FrameStateInfoOf` 函数用于从 `FrameState` 操作符中提取其关联的状态信息。文件中取消定义了一系列 `CACHED_` 开头的宏，这些宏可能用于管理常见操作符的缓存。虽然用户不直接操作这些底层结构，但理解 `FrameState` 的概念有助于理解 JavaScript 引擎的工作原理以及一些常见编程错误的成因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/common-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,9 +186,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-           // name
+### 源代码
+```cpp
+// name
       1, 0, 0, 1, 0, 0,                                  // counts
       rep);                                              // parameter
 }
@@ -219,8 +221,4 @@ const FrameStateInfo& FrameStateInfoOf(const Operator* op) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

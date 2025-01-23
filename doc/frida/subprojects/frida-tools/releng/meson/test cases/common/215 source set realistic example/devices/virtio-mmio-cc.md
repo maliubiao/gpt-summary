@@ -102,7 +102,7 @@ By following these steps, you can systematically analyze the code snippet and ge
 
 总而言之，`virtio-mmio.cc` 是 Frida 工具中一个用于表示和指示 virtio-mmio 设备可用性的模块，它涉及到虚拟化技术、底层硬件通信方式以及 Frida 的内部工作机制。它在 Frida 的测试和开发过程中扮演着一定的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/215 source set realistic example/devices/virtio-mmio.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
@@ -128,7 +130,4 @@ void VirtioMMIODevice::say_hello()
 }
 
 static VirtioMMIODevice virtio_mmio;
-
-"""
-
 ```

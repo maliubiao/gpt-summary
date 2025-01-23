@@ -65,7 +65,7 @@ Response:
 - **过滤机制**：通过 `filter_port()` 过滤目标端口，`filter_uid` 和 `filter_pid` 过滤进程。
 - **数据存储**：使用 `sockets` Map 临时存储 TID 到 socket 的映射，确保入口/出口匹配。
 - **原子计数**：`__atomic_add_fetch` 保证多核并发下的统计准确性。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/tcpconnect.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -74,8 +74,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2020 Anton Protopopov
 //
@@ -302,7 +304,4 @@ int BPF_KRETPROBE(tcp_v6_connect_ret, int ret)
 }
 
 char LICENSE[] SEC("license") = "GPL";
-
-"""
-
 ```

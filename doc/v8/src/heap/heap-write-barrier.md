@@ -111,11 +111,13 @@ worker.postMessage({ type: 'write', index: 0, value: 42 });
 
 `heap-write-barrier.cc` 文件是 V8 引擎垃圾回收机制的关键组成部分。它在底层默默地工作，确保了 JavaScript 程序的内存安全和高效运行，开发者通常不需要直接与之交互，但理解其作用有助于理解 V8 的内存管理模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-write-barrier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -685,7 +687,4 @@ bool WriteBarrier::VerifyDispatchHandleMarkingState(Tagged<HeapObject> host,
 #endif  // ENABLE_SLOW_DCHECKS
 
 }  // namespace v8::internal
-
-"""
-
 ```

@@ -82,15 +82,17 @@ Based on this analysis, I can now formulate a summary of the file's functionalit
 
 总而言之，`blink/renderer/core/layout/layout_view_test.cc` 文件的主要功能是**全面测试 `LayoutView` 类的各种布局和命中测试相关的功能，确保其在不同的 CSS 属性、HTML 结构和编辑行为下都能正确工作**。这对于保证 Chromium 浏览器的页面渲染和用户交互的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_view_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -886,8 +888,5 @@ TEST_P(LayoutViewHitTestTest, HitTestVerticalLR) {
             result.GetPosition());
 
   // Top-right corner (outside) of span1.
-  result 
-"""
-
-
+  result
 ```

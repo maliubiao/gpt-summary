@@ -143,7 +143,7 @@ addw v3, v1, v2  // 将 v1 和 v2 的值相加，结果存储到 v3
 
 `v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc` 负责将 V8 编译器生成的平台无关的中间表示（IR）转换为特定于 RISC-V 64 位架构的高效机器指令。它针对各种操作（内存访问、算术运算、比较、原子操作等）选择合适的 RISC-V 指令，并进行一些优化，以确保生成的代码能够正确、高效地执行 JavaScript 代码。它是 V8 编译器后端的重要组成部分，连接了高级的语言特性和底层的硬件指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ze);
         code = kRiscvStoreCompressTagged;
         break;
@@ -962,7 +964,4 @@ void InstructionSelectorT<TurbofanAdapter>::VisitWord64AtomicExchange(
   AtomicOpParameters params = AtomicOpParametersOf(node->op());
   if (params.type() == MachineType::Uint8()) {
     opcode = kAtomicExchangeU
-"""
-
-
 ```

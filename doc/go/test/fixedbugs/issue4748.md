@@ -261,15 +261,17 @@ An error occurred: something went wrong
 
 `issue4748.go` 的主要目的是展示 `goto` 语句，并解决早期 Go 编译器在内联包含 `goto` 的函数时遇到的技术问题。虽然 `goto` 在某些特定场景下（如跳出多层循环或处理错误）可能有用，但应该谨慎使用，避免滥用导致代码可读性和维护性下降。现代编程通常推荐使用结构化的控制流语句（如 `for`、`if`、`break`、`continue` 和 `return`）来组织代码逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4748.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -290,9 +292,4 @@ func main() {
         jump()
         jump()
 }
-
-"""
-
-
-
 ```

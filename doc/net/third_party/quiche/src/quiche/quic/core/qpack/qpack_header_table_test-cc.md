@@ -143,15 +143,17 @@ fetch('https://example.com/data')
 
 通过以上步骤，开发者可以逐步定位问题，确定是否是 `QpackHeaderTable` 的实现存在 bug，或者配置不当导致的问题。 `qpack_header_table_test.cc` 文件本身就是调试过程中的一个重要参考，可以用来验证代码的正确性，并提供一些边界条件和使用场景的示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_header_table_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -824,7 +826,4 @@ TEST_F(QpackDecoderHeaderTableTest, Cancel) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

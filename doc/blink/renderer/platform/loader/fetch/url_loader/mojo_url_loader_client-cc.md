@@ -190,14 +190,16 @@ Content-Length: 25
 
 总而言之，`mojo_url_loader_client.cc` 是 Blink 引擎中处理网络请求响应的关键组件，它确保了从网络进程接收到的数据能够被正确地传递和处理，最终影响着网页的渲染和 JavaScript 的执行。理解其功能有助于开发者更好地理解浏览器的工作原理，并避免一些常见的网络请求相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/mojo_url_loader_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -743,7 +745,4 @@ void MojoURLLoaderClient::FlushDeferredMessages() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

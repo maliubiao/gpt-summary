@@ -176,7 +176,7 @@ V8 会将该 `kCheckBounds` 节点替换为 `CheckedUint32Bounds` 机器节点�
 
 总之，这段代码是 V8 编译器进行优化的关键部分，它负责将高级的语言特性降低到更高效的机器指令，从而提升 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -184,9 +184,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
-    if (BothInputsAre(node, Type::Unsigned32OrMinusZeroOrNaN()) &&
+### 源代码
+```cpp
+if (BothInputsAre(node, Type::Unsigned32OrMinusZeroOrNaN()) &&
         (truncation.IsUsedAsWord32() ||
          NodeProperties::GetType(node).Is(Type::Unsigned32()))) {
       // => unsigned Uint32Mod
@@ -943,7 +945,4 @@ Prompt:
           if (lower<T>()) DeferReplacement(node, node->InputAt(0));
         } else {
           V
-"""
-
-
 ```

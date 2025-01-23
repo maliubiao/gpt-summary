@@ -68,7 +68,7 @@ Android 应用程序或系统服务在进行涉及到三角函数计算时，会
 
 **请注意：**  由于这只是文件的内容，我们只能推断其功能。要了解其更详细的使用方式，需要查看相关的测试代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tan_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -80,8 +80,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1529,7 +1531,4 @@ static data_1_1_t<double, double> g_tan_intel_data[] = {
   },
   { // Entry 357
     -
-"""
-
-
 ```

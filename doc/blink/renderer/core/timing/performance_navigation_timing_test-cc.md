@@ -161,15 +161,17 @@ Initially, I might focus too much on the specific C++ implementation details. Ho
 
 总而言之，`performance_navigation_timing_test.cc` 文件是 Blink 引擎中用于保证 `PerformanceNavigationTiming` 类正确性的重要组成部分，它直接关系到 JavaScript 中 `window.performance.navigation.type` 属性的准确性，对于理解和调试与页面导航性能相关的 Bug 非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/performance_navigation_timing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ TEST_F(PerformanceNavigationTimingTest, GetNavigationTimingType) {
   EXPECT_EQ(returned_type, V8NavigationTimingType::Enum::kBackForward);
 }
 }  // namespace blink
-
-"""
-
 ```

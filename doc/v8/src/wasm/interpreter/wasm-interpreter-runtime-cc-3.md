@@ -133,7 +133,7 @@ Let's synthesize this into the final response.
 
 `v8/src/wasm/interpreter/wasm-interpreter-runtime.cc` 的主要职责是为 V8 的 WebAssembly 解释器提供必要的运行时支持，包括对象生命周期管理、类型系统实现、以及与 JavaScript 互操作的桥梁。它包含了一系列底层的 C++ 函数，这些函数处理 WebAssembly 执行过程中各种关键操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-runtime.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter-runtime.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 <Map> rtt = RttCanon(array_index);
   return {
       {isolate_->factory()->NewWasmArrayUninitialized(length, rtt), isolate_},
@@ -720,8 +722,4 @@ void InterpreterHandle::SetTrapFunctionIndex(int32_t func_index) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

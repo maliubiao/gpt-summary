@@ -276,7 +276,7 @@ sys.stdin.read()
 
 `bionic/libc/seccomp/gen_syscall_nrs_x86.cpp` 是一个关键的源代码文件，它为 Android Bionic libc 库生成了 x86 架构的系统调用号映射。这个映射关系是 Android 系统正常运行的基础，它使得用户空间程序能够通过 `libc` 函数间接地请求操作系统内核的服务。虽然普通应用开发者不会直接接触这个文件，但理解其功能有助于深入理解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/seccomp/gen_syscall_nrs_x86.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -287,10 +287,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 #include <asm/unistd_32.h>
-
-"""
-
 ```

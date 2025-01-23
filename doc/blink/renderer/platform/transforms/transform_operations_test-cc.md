@@ -154,15 +154,17 @@ element.animate([
 
 这个代码文件 `transform_operations_test.cc` 的主要功能是**全面测试 Chromium Blink 渲染引擎中 `TransformOperations` 类及其相关 transform 操作的实现**。 它通过大量的单元测试，验证了 transform 操作的正确应用、混合 (动画插值)、边界框计算，并覆盖了各种 transform 类型和特殊场景。 这确保了 Blink 引擎能够正确地处理 CSS `transform` 属性，为基于 JavaScript 和 CSS 的动画和视觉效果提供可靠的基础。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/transforms/transform_operations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -930,8 +932,4 @@ TEST(TransformOperationsTest, SizeDependenciesCombineTest) {
   ops.Operations().push_back(MakeGarbageCollected<TranslateTransformOperation>(
       Length::Percent(100), Length::Fixed(0), TransformOperation::kTranslate));
   EXPECT_EQ(ops.Operations()[2]->BoxSizeDependencies(),
-            
-"""
-
-
 ```

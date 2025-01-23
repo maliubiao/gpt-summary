@@ -84,7 +84,7 @@ Let's break down the thought process to analyze the provided Python script in th
 
 总而言之，这个 `script.py` 文件虽然功能简单，但在 Frida 的开发和测试流程中扮演着一个辅助角色，用于模拟文件系统的状态，以便测试安装和其他相关功能是否正常工作。 它与逆向工程的联系在于它支持了 Frida 这个逆向工具的正确构建和运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/99 install all targets/subdir/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -101,7 +103,4 @@ import sys
 for f in sys.argv[1:]:
   with open(f, 'w') as f:
       pass
-
-"""
-
 ```

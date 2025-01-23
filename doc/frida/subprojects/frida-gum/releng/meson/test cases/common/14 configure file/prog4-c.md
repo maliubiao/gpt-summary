@@ -149,7 +149,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，`prog4.c` 虽然代码简单，但它作为一个 Frida 测试用例，体现了动态分析、外部配置影响程序行为等逆向工程的重要概念，并且涉及到一些底层的编译、链接和操作系统知识。查看这个文件通常是 Frida 开发者或高级用户深入了解 Frida 工作原理或进行调试的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/14 configure file/prog4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,15 +157,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <config4a.h>
 #include <config4b.h>
 
 int main(void) {
     return RESULTA + RESULTB;
 }
-
-"""
-
 ```

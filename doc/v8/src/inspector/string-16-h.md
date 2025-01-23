@@ -188,15 +188,17 @@ If `v8/src/inspector/string-16.h` had a `.tq` extension (e.g., `string-16.tq`), 
 
 In summary, `v8/src/inspector/string-16.h` provides a crucial utility for handling UTF-16 encoded strings within the V8 inspector, facilitating the inspection and manipulation of JavaScript string data during debugging.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/string-16.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/string-16.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -375,7 +377,4 @@ struct hash<v8_inspector::String16> {
 #endif  // !defined(__APPLE__) || defined(_LIBCPP_VERSION)
 
 #endif  // V8_INSPECTOR_STRING_16_H_
-
-"""
-
 ```

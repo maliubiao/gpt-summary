@@ -182,15 +182,17 @@ go test -run TestMyList_Int ./listimp.go
 
 总而言之，`go/test/typeparam/listimp.go` 很可能是一个 Go 语言测试文件，用于测试与类型参数和列表实现相关的代码。它本身不打算被直接使用，而是作为 Go 语言测试套件的一部分运行。 `// rundir` 注释暗示了其对特定运行环境的依赖。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/listimp.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -198,9 +200,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

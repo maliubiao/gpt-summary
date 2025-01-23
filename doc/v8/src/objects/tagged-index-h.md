@@ -150,15 +150,17 @@ processIndex(2000000000); // 输出 "Index is outside TaggedIndex range: 2000000
 
 `v8/src/objects/tagged-index.h` 定义了 V8 中用于表示 31 位有符号整数的 `TaggedIndex` 类型。它优化了小整数的存储和操作，并考虑了不同架构的特性。虽然 JavaScript 开发者不会直接操作 `TaggedIndex`，但它的存在和特性是 V8 引擎高效处理 JavaScript 中整数的基础。理解 `TaggedIndex` 的功能和限制有助于更深入地理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/tagged-index.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/tagged-index.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ struct CastTraits<TaggedIndex> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_TAGGED_INDEX_H_
-
-"""
-
 ```

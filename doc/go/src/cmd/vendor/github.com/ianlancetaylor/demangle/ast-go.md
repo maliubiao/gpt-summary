@@ -126,7 +126,7 @@ demangledString := demangle.ASTToString(myAST, options...)
 
 `go/src/cmd/vendor/github.com/ianlancetaylor/demangle/ast.go` 文件定义了用于表示 C++ 声明的抽象语法树结构，并提供了将 AST 转换为可读的 C++ 声明字符串的能力。这是实现 C++ 符号 demangle 功能的核心数据结构和方法。该文件本身不直接处理命令行参数，但其提供的 `Option` 机制允许调用者根据命令行参数来定制 demangle 的输出格式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/ianlancetaylor/demangle/ast.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -3260,9 +3262,4 @@ func (b *Binary) print(ps *printState) {
 			ps.writeByte('[')
 		}
 		p
-"""
-
-
-
-
 ```

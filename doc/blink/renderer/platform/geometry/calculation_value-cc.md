@@ -164,14 +164,16 @@ This methodical approach, starting from the filename and progressively analyzing
 
 总而言之，`CalculationValue.cc` 是 Blink 渲染引擎中一个关键的文件，它负责处理 CSS 中各种复杂的计算值，使得网页布局和样式具有更大的灵活性和动态性。理解其功能有助于我们更好地理解浏览器如何解析和应用 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/geometry/calculation_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -376,7 +378,4 @@ bool CalculationValue::HasFitContent() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

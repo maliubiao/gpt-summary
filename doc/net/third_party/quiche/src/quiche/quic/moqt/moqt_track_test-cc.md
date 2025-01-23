@@ -141,15 +141,17 @@ A developer might encounter this code while debugging a media streaming issue in
 
 In essence, understanding this test file helps developers verify the correctness of the `RemoteTrack` class, which is a crucial component in the browser's ability to handle real-time media streams using the MoQT protocol. This directly impacts the user experience of web applications that rely on such technologies.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_track_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ TEST_F(RemoteTrackTest, UpdateForwardingPreference) {
 }  // namespace test
 
 }  // namespace moqt
-
-"""
-
 ```

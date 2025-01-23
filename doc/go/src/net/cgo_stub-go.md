@@ -203,7 +203,7 @@ go run -tags netgo main.go
 
 因此，理解 `netgo` 标签的作用，以及它如何影响 Go 的网络操作，对于避免这类错误至关重要。  只有在明确需要使用纯 Go 实现的网络功能时，才应该使用 `netgo` 标签。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -211,8 +211,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -253,9 +255,4 @@ func cgoLookupCNAME(ctx context.Context, name string) (cname string, err error, 
 func cgoLookupPTR(ctx context.Context, addr string) (ptrs []string, err error) {
 	panic("cgo stub: cgo not available")
 }
-
-"""
-
-
-
 ```

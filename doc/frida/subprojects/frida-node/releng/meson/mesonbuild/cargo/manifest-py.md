@@ -160,7 +160,7 @@ serde = "1.0"
 
 `manifest.py` 文件虽然看似简单，但它在 Frida 项目中扮演着重要的角色，用于规范化和管理与 Rust 代码构建相关的元数据。它为处理 Cargo 清单文件提供了类型安全的基础，并间接地影响着 Frida 的构建过程以及对 Rust 编写的目标程序的理解和分析。 作为一个调试线索，它能帮助开发者理解 Frida 如何解析和使用 Rust 项目的配置信息，从而定位构建或依赖相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/cargo/manifest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -397,7 +399,4 @@ class VirtualManifest(TypedDict):
     """
 
     workspace: Workspace
-
-"""
-
 ```

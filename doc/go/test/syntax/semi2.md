@@ -153,15 +153,17 @@ Go 语言的 `switch` 语句有几种形式：
 
 `go/test/syntax/semi2.go` 这段代码是一个用于测试 Go 编译器语法解析能力的测试用例， specifically 针对 `switch` 语句中缺少必要结构的情况进行错误检测。 它并不实现任何实际的业务逻辑，而是确保编译器能够正确地识别并报告语法错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/syntax/semi2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -174,11 +176,4 @@ func main() {
 	switch x; y	// ERROR "missing .*{.* after switch clause|undefined"
 	{
 		z
-
-
-
-"""
-
-
-
 ```

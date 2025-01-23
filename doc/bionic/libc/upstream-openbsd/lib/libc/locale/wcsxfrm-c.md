@@ -329,7 +329,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 总结来说，虽然这个 `wcsxfrm.c` 文件来自 OpenBSD，但在 Android Bionic 中其实现非常简化，主要功能是宽字符串的复制，而非传统的 locale 感知的转换。理解这一点对于避免在 Android 开发中出现与字符串排序和比较相关的错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/locale/wcsxfrm.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -340,8 +340,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: wcsxfrm.c,v 1.3 2017/09/05 03:16:13 schwarze Exp $ */
 /*	$NetBSD: multibyte_sb.c,v 1.4 2003/08/07 16:43:04 agc Exp $ */
 
@@ -384,7 +386,4 @@ wcsxfrm(wchar_t *dest, const wchar_t *src, size_t n)
 	return wcslcpy(dest, src, n);
 }
 DEF_STRONG(wcsxfrm);
-
-"""
-
 ```

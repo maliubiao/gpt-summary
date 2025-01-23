@@ -108,11 +108,13 @@ WebAssembly.instantiate(wasmCode, importObject)
 
 `callbacks.cc` 文件主要验证了 WebAssembly C API 中关于回调机制的实现。它通过 C++ 代码模拟了 WebAssembly 模块和外部函数交互的各种场景，这直接关系到 JavaScript 中如何通过 `importObject` 将 JavaScript 函数或使用 C API 编译的 C++ 函数提供给 WebAssembly 模块使用。JavaScript 示例展示了如何通过导入对象将一个 JavaScript 函数 (模拟 C++ 函数) 传递给 WebAssembly 模块，并在 WebAssembly 代码执行时被调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/callbacks.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -446,7 +448,4 @@ TEST_F(WasmCapiTest, DirectCallCapiFunctionWithManyArgs) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

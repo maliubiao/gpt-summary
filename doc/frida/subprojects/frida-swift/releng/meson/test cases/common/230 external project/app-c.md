@@ -198,7 +198,7 @@ By following this systematic approach, starting with the simple code and gradual
 
 通过这些步骤，用户从简单的程序运行和观察，逐步深入到使用动态分析工具 Frida 来理解程序内部的行为，尤其是在不了解 `libfoo` 实现细节的情况下，Frida 成为了非常有用的调试工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/230 external project/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,15 +206,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libfoo.h>
 
 int main(void)
 {
     return call_foo() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

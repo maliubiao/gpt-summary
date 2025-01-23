@@ -137,7 +137,7 @@ By following this systematic approach, breaking down the request, analyzing the 
 
 总而言之，这个简单的 `main.cpp` 文件是 Frida 项目中用于测试基础功能的组件。虽然它的功能很简单，但在 Frida 的上下文中，它可以作为测试 Frida 各种强大功能的理想目标。通过分析这个简单的程序，可以更好地理解 Frida 如何与目标进程交互，以及如何利用底层的操作系统机制进行动态插桩。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/207 warning level 0/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 #define PROJECT_NAME "demo"
@@ -159,7 +161,4 @@ int main(int argc, char **argv) {
     std::cout << "This is project " << PROJECT_NAME << ".\n";
     return 0;
 }
-
-"""
-
 ```

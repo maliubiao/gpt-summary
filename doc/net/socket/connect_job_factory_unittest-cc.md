@@ -192,7 +192,7 @@ fetch('https://example.com');
 
 总而言之，`net/socket/connect_job_factory_unittest.cc` 文件的主要功能是**系统地测试 `ConnectJobFactory` 类的各种连接作业创建场景，确保它能够根据不同的网络请求需求创建正确的 `ConnectJob` 子类实例，并使用正确的参数进行初始化**。 这对于保证 Chromium 网络栈的稳定性和正确性至关重要，因为它直接关系到浏览器能否成功建立各种类型的网络连接。 这些测试覆盖了直接连接、通过各种类型的代理连接以及使用 SSL/TLS 的情况，并验证了连接参数的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/connect_job_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -916,8 +918,4 @@ TEST_F(ConnectJobFactoryTest, CreateNestedHttpsProxyConnectJobWithoutScheme) {
   EXPECT_FALSE(proxy_server1_ssl_params.ssl_config().early_data_enabled);
 
   ASSERT_EQ(proxy_server1_ssl_params.GetConnectionType(),
-  
-"""
-
-
 ```

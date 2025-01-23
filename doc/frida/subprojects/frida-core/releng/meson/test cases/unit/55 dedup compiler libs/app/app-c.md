@@ -182,7 +182,7 @@ By following this systematic thought process, combining code analysis with the c
 
 总而言之，`app.c` 是一个用于演示和测试动态链接库之间交互的简单示例，特别关注了不同库可能共享状态或相互影响的情况。在 Frida 的上下文中，它可以用作单元测试，帮助验证 Frida 框架在处理这类场景时的行为，同时也为逆向工程师提供了一个简单的目标，用于练习动态分析技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/55 dedup compiler libs/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <liba.h>
 #include <libb.h>
@@ -205,7 +207,4 @@ main(void)
   printf("end value = %d\n", liba_get());
   return 0;
 }
-
-"""
-
 ```

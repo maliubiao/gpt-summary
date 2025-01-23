@@ -259,7 +259,7 @@ if (unlinkPtr) {
 
 通过这些 Frida Hook，你可以观察到 `dlopen` 是如何被调用的，以及在测试过程中 `dlfcn_symlink_support.handroid.h` 中定义的函数（最终会调用 `symlink` 和 `unlink`）是如何被执行的，从而更好地理解动态链接器对符号链接的处理过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/dlfcn_symlink_support.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -315,7 +317,4 @@ class DlfcnSymlink {
 };
 
 #endif /* __DLFCN_SYMLINK_SUPPORT_H__ */
-
-"""
-
 ```

@@ -171,15 +171,17 @@ navigator.mediaDevices.getUserMedia({ video: true })
 
 `vpx_encoder.cc` 是 Chromium 浏览器中 MediaRecorder API 的核心组件之一，它负责将视频帧高效地编码为 VP8 或 VP9 格式，使得网页能够进行视频录制等操作。理解这个文件的功能有助于理解浏览器如何处理视频编码以及如何调试相关的 Web 应用问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/vpx_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -578,7 +580,4 @@ base::TimeDelta VpxEncoder::EstimateFrameDuration(
 }
 
 }  // namespace blink
-
-"""
-
 ```

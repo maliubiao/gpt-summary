@@ -163,7 +163,7 @@ This systematic approach allows for a comprehensive understanding of the code an
 
 `lib1.c` 文件定义了一个简单的导出函数 `libfun`，它调用了两个未实现的内部函数。这个例子在 Frida 的测试用例中用于演示跨库函数调用的场景。理解这个文件的功能和背后的概念对于使用 Frida 进行动态插桩、进行逆向分析以及理解动态链接库的工作原理都非常有帮助。用户查看这个文件通常是为了理解 Frida 的工作方式或者分析一个使用了动态链接库的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/39 library chain/subdir/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int lib2fun(void);
 int lib3fun(void);
 
@@ -190,7 +192,4 @@ int lib3fun(void);
 int DLL_PUBLIC libfun(void) {
   return lib2fun() + lib3fun();
 }
-
-"""
-
 ```

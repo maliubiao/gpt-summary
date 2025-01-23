@@ -204,14 +204,16 @@ JavaScript 代码创建了一个 Shadow DOM 并向其中添加了带有 `.my-cla
 
 总而言之，`scoped_css_name.cc` 定义的类是 Blink 引擎实现 CSS 作用域的关键组成部分，尤其对于 Shadow DOM 这样的特性至关重要。它们帮助引擎在内部区分和管理在不同 DOM 树部分中可能重名的 CSS 类，从而确保样式的正确应用和隔离。理解这些内部机制有助于开发者更好地理解 CSS 作用域的概念，并避免在使用 Shadow DOM 等技术时可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/scoped_css_name.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/core/style/scoped_css_name.h"
 
 #include "third_party/blink/renderer/core/dom/tree_scope.h"
@@ -227,7 +229,4 @@ void ScopedCSSNameList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

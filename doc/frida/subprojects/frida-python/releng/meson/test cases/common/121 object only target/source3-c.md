@@ -113,7 +113,7 @@ Interceptor.attach(Module.findExportByName(null, "func3_in_obj"), {
 
 因此，用户（通常是 Frida 的开发者或高级用户）到达这个文件作为调试线索，是因为他们正在开发、测试或调试 Frida 本身的功能，而这个文件是 Frida 测试套件的一部分，用于验证基本 hook 功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/121 object only target/source3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,12 +121,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

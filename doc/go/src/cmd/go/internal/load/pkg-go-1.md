@@ -435,7 +435,7 @@ case-insensitive import collision: "mypackage" and "myPackage"
 
 这段代码是 `go` 命令中负责 **加载和预处理 Go 包** 的核心逻辑之一。它根据不同的构建配置、依赖关系和语言特性，为后续的编译、链接等操作准备必要的包信息，包括确定构建目标、处理 `go:embed` 指令、处理 Cgo/SWIG 依赖、检查导入路径冲突等。 它的主要职责是确保在构建过程开始之前，所有相关的包信息都得到正确加载和校验。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/load/pkg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -443,9 +443,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- error
+### 源代码
+```go
+error
 			// must be either in an explicit command-line argument,
 			// or on the importer side (indicated by a non-empty importPos).
 			top, ok := stk.Top()
@@ -2270,10 +2272,4 @@ func DeclareCoverVars(p *Package, files ...string) map[string]*CoverVar {
 	}
 	return coverVars
 }
-
-"""
-
-
-
-
 ```

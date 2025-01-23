@@ -137,7 +137,7 @@ By following these steps, I could generate a comprehensive and informative summa
 
 这部分代码专注于测试 `CertVerifyProc` 组件在处理证书吊销时的各种场景，特别是通过 CRL 进行吊销检查的硬性失败和软性失败行为，以及在线 OCSP 检查对 EV 证书的影响。此外，还包含了对证书基本约束的测试。这部分测试确保了 Chrome 浏览器能够正确地执行证书吊销检查，从而保障用户的网络安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 EXPECT_FALSE(verify_result.cert_status & CERT_STATUS_REV_CHECKING_ENABLED);
 }
 
@@ -936,7 +938,4 @@ TEST_P(CertVerifyProcConstraintsTest, BasicConstraintsIsCaLeaf) {
                                bssl::KEY_USAGE_BIT_DIGITAL_SIGNATURE});
     } else {
       chain_[0]->SetKeyUsages({bssl::KEY_USAGE_BIT_DIG
-"""
-
-
 ```

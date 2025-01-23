@@ -169,11 +169,13 @@ This iterative and self-correcting approach is crucial for developing a comprehe
 
 `v8/src/runtime/runtime-compiler.cc` 是 V8 引擎中负责将 JavaScript 代码转换为可执行机器码并进行优化的关键组成部分。它实现了多种编译策略和优化技术，以提高 JavaScript 代码的执行效率。虽然 JavaScript 开发者不能直接调用这些运行时函数，但它们的行为直接影响着 JavaScript 代码的性能表现。理解这些运行时函数的功能有助于更深入地理解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1002,7 +1004,4 @@ RUNTIME_FUNCTION(Runtime_ResolvePossiblyDirectEval) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

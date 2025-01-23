@@ -245,7 +245,7 @@ This part of the `decode.go` file is responsible for the **fundamental process o
 
 This code provides the foundational building blocks for a complete ARM64 assembler or disassembler. It doesn't deal with higher-level concerns like instruction semantics or code generation; it focuses solely on the initial step of breaking down the raw binary instruction.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/arm64/arm64asm/decode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -253,8 +253,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2601,9 +2603,4 @@ func decodeArg(aop instArg, x uint32) Arg {
 		} else if size == 3 && Q == 0 {
 			return RegisterWithArrangement{V0 + Reg(Rt), Arrangement1D, 2}
 		} else /* size =
-"""
-
-
-
-
 ```

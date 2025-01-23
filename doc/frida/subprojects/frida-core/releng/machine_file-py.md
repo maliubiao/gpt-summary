@@ -212,7 +212,7 @@ value2 = 'some_string'
 
 总而言之，`frida/subprojects/frida-core/releng/machine_file.py` 是 Frida 构建和运行时配置管理的关键部分，它通过加载和解析机器配置文件，为 Frida 提供了关于目标环境的重要信息，从而支持其动态 instrumentation 功能。用户通常不需要直接编辑或调用这个文件，但了解其功能有助于理解 Frida 的内部工作原理以及排查与环境配置相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/machine_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -220,8 +220,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 from typing import Sequence, Union
@@ -266,7 +268,4 @@ def strv_to_meson(strv: Sequence[str]) -> str:
 
 def str_to_meson(s: str) -> str:
     return "'" + s + "'"
-
-"""
-
 ```

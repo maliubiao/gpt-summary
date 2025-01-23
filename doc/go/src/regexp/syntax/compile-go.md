@@ -179,7 +179,7 @@ func main() {
 
 `go/src/regexp/syntax/compile.go` 是 Go 语言正则表达式编译器的核心部分，负责将正则表达式的抽象语法树转换为可在虚拟机上执行的指令序列。它使用了回填技术来处理前向引用，并支持各种正则表达式操作符。虽然普通使用者不会直接与这段代码交互，但理解其功能有助于更好地理解正则表达式的匹配原理和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/regexp/syntax/compile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -485,9 +487,4 @@ func (c *compiler) rune(r []rune, flags Flags) frag {
 
 	return f
 }
-
-"""
-
-
-
 ```

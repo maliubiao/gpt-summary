@@ -113,7 +113,7 @@ console.log(result);
 
 这段代码是 V8 引擎中 x64 架构反汇编器的一部分，专注于解码并以可读的汇编格式打印以 `0F` 开头的双字节指令和以 `0F 38` 或 `0F 3A` 开头的三字节指令。它延续了反汇编流程，处理了更多的 x64 指令，包括 SSE 指令和其他常见的指令。这个功能对于调试 V8 引擎、分析性能以及深入理解 JavaScript 代码的底层执行机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/disasm-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/x64/disasm-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 endToBuffer("movmskpd %s,", NameOfCPURegister(regop));
       current += PrintRightXMMOperand(current);
     } else if (opcode == 0x70) {
@@ -1057,7 +1059,4 @@ const char* NameConverter::NameOfConstant(uint8_t* addr) const {
 }
 
 const char* NameConverter::NameOfCPURegiste
-"""
-
-
 ```

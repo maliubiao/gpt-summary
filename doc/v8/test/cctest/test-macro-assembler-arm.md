@@ -94,11 +94,13 @@ console.log(processedNumbers);
 
 `v8/test/cctest/test-macro-assembler-arm.cc` 文件通过测试 ARM 架构下宏汇编器生成 NEON 指令的正确性，间接地保证了 V8 引擎在 ARM 设备上执行 JavaScript 代码时的性能和正确性。这些底层的测试确保了 V8 能够有效地利用 ARM 处理器的 SIMD 功能来优化 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -436,7 +438,4 @@ TEST(DeoptExitSizeIsFixed) {
 }  // namespace test_macro_assembler_arm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

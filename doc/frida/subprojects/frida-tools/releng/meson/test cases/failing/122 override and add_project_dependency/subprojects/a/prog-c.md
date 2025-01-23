@@ -243,7 +243,7 @@ Finally, organize the thoughts into the categories requested by the user (functi
 
 通过查看这个简单的 `prog.c`，开发者可以开始理解测试用例的意图以及可能失败的原因。例如，他们可能会检查 `lib.h` 的内容，查看 Frida 的测试脚本是如何尝试覆盖 `f()` 函数的，以及项目依赖是如何配置的，从而找出导致测试失败的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/122 override and add_project_dependency/subprojects/a/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -251,15 +251,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "lib.h"
 
 int main() {
     f();
     return 0;
 }
-
-"""
-
 ```

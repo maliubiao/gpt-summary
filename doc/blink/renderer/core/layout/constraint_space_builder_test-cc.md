@@ -103,14 +103,16 @@ This systematic approach allows for a comprehensive understanding of the test fi
 
 `constraint_space_builder_test.cc` 通过模拟不同的书写模式和尺寸情况，来确保 `ConstraintSpaceBuilder` 类能够正确地处理不定尺寸，并根据包含块的尺寸和书写模式进行正确的解析。这对于确保 Blink 引擎能够正确地渲染网页至关重要，尤其是在处理复杂的布局和国际化内容时。这些测试直接关联到 CSS 的 `writing-mode` 属性以及浏览器如何处理元素的尺寸和包含关系。理解这些测试用例有助于开发者避免在使用 CSS 和 JavaScript 进行布局时可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/constraint_space_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ TEST(ConstraintSpaceBuilderTest, AvailableSizeFromVerticalICB) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

@@ -170,7 +170,7 @@ mv [sp], t0        # 将 t0 的值存储到栈顶
 
 它体现了编译器后端将高级语言（WebAssembly 的中间表示）转换为目标机器指令的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/riscv/liftoff-assembler-riscv64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/riscv/liftoff-assembler-riscv64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 onst int num_args = static_cast<int>(args_list.size());
   const VarState* const args = args_list.begin();
   // Note: If we ever need more than eight arguments we would need to load the
@@ -244,8 +246,4 @@ bool LiftoffAssembler::supports_f16_mem_access() { return false; }
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_BASELINE_RISCV_LIFTOFF_ASSEMBLER_RISCV64_INL_H_
-
-"""
-
-
 ```

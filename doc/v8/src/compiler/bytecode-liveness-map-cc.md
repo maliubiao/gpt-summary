@@ -136,15 +136,17 @@ function useBeforeAssign(a) {
 
 `v8/src/compiler/bytecode-liveness-map.cc` 定义了表示字节码活跃状态的数据结构和操作，这是 V8 优化 JavaScript 代码的关键组成部分。它通过分析哪些寄存器和累加器在程序的特定点是活跃的，为寄存器分配和死代码消除等优化提供了基础信息。虽然不直接与用户编写的 JavaScript 代码交互，但它对于 V8 高效执行 JavaScript 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-liveness-map.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-liveness-map.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ std::string ToString(const BytecodeLivenessState& liveness) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

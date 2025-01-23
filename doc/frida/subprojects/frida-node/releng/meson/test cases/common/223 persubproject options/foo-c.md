@@ -132,7 +132,7 @@ int main() {
 
 总而言之，`foo.c` 文件本身的功能非常简单，但它的存在对于确保 Frida 项目的构建和测试流程的正确性至关重要。它虽然不直接参与逆向分析的运行时操作，但为 Frida 作为一个强大的动态插桩工具奠定了基础。理解这种简单的测试用例在整个项目中的作用，有助于更好地理解 Frida 的架构和开发流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/223 persubproject options/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,14 +140,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void);
 
 int foo(void) {
   return 0;
 }
-
-"""
-
 ```

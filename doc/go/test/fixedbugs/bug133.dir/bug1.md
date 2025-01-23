@@ -201,15 +201,17 @@ Some additional data
 
 总而言之，这段代码简洁地展示了 Go 语言中包的导入和结构体的嵌入特性，是理解 Go 语言模块化和数据组织方式的一个很好的例子。 理解相对导入的含义以及如何正确访问嵌入结构体的字段是使用这段代码或类似结构的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug133.dir/bug1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -219,9 +221,4 @@ package bug1
 import "./bug0"
 
 type T struct { t bug0.T }
-
-"""
-
-
-
 ```

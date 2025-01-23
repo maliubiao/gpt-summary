@@ -95,11 +95,13 @@ console.log(doubled);
 
 `setup-builtins-internal.cc` 是 V8 引擎的基石之一。它就像一个工厂，在引擎启动时生产并组装了 JavaScript 语言的核心零件——内置函数。如果没有这个文件及其定义的功能，JavaScript 代码就无法执行，因为许多我们日常使用的基本功能都依赖于这里初始化的内置函数。这个文件体现了 V8 引擎的复杂性和底层实现，它将高级的 JavaScript 代码与底层的机器码执行连接起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/setup-builtins-internal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -565,7 +567,4 @@ void SetupIsolateDelegate::SetupBuiltinsInternal(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

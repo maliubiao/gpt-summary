@@ -129,15 +129,17 @@ func main() {
 
 `issue11610a.go` 是一个专门设计的测试用例，用于验证 Go 编译器在遇到空字符串 import 路径时能否正确报错。它不代表一个常用的 Go 功能实现，而是 Go 编译器自身质量保证的一部分。  通过这种类型的测试用例，Go 团队确保编译器能够捕获常见的语法错误，并提供清晰的错误信息，帮助开发者快速定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue11610a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -149,9 +151,4 @@ Prompt:
 
 package a
 import""  // ERROR "import path is empty|invalid import path \(empty string\)"
-
-"""
-
-
-
 ```

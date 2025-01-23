@@ -127,11 +127,13 @@ console.log(str5); // 输出 "10"
 
 `v8/src/base/numbers/dtoa.cc` 文件是 V8 引擎中实现双精度浮点数到字符串转换的核心组件。它通过 `DoubleToAscii` 函数，根据不同的转换模式和精度要求，将数字转换为符合 JavaScript 规范的字符串表示。它直接影响着 JavaScript 中 `toString()`, `toFixed()`, `toPrecision()` 等方法的行为，以及数字到字符串的隐式转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/dtoa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ void DoubleToAscii(double v, DtoaMode mode, int requested_digits,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

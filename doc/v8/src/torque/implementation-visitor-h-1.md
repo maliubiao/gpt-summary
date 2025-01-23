@@ -162,7 +162,7 @@ int32_t Multiply(int32_t a, int32_t b) {
 
 `ImplementationVisitor` 的核心功能是作为 Torque 编译过程中的一个关键组件，负责将 Torque 的高级定义转换为可执行的 C++ 代码。它管理代码生成的细节，包括输出流、编译器后端、源码位置、代码块状态和代码缩进。此外，它还处理宏定义，为生成的代码添加调试或辅助功能。这个类确保了从 Torque 代码到 C++ 代码的转换过程是结构化的、可控的，并符合 V8 引擎的编码规范。它生成的 C++ 代码最终构成了 V8 引擎的一部分，直接参与 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.h以.tq结尾，那它是个v8 torque源代码，
@@ -170,9 +170,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  std::stringstream debug_macros_h_;
+### 源代码
+```c
+std::stringstream debug_macros_h_;
 
   OutputType output_type_ = OutputType::kCSA;
 };
@@ -182,8 +184,4 @@ void ReportAllUnusedMacros();
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_IMPLEMENTATION_VISITOR_H_
-
-"""
-
-
 ```

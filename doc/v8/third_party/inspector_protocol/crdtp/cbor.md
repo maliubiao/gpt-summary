@@ -120,11 +120,13 @@ CBOR 在这里的作用是将 JavaScript 中的数据结构（例如对象、数
 
 虽然 JavaScript 代码不会直接调用 `cbor.cc` 中的函数，但当 Chrome 开发者工具与 V8 引擎进行通信时，在幕后，数据会被序列化成 CBOR 格式进行传输。`cbor.cc` 文件提供的编码和解码功能正是用于处理这些 CBOR 数据的关键部分。JavaScript 只需要构建和解析 JavaScript 对象，底层的 CBOR 序列化和反序列化是由浏览器和 V8 引擎的机制自动完成的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/cbor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1203,7 +1205,4 @@ Status AppendString8EntryToCBORMap(span<uint8_t> string8_key,
 }
 }  // namespace cbor
 }  // namespace v8_crdtp
-
-"""
-
 ```

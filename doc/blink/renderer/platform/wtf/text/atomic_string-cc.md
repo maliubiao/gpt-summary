@@ -141,14 +141,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`atomic_string.cc` 文件定义了 Blink 引擎中用于高效处理重复字符串的核心机制，它通过字符串驻留来优化内存使用和比较性能，并在处理 HTML、CSS 和 JavaScript 等 Web 技术中的字符串数据方面发挥着关键作用。理解其不可变性和生命周期管理对于正确使用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/atomic_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2013 Apple Inc. All rights
  * reserved.
@@ -290,7 +292,4 @@ void AtomicString::Show() const {
 #endif
 
 }  // namespace WTF
-
-"""
-
 ```

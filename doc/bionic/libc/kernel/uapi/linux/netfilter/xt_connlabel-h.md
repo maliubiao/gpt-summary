@@ -251,7 +251,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/kernel/uapi/linux/netfilter/xt_connlabel.h` 定义了用于操作 Netfilter 连接标签的用户空间 API。它本身不涉及 libc 函数的实现或 dynamic linker 的直接操作，但它定义的结构体和常量被用户空间程序用于配置和管理内核中的连接标签功能，这在 Android 的网络管理和安全机制中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_connlabel.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -283,7 +285,4 @@ struct xt_connlabel_mtinfo {
   __u16 options;
 };
 #endif
-
-"""
-
 ```

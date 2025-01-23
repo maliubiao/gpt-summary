@@ -191,15 +191,17 @@ In this example, the initial array `numbers` can be optimized by V8 assuming it 
 
 `v8/src/objects/allocation-site-inl.h` is a crucial part of V8's optimization strategy. It defines the `AllocationSite` and `AllocationMemento` objects, which are used to track information about object and array allocations. This information is leveraged by the optimizing compiler and garbage collector to improve performance. The involvement of Torque for parts of the implementation highlights the complexity and efficiency focus of V8's internal design. Understanding allocation sites helps in understanding how V8 optimizes common JavaScript patterns.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/allocation-site-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/allocation-site-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -477,7 +479,4 @@ bool AllocationSite::DigestTransitionFeedback(DirectHandle<AllocationSite> site,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_ALLOCATION_SITE_INL_H_
-
-"""
-
 ```

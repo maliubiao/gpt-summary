@@ -200,7 +200,7 @@ func main() {
 
 基于您提供的第二部分代码，我们可以归纳出其主要功能是：**提供便捷的函数，用于从字符串的开头或结尾安全地移除指定的前缀或后缀，并明确告知操作是否成功。**  这两个函数通过封装 `stringslite` 包中的实现，为开发者提供了清晰简洁的 API 来执行常见的字符串处理任务。 它们的设计考虑到了前缀或后缀不存在的情况，通过返回布尔值，避免了在这些情况下可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/strings.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -209,8 +209,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ix returns s, true.
 func CutPrefix(s, prefix string) (after string, found bool) {
 	return stringslite.CutPrefix(s, prefix)
@@ -223,10 +225,4 @@ func CutPrefix(s, prefix string) (after string, found bool) {
 func CutSuffix(s, suffix string) (before string, found bool) {
 	return stringslite.CutSuffix(s, suffix)
 }
-
-"""
-
-
-
-
 ```

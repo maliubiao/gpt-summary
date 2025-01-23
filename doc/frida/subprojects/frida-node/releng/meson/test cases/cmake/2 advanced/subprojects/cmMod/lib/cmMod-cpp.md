@@ -221,7 +221,7 @@ Finally, I organize my thoughts into a coherent response, addressing each point 
 
 总而言之，这个简单的 C++ 文件 `cmMod.cpp` 虽然功能不多，但它展示了 C++ 类的基本结构、条件编译、与外部库的交互以及在不同平台上的差异。对于逆向工程师来说，这是一个很好的练习目标，可以学习如何使用 Frida hook C++ 代码，并理解代码在二进制层面的行为。对于开发者来说，它也展示了一些常见的编程实践和可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/2 advanced/subprojects/cmMod/lib/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -229,8 +229,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include <zlib.h>
 #include "config.h"
@@ -257,7 +259,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

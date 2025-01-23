@@ -125,7 +125,7 @@ func main() {
 
 总而言之，这段 `signal_freebsd_386.go` 文件是 Go 运行时在 FreeBSD/386 平台上处理信号的关键组成部分，它提供了访问和操作信号上下文的能力，为 Go 语言的错误处理和底层机制提供了支持。普通 Go 开发者不需要直接使用它，但了解其功能有助于更深入地理解 Go 运行时的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_freebsd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -133,8 +133,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -176,9 +178,4 @@ func (c *sigctxt) set_eip(x uint32)     { c.regs().mc_eip = x }
 func (c *sigctxt) set_esp(x uint32)     { c.regs().mc_esp = x }
 func (c *sigctxt) set_sigcode(x uint32) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint32) { c.info.si_addr = uintptr(x) }
-
-"""
-
-
-
 ```

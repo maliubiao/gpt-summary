@@ -207,7 +207,7 @@ int main(int argc, char *argv[]) {
 
 总而言之，这段简单的 C 代码虽然功能单一，但它可以作为 Frida 动态插桩工具的测试基础，帮助理解字符串比较的底层机制，并且是逆向工程中分析更复杂程序的基础构建块。通过 Frida，我们可以动态地观察和操纵这类代码的行为，从而深入理解程序的运行逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/188 dict/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 
 int main(int argc, char **argv) {
@@ -225,7 +227,4 @@ int main(int argc, char **argv) {
 
   return strcmp(argv[1], argv[2]);
 }
-
-"""
-
 ```

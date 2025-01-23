@@ -138,15 +138,17 @@ func cmovint(c int) int {
 
 总而言之，`condmove.go` 文件是一个 Go 语言编译器的测试用例，它通过编写特定的 Go 代码，并使用指令注释来验证编译器是否能在不同的架构下正确生成高效的条件移动指令，体现了 Go 语言在代码生成和优化方面的细致考虑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/condmove.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -600,9 +602,4 @@ func cmovzeroreg1(a, b int) int {
 	// ppc64x:"ISEL\t[$]2, R0, R[0-9]+, R[0-9]+"
 	return x
 }
-
-"""
-
-
-
 ```

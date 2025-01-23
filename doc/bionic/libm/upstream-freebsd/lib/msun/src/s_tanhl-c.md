@@ -314,7 +314,7 @@ Sections:
 
 `s_tanhl.c` provides a crucial mathematical function for Android, demonstrating careful implementation for different input ranges to ensure accuracy and performance. Understanding its internal workings and the dynamic linking process is essential for debugging and optimizing applications that rely on mathematical computations on the Android platform.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_tanhl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -324,8 +324,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* from: FreeBSD: head/lib/msun/src/s_tanhl.c XXX */
 
 /*
@@ -496,7 +498,4 @@ tanhl(long double x)
 	if (jx<0) s = -1;
 	RETURNI(s*z);
 }
-
-"""
-
 ```

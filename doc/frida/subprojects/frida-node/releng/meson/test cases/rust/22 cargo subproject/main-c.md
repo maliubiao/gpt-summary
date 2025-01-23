@@ -156,7 +156,7 @@ pub extern "C" fn rust_func() -> i32 {
 
 总而言之，这个简单的 `main.c` 文件在 Frida 的上下文中扮演着连接 C 代码和 Rust 代码的桥梁角色，它本身的功能很直接，但其背后的意义在于启动和执行由 Rust 实现的、可能涉及复杂逆向工程逻辑的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/rust/22 cargo subproject/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,14 +164,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int rust_func(void);
 
 int main(int argc, char *argv[]) {
     return rust_func();
 }
-
-"""
-
 ```

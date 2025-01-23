@@ -150,7 +150,7 @@ console.profileEnd('My Profile'); // 停止性能分析
 
 这部分 `v8/src/profiler/profile-generator.cc` 的主要功能是**构建、存储和管理 CPU 性能剖析的数据结构**。它提供了启动和停止性能剖析的功能，并维护了指令地址到代码信息的映射，为后续的性能数据序列化和分析提供了基础。 它的核心职责是确保在 JavaScript 代码执行过程中，能够有效地收集和组织性能数据，以便开发者可以了解代码的性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/profile-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/profile-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ter_->AddString(",\"timeDeltas\":[");
   SerializeTimeDeltas();
   if (writer_->aborted()) return;
@@ -473,8 +475,4 @@ void CpuProfilesCollection::UpdateNativeContextAddressForCurrentProfiles(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

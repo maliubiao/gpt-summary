@@ -99,11 +99,13 @@ console.log(remainder);
 
 `v8/src/bigint/div-barrett.cc` 文件是 V8 引擎中用于实现高效 `BigInt` 除法运算的关键组成部分。它实现了 Barrett 约减算法，并通过计算除数的近似倒数来优化除法过程，这直接影响了 JavaScript 中 `BigInt` 除法和求模运算的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/div-barrett.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -470,7 +472,4 @@ void ProcessorImpl::DivideBarrett(RWDigits Q, RWDigits R, Digits A, Digits B) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

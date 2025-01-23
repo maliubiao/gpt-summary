@@ -689,12 +689,14 @@ void RegExpMacroAssemblerARM64::SkipUntilBitInTable(
     // hi_nibbles = (input >> 4) & 0x0f
     VRegister hi_nibbles = v5;
     __ Ushr
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2511,8 +2513,4 @@ MemOperand RegExpMacroAssemblerARM64::register_location(int register_index) {
   int offset = kFirstRegisterOnStackOffset - register_index * kWRegSize;
   return MemOperand(frame_pointer(), offset);
 }
-
-"""
-
-
 ```

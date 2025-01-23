@@ -126,14 +126,16 @@ Here's a breakdown of its functionalities:
 
 **In summary, `media_document.cc` is a foundational piece of Blink responsible for creating a simple, functional HTML wrapper to display media files directly in the browser. It handles basic user interaction and sets default autoplay behavior, bridging the gap between raw media resources and the web rendering engine.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  *
@@ -298,7 +300,4 @@ void MediaDocument::DefaultEventHandler(Event& event) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

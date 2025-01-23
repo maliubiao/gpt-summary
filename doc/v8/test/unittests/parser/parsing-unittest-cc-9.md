@@ -212,7 +212,7 @@ By following these steps and refining the analysis along the way, we arrive at a
 
 总而言之，`v8/test/unittests/parser/parsing-unittest.cc` 是一个重要的测试文件，用于确保 V8 的 JavaScript 解析器能够正确地解析各种 JavaScript 代码，为 V8 引擎的稳定性和正确性提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -220,9 +220,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共15部分，请归纳一下它的功能
+```
 
-"""
-               "a, ... args,  \n  \n  b",
+### 源代码
+```cpp
+"a, ... args,  \n  \n  b",
                         "a, a, ...args",
                         "a,\ta, ...args",
                         "a,\ra, ...args",
@@ -1071,7 +1073,4 @@ TEST_F(ParsingTest, ModuleParsingInternalsWithImportAttributes) {
     } else if (elem->index() == 3) {
       CHECK(elem->specifier()->IsOneByteEqualTo("m.js"));
       CHECK_EQ(1, elem->import_attributes()->size());
-"""
-
-
 ```

@@ -131,14 +131,16 @@ By following this thought process, breaking down the code, and connecting it to 
 
 总而言之，`media_stream_component_impl.cc` 定义的 `MediaStreamComponentImpl` 类是 Blink 引擎中处理媒体流轨道的关键组件，它连接了 JavaScript API 和底层的平台实现，负责管理轨道的状态和数据流。理解它的功能对于理解 WebRTC 和 Media Streams API 在浏览器内部的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_component_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Ericsson AB. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -319,7 +321,4 @@ void MediaStreamComponentImpl::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

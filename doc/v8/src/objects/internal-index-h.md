@@ -180,15 +180,17 @@ for (let i = 0; i < myArray.length; i++) {
 
 总而言之，`v8/src/objects/internal-index.h` 定义的 `InternalIndex` 类是 V8 引擎内部用于抽象和安全地处理索引的一个重要工具，它提高了代码的可读性和健壮性，并在一定程度上防止了因索引操作不当而引发的错误。虽然 JavaScript 开发者不会直接使用这个类，但它支撑着 JavaScript 语言的许多核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/internal-index.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/internal-index.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ class InternalIndex {
 }  // namespace v8
 
 #endif  // V8_OBJECTS_INTERNAL_INDEX_H_
-
-"""
-
 ```

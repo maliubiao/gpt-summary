@@ -121,14 +121,16 @@ The provided code snippet **does not involve any command-line argument processin
 
 **In conclusion, the provided Go code demonstrates the concept of closures within a method. The `Search1` method has a very specific and limited functionality, which could easily lead to misunderstandings if a user expects a more traditional search implementation.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/closure6.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -147,9 +149,4 @@ func (a Float64Slice) Search1(x float64) int {
 	}
 	return i
 }
-
-"""
-
-
-
 ```

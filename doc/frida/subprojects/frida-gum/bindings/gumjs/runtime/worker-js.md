@@ -181,7 +181,7 @@ Sum: 15
 
 Therefore, as a debugger, if you see RPC messages being sent and received in Frida, and you're examining the source code, tracing the path of an RPC call would lead you to the `Worker` class and its methods like `_request`, `_dispatchMessage`, and `_onRpcMessage`. Understanding this code is crucial for debugging issues related to communication between the main Frida script and the code running within the target process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/runtime/worker.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 class Worker {
   _pendingRequests = new Map();
   _nextRequestId = 1;
@@ -326,7 +328,4 @@ function isReservedMethodName(name) {
 }
 
 module.exports = Worker;
-
-"""
-
 ```

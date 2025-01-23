@@ -164,12 +164,14 @@ This file is a crucial part of V8's initialization process. It's responsible for
 
 总而言之，`v8/src/heap/setup-heap-internal.cc` 的第一部分是 V8 引擎启动时的一个关键步骤，它使用 C++ 代码构建了 JavaScript 运行时所需的基础设施，使得 V8 能够高效地表示和操作 JavaScript 代码和数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/setup-heap-internal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1723,7 +1725,4 @@ void Heap::CreateInitialMutableObjects() {
     info = CreateSharedFunctionInfo(
         isolate_, Builtin::kPromiseAnyRejectElementClosure, 1);
     set_promise_any_reject_element_closure_sh
-"""
-
-
 ```

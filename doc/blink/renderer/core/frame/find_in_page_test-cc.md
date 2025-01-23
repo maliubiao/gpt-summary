@@ -108,14 +108,16 @@ By following these steps, we can systematically analyze the code and extract the
 
 总结来说，`find_in_page_test.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎的“在页面中查找”功能能够正确可靠地工作。它通过模拟各种场景和验证输出，保障了用户在使用浏览器查找功能时的体验。 尽管它是测试代码，但它揭示了 `FindInPage` 功能与 HTML、CSS 的交互方式以及潜在的使用陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/find_in_page_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ TEST_F(FindInPageTest, FindAllAs) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

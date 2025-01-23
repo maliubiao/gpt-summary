@@ -114,11 +114,13 @@ const myObjects = createManyObjects();
 
 `logging-unittest.cc` 文件测试的是 V8 引擎中 `cppgc` 垃圾回收器使用的日志记录和断言机制。这些机制对于 V8 的内部开发和维护至关重要，用于确保垃圾回收器的正确性和可靠性。虽然 JavaScript 开发者不直接使用这些 C++ 宏，但这些宏保证了 V8 引擎的稳定运行，从而确保了 JavaScript 代码的正常执行。  上面 JavaScript 的例子展示了一个可能触发 `cppgc` 运行的场景，间接说明了这些 C++ 内部测试的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/logging-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ TEST(LoggingTest, SourceLocation) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

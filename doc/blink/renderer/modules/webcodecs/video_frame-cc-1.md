@@ -195,7 +195,7 @@ This code defines the `VideoFrame` class, a core component of the WebCodecs API 
 
 This portion of the `VideoFrame.cc` file primarily focuses on **creating `VideoFrame` objects from various sources (images and raw data), providing access to their properties, enabling the copying of frame data to memory buffers, managing the lifecycle of `VideoFrame` objects, and facilitating their integration with the browser's rendering pipeline (specifically `<canvas>` and `ImageBitmap`).** It encapsulates the core mechanisms for representing and interacting with video frame data within the WebCodecs API.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/video_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ();
     const bool is_origin_top_left = sbi->IsOriginTopLeft();
 
@@ -995,8 +997,4 @@ void VideoFrame::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

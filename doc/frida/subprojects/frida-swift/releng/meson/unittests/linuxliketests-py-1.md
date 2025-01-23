@@ -321,7 +321,7 @@ My thinking process for analyzing the Python code snippet went something like th
 
 总的来说，这部分代码对 frida 的构建系统在 Linux-like 系统上的各种功能进行了全面的测试，涵盖了编译器选项、库依赖、链接过程、安装过程以及与 pkg-config 的集成等方面。 这些测试对于确保 frida 的构建过程的正确性和稳定性至关重要，同时也揭示了许多与逆向工程相关的底层知识和用户可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -330,9 +330,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    def test_cpp_std_override(self):
+### 源代码
+```python
+def test_cpp_std_override(self):
         testdir = os.path.join(self.unit_test_dir, '6 std override')
         self.init(testdir)
         compdb = self.get_compdb()
@@ -1037,7 +1039,4 @@ Prompt:
 
     @skipIfNoPkgconfigDep('gmodule-2.0')
     def test_ldflag_dedup(se
-"""
-
-
 ```

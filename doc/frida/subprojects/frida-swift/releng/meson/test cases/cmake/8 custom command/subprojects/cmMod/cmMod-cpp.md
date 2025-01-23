@@ -148,7 +148,7 @@ otherInfo 的值将是：
 
 总而言之，`cmMod.cpp` 是 Frida 项目中一个用于测试目的的 C++ 源文件，它演示了一个简单的类，用于字符串操作和集成来自其他组件的数据。虽然它本身不是 Frida 动态插桩的核心，但理解其功能和依赖关系可以帮助开发者更好地理解 Frida 的测试框架和构建过程。在逆向分析的场景下，它可以作为被 Frida 操作或监控的目标代码片段的示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "genTest.hpp"
 #include "cpyBase.txt"
@@ -182,7 +184,4 @@ string cmModClass::getStr() const {
 string cmModClass::getOther() const {
   return "Strings:\n - " + getStrCpy() + "\n - " + getStrNext() + "\n - " + getStrCpyTest();
 }
-
-"""
-
 ```

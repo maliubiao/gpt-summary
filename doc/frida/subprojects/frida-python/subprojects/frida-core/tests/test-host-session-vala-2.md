@@ -116,7 +116,7 @@ int main() {
 ### 总结
 
 该文件主要测试了 Frida 在进程管理、插桩、调试等方面的功能，特别是在处理 `fork`、`exec`、`abort` 等系统调用时的表现。通过 LLDB 或 Frida，用户可以复现这些调试功能，并在目标进程中执行自定义的调试逻辑。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/tests/test-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -126,9 +126,11 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-		    args[2] = NULL;
+### 源代码
+```
+args[2] = NULL;
 						  }
 						});
 						Interceptor.attach(methInner.implementation, {
@@ -1240,7 +1242,4 @@ Prompt:
 
 				var script_id = yield session.create_script ("""
 					const STD_O
-"""
-
-
 ```

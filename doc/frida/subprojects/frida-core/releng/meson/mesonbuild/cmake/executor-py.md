@@ -151,7 +151,7 @@ When building Frida for an Android device, Meson (and subsequently this `CMakeEx
 
 By stepping through the Meson build process, a debugger could be used to observe the instantiation of the `CMakeExecutor`, the arguments passed to its methods, and the output of the executed CMake commands. This would help in diagnosing build issues related to CMake.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/cmake/executor.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -402,7 +404,4 @@ class CMakeExecutor:
 
     def machine_choice(self) -> MachineChoice:
         return self.for_machine
-
-"""
-
 ```

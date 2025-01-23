@@ -157,14 +157,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`html_summary_element.cc` 文件是 Blink 引擎中实现 HTML `<summary>` 元素核心功能的重要组成部分，它负责处理元素的创建、布局、与 `<details>` 元素的关联以及默认的交互行为。理解这个文件有助于深入了解浏览器如何解析和渲染 HTML 代码，以及如何实现 Web 页面的交互功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_summary_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies)
  *
@@ -272,7 +274,4 @@ bool HTMLSummaryElement::WillRespondToMouseClickEvents() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -131,7 +131,7 @@ fetch('https://example.com/data.json')
 
 这部分单元测试主要集中在 **`HostResolverManager` 组件的 DNS 解析核心功能测试**，具体包括：**DNS 别名的正确处理、本地主机名的解析逻辑、以及 DNS-over-HTTPS 配置的管理和自动升级机制，以及 DNS 配置覆盖的功能测试**。 这些测试确保了 `HostResolverManager` 能够按照预期的方式解析域名，并正确应用各种 DNS 配置策略，为 Chromium 的网络功能提供可靠的 DNS 解析服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::Pointee(testing::UnorderedElementsAre("canonical")));
 }
 
@@ -912,7 +914,4 @@ TEST_F(HostResolverManagerDnsTest, DohMappingWithAutomaticDot) {
   DnsConfig original_config = CreateUpgradableDnsConfig();
   original_config.dns_over_tls_active = true;
   ChangeDnsConfig(original
-"""
-
-
 ```

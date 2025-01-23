@@ -189,15 +189,17 @@ By following these steps, we can effectively analyze the given code snippet and 
 
 通过查看渲染引擎的日志、使用性能分析工具，或者在源码中设置断点，开发者可以追踪失效标志的状态变化，从而理解哪些操作导致了哪些类型的失效，并找到优化渲染性能的方法。 例如，如果发现 `whole_subtree_invalid_` 频繁出现，可能需要优化 DOM 操作，避免一次性进行大规模的修改。 如果 `tree_boundary_crossing_` 频繁出现，可能需要重新考虑 Shadow DOM 的边界样式管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/invalidation/invalidation_flags.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ bool InvalidationFlags::operator==(const InvalidationFlags& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

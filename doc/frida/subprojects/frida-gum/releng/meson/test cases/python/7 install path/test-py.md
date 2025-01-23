@@ -186,7 +186,7 @@ else:
 
 总而言之，虽然没有源代码，但通过分析文件路径，我们可以推断出 `frida/subprojects/frida-gum/releng/meson/test cases/python/7 install path/test.py` 是一个用于验证 Frida 组件安装路径的 Python 测试用例，它对于确保 Frida 的正常运行至关重要，并间接关系到逆向工程的顺利进行，也涉及到一些底层系统知识。用户通常会在遇到安装问题或进行 Frida 开发时接触到这类测试文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/python/7 install path/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,9 +194,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

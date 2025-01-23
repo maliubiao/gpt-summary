@@ -122,14 +122,16 @@ By following this structured approach, combining code analysis with domain knowl
 
 总而言之，`SharedWorkerContentSettingsProxy` 是 Blink 渲染引擎中一个关键的组件，负责管理 Shared Worker 的内容设置和权限，确保 Web 应用的安全性和用户隐私。开发者在使用 Shared Worker 时，需要理解其权限模型，并妥善处理可能发生的权限拒绝情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/shared_worker_content_settings_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ SharedWorkerContentSettingsProxy::GetService() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

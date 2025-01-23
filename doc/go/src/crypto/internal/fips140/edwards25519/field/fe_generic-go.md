@@ -371,7 +371,7 @@ a = {l0: 3, l1: 5, l2: 7, l3: 9, l4: 11}
 
 总而言之，这段代码是 Edwards25519 曲线密码学中有限域算术运算的关键组成部分，它通过精细的位操作和优化的算法实现了高效的乘法和平方运算，并确保结果始终保持在正确的表示范围内。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/field/fe_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -379,8 +379,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -647,9 +649,4 @@ func (v *Element) carryPropagateGeneric() *Element {
 
 	return v
 }
-
-"""
-
-
-
 ```

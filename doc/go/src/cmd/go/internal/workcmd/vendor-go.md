@@ -170,15 +170,17 @@ go: no go.work file found
 
 总结来说，`go work vendor` 是 Go Modules Workspace 提供的一个重要功能，用于将依赖项本地化，提高构建的可重复性和隔离性。理解其工作原理和命令行参数，以及注意其使用的上下文（Go Workspace），可以避免使用中常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/workcmd/vendor.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -234,9 +236,4 @@ func runVendor(ctx context.Context, cmd *base.Command, args []string) {
 
 	modcmd.RunVendor(ctx, vendorE, vendorO, args)
 }
-
-"""
-
-
-
 ```

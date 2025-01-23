@@ -87,11 +87,13 @@ if (global.gc) {
 
 `test-pool.cc` 文件通过 C++ 代码测试了 V8 引擎中内存池在垃圾回收时的行为，这对于保证 JavaScript 应用程序的内存管理效率和避免内存泄漏至关重要。虽然 JavaScript 无法直接操作内存池，但其创建和释放对象的过程依赖于 V8 引擎的内存管理机制，包括内存池的正确运作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-pool.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ UNINITIALIZED_TEST(EagerDiscardingInCollectAllAvailableGarbage) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

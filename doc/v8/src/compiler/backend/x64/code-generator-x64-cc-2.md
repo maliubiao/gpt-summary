@@ -98,7 +98,7 @@ add(5, 10);
 
 正如代码所示，`v8/src/compiler/backend/x64/code-generator-x64.cc` 的后缀是 `.cc`，这意味着它是一个 C++ 源代码文件，而不是 Torque 源代码。Torque 文件通常以 `.tq` 结尾。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/code-generator-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -106,8 +106,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rLazyDeopt(instr);
       frame_access_state()->ClearSPDelta();
       break;
@@ -1038,7 +1040,4 @@ rLazyDeopt(instr);
         __ j(parity_even, &fail, Label::kNear);
         // If the input is INT32_MIN, then the conversion succeeds.
         __ j(equal, &done, Labe
-"""
-
-
 ```

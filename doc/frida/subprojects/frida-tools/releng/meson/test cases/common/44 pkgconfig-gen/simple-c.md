@@ -124,7 +124,7 @@ int main() {
 
 总而言之，`simple.c` 是 Frida 工具中一个非常基础的测试用例，用于验证某些基本功能或构建过程。虽然它本身的功能很简单，但它也体现了软件开发和逆向工程中需要分析的基本单元——函数。 理解这样的简单示例有助于理解更复杂的代码和系统。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/44 pkgconfig-gen/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,14 +132,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int simple_function(void) {
     return 42;
 }
-
-"""
-
 ```

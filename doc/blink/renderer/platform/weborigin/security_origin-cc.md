@@ -228,14 +228,16 @@ This file is deeply intertwined with the functionality of JavaScript, HTML, and 
 
 In summary, `security_origin.cc` is a crucial component of the Chromium Blink engine, responsible for defining and enforcing the security boundaries that protect users from malicious web content and ensure the integrity of the web platform. It directly impacts how JavaScript, HTML, and CSS interact with resources from different locations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/security_origin.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc. All rights reserved.
  *
@@ -1001,7 +1003,4 @@ bool SecurityOrigin::SerializesAsNull() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

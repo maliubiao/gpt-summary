@@ -174,7 +174,7 @@ sys     0m0.002s
 
 总而言之，`delayer.c` 是一个简单但有用的工具，用于在 Frida 的测试环境中模拟延迟，以便测试 Frida 对时间敏感的操作的监控和干预能力。它的存在是为了确保 Frida 在处理涉及时间延迟的场景时能够正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/91 benchmark/delayer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Simple prog that sleeps for a random time. */
 
 #include<stdlib.h>
@@ -204,7 +206,4 @@ int main(void) {
 #endif
     return 0;
 }
-
-"""
-
 ```

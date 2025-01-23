@@ -189,7 +189,7 @@ By following these steps, the detailed and organized summary provided as the mod
 
 这部分测试主要关注 `UserMediaClient` 对本地媒体流的**生命周期管理**（创建、停止、页面卸载时的清理）以及对 **`getUserMedia` 请求中约束条件的处理和应用**。它验证了在各种场景下，`UserMediaClient` 是否能够正确地与底层媒体设备交互，并按照预期的方式管理资源和应用约束。特别是强调了在多轨道、多媒体流以及页面导航等复杂场景下的行为正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/user_media_client_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 iaProcessorUnderTest> user_media_processor_;
   WeakPersistent<UserMediaProcessorUnderTest> display_user_media_processor_;
   Persistent<UserMediaClientUnderTest> user_media_client_impl_;
@@ -881,7 +883,4 @@ TEST_F(UserMediaClientTest, ApplyConstraintsVideoDeviceTwoTracks) {
 
   // Create a new track and verify that it uses the same source and that the
   // source's format did not change. The new track uses the same for
-"""
-
-
 ```

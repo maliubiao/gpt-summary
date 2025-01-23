@@ -116,7 +116,7 @@ By following these steps, we can generate a comprehensive and accurate answer th
 
 `successful_test.c` 作为一个极其简单的 C 程序，其核心功能是作为一个 **成功的单元测试用例**。 它本身不涉及复杂的逆向工程或底层知识，但它的存在对于确保 Frida 作为一个逆向工具的整体质量和测试框架的正常运作至关重要。 它的成功执行验证了测试环境的基本功能，为后续更复杂的测试奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/4 suite selection/successful_test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,10 +124,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0 ; }
-
-"""
-
 ```

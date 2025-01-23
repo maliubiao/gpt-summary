@@ -273,7 +273,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/devlink.h` 定义了与 Linux 内核 `devlink` 子系统交互的接口，用于管理网络设备。虽然普通 Android 应用开发者通常不直接使用它，但 Android 系统的底层组件（例如系统服务、HAL 模块）可能会利用 `devlink` 来配置和管理网络硬件。理解这个头文件的内容有助于深入理解 Android 系统的网络架构和底层实现。使用 Frida 可以帮助我们动态地观察和调试与 `devlink` 相关的系统调用和数据交换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/devlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -767,7 +769,4 @@ enum devlink_port_fn_opstate {
   DEVLINK_PORT_FN_OPSTATE_ATTACHED,
 };
 #endif
-
-"""
-
 ```

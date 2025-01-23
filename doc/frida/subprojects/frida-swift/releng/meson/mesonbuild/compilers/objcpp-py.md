@@ -176,7 +176,7 @@ This step-by-step breakdown, focusing on understanding the code's structure, key
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/objcpp.py` 是 Frida 项目中处理 Objective-C++ 代码编译的关键组件，它定义了编译器抽象和具体实现，并提供了配置编译选项和处理不同编译器差异的功能。理解这个文件的作用对于调试 Frida 构建过程中的 Objective-C++ 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/objcpp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -288,7 +290,4 @@ class ClangObjCPPCompiler(ClangCompiler, ObjCPPCompiler):
 class AppleClangObjCPPCompiler(ClangObjCPPCompiler):
 
     """Handle the differences between Apple's clang and vanilla clang."""
-
-"""
-
 ```

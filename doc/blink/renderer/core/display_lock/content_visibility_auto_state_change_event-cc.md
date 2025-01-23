@@ -187,14 +187,16 @@ myDiv.addEventListener('contentvisibilityautostatechange', (event) => {
 
 `ContentVisibilityAutoStateChangeEvent` 是 Blink 引擎中一个关键的事件，用于告知开发者 `content-visibility: auto` 属性所引起的元素渲染状态的自动变化。通过监听这个事件并检查其 `skipped` 属性，开发者可以更好地控制和优化页面的渲染性能，并提供更好的用户体验。理解其触发时机和 `skipped` 属性的含义对于正确使用 `content-visibility: auto` 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/display_lock/content_visibility_auto_state_change_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ void ContentVisibilityAutoStateChangeEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

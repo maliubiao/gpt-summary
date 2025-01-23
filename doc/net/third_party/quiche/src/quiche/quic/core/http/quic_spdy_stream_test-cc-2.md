@@ -137,7 +137,7 @@ fetch('https://example.com/data', {
 
 这部分 `QuicSpdyStreamTest` 文件主要集中在测试 `QuicSpdyStream` 类在处理 **HTTP/3 特有的功能** 以及更**高级的流控制和数据确认机制**方面的行为。它涵盖了 Trailers 的发送限制、与 Headers Stream 的交互、优先级处理、数据 ACK 跟踪的各种场景，以及对 HTTP/3 中头部和 Trailers 进行编码和解码的各种情况，包括成功的解码、阻塞的解码以及发生错误时的处理。特别是对 QPACK 编码和解码的测试占据了很大的篇幅。 这部分测试对于确保 HTTP/3 连接的可靠性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 LL(*stream_, WriteHeadersMock(true));
   stream_->WriteHeaders(HttpHeaderBlock(), /*fin=*/true, nullptr);
   EXPECT_TRUE(stream_->fin_sent());
@@ -938,8 +940,4 @@ TEST_P(QuicSpdyStreamTest, AsyncErrorDecodingTrailers) {
       CloseConnection(QUIC_QPACK_DECOMPRESSION_FAILED,
                       MatchesRegex("Error decoding trailers on stream \\d+: "
                                    "Required Insert Count too large."),
-            
-"""
-
-
 ```

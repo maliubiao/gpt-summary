@@ -186,15 +186,17 @@ func main() {
 
 总而言之，`go/src/cmd/go/internal/modload/stat_unix.go` 中的 `hasWritePerm` 函数是 Go 模块加载机制中一个重要的组成部分，它负责在 Unix 系统上判断文件写权限，并影响 Go 在处理模块依赖时的行为。理解其工作原理有助于避免在使用 Go 模块功能时遇到权限相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/stat_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -227,9 +229,4 @@ func hasWritePerm(path string, fi fs.FileInfo) bool {
 	const W_OK = 0x2
 	return syscall.Access(path, W_OK) == nil
 }
-
-"""
-
-
-
 ```

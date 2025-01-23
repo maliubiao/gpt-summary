@@ -199,15 +199,17 @@ outerFunction(3);
 
 总结来说，`v8/src/objects/scope-info.tq` 定义了 V8 引擎中用于表示 JavaScript 代码作用域的关键数据结构，它包含了作用域的类型、变量信息、嵌套关系等，是 V8 理解和执行 JavaScript 代码的基础。理解 `ScopeInfo` 的结构有助于我们更深入地了解 JavaScript 的作用域机制以及可能出现的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/scope-info.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/scope-info.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -421,7 +423,4 @@ macro IndexOfLocalName(
         scopeInfo.context_local_names_hashtable, name) otherwise goto NotFound;
   }
 }
-
-"""
-
 ```

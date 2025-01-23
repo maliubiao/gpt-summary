@@ -141,7 +141,7 @@ func main() {
 
 `go/src/runtime/vgetrandom_linux.go` 是 Go 语言运行时中一个关键的组件，它负责利用 Linux 系统提供的 `vgetrandom` 系统调用来高效地生成加密安全的随机数。它是 `crypto/rand` 包的基础，为 Go 应用程序提供高质量的随机源。普通开发者通常不需要直接与这段代码交互，但理解其功能有助于更好地理解 Go 语言的底层机制和性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vgetrandom_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -149,8 +149,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -263,9 +265,4 @@ func vgetrandom(p []byte, flags uint32) (ret int, supported bool) {
 	}
 	return vgetrandom1(unsafe.SliceData(p), uintptr(len(p)), flags, mp.vgetrandomState, vgetrandomAlloc.stateSize), true
 }
-
-"""
-
-
-
 ```

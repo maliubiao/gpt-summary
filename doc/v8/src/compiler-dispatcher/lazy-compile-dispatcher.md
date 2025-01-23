@@ -107,11 +107,13 @@ setTimeout(() => {
 
 `LazyCompileDispatcher` 是 V8 引擎为了提高 JavaScript 执行性能和用户体验而设计的一个重要组件。它通过将耗时的编译任务转移到后台线程，并延迟编译不必要的代码，显著减少了主线程的阻塞，使得 JavaScript 应用更加流畅和响应迅速。虽然开发者无法直接操作它，但它的存在默默地优化着 JavaScript 代码的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler-dispatcher/lazy-compile-dispatcher.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -714,7 +716,4 @@ void LazyCompileDispatcher::VerifyBackgroundTaskCount(const base::MutexGuard&) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

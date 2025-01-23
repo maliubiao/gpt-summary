@@ -115,14 +115,16 @@ This iterative process of examining the code, understanding its purpose, tracing
 
 总而言之，`origin_trial_context.cc` 是 Blink 引擎中负责管理 Origin Trials 的关键组件，它处理令牌的解析、验证和实验性功能的激活，从而允许开发者在受控的环境中测试新的 Web 平台特性。它与 HTML（通过 `<meta>` 标签）、JavaScript（通过暴露新的 API）以及 CSS（通过激活新的 CSS 功能）都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/origin_trials/origin_trial_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -890,7 +892,4 @@ void OriginTrialContext::SendTokenToBrowser(
 }
 
 }  // namespace blink
-
-"""
-
 ```

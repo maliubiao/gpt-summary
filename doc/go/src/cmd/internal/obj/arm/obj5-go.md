@@ -223,15 +223,17 @@ MOVW	R11, LR
 
 `go/src/cmd/internal/obj/arm/obj5.go` 是 Go 编译器中 ARM 架构汇编器的核心组成部分，负责指令的架构特定处理、动态链接支持、栈管理以及与 Go 运行时库的交互。理解这个文件的功能有助于深入了解 Go 在 ARM 架构上的编译和执行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm/obj5.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/5c/swt.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5c/swt.c
 //
@@ -1071,9 +1073,4 @@ var Linkarm = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: ARMDWARFRegisters,
 }
-
-"""
-
-
-
 ```

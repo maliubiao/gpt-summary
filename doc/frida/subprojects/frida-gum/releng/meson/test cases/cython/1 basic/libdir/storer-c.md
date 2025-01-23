@@ -194,7 +194,7 @@ By following this structured thought process, considering the specific context o
 
 因此，用户一般不会直接修改 `storer.c`，而是通过 Frida 脚本间接地与编译后的版本进行交互。查看 `storer.c` 的源代码通常是作为调试 Frida 本身功能或理解测试用例行为的一种手段。当遇到与 Frida 对 C 代码的插桩能力相关的问题时，查看这个简单的 `storer.c` 可以帮助理解问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cython/1 basic/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -228,7 +230,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

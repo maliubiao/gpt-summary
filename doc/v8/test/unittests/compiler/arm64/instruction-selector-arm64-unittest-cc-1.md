@@ -100,7 +100,7 @@ Here's a breakdown of the thought process to achieve the desired output:
 
 请继续提供后续部分的代码，以便进行更全面的分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -108,8 +108,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ing_mode());
       EXPECT_EQ(3U, s[0]->InputCount());
       EXPECT_EQ(0x3F & imm, 0x3F & s.ToInt64(s[0]->InputAt(2)));
@@ -972,7 +974,4 @@ TEST_F(InstructionSelectorTest, EqualZeroAndBranch) {
     EXPECT_EQ(kArm64CompareAndBranch, s[0]->arch_opcode());
     EXPECT_EQ(kNotEqual, s[0]->flags_condition());
     EXPEC
-"""
-
-
 ```

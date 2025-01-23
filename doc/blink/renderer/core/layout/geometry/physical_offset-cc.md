@@ -144,14 +144,16 @@ This systematic approach, moving from code analysis to understanding the broader
 
 总而言之，`physical_offset.cc` 中定义的 `PhysicalOffset` 类是 Blink 渲染引擎中处理布局计算的关键组成部分，它负责表示屏幕上的物理偏移，并提供了转换为考虑书写方向的逻辑偏移的能力。理解它的功能对于理解浏览器如何渲染网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/physical_offset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ std::ostream& operator<<(std::ostream& os, const PhysicalOffset& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

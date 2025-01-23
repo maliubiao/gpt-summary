@@ -207,15 +207,17 @@ parser.ParseCSSPropertyList(
 
 通过以上步骤，开发者可以逐步追踪问题，最终可能需要查看 `v8_object_parser.cc` 的代码来理解 CSS 属性解析的内部机制，并找出问题所在。例如，如果发现某个标准的 CSS 属性没有被正确识别，可能是因为 Blink 内部的 `CssPropertyID` 映射表没有包含该属性，或者属性名称的拼写不匹配。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_object_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ bool V8ObjectParser::ParseCSSPropertyList(
 }
 
 }  // namespace blink
-
-"""
-
 ```

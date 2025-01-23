@@ -172,7 +172,7 @@ By following this structured thought process, moving from the general to the spe
 
 `meson-subsample.c` 文件定义了一个简单的 GObject 类，用于演示 GObject 的基本功能。它在 Frida 项目中作为测试用例存在，用于验证 Frida 与基于 GObject 的库的交互能力。理解这段代码的功能以及它与逆向、底层知识、逻辑推理和用户错误的关系，有助于 Frida 开发者和使用者更好地利用 Frida 进行动态程序分析和调试。用户到达这个文件的过程通常是出于调试和理解目标程序的目的，通过静态分析和动态分析相结合的方式逐步深入。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/34 gir static lib/subdir/gir/meson-subsample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 struct _MesonSubSample
@@ -306,7 +308,4 @@ meson_sub_sample_print_message (MesonSubSample *self)
 
   g_print ("Message: %s\n", self->msg);
 }
-
-"""
-
 ```

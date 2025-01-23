@@ -137,15 +137,17 @@ func main() {
 
 `go/src/cmd/link/linkbig_test.go` 通过生成包含大量汇编指令的代码来创建一个测试场景，旨在验证 Go 链接器在处理大型代码段时，特别是在需要插入 trampolines 或 long branches 的架构上，能否正确地完成链接过程。它分别测试了内部链接和外部链接两种模式，确保链接器在不同情况下都能正确处理这类问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/linkbig_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -257,9 +259,4 @@ func TestLargeText(t *testing.T) {
 		t.Fatalf("Program built with external linking failed to run with err %v, output: %s", err, out)
 	}
 }
-
-"""
-
-
-
 ```

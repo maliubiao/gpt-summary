@@ -262,7 +262,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "strtotimeval"), {
 
 总而言之，`bionic/libc/bionic/ndk_cruft.cpp` 文件是 Android Bionic 库中一个至关重要的组成部分，它通过提供一系列兼容性函数，确保了旧版本的 NDK 构建的应用能够在新的 Android 系统上正常运行，体现了 Android 平台对向后兼容性的重视。虽然这些函数是为了解决历史遗留问题，但了解它们的存在和作用对于理解 Android 的发展演变以及处理旧代码的兼容性问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/ndk_cruft.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -668,7 +670,4 @@ int putw(int value, FILE* fp) {
 #endif // !defined (__LP64__)
 
 } // extern "C"
-
-"""
-
 ```

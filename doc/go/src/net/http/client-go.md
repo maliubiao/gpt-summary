@@ -157,7 +157,7 @@ func main() {
 
 这部分 `go/src/net/http/client.go` 代码定义了 Go 语言中进行 HTTP 客户端编程的核心抽象和实现。它提供了灵活且易用的接口来发送各种 HTTP 请求，并处理常见的 HTTP 协议细节，如重定向和 Cookie 管理。`Client` 依赖于 `RoundTripper` 进行底层的网络传输，并通过可配置的选项（如 `CheckRedirect` 和 `Timeout`) 来满足不同的应用场景需求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/client.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1145,9 +1147,4 @@ func (b *cancelTimerBody) Read(p []byte) (n int, err error) {
 
 func (b *cancelTimerBody) Close() error {
 	err := b
-"""
-
-
-
-
 ```

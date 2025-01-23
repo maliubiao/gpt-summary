@@ -144,7 +144,7 @@ This thought process combines code reading, knowledge of related technologies (G
 
 总而言之，`frida_version.py` 是一个简单但重要的工具，用于确定 Frida 的版本，这对于逆向工程、开发、调试和自动化流程都至关重要。了解其工作原理可以帮助用户更好地理解 Frida 的版本管理和潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/frida_version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -223,7 +225,4 @@ def detect(repo: Path) -> FridaVersion:
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

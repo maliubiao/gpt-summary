@@ -318,15 +318,17 @@ console.log(obj.value);
 
 总结来说，`v8/src/inspector/value-mirror.h` 是 V8 检查器用来理解和表示 JavaScript 运行时状态的关键部分。它定义了用于描述 JavaScript 值的各种结构，这些结构直接映射到 JavaScript 的语言特性，并帮助开发者更好地理解和调试他们的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/value-mirror.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/value-mirror.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -434,7 +436,4 @@ protocol::Response objectToProtocolValue(
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_VALUE_MIRROR_H_
-
-"""
-
 ```

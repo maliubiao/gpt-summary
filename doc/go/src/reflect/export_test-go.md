@@ -250,7 +250,7 @@ func TestTypeLinks(t *testing.T) {
 
 总而言之，`go/src/reflect/export_test.go` 中的代码是 `reflect` 包内部测试的工具，它揭示了 Go 反射机制的一些底层实现细节。普通开发者无需，也不应该直接使用其中的功能。理解其作用有助于更深入地理解 Go 语言的反射机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -258,8 +258,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -414,9 +416,4 @@ var MethodValueCallCodePtr = methodValueCallCodePtr
 var InternalIsZero = isZero
 
 var IsRegularMemory = isRegularMemory
-
-"""
-
-
-
 ```

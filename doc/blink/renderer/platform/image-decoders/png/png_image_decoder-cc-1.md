@@ -100,15 +100,17 @@ Considering these individual functions, the overarching purpose of this code blo
 
 这段代码是 `PNGImageDecoder` 的核心组成部分，专注于**单个 PNG 图像帧的解码和管理**。它负责将解码后的像素数据写入内存，处理颜色空间转换，管理帧的完成状态，并提供查询帧是否已接收以及帧持续时间的功能。这部分代码是浏览器渲染 PNG 图像的基础，特别是对于支持动画的 APNG 图像来说至关重要。它确保了 PNG 图像能够被正确地解码并准备好用于后续的渲染和显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/png/png_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ColorTransform()) {
         skcms_AlphaFormat alpha_format = skcms_AlphaFormat_Unpremul;
         bool color_conversion_successful =
@@ -196,8 +198,4 @@ base::TimeDelta PNGImageDecoder::FrameDurationAtIndex(wtf_size_t index) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -128,15 +128,17 @@ My thinking process to arrive at the detailed explanation goes like this:
 
 通过以上步骤，用户的操作最终会触发 `XRSessionViewportScaler` 中的逻辑，以动态调整渲染分辨率，从而优化 WebXR 体验的性能。 开发者可以通过分析浏览器的性能工具、查看帧率、以及观察渲染质量的变化来推断视口缩放器是否在工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_session_viewport_scaler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ void XRSessionViewportScaler::UpdateRenderingTimeRatio(float new_value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

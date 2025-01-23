@@ -186,7 +186,7 @@ if (ObjC.available) {
 
 **因此，用户到达这个源代码文件的路径是：** 从编写 Frida 脚本尝试 Hook 目标函数开始，当遇到 Hook 失败等问题时，为了深入了解目标函数的定义和导出方式，开发者会查看相关的源代码文件，例如这里的 `c.c`。这个文件作为测试用例的一部分，可以帮助开发者理解 Frida 的工作原理，特别是关于模块加载和符号导出的部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/75 custom subproject dir/custom_subproject_dir/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -210,7 +212,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

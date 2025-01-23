@@ -160,14 +160,16 @@ Initially, I might focus too much on the low-level graphics details. Then, reali
 
 总而言之，`RemoteFrameView` 是 Blink 渲染引擎中处理跨进程 iframe 的关键组件，它负责管理远程帧的视图信息，并与远程进程进行通信，以确保远程内容能够正确地集成到主页面中。理解其功能有助于开发者更好地理解和调试涉及 iframe 的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/remote_frame_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -672,7 +674,4 @@ void RemoteFrameView::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

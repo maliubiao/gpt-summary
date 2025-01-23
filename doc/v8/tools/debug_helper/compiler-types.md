@@ -55,9 +55,12 @@ By following these steps, we can systematically analyze the code and generate a 
 
 **总结来说，这个文件的目的是为了在调试 V8 编译器时，能够方便地将表示位集合类型的数字值转换成易于理解的字符串名称，从而提高调试效率和可读性。**  它提供了一种将 V8 内部的数字表示映射到人类可读的符号名称的机制，这对于理解编译器在类型推断和优化过程中使用的各种位集合至关重要。
 
-Prompt: ```这是目录为v8/tools/debug_helper/compiler-types.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/debug_helper/compiler-types.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -89,6 +92,4 @@ V8_DEBUG_HELPER_EXPORT const char* _v8_debug_helper_BitsetName(
   }
 }
 }
-
-"""
 ```

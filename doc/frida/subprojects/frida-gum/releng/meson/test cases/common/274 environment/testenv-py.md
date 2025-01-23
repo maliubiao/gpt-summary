@@ -182,7 +182,7 @@ By following this structured thought process, breaking down the script, and conn
 
 `testenv.py` 是一个简单的但很有用的测试工具，用于验证环境中特定环境变量的值。在 Frida 这样的动态 instrumentation 工具的开发和测试过程中，确保环境的正确性至关重要，而这个脚本就承担了这样的职责。通过分析其功能，我们可以更好地理解 Frida 的测试机制以及环境变量在软件运行环境中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/274 environment/testenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -204,7 +206,4 @@ if os.environ.get(key) == expected:
     sys.exit(0)
 
 sys.exit(f'Expected {expected!r}, was {os.environ.get(key)!r}')
-
-"""
-
 ```

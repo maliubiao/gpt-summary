@@ -142,7 +142,7 @@ It has multiple lines.
 
 总结来说，`filecopier.c` 是一个简单但实用的文件复制工具，它体现了文件操作的基本原理。理解它的功能和潜在问题，对于逆向分析更复杂的程序以及调试相关问题都非常有帮助，尤其是在 Frida 这样的动态分析工具的上下文中。它作为 Frida 测试用例的一部分，也揭示了 Frida 构建和测试流程中的一些细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/native/3 pipeline/depends/filecopier.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<assert.h>
 
@@ -175,7 +177,4 @@ int main(int argc, char **argv) {
     fclose(fout);
     return 0;
 }
-
-"""
-
 ```

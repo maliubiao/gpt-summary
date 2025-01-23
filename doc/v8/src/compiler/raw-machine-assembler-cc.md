@@ -132,7 +132,7 @@ function add(a, b) {
 
 `RawMachineAssembler` 的主要功能是作为 V8 编译器中一个关键的低级代码生成器。它提供了一组接口，用于以一种接近机器指令的方式构建和操作代码的图表示。这个图最终会被用于生成可执行的机器码。它处理控制流、函数调用、常量、参数以及一些基本的优化任务。它不直接处理 JavaScript 语法，而是负责将 JavaScript 代码的中间表示转换为更底层的形式。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/raw-machine-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/raw-machine-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -140,8 +140,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -964,7 +966,4 @@ void RawMachineAssembler::Bind(RawMachineLabel* label,
 }
 
 void RawMachineAssembler::PrintCurrentBlock(std::ost
-"""
-
-
 ```

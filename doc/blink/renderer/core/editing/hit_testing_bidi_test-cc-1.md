@@ -90,7 +90,7 @@ div { font: 10px/10px Ahem; width: 300px; }
 
 作为 `blink/renderer/core/editing/hit_testing_bidi_test.cc` 的第 2 部分，其核心功能是**扩展了对双向文本点击测试的覆盖范围，针对更复杂的嵌套结构和行边界情况进行验证，确保在各种 Bidi 场景下，用户的鼠标点击能够准确地映射到预期的光标位置。** 这些测试对于保证富文本编辑器等需要精确光标控制的应用在处理多语言内容时的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/hit_testing_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 10px/10px Ahem; width: 300px}");
   SetBodyContent(
       "<div dir=rtl><bdo dir=rtl>GHI<bdo dir=ltr>abc</bdo>DEF</bdo></div>");
@@ -925,7 +927,4 @@ TEST_F(HitTestingBidiTest,
   int y = div->OffsetTop() + 5;
   const EphemeralRange result(GetDocument().caretRangeFromPoint(x, y));
   EXPECT
-"""
-
-
 ```

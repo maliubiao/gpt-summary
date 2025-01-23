@@ -86,11 +86,13 @@ node14: Add temp_var_x, temp_var_y
 
 `v8/src/compiler/csa-load-elimination.cc` 是 V8 引擎中一个重要的优化组件，它通过跟踪对象属性的状态，识别并消除冗余的加载操作，从而提升 JavaScript 代码的执行效率。它与 JavaScript 代码的功能直接相关，因为它优化了 JavaScript 中常见的对象属性访问模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/csa-load-elimination.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -713,7 +715,4 @@ Isolate* CsaLoadElimination::isolate() const { return jsgraph()->isolate(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

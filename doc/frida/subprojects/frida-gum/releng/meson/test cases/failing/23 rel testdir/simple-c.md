@@ -111,7 +111,7 @@ By following this thought process, breaking down the request, and considering th
 
 总而言之，这个 `simple.c` 文件本身功能极简，但它在 Frida 的测试和开发流程中扮演着特定的角色，用于验证 Frida 在处理最基本或异常情况时的行为。对于逆向工程师来说，它可以作为一个最简单的目标进行 Frida 功能测试，或者作为理解 Frida 如何与目标进程交互的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/23 rel testdir/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,12 +119,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

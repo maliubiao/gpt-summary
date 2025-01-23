@@ -115,22 +115,19 @@ func MyFunction() {
 
 这段代码的核心作用是作为 `vet` 工具的测试用例，验证 `//go:debug` 指令的适用范围限制。 它提醒开发者 `//go:debug` 指令通常用于控制可执行程序或测试的调试行为，而不是作为通用库包的配置项。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vet/testdata/directive/directive.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package p
 
 // ERRORNEXT "//go:debug directive only valid in package main or test"
 //go:debug panicnil=1
-
-"""
-
-
-
 ```

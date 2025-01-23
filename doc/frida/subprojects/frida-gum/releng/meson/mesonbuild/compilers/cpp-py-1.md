@@ -74,7 +74,7 @@ Let's structure the answer to address each of these points.
 
 如果在 Frida 的构建过程中遇到与 C++ 编译器相关的错误，例如编译选项不被支持，那么调试线索就可以指向这个 `cpp.py` 文件，检查对应的编译器类是否正确配置了选项，以及是否正确处理了不同的编译器版本。 例如，如果构建时报告某个 C++ 标准版本不被支持，就可以检查 `get_options` 和 `get_option_compile_args` 方法中对该版本号的处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/cpp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -83,8 +83,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 options[key].value]
 
         if ver is not None:
@@ -369,8 +371,4 @@ class MetrowerksCPPCompilerEmbeddedPowerPC(MetrowerksCompiler, CPPCompiler):
         if std.value != 'none':
             args.append('-lang ' + std.value)
         return args
-
-"""
-
-
 ```

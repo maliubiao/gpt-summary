@@ -119,7 +119,7 @@ The user has also specified that this is part 4 of a 7-part question and wants a
 
 作为系列测试的一部分，`allplatformstests.py` 的主要功能是**全面测试 Frida 构建系统 (基于 Meson) 在各种平台上的核心功能，特别是关于构建选项的处理、子项目管理、错误和警告报告以及代码模板生成等方面**。它通过模拟各种用户操作和场景，确保构建系统能够正确地配置和生成 Frida 的各个组件。这对于保证 Frida 的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,9 +128,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-      if x.get('name') == 'list':
+### 源代码
+```python
+if x.get('name') == 'list':
                     return x
             raise Exception(opts)
 
@@ -809,7 +811,4 @@ Prompt:
         # Subprojects warn correctly
         self.assertRegex(out, r"foo\| .*WARNING: Project targets '>=0.40'.*'0.44.0': disabler")
         self.assertRegex(out, r"baz\
-"""
-
-
 ```

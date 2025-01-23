@@ -107,11 +107,13 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，`page-metadata.cc` 中的 `PageMetadata` 类是 V8 堆管理的基础设施，它存储和管理着每个内存页的关键信息，使得 V8 能够高效地进行内存分配、垃圾回收和内存优化，从而支撑 JavaScript 代码的执行。它虽然不直接暴露给 JavaScript 开发者，但其功能直接影响着 JavaScript 代码的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/page-metadata.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ void PageMetadata::DestroyBlackArea(Address start, Address end) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

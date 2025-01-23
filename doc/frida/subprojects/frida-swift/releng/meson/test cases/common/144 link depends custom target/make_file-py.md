@@ -100,7 +100,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 因此，用户到达这里（查看 `make_file.py` 的源代码）很可能是因为他们在调试 Frida 的构建过程、理解某个测试用例的设置，或者遇到了与链接依赖相关的错误，并且正在追踪问题的根源。这个脚本虽然简单，但在 Frida 的自动化测试和构建流程中扮演着一个小但可能重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/144 link depends custom target/make_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,14 +108,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     print('# this file does nothing', file=f)
-
-"""
-
 ```

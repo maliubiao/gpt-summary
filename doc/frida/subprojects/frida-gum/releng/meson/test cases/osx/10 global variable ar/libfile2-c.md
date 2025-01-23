@@ -174,7 +174,7 @@ Finally, I organized the information into logical sections based on the user's o
 
 总而言之，虽然 `libfile2.c` 的代码非常简单，但在 Frida 这样的动态分析工具的上下文中，它可以作为理解程序运行时状态和行为的一个基本构建块，帮助逆向工程师进行调试和分析。 文件路径 `frida/subprojects/frida-gum/releng/meson/test cases/osx/10 global variable ar/libfile2.c` 表明这很可能是一个用于测试 Frida 功能的测试用例，特别是测试 Frida 处理全局变量和静态库的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/osx/10 global variable ar/libfile2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // Source: https://lists.gnu.org/archive/html/libtool/2002-07/msg00025.html
 
 int l2;
@@ -191,7 +193,4 @@ void l2_func(void)
 {
   l2 = 77;
 }
-
-"""
-
 ```

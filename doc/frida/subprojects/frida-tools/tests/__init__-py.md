@@ -163,7 +163,7 @@ Essentially, I used the limited information in the `__init__.py` file as a start
 
 虽然 `frida/subprojects/frida-tools/tests/__init__.py` 本身的代码很简单，但它是 Frida 工具测试框架的重要组成部分。它定义了测试包的结构和公开接口，使得测试用例能够被组织、发现和执行。理解这个文件有助于理解 Frida 工具的测试机制，并在遇到导入问题或需要扩展测试功能时提供调试线索。这个文件背后的 `TestDiscoverer` 和 `TestTracer` 类则承担了实际的测试发现和执行工作，这些工作会深入涉及到逆向工程的各种方法以及二进制底层、操作系统内核和框架的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/tests/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,13 +171,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from .test_discoverer import TestDiscoverer
 from .test_tracer import TestTracer
 
 __all__ = ["TestDiscoverer", "TestTracer"]
-
-"""
-
 ```

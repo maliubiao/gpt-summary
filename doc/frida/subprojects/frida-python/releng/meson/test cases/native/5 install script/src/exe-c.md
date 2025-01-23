@@ -126,7 +126,7 @@ Some text
 
 总而言之，虽然 `exe.c` 的功能很简单，但它在 Frida Python 库的自动化测试流程中扮演着验证安装结果的关键角色。它的执行依赖于构建系统的配置、操作系统的环境以及正确的文件系统操作。理解其功能和潜在的错误情况，有助于调试 Frida 的安装问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/5 install script/src/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -163,7 +165,4 @@ int main(int argc, char * argv[]) {
 
     return 0;
 }
-
-"""
-
 ```

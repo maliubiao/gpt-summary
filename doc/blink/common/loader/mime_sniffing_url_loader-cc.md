@@ -148,14 +148,16 @@ MIME 类型对于浏览器如何处理资源至关重要。`MimeSniffingURLLoade
 
 `blink/common/loader/mime_sniffing_url_loader.cc` 文件中的 `MimeSniffingURLLoader` 类在 Chromium Blink 引擎中扮演着重要的角色，它通过读取部分响应体数据来修正或确定资源的 MIME 类型。这对于正确加载和解析 JavaScript, HTML, CSS 等 Web 资源至关重要，直接影响着网页的呈现和功能。虽然开发者通常不会直接使用这个类，但理解其功能有助于诊断和解决与资源加载相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/mime_sniffing_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -540,7 +542,4 @@ void MimeSniffingURLLoader::Abort() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

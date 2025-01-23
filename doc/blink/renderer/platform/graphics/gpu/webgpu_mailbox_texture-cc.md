@@ -158,14 +158,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`webgpu_mailbox_texture.cc` 是 Blink 渲染引擎中一个关键的底层组件，它通过共享内存机制实现了 WebGPU 纹理的高效创建和管理，使得 Web 开发者能够在浏览器中利用 GPU 进行高性能的图形渲染。理解其功能有助于理解 WebGPU 如何与 HTML、CSS 和 JavaScript 协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgpu_mailbox_texture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -459,7 +461,4 @@ WebGPUMailboxTexture::~WebGPUMailboxTexture() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

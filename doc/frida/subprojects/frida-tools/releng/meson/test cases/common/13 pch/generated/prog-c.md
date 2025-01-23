@@ -105,7 +105,7 @@ By following this structured approach, we can systematically analyze the seeming
 
 总而言之，这个 `prog.c` 文件虽然代码简单，但在 Frida 的开发和测试流程中扮演着重要的角色，用于验证 Frida 对使用了预编译头的代码的处理能力。用户查看这个文件通常是因为他们正在进行 Frida 的开发、调试，或者在使用 Frida 时遇到了与预编译头相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/13 pch/generated/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,14 +113,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 int main(void) {
     return FOO + BAR;
 }
-
-"""
-
 ```

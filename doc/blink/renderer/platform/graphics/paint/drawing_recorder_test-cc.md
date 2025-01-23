@@ -131,14 +131,16 @@ This iterative process of code analysis, connection to broader concepts, logical
 
 总而言之，`drawing_recorder_test.cc` 通过一系列单元测试，确保 `DrawingRecorder` 能够正确地记录各种图形绘制操作，这对于保证 Chromium/Blink 引擎的渲染质量和性能至关重要。虽然前端开发者不直接接触这个类，但它的功能直接影响着他们所编写的 JavaScript、HTML 和 CSS 代码最终在浏览器中的呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/drawing_recorder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST_F(DrawingRecorderTest, Cached) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

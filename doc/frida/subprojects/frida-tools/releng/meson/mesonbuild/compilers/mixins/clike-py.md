@@ -153,7 +153,7 @@ This code is indirectly related to reverse engineering in the following ways:
 
 This part of the `clike.py` file defines two core mixin classes, `CLikeCompilerArgs` and `CLikeCompiler`. `CLikeCompilerArgs` is responsible for managing and manipulating compiler command-line arguments, including handling prefixes, deduplication, and linker grouping. `CLikeCompiler` provides a collection of common methods for C-like compilers, enabling Meson to perform essential checks like compiler sanity, header existence, symbol presence, data type size and alignment, and retrieval of preprocessor defines and function return values. These functionalities are crucial for Meson to correctly configure the build process for C-like projects and understand the target environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -891,8 +893,4 @@ class CLikeCompiler(Compiler):
         main = '''
         int main(void) {{
           return {func} ();
-    
-"""
-
-
 ```

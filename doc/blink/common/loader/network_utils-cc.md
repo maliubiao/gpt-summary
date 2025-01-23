@@ -187,14 +187,16 @@ During the process, I might have initially missed the significance of the `SetHe
 
 总而言之，`blink/common/loader/network_utils.cc` 文件在 Blink 渲染引擎中扮演着重要的角色，它帮助浏览器正确地构造网络请求头，特别是 `Accept` 头，以便与服务器协商期望的内容类型，并处理缓存相关的策略，从而确保网页资源能够被正确加载和处理。理解这个文件中的功能有助于理解浏览器如何与网络交互，以及如何处理不同类型的网页资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/network_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ const char* GetAcceptHeaderForDestination(
 
 }  // namespace network_utils
 }  // namespace blink
-
-"""
-
 ```

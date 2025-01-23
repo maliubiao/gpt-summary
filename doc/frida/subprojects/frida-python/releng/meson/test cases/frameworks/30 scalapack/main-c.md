@@ -143,7 +143,7 @@ By following this structured approach, combining code analysis, knowledge of rel
 
 通过这个过程，用户可以利用这个简单的 ScaLAPACK 测试用例作为学习和调试的基础，更好地理解如何使用 Frida 来分析更复杂的、使用了 ScaLAPACK 的应用程序。这个 `main.c` 文件可以作为一个很好的起点，帮助用户理解 ScaLAPACK 的基本用法和 Frida 的 hook 机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/30 scalapack/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 // #include <mkl.h>
@@ -187,6 +189,4 @@ blacs_exit_(&i0);
 
 return 0;
 }
-"""
-
 ```

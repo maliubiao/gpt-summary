@@ -129,14 +129,16 @@ By following these steps, one can systematically analyze the provided C++ code a
 
 总而言之，这个单元测试文件深入测试了 `BlinkSchedulerSingleThreadTaskRunner` 类的核心功能，特别是其异步删除机制和处理线程关闭的能力，这对于确保 Blink 渲染引擎中对象的安全和正确管理至关重要。它间接地关系到 JavaScript, HTML 和 CSS，因为它是支持这些技术实现的基础设施的一部分。理解这些测试用例有助于开发者避免在使用 `DeleteSoon()` 时常犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/blink_scheduler_single_thread_task_runner_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ TEST_F(BlinkSchedulerSingleThreadTaskRunnerTest,
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

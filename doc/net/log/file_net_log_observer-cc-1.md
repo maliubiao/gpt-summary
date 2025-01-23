@@ -192,7 +192,7 @@ base::Value number(3.14159);
 
 作为调试线索，开发者可以查看日志文件，分析其中的 JSON 数据，了解网络操作的详细过程，排查网络相关的问题。如果发现日志中缺少某些信息或格式不正确，可能需要回到更早的步骤，检查数据收集和 `base::Value` 对象的构建过程。如果遇到断言失败，则表明尝试记录了无法序列化为 JSON 的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/log/file_net_log_observer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 senting integers between 32 and 53 bits large).
   int options = base::JSONWriter::OPTIONS_OMIT_DOUBLE_TYPE_PRESERVATION;
 
@@ -216,8 +218,4 @@ senting integers between 32 and 53 bits large).
 }
 
 }  // namespace net
-
-"""
-
-
 ```

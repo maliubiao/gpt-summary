@@ -167,7 +167,7 @@ By following these steps, combining code analysis with an understanding of the r
 
 `windows-host-session-glue.c` 文件是 Frida 在 Windows 平台上与操作系统进行交互的关键桥梁，特别是负责进程的创建和管理。它深入到 Windows 的底层 API，处理了进程启动的各种细节，包括命令行参数、环境变量和标准输入输出的配置。理解这个文件的功能对于理解 Frida 如何在 Windows 上工作以及如何调试 Frida 脚本与目标进程的交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/windows/windows-host-session-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define COBJMACROS 1
 
 #include "frida-core.h"
@@ -635,7 +637,4 @@ frida_ensure_not_inherited (HANDLE handle)
   inherit_flag_updated = SetHandleInformation (handle, HANDLE_FLAG_INHERIT, 0);
   g_assert (inherit_flag_updated);
 }
-
-"""
-
 ```

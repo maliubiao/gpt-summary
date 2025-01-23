@@ -82,7 +82,7 @@ The user wants a breakdown of the functionality of the provided C++ code snippet
 
 这段代码是 Frida Stalker 功能在 V8 JavaScript 绑定层的核心实现。它定义了用于追踪程序执行流程的迭代器，并提供了在代码执行到特定位置或函数调用时执行用户自定义 JavaScript 回调的能力。 通过这些机制，用户可以动态地监控和修改程序的行为，这对于逆向工程、安全分析和调试至关重要。它还提供了访问和修改被追踪函数参数的能力，进一步增强了动态分析的灵活性。 代码通过与 V8 引擎的集成，使得用户可以使用 JavaScript 方便地控制底层的动态追踪功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8stalker.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -91,9 +91,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-       GumV8StalkerDefaultIterator)
+### 源代码
+```cpp
+GumV8StalkerDefaultIterator)
 {
   gum_v8_stalker_iterator_keep (&self->iterator, isolate);
 }
@@ -432,8 +434,4 @@ gum_make_pointer (gpointer value,
     return _gum_v8_native_pointer_new (value, core);
   }
 }
-
-"""
-
-
 ```

@@ -259,7 +259,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/tests/math_data/tan_intel_data.handroid` 是 Android Bionic 库中用于测试 `tan()` 函数正确性的一个数据文件，包含了预定义的输入输出对。它在 Android 系统的开发和测试中扮演着重要的角色，确保了数学库的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tan_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 0x1.efdad938b4b0e834014bf56a7084675dp-4,
     -0x1.ed7424ba2aa4ep-4
   },
@@ -1726,7 +1728,4 @@ Prompt:
   },
   { // Entry 720
     0x1.b3df386f18227ebcee905fd
-"""
-
-
 ```

@@ -177,15 +177,17 @@ strcat(patched_line, original_line + offset); // Copies "target" but might overw
 
 In this simplified example, the programmer forgot to allocate space for the space character and the null terminator, leading to a potential buffer overflow when concatenating the label. V8's `MultiLineStringBuilder` handles these details more carefully through its internal `StringBuilder` and memory management.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/string-builder-multiline.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/string-builder-multiline.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -383,7 +385,4 @@ class MultiLineStringBuilder : public StringBuilder {
 }  // namespace v8
 
 #endif  // V8_WASM_STRING_BUILDER_MULTILINE_H_
-
-"""
-
 ```

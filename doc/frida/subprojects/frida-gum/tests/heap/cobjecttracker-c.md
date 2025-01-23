@@ -173,7 +173,7 @@ By following these steps, combining code analysis with contextual understanding 
 
 总而言之，`frida/subprojects/frida-gum/tests/heap/cobjecttracker.c` 是一个关键的测试文件，它不仅验证了 `GumCObjectTracker` 的功能，也为用户理解 Frida 的对象跟踪机制提供了宝贵的参考。它与逆向分析、底层内存管理、操作系统内核以及各种 C 框架都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/cobjecttracker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -297,7 +299,4 @@ TESTCASE (object_list)
 }
 
 #endif /* HAVE_WINDOWS */
-
-"""
-
 ```

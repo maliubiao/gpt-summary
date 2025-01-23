@@ -72,12 +72,14 @@ let f = Math.clz32(a); // 对应于 C++ 测试中的 RunWord32Clz
 
 这个 `test-run-machops.cc` 文件中的测试用例，就是用来验证 V8 编译器在生成这些机器操作码时的正确性，确保 JavaScript 的整数和位运算在底层能够按照预期执行。 例如，`TEST(RunInt32Add)` 就是确保 V8 编译器生成的 `Int32Add` 指令能够正确地执行 32 位整数的加法。 `TEST(RunWord32Clz)` 就是测试生成的 `Word32Clz` 指令是否能正确计算前导零的数量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved. Use of this
 // source code is governed by a BSD-style license that can be found in the
 // LICENSE file.
@@ -2056,7 +2058,4 @@ TEST(RunInt32AddInComparison) {
     FOR_UINT32_INPUTS(i) {
       RawMachineAssemblerTester<uint32_t> m(MachineType::Uint32());
   m.Retu
-"""
-
-
 ```

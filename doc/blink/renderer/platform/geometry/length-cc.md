@@ -128,14 +128,16 @@ Essentially, I approached this like reverse-engineering. I looked at the code, u
 
 总而言之，`blink/renderer/platform/geometry/length.cc` 文件是 Blink 渲染引擎中处理长度值的核心组件，它负责表示、操作和转换各种类型的长度，并与 CSS 解析、布局计算以及 JavaScript 的样式操作紧密相关。 理解 `Length` 类的功能有助于理解 Blink 引擎如何处理网页的尺寸和布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/geometry/length.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -457,7 +459,4 @@ struct SameSizeAsLength {
 ASSERT_SIZE(Length, SameSizeAsLength);
 
 }  // namespace blink
-
-"""
-
 ```

@@ -185,15 +185,17 @@ Let's break down the thought process for analyzing the `try_value_flips.cc` file
 
 总而言之，`blink/renderer/core/css/try_value_flips.cc` 是 Blink 渲染引擎中一个关键的模块，负责根据指定的策略生成 CSS 属性值的翻转版本，以支持多语言环境和不同的书写模式。它深入参与了 CSS 样式的计算和应用过程，直接影响着网页的最终呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/try_value_flips.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -873,7 +875,4 @@ void TryValueFlips::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

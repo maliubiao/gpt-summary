@@ -161,7 +161,7 @@ Now, let's systematically go through each requirement of the prompt, combining o
 
 **总结：** `exe.orig.c` 是一个非常简单的 C 程序，它本身的功能并不复杂。但它在 Frida 的测试用例中扮演着一个 **目标程序** 的角色。这个简单的程序被设计用来验证 Frida 在处理动态链接库版本问题时的能力。真正的分析和调试工作通常会涉及到与这个程序相关的 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/osx/2 library versions/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main (void) {
@@ -178,7 +180,4 @@ int main (void) {
     return 0;
   return 1;
 }
-
-"""
-
 ```

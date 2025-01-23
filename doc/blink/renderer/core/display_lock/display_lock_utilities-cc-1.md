@@ -158,15 +158,17 @@ By following this structured approach, I can break down the code into manageable
 
 总而言之，`display_lock_utilities.cc` 提供了一组核心的实用工具函数，用于查询和判断 DOM 树中节点及其祖先节点的显示锁定状态。这些函数可以帮助 Blink 渲染引擎内部判断是否应该进行渲染、是否需要进行样式重算，以及优化渲染性能。虽然开发者通常不会直接调用这些 C++ 函数，但理解其背后的逻辑有助于理解浏览器如何管理渲染过程，以及某些 CSS 属性或 JavaScript 行为可能对渲染产生的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/display_lock/display_lock_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f the loop, then last node that we visited is not
   // locked.
   memoizer_->NotifyUnlocked(previous_ancestor);
@@ -220,8 +222,4 @@ bool DisplayLockUtilities::IsPotentialStyleRecalcRoot(const Node& node) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

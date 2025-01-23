@@ -159,7 +159,7 @@ python3 wrap.py non_existent_script.sh
 
 总而言之，虽然 `wrap.py` 代码非常简单，但它在 Frida 的测试框架中扮演着执行外部命令的角色，这对于模拟和测试各种场景（包括与逆向相关的场景）是很有用的。它也间接地涉及到操作系统底层、Linux/Android 系统概念以及用户可能遇到的各种使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/native/5 install script/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,15 +167,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import subprocess
 import sys
 
 subprocess.run(sys.argv[1:])
-
-"""
-
 ```

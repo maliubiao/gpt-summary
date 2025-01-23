@@ -138,7 +138,7 @@ Throughout the process, it's important to double-check the interpretation agains
 
 `frida/subprojects/frida-gum/releng/meson/test cases/common/8 install/prog.c` 文件是一个非常基础的 C 程序，它在 Frida 的测试框架中扮演着验证基本编译和安装流程的角色。虽然代码本身简单，但它与逆向方法、二进制底层、操作系统知识都有着间接的联系。用户到达这个文件所在位置通常是出于 Frida 的开发、测试或高级问题排查的目的。通过分析这个简单的文件，我们可以更好地理解 Frida 测试框架的结构和工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/8 install/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,12 +146,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

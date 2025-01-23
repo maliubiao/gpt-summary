@@ -124,7 +124,7 @@ func main() {
 
 这段 `rand_netbsd.go` 代码是 Go 语言为了在 NetBSD 操作系统上提供安全随机数生成能力所做的底层实现，它通过调用 `arandom` 系统调用来获取高质量的随机数据，并做了适当的批量处理和错误处理。 作为 `crypto/rand` 包的底层支撑，它为 Go 应用程序提供了可靠的随机数来源。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/sysrand/rand_netbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ func read(b []byte) error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

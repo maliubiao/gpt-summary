@@ -163,14 +163,16 @@ clearTimeout(timeoutId);
 
 总之，`post_cancellable_task.cc` 定义了 Blink 中一个重要的基础机制，用于安全地异步执行和取消任务，这对于实现各种 Web 技术的功能至关重要，并需要开发者在使用时注意潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/post_cancellable_task.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ TaskHandle PostNonNestableDelayedCancellableTask(
 }
 
 }  // namespace blink
-
-"""
-
 ```

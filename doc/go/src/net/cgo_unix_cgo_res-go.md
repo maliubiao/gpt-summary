@@ -141,7 +141,7 @@ DNS 查询成功，返回长度: 60  // 返回长度会根据实际 DNS 响应�
 
 总而言之，这段代码是 Go 语言 `net` 包为了利用系统底层 DNS 解析能力而进行的 Cgo 集成，它提供了一种更底层的 DNS 查询方式。开发者通常不需要直接与这些 `_C_` 开头的函数交互，而是使用 `net` 包中更高级的 API，例如 `net.LookupHost`，这些 API 会在适当的时候利用这些底层的 Cgo 实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_unix_cgo_res.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -149,8 +149,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -189,9 +191,4 @@ func _C_res_nsearch(state *_C_struct___res_state, dname *_C_char, class, typ int
 	x := C.res_search(dname, C.int(class), C.int(typ), ans, C.int(anslen))
 	return int(x)
 }
-
-"""
-
-
-
 ```

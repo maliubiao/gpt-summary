@@ -75,12 +75,14 @@ obj1.ref = obj2; // 可能会触发写屏障
 
 总而言之，这个C++代码文件是V8引擎将JavaScript代码转换为RISC-V架构机器码的关键组成部分，它提供了构建这些机器码所需的各种低级操作和管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2038,8 +2040,4 @@ void MacroAssembler::ByteSwap(Register rd, Register rs, int operand_size,
     or_(x0, rd, x0);   // x0 <- x0 << 16 | x0 >> 16
     and_(x2, x0, x1);  // x2 <- x0 & 0x00FF00FF
     slli(x2, x2, 8);   // x2 <- (x0 & x1) << 8
- 
-"""
-
-
 ```

@@ -90,11 +90,13 @@ loadAndRunWasm();
 
 `wasm-lowering-phase.cc` 中定义的 `WasmLoweringPhase` 是 V8 引擎编译 WebAssembly 代码的关键步骤，它负责将 Wasm 的高层操作降低到更接近机器指令的级别，并进行一些机器相关的优化，从而使得 JavaScript 能够高效地执行 WebAssembly 代码。 虽然它不直接处理 JavaScript 代码，但它是 JavaScript 能够运行 WebAssembly 功能的必要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-lowering-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -122,7 +124,4 @@ void WasmLoweringPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

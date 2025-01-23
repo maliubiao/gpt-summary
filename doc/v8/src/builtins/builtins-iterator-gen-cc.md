@@ -214,15 +214,17 @@ This file helps prevent or handle common errors developers might make when worki
 
 In summary, `v8/src/builtins/builtins-iterator-gen.cc` is a crucial part of V8, providing the low-level implementation for JavaScript's iteration mechanisms, ensuring correct behavior and helping to catch common programming errors related to iterators.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-iterator-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-iterator-gen.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -766,7 +768,4 @@ TF_BUILTIN(IterableToFixedArrayWithSymbolLookupSlow,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -309,7 +309,7 @@ sys.stdin.read()
 
 **注意:**  这个 Frida 示例是基于一个假设，即 `sendto` 发送的是原始以太网帧。在实际应用中，`sendto` 通常用于发送更高层协议的数据，例如 IP 数据包。要观察实际的以太网帧，可能需要在更底层的网络驱动程序层面进行 hook，但这通常需要 root 权限并且更加复杂。 这个示例主要演示了如何使用 Frida 来检查 Bionic 库中网络相关函数的使用情况，以及如何尝试解析可能涉及的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/net/ethernet.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2011 The Android Open Source Project
  * All rights reserved.
@@ -402,7 +404,4 @@ struct	ether_header {
 #define	ETHERMIN	(ETHER_MIN_LEN - ETHER_HDR_LEN - ETHER_CRC_LEN)
 
 #endif
-
-"""
-
 ```

@@ -140,7 +140,7 @@ Frida 作为动态插桩工具，可以在运行时修改程序的行为。如�
 
 总而言之，`foo.c` 虽然代码简单，但作为一个测试用例，它清晰地展示了静态链接和动态链接的区别，以及 Frida 如何在不同场景下工作。对于进行逆向工程的用户来说，理解这些概念至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/18 pkgconfig static/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int power_level (void)
 {
 #ifdef FOO_STATIC
@@ -158,7 +160,4 @@ int power_level (void)
     return 8999;
 #endif
 }
-
-"""
-
 ```

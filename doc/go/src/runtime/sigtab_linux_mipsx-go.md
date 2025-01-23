@@ -193,7 +193,7 @@ func main() {
 
 在这个错误的例子中，尝试捕获 `SIGKILL` 是没有意义的。当接收到 `SIGKILL` 时，程序会被操作系统强制终止，而不会执行 `signal.Notify` 注册的处理函数。  另外，在主 `goroutine` 中直接阻塞等待信号，会导致程序在没有收到信号前无法执行其他操作，这通常不是期望的行为。应该将信号监听放在单独的 `goroutine` 中。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sigtab_linux_mipsx.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -342,9 +344,4 @@ var sigtable = [...]sigTabT{
 	/* 127 */ {_SigNotify, "signal 127"},
 	/* 128 */ {_SigNotify, "signal 128"},
 }
-
-"""
-
-
-
 ```

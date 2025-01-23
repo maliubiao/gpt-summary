@@ -138,7 +138,7 @@ By following this structured thought process, considering the context of Frida a
 
 `f.c` 虽然代码非常简单，但它作为一个 Frida 测试用例，有效地展示了 Frida 可以操作和观察程序执行流程中的关键点（函数指针和函数调用）。它涉及了逆向工程的核心技术，并与操作系统底层、进程内存管理等概念紧密相关。理解这样的简单测试用例有助于深入理解 Frida 的工作原理和动态插桩技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/213 source set dictionary/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = (void *)0x1234ABCD;
@@ -155,7 +157,4 @@ void (*p)(void) = (void *)0x1234ABCD;
 void f(void)
 {
 }
-
-"""
-
 ```

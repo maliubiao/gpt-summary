@@ -166,14 +166,16 @@ By following these steps, I can systematically analyze the C++ code and provide 
 
 总结来说，`web_bluetooth_device_id.cc` 文件定义了一个关键的数据结构，用于在 Chromium 内部管理 Web Bluetooth API 中的蓝牙设备标识符。虽然前端开发者不能直接操作这个 C++ 类，但理解其功能有助于理解 Web Bluetooth API 的内部工作原理和潜在的使用限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/bluetooth/web_bluetooth_device_id.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ std::ostream& operator<<(std::ostream& out,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -150,7 +150,7 @@ By following these steps, we can systematically analyze the code snippet and ext
 
 总而言之，`cmMod.cpp` 文件本身的功能比较简单，主要是定义了一个包含字符串操作和返回特定整数的类，并进行了一些编译时的宏定义和 C++ 标准版本检查。它的主要作用是作为 Frida 构建系统的一部分，用于测试 CMake 的高级选项，确保构建过程的正确性，间接地支撑着 Frida 的动态 instrumentation 功能。  它的错误提示可以作为调试线索，帮助用户定位 Frida 构建过程中配置方面的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/19 advanced options/subprojects/cmOpts/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -191,7 +193,4 @@ string cmModClass::getStr() const {
 int cmModClass::getInt() const {
   return MESON_MAGIC_INT;
 }
-
-"""
-
 ```

@@ -253,7 +253,7 @@ except Exception as e:
 
 总结来说，`unistd.handroid` 虽然内容简单，但在 Android 系统中扮演着基础性的角色，它通过包含 `<asm/unistd.h>` 提供了系统调用的定义，是连接用户空间和内核空间的关键桥梁，也是 Bionic 库实现各种与操作系统交互功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/unistd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -276,7 +278,4 @@ Prompt:
 #define _LINUX_UNISTD_H_
 #include <asm/unistd.h>
 #endif
-
-"""
-
 ```

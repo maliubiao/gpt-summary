@@ -132,14 +132,16 @@ video.requestVideoFrameCallback(onFrame);
 
 总而言之，`video_frame_callback_requester.cc` 是 Blink 引擎中一个重要的组成部分，它连接了 JavaScript 代码和视频帧的渲染过程，为开发者提供了强大的能力来同步执行与视频帧相关的操作。理解它的功能和使用场景对于开发高性能的 Web 视频应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/video_frame_callback_requester.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ const char VideoFrameCallbackRequester::kSupplementName[] =
     "VideoFrameCallbackRequester";
 
 }  // namespace blink
-
-"""
-
 ```

@@ -52,7 +52,7 @@ My summary should provide a high-level overview of the functionalities exposed b
 
 总的来说，这部分头文件定义了 BPF 程序与内核网络栈、跟踪机制和内核数据交互的各种接口和数据结构，为开发者提供了强大的内核编程能力。 由于该文件是 UAPI 头文件，它旨在为用户空间程序提供一个稳定的接口，这意味着这些定义在内核版本之间通常保持兼容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/bpf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -64,8 +64,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _min;
   __u32 snd_ssthresh;
   __u32 rcv_nxt;
@@ -404,8 +406,4 @@ enum bpf_kfunc_flags {
   BPF_F_PAD_ZEROS = (1ULL << 0),
 };
 #endif
-
-"""
-
-
 ```

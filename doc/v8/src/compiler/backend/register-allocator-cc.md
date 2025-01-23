@@ -150,7 +150,7 @@ return R1
 
 `v8/src/compiler/backend/register-allocator.cc` 的主要功能是为编译器生成的中间代码中的虚拟寄存器分配物理寄存器。它分析变量的生命周期，并尝试有效地利用目标架构的寄存器资源。当寄存器不足时，它会负责插入溢出和加载指令，以确保程序的正确执行。这个过程对最终生成的机器码的性能至关重要。它定义了诸如 `UsePosition` 和 `LiveRange` 等关键数据结构，用于跟踪变量的使用情况和生命周期，为后续的寄存器分配决策提供基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1054,7 +1056,4 @@ void TopLevelLiveRange::AddUseInterval(LifetimePosition start,
 
 void TopLevelLiveRange::AddUsePosition(UsePosition* use_pos, Zone* zone) {
   TRACE("Add to live range %d use po
-"""
-
-
 ```

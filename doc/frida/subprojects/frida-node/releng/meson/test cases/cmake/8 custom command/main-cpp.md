@@ -257,7 +257,7 @@ Default Other
 
 总而言之，这个 `main.cpp` 文件虽然代码简单，但在 Frida 的上下文中，它扮演着验证 Frida 与 CMake 构建系统集成的关键角色，特别是在处理包含自定义命令的项目时。通过分析这个测试用例，开发者可以确保 Frida 能够正确地 hook 和操作由这类项目生成的二进制文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/8 custom command/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -265,8 +265,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -278,7 +280,4 @@ int main(void) {
   cout << obj.getOther() << endl;
   return 0;
 }
-
-"""
-
 ```

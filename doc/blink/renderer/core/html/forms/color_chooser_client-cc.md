@@ -148,15 +148,17 @@ By following these steps, I can arrive at a comprehensive understanding of the `
 
 总而言之，`blink/renderer/core/html/forms/color_chooser_client.cc` 定义了 Blink 中处理颜色选择器交互的关键接口。它作为连接 HTML `<input type="color">` 元素和底层平台颜色选择器实现的桥梁，负责启动颜色选择器、接收用户选择的颜色值，并通知相关的组件。 具体的平台实现会在其他文件中完成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/color_chooser_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -193,7 +195,4 @@ namespace blink {
 ColorChooserClient::~ColorChooserClient() = default;
 
 }  // namespace blink
-
-"""
-
 ```

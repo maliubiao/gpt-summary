@@ -132,7 +132,7 @@ By following this structured approach, I can systematically analyze the code sni
 
 `position_iterator.cc` 文件的核心在于提供了在 DOM 树中进行精细位置遍历的机制，这是 Blink 渲染引擎中实现文本选择、光标移动、编辑操作等功能的基础。它需要处理各种复杂的 DOM 结构和特殊属性的影响，以确保编辑位置的准确性和一致性。  `SlowPositionIteratorAlgorithm` 和 `FastPositionIteratorAlgorithm` 提供了不同的实现策略，以满足不同的性能需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/position_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple Inc. All rights reserved.
  *
@@ -1050,7 +1052,4 @@ bool FastPositionIteratorAlgorithm<Strategy>::AtEndOfNode() const {
     case kCharacterData:
     case kTextNode:
       return offset_in_container_ =
-"""
-
-
 ```

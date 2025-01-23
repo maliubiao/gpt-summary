@@ -92,12 +92,14 @@ label_end:
 
 这部分 `assembler-loong64.cc` 代码提供了在 LoongArch 64 位架构上操作已生成机器码的关键功能，特别是针对跳转指令和加载立即数的指令序列，允许 V8 引擎在运行时读取和修改代码的执行流程和数据。这对于实现各种高级优化和动态代码管理策略至关重要，从而提升 JavaScript 的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/assembler-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eck_ = kMaxInt;
     }
   } else {
@@ -242,8 +244,4 @@ void Assembler::set_target_compressed_value_at(
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
-
 ```

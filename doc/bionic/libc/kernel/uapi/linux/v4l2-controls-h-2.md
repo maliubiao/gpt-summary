@@ -111,7 +111,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "ioctl"), {
 
 这个头文件的第三部分延续了前两部分的功能，为 Android 系统中 V4L2 框架下 HEVC、VP9 和 AV1 视频编解码器的控制提供了详细的结构体和宏定义。 这些定义是 Android 多媒体框架与底层硬件交互的关键，直接影响着摄像头、视频播放等功能。理解这些定义对于进行底层的多媒体开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/v4l2-controls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -123,8 +123,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 AG_STRONG_INTRA_SMOOTHING_ENABLED (1ULL << 8)
 struct v4l2_ctrl_hevc_sps {
   __u8 video_parameter_set_id;
@@ -720,8 +722,4 @@ struct v4l2_ctrl_av1_film_grain {
 #define V4L2_CID_MPEG_CX2341X_BASE V4L2_CID_CODEC_CX2341X_BASE
 #define V4L2_CID_MPEG_MFC51_BASE V4L2_CID_CODEC_MFC51_BASE
 #endif
-
-"""
-
-
 ```

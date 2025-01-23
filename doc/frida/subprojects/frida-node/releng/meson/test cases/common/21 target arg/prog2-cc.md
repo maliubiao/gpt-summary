@@ -138,7 +138,7 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总而言之，`prog2.cc` 作为一个简单的测试用例，其核心功能是验证在特定编译配置下（特别是定义了 `CTHING` 或 `CPPTHING` 宏时）会触发编译错误。这对于确保 Frida 在处理目标程序参数时能够正确工作至关重要，并且为 Frida 的开发者提供了一种清晰的方式来测试和验证相关的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/21 target arg/prog2.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef CTHING
 #error "Local C argument set in wrong target"
 #endif
@@ -161,7 +163,4 @@ extern "C" int func();
 int main(void) {
     return func();
 }
-
-"""
-
 ```

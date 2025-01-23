@@ -164,7 +164,7 @@ During this process, I might have initially focused too much on specific impleme
 
 `blink/renderer/core/page/focus_controller.cc` 文件是 Chromium Blink 引擎中负责页面焦点管理的核心组件。它提供了查找可聚焦元素、设置焦点、处理 Shadow DOM 和表单元素的焦点逻辑，并与 HTML、JavaScript 和 CSS 紧密相关。理解 `FocusController` 的工作原理对于开发可访问且用户体验良好的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/focus_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt| and |next_element| belongs to the same <form> element.
           return next_element;
         }
@@ -398,8 +400,4 @@ void FocusController::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

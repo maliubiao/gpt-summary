@@ -166,7 +166,7 @@ float arr_in[4] = {1.0f, 2.0f, 3.0f, 4.0f};
 
 总而言之，用户可能因为调试目标应用程序中使用了 SIMD 指令的代码，或者因为研究 Frida 自身对 SIMD 的处理而接触到 `simd_sse.c` 这样的代码。这个文件作为一个简单的 SSE 用例，可以帮助理解更复杂的 SIMD 代码的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/147 simd/simd_sse.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -205,7 +207,4 @@ void increment_sse(float arr[4]) {
     __m128 result = _mm_add_ps(val, one);
     _mm_storeu_ps(arr, result);
 }
-
-"""
-
 ```

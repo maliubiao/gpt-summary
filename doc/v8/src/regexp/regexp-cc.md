@@ -189,7 +189,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 `v8/src/regexp/regexp.cc` 是 V8 引擎中处理正则表达式的核心 C++ 代码，它负责正则表达式的编译、优化和执行，并直接支撑着 JavaScript 中 `RegExp` 对象及其相关方法的功能。 该文件涉及多种正则表达式引擎的实现，并包含了性能优化和错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp.cc以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -946,8 +948,4 @@ int RegExpImpl::IrregexpExecRaw(Isolate* isolate,
       // the, potentially, different subject (the string can switch between
       // being internal and external, and even between being Latin1 and
       // UC16, but the characters are always the same).
-    
-"""
-
-
 ```

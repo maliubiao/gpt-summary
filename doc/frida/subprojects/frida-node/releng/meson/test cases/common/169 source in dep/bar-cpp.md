@@ -139,7 +139,7 @@ By following these steps, we can systematically analyze the seemingly simple cod
 
 总而言之，这个看似简单的 C++ 代码片段在 Frida 项目中扮演着重要的测试角色，它验证了 Frida 与动态链接库交互的能力，并为 Frida 的开发和调试提供了基础的保障。它也反映了逆向工程中观察和验证函数行为的核心思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/169 source in dep/bar.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,14 +147,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" int foo(void);
 
 int main(void) {
     return foo() != 42;
 }
-
-"""
-
 ```

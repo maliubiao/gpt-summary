@@ -160,15 +160,17 @@ func main() {
 
 例如，如果用户在外部链接模式下，并且没有正确配置环境或者链接器，导致 FIPS 哈希计算不正确，那么运行时校验就会失败，但用户可能不清楚是链接过程中的哪个环节出了问题。 `-fipso` 标志在这种情况下可以帮助定位问题，通过对比链接时生成的 `/tmp/fips.o` 和运行时校验失败时可能生成的调试文件（代码注释中提到的 `/tmp/fipscheck.o`）来找出差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/fips140.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -768,9 +770,4 @@ Addrs:
 	}
 	return f.Close()
 }
-
-"""
-
-
-
 ```

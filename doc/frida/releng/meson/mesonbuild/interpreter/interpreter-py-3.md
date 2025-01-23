@@ -159,7 +159,7 @@ The user wants a summary of the functionality of the `interpreter.py` file in th
 
 总而言之，`interpreter.py` 文件是 Meson 构建系统的核心组成部分，负责解释构建描述文件中的指令，并将其转化为具体的构建操作。用户通过编写 `meson.build` 文件来定义项目的构建方式，而 `interpreter.py` 则负责理解这些定义并执行相应的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 =True),
         MULTI_OUTPUT_KW,
         # Cannot use the COMMAND_KW because command is allowed to be empty
@@ -849,7 +851,4 @@ Prompt:
             'input',
             ContainerTypeInfo(list, (mesonlib.File, str)),
             listif
-"""
-
-
 ```

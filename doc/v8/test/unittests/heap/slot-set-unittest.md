@@ -104,11 +104,13 @@ V8 的一些垃圾回收算法（如标记压缩）会移动内存中的对象�
 
 `v8/test/unittests/heap/slot-set-unittest.cc` 测试的是 V8 引擎内部用于管理堆内存中对象引用的核心机制。虽然 JavaScript 开发者通常不需要直接关心这些底层的实现细节，但理解这些机制有助于理解 JavaScript 引擎是如何进行内存管理和垃圾回收的，从而更好地理解 JavaScript 的运行原理和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/slot-set-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ TEST(TypedSlotSet, Merge) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

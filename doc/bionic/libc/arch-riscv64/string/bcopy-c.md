@@ -420,7 +420,7 @@ if (Process.arch === 'riscv64') {
 
 通过以上分析和示例，你应该对 `bionic/libc/arch-riscv64/string/bcopy.c` 文件的功能、与 Android 的关系、实现细节以及如何调试有了一个更深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-riscv64/string/bcopy.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -431,8 +431,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-3-Clause
  *
@@ -555,7 +557,4 @@ done:
 	return;
 #endif
 }
-
-"""
-
 ```

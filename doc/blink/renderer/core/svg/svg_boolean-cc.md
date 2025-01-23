@@ -184,15 +184,17 @@ By following this systematic approach, I can dissect the functionality of the `s
 
 总而言之，`blink/renderer/core/svg/svg_boolean.cc` 是 Blink 引擎处理 SVG 布尔属性的基础组件，负责解析、存储和有限地处理这些属性。 它的实现相对简单，专注于正确地处理 `"true"` 和 `"false"` 字符串。  调试与布尔 SVG 属性相关的问题时，理解这个文件的功能和限制非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_boolean.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -266,7 +268,4 @@ float SVGBoolean::CalculateDistance(const SVGPropertyBase*,
 }
 
 }  // namespace blink
-
-"""
-
 ```

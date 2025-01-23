@@ -166,7 +166,7 @@ func main() {
 
 这段 `dragonfly.go` 代码是 Go 语言 `cgo` 功能在 DragonFly BSD 上的一个关键组成部分，它通过链接外部符号的方式，为 C 运行时库提供了必要的全局变量，使得 Go 程序能够安全地调用 C 代码并与之交互。开发者通常不需要直接关注这段代码，但理解其背后的原理有助于理解 `cgo` 的工作方式以及 Go 语言在不同操作系统上的适配。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/dragonfly.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -195,9 +197,4 @@ import _ "unsafe" // for go:linkname
 
 var _environ uintptr
 var _progname uintptr
-
-"""
-
-
-
 ```

@@ -286,7 +286,7 @@ func TestS390XAgainstCPUInfo(t *testing.T) {
 
 确保 `mapping` 包含了 "newfeature" 对应的项，这样当 `/proc/cpuinfo` 中有 "newfeature" 时，如果 `internal/cpu` 没有检测到，测试就会报错。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_s390x_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -294,8 +294,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -359,9 +361,4 @@ func TestS390XAgainstCPUInfo(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

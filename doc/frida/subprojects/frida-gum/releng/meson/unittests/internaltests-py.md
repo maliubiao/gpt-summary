@@ -156,7 +156,7 @@ My thinking process to analyze the Python code and generate the summary goes lik
 
 **总结：该文件的功能是测试 Frida 构建系统所依赖的 Meson 构建系统的内部核心功能和工具函数的正确性。** 这些测试覆盖了版本号解析、文件模式转换、编译器参数处理、字符串模板替换、跨平台编译配置、列表处理工具函数以及库文件查找模式等多个方面，确保了构建过程的稳定性和可靠性。虽然这个文件不是直接进行逆向操作，但它测试的构建系统功能对于逆向工程师理解目标软件的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -829,7 +831,4 @@ class InternalTests(unittest.TestCase):
                     for link_arg in link_args:
                         for lib in ('pthread', 'm', 'c', 'dl', 'rt'):
                             self.assertNotIn(f'lib{lib}.a', link_arg, msg=lin
-"""
-
-
 ```

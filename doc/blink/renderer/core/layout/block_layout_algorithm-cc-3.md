@@ -151,16 +151,18 @@ This section of `block_layout_algorithm.cc` details the primary logic for **layi
 
 `block_layout_algorithm.cc` 文件的第 4 部分是块级布局算法的核心，它负责**迭代地布局 BFC 中的每个子元素**，并完成布局后的关键处理步骤。它涵盖了计算子元素的初始布局数据、启动子元素的布局过程、处理布局结果（包括浮动清除、边距折叠、BFC 块偏移量解析、分片处理、行裁剪和文本框裁剪）、以及计算下一个子元素的起始位置。这部分代码直接实现了 CSS 布局规范中关于块级元素布局的核心逻辑，是 Blink 渲染引擎中至关重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
- is_new_fc */ false);
+### 源代码
+```cpp
+is_new_fc */ false);
   child_data.is_pushed_by_floats = is_pushed_by_floats;
   ConstraintSpace child_space = CreateConstraintSpaceForChild(
       child, child_break_token, child_data, ChildAvailableSize(),
@@ -865,7 +867,4 @@ void BlockLayoutAlgorithm::ConsumeRemainingFragmentainerSpace(
     // The remaining part of the fragmentainer (the unusable space for child
     // content, due to the break) should still be occupied by this
     // container
-"""
-
-
 ```

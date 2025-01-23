@@ -64,13 +64,15 @@ WebAssembly 的字符串功能是为了更好地与 JavaScript 互操作而设�
 
 这部分 `liftoff-compiler.cc` 代码是 WebAssembly 引擎中处理字符串操作的关键部分。它定义了如何将 WebAssembly 的字符串指令转换为底层的机器码，从而使得 WebAssembly 能够有效地创建、操作和与 JavaScript 共享字符串数据。这些功能对于构建更复杂、更强大的 WebAssembly 应用，特别是那些需要进行文本处理的应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
-   RegisterDebugSideTableEntry(decoder, DebugSideTableBuilder::kDidSpill);
+### 源代码
+```
+RegisterDebugSideTableEntry(decoder, DebugSideTableBuilder::kDidSpill);
 
     LiftoffRegister result_reg(kReturnRegister0);
     __ PushRegister(kI32, result_reg);
@@ -1637,7 +1639,4 @@ Prompt:
   LiftoffAssembler asm_;
 
   // Used for merging code generation of subsequent operations (via look-ahea
-"""
-
-
 ```

@@ -126,7 +126,7 @@ Here's a breakdown of the thinking process to generate the analysis of the `side
 
 `sideprog.cpp` 是一个简单的 C++ 程序，用于演示 Google Protocol Buffers 的基本用法，特别是消息的创建和嵌套。尽管简单，它涵盖了逆向工程中理解 Protobuf 数据结构的关键概念，并涉及到二进制底层、内存管理等相关知识。作为 Frida 的测试用例，它的存在是为了验证 Frida 在处理 Swift 和 Protobuf 集成时的正确性。用户不太可能直接运行这个文件，而是通过 Frida 的开发、测试或学习过程接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/5 protocol buffers/sidedir/sideprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"com/mesonbuild/simple.pb.h"
 #include"com/mesonbuild/subsite/complex.pb.h"
 
@@ -152,7 +154,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

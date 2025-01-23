@@ -129,7 +129,7 @@ const loadedValue = buffer[offset + 1];
 
 这部分 `liftoff-assembler-arm-inl.h` 代码的核心功能是为 ARM 架构上的 WebAssembly Liftoff 编译器提供了一组用于生成汇编代码的构建块，涵盖了基本的内存访问、原子操作、栈帧管理和基础的 i32 运算。它负责将 WebAssembly 的高级操作转化为可以在 ARM 处理器上执行的底层指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 fset_imm, LoadType::kI32Load, protected_load_pc,
                         needs_shift);
 }
@@ -1006,7 +1008,4 @@ void LiftoffAssembler::emit_i32_shli(Register dst, Register src,
 void LiftoffAssembler::emit_i32_sar(Register dst, Register src,
                                     Register amount) {
   UseScratchRegi
-"""
-
-
 ```

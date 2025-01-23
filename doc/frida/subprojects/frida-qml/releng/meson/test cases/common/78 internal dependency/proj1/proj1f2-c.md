@@ -163,7 +163,7 @@ Frida 是一个动态插桩工具，常用于逆向工程。这个简单的函�
 
 通过以上步骤，用户可以利用 Frida 动态地分析程序的行为，定位到 `proj1_func2` 的执行，并获取所需的调试信息。这个简单的 `proj1f2.c` 文件在 Frida 的上下文中就成为一个可以被观察、分析和操纵的目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/78 internal dependency/proj1/proj1f2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,15 +171,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<proj1.h>
 #include<stdio.h>
 
 void proj1_func2(void) {
     printf("In proj1_func2.\n");
 }
-
-"""
-
 ```

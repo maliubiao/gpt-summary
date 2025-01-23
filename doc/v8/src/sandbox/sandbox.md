@@ -91,11 +91,13 @@ console.log("程序继续运行，没有崩溃!");
 
 `sandbox.cc` 文件是 V8 引擎安全性的基石。它通过在 C++ 层面上创建和管理一个隔离的执行环境，来保护 V8 引擎和宿主系统免受潜在恶意或错误的 JavaScript 代码的影响。JavaScript 代码本身并不会直接操作沙箱，但它的安全执行依赖于沙箱机制的存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/sandbox.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -420,7 +422,4 @@ DEFINE_LAZY_LEAKY_OBJECT_GETTER(Sandbox, GetProcessWideSandbox)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

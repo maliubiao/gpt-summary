@@ -195,7 +195,7 @@ func main() {
 
 假设开发者在一个 4 核的 Raspberry Pi 3 (ARMv8 架构，兼容 ARMv7) 上运行 OpenBSD，并且想编译一个并发的 Go 程序。如果他们直接使用 `go build` 命令，而没有设置 `GOARM=7`，编译后的程序在运行时就会失败，并提示需要使用 `GOARM=7` 重新编译。他们需要使用 `GOARM=7 go build your_program.go` 来确保程序能够正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_openbsd_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -203,8 +203,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -227,9 +229,4 @@ func cputicks() int64 {
 	// runtime·nanotime() is a poor approximation of CPU ticks that is enough for the profiler.
 	return nanotime()
 }
-
-"""
-
-
-
 ```

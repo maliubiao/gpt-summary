@@ -121,7 +121,7 @@ Initially, one might overemphasize the direct reverse engineering implications o
 
 因此，用户不太可能直接操作这个脚本，它更多的是作为 Frida 构建和测试流程的一部分被执行，当构建过程在特定的场景下失败时，开发者才会作为调试线索来分析这个脚本。  "40 custom target plainname many inputs" 这个目录名暗示了失败场景与自定义目标的命名和处理多个输入有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/40 custom target plainname many inputs/catfiles.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -140,7 +142,4 @@ with open(out, 'wb') as o:
     for infile in sys.argv[1:-1]:
         with open(infile, 'rb') as f:
             o.write(f.read())
-
-"""
-
 ```

@@ -182,14 +182,16 @@ This methodical approach, starting with the big picture and gradually drilling d
 
 这个单元测试文件通过大量的测试用例，覆盖了各种可能出现的输入情况，旨在确保 `ad_display_size_utils.h` 中的实用工具函数能够正确地解析和处理广告尺寸字符串，从而避免开发者在使用这些功能时遇到上述常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/ad_display_size_utils_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -439,7 +441,4 @@ TEST(AdDisplaySizeUtilsTest, AdSizeInfiniteValue) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

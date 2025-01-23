@@ -161,7 +161,7 @@ Valgrind 通过监控程序运行时的内存操作，可以有效地检测到�
 
 作为系列的一部分，到目前为止，这段 `valgrind.h` 代码片段主要展示了 V8 引擎为了与 Valgrind 集成，在底层如何定义用于调用函数的宏。这些宏是平台特定的，并使用内联汇编来执行函数调用，同时允许 Valgrind 工具进行拦截和监控。其核心功能是为 Valgrind 提供必要的“钩子”，以便在 V8 运行时检测内存管理相关的错误。这部分代码是 V8 质量保证和调试流程中的一个关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/valgrind/valgrind.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/valgrind/valgrind.h以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 gned long)arg3;                         \
       _argvec[2+4] = (unsigned long)arg4;                         \
       _argvec[2+5] = (unsigned long)arg5;                         \
@@ -686,7 +688,4 @@ gned long)arg3;                         \
       _argvec[5] = (unsigned long)(arg5);                         \
       _argvec[6] = (unsigned long)(arg6);                         \
       __asm
-"""
-
-
 ```

@@ -185,7 +185,7 @@ This section of `v8/src/heap/heap.h` defines a collection of utility classes and
 
 These components are crucial for the internal workings of V8's heap management, garbage collection, and debugging capabilities. They are generally not directly exposed or used by JavaScript developers but are fundamental to how the V8 engine operates.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap.h以.tq结尾，那它是个v8 torque源代码，
@@ -193,8 +193,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 (Heap* heap);
 
  private:
@@ -375,8 +377,4 @@ struct ::std::__asan_annotate_container_with_allocator<
 #endif  // _LIBCPP_HAS_ASAN_CONTAINER_ANNOTATIONS_FOR_ALL_ALLOCATORS
 
 #endif  // V8_HEAP_HEAP_H_
-
-"""
-
-
 ```

@@ -205,7 +205,7 @@ func main() {
 
 总而言之，这段 `signal_linux_mipsx.go` 代码是 Go 运行时用于在特定架构上处理底层信号的关键基础设施，它允许 Go 程序与操作系统级别的信号机制进行交互，并为实现高级功能（如 panic 恢复、性能分析等）提供了基础。用户代码通常不需要直接操作这些底层的结构体，而是通过 `os/signal` 包提供的更高级别的抽象来处理信号。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_linux_mipsx.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -213,8 +213,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -279,9 +281,4 @@ func (c *sigctxt) set_link(x uint32) { c.regs().sc_regs[31] = uint64(x) }
 
 func (c *sigctxt) set_sigcode(x uint32) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint32) { c.info.si_addr = x }
-
-"""
-
-
-
 ```

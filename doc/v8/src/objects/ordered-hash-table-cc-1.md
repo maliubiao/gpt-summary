@@ -160,7 +160,7 @@ bool has_key_after_delete = table->HasKey(isolate, Handle<Object>::cast(key1));
 
 这段代码是 V8 引擎中小型有序哈希表的核心实现，提供了添加、删除、查找、调整大小等基本操作。它还定义了一个处理器，用于在小型和大型哈希表之间进行转换，以优化内存使用和性能。这些数据结构是 JavaScript 中 `Set`、`Map` 以及对象属性存储的基础。此外，代码还包括了用于迭代这些哈希表的迭代器实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/ordered-hash-table.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/ordered-hash-table.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,8 +168,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t raw_entry = entry.as_int();
   DCHECK_IMPLIES(!IsName(key), IsTheHole(key));
   SetDataEntry(raw_entry, SmallOrderedNameDictionary::kValueIndex, value);
@@ -825,8 +827,4 @@ OrderedHashTableIterator<JSMapIterator, OrderedHashMap>::Transition();
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

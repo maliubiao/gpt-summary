@@ -238,7 +238,7 @@ N1 -> N2 [label=" 0.08ms" weight=27 penwidth=2 color="#ffcccc" tooltip="function
 
 总而言之，这段代码是 `pprof` 工具中生成 DOT 图的关键部分，通过灵活的配置选项，可以创建出各种定制化的性能分析图，帮助开发者深入理解程序的性能特征。理解其功能和使用方式对于有效地利用 `pprof` 进行性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/graph/dotgraph.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -246,8 +246,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -742,9 +744,4 @@ func escapeAllForDot(in []string) []string {
 func escapeForDot(str string) string {
 	return strings.ReplaceAll(strings.ReplaceAll(strings.ReplaceAll(str, `\`, `\\`), `"`, `\"`), "\n", `\l`)
 }
-
-"""
-
-
-
 ```

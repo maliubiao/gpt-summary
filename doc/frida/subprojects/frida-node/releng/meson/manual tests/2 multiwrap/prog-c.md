@@ -171,7 +171,7 @@ By following this systematic approach, including identifying the key functions, 
 
 `prog.c` 是一个演示 Lua 和 C 互操作以及 PNG 图像读取的示例代码。它为理解 Frida 如何 hook 和分析这类程序提供了基础。通过分析这个代码，可以学习到关于内存管理、文件操作、库的使用以及动态链接等底层知识，并了解在逆向工程中如何利用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/manual tests/2 multiwrap/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<lua.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -247,7 +249,4 @@ int main(int argc, char **argv) {
     lua_close(l);
     return 0;
 }
-
-"""
-
 ```

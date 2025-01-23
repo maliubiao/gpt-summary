@@ -144,7 +144,7 @@ By following this thinking process, covering the core functionality, connecting 
 
 这个 `prog.c` 文件作为一个简洁的测试用例，帮助用户理解 Frida 的基本功能，并提供了一个起点来探索更复杂的动态分析场景。它的简单性使得用户可以专注于理解动态插桩的核心概念，而无需被复杂的程序逻辑所干扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/native/3 pipeline/depends/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,14 +152,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void);
 
 int main(void) {
     return func() != 42;
 }
-
-"""
-
 ```

@@ -250,7 +250,7 @@ v4 = CondSelect p q v2
 
 总而言之，这段代码负责 Go 语言代码到 ARM64 机器码转换过程中的核心的、架构相关的优化和转换工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -259,9 +259,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第14部分，共20部分，请归纳一下它的功能
+```
 
-"""
- v.Block
+### 源代码
+```go
+v.Block
 	// match: (CondSelect x y boolval)
 	// cond: flagArg(boolval) != nil
 	// result: (CSEL [boolval.Op] x y flagArg(boolval))
@@ -1761,9 +1763,4 @@ func rewriteValueARM64_OpLsh32x16(v *Value) bool {
 		}
 		v.reset(OpARM64CSEL)
 		v.AuxInt = opToAuxInt(OpARM64LessT
-"""
-
-
-
-
 ```

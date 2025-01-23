@@ -153,14 +153,16 @@ This detailed thought process, moving from code decomposition to understanding i
 
 总而言之，`media_stream_audio_processor_options.cc` 文件在 Blink 引擎中扮演着关键角色，负责管理和配置音频流处理选项，这些选项最终会影响用户在使用 Web 应用程序进行音频通信时的体验。理解这个文件的功能有助于开发者更好地利用 Web API，并避免一些常见的配置错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_audio_processor_options.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ AudioProcessingProperties::ToAudioProcessingSettings(
   return out;
 }
 }  // namespace blink
-
-"""
-
 ```

@@ -197,15 +197,17 @@ main.go:4:9: mypkg.MyStruct struct literal uses unkeyed fields
 
 `composite.go` 实现了一个重要的代码质量检查功能，它可以帮助 Go 开发者避免因使用未键入的复合字面量而引入的潜在问题，特别是针对从其他包导入的结构体。通过强制使用键入的字面量，可以提高代码的可读性、可维护性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/composite/composite.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -365,9 +367,4 @@ func isLocalType(pass *analysis.Pass, typ types.Type) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

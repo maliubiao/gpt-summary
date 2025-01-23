@@ -228,15 +228,17 @@ std::string GetJSFunctionNameAtAddress(ULONG64 address) {
 
 In summary, `v8/tools/v8windbg/base/dbgext.h` is a crucial header file that sets the stage for building powerful WinDbg extensions to debug the V8 JavaScript engine. It provides access to core debugging functionalities and defines the basic structure for such extensions. While not directly containing JavaScript code, it's fundamentally tied to understanding and inspecting the execution of JavaScript within V8.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/v8windbg/base/dbgext.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/v8windbg/base/dbgext.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -274,7 +276,4 @@ HRESULT CreateExtension();
 void DestroyExtension();
 
 #endif  // V8_TOOLS_V8WINDBG_BASE_DBGEXT_H_
-
-"""
-
 ```

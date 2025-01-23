@@ -277,7 +277,7 @@ sys.stdin.read()
 
 通过这些 Frida hook，你可以观察 `__libc_init` 的调用时机、参数以及全局构造函数的执行情况，从而更深入地理解 Android 应用程序的启动过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/libc_init_common.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -369,7 +371,4 @@ __LIBC_HIDDEN__ void __libc_init_fork_handler();
 __LIBC_HIDDEN__ void __libc_set_target_sdk_version(int target);
 
 #endif
-
-"""
-
 ```

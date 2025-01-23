@@ -199,12 +199,14 @@ const offsetNanoseconds = timezone.getOffsetNanosecondsFor(now); // 内部调用
 
 总而言之，这个 C++ 文件提供了 JavaScript Temporal API 中日期、时间、时区和日历操作的核心底层实现。它负责字符串的解析和格式化，以及与日历和时区相关的计算和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 dDecimalString(&builder, minutes, 2);
 
   // 10. Let s be ToZeroPaddedDecimalString(seconds, 2).
@@ -1716,7 +1718,4 @@ int32_t CalendarIndex(Isolate* isolate, Handle<String> id) { return 0; }
 // #sec-isvalidtimezonename
 bool IsValidTimeZoneName(Isolate* isolate, DirectHandle<String> time_zone) {
   return IsUTC(isolate, indirect_handle(time
-"""
-
-
 ```

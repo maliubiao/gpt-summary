@@ -124,15 +124,17 @@ By following these steps, we can systematically analyze the C++ code and provide
 
 总而言之，`mutation_event_suppression_scope_test.cc` 是 Blink 引擎中确保 `MutationEventSuppressionScope` 功能正常的关键测试文件，它的作用是验证控制 DOM 突变事件分发的能力，这与 JavaScript 对 DOM 变化的监听密切相关，也间接影响了 HTML 和 CSS 变化引起的 DOM 事件。 理解它的功能有助于开发者在调试与 DOM 突变事件相关的 bug 时，更好地理解 Chromium 内部的工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/events/mutation_event_suppression_scope_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -168,7 +170,4 @@ TEST_F(MutationEventSuppressionScopeTest, NestedScopes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

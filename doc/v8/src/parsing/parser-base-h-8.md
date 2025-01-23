@@ -215,7 +215,7 @@ ForStatement {
 
 `v8/src/parsing/parser-base.h` 作为 V8 解析器的基础头文件，定义了构建 JavaScript 解析器的核心框架。它提供了通用的解析器状态管理、基本 token 操作、作用域管理、错误报告机制以及针对特定 JavaScript 语法结构的初步检查（例如类成员名称和 `for` 循环）。这个文件是 V8 解析器架构的关键组成部分，它为更高级的、特定于语法的解析逻辑提供了坚实的基础。它的设计目标是提供可重用的、通用的解析功能，从而简化和统一 V8 的解析过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser-base.h以.tq结尾，那它是个v8 torque源代码，
@@ -223,8 +223,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ments()->Add(loop, zone());
     init_block->set_scope(for_scope);
     return init_block;
@@ -290,8 +292,4 @@ void ParserBase<Impl>::CheckClassFieldName(IdentifierT name, bool is_static) {
 }  // namespace v8::internal
 
 #endif  // V8_PARSING_PARSER_BASE_H_
-
-"""
-
-
 ```

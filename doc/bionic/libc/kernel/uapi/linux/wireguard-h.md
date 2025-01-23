@@ -349,7 +349,7 @@ if (targetFunctionAddress) {
 
 这些 Frida 脚本可以帮助你观察用户空间程序是如何使用 `bionic/libc/kernel/uapi/linux/wireguard.h` 中定义的常量和结构体与 WireGuard 内核模块进行通信的。通过分析 `sendto` 和 `recvfrom` 传递的数据，你可以理解发送的命令和接收的响应，从而调试 WireGuard 的相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/wireguard.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -360,8 +360,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -426,7 +428,4 @@ enum wgallowedip_attribute {
 };
 #define WGALLOWEDIP_A_MAX (__WGALLOWEDIP_A_LAST - 1)
 #endif
-
-"""
-
 ```

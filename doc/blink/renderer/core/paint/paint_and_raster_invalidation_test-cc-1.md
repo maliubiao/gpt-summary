@@ -156,7 +156,7 @@ In essence, this part of the test file delves deeper into nuanced paint and rast
 
 总而言之，这部分测试用例是 Blink 渲染引擎的重要组成部分，它确保了渲染失效机制的正确性和效率，从而保证了网页的正常渲染和性能表现。开发者可以通过研究这些测试用例，更深入地理解浏览器的渲染原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_and_raster_invalidation_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 fo{
                   client.Id(), client.DebugName(), gfx::Rect(50, 0, 50, 500),
                   PaintInvalidationReason::kIncremental}));
@@ -731,8 +733,4 @@ TEST_F(PaintInvalidatorCustomClientTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

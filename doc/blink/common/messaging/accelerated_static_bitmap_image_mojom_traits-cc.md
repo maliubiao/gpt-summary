@@ -166,14 +166,16 @@ By following these steps, one can systematically analyze the C++ code and provid
 
 总而言之，`accelerated_static_bitmap_image_mojom_traits.cc` 是 Blink 引擎中一个至关重要的文件，它负责确保加速位图图像数据能够在不同的进程之间安全有效地传递，并提供了必要的机制来管理这些图像资源的生命周期，这对于 Web 页面的流畅渲染至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/messaging/accelerated_static_bitmap_image_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ bool StructTraits<blink::mojom::AcceleratedStaticBitmapImage::DataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

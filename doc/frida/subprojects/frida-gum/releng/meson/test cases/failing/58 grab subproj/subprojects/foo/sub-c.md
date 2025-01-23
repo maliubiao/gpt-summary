@@ -154,7 +154,7 @@ By following these steps, we can go from a simple C code snippet to a comprehens
 
 虽然 `sub.c` 自身功能简单，但它作为 Frida 测试套件中的一个 *失败的测试用例*，对于理解 Frida 如何处理子项目以及可能存在的问题至关重要。它的简单性有助于隔离问题，并为 Frida 的开发和调试提供了重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/58 grab subproj/subprojects/foo/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,15 +162,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("I am a subproject executable file.\n");
     return 0;
 }
-
-"""
-
 ```

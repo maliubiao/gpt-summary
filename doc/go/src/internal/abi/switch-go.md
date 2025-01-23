@@ -203,7 +203,7 @@ func main() {
 
 总而言之，这段代码是 Go 运行时为了提升接口类型操作性能而实现的底层优化机制，它通过缓存之前的结果来加速后续相同的操作。开发者不需要直接操作这些结构体，但了解其背后的原理有助于理解 Go 程序的性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/switch.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -211,8 +211,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -274,9 +276,4 @@ type TypeAssertCacheEntry struct {
 	// nil if CanFail is set and conversion would fail.
 	Itab uintptr
 }
-
-"""
-
-
-
 ```

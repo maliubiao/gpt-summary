@@ -104,11 +104,13 @@ This systematic approach allows for a thorough understanding of the C++ code and
 
 `platform-freebsd.cc` 文件是 V8 引擎在 FreeBSD 操作系统上的基石，它实现了与操作系统交互的关键功能，包括时间区域处理、共享库信息获取、线程栈管理等。虽然 JavaScript 开发者通常不会直接与这些 C++ 代码交互，但这些底层实现直接影响着 JavaScript 代码的执行效率、内存管理以及与系统资源的交互。 该文件确保 V8 引擎能够在 FreeBSD 环境下正确、高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-freebsd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -136,14 +136,16 @@ Response: Here's a breakdown of the thinking process to arrive at the explanatio
 
 `disk_data_metadata.cc` 中定义的 `ReservedChunk` 类是一个用于管理磁盘数据元数据预留的工具类。它通过 RAII (Resource Acquisition Is Initialization) 的方式，确保预留的元数据最终会被释放，避免资源泄漏。 虽然它不直接与 JavaScript、HTML 和 CSS 交互，但它是 Blink 引擎实现缓存、本地存储等功能的重要基础。理解其功能有助于理解 Blink 如何管理磁盘上的数据和元信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/disk_data_metadata.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ std::unique_ptr<DiskDataMetadata> ReservedChunk::Take() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

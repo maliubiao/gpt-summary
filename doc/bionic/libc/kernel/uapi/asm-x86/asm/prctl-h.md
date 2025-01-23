@@ -267,7 +267,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "prctl"), {
 
 当你运行目标 Android 应用或执行 NDK 代码时，Frida 脚本会拦截对 `prctl` 的调用，并打印出 `option` 的值以及其他参数，从而帮助你理解 Android Framework 或 NDK 是如何使用这些 `prctl` 功能的。 你可以根据 `prctl.handroid` 文件中的宏定义来扩展 `switch` 语句，以打印更多有用的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/prctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -316,7 +318,4 @@ Prompt:
 #define ARCH_SHSTK_SHSTK (1ULL << 0)
 #define ARCH_SHSTK_WRSS (1ULL << 1)
 #endif
-
-"""
-
 ```

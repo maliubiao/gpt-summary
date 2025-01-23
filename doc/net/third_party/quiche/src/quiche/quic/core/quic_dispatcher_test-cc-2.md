@@ -97,7 +97,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 这部分代码主要测试了 `QuicDispatcher` 在处理 QUIC 连接建立初期各种情况下的行为，特别是针对版本协商的场景。它验证了 `QuicDispatcher` 能够正确拒绝使用已弃用版本的连接请求并发送版本协商响应，能够处理版本协商探测包，并且能够处理一些异常情况，例如过小的包或连接 ID 不完整的包。此外，它还测试了 `QuicDispatcher` 管理连接接受和处理写入阻塞的能力。这些测试确保了 `QuicDispatcher` 在连接建立阶段的健壮性和正确性，为后续的数据传输奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_dispatcher_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t packet[kMinPacketSizeForVersionNegotiation] = {
       0xC0, 'Q', '0', '4', '9', /*destination connection ID length*/ 0x08};
   QuicReceivedPacket received_packet(reinterpret_cast<char*>(packet),
@@ -860,7 +862,4 @@ TEST_P(QuicDispatcherWriteBlockedListTest,
       .WillOnce(
           Invoke(this, &QuicDispatcherWriteBlockedListTest::BlockConnection1));
   EXPECT_CALL(*connection2(), OnCanWrite())
-"""
-
-
 ```

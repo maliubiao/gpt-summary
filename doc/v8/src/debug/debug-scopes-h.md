@@ -242,15 +242,17 @@ standaloneGetValue(); // 输出 undefined，因为此时 this 指向全局对象
 
 总之，`v8/src/debug/debug-scopes.h` 是 V8 调试基础设施的关键组成部分，它提供了检查和操作 JavaScript 代码执行期间作用域的强大能力，这对于构建功能完善的调试器至关重要，并间接地帮助开发者理解和避免与作用域相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-scopes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-scopes.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -442,7 +444,4 @@ class V8_EXPORT_PRIVATE ScopeIterator {
 }  // namespace v8
 
 #endif  // V8_DEBUG_DEBUG_SCOPES_H_
-
-"""
-
 ```

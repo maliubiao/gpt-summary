@@ -80,15 +80,17 @@ The user wants a summary of the functionality of the `bitmap_image_test.cc` file
 
 `bitmap_image_test.cc` 文件主要用于对 Blink 引擎中的 `BitmapImage` 类进行全面的单元测试。 它涵盖了图像解码、渲染、动画处理、内存管理、图像元数据处理以及对各种图像格式和边界情况的处理。 这些测试确保了 `BitmapImage` 类的正确性和稳定性，从而保证了网页上图像的正常显示和 JavaScript 对图像的正确操作。  这些测试对于防止因图像处理错误而导致的网页显示问题和潜在的内存泄漏至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/bitmap_image_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -944,7 +946,4 @@ TEST_F(BitmapHistogramTest, DecodedImageType) {
   ExpectImageRecordsSample("red-full-ranged-8bpc.avif",
                            "Blink.DecodedImageType",
                            Bitmap
-"""
-
-
 ```

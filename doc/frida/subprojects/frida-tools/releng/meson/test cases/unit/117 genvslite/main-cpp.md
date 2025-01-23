@@ -106,7 +106,7 @@ Initially, I might have focused too much on the specifics of Frida's internal wo
 
 虽然 `main.cpp` 的代码非常简洁，但它在 Frida 的构建和测试流程中扮演着重要的角色，用于验证构建类型（调试或发布）。这与逆向工程中对软件不同版本的分析密切相关，并且涉及到编译原理、构建系统以及目标平台的相关知识。  这个测试用例的输出可以作为调试线索，帮助开发者确保 Frida 在正确的构建配置下进行开发和测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/117 genvslite/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<stdio.h>
 
 int main() {
@@ -126,7 +128,4 @@ int main() {
 #endif
     return 0;
 }
-
-"""
-
 ```

@@ -177,14 +177,16 @@ void MyObject::myMethod(int value, ExceptionState& exception_state) {
 
 总而言之，`exception_state.cc` 中定义的 `ExceptionState` 类是 Blink 引擎中连接 C++ 代码和 JavaScript 异常处理机制的关键桥梁，确保了在底层错误发生时，JavaScript 代码能够得到适当的通知和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/exception_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -367,7 +369,4 @@ ExceptionState::ExceptionState(DummyExceptionStateForTesting& dummy_derived)
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -36,9 +36,12 @@ I will organize the summary based on these observations and the structure of the
 
 **总结来说，`memory-protection-unittest.cc` 致力于确保 V8 的 WebAssembly 代码内存保护机制能够有效地防止未经授权的代码修改，同时允许在明确控制的 `CodeSpaceWriteScope` 内进行必要的修改，并且正确处理与信号处理程序的交互 (在相关平台上)。**
 
-Prompt: ```这是目录为v8/test/unittests/wasm/memory-protection-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/memory-protection-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,6 +319,4 @@ TEST_P(ParameterizedMemoryProtectionTestWithSignalHandling, TestSignalHandler) {
 #endif  // V8_OS_POSIX && !V8_OS_FUCHSIA
 
 }  // namespace v8::internal::wasm
-
-"""
 ```

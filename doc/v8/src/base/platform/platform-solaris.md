@@ -102,11 +102,13 @@ if (timeZoneNamePart) {
 
 `platform-solaris.cc` 是 V8 引擎在 Solaris 平台上进行操作系统交互的关键组件。它提供了时间处理、线程栈信息等底层功能，使得 JavaScript 可以在 Solaris 上正确地运行，并能够感知到 Solaris 特有的系统特性。虽然有些功能（如共享库地址和调度参数调整）在该文件中可能没有特定的 Solaris 实现，但它仍然负责处理一些关键的平台特定任务，特别是时区处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-solaris.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

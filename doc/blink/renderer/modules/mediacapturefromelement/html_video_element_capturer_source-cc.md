@@ -165,15 +165,17 @@ By following these steps, combining code analysis with an understanding of web t
 
 总而言之，`html_video_element_capturer_source.cc` 是一个连接 HTML `<video>` 元素和 MediaStream API 的关键桥梁，它负责从视频元素中提取视频帧，并将其转换为可以被 Web 应用使用的视频流。理解它的工作原理对于开发需要捕获视频元素内容的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediacapturefromelement/html_video_element_capturer_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ void HtmlVideoElementCapturerSource::sendNewFrame() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -185,7 +185,7 @@ func main() {
 
 总而言之，这段代码是 Go 运行时在 32 位架构上进行内存管理的关键部分，它通过复杂的数据结构和算法来高效地分配和回收内存页，支撑着 Go 程序的运行。理解这段代码有助于深入了解 Go 内存管理的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mpagealloc_32bit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -335,9 +337,4 @@ func (s *scavengeIndex) sysInit(test bool, sysStat *sysMemStat) (mappedReady uin
 func (s *scavengeIndex) sysGrow(base, limit uintptr, sysStat *sysMemStat) uintptr {
 	return 0
 }
-
-"""
-
-
-
 ```

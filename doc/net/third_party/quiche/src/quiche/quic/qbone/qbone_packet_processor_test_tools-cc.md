@@ -133,15 +133,17 @@ Finally, I organize my findings into a clear and structured answer, addressing e
 
 `qbone_packet_processor_test_tools.cc` 文件提供了一组用于测试 QUIC QBONE 组件的低级网络包操作工具。它不是用户直接交互的代码，而是用于辅助开发和测试的。理解这些工具的功能有助于理解 QBONE 如何处理 IPv6 数据包，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/qbone_packet_processor_test_tools.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ bool DecrementIPv6HopLimit(std::string& packet) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

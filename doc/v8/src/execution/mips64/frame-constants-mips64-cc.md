@@ -117,15 +117,17 @@ foo(1, 2);
 
 `v8/src/execution/mips64/frame-constants-mips64.cc` 是 V8 引擎在 MIPS64 架构上管理函数调用栈帧的关键组成部分。它定义了栈帧的结构、关键寄存器的用途以及计算栈空间的方法，为 JavaScript 代码的正确执行奠定了基础。虽然普通 JavaScript 开发者不需要直接修改这些文件，但理解其背后的概念有助于更好地理解 JavaScript 的执行机制和某些类型的运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/frame-constants-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/frame-constants-mips64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ intptr_t MaglevFrame::StackGuardFrameSize(int register_input_count) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
 ```

@@ -136,14 +136,16 @@ By following these steps, I could dissect the provided code snippet and generate
 
 总而言之，`deferred_image_decoder.cc` 是 Blink 渲染引擎中一个至关重要的组件，它通过延迟图像解码来提高网页加载速度和渲染性能，与网页中的 HTML 结构、CSS 样式以及 JavaScript 行为紧密相关。理解其工作原理有助于开发者编写更高效和健壮的网页应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/deferred_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -627,7 +629,4 @@ struct VectorTraits<blink::DeferredFrameData>
       false;  // Not all DeferredFrameData members initialize to 0.
 };
 }  // namespace WTF
-
-"""
-
 ```

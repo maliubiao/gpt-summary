@@ -281,7 +281,7 @@ This portion of `v8/src/codegen/x64/macro-assembler-x64.h` primarily focuses on 
 
 Essentially, it provides the low-level machinery necessary for V8 to securely and efficiently execute JavaScript code on x64 architectures. This part builds upon the fundamental assembly generation capabilities likely introduced in the first part of the file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/macro-assembler-x64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/macro-assembler-x64.h以.tq结尾，那它是个v8 torque源代码，
@@ -289,8 +289,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 code and store a SandboxedPointer to the heap.
   void StoreSandboxedPointerField(Operand dst_field_operand, Register value);
 
@@ -782,8 +784,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_X64_MACRO_ASSEMBLER_X64_H_
-
-"""
-
-
 ```

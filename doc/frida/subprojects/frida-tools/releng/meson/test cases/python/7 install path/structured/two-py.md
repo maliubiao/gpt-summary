@@ -110,7 +110,7 @@ Initially, one might be tempted to speculate about what *could* be in the `two.p
 
 虽然 `two.py` 文件本身是空的，但它的存在和路径表明它 *应该* 是 Frida 工具测试套件的一部分，用于验证在特定结构化安装路径下 Frida 工具的功能是否正常。  对于逆向工程师和 Frida 开发者来说，理解这些测试用例的目的是非常重要的，即使某些测试文件暂时是空的。这有助于确保 Frida 工具的可靠性和在各种环境下的正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/7 install path/structured/two.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,9 +118,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

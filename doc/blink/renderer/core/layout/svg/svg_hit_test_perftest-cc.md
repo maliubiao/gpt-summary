@@ -168,14 +168,16 @@ Initially, I might just see the "hit test" and think it's solely about finding w
 
 总而言之，`svg_hit_test_perftest.cc` 通过性能测试来确保 Chromium 浏览器能够高效地处理 SVG 元素的命中测试，这对于提供流畅的用户交互体验至关重要，尤其是在涉及到复杂的 SVG 图形和用户交互的 Web 应用中。 开发者应该了解这些底层机制，避免创建导致性能瓶颈的 SVG 结构和交互模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_hit_test_perftest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ TEST_F(SvgHitTestPerfTest, IntersectsClipPath) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

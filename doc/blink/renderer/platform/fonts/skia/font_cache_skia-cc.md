@@ -138,14 +138,16 @@ Blink 渲染引擎最终会使用 "思源黑体" 的粗体版本（如果存在�
 
 总之，`font_cache_skia.cc` 是 Blink 引擎中负责高效、跨平台字体管理的关键组件，它连接了上层的 CSS 样式定义和底层的 Skia 字体渲染能力，对于网页的文本显示至关重要。开发者在使用字体时需要注意字体名称的正确性、提供合适的备用字体、考虑字符覆盖范围以及避免过度依赖平台特定字体，以确保网页在不同环境下的正确显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/skia/font_cache_skia.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2006, 2007, 2008, 2009 Google Inc. All rights reserved.
  *
@@ -454,7 +456,4 @@ const FontPlatformData* FontCache::CreateFontPlatformData(
 #endif  // !BUILDFLAG(IS_WIN)
 
 }  // namespace blink
-
-"""
-
 ```

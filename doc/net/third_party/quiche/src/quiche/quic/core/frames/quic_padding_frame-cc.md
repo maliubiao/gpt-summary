@@ -89,15 +89,17 @@ This step-by-step breakdown reflects a process of understanding the code, connec
 
 总而言之，`quic_padding_frame.cc` 虽然只是一个小的辅助文件，但它在 QUIC 协议的调试和理解中起着重要的作用，帮助开发者查看和理解填充帧的内容，从而更好地排查网络问题。用户与这个文件的交互是间接的，通过触发网络请求，使得 QUIC 协议在底层运行，最终开发者可能需要查看这个文件来理解网络行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/frames/quic_padding_frame.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -115,7 +117,4 @@ std::ostream& operator<<(std::ostream& os,
 }
 
 }  // namespace quic
-
-"""
-
 ```

@@ -157,7 +157,7 @@ dict.set_boolean("is_student", false);
 ### 总结
 
 该文件实现了 Frida 工具中 Plist 数据结构的核心功能，支持多种数据类型的存储、读取和错误处理。通过 LLDB 调试工具，用户可以方便地查看和调试 Plist 对象的内容。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/plist.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ic unowned PlistDict get_dict (string key) throws PlistError {
 			return (PlistDict) get_value (key, typeof (PlistDict)).get_object ();
 		}
@@ -504,8 +506,4 @@ ic unowned PlistDict get_dict (string key) throws PlistError {
 		assert_not_reached ();
 	}
 }
-
-"""
-
-
 ```

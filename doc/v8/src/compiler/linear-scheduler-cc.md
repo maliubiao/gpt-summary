@@ -176,15 +176,17 @@ Turbofan 编译器会将这段代码转换为一个图，其中包含表示加�
 
 `v8/src/compiler/linear-scheduler.cc` 是 V8 编译器中负责确定代码执行顺序的关键组件。它通过分析控制流和数据依赖性，为编译器图中的节点找到一个线性的调度方案，从而优化生成的机器码的性能。 虽然用户不会直接操作这个文件，但编写清晰、简洁的代码有助于编译器更好地进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/linear-scheduler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/linear-scheduler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ bool LinearScheduler::SameBasicBlock(Node* node0, Node* node1) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -125,7 +125,7 @@ Finally, we organize this information into a clear and comprehensive answer, add
 
 虽然 `main.c` 的代码非常简单，但它作为 Frida 项目中一个测试用例的组成部分，展示了 Frida 如何利用标准的 Windows DLL 机制进行代码注入。它为 Frida 提供了在目标进程中执行自定义代码的入口点，是动态 instrumentation 技术的基础。理解这段代码有助于理解 Frida 的底层工作原理以及 Windows DLL 的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/15 resource scripts with duplicate filenames/exe3/src_dll/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <windows.h>
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
@@ -145,7 +147,4 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     ((void)lpvReserved);
   return TRUE;
 }
-
-"""
-
 ```

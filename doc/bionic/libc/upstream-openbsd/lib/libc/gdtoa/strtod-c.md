@@ -325,7 +325,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/libc/upstream-openbsd/lib/libc/gdtoa/strtod.c` 文件在 Android 中扮演着至关重要的角色，负责将字符串转换为 `double` 类型，并且考虑了多种数字格式、错误处理和浮点数舍入模式。理解其功能和实现细节对于 Android 开发人员和安全研究人员都非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gdtoa/strtod.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -336,8 +336,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /****************************************************************
 
 The author of this software is David M. Gay.
@@ -1440,7 +1442,4 @@ strtod
 	return sign ? -dval(&rv) : dval(&rv);
 	}
 DEF_STRONG(strtod);
-
-"""
-
 ```

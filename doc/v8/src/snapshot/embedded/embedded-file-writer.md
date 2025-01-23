@@ -96,11 +96,13 @@ console.log(doubled);
 
 文件中诸如 `WriteBuiltin`、`WriteCodeSection` 等函数名，以及对 `Builtin` 的处理，都印证了其生成内置函数代码的功能。 而 `SourcePositionTable` 的处理则表明它还包含了调试信息的生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/embedded-file-writer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -400,7 +402,4 @@ void EmbeddedFileWriter::PrepareBuiltinSourcePositionMap(Builtins* builtins) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

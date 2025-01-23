@@ -186,15 +186,17 @@ void ScanSequenceHelper1(const String& input) {
 
 `vtt_scanner_test.cc` 通过一系列的单元测试，详尽地验证了 `VTTScanner` 类的各种功能。理解这个测试文件不仅有助于理解 `VTTScanner` 的工作原理，还能帮助开发者避免在使用相关 WebVTT 功能时可能遇到的错误。它也清晰地展示了 Blink 引擎如何确保其 VTT 解析功能的正确性和鲁棒性，从而为用户提供可靠的字幕和文本轨道体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/vtt/vtt_scanner_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Opera Software ASA. All rights reserved.
  *
@@ -548,7 +550,4 @@ TEST(VTTScannerTest, ScanDouble) {
 #undef TEST_WITH
 
 }  // namespace blink
-
-"""
-
 ```

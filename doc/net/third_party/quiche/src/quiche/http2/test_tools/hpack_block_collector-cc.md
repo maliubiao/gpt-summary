@@ -168,15 +168,17 @@ fetch('https://example.com/data', {
 
 **简而言之，`hpack_block_collector.cc` 是 Chromium 网络栈中用于测试 HTTP/2 HPACK 解码功能的重要工具。它帮助开发者确保网络请求的头部压缩和解压缩过程的正确性，从而保障用户的网络体验。虽然普通用户不会直接接触到这个文件，但其功能直接影响着用户通过浏览器进行的每一次网络交互。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/hpack_block_collector.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ AssertionResult HpackBlockCollector::VerifyEq(
 
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

@@ -139,15 +139,17 @@ func main() {
 
 总而言之，这段代码是 Go 编译器针对 WebAssembly 目标平台进行代码生成的核心数据结构定义，它将 Go 的高级抽象映射到底层的 WebAssembly 指令。 编译器开发者需要仔细维护这些定义，以确保生成的 WebAssembly 代码的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/_gen/WasmOps.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -425,9 +427,4 @@ func init() {
 		linkreg:         -1, // not used
 	})
 }
-
-"""
-
-
-
 ```

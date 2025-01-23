@@ -382,7 +382,7 @@ console.log(pr.select(1)); // 输出: "one"
 
 总而言之，`v8/src/builtins/builtins-definitions.h` (或者如果以 `.tq` 结尾则是相应的 Torque 文件) 是 V8 引擎的核心组成部分，它定义了 JavaScript 语言中大量内置功能的接口，使得 JavaScript 开发者能够使用这些强大的功能。 它充当了 JavaScript 代码和 V8 引擎底层实现之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -390,8 +390,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 aptArgumentsSentinel)               \
   /* ecma402 #sec-Intl.Locale.prototype.getNumberingSystems */                 \
   CPP(LocalePrototypeGetNumberingSystems, kDontAdaptArgumentsSentinel)         \
@@ -632,8 +634,4 @@ aptArgumentsSentinel)               \
 }  // namespace v8
 
 #endif  // V8_BUILTINS_BUILTINS_DEFINITIONS_H_
-
-"""
-
-
 ```

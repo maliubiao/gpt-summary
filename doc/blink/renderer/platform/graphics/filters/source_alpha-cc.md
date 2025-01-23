@@ -155,14 +155,16 @@ Finally, the information is organized into clear sections addressing the differe
 
 总而言之，`source_alpha.cc` 文件定义了一个核心的图形处理单元，负责提取图像的透明度信息，这在实现各种复杂的 CSS 滤镜效果中扮演着重要的角色。虽然用户不会直接与之交互，但理解其功能有助于更好地理解和使用 Web 平台提供的图形能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/source_alpha.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -217,7 +219,4 @@ StringBuilder& SourceAlpha::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

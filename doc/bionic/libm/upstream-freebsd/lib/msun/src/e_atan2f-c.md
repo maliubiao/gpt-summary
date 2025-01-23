@@ -389,7 +389,7 @@ sys.stdin.read()
 
 这个 Frida Hook 示例可以帮助你理解在 Android 应用中何时以及如何调用 `atan2f`，以及其输入输出值是什么，从而更好地调试和分析相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_atan2f.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -400,8 +400,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* e_atan2f.c -- float version of e_atan2.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -495,7 +497,4 @@ atan2f(float y, float x)
 	    	    return  (z-pi_lo)-pi;/* atan(-,-) */
 	}
 }
-
-"""
-
 ```

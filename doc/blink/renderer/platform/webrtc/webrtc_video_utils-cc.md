@@ -127,14 +127,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总之，`webrtc_video_utils.cc` 是一个底层的工具文件，它的正确使用对于 WebRTC 视频功能的稳定性和正确性至关重要。虽然开发者通常不会直接调用这些 C++ 函数，但理解它们的功能有助于理解 WebRTC API 在浏览器内部的工作原理，并能更好地调试和解决相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/webrtc/webrtc_video_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -553,7 +555,4 @@ webrtc::ColorSpace GfxToWebRtcColorSpace(const gfx::ColorSpace& color_space) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

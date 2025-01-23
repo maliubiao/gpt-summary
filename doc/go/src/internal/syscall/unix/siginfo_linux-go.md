@@ -180,7 +180,7 @@ func main() {
 
 这段代码是 Go 运行时环境处理底层操作系统信号机制的一个细节实现，对于一般的 Go 开发者来说，通常不需要直接操作 `SiginfoChild` 结构体。标准库提供的 `os/exec` 和 `syscall` 包已经提供了更高级、更方便的接口来处理子进程的状态。理解这段代码有助于深入了解 Go 如何与操作系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/siginfo_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -254,9 +256,4 @@ func (s *SiginfoChild) WaitStatus() (ws syscall.WaitStatus) {
 	}
 	return
 }
-
-"""
-
-
-
 ```

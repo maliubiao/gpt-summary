@@ -136,15 +136,17 @@ By following this structured thought process, I could generate a comprehensive a
 
 总而言之，`ai_metrics.cc` 虽然不直接参与用户交互或页面渲染，但它为 Blink 引擎中 AI 功能的监控和分析提供了基础，通过定义标准化的指标名称，使得开发者能够更好地理解和优化这些功能的性能和使用情况。 这些 AI 功能最终会通过 JavaScript API 影响网页的功能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ai/ai_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ std::string AIMetrics::GetAISessionResponseCallbackCountMetricName(
                        ".PromptResponseCallbackCount"});
 }
 }  // namespace blink
-
-"""
-
 ```

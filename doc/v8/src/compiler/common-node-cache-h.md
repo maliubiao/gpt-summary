@@ -186,15 +186,17 @@ While the `CommonNodeCache` itself doesn't directly cause user programming error
 
 In summary, `v8/src/compiler/common-node-cache.h` defines a crucial component of the V8 compiler responsible for efficiently managing and reusing constant nodes. This optimization helps reduce memory usage and potentially improves compilation speed by avoiding redundant node creation. While not directly causing user errors, it plays a role in how the compiler handles constant values present in JavaScript code, which relates to potential pitfalls in user programming related to comparisons and object identity.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-node-cache.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/common-node-cache.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ class CommonNodeCache final {
 }  // namespace v8
 
 #endif  // V8_COMPILER_COMMON_NODE_CACHE_H_
-
-"""
-
 ```

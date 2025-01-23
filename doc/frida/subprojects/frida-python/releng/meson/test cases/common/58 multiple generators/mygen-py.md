@@ -147,7 +147,7 @@ This script is part of Frida's development and testing infrastructure. A user wo
 
 In essence, encountering this script suggests the user is operating within the context of Frida's development or is deeply involved in understanding its inner workings and testing procedures, possibly while troubleshooting a specific issue. The path itself (`frida/subprojects/frida-python/releng/meson/test cases/common/58 multiple generators/mygen.py`) is a strong indicator that the user is exploring aspects of Frida related to its Python bindings, release engineering (releng), the Meson build system, and how it handles scenarios with multiple code generators.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/58 multiple generators/mygen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -179,7 +181,4 @@ with open(outsrc, 'w') as f:
     return 0;
 }
 ''' % val)
-
-"""
-
 ```

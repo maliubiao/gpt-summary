@@ -128,7 +128,7 @@ Go 程序的命令行参数处理通常在 `main` 函数中使用 `os.Args` 或 
 
 总结来说，`sha256block_s390x.go` 文件是 Go 语言中为 S390X 架构提供高性能 SHA256 哈希计算的关键部分，它利用硬件加速并巧妙地融入了 Go 的 `crypto` 包的架构中。开发者通常不需要直接与这个文件交互，但理解其背后的原理有助于更好地理解 Go 标准库的性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha256/sha256block_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -169,9 +171,4 @@ func block(dig *Digest, p []byte) {
 		blockGeneric(dig, p)
 	}
 }
-
-"""
-
-
-
 ```

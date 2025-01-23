@@ -101,14 +101,16 @@ This structured approach, combining code analysis, domain knowledge (web caching
 
 `StaleRevalidationResourceClient` 是 Blink 引擎中一个重要的组成部分，它实现了“先显示过期内容，同时在后台重新验证”的策略，这种策略在提升网页加载速度和用户体验方面起着关键作用。它与 HTML、CSS、JavaScript 的加载和更新都息息相关，并且其行为受到 HTTP 缓存策略的影响。理解其工作原理有助于开发者更好地理解浏览器的缓存机制，并避免一些常见的缓存相关错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/stale_revalidation_resource_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -143,7 +145,4 @@ String StaleRevalidationResourceClient::DebugName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -226,15 +226,17 @@ Let's break down the thought process for analyzing this `NameNodeList.cc` file.
 
 总而言之，`blink/renderer/core/dom/name_node_list.cc` 文件在 Blink 引擎中扮演着关键角色，它实现了 JavaScript 中 `document.getElementsByName()` 功能的基础，负责维护一个动态更新的、包含具有特定 `name` 属性的元素列表。理解这个文件的功能有助于开发者更好地理解 DOM 操作和浏览器内部的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/name_node_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /**
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -282,7 +284,4 @@ bool NameNodeList::ElementMatches(const Element& element) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

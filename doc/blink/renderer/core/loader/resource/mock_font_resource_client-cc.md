@@ -140,15 +140,17 @@ By following these steps, breaking down the code into smaller parts, and thinkin
 
 总而言之，`mock_font_resource_client.cc` 是 Blink 渲染引擎中用于测试字体加载逻辑的关键组件。它通过模拟字体加载过程中可能发生的限制情况，帮助开发者验证相关代码的正确性，并及早发现潜在的错误。虽然用户不会直接操作这个文件，但用户在使用 Chrome 浏览器浏览网页时遇到的字体加载问题，可能会间接地引导开发者查看和调试这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource/mock_font_resource_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ void MockFontResourceClient::FontLoadLongLimitExceeded(FontResource*) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

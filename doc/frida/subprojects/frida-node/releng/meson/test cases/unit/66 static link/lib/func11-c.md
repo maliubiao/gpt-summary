@@ -144,7 +144,7 @@ By following this structured approach and continuously refining the analysis bas
 
 总而言之，`func11.c` 文件中的代码虽然简单，但在 Frida 的上下文中，它代表了一个可以被动态 instrument 的基本单元，可以用来理解 Frida 的 Hooking 机制，特别是对于静态链接的场景。它也反映了逆向分析中常见的对函数行为的观察和分析过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/66 static link/lib/func11.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,15 +152,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func10();
 
 int func11()
 {
   return func10() + 1;
 }
-
-"""
-
 ```

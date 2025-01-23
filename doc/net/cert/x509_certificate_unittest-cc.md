@@ -119,7 +119,7 @@ Based on my initial scan, the file primarily focuses on testing the parsing and 
 
 总而言之，`net/cert/x509_certificate_unittest.cc` 是一个至关重要的单元测试文件，它全面地测试了 Chromium 中 `X509Certificate` 类的各项功能，确保了浏览器能够安全可靠地处理 HTTPS 连接中使用的 X.509 证书。 它涵盖了证书的解析、属性访问、指纹计算、特殊编码处理、扩展字段提取、缓存机制和序列化等多个方面。这些测试对于保障 Chromium 浏览器的网络安全至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_certificate_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -905,7 +907,4 @@ TEST(X509CertificateTest, Pickle) {
   base::PickleIterator iter(pickle);
   scoped_refptr<X509Certificate> cert_from_pickle =
       X509Certificate::Creat
-"""
-
-
 ```

@@ -221,7 +221,7 @@ During the process, I might have initially focused too much on one aspect. For e
 
 总而言之，`frida/subprojects/frida-gum/gum/backend-darwin/helpers/fixupchainprocessor.c` 是 Frida 在 Darwin 系统上实现动态 instrumentation 的关键组成部分，它负责确保程序在运行时能够正确地访问代码和数据，为 Frida 的代码注入、hook 和其他动态分析功能提供了坚实的基础。理解它的工作原理对于深入使用 Frida 和进行高级逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/helpers/fixupchainprocessor.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -229,8 +229,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -501,7 +503,4 @@ gum_sign_extend_int19 (uint64_t i19)
 }
 
 #endif
-
-"""
-
 ```

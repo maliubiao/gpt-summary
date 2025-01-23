@@ -193,15 +193,17 @@ By following these steps, one can systematically analyze C++ unit tests and gain
 
 总而言之，`v8/test/unittests/heap/memory-reducer-unittest.cc`  是一个至关重要的测试文件，它确保了 V8 引擎的内存管理组件 `MemoryReducer` 能够正确地工作，从而保证 JavaScript 应用的性能和稳定性。它通过详尽的测试用例，模拟各种场景，验证了 `MemoryReducer` 的状态转换和决策逻辑的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/memory-reducer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/memory-reducer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -512,7 +514,4 @@ TEST(MemoryReducer, FromRunToWait) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

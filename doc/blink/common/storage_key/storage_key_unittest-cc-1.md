@@ -104,15 +104,17 @@ Response: My thinking process for analyzing the provided C++ unittest code and g
 
 总而言之，这个测试文件细致地检验了 `StorageKey` 类的序列化和反序列化逻辑的正确性，并覆盖了在不同特性标志下的行为，这对于确保 Blink 引擎中存储机制的稳定性和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/storage_key/storage_key_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ird-party key.
       "https://example.com/^0https://example.com/",
       // We cannot add a first path in a third-party key.
@@ -227,8 +229,4 @@ TEST_F(StorageKeyTest,
   }
 }
 }  // namespace blink
-
-"""
-
-
 ```

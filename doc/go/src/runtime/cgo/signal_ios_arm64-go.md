@@ -130,7 +130,7 @@ main.main()
 
 这段代码是 Go 语言在 iOS ARM64 平台上处理 C 代码中内存错误的关键部分。 它通过导出一个特殊的 Go 函数，使得当 C 代码发生内存相关的错误时，能够通知 Go 运行时，并触发 Go 的 panic 机制，从而允许 Go 运行时进行统一的错误处理或程序终止。 普通 Go 开发者不会直接使用或调用这个函数，但理解其背后的原理有助于理解 `cgo` 的工作方式以及跨语言错误处理的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/signal_ios_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -138,8 +138,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -150,9 +152,4 @@ import _ "unsafe"
 
 //go:cgo_export_static xx_cgo_panicmem xx_cgo_panicmem
 func xx_cgo_panicmem()
-
-"""
-
-
-
 ```

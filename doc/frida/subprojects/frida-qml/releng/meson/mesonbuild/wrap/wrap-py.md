@@ -169,7 +169,7 @@ Initially, I might have focused too much on Frida, given the prompt's context. H
 
 总的来说，`frida/subprojects/frida-qml/releng/meson/mesonbuild/wrap/wrap.py` 文件的主要功能是 **作为 Meson 构建系统的一部分，负责自动化地管理和集成外部依赖项 (wraps)。** 它通过解析 `.wrap` 文件、与 WrapDB 交互、下载源代码、应用补丁以及管理本地缓存等步骤，简化了外部依赖的集成过程，使得开发者能够更方便地在他们的 Meson 项目中使用第三方库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -902,7 +904,4 @@ class Resolver:
         return hashvalue, tmpfile.name
 
     def check_hash(self, what: str, path: str, hash_required:
-"""
-
-
 ```

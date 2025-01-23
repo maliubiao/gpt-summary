@@ -155,11 +155,13 @@ console.log(buffer.resizable); // 输出: true
 
 `v8/src/objects/js-array-buffer.cc` 文件是 V8 引擎中关于 `ArrayBuffer` 和 `SharedArrayBuffer` 的基础设施，它负责对象的创建、内存管理、以及与 `TypedArray` 的协同工作。 它背后的 C++ 代码使得 JavaScript 能够高效地处理二进制数据。理解这个文件有助于深入了解 JavaScript 中内存管理和底层数据结构的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-array-buffer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -617,7 +619,4 @@ size_t JSTypedArray::GetVariableLengthOrOutOfBounds(bool& out_of_bounds) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

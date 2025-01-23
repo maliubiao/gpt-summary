@@ -127,15 +127,17 @@ By following these steps, I was able to construct a comprehensive and accurate a
 
 总而言之，`rtc_encoded_audio_receiver_source_optimizer.cc` 是 Blink 引擎中一个重要的内部组件，负责优化 WebRTC 音频接收的底层数据源管理，虽然用户无法直接操作它，但它的功能直接影响着 WebRTC 音频应用的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_audio_receiver_source_optimizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ RtcEncodedAudioReceiverSourceOptimizer::PerformInProcessOptimization(
 }
 
 }  // namespace blink
-
-"""
-
 ```

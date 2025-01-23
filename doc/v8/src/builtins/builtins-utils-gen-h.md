@@ -161,15 +161,17 @@ While this header file deals with *defining* built-ins, here are common errors u
 
 In summary, `v8/src/builtins/builtins-utils-gen.h` is a foundational header file in V8 that provides the infrastructure for defining built-in functions using the Turbofan and Turboshaft compilers. It simplifies the process by providing macros that generate the necessary C++ structures and handle parameter access, integration with the V8 runtime, and potentially error handling and feedback collection. While not a Torque file itself, it plays a vital role in how built-ins, including those potentially written in Torque, are implemented within V8.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-utils-gen.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-utils-gen.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ class CodeAssemblerState;
 }  // namespace v8
 
 #endif  // V8_BUILTINS_BUILTINS_UTILS_GEN_H_
-
-"""
-
 ```

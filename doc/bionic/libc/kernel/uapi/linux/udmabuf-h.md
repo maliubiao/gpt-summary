@@ -315,7 +315,7 @@ if (Process.platform === 'linux') {
 
 当目标进程调用 `ioctl` 并使用 `UDMABUF_CREATE` 命令时，Frida 脚本会在控制台输出相关信息，帮助你调试 `udmabuf` 的使用过程。  你可以根据需要添加对 `UDMABUF_CREATE_LIST` 的 hook。  你需要根据实际的内核头文件来确定 `UDMABUF_CREATE` 宏的值。可以使用预处理器展开宏来得到确切的数值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/udmabuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -326,8 +326,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -359,7 +361,4 @@ struct udmabuf_create_list {
 #define UDMABUF_CREATE _IOW('u', 0x42, struct udmabuf_create)
 #define UDMABUF_CREATE_LIST _IOW('u', 0x43, struct udmabuf_create_list)
 #endif
-
-"""
-
 ```

@@ -186,7 +186,7 @@ const formatter = new Intl.DateTimeFormat('en-US', {
 
 总而言之，`v8/src/objects/js-date-time-format.cc` 文件的核心功能是 **为 JavaScript 的 `Intl.DateTimeFormat` API 提供高效且符合国际化标准的日期和时间格式化支持**。它负责处理用户提供的 locale 和选项，利用 ICU 库执行实际的格式化操作，并提供将格式化结果分解为部件的能力。该代码是 V8 引擎实现 JavaScript 国际化功能的重要组成部分。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-date-time-format.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-date-time-format.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 = RequiredOption::kAny) {
       // 1. For each property name prop of << *"weekday"*, *"year"*, *"month"*,
       // *"day"* >>, do
@@ -852,8 +854,4 @@ MaybeHandle<JSArray> JSDateTimeFormat::FormatRangeToParts(
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

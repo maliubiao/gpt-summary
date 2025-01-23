@@ -304,7 +304,7 @@ func main() {
 
 简单来说，`parse.go` 就像一个翻译员，它将人类可读的 Go 汇编代码转换成机器可以理解的中间表示形式，为最终生成机器码做准备。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/asm/internal/asm/parse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -313,8 +313,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 are two changes in the expression handling here
 // compared to the old yacc/C implementations. Neither has
 // much practical consequence because the expressions we
@@ -555,10 +557,4 @@ func (p *Parser) at(next ...lex.ScanToken) bool {
 	}
 	return true
 }
-
-"""
-
-
-
-
 ```

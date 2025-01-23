@@ -159,15 +159,17 @@ go object linux amd64 go1.20 cpu=v2 X:
 
 `go/src/cmd/internal/objabi/util.go` 中的这段代码主要负责定义目标文件格式相关的常量以及生成包含构建配置信息的头部字符串。这个头部字符串是 Go 确保不同编译配置下目标文件兼容性的重要机制。理解其功能有助于开发者避免因构建配置不当而导致的问题。虽然这段代码本身不直接处理命令行参数，但它所依赖的构建配置信息会受到多种命令行参数和环境变量的影响。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/objabi/util.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -201,9 +203,4 @@ func HeaderString() string {
 		buildcfg.Version, archExtra,
 		strings.Join(buildcfg.Experiment.Enabled(), ","))
 }
-
-"""
-
-
-
 ```

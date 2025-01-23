@@ -129,7 +129,7 @@ let first = arr[0];
 
 这部分 `assembler-arm.cc` 代码专注于实现 ARM 架构中与**位操作、数据打包解包以及字节/半字扩展**相关的汇编指令生成。这些指令是构建更复杂操作的基础，并且在 V8 引擎进行 JavaScript 代码优化和执行时被广泛使用。 开发者通过调用这些 `Assembler` 的成员函数，能够精确地控制生成的底层机器码，从而实现高效的代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -137,9 +137,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
- src.shift_imm_ * B7 | sh * B6 | 0x1 * B4 | src.rm_.code());
+### 源代码
+```cpp
+src.shift_imm_ * B7 | sh * B6 | 0x1 * B4 | src.rm_.code());
 }
 
 // Bitfield manipulation instructions.
@@ -1040,7 +1042,4 @@ void Assembler::vmov(const DwVfpRegister dst, uint64_t imm) {
     emit(kSpecialCondition | 0x05 * B23 | d * B22 | vd * B12 | cmode * B8 |
          op * B5 | 0x1 * B4 | enc);
   } els
-"""
-
-
 ```

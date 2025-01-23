@@ -136,11 +136,13 @@ try {
 
 `operator-properties.cc` 文件是 V8 编译器内部的关键组成部分，它定义了操作符的各种属性，这些属性指导着编译器的优化和代码生成过程。  `NeedsExactContext` 和 `HasFrameStateInput` 等方法直接反映了 JavaScript 的作用域规则、异常处理以及 V8 的优化策略。 理解这些属性有助于深入了解 V8 如何高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/operator-properties.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ bool OperatorProperties::IsBasicBlockBegin(const Operator* op) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

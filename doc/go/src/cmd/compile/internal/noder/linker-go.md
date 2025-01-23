@@ -188,15 +188,17 @@ func GetG0() uintptr {
 
 总而言之，`linker.go` 中的代码是 Go 编译器中一个至关重要的组成部分，它负责整合编译产生的中间表示，为 Go 语言的各种高级特性提供底层的支持。理解其功能有助于深入理解 Go 语言的编译和链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/linker.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -551,9 +553,4 @@ func (l *linker) lsymIdx(w *pkgbits.Encoder, linkname string, lsym *obj.LSym) bo
 	w.Int64(int64(lsym.SymIdx))
 	return true
 }
-
-"""
-
-
-
 ```

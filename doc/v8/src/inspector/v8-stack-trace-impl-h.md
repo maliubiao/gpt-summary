@@ -202,15 +202,17 @@ asyncA().catch(e => {
 
 总结来说，`v8/src/inspector/v8-stack-trace-impl.h` 定义了 V8 调试器中用于表示和管理同步及异步堆栈跟踪的关键数据结构和方法，这对于 JavaScript 程序的调试和错误分析至关重要。它不是 Torque 代码，而是标准的 C++ 头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-stack-trace-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-stack-trace-impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -364,7 +366,4 @@ class AsyncStackTrace {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_STACK_TRACE_IMPL_H_
-
-"""
-
 ```

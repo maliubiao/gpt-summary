@@ -302,7 +302,7 @@ session.detach()
 
 这个 Frida 示例只 Hook 了 `error` 函数。你可以类似地 Hook `error_at_line` 函数，并通过 `args[3]` 和 `args[4]` 获取文件名和行号。 通过 Frida Hook，你可以动态地观察和调试 Bionic 库的错误处理过程，这对于理解 Android 系统的底层行为和调试 NDK 应用非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/error_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -389,7 +391,4 @@ TEST(error_DeathTest, error_at_line_exit) {
 TEST(error_DeathTest, error_at_line_exit_with_errno) {
   ASSERT_EXIT(error_at_line(22, EBADF, "a.c", 123, "x%c", 'y'), ::testing::ExitedWithCode(22), ":a.c:123: xy: Bad file descriptor");
 }
-
-"""
-
 ```

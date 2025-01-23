@@ -229,7 +229,7 @@ if (Process.platform === 'linux') {
 
 通过 Frida Hook，你可以观察到应用在哪些场景下调用了 `readlink`，读取了哪些 `/proc` 下的符号链接，以及 `readlink` 的返回结果，从而帮助你理解 Android Framework 或 NDK 是如何一步步到达这个底层的 libc 函数的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/bug_26110743_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -240,8 +240,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -359,7 +361,4 @@ TEST(bug_26110743, ProcTaskFdReadlink_NotDumpable) {
   ASSERT_EQ(0, pthread_join(t, &result));
   ASSERT_EQ(nullptr, result);
 }
-
-"""
-
 ```

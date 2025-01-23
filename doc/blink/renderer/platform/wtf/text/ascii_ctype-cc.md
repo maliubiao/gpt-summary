@@ -100,14 +100,16 @@ This detailed breakdown demonstrates a systematic approach to understanding code
 
 `ascii_ctype.cc` 文件中的 `kASCIICaseFoldTable` 提供了一个高效的 ASCII 字符小写转换机制，它是 Blink 引擎处理文本的基础组件之一，间接地影响着 JavaScript、HTML 和 CSS 的解析和渲染过程。理解其功能和局限性有助于更好地理解浏览器内部的工作原理，并避免在处理文本时可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/ascii_ctype.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008, 2009, 2011 Apple Inc. All rights reserved.
  *
@@ -165,7 +167,4 @@ extern const LChar kASCIICaseFoldTable[256] = {
     0xfc, 0xfd, 0xfe, 0xff};
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -76,13 +76,15 @@ const result = myExtensionFunction(10, "hello");
 
 这部分 C++ 代码是 V8 引擎将 JavaScript 代码（特别是涉及 SIMD 和 API 调用的部分）转化为高效的 s390 机器码的关键组成部分。它提供了构建这些机器码指令所需的底层操作。由于这是第4部分，它可能涵盖了较为复杂或特定的 SIMD 操作和一些辅助性的代码生成功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                  Register scratch2) {
+### 源代码
+```
+Register scratch2) {
   // vclgd or ConvertFloat32ToUnsignedInt32 will convert NaN to 0, negative to 0
   // automatically.
   if (CpuFeatures::IsSupported(VECTOR_ENHANCE_FACILITY_2)) {
@@ -843,8 +845,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #undef __
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
-
 ```

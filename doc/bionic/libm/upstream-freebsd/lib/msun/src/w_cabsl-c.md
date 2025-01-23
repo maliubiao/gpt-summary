@@ -238,7 +238,7 @@ Android 的动态链接器 (linker) 负责在程序运行时加载所需的共�
 
 `w_cabsl.c` 中实现的 `cabsl` 函数是 Bionic libc 中用于计算 `long double complex` 类型复数绝对值的基础数学函数。它通过调用 `hypotl` 以及访问复数的实部和虚部来实现其功能。该函数在 Android Framework 和 NDK 开发中都有可能被使用，尤其是在需要高精度复数运算的场景下。理解动态链接器的工作原理对于理解 `cabsl` 如何在运行时被加载和调用至关重要。开发者在使用时需要注意头文件的包含、类型匹配以及对复数概念的正确理解，以避免常见的编程错误。 通过合理的调试方法，可以追踪到 `cabsl` 函数的调用路径，从而解决相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/w_cabsl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -248,8 +248,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * cabs() wrapper for hypot().
  *
@@ -267,7 +269,4 @@ cabsl(long double complex z)
 {
 	return hypotl(creall(z), cimagl(z));
 }
-
-"""
-
 ```

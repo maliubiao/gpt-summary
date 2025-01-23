@@ -148,15 +148,17 @@ Mapped data after deletion: Hello, memory mapped world!
 
 这段 `go/src/cmd/go/internal/mmap/mmap.go` 代码片段提供了一个用于内存映射文件的基本抽象，特别强调了只读访问和在进程生命周期内保持文件打开。它很可能是 `go` 命令自身为了提高文件读取效率而使用的内部工具。 理解其只读特性和文件生命周期管理是避免使用错误的重点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/mmap/mmap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -188,9 +190,4 @@ func Mmap(file string) (Data, error) {
 	}
 	return mmapFile(f)
 }
-
-"""
-
-
-
 ```

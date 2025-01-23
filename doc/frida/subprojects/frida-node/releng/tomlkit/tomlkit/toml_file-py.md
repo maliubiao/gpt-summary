@@ -223,7 +223,7 @@ host = "127.0.0.1"
 
 通过查看 Frida 的日志输出、使用 `print` 语句在相关代码中输出变量值，可以跟踪代码的执行流程，确认是否调用了 `toml_file.py` 以及传入的参数是否正确。例如，可以在 `TOMLFile` 的 `read` 和 `write` 方法中添加日志输出，以了解文件是否被成功读取或写入，以及读取到的内容是什么。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -231,8 +231,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 import re
 
@@ -291,7 +293,4 @@ class TOMLFile:
 
         with open(self._path, "w", encoding="utf-8", newline="") as f:
             f.write(content)
-
-"""
-
 ```

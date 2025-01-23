@@ -210,15 +210,17 @@ By following this structured thought process, combining high-level understanding
 
 `CoalescingCertVerifier` 是 Chromium 网络栈中一个重要的性能优化组件，它通过合并重复的证书验证请求来提高效率。理解其工作原理、与 JavaScript 的关系以及可能出现的错误，对于开发和调试涉及 HTTPS 连接的应用至关重要。通过仔细分析网络日志和添加适当的调试信息，可以有效地追踪和解决与证书验证相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/coalescing_cert_verifier.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -710,7 +712,4 @@ void CoalescingCertVerifier::OnCertVerifierChanged() {
 }
 
 }  // namespace net
-
-"""
-
 ```

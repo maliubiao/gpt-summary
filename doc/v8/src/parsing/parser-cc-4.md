@@ -256,7 +256,7 @@ class MyClass {
 
 总的来说，这部分代码主要关注 **JavaScript 类语法的解析和处理，以及一些与作用域管理、源代码信息处理和性能统计相关的辅助功能。** 它确保了 V8 能够正确理解和表示 JavaScript 中的类声明，并为后续的编译和执行阶段提供必要的元数据。  此外，它还处理了一些与脚本上下文（如源 URL）和性能监控相关的任务。 这部分功能是 V8 解析器将 JavaScript 源代码转换为可执行的抽象语法树的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -264,8 +264,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 atic_initializer = CreateStaticElementsInitializer(name, class_info);
   }
 
@@ -639,8 +641,4 @@ void Parser::SetFunctionName(Expression* value, const AstRawString* name,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

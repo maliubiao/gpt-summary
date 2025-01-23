@@ -268,7 +268,7 @@ example.go:6.1,6.10 1 1
 
 总而言之，`go/src/internal/coverage/defs.go` 文件是 Go 语言覆盖率工具的基石，它定义了覆盖率数据的标准格式，使得编译器、运行时环境和覆盖率分析工具能够有效地协作，提供准确的代码覆盖率信息。 理解这个文件中的结构体和常量，有助于深入了解 Go 语言覆盖率功能的实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/defs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -276,8 +276,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -666,9 +668,4 @@ const NumCtrsOffset = 0
 const PkgIdOffset = 1
 const FuncIdOffset = 2
 const FirstCtrOffset = 3
-
-"""
-
-
-
 ```

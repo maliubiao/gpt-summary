@@ -144,14 +144,16 @@ By following this structured thought process, combining code analysis with an un
 
 总之，`webrtc_encoding_info_handler.cc` 是 Blink 渲染引擎中负责查询 WebRTC 编解码器支持情况的关键组件，它为上层的 JavaScript WebRTC API 提供了基础功能，确保了 WebRTC 应用能够根据当前环境选择合适的编码方式。开发者应该利用 WebRTC 提供的 `getCapabilities` 等 API，基于 `WebrtcEncodingInfoHandler` 的查询结果，编写更健壮和兼容性更好的 WebRTC 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/webrtc_encoding_info_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ void WebrtcEncodingInfoHandler::EncodingInfo(
 }
 
 }  // namespace blink
-
-"""
-
 ```

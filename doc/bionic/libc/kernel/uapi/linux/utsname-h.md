@@ -305,7 +305,7 @@ sys.stdin.read()
 
 请注意，直接 hook 系统调用可能需要 root 权限，并且不同 Android 版本和架构的系统调用号可能不同，你需要根据具体情况进行调整。同时，读取结构体数据时需要根据结构体的定义计算正确的偏移量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/utsname.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -316,8 +316,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -351,7 +353,4 @@ struct new_utsname {
   char domainname[__NEW_UTS_LEN + 1];
 };
 #endif
-
-"""
-
 ```

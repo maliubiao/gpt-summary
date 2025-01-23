@@ -183,15 +183,17 @@ enum class PrivacyMode {
 
 总而言之，`net/base/privacy_mode.cc` 文件虽然功能简单，但在 Chromium 的网络隐私机制中扮演着基础性的角色，它提供了一种清晰且易于调试的方式来表示当前的隐私状态，并间接地影响着 JavaScript 代码的行为和用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/privacy_mode.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ const char* PrivacyModeToDebugString(PrivacyMode privacy_mode) {
 }
 
 }  // namespace net
-
-"""
-
 ```

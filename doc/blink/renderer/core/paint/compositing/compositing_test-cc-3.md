@@ -177,7 +177,7 @@ By following these steps and refining the explanations, I can generate a compreh
 
 总而言之，`compositing_test.cc` 是 Blink 渲染引擎中至关重要的测试文件，它通过大量的单元测试，细致地检验了各种场景下合成逻辑的正确性、效率以及与 HTML、CSS 和 JavaScript 的协同工作方式。这些测试覆盖了属性树的更新、合成提交的触发、图层归属、不同类型的油漆更新、内容不透明度、合成更新原因以及 iframe 和外部图层的合成等关键方面，确保了 Blink 能够正确且高效地渲染复杂的网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/compositing/compositing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sform tree's page scale factor isn't computed until we perform a
   // lifecycle update.
   ASSERT_EQ(1.f, GetPropertyTrees()->transform_tree().page_scale_factor());
@@ -1099,7 +1101,4 @@ TEST_P(CompositingSimTest, EffectCompositedWith3DTransform) {
   EXPECT_TRUE(filter_effect);
   EXPECT_EQ(filter_effect->opacity, 1.f);
   EXPECT_FALSE(filter
-"""
-
-
 ```

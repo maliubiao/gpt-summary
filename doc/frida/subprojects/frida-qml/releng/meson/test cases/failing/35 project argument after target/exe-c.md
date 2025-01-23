@@ -116,7 +116,7 @@ console.log("Attached to process:", Process.id);
 
 总而言之，这个简单的 `exe.c` 文件本身功能单一，但它在 Frida 的测试框架中扮演着重要的角色，用于检测 Frida 在处理特定命令行参数时的潜在问题。它的存在揭示了 Frida 开发和测试过程中的一个细节，并为开发者提供了调试的入口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/35 project argument after target/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,12 +124,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

@@ -158,14 +158,16 @@ func main() {
 
 这段 `go/test/const6.go` 代码片段是Go编译器测试套件的一部分，用于验证Go语言类型系统对于自定义布尔类型的处理是否符合预期，即它们与内置 `bool` 类型以及彼此之间是不同的类型，需要显式转换才能进行某些操作。使用者需要注意这种类型差异，避免在没有进行类型转换的情况下直接进行比较或逻辑运算，否则会导致编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/const6.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -196,9 +198,4 @@ var (
 	_ = c2 && c6 // ERROR "mismatched types|incompatible types"
 	_ = c1 && c6 // ERROR "mismatched types|incompatible types"
 )
-
-"""
-
-
-
 ```

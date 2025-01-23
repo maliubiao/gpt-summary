@@ -121,7 +121,7 @@ By following this detailed analysis process, breaking down the code into smaller
 
 总而言之，这个 `simd_mmx.c` 文件是Frida测试套件的一部分，用于验证Frida对MMX指令集支持的正确性。开发者可能会在调试Frida本身的功能或分析目标程序中使用MMX指令时，遇到并分析这个文件。它揭示了不同平台和编译器对MMX的支持差异以及在实际编程中需要注意的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/147 simd/simd_mmx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -200,7 +202,4 @@ void increment_mmx(float arr[4]) {
 }
 
 #endif
-
-"""
-
 ```

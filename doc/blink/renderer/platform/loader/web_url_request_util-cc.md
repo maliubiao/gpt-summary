@@ -159,14 +159,16 @@ By following this thought process, I can create a comprehensive and accurate ans
 
 总而言之，`web_url_request_util.cc` 文件是 Blink 引擎中处理网络请求的关键组件，它负责将 Blink 的内部表示与 Chromium 网络栈的表示进行转换，确保网络请求能够正确发送和接收，并涉及到与 JavaScript、HTML 和 CSS 相关的资源加载和数据传输过程。理解其功能有助于理解浏览器如何处理网页中的各种资源请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/web_url_request_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -397,7 +399,4 @@ int GenerateRequestId() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

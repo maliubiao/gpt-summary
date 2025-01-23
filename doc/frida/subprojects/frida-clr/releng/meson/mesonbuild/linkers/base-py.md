@@ -142,7 +142,7 @@ ar -csr frida-core.a agent.o rpc.o
 
 总而言之，`base.py` 文件为 Frida 的构建系统定义了处理类似 `ar` 工具的链接器的基础框架，它通过提供抽象的接口和通用的方法，简化了对不同链接器的管理和使用。虽然它本身不直接执行逆向操作，但它是构建逆向工具 Frida 的关键组成部分。理解这个文件有助于深入了解 Frida 的构建过程以及与底层二进制、操作系统和链接器相关的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/linkers/base.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -191,7 +193,4 @@ class ArLikeLinker:
 
     def rsp_file_syntax(self) -> RSPFileSyntax:
         return RSPFileSyntax.GCC
-
-"""
-
 ```

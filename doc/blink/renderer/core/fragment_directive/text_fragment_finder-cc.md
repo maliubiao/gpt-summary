@@ -148,14 +148,16 @@ Let's break down the thought process for analyzing the provided C++ code and gen
 
 总而言之，`TextFragmentFinder.cc` 是 Chromium Blink 引擎中负责实现“滚动到文本片段”这一重要功能的关键组件，它通过解析文本片段选择器并在文档中执行多步骤搜索来定位目标文本，并与 JavaScript、HTML 和 CSS 等 Web 技术紧密相关。理解其功能有助于开发者更好地利用和调试与文本片段相关的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/text_fragment_finder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -636,7 +638,4 @@ bool TextFragmentFinder::HasValidRanges() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

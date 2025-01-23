@@ -124,7 +124,7 @@ if (Process.platform === 'linux') {
 
 因此，用户操作的路径是从对程序行为的观察和分析需求开始，逐步深入到使用动态插桩工具来理解和修改程序的运行时行为。这个 `receiver.c` 文件中的弱符号 `get_checked()` 提供了一个理想的插桩点，允许用户通过 Frida 轻易地修改程序的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/98 link full name/proguser/receiver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 int  __attribute__((weak)) get_checked(void) {
     return -1;
@@ -152,7 +154,4 @@ int main(void) {
     fprintf(stdout,"bad\n");
     return TEST_FAILURE;
 }
-
-"""
-
 ```

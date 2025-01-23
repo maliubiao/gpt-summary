@@ -80,7 +80,7 @@ Let's break down the thought process for analyzing this trivial C code snippet i
 
 虽然 `foo.c` 文件本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的构建系统和运行时环境能够正确处理子项目依赖关系。  它间接地与逆向工程方法、二进制底层知识以及操作系统内核和框架的概念相关联，因为它确保了 Frida 在处理具有复杂依赖关系的目标时能够正常工作。用户通常不会直接与这个文件交互，但它可能是 Frida 开发人员或高级用户在调试构建问题或深入理解 Frida 内部机制时会遇到的一个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/253 subproject dependency variables/subprojects/subfiles/subdir/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -88,10 +88,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

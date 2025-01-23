@@ -92,7 +92,7 @@ The user wants to understand the functionality of the Python code provided. I ne
 
 总的来说，`frida/subprojects/frida-tools/releng/meson/unittests/internaltests.py` 这个文件专注于测试 Meson 构建系统中用于定义和验证函数参数的关键内部机制。它通过各种单元测试用例，覆盖了类型检查、默认值、版本控制、自定义校验、类型转换以及 CPU 架构检测等功能。这些测试确保了 Meson 能够可靠地处理构建选项，并在用户提供不正确的参数时能够给出清晰的错误提示，从而提高构建系统的健壮性和用户体验。从逆向工程的角度来看，这些测试也间接保证了 Frida 内部参数处理的正确性，这对于 Frida API 的稳定性和脚本开发的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rtIsNot(kwargs['input'], default)
 
         _(None, mock.Mock(), [], {})
@@ -491,8 +493,4 @@ rtIsNot(kwargs['input'], default)
         for raw, expected in cases:
             with self.subTest(raw):
                 self.assertEqual(OptionKey.from_string(raw), expected)
-
-"""
-
-
 ```

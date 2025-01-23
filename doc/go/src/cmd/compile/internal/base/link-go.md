@@ -204,15 +204,17 @@ func printInteger(i int) {
 
 总而言之，`go/src/cmd/compile/internal/base/link.go` 提供了一组核心的工具，用于在 Go 编译器的链接阶段管理和生成符号。它确保了符号的唯一性，并处理了内部符号和用户定义符号之间的区别，为最终的可执行文件的生成奠定了基础。虽然普通开发者不会直接使用这个文件，但了解其功能有助于理解 Go 语言的编译和链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/base/link.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -266,9 +268,4 @@ func Linkname(name string, abi obj.ABI) *obj.LSym {
 func linksym(pkg, name string, abi obj.ABI) *obj.LSym {
 	return Ctxt.LookupABIInit(name, abi, func(r *obj.LSym) { r.Pkg = pkg })
 }
-
-"""
-
-
-
 ```

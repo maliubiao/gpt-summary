@@ -269,7 +269,7 @@ x = 10;
 
 `implementation-visitor.h` 定义了 `ImplementationVisitor` 类以及其辅助类和结构体，它是 Torque 编译器的核心，负责将 Torque 语言描述的程序（例如内置函数和运行时代码）转换成底层的 C++ 代码。它管理变量和标签的绑定，处理类型信息，并提供了生成各种 C++ 代码结构（如变量访问、赋值、函数调用、控制流等）的能力。`LocationReference` 是一个关键的抽象，用于统一表示不同类型的内存位置。该头文件是 Torque 编译器实现代码生成逻辑的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.h以.tq结尾，那它是个v8 torque源代码，
@@ -277,8 +277,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1162,8 +1164,4 @@ class ImplementationVisitor {
   // The contents of the debug macros output files. These contain all Torque
   // macros that have been generated using the C++ backend with debug purpose.
   std::stringstream debug_macros_cc_;
-
-"""
-
-
 ```

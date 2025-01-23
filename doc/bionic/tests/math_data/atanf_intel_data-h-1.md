@@ -202,7 +202,7 @@ sys.stdin.read()
 
 `atanf_intel_data.handroid` 文件是 Android Bionic 库中用于测试 `atanf` 函数正确性的数据文件。 它包含大量的输入输出对，用于回归测试和验证 `atanf` 在不同输入范围下的行为。  理解这个文件的作用有助于理解 Android 底层数学库的测试机制和确保系统功能的稳定性和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atanf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -214,9 +214,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- },
+### 源代码
+```c
+},
   { // Entry 380
     -0x1.d6e1429159f6f0290cf9f2fb24bc26bdp-4,
     -0x1.d8f720p-4
@@ -1780,8 +1782,4 @@ Prompt:
   { // Entry 770
     -0x1.69b81590d4dbd567331c0dc4b7fd047bp0,
     -0x1.921fb8p2
-
-"""
-
-
 ```

@@ -210,15 +210,17 @@ bool isActive = b.IsActive(); // 返回 b.nesting_ != 0
 
 `v8/src/init/bootstrapper.h` 定义了 V8 中负责创建和初始化 JavaScript 全局上下文的关键类 `Bootstrapper`。 它与 JavaScript 的基础功能息息相关，为 JavaScript 代码的执行提供了必要的基础设施。理解 `Bootstrapper` 的作用有助于深入理解 V8 的启动过程和上下文管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -359,7 +361,4 @@ V8_NOINLINE Handle<JSFunction> SimpleInstallFunction(
 }  // namespace v8
 
 #endif  // V8_INIT_BOOTSTRAPPER_H_
-
-"""
-
 ```

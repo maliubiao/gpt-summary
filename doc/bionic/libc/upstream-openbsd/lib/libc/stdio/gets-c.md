@@ -282,7 +282,7 @@ sys.stdin.read()
 
 请注意，由于 `gets` 的安全性问题，在实际开发中强烈建议使用更安全的替代方案，如 `fgets`，它可以限制读取的最大字符数，从而避免缓冲区溢出。Bionic 的 `gets` 实现中添加的 `__warn_references` 宏也是为了提醒开发者注意这个问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdio/gets.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -293,8 +293,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: gets.c,v 1.12 2009/11/09 00:18:27 kurt Exp $ */
 /*-
  * Copyright (c) 1990, 1993
@@ -354,7 +356,4 @@ gets(char *buf)
 	FUNLOCKFILE(stdin);
 	return (buf);
 }
-
-"""
-
 ```

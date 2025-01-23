@@ -151,7 +151,7 @@ Key aspects to cover:
 
 这个 blink 引擎源代码文件的主要功能是 **实现了 JavaScript Streams API 中可转移流的跨 Realm 传输机制**。它定义了用于管理可读流和可写流在不同 JavaScript 执行上下文之间转移状态和数据的核心逻辑，包括消息的封装与解包、背压控制、错误处理和流的关闭。该文件依赖于 `MessagePort` 进行跨 Realm 通信，并为可转移的流定义了底层的算法实现。这部分代码主要关注建立连接、数据传输的基础框架和可写流的具体实现。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/transferable_streams.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -968,7 +970,4 @@ class ConcatenatingUnderlyingSource final : public UnderlyingSourceBase {
     }
 
     void CloseSteps(Sc
-"""
-
-
 ```

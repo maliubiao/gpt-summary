@@ -107,12 +107,14 @@ runWasm();
 
 总结来说，这个 C++ 文件是 V8 引擎中用于测试 WebAssembly 垃圾回收特性的单元测试，它验证了 WebAssembly GC 指令的正确实现，并确保了 WebAssembly 的 GC 能与 JavaScript 的 GC 系统良好地协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-gc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1621,7 +1623,4 @@ WASM_COMPILED_EXEC_TEST(FunctionRefs) {
 
   tester.CheckResult(test, 1);
   tester.CheckResult(test_fa
-"""
-
-
 ```

@@ -116,12 +116,14 @@ My plan is to:
 
 总而言之，这段 C++ 代码是 V8 引擎实现 JavaScript 错误处理、异常管理和一些底层控制机制的关键部分。它直接影响了 JavaScript 运行时错误的行为和开发者所看到的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 sage(v8::Isolate::kErrorStackTraceLimit);
   }
 
@@ -1750,7 +1752,4 @@ bool CallsCatchMethod(Isolate* isolate, Handle<BytecodeArray> bytecode_array,
     // Next instruction should be a Star (store accumulator to register)
     if (iterator.done() || !Bytecodes::IsAnyStar(iterator.current_bytecode())) {
       return f
-"""
-
-
 ```

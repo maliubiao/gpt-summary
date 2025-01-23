@@ -199,7 +199,7 @@ internedInt1 == internedInt3: false
 
 总而言之，`unique` 包提供了一种在 Go 语言中显式地规范化可比较值的方式，这可以帮助节省内存并可能提高某些比较操作的效率，尤其是在处理大量重复数据时。 它类似于字符串留存的概念，但推广到了更广泛的类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unique/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -218,9 +220,4 @@ The unique package provides facilities for canonicalizing ("interning")
 comparable values.
 */
 package unique
-
-"""
-
-
-
 ```

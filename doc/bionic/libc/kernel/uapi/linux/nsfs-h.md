@@ -271,7 +271,7 @@ if (Process.platform === 'linux') {
 
 通过这种方式，可以观察 Android 系统或应用在底层如何使用与命名空间相关的 `ioctl` 调用，尽管直接使用这些常量的情况可能不多见。Android 框架更多地依赖于其内部的进程管理和隔离机制来实现命名空间隔离，而不是直接在应用层调用这些底层的 `ioctl` 命令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nsfs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -282,8 +282,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -314,7 +316,4 @@ struct mnt_ns_info {
 #define NS_MNT_GET_NEXT _IOR(NSIO, 11, struct mnt_ns_info)
 #define NS_MNT_GET_PREV _IOR(NSIO, 12, struct mnt_ns_info)
 #endif
-
-"""
-
 ```

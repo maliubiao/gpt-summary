@@ -160,7 +160,7 @@ By following this detailed, step-by-step thought process, I can systematically a
 
 总而言之，`createmsi.py` 是 Frida 项目中一个重要的构建脚本，它负责将 Frida 的 Node.js 绑定打包成用户友好的 Windows 安装程序。理解其功能和背后的技术，对于 Frida 的开发者、用户以及逆向分析相关人员都有重要的意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/packaging/createmsi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017-2021 The Meson development team
@@ -502,7 +504,4 @@ if __name__ == '__main__':
     p.build_dist()
     p.generate_files()
     p.build_package()
-
-"""
-
 ```

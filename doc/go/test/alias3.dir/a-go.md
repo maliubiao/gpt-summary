@@ -196,15 +196,17 @@ func main() {
 
 总之，这段代码的核心在于展示 Go 语言的类型别名功能，包括如何为基本类型、自定义类型、导入的类型和接口创建别名，以及如何在结构体和接口中使用这些别名。理解类型别名的本质是理解其正确使用的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/alias3.dir/a.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -247,9 +249,4 @@ type (
 
 var i1 I1
 var i2 I2 = i1
-
-"""
-
-
-
 ```

@@ -183,7 +183,7 @@ func main() {
 
 总而言之，这段 `signal_solaris.go` 代码是 Go 运行时在 Solaris 系统上处理操作系统信号的关键组成部分，它定义了各种信号的属性，并为 Go 程序的信号处理提供了基础。理解它的作用有助于我们更好地理解 Go 程序是如何与操作系统进行交互的，特别是在信号处理方面。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -276,9 +278,4 @@ var sigtable = [...]sigTabT{
 	/* 71 */ {_SigNotify, "real time signal"},
 	/* 72 */ {_SigNotify, "real time signal"},
 }
-
-"""
-
-
-
 ```

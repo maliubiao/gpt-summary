@@ -112,7 +112,7 @@ During the thought process, I might initially overthink the "reverse engineering
 
 `prog.cc` 是 Frida 项目中一个简单的 C++ 测试文件，专门用于验证预编译头机制的有效性。它本身不直接执行逆向操作，但确保了 Frida 构建过程的效率和正确性，这对于 Frida 作为逆向工具的开发至关重要。用户通常不会直接操作这个文件，但当 Frida 的构建过程出现与预编译头相关的问题时，开发者可能会深入到这个文件及其相关的构建配置中进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/13 pch/cpp/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Note: if using PGI compilers, you will need to add #include "prog.hh"
 // even though you're using precompiled headers.
 void func(void) {
@@ -133,7 +135,4 @@ int main(void) {
     func();
     return 0;
 }
-
-"""
-
 ```

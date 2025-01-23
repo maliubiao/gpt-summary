@@ -121,7 +121,7 @@ Let's break down the thought process to analyze the given C++ code snippet for t
 
 总而言之，`prog.cc` 作为一个简单的测试目标程序，其存在是为了辅助 Frida 的开发和测试过程，确保 Frida 能够正确地处理目标进程的参数。 它的简洁性使得开发者能够专注于验证特定的编译配置和 Frida 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/21 target arg/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef CTHING
 #error "Wrong local argument set"
 #endif
@@ -144,7 +146,4 @@ extern "C" int func();
 int main(void) {
     return func();
 }
-
-"""
-
 ```

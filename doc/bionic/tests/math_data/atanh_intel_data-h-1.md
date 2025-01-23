@@ -263,7 +263,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 希望以上归纳和解释能够帮助你理解这个测试数据文件的功能以及它在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atanh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 1,
     -0x1.1111111111112p-1
   },
@@ -1297,8 +1299,4 @@ Prompt:
     -0.0
   }
 };
-
-"""
-
-
 ```

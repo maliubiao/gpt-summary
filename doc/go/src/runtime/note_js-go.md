@@ -271,7 +271,7 @@ Goroutine 1: 第二次等待后继续执行
 
 总而言之，`go/src/runtime/note_js.go` 中的 `note` 结构体及其相关操作提供了一种底层的、一次性的事件通知机制，主要用于 Go 运行时内部的同步和状态管理。 正确使用它需要严格遵守其调用顺序和一次性触发的特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/note_js.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -279,8 +279,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -321,9 +323,4 @@ type note struct {
 	allprev *note
 	allnext *note
 }
-
-"""
-
-
-
 ```

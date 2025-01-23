@@ -129,14 +129,16 @@ By following these steps, we arrive at a comprehensive analysis of the `callback
 
 `callback_interface_base.cc` 中的 `CallbackInterfaceBase` 类是 Blink 引擎中一个关键的安全组件，它负责安全地管理和执行 JavaScript 回调函数，尤其是在处理跨域场景时。它通过跟踪相关的脚本状态，并在必要时抛出安全错误，来防止潜在的安全漏洞。开发者在使用涉及回调的 Web API 时，需要理解浏览器的同源策略，并采取适当的措施来处理跨域情况，例如使用 `postMessage` 或确保回调的执行符合安全上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/callback_interface_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ ScriptState* CallbackInterfaceBase::CallbackRelevantScriptStateOrThrowException(
 }
 
 }  // namespace blink
-
-"""
-
 ```

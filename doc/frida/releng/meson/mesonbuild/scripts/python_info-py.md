@@ -193,7 +193,7 @@ Frida 是一个动态插桩工具，常用于逆向工程、安全分析和动�
 
 总而言之，`python_info.py` 脚本虽然看似简单，但在 Frida 的构建和运行过程中扮演着关键的角色，它确保了 Frida 能够正确地适应目标 Python 环境，这对于 Frida 的核心功能——动态插桩至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/scripts/python_info.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python
 
 # ignore all lints for this file, since it is run by python2 as well
@@ -324,7 +326,4 @@ print(json.dumps({
   'suffix': suffix,
   'limited_api_suffix': limited_api_suffix,
 }))
-
-"""
-
 ```

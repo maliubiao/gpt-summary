@@ -153,7 +153,7 @@ My thought process to answer the prompt about the `table_painters.cc` snippet go
 
 由于这是第二部分，我们可以推测 **第一部分可能包含 `TableCellPainter` 类中关于表格单元格其他方面的绘制功能**，例如边框绘制、内容绘制（文字、内联元素等）、以及其他装饰效果的绘制。第一部分可能也会包含 `TableCellPainter` 类的初始化和成员变量定义等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/table_painters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lipper(
       paint_info.context, *To<LayoutTableCell>(fragment_.GetLayoutObject()),
       paint_rect, box_decoration_data.IsPaintingBackgroundInContentsSpace());
@@ -202,8 +204,4 @@ void TableCellPainter::PaintBackgroundForTablePart(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

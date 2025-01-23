@@ -262,7 +262,7 @@ setImmediate(hookIoctl);
 
 这些 Frida Hook 示例可以帮助你追踪 Android 系统如何一步步地调用到与 PMIC 交互的底层 `ioctl` 命令，从而更好地理解电源管理的流程。请注意，实际的 HAL 接口名称和服务名称可能会因 Android 版本和设备而异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tps6594_pfsm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -299,7 +301,4 @@ struct pmic_state_opt {
 #define PMIC_SET_MCU_ONLY_STATE _IOW(PMIC_BASE, 4, struct pmic_state_opt)
 #define PMIC_SET_RETENTION_STATE _IOW(PMIC_BASE, 5, struct pmic_state_opt)
 #endif
-
-"""
-
 ```

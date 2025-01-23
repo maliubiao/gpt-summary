@@ -69,7 +69,7 @@ The user wants a summary of the functionality of the Python code provided, which
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/coredata.py` 文件的主要功能是**作为 Frida 构建过程中的核心数据管理模块，负责定义、存储和校验构建配置信息，特别是用户可配置的选项，并管理依赖项和 CMake 的状态缓存，为后续的构建过程提供必要的数据基础**。它确保了构建过程能够根据用户的配置正确地进行，并提高了构建效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -78,8 +78,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2024 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -843,8 +845,5 @@ class CoreData:
         return value.as_posix()
 
     def init_builtins(self, subproject: str) -> None:
-        # Create builtin options with default 
-"""
-
-
+        # Create builtin options with default
 ```

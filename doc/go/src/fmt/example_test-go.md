@@ -240,7 +240,7 @@ func main() {
 
 总而言之，`go/src/fmt/example_test.go` 是学习和理解 Go 语言 `fmt` 包功能的绝佳资源。它通过清晰的示例代码展示了各种格式化输入输出函数的使用方法，是掌握 Go 语言格式化技巧的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/fmt/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -248,8 +248,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -615,9 +617,4 @@ func Example_formats() {
 	// [97 226 140 152] [97 226 140 152] a⌘ "a⌘" 61e28c98 61 e2 8c 98
 	// 1973-11-29 21:33:09 +0000 UTC "1973-11-29 21:33:09 +0000 UTC"
 }
-
-"""
-
-
-
 ```

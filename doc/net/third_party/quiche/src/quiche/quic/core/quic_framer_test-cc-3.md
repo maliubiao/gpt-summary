@@ -111,7 +111,7 @@ QUIC 协议是位于传输层的协议，主要负责数据在网络上的可靠
 
 这部分 `quic_framer_test.cc` 的主要功能是**深入测试 `QuicFramer` 解析和验证 ACK 帧的能力，尤其关注各种可能导致解析错误的边界情况和异常输入**。  通过这些测试，可以确保 `QuicFramer` 能够可靠地处理各种合法的和非法的 ACK 帧，提高 QUIC 协议实现的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s means that if we are acking just packet 0x1234
        // then the 1st ack block will be 0.
        {"Unable to read first ack block length.",
@@ -1033,7 +1035,4 @@ TEST_P(QuicFramerTest, AckFrameReceiveTimestampGapTooHigh) {
 }
 
 TEST_P(QuicF
-"""
-
-
 ```

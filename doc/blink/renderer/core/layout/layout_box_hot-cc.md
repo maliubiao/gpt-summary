@@ -133,14 +133,16 @@ My thinking process to analyze the provided code and answer the prompt went like
 
 总而言之，`layout_box_hot.cc` 文件中的代码是 Blink 渲染引擎中至关重要的组成部分，它直接影响着页面的渲染性能和用户交互体验。理解其功能和与 Web 技术的关系，有助于开发者更好地理解浏览器的工作原理，并避免常见的性能和布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box_hot.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -721,7 +723,4 @@ const PhysicalBoxFragment* LayoutBox::GetPhysicalFragment(wtf_size_t i) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

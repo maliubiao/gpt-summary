@@ -176,7 +176,7 @@ if c_compiler.get_id() == 'mwcc':
 
 总而言之，`metrowerks.py` 是 Frida 构建系统中使用 Meson 来支持 Metrowerks 编译器的关键组成部分，它定义了该编译器的特性和命令行参数生成规则，对最终生成的二进制文件的特性有着直接的影响，也为理解和调试 Frida 的构建过程提供了线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/mixins/metrowerks.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2019 The Meson development team
 
@@ -465,7 +467,4 @@ class MetrowerksCompiler(Compiler):
                 parameter_list[idx] = i[:9] + os.path.normpath(os.path.join(build_dir, i[9:]))
 
         return parameter_list
-
-"""
-
 ```

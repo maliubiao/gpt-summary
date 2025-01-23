@@ -146,7 +146,7 @@ This methodical approach, combining code analysis, knowledge of the underlying t
 
 总而言之，`launchapplication.js` 是一个功能强大的 Frida 脚本，它展示了如何利用 Frida 与 iOS 设备的 XPC 服务进行交互，以启动应用程序并捕获其标准 I/O。理解这个脚本的功能和相关知识点，对于使用 Frida 进行 iOS 应用程序的动态分析和逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/open_service/xpc/launchapplication.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('../../..');
 const util = require('util');
 
@@ -228,7 +230,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

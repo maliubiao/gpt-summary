@@ -166,14 +166,16 @@ Let's break down the thought process for analyzing this C++ code.
 
 总而言之，`FrameViewAutoSizeInfo` 是 Blink 渲染引擎中一个重要的组件，它负责根据框架内容的需要动态调整框架视口的大小，从而提供更好的用户体验。理解其工作原理以及与 Web 前端技术的关系，有助于开发者更好地控制和优化页面的布局和渲染行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_view_auto_size_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ void FrameViewAutoSizeInfo::Clear() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

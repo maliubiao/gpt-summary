@@ -180,15 +180,17 @@ This iterative process of reading the code, identifying key elements, relating t
 
 总而言之，`clip_list.cc` 是 Canvas 2D API 中裁剪功能的核心实现，它负责管理和应用裁剪操作，确保 Canvas 上的绘制行为遵循定义的裁剪区域。理解这个文件的功能有助于理解 Canvas 2D 裁剪的底层机制，并帮助开发者避免和调试相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/clip_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ ClipList::ClipOp::ClipOp(const ClipOp&) = default;
 ClipList::ClipOp& ClipList::ClipOp::operator=(const ClipOp&) = default;
 
 }  // namespace blink
-
-"""
-
 ```

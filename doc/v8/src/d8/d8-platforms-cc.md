@@ -203,15 +203,17 @@ setTimeout(() => {
 
 总而言之，`v8/src/d8/d8-platforms.cc` 提供的这两个自定义平台是 V8 开发者进行特定场景测试和调试的有力工具，但开发者需要理解它们对 JavaScript 执行语义的影响，避免因此引入编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-platforms.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8-platforms.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -568,7 +570,4 @@ std::unique_ptr<Platform> MakeDelayedTasksPlatform(
 }
 
 }  // namespace v8
-
-"""
-
 ```

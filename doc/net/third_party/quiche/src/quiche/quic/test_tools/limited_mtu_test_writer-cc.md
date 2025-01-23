@@ -124,15 +124,17 @@ fetch('https://example.com/data', {
 
 通过以上步骤，开发者可以了解到 `LimitedMtuTestWriter` 的作用，并将其作为调试的线索，例如验证 QUIC 的 PMTU 发现机制是否正常工作。他们可能会编写或修改测试用例，使用 `LimitedMtuTestWriter` 设置不同的 MTU 值，观察 QUIC 的行为，从而诊断和解决实际的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/limited_mtu_test_writer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2015 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ WriteResult LimitedMtuTestWriter::WritePacket(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

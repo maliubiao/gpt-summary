@@ -309,7 +309,7 @@ Android 的动态链接器 (`/system/bin/linker` 或 `/system/bin/linker64`) 负
 
 总结来说，`s_fminf.c` 文件实现了单精度浮点数最小值函数，它是 Android 系统 `libm` 库的重要组成部分，被广泛应用于各种需要浮点数比较的场景。理解其实现细节，包括对 NaN 和带符号零的处理，有助于编写更健壮和精确的 Android 应用。同时，理解动态链接器的工作原理有助于理解 `fminf` 如何在系统中被加载和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_fminf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -319,8 +319,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -381,7 +383,4 @@ fminf(float x, float y)
 	return (x < y ? x : y);
 }
 #endif
-
-"""
-
 ```

@@ -223,7 +223,7 @@ char func_c(void) {
 
 因此，到达 `frida/subprojects/frida-qml/releng/meson/test cases/common/155 subproject dir name collision/a.c` 这个文件的路径，通常是 Frida 开发者为了解决特定构建或链接问题而创建测试用例的过程。这个简单的 `a.c` 文件是测试 Frida 在处理特定场景下行为的工具之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/155 subproject dir name collision/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -231,8 +231,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -246,7 +248,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

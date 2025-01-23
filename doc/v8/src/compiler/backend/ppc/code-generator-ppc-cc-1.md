@@ -85,7 +85,7 @@ push r4
 
 这部分代码主要负责 **为 PowerPC 架构生成与函数调用（特别是尾调用）相关的汇编代码，并进行必要的栈帧管理和代码起始地址校验。**  它处理了尾调用前的参数压栈、栈指针调整，以及确保函数调用目标的正确性。 这部分是代码生成器中处理函数调用逻辑的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/code-generator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ppc/code-generator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -93,8 +93,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ed(__ pc_offset());
 }
 
@@ -947,8 +949,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
     case kIeee754Float64Log2:
       ASSEMBLE_IEEE754_UNOP(log2);
       break;
-
-"""
-
-
 ```

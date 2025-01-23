@@ -157,15 +157,17 @@ func main() {
 
 这段代码主要是为了测试 Go 语言编译器处理类型别名的能力。虽然技术上可行，但在实际开发中，重新定义内置类型（即使是别名）通常是不推荐的做法，因为它会降低代码的可读性和可维护性，并可能引入潜在的混淆。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/importer/testdata/issue15920.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -177,9 +179,4 @@ package p
 type Error error
 
 func F() Error { return nil }
-
-"""
-
-
-
 ```

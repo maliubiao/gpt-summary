@@ -169,14 +169,16 @@ By following this process, combining code analysis with knowledge of web technol
 
 总而言之，`scoped_allow_fullscreen_test.cc` 这个文件通过单元测试确保 `ScopedAllowFullscreen` 类能够正确地管理全屏请求的权限，这对于保证 Web 页面的全屏功能在 Chromium 浏览器中的正常运行至关重要，并且直接影响到 JavaScript 的全屏 API 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fullscreen/scoped_allow_fullscreen_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ TEST(ScopedAllowFullscreenTest, DestructResetsStateToPrevious) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

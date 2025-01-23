@@ -75,7 +75,7 @@ Essentially, my approach was to read for understanding, identify the core concep
 
 这段代码提供了一套机制，允许 Go 程序员在某些特定场景下，手动管理一部分内存的生命周期。这可以用来优化内存分配，减少 GC 的压力，并提高程序性能，但同时也需要程序员更加谨慎地管理内存，避免出现 use-after-free 等问题。  其核心思想是在 Go 的自动内存管理之上，提供一种更精细的手动控制方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/arena.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -84,8 +84,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1024,9 +1026,4 @@ func freeUserArenaChunk(s *mspan, x unsafe.Pointer) {
 		throw("span is not for a user arena")
 	}
 	if s.npages*pageSize != userArenaChu
-"""
-
-
-
-
 ```

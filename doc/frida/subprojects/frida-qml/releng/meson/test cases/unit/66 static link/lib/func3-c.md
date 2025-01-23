@@ -149,7 +149,7 @@ By following this thought process, breaking down the prompt, generating ideas, a
 
 尽管 `func3.c` 本身是一个非常简单的函数，但在 Frida 的上下文中，它可以用作动态插桩的目标，用于测试静态链接的功能。理解它的功能涉及到编译、链接、函数调用约定等底层知识。对于逆向工程师来说，这样的简单函数可以作为学习 Frida hook 和动态分析的基础。用户在开发和调试 Frida 相关功能时，可能会创建或分析这样的文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/66 static link/lib/func3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,13 +157,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3()
 {
   return 1;
 }
-
-"""
-
 ```

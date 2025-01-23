@@ -98,7 +98,7 @@ This code is part of the Frida project's test suite. A developer working on Frid
 
 **In summary, while the code itself is extremely simple, its presence within the Frida project's test suite highlights the importance of verifying even basic data type conversions. It serves as a concrete example of how boolean values are represented as integers, a fundamental concept relevant to both reverse engineering and low-level system understanding.** The test is likely used to ensure that Clang-Tidy's analysis and potential fixes around boolean-to-integer conversions are behaving as expected within the Frida ecosystem.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/68 clang-tidy/cttest_fixed.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 int main(int, char**) {
@@ -115,7 +117,4 @@ int main(int, char**) {
   printf("Intbool is %d\n", (int)intbool);
   return 0;
 }
-
-"""
-
 ```

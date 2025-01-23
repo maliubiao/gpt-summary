@@ -90,7 +90,7 @@ func main() {
 
 这段测试代码虽然简短，但它对于保证 Go 运行时在 Unix 系统上与底层系统调用的正确交互至关重要。 它确保了 `runtime` 包提供的便利性和 `syscall` 包的底层能力之间的一致性，从而避免潜在的错误。 普通开发者通常不需要直接关注这些细节，因为 Go 的标准库已经做了很好的抽象。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/syscall_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -98,8 +98,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -125,9 +127,4 @@ func TestSyscallFlagAlignment(t *testing.T) {
 	check("O_CREAT", runtime.O_CREAT, syscall.O_CREAT)
 	check("O_TRUNC", runtime.O_TRUNC, syscall.O_TRUNC)
 }
-
-"""
-
-
-
 ```

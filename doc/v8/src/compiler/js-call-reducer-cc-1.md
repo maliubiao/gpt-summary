@@ -161,7 +161,7 @@ const obj = { 0: 'a', 1: 'b', length: 2 };
 
 本部分 `js-call-reducer.cc` 的代码主要定义了用于简化和优化 JavaScript 函数调用的汇编器辅助类。它针对特定的 JavaScript 内置函数和方法，例如数学运算、字符串操作和数组操作，提供了优化的实现路径。通过在编译时识别这些调用模式并将其转换为更高效的底层操作，显著提升了 JavaScript 代码的执行性能。它还处理了一些常见的编程错误和边界情况，以确保代码的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ction, this_arg, arg0, arg1, arg2, n.feedback_vector(),
         ContextInput(), frame_state, effect(), control()));
   });
@@ -979,8 +981,5 @@ TNode<Object> IteratingArrayBuiltinReducerAssembler::ReduceArrayPrototypeReduce(
   TNode<Context> context = ContextInput();
   TNode<Object> target = TargetInput();
   TNode<JSArray> receiver = ReceiverInputAs<JSArray>();
-  TNode<Object> fncallback = 
-"""
-
-
+  TNode<Object> fncallback =
 ```

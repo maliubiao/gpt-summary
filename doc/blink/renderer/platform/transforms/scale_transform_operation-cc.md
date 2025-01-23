@@ -128,14 +128,16 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`scale_transform_operation.cc` 是 Blink 渲染引擎中处理 CSS 缩放变换的核心组件，它负责缩放信息的存储、累积和混合，直接支撑了 web 页面中元素的缩放效果。理解其功能对于深入了解浏览器渲染机制和优化前端性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/transforms/scale_transform_operation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Antti Koivisto (koivisto@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008 Apple Inc. All rights reserved.
@@ -246,7 +248,4 @@ void ScaleTransformOperation::CommonPrimitiveForInterpolation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

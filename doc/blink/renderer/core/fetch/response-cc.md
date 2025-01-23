@@ -242,15 +242,17 @@ fetch('https://api.example.com/users')
 
 总而言之，`blink/renderer/core/fetch/response.cc` 是 Blink 引擎中实现 Fetch API `Response` 接口的关键 C++ 文件，它连接了底层的网络数据和上层的 JavaScript 代码，负责表示、处理和提供 HTTP 响应信息。理解其功能对于理解浏览器如何处理网络请求以及如何调试与 Fetch API 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/response.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -842,7 +844,4 @@ void Response::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

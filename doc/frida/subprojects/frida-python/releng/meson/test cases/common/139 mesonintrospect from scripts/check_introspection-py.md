@@ -183,7 +183,7 @@ Let's break down the thought process for analyzing this Python script.
 
 总之，`check_introspection.py` 是 Frida 构建系统的一个测试脚本，用于验证 Meson introspection 功能是否正常工作。它的执行依赖于正确的 Meson 环境配置，如果出现错误，通常是由于环境变量未设置或路径不正确导致的。理解这个脚本的功能和可能的错误情况，可以帮助开发者和用户更好地调试 Frida 的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/139 mesonintrospect from scripts/check_introspection.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -211,7 +213,4 @@ introspect_arr = shlex.split(mesonintrospect)
 buildroot = os.environ['MESON_BUILD_ROOT']
 
 subprocess.check_output([*introspect_arr, '--all', buildroot])
-
-"""
-
 ```

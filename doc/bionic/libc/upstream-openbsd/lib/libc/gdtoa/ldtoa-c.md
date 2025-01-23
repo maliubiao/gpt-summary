@@ -288,7 +288,7 @@ sys.stdin.read()
 
 通过 Frida Hook，你可以动态地观察 `ldtoa` 函数的调用情况，这对于理解其工作原理和调试相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gdtoa/ldtoa.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: ldtoa.c,v 1.4 2016/03/09 16:28:47 deraadt Exp $	*/
 /*-
  * Copyright (c) 2003 David Schultz <das@FreeBSD.ORG>
@@ -425,7 +427,4 @@ __ldtoa(long double *ld, int mode, int ndigits, int *decpt, int *sign,
 DEF_STRONG(__ldtoa);
 
 #endif  /* (LDBL_MANT_DIG == DBL_MANT_DIG) */
-
-"""
-
 ```

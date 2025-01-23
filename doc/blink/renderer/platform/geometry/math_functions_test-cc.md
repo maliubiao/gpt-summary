@@ -157,14 +157,16 @@ By following this structured approach, combining code analysis with domain knowl
 
 `blink/renderer/platform/geometry/math_functions_test.cc` 是一个用于测试底层数学函数的关键文件。它确保了 Blink 渲染引擎在处理几何计算时，特别是在涉及到微小数值时，其行为的正确性和一致性。这些底层的数学函数直接或间接地影响着网页的布局、渲染以及 JavaScript 动画等功能，对于保证用户体验至关重要。理解这些底层机制有助于开发者更好地理解和调试与渲染相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/geometry/math_functions_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ TEST(MathFunctionsTest, EvaluateSteppedValueFunction_SmallB) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

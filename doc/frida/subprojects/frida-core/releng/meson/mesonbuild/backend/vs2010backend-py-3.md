@@ -109,7 +109,7 @@ The user wants to understand the functionality of the provided Python code, whic
 
 这段代码是 Frida 构建系统的一部分，负责根据 Meson 的配置，生成用于 Visual Studio 2010 的项目文件（`.vcxproj` 和 `.filters`）。它处理了源代码的组织、编译选项的配置、依赖项的管理，并提供了一些辅助的实用工具项目，如重新生成项目、运行测试和安装。其主要目的是使得开发者可以使用 Visual Studio IDE 来构建、测试和安装 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 , inc_cl)
                         self.add_additional_options(lang, inc_cl, file_args)
                         self.add_preprocessor_defines(lang, inc_cl, file_defines)
@@ -477,8 +479,4 @@ Prompt:
 
     def generate_lang_standard_info(self, file_args: T.Dict[str, CompilerArgs], clconf: ET.Element) -> None:
         pass
-
-"""
-
-
 ```

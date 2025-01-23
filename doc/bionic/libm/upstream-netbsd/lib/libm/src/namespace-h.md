@@ -207,7 +207,7 @@ __sin_internal
 
 总而言之，`namespace.handroid` 虽然不包含代码实现，但它是 Android 中管理 `libm` 库符号可见性的关键配置文件，直接影响着哪些数学函数可以被应用和系统服务使用，以及动态链接器如何解析符号。理解它的作用对于调试链接问题和理解 Android 系统库的结构至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-netbsd/lib/libm/src/namespace.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -217,9 +217,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

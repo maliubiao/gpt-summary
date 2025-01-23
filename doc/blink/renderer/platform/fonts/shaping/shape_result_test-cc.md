@@ -74,15 +74,17 @@ ShapeResultTest 的功能归纳 (第1部分):
 
 总而言之，`shape_result_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中负责文本塑形的核心组件 `ShapeResult` 的正确性和稳定性，从而保证了网页上文本渲染的质量和用户体验。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -998,8 +1000,4 @@ struct CaretOffsetForPositionTestData {
      {0, 0, 1, 1,  2,  2,  3,  3,  5,  5,  6,  6,  7,  7,  9,  9,  10, 10},
 #else
      {1, 6, 7, 15, 16, 25, 26, 34, 35, 40, 41, 50, 51, 59, 60, 68, 69, 73},
-     
-"""
-
-
 ```

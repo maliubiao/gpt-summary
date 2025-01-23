@@ -120,11 +120,13 @@ By following these steps, moving from a broad overview to specific details and t
 
 `v8/src/builtins/builtins.cc` 是 V8 引擎中一个至关重要的文件，它集中定义和管理了 JavaScript 语言的内置函数。它提供了元数据、访问接口，并处理了不同类型内置函数的调用约定。当 JavaScript 代码执行时，会频繁地调用这里定义的内置函数来完成各种核心操作。 理解这个文件有助于深入理解 V8 引擎如何执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -713,7 +715,4 @@ Builtin ExampleBuiltinForTorqueFunctionPointerType(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

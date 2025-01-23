@@ -99,14 +99,16 @@ Essentially, I approached the problem like reverse engineering the code's intent
 
 `layer_tree_view_unittest.cc` 通过模拟各种场景，细致地测试了 `LayerTreeView` 类的核心功能，特别是其与 `LayerTreeFrameSink` 的生命周期管理、可见性处理、以及在不同错误状态下的恢复能力。这些测试确保了 Blink 引擎在合成渲染过程中能够稳定可靠地工作，从而为用户提供流畅的网页浏览体验。 理解这些测试用例有助于深入理解 Blink 渲染引擎的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/layer_tree_view_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -780,7 +782,4 @@ TEST_F(LayerTreeViewDelegateChangeTest, ResetEventListenerPropertiesOnSwap) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

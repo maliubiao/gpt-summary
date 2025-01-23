@@ -157,7 +157,7 @@ By following this structured approach, breaking down the script's functionality,
 
 总而言之，`msgfmthelper.py` 是 Frida 构建系统中一个重要的辅助脚本，它封装了 `msgfmt` 工具，简化了本地化文件的编译过程。理解其功能和使用方式，有助于理解 Frida 的构建过程，以及在逆向工程中处理本地化资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/scripts/msgfmthelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -196,7 +198,4 @@ def run(args: T.List[str]) -> int:
     return subprocess.call([options.msgfmt, '--' + options.type, '-d', options.podir,
                             '--template', options.input,  '-o', options.output] + options.args,
                            env=env)
-
-"""
-
 ```

@@ -227,15 +227,17 @@ func main() {
 
 总而言之，这段代码是 Go 语言 `syscall` 包在 OpenBSD/386 平台上与操作系统底层交互的基石，它提供了操作时间、内核事件通知、以及进行底层 I/O 操作所需的结构体和辅助函数。使用者需要理解这些函数背后的系统调用机制，并注意数据类型转换和结构体字段设置的正确性，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -277,9 +279,4 @@ func (cmsg *Cmsghdr) SetLen(length int) {
 // SYS___SYSCTL is used by syscall_bsd.go for all BSDs, but in modern versions
 // of openbsd/386 the syscall is called sysctl instead of __sysctl.
 const SYS___SYSCTL = SYS_SYSCTL
-
-"""
-
-
-
 ```

@@ -156,7 +156,7 @@ The `TransportClientSocketPool` class is responsible for managing a pool of tran
 
 `TransportClientSocketPool` 是 Chromium 网络栈中负责高效管理和复用传输层客户端套接字连接的关键组件。它接收来自上层的连接请求，尝试复用现有连接，并在必要时建立新的连接。它与 JavaScript 发起的网络请求紧密相关，并通过复用连接来提高网络性能。理解其工作原理有助于调试网络问题和优化网络性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/transport_client_socket_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1038,7 +1040,4 @@ void TransportClientSocketPool::OnSSLConfigForServersChanged(
     // exists and need them, but this should be rare enough that it doesn't
     // matter. This will also make sure the slots are given to the group with
     // the highest priority request
-"""
-
-
 ```

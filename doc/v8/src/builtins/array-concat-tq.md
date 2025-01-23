@@ -136,14 +136,16 @@ console.log(array6 === array7); // 输出: false (是不同的数组)
 
 总而言之，这段 Torque 代码是 V8 引擎中对 `Array.prototype.concat()` 方法的优化实现，针对特定场景提供了更快的执行路径。理解这段代码有助于理解 JavaScript 引擎是如何优化常用 built-in 方法的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-concat.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ transitioning javascript builtin ArrayPrototypeConcat(
 }
 
 }  // namespace array
-
-"""
-
 ```

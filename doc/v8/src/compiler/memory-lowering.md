@@ -107,11 +107,13 @@ buffer[20] = 42;
 
 `memory-lowering.cc` 是 V8 编译器中一个低级别的组件，它将高级的内存操作转换为机器可以执行的指令。虽然 JavaScript 开发者不需要直接编写或理解这段 C++ 代码，但它的优化工作直接影响了 JavaScript 代码的执行效率。通过理解其基本功能，可以更好地理解 JavaScript 引擎是如何在底层管理内存的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/memory-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -892,7 +894,4 @@ bool MemoryLowering::AllocationState::IsYoungGenerationAllocation() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

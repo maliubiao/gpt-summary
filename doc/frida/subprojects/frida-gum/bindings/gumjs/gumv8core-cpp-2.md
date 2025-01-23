@@ -132,7 +132,7 @@ By following these steps and making these refinements, I can generate a comprehe
 
 `gumv8core.cpp` 是 Frida 中 V8 JavaScript 引擎的核心粘合层。它负责将 V8 引擎集成到 Frida 框架中，并扩展 JavaScript 的能力，使其能够方便地与目标进程的底层进行交互。这包括管理 V8 引擎的生命周期、提供 JavaScript 与 Native C++ 互相调用的机制、定义用于表示底层数据类型的 JavaScript 对象（如 `Int64`, `NativePointer`）以及处理弱引用和异步任务。这个文件是 Frida 实现动态 instrumentation 功能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8core.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ng_weak_callbacks_in_idle, core,
         NULL);
     g_source_attach (source,
@@ -1372,7 +1374,4 @@ gum_v8_native_function_params_init (GumV8NativeFunctionParams * params,
       }
 
       if (!options->Get (context,
-"""
-
-
 ```

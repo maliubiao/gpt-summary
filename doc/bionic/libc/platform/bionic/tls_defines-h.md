@@ -232,7 +232,7 @@ if (Process.arch === 'arm64') {
 
 总而言之，`tls_defines.handroid` 文件虽然看似简单，但它定义了 Android 系统中关键的线程局部数据的布局，对于理解 Android 的高性能特性和一些底层机制至关重要。理解其内容有助于深入了解 ART、OpenGL、动态链接器等核心组件的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/platform/bionic/tls_defines.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -395,7 +397,4 @@ Prompt:
 #endif
 
 #define BIONIC_TLS_SLOTS (MAX_TLS_SLOT - MIN_TLS_SLOT + 1)
-
-"""
-
 ```

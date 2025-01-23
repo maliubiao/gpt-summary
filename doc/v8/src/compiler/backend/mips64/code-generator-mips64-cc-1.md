@@ -154,7 +154,7 @@ myFunction(2, 3); // 函数调用会涉及 kArchCallJSFunction 等指令
 
 总而言之，提供的代码片段是 `v8/src/compiler/backend/mips64/code-generator-mips64.cc` 文件的一部分，它负责 **将 V8 内部的中间表示指令翻译成实际的 MIPS64 汇编指令**。 这包括处理函数调用、控制流、栈操作、基本运算（整数和浮点数）、内存访问以及一些架构特定的指令。 这是 V8 引擎将 JavaScript 代码转换为可在 MIPS64 架构上执行的机器码的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/code-generator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 a statically.
       frame_access_state()->ClearSPDelta();
       if (caller_registers_saved_) {
@@ -1076,7 +1078,4 @@ a statically.
     }
     case kMips64Lhu:
       __ Lhu(i.OutputRegister(), i.Mem
-"""
-
-
 ```

@@ -74,11 +74,13 @@ try {
 
 这个 C++ 单元测试是为了确保 V8 引擎的 `NewFixedArray` 方法在接收到负长度参数时能够正确地抛出错误并终止程序。这与 JavaScript 中对数组长度的限制和错误处理机制相对应，防止了潜在的内存安全问题。虽然 JavaScript 代码本身无法直接触发 `NewFixedArray(-1)` 这样的调用，但这个测试保证了 V8 引擎在处理数组相关操作时的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regress/regress-crbug-1041240-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -99,7 +101,4 @@ TEST_F(NewUninitializedFixedArrayTest, ThrowOnNegativeLength) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

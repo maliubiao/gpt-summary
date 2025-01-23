@@ -72,7 +72,7 @@ Response:
 
 ### 总结
 该程序通过多层级 Hook 实现动态 TCP 连接监控与阻断，需确保 PID 列表、允许列表和 TC 挂载正确。调试时可借助 `blocked_events` 和 `verbose_events` 定位问题。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/examples/networking/tcp_mon_block/src/tcp_mon_block.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -81,8 +81,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*author: https://github.com/agentzex
 Licensed under the Apache License, Version 2.0 (the "License")
 
@@ -330,6 +332,4 @@ int trace_connect_entry(struct pt_regs *ctx, struct sock *sk)
 
     return 0;
 }
-"""
-
 ```

@@ -130,14 +130,16 @@ Let's break down the thought process for analyzing the provided C++ code.
 
 总而言之，`security_origin_fuzzer.cc` 是一个重要的工具，用于确保 Chromium Blink 引擎在处理 Web 安全的关键概念 `SecurityOrigin` 时具有鲁棒性和正确性，从而保障用户的浏览安全。 它通过模拟各种可能的输入情况，帮助开发者发现潜在的边界情况错误和安全漏洞，这些漏洞可能与 JavaScript、HTML 和 CSS 的安全执行息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/security_origin_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

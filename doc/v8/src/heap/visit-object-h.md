@@ -159,15 +159,17 @@ class LoggingVisitor : public ObjectVisitor {
 
 `v8/src/heap/visit-object.h` 定义了 V8 引擎用于访问和操作堆中对象的关键机制。它通过 `VisitObject` 和 `VisitObjectBody` 函数以及访问者模式，为 V8 的其他组件提供了遍历和处理对象的能力，这对于垃圾回收、属性访问等核心 JavaScript 功能至关重要。虽然普通 JavaScript 开发者不会直接使用这些函数，但理解它们有助于深入了解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/visit-object.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/visit-object.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ void VisitObjectBody(LocalIsolate* isolate, Tagged<HeapObject> object,
 }  // namespace v8::internal
 
 #endif  // V8_HEAP_VISIT_OBJECT_H_
-
-"""
-
 ```

@@ -204,15 +204,17 @@ fetch('https://www.example.com/data');
 
 总而言之，`address_list_unittest.cc` 通过各种测试用例，确保了 `AddressList` 类能够正确地管理和操作 IP 地址列表和 DNS 别名，这对于 Chromium 网络栈的稳定性和可靠性至关重要。虽然 JavaScript 代码不直接操作这个类，但它的功能是 JavaScript 发起网络请求的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/address_list_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -495,7 +497,4 @@ TEST(AddressListTest, DeduplicatePreservesOrder) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

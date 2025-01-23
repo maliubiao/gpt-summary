@@ -249,7 +249,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 总结来说，`bionic/tests/string_nofortify_test.cpp` 是一个用于测试 Bionic C 库字符串操作函数在禁用安全增强特性时的行为的文件。 它对于理解安全增强的作用以及在没有这些保护的情况下可能出现的漏洞至关重要。 虽然它本身不直接涉及 dynamic linker，但它测试的函数是 `libc.so` 的一部分，需要 dynamic linker 加载和链接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/string_nofortify_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,9 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
-
+### 源代码
+```cpp
 #ifdef _FORTIFY_SOURCE
 #undef _FORTIFY_SOURCE
 #endif
@@ -274,7 +275,4 @@ Prompt:
 #if defined(_FORTIFY_SOURCE)
 #error "_FORTIFY_SOURCE has been redefined, fix the code to remove this redefinition."
 #endif
-
-"""
-
 ```

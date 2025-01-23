@@ -124,14 +124,16 @@ By following this thought process, combining code analysis, logical deduction, a
 
 `blink/renderer/core/frame/report_body.cc` 文件是 Blink 引擎中用于将内部的报告信息（`ReportBody` 对象）转换为 JavaScript 可用的 JSON 格式的关键组件。它连接了 C++ 的内部实现和 JavaScript 的外部使用，使得网页上的脚本能够获取并处理浏览器内部产生的报告信息，从而实现更丰富的功能和更好的用户体验。 其核心逻辑在于 `BuildJSONValue` 函数，但由于代码中没有给出其具体实现，我们只能根据上下文进行推断。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/report_body.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ ScriptValue ReportBody::toJSON(ScriptState* script_state) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -92,7 +92,7 @@ By following this structured process, I can accurately and comprehensively answe
 
 `v8/src/diagnostics/objects-debug.cc` 的主要功能是**作为 V8 引擎内部的一个诊断工具，通过定义和执行针对各种 V8 对象的验证检查，来确保堆中对象的完整性和一致性。** 它主要用于 V8 的开发和调试阶段，以检测内存错误、验证对象模型的一致性，并辅助定位问题。 虽然它不是 Torque 源代码，但它与 JavaScript 功能密切相关，因为它验证的是 JavaScript 对象在 V8 内部的表示。 验证函数的逻辑基于对对象内部结构的了解，并在检测到异常状态时报告错误。 它可以间接地帮助发现一些由不当 JavaScript 代码操作引起的 V8 内部状态异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/objects-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -100,8 +100,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -957,7 +959,4 @@ void ScriptContextTable::ScriptContextTableVerify(Isolate* isolate) {
     Object::VerifyPointer(isolate, o);
     CHECK(IsContext(o));
     CHECK(o->
-"""
-
-
 ```

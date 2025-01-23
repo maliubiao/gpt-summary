@@ -105,7 +105,7 @@ My thinking process to answer the request goes like this:
 
 总而言之，`printer.py` 文件中的类是 Frida 内部用于处理和表示 Meson 构建系统配置的关键组件，它们在理解软件构建过程、进行自动化分析以及调试 Frida 自身对 Meson 构建文件的处理方面发挥着重要作用。 虽然普通 Frida 用户可能不会直接调用这些类，但它们是 Frida 工具链中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/ast/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -735,7 +737,4 @@ class AstJSONPrinter(AstVisitor):
             kwargs_list += [{'key': key_res, 'val': val_res}]
         self.current['kwargs'] = kwargs_list
         self.setbase(node)
-
-"""
-
 ```

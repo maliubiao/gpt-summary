@@ -126,7 +126,7 @@ This thought process involves understanding the code's structure, inferring its 
 
 这段代码对于保证 Frida 的成功构建至关重要，因为 `frida-gum` 是 Frida 进行动态 instrumentation 的核心引擎。它的存在体现了构建系统需要高效地处理多个相互依赖的组件，并提供有效的错误报告机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 er(logger, r, wrap, dirname, options)
         task = loop.run_in_executor(executor, runner.run)
         tasks.append(task)
@@ -152,8 +154,4 @@ er(logger, r, wrap, dirname, options)
         m += ', '.join(failures)
         mlog.warning(m)
     return len(failures)
-
-"""
-
-
 ```

@@ -123,7 +123,7 @@ func main() {
 
 `go/src/crypto/internal/sysrand/rand_js.go` 的主要功能是利用 JavaScript 的 `crypto.getRandomValues()` API 在 WebAssembly 环境中安全地生成随机数，并处理可能超出 API 限制的大数据量读取请求。 它是 Go 在 WebAssembly 环境下提供密码学安全随机数能力的关键组成部分。 开发者应该使用 `crypto/rand` 包来获取随机数，而不是直接使用这个内部包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/sysrand/rand_js.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -131,8 +131,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -160,9 +162,4 @@ func read(b []byte) error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

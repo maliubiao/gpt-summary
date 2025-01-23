@@ -160,7 +160,7 @@ My thinking process to answer the request about the `datatests.py` file goes thr
 
 因此，`datatests.py` 作为 Frida 项目的自动化测试的一部分，确保了项目的质量和一致性，帮助开发者及时发现和修复潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/datatests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -414,7 +416,4 @@ class DataTests(unittest.TestCase):
         interp = Interpreter(FakeBuild(env))
         astint = AstInterpreter('.', '', '')
         self.assertEqual(set(interp.funcs.keys()), set(astint.funcs.keys()))
-
-"""
-
 ```

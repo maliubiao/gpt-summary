@@ -526,7 +526,7 @@ void RegExpMacroAssemblerPPC::AdvanceCurrentPosition(int by) {
 
 `v8/src/regexp/ppc/regexp-macro-assembler-ppc.cc` 的主要功能是作为 V8 引擎中 PowerPC 64位架构下正则表达式匹配的**代码生成器和执行引擎**。它负责将正则表达式模式编译成高效的机器码，并在运行时执行这些代码以完成字符串的匹配操作。该文件定义了底层的寄存器使用约定、栈帧结构以及用于生成各种正则表达式匹配指令的方法。它处理了包括字符匹配、边界检查、回溯、捕获组等核心的正则表达式功能，是 V8 实现高性能正则表达式的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/ppc/regexp-macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/ppc/regexp-macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -534,8 +534,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1413,7 +1415,4 @@ Handle<HeapObject> RegExpMacroAssemblerPPC::GetCode(Handle<String> source,
     // Initialize on-stack registers.
     if (num_saved_registers_ > 0) {  // Always is, if generated from a regexp.
       // Fill saved registers with initial val
-"""
-
-
 ```

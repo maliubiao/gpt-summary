@@ -191,15 +191,17 @@ Let's consider the HTML example:
 
 **In summary, `compare_positions.cc` provides the core logic for determining the relative order of positions within the DOM and flat tree in the Blink rendering engine. It is a fundamental piece used by many higher-level features exposed to JavaScript, influenced by HTML structure, and potentially affected by CSS, making it a crucial component for the browser's ability to understand and manipulate the structure of web pages.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/compare_positions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Apple Inc. All rights reserved.
  *
@@ -666,7 +668,4 @@ int16_t ComparePositions(const PositionInFlatTree& position_a,
 }
 
 }  // namespace blink
-
-"""
-
 ```

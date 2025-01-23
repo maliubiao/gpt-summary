@@ -91,7 +91,7 @@ Based on these observations, the file focuses on testing the accuracy of hit tes
 
 这部分 `hit_testing_bidi_test.cc` 文件的功能是**系统地测试在各种复杂的嵌套 Bidi 文本场景下，`caretRangeFromPoint` 方法能否准确地将屏幕坐标转换为文档中的插入符位置**。它通过大量的测试用例覆盖了不同的文本方向组合、嵌套层级和点击位置，确保了 Blink 引擎在处理双向文本时的命中测试功能的正确性和可靠性。这是保证用户在编辑包含多种语言文本的网页时能够获得良好体验的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/hit_testing_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 h: 300px}");
   SetBodyContent(
       "<div dir=ltr><bdo dir=rtl><bdo dir=ltr><bdo dir=rtl>DEF<bdo "
@@ -865,7 +867,4 @@ TEST_F(HitTestingBidiTest,
   // Bidi:    1 1 1 2 2 2 3 3 3 4 4 4
   LoadAhem();
   InsertStyleElement("di
-"""
-
-
 ```

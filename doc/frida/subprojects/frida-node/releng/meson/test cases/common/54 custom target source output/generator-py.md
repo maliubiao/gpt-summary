@@ -138,7 +138,7 @@ input() # 让脚本保持运行
 
 因此，用户通常不会直接操作这个脚本，它是 Frida 内部测试流程的一部分。如果用户需要调试与自定义 target 构建相关的问题，他们可能会检查这个脚本的行为，或者查看 Meson 构建系统是如何调用和使用这个脚本的。 了解这个脚本的功能可以帮助理解 Frida 的构建流程，特别是涉及到自定义外部代码集成时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/54 custom target source output/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -164,7 +166,4 @@ with open(os.path.join(odir, 'mylib.c'), 'w') as f:
     return 0;
 }
 ''')
-
-"""
-
 ```

@@ -115,11 +115,13 @@ Operation::GenericAdd(Operand a, Operand b)
 
 `MachineLoweringPhase` 通过一系列 reducers 将 V8 Turboshaft 编译管道中较高层次的中间表示转换为更接近机器代码的形式。 `JSGenericLoweringReducer` 在其中扮演着关键角色，它负责处理 JavaScript 的动态特性，将通用的 JavaScript 操作降低为更具体的机器操作，为后续的机器代码生成奠定基础。 这使得 V8 能够针对不同的数据类型和操作执行高效的机器代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/machine-lowering-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ void MachineLoweringPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

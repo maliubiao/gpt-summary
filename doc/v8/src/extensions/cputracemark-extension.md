@@ -86,11 +86,13 @@ console.log("执行结束。");
 
 总而言之，`cputracemark-extension.cc` 提供了一种在 V8 中从 JavaScript 代码触发特定 CPU 指令的方式，用于底层的性能追踪和代码标记。它通过 V8 的扩展机制将 C++ 功能暴露给 JavaScript 环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/cputracemark-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ void CpuTraceMarkExtension::Mark(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

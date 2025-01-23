@@ -112,7 +112,7 @@ function wrongShift(x) {
 
 总而言之，`v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc` 是一个关键的测试文件，用于确保 V8 的 ARM64 指令选择器能够正确且高效地将 JavaScript 代码编译成机器码，从而保证在 ARM64 架构上的性能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -120,8 +120,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ->InputCount());
     EXPECT_EQ(s.ToVreg(p0), s.ToVreg(s[0]->InputAt(0)));
     ASSERT_EQ(1U, s[0]->OutputCount());
@@ -986,8 +988,5 @@ static const SIMDConstAndTest SIMDConstAndTests[] = {
      1},
 
     {{0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01,
-      0x00, 0x00, 
-"""
-
-
+      0x00, 0x00,
 ```

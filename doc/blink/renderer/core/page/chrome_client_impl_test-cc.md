@@ -114,15 +114,17 @@ By following these steps, I could systematically analyze the C++ test file and e
 
 `chrome_client_impl_test.cc` 是一个非常重要的测试文件，它覆盖了 `ChromeClientImpl` 类的核心功能，这些功能直接关系到用户与网页的交互，以及浏览器如何响应用户的操作和网页的请求。通过分析这些测试用例，开发者可以更好地理解 Blink 渲染引擎的工作原理，并能更有效地进行调试和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/chrome_client_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -657,7 +659,4 @@ TEST_F(AutofillChromeClientTest, NotificationsOfJavaScriptChangesDuringFill) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

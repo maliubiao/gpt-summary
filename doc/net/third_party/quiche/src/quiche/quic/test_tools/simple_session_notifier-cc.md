@@ -217,15 +217,17 @@ After drafting the explanation, review it for accuracy, completeness, and clarit
 
 总而言之，`simple_session_notifier.cc` 作为一个测试工具，它的存在主要是为了辅助 QUIC 协议的开发和验证，帮助开发者确保 QUIC 连接在各种情况下都能正确地发送和接收数据，并处理各种网络事件。用户操作不会直接到达这个文件，但开发者会利用它来测试用户操作背后的 QUIC 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/simple_session_notifier.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1017,7 +1019,4 @@ bool SimpleSessionNotifier::HasLostStreamData() const {
 }  // namespace test
 
 }  // namespace quic
-
-"""
-
 ```

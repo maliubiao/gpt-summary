@@ -205,15 +205,17 @@ This structured approach, moving from the specific code to the broader context o
 
 通过在 `SVGShapePainter` 的关键方法中设置断点，并检查相关的 `LayoutSVGShape` 对象和 `ComputedStyle` 信息，开发者可以逐步追踪 SVG 形状的绘制过程，找出渲染问题的根源。例如，如果矩形的颜色不正确，可能是 CSS 样式没有正确应用，或者 `PaintFlags` 的设置有问题。如果矩形的位置或尺寸不正确，可能是在布局阶段计算错误，或者变换没有正确应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/svg_shape_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -520,7 +522,4 @@ void SVGShapePainter::PaintMarker(const PaintInfo& paint_info,
 }
 
 }  // namespace blink
-
-"""
-
 ```

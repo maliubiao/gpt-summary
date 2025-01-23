@@ -151,7 +151,7 @@ By following this structured approach, incorporating domain knowledge (Windows r
 
 总而言之，`verify.c` 是一个用于确保资源嵌入过程正确的测试工具，它反映了逆向工程中对资源分析的需求，并涉及到操作系统底层的二进制文件和资源管理机制。理解其功能和可能的错误情况，有助于开发者构建可靠的软件，也有助于逆向工程师分析目标程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/windows/15 resource scripts with duplicate filenames/verify.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <windows.h>
 
@@ -186,7 +188,4 @@ int main(int argc, char *argv[])
 
   return 0;
 }
-
-"""
-
 ```

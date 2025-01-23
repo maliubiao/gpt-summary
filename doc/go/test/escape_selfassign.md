@@ -162,15 +162,17 @@ While this specific code is a test case, here's a common misunderstanding relate
 
 **In summary, `go/test/escape_selfassign.go` is a focused test case for the Go compiler's escape analysis, specifically examining how self-assignment within structs influences where those structs are allocated in memory (stack or heap). The error messages embedded in the code indicate the expected behavior of the escape analysis for these particular scenarios.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_selfassign.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -203,9 +205,4 @@ func h() {
 	g(&s)
 	sink = s
 }
-
-"""
-
-
-
 ```

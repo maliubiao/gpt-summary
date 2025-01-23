@@ -493,12 +493,14 @@ std::ostream& operator<<(std::ostream& os, TruncateKind kind) {
   IF_WASM(V, F16x8Mul, Operator::kCommutative, 2, 0, 1)                        \
   IF_WASM(V, F16x8Div, Operator::kNoProperties, 2, 0, 1)                       \
   IF_WASM(V, F16x8Min, Operator::kAssociative | Operator::kCommutative, 2, 0,  \
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1660,8 +1662,4 @@ std::ostream& operator<<(std::ostream& os, TruncateKind kind) {
 struct StackSlotOperator : public Operator1<StackSlotRepresentation> {
   explicit StackSlotOperator(int size, int alignment, bool is_tagged)
       : Operator1<StackSlotRepresentation>(
-        
-"""
-
-
 ```

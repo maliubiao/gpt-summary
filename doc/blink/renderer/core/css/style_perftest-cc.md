@@ -120,15 +120,17 @@ By following these steps, one can systematically analyze the `style_perftest.cc`
 
 总而言之，`style_perftest.cc` 是 Blink 引擎中用于持续监控和优化 CSS 样式计算性能的关键工具。开发人员会通过运行和分析这个文件中的测试用例，来发现性能问题，验证优化效果，并确保浏览器的渲染性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_perftest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -553,7 +555,4 @@ TEST(StyleCalcPerfTest, Alexa1000) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

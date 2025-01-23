@@ -169,7 +169,7 @@ Here's a breakdown of the thought process to generate the comprehensive analysis
 
 总而言之，`prog.c` 作为一个简单的测试用例，其目的是验证 Frida 构建过程中关键的配置宏定义是否正确，这对于保证 Frida 核心功能的正常运行至关重要。它也体现了逆向工程中分析静态常量和配置信息的重要性，并展示了 Frida 如何在运行时验证和修改这些信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/31 define10/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include"config.h"
 
@@ -192,7 +194,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

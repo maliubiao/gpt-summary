@@ -170,15 +170,17 @@ int main() {
 
 了解 `DefaultThreadIsolatedAllocator` 这样的底层组件有助于理解 V8 引擎如何管理内存，这对于性能优化和避免潜在的内存相关错误至关重要，尤其是在开发需要高性能和稳定性的 JavaScript 应用或 V8 扩展时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-thread-isolated-allocator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/default-thread-isolated-allocator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ class V8_PLATFORM_EXPORT DefaultThreadIsolatedAllocator
 }  // namespace v8
 
 #endif  // V8_LIBPLATFORM_DEFAULT_THREAD_ISOLATED_ALLOCATOR_H_
-
-"""
-
 ```

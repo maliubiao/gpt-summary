@@ -183,15 +183,17 @@ S, S, D, S, S, D, S, S, S, D
 
 总而言之，`PacketDroppingTestWriter` 是一个强大的测试工具，允许 Chromium 的开发者在各种受控的网络条件下测试 QUIC 协议的实现，确保其在真实的网络环境中能够稳定可靠地工作。 开发者在遇到网络相关的测试问题时，很可能会查看这个文件的源代码以理解其模拟行为并排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/packet_dropping_test_writer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -457,7 +459,4 @@ PacketDroppingTestWriter::DelayedWrite::~DelayedWrite() = default;
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -87,15 +87,17 @@ Here's a breakdown of the thought process:
 
 该单元测试文件的主要功能是全面测试 `MainThreadSchedulerImpl` 类的核心调度逻辑，包括不同类型任务的优先级管理、输入事件的处理、不同调度策略的切换以及与合成器的协同工作。通过模拟各种场景和事件，确保主线程上的任务能够按照预期顺序执行，从而保证渲染引擎的性能和用户交互的流畅性。 它是验证 Blink 引擎主线程调度器正确性的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1714,7 +1716,4 @@ TEST_F(MainThreadSchedulerImplTest, EventForwardedToMainThread_MouseClick) {
       InputEventState::EVENT_FORWARDED_TO_MAIN_THREAD);
   scheduler_->DidHandleInputEventOnCompositorThread(
       FakeInputEvent(blink
-"""
-
-
 ```

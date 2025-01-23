@@ -212,7 +212,7 @@ func main() {
 
 总而言之，`html/template` 包的核心价值在于其自动的、上下文感知的 HTML 转义功能，这大大降低了在 Go Web 应用中引入 XSS 漏洞的风险。理解其工作原理以及避免常见的错误用法对于开发安全的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -462,9 +464,4 @@ literals are now supported by default, and setting jstmpllitinterp has no
 effect.
 */
 package template
-
-"""
-
-
-
 ```

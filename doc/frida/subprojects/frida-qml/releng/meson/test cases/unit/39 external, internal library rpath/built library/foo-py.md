@@ -132,7 +132,7 @@ By following this systematic approach, we can dissect the file path, infer the s
 
 总而言之，`foo.py` 这个测试脚本在 Frida-QML 项目中扮演着重要的角色，它确保了构建出的组件能够正确加载其依赖的共享库，这对于 Frida 的正常运行和动态 instrumentation 功能至关重要。开发者可以通过查看和修改这个测试脚本来诊断和解决与库依赖和 RPATH 相关的构建和运行时问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/39 external, internal library rpath/built library/foo.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,9 +140,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

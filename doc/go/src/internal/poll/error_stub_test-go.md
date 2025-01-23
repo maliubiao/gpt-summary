@@ -160,7 +160,7 @@ func main() {
 
 `go/src/internal/poll/error_stub_test.go` 通过 Go 的构建约束机制，为非 Linux 系统上的 `internal/poll` 包提供了一个关于“bad state file”处理的占位符实现。这确保了在不同操作系统上，`internal/poll` 包的接口保持一致，即使某些功能在特定平台上不可用。使用者需要注意不同平台上的行为差异，并妥善处理可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/error_stub_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ func badStateFile() (*os.File, error) {
 func isBadStateFileError(err error) (string, bool) {
 	return "", false
 }
-
-"""
-
-
-
 ```

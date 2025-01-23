@@ -86,12 +86,14 @@ FMUL d2, d0, d1 // 将 d0 和 d1 的浮点数相乘，结果存入 d2
 
 这段 C++ 代码是 V8 引擎将 JavaScript 代码转换成可在 ARM64 架构上执行的机器码的关键部分。它定义了如何将各种抽象的 IR 操作映射到具体的硬件指令，从而使得 JavaScript 代码能够在 ARM64 设备上高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/code-generator-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 m64Eor:
       __ Eor(i.OutputRegister(), i.InputOrZeroRegister64(0),
              i.InputOperand2_64(1));
@@ -1755,7 +1757,4 @@ m64Eor:
       RecordTrapInfoIfNeeded(zone(), this, opcode, instr, __ pc_offset());
       __ Ldr(i.OutputSimd128Register().V2S(), i.MemoryOperand(0));
       __ Uxtl(i.OutputSimd128Register().V2D()
-"""
-
-
 ```

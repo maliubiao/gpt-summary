@@ -149,7 +149,7 @@ This methodical approach allows for a thorough understanding of the script's pur
 
 总而言之，`gtkdochelper.py` 是 Frida 构建系统中负责生成 API 文档的关键脚本，它依赖于 `gtk-doc` 工具集，并需要正确的配置和运行环境才能正常工作。理解其功能和依赖关系有助于排查文档生成过程中出现的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/gtkdochelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -445,7 +447,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

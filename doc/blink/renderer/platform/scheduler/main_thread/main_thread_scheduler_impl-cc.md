@@ -125,15 +125,17 @@ Response: The user wants me to analyze the provided C++ source code file `main_t
 
 `MainThreadSchedulerImpl` 是 Blink 渲染引擎中主线程的核心调度器，负责管理各种类型的任务队列，并根据系统状态、用户交互和渲染流程等因素动态调整任务的优先级和执行顺序。它确保了主线程的响应性，特别是在处理用户输入和渲染更新方面，并负责主线程的生命周期管理和性能监控。它与 JavaScript, HTML, CSS 的执行息息相关，通过调度不同类型的任务来驱动网页的渲染和交互行为。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1781,7 +1783,4 @@ UseCase MainThreadSchedulerImpl::ComputeCurrentUseCase(
     } else {
       if (any_thread().is_any_main_frame_loading) {
         return
-"""
-
-
 ```

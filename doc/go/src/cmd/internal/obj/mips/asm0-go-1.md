@@ -165,7 +165,7 @@ func main() {
 
 总之，`go/src/cmd/internal/obj/mips/asm0.go` 的这部分代码是 MIPS 后端代码生成的核心，负责将 Go 语言的汇编指令翻译成可执行的机器码。它的正确性直接关系到最终生成程序的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/mips/asm0.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 , r3 int16) uint32 {
 	return op | uint32(r1&31)<<16 | uint32(r2&31)<<21 | uint32(r3&31)<<11
 }
@@ -1179,10 +1181,4 @@ func (c *ctxt0) lsoffset(a obj.As, o int32) int32 {
 
 	return o / mod
 }
-
-"""
-
-
-
-
 ```

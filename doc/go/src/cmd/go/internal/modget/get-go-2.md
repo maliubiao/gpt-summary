@@ -265,7 +265,7 @@ func main() {
 
 总而言之，这段代码是 `go get` 命令中至关重要的一部分，它负责将解析得到的模块版本信息应用到项目的依赖关系中，确保构建的一致性和正确性。它处理了版本冲突、更新构建列表以及与 Go 模块加载器进行交互，是 Go 模块管理的核心机制之一。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modget/get.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -274,8 +274,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 .QueryMatchesMainModulesError{
 			MainModules: []module.Version{{Path: m.Path}},
 			Pattern:     q.pattern,
@@ -402,10 +404,4 @@ func isNoSuchPackageVersion(err error) bool {
 	var noPackage *modload.PackageNotInModuleError
 	return isNoSuchModuleVersion(err) || errors.As(err, &noPackage)
 }
-
-"""
-
-
-
-
 ```

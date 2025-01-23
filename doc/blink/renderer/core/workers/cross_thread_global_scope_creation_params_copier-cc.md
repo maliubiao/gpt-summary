@@ -123,14 +123,16 @@ params->outside_content_security_policies.push_back(
 
 总而言之，`cross_thread_global_scope_creation_params_copier.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它确保了在跨线程创建全局作用域（例如 Web Worker）时，相关的配置参数，特别是安全相关的 CSP 策略，能够被安全且独立地传递，避免了潜在的数据竞争和安全漏洞。这对于维护 Web 应用的安全性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/cross_thread_global_scope_creation_params_copier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ CrossThreadCopier<std::unique_ptr<blink::GlobalScopeCreationParams>>::Copy(
 }
 
 }  // namespace WTF
-
-"""
-
 ```

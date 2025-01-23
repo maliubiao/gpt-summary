@@ -153,15 +153,17 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`image_resource_type_converters.cc` 是 Blink 引擎处理 Web App Manifest 中图像资源信息的关键模块，它确保了这些信息能够被正确解析、验证和转换，以便浏览器能够正确地显示和使用这些图像资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/image_resource_type_converters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ Manifest::ImageResource ConvertManifestImageResource(
 }
 
 }  // namespace blink
-
-"""
-
 ```

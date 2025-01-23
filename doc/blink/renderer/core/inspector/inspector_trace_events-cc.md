@@ -74,15 +74,17 @@ The user wants to understand the functionality of the provided C++ source code f
 
 总结来说，`inspector_trace_events.cc` 是 Blink 渲染引擎中一个至关重要的组成部分，它负责将引擎内部的性能数据转化为 DevTools 可以理解的信息，为开发者进行网页性能分析和优化提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_trace_events.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -846,7 +848,4 @@ static void CreateQuad(perfetto::TracedValue context, const gfx::QuadF& quad) {
   array.Append(quad.p4().x());
   array.Append(quad.p4().y());
 }
-"""
-
-
 ```

@@ -208,15 +208,17 @@ By following this structured thought process, I can generate a comprehensive and
 
 总而言之，`peer_connection_features.cc` 虽然是底层的 C++ 代码，但它定义了影响 WebRTC 功能的关键开关，直接决定了 Web 开发者可以使用哪些 API 特性以及这些特性的行为方式。理解这些特性对于开发和调试 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/peer_connection_features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ BASE_FEATURE(kWebRtcRtpScriptTransformerFrameRestrictions,
              base::FEATURE_ENABLED_BY_DEFAULT);
 
 }  // namespace blink
-
-"""
-
 ```

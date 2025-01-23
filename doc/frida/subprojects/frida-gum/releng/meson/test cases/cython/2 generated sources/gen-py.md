@@ -100,7 +100,7 @@ cpdef func():
 
 总而言之，`gen.py` 是一个简单的代码生成脚本，其目的是方便地创建基础的 Cython 源文件。虽然其自身功能简单，但它生成的代码在 Frida 的动态插桩和逆向分析的上下文中具有一定的意义，并间接地涉及到操作系统底层和编程语言的编译原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cython/2 generated sources/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 
 import argparse
@@ -124,7 +126,4 @@ with open(args.output, 'w') as f:
         cpdef func():
             return "Hello, World!"
         '''))
-
-"""
-
 ```

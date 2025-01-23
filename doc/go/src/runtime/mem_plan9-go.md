@@ -139,7 +139,7 @@ func main() {
 
 `go/src/runtime/mem_plan9.go` 中的 `sbrk` 函数是 Go 语言在 Plan 9 操作系统上实现动态内存分配的关键组成部分。它通过扩展程序的数据段来满足内存分配的需求。虽然普通 Go 开发者不会直接使用它，但了解其功能有助于理解 Go 语言的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mem_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -147,8 +147,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -170,9 +172,4 @@ func sbrk(n uintptr) unsafe.Pointer {
 	bloc += n
 	return unsafe.Pointer(bl)
 }
-
-"""
-
-
-
 ```

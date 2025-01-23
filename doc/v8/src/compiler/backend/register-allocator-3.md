@@ -96,12 +96,14 @@ The connection to JavaScript lies in the fact that these register allocation ste
 
 这部分代码主要负责在寄存器分配的最后阶段，处理与垃圾回收、控制流以及延迟溢出相关的关键任务。它确保了生成的机器代码能够正确地管理 JavaScript 变量的生命周期，并在不同的执行路径和安全点上保持数据的一致性和可访问性，最终保障了 JavaScript 代码的高效和正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 safe_point_pos);
         found = cur != nullptr;
       } else {
@@ -474,8 +476,4 @@ void LiveRangeConnector::CommitSpillsInDeferredBlocks(TopLevelLiveRange* range,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

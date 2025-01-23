@@ -143,14 +143,16 @@ By following this structured approach, deconstructing the code, linking it to we
 
 `blink/common/use_counter/use_counter_feature.cc` 文件定义了一个核心的数据结构，用于在 Blink 引擎中跟踪各种 Web 平台特性的使用情况。它通过 `UseCounterFeature` 类及其相关枚举，将抽象的 Web 功能（如 HTML 标签、CSS 属性、JavaScript API）映射到可统计的数据点，为浏览器开发者提供宝贵的性能分析和特性使用情况数据。这对于了解 Web 标准的 adoption 率、识别需要优化的性能瓶颈以及指导新特性的开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/use_counter/use_counter_feature.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ bool UseCounterFeature::operator<(const UseCounterFeature& rhs) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

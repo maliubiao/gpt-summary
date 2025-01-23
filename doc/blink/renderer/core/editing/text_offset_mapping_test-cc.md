@@ -137,15 +137,17 @@ Let's break down the thought process for analyzing this C++ test file and genera
 
 总而言之，`text_offset_mapping_test.cc` 是一个用于验证 Blink 引擎中处理文本偏移量和范围的核心组件的测试文件。它与 JavaScript, HTML, CSS 紧密相关，因为它的目标是正确地理解和操作在这些技术构建的复杂网页中的文本。理解这个测试文件的功能有助于理解浏览器如何处理文本编辑相关的用户操作，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/text_offset_mapping_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -794,7 +796,4 @@ TEST_F(TextOffsetMappingTest, ComputeTextOffsetWithBrokenImage) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

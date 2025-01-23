@@ -115,14 +115,16 @@ HTTP 响应头: Content-Type: text/html
 
 `TextResourceDecoder` 的目标是尽可能准确地确定文本资源的编码，即使在信息不完整或存在错误的情况下也能提供最佳的解码结果。理解其工作原理有助于开发者避免常见的编码问题，并确保网页内容能够正确显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/text_resource_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 1999 Lars Knoll (knoll@mpi-hd.mpg.de)
     Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2012 Apple Inc. All
@@ -572,7 +574,4 @@ WebEncodingData TextResourceDecoder::GetEncodingData() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

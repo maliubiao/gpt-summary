@@ -156,7 +156,7 @@ func main() {
 
 这个代码片段（作为 `zerrors_windows.go` 文件的一部分）的主要功能是**定义了大量的Windows系统错误码常量，方便Go程序在与Windows系统交互时，能够以可读性强的方式识别和处理各种错误情况**。它为开发者提供了一组预定义的符号来代表底层的Windows错误，提高了代码的可维护性和可读性。这些常量涵盖了安全、加密、设备管理、智能卡、COM 等多个Windows API领域。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,9 +164,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第7部分，共15部分，请归纳一下它的功能
+```
 
-"""
-                  Handle        = 0x00090360
+### 源代码
+```go
+Handle        = 0x00090360
 	SEC_E_NO_CONTEXT                                                          Handle        = 0x80090361
 	SEC_E_PKU2U_CERT_FAILURE                                                  Handle        = 0x80090362
 	SEC_E_MUTUAL_AUTH_FAILED                                                  Handle        = 0x80090363
@@ -809,9 +811,4 @@ Prompt:
 	ERROR_GRAPHICS_INVALID_VIDPN                                              Handle        = 0xC0262303
 	ERROR_GRAPHICS_INVALID_VIDEO_PRESENT_SOURCE                               Handle        = 0xC0262304
 	ERROR_GRAPHICS_INVALID_VIDEO_PRESENT_TARGET                               Handle        = 0xC0262
-"""
-
-
-
-
 ```

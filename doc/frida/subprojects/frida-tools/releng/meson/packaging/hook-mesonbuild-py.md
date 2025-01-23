@@ -97,7 +97,7 @@ Frida 本身就是一个强大的动态逆向工具。Meson 是一个构建系�
 
 作为调试线索，如果用户报告打包后的 Frida 工具在某些情况下出现与 Meson 相关的错误，开发者可以检查这个 hook 脚本是否正确地包含了所有必要的 Meson 组件，或者是否有新的 Meson 模块需要添加到 `hiddenimports` 中。  他们还可以检查 PyInstaller 的配置，确保这个 hook 脚本被正确加载和执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/packaging/hook-mesonbuild.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!hint/python3
 
 """
@@ -167,7 +169,4 @@ hiddenimports += [
     # needed for gtk's find_program() scripts
     'filecmp',
 ]
-
-"""
-
 ```

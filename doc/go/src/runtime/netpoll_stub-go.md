@@ -138,7 +138,7 @@ func main() {
 
 `go/src/runtime/netpoll_stub.go` 是 Go 语言运行时为 Plan 9 提供的网络轮询的简化实现。它主要提供了初始化、触发中断和基本的定时等待功能，但缺乏实际的网络事件监听能力。 理解这一点对于在 Plan 9 上进行 Go 语言开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/netpoll_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -146,8 +146,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -217,9 +219,4 @@ func netpollAnyWaiters() bool {
 
 func netpollAdjustWaiters(delta int32) {
 }
-
-"""
-
-
-
 ```

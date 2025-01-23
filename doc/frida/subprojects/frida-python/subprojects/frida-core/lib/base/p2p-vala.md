@@ -128,7 +128,7 @@ process = target.LaunchSimple(None, None, os.getcwd())
 ### 总结
 
 `p2p.vala` 文件实现了 Frida 工具中 P2P 通信的核心功能，包括 STUN/TURN 服务器配置、SDP 解析、SCTP 连接管理等。通过 LLDB 调试工具，用户可以深入分析这些功能的执行过程，排查潜在的错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/base/p2p.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 #if HAVE_NICE
 namespace Frida {
 	namespace PeerConnection {
@@ -1255,7 +1257,4 @@ namespace Frida {
 	public extern void _generate_certificate (out uint8[] cert_der, out string cert_pem, out string key_pem);
 }
 #endif
-
-"""
-
 ```

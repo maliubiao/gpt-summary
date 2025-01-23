@@ -162,7 +162,7 @@ Hello, World!
 
 如果用户遇到网页加载错误、资源加载失败等问题，网络工程师或前端开发者在调试时，可以使用浏览器的开发者工具查看网络请求的详细信息，包括响应头。如果响应头格式不正确，很可能就是 `BalsaFrame` 这样的解析器在底层发现了问题。通过分析 `BalsaFrame` 的源代码和测试用例，可以更好地理解浏览器是如何处理这些错误，并帮助定位问题根源是出在服务器端还是网络传输过程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_frame_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 parsed);
     EXPECT_EQ(framer.ErrorCode(), expected_error);
   }
@@ -1052,7 +1054,4 @@ TEST_F(HTTPBalsaFrameTest, NonAsciiCharacterInChunkLength) {
   FakeHeaders fake_headers;
   fake_headers.AddKeyValue("Connection", "close");
   fake_headers.AddKeyValue("transfer-encoding", "chunked"
-"""
-
-
 ```

@@ -107,15 +107,17 @@ The user wants a summary of the provided C++ code, specifically focusing on its 
 
 总而言之，这部分测试用例覆盖了在使用 `text-combine-upright` 属性时，进行各种常见的 DOM 操作和样式更改的场景，确保 Blink 引擎能够正确地处理这些情况并生成符合预期的布局树。这有助于开发者避免在使用该特性时遇到意外的布局问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_text_combine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 bug.com/1227066
 TEST_F(LayoutTextCombineTest, RemoveChildToOneCombinedText) {
   InsertStyleElement(
@@ -734,8 +736,4 @@ LayoutInline TCY id="sample"
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

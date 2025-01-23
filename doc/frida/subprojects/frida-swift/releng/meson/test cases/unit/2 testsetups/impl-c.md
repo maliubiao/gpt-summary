@@ -100,7 +100,7 @@ By following these steps and engaging in self-correction, you can arrive at a co
 
 总而言之，`impl.c` 中的 `do_nasty` 函数是一个刻意设计的简单示例，用于演示写越界这个常见的编程错误，它与逆向工程中漏洞分析和动态调试密切相关，并涉及到对二进制底层和操作系统内存管理机制的理解。在调试过程中，它作为一个明确的“坏”代码示例，可以帮助开发者和逆向工程师理解和定位实际应用中可能出现的类似问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/2 testsetups/impl.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,14 +108,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Write past the end. */
 
 void do_nasty(char *ptr) {
     ptr[10] = 'n';
 }
-
-"""
-
 ```

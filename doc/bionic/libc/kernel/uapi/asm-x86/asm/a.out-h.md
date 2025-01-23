@@ -265,7 +265,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-x86/asm/a.out.handroid` 定义了古老的 `a.out` 可执行文件格式的结构体，虽然在现代 Android 中不常用，但可能出于兼容性或内核接口的考虑而保留。开发者通常不需要直接操作这个文件中的定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/a.out.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -276,8 +276,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -300,7 +302,4 @@ struct exec {
 #define N_DRSIZE(a) ((a).a_drsize)
 #define N_SYMSIZE(a) ((a).a_syms)
 #endif
-
-"""
-
 ```

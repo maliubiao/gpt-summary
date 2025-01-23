@@ -126,11 +126,13 @@ console.log(weakMap.has(key2)); // 应该仍然输出 true (假设 key2 还有�
 
 `weak-object-worklists.cc` 是 V8 引擎中至关重要的一个文件，它负责管理和维护各种弱引用，确保垃圾回收器能够正确地处理这些弱引用，并支持 JavaScript 中 `WeakRef`、`WeakMap` 和 `WeakSet` 等相关功能。它在 V8 的内存管理和垃圾回收机制中扮演着核心角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/weak-object-worklists.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -375,7 +377,4 @@ bool WeakObjects::ContainsYoungObjects(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

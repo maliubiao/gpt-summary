@@ -241,15 +241,17 @@ By following these steps, we can systematically analyze the provided C++ code an
 
 总而言之，`blink/renderer/modules/webcodecs/audio_data.cc` 文件是 WebCodecs API 中处理音频数据的核心组件，它连接了底层的音频数据表示和上层的 JavaScript API，使得开发者能够在 Web 平台上高效地操作音频。理解其功能和潜在的错误场景对于开发和调试 Web 音频应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/audio_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1022,7 +1024,4 @@ void AudioData::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

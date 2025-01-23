@@ -195,7 +195,7 @@ a
 
 总而言之，这部分代码是 `EmbeddedTestServer` 的核心组成部分，它通过提供各种可配置的默认请求处理器，极大地简化了 Chromium 网络栈相关功能的测试工作。它与 JavaScript 的联系在于，它模拟了 JavaScript 代码通过网络请求可能遇到的各种服务器行为，帮助开发者测试和验证 JavaScript 代码的网络处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/embedded_test_server/default_handlers.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ks() for argument details.
 class DelayedChunkedHttpResponse : public HttpResponse {
  public:
@@ -468,8 +470,4 @@ void RegisterDefaultHandlers(EmbeddedTestServer* server) {
 }
 
 }  // namespace net::test_server
-
-"""
-
-
 ```

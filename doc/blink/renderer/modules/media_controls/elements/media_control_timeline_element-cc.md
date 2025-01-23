@@ -162,15 +162,17 @@ By following this structured approach – understanding the file's purpose, anal
 
 总而言之，`media_control_timeline_element.cc` 是浏览器媒体控件中负责时间线显示和交互的核心组件，它连接了用户的操作、媒体的状态以及最终的播放效果。理解这个文件的功能和交互方式对于理解 Chromium 中媒体播放的实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_timeline_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -529,7 +531,4 @@ bool MediaControlTimelineElement::EndScrubbingEvent(Event& event) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

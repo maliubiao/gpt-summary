@@ -191,7 +191,7 @@ func main() {
 
 作为 `go/src/cmd/go/internal/load/pkg.go` 的一部分，这段代码的核心功能是 **负责加载 Go 语言包，并提供了一系列用于控制加载行为、处理 PGO 和代码覆盖率、以及过滤 `main` 包的功能。** 它是 `go` 命令工具中构建、测试和运行 Go 代码的关键组成部分，负责将源代码组织成可操作的程序单元。这段代码体现了 Go 语言工具链对模块化、性能优化和代码质量的重视。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/load/pkg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 automatically
 // in LoadImport instead.
 func LoadImportWithFlags(path, srcDir string, parent *Package, stk *ImportStack, importPos []token.Position, mode int) (*Package, *PackageError) {
@@ -1026,10 +1028,4 @@ func DeclareCoverVars(p *Package, files ...string) map[string]*CoverVar {
 	}
 	return coverVars
 }
-
-"""
-
-
-
-
 ```

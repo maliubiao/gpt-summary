@@ -133,15 +133,17 @@ My thinking process to analyze the provided C++ test file went something like th
 
 `font_object_threaded_test.cc` 是 Blink 引擎中一个关键的测试文件，它专注于验证 `Font` 对象在多线程环境下的线程安全性。这对于确保浏览器在并发执行渲染任务时的稳定性和正确性至关重要。它涵盖了字体定义解析、默认字体获取、字体选择、文本拦截和字形组合等与字体相关的核心功能，并模拟了可能导致并发问题的场景。 理解这类测试文件有助于开发者深入了解浏览器引擎的内部工作原理以及多线程编程的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/threaded/font_object_threaded_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TSAN_TEST(FontObjectThreadedTest, WordShaperTest) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

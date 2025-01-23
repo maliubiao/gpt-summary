@@ -109,7 +109,7 @@ By following these steps, I can generate a comprehensive and accurate summary of
 
 **作为调试线索:** 如果用户在链接阶段遇到错误，例如 "找不到库" 或 "未定义的符号"，开发者可以查看 Meson 生成的链接命令，并根据 `mesonbuild/linkers/linkers.py` 中的代码来理解这些命令是如何生成的。这有助于诊断是 Meson 配置错误，还是底层链接器工具的问题。例如，如果链接命令中缺少 `-L` 参数，那么问题可能出在 Meson 如何处理库搜索路径；如果 `-l` 参数缺失或错误，则可能是用户未正确指定依赖库。通过查看具体的链接器类和其方法的实现，可以追踪问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -791,8 +793,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

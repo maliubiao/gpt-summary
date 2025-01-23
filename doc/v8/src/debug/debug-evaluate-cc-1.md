@@ -184,7 +184,7 @@ console.log(myArray); // 输出 [1, 2, 3, 5]，可能与预期不符
 
 总而言之，`v8/src/debug/debug-evaluate.cc` 的这部分代码是 V8 调试机制的关键组成部分，它负责精确地识别哪些内置操作是安全的，可以在调试评估期间执行而不会干扰程序状态，哪些操作可能产生副作用或需要额外的运行时检查以确保安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-evaluate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-evaluate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::kStringPrototypeSearch:
     case Builtin::kStringPrototypeSlice:
     case Builtin::kStringPrototypeSmall:
@@ -746,8 +748,4 @@ void DebugEvaluate::ApplySideEffectChecks(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

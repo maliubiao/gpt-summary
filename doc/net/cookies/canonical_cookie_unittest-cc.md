@@ -114,7 +114,7 @@ Here's a breakdown of how to approach this:
 
 `canonical_cookie_unittest.cc` 是一个至关重要的测试文件，它通过大量的单元测试，保证了 `CanonicalCookie` 类作为 Chromium 网络栈中 Cookie 处理的核心组件的正确性和健壮性。这些测试覆盖了 Cookie 的创建、属性解析、各种边缘情况和异常情况的处理，以及与特定安全和隐私属性（如 `HttpOnly`、`SameSite` 和 `Partitioned`）相关的行为。理解这个文件的功能有助于开发者理解 Chromium 如何处理 Cookie，并为调试 Cookie 相关的问题提供重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -849,7 +851,4 @@ TEST(CanonicalCookieTest, CreateWithPartitioned) {
 
 TEST(CanonicalCookieTest, CreateWithPartitioned_Localhost) {
   GURL url("http://localhost:8000/foo/ba
-"""
-
-
 ```

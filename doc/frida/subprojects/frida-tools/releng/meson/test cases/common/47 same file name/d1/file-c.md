@@ -136,7 +136,7 @@ func1 is leaving, modified return value: 100
 
 尽管 `file.c` 本身非常简单，但它在 Frida 项目的测试体系中扮演着重要的角色。 它可以作为测试 Frida 功能、构建系统处理同名文件能力的基础案例，并且可以作为逆向工程师学习和实验 Frida Hook 技术的起点。  用户可能在探索 Frida 源码、学习测试用例或者调试构建系统相关问题时，一步步地来到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/47 same file name/d1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,10 +144,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1(void) { return 42; }
-
-"""
-
 ```

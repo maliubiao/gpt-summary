@@ -271,7 +271,7 @@ std::ostream& operator<<(std::ostream& os, const SourceCodeOf& v);
 
 总而言之，`v8/src/objects/shared-function-info.h` 的第二部分继续完善了对 JavaScript 函数元数据的管理和访问机制。它定义了 `SharedFunctionInfo` 类的更多细节，引入了用于安全访问的包装类，提供了获取源代码信息的功能，并实现了一个用于控制函数编译状态的 RAII 类。所有这些机制都服务于 V8 引擎高效、正确地执行和优化 JavaScript 代码。 这部分代码是 V8 内部实现的核心组成部分，虽然开发者不会直接接触，但理解其功能有助于更深入地了解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/shared-function-info.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/shared-function-info.h以.tq结尾，那它是个v8 torque源代码，
@@ -279,8 +279,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // [name_or_scope_info]: Function name string, kNoSharedNameSentinel or
   // ScopeInfo.
   DECL_RELEASE_ACQUIRE_ACCESSORS(name_or_scope_info, Tagged<NameOrScopeInfoT>)
@@ -373,8 +375,4 @@ std::ostream& operator<<(std::ostream& os, const SourceCodeOf& v);
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_SHARED_FUNCTION_INFO_H_
-
-"""
-
-
 ```

@@ -102,15 +102,17 @@ void SomeFunction() {
 
 `event_dispatch_forbidden_scope.cc` 提供了一个用于在 Blink 渲染引擎内部暂时禁止事件派发的机制。虽然普通开发者不会直接操作它，但它的存在对保证引擎内部操作的正确性和避免某些并发问题至关重要。理解它的作用有助于理解 Chromium 如何管理事件流以及在某些情况下可能出现的事件处理延迟或丢失问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/events/event_dispatch_forbidden_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -124,7 +126,4 @@ unsigned EventDispatchForbiddenScope::count_ = 0;
 #endif  // DECHECK_IS_ON()
 
 }  // namespace blink
-
-"""
-
 ```

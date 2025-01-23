@@ -192,7 +192,7 @@ counters: []uint32{5, 2} // 假设有两个计数器，值为 5 和 2
 
 总而言之，`go/src/internal/coverage/encodecounter/encode.go` 是 Go 语言覆盖率功能的核心组成部分，负责将运行时的覆盖率信息编码成持久化的数据文件，供后续的覆盖率分析工具使用。它处理了文件结构、数据编码（包括字符串表和计数器编码）等关键细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/encodecounter/encode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -496,9 +498,4 @@ func (cfw *CoverageDataWriter) writeFooter() error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

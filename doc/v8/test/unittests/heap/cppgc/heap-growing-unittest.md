@@ -118,11 +118,13 @@ for (let i = 0; i < 100000; i++) {
 
 总而言之，`heap-growing-unittest.cc` 这个 C++ 文件是 V8 引擎内部测试其内存管理核心组件 `HeapGrowing` 的重要组成部分，它确保了 V8 能够有效地管理 JavaScript 程序的内存，并尽可能减少垃圾回收对程序执行的影响。虽然 JavaScript 开发者不能直接控制 `HeapGrowing` 的行为，但理解其背后的原理有助于理解 JavaScript 引擎的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/heap-growing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ TEST(HeapGrowingTest, IncrementalGCFinalized) {
 }
 
 }  // namespace cppgc::internal
-
-"""
-
 ```

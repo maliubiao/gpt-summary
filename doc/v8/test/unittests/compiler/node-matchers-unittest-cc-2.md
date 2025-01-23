@@ -162,7 +162,7 @@ function example(arr, index) {
 
 这部分代码是 V8 编译器测试套件的一部分，专门用于测试节点匹配器的功能。它重点测试了 `BaseWithIndexAndDisplacement64Matcher`（用于识别内存寻址模式）、`BranchMatcher`（用于识别分支节点）和 `DiamondMatcher`（用于识别 `if-else` 结构）的正确性。 这些匹配器在 V8 编译器理解和优化 JavaScript 代码的过程中起着至关重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-matchers-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/node-matchers-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ithIndexAndDisplacement(&match90, p1, 3, b0, d15);
 
   // S3 + (B0 + D15) -> [p1, 2, b0, d15]
@@ -755,8 +757,4 @@ TEST_F(NodeMatcherTest, DiamondMatcher_fail) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

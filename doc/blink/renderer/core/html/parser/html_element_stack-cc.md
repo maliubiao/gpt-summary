@@ -116,14 +116,16 @@ By following these steps, one can systematically analyze the source code and ext
 
 总而言之，`html_element_stack.cc` 是 Blink 引擎 HTML 解析器的核心组件，负责维护元素层级关系，处理各种 HTML 语法规则，并为构建正确的 DOM 树奠定基础，这对于网页的正常渲染和 JavaScript 的操作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_element_stack.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google, Inc. All Rights Reserved.
  * Copyright (C) 2011 Apple Inc. All rights reserved.
@@ -748,7 +750,4 @@ void HTMLElementStack::Show() {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

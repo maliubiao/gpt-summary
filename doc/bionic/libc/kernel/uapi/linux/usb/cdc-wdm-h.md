@@ -207,7 +207,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`bionic/libc/kernel/uapi/linux/usb/cdc-wdm.h` 定义了与 USB CDC-WDM 设备交互的关键常量，它在 Android 中用于支持移动数据连接，并通过 `ioctl` 系统调用在用户空间和内核驱动程序之间传递信息。理解这个文件有助于理解 Android 如何与底层的硬件进行通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/usb/cdc-wdm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -231,7 +233,4 @@ Prompt:
 #include <linux/types.h>
 #define IOCTL_WDM_MAX_COMMAND _IOR('H', 0xA0, __u16)
 #endif
-
-"""
-
 ```

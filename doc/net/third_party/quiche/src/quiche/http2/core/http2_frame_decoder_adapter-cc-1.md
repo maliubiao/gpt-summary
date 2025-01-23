@@ -145,7 +145,7 @@ fetch('https://example.com/data')
 
 总而言之，这部分代码着重于管理解码过程中的状态流转和错误处理，确保能够正确地解析 HTTP/2 帧并向上层报告解码结果或错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/http2_frame_decoder_adapter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ecodeInProgress";
       if (decoded_frame_header_) {
         if (IsDiscardingPayload()) {
@@ -420,8 +422,4 @@ bool SpdyFramerVisitorInterface::OnGoAwayFrameData(const char* /*goaway_data*/,
 }
 
 }  // namespace spdy
-
-"""
-
-
 ```

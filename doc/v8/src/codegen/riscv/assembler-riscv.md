@@ -89,12 +89,14 @@ In this example:
 
 Therefore, while JavaScript developers don't directly interact with this C++ code, it's a fundamental part of the machinery that allows their JavaScript code to run efficiently on RISC-V hardware. It bridges the gap between the high-level JavaScript language and the low-level instructions understood by the processor.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1923,7 +1925,4 @@ void Assembler::EmitHelper(T x) {
 }
 
 void Assembler::emit(Instr x
-"""
-
-
 ```

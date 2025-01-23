@@ -151,14 +151,16 @@ By following this structured approach, we can systematically understand the purp
 
 总而言之，`blink/renderer/platform/audio/iir_filter.cc` 文件是 Chromium 中实现 IIR 滤波器的核心代码，它直接支持 Web Audio API 的 `IIRFilterNode` 功能，并与 JavaScript 和 HTML 有着紧密的联系。理解其功能和潜在的使用错误对于开发 Web Audio 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/iir_filter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -399,7 +401,4 @@ double IIRFilter::TailTime(double sample_rate,
 }
 
 }  // namespace blink
-
-"""
-
 ```

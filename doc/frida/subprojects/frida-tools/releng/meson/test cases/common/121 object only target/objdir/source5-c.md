@@ -140,7 +140,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 总而言之，尽管 `source5.c` 本身功能极其简单，但在 Frida 的测试和开发环境中，它作为一个基本的测试目标，用于验证 Frida 的核心功能，例如模块加载、符号解析和代码注入等，特别是在处理“仅对象目标”的场景下。对于用户而言，接触到这个文件通常是因为他们在研究 Frida 的内部实现、调试 Frida 的测试用例，或者试图理解 Frida 如何与底层的二进制代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/121 object only target/objdir/source5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,12 +148,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func5_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

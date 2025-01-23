@@ -135,14 +135,16 @@ Initially, I might focus solely on the C++ code. However, realizing the "exporte
 
 `web_image_generator.cc` 提供了一个关键的桥梁，将原始的图像数据转换为 Skia 图形库可以使用的 `SkImageGenerator` 对象。 虽然开发者通常不会直接调用这个文件中的代码，但它在浏览器渲染网页上所有图像的过程中都发挥着至关重要的作用，因此与 JavaScript, HTML 和 CSS 的图像显示功能紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_image_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 Google Inc. All rights reserved.
  *
@@ -186,7 +188,4 @@ std::unique_ptr<SkImageGenerator> WebImageGenerator::CreateAsSkImageGenerator(
 }
 
 }  // namespace blink
-
-"""
-
 ```

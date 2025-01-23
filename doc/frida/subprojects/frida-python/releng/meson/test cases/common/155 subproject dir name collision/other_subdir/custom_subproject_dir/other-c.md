@@ -160,7 +160,7 @@ Frida 是一种动态插桩工具，常用于逆向工程。这段代码虽然�
 
 通过这些步骤，用户可以利用 Frida 的动态插桩能力，结合源代码分析，来理解目标应用程序中特定函数的行为，即使该函数位于具有复杂目录结构的子项目中。这个特定的文件作为 Frida 测试用例的一部分，旨在验证 Frida 在处理此类场景时的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/155 subproject dir name collision/other_subdir/custom_subproject_dir/other.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -189,7 +191,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

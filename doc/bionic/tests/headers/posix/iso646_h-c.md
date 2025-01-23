@@ -256,7 +256,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/tests/headers/posix/iso646_h.c` 是一个编译时测试文件，用于验证 Bionic 库提供的 `iso646.h` 头文件是否正确定义了标准规定的宏。它不涉及动态链接，用户使用错误通常是忘记包含头文件。虽然无法直接使用 Frida hook 这个测试文件，但可以使用 Frida hook 应用程序中使用了这些宏的运行时代码来观察其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/iso646_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -336,7 +338,4 @@ static void iso646_h() {
 #error xor_eq
 #endif
 }
-
-"""
-
 ```

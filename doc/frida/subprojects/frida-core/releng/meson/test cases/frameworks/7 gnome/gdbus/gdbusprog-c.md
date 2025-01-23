@@ -108,7 +108,7 @@ Let's break down the thought process for analyzing this C code and generating th
 
 总而言之，`gdbusprog.c` 是一个非常基础的 GDBus 服务端骨架创建示例，它本身的功能有限，但在逆向工程和调试 D-Bus 相关应用程序时，它可以作为理解 D-Bus 服务端基本原理、测试接口以及进行动态分析的起点。在 Frida 的上下文中，它很可能是一个测试用例或者一个简单的示例，用于演示如何创建和操作 D-Bus 骨架对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/7 gnome/gdbus/gdbusprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"generated-gdbus.h"
 
 int main(int argc, char **argv) {
@@ -126,7 +128,4 @@ int main(int argc, char **argv) {
     g_object_unref(s);
     return 0;
 }
-
-"""
-
 ```

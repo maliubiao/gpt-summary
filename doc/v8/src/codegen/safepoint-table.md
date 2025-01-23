@@ -134,11 +134,13 @@ When you set a breakpoint in a JavaScript debugger, V8 needs to pause execution 
 
 **In summary, `v8/src/codegen/safepoint-table.cc` defines the `SafepointTable` class, which is a fundamental internal component of V8 responsible for managing safepoints in generated code. While JavaScript developers don't directly interact with it, its correct functioning is critical for garbage collection, deoptimization, and debugging, all of which are essential for the reliable and performant execution of JavaScript code.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/safepoint-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ void SafepointTableBuilder::RemoveDuplicates() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

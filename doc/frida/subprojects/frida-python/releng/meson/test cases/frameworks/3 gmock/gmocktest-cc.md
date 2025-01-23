@@ -120,7 +120,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 总而言之，这个 `gmocktest.cc` 文件是一个微小的但重要的组成部分，它通过模拟对象行为来验证 Frida 框架的正确性，帮助开发者发现和修复潜在的 bug。它展示了如何使用 mocking 技术进行单元测试，并间接地反映了 Frida 作为动态插桩工具所涉及的底层技术和概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/3 gmock/gmocktest.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<gtest/gtest.h>
 #include<gmock/gmock.h>
 
@@ -157,7 +159,4 @@ TEST(counttest, once) {
 
     EXPECT_EQ(f.getValue(), 42) << "Got wrong value";
 }
-
-"""
-
 ```

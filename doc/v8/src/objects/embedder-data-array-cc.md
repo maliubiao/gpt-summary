@@ -149,15 +149,17 @@ fs.closeSync(fd);
 
 总而言之，`v8/src/objects/embedder-data-array.cc` 定义的 `EmbedderDataArray` 提供了一个重要的基础设施，允许嵌入器安全有效地管理与 V8 对象关联的自定义数据，从而扩展 V8 的功能并支持更复杂的嵌入式场景。 `EnsureCapacity` 函数是确保这种机制安全可靠的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/embedder-data-array.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/embedder-data-array.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ Handle<EmbedderDataArray> EmbedderDataArray::EnsureCapacity(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

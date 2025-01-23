@@ -126,7 +126,7 @@ console.log('func_from_language_runtime returned:', result); // 预期输出: fu
 
 `frida/subprojects/frida-node/releng/meson/test cases/common/117 shared module/runtime.c` 这个文件虽然代码量很少，但在 Frida 的测试框架中扮演着重要的角色，它模拟了一个简单的可加载模块，用于测试 Frida 的共享库加载和函数调用机制。它的存在方便了 Frida 开发人员验证核心功能，并提供了一个简单的示例供用户理解 Frida 的工作原理。 它的简单性也降低了测试和调试的复杂度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/117 shared module/runtime.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -155,7 +157,4 @@ Prompt:
 int DLL_PUBLIC func_from_language_runtime(void) {
     return 86;
 }
-
-"""
-
 ```

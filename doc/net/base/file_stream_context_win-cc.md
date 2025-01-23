@@ -169,15 +169,17 @@ By following this structured approach, breaking down the code, identifying key c
 
 总而言之，`net/base/file_stream_context_win.cc` 是 Chromium 在 Windows 平台上实现高性能异步文件操作的关键底层组件，它通过与 Windows API 的紧密集成，为上层网络功能和 JavaScript API 提供了基础支持。理解它的工作原理有助于调试与文件系统交互相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/file_stream_context_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ void FileStream::Context::ReadAsyncResult(BOOL read_file_ret,
 }
 
 }  // namespace net
-
-"""
-
 ```

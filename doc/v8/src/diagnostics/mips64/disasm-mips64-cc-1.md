@@ -115,7 +115,7 @@ long long c = a + b; // 这里会发生隐式类型转换
 
 这部分 `disasm-mips64.cc` 实现了 MIPS64 架构指令集的大部分解码和格式化功能，能够将机器码指令转换成可读的汇编代码字符串，用于 V8 引擎的调试和代码分析。它涵盖了寄存器操作、协处理器操作、特殊指令以及立即数操作等多种指令类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/mips64/disasm-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/mips64/disasm-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 RTS_WITH(format, "bp3"));
               PrintBp3(instr);
               return 3;
@@ -1345,7 +1347,4 @@ void Decoder::DecodeTypeImmediate(Instruction* instr) {
       break;
     case LDC1:
       Format(
-"""
-
-
 ```

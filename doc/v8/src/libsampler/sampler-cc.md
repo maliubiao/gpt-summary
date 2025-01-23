@@ -226,15 +226,17 @@ mainFunction -> helperFunction -> deeplyNestedFunction
 
 `v8/src/libsampler/sampler.cc` 是 V8 引擎中用于 CPU 性能剖析的关键组件，它提供了跨平台的采样机制来捕获线程的执行状态。虽然它本身不是 Torque 代码，但它支持了开发者对 JavaScript 代码进行性能分析，帮助他们识别和修复性能瓶颈。理解其工作原理有助于开发者更好地理解性能分析工具的输出，并避免常见的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libsampler/sampler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libsampler/sampler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -918,7 +920,4 @@ void Sampler::DoSample() {
 
 }  // namespace sampler
 }  // namespace v8
-
-"""
-
 ```

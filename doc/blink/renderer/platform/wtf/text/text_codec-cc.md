@@ -92,14 +92,16 @@ This step-by-step approach ensures a thorough analysis of the code and its impli
 
 总而言之，`blink/renderer/platform/wtf/text/text_codec.cc` 文件是 Blink 引擎处理文本编码的核心组成部分，它通过定义 `TextCodec` 基类和提供处理无法编码字符的机制，确保浏览器能够正确地解释和渲染来自不同来源和使用不同编码的文本内容。理解其功能有助于开发者避免常见的编码相关错误，并更好地理解浏览器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2006 Apple Computer, Inc.  All rights reserved.
  * Copyright (C) 2006 Alexey Proskuryakov <ap@nypop.com>
@@ -155,7 +157,4 @@ std::string TextCodec::GetUnencodableReplacement(UChar32 code_point,
 }
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -126,7 +126,7 @@ My thinking process to analyze the `style_engine_test.cc` file and answer the pr
 
 总而言之，`blink/renderer/core/css/style_engine_test.cc` 的第 7 部分主要集中在**细致地测试 Blink 引擎的 CSS 样式引擎在处理级联层和 `:has()` 伪类选择器时的正确性和性能**，同时也涵盖了一些其他 CSS 特性的边缘情况和健壮性测试。这些测试确保了浏览器能够按照 CSS 规范正确地渲染网页，并有效地处理动态的 DOM 结构和用户交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er(WebFeature::kCSSCascadeLayers);
   }
 
@@ -1183,7 +1185,4 @@ TEST_F(StyleEngineSimTest,
 
   second = GetDocument().getElementById(AtomicString("second"));
   EXPECT_TRUE(s
-"""
-
-
 ```

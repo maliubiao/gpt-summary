@@ -176,7 +176,7 @@ By following these steps, combining code analysis with conceptual understanding,
 
 总而言之，`gumallocationtracker.c` 是 Frida 中一个核心的组件，它提供了强大的内存分配跟踪功能，为动态逆向工程提供了重要的支持和信息。 理解其内部实现有助于更好地利用 Frida 进行程序分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/heap/gumallocationtracker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -706,7 +708,4 @@ gum_allocation_tracker_size_stats_remove_block (GumAllocationTracker * self,
   group = g_hash_table_lookup (self->block_groups_ht, GUINT_TO_POINTER (size));
   group->alive_now--;
 }
-
-"""
-
 ```

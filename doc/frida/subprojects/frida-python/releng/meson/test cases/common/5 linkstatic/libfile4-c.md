@@ -189,7 +189,7 @@ int func4(void) {
 
 虽然 `libfile4.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色。它可以用于测试 Frida 的基本 hook 能力、对静态链接库的处理以及作为其他更复杂测试的基础。通过分析这个简单的例子，我们可以更好地理解 Frida 的工作原理以及它与逆向工程、二进制底层和操作系统相关的知识。对于用户来说，理解这些简单的测试用例有助于他们更好地使用 Frida 进行实际的程序分析和修改工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/5 linkstatic/libfile4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,12 +197,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func4(void) {
     return 4;
 }
-
-"""
-
 ```

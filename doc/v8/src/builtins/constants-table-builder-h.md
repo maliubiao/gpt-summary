@@ -116,15 +116,17 @@ A developer might try to analyze the raw bytecode or machine code of a built-in 
 
 In summary, `v8/src/builtins/constants-table-builder.h` defines a crucial internal mechanism for V8 to efficiently manage and access constants used by built-in functions, especially for immutable off-heap code objects. It promotes code sharing and reduces redundancy by deduplicating constant values.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/constants-table-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/constants-table-builder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ class BuiltinsConstantsTableBuilder final {
 }  // namespace v8
 
 #endif  // V8_BUILTINS_CONSTANTS_TABLE_BUILDER_H_
-
-"""
-
 ```

@@ -302,7 +302,7 @@ rpc.exports = {
 
 `bionic/linker/linker_debug.handroid` 头文件定义了 Android 动态链接器的调试机制，通过全局配置和宏定义，允许开发者在运行时收集和观察链接器的内部状态。这对于理解库的加载过程、诊断链接错误至关重要。虽然它本身不包含 libc 函数的实现，但它提供的调试能力可以帮助开发者定位与 libc 以及其他共享库相关的链接问题。 通过 Frida 这样的工具，我们可以动态地 hook 相关的函数，更深入地了解动态链接器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_debug.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -387,7 +389,4 @@ __LIBC_HIDDEN__ void __linker_error(const char* fmt, ...) __printflike(1, 2);
       __linker_log(ANDROID_LOG_INFO, x); \
     } \
   } while (false)
-
-"""
-
 ```

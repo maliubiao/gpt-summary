@@ -197,7 +197,7 @@ By following this structured approach, combining code analysis with understandin
 
 总而言之，虽然 `hello.c` 本身非常简单，但它作为 Frida 的一个基础测试用例，可以用来演示 Frida 的基本功能，并帮助用户理解动态插桩的概念和调试流程。通过对这个简单程序的插桩，用户可以逐步学习如何将 Frida 应用于更复杂的逆向工程任务中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/wasm/1 basic/hello.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,15 +205,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main() {
   printf("Hello World\n");
   return 0;
 }
-
-"""
-
 ```

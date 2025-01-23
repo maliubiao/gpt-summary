@@ -117,11 +117,13 @@ foo();
 
 总而言之，`test-log-stack-tracer.cc` 是 V8 引擎的关键测试文件，它专注于确保 JavaScript 的堆栈跟踪功能能够可靠且准确地工作，这对于 JavaScript 的错误处理、调试和性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-log-stack-tracer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -417,7 +419,4 @@ TEST(JsEntrySp) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

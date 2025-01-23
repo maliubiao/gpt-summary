@@ -121,15 +121,17 @@ console.log(Object.is(nanValue, NaN)); // 输出: true
 
 这些测试对于确保 Liftoff 编译器在处理各种可能的、甚至是恶意的 WebAssembly 代码时能够保持稳定和安全至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-liftoff-for-fuzzing.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-liftoff-for-fuzzing.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ TEST(NondeterminismBinop) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -198,15 +198,17 @@ While JavaScript developers don't directly manage write barriers, understanding 
 
 `v8/src/heap/heap-write-barrier.cc` is a crucial piece of V8's infrastructure responsible for ensuring the correctness and efficiency of garbage collection. It intercepts pointer writes and records information necessary for the garbage collector to track live objects across different generations and memory spaces. While JavaScript developers don't directly interact with this code, understanding its purpose helps in appreciating how V8 manages memory and can indirectly inform coding practices for better performance.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-write-barrier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-write-barrier.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -776,7 +778,4 @@ bool WriteBarrier::VerifyDispatchHandleMarkingState(Tagged<HeapObject> host,
 #endif  // ENABLE_SLOW_DCHECKS
 
 }  // namespace v8::internal
-
-"""
-
 ```

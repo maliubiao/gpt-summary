@@ -113,7 +113,7 @@ Here's a thinking process to arrive at the analysis of the provided C code:
 
 总而言之，`alexandria.c` 虽然代码量很少，但它在 Frida 的动态插桩场景下可以发挥重要的作用，帮助逆向工程师进行代码跟踪、事件标记和自定义调试信息的输出。理解其背后的底层原理和可能出现的错误，有助于更好地利用 Frida 进行逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/17 prebuilt shared/alexandria.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,15 +121,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"alexandria.h"
 #include<stdio.h>
 
 void alexandria_visit() {
     printf("You are surrounded by wisdom and knowledge. You feel enlightened.\n");
 }
-
-"""
-
 ```

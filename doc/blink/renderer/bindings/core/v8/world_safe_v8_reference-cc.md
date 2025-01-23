@@ -134,15 +134,17 @@ By following these steps – understanding the core purpose, analyzing the funct
 
 **简而言之，`world_safe_v8_reference.cc` 是 Chromium Blink 引擎中用于维护 JavaScript 执行上下文隔离和安全性的重要组成部分，特别是在处理跨 world 的对象传递时。** 开发者在处理涉及 iframe、扩展、Web Workers 等场景下的跨 world 通信时，理解其背后的原理对于避免错误和调试问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/world_safe_v8_reference.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void WorldSafeV8ReferenceInternal::MaybeCheckCreationContextWorld(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -182,15 +182,17 @@ func main() {
 3. **删除操作的副作用:**  `remove` 操作通过将最后一个元素移动到被删除的位置来保持 `dense` 数组的紧凑。这意味着删除操作会改变元素的顺序，如果你依赖于 `contents()` 返回的元素的特定顺序，可能会出错。
 4. **并发安全:**  这段代码没有实现任何并发控制，如果在多个 goroutine 中同时访问和修改 `sparseMapPos`，可能会导致数据竞争和未定义的行为。在并发环境中使用需要额外的同步机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/sparsemappos.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -270,9 +272,4 @@ func (s *sparseMapPos) clear() {
 func (s *sparseMapPos) contents() []sparseEntryPos {
 	return s.dense
 }
-
-"""
-
-
-
 ```

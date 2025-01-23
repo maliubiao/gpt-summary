@@ -114,7 +114,7 @@ largeArray(); // 可能导致栈溢出
 
 作为第 3 部分（共 7 部分），这段代码集中体现了指令选择器在将 V8 编译器的中间表示转换为具体的 ARM 机器指令过程中的核心职责。 它专注于处理基本的整数和浮点数算术运算、位操作、双字操作以及栈指针检查。 代码中包含针对 ARM 架构的优化策略，以生成更高效的机器码。 这部分的功能是代码生成过程中的关键环节，直接影响到最终 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-selector-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/instruction-selector-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,8 +122,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 onSelectorT<Adapter>::VisitStackPointerGreaterThan(
     node_t node, FlagsContinuation* cont) {
   StackCheckKind kind;
@@ -949,7 +951,4 @@ void InstructionSelectorT<Adapter>::VisitFloat32Add(node_t node) {
     }
     const Operation& rhs = this->Get(add.right());
     if (rhs.Is<Opmask::kFloat32
-"""
-
-
 ```

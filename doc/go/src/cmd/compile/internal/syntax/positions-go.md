@@ -227,15 +227,17 @@ case *AssignStmt:
 
 总结来说，`go/src/cmd/compile/internal/syntax/positions.go` 是 Go 编译器中一个关键的辅助文件，它提供了计算语法树节点起始和近似结束位置的功能，这对于错误报告、代码分析和各种编译器内部操作至关重要。 理解其工作原理对于参与 Go 编译器开发的人员非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/syntax/positions.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -601,9 +603,4 @@ func lastField(list []*Field) *Field {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

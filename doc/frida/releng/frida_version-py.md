@@ -172,7 +172,7 @@ By following this detailed analysis and refinement process, we arrive at the com
 
 `frida/releng/frida_version.py` 是一个实用的小工具，用于获取 Frida 动态Instrumentation 工具的版本信息。它通过解析 Git 仓库的描述信息来实现，与逆向工程紧密相关，并间接涉及到二进制底层、操作系统内核等知识。了解其功能和潜在的使用错误，有助于更好地使用和调试 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/frida_version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -251,7 +253,4 @@ def detect(repo: Path) -> FridaVersion:
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

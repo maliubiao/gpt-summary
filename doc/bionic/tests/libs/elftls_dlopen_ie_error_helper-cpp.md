@@ -260,7 +260,7 @@ if (Process.platform === 'android') {
 
 总而言之，`bionic/tests/libs/elftls_dlopen_ie_error_helper.cpp` 是一个用于验证 Bionic 动态链接器在处理特定 TLS 访问模型时的行为的测试程序。理解它的功能和背后的原理有助于理解 Android 系统中动态链接和 TLS 的工作方式以及可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/elftls_dlopen_ie_error_helper.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -318,7 +320,4 @@ int main() {
   }
   return 0;
 }
-
-"""
-
 ```

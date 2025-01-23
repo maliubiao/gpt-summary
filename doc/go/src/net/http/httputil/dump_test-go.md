@@ -244,7 +244,7 @@ Go 的测试框架会查找以 `_test.go` 结尾的文件并执行其中的测�
 
 总而言之，这段测试代码全面地验证了 `httputil.DumpRequest` 和 `httputil.DumpResponse` 函数在各种场景下的行为，确保这些工具函数能够正确地为开发者提供 HTTP 消息的文本表示，辅助调试和日志记录。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/httputil/dump_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -252,8 +252,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -786,9 +788,4 @@ func TestDumpRequestOutIssue38352(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

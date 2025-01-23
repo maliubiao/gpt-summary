@@ -139,15 +139,17 @@ By following this structured approach, we can systematically analyze the source 
 
 总而言之，`layout_inline.cc` (第一部分) 的核心在于定义了 `LayoutInline` 类，该类负责 **行内级别元素的布局计算和管理**。它处理了行内元素的样式应用、子元素管理（包括匿名块级容器的创建）、尺寸和位置计算、坐标转换、以及命中测试等关键任务。该文件是 Blink 渲染引擎中处理行内元素显示的核心组件，并已部分集成了 LayoutNG 的相关特性。它直接关联着 HTML 中行内元素的呈现方式和 CSS 样式的应用效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_inline.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -1034,7 +1036,4 @@ void LayoutInline::UpdateHitTestResult(HitTestResult& result,
 void LayoutInline::DirtyLinesFromChangedChild(LayoutObject* child) {
   NOT_DESTROYED();
   if (IsInL
-"""
-
-
 ```

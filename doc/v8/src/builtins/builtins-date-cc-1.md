@@ -158,7 +158,7 @@ Now, I can formulate the response based on these observations.
 
 这部分代码主要实现了 `Date` 对象原型中与**日期和时间格式化**（本地化和 UTC）、**年份的获取和设置**（包括对旧方法的兼容）以及**转换为 JSON 字符串和 Temporal API 的 Instant 对象**相关的功能。它提供了将 `Date` 对象以不同格式呈现以及与新的日期时间 API 互操作的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-date.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-date.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 / required
                    JSDateTimeFormat::DefaultsOption::kTime,  // defaults
                    method_name));                            // method_name
@@ -279,8 +281,4 @@ BUILTIN(DatePrototypeToTemporalInstant) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

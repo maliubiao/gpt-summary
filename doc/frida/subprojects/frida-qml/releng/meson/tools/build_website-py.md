@@ -192,7 +192,7 @@ By following this structured approach, we can systematically analyze the code an
 
 总而言之，这个脚本是一个用于自动化部署 Frida QML 文档网站的工具，它利用了 Meson 构建系统和 Git 版本控制，涉及到文件操作、子进程调用等编程技术。理解这个脚本的功能有助于理解 Frida QML 文档的构建和发布流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/tools/build_website.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, subprocess, shutil
@@ -253,7 +255,4 @@ def update() -> None:
 
 if __name__ == '__main__':
     update()
-
-"""
-
 ```

@@ -175,7 +175,7 @@ Internally, V8's generated code would likely use functions like `IsObjectType` t
 
 This part of the `macro-assembler-arm64.cc` file is fundamental for the correct and efficient execution of JavaScript code on ARM64 architectures within the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/macro-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/macro-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -183,9 +183,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
- actual_parameter_count) {
+### 源代码
+```cpp
+actual_parameter_count) {
   ASM_CODE_COMMENT(this);
   DCHECK(!AreAliased(x5, fun, new_target,
                      expected_parameter_count_or_dispatch_handle,
@@ -1071,7 +1073,4 @@ void MacroAssembler::AtomicDecompressTagged(const Register& destination,
   Add(temp, base, index);
   Ldar(destination.W(), temp);
   Add
-"""
-
-
 ```

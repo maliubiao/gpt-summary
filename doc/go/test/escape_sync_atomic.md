@@ -175,15 +175,17 @@ func main() {
 
 总而言之，这段代码通过断言编译器的逃逸分析结果，验证了在使用 `sync/atomic` 和 `unsafe.Pointer` 时，编译器是否能够正确地判断变量是否需要逃逸到堆上，从而帮助开发者理解和避免潜在的内存管理问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_sync_atomic.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -222,9 +224,4 @@ func CompareAndSwapPointer() {
 	var y int // ERROR "moved to heap: y"
 	atomic.CompareAndSwapPointer(&ptr, unsafe.Pointer(&x), unsafe.Pointer(&y))
 }
-
-"""
-
-
-
 ```

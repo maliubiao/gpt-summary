@@ -140,15 +140,17 @@ Essentially, my approach involved a combination of code scanning, pattern recogn
 
 **总结来说，`WebFrameWidgetImpl` 的这一部分代码主要负责管理 WebFrame 的生命周期，接收并应用视觉属性的更新，驱动渲染合成流程，并与浏览器和外部环境进行交互。它在 Blink 渲染引擎中扮演着至关重要的角色，直接影响着页面的显示、性能和用户交互。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 otExpected(request);
 }
 
@@ -986,7 +988,4 @@ bool WebFrameWidgetImpl::ScrollFocusedEditableElementIntoView() {
           mojom::blink::ScrollType::kProgrammatic,
           /*make_visible_in_visual_viewport=*/false,
           mojom::blink::ScrollBe
-"""
-
-
 ```

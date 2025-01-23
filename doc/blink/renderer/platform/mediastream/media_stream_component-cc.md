@@ -144,14 +144,16 @@ MediaStreamComponents* components = new MediaStreamComponents(audio_track, nullp
 
 总之，`blink/renderer/platform/mediastream/media_stream_component.cc`  定义了一个核心的数据结构，用于在 Blink 渲染引擎中组织和管理媒体流的组成部分。虽然它本身不直接涉及 JavaScript, HTML, 或 CSS 代码，但它是实现 WebRTC 功能的关键底层组件，直接影响着这些上层技术的行为和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_component.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Ericsson AB. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -199,7 +201,4 @@ void MediaStreamComponents::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

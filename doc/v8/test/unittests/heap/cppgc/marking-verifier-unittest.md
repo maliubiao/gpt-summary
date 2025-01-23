@@ -131,11 +131,13 @@ let registry = new WeakRef({ value: 3 }); // 使用 WeakRef 创建弱引用
 
 `marking-verifier-unittest.cc` 文件是 V8 引擎中一个重要的测试组件，它通过各种单元测试来确保垃圾回收的标记阶段能够正确地识别和处理存活的对象。这直接关系到 JavaScript 程序的内存管理和性能，保证了 JavaScript 程序的稳定性和可靠性。 虽然 JavaScript 开发者不直接参与 V8 的底层实现，但这些测试确保了 JavaScript 运行时的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/marking-verifier-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -457,7 +459,4 @@ TEST_F(MarkingVerifierDeathTest, DiesOnResurrectedWeakMember) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

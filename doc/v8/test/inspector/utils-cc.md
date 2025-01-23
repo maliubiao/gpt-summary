@@ -158,15 +158,17 @@ console.log(codePoints); // 输出与 C++ 中 ToVector 得到的结果类似
 
 总而言之，`v8/test/inspector/utils.cc` 提供了一组方便的工具函数，用于在 V8 的 Inspector 测试环境中进行字符串的格式转换，这对于测试 Inspector 的功能以及确保其正确处理 JavaScript 字符串至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/inspector/utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/inspector/utils.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ std::vector<uint16_t> ToVector(v8::Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

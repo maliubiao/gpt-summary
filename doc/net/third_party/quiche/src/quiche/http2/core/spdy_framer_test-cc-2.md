@@ -120,7 +120,7 @@ Chromium 的网络栈会将这个请求转换成一系列 HTTP/2 帧，其中可
 
 这部分 `spdy_framer_test.cc` 代码是 `SpdyFramer` 类的单元测试，它详细验证了 `SpdyFramer` 能否正确地将各种类型的 HTTP/2 帧从内部表示 (例如 `SpdyDataIR`, `SpdyHeadersIR`) 序列化成符合协议规范的二进制数据。这些测试覆盖了不同帧类型的各种参数组合和边界情况，确保了 HTTP/2 帧生成逻辑的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/spdy_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ta_ir(/* stream_id = */ 1, bytes);
     // The pad length field itself is used for the 1-byte padding and no padding
     // payload is needed.
@@ -970,7 +972,4 @@ TEST_P(SpdyFramerTest, SendUnexpectedContinuation) {
   deframer_->set_visitor(&visitor);
 
   /
-"""
-
-
 ```

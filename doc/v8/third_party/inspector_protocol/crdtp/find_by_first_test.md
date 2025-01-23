@@ -115,11 +115,13 @@ if (handler) {
 
 `find_by_first_test.cc` 测试的 `FindByFirst` 函数是一个用于在排序数据结构中高效查找的通用工具。在 V8 引擎的上下文中，它很可能被用于管理和查找与 JavaScript 运行时和调试相关的数据，例如网络请求信息、断点信息、JavaScript 对象等，从而支持 Chrome DevTools 协议的功能。 JavaScript 的例子展示了一个类似的查找需求和实现思路，尽管 JavaScript 通常不需要像 C++ 那样关注底层的内存表示 (`span<uint8_t>`) 和指针管理 (`std::unique_ptr`)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/find_by_first_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ TEST(FindByFirst, ObjectBySpan) {
   }
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

@@ -108,11 +108,13 @@ const shuffled = SIMD.Int32x4.shuffle(a, b, 0, 4, 2, 6);
 
 总而言之，`v8/src/wasm/simd-shuffle.cc` 是 V8 引擎中用于理解和优化 SIMD 数据重排操作的关键组件，它直接支持了 WebAssembly 和 JavaScript 中 SIMD 功能的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/simd-shuffle.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -544,7 +546,4 @@ bool SimdSwizzle::AllInRangeOrTopBitSet(
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -110,14 +110,16 @@ This C++ test file itself doesn't directly interact with JavaScript, HTML, or CS
 
     **举例说明：**  开发者可能期望在所有版本的 Chromium 上都能使用 H.265 编码，但实际上 H.265 的支持可能需要特定的 Feature Flag (`kWebRtcAllowH265Send`) 启用。如果这个 Flag 没有启用，`RTCVideoEncoderFactory` 会报告不支持 H.265。这个测试文件通过模拟不同的 Feature Flag 状态，确保 `RTCVideoEncoderFactory` 在不同的 Flag 配置下行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder_factory_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -601,7 +603,4 @@ TEST_F(RTCVideoEncoderFactoryTest, SupportedFormatsHaveScalabilityModes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

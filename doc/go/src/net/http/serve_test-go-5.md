@@ -182,7 +182,7 @@ func ExampleMaxBytesHandler() {
 
 作为第 6 部分，这个代码片段的主要功能是**深入测试 `net/http.Server` 类型的各种高级特性和边界情况**。它涵盖了服务器的生命周期管理（启动、关闭）、连接管理（Keep-Alive）、超时控制、请求处理的细节（方法验证、请求体大小限制）、连接劫持、上下文管理以及一些不太常见但重要的场景（如处理不可比较的 Listener、不支持的传输编码）。  通过这些细致的测试，可以确保 `net/http.Server` 在各种复杂情况下都能稳定可靠地运行，并符合 HTTP 协议规范。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/serve_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 tdown is broken.
 
 	if states := <-statesRes; states[StateActive] != 1 {
@@ -1326,9 +1328,4 @@ func testMaxBytesHandler(t *testing.T, mode testMode, maxSize, requestSize int64
 		getBody := func() (io.ReadCloser, error) {
 			wg.Add(1)
 			body := &wgRead
-"""
-
-
-
-
 ```

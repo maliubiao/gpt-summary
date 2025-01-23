@@ -171,7 +171,7 @@ By following this thought process, combining code analysis with contextual infor
 
 总而言之，`eftest.cpp` 虽然是一个简单的测试程序，但它在 Frida 的测试框架中扮演着验证基础功能的重要角色。对于逆向工程师和 Frida 开发者来说，理解这类测试用例有助于他们更好地掌握 Frida 的使用和内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/89 default library/eftest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"ef.h"
 
 #include<iostream>
@@ -195,7 +197,4 @@ int main(int, char **) {
         return 1;
     }
 }
-
-"""
-
 ```

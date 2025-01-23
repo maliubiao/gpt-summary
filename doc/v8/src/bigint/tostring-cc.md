@@ -170,15 +170,17 @@ console.log(bigIntToHex(myBigInt));  // 自定义实现，可能存在 bug
 
 总而言之，`v8/src/bigint/tostring.cc` 是 V8 引擎中负责将 `BigInt` 对象高效、正确地转换为各种进制字符串的关键组件。它通过多种优化算法和严谨的代码逻辑，确保了 JavaScript 中 `BigInt` 到字符串转换的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/tostring.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/bigint/tostring.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -792,7 +794,4 @@ uint32_t ToStringResultLength(Digits X, int radix, bool sign) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

@@ -92,7 +92,7 @@ Here's a plan to address the request:
 
 第二部分的单元测试主要集中在 `SpdyProxyClientSocket` 的 **健壮性和错误处理能力**。它详细测试了在连接的生命周期中各种异常情况下的行为，例如连接关闭、断开、接收到错误帧等，以及如何正确地处理待处理的读写操作和网络日志记录。这些测试确保了 `SpdyProxyClientSocket` 在各种复杂的网络环境下都能稳定可靠地工作，并为上层应用提供正确的网络通信服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_proxy_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 be
   // buffered.
   ResumeAndRun();
@@ -861,8 +863,4 @@ TEST_P(SpdyProxyClientSocketTest, WriteAfterStreamEndSent) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

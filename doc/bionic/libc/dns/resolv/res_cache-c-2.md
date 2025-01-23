@@ -49,7 +49,7 @@ Response:
 
 希望这个归纳对您有所帮助!
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_cache.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -61,10 +61,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-            cache_info->nsstats->sample_count = cache_info->nsstats->sample_next = 0;
+### 源代码
+```c
+cache_info->nsstats->sample_count = cache_info->nsstats->sample_next = 0;
         }
     }
 }
@@ -169,8 +170,4 @@ _resolv_cache_add_resolver_stats_sample( unsigned netid, int revision_id, int ns
 
     pthread_mutex_unlock(&_res_cache_list_lock);
 }
-
-"""
-
-
 ```

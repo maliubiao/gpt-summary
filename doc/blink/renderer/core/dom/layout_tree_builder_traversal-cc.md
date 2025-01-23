@@ -205,15 +205,17 @@ A user's actions can indirectly lead to this code being executed. Here's a step-
 
 **In summary, `layout_tree_builder_traversal.cc` is a foundational file in the Blink rendering engine, providing the core logic for navigating and understanding the structure of the layout tree, which is essential for correctly rendering web pages with complex HTML, CSS, and dynamic JavaScript interactions.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/layout_tree_builder_traversal.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -985,7 +987,4 @@ int LayoutTreeBuilderTraversal::ComparePreorderTreePosition(const Node& node1,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -203,7 +203,7 @@ function getProperty(obj) {
 
 这部分 `MacroAssembler` 的功能进一步扩展了其在 s390 架构上生成高效机器码的能力。它提供了处理各种 V8 内部数据结构（如 Tagged 值、Smi、对象）的方法，支持 JavaScript 函数的调用和优化，并与垃圾回收机制紧密结合。这些方法是 V8 引擎将 JavaScript 代码转换为可执行机器码的关键组成部分。该文件不是 Torque 代码，因为它以 `.h` 结尾，是 C++ 头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/macro-assembler-s390.h以.tq结尾，那它是个v8 torque源代码，
@@ -211,8 +211,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 mOperand& field_operand,
                        const Register& scratch = no_reg);
   void LoadTaggedSignedField(Register destination, MemOperand field_operand);
@@ -631,8 +633,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_S390_MACRO_ASSEMBLER_S390_H_
-
-"""
-
-
 ```

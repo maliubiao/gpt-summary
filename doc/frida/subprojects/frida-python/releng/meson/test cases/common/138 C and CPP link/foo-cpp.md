@@ -123,7 +123,7 @@ int get_number_index(void) {
 
 总而言之，`foo.cpp` 文件虽然简单，但它有效地演示了 C 和 C++ 代码的互操作性以及 Frida 动态插桩的基本原理，并为测试 Frida 的功能提供了一个具体的例子。对于理解 Frida 的工作方式以及逆向工程中常用的技术，分析这样的测试用例是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/138 C and CPP link/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -167,7 +169,4 @@ namespace {
 extern "C" int six_one(void) {
     return numbers[get_number_index ()];
 }
-
-"""
-
 ```

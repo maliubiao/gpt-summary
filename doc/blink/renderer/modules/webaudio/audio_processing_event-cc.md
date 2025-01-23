@@ -198,15 +198,17 @@ By following this thought process, combining knowledge of web technologies, C++,
 
 总而言之，`audio_processing_event.cc` 文件定义了 Web Audio API 中用于实时音频处理的关键事件对象，它连接了底层的音频数据和 JavaScript 的处理逻辑，使得开发者能够灵活地控制音频流。理解这个文件有助于深入了解 Web Audio API 的工作原理以及在浏览器引擎中的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_processing_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -288,7 +290,4 @@ void AudioProcessingEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -231,15 +231,17 @@ console.log(profile);
 
 总结来说，`v8/src/profiler/heap-profiler.cc` 是 V8 引擎中负责堆分析的核心组件，它提供了强大的工具来帮助开发者理解 JavaScript 程序的内存使用情况，并诊断和修复与内存相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/heap-profiler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2009-2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -616,7 +618,4 @@ void HeapProfiler::QueryObjects(DirectHandle<Context> context,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

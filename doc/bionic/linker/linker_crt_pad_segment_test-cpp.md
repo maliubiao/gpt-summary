@@ -243,7 +243,7 @@ if (getPadSegmentAddress) {
 
 总而言之，`bionic/linker/linker_crt_pad_segment_test.cpp` 是一个关键的单元测试，用于确保 Android 动态链接器能够正确处理包含特定 Note 信息的共享对象，特别是与页面大小迁移特性相关的内存段填充策略。理解这个测试的功能有助于深入了解 Android 系统中动态链接的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_crt_pad_segment_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -349,7 +351,4 @@ TEST(crt_pad_segment, note_present_and_disabled) {
   }
   ASSERT_FALSE(GetPadSegment("crt_pad_segment_disabled.so"));
 }
-
-"""
-
 ```

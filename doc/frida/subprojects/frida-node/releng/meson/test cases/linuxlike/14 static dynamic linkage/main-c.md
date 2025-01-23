@@ -131,7 +131,7 @@ By following this structured approach, and constantly relating the specific code
 
 因此，到达 `frida/subprojects/frida-node/releng/meson/test cases/linuxlike/14 static dynamic linkage/main.c` 这个文件的路径，通常意味着开发者正在进行 Frida 的 Node.js 绑定的相关开发和测试工作，并且遇到了与静态/动态链接库处理相关的问题，需要通过这个简单的测试用例来验证或调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/linuxlike/14 static dynamic linkage/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "stdio.h"
 #include "zlib.h"
 
@@ -148,7 +150,4 @@ int main(void) {
     printf("%s\n", zlibVersion());
     return 0;
 }
-
-"""
-
 ```

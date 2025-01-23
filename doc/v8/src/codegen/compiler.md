@@ -73,12 +73,14 @@ eval('function multiply(x, y) { return x * y; } multiply(3, 4);');
 
 总而言之，`compiler.cc` 是 V8 引擎将 JavaScript 代码“翻译”成计算机可以理解并执行的指令的关键组件。它负责代码生成和优化的核心流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1689,7 +1691,4 @@ MaybeHandle<SharedFunctionInfo> CompileToplevel(
       finalize_unoptimized_compilation_data_list;
 
   // Prepare and execute compilation of the outer
-"""
-
-
 ```

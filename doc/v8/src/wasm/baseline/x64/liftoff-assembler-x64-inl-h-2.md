@@ -165,7 +165,7 @@ WebAssembly.instantiate(wasmCode).then(instance => {
 
 总而言之，这部分代码是 WebAssembly Liftoff 编译器在 x64 架构上生成高效机器码的关键组成部分，涵盖了多种算术运算、类型转换、控制流和 SIMD 操作的汇编代码生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/x64/liftoff-assembler-x64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/x64/liftoff-assembler-x64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -173,8 +173,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 dst != lhs) movsd(dst, lhs);
     divsd(dst, rhs);
   }
@@ -1088,8 +1090,5 @@ void LiftoffAssembler::emit_i8x16_gt_u(LiftoffRegister dst, LiftoffRegister lhs,
     Movaps(kScratchDoubleReg, rhs.fp());
     ref = kScratchDoubleReg;
   }
-  liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxub, 
-"""
-
-
+  liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxub,
 ```

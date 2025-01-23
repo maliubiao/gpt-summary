@@ -190,15 +190,17 @@ By following this thought process, breaking down the problem, and systematically
 
 总而言之，`dynamics_compressor_node_test.cc` 作为一个单元测试文件，对于确保 `DynamicsCompressorNode` 在 Blink 引擎中的正确实现至关重要。它不仅验证了核心功能，也关注了资源管理等重要的实现细节。开发者可以通过研究这些测试用例来理解 Web Audio API 的底层实现，并辅助进行问题排查和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/dynamics_compressor_node_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ TEST(DynamicsCompressorNodeTest, ProcessorLifetime) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

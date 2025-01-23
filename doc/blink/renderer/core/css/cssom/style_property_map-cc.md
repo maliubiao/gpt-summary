@@ -151,15 +151,17 @@ This detailed thought process, moving from a high-level understanding to the imp
 
 总而言之，`blink/renderer/core/css/cssom/style_property_map.cc` 是 Blink 引擎中至关重要的一个文件，它实现了 CSS Typed OM 的核心功能，负责以类型安全的方式管理和操作元素的 CSS 样式，并连接了 JavaScript、HTML 和 CSS 三种 web 技术。理解它的功能有助于深入理解浏览器如何处理和应用样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/style_property_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -617,7 +619,4 @@ void StylePropertyMap::clear() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

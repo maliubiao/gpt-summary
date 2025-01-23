@@ -199,7 +199,7 @@ This part of `v8/test/cctest/test-code-stub-assembler.cc` provides a comprehensi
 
 These tests are crucial for ensuring the reliability and correctness of the low-level code generation within the V8 engine. They help catch bugs and regressions in the `CodeStubAssembler` as the engine evolves.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -207,8 +207,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 emblerTester asm_tester(isolate, JSParameterCount(kNumParams));
   CodeStubAssembler m(asm_tester.state());
 
@@ -1024,7 +1026,4 @@ class AppendJSArrayCodeStubAssembler : public CodeStubAssembler {
                                 Tagged<Object> o3, Tagged<Object> o4,
                                 int initial_size, int result_size) {
     CodeAssemblerTester asm_tester(isolate, i::JSParameterCount(k
-"""
-
-
 ```

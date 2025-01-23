@@ -156,14 +156,16 @@ By following these steps, iteratively analyzing the code, and connecting it to b
 
 `rtc_video_decoder_adapter.cc` 是 Blink 渲染引擎中 WebRTC 视频解码的关键组件，它负责将 WebRTC 的视频流解码成浏览器可以渲染的格式，并处理解码过程中的各种复杂情况，包括硬件加速、软件回退、错误处理和动态重初始化。它通过 C++ 实现，并在幕后支撑着 WebRTC 在 JavaScript、HTML 和 CSS 构建的网页中的视频功能。理解其功能和潜在的错误使用场景对于开发健壮的 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_decoder_adapter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1101,7 +1103,4 @@ void RTCVideoDecoderAdapter::DecrementCurrentDecoderCountForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -134,14 +134,16 @@ The user wants to understand the functionality of the `InspectorPerformanceAgent
 
 理解 `InspectorPerformanceAgent` 如何跟踪这些指标，可以帮助开发者更好地理解和优化他们的代码，从而提升网页的性能。虽然开发者不能直接使用这个类，但可以通过 Chrome DevTools 的 Performance 面板来查看这些指标，并根据这些指标来定位性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_performance_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ void InspectorPerformanceAgent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

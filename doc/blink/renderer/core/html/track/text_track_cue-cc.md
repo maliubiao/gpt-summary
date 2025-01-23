@@ -200,15 +200,17 @@ cue.startTime = 12.0;
 
 总而言之，`text_track_cue.cc` 中定义的 `TextTrackCue` 类是 Blink 引擎处理网页中视频和音频文本轨道的核心组成部分，它负责存储、管理和通知关于单个文本提示的信息和状态变化，并与 HTML 的 `<track>` 元素和 JavaScript 的 TextTrack API 紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/text_track_cue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc.  All rights reserved.
  * Copyright (C) 2011, 2012, 2013 Apple Inc. All rights reserved.
@@ -350,7 +352,4 @@ void TextTrackCue::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

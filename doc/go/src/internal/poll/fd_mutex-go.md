@@ -386,7 +386,7 @@ Read after close: , Error: read lock failed: fd is closing or closed
 
 `go/src/internal/poll/fd_mutex.go` 中定义的 `fdMutex` 是一个用于管理文件描述符并发访问和生命周期的底层同步原语。它通过读写锁和引用计数来确保对文件描述符的安全访问，并防止过早关闭。虽然开发者不会直接使用它，但理解其功能有助于理解 Go 语言中并发 I/O 的工作原理，并避免常见的资源管理错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_mutex.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -394,8 +394,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -648,9 +650,4 @@ func (fd *FD) writeUnlock() {
 		fd.destroy()
 	}
 }
-
-"""
-
-
-
 ```

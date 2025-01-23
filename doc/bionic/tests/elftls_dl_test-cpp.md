@@ -372,7 +372,7 @@ if (getTlsAddress) {
 
 `bionic/tests/elftls_dl_test.cpp` 是一个关键的测试文件，用于验证 Android Bionic 库中动态链接器对 TLS 变量的管理和访问是否正确。通过分析这个文件，我们可以深入了解 Android 系统中动态链接和线程本地存储的工作原理，以及常见的编程错误和调试方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/elftls_dl_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -383,8 +383,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -736,7 +738,4 @@ TEST(elftls_dl, dl_iterate_phdr) {
   ASSERT_GE(var_addr, tls_info.data);
   ASSERT_LT(var_addr, static_cast<char*>(tls_info.data) + tls_info.memsz);
 }
-
-"""
-
 ```

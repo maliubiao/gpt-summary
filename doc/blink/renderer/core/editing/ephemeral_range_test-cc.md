@@ -154,15 +154,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`ephemeral_range_test.cc` 是 Blink 引擎中一个重要的测试文件，它确保了 `EphemeralRange` 这个用于编辑操作的关键组件能够正确地遍历和处理 DOM 节点，包括在复杂的 Shadow DOM 场景下。它的正确性直接影响到浏览器中许多与文本和 DOM 操作相关的功能的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ephemeral_range_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -420,7 +422,4 @@ TEST_F(EphemeralRangeTest, EquivalentPositions) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

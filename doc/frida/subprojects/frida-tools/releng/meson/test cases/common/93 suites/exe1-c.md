@@ -168,7 +168,7 @@ if (Process.platform === 'linux') {
 
 因此，`exe1.c` 的存在是为了作为一个简单但可靠的测试目标，用于验证 Frida 的基本功能，并作为回归测试的一部分，确保代码的修改不会破坏现有功能。 当测试失败时，开发者会查看这个简单的 `exe1.c` 及其输出，结合 Frida 的日志信息，来定位问题的根源。 例如，如果修改 Frida 代码后，`exe1` 的输出不再是预期的 "I am test exe1.\n"，或者 Frida 无法成功附加到 `exe1` 进程，这就说明最近的修改可能引入了 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/93 suites/exe1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,15 +176,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I am test exe1.\n");
     return 0;
 }
-
-"""
-
 ```

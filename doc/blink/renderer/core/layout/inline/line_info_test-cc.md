@@ -123,14 +123,16 @@ This systematic approach, starting with a high-level overview and progressively 
 
 `line_info_test.cc` 文件通过一个具体的例子测试了 `LineInfo` 类的 `InflowEndOffset()` 方法，验证了布局引擎在处理包含 `<ruby>` 这样复杂行内元素时的偏移量计算的正确性。这对于确保网页能够正确渲染各种复杂的文本布局至关重要。虽然开发者不直接使用 `LineInfo`，但理解其功能有助于避免与文本布局相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_info_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ TEST_F(LineInfoTest, InflowEndOffset) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

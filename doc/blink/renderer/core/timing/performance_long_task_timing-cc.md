@@ -200,15 +200,17 @@ By following this structured analysis, combining code examination with knowledge
 
 总而言之，`performance_long_task_timing.cc` 是 Blink 引擎中负责度量和报告影响用户体验的长任务的关键组件，它通过 Performance API 将这些信息暴露给开发者，帮助他们诊断和优化网页性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/performance_long_task_timing.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ void PerformanceLongTaskTiming::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

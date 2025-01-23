@@ -166,15 +166,17 @@ console.log(a + b === c); // Output: false (often, due to floating-point represe
 
 In summary, `v8/src/codegen/arm64/instructions-arm64-constants.cc` is a crucial file for V8's ARM64 code generation, ensuring correct handling of special floating-point values by defining their precise bit representations. This directly impacts how JavaScript code behaves when dealing with concepts like Infinity and NaN.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/instructions-arm64-constants.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/instructions-arm64-constants.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ extern const float16 kFP16DefaultNaN =
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

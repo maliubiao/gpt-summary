@@ -158,14 +158,16 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 总而言之，`web_url_response_test.cc` 通过一系列单元测试，确保了 `WebURLResponse` 类作为 Blink 引擎与外部交互的关键接口的稳定性和正确性，从而间接地保证了浏览器能够正确加载和处理网页资源，最终影响到 JavaScript, HTML 和 CSS 的执行和渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_url_response_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -233,7 +235,4 @@ TEST(WebURLResponseTest, DnsAliasesCanBeAccessed) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

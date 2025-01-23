@@ -145,15 +145,17 @@ By following this thought process, I aimed to provide a comprehensive and unders
 
 `internals_storage_access.cc` 是 Chromium Blink 引擎中一个关键的测试工具，它允许开发者在底层模拟和控制存储访问策略，以便对涉及跨域存储访问的各种场景进行彻底的测试。它通过 `internals` JavaScript API 与测试代码交互，并最终影响浏览器的存储行为，从而间接地影响 JavaScript, HTML, 和 CSS 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/testing/internals_storage_access.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ ScriptPromise<IDLUndefined> InternalsStorageAccess::setStorageAccess(
 }
 
 }  // namespace blink
-
-"""
-
 ```

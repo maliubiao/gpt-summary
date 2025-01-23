@@ -136,14 +136,16 @@ By following this structured approach and continuously refining the understandin
 
 `string_keyframe.cc` 是 Blink 渲染引擎中处理动画关键帧的核心组件，负责解析、存储和管理基于字符串定义的动画属性值。它连接了 JavaScript 的 Web Animations API、CSS 动画和 HTML 元素的样式，使得开发者可以使用字符串的形式来定义丰富的动画效果。理解其功能有助于深入了解 Web Animations API 的内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/string_keyframe.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -631,7 +633,4 @@ bool PropertyResolver::HasLowerPriority(PropertyResolver* first,
 }
 
 }  // namespace blink
-
-"""
-
 ```

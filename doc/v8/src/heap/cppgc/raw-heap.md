@@ -119,11 +119,13 @@ let dynamicObject = createObject();
 
 `v8/src/heap/cppgc/raw-heap.cc` 中的 `RawHeap` 类是 V8 引擎中 C++ 垃圾回收器 `cppgc` 的核心组件，负责管理不同类型的原始堆内存空间。 这些空间的组织和管理直接影响了 JavaScript 对象的内存分配和垃圾回收效率，是 JavaScript 动态内存管理的基础。 虽然 JavaScript 开发者无法直接操作 `RawHeap`，但理解其功能有助于理解 JavaScript 引擎的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/raw-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ RawHeap::~RawHeap() = default;
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

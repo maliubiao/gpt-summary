@@ -170,15 +170,17 @@ console.log('Current reduction:', reduction);
 
 通过以上步骤，我们可以看到用户的操作最终会触发到 `dynamics_compressor_handler.cc` 中的代码执行。调试人员可以通过理解这些流程，以及在关键代码点设置断点，来分析和解决 Web Audio 应用中的问题。例如，他们可以检查参数是否按预期设置，音频数据是否被正确压缩等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/dynamics_compressor_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -372,7 +374,4 @@ void DynamicsCompressorHandler::SetChannelCountMode(
 }
 
 }  // namespace blink
-
-"""
-
 ```

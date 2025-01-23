@@ -154,7 +154,7 @@ Finally, I organize the information into a clear and logical structure, using he
 
 通过以上步骤，逆向工程师可以深入了解 `meson_dep1_just_return_it` 函数的调用情况，并利用 Frida 进行动态分析和调试。这个简单的文件虽然功能不多，但在测试框架中可以用于验证依赖注入或对象传递等机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/7 gnome/gir/dep1/dep1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "dep1.h"
 
 struct _MesonDep1
@@ -220,7 +222,4 @@ meson_dep1_just_return_it (MesonDep1 *self, MesonDep2 *dep)
 
   return dep;
 }
-
-"""
-
 ```

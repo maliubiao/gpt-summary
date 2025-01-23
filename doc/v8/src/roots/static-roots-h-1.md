@@ -140,7 +140,7 @@ try {
 
 这部分 `v8/src/roots/static-roots.h` 代码定义了大量的静态字符串常量，这些常量是 V8 引擎内部运行的基础。它们用于标识 JavaScript 的关键字、内置对象、方法名、属性名等。虽然不直接涉及复杂的代码逻辑，但它们是 V8 引擎高效地解析、编译和执行 JavaScript 代码的关键组成部分。这些常量与用户在编写 JavaScript 代码时遇到的各种概念和错误类型息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/roots/static-roots.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/roots/static-roots.h以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 liseconds_string = 0x511d;
   static constexpr Tagged_t kminute_string = 0x5135;
   static constexpr Tagged_t kminutes_string = 0x5149;
@@ -828,7 +830,4 @@ static constexpr std::array<Tagged_t, 767> StaticReadOnlyRootsPointerTable = {
     StaticReadOnlyRoot::kisExtensible_string,
     StaticReadOnlyRoot::kiso8601_string,
     StaticReadOnlyRoot::kisoDay_strin
-"""
-
-
 ```

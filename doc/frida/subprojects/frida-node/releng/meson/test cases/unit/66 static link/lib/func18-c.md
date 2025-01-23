@@ -268,7 +268,7 @@ int func18()
 
 总而言之，`func18.c` 虽然代码简单，但在 Frida 动态插桩的上下文中，它可以作为理解程序行为、验证假设、进行性能分析和安全研究的关键入口点。用户通过 Frida 的各种功能，可以深入探索这段代码在实际运行中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/66 static link/lib/func18.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -276,15 +276,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17();
 
 int func18()
 {
   return func17() + 1;
 }
-
-"""
-
 ```

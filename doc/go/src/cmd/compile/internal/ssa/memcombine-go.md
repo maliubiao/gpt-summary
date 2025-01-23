@@ -194,15 +194,17 @@ Bytes written: 11223344
 
 总而言之，`go/src/cmd/compile/internal/ssa/memcombine.go` 实现了一种重要的 SSA 优化，旨在提高内存访问效率，特别是在处理二进制数据时。 它通过识别和合并小的加载和存储操作来减少指令数量和内存访问次数。 虽然开发者通常不需要直接管理此优化，但了解其原理有助于编写出更高效的 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/memcombine.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1010,9 +1012,4 @@ func byteSwap(b *Block, pos src.XPos, v *Value) *Value {
 		return nil
 	}
 }
-
-"""
-
-
-
 ```

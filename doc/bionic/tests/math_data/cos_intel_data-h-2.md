@@ -258,7 +258,7 @@ sys.stdin.read()
 
 总结来说，`cos_intel_data.handroid` 是 Android 系统 `bionic` 库中用于优化余弦函数计算的预计算数据查找表。它通过存储一系列输入值及其对应的余弦值，使得 `cos()` 函数在运行时可以快速查找结果，提高性能。这在各种需要三角函数计算的 Android 功能中都有应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 791cf983d53efaa7d45e291ep-1,
     -0x1.9dd83c7c9e128p-2
   },
@@ -1705,7 +1707,4 @@ Prompt:
   },
   { // Entry 1068
     0x1.6a09e667f3bcd777b6461376ab523242p-1
-"""
-
-
 ```

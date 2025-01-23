@@ -151,7 +151,7 @@ By following this structured approach, I can systematically analyze the code, co
 
 总而言之，`server-glue.c` 文件虽然代码量不大，但它扮演着连接 Frida 核心功能和底层操作系统平台的关键角色，负责环境初始化、平台适配和日志管理，对于理解 Frida Server 的运作原理和进行问题排查至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/server/server-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "server-glue.h"
 
 #include "frida-core.h"
@@ -340,8 +342,4 @@ frida_server_on_log_message (const gchar * log_domain, GLogLevelFlags log_level,
   fflush (file);
 #endif
 }
-
-
-"""
-
 ```

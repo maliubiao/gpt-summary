@@ -87,15 +87,17 @@ Here's a breakdown of how to approach this:
 
 总而言之，这个文件是 Blink 引擎中用于实现暗黑模式智能判断的核心组件，它通过一个轻量级的神经网络模型来分析网页的特征，从而决定是否应该应用暗黑模式，提升用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/darkmode/darkmode_classifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ARY_OP(Sinh, std::sinh(value), values.sinh())
 SIMPLE_UNARY_OP(Sqrt, std::sqrt(value), values.sqrt())
 SIMPLE_UNARY_OP(Square, value* value, values.square())
@@ -447,8 +449,4 @@ void Inference(
 }
 
 }  // namespace darkmode_tfnative_model
-
-"""
-
-
 ```

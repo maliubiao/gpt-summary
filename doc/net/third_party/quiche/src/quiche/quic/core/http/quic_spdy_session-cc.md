@@ -100,7 +100,7 @@ Based on this breakdown, I can now formulate the response.
 * **与底层 QUIC 连接的交互:**  通过 `QuicSession` 基类提供的接口与 QUIC 连接进行交互。
 * **流管理的基础:**  为后续的流创建和管理奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2015 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -973,8 +975,4 @@ void QuicSpdySession::OnHttp3GoAway(uint64_t id) {
       QuicSpdyStream* spdy_stream = static_cast<QuicSpdyStream*>(stream);
       WebTransportHttp3* web_transport = spdy_stream->web_transport();
       if (web_transport == nullptr) {
-      
-"""
-
-
 ```

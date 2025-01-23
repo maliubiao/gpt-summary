@@ -239,7 +239,7 @@ if __name__ == '__main__':
 
 要更精细地解析 `xdp_diag_req` 结构体，你需要知道目标进程的架构（32位或64位）以及结构体的确切内存布局，并在 Frida 脚本中进行相应的内存读取和解析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/xdp_diag.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -323,7 +325,4 @@ struct xdp_diag_stats {
   __u64 n_tx_ring_empty;
 };
 #endif
-
-"""
-
 ```

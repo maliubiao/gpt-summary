@@ -129,15 +129,17 @@ This iterative process of scanning, focusing, analyzing, grouping, relating, and
 
 这部分代码主要关注 `WorkerThread` 类的定义和与 worker 线程生命周期管理、JavaScript 执行以及与主线程通信相关的核心功能。它搭建了 worker 线程的基础架构，使其能够独立于主线程执行 JavaScript 代码，从而提高 Web 应用的性能和响应速度。  同时，它也初步涉及了与开发者工具的集成，为调试 worker 线程提供了支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/worker_thread.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  *
@@ -941,7 +943,4 @@ void WorkerThread::PerformShutdownOnWorkerThread() {
   inspector_task_runner_->Dispose();
   if (worker_inspector_controller_) {
     worker_insp
-"""
-
-
 ```

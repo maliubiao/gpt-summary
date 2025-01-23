@@ -188,14 +188,16 @@ This detailed process, starting from the file path and progressively analyzing t
 
 这些功能对于 Blink 如何执行 JavaScript 代码，以及如何将 JavaScript 的操作反映到 HTML 结构和 CSS 样式上至关重要。例如，当 JavaScript 操作 DOM 元素或修改 CSS 样式时，Blink 内部会使用这些绑定机制来与 V8 交互，并更新渲染树。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_binding.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009 Google Inc. All rights reserved.
  *
@@ -369,7 +371,4 @@ void V8ObjectToPropertyDescriptor(v8::Isolate* isolate,
 }  // namespace bindings
 
 }  // namespace blink
-
-"""
-
 ```

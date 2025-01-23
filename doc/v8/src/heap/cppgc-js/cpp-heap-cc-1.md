@@ -211,7 +211,7 @@ globalThis.leakedReference = leakedObject; // 意外地将对象保存在全局�
 
 希望这个归纳能够帮助你理解 `v8/src/heap/cppgc-js/cpp-heap.cc` 这部分代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cpp-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/cpp-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -219,8 +219,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 increased memory is reported. This allows for
     // setting limits close to actual heap sizes.
     allocated_size_limit_for_check_ = 0;
@@ -630,8 +632,4 @@ bool CppHeap::IsCurrentThread(int thread_id) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

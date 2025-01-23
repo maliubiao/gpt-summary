@@ -127,15 +127,17 @@ cppgc 通过提供自动化的内存管理，显著降低了这些常见错误�
 
 总结来说， `v8/samples/cppgc/hello-world.cc` 是一个简洁的示例，展示了如何使用 V8 的 cppgc 库进行垃圾回收的 C++ 编程，它与 JavaScript 的垃圾回收机制在概念上是相通的，并有助于避免传统 C++ 编程中常见的内存管理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/samples/cppgc/hello-world.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/samples/cppgc/hello-world.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ int main(int argc, char* argv[]) {
   cppgc::ShutdownProcess();
   return 0;
 }
-
-"""
-
 ```

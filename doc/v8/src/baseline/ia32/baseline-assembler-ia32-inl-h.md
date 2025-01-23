@@ -225,15 +225,17 @@ console.log(arr[2]); // Expected: 3, but might incorrectly output 2
 
 This header file is a low-level but essential component in V8's architecture, directly bridging the gap between JavaScript semantics and the underlying machine instructions. Understanding its functions is crucial for comprehending how the Baseline compiler works.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/ia32/baseline-assembler-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/ia32/baseline-assembler-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Use of this source code is governed by a BSD-style license that can be
 // Copyright 2021 the V8 project authors. All rights reserved.
 // found in the LICENSE file.
@@ -795,7 +797,4 @@ inline void EnsureAccumulatorPreservedScope::AssertEqualToAccumulator(
 }  // namespace v8
 
 #endif  // V8_BASELINE_IA32_BASELINE_ASSEMBLER_IA32_INL_H_
-
-"""
-
 ```

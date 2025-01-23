@@ -190,15 +190,17 @@ By following these steps, we can systematically analyze the provided test file a
 
 总之，`css_computed_style_declaration_test.cc` 文件是 Blink 渲染引擎中一个重要的测试文件，它确保了 `CSSComputedStyleDeclaration` 类的正确性和性能，而这个类是 JavaScript 获取元素计算样式信息的关键桥梁，直接影响到网页的呈现和交互效果。 了解这个文件的功能有助于理解浏览器是如何处理 CSS 样式计算的，并为解决相关的 bug 和性能问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_computed_style_declaration_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -410,7 +412,4 @@ TEST_F(CSSComputedStyleDeclarationTest, UseCountDurationZero) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

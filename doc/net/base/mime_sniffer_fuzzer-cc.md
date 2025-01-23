@@ -182,15 +182,17 @@ MIME类型对于JavaScript的执行至关重要。浏览器根据服务器返回
 
 最终，如果怀疑是浏览器自身的 MIME 嗅探逻辑存在问题，开发人员可能会研究 Chromium 的源代码，包括 `net/base/mime_sniffer.cc` 和相关的 fuzzer 代码，以了解其工作原理和潜在的 bug。该 fuzzer 就是用来在开发阶段提前发现这些潜在问题的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/mime_sniffer_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

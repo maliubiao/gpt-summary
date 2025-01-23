@@ -109,7 +109,7 @@ Finally, the answers are organized and phrased clearly, addressing each part of 
 
 总而言之，`func2.c` 文件本身的功能很简单，但它在Frida的构建和测试流程中扮演着重要的角色，用于验证构建系统是否正确地配置了目标相关的编译参数，从而确保Frida能够针对不同的目标平台和语言环境进行正确构建。当构建过程中出现与此文件相关的错误时，通常意味着构建配置存在问题，需要检查构建系统的设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/21 target arg/func2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef CTHING
 #error "Local C argument set in wrong target"
 #endif
@@ -128,7 +130,4 @@ Prompt:
 #endif
 
 int func(void) { return 0; }
-
-"""
-
 ```

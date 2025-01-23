@@ -227,7 +227,7 @@ main();
 
 `v8/src/objects/js-atomics-synchronization.cc` 是 V8 引擎中实现 JavaScript 原子操作同步原语的核心 C++ 代码，负责管理互斥锁和条件变量的状态、等待队列、以及异步操作的 Promise 管理和超时处理。它为 JavaScript 提供了在多线程环境下进行安全并发编程的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-atomics-synchronization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-atomics-synchronization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -235,9 +235,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- mutex, Handle<Object> callback,
+### 源代码
+```cpp
+mutex, Handle<Object> callback,
     std::optional<base::TimeDelta> timeout) {
   Handle<JSPromise> internal_locked_promise =
       requester->factory()->NewJSPromise();
@@ -809,8 +811,4 @@ void JSAtomicsCondition::HandleAsyncNotify(WaitAsyncWaiterQueueNode* waiter) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

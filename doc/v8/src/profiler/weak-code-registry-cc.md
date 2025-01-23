@@ -182,15 +182,17 @@ if (obj) {
 
 In summary, `v8/src/profiler/weak-code-registry.cc` provides a mechanism for the V8 profiler to track compiled code objects without preventing garbage collection, using weak global handles and a sweep mechanism to identify and potentially react to the deletion of these code objects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/weak-code-registry.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/weak-code-registry.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ void WeakCodeRegistry::Clear() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

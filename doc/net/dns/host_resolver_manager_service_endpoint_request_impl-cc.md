@@ -190,15 +190,17 @@ By following this detailed analysis and refinement process, the comprehensive ex
 
 总之，`net/dns/host_resolver_manager_service_endpoint_request_impl.cc` 是 Chromium 网络栈中一个关键的组件，负责处理服务终端的 DNS 解析，这是现代网络协议（如 HTTPS）高效、安全连接的基础。虽然 JavaScript 代码不直接操作这个类，但用户的网络行为最终会触发这里的代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_service_endpoint_request_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -563,7 +565,4 @@ HostResolverManager::ServiceEndpointRequestImpl::GetClientSocketFactory() {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -142,15 +142,17 @@ const obj2 = { b: 2, a: 1 };
 
 `v8/test/cctest/test-transitions.h` 提供了一个测试框架，用于验证 V8 内部转换机制的正确性和性能。它通过 `TestTransitionsAccessor` 类暴露了底层的转换数据和编码信息，使开发者能够编写细粒度的测试用例。理解 V8 的转换机制有助于开发者编写更高效的 Javascript 代码，避免常见的性能陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-transitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-transitions.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ class TestTransitionsAccessor : public TransitionsAccessor {
 }  // namespace v8
 
 #endif  // V8_TEST_CCTEST_TEST_TRANSITIONS_H_
-
-"""
-
 ```

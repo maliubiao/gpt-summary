@@ -181,15 +181,17 @@ func foo9(xx, yy *int) *int { // ERROR "leaking param: xx to result ~r0 level=0$
 
 总而言之，`go/test/escape2n.go` 是一个重要的测试文件，用于验证 Go 编译器逃逸分析的正确性，帮助开发者理解和调试逃逸相关的行为。它通过一系列精心设计的测试用例，覆盖了各种可能导致变量逃逸或不逃逸的情况，并通过编译器指令来断言预期的结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape2n.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -N -m -l
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -2035,9 +2037,4 @@ func issue12397(x, y int) { // ERROR "moved to heap: y$"
 		gxx = &x
 	}
 }
-
-"""
-
-
-
 ```

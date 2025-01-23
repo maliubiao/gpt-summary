@@ -108,7 +108,7 @@ Here are a few scenarios where a user (likely a developer or someone contributin
 
 In summary, while this specific `__init__.py` file might seem trivial due to its likely empty content, it plays a crucial structural role in the Python packaging system, which is essential for organizing the build process of the Frida Node.js bindings. Its presence ensures that the `templates` directory can function as a package and its modules can be imported correctly. It's a small but necessary part of the larger system that ultimately empowers reverse engineers using Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/templates/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,9 +116,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

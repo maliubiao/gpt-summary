@@ -179,15 +179,17 @@ table.Mark(space, handle, handle_location);
 
 总而言之，`v8/src/sandbox/cppheap-pointer-table-inl.h` 定义了一个用于管理 C++ 堆中指针的关键组件，它在 V8 的沙箱环境中运行，并与垃圾回收机制紧密相关。 开发者需要小心地使用提供的 API，避免常见的编程错误，以确保内存安全和程序的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/cppheap-pointer-table-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/cppheap-pointer-table-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -393,7 +395,4 @@ bool CppHeapPointerTable::Contains(Space* space,
 #endif  // V8_COMPRESS_POINTERS
 
 #endif  // V8_SANDBOX_CPPHEAP_POINTER_TABLE_INL_H_
-
-"""
-
 ```

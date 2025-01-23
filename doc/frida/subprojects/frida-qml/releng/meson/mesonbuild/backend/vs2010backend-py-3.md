@@ -92,7 +92,7 @@ A user interacts with this code indirectly through the Meson build system. Here'
 
 The `vs2010backend.py` file acts as a translator between the Meson build system and the Visual Studio 2010 build environment. It generates the necessary project files (`.vcxproj` and `.vcxproj.filters`) that define how Frida should be built using Visual Studio. This includes specifying source files, include directories, compiler settings, linker options, and custom build steps, allowing developers to build and work on Frida on Windows. It also generates utility projects for tasks like regenerating the build system, running tests, and installing Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 , inc_cl)
                         self.add_additional_options(lang, inc_cl, file_args)
                         self.add_preprocessor_defines(lang, inc_cl, file_defines)
@@ -460,8 +462,4 @@ Prompt:
 
     def generate_lang_standard_info(self, file_args: T.Dict[str, CompilerArgs], clconf: ET.Element) -> None:
         pass
-
-"""
-
-
 ```

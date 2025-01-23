@@ -156,14 +156,16 @@ By following these steps, I can systematically analyze the code and extract the 
 
 总而言之，`web_font_decoder.cc` 是 Blink 引擎中一个关键的安全组件，它确保了浏览器可以安全可靠地使用来自网络或本地的字体资源，从而实现丰富的网页排版效果。它与 CSS 的 `@font-face` 规则紧密相关，并间接地受到 HTML 结构和 JavaScript 动态操作的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/web_font_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -369,7 +371,4 @@ sk_sp<SkTypeface> WebFontDecoder::Decode(SegmentedBuffer* buffer) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -119,7 +119,7 @@ SPDY is a transport protocol that underlies HTTP/2. Web browsers use SPDY/HTTP/2
 
 总的来说，这部分 `SpdySessionTest` 单元测试文件的功能是验证 `SpdySession` 类在各种复杂和异常情况下的行为，包括流控、断开连接检测、处理已删除的流和会话、会话级别的错误处理、对无效帧的拒绝以及对 WebSocket 连接的支持。这些测试旨在确保 `SpdySession` 的稳定性和可靠性，使其能够正确处理各种网络事件和协议交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erializedFrame req2(spdy_util_.ConstructSpdyPost(
       kDefaultUrl, 3, kBodyDataSize, MEDIUM, nullptr, 0));
   spdy::SpdySerializedFrame body1(
@@ -1035,7 +1037,4 @@ TEST_F(SpdySessionTest, GreaseFrameTypeAfterSettings) {
   expected_settings[spdy::SETTINGS_HEADER_TABLE_SIZE] = kSpdyMaxHeaderTableSize;
   expected_settings[spdy::SETTINGS_MAX_HEADER_LIST_SIZE] =
       kSpdyMaxHeaderLi
-"""
-
-
 ```

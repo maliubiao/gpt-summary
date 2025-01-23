@@ -115,7 +115,7 @@ process.StepInstruction(False)
 5. **调试进程**：用户通过LLDB或Frida的API对目标进程进行调试和插桩。
 
 通过这些步骤，用户可以逐步实现动态插桩和调试功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/fruity-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _error (e);
 			}
 			var local_session_id = AgentSessionId.generate ();
@@ -1308,7 +1310,4 @@ _error (e);
 					}
 
 					if (val.is_
-"""
-
-
 ```

@@ -233,15 +233,17 @@ int64_t result_invalid = charactersToInteger(chars_invalid, 3, &ok); // result_i
 
 理解 `v8/src/inspector/string-16.cc` 的功能对于想要深入了解 V8 Inspector 内部实现以及如何处理字符串至关重要。它展示了在跨平台和处理不同编码时字符串操作的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/string-16.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/string-16.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -496,7 +498,4 @@ std::string String16::utf8() const {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

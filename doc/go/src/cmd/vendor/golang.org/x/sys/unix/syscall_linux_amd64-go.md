@@ -287,15 +287,17 @@ func main() {
 
 理解这些潜在的陷阱对于正确使用 `syscall` 包至关重要。通常情况下，建议使用 Go 标准库中更高级别的抽象 (如 `os` 和 `net` 包)，这些库会处理很多底层细节和错误处理。只有在需要访问特定系统调用功能或进行性能优化时，才直接使用 `syscall` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -441,9 +443,4 @@ func KexecFileLoad(kernelFd int, initrdFd int, cmdline string, flags int) error 
 	}
 	return kexecFileLoad(kernelFd, initrdFd, cmdlineLen, cmdline, flags)
 }
-
-"""
-
-
-
 ```

@@ -100,7 +100,7 @@ Based on these observations, I can now summarize the functionality of this part 
 
 总而言之，这部分测试用例覆盖了 `WebMediaPlayerMS` 核心的视频帧处理和渲染逻辑，以及针对特定场景的优化策略，为保证 Chromium 浏览器中 MediaStream API 的正确性和稳定性提供了重要的保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/web_media_player_ms_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tVideoFrameCallback())
       .Times(1)
       .WillOnce(testing::Invoke([&]() {
@@ -904,7 +906,4 @@ TEST_P(WebMediaPlayerMSTest, OutOfOrderEnqueue) {
 
   compositor_->EnqueueFrame(std::move(frame), true);
   compositor_->EnqueueFrame(std::move(frame3), true
-"""
-
-
 ```

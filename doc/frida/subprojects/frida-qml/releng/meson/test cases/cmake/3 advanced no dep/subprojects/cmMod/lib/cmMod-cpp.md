@@ -165,7 +165,7 @@ Hello World
 
 通过以上步骤，开发者可以使用 Frida 作为强大的调试工具，深入了解 `cmModClass` 在运行时的情况，并辅助定位问题。文件路径本身也提供了重要的上下文信息，表明这是 Frida 测试套件的一部分，这意味着它很可能被设计用于各种测试和验证场景，其中就包括动态插桩和逆向分析的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/3 advanced no dep/subprojects/cmMod/lib/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "config.h"
 
@@ -191,7 +193,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

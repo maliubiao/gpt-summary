@@ -320,7 +320,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm64/asm/shmbuf.handroid` 文件本身只是一个包含头文件，它引入了共享内存相关的定义。这些定义被 libc 库中的函数使用，最终通过系统调用与内核进行交互，实现进程间的共享内存通信。共享内存在 Android 系统中被广泛用于提高性能，尤其是在图形、多媒体等领域。理解共享内存的机制对于开发高性能的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/shmbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -331,8 +331,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -340,7 +342,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/shmbuf.h>
-
-"""
-
 ```

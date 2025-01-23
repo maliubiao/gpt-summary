@@ -143,7 +143,7 @@ By following these steps, we can systematically analyze the code snippet, connec
 
 总而言之，`prog.c` 是一个非常简单的测试用例，其目的是验证 `custom header generator` 工具的功能是否正确，确保其能够生成有效的自定义头文件，以便 C 代码能够与 Swift 代码进行交互。它在 Frida 的逆向工程流程中扮演着一个验证和调试的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/57 custom header generator/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,14 +151,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"myheader.lh"
 
 int main(void) {
     return RET_VAL;
 }
-
-"""
-
 ```

@@ -156,7 +156,7 @@ if combineDwarf {
 
 总而言之，这部分 `lib.go` 代码是 Go 语言链接器在完成核心链接任务后，对生成的可执行文件进行最终润色和适配的关键环节，确保生成的可执行文件能够正确运行并具备必要的调试信息和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/lib.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Args[0], err)
 		}
 		if err := updateFunc(ctxt, exef, exem, rewrittenOutput); err != nil {
@@ -1182,10 +1184,4 @@ func (ctxt *Link) findExtLinkTool(toolname string) string {
 	cmdpath := strings.TrimRight(string(out), "\r\n")
 	return cmdpath
 }
-
-"""
-
-
-
-
 ```

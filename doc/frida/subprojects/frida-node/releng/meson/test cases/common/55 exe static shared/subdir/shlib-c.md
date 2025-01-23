@@ -134,7 +134,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 总而言之，`shlib.c` 虽然代码量很少，但它作为一个清晰、简单的示例，可以用于测试和演示 Frida 在处理共享库方面的能力，同时也为理解逆向工程中的函数 hooking 技术以及与操作系统底层相关的概念提供了一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/55 exe static shared/subdir/shlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,14 +142,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "exports.h"
 
 int DLL_PUBLIC shlibfunc(void) {
     return 42;
 }
-
-"""
-
 ```

@@ -177,15 +177,17 @@ Finally, I organized the information into the requested categories: functionalit
 
 `private_attribution.cc` 文件定义了 `PrivateAttribution` 类，目前主要声明了两个尚未实现的静态方法，旨在提供与私有属性功能相关的能力，例如获取加密的匹配密钥和辅助网络的信息。这些功能设计为通过 JavaScript API 暴露给 Web 开发者使用。 由于代码中明确指明 "This function is not implemented."，任何尝试调用这些方法的 JavaScript 代码都会导致错误。开发者在调试相关问题时可能会查看此文件以了解功能的实现状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/private_attribution/private_attribution.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ void PrivateAttribution::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

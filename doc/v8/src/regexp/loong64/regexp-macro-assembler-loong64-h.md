@@ -191,15 +191,17 @@ while ((array = regex.exec(str)) !== null) {
 
 了解 `RegExpMacroAssemblerLOONG64` 的功能可以帮助我们理解 V8 引擎是如何高效地执行正则表达式的，并且在遇到性能问题时，可以更好地分析和优化正则表达式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/loong64/regexp-macro-assembler-loong64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/loong64/regexp-macro-assembler-loong64.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -455,7 +457,4 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerLOONG64
 }  // namespace v8
 
 #endif  // V8_REGEXP_LOONG64_REGEXP_MACRO_ASSEMBLER_LOONG64_H_
-
-"""
-
 ```

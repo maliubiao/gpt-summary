@@ -195,7 +195,7 @@ python.extension_module(
 
 总而言之，`frida/subprojects/frida-python/releng/meson/mesonbuild/modules/python.py` 文件是 Frida 项目中用于管理 Python 相关构建任务的关键模块，它提供了查找 Python 解释器、构建 Python 扩展模块和安装 Python 源代码等功能，对于 Frida 的 Python 绑定和希望开发自定义 Frida 扩展的用户来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/modules/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -761,7 +763,4 @@ def initialize(interpreter: 'Interpreter') -> PythonModule:
     mod = PythonModule(interpreter)
     mod.interpreter.append_holder_map(PythonExternalProgram, PythonInstallation)
     return mod
-
-"""
-
 ```

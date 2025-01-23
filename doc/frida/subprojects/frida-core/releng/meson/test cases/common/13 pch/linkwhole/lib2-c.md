@@ -134,7 +134,7 @@ By following these steps, the detailed and informative answer provided previousl
 
 总而言之，这段看似简单的代码片段在 Frida 的测试环境中扮演着重要的角色，它展示了如何获取进程的命令行参数，而这在逆向工程、动态分析和理解程序行为方面都具有重要的意义。同时，它也涉及到了操作系统底层的一些概念以及跨平台开发中需要注意的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/13 pch/linkwhole/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,15 +142,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 void func2() {
     const char *cl = GetCommandLineA();
     printf("Command line was: %s\n", cl);
 }
-
-"""
-
 ```

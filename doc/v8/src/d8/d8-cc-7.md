@@ -243,7 +243,7 @@ Deserialized: Hello, world!
 
 它将 V8 引擎的强大功能暴露给开发者，使其能够方便地运行和测试 JavaScript 代码，并进行性能分析和调试。它是连接 V8 引擎和用户的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -251,8 +251,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 te, uint32_t clone_id) override {
     DCHECK_NOT_NULL(data_);
     if (clone_id < data_->sab_backing_stores().size()) {
@@ -791,8 +793,4 @@ int main(int argc, char* argv[]) { return v8::Shell::Main(argc, argv); }
 
 #undef CHECK
 #undef DCHECK
-
-"""
-
-
 ```

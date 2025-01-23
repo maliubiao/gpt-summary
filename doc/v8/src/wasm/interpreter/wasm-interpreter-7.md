@@ -97,13 +97,15 @@ WebAssembly.instantiate(wasmBinary)
 
 作为第 8 部分也是最后一部分，这个文件完成了将 WebAssembly 指令序列转换为可执行字节码的关键步骤。它负责处理各种 WebAssembly 指令，进行优化，并生成最终的 `WasmBytecode` 对象，这个对象随后会被 WebAssembly 解释器使用来执行 WebAssembly 代码。它处于 WebAssembly 执行流程的早期阶段，是连接 WebAssembly 模块和 V8 解释器的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
-       \
+### 源代码
+```
+\
   }
       LOAD_LANE_CASE(Load8Lane)
       LOAD_LANE_CASE(Load16Lane)
@@ -557,8 +559,4 @@ ClearThreadInWasmScope ::~ClearThreadInWasmScope() {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

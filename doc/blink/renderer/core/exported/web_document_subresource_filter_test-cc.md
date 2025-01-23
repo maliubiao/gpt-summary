@@ -157,15 +157,17 @@ By following this structured analysis, we can thoroughly understand the function
 
 总而言之，`web_document_subresource_filter_test.cc` 是 Blink 引擎中一个重要的测试文件，用于确保子资源过滤功能的正确性和稳定性。它通过模拟各种加载场景和策略，验证过滤器是否按照预期工作，这对于维护浏览器的安全性和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_document_subresource_filter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ TEST_F(WebDocumentSubresourceFilterTest, FilteringDecisionIsMadeLoadByLoad) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

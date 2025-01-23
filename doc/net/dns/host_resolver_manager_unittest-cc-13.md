@@ -249,7 +249,7 @@ TEST_F(HostResolverManagerDnsTest, SrvDnsQuery) {
 
 总而言之，这部分单元测试着重于确保 `HostResolverManager` 能够正确且健壮地处理 `PTR` 和 `SRV` 类型的 DNS 查询，覆盖了各种成功和失败的场景，并考虑了安全 DNS 的配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -257,8 +257,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第14部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 LogWithSource(),
       parameters, resolve_context_.get()));
   EXPECT_THAT(cached_response.result_error(), IsOk());
@@ -996,7 +998,4 @@ TEST_F(HostResolverManagerDnsTest, SrvQuery_WrongType) {
   MockDnsClientRuleList rules;
   rules.emplace_back(
       "host", dn
-"""
-
-
 ```

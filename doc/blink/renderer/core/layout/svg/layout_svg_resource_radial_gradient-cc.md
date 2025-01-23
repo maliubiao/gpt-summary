@@ -172,14 +172,16 @@ This step-by-step process, focusing on understanding the code's purpose, its int
 
 `layout_svg_resource_radial_gradient.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它负责解析、计算和管理 SVG 径向渐变的布局属性，并将这些信息转换为渲染引擎可以理解和使用的 `Gradient` 对象，最终实现网页上看到的绚丽渐变效果。 理解这个文件的工作原理有助于我们更好地理解浏览器如何渲染 SVG，并能帮助我们避免在使用 SVG 渐变时常犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_resource_radial_gradient.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) Research In Motion Limited 2010. All rights reserved.
@@ -268,7 +270,4 @@ scoped_refptr<Gradient> LayoutSVGResourceRadialGradient::BuildGradient() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

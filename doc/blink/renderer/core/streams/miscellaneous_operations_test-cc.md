@@ -168,15 +168,17 @@ This systematic approach, combining code analysis, domain knowledge (web technol
 
 总而言之，`miscellaneous_operations_test.cc` 文件是 Blink 引擎中测试 Web Streams API 内部机制的关键组成部分，它确保了各种辅助函数和算法的正确性和健壮性，从而保证了 Web Streams API 的稳定运行。 开发者在使用 Web Streams API 时，其 JavaScript 代码最终会通过这些底层的 C++ 实现来执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/miscellaneous_operations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -715,7 +717,4 @@ TEST(MiscellaneousOperationsTest, PromiseReject) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

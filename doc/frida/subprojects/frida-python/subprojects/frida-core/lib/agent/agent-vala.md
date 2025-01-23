@@ -147,7 +147,7 @@ if __name__ == "__main__":
    - 用户结束调试会话，代理调用 `unload()` 方法，清理资源并卸载代理。
 
 通过以上步骤，用户可以逐步深入到 `agent.vala` 的各个功能模块，进行调试和分析。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/agent/agent.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida.Agent {
 	public void main (string agent_parameters, ref Frida.UnloadPolicy unload_policy, void * injector_state) {
 		if (Runner.shared_instance == null)
@@ -1346,8 +1348,5 @@ namespace Frida.Agent {
 				controller = yield connection.get_proxy (null, ObjectPath.AGENT_CONTROLLER, DO_NOT_LOAD_PROPERTIES, null);
 
 				connection.start_message_processing ();
-			} catch 
-"""
-
-
+			} catch
 ```

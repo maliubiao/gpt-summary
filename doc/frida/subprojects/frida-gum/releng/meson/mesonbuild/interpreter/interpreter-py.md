@@ -120,7 +120,7 @@ message('Custom option value:', my_option)
 
 这部分 `interpreter.py` 代码主要负责 Meson 构建系统的初始化和 `meson.build` 文件的初步解析。它定义了解释器类和一些基础的数据结构，用于存储构建过程中的信息。核心功能是提供了解释 `meson.build` 文件中声明式指令的基础框架，包括内置函数的定义和执行环境的搭建，为后续构建目标的创建和依赖关系的解析奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -840,8 +842,5 @@ class Interpreter(InterpreterBase, HoldableObject):
         srcdir = Path(self.environment.source_dir)
         # convert variables which refer to an -uninstalled.pc style datadir
         for k, v in variables.items():
-            if 
-"""
-
-
+            if
 ```

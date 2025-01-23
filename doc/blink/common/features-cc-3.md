@@ -107,15 +107,17 @@ Strategizing complete. Proceeding with response generation.
 
 `blink/common/features.cc` 文件是 Blink 引擎的核心配置中心，它通过定义一系列可开关的特性标志和可配置的参数，实现了对 Blink 引擎各种功能和行为的灵活控制。这些特性标志直接或间接地影响着 JavaScript 的 API 行为、HTML 的解析和渲染、CSS 的加载以及各种 Web 标准的实现。  开发者可以通过这些标志进行实验性功能的开发、A/B 测试、性能调优以及控制功能的发布流程。 然而，不当的使用和配置这些特性标志也可能导致错误和不兼容性问题，因此理解其作用和默认状态至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (kSendCnameAliasesToSubresourceFilterFromRenderer,
              "SendCnameAliasesToSubresourceFilterFromRenderer",
              base::FEATURE_DISABLED_BY_DEFAULT);
@@ -717,8 +719,4 @@ bool IsLinkPreviewTriggerTypeEnabled(LinkPreviewTriggerType type) {
 // DO NOT ADD NEW FEATURES HERE.
 
 }  // namespace blink::features
-
-"""
-
-
 ```

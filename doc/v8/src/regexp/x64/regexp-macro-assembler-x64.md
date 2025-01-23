@@ -110,11 +110,13 @@ const match6 = regex6.test(str6); // true
 
 总而言之，`regexp-macro-assembler-x64.cc` 是 V8 引擎中一个非常底层的组件，它负责将高级的正则表达式模式转换为可以在 x64 架构上高效执行的机器码，从而使得 JavaScript 中的正则表达式功能得以实现。它隐藏了底层的汇编细节，并提供了一组更容易使用的宏指令，让 V8 开发者能够专注于实现正确的正则表达式匹配逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/x64/regexp-macro-assembler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1748,7 +1750,4 @@ void RegExpMacroAssemblerX64::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
 ```

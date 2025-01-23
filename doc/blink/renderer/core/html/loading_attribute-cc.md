@@ -153,14 +153,16 @@ By following these steps, I can construct a comprehensive and informative answer
 
 `loading_attribute.cc` 文件中的 `GetLoadingAttributeValue` 函数扮演着关键的角色，它负责将 HTML 中 `loading` 属性的字符串值转化为 Blink 引擎内部使用的枚举值，从而指导浏览器如何加载相关的资源。理解这个文件的功能有助于我们更好地理解浏览器如何处理 HTML 的 `loading` 属性，并避免一些常见的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/loading_attribute.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ LoadingAttributeValue GetLoadingAttributeValue(const String& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -72,7 +72,7 @@ Essentially, my process involves: **Decomposition (into functions) -> Understand
 
 **总结来说，这段代码的核心职责是根据当前模块的剪枝模式和已加载的包信息，精确地管理 `go.mod` 文件中的 `require` 指令，以确保模块依赖的正确性、一致性和最小化。它涉及复杂的逻辑来处理 pruned 模式下的不变量，并优化 unpruned 模式下的依赖关系。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/buildlist.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -81,8 +81,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Adding these roots may have pulled additional modules into the module
 			// graph, causing additional packages to become ambiguous. Keep iterating
 			// until we reach a fixed point.
@@ -633,10 +635,4 @@ func convertPruning(ctx context.Context, rs *Requirements, pruning modPruning) (
 	}
 	return newRequirements(pruned, mg.BuildList()[MainModules.Len():], rs.direct), nil
 }
-
-"""
-
-
-
-
 ```

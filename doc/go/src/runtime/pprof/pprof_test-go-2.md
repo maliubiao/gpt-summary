@@ -272,7 +272,7 @@ wantSamples := []*profile.Sample{
 
 总而言之，`go/src/runtime/pprof/pprof_test.go` 这个文件通过大量的测试用例，细致地验证了 `runtime/pprof` 包的各项功能，确保其能够正确地收集和处理各种性能剖析数据，为 Go 程序的性能分析提供可靠的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/pprof_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -281,8 +281,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ame location is used for duplicated stacks.
 		name: "truncated_stack_trace_twice",
 		input: []uint64{
@@ -776,10 +778,4 @@ func disableSampling() func() {
 		runtime.SetMutexProfileFraction(oldMutexRate)
 	}
 }
-
-"""
-
-
-
-
 ```

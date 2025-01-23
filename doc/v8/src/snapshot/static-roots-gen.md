@@ -106,11 +106,13 @@ V8 内部会通过类似 `StaticReadOnlyRoot::kGlobalThis` (具体名称可能�
 
 `static-roots-gen.cc` 是 V8 引擎的关键组成部分，它负责在编译时生成静态只读根对象的地址映射，使得 V8 可以在运行时高效地访问这些核心的 JavaScript 对象，从而提升性能并优化内存使用。虽然 JavaScript 开发者不会直接接触到这个文件，但它的存在对 JavaScript 的高效运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/static-roots-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ void StaticRootsTableGen::write(Isolate* isolate, const char* file) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

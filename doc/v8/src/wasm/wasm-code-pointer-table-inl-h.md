@@ -145,15 +145,17 @@ loadAndRunWasm();
 
 总而言之，`v8/src/wasm/wasm-code-pointer-table-inl.h` 定义了一个用于管理 WebAssembly 代码指针的关键数据结构，它支持动态分配、释放、并发访问，并且与 JavaScript 调用 WebAssembly 代码的过程紧密相关。理解其功能有助于深入理解 V8 引擎的 WebAssembly 执行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-pointer-table-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-code-pointer-table-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ WasmCodePointerTable::FreelistHead WasmCodePointerTable::LinkFreelist(
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_WASM_CODE_POINTER_TABLE_INL_H_
-
-"""
-
 ```

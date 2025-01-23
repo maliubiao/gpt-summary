@@ -161,14 +161,16 @@ By following this systematic approach, breaking down the code into smaller piece
 
 总而言之，`up_sampler.cc` 文件实现了 Chromium 中音频上采样的核心逻辑，它使用带限插值滤波器来提高音频信号的采样率，这对于提供高质量的音频播放体验至关重要，并且与浏览器对 HTML5 音频和 Web Audio API 的支持密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/up_sampler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -331,7 +333,4 @@ size_t UpSampler::LatencyFrames() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -213,7 +213,7 @@ Finally, I organized the information into the requested categories, providing cl
 
 总而言之，这个脚本是一个简单但非常实用的 Frida 示例，它展示了如何使用 Frida 连接到目标设备并获取基本的系统信息，是动态分析和逆向工程的入门砖。 理解这个脚本的功能和背后的原理，有助于更好地使用 Frida 进行更高级的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/enumerate_processes.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -221,8 +221,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('..');
 const { inspect } = require('util');
 
@@ -240,7 +242,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

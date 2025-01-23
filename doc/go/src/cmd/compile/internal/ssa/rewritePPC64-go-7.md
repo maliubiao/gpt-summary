@@ -124,7 +124,7 @@ This systematic approach allows me to break down the complex code into manageabl
 
 `rewritePPC64.go` 的第 8 部分主要负责针对 PPC64 架构下多种与 32 位整数操作相关的 SSA 指令进行优化。其核心功能在于通过模式匹配和替换，将这些指令转换为更高效的 PPC64 机器码，例如消除冗余的类型转换、合并地址计算、利用特定的机器指令等，从而提升最终生成的可执行程序的性能。这部分包含了对加载、存储、寄存器移动、算术运算、逻辑运算以及位操作等多种指令的优化规则。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritePPC64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -133,8 +133,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第8部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 C64SRDconst)
 		v.AuxInt = int64ToAuxInt(c)
 		v.AddArg(x)
@@ -1677,9 +1679,4 @@ func rewriteValuePPC64_OpPPC64SETBC(v *Value) bool {
 	}
 	// match: (SETBC [0] (FlagGT))
 	// result: (MOVDconst
-"""
-
-
-
-
 ```

@@ -117,14 +117,16 @@ interest_group.expiry = base::Time::Now();
 
 总而言之，`interest_group_mojom_traits_test.cc` 通过测试 `InterestGroup` 对象的序列化和反序列化，确保了 FLEDGE 功能的核心数据结构能够在不同的 Chromium 组件之间正确地传递和存储，这对于 FLEDGE 功能的正常运行至关重要，并间接地关系到开发者在使用 FLEDGE API 时可能遇到的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/interest_group_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -707,7 +709,4 @@ TEST(InterestGroupMojomTraitsTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -254,7 +254,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "_resolv_cache_add"), {
 
 `bionic/libc/dns/resolv/res_cache.c` 文件实现了 Android Bionic libc 中 DNS 解析器的本地缓存功能。它通过存储 DNS 查询的答案，基于 TTL 进行过期管理，并采用简单的哈希表和 LRU 策略，来优化 DNS 查询性能，减少网络流量，并加速应用程序的网络连接。其核心功能在于在进行实际 DNS 查询之前检查缓存，并在接收到新的 DNS 响应后更新缓存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_cache.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -1429,7 +1431,4 @@ answer_getTTL(const void* answer, int answerlen)
 
 static void
 e
-"""
-
-
 ```

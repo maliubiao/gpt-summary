@@ -58,13 +58,15 @@ const c = SIMD.float32x4.add(a, b);
 
 总而言之，这个 C++ 文件是 V8 引擎将 JavaScript 代码转化为可以在 RISC-V 架构上执行的机器码的关键组成部分，特别是负责处理 RISC-V 向量扩展和控制流相关的指令生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/code-generator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  }
+### 源代码
+```
+}
     case kRiscvI32x4SConvertF32x4: {
       __ VU.set(kScratchReg, E32, m1);
       __ VU.set(FPURoundingMode::RTZ);
@@ -1842,8 +1844,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

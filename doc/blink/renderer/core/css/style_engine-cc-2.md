@@ -76,7 +76,7 @@ Here's a breakdown of how to address the request:
 
 这个代码片段是 Chromium Blink 引擎中 `StyleEngine` 的一部分，专门负责处理各种元素状态变化引起的 CSS 样式失效。它的核心目标是精确地找出受影响的元素，并标记它们需要重新计算样式，从而优化渲染性能。它通过分析 CSS 规则和 DOM 结构，对不同类型的变化采取不同的失效策略，避免了全局的样式重算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -84,8 +84,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ion_data.NeedsHasInvalidationForId(new_id))) {
       InvalidateChangedElementAffectedByLogicalCombinationsInHas(
           element, /* for_element_affected_by_pseudo_in_has */ false);
@@ -967,8 +969,4 @@ class StyleEngine::AtRuleCascadeMap {
     uint16_t layer_order;
 
     bool operator<(const Priority& other) const {
-
-"""
-
-
 ```

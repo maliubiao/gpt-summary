@@ -129,15 +129,17 @@ AMOSWAPW x13, x14, (x15)  // 原子地将 x14 的值与内存地址 (x15) 的值
 
 `go/src/cmd/asm/internal/arch/riscv64.go` 文件中的 `IsRISCV64AMO` 函数是 Go 汇编器中用于识别 RISC-V 64 位架构原子内存操作指令的关键组成部分。它帮助汇编器针对这些特殊指令进行正确的处理和编码。普通 Go 开发者无需直接操作此代码，但了解 AMO 指令的特性对于编写正确的 RISC-V 64 位汇编代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/asm/internal/arch/riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -166,9 +168,4 @@ func IsRISCV64AMO(op obj.As) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

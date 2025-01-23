@@ -131,15 +131,17 @@ func TestGenericFunctionCall(t *testing.T) {
 
 `go/test/typeparam/issue48337a.go` 是 Go 官方测试套件中用于测试泛型相关功能的代码片段。它定义了一个名为 `ignored` 的空包，很可能是为了测试在特定泛型场景下（与 issue #48337 相关）编译、类型检查或导入行为是否正确。开发者需要理解 `// rundir` 的含义，并在正确的目录下运行测试。 `ignored` 包本身没有实际功能，其存在是为了触发或隔离特定的测试条件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48337a.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -147,9 +149,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

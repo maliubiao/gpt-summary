@@ -171,7 +171,7 @@ Person{
 
 这部分代码定义了测试 `encoding/xml` 包序列化功能的各种数据结构，是构建和验证 XML 序列化功能的重要组成部分。在实际使用 `encoding/xml` 包时，理解这些 tag 的含义和作用至关重要，可以避免很多常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/xml/marshal_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1535,9 +1537,4 @@ var marshalTests = []struct {
 	{
 		ExpectXML:      `<IfaceChardata><T1></T1>hi<T2></T2></IfaceChardata>`,
 		Value:          &IfaceChar
-"""
-
-
-
-
 ```

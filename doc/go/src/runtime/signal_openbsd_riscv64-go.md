@@ -159,7 +159,7 @@ func main() {
 
 这段 `go/src/runtime/signal_openbsd_riscv64.go` 代码是 Go 语言运行时处理信号的关键组成部分，它为 Go 运行时提供了访问和修改在接收到信号时 CPU 状态的能力，使得 Go 能够实现跨平台的信号处理机制。普通 Go 开发者应该使用 `os/signal` 包提供的更高级别的抽象来处理信号，而避免直接操作底层的 `runtime` 结构体。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_openbsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -167,8 +167,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -241,9 +243,4 @@ func (c *sigctxt) set_sigcode(x uint32) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) {
 	*(*uintptr)(add(unsafe.Pointer(c.info), 2*goarch.PtrSize)) = uintptr(x)
 }
-
-"""
-
-
-
 ```

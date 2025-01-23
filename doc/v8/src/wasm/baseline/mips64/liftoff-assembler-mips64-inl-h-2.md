@@ -188,7 +188,7 @@ int main() {
 
 这部分 `liftoff-assembler-mips64-inl.h` 代码是 V8 引擎中 Liftoff 编译器在 MIPS64 架构上的核心组件，负责生成执行 WebAssembly 代码所需的各种汇编指令，包括类型转换、符号扩展、跳转、条件设置以及 SIMD 向量操作。它确保了 WebAssembly 代码能够在 MIPS64 架构上正确高效地执行，并处理了类型转换中的饱和等细节，避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ueShortF(&done);
         trunc_w_s(kScratchDoubleReg, src.fp());
         mfc1(dst.gp(), kScratchDoubleReg);
@@ -1077,8 +1079,4 @@ void LiftoffAssembler::emit_i8x16_shr_u(LiftoffRegister dst,
 }
 
 void LiftoffAssembler::emit_i8x16_shri_u(LiftoffRegister dst,
-                                   
-"""
-
-
 ```

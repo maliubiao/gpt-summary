@@ -228,15 +228,17 @@ CSS 主要负责样式控制，与 Transform Feedback 的核心逻辑没有直�
 
 总而言之，`webgl_transform_feedback.cc` 文件是 WebGL Transform Feedback 功能在 Chromium Blink 引擎中的核心实现，负责管理 Transform Feedback 对象的生命周期、状态以及与缓冲区和程序的关联，从而为开发者提供将 GPU 计算结果反馈回 GPU 的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_transform_feedback.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ void WebGLTransformFeedback::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

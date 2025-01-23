@@ -118,14 +118,16 @@ console.log("Hello from MHTML!");\r\n
 
 总而言之，`mhtml_parser_test.cc` 通过大量的测试用例确保了 `MHTMLParser` 能够可靠地解析各种符合或不符合规范的 MHTML 数据，这对于 Chromium Blink 引擎正确加载和处理保存的网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mhtml/mhtml_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -632,7 +634,4 @@ TEST_F(MHTMLParserTest, OverflowedDay) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

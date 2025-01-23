@@ -160,15 +160,17 @@ JavaScript 代码调用 `shaderModule.compilationInfo()` 后，返回的 `GPUCom
 
 总而言之，`gpu_compilation_info.cc` 文件中的 `GPUCompilationInfo` 类是 WebGPU 实现中一个关键的组成部分，它负责收集和管理着色器编译过程中的诊断信息，并将这些信息暴露给 JavaScript，以便开发者能够了解着色器的编译状态并诊断潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_compilation_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ void GPUCompilationInfo::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

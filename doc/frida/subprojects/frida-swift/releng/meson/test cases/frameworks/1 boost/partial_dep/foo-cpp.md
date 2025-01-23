@@ -162,7 +162,7 @@ vec Foo::vector() {
 
 `foo.cpp` 中的代码虽然简单，但它代表了在动态插桩和逆向工程中经常需要处理的常见模式：访问对象的内部状态。在 Frida 的上下文中，这样的代码片段是测试 Frida 功能的基础，确保 Frida 能够正确地 Hook 和与 C++ 代码交互，尤其是在涉及到外部库和框架时。  `partial_dep` 目录暗示了测试关注的是部分依赖的情况，这在现实世界的软件开发中是很常见的，Frida 需要能够处理这种情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/1 boost/partial_dep/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -192,7 +194,4 @@ Prompt:
 vec Foo::vector() {
     return myvec;
 }
-
-"""
-
 ```

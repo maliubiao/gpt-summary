@@ -159,15 +159,17 @@ By following this systematic approach, which combines code analysis, conceptual 
 
 总而言之，`element_internals.cc` 是连接自定义元素与浏览器核心功能（特别是表单和可访问性）的关键桥梁，它提供了让自定义元素表现得像内置 HTML 元素所需的底层机制。开发者通过 `attachInternals()` API 与这个 C++ 组件进行交互，从而增强自定义元素的功能和互操作性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/custom/element_internals.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -775,7 +777,4 @@ void ElementInternals::RestoreFormControlState(const FormControlState& state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

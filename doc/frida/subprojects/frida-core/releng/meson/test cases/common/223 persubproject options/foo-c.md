@@ -190,7 +190,7 @@ By following this systematic approach, breaking down the request, and considerin
 
 总而言之，`foo.c` 文件本身是一个极其简单的 C 代码文件，但它在 Frida 的测试和开发流程中扮演着重要的角色，用于验证工具的基本功能和构建系统的正确性。 开发者通常会在调试测试用例或研究 Frida 内部机制时遇到这样的文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/223 persubproject options/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,14 +198,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void);
 
 int foo(void) {
   return 0;
 }
-
-"""
-
 ```

@@ -188,7 +188,7 @@ Go signal handler received signal: interrupt
 
 `go/src/runtime/cgo/sigaction.go` 是 Go 运行时中一个关键的组成部分，它专注于在使用 CGO 的情况下，如何正确地处理信号，并支持与 C 代码检查工具 (Sanitizer) 的集成。它通过调用 C 语言库的 `sigaction` 函数来实现这一目标，确保了 Go 程序与 C 代码在信号处理方面的协同工作，并提升了代码的健壮性和可调试性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/sigaction.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ import _ "unsafe"
 //go:linkname _cgo_sigaction _cgo_sigaction
 var x_cgo_sigaction byte
 var _cgo_sigaction = &x_cgo_sigaction
-
-"""
-
-
-
 ```

@@ -277,7 +277,7 @@ isolate2.run('console.log(global.myVar); // 输出 undefined，因为 isolate2 �
 
 **`Isolate` 是 V8 引擎中代表一个独立且隔离的 JavaScript 执行环境的关键类。它封装了执行 JavaScript 代码所需的全部状态、资源和组件，包括内存管理、编译器、调试器、全局对象、上下文栈等。`Isolate` 的设计允许多个独立的 JavaScript 虚拟机实例在同一进程中并行运行，互不干扰，这对于构建高性能、可扩展的应用至关重要。理解 `Isolate` 的功能是深入理解 V8 引擎架构的基础。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.h以.tq结尾，那它是个v8 torque源代码，
@@ -285,9 +285,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- to prioritize
+### 源代码
+```c
+to prioritize
   // between memory usage and latency.
   std::atomic<v8::Isolate::Priority> priority_ =
       v8::Isolate::Priority::kUserBlocking;
@@ -736,8 +738,4 @@ class V8_NODISCARD SharedMutexGuardIfOffThread<Isolate, kIsShared> final {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_ISOLATE_H_
-
-"""
-
-
 ```

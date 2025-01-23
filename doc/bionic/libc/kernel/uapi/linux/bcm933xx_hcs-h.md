@@ -267,7 +267,7 @@ sys.stdin.read()
 
 请注意，这只是一个示例，实际的库名、函数名和参数可能不同，需要根据具体的 Android 版本和硬件配置进行调整。  逆向工程分析是找到正确 hook 点的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/bcm933xx_hcs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -303,7 +305,4 @@ struct bcm_hcs {
   __u32 crc;
 };
 #endif
-
-"""
-
 ```

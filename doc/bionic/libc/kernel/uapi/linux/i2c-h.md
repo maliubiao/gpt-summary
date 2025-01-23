@@ -324,7 +324,7 @@ except Exception as e:
 
 这个 Frida 脚本会拦截所有进程的 `ioctl` 调用。为了更精确地调试特定组件，你可能需要找到负责 I2C 通信的进程或库，并将 Hook 目标限定在该进程或库中。 你可以使用 `frida-ps -U` 命令列出正在运行的进程。 你也可以 Hook `open` 系统调用来观察哪些进程打开了 `/dev/i2c-*` 设备文件，从而定位相关的进程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/i2c.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -335,8 +335,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -406,7 +408,4 @@ union i2c_smbus_data {
 #define I2C_SMBUS_BLOCK_PROC_CALL 7
 #define I2C_SMBUS_I2C_BLOCK_DATA 8
 #endif
-
-"""
-
 ```

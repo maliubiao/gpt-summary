@@ -82,7 +82,7 @@ By following these steps, I can generate a comprehensive and accurate answer to 
 
 总而言之，这部分代码继续深入测试了 Blink 引擎中选择功能在各种布局场景下的正确性，特别是针对新的 LayoutNG 引擎。它通过模拟用户操作和断言预期结果，确保了用户在浏览器中进行选择时的行为符合预期，并且关注了特定 bug 的修复。 这部分的测试更加细致，涉及到对选择状态的更精细的检查，并且覆盖了更多类型的 HTML 元素和 CSS 样式对选择的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/layout_selection_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -90,8 +90,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 1"));
   Node* div2 = GetDocument().QuerySelector(AtomicString("#div2"));
   div1->appendChild(div2);
@@ -517,8 +519,4 @@ TEST_F(NGLayoutSelectionTest, SoftHyphen1to5) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

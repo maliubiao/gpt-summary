@@ -84,13 +84,15 @@ When these properties are added to `myObject`, V8 might internally use the `Swis
 
 In summary, this part of `code-stub-assembler.cc` provides low-level building blocks and utilities that the V8 engine uses to implement core JavaScript functionalities, optimize performance, and manage internal state. It bridges the gap between high-level JavaScript code and the underlying machine instructions that the processor executes.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第11部分，共12部分，请归纳一下它的功能
+```
 
-"""
-       (PACKED_NONEXTENSIBLE_ELEMENTS | 1));
+### 源代码
+```
+(PACKED_NONEXTENSIBLE_ELEMENTS | 1));
   static_assert(HOLEY_SEALED_ELEMENTS == (PACKED_SEALED_ELEMENTS | 1));
   static_assert(HOLEY_FROZEN_ELEMENTS == (PACKED_FROZEN_ELEMENTS | 1));
   return IsSetWord32(elements_kind, 1);
@@ -1747,7 +1749,4 @@ TNode<ArrayList> CodeStubAssembler::AllocateArrayList(TNode<Smi> capacity) {
     StoreObjectFieldNoWriteBarrier(array, offsetof(ArrayList, capacity_),
                                    capacity);
     StoreObjectFieldNoWriteBarrier(array, offsetof(
-"""
-
-
 ```

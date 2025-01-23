@@ -89,7 +89,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 总而言之，这部分单元测试旨在确保 `MediaRecorderHandler` 在各种复杂的用例下都能可靠且正确地工作，为 Web 开发者提供稳定的 `MediaRecorder` API 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/media_recorder_handler_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ler_->Initialize(
       recorder, registry_.test_stream(), mime_type, codecs,
       AudioTrackRecorder::BitrateMode::kVariable));
@@ -971,8 +973,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          ValuesIn(kMediaRecorderCodecProfileTestParams));
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -116,15 +116,17 @@ func main() {
 
 `go/src/cmd/compile/internal/s390x/galign.go` 中的 `Init` 函数是 Go 编译器为 s390x 架构进行初始化配置的关键部分。它设置了链接信息、栈指针寄存器、最大宽度以及用于零值填充、空操作生成和 SSA 处理的函数，确保编译器能够为 s390x 架构生成正确的机器码。 这段代码是 Go 编译器内部架构的一部分，用户通常不需要直接与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/s390x/galign.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -148,9 +150,4 @@ func Init(arch *ssagen.ArchInfo) {
 	arch.SSAGenValue = ssaGenValue
 	arch.SSAGenBlock = ssaGenBlock
 }
-
-"""
-
-
-
 ```

@@ -100,11 +100,13 @@ console.log(product_low);
 
 `extension-riscv-m.cc` 是 V8 引擎在 RISC-V 架构上执行 JavaScript 算术运算的关键组成部分。它提供了生成 RISC-V M 扩展指令的能力，使得 V8 能够有效地将 JavaScript 中的乘法、除法和取余操作转换为可以在 RISC-V 处理器上执行的机器码。 简而言之，这个 C++ 文件是 JavaScript 语言在 RISC-V 架构上实现算术运算的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-m.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```objectivec
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ void AssemblerRISCVM::remuw(Register rd, Register rs1, Register rs2) {
 #endif
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -114,7 +114,7 @@ Here's a breakdown of the thinking process to arrive at the detailed analysis of
 
 总而言之，`lib.c` 是一个简单的 C 代码文件，其本身功能有限，但在 Frida 的上下文中，它被用作一个最小化的测试目标，用于验证 Frida 在覆盖函数和处理项目依赖关系方面的能力，并且该测试用例目前处于失败状态，需要开发人员进行调试和修复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/122 override and add_project_dependency/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,12 +122,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "lib.h"
 void f() {puts("hello");}
-
-"""
-
 ```

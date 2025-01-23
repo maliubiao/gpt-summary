@@ -131,14 +131,16 @@ Let's break down the thought process for analyzing this C++ code snippet and ful
 
 `highlight_pointer_event.cc` 文件定义了 Blink 渲染引擎中用于表示与用户高亮操作相关的指针事件的类。这个类继承自 `PointerEvent`，并在其基础上提供了类型标识。理解这个类的功能以及它与 JavaScript、HTML、CSS 的关系对于开发需要处理用户高亮操作的 Web 应用至关重要。开发者需要正确监听和处理这类事件，并注意区分它与普通的 `PointerEvent`，避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/highlight/highlight_pointer_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ void HighlightPointerEvent::Trace(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

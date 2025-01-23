@@ -245,7 +245,7 @@ sys.stdin.read()
 
 通过这些 Frida Hook 示例，你可以更深入地了解 Android 动态链接器的工作原理以及 `linker_globals.handroid` 中定义的元素在其中的作用。记住，进行底层调试需要谨慎，并充分理解代码逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_globals.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -365,7 +367,4 @@ class DlErrorRestorer {
 
 __LIBC_HIDDEN__ extern bool g_is_ldd;
 __LIBC_HIDDEN__ extern pthread_mutex_t g_dl_mutex;
-
-"""
-
 ```

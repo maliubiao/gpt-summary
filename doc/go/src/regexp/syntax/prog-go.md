@@ -187,7 +187,7 @@ inst := syntax.Inst{
 
 总而言之，`go/src/regexp/syntax/prog.go` 是 Go 语言正则表达式编译器的核心组件，它定义了编译后的正则表达式程序的内部结构和操作，为后续的正则表达式匹配提供了基础。普通开发者虽然不会直接使用它，但了解其功能有助于更深入地理解正则表达式的工作原理，并避免在使用 `regexp` 包时犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/regexp/syntax/prog.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -546,9 +548,4 @@ func dumpInst(b *strings.Builder, i *Inst) {
 		bw(b, "anynotnl -> ", u32(i.Out))
 	}
 }
-
-"""
-
-
-
 ```

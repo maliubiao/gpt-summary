@@ -208,7 +208,7 @@ func Float32bits(f float32) uint32 {
 
 作为 `avx_optabs.go` 文件的最后一部分，这部分代码继续定义了 `avxOpcodes` 数组的剩余条目，**完整地描述了 Go 编译器在 x86-64 架构下支持的 AVX 和 EVEX 指令集中的一部分指令的编码信息**。 整个 `avx_optabs.go` 文件的作用是为 Go 编译器提供一个查找表，用于将 AVX 汇编指令映射到其对应的机器码，这是 Go 编译器生成高效机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/avx_optabs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -217,8 +217,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 x0F | vexW0, 0x5C,
 		avxEscape | evex512 | evex0F | evexW0, evexN64 | evexBcstN4 | evexRoundingEnabled | evexZeroingEnabled, 0x5C,
 		avxEscape | evex128 | evex0F | evexW0, evexN16 | evexBcstN4 | evexZeroingEnabled, 0x5C,
@@ -297,10 +299,4 @@ x0F | vexW0, 0x5C,
 		avxEscape | vex128 | vex0F | vexW0, 0x77,
 	}},
 }
-
-"""
-
-
-
-
 ```

@@ -131,11 +131,13 @@ let constructingObject = new GCed(); // 对象正在构造中
 
 `marking-visitor-unittest.cc` 文件通过各种测试用例，详细验证了 `cppgc` 组件中的 `MarkingVisitor` 类在垃圾回收标记阶段的正确行为，包括如何处理强引用、弱引用、mixin 以及正在构造中的对象。这对于确保 V8 引擎的内存管理正确性和避免内存泄漏至关重要。 虽然 `MarkingVisitor` 是 C++ 的实现细节，但其核心功能与 JavaScript 垃圾回收的标记阶段在概念上是相似的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/marking-visitor-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -541,7 +543,4 @@ TEST_F(ConservativeTracerTest, TraceConservativelyStack) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

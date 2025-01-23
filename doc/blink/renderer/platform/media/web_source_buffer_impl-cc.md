@@ -125,14 +125,16 @@ By following these steps, focusing on the code structure, key interactions, and 
 
 总而言之，`blink/renderer/platform/media/web_source_buffer_impl.cc` 是 Blink 引擎中 `WebSourceBuffer` 功能的核心实现，负责管理媒体数据的接收、缓冲和与底层媒体管道的交互，并最终支撑了 Web 页面上基于 MSE 的自适应流媒体播放。它直接响应 JavaScript 的 API 调用，并将这些请求转化为底层的媒体操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_source_buffer_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ void WebSourceBufferImpl::NotifyParseWarning(
 }
 
 }  // namespace blink
-
-"""
-
 ```

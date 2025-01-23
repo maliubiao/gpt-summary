@@ -186,7 +186,7 @@ By following these steps, I was able to create a comprehensive and informative s
 
 总而言之，这个代码片段是 Chromium Blink 引擎中 Canvas 2D API 中关于文本渲染和 GPU 纹理交互的核心实现部分，它连接了 JavaScript API 和底层的图形渲染逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e to be up to date, but updating style can cause
     // script to run, (e.g. due to autofocus) which can free the canvas (set
     // size to 0, for example), so update style before grabbing the PaintCanvas.
@@ -787,8 +789,4 @@ void BaseRenderingContext2D::transferBackFromGPUTexture(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

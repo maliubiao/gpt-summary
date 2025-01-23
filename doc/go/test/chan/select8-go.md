@@ -159,15 +159,17 @@ Exited select statement
 
 总而言之，`go/test/chan/select8.go` 的核心功能是确保 Go 语言的 `break` 语句在各种 `select` 语句结构中都能按照预期工作，即在执行到 `break` 时能够立即跳出 `select` 语句，并且阻止 `select` 块内后续代码的执行。这对于保证并发程序的正确性和可预测性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/select8.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -223,9 +225,4 @@ func main() {
 		panic("unreachable")
 	}
 }
-
-"""
-
-
-
 ```

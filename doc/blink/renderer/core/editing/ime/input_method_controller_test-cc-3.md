@@ -74,7 +74,7 @@ The user is asking for a summary of the functionality of the provided C++ code s
 
 这部分测试主要验证了 `blink::InputMethodController` 在处理文本删除和插入操作时，如何正确地维护和更新 `blink::DocumentMarker` 的状态。 这些测试覆盖了不同类型的 marker (content-dependent 和 content-independent) 以及不同的删除和插入场景（部分覆盖、完全覆盖、内部操作、边界操作）。  其目的是确保在用户进行文本编辑时，与输入法相关的标记（例如拼写错误、建议、搜索匹配等）能够保持与实际文本内容的一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/input_method_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::kInactive);
 
   marker_range = PlainTextRange(5, 10).CreateRange(*div);
@@ -884,8 +886,4 @@ TEST_F(InputMethodControllerTest,
                    .Selection()
                    .GetSelectionInDOMTree()
                    .Anchor()
-            
-"""
-
-
 ```

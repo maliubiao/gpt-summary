@@ -176,15 +176,17 @@ Go Version: go版本号
 
 这段 Go 代码片段的核心功能是收集关于 `go` 命令执行环境的统计信息，并将这些信息以计数器的形式记录下来。这些信息包括 Go 模块模式、目标操作系统和架构，以及特定架构的配置。它是 Go 工具链遥测系统的一部分，用于帮助 Go 团队了解 Go 工具的使用情况。这段代码本身不直接处理命令行参数，而是依赖于 `cfg` 包来获取配置信息。使用者在使用或分析相关遥测数据时，需要注意理解计数器的含义，避免过度解读和错误关联因果关系。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/telemetrystats/telemetrystats.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -236,9 +238,4 @@ func incrementConfig() {
 		counter.Inc("go/platform/target/gowasm:" + cfg.GOWASM)
 	}
 }
-
-"""
-
-
-
 ```

@@ -86,7 +86,7 @@ Here's a breakdown of the thinking process to answer the request about the `main
 
 这个简单的 `main.c` 文件本身的功能是作为一个可以编译的空 C 程序存在。但它在 Frida 的测试框架中的作用是作为测试用例的一部分，特别是在测试构建系统如何处理缺少编译器的情况。 用户之所以会接触到这个文件，很可能是在构建或调试 Frida-Node 的过程中，遇到了这个故意设计成失败的测试用例。  这个测试用例的目的是验证 Frida 的构建系统在缺少关键构建工具（如编译器）时的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/118 missing compiler/subprojects/sub/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -94,10 +94,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char *argv[]) { return 0; }
-
-"""
-
 ```

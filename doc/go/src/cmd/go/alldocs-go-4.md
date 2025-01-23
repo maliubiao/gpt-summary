@@ -182,7 +182,7 @@ ok  	mypackage	1.052s
 
 `go/src/cmd/go/alldocs.go` 的核心功能是 **提供 `go` 命令及其子命令（如 `go test` 和 `go get`）的详细帮助文档**。它包含了关于包管理、模块、测试、版本控制等关键概念的解释和使用说明，是 Go 语言工具链的重要组成部分，帮助开发者理解和使用 Go 语言的各种功能。这段代码片段正是这些文档内容的其中一部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/alldocs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 pattern:
 // 'github.com/user/repo/http'.
 //
@@ -682,10 +684,4 @@ pattern:
 // The 'go env -w' command (see 'go help env') can be used to set the GOVCS
 // variable for future go command invocations.
 package main
-
-"""
-
-
-
-
 ```

@@ -134,14 +134,16 @@ This iterative process of reading, understanding, connecting, exemplifying, and 
 
 总而言之，`interpolable_aspect_ratio.cc` 是 Blink 渲染引擎中处理 `aspect-ratio` 属性动画的关键部分，它通过在对数域进行插值，实现了平滑自然的过渡效果。理解其工作原理有助于开发者更好地利用 CSS 和 JavaScript 进行动画设计。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_aspect_ratio.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ void InterpolableAspectRatio::Interpolate(const InterpolableValue& to,
 }
 
 }  // namespace blink
-
-"""
-
 ```

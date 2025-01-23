@@ -99,7 +99,7 @@ obj3 = null;
 
 `v8/src/heap/minor-mark-sweep.cc` 实现了 V8 引擎中至关重要的 Minor GC 功能，它专注于高效地回收新生代中的垃圾，是 V8 内存管理和性能优化的关键组成部分。它通过标记-清理算法，并结合记忆集、并发标记等技术，有效地管理新生代的内存，并与其他堆管理组件协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/minor-mark-sweep.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/minor-mark-sweep.cc以.tq结尾，那它是个v8 torque源代码，
@@ -107,8 +107,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -994,7 +996,4 @@ bool ShouldMovePage(PageMetadata* p, intptr_t live_bytes,
 
 void MinorMarkSweepCollector::EvacuateExternalPointerReferences(
     MutablePageMetadata* p) {
-"""
-
-
 ```

@@ -116,11 +116,13 @@ if (result > 12) {
 
 总而言之，`base-riscv-i.cc` 文件是 V8 引擎在 RISC-V 平台上生成可执行代码的蓝图，它提供了一组构建 RISC-V 指令的基础工具，使得 V8 能够将高级的 JavaScript 代码转化为底层的机器指令，从而在 RISC-V 架构的硬件上高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/base-riscv-i.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -459,7 +461,4 @@ void AssemblerRISCVI::sraw(Register rd, Register rs1, Register rs2) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

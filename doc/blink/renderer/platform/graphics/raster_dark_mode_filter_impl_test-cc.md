@@ -109,14 +109,16 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 `raster_dark_mode_filter_impl_test.cc` 是一个基础的测试文件，用于验证 `RasterDarkModeFilterImpl` 类的基本功能。它间接地与 JavaScript、HTML 和 CSS 相关，因为它所测试的功能是浏览器渲染管线中处理暗黑模式的重要组成部分。该测试用例通过提供一个未初始化的图像数据来验证 `ApplyToImage` 方法的健壮性。理解此类测试有助于我们了解浏览器如何实现暗黑模式以及可能出现的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/raster_dark_mode_filter_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ TEST(RasterDarkModeFilterImplTest, ApplyToImageAPI) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

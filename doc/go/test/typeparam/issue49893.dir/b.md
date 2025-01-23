@@ -159,15 +159,17 @@ The provided code snippet in `b.go` does **not** directly handle any command-lin
 
 In summary, the `b.go` file demonstrates the basic syntax for defining generic structs in Go, showcasing the use of type parameters and dependencies on other generic types. Its likely purpose, given the file path, is as a test case within the Go compiler's testing suite for generics.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue49893.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -183,9 +185,4 @@ type Ap1[A, B any] struct {
 type Ap2[A, B any] struct {
 	opt a.Option[A]
 }
-
-"""
-
-
-
 ```

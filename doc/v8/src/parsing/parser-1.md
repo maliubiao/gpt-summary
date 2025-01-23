@@ -179,12 +179,14 @@ for (const item of arr) {
 
 总而言之，这部分 `parser.cc` 代码是 V8 引擎将 JavaScript 源代码转化为内部表示的关键组成部分，它识别并解析 JavaScript 的各种语法结构，为后续的编译和执行奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 );
 }
 
@@ -1780,7 +1782,4 @@ Expression* Parser::RewriteClassLiteral(ClassScope* block_scope,
   FunctionLiteral* static_initializer = nullptr;
   if (class_info->has_static_elements()) {
     st
-"""
-
-
 ```

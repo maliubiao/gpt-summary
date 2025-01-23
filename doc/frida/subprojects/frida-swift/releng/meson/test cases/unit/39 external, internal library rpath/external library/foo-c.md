@@ -169,7 +169,7 @@ By following these steps, and continuously refining the analysis based on the pr
 
 尽管 `foo_system_value` 函数本身非常简单，但它在 Frida 动态 instrumentation 工具的测试用例中扮演着重要的角色，用于验证工具的基本功能。理解其上下文以及与底层二进制、操作系统概念的联系，对于有效地使用和调试 Frida 以及进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/39 external, internal library rpath/external library/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,13 +177,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo_system_value (void)
 {
     return 42;
 }
-
-"""
-
 ```

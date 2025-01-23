@@ -130,11 +130,13 @@ Essentially, the process involves: understanding the C++ code's purpose based on
 
 `v8/src/runtime/runtime-module.cc` 文件包含了 V8 引擎处理 JavaScript 模块功能的核心运行时函数。这些函数负责处理动态导入、访问模块的命名空间以及获取模块的元数据和导出。它们是 JavaScript 模块语法的底层实现，使得 JavaScript 能够模块化地组织和执行代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-module.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ RUNTIME_FUNCTION(Runtime_GetModuleNamespaceExport) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

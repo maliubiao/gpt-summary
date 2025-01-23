@@ -154,14 +154,16 @@ longPressEvent.SetTimeStamp(1678886400); // 假设的时间戳
 
 总而言之，`blink/renderer/core/events/gesture_event.cc` 是 Blink 引擎中连接底层手势输入和上层 JavaScript 事件处理的关键组件，它负责创建表示特定手势操作的事件对象，使得 JavaScript 能够响应用户的触摸和触控板操作。理解其功能和支持的事件类型对于进行 Web 前端开发，特别是涉及复杂手势交互的应用开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/gesture_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -258,7 +260,4 @@ void GestureEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

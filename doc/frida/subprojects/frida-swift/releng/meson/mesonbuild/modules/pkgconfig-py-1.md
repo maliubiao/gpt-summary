@@ -193,7 +193,7 @@ Cflags: -I${includedir} -DMY_TOOL_FEATURE
 
 通过查看 `mesonbuild/modules/pkgconfig.py` 的源代码，开发者可以更深入地了解 `.pc` 文件的生成过程，从而更好地诊断和解决构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tadir(), 'pkgconfig')
 
         subdirs = kwargs['subdirs'] or default_subdirs
@@ -301,8 +303,4 @@ tadir(), 'pkgconfig')
 
 def initialize(interp: Interpreter) -> PkgConfigModule:
     return PkgConfigModule()
-
-"""
-
-
 ```

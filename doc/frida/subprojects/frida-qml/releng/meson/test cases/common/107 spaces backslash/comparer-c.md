@@ -128,7 +128,7 @@ By following this systematic process of examination, contextualization, and refi
 
 总而言之，`comparer.c` 虽然代码简单，但它在 Frida 项目中扮演着重要的角色，用于确保框架能够正确处理包含反斜杠的字符串，这对于进行可靠的动态 instrumentation 至关重要。它反映了在处理字符串时需要注意的细节，尤其是在涉及到转义字符时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/107 spaces backslash/comparer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "comparer.h"
 
 #ifndef COMPARER_INCLUDED
@@ -154,7 +156,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

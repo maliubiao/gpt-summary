@@ -134,15 +134,17 @@ console.log(obj.c);
 
 总而言之，`v8/src/objects/field-index-inl.h` 定义了 V8 引擎中用于管理对象字段位置和属性的关键机制。它通过 `FieldIndex` 结构体和相关的内联函数，使得 V8 能够高效地访问和操作 JavaScript 对象的属性。虽然开发者通常不直接与这个文件交互，但理解其背后的原理有助于编写更优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/field-index-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/field-index-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ FieldIndex FieldIndex::ForDetails(Tagged<Map> map, PropertyDetails details) {
 }  // namespace v8
 
 #endif  // V8_OBJECTS_FIELD_INDEX_INL_H_
-
-"""
-
 ```

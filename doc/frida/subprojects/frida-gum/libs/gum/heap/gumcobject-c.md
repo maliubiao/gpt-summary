@@ -175,7 +175,7 @@ By following this systematic approach,  we can thoroughly analyze the code snipp
 
 总而言之，`gumcobject.c` 提供了一个基础的数据结构和操作函数，用于在 Frida Gum 内部表示和管理目标进程中的 C 对象，这对于 Frida 实现其动态插桩和代码分析功能至关重要。虽然用户通常不会直接操作这些函数，但理解其功能有助于理解 Frida 的内部工作原理，并能帮助诊断与对象跟踪相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/heap/gumcobject.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -237,7 +239,4 @@ gum_cobject_list_free (GList * cobject_list)
 
   g_list_free (cobject_list);
 }
-
-"""
-
 ```

@@ -129,7 +129,7 @@ extern "C" {
 
 总而言之，`c_linkage.cpp` 作为一个 Frida 的测试用例，其主要目的是验证 Frida 是否能够正确处理使用 C 语言链接约定的函数。它在逆向工程中体现了符号处理的重要性，并涉及到二进制底层、操作系统链接器和 ABI 的相关知识。理解这类测试用例有助于用户在使用 Frida 进行逆向分析和动态 instrumentation 时避免常见的链接错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/225 link language/c_linkage.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,14 +137,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" {
     int makeInt(void) {
         return 0;
     }
 }
-
-"""
-
 ```

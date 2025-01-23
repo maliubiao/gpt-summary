@@ -153,14 +153,16 @@ By following these steps, I was able to systematically analyze the C++ code and 
 
 总而言之，`html_table_row_element.cc` 文件在 Blink 渲染引擎中扮演着关键的角色，它负责管理和操作 HTML 表格的行元素，并提供了与 JavaScript 交互的接口，使得开发者可以通过脚本来动态地修改表格结构。理解这个文件的功能有助于深入理解浏览器如何处理 HTML 表格。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_table_row_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1997 Martin Jones (mjones@kde.org)
  *           (C) 1997 Torben Weis (weis@kde.org)
@@ -297,7 +299,4 @@ HTMLCollection* HTMLTableRowElement::cells() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

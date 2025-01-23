@@ -180,7 +180,7 @@ func main() {
 
 总而言之，这段代码片段的核心功能是测试在 Windows 平台上，一个非常基础的 Go 程序（包含导入但无实际逻辑）的启动和执行性能开销。它通过动态构建和重复运行这个最小程序来衡量性能，是 Go 运行时系统基准测试的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/syscall_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,9 +189,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- filepath.Join(tmpdir, "main.go")
+### 源代码
+```go
+filepath.Join(tmpdir, "main.go")
 	err := os.WriteFile(src, []byte(benchmarkRunningGoProgram), 0666)
 	if err != nil {
 		b.Fatal(err)
@@ -223,10 +225,4 @@ import _ "os" // average Go program will use "os" package, do the same here
 func main() {
 }
 `
-
-"""
-
-
-
-
 ```

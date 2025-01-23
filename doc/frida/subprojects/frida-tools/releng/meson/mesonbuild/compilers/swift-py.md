@@ -189,7 +189,7 @@ A user's actions leading to the execution of this code typically involve the bui
 
 Therefore, a user encountering issues with Swift compilation within a Meson-based project would likely end up examining this `swift.py` file as part of their debugging process to understand how Meson interacts with the Swift compiler and what flags are being used.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/swift.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -330,7 +332,4 @@ class SwiftCompiler(Compiler):
 
     def get_optimization_args(self, optimization_level: str) -> T.List[str]:
         return swift_optimization_args[optimization_level]
-
-"""
-
 ```

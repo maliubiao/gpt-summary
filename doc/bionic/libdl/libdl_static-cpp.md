@@ -291,7 +291,7 @@ session.detach()
 
 总结来说，`bionic/libdl/libdl_static.cpp` 提供的是动态链接 API 的静态桩实现，用于在不需要或无法进行真正动态链接的场景下提供编译兼容性。它本身不具备动态链接功能，其存在是为了在某些特定情况下避免链接错误并提供明确的错误提示。理解这一点对于理解 Android 系统构建和动态链接机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libdl/libdl_static.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -302,8 +302,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 The Android Open Source Project
  *
@@ -347,7 +349,4 @@ int dladdr(const void* /*addr*/, Dl_info* /*info*/) {
 int dlclose(void* /*handle*/) {
   return -1;
 }
-
-"""
-
 ```

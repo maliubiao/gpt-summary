@@ -102,7 +102,7 @@ I've now mentally outlined the key areas to address. I will now generate the res
 
 这个文件的主要功能是作为 `TlsServerHandshaker` 类的单元测试，用于验证 QUIC 服务器端 TLS 握手过程的各种场景，包括成功的握手、会话恢复、异步操作、错误处理以及参数协商等。它确保了 QUIC 服务器能够安全可靠地建立连接，这对于基于浏览器的 JavaScript 应用通过 HTTPS 进行安全通信至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/tls_server_handshaker_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -950,7 +952,4 @@ TEST_P(TlsServerHandshakerTest, AdvanceHandshakeDuringAsyncDecryptCallback) {
   InitializeServerWithFakeProofSourceHandle();
   server_handshaker_->SetupProofSourceHandle(
       /*select_cert_action=*/FakeProofSourceHandle::Action::DELEGATE_SYNC,
-"""
-
-
 ```

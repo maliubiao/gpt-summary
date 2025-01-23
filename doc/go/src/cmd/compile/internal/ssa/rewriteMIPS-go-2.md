@@ -156,7 +156,7 @@ func main() {
 
 作为 `go/src/cmd/compile/internal/ssa/rewriteMIPS.go` 文件的第三部分（假设前面两部分也定义了其他的重写规则），这部分代码继续定义了针对 **MIPS 架构** 的 **SSA 值和块的重写规则**。它涵盖了循环移位、各种类型的右移、多返回值选择、符号和切片掩码、内存存储、带借位减法、内存清零以及控制流块的转换。这些规则共同构成了 Go 编译器针对 MIPS 架构进行代码优化的重要组成部分，旨在将通用的 SSA 中间表示转换为更符合 MIPS 硬件特性、执行效率更高的指令序列。 它的核心目标是 **提高在 MIPS 架构上运行的 Go 程序的性能**。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,9 +164,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- b.NewValue0(v.Pos, OpMIPSMOVWconst, typ.UInt32)
+### 源代码
+```go
+b.NewValue0(v.Pos, OpMIPSMOVWconst, typ.UInt32)
 		v1.AuxInt = int32ToAuxInt(c & 31)
 		v0.AddArg2(x, v1)
 		v2 := b.NewValue0(v.Pos, OpRsh32Ux32, t)
@@ -2197,10 +2199,4 @@ func rewriteBlockMIPS(b *Block) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

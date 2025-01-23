@@ -170,7 +170,7 @@ This systematic approach, starting with the high-level context and gradually dig
 
 `frida/subprojects/frida-tools/releng/meson/mesonbuild/coredata.py` 文件的第三部分延续了前两部分的功能，**主要负责定义和组织 Frida 工具构建过程中各种核心和高级的配置选项**。它细化了各个方面的构建设置，包括安装路径、编译器行为、链接方式、测试设置、Python 集成等。这些定义为 Meson 构建系统提供了必要的元数据，使得用户可以通过配置这些选项来定制 Frida 工具的构建过程，以满足不同的需求和环境。 开发者可以通过查看和理解这个文件，深入了解 Frida 构建系统的可配置性，并在遇到构建问题时作为重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ption(UserBooleanOption, 'Whether to try static linking before shared linking', False)),
     (OptionKey('stdsplit'),        BuiltinOption(UserBooleanOption, 'Split stdout and stderr in test logs', True)),
     (OptionKey('strip'),           BuiltinOption(UserBooleanOption, 'Strip targets on install', False)),
@@ -248,8 +250,4 @@ FORBIDDEN_TARGET_NAMES = frozenset({
     'dist',
     'distcheck',
 })
-
-"""
-
-
 ```

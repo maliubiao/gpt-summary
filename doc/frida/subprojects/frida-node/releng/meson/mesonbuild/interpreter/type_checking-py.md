@@ -114,7 +114,7 @@ Here's a plan:
 
 总而言之，`type_checking.py` 文件是 Frida 项目 Meson 构建系统的重要组成部分，它通过定义和执行严格的类型检查，提高了构建过程的健壮性和可靠性，并帮助用户避免常见的参数使用错误。虽然它不直接参与逆向操作，但理解它的功能对于构建和定制 Frida 工具链至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/type_checking.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 Intel Corporation
 
@@ -977,7 +979,4 @@ PKGCONFIG_DEFINE_KW: KwargInfo = KwargInfo(
     default=[],
     convertor=_pkgconfig_define_convertor,
 )
-
-"""
-
 ```

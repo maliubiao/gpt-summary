@@ -120,7 +120,7 @@ Based on the above analysis, the generated explanation focuses on the context of
 
 `simple5.c` 自身是一个非常简单的 C 函数，功能是返回 0。它在 Frida 项目中的作用主要是作为 `pkgconfig-gen` 工具的一个基础测试用例，用于验证该工具能否正确处理最简单的 C 代码并生成相应的 `.pc` 文件。它间接地服务于 Frida 的整体功能，确保构建系统的正确性，从而支持 Frida 进行动态 instrumentation 和逆向分析。用户通常不会直接与这个文件交互，但如果 Frida 的构建过程出现问题，开发者可能会检查它作为调试的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/44 pkgconfig-gen/simple5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,15 +128,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int simple5(void);
 
 int simple5(void)
 {
     return 0;
 }
-
-"""
-
 ```

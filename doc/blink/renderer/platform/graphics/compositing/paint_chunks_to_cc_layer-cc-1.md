@@ -123,16 +123,18 @@ PaintChunk {
 
 它充当了 Blink 渲染引擎中一个关键的转换桥梁，将渲染流水线中后期的绘制信息转化为最终在屏幕上呈现的内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_chunks_to_cc_layer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- gfx::Transform projection = TargetToCurrentProjection(target_transform);
+### 源代码
+```cpp
+gfx::Transform projection = TargetToCurrentProjection(target_transform);
   if (projection.IsIdentity()) {
     return {};
   }
@@ -897,8 +899,4 @@ void PaintChunksToCcLayer::UpdateLayerProperties(
 WTF_ALLOW_MOVE_INIT_AND_COMPARE_WITH_MEM_FUNCTIONS(blink::StateEntry)
 WTF_ALLOW_MOVE_INIT_AND_COMPARE_WITH_MEM_FUNCTIONS(blink::EffectBoundsInfo)
 WTF_ALLOW_MOVE_INIT_AND_COMPARE_WITH_MEM_FUNCTIONS(blink::NonCompositedScroll)
-
-"""
-
-
 ```

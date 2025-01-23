@@ -131,15 +131,17 @@ Finally, I'd organize the information into a clear and structured answer, as dem
 
 `blink/renderer/core/testing/internals_delete_all_cookies.cc` 提供了一个供 Blink 内部测试使用的工具，用于方便地删除浏览器中的所有 Cookie。它通过 Mojo 与浏览器进程通信，并暴露为一个可以通过 JavaScript 的 `internals` 对象调用的方法，返回一个 Promise 以处理异步操作。 虽然普通用户不会直接接触到这个文件，但了解其功能有助于理解 Blink 引擎的测试机制以及 Cookie 管理的相关概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/internals_delete_all_cookies.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ ScriptPromise<IDLUndefined> InternalsDeleteAllCookies::deleteAllCookies(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -113,14 +113,16 @@ By following this structured approach and thinking about the broader context of 
 
 `resource_response_test.cc` 通过各种测试用例，确保了 `ResourceResponse` 类能够正确地解析、存储和处理 HTTP 响应头信息。这对于 Blink 渲染引擎的正确运行至关重要，因为它直接影响着浏览器如何加载和处理各种类型的网络资源，从而影响到 JavaScript 的执行、HTML 的渲染和 CSS 的应用。 这些测试帮助开发者避免了与 HTTP 头部处理相关的常见错误，保证了 Web 内容的正确加载和缓存行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_response_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ TEST(ResourceResponseTest, TreatExpiresZeroAsExpired) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

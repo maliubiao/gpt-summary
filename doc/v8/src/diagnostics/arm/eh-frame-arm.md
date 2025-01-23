@@ -109,11 +109,13 @@ main();
 
 `eh-frame-arm.cc` 负责生成用于 ARM 架构的异常处理元数据。虽然 JavaScript 开发者通常不需要直接与这些数据交互，但这些数据对于 V8 引擎正确处理 JavaScript 异常至关重要，保证了 `try...catch` 语句的正常工作，以及程序在发生错误时的可靠性。 这个 C++ 文件就像是幕后英雄，默默地支撑着 JavaScript 的异常处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/arm/eh-frame-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ const char* EhFrameDisassembler::DwarfRegisterCodeToString(int code) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

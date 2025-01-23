@@ -135,7 +135,7 @@ function lazy_func_at_6th_line() {
 
 该文件的主要功能是为 V8 引擎的 `CpuProfiler` 组件提供全面的单元测试，确保其在各种场景下都能准确、可靠地生成性能分析数据。 这些测试覆盖了脚本标识、代码行号、优化失败原因以及不同代码来源的识别，同时也验证了用于管理代码地址映射的 `InstructionStreamMap` 的功能。通过这些测试，可以有效地验证和保障 V8 引擎性能分析功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-profile-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-profile-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -143,8 +143,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 UnboundScript()->GetId(), current->GetScriptId());
 
   current = PickChild(current, "a");
@@ -379,8 +381,4 @@ TEST(CodeMapMoveOverlappingCode) {
 }  // namespace test_profile_generator
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

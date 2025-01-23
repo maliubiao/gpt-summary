@@ -119,14 +119,16 @@ This systematic approach, moving from a general understanding to specific detail
 
 总而言之，`performance_scenario_observer_unittest.cc` 通过各种测试用例，验证了 `PerformanceScenarioObserver` 及其相关机制的正确性，这对于确保 Blink 引擎能够准确地监控和报告性能数据至关重要，而这些性能数据最终会影响用户体验，并可以被开发者用来优化其 Web 应用的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/performance/performance_scenario_observer_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -322,7 +324,4 @@ TEST_F(PerformanceScenarioObserverTest, NotifyOnChange) {
 }  // namespace
 
 }  // namespace blink::performance_scenarios
-
-"""
-
 ```

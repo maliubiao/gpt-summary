@@ -225,15 +225,17 @@ async function saveFile() {
 
 总而言之，`FileSystemAccessIncognitoFileDelegate.cc` 是 Blink 渲染引擎中处理隐身模式下文件系统访问请求的关键组件，它通过 Mojo 与浏览器进程通信，并利用 Data Pipe 进行高效的数据传输。理解这个文件的工作原理有助于理解 File System Access API 在隐身模式下的行为和限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/file_system_access/file_system_access_incognito_file_delegate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -436,7 +438,4 @@ void FileSystemAccessIncognitoFileDelegate::Close() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

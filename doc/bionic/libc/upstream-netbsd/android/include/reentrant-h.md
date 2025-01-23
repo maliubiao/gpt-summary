@@ -335,7 +335,7 @@ except Exception as e:
 
 总结来说，`bionic/libc/upstream-netbsd/android/include/reentrant.handroid` 是一个桥梁，它使得 Bionic 可以复用 NetBSD 的 libc 代码，同时确保这些代码在 Android 的多线程环境下能够正确地使用 POSIX 线程同步机制。它本身不涉及复杂的实现，但对于 Bionic 的整体架构和兼容性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/android/include/reentrant.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -346,8 +346,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -379,7 +381,4 @@ Prompt:
 #define mutex_t pthread_mutex_t
 #define mutex_lock(x) pthread_mutex_lock(x)
 #define mutex_unlock(x) pthread_mutex_unlock(x)
-
-"""
-
 ```

@@ -297,14 +297,16 @@ console.log(ArrayBuffer.isView(null));      // 输出: false
 
 理解这些底层的 V8 Torque 代码有助于更深入地理解 JavaScript 中 `ArrayBuffer` 和 `SharedArrayBuffer` 的行为和限制，从而避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arraybuffer.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -463,7 +465,4 @@ transitioning javascript builtin ArrayBufferIsView(arg: JSAny): Boolean {
 }
 
 }  // namespace arraybuffer
-
-"""
-
 ```

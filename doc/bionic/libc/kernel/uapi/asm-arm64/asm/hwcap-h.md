@@ -225,7 +225,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm64/asm/hwcap.handroid` 文件虽然简单，但它定义了 Android 系统利用底层硬件能力的关键信息，这些信息直接影响到应用程序的性能、安全性以及功能的可用性。动态链接器、libc 库以及 Android Framework 都依赖这些信息来做出最优的决策。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/hwcap.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -236,8 +236,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -343,7 +345,4 @@ Prompt:
 #define HWCAP2_SME_SF8DP2 (1UL << 62)
 #define HWCAP2_POE (1UL << 63)
 #endif
-
-"""
-
 ```

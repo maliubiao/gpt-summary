@@ -152,11 +152,13 @@ if (flags & FLAG_SECOND) {
 
 `flags-unittest.cc` 文件测试的是 V8 引擎中用于类型安全地管理和操作位掩码的工具类。虽然 JavaScript 没有完全相同的概念，但可以使用不同的方式来实现类似的功能来管理一组选项或状态。理解 C++ 中的 `Flags` 类有助于理解 V8 引擎内部如何处理各种配置和标志。  在 JavaScript 中模拟位掩码操作虽然可行，但在更高级别的应用开发中，使用布尔变量、对象或 Set 通常更易读和维护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/flags-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ TEST(FlagsTest, ClassScope) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

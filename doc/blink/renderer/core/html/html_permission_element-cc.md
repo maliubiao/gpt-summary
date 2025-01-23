@@ -118,15 +118,17 @@ Here's a breakdown of the thought process:
 
 `HTMLPermissionElement.cc` 文件的核心功能是定义和实现了 `<permission>` 这个新的 HTML 元素。它负责处理权限请求、管理权限状态、呈现与权限相关的用户界面，并集成 `IntersectionObserver` 来根据元素的可见性调整行为。  该实现还关注元素的样式和可访问性，并进行错误处理和日志记录，以帮助开发者正确使用该元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_permission_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -958,7 +960,4 @@ void HTMLPermissionElement::AdjustStyle(ComputedStyleBuilder& builder) {
 
   builder.SetMinHeight(AdjustedBoundedLength(
       builder.MinHeigh
-"""
-
-
 ```

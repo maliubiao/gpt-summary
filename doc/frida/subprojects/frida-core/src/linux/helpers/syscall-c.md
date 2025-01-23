@@ -155,7 +155,7 @@ Imagine a user is trying to intercept the `openat` system call in an Android app
 
 By examining the call stack during debugging, a developer would see the execution flow leading from the user's Frida script, through Frida's interception mechanisms, and finally reaching the low-level `frida_syscall_4` function responsible for making the system call. This file is a crucial piece in understanding how Frida bridges the gap between high-level scripting and low-level operating system interactions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/helpers/syscall.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "syscall.h"
 
 ssize_t
@@ -309,7 +311,4 @@ frida_syscall_4 (size_t n, size_t a, size_t b, size_t c, size_t d)
 
   return result;
 }
-
-"""
-
 ```

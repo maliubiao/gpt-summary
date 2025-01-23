@@ -130,14 +130,16 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`blink/renderer/core/inspector/dom_editor.cc` 是 Blink 渲染引擎中 Inspector 组件的关键部分，它负责接收来自 Inspector 前端的 DOM 编辑指令，并将其转换为对底层 DOM 结构的实际操作，同时提供了撤销/重做、错误处理和与 Web 技术集成的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/dom_editor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -615,7 +617,4 @@ void DOMEditor::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

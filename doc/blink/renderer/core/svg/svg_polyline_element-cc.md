@@ -121,15 +121,17 @@ Finally, the key is to organize the findings logically and address each part of 
 
 总而言之，`blink/renderer/core/svg/svg_polyline_element.cc` 是 Blink 渲染引擎中负责处理 SVG `<polyline>` 元素的核心组件，它将声明式的 SVG 数据转换为可供底层图形系统使用的路径信息，是 SVG 渲染的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_polyline_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -164,7 +166,4 @@ Path SVGPolylineElement::AsPath() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -137,7 +137,7 @@ func main() {
 
 `go/src/runtime/defs1_solaris_amd64.go` 是 Go 运行时系统在 Solaris AMD64 平台上的一个关键组成部分，它定义了与操作系统交互所需的各种常量和数据结构。 理解这个文件的内容有助于理解 Go 语言在底层是如何与操作系统进行交互的，并能帮助开发者避免一些与平台相关的潜在问题。  普通 Go 开发者通常不需要直接操作这个文件，但了解其背后的原理是有益的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs1_solaris_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_solaris.go defs_solaris_amd64.go
 
@@ -397,9 +399,4 @@ const (
 	_REG_RSP    = 0x14
 	_REG_SS     = 0x15
 )
-
-"""
-
-
-
 ```

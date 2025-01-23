@@ -176,7 +176,7 @@ A user action leading to this code being relevant during debugging would involve
 
 As part 10 of the `host_resolver_manager_unittest.cc` suite, this section focuses on thoroughly testing the **Secure DNS functionality** of the `HostResolverManager`. It covers various Secure DNS modes, interactions with the DNS cache in the context of Secure DNS, and the fallback mechanisms to ensure reliable DNS resolution even when secure lookups encounter issues. This part ensures that Chromium's networking stack correctly implements and handles Secure DNS according to user settings and network conditions. The tests aim to prevent errors related to misconfigured Secure DNS settings, faulty fallback logic, and incorrect cache behavior, ultimately contributing to a more secure and reliable browsing experience.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 re_automatic_cached", 80), NetworkAnonymizationKey(),
       NetLogWithSource(), std::nullopt, resolve_context_.get()));
   EXPECT_THAT(response_insecure_cached.result_error(), IsOk());
@@ -848,7 +850,4 @@ TEST_F(HostResolverManagerDnsTest,
     }
 
     EXP
-"""
-
-
 ```

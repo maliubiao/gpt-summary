@@ -170,7 +170,7 @@ console.log(shifted); // 输出 4，二进制: 00000000 00000000 00000000 000001
 
 总而言之，`v8/src/codegen/mips64/assembler-mips64.h` 的这一部分主要负责为 V8 引擎提供生成 MIPS64 架构上 MSA 指令的能力，并提供了一系列辅助工具来管理代码生成过程。它是 V8 将 JavaScript 代码高效地转换为底层机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64.h以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 r wd, uint32_t n, MSARegister ws);
   void move_v(MSARegister wd, MSARegister ws);
   void ctcmsa(MSAControlRegister cd, Register rs);
@@ -801,8 +803,4 @@ class LoadStoreLaneParams {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_MIPS64_ASSEMBLER_MIPS64_H_
-
-"""
-
-
 ```

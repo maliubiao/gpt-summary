@@ -156,15 +156,17 @@ By following this thought process,  we can arrive at a comprehensive and informa
 
 总而言之，`style_rule_css_style_declaration.cc` 文件定义了 Blink 渲染引擎中一个核心的类，负责管理 CSS 样式规则的样式声明，它在网页的样式渲染和动态更新中扮演着至关重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_rule_css_style_declaration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Apple Inc. All
@@ -250,7 +252,4 @@ void StyleRuleCSSStyleDeclaration::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -117,12 +117,14 @@ function handleInput(input) {
 
 总而言之，这段 C++ 代码是 V8 引擎在 PPC 架构下生成高效机器码的关键部分，它负责底层的内存管理和数据操作，以支持 JavaScript 代码的执行。它处理了函数调用、变量赋值、算术运算等各种操作背后的数据搬运和栈帧管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/code-generator-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _access_state_->frame()->GetTotalFrameSlotCount() - 1;
   int sp_delta = frame_access_state_->sp_delta();
   int slot_id = last_frame_slot_id + sp_delta + new_slots;
@@ -467,8 +469,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

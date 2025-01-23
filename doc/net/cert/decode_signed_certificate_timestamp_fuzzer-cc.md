@@ -114,15 +114,17 @@ fetch('https://example.com')
 
 `decode_signed_certificate_timestamp_fuzzer.cc` 是 Chromium 网络栈中一个重要的模糊测试工具，用于确保 SCT 解码逻辑的健壮性和安全性。它虽然不直接与 JavaScript 交互，但在浏览器处理 HTTPS 连接和验证证书的过程中发挥着关键作用。理解这段代码的功能有助于开发者理解 Chromium 如何处理 Certificate Transparency 相关的数据，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/decode_signed_certificate_timestamp_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   DecodeSignedCertificateTimestamp(&buffer, &sct);
   return 0;
 }
-
-"""
-
 ```

@@ -149,14 +149,16 @@ SRI 是一种安全特性，允许浏览器验证从 CDN 或其他来源加载�
 
 总而言之，`subresource_integrity.cc` 文件是 Blink 引擎中实现 SRI 这一关键安全特性的核心组件，它负责解析、计算和比较哈希值，以确保网页加载的资源没有被恶意篡改，从而提高 Web 应用的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/subresource_integrity.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -548,7 +550,4 @@ void SubresourceIntegrity::ParseIntegrityAttribute(
 }
 
 }  // namespace blink
-
-"""
-
 ```

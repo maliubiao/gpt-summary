@@ -140,14 +140,16 @@ Here's a breakdown of the thinking process to analyze the provided code snippet 
 
 虽然提供的代码片段只包含一个空的 `Trace` 方法，但根据文件名和上下文，`MediaSourceTracer` 的核心功能是用于追踪 Chromium 内部 Media Source API 的使用情况。它可以帮助 Chromium 工程师调试、分析和监控 MSE 的行为，并间接地帮助开发者诊断与 MSE API 相关的错误。未来，该文件很可能会填充具体的追踪逻辑，以便收集更详细的 Media Source 信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_source_tracer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ namespace blink {
 void MediaSourceTracer::Trace(Visitor* visitor) const {}
 
 }  // namespace blink
-
-"""
-
 ```

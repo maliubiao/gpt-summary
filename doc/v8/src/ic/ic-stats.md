@@ -150,11 +150,13 @@ node --trace-event-categories v8.ic_stats your_script.js
 
 `ic-stats.cc` 是 V8 引擎中用于内部诊断和性能分析的重要组成部分。它通过跟踪 IC 的行为，帮助 V8 开发者了解引擎的优化效果，并找出潜在的性能问题。 虽然 JavaScript 代码不能直接操作它，但 JavaScript 代码的执行会触发它的数据收集和记录过程。 通过分析 `ic-stats` 收集的数据，可以深入了解 V8 如何优化 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic-stats.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ void ICInfo::AppendToTracedValue(v8::tracing::TracedValue* value) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

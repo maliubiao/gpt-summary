@@ -102,11 +102,13 @@ myDog.speak(); // 当你点击 "Dog" 或者 "speak" 时，IDE 可以跳转到它
 
 `ls-server-data-unittest.cc` 文件通过一系列单元测试，确保了 V8 引擎中 Torque 语言的语言服务器能够正确地处理 "跳转到定义" 的请求，这对于提升 Torque 代码的可读性和开发效率至关重要。虽然 Torque 不是 JavaScript，但语言服务器提供的智能代码导航功能在各种编程语言中都是通用的，JavaScript 开发人员也经常使用类似的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/torque/ls-server-data-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -369,7 +371,4 @@ TEST(LanguageServer, SymbolsArePopulated) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

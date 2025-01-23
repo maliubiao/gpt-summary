@@ -169,15 +169,17 @@ func main() {
 
 总而言之，`go/test/fixedbugs/issue6403.go` 是一个针对Go编译器错误报告机制的测试用例，它专注于验证编译器在处理非法常量初始化时是否能给出正确的错误信息，特别是关于未定义标识符的情况。它帮助确保了编译器不会错误地将某些合法的常量初始化标记为非法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6403.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -192,9 +194,4 @@ import "syscall"
 
 const A int = syscall.X // ERROR "undefined: syscall.X|undefined identifier .*syscall.X"
 const B int = voidpkg.X // ERROR "undefined: voidpkg|undefined name .*voidpkg"
-
-"""
-
-
-
 ```

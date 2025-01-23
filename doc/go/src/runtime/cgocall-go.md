@@ -299,7 +299,7 @@ C code finished calling Go callback.
 
 总而言之，`go/src/runtime/cgocall.go` 是 Go 语言 Cgo 功能的核心实现，它定义了 Go 和 C 代码之间相互调用的底层机制，并提供了一些安全检查来降低 Cgo 使用中的风险。理解这段代码有助于深入了解 Go 语言的运行时原理以及 Cgo 的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgocall.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -307,8 +307,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1103,9 +1105,4 @@ func cgoCheckResult(val any) {
 	t := ep._type
 	cgoCheckArg(t, ep.data, t.Kind_&abi.KindDirectIface == 0, false, cgoResultFail)
 }
-
-"""
-
-
-
 ```

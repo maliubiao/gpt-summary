@@ -128,7 +128,7 @@ COMPARE(addi(t0, zero_reg, 10), "00a00293       addi      t0, zero_reg, 10");
 
 `v8/test/unittests/assembler/disasm-riscv-unittest.cc` 的主要功能是作为 V8 引擎中 RISC-V 反汇编器的单元测试。它通过生成并反汇编各种 RISC-V 指令，并与预期的反汇编结果进行比较，来确保反汇编器的正确性和健壮性。这对于 V8 开发者理解和调试 V8 生成的 RISC-V 机器码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-riscv-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-riscv-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -820,8 +822,5 @@ TEST_F(DisasmRiscvTest, RVV) {
   COMPARE(vfnmsub_vf(v17, fa5, v28), "afc7d8d7       vfnmsub.vf v17, fa5, v28");
   COMPARE(vfmacc_vf(v17, fa5, v28), "b3c7d8d7       vfmacc.vf v17, fa5, v28");
   COMPARE(vfnmacc_vf(v17, fa5, v28), "b7c7d8d7       vfnmacc.vf v17, fa5, v28");
-  COMPARE(vfmsac_vf(v17, fa5, v28), "bbc7d8d7       vfmsac.vf v17, fa5, 
-"""
-
-
+  COMPARE(vfmsac_vf(v17, fa5, v28), "bbc7d8d7       vfmsac.vf v17, fa5,
 ```

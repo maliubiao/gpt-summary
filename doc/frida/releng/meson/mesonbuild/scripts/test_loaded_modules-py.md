@@ -103,7 +103,7 @@ By following this systematic approach, we can thoroughly analyze the script and 
 
 总而言之，`frida/releng/meson/mesonbuild/scripts/test_loaded_modules.py` 是 Frida 项目中一个重要的测试工具，它通过监控模块加载来确保 Frida 的代码库保持精简和高效，这对于一个动态 instrumentation 工具来说至关重要，因为它直接关系到其性能、稳定性和对目标进程的干扰程度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/scripts/test_loaded_modules.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import sys
@@ -127,7 +129,4 @@ def run(args: T.List[str]) -> int:
     meson_exe.run(args)
     print(json.dumps(list(sys.modules.keys())))
     return 0
-
-"""
-
 ```

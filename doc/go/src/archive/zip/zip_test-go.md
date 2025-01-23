@@ -213,7 +213,7 @@ go test -test.bench BenchmarkZip64Test ./archive/zip
 
 总而言之，这段测试代码覆盖了 `archive/zip` 包在读取和写入 zip 文件时的各种场景，包括基本的文件操作、元数据处理、Zip64 扩展、错误处理以及性能测试。通过分析这些测试，可以更好地理解 `archive/zip` 包的功能和使用方式，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/zip/zip_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -221,8 +221,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1042,9 +1044,4 @@ func (zeros) Read(p []byte) (int, error) {
 	clear(p)
 	return len(p), nil
 }
-
-"""
-
-
-
 ```

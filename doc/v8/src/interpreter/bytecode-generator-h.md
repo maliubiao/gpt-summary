@@ -226,15 +226,17 @@ StaLocal [y的寄存器]           // 存储返回值到 y
 
 `v8/src/interpreter/bytecode-generator.h` 定义的 `BytecodeGenerator` 类是 V8 解释器至关重要的组成部分，它负责将 JavaScript 代码转化为可执行的字节码。它处理各种 JavaScript 语法结构，并为后续的解释执行奠定基础。虽然它本身不直接处理用户编程错误，但它生成的字节码会揭示这些错误，并在运行时抛出异常或产生意外的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -889,7 +891,4 @@ class BytecodeGenerator final : public AstVisitor<BytecodeGenerator> {
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_BYTECODE_GENERATOR_H_
-
-"""
-
 ```

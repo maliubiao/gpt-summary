@@ -129,7 +129,7 @@ By following these steps, combining contextual clues with knowledge of Frida's a
 
 总结来说，`d.c` 很可能是一个用于测试 Frida Python 绑定在特定场景下生成警告信息时，能否准确报告警告位置的单元测试文件。虽然它本身不是 Frida 的核心功能代码，但它对于保证 Frida 的稳定性和提供准确的调试信息至关重要，这对于使用 Frida 进行逆向工程的用户来说是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/22 warning location/sub/d.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,9 +137,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

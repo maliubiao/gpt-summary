@@ -101,7 +101,7 @@ Based on the code, the script seems to manage dependencies for the Frida project
 
 总而言之，`deps.py` 是 Frida 项目中一个至关重要的脚本，它负责自动化管理 Frida Swift 组件的构建依赖，确保开发者能够方便地构建和使用 Frida 在各种目标平台上的功能。它涉及到操作系统、架构、构建工具链、网络通信等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from __future__ import annotations
 import argparse
@@ -931,8 +933,4 @@ class Builder:
             print("\n".join([
                 "",
                 f"# Done",
-  
-"""
-
-
 ```

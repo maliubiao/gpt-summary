@@ -116,11 +116,13 @@ console.log(absolutePathSimulated); // 输出: /path/to/my/settings/user.config
 
 `v8/src/base/file-utils.cc` 中的 `RelativePath` 函数是 V8 引擎内部用于处理文件路径的底层工具函数。 它根据可执行文件的路径和一个相对路径或文件名，构建出一个新的绝对路径。  虽然 JavaScript 代码不会直接调用这个 C++ 函数，但在 JavaScript (特别是 Node.js 环境) 中进行模块加载、动态代码加载以及文件系统操作时，V8 引擎内部会使用类似的路径解析和构建逻辑来找到所需的文件。  Node.js 的 `path` 模块提供了更高级别的 API 来处理这些任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/file-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -151,7 +153,4 @@ std::unique_ptr<char[]> RelativePath(const char* exec_path, const char* name) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -100,15 +100,17 @@ By following this systematic approach, we can effectively analyze and understand
 
 总而言之，`peer_connection_dependency_factory_test.cc` 文件是 Blink 引擎中一个重要的单元测试，它确保了 WebRTC 功能的核心依赖管理类 `PeerConnectionDependencyFactory` 的正确性，这对于 WebRTC 功能的稳定运行至关重要。虽然用户不会直接接触到这个文件，但它背后的逻辑直接影响着用户在浏览器中使用 WebRTC 功能的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/peer_connection_dependency_factory_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ TEST_F(PeerConnectionDependencyFactoryTest, CreateRTCPeerConnectionHandler) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

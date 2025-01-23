@@ -222,7 +222,7 @@ const it = map.values();
 
 考虑到这是 36 个部分中的第 32 部分，可以推测 `test-api.cc` 的整体目标是对 V8 JavaScript 引擎的各种 C++ API 进行全面的单元测试，涵盖了从基本的数据结构操作到更复杂的引擎特性（如 `Isolate` 管理和性能优化机制）。这部分可能集中在集合类型 (`Map`) 的迭代器行为和 V8 的扩展机制 (Fast API Calls)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -230,9 +230,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第32部分，共36部分，请归纳一下它的功能
+```
 
-"""
-             "var key = {}; map.set(key, 1);"
+### 源代码
+```cpp
+"var key = {}; map.set(key, 1);"
                                          "map.set({}, 2); map.set({}, 3);"
                                          "var it = map.values(); it")
                                          ->ToObject(context)
@@ -1091,7 +1093,4 @@ void CheckFastCallsWithConstructor() {
 template <typename T>
 struct ReturnValueChecker : BasicApiChecker<T, ReturnValueChecker<T>, T> {
   static T FastCallback(v8::Local<v8::Object
-"""
-
-
 ```

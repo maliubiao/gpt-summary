@@ -252,7 +252,7 @@ Stalker.follow(Process.getCurrentThreadId(), {
 
 `frida/subprojects/frida-gum/gum/backend-mips/gumstalker-mips.c` 文件是 Frida 中 `Stalker` 组件针对 MIPS 架构的占位符实现。它定义了接口，但并没有实际的功能实现。这意味着在 MIPS 架构上，Frida 的 `Stalker` 功能目前是不可用的。理解这一点对于尝试在 MIPS 设备上进行动态逆向的用户至关重要，可以避免不必要的调试和困惑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-mips/gumstalker-mips.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -260,8 +260,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -494,7 +496,4 @@ gum_stalker_iterator_get_capstone (GumStalkerIterator * self)
 {
   return 0;
 }
-
-"""
-
 ```

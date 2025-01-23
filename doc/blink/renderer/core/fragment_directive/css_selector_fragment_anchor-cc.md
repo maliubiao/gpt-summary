@@ -111,14 +111,16 @@ Here's a breakdown of its functionality and its relationship to web technologies
 
 **In summary, `css_selector_fragment_anchor.cc` is a crucial component in enabling a more sophisticated way to navigate within web pages by using the power of CSS selectors within URL fragments. It bridges the gap between URLs, CSS styling, and the HTML structure of a web page, enhancing the user experience by allowing direct linking to specific content based on CSS criteria.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/css_selector_fragment_anchor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ void CssSelectorFragmentAnchor::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

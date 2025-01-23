@@ -187,7 +187,7 @@ By following this systematic process of understanding, decomposing, connecting t
 
 总而言之，这个示例代码展示了 Frida 的基本用法，即在程序运行时动态地拦截函数调用并观察其行为，这是逆向工程和动态分析中非常常见的技术。通过理解这段代码，可以为进一步使用 Frida 进行更复杂的分析打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/devkit-assets/frida-gumjs-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gumjs.h"
 
 #include <fcntl.h>
@@ -281,7 +283,4 @@ on_message (const gchar * message,
 
   g_object_unref (parser);
 }
-
-"""
-
 ```

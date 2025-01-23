@@ -129,7 +129,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`blink/renderer/core/css/resolver/style_builder_converter.cc` 的第二部分是 Blink 样式系统中一个至关重要的组件，它负责将 CSS 的抽象表示转换为可供 Blink 内部使用的具体数据结构，是连接 CSS 解析和样式应用的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_builder_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -137,9 +137,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
- return FontDescription::Size(
+### 源代码
+```cpp
+return FontDescription::Size(
         /*keyword=*/0,
         (primitive_value.ComputePercentage(conversion_data) *
          parent_size.value / 100.0f),
@@ -1031,7 +1033,4 @@ StyleHyphenateLimitChars StyleBuilderConverter::ConvertHyphenateLimitChars(
                 1);
       values.push_back(
           primitive->Comput
-"""
-
-
 ```

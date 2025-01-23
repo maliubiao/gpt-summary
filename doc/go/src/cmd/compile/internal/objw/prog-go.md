@@ -164,15 +164,17 @@ pp.Flush()
 
 总而言之，`go/src/cmd/compile/internal/objw/prog.go` 是 Go 编译器后端生成目标代码的关键组件，它通过提供结构化的方式来管理和输出汇编指令，并处理与垃圾回收和运行时系统相关的元数据。普通 Go 开发者无需直接关注它，但理解其功能有助于理解 Go 编译过程的内部运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/objw/prog.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6c/txt.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6c/txt.c
 //
@@ -387,9 +389,4 @@ func LosesStmtMark(as obj.As) bool {
 	// is_stmt does not work for these; it DOES for ANOP even though that generates no code.
 	return as == obj.APCDATA || as == obj.AFUNCDATA
 }
-
-"""
-
-
-
 ```

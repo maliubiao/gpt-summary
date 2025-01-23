@@ -143,7 +143,7 @@ This systematic approach allows for a comprehensive analysis of the script, addr
 
 总而言之，`query_system_parameters.js` 是一个简单但实用的 Frida 脚本，它演示了如何获取目标系统的基本信息，这在逆向工程、安全分析和调试等场景中非常有用。 理解这个脚本的功能和潜在问题，有助于用户更好地使用 Frida 进行更复杂的动态插桩操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/query_system_parameters.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('..');
 
 async function main() {
@@ -166,7 +168,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

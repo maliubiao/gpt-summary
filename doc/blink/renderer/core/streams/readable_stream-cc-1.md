@@ -145,7 +145,7 @@ By following these steps iteratively, I can develop a comprehensive understandin
 
 这部分代码主要负责处理 `ReadableStream` 的核心操作，特别是与 **读取器 (Readers)** 交互相关的部分。它定义了如何添加和完成读取请求（无论是默认读取器还是 BYOB 读取器），以及如何处理流的取消、关闭和错误状态。这些功能是实现 WHATWG Streams 标准中可读流 API 的关键组成部分，使得 JavaScript 能够以高效且可控的方式处理流式数据。此外，它还包含了创建可读流迭代器以及支持 `tee()` 操作的辅助功能。 总体来说，这部分代码专注于 **管理可读流的生命周期和数据流动**，确保数据能够正确地从底层数据源传递给 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/readable_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -153,10 +153,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  // initialised correctly.
+### 源代码
+```cpp
+// initialised correctly.
   // https://streams.spec.whatwg.org/#initialize-readable-stream
   // 1. Set stream.[[state]] to "readable".
   CHECK_EQ(stream->state_, kReadable);
@@ -682,8 +683,4 @@ ReadableStream::IterationSourceBase* ReadableStream::CreateIterationSource(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

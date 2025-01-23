@@ -154,15 +154,17 @@ generator.Emit(0x02, 0x56789A);
 
 了解这些功能和潜在的错误可以帮助理解 V8 内部正则表达式引擎的工作原理，并避免在类似的底层编程中犯错。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecode-generator-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-bytecode-generator-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2008-2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ void RegExpBytecodeGenerator::Emit32(uint32_t word) {
 }  // namespace v8
 
 #endif  // V8_REGEXP_REGEXP_BYTECODE_GENERATOR_INL_H_
-
-"""
-
 ```

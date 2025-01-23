@@ -204,7 +204,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`legacy_termios_inlines.handroid` 是 Bionic 库中一个重要的兼容性头文件，它确保了即使在旧版本的 Android 系统上，应用程序也能使用最新的 `termios` 相关功能，从而保证了终端相关操作的一致性和可靠性。它通过条件编译和包含内联函数定义来实现这一目标，最终依赖于 `libc.so` 提供的系统调用实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/android/legacy_termios_inlines.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -215,8 +215,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -269,7 +271,4 @@ Prompt:
 #include <bits/termios_winsize_inlines.h>
 
 #endif
-
-"""
-
 ```

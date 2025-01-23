@@ -151,15 +151,17 @@ By following these steps, combining code analysis with understanding of web tech
 
 `web_frame_content_dumper.cc` 提供的 `DumpFrameTreeAsText` 功能是一个用于提取 Web 框架渲染后纯文本内容的实用工具。 它在 Chromium 的内部测试、调试和性能分析中扮演着重要的角色，帮助开发者理解页面的最终呈现结果，并进行自动化验证。虽然普通用户不会直接接触到这个函数，但它的存在对于确保 Chromium 的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_frame_content_dumper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ WebString WebFrameContentDumper::DumpFrameTreeAsText(WebLocalFrame* frame,
 }
 
 }  // namespace blink
-
-"""
-
 ```

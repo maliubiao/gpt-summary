@@ -196,7 +196,7 @@ void MacroAssembler::Cvt_d_ul(FPURegister fd, Register rs) {
 
 总而言之，这部分 `macro-assembler-mips64.cc` 代码是 V8 引擎在 MIPS64 架构上执行 JavaScript 代码的关键组成部分，它提供了执行浮点数和 SIMD 运算所需的底层指令支持。了解这些指令的功能有助于理解 V8 如何将高级的 JavaScript 代码转换为机器可以执行的指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 block_trampoline_pool(this);
   mfc1(t8, fs);
   Cvt_d_uw(fd, t8);
@@ -1347,8 +1349,4 @@ void MacroAssembler::CompareWord(Condition cond, Register dst, Register lhs,
     case eq:
     case ne: {
       if (rhs.IsImmediate()) {
- 
-"""
-
-
 ```

@@ -111,11 +111,13 @@ main();
 
 `eh-frame-x64.cc` 文件是 V8 引擎内部用于生成 x64 架构下异常处理所需的核心数据的组件。虽然 JavaScript 开发者不会直接接触它，但它对于 V8 引擎正确实现 JavaScript 的异常处理机制至关重要。它确保了在发生错误时，程序能够正确地展开调用栈，找到合适的异常处理器，并保证程序的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/eh-frame-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ const char* EhFrameDisassembler::DwarfRegisterCodeToString(int code) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

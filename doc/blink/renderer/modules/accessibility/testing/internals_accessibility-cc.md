@@ -154,15 +154,17 @@ My thinking process to arrive at the explanation of `internals_accessibility.cc`
 
 总而言之，`internals_accessibility.cc` 是 Blink 引擎中一个重要的测试工具，它允许开发人员深入了解和验证辅助功能功能的实现细节，确保网页对所有用户都是可访问的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/testing/internals_accessibility.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ WTF::String InternalsAccessibility::getComputedRole(Internals&,
 }
 
 }  // namespace blink
-
-"""
-
 ```

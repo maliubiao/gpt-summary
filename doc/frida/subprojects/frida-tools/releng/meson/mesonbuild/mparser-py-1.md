@@ -116,7 +116,7 @@ IfClauseNode(
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/mparser.py` 的第二部分是 Meson 构建系统语法解析的核心，负责将构建描述文件转换成计算机可以理解的结构，为后续的构建步骤奠定基础。虽然它不直接参与逆向工程的执行，但理解其工作原理对于深入理解 Frida 的构建过程和进行相关调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf.create_node(SymbolNode, block_start)
             key_values = self.key_values()
             self.block_expect('rcurl', block_start)
@@ -329,8 +331,4 @@ lf.create_node(SymbolNode, block_start)
         self.current_ws = []
 
         return block
-
-"""
-
-
 ```

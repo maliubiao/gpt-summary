@@ -145,15 +145,17 @@ By following this systematic approach, we can thoroughly understand the purpose,
 
 总而言之，`reporting_test_util.cc` 是 Chromium Reporting API 功能测试的关键基础设施，它通过提供可控的模拟组件和辅助函数，使得开发者能够有效地编写和调试与报告生成、排队、上传和策略管理相关的单元测试。它本身不直接参与用户的日常操作，但在幕后支撑着确保 Reporting API 功能正确性的测试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -565,7 +567,4 @@ void TestReportingService::RemoveReportingCacheObserver(
 }
 
 }  // namespace net
-
-"""
-
 ```

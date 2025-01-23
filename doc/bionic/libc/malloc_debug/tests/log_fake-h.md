@@ -303,7 +303,7 @@ sys.stdin.read()
 
 总而言之，`log_fake.h` 是一个测试工具，用于在隔离的环境中验证 `malloc_debug` 模块的功能，它模拟了日志记录的行为，使得测试可以独立于 Android 系统的实际日志机制进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/tests/log_fake.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -314,8 +314,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -342,7 +344,4 @@ std::string getFakeLogBuf();
 std::string getFakeLogPrint();
 
 #endif // MALLOC_DEBUG_TESTS_LOG_FAKE_H
-
-"""
-
 ```

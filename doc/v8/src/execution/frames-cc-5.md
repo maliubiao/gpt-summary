@@ -195,7 +195,7 @@ bar(); // 调用 bar，创建一个 JavaScriptFrame
 
 作为 V8 引擎执行机制的关键组成部分，`v8/src/execution/frames.cc` 文件负责 **定义、管理和提供访问程序执行期间在调用栈上创建的执行帧的关键信息。** 它定义了不同类型的帧以适应不同的执行上下文（JavaScript 代码、内部 C++ 代码、桩代码等），计算和管理帧的内存布局，提供访问帧内数据（如参数、局部变量、代码对象）的接口，并支持垃圾回收和调试等关键功能。 简而言之，这个文件是 V8 如何跟踪和控制程序执行流程的核心。 它确保了函数调用和返回的正确性，并为 V8 的其他组件（如垃圾回收器和调试器）提供了必要的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/frames.cc以.tq结尾，那它是个v8 torque源代码，
@@ -203,8 +203,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s>(fp() + last_object_offset) + 1);
   v->VisitRootPointers(Root::kStackRoots, nullptr, base, argc);
   v->VisitRootPointers(Root::kStackRoots, nullptr, argc + 1, limit);
@@ -445,8 +447,4 @@ BuiltinContinuationFrameInfo::BuiltinContinuationFrameInfo(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

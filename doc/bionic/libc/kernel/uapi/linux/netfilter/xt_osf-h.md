@@ -262,7 +262,7 @@ Frida hook 会拦截 `iptables` 的 `execv` 系统调用，并输出执行的命
 
 这个 Frida 示例提供了一个调试用户空间程序如何使用 `xt_osf` 模块的思路。要更深入地调试内核模块内部的行为，需要使用更底层的内核调试技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_osf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -305,7 +307,4 @@ Prompt:
 #define xt_osf_attr_type nf_osf_attr_type
 #define xt_osf_msg_types nf_osf_msg_types
 #endif
-
-"""
-
 ```

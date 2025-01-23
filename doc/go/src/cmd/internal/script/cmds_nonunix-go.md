@@ -139,15 +139,17 @@ script rm my_file.txt
 
 `go/src/cmd/internal/script/cmds_nonunix.go` 文件定义了一个平台特定的 `isETXTBSY` 函数，该函数在非 Unix 系统上总是返回 `false`。这表明 `script` 包是一个用于执行脚本或命令序列的内部工具，它需要处理平台特定的行为和错误。普通开发者不应该直接使用这个包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/script/cmds_nonunix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -160,9 +162,4 @@ func isETXTBSY(err error) bool {
 	// syscall.ETXTBSY is only meaningful on Unix platforms.
 	return false
 }
-
-"""
-
-
-
 ```

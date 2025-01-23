@@ -192,7 +192,7 @@ option('max_threads', type: 'integer', value: 4, min: 1, max: 16, description: '
 
 总而言之，`optinterpreter.py` 是 Frida 构建系统中的关键组件，负责将用户在 `meson_options.txt` 中定义的选项转化为程序可以理解和使用的配置信息。它的功能是确保构建配置的正确性和一致性，并提供错误检查机制来帮助用户避免配置错误。虽然它不直接参与逆向操作或底层系统交互，但它解析的选项会间接影响 Frida 的功能和行为，甚至影响逆向分析的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/optinterpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2014 The Meson development team
 
@@ -478,7 +480,4 @@ class OptionInterpreter:
     )
     def feature_parser(self, name: str, description: str, args: T.Tuple[bool, _DEPRECATED_ARGS], kwargs: FeatureArgs) -> coredata.UserOption:
         return coredata.UserFeatureOption(name, description, kwargs['value'], *args)
-
-"""
-
 ```

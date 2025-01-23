@@ -104,7 +104,7 @@ By following these steps, we can systematically analyze the script and generate 
 
 这个 `setup.py` 脚本的主要功能是定义如何安装 `frida-node` 这个 Python 包，并负责将特定的数据文件复制到系统目录。虽然它本身不执行逆向操作，但它是 Frida 工具链的重要组成部分，为逆向工程师提供了使用 Node.js 与目标进程交互的能力。脚本中对操作系统类型的判断和对特定系统目录的操作，体现了对 Linux 系统底层知识的运用。用户在安装 `frida-node` 遇到问题时，可能会查看这个文件以寻找调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/setup.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -134,7 +136,4 @@ if sys.platform != 'win32':
                   ('share/polkit-1/actions', ['data/com.mesonbuild.install.policy'])]
 
 setup(data_files=data_files,)
-
-"""
-
 ```

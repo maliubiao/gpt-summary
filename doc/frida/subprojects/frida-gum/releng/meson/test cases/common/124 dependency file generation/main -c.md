@@ -104,7 +104,7 @@ Initially, I might have focused too much on the C code itself. However, the path
 
 尽管 `main.c` 的代码非常简单，但它在 Frida 的构建测试体系中扮演着重要的角色。它作为一个最基本的 C 源文件，用于验证构建系统是否能够正确地生成依赖文件，这对于确保 Frida 的正确构建和运行至关重要。开发者通过运行测试套件，可以及早发现构建系统中关于依赖管理的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/124 dependency file generation/main .c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,12 +112,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

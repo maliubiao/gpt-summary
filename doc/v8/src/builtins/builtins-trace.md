@@ -133,11 +133,13 @@ V8Internal.Trace(
 
 `builtins-trace.cc` 文件是 V8 引擎中连接 JavaScript 代码和底层 tracing 机制的关键桥梁。它通过 `IsTraceCategoryEnabled` 和 `Trace` 这两个内置函数，允许 JavaScript 代码有选择地生成和管理跟踪事件，这些事件可以用于性能分析、调试和理解 JavaScript 代码在 V8 引擎中的执行行为。 底层实现依赖于 V8 的 tracing 基础设施，并且可以选择性地使用 Perfetto 这样的系统级的 tracing 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-trace.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ BUILTIN(Trace) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

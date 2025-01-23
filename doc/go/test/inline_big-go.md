@@ -165,15 +165,17 @@ go test -gcflags="-m=2 -N" inline_big.go
 
 总而言之，`go/test/inline_big.go` 是一个精心设计的测试用例，用于验证 Go 编译器在处理函数内联时对大型函数的限制。它通过定义不同大小的函数并检查编译器的输出信息来确保内联优化按预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_big.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m=2
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -1203,9 +1205,4 @@ func f(a []int) int { // ERROR "cannot inline f:.*" "a does not escape" "functio
 	y := medium(a) // The crux of this test: medium is not inlined.
 	return x + y
 }
-
-"""
-
-
-
 ```

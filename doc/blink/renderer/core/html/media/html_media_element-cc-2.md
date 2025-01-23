@@ -131,15 +131,17 @@ By following these steps, I can systematically analyze the code snippet and prov
 
 这段 `HTMLMediaElement.cc` 代码片段是 Chromium Blink 引擎中处理 HTML 媒体元素（`<audio>` 和 `<video>`）资源加载和管理的核心部分。它实现了延迟加载、管理加载流程和网络状态、处理文本轨道、保障安全性、控制进度事件、处理错误、维护元素状态、支持 seek 操作以及管理 poster 图片的显示。 这段代码是实现 HTML5 媒体规范的关键组成部分，并与 JavaScript、HTML 和 CSS 紧密协作，共同为用户提供丰富的媒体体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // This implements the "optional" step 4 from the resource fetch algorithm
   // "If mode is remote".
   DCHECK(!deferred_load_timer_.IsActive());
@@ -1033,7 +1035,4 @@ HTMLMediaElement::ReadyState HTMLMediaElement::getReadyState() const {
 bool HTMLMediaElement::HasVideo() const {
   return web_media_player_ && web_media_player_->HasVideo();
 }
-"""
-
-
 ```

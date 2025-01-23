@@ -128,15 +128,17 @@ entry:
 
 `deadcode_test.go` 这部分代码是 Go 编译器中 SSA 死代码消除功能的单元测试。它通过构造不同的场景（死循环、无用值、永不执行的代码块等）来验证 `Deadcode` 函数的正确性，确保编译器能够有效地识别并移除程序中的冗余代码，从而提高程序的性能和减小程序体积。  开发者无需直接与这段代码交互，但了解其背后的原理有助于理解 Go 编译器的优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/deadcode_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -298,9 +300,4 @@ func BenchmarkDeadCode(b *testing.B) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

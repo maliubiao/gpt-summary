@@ -161,7 +161,7 @@ b4:
 
 作为第 12 部分，也是最后一部分，这段代码集中展示了针对 PPC64 架构的条件跳转块的最后一系列重写规则。它延续了之前部分的功能，继续寻找可以优化的模式，并将其转换为更高效的 SSA 代码表示。  这部分特别关注了 `BlockPPC64LE`，`BlockPPC64LT` 和 `BlockPPC64NE` 类型的代码块，并针对与常量 0 比较以及涉及位运算的情况进行了优化。总的来说，整个 `rewritePPC64.go` 文件定义了 PPC64 架构特有的 SSA 重写规则，旨在提升最终生成的可执行代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritePPC64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -170,9 +170,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
- == OpPPC64CMPconst {
+### 源代码
+```go
+== OpPPC64CMPconst {
 			v_0 := b.Controls[0]
 			if auxIntToInt64(v_0.AuxInt) != 0 {
 				break
@@ -629,10 +631,4 @@ Prompt:
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

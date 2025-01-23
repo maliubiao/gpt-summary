@@ -112,14 +112,16 @@ By following these steps, I can dissect the test file and accurately describe it
 
 总而言之，`html_document_parser_fastpath_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎的 HTML 快速路径解析器在处理常见 HTML 场景时的正确性和性能。它通过各种测试用例覆盖了快速路径解析器的支持范围，并监控了其在遇到不支持的 HTML 结构时的行为，从而帮助开发者了解快速路径解析器的局限性，并避免一些常见的 HTML 使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser_fastpath_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -529,7 +531,4 @@ TEST(HTMLDocumentParserFastpathTest, Escaped8BitText) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

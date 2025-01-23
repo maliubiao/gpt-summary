@@ -88,14 +88,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`blocking_attribute_test.cc` 是 Blink 引擎中用于验证 `blocking` HTML 属性行为的关键测试文件，它确保了该属性能够按照预期工作，并帮助开发者正确使用该属性来优化网页的渲染性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/blocking_attribute_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/core/html/blocking_attribute.h"
 
 #include "third_party/blink/renderer/core/dom/document.h"
@@ -131,7 +133,4 @@ TEST_F(BlockingAttributeTest, NoCountIfElementDoesNotSupportTheAttribute) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

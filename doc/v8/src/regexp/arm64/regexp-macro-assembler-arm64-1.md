@@ -63,13 +63,14 @@ I need to summarize the functionality of these two methods and explain their rol
 
 `capture_location` 负责管理捕获组信息的存储，使得 JavaScript 可以访问正则表达式匹配到的子字符串。`LoadCurrentCharacterUnchecked` 负责高效地从输入字符串中提取字符，这是正则表达式匹配过程中的核心操作。这两个方法都是 V8 引擎在 ARM64 架构上高效执行 JavaScript 正则表达式的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```
 MemOperand RegExpMacroAssemblerARM64::capture_location(int register_index,
                                                      Register scratch) {
   DCHECK(register_index < (1<<30));
@@ -143,8 +144,4 @@ void RegExpMacroAssemblerARM64::LoadCurrentCharacterUnchecked(int cp_offset,
 #undef __
 
 #endif  // V8_TARGET_ARCH_ARM64
-
-"""
-
-
 ```

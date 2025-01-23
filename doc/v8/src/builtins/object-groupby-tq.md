@@ -176,14 +176,16 @@ console.log(groupedByParityString);
 
 理解这些常见错误可以帮助开发者更有效地使用 `Object.groupBy` 并避免潜在的问题。这段 Torque 代码的实现细节也揭示了 V8 引擎在性能优化方面所做的努力，例如针对快速数组的特殊处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/object-groupby.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -389,7 +391,4 @@ transitioning javascript builtin ObjectGroupBy(
   // 4. Return obj.
   return obj;
 }
-
-"""
-
 ```

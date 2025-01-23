@@ -130,7 +130,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，这个 `main.c` 文件是一个精心设计的测试用例，用于验证 Frida 在处理具有特定依赖结构的跨语言代码时的动态插桩能力。它简洁地表达了测试的核心逻辑，并与逆向工程中的常见技术（如函数 hooking 和返回值修改）紧密相关。 通过分析这个文件，开发者可以深入了解 Frida 的工作原理以及在复杂软件环境中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/21 transitive dependencies/diamond/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,14 +138,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int r3(void);
 
 int main_func(void) {
     return r3() == 246 ? 0 : 1;
 }
-
-"""
-
 ```

@@ -219,7 +219,7 @@ func main() {
 
 总而言之，`go/src/internal/poll/fd_unix.go` 中的 `FD` 结构体及其相关方法是 Go 语言在 Unix-like 系统上进行底层 I/O 操作的关键组成部分，为上层网络和操作系统相关的包提供了基础支持。理解其功能有助于更深入地理解 Go 语言的 I/O 模型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -227,8 +227,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -979,9 +981,4 @@ func ignoringEINTRIO(fn func(fd int, p []byte) (int, error), fd int, p []byte) (
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -154,7 +154,7 @@ v = &Value{
 
 这段 `rewriteMIPS.go` 代码 (第 1 部分) 的主要功能是 **定义了将 Go 语言的抽象 SSA 操作转换为 MIPS 架构特定指令的初步转换规则**。 它处理了大量的基本操作，包括算术运算、逻辑运算、类型转换、常量加载、原子操作和部分 Load/Store 操作的转换。  这为后续更复杂的 MIPS 特定的优化和代码生成奠定了基础。 简单来说，它完成了从与架构无关的中间表示到与 MIPS 架构相关的指令的初步映射。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/MIPS.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -2971,9 +2973,4 @@ func rewriteValueMIPS_OpMIPSMOVBstorezero(v *Value) bool {
 	v_1 := v.Args[1]
 	v_0 := v.Args[0]
 	// match: (MOVBstorezero [off1] {sym} x
-"""
-
-
-
-
 ```

@@ -244,7 +244,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/stack_protector_test.cpp` 是一个关键的测试文件，用于验证 Android Bionic 库中栈保护机制的正确性，这对于确保 Android 系统的安全性和稳定性至关重要。它通过创建线程、检查金丝雀值、以及模拟栈溢出等方式来测试栈保护的各个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stack_protector_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -255,8 +255,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -401,7 +403,4 @@ TEST_F(stack_protector_DeathTest, modify_stack_protector) {
                 "stack corruption detected");
   }
 }
-
-"""
-
 ```

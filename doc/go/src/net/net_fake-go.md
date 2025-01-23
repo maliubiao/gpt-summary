@@ -233,7 +233,7 @@ func main() {
 
 总而言之，这段代码为特定的 Go 语言运行环境提供了一个基本的、用于测试目的的伪造网络功能，使用者需要清楚其局限性，避免将其用于需要真实网络交互的场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/net_fake.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -241,8 +241,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1400,9 +1402,4 @@ func (ffd *fakeNetFD) setLinger(sec int) error {
 	ffd.peer.queue.setLinger(sec > 0)
 	return nil
 }
-
-"""
-
-
-
 ```

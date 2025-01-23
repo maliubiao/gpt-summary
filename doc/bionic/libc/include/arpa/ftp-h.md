@@ -293,7 +293,7 @@ sys.stdin.read()
 
 `bionic/libc/include/arpa/ftp.h` 是 Bionic libc 中定义 FTP 协议相关常量的头文件。它本身不包含函数实现，但为使用 FTP 协议的程序提供了必要的符号定义。虽然现代 Android 应用很少直接使用原始 FTP，但了解这个文件有助于理解网络协议和 Bionic libc 的底层结构。通过 Frida 可以 hook 使用这些常量的函数，观察其运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/arpa/ftp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -304,8 +304,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (c) 1983, 1989, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -415,7 +417,4 @@ char *modenames[] =  {"0", "Stream", "Block", "Compressed" };
 #define	BLK_BYTECOUNT	2	/* Bytes in this block */
 
 #endif /* !_FTP_H_ */
-
-"""
-
 ```

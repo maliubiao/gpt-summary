@@ -91,7 +91,7 @@ The user wants to understand the functionality of the Python file `universal.py`
 
 总而言之，`universal.py` 是 Frida 项目构建过程中的一个核心实用工具库，涵盖了操作系统检测、版本控制集成、文件处理、进程执行、版本比较等多种功能，为 Frida 的成功构建和运行提供了基础支持。其功能与逆向工程密切相关，因为它提供了获取目标环境和二进制文件信息的能力，并允许执行必要的外部工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -1081,7 +1083,4 @@ def search_version(text: str) -> str:
     # Limiting major version number to two digits seems to work
     # thus far. When we get to GCC 100, this will break, but
     # if we are still relevant whe
-"""
-
-
 ```

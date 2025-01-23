@@ -211,15 +211,17 @@ console.log(byteArray.map(byte => byte.toString(16).padStart(2, '0')).join(' '))
 
 总而言之，`HpackExampleToStringOrDie` 是一个在 Chromium 网络栈测试工具中使用的实用函数，它简化了将人类可读的 HPACK 示例字符串转换为原始字节的过程，这对于调试和理解 HTTP/2 和 HTTP/3 的头部压缩机制非常有用。虽然 JavaScript 不直接使用它，但在网络开发的上下文中，JavaScript 开发者可能会遇到需要处理 HPACK 编码数据的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/hpack_example.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ std::string HpackExampleToStringOrDie(absl::string_view example) {
 
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

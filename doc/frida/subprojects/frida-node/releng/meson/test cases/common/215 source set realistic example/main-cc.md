@@ -247,7 +247,7 @@ Hello from Device!
 
 总而言之，这个 `main.cc` 文件提供了一个简单的、但具有代表性的 C++ 程序结构，Frida 可以用来对其进行动态 instrumentation。它涵盖了链表操作、函数调用、以及一些常见的编程实践，因此可以作为理解 Frida 功能和调试 Frida 脚本的参考示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/main.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -255,8 +255,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <vector>
 #include "common.h"
@@ -289,7 +291,4 @@ int main(void)
     for (auto d = devices; d; d = d->next)
         d->say_hello();
 }
-
-"""
-
 ```

@@ -110,7 +110,7 @@ android_ndk_path = '/wrong/path/to/ndk'
 
 作为整个 `backends.py` 文件的一部分，这段代码的核心功能是 **将高级的编译目标描述转化为具体的、可执行的编译命令**。它充当了 Meson 构建系统和底层编译器之间的桥梁，负责根据目标平台的特性和用户配置，生成正确的编译指令。这对于 Frida 动态 instrumentation 工具至关重要，因为它需要能够编译注入到目标进程中的代码片段。这段代码确保了 Frida 能够灵活地支持不同的编译器和目标平台，并处理各种编译相关的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rt a Compiler to a Generator.
         '''
         exelist = compiler.get_exelist()
@@ -145,8 +147,4 @@ rt a Compiler to a Generator.
         all_sources = T.cast('_ALL_SOURCES_TYPE', target.sources) + T.cast('_ALL_SOURCES_TYPE', target.generated)
         return self.compiler_to_generator(target, target.compiler, all_sources,
                                           target.output_templ, target.depends)
-
-"""
-
-
 ```

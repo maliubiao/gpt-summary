@@ -134,7 +134,7 @@ Here's a breakdown of the thought process to answer the request:
 
 总而言之，这个头文件定义了 WebAssembly 解释器执行各种指令所需的构建块。理解这些指令及其行为对于深入了解 WebAssembly 的执行机制以及 V8 如何运行 WebAssembly 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/instruction-handlers.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/instruction-handlers.h以.tq结尾，那它是个v8 torque源代码，
@@ -142,9 +142,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                 \
+### 源代码
+```c
+\
   V(r2r_I32Eqz)                                 \
   V(r2r_I64Clz)                                 \
   V(r2r_I64Ctz)                                 \
@@ -735,8 +737,4 @@ Prompt:
 #endif  // V8_ENABLE_DRUMBRAKE_TRACING
 
 #endif  // V8_WASM_INTERPRETER_INSTRUCTION_HANDLERS_H_
-
-"""
-
-
 ```

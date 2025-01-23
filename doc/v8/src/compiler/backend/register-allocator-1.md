@@ -71,12 +71,14 @@ The `register-allocator.cc` code is responsible for automatically determining th
 
 In essence, this C++ code is a crucial part of the machinery that makes JavaScript execution fast by optimizing how variables are handled at the machine code level.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 , &gap_move->source()};
         data()->delayed_references().push_back(delayed_reference);
       }
@@ -1629,7 +1631,4 @@ void LinearScanAllocator::ComputeStateFromManyPredecessors(
   struct Vote {
     size_t count;
     int used_register
-"""
-
-
 ```

@@ -151,15 +151,17 @@ void someV8InternalFunction(v8::Isolate* isolate) {
 
 `v8/src/objects/foreign.tq` 定义了 V8 用于表示外部内存地址的两种对象类型。它们是 V8 与外部代码（如原生模块或 WebAssembly）交互的关键机制。理解这些对象的作用有助于理解 V8 如何管理和使用非堆内存。虽然 JavaScript 代码不能直接操作这些底层的指针，但可以通过 V8 提供的 API 间接地与外部数据进行交互。使用这些机制时需要格外小心内存管理和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/foreign.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/foreign.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ extern class Foreign extends HeapObject {
 extern class TrustedForeign extends TrustedObject {
   foreign_address: RawPtr;
 }
-
-"""
-
 ```

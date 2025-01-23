@@ -141,7 +141,7 @@ Go 编译器的 `-tags` 命令行参数用于指定构建标签。
 
 `go/src/net/netcgo_off.go` 通过 Go 的构建标签机制，在不使用 CGO 时定义了一个常量 `netCgoBuildTag` 为 `false`，以便 `net` 包的其他部分可以根据这个标志来选择不同的实现路径。这体现了 Go 语言在不同场景下灵活选择实现方式的能力。理解构建标签对于控制 Go 程序的编译和行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/netcgo_off.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -149,8 +149,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -160,9 +162,4 @@ Prompt:
 package net
 
 const netCgoBuildTag = false
-
-"""
-
-
-
 ```

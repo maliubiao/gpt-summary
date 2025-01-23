@@ -250,15 +250,17 @@ Finally, organize the information into a clear and logical structure, using head
 
 总结来说，`blink/renderer/core/css/css_container_rule.cc` 文件是 Blink 引擎中处理 CSS 容器查询的核心组件，它负责表示、解析、存储和管理 `@container` 规则，并与 HTML、CSS 和 JavaScript 协同工作，实现基于容器的响应式布局。理解这个文件的功能对于理解 Blink 如何实现 CSS 容器查询至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_container_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ const ContainerQuery& CSSContainerRule::ContainerQuery() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

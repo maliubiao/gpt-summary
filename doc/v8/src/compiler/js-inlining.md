@@ -124,11 +124,13 @@ function calculate(x) {
 
 总而言之，`v8/src/compiler/js-inlining.cc` 是 V8 引擎中负责提升 JavaScript 代码性能的关键组件，它通过将小而频繁调用的函数代码直接嵌入到调用者的代码中，消除了函数调用的开销。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-inlining.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1105,7 +1107,4 @@ SimplifiedOperatorBuilder* JSInliner::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

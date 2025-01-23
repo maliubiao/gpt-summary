@@ -83,7 +83,7 @@ By following this structured thinking process and incorporating self-correction,
 
 总而言之，`pkgdep.c` 虽然代码很简单，但它在一个更宏大的背景下，扮演着测试 Frida 构建系统处理外部依赖的重要角色。它简洁地展示了依赖关系的基本概念，并可以作为调试依赖项相关问题的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/27 pkgconfig usage/dependency/pkgdep.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -91,8 +91,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<pkgdep.h>
 
 int internal_thingy();
@@ -100,7 +102,4 @@ int internal_thingy();
 int pkgdep() {
     return internal_thingy();
 }
-
-"""
-
 ```

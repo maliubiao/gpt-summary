@@ -152,7 +152,7 @@ This systematic approach of understanding the context, deconstructing the code, 
 
 总而言之，`fortrantemplates.py` 是 Frida 使用 Meson 构建系统来支持 Fortran 组件的关键部分，它定义了生成 Fortran 项目所需的样板文件，简化了 Fortran 代码集成到 Frida 框架的过程。 这对于开发需要与 Fortran 代码交互的 Frida 模块或进行相关逆向工程任务非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/templates/fortrantemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -263,7 +265,4 @@ class FortranProject(FileImpl):
     lib_template = lib_fortran_template
     lib_meson_template = lib_fortran_meson_template
     lib_test_template = lib_fortran_test_template
-
-"""
-
 ```

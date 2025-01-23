@@ -101,7 +101,7 @@ By following these steps, moving from a basic understanding to contextualized an
 
 虽然 `make_file.py` 自身的功能非常简单，但它在 Frida 项目的上下文中扮演着辅助角色，用于生成测试所需的占位文件。这与逆向工程中动态链接、二进制文件处理以及操作系统底层机制都有着间接的联系。理解这样的辅助脚本有助于理解 Frida 测试框架的结构和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/226 link depends indexed custom target/make_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
@@ -119,7 +121,4 @@ with open(sys.argv[1], 'w') as f:
 
 with open(sys.argv[2], 'w') as f:
     print('# this file does nothing', file=f)
-
-"""
-
 ```

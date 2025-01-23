@@ -212,7 +212,7 @@ Initially, I might focus too much on the individual functions. It's important to
 
 总而言之，`frida/releng/meson/mesonbuild/mesonmain.py` 是 Frida 构建系统的核心，它负责接收和处理用户的构建指令，并驱动底层的构建工具来生成最终的 Frida 工具。理解这个文件的功能对于 Frida 的开发者和高级用户来说至关重要，可以帮助他们解决构建问题，定制构建过程，并深入了解 Frida 的构建机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/mesonmain.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -220,8 +220,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 
@@ -511,7 +513,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

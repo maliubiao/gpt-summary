@@ -146,7 +146,7 @@ By following this systematic approach, starting with basic understanding and gra
 
 `frida/subprojects/frida-python/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cp.cpp` 这个文件是一个简单的文件复制工具，用于在 Frida 的构建和测试环境中演示 CMake 自定义命令的功能。虽然它本身不是一个逆向工具，但其功能在逆向分析的流程中可以作为辅助手段。理解其功能和可能的错误情况，可以帮助开发者调试 Frida 的构建过程和相关的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cp.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -178,7 +180,4 @@ int main(int argc, char *argv[]) {
   dst << src.rdbuf();
   return 0;
 }
-
-"""
-
 ```

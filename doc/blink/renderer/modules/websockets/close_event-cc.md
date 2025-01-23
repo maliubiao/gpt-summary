@@ -160,15 +160,17 @@ CloseEvent close_event(u"close", &init);
 
 通过分析这些信息，开发者可以更好地理解 WebSocket 连接关闭的原因，并进行相应的错误排查和修复。 例如，如果 `code` 是 1006，可能是网络问题；如果 `code` 是 1001，可能是服务器主动关闭；如果 `wasClean` 是 `true`，并且 `code` 是 1000，则可能是客户端主动关闭。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/websockets/close_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ CloseEvent::CloseEvent(const AtomicString& type,
 }
 
 }  // namespace blink
-
-"""
-
 ```

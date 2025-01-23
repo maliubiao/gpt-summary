@@ -202,7 +202,7 @@ By following this structured approach, combining code analysis with knowledge of
 - 检查用户输入的命令是否正确，以及是否符合脚本的逻辑（例如，在发送消息前是否加入了频道）。
 - 使用 Python 的调试器 (例如 `pdb`) 可以更深入地分析脚本的运行状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/portal_client.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import json
 import sys
 
@@ -308,7 +310,4 @@ if __name__ == "__main__":
     nick = sys.argv[1]
     app = Application(nick)
     app.run()
-
-"""
-
 ```

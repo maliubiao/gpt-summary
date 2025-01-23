@@ -177,14 +177,16 @@ div {
 
 总而言之，`PhysicalFragmentRareData` 是 Blink 渲染引擎中一个用于优化内存并存储布局过程中产生的可选信息的关键类，它与 HTML 结构和 CSS 样式密切相关，并且其存储的信息会影响到 JavaScript 获取到的布局信息。理解其功能对于深入了解浏览器渲染原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/physical_fragment_rare_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -385,7 +387,4 @@ PhysicalFragmentRareData::RareField::~RareField() {
 #undef DISPATCH_BY_MEMBER_TYPE
 
 }  // namespace blink
-
-"""
-
 ```

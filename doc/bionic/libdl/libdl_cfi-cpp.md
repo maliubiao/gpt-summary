@@ -295,7 +295,7 @@ Interceptor.attach(Module.findExportByName("libdl.so", "__loader_cfi_fail"), {
 
 通过这些 Frida hook，你可以深入了解 Android 系统中 CFI 的工作原理，以及应用程序是如何与这些安全机制进行交互的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libdl/libdl_cfi.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -396,7 +398,4 @@ extern "C" void __cfi_slowpath(uint64_t CallSiteTypeId, void* Ptr) {
 extern "C" void __cfi_slowpath_diag(uint64_t CallSiteTypeId, void* Ptr, void* DiagData) {
   cfi_slowpath_common(CallSiteTypeId, Ptr, DiagData);
 }
-
-"""
-
 ```

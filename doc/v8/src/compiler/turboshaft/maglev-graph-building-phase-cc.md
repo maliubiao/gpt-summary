@@ -133,7 +133,7 @@ While this code isn't directly exposed to user programming, errors in this phase
 
 The first part of `v8/src/compiler/turboshaft/maglev-graph-building-phase.cc` lays the groundwork for translating Maglev graphs into Turboshaft graphs. It focuses on the initial setup, block mapping, and the crucial analysis of generator functions to handle their unique control flow characteristics. The `GeneratorAnalyzer` plays a vital role in identifying how generator resumes can bypass loop headers, and this information will be used in subsequent parts to construct the correct Turboshaft representation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/maglev-graph-building-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/maglev-graph-building-phase.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -876,7 +878,4 @@ class GraphBuildingNodeProcessor {
   // happens when they are populated. This can lead to exception Phis having a
   // mix of tagged and untagged predecessors (the latter would be automatically
   // retagged). When this happens
-"""
-
-
 ```

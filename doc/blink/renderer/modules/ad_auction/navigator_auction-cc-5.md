@@ -157,7 +157,7 @@ Given this is the final part, we can synthesize a comprehensive summary:
 
 In essence, `navigator_auction.cc` is the **glue** that binds the JavaScript API exposed to web developers with the complex, privacy-preserving ad auction mechanisms implemented within the browser. It handles the translation and communication between these two layers, ensuring the Ad Auction API can be utilized effectively and securely by web pages. This file is crucial for enabling the core functionality of the Privacy Sandbox's efforts to provide interest-based advertising in a privacy-respecting manner.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/navigator_auction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -165,9 +165,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                             /*auction_id=*/nullptr, *config,
+### 源代码
+```cpp
+/*auction_id=*/nullptr, *config,
                                    *mojo_config);
 
   if (!ValidateAdsObject(exception_state, ads)) {
@@ -604,8 +606,4 @@ ScriptPromise<AdAuctionData> NavigatorAuction::getInterestGroupAdAuctionData(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

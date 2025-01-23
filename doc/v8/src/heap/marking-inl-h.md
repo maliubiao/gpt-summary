@@ -151,15 +151,17 @@ The mark bits at indices 5 through 14 would be set in the `MarkingBitmap`.
 
 In summary, `v8/src/heap/marking-inl.h` is a performance-critical header file in V8 that provides the foundational inline implementations for managing the marking bitmap, a key data structure used during garbage collection to track live objects. It uses templates for flexibility and supports atomic operations for thread safety in concurrent garbage collection scenarios.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/marking-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/marking-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -518,7 +520,4 @@ bool MarkingHelper::TryMarkAndPush(Heap* heap,
 }  // namespace v8::internal
 
 #endif  // V8_HEAP_MARKING_INL_H_
-
-"""
-
 ```

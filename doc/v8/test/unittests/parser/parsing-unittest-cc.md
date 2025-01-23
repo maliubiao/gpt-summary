@@ -163,7 +163,7 @@ However, we expected no error.
 
 总而言之，**第 1 部分主要构建了用于测试 V8 JavaScript 解析器的基础工具和框架。** 它定义了测试的骨架，并提供了一些基本的测试用例。后续的部分很可能会添加更多针对特定语法结构和解析场景的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1119,7 +1121,4 @@ TEST_F(ParsingTest, ScanKeywords) {
       TOKEN_LIST(IGNORE_TOKEN, KEYWORD)
 #undef KEYWORD
           {nullptr, i::Token::
-"""
-
-
 ```

@@ -170,7 +170,7 @@ Sum is: 30
 
 在这个调试过程中，用户可能会查看 `main.c` 的内容，以理解 Frida 是如何组织自定义注入代码的，或者作为排除自身代码错误的起点。 这个简单的 `main.c` 文件通常是 Frida 内部测试用例的一部分，用于验证 Frida 的 "custom target" 功能是否正常工作。用户在学习或使用 Frida 的相关功能时可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/54 custom target source output/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,14 +178,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"mylib.h"
 
 int main(void) {
     return func();
 }
-
-"""
-
 ```

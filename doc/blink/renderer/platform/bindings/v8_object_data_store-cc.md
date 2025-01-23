@@ -169,14 +169,16 @@ auto retrieved_value = data_store.Get(isolate, unknown_js_object);
 
 总之，`V8ObjectDataStore` 提供了一种重要的机制，用于在 Blink 引擎的 C++ 代码中安全地关联和管理与 JavaScript 对象相关的数据。正确使用它对于构建复杂且高效的 Web 浏览器至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_object_data_store.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ void V8ObjectDataStore::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -225,15 +225,17 @@ This systematic approach, starting with a high-level overview and progressively 
 
 总而言之，`image_element_timing.cc` 是 Blink 渲染引擎中一个关键的组成部分，它实现了 Element Timing API，使得开发者能够细粒度地测量网页中特定图像元素的渲染性能，从而更好地优化用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/image_element_timing.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -497,7 +499,4 @@ void ImageElementTiming::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -158,7 +158,7 @@ func main() {
 
 这段代码是 Go 运行时库中一个非常底层的工具，它暴露了操作系统提供的管道创建功能。在更高层次的应用中，开发者通常会使用 `os.Pipe()` 函数，它提供了更方便的 `*os.File` 对象来操作管道，隐藏了底层的系统调用细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_pipe2_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ package runtime
 func Pipe() (r, w int32, errno int32) {
 	return pipe2(0)
 }
-
-"""
-
-
-
 ```

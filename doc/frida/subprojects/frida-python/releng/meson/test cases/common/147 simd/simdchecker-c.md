@@ -150,7 +150,7 @@ This systematic approach helps ensure all aspects of the prompt are addressed co
 
 总而言之，`simdchecker.c` 是 Frida 开发流程中一个重要的组成部分，用于保证其对各种 SIMD 指令集的支持是正确和可靠的。当涉及到 SIMD 相关的 bug 或新功能的开发时，这个测试用例会提供关键的反馈和调试信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/147 simd/simdchecker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdfuncs.h>
 #include<stdio.h>
 #include<string.h>
@@ -303,7 +305,4 @@ int main(void) {
             blocksize);
     return r;
 }
-
-"""
-
 ```

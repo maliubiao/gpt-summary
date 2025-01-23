@@ -98,12 +98,14 @@ Now, let's consider the relationship to JavaScript. The code generator is respon
 
 总而言之，这个代码文件的核心功能是将高级的、平台无关的 JavaScript 代码（或其中间表示）转换为可以在 S390 架构上执行的低级机器指令。它是 V8 引擎将 JavaScript 动态性转化为高效机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/code-generator-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ore32Lane: {
       STORE_LANE(32, 3 - i.InputUint8(1));
       break;
@@ -863,8 +865,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

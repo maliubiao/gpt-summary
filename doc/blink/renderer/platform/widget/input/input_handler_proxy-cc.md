@@ -139,15 +139,17 @@ By following this process, I can systematically analyze the provided code snippe
 
 `InputHandlerProxy` 的主要职责是作为渲染引擎中输入事件的入口点和调度中心。它负责接收、分类和初步处理各种输入事件，并与 Compositor 紧密协作来驱动页面的渲染更新。它还需要考虑 JavaScript 事件监听器的存在，并协调输入事件在渲染线程和主线程之间的传递。第 1 部分的代码主要关注事件的接收、初步处理、与 Compositor 的交互以及手势和触摸事件的基础处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/input_handler_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1695,7 +1697,4 @@ void InputHandlerProxy::DeliverInputForBeginFrame(
     const viz::BeginFrameArgs& args) {
   current_begin_frame_args_ = args;
   enqueue_scroll_e
-"""
-
-
 ```

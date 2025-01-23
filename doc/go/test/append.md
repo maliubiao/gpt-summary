@@ -158,15 +158,17 @@ func main() {
 
 In the incorrect example, the `append` function might have created a new slice with the added element, but this new slice was not captured. The original `numbers` slice remains unchanged. This is a crucial point to understand when using `append`.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/append.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -421,9 +423,4 @@ func verifyType() {
 	t2 := T2{2}
 	verify("T1", append(t1, t2...), T1{1, 2})
 }
-
-"""
-
-
-
 ```

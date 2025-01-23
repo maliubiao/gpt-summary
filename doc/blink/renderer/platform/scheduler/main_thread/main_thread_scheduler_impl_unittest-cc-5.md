@@ -126,16 +126,18 @@ Bringing all of this together leads to the kind of summary provided in the initi
 
 作为系列测试的最后一部分，这个文件专注于验证 `MainThreadSchedulerImpl` 在处理离散输入事件时的特定策略，该策略由 `kBlinkSchedulerDiscreteInputMatchesResponsivenessMetrics` feature flag 控制。它通过模拟不同类型的输入事件和任务，并断言任务的执行顺序，来确保 scheduler 的行为符合预期。这对于保证浏览器在用户交互时的响应性和性能至关重要。该测试用例特别关注了 `kMouseLeave` 事件在不同 feature flag 状态下的处理方式，并对比了其与 `kTouchMove` 事件的处理差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
- public:
+### 源代码
+```cpp
+public:
   DiscreteInputMatchesResponsivenessMetricsTest() {
     feature_list_.Reset();
     if (GetParam()) {
@@ -197,8 +199,4 @@ INSTANTIATE_TEST_SUITE_P(,
 }  // namespace main_thread_scheduler_impl_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

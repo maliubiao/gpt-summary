@@ -184,7 +184,7 @@ By following this structured approach, we can effectively analyze the provided c
 
 总而言之，`regen_checker.py` 是 Frida 构建过程中的一个幕后英雄，它通过智能地检查文件时间戳，避免了不必要的重复构建，提高了构建效率，并确保了在代码或配置发生变化时，构建系统能够及时更新。理解其工作原理有助于我们诊断和解决 Frida 构建过程中可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/scripts/regen_checker.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -249,7 +251,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

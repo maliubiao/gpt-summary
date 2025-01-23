@@ -344,7 +344,7 @@ getBinding(ptr("0x100080000"))
 
 这个文件是 Frida 实现动态 Objective-C 代码检测和修改的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-gum/bindings/gumjs/runtime.bundle.p/out-qjs/objc.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -354,8 +354,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 function getBinding(e) {
     const t = getHandle(e), r = t.toString();
     let n = bindings.get(r);
@@ -1201,7 +1203,4 @@ module.exports = {
 
 },{}],3:[function(require,module,exports){
 const e = "#include <glib.h>\n#include <ptrauth.h>\n\n#define KERN_SUCCESS 0\n#define MALLOC_PTR_IN_USE_RANGE_TYPE 1\n#if defined (HAVE_I386) && GLIB_SIZEOF_VOID_P == 8\n# define OBJC_ISA_MASK 0x7ffffffffff8ULL\n#elif defined (HAVE_ARM64)\n# define OBJC_ISA_MASK 0xffffffff8ULL\n#endif\n\ntypedef struct _ChooseContext ChooseContext;\n\ntypedef struct _malloc_zone_t malloc_zone_t;\ntypedef struct _malloc_introspection_t malloc_introspection_t;\ntypedef struct _vm_range_t vm_range_t;\n\ntypedef gpointer Class;\ntypedef int kern_return_t;\ntypedef guint mach_port_t;\ntypedef mach_port_t task_t;\ntypedef guintptr vm_offset_t;\ntypedef guintptr vm_size_t;\ntypedef vm_offset_t vm_address_t;\n\nstruct _ChooseContext\n{\n  GHashTable * classes;\n  GArray * matches;\n};\n\nstruct _malloc_zone_t\n{\n  void * reserved1;\n  void * reserved2;\n  size_t (* size) (struct _malloc_zone_t * zone, const void * ptr);\n  void * (* malloc) (struct _malloc_zone_t * zone, size_t size);\n  void * (* calloc) (struct _malloc_zone_t * zone, size_t num_items, size_t size);\n  void * (* valloc) (struct _malloc_zone_t * zone, size_t size);\n  void (* free) (struct _malloc_zone_t * zone, void * ptr);\n  void * (* realloc) (struct _malloc_zone_t * zone, void * ptr, size_t size);\n  void (* destroy) (struct _malloc_zone_t * zone);\n  const char * zone_name;\n\n  unsigned (* batch_malloc) (struct _malloc_zone_t * zone, size_t size, void ** results, unsigned num_requested);\n  void (* batch_free) (struct _malloc_zone_t * zone, void ** to_be_freed, unsigned num_to_be_freed);\n\n  malloc_introspection_t * introspect;\n};\n\ntypedef kern_return_t (* memory_reader_t) (task_t remote_task, vm_address_t remote_address, vm_size_t size, void ** local_memory);\ntypedef void (* vm_range_recorder_t) (task_t task, void * user_data, unsigned type, vm_range_t * ranges, unsigned count);\ntypedef kern_return_t (* enumerator_func) (task_t task, void * user_data, unsigned type_mask, vm_address_t zone_address, memory_reader_t reader,\n      vm_range_recorder_t recorder);\n\nstruct _malloc_introspection_t\n{\n  enumerator_func enumerator;\n};\n\nstruct _vm_range_t\n{\n  vm_address_t address;\n  vm_size_t size;\n};\n\nextern int objc_getClassList (Class * buffer, int buffer_count);\nextern Class class_getSuperclass (Class cls);\nextern size_t class_getInstanceSize (Class cls);\nextern kern_return_t malloc_get_all_zones (task_t task, memory_reader_t reader, vm_address_t ** addresses, unsigned * count);\n\nstatic void collect_subclasses (Class klass, GHashTable * result);\nstatic void collect_matches_in_ranges (task_t task, void * user_data, unsigned type, vm_range_t * ranges, unsigned count);\nstatic kern_return_t read_local_memory (task_t remote_task, vm_address_t remote_address, vm_size_t size, void ** local_memory);\n\nextern mach_port_t selfTask;\n\ngpointer *\nchoose (Class * klass,\n        gboolean consider_subclasses,\n        guint * count)\n{\n  ChooseContext ctx;\n  GHashTable * classes;\n  vm_address_t * malloc_zone_addresses;\n  unsigned malloc_zone_count, i;\n\n  classes = g_hash_table_new_full (NULL, NULL, NULL, NULL);\n  ctx.classes = classes;\n  ctx.matches = g_array_new (FALSE, FALSE, sizeof (gpointer));\n  if (consider_subclasses)\n    collect_subclasses (klass, classes);\n  else\n    g_hash_table_insert (classes, klass, GSIZE_TO_POINTER (class_getInstanceSize (klass)));\n\n  malloc_zone_count = 0;\n  malloc_get_all_zones (selfTask, read_local_memory, &malloc_zone_addresses, &malloc_zone_count);\n\n  for (i = 0; i != malloc_zone_count; i++)\n  {\n    vm_address_t zone_address = malloc_zone_addresses[i];\n    malloc_zone_t * zone = (malloc_zone_t *) zone_address;\n    enumerator_func enumerator;\n\n    if (zone != NULL && zone->introspect != NULL &&\n        (enumerator = (ptrauth_strip (zone->introspect, ptrauth_key_asda))->enumerator) != NULL)\n    {\n      enumerator = ptrauth_sign_unauthenticated (\n          ptrauth_strip (enumerator, ptrauth_key_asia),\n          ptrauth_key_asia, 0);\n\n      enumerator (selfTask, &ctx, MALLOC_PTR_IN_USE_RANGE_TYPE, zone_address, read_local_memory,\n          collect_matches_in_ranges);\n    }\n  }\n\n  g_hash_table_unref (classes);\n\n  *count = ctx.matches->len;\n\n  return (gpointer *) g_array_free (ctx.matches, FALSE);\n}\n\nvoid\ndestroy (gpointer mem)\n{\n  g_free (mem);\n}\n\nstatic void\ncollect_subclasses (Class klass,\n                    GHashTable * result)\n{\n  Class * classes;\n  int count, i;\n\n  count = objc_getClassList (NULL, 0);\n  classes = g_malloc (count * sizeof (gpointer));\n  count = objc_getClassList (classes, count);\n\n  for (i = 0; i != count; i++)\n  {\n    Class candidate = classes[i];\n    Class c;\n\n    c = candidate;\n    do\n    {\n      if (c == klass)\n      {\n        g_hash_table_insert (result, candidate, GSIZE_TO_POINTER (class_getInstanceSize (candidate)));\n        break;\n      }\n\n      c = class_getSuperclass (c);\n    }\n    while (c != NULL);\n  }\n\n  g_fr
-"""
-
-
 ```

@@ -142,7 +142,7 @@ While these helper functions don't directly perform code injection or hooking (F
 
 **In summary, `helpers.py` provides foundational utility functions for the Meson build system within the Frida project. They are crucial for processing and validating arguments, resolving placeholders, and representing data as strings during the build configuration phase. While not directly manipulating runtime processes, they are essential for building the tools and libraries that enable Frida's dynamic instrumentation capabilities.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreterbase/helpers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -219,7 +221,4 @@ def stringifyUserArguments(args: TYPE_var, subproject: SubProject, quote: bool =
         FeatureNew.single_use('User option in string format', '1.3.0', subproject)
         return stringifyUserArguments(args.printable_value(), subproject)
     raise InvalidArguments('Value other than strings, integers, bools, options, dictionaries and lists thereof.')
-
-"""
-
 ```

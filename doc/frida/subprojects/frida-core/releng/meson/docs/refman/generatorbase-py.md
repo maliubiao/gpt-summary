@@ -189,7 +189,7 @@ generator.generate()  # 会抛出 NotImplementedError 异常
 
 `generatorbase.py` 是 Frida 文档生成流程中的一个核心组件，它定义了文档生成器的抽象接口和一些通用的工具方法。虽然它本身不直接参与逆向操作或底层的二进制/内核交互，但它生成的文档对于 Frida 的使用者（包括逆向工程师）至关重要。理解 `generatorbase.py` 的功能有助于理解 Frida 文档的生成流程，并在调试文档相关问题时提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/docs/refman/generatorbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -265,7 +267,4 @@ class GeneratorBase(metaclass=ABCMeta):
 
     def extract_returned_by_module(self, module: Object) -> T.List[Object]:
         return [x for x in self.objects if x.obj_type == ObjectType.RETURNED and x.defined_by_module is module]
-
-"""
-
 ```

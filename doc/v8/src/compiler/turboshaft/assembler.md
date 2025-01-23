@@ -89,11 +89,13 @@ console.log(keys); // 输出 ["a", "b"]
 
 `assembler.cc` 文件中的 `BuiltinCodeHandle` 函数是 V8 引擎实现高性能 JavaScript 执行的关键组成部分，它使得 JavaScript 代码可以高效地利用预先编译好的、由 C++ 实现的内置功能，从而避免了重复编译的开销，提升了执行效率。 JavaScript 中常用的数组操作、控制台输出、数学运算等功能，其底层实现都依赖于这些内置函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -110,7 +112,4 @@ Handle<Code> BuiltinCodeHandle(Builtin builtin, Isolate* isolate) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

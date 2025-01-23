@@ -132,7 +132,7 @@ Let's break down the thought process for analyzing this simple C code in the con
 
 总而言之，`bar.c` 作为一个非常简单的 C 程序，在 Frida 的测试用例中扮演了一个基本的角色，可能是用来模拟一个被测试的目标程序。开发人员在调试相关功能时，可能会通过浏览代码、编译运行、甚至逆向分析等手段来理解它的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/165 get project license/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,15 +140,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a main project bar.\n");
     return 0;
 }
-
-"""
-
 ```

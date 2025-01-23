@@ -214,15 +214,17 @@ Go 的测试框架会加载包含测试的包，执行指定的测试函数，�
 
 总而言之，这段测试代码是 Go 编译器内部类型检查机制的重要组成部分，用于确保内置函数的行为符合语言规范，从而保证 Go 程序的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/builtins_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -473,9 +475,4 @@ func testBuiltinSignature(t *testing.T, name, src0, want string) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

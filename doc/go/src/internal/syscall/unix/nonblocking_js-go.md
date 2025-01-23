@@ -179,7 +179,7 @@ func main() {
 
 `go/src/internal/syscall/unix/nonblocking_js.go` 在 `js/wasm` 环境下提供了一个关于文件描述符非阻塞状态的“虚拟”实现，实际上表示在该平台上传统的非阻塞 I/O 模型不适用。Go 在 `js/wasm` 上处理 I/O 的方式更贴近 JavaScript 的异步模型。开发者在 `js/wasm` 上进行 Go 开发时，需要理解这种差异，并采用适合该平台的 I/O 处理方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/nonblocking_js.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -204,9 +206,4 @@ func IsNonblock(fd int) (nonblocking bool, err error) {
 func HasNonblockFlag(flag int) bool {
 	return false
 }
-
-"""
-
-
-
 ```

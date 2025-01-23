@@ -221,7 +221,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 `bionic/libc/private/icu.handroid` 是 Bionic C 库用于访问 ICU 功能的私有头文件。它定义了字符属性、类别、宽度等枚举类型，以及用于获取字符信息和动态查找 ICU 符号的私有函数。普通应用程序不应该直接使用这些接口，而应该使用 Android SDK 或 NDK 提供的公共 API 来进行国际化和本地化操作。理解这些私有接口有助于深入了解 Android 系统内部如何处理文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/icu.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -232,8 +232,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -322,7 +324,4 @@ typedef UBool (*u_hasBinaryProperty_t)(UChar32, UProperty);
 void* __find_icu_symbol(const char* symbol_name);
 
 #endif  // _PRIVATE_ICU_H
-
-"""
-
 ```

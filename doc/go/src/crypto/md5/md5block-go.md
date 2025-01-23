@@ -280,7 +280,7 @@ State after processing block: [3117393334 2175083192 2627842133 1687521347]
 
 总而言之，`md5block.go` 文件中的 `blockGeneric` 函数是 Go 语言 `crypto/md5` 包中用于高效处理 MD5 算法数据块的核心组件。普通开发者通常不需要直接调用它，而是通过 `hash.Hash` 接口进行操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/md5/md5block.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -288,8 +288,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -415,9 +417,4 @@ func blockGeneric(dig *digest, p []byte) {
 	// save state
 	dig.s[0], dig.s[1], dig.s[2], dig.s[3] = a, b, c, d
 }
-
-"""
-
-
-
 ```

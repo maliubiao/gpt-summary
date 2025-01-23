@@ -151,15 +151,17 @@ This detailed process ensures a thorough and accurate analysis of the given code
 
 总而言之，`priority_update_payload_decoder.cc` 在 Chromium 的网络栈中扮演着解析 HTTP/2 优先级更新指令的关键角色，它接收来自服务器的优先级调整信息，并将其传递给浏览器的其他组件，最终影响资源加载的顺序和效率。虽然不直接与 JavaScript 交互，但它的工作直接影响着 JavaScript 代码的加载和执行时机。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/payload_decoders/priority_update_payload_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ DecodeStatus PriorityUpdatePayloadDecoder::ResumeDecodingPayload(
 }
 
 }  // namespace http2
-
-"""
-
 ```

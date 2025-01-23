@@ -101,11 +101,13 @@ console.log(str9); // 输出: "2.5"  // 注意 JavaScript 的默认舍入方式�
 
 `fast-dtoa.cc` 是 V8 引擎中一个关键的组件，它负责高效且准确地将双精度浮点数转换为字符串表示。它实现了复杂的算法来处理浮点数的精度问题，并提供不同的转换模式以满足不同的需求。JavaScript 的数字到字符串的转换功能在底层很大程度上依赖于这个 C++ 文件的实现。当你用 JavaScript 将数字转换为字符串时，你实际上是在间接地使用这里定义的算法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/fast-dtoa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -850,7 +852,4 @@ bool FastDtoa(double v, FastDtoaMode mode, int requested_digits,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -191,7 +191,7 @@ func main() {
 
 这段 `abs.go` 代码的核心功能就是提供一个高效且符合 IEEE 754 标准的方式来计算浮点数的绝对值，并妥善处理了特殊情况如正负无穷和 NaN。其实现方式是通过直接操作浮点数的位表示来清除符号位，从而得到绝对值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/abs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -216,9 +218,4 @@ package math
 func Abs(x float64) float64 {
 	return Float64frombits(Float64bits(x) &^ (1 << 63))
 }
-
-"""
-
-
-
 ```

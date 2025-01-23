@@ -83,7 +83,7 @@ Here's a plan to generate the summary:
 
 作为调试线索，如果用户在使用 Frida 脚本时遇到问题，可以通过查看 Frida 的源代码（如 `gumv8core.cpp`）来理解 API 的底层实现，从而更好地定位问题。例如，如果 `NativeFunction` 调用失败，可以查看 `gumjs_native_function_invoke` 的实现来分析可能的错误原因，如参数类型不匹配、内存访问错误等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8core.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2015 Asger Hautop Drewsen <asgerdrewsen@gmail.com>
@@ -961,7 +963,4 @@ _gum_v8_core_init (GumV8Core * self,
   GUM_DEFINE_CPU_CONTEXT_ACCESSOR_GPR_ALIASED (x20, x[20]);
   GUM_DEFINE_CPU_CONTEXT_ACCESSOR_GPR_ALIASED (x21, x[21]);
   GUM_DEFINE_CPU_CONTEXT_ACCE
-"""
-
-
 ```

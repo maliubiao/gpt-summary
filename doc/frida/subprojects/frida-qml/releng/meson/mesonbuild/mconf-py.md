@@ -190,7 +190,7 @@ The tool would parse the command-line argument `-Denable_qml_debug=true`, update
 
 By examining the use of `mconf.py` and the options being toggled, a debugger or reverse engineer can understand how the software was configured, which can be a critical piece of information for troubleshooting or analysis. For instance, if a bug only appears when a specific optimization is enabled, the use of `mconf.py` to set that optimization level becomes a relevant debugging clue.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/mconf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -568,7 +570,4 @@ def run(options: CMDOptions) -> int:
     coredata.parse_cmd_line_options(options)
     builddir = os.path.abspath(os.path.realpath(options.builddir))
     return run_impl(options, builddir)
-
-"""
-
 ```

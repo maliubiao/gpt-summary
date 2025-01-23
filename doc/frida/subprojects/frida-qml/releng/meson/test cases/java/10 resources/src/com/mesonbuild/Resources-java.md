@@ -140,7 +140,7 @@ Frida 可以 hook Android 框架中与资源加载相关的类和方法，例如
 
 总而言之，`Resources.java` 虽然是一个简单的测试用例，但它展示了Java中基本的资源加载方式，对于理解应用程序的资源处理机制，尤其是在进行逆向分析和动态调试时，具有一定的参考价值。它可以作为调试和学习 Frida 相关功能的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/java/10 resources/src/com/mesonbuild/Resources.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 import java.io.BufferedReader;
@@ -176,7 +178,4 @@ public class Resources {
         }
     }
 }
-
-"""
-
 ```

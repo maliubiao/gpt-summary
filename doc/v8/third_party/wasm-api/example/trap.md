@@ -158,11 +158,13 @@ runWasm();
 
 `trap.cc` 这个 C++ 示例展示了 WebAssembly 的陷阱机制以及如何在 C++ host 环境中处理这些陷阱。与 JavaScript 类似，WebAssembly 的陷阱表示运行时错误。JavaScript 使用 `try...catch` 语句来捕获这些错误，并提供了一些关于错误的信息，尽管可能不如 C++ API 提供的详细。  这个例子强调了 WebAssembly 的通用性和跨平台特性，即不同的宿主环境（C++ 或 JavaScript）都需要处理 WebAssembly 代码可能产生的运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/trap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -288,8 +290,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

@@ -89,7 +89,7 @@ The primary function of `v8/src/compiler/backend/riscv/instruction-scheduler-ris
 
 This file is a crucial component in ensuring that JavaScript code runs efficiently on RISC-V processors by optimizing the order in which machine instructions are executed.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-scheduler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-scheduler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -97,8 +97,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1396,7 +1398,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
     case kRiscvSar32:
 #if V8_TARGET_ARCH_RISCV64
     case kRis
-"""
-
-
 ```

@@ -124,11 +124,13 @@ console.log(myDate.toJSON());
 
 `builtins-date.cc` 文件是 V8 引擎中 `Date` 对象功能的核心实现，它使用 C++ 语言提供了 JavaScript 中 `Date` 对象所有的方法和构造函数的底层逻辑，负责处理日期和时间的创建、操作、格式化以及与其他时间概念（如 Unix 时间戳和 UTC 时间）的转换。  JavaScript 开发者通过 `Date` 对象及其方法进行的所有日期时间操作，最终都会委托给这个文件中的 C++ 代码来执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-date.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1013,7 +1015,4 @@ BUILTIN(DatePrototypeToTemporalInstant) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

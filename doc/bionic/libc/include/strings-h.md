@@ -266,7 +266,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/include/strings.handroid` 虽然名字带有 "handroid"，但其核心内容是提供标准的 C 字符串和内存操作函数（尽管 `bcopy` 和 `bzero` 已废弃）。这些函数是 Android 系统和 Native 开发的基石，在各种场景下都有着广泛的应用。理解它们的功能和实现方式对于深入理解 Android 系统的运作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/strings.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: strings.h,v 1.10 2005/02/03 04:39:32 perry Exp $	*/
 
 /*-
@@ -391,7 +393,4 @@ __BIONIC_STRINGS_INLINE int ffsll(long long __n) {
 #endif
 
 __END_DECLS
-
-"""
-
 ```

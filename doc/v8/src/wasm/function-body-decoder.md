@@ -98,11 +98,13 @@ loadAndRunWasm();
 
 **总结来说，`function-body-decoder.cc` 在 JavaScript 执行 WebAssembly 代码的过程中扮演着至关重要的角色，它负责理解和确保 WebAssembly 函数体的结构和语义是正确的，这是安全可靠地执行 WebAssembly 代码的基础。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/function-body-decoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ BitVector* AnalyzeLoopAssignmentForTesting(Zone* zone, uint32_t num_locals,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

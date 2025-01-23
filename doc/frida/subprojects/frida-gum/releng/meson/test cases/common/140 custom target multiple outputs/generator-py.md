@@ -123,7 +123,7 @@ By following this systematic approach, breaking down the problem into smaller pa
 
 总而言之，`generator.py` 脚本虽然简单，但在 Frida 的测试框架中扮演着重要的角色，用于模拟和验证 Frida Gum 处理自定义构建输出的能力。开发者在进行 Frida 相关开发和调试时，可能会接触到这个脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/140 custom target multiple outputs/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -147,7 +149,4 @@ with open(os.path.join(odir, name + '.h'), 'w') as f:
     f.write('int func();\n')
 with open(os.path.join(odir, name + '.sh'), 'w') as f:
     f.write('#!/bin/bash')
-
-"""
-
 ```

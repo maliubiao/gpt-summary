@@ -157,14 +157,16 @@ body {
 
 `font_fallback_list.cc` 是 Blink 渲染引擎中处理字体回退的关键部分。它确保即使首选字体不可用，也能选择合适的替代字体进行渲染，从而保证网页内容的可读性和视觉效果。它与 CSS 中 `font-family` 属性紧密相关，并受到 JavaScript 动态样式修改的影响。理解其工作原理有助于开发者避免常见的字体使用错误，并创建更健壮和跨平台的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_fallback_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.  All rights reserved.
  *
@@ -417,7 +419,4 @@ bool FontFallbackList::CanShapeWordByWord(
 }
 
 }  // namespace blink
-
-"""
-
 ```

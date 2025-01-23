@@ -160,15 +160,17 @@ This detailed breakdown reflects a step-by-step process of understanding the cod
 
 总而言之，`WebRtcAudioDeviceNotImpl` 是一个备用方案，当真实的音频设备不可用时，确保 WebRTC 的相关代码不会崩溃，但它本身并不提供实际的音频功能。它的存在和使用通常是系统遇到问题的一个迹象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webrtc/webrtc_audio_device_not_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ int WebRtcAudioDeviceNotImpl::GetRecordAudioParameters(
 #endif  // BUILDFLAG(IS_IOS)
 
 }  // namespace blink
-
-"""
-
 ```

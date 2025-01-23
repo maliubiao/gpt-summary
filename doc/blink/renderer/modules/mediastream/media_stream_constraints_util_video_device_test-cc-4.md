@@ -74,7 +74,7 @@ The user is asking for a summary of the provided C++ code, which is a test file 
 
 该测试文件 (`media_stream_constraints_util_video_device_test.cc`) 的主要功能是 **全面测试 Blink 引擎中用于处理视频设备媒体流约束的工具类 `MediaStreamConstraintsUtil` 的正确性**。 它通过模拟各种用户可能设置的约束条件以及不同的视频设备能力，来验证该工具类能否正确地选择合适的视频设备和设置，或者在无法满足约束时给出合理的错误信息。 这保证了当网页 JavaScript 代码通过 `getUserMedia()` 请求摄像头访问时，Blink 引擎能够按照预期处理这些约束，并为用户提供最佳的媒体体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_device_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 viceTest, AdvancedPanTiltZoom) {
   for (auto& constraint : PanTiltZoomConstraints()) {
     constraint_factory_.Reset();
@@ -344,8 +346,4 @@ TEST_F(MediaStreamConstraintsUtilVideoDeviceTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

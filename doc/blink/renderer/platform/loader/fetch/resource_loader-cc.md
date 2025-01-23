@@ -110,15 +110,17 @@ Now, let's translate this outline into a concise summary suitable for the first 
 
 总而言之，`blink/renderer/platform/loader/fetch/resource_loader.cc` 的核心功能是 **作为 Blink 渲染引擎中加载网络资源的关键模块，负责发起、管理和完成各种类型的资源请求，并处理加载过程中的安全策略、缓存机制和错误情况，为页面的正常渲染提供基础支持。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2010, 2011 Apple Inc. All rights reserved.
  *           (C) 2007 Graham Dennis (graham.dennis@gmail.com)
@@ -886,8 +888,4 @@ bool ResourceLoader::WillFollowRedirect(
 }
 
 void ResourceLoader::DidSendData(uint64_t bytes_sent,
-                   
-"""
-
-
 ```

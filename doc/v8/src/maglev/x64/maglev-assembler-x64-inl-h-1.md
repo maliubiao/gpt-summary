@@ -168,7 +168,7 @@ masm->JumpIfNan(xmm0, &nan_label);
 
 `v8/src/maglev/x64/maglev-assembler-x64-inl.h` 定义了 Maglev 编译器在 x64 架构下生成机器码的核心工具，提供了丰富的指令集用于控制流、数据操作、类型检查、Deoptimization 支持和调试。它与 JavaScript 的执行息息相关，是 V8 将 JavaScript 代码转化为可执行机器码的关键组成部分。虽然普通开发者不会直接编写这些代码，但理解其功能有助于理解 JavaScript 引擎的底层工作原理和一些潜在的性能瓶颈和错误来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/x64/maglev-assembler-x64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/x64/maglev-assembler-x64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ress.
   DCHECK(!IsDeoptLabel(target));
   jmp(target, distance);
@@ -552,8 +554,4 @@ inline void MaglevAssembler::MaybeEmitPlaceHolderForDeopt() {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_X64_MAGLEV_ASSEMBLER_X64_INL_H_
-
-"""
-
-
 ```

@@ -147,14 +147,16 @@ params.screen_orientation_angle = 0;
 
 `blink/common/widget/device_emulation_params_mojom_traits.cc` 是 Chromium Blink 引擎中负责设备模拟功能的重要组成部分。它确保了设备模拟参数能够正确地在不同的进程之间传递，从而使得浏览器能够模拟各种设备环境，影响 JavaScript API 的返回值、HTML 的布局以及 CSS 媒体查询的应用，最终为开发者提供准确的测试和调试环境。 理解这个文件的作用有助于理解浏览器设备模拟功能的底层实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/widget/device_emulation_params_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ bool StructTraits<blink::mojom::DeviceEmulationParamsDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

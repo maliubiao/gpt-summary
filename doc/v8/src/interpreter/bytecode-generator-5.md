@@ -95,12 +95,14 @@ function createClosure(y) {
 
 总而言之，`bytecode-generator.cc` 的这部分代码是 V8 解释器 Ignition 的核心组件，它将 JavaScript 的高级语法结构转换为低级的字节码指令，并利用反馈向量机制来收集运行时信息，为后续的优化（例如通过 TurboFan 编译器）奠定基础。它直接影响着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
 
   // Skip the nullish shortcircuit if we already have a boolean.
@@ -295,8 +297,4 @@ FeedbackSlot BytecodeGenerator::GetDummyCompareICSlot() {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

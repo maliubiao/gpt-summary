@@ -144,12 +144,14 @@ Response: Let's break down the thought process for summarizing the C++ code and 
 
 `v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc` 的第二部分，连同第一部分，共同构成了一套全面的单元测试，用于验证 V8 引擎在将 JavaScript 的各种操作编译成 MIPS64 机器码时，指令选择器的工作是否正确。这些测试对于保证 JavaScript 在 MIPS64 架构上的性能和正确性至关重要。它们直接测试了 JavaScript 中许多基本操作在底层是如何被高效地转化为机器指令的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 );
     EXPECT_EQ(1U, s[0]->OutputCount());
     EXPECT_EQ(kFlags_set, s[0]->flags_mode());
@@ -306,8 +308,4 @@ TEST_F(InstructionSelectorTest, Word64ReverseBytes) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -126,7 +126,7 @@ This part of the `websocket_channel_test.cc` file primarily defines **test fixtu
 
 总而言之，这部分测试代码是 Chromium 网络栈中 `WebSocketChannel` 功能的基石，它通过模拟各种正常的和异常的 WebSocket 通信场景，来确保 `WebSocketChannel` 能够可靠、正确地处理 WebSocket 连接，并为上层的 JavaScript `WebSocket` API 提供稳定的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_channel_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 () {
     return std::make_unique<FakeWebSocketEventInterface>();
   }
@@ -956,8 +958,4 @@ TEST_F(WebSocketChannelEventInterfaceTest, ClosePayloadReservedStatusMessage) {
   EXPECT_CALL(*event_interface_, OnAddChannelResponse(_, _, _));
   EXPECT_CALL(
       *event_interface_,
-    
-"""
-
-
 ```

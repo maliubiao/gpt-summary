@@ -213,7 +213,7 @@ This structured approach ensures all aspects of the request are addressed thorou
 
 因此，这个脚本虽然简单，但在 Frida 的开发和测试流程中扮演着一个验证构建环境和 Meson 内省功能是否正常的角色。它的失败可以帮助开发者快速定位构建环境或工具链的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/139 mesonintrospect from scripts/check_introspection.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -221,8 +221,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -241,7 +243,4 @@ introspect_arr = shlex.split(mesonintrospect)
 buildroot = os.environ['MESON_BUILD_ROOT']
 
 subprocess.check_output([*introspect_arr, '--all', buildroot])
-
-"""
-
 ```

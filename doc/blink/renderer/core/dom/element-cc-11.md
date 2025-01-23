@@ -257,7 +257,7 @@ element.style.color = 'red';
 
 作为 `blink/renderer/core/dom/element.cc` 文件的第 12 部分，这段代码主要集中在 **`Element` 对象的样式和属性管理** 的核心功能上。它涵盖了从最基本的内联样式操作，到更复杂的表现属性样式、`part` 属性、交互状态管理、视图过渡伪元素处理以及元素可见性检查等多个方面。 考虑到这是倒数第二部分，它很可能包含了 `Element` 类中与样式和属性相关的大部分重要逻辑，为渲染引擎正确地呈现和交互网页内容提供了基础。 剩下的最后一部分可能涉及其他方面，例如事件处理、DOM 结构操作或其他辅助功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alue, important,
           GetExecutionContext() ? GetExecutionContext()->GetSecureContextMode()
                                 : SecureContextMode::kInsecureContext,
@@ -1173,8 +1175,4 @@ Attr* Element::setAttributeNode(Attr* attr_node,
       ExpectedTrustedTypeForAttribute(attr_node->GetQualifiedName()),
       attr_node->value(), GetExecutionContext(), "Element", "setAttributeNode",
       exception_state));
-
-"""
-
-
 ```

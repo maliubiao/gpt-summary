@@ -138,7 +138,7 @@ add(5, "hello"); // 类型不一致，可能导致反优化
 
 总而言之，这段代码是 V8 引擎的单元测试，专注于验证 CPU Profiler 在处理 JavaScript 代码优化和反优化场景时的正确性和信息记录能力，特别是针对内联函数和在 Profiler 启动后才优化的函数。它确保了开发者能够通过 Profiler 获取到准确的反优化信息，从而更好地理解和优化他们的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-cpu-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-cpu-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ontext::Scope context_scope(env);
   ProfilerHelper helper(env);
   i::CpuProfiler* iprofiler =
@@ -1081,7 +1083,4 @@ TEST(StandardNaming) {
   LocalContext env;
   i::Isolate* isolate = CcTest::i_isolate();
   i
-"""
-
-
 ```

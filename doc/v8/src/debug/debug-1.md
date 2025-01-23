@@ -202,13 +202,15 @@ This section of the code is deeply intertwined with JavaScript debugging feature
 
 In essence, this section of `debug.cc` provides the core infrastructure for interacting with JavaScript code during debugging. It handles the low-level details of managing code execution, breakpoints, and the overall debugging state within the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- OffHeapInstructionStream::TryLookupCode(isolate, pc);
+### 源代码
+```
+OffHeapInstructionStream::TryLookupCode(isolate, pc);
         if (builtin == Builtin::kBaselineOrInterpreterEnterAtBytecode ||
             builtin == Builtin::kBaselineOrInterpreterEnterAtNextBytecode) {
           Address* pc_addr = frame->pc_address();
@@ -1875,8 +1877,4 @@ void Debug::NotifyDebuggerPausedEventSent() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

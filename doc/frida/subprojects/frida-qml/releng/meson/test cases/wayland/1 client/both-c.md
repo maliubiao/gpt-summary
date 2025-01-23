@@ -124,7 +124,7 @@ By following this systematic thought process, combining code understanding with 
 
 `both.c` 是一个简单的编译时测试，用于验证 Wayland `viewporter` 扩展的客户端和服务器头文件是否存在。虽然它本身不直接参与运行时逆向，但它所测试的组件对于逆向使用 Wayland 和 `viewporter` 的应用程序至关重要。当构建或测试 Frida 时，如果这个测试失败，通常意味着编译环境缺少必要的开发库或配置不正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/wayland/1 client/both.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "viewporter-client-protocol.h"
 #include "viewporter-server-protocol.h"
 
@@ -145,7 +147,4 @@ int main() {
   return 1;
 #endif
 }
-
-"""
-
 ```

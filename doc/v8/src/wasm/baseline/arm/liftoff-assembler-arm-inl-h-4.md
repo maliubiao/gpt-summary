@@ -171,7 +171,7 @@ void LiftoffAssembler::emit_i32x4_sub(LiftoffRegister dst, LiftoffRegister lhs,
 
 这段 `v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h` 代码是 V8 引擎中 Liftoff 基线编译器在 ARM 架构下实现 WebAssembly SIMD 操作的关键组成部分。它定义了用于生成 ARM NEON 指令的内联函数，涵盖了 SIMD 的各种算术、位运算、比较、最小值/最大值、车道操作以及扩展和饱和运算。这段代码使得 V8 能够高效地执行在 JavaScript 环境中运行的 WebAssembly 模块中的 SIMD 指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -179,8 +179,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 8Register(rhs));
 }
 
@@ -925,7 +927,4 @@ void LiftoffAssembler::emit_i64x2_gt_s(LiftoffRegister dst, LiftoffRegister lhs,
 }
 
 void LiftoffAssemble
-"""
-
-
 ```

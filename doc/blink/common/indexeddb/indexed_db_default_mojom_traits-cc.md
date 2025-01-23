@@ -163,14 +163,16 @@ request.onsuccess = function(event) {
 
 `indexed_db_default_mojom_traits.cc` 是 Blink 引擎中一个关键的底层文件，负责 IndexedDB 相关数据结构在 Mojo 消息中的序列化和反序列化，使得不同进程之间可以安全有效地传递这些数据，从而支持 JavaScript 中 IndexedDB API 的正常运作。它不直接与 JavaScript、HTML 或 CSS 交互，而是作为基础设施的一部分默默地支持着这些 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/indexeddb/indexed_db_default_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -395,7 +397,4 @@ bool StructTraits<blink::mojom::IDBObjectStoreMetadataDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

@@ -285,7 +285,7 @@ if __name__ == "__main__":
 
 `bionic/tests/netinet_igmp_test.cpp` 虽然是一个简单的冒烟测试，但它验证了与 IGMP 协议相关的基本数据结构和定义在 Android Bionic 库中的正确性。这对于确保 Android 设备的网络功能正常运作至关重要。理解这个测试文件以及其背后的相关概念，可以帮助我们更好地理解 Android 底层的网络实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/netinet_igmp_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -296,8 +296,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -338,7 +340,4 @@ TEST(netinet_igmp, smoke) {
   i.igmp_cksum = 0;
   i.igmp_group.s_addr = htonl(INADDR_ANY);
 }
-
-"""
-
 ```

@@ -187,7 +187,7 @@ This structured approach ensures that all aspects of the prompt are addressed th
 
 总而言之，`frida/subprojects/frida-clr/releng/progress.py` 提供了一个简单但重要的机制，用于在 Frida-CLR 的操作中向用户提供反馈，帮助用户理解工具的运行状态，并可能在调试过程中提供线索。尽管其自身代码简单，但它在整个 Frida-CLR 的架构中扮演着用户体验和可调试性的重要角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/progress.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from dataclasses import dataclass
 from typing import Callable
 
@@ -211,7 +213,4 @@ ProgressCallback = Callable[[Progress], None]
 
 def print_progress(progress: Progress):
     print(f"{progress.message}...", flush=True)
-
-"""
-
 ```

@@ -122,7 +122,7 @@ Here's a breakdown of the thinking process to generate the summary:
 
 总而言之，`net/dns/mdns_client_unittest.cc` 的第二部分，连同第一部分，全面地测试了 Chromium `MDnsClient` 及其相关组件的各种功能，确保其能够正确地实现 mDNS 协议，进行设备发现和服务发现。 它可以作为理解 `MDnsClient` 工作原理的重要参考，并在调试 mDNS 相关问题时提供关键的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/mdns_client_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -130,9 +130,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-               sizeof(kSamplePacketAdditionalOnly));
+### 源代码
+```cpp
+sizeof(kSamplePacketAdditionalOnly));
 
   EXPECT_TRUE(record_privet.IsRecordWith("_privet._tcp.local",
                                          "hello._privet._tcp.local"));
@@ -745,8 +747,4 @@ TEST(MDnsSocketTest, CreateSocket) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

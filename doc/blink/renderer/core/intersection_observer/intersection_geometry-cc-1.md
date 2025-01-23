@@ -152,16 +152,18 @@ Essentially, my process involved understanding the code's purpose, relating it t
 
 总而言之，`blink/renderer/core/intersection_observer/intersection_geometry.cc` 的第二部分继续实现了 Intersection Observer API 的核心几何计算逻辑，确保了能够准确地判断目标元素与根元素（或视口）的交集状态，并根据设定的阈值触发相应的通知。它深入处理了各种复杂的场景，包括变换、裁剪、滚动边距和跨域 iframe，为 Intersection Observer API 的可靠性和准确性提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_geometry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- local_ancestor->FirstFragment().PaintProperties()) {
+### 源代码
+```cpp
+local_ancestor->FirstFragment().PaintProperties()) {
           if (auto* replaced_transform =
                   properties->ReplacedContentTransform()) {
             gfx::Transform invert_replaced_transform =
@@ -319,8 +321,4 @@ gfx::Vector2dF IntersectionGeometry::ComputeMinScrollDeltaToUpdate(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

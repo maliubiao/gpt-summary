@@ -100,7 +100,7 @@ fetch('https://example.com/data')
 
 总而言之，`net/spdy/spdy_test_util_common.cc` 的第一部分是一个专门为 SPDY 协议测试设计的工具箱，它简化了 SPDY 帧的构造、网络行为的模拟以及测试环境的搭建，是保证 Chromium 网络栈中 SPDY 协议实现质量的重要组成部分。虽然 JavaScript 不直接与它交互，但该文件所支撑的 SPDY 测试直接关系到基于 SPDY 的网络请求的正确性和性能，从而间接影响到 JavaScript 发起的网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_test_util_common.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -966,8 +968,4 @@ spdy::SpdySerializedFrame SpdyTestUtil::ConstructSpdyHeaders(
   headers.set_fin(fin);
   return spdy::SpdySerializedFrame(
       request_spdy_framer_.SerializeFrame(headers));
-
-"""
-
-
 ```

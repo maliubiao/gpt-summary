@@ -137,12 +137,14 @@ This code directly implements the underlying mechanics of how JavaScript code is
 
 In essence, this code snippet is a crucial part of the V8 compiler that makes JavaScript code executable by translating its high-level semantics into the low-level instructions that the CPU can understand. It ensures that JavaScript operations are performed efficiently by considering the underlying data types and choosing the most appropriate machine representations and instructions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ntifiesZeroAndMinusZero()
                                 ? Type::OrderedNumber()
                                 : Type::PlainNumber())) {
@@ -1727,8 +1729,5 @@ ntifiesZeroAndMinusZero()
   Type false_type() const { return singleton_false_; }
 
   JSGraph* jsgraph_;
-  JSHeapBroker* 
-"""
-
-
+  JSHeapBroker*
 ```

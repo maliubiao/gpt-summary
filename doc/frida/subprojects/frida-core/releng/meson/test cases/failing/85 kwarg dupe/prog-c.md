@@ -90,7 +90,7 @@ Here's a thinking process to arrive at the comprehensive analysis of the C code 
 
 虽然 `prog.c` 本身的代码非常简单，但它在 Frida 测试框架中扮演着特定的角色。它的存在是为了 **验证 Frida 在处理特定情况（很可能与构建过程或参数处理有关）时的行为**。 开发者查看这个文件，很可能是为了理解一个预期发生的测试失败的原因，从而调试 Frida 本身的代码。  程序中打印的 "I don't get built" 的信息也印证了这一点，暗示这个程序可能故意没有被构建，以测试 Frida 在这种场景下的处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/85 kwarg dupe/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,15 +98,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("I don't get built. It makes me saaaaaad. :(\n");
     return 0;
 }
-
-"""
-
 ```

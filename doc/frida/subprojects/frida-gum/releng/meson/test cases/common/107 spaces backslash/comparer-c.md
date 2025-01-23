@@ -159,7 +159,7 @@ Arg string is quoted incorrectly: foo\bar instead of foo\bar
 
 因此，开发者在看到这个测试用例失败时，会重点检查 Frida Gum 中与字符串处理、参数传递、以及特殊字符转义相关的代码，以找出引入错误的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/107 spaces backslash/comparer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "comparer.h"
 
 #ifndef COMPARER_INCLUDED
@@ -185,7 +187,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

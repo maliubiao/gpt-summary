@@ -132,7 +132,7 @@ func TestUsplit(t *testing.T) {
 
 `go/src/runtime/export_arm_test.go` 的核心作用是为 `runtime` 包的测试提供便利，它通过将内部的 `usplit` 函数以 `Usplit` 的名字暴露出来，使得测试代码可以调用并验证该函数的行为。我们可以推断 `usplit` 是一个用于分割字符串的底层函数。普通用户应该避免直接使用这类为测试导出的接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_arm_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -151,9 +153,4 @@ Prompt:
 package runtime
 
 var Usplit = usplit
-
-"""
-
-
-
 ```

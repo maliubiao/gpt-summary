@@ -188,15 +188,17 @@ Imagine a user is experiencing issues with a `clip-path` property on their websi
 
 In summary, `css_path_value.cc` is a foundational file in Blink responsible for the internal representation and manipulation of CSS `path()` values, which are crucial for advanced styling features like clipping and motion paths. It bridges the gap between the textual CSS representation and the internal data structures used for rendering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_path_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ void CSSPathValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

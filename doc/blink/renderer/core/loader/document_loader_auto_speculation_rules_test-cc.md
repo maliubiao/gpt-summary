@@ -148,15 +148,17 @@ Imagine a user reports unexpected prefetching or prerendering on a website. Here
 
 **In summary, this test file plays a crucial role in ensuring the correctness and reliability of Blink's automatic speculation rules feature, which aims to improve web performance by proactively loading resources based on detected JavaScript frameworks and URL patterns.** It helps developers avoid common configuration errors and provides a clear understanding of how the feature should behave.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/document_loader_auto_speculation_rules_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -508,7 +510,4 @@ INSTANTIATE_TEST_SUITE_P(FromInlineOrExternal,
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

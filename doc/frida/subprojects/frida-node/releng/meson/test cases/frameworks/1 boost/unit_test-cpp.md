@@ -156,7 +156,7 @@ test.cpp(9): info: check_equal: x == 4
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/frameworks/1 boost/unit_test.cpp` 是一个基础的单元测试文件，用于验证 `frida-node` 的基本功能。虽然它本身很简单，但它是整个 Frida 项目测试框架的一部分，对于保证工具的可靠性和正确性至关重要。理解这类测试用例对于开发者理解 Frida 的工作原理、调试问题和贡献代码都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/1 boost/unit_test.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BOOST_TEST_MODULE "MesonTest"
 #define BOOST_TEST_MAIN
 #include <boost/test/unit_test.hpp>
@@ -175,7 +177,4 @@ BOOST_AUTO_TEST_CASE(m_test) {
     BOOST_CHECK(true);
     BOOST_CHECK_EQUAL(x, 4);
 }
-
-"""
-
 ```

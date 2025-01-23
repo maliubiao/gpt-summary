@@ -63,7 +63,7 @@ Here's a breakdown of how to approach each request:
 
 **总而言之，这部分代码主要专注于验证 `WindowPerformance` 类在处理各种用户交互时，能够准确地记录和上报关键的性能指标，并通过 UKM 和 UMA 进行统计分析，为浏览器性能优化提供数据支持。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/window_performance_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -71,8 +71,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tamp(2);
   processing_start_keydown = GetTimeStamp(3);
   processing_end_keydown = GetTimeStamp(5);
@@ -801,7 +803,4 @@ TEST_F(WindowPerformanceTest, SlowInteractionToNextPaintTraceEvents) {
     base::TimeTicks processing_start_keydown = GetTimeStamp(201);
     base::TimeTicks processing_end_keydown = GetTimeStamp(202);
     base::TimeTicks pre
-"""
-
-
 ```

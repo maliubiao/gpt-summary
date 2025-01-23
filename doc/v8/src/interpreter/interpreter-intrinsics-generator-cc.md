@@ -234,15 +234,17 @@ By following these steps, I can arrive at a comprehensive and accurate answer to
 
 总结来说，`v8/src/interpreter/interpreter-intrinsics-generator.cc` 是 V8 解释器与高效内置函数之间的桥梁，它负责生成调用内置函数的代码，以实现 JavaScript 的核心功能。用户编写的 JavaScript 代码中的各种操作最终会通过解释器转化为对这些内置函数的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-intrinsics-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-intrinsics-generator.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -515,7 +517,4 @@ void IntrinsicsGenerator::AbortIfArgCountMismatch(int expected,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

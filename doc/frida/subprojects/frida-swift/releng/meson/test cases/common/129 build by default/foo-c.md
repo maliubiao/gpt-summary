@@ -168,7 +168,7 @@ Existentialism.
 
 尽管 `foo.c` 程序本身非常简单，但它在软件开发和逆向工程领域都有着一定的作用。作为 Frida 的一个测试用例，它可以帮助验证 Frida 在处理基本 C 程序时的功能，并为开发者提供调试和理解 Frida 工作原理的入口。 它的简单性也使其成为演示逆向工程概念的理想选择。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/129 build by default/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,15 +176,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Existentialism.\n");
     return 0;
 }
-
-"""
-
 ```

@@ -106,7 +106,7 @@ Interceptor.attach(funcAddress, {
 
 `bob.c` 本身是一个非常简单的 C 文件，其核心功能是定义一个返回 0 的函数。它的重要性在于它作为 Frida 测试框架中的一个测试目标，用于验证 Frida 的各种功能，尤其是与构建系统和动态链接相关的特性。通过分析其上下文和可能的使用场景，我们可以更好地理解 Frida 的工作原理和潜在的调试方向。  "ldflagdedup" 这个路径信息是关键，它指向了该文件在 Frida 构建系统中用于测试链接器标志去重功能的用途。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/51 ldflagdedup/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,14 +114,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<gmodule.h>
 
 int func() {
     return 0;
 }
-
-"""
-
 ```

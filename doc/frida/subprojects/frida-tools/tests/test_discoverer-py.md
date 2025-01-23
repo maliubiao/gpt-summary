@@ -179,7 +179,7 @@ Finally, I'd organize the analysis into clear sections as requested by the promp
 
 总而言之，`test_discoverer.py` 是一个用于验证 Frida 工具中 `discoverer` 模块功能的测试文件。它展示了如何使用 `discoverer` 来动态发现目标进程中的模块和函数，这在软件逆向工程中是一个重要的技术。理解这个测试文件可以帮助开发者和逆向工程师更好地使用和调试 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/tests/test_discoverer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import subprocess
 import threading
 import time
@@ -247,7 +249,4 @@ class TestUI(UI):
 
 if __name__ == "__main__":
     unittest.main()
-
-"""
-
 ```

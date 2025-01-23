@@ -188,16 +188,18 @@ document.getElementById('container').appendChild(document.createElement('b'));
 
 总而言之，这部分测试代码覆盖了 `InlineNode` 类在处理各种 DOM 结构、样式变化以及特定文本渲染场景下的核心功能，确保了 Blink 引擎能够正确地管理和更新内联布局。这些测试对于保证浏览器的渲染准确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_node_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-   <div id="container">
+### 源代码
+```cpp
+<div id="container">
       <span id="previous"></span>
       <span id="parent"></span>
       <span id="next"></span>
@@ -1121,7 +1123,4 @@ TEST_F(InlineNodeTest, ShapeCacheSpacingRequired) {
 
   EXPECT_FALSE(
       node.IsNGShapeCacheAllowed(text_content, nullpt
-"""
-
-
 ```

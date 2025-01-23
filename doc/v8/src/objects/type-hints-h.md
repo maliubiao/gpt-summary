@@ -209,15 +209,17 @@ for (let key in obj) {
 
 总而言之，`v8/src/objects/type-hints.h` 定义了 V8 引擎用于优化 JavaScript 代码执行的关键类型信息。理解这些类型提示有助于理解 V8 如何尝试提高性能，以及某些 JavaScript 编程模式如何影响引擎的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/type-hints.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/type-hints.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ std::ostream& operator<<(std::ostream& os, const StringAddFlags& flags);
 }  // namespace v8
 
 #endif  // V8_OBJECTS_TYPE_HINTS_H_
-
-"""
-
 ```

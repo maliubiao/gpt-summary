@@ -118,15 +118,17 @@ By following these steps, I can construct a comprehensive and accurate answer th
 
 总而言之，`blink/renderer/modules/compression/zlib_partition_alloc.cc` 是 Blink 引擎中一个重要的底层组件，它通过使用 `PartitionAlloc` 提高了 `zlib` 库在内存管理方面的安全性、效率和可控性，从而间接地影响了网页的加载速度、资源利用率和整体稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/compression/zlib_partition_alloc.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/modules/compression/zlib_partition_alloc.h"
 #include "third_party/blink/renderer/platform/wtf/allocator/partitions.h"
 
@@ -147,7 +149,4 @@ void ZlibPartitionAlloc::Free(void*, void* address) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

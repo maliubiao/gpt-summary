@@ -163,15 +163,17 @@ Go 语言中的 `slice` (切片)、`map` (映射) 和 `func` (函数) 类型是�
 
 `a.F` 是一个简单的泛型函数，用于比较两个相同类型且可比较的值是否相等。它的主要作用是展示了 Go 语言的泛型功能。使用者需要注意传入的参数类型必须是可比较的，避免使用切片、映射或函数等不可比较的类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/dedup.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -182,9 +184,4 @@ package a
 func F[T comparable](a, b T) bool {
 	return a == b
 }
-
-"""
-
-
-
 ```

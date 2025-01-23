@@ -191,14 +191,16 @@ setTimeout(() => {
 
 总而言之，`layout_shift_region.cc` 是 Blink 渲染引擎中一个重要的组成部分，它通过高效的扫描线算法来量化页面布局的稳定性，帮助开发者识别和优化可能影响用户体验的布局偏移问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_shift_region.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -518,7 +520,4 @@ uint64_t LayoutShiftRegion::Area() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

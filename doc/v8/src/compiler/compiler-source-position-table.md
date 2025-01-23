@@ -113,11 +113,13 @@ V8 引擎能够生成这样的堆栈跟踪信息，正是因为在编译 `myFunc
 
 总而言之，`SourcePositionTable` 是 V8 编译器中一个关键的组件，它负责维护编译后的代码与其原始源代码之间的映射关系，这对于提供有用的错误信息、支持调试功能和进行性能分析至关重要，从而极大地提升了 JavaScript 开发的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/compiler-source-position-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ void SourcePositionTable::PrintJson(std::ostream& os) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

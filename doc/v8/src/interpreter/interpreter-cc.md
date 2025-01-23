@@ -161,15 +161,17 @@ While `interpreter.cc` is internal to V8, understanding its role helps in unders
 
 In summary, `v8/src/interpreter/interpreter.cc` is a crucial piece of V8 responsible for the initial, unoptimized execution of JavaScript code through bytecode interpretation. It manages the mapping of bytecodes to their implementations and handles the compilation of JavaScript ASTs into bytecode. While not a Torque file, it works closely with Torque-generated built-ins to execute JavaScript efficiently. Understanding its functions provides insight into how JavaScript code runs within the V8 engine and how common programming errors manifest at a lower level.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -599,7 +601,4 @@ Handle<JSObject> Interpreter::GetDispatchCountersObject() {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

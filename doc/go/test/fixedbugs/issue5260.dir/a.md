@@ -188,15 +188,17 @@ func main() {
 
 总而言之，这段代码定义了一个表示 UTF-8 BOM 的常量，它主要用于在处理文本文件时识别文件是否以 BOM 开头，从而进行相应的处理，避免因 BOM 字符导致的解析错误。使用者需要注意不要盲目假设 UTF-8 文件没有 BOM，并且在需要去除 BOM 时要使用正确的方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5260.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -204,9 +206,4 @@ Prompt:
 package a
 
 const BOM = "\uFEFF"
-
-"""
-
-
-
 ```

@@ -131,7 +131,7 @@ As the 12th part of a larger set of compiler components, `js-call-reducer.cc` pl
 
 The reducer works by recognizing common and performance-critical JavaScript call patterns and transforming them into more efficient lower-level operations, contributing significantly to V8's overall performance. It's a crucial component in bridging the gap between high-level JavaScript and optimized machine code execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 return NoChange();
 
   JSCallNode n(node);
@@ -374,8 +376,4 @@ SimplifiedOperatorBuilder* JSCallReducer::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

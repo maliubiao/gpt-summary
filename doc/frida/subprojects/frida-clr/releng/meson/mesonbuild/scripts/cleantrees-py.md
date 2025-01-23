@@ -159,7 +159,7 @@ with open("clean_data.pkl", "wb") as f:
 
 总而言之，`cleantrees.py` 是 Frida 构建系统的一个小而重要的组成部分，负责在构建过程中进行目录清理，确保构建环境的整洁，并为后续的构建步骤提供一个干净的基础。理解它的功能和运行方式有助于理解 Frida 的构建流程，并在遇到构建问题时提供一些调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/cleantrees.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -204,7 +206,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     run(sys.argv[1:])
-
-"""
-
 ```

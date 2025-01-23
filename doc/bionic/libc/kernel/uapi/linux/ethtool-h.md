@@ -74,7 +74,7 @@ This systematic approach, starting with a broad overview and then drilling down 
 
 **总结来说，这个头文件为用户空间程序提供了一套完整的接口定义，使其能够与 Linux 内核中的 `ethtool` 子系统进行通信，从而实现对以太网网络接口的详细配置、监控和管理。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ethtool.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -86,8 +86,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1072,7 +1074,4 @@ enum ethtool_link_mode_bit_indices {
 #define RX_CLS_FLOW_WAKE 0xfffffffffffffffeULL
 #define RX_CLS_LOC_SPECIAL 0x80000000
 #define RX_CLS
-"""
-
-
 ```

@@ -128,11 +128,13 @@ When the V8 engine needs to perform a global operation (like a full GC) involvin
 
 **In summary, `v8/src/heap/safepoint.cc` implements a critical low-level mechanism in V8 that ensures the safety and correctness of operations like garbage collection, especially in multi-threaded or multi-isolate environments. It's a fundamental building block for the robust execution of JavaScript.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/safepoint.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -572,7 +574,4 @@ SafepointScope::SafepointScope(Isolate* initiator,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -178,11 +178,13 @@ Here, the `process` function makes a polymorphic call to `getValue`. The inlinin
 
 **In summary, `js-inlining-heuristic.cc` is responsible for making intelligent decisions about when and how to inline JavaScript function calls within the TurboFan compiler. It considers factors like function size, call frequency, runtime feedback, and polymorphism to optimize JavaScript code for better performance.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-inlining-heuristic.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1058,7 +1060,4 @@ SimplifiedOperatorBuilder* JSInliningHeuristic::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

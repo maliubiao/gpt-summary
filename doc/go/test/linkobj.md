@@ -194,15 +194,17 @@ go tool link -o myprogram main.o mypackage.a
 
 总而言之，`go/test/linkobj.go` 通过创建一系列的 Go 源文件，并使用 `go tool compile` 和 `go tool link` 命令，详细测试了 `-linkobj` 标志的功能，验证了使用链接对象文件进行链接的可行性和正确性。它模拟了使用普通对象文件和打包归档文件两种场景，确保了该功能在不同情况下的表现符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkobj.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 //go:build !nacl && !js && gc && !wasip1
@@ -367,9 +369,4 @@ func fatalf(format string, args ...interface{}) {
 	cleanup()
 	log.Fatalf(format, args...)
 }
-
-"""
-
-
-
 ```

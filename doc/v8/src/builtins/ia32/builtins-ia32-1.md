@@ -120,13 +120,15 @@ Based on the code, it seems like this part focuses on:
 
 总而言之，这部分 `builtins-ia32.cc` 代码是 V8 引擎在 IA-32 架构上实现各种关键 JavaScript 功能的底层基础，它连接了 JavaScript 语法和底层的机器指令执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- table register.
+### 源代码
+```
+table register.
   __ Move(kInterpreterDispatchTableRegister,
           Immediate(ExternalReference::interpreter_dispatch_table_address(
               masm->isolate())));
@@ -1886,7 +1888,4 @@ void SwitchToAllocatedStack(MacroAssembler* masm, Register wrapper_buffer,
       scratch,
       MemOperand(
           wrappe
-"""
-
-
 ```

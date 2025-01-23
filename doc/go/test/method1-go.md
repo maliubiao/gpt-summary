@@ -206,15 +206,17 @@ go test ./go/test/method1.go # 测试特定的 method1.go 文件
 
 总之，这段代码片段的核心作用是作为 Go 语言编译器错误检测机制的一部分，专门用于验证编译器能否正确识别和报告方法和函数的重复声明错误。理解这一点有助于避免在编写 Go 代码时犯类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/method1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -239,9 +241,4 @@ func f(int, float64) {} // ERROR "redeclared|redefinition"
 
 func g(a int, b string) // GCCGO_ERROR "previous"
 func g(a int, c string) // ERROR "redeclared|redefinition"
-
-"""
-
-
-
 ```

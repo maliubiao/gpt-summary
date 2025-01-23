@@ -195,7 +195,7 @@ console.log(result); // 输出 15
 
 总而言之，这段代码是 V8 引擎 Liftoff 编译器中用于生成 IA-32 架构 WebAssembly 代码的核心组件，涵盖了整数和浮点数运算、类型转换、位操作、控制流和比较等多种基本操作。理解这段代码有助于深入了解 WebAssembly 在 V8 引擎中的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -203,8 +203,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 pinned{dst};
 
   constexpr size_t kMaxRegMoves = 3;
@@ -1133,8 +1135,4 @@ bool LiftoffAssembler::emit_select(LiftoffRegister dst, Register condition,
 }
 
 void LiftoffAssembler::emit_smi_check(Register obj, Label* target,
-                         
-"""
-
-
 ```

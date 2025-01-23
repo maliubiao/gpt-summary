@@ -175,7 +175,7 @@ async function correctProcessData() {
 
 总的来说，这部分代码的核心目标是**在保证性能的前提下，提升 V8 引擎在沙箱环境下的安全性和内存管理的效率**。它定义了用于间接引用内存的关键数据结构和常量，为 V8 的安全执行环境提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-internal.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-internal.h以.tq结尾，那它是个v8 torque源代码，
@@ -183,8 +183,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 y, in contrast to "normal" pointers, indirect pointers never need to
 // be tracked by the GC (i.e. there is no remembered set for them).
 // These pointers do not exist when the sandbox is disabled.
@@ -956,7 +958,4 @@ class WrappedIterator : public MaybeDefineIteratorConcept<Iterator> {
                          typename std::iterator_traits<Iterator>::reference,
                          std::add_lvalue_reference_t<ElementType>>;
   using iterator_catego
-"""
-
-
 ```

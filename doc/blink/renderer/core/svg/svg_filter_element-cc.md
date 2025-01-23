@@ -209,15 +209,17 @@ filterElement.setAttribute('width', '150');
 
 总而言之，`SVGFilterElement.cc` 文件在 Chromium Blink 渲染引擎中扮演着至关重要的角色，它负责表示和管理 SVG `<filter>` 元素，处理其属性变化，并与布局系统和资源管理系统协同工作，最终实现网页上复杂的图形滤镜效果。 开发者与这个文件的交互通常是通过 HTML、CSS 和 JavaScript 来间接完成的，但当需要深入理解或调试滤镜机制时，直接查看和调试这个文件也是可能的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_filter_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -394,7 +396,4 @@ void SVGFilterElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

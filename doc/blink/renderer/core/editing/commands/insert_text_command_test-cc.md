@@ -127,15 +127,17 @@ By following this systematic approach, I can thoroughly analyze the C++ test fil
 
 总而言之，`insert_text_command_test.cc` 文件通过大量的测试用例，确保了 Blink 引擎在处理文本插入操作时的正确性和健壮性，涵盖了各种可能的场景和边缘情况，对于保证用户在网页上进行编辑操作的稳定性和一致性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_text_command_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -456,7 +458,4 @@ TEST_F(InsertTextCommandTest, MultilineSelectionCrash) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

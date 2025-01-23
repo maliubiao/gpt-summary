@@ -203,15 +203,17 @@ console.log(new Int8Array(buffer)[0]); // 输出 100
 
 总而言之，`v8/src/asmjs/asm-names.h` 是 V8 引擎中一个关键的头文件，它为处理 asm.js 代码提供了必要的名称映射和常量定义，确保了 V8 能够正确地解析、编译和执行符合 asm.js 规范的 JavaScript 代码。它与用户编写的 JavaScript 代码（特别是 asm.js 代码）的功能和潜在错误密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-names.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/asmjs/asm-names.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ Prompt:
   V(kDouble, -4, "{double value}")
 
 #endif  // V8_ASMJS_ASM_NAMES_H_
-
-"""
-
 ```

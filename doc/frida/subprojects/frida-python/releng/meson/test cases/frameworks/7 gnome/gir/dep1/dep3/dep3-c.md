@@ -166,7 +166,7 @@ By following this structured approach, considering the context, analyzing the co
 
 因此，这个文件的存在是 Frida Python 绑定测试和开发过程中的一个环节，目的是为了验证绑定层与底层 C 代码的互操作性。通过查看这个文件的源代码，可以深入了解 Frida 如何与基于 GObject 的库进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/7 gnome/gir/dep1/dep3/dep3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "dep3.h"
 
 struct _MesonDep3
@@ -300,7 +302,4 @@ meson_dep3_return_message (MesonDep3 *self)
 
   return (const gchar*) self->msg;
 }
-
-"""
-
 ```

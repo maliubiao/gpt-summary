@@ -626,7 +626,7 @@ TEST(NgHttp2AdapterTest, ClientRejects100HeadersWithContent) {
               OnFrameSent(RST_STREAM, 1, _, 0x0,
                           static_cast<int>(Http2ErrorCode::PROTOCOL_ERROR)));
   EXPECT
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -634,8 +634,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/nghttp2_adapter.h"
 
 #include <memory>
@@ -1490,7 +1492,4 @@ TEST(NgHttp2AdapterTest, ClientHandles204WithContent) {
   EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0, _, 0x1, 0));
   EXPECT_CALL(visitor, OnBeforeFrameSent(RST_STREAM, 1, _, 0x0));
   EXPECT_CALL(
-"""
-
-
 ```

@@ -376,15 +376,17 @@ parsed := &parsedTrace{
 
 总的来说，`jsontrace.go` 文件中的 `JSONTraceHandler` 函数是 `go tool trace` 工具中一个关键的组成部分，它负责将后端的 trace 数据以 JSON 格式暴露给前端，使得用户可以通过 web 界面来交互式地查看和分析 Go 程序的执行轨迹。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/trace/jsontrace.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -613,9 +615,4 @@ func generateTrace(parsed *parsedTrace, opts *genOpts, c traceviewer.TraceConsum
 	runGenerator(ctx, g, parsed, opts)
 	return nil
 }
-
-"""
-
-
-
 ```

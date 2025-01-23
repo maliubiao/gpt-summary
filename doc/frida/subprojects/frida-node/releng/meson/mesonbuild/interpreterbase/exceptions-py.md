@@ -112,7 +112,7 @@ Initially, one might be tempted to directly connect these exceptions to runtime 
 
 这个 `exceptions.py` 文件定义了 Meson 构建系统在处理 Frida 的构建文件时可能遇到的各种情况。其中，`InterpreterException`、`InvalidCode` 和 `InvalidArguments` 主要用于指示构建过程中的错误，这些错误可能是由于用户编写的 `meson.build` 文件存在问题导致的。而 `SubdirDoneRequest`、`ContinueRequest` 和 `BreakRequest` 则用于构建系统内部的控制流管理，不代表错误状态。理解这些异常有助于调试 Frida 的构建过程，并在遇到构建错误时快速定位问题所在。作为逆向工程师，虽然不会直接操作这些异常，但了解它们有助于理解 Frida 的构建流程，为成功构建 Frida 工具提供保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreterbase/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -144,7 +146,4 @@ class ContinueRequest(BaseException):
 
 class BreakRequest(BaseException):
     pass
-
-"""
-
 ```

@@ -166,15 +166,17 @@ func Fp() func(*T) string {
 
 `b.go` 是一个测试用例，用于验证 `a` 包中关于方法表达式以及在 `nil` 指针上调用方法的行为是否正确。它通过断言 `a.F()` 和 `a.Fp()` 返回的函数在特定参数下的返回值来完成测试。这个测试用例的成功运行意味着相关 Go 语言特性按照预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue15646.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ func main() {
 		panic(1)
 	}
 }
-
-"""
-
-
-
 ```

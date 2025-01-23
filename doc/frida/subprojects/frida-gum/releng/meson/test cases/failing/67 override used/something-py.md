@@ -211,7 +211,7 @@ Doing something.
 
 总而言之，`something.py` 作为一个简单的 Python 脚本，其自身的功能并不复杂。它的价值在于作为 Frida 功能测试的一个目标，用于验证 Frida 的某些特性（可能与函数覆盖或 hook 有关），并且它的 "失败" 状态表明在特定的测试场景下，Frida 的行为没有达到预期。开发者通过分析这个脚本和相关的测试代码，可以定位 Frida 代码中的缺陷或配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/67 override used/something.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -219,12 +219,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('Doing something.')
-
-"""
-
 ```

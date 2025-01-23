@@ -105,14 +105,16 @@ Here's a plan:
 
 总而言之，`elastic_overscroll_controller_exponential_unittest.cc` 这个文件通过各种测试用例，深入地验证了 Blink 引擎中弹性过度滚动控制器的核心逻辑和行为，确保了在不同的滚动场景下，弹性效果能够正确、平滑地工作，并与相关的 Web 技术（HTML, CSS）协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/elastic_overscroll_controller_exponential_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -666,7 +668,4 @@ TEST_F(ElasticOverscrollControllerExponentialTest,
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

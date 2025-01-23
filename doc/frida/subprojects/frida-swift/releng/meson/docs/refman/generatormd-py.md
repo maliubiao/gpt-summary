@@ -223,7 +223,7 @@ Users of the Frida Swift API might encounter errors due to incorrect usage. This
 
 In summary, `generatormd.py` is a crucial part of the Frida Swift development process, enabling the creation of accurate and comprehensive documentation that is essential for reverse engineers to effectively utilize the Frida Swift API for dynamic analysis and instrumentation, which inherently involves interacting with the binary level, operating system kernels, and application frameworks.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/docs/refman/generatormd.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -231,8 +231,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -623,7 +625,4 @@ class GeneratorMD(GeneratorBase):
             data[fn.name] = f'{funcs_file}#{fn.name}'
 
         self.link_def_out.write_text(json.dumps(data, indent=2), encoding='utf-8')
-
-"""
-
 ```

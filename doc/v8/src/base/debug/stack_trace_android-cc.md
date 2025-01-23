@@ -179,15 +179,17 @@ trace_[2] = 指向 function a() 中调用 function b() 之后的指令地址
 
 总而言之，`v8/src/base/debug/stack_trace_android.cc` 是 V8 引擎在 Android 平台上实现堆栈跟踪的关键组成部分，它通过调用底层的系统 API 来捕获程序的调用栈信息，为错误报告和调试提供了基础支持。 虽然开发者不会直接接触这个文件，但理解其功能有助于更好地理解 JavaScript 中堆栈跟踪的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace_android.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/debug/stack_trace_android.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ void StackTrace::OutputToStream(std::ostream* os) const {
 }  // namespace debug
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

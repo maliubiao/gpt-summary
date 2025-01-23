@@ -168,7 +168,7 @@ This is part 1 of a 9-part description of the V8 source code file `v8/src/parsin
 
 In essence, `v8/src/parsing/parser-base.h` lays the groundwork for V8's JavaScript parser. It defines the core data structures, state management mechanisms, and access points to crucial components like the scanner and AST factories. It provides the basic building blocks and error-handling infrastructure upon which the specific parsing logic for JavaScript syntax is built in other parts of the V8 codebase. It's concerned with the fundamental aspects of breaking down the code and representing its structure.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser-base.h以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1097,7 +1099,4 @@ class ParserBase {
   void CheckStackOverflow() {
     // Any further calls to Next or peek will return the illegal token.
     if (GetCurrentStackPosition() < stack_limit_) set_stack_overflow();
-"""
-
-
 ```

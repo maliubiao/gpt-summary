@@ -91,15 +91,17 @@ By following these steps, iteratively analyzing the code, and refining the under
     * **Roots (根对象):**  `LoadRoot` 方法用于加载 V8 堆中的根对象，这些对象是虚拟机启动和运行的基础。
     * **Builtins (内置函数):** `BuiltinEntry` 方法用于获取内置 JavaScript 函数的入口地址。
     * **外部引用 (External References):** `IndirectLoadExternal
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/macro-assembler-base.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/macro-assembler-base.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ Tagged_t MacroAssemblerBase::ReadOnlyRootPtr(RootIndex index) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

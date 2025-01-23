@@ -150,14 +150,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`html_form_control_element_with_state.cc` 是 Blink 引擎中一个关键的文件，它负责管理带有状态的 HTML 表单控件的核心逻辑，并与 JavaScript、HTML 和 CSS 紧密配合，实现了诸如用户交互跟踪、自动填充和表单状态管理等重要功能。理解这个文件的功能有助于深入了解浏览器如何处理 HTML 表单。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_form_control_element_with_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -564,7 +566,4 @@ bool HTMLFormControlElementWithState::MatchesUserValidPseudo() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

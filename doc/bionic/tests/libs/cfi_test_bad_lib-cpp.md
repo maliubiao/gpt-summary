@@ -182,7 +182,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/cfi_test_bad_lib.cpp` 是一个用于测试 Android CFI 机制的负面测试用例，它通过故意创建一个无效的 CFI 配置来验证系统的错误检测能力。它与动态链接器和 Android 的安全特性密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/cfi_test_bad_lib.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -193,13 +193,12 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 // Mock an invalid CFI-enabled library.
 __attribute__((aligned(4096))) extern "C" char dummy[16] = {};
 __asm__(".globl __cfi_check");
 __asm__("__cfi_check = dummy + 3"); // Not aligned to anything.
-
-"""
-
 ```

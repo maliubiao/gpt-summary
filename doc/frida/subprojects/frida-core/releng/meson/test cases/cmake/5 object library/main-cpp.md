@@ -116,7 +116,7 @@ By following these steps, we can comprehensively analyze the provided code snipp
 
 总而言之，这个 `main.cpp` 文件是一个简单的但重要的测试用例，用于验证 Frida 核心与动态链接库交互的基本功能。它为 Frida 的开发和调试提供了基础，并帮助确保 Frida 能够可靠地与各种目标程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/5 object library/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stdlib.h>
 #include <iostream>
 #include "libA.hpp"
@@ -137,7 +139,4 @@ int main(void) {
   cout << getLibStr() << " -- " << getZlibVers() << endl;
   return EXIT_SUCCESS;
 }
-
-"""
-
 ```

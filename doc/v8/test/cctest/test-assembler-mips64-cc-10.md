@@ -165,7 +165,7 @@ for (let i = 0; i < byteArray.length; i++) {
 
 总而言之，这个代码片段是 V8 保证其在 MIPS64 架构上正确且高效运行的关键组成部分，它通过模拟硬件指令的行为来测试软件层面的汇编器实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,9 +173,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共13部分，请归纳一下它的功能
+```
 
-"""
-                                \
+### 源代码
+```cpp
+\
       T r;                                                                   \
       if (bits == size_in_bits) {                                            \
         r = static_cast<T>(ws_op);                                           \
@@ -713,7 +715,4 @@ Prompt:
   V(srl_h, SRL_DF, uint16_t, kMSALanesHalf, UINT16_MAX)           \
   V(srl_w, SRL_DF, uint32_t, kMSALanesWord, UINT32_MAX)           \
   V(srl_d, SRL_DF,
-"""
-
-
 ```

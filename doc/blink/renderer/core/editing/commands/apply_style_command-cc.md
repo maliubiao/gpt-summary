@@ -120,7 +120,7 @@ Strategizing complete. I will now generate the response based on the above analy
 
 请提供后续部分的代码，以便进行更深入的分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/apply_style_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2008, 2009 Apple Inc. All rights reserved.
  *
@@ -961,7 +963,4 @@ void ApplyStyleCommand::ApplyInlineStyle(EditingStyle* style,
     // ancestors that already have them.
     HTMLElement* embedding_start_element = HighestEmbeddingAncestor(
         start.AnchorNode(), EnclosingBlock(start.AnchorNode())
-"""
-
-
 ```

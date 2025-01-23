@@ -110,14 +110,16 @@ By following these steps, we can systematically analyze the C++ test file and pr
 
 总而言之， `ipc_network_manager_test.cc` 是确保 Blink 引擎中网络管理模块正确运行的关键组成部分，它的稳定性和正确性直接影响到依赖 P2P 通信功能的网页应用的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/ipc_network_manager_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -358,7 +360,4 @@ TEST_F(IpcNetworkManagerTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

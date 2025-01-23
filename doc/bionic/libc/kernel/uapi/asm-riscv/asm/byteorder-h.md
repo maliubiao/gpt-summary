@@ -295,7 +295,7 @@ if __name__ == '__main__':
 
 `bionic/libc/kernel/uapi/asm-riscv/asm/byteorder.handroid` 虽然代码很简单，但它是 Android 支持 RISC-V 架构的关键基础，它定义了字节序，影响了 libc 中字节序转换函数的行为，并最终影响了 Android 应用程序的网络通信和数据处理。理解它的作用有助于我们更好地理解 Android 系统的跨平台特性以及底层的数据表示方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/byteorder.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -318,7 +320,4 @@ Prompt:
 #define _UAPI_ASM_RISCV_BYTEORDER_H
 #include <linux/byteorder/little_endian.h>
 #endif
-
-"""
-
 ```

@@ -152,7 +152,7 @@ func main() {
 
 `go/src/net/cgo_sockold.go` 中的代码是 Go 语言 `net` 包中用于特定操作系统上与 C 语言进行套接字编程交互的关键部分。它负责将 Go 的 IP 地址表示转换为 C 语言的套接字地址结构体，使得 Go 程序能够利用底层的 C 语言套接字 API。 普通开发者通常不需要直接操作这些函数，但理解其功能有助于深入理解 Go 的网络编程实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_sockold.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -194,9 +196,4 @@ func cgoSockaddrInet6(ip IP, zone int) *C.struct_sockaddr {
 	copy(sa.Addr[:], ip)
 	return (*C.struct_sockaddr)(unsafe.Pointer(&sa))
 }
-
-"""
-
-
-
 ```

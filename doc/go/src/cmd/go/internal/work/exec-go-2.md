@@ -132,7 +132,7 @@ void say_hello();
 
 总的来说，这部分代码是 Go 构建过程中与 C/C++/Fortran 代码交互的核心，它负责调用外部工具链来完成编译和链接任务，并处理各种平台和编译器特定的细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/work/exec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -141,8 +141,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 , compiler []string) error {
 	p := a.Package
 	sh := b.Shell(a)
@@ -1167,9 +1169,4 @@ func (b *Builder) swigDoVersionCheck() error {
 	matches := re.FindSubmatch(out)
 	if matches == nil {
 		// Can't find version
-"""
-
-
-
-
 ```

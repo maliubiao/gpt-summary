@@ -124,7 +124,7 @@ The user wants to understand the functionality of the `image_resource_test.cc` f
 
 总而言之，`blink/renderer/core/loader/resource/image_resource_test.cc` 文件是 Blink 引擎中至关重要的单元测试文件，它全面地测试了 `ImageResource` 类的核心功能，包括资源的加载、解码、重新验证、错误处理、内存管理以及与渲染引擎的交互机制。这些测试用例覆盖了各种正常和异常情况，确保了 Blink 引擎能够可靠地处理各种类型的图像资源，为网页上正确显示图片提供了坚实的基础。通过这些测试，开发者可以验证和保证图片加载逻辑的正确性，并为调试实际应用中遇到的图片加载问题提供有力的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource/image_resource_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n(kJpegImage)));
 
   EXPECT_FALSE(image_resource->ErrorOccurred());
@@ -690,8 +692,4 @@ TEST_F(ImageResourceCounterTest, RevalidationPolicyMetrics) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

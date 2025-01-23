@@ -160,15 +160,17 @@ By following this structured thought process, which involves code analysis, dedu
 
 总而言之，`MediaControlElementBase` 是 Blink 渲染引擎中媒体控件管理的核心基类，它通过内部状态和 CSS 样式的动态修改，实现了媒体控件的灵活显示和隐藏，并与 JavaScript 和 HTML 紧密协作，为用户提供丰富的媒体控制体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_element_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ void MediaControlElementBase::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

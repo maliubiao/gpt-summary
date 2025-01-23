@@ -205,15 +205,17 @@ try {
 
 总而言之，`v8/test/unittests/utils/detachable-vector-unittest.cc` 文件通过一系列单元测试验证了 `v8::internal::DetachableVector` 类的核心功能，包括动态添加元素、分离底层存储、手动释放以及容量管理等。理解这些测试用例有助于深入了解 `DetachableVector` 的行为和使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/detachable-vector-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/utils/detachable-vector-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ TEST(DetachableVector, ShrinkToFit) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -119,7 +119,7 @@ Key{dip=10.0.0.5, sip=192.168.1.2} → Leaf{xdip=172.16.0.1, xsip=10.0.0.1}
                   └─ 更新计数器
 ```
 该程序实现了轻量级的网络层地址转换功能，适用于容器网络、负载均衡等需要动态修改数据包特征的场景。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/tests/python/test_xlate1.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) PLUMgrid, Inc.
 // Licensed under the Apache License, Version 2.0 (the "License")
 #include <bcc/proto.h>
@@ -228,7 +230,4 @@ int on_packet(struct __sk_buff *skb) {
 EOP:
   return 0;
 }
-
-"""
-
 ```

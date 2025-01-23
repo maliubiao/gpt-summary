@@ -69,7 +69,7 @@ Response:
 
 ### 总结
 此程序是 BCC 的极小化测试用例，核心验证静态 BPF 表的创建流程。实际 eBPF 程序需进一步挂钩事件并操作 BPF 表，而调试时需关注系统调用和内核映射状态。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/tests/cc/test_static.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -78,15 +78,14 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include "bcc_common.h"
 
 int main(int argc, char **argv) {
   void *mod = bpf_module_create_c_from_string("BPF_TABLE(\"array\", int, int, stats, 10);\n", 4, NULL, 0, true, NULL);
   return !(mod != NULL);
 }
-
-"""
-
 ```

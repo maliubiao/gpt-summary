@@ -202,7 +202,7 @@ python file_contains.py /var/log/my_hook.log "System call 'open' intercepted for
 
 总而言之，`file_contains.py` 在 Frida 的开发和测试流程中扮演着一个简单的但重要的角色，用于自动化验证配置文件的状态，从而帮助确保 Frida 功能的正确性。当测试失败时，这个脚本提供的失败信息可以作为调试的起点，引导开发者去检查 Frida 的代码和生成的配置文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/14 configure file/file_contains.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -234,7 +236,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

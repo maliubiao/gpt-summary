@@ -161,14 +161,16 @@ Let's break down the thought process for analyzing the provided C++ code and gen
 
 总而言之，`blink/renderer/platform/audio/hrtf_kernel.cc` 是 Chromium 中实现空间音频效果的关键底层模块，它负责加载、处理和插值 HRTF 数据，为 Web Audio API 提供基础支持，从而让网页开发者能够创建沉浸式的音频体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/hrtf_kernel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -304,7 +306,4 @@ std::unique_ptr<HRTFKernel> HRTFKernel::CreateInterpolatedKernel(
 }
 
 }  // namespace blink
-
-"""
-
 ```

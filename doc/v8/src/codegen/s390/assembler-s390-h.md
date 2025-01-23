@@ -152,7 +152,7 @@ inline void rr_format(Opcode opcode, int f1, int f2) {
 
 总而言之，这个头文件是 V8 引擎在 S390 架构上进行代码生成的核心组件，它提供了一种方便且类型安全的方式来构建底层的机器指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/assembler-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/assembler-s390.h以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -910,8 +912,5 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
 
 #define DECLARE_S390_SI_INSTRUCTIONS(name, op_name, op_value)          \
   void name(const Operand& i2, Register b1, const Operand& d1) {       \
-    si_format(op_name, i2.immediate(), b1.code(), d1.immediate());   
-"""
-
-
+    si_format(op_name, i2.immediate(), b1.code(), d1.immediate());
 ```

@@ -186,7 +186,7 @@ This section of `test-heap.cc` primarily focuses on testing various aspects of V
 
 **In summary, this section of the `test-heap.cc` file meticulously tests various aspects of V8's heap management and garbage collection mechanisms, including incremental marking, GC flag handling, regression fixes, optimized allocation strategies (pretenuring), map transition management, and the ability to release unused memory pages.** It uses a combination of C++ test infrastructure and embedded JavaScript code to simulate real-world scenarios and ensure the robustness and efficiency of V8's memory management.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 te()->GetCurrentContext();
 
   // Store native context in global as well to make it part of the root set when
@@ -1016,7 +1018,4 @@ TEST(ReleaseOverReservedPages) {
   // Triggering a last-resort GC should cause all pages to be released to the
   // OS so that other processes can seize the memory.  If we get a failure here
   // where there are 2 pages left
-"""
-
-
 ```

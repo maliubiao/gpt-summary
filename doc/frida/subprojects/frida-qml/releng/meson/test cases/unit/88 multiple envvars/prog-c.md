@@ -118,7 +118,7 @@ Here's a breakdown of the thinking process to analyze the C code snippet and ans
 
 总而言之，这个简单的 `prog.c` 文件虽然功能简单，但它在 Frida 项目中扮演着一个单元测试的角色，用于验证在特定的编译环境下，构建系统是否正确地设置了必要的编译标志。编译失败的错误信息可以作为调试线索，帮助开发者定位构建配置或环境变量设置方面的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/88 multiple envvars/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifndef CPPFLAG
@@ -146,7 +148,4 @@ int main(int argc, char **argv) {
     printf("%d %s\n", argc, argv[0]);
     return 0;
 }
-
-"""
-
 ```

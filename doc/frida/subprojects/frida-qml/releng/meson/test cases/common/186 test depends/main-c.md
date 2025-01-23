@@ -116,7 +116,7 @@ Initially, one might focus too much on the *code itself*. The key insight is to 
 
 总而言之，虽然 `main.c` 的代码极其简单，但它在 Frida 的构建和测试体系中扮演着一个重要的角色，用于验证基本的依赖条件是否满足，确保 Frida 的正常运行。它的存在是 Frida 健壮性和可靠性的一个体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/186 test depends/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,10 +124,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

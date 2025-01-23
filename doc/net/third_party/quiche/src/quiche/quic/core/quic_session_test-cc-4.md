@@ -96,7 +96,7 @@ Based on these individual tests, the overall function of `quic_session_test.cc` 
 
 总而言之，`quic_session_test.cc` 是 QUIC 协议实现质量的重要保障，它通过大量的单元测试覆盖了 `QuicSession` 类的各种功能和边界情况，帮助开发者确保 QUIC 连接的稳定性和可靠性，从而间接地提升用户在使用基于 QUIC 的 Web 应用时的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , QUIC_STREAM_CANCELLED);
   EXPECT_CALL(*connection_, CloseConnection(_, _, _)).Times(0);
   session_.OnStopSendingFrame(frame);
@@ -571,8 +573,4 @@ TEST_P(QuicSessionTestClientUnconfigured, StreamInitiallyBlockedThenUnblocked) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

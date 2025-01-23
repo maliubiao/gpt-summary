@@ -125,7 +125,7 @@ cc -DEXTERNAL_HOST host_tool.c -o host_tool
 
 总而言之，`host_wrapper.py` 是 Frida 构建系统中的一个关键辅助脚本，它确保了在构建主机端组件时能够使用正确的编译器和编译选项，从而支持 Frida 的跨平台特性。理解它的功能有助于理解 Frida 的构建过程以及在遇到编译问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/60 identity cross/host_wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import subprocess, sys, platform
@@ -146,7 +148,4 @@ else:
     cc = 'cc'
 
 subprocess.call([cc, "-DEXTERNAL_HOST"] + sys.argv[1:])
-
-"""
-
 ```

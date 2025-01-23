@@ -138,7 +138,7 @@ By following these steps, the detailed and comprehensive analysis provided in th
 
 总而言之，`rejected.c` 不是一个最终用户直接交互的文件，而是 Frida 内部测试框架的一部分，用于验证 Frida 在处理特定（通常是异常或受限）场景下的行为。开发者和高级用户可能会通过研究 Frida 源码来接触到这个文件，以理解 Frida 的工作原理或调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/17 prebuilt shared/rejected.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rejected.h"
 
 void say(void) {
@@ -156,7 +158,4 @@ void say(void) {
     alexandria_visit();
     printf("The librarian tells you it's time to leave\n");
 }
-
-"""
-
 ```

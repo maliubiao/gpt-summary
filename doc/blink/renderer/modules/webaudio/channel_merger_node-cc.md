@@ -183,15 +183,17 @@ During this process, I might revisit earlier assumptions. For example, I initial
 
 总而言之，`channel_merger_node.cc` 文件是 Web Audio API 中用于合并多个音频输入流的关键组件的实现，它通过 JavaScript 接口暴露给开发者，并在 Blink 引擎内部处理底层的音频数据操作。理解其功能和可能的错误使用场景对于开发高质量的 Web Audio 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/channel_merger_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -297,7 +299,4 @@ void ChannelMergerNode::ReportWillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

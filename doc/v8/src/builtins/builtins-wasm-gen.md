@@ -103,11 +103,13 @@ WebAssembly.instantiate(wasmCode).then(module => {
 
 总而言之，`builtins-wasm-gen.cc` 中定义的内置函数是 V8 引擎支持 WebAssembly 的基础设施，它们确保了 JavaScript 和 WebAssembly 能够安全、高效地协同工作。这些内置函数对于开发者来说是透明的，他们通常只需要使用 `WebAssembly` API 即可，而无需直接调用这些底层的 C++ 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-wasm-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ TF_BUILTIN(WasmToJsWrapperInvalidSig, WasmBuiltinsAssembler) {
 #include "src/codegen/undef-code-stub-assembler-macros.inc"
 
 }  // namespace v8::internal
-
-"""
-
 ```

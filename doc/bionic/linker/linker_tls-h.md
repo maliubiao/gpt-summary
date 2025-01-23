@@ -314,7 +314,7 @@ Interceptor.attach(Module.findExportByName(null, "tlsdesc_resolver_dynamic"), {
 
 通过 Frida hook，你可以深入了解 Android 动态链接器处理 TLS 的过程，并帮助你调试与线程局部变量相关的问题。请注意，`soinfo` 结构体的具体布局可能因 Android 版本而异，你可能需要根据实际情况调整 hook 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_tls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -325,8 +325,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -392,7 +394,4 @@ struct TlsDynamicResolverArg {
 __LIBC_HIDDEN__ extern "C" size_t tlsdesc_resolver_static(size_t);
 __LIBC_HIDDEN__ extern "C" size_t tlsdesc_resolver_dynamic(size_t);
 __LIBC_HIDDEN__ extern "C" size_t tlsdesc_resolver_unresolved_weak(size_t);
-
-"""
-
 ```

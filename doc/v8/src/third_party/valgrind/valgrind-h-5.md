@@ -444,7 +444,7 @@ let myArray = createLargeArray();
 
 这是 `v8/src/third_party/valgrind/valgrind.h` 文件为 **ARM Linux 平台** 定义的一组 **宏**，其核心功能是提供一种机制，用于 **调用带有多个参数的 C/C++ 函数**，并且这些调用能够被 **Valgrind 内存调试工具监控**。 这些宏通过 **内联汇编** 精确控制函数调用的过程，将函数地址和参数放置在特定的位置，以便 Valgrind 能够拦截和分析这些调用，从而帮助开发者检测和修复 V8 引擎中的内存错误和其他潜在问题。 这段代码是 V8 引擎与 Valgrind 工具集成的关键部分，对于保证 V8 的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/valgrind/valgrind.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/valgrind/valgrind.h以.tq结尾，那它是个v8 torque源代码，
@@ -452,8 +452,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 __ volatile(                                           \
          "ldr r0, [%1, #20] \n\t"                                 \
          "ldr r1, [%1, #24] \n\t"                                 \
@@ -982,8 +984,5 @@ __ volatile(                                           \
 #define CALL_FN_W_8W(lval, orig, arg1, arg2, arg3, arg4, arg5,   \
                      arg6, arg7 ,arg8)                           \
    do {                                                          \
-      volatile OrigFn        _orig = (orig);   
-"""
-
-
+      volatile OrigFn        _orig = (orig);
 ```

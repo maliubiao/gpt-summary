@@ -88,16 +88,18 @@ Based on this analysis, the file primarily tests the core functionalities of the
 
 总而言之，第二部分的代码继续完善对 `ParkableString` 各种功能的测试，确保其在各种场景下都能正常工作，并达到预期的内存优化效果。这些测试覆盖了其核心的内存管理、持久化、性能以及与系统状态交互的关键方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/parkable_string_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  WaitForAging();
+### 源代码
+```cpp
+WaitForAging();
   EXPECT_EQ(ParkableStringImpl::Age::kVeryOld, impl->age_for_testing());
   EXPECT_FALSE(impl->is_on_disk());
 
@@ -764,8 +766,4 @@ INSTANTIATE_TEST_SUITE_P(
                       ));
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -145,7 +145,7 @@ By following this structured approach, we can effectively analyze and understand
 
 这部分代码为 V8 在 MIPS64 架构上生成高效代码提供了丰富的指令支持，尤其是在处理浮点数和利用 MSA SIMD 指令集进行并行计算方面。这些指令是 V8 执行 JavaScript 代码中涉及数值计算、数据处理等操作的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64.h以.tq结尾，那它是个v8 torque源代码，
@@ -153,9 +153,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- cvt_d_w(FPURegister fd, FPURegister fs);
+### 源代码
+```c
+cvt_d_w(FPURegister fd, FPURegister fs);
   void cvt_d_l(FPURegister fd, FPURegister fs);
   void cvt_d_s(FPURegister fd, FPURegister fs);
 
@@ -727,7 +729,4 @@ Prompt:
   void insve_h(MSARegister wd, uint32_t n, MSARegister ws);
   void insve_w(MSARegister wd, uint32_t n, MSARegister ws);
   void insve_d(MSARegiste
-"""
-
-
 ```

@@ -167,15 +167,17 @@ console.timeEnd("expensiveOperation");
 
 总而言之，`v8/src/diagnostics/etw-isolate-capture-state-monitor-win.h` 定义了一个用于在 Windows 平台上同步 V8 isolates 状态捕获的 C++ 类，它在 V8 的 ETW 集成中扮演着重要的角色，间接地帮助开发者诊断 JavaScript 代码的性能问题。理解其内部的同步机制对于编写健壮的多线程程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-isolate-capture-state-monitor-win.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/etw-isolate-capture-state-monitor-win.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ class V8_EXPORT_PRIVATE EtwIsolateCaptureStateMonitor {
 }  // namespace v8
 
 #endif  // V8_DIAGNOSTICS_ETW_ISOLATE_CAPTURE_STATE_MONITOR_WIN_H_
-
-"""
-
 ```

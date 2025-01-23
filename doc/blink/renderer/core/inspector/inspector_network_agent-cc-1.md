@@ -136,15 +136,17 @@ This section of `inspector_network_agent.cc` is primarily responsible for interc
 
 总而言之，这部分代码是 Chrome DevTools Network 面板功能实现的核心组成部分，它负责收集、转换和报告浏览器内部的网络活动，并允许开发者通过 DevTools 修改浏览器的网络行为，从而帮助开发者调试和优化 Web 应用的网络性能和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_network_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 MillisecondDelta(timing.DomainLookupStart()))
       .setDnsEnd(timing.CalculateMillisecondDelta(timing.DomainLookupEnd()))
       .setConnectStart(timing.CalculateMillisecondDelta(timing.ConnectStart()))
@@ -926,7 +928,4 @@ void InspectorNetworkAgent::DidReceiveResourceResponse(
   // following didReceiveResponse as there will be no calls to didReceiveData
   // from the network stack.
   if (is_
-"""
-
-
 ```

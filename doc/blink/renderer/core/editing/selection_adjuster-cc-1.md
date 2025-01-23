@@ -160,7 +160,7 @@ By following this structured thought process, combining code analysis with an un
 
 这部分代码主要负责**基于计算出的最小范围 (`minimal_range`) 和原始选择的方向，构建最终的规范化选择对象**。它根据 `minimal_range` 是否折叠以及选择的起始锚点是否在前来决定将选择设置为前向还是后向。这确保了选择对象在 Blink 内部表示的一致性和准确性。它依赖于第一部分计算出的 `minimal_range`，并利用 `SelectionTemplate` 构建器模式来创建最终的选择对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/selection_adjuster.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hemeralRangeTemplate<Strategy> minimal_range(forward_start_position,
                                                          backward_end_position);
     if (minimal_range.IsCollapsed() || selection.IsAnchorFirst()) {
@@ -193,8 +195,4 @@ SelectionInFlatTree SelectionAdjuster::AdjustSelectionType(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

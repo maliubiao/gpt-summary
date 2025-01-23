@@ -84,7 +84,7 @@ Here's a plan to generate the summary:
 
 总的来说，这部分测试旨在确保 `OgHttp2Adapter` 作为客户端能够正确、健壮地处理各种 HTTP/2 协议相关的场景和潜在的错误情况，保证了 Chromium 网络栈在作为 HTTP/2 客户端时的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 itial_frames.size(), static_cast<size_t>(initial_result));
 
   // Session will want to write a GOAWAY.
@@ -897,7 +899,4 @@ TEST(OgHttp2AdapterTest, ClientQueuesRequests) {
                                          END_STREAM_FLAG | END_HEADERS_FLAG));
   EXPECT_CALL(visitor, OnFrameSent(HEADERS, stream_ids[2], _,
                                    END_STREAM_FLA
-"""
-
-
 ```

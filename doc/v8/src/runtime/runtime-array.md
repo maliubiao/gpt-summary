@@ -149,11 +149,13 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 总而言之，`v8/src/runtime/runtime-array.cc` 文件是 V8 引擎中处理 JavaScript 数组核心操作的 C++ 代码，它直接支持了 JavaScript 中各种数组相关的内置方法和语法特性。理解这些运行时函数有助于深入了解 JavaScript 数组在 V8 引擎内部是如何工作的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-array.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -579,7 +581,4 @@ RUNTIME_FUNCTION(Runtime_ArrayIndexOf) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

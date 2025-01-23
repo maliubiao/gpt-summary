@@ -145,15 +145,17 @@ go vet [options] [packages]
 
 这段测试代码通过大量的正反示例，系统地测试了 `go vet` 的 `printf` 检查器在各种情况下的准确性，帮助开发者避免在使用 `fmt` 包时常犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vet/testdata/print/print.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -834,9 +836,4 @@ func PointersToCompoundTypes() {
 	}
 	fmt.Printf("%s\n", T1{&T2{"x"}}) // ERROR "Printf format %s has arg T1{&T2{.x.}} of wrong type .*print\.T1"
 }
-
-"""
-
-
-
 ```

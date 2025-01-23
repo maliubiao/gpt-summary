@@ -207,15 +207,17 @@ navigator.webkitPersistentStorage.requestQuota(10 * 1024 * 1024, function(grante
 
 总而言之，`web_dom_file_system.cc` 是 Blink 渲染引擎中一个关键的桥梁，它使得 JavaScript 能够安全且有效地访问和操作客户端的文件系统资源。理解它的功能和与 JavaScript 的交互方式对于调试 Web 应用中的文件系统相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/exported/web_dom_file_system.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -369,7 +371,4 @@ WebDOMFileSystem& WebDOMFileSystem::operator=(DOMFileSystem* dom_file_system) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

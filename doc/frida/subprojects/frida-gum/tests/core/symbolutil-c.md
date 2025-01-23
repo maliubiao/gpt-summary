@@ -157,7 +157,7 @@ Finally, I organized the information into clear sections based on the prompt's q
 
 总而言之，`symbolutil.c` 是 Frida `frida-gum` 库中一个至关重要的测试文件，它确保了 Frida 能够准确可靠地进行符号处理，这是动态插桩功能的基础。虽然普通 Frida 用户不会直接操作它，但它在幕后支撑着 Frida 的核心功能，并在 Frida 的开发和调试过程中发挥着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/symbolutil.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -315,8 +317,4 @@ gum_dummy_function_1 (void)
 {
   g_print ("%s\n", G_STRFUNC);
 }
-
-
-"""
-
 ```

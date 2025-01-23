@@ -164,15 +164,17 @@ While you wouldn't directly manipulate these constants in your JavaScript code, 
 
 `v8/src/codegen/ia32/constants-ia32.h` defines crucial architecture-specific constants used by V8's code generator for IA-32. These constants, while not directly manipulated by JavaScript developers, have a significant impact on the efficiency and correctness of the generated machine code, influencing things like object access and function call mechanisms. The value of `kMaxPCRelativeCodeRangeInMB` being 0 suggests a design choice to potentially avoid relying heavily on PC-relative calls over larger code ranges on IA-32 in this V8 configuration.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/constants-ia32.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/constants-ia32.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ constexpr size_t kMaxPCRelativeCodeRangeInMB = 0;
 }  // namespace v8
 
 #endif  // V8_CODEGEN_IA32_CONSTANTS_IA32_H_
-
-"""
-
 ```

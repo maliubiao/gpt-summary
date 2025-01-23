@@ -122,15 +122,17 @@ My thought process for analyzing the provided C++ code snippet goes like this:
 
 虽然 `media_source_handle_attachment.cc` 代码非常简洁，但它代表了一种在 Blink 引擎内部管理与 `MediaSource` 对象相关联的额外信息的机制。它在幕后支持了 Media Source Extensions 的功能，允许 JavaScript 动态地向 `<video>` 或 `<audio>` 元素提供媒体数据。 理解它的作用有助于理解 Blink 引擎处理 MSE 的内部机制，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/media_source_handle_attachment.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ MediaSourceHandleAttachment::MediaSourceHandleAttachment() = default;
 MediaSourceHandleAttachment::~MediaSourceHandleAttachment() = default;
 
 }  // namespace blink
-
-"""
-
 ```

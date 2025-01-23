@@ -256,7 +256,7 @@ myFunction(5, 10);
 
 `v8/src/debug/debug-interface.cc` 是 V8 引擎调试功能的核心接口，它提供了一组强大的 C++ 函数，用于与外部调试器交互，实现代码检查、断点控制、单步执行等功能。它直接支撑了 JavaScript 的调试体验，帮助开发者定位和修复代码中的各种错误。 虽然开发者不会直接修改这个文件，但理解其功能有助于更深入地理解 V8 引擎的调试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -264,8 +264,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1136,7 +1138,4 @@ std::pair<int, int> WasmScript::GetFunctionRange(int function_index) const {
   DCHECK_LE(0, function_index);
   DCHECK_GT(module->functions.size(), function_index);
   const i::wasm::WasmFunction& func = module->functions[function_index]
-"""
-
-
 ```

@@ -214,7 +214,7 @@ func main() {
 
 在这个例子中，第二次计算 "world" 的哈希值时，由于没有调用 `h.Reset()`，导致 `h` 对象仍然保留了处理 "hello" 之后的状态，因此计算出的 `hash2` 是将 "world" 追加到 "hello" 后得到的哈希值，而不是 "world" 本身的哈希值。只有在调用 `h.Reset()` 后，才能正确计算出 "world" 的哈希值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/fnv/fnv.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -574,9 +576,4 @@ func (s *sum128a) UnmarshalBinary(b []byte) error {
 	s[1] = byteorder.BEUint64(b[12:])
 	return nil
 }
-
-"""
-
-
-
 ```

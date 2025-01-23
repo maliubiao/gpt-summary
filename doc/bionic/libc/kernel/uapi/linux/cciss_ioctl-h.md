@@ -293,7 +293,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/cciss_ioctl.handroid` 是一个底层的头文件，定义了与特定硬件 RAID 控制器交互的接口。虽然它位于 Android 的 Bionic 库中，但其直接应用场景主要在底层的系统级服务和硬件抽象层，而不是常见的 Android 应用开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/cciss_ioctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -304,8 +304,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -376,7 +378,4 @@ typedef struct _LogvolInfo_struct {
 #define CCISS_GETLUNINFO _IOR(CCISS_IOC_MAGIC, 17, LogvolInfo_struct)
 #define CCISS_BIG_PASSTHRU _IOWR(CCISS_IOC_MAGIC, 18, BIG_IOCTL_Command_struct)
 #endif
-
-"""
-
 ```

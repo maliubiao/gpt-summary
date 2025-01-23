@@ -128,15 +128,17 @@ I will go through each method and identify its purpose. Then I will group them b
 
 这段代码是 `WebLocalFrameImpl` 的一部分，负责管理和控制渲染器进程中的一个本地 frame 的生命周期和行为。它处理 frame 的创建、加载、渲染、用户交互以及与浏览器进程和 DevTools 的通信。它连接了 Blink 渲染引擎的核心概念 (如 `LocalFrame`, `Document`) 和 Chromium 的 Web API (以 `Web` 开头的类)。 这部分代码特别关注 fenced frame 的创建，DevTools 的集成，以及页面加载的不同阶段的事件处理和优化。它还处理了与导航相关的操作，包括主文档导航和同文档导航。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_local_frame_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _replicated_state->origin = SecurityOrigin::CreateUniqueOpaque();
   RemoteFrameToken frame_token;
   base::UnguessableToken devtools_frame_token =
@@ -1031,7 +1033,4 @@ bool WebLocalFrameImpl::IsFeatureEnabled(
 }
 
 void WebLocalFrameImpl::AddHitTestOnTouchStartCal
-"""
-
-
 ```

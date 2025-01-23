@@ -165,7 +165,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 总而言之，`bionic/tests/math_data/ldexp_intel_data.handroid` 是 Android Bionic 库中用于保证 `ldexp` 函数在 Intel 架构上正确实现的关键测试数据文件。它通过提供大量的测试用例来覆盖各种场景，确保 Android 平台的数值计算精度和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/ldexp_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -177,8 +177,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 906,
     0x1.ffffffffffffep-1023,
     (int)117
@@ -529,8 +531,4 @@ Prompt:
     (int)-40000
   }
 };
-
-"""
-
-
 ```

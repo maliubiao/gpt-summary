@@ -202,7 +202,7 @@ function memoryMapFindRegionContaining(address) {
 
 总而言之，`frida/subprojects/frida-gum/bindings/gumjs/generate-bindings.py` 脚本在 Frida 项目中扮演着至关重要的角色。它的主要功能是 **自动化地将 Gum 库的 C 接口转换为易于在 JavaScript 中使用的绑定**，并 **生成相应的 API 文档**。这极大地简化了 Frida 用户使用 Gum 库进行底层动态 instrumentation 的过程，使得逆向工程师能够方便地通过 JavaScript 代码与目标进程进行交互，执行诸如 hook 函数、读写内存、操作寄存器等关键的逆向分析任务。 该脚本的正确运行是 Frida 强大功能的基石之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/generate-bindings.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -211,8 +211,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ""
         elif method.name == "sign":
             description = "sign the given pointer value"
@@ -556,8 +558,4 @@ def to_camel_case(name, start_high):
 
 if __name__ == '__main__':
     main(sys.argv)
-
-"""
-
-
 ```

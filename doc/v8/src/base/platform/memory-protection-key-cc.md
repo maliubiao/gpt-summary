@@ -141,15 +141,17 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，`v8/src/base/platform/memory-protection-key.cc` 提供了一个关键的底层机制，用于增强 V8 引擎的安全性，特别是针对 JIT 编译的代码，通过使用硬件提供的内存保护密钥功能来实现更精细的访问控制。这对于防止某些类型的安全漏洞至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/memory-protection-key.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/memory-protection-key.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ MemoryProtectionKey::Permission MemoryProtectionKey::GetKeyPermission(int key) {
 }  // namespace v8
 
 #endif  // V8_HAS_PKU_JIT_WRITE_PROTECT
-
-"""
-
 ```

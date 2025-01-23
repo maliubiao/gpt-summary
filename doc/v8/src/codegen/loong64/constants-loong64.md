@@ -98,11 +98,13 @@ function add(a, b) {
 
 虽然 JavaScript 开发者通常不需要直接与这些底层常量交互，但它们是 V8 引擎将高级 JavaScript 代码转换为可在特定硬件上执行的低级指令的关键组成部分。这个文件保证了 V8 能够在 LoongArch 64 位架构上正确运行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/constants-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ int FPURegisters::Number(const char* name) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
 ```

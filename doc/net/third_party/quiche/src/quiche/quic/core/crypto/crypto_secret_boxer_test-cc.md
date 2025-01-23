@@ -188,15 +188,17 @@ fetch('https://example.com/api', {
 
 因此，`crypto_secret_boxer_test.cc` 作为一个测试文件，确保了 `CryptoSecretBoxer` 这个关键的加密组件在各种场景下的正确性，从而保证了基于 QUIC 的网络连接的安全性。用户看似简单的网页浏览行为背后，有着复杂的加密机制在默默地保护着数据的安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/crypto_secret_boxer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ TEST_F(CryptoSecretBoxerTest, MultipleKeys) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

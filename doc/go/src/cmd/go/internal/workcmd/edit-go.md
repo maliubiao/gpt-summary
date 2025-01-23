@@ -270,15 +270,17 @@ replace example.com/old@v1.0.0 => example.com/new@v2.0.0
 
 理解这些功能和潜在的错误点可以帮助用户更有效地使用 `go work edit` 命令来管理 Go 工作区。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/workcmd/edit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -655,9 +657,4 @@ type useJSON struct {
 	DiskPath string
 	ModPath  string `json:",omitempty"`
 }
-
-"""
-
-
-
 ```

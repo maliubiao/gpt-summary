@@ -173,7 +173,7 @@ func main() {
 
 这段代码虽然能编译，但在运行时可能会因为 `internal/poll` 的内部状态没有正确设置而出现问题，或者在未来的 Go 版本中失效。  正确的做法是使用 `net` 包等标准库提供的 API 来进行网络编程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -370,9 +372,4 @@ type _TCP_INFO_v0 struct {
 	TimeoutEpisodes   uint32
 	SynRetrans        uint8
 }
-
-"""
-
-
-
 ```

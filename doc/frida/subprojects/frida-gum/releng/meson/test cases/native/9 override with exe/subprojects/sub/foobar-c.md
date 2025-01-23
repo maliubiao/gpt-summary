@@ -93,7 +93,7 @@ Let's break down the thought process for analyzing this C code snippet and conne
 
 总结来说，这个简单的 C 程序虽然功能单一，但它在 Frida 的动态 instrumentation 上下文中扮演着一个重要的角色，即生成用于覆盖或替换目标进程代码的简单可执行文件。理解这个程序的功能有助于理解 Frida 如何实现代码级别的动态修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/9 override with exe/subprojects/sub/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 
@@ -116,7 +118,4 @@ int main(int argc, char* argv[]) {
   assert(r == 0);
   return 0;
 }
-
-"""
-
 ```

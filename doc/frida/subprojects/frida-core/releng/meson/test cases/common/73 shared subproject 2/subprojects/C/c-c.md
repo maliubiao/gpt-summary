@@ -104,7 +104,7 @@ By following this systematic breakdown, including considering the context provid
 
 总而言之，这个简单的 `c.c` 文件虽然自身功能有限，但它是 Frida 测试框架中的一个基本 building block，用于验证 Frida 对动态链接库中函数 Hook 的能力。它也展示了共享库中函数导出的基本概念，这些概念在逆向工程中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/73 shared subproject 2/subprojects/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -128,7 +130,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

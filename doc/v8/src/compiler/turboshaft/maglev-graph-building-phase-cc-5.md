@@ -153,7 +153,7 @@ counter++; // 对应 maglev::Int32IncrementWithOverflow
 
 作为整个 Maglev 到 Turboshaft 图构建过程的第 6 部分，这个代码段的核心职责是 **将 Maglev IR 中关于基本运算和类型转换的节点翻译成 Turboshaft IR 的等效表示**。  它专注于数值计算、位操作和类型转换，为后续 Turboshaft 优化和代码生成阶段奠定基础。  它确保了从 Maglev 的高层抽象到 Turboshaft 更底层的操作的正确转换，并处理了可能导致运行时错误或需要反优化的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/maglev-graph-building-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/maglev-graph-building-phase.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 E_MAYBE_ABORT(frame_state, node->eager_deopt_info());
     V<Word32> as_int32 = __ ChangeFloat64ToInt32OrDeopt(
         Map(node->input()), frame_state,
@@ -821,7 +823,4 @@ E_MAYBE_ABORT(frame_state, node->eager_deopt_info());
     return maglev::ProcessResult::kContinue;
   }
   m
-"""
-
-
 ```

@@ -161,7 +161,7 @@ versioned_func 返回值: 42
 
 总而言之，这个简单的 `main.c` 文件虽然功能单一，但在 Frida 项目中扮演着重要的角色，用于测试 Frida 在处理具有 `soname` 的共享库时的基本功能，这对于确保 Frida 在逆向工程中的有效性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/1 soname/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,14 +169,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int versioned_func (void);
 
 int main (void) {
   return versioned_func();
 }
-
-"""
-
 ```

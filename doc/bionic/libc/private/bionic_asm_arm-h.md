@@ -249,7 +249,7 @@ sys.stdin.read()
 
 这个 `asm.h` 文件虽然小，但它体现了 Bionic 库在底层对性能和调试的关注，并通过宏定义来标准化汇编代码的生成。理解它的作用有助于我们更深入地理解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_asm_arm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: asm.h,v 1.1 2004/02/01 05:09:49 drahn Exp $	*/
 /*	$NetBSD: asm.h,v 1.4 2001/07/16 05:43:32 matt Exp $	*/
 
@@ -310,7 +312,4 @@ Prompt:
 
 #undef __bionic_asm_function_type
 #define __bionic_asm_function_type #function
-
-"""
-
 ```

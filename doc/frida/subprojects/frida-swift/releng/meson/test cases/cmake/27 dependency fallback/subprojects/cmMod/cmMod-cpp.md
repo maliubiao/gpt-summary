@@ -116,7 +116,7 @@ By following this structured approach, the analysis becomes comprehensive and ad
 
 总而言之，`cmMod.cpp` 是 Frida 构建系统中的一个小型测试模块，用于验证依赖回退机制。虽然其自身功能简单，但理解其上下文和作用对于理解 Frida 的构建过程和可能的调试场景至关重要，尤其是在涉及到构建系统配置和依赖关系的问题时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/27 dependency fallback/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -141,7 +143,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

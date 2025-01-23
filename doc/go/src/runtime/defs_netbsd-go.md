@@ -157,7 +157,7 @@ func main() {
 
 总而言之，`go/src/runtime/defs_netbsd.go` 是 Go 运行时与 NetBSD 操作系统底层交互的重要桥梁，它通过 `cgo` 机制定义了 Go 代码可以使用的操作系统常量和类型，使得 Go 程序能够调用底层的系统调用和处理操作系统事件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_netbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -305,9 +307,4 @@ type McontextT C.mcontext_t
 type UcontextT C.ucontext_t
 
 type Kevent C.struct_kevent
-
-"""
-
-
-
 ```

@@ -100,7 +100,7 @@ Let's construct the answer based on these points.
 
 总而言之，这个文件的前半部分专注于测试 `MediaControlsImpl` 类的基础控件显示逻辑和部分按钮的核心功能，以及它们如何响应 HTML 属性的变化。它模拟了用户与媒体控件的交互，并验证了控件的状态和可见性是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/media_controls_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -963,8 +965,4 @@ TEST_F(MediaControlsImplTest, TimeIsCorrectlyFormatted) {
       {-3661, "-1:01:01"},   {-1, "-0:01"},     {0, "0:00"},
       {1, "0:01"},           {15, "0:15"},      {125, "2:05"},
       {615, "10:15"},        {3666, "1:01:06"}, {75123, "20:52:03"},
-      
-"""
-
-
 ```

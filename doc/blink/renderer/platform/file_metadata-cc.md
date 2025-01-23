@@ -190,14 +190,16 @@ These errors typically occur on the JavaScript/web developer side, as this C++ c
 
 In summary, `blink/renderer/platform/file_metadata.cc` is a foundational piece of the Blink rendering engine, responsible for securely fetching file metadata. It acts as a crucial bridge between the web environment (JavaScript, HTML, CSS) and the underlying operating system's file system, ensuring security and providing necessary information for various web functionalities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/file_metadata.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2008, 2009, Google Inc. All rights reserved.
  *
@@ -302,7 +304,4 @@ KURL FilePathToURL(const String& path) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -177,15 +177,17 @@ Parsing failed (see stderr for details).
 
 总而言之，`go/src/cmd/compile/internal/syntax/syntax.go` 是 Go 语言编译器的核心组成部分，负责将源代码转换为抽象语法树，为后续的编译阶段提供基础。它定义了关键的数据结构和接口，用于处理解析过程中的模式、错误和 pragma 指令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/syntax/syntax.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -280,9 +282,4 @@ func ParseFile(filename string, errh ErrorHandler, pragh PragmaHandler, mode Mod
 	defer f.Close()
 	return Parse(NewFileBase(filename), f, errh, pragh, mode)
 }
-
-"""
-
-
-
 ```

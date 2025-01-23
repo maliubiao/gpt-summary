@@ -249,7 +249,7 @@ if (Process.platform === 'android') {
 
 通过 Frida Hook，你可以动态地观察 `getauxval` 的调用，从而理解 Android Framework 或 NDK 代码是如何利用这个函数来获取系统信息的。这对于逆向工程、性能分析和调试非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/auxv.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -313,7 +315,4 @@ __BEGIN_DECLS
 unsigned long int getauxval(unsigned long int __type);
 
 __END_DECLS
-
-"""
-
 ```

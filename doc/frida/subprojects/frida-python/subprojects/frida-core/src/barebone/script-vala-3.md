@@ -128,7 +128,7 @@ debugger.HandleCommand('command script add -f parse_page_protection_debugger par
 ### 总结
 
 该源代码文件实现了Frida核心的JavaScript引擎与底层系统的交互功能，包括内存管理、异常处理、调试信息输出等。通过LLDB调试工具，可以复现并调试这些功能。用户在使用过程中可能遇到的常见错误包括未定义属性访问、无效的内存保护标志以及未处理的异常。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/barebone/script.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rintf (name_str));
 					ctx.free_cstring (name_str);
 
@@ -336,8 +338,4 @@ rintf (name_str));
 		}
 	}
 }
-
-"""
-
-
 ```

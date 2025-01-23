@@ -141,14 +141,16 @@ This detailed process of code analysis, conceptual linking, and scenario-based t
 
 总而言之，`open_type_vertical_data.cc` 是 Blink 渲染引擎中一个关键的组成部分，它负责理解和处理 OpenType 字体中与垂直排版相关的信息，从而使得浏览器能够正确地渲染垂直书写模式的文本。它的正确运行对于支持多种语言和排版需求至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_vertical_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Koji Ishii <kojiishi@gmail.com>
  *
@@ -472,7 +474,4 @@ void OpenTypeVerticalData::GetVerticalTranslationsForGlyphs(
 }
 
 }  // namespace blink
-
-"""
-
 ```

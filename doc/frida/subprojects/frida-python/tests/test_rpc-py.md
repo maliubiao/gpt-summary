@@ -168,7 +168,7 @@ Frida 作为动态 instrumentation 工具，其底层运作涉及到很多与操
 
 如果在上述任何一步出现问题，例如连接失败、脚本加载错误、RPC 调用失败等，用户可能会需要查看 Frida 的日志、目标进程的输出，或者使用调试器来定位问题。这个 `test_rpc.py` 文件中的测试用例覆盖了这些步骤中可能出现的各种情况，可以作为理解 Frida RPC 工作原理和排查问题的参考。例如，如果用户遇到 `frida.InvalidOperationError`，他们可以参考 `test_post_failure`、`test_unload_mid_request` 和 `test_detach_mid_request`，来判断是否是因为 session 被 detach 或 script 被 unload 导致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/tests/test_rpc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import subprocess
 import threading
 import time
@@ -349,7 +351,4 @@ rpc.exports = {
 
 if __name__ == "__main__":
     unittest.main()
-
-"""
-
 ```

@@ -134,7 +134,7 @@ let sum = strValue + numValue; // 错误：字符串拼接，结果为 "105"，�
 
 总而言之，这个测试文件是 V8 引擎质量保证的关键部分，它确保了 Turboshaft 编译器能够针对 x64 架构生成正确且高效的机器码，涵盖了基础的数值运算到更高级的 SIMD 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/x64/turboshaft-instruction-selector-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/x64/turboshaft-instruction-selector-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -142,8 +142,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (MachineType::Float64(), p1, m.Int64Constant(127)));
     OpIndex sub = m.Float64Sub(
         add, m.Load(MachineType::Float64(), p1, m.Int64Constant(127)));
@@ -866,8 +868,4 @@ TEST_F(TurboshaftInstructionSelectorTest, SIMDF32x4SConvert) {
 #endif  // V8_ENABLE_WEBASSEMBLY
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
-
 ```

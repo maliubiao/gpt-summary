@@ -211,14 +211,16 @@ console.log(count);  // 输出: 3
 
 总而言之，`v8/src/builtins/regexp-replace.tq` 是 V8 引擎中实现 `String.prototype.replace()` 方法核心逻辑的关键部分，它针对不同的使用场景进行了优化，并与 JavaScript 的行为完全一致。理解这段代码有助于深入理解 JavaScript 正则表达式替换的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/regexp-replace.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -477,7 +479,4 @@ transitioning javascript builtin RegExpPrototypeReplace(
   }
 }
 }
-
-"""
-
 ```

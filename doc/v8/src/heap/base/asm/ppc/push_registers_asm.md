@@ -115,11 +115,13 @@ outerFunction();
 
 `push_registers_asm.cc` 中的 `PushAllRegistersAndIterateStack` 函数是 V8 引擎用于实现保守垃圾回收的关键低级操作。它确保在垃圾回收过程中，即使对象引用存储在 CPU 寄存器中，也能被正确地识别和处理，防止过早回收仍在使用的 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/ppc/push_registers_asm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ asm(
     "  ld 2, 24(1)                                     \n"
 #endif
     "  blr                                             \n");
-
-"""
-
 ```

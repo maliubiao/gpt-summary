@@ -181,7 +181,7 @@ Interceptor.attach(Module.findExportByName(null, "func3"), {
 
 `func4.c` 文件虽然代码简单，但它体现了函数调用的基本概念，并可以作为逆向工程和动态 instrumentation 的一个简单示例。在 Frida 的上下文中，这个文件很可能是用于测试静态链接场景下的函数调用行为。用户通过运行单元测试或使用 Frida 进行动态分析，就有可能触发或观察到这段代码的执行。其所在的目录结构也为我们提供了它在 Frida 项目中的角色信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,15 +189,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3();
 
 int func4()
 {
   return func3() + 1;
 }
-
-"""
-
 ```

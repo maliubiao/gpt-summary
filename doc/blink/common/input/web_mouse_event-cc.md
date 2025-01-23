@@ -169,14 +169,16 @@ CSS 可以定义鼠标悬停时的样式：
 
 总而言之，`WebMouseEvent.cc` 文件是 Blink 引擎中处理鼠标事件的核心组件，它负责存储、操作和转换鼠标事件的相关信息，并最终影响到 Web 开发者在 JavaScript、HTML 和 CSS 中观察到的行为。理解其功能对于开发高性能和准确响应用户交互的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_mouse_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ void WebMouseEvent::SetMenuSourceType(WebInputEvent::Type type) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

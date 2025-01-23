@@ -228,15 +228,17 @@ Hello, world.
 
 这段代码通过使用泛型和类型约束，实现了一种更加灵活和类型安全的方式来处理具有特定行为的对象。类型近似的运用允许接受更多符合特定结构的类型，而不仅仅是完全匹配的类型。 理解这些概念对于编写可复用的泛型代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue50690c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -287,9 +289,4 @@ type StructWithPrinter struct {
 func (s StructWithPrinter) PrintFn() func(string) {
 	return s.PrintFn_
 }
-
-"""
-
-
-
 ```

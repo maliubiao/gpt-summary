@@ -163,15 +163,17 @@ By following these steps, you can systematically analyze a source code file like
 
 总而言之，`MockMediaStreamVideoSource` 是一个关键的测试工具，它允许开发者在没有真实硬件的情况下，对涉及 `getUserMedia` 的 Web 应用进行可靠和可控的测试。理解其功能和使用方式对于进行相关功能的开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/mock_media_stream_video_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ void MockMediaStreamVideoSource::RestartSourceImpl(
 }
 
 }  // namespace blink
-
-"""
-
 ```

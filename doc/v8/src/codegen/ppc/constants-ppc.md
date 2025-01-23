@@ -101,11 +101,13 @@ let result = add(5, 10);
 
 `constants-ppc.cc` 文件是 V8 引擎在 PPC64 架构上进行代码生成的基础设施的一部分。它定义了关键的常量（如寄存器名称）和工具函数（如指令写入和寄存器名称查找），这些对于将 JavaScript 代码高效地编译和执行为本地机器码至关重要。 虽然JavaScript开发者不会直接操作这些底层细节，但这些底层的实现是保证 JavaScript 代码在特定硬件架构上能够快速运行的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/constants-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ int Registers::Number(const char* name) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
 ```

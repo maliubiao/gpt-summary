@@ -250,7 +250,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 `ilogbf_intel_data.handroid` 是 Bionic 库中用于测试 `ilogbf` 函数的测试数据文件。它定义了一系列输入输出对，用于验证 `ilogbf` 函数在特定平台上的实现是否符合预期。这个文件在 Bionic 的开发和测试过程中起着重要的作用，确保了 Android 系统底层数学运算的正确性。 应用程序在运行时不会直接使用这个数据文件，但其正确性直接影响到依赖 `ilogbf` 函数的上层应用和服务的稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/ilogbf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -977,7 +979,4 @@ static data_int_1_t<float> g_ilogbf_intel_data[] = {
     -0x1.p-149
   }
 };
-
-"""
-
 ```

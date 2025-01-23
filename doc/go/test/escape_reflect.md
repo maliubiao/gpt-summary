@@ -175,15 +175,17 @@ func main() {
 
 `escape_reflect.go` 是 Go 语言编译器测试套件的一部分，专门用于测试 `reflect` 包操作的逃逸分析。通过分析各种使用 `reflect.ValueOf` 和相关方法的场景，它可以验证编译器是否正确地判断了变量的逃逸行为，这对于保证 Go 程序的性能至关重要。使用者需要理解，即使是使用 `reflect` 对值进行操作，也可能因为后续的操作导致变量逃逸到堆上。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_reflect.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -646,9 +648,4 @@ func append2(s, x []int) []int { // ERROR "leaking param: s$" "x does not escape
 	rv := reflect.AppendSlice(sv, xv)
 	return rv.Interface().([]int)
 }
-
-"""
-
-
-
 ```

@@ -193,7 +193,7 @@ fetch('https://example.com/data')
 
 总而言之，这部分代码专注于测试 `SSLClientSocket` 的数据读取功能以及在各种网络和 TLS 场景下的健壮性，确保 Chromium 能够可靠地处理 HTTPS 连接中的数据接收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ompletionCallback* callback,
                             int rv) {
     if (!test_ssl_read_if_ready())
@@ -1052,7 +1054,4 @@ TEST_P(SSLClientSocketVersionTest, Write_WithSynchronousErrorNoRead) {
       std::move(counting_socket), host_port_pair(), SSLConfig()));
 
   rv = call
-"""
-
-
 ```

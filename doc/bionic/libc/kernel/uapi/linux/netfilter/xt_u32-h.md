@@ -371,7 +371,7 @@ if __name__ == '__main__':
 
 到达 `xt_u32` 的路径是从用户空间的网络配置请求，经过 Android Framework 服务，到达 `iptables`/`nftables` 工具，最终通过 Netlink Socket 与内核的 `netfilter` 子系统交互。 Frida 可以用于 hook 用户空间的工具来观察规则的构造，或者通过更高级的内核 hooking 技术来观察内核中 `xt_u32` 模块的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_u32.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -382,8 +382,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -420,7 +422,4 @@ struct xt_u32 {
   __u8 invert;
 };
 #endif
-
-"""
-
 ```

@@ -109,15 +109,17 @@ Potential user/programming errors:
 
 **总结来说，这个测试文件的主要功能是验证 Blink 渲染引擎中 `HarfBuzzShaper` 类的各种文本排版功能，包括安全断点、处理缺失字符、子范围提取、字距调整、Emoji 处理和处理复杂的字符组合。这些测试确保了 Blink 能够按照 CSS 的指示正确渲染各种语言和字符集的文本，为用户提供高质量的网页浏览体验。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_shaper_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 onst ShapeResult* result2 =
       shaper.Shape(&font, direction, 6, string.length());
 
@@ -787,8 +789,4 @@ TEST_F(HarfBuzzShaperTest, UnorderedClusterIndex) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

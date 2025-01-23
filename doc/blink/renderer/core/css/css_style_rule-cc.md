@@ -148,15 +148,17 @@ rule.style.fontSize = "20px";
 
 总而言之，`CSSStyleRule.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它负责表示和管理 CSS 样式规则，并为 JavaScript 动态操作 CSS 提供了接口。理解这个文件的功能对于深入理解浏览器如何处理 CSS 以及如何进行相关的性能优化和调试非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_style_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * (C) 2002-2003 Dirk Mueller (mueller@kde.org)
@@ -445,7 +447,4 @@ void CSSStyleRule::deleteRule(unsigned index, ExceptionState& exception_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

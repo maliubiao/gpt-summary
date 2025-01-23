@@ -101,7 +101,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`c_test_one.c` 是一个非常基础的 C 代码文件，它在 Frida 项目中扮演着测试 Vala 和 C 代码互操作性的角色。虽然它本身的功能很简单，但在 Frida 的上下文中，它涉及到很多与逆向工程、底层二进制、操作系统机制相关的概念。 用户通常不会直接使用这个文件，而是作为 Frida 开发和测试过程的一部分被遇到。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/vala/20 genie multiple mixed sources/c_test_one.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,14 +109,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 gboolean c_test_one_is_true (void) {
     return TRUE;
 }
-
-"""
-
 ```

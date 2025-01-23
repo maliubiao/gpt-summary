@@ -116,14 +116,16 @@ This systematic approach, starting from the high-level purpose and progressively
 
 总而言之，`execution_context_lifecycle_state_observer_test.cc` 通过一系列单元测试，确保 `ExecutionContextLifecycleStateObserver` 类能够可靠地监听和报告执行上下文的生命周期状态变化，这对于 Blink 引擎正确管理和优化网页的资源使用和功能至关重要。它涵盖了观察者的创建、状态变化监听、上下文切换以及观察上下文被销毁等关键场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/execution_context/execution_context_lifecycle_state_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2014, Google Inc. All rights reserved.
  *
@@ -257,7 +259,4 @@ TEST_F(ExecutionContextLifecycleStateObserverTest, MoveToStoppedContext) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -255,7 +255,7 @@ except Exception as e:
 
 希望这个更详细的归纳对您有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/asound.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ;
       long * value_ptr;
     } integer;
@@ -353,8 +355,4 @@ struct snd_ctl_event {
 #define SNDRV_CTL_NAME_IEC958_PCM_STREAM "PCM Stream"
 #define SNDRV_CTL_NAME_IEC958(expl,direction,what) "IEC958 " expl SNDRV_CTL_NAME_ ##direction SNDRV_CTL_NAME_IEC958_ ##what
 #endif
-
-"""
-
-
 ```

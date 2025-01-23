@@ -145,15 +145,17 @@ By following these steps systematically, one can thoroughly analyze the C++ unit
 
 总而言之，`dns_hosts_unittest.cc` 是 Chromium 网络栈中一个非常重要的测试文件，它确保了浏览器能够正确地解析和使用本地 hosts 文件，这对于网络请求的正确路由至关重要。虽然与 JavaScript 没有直接的代码关联，但它所测试的功能直接影响了 JavaScript 发起的网络请求的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_hosts_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -358,7 +360,4 @@ TEST(DnsHostsTest, HostsParser_EndsWithNewlineAndToken) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

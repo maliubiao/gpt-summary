@@ -219,15 +219,17 @@ func main() {
 
 总的来说，这段代码的主要目的是为了提供一种统一的方式来获取和规范化 Go 程序的信息，以便用于遥测数据的聚合和分析。 它特别关注区分 Go 工具链程序和普通程序，并对版本号进行一定的规范化处理，以减少统计维度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/telemetry/internal/telemetry/proginfo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -286,9 +288,4 @@ func ProgramInfo(info *debug.BuildInfo) (goVers, progPath, progVers string) {
 
 	return goVers, progPath, progVers
 }
-
-"""
-
-
-
 ```

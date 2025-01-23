@@ -228,7 +228,7 @@ LibA Version 1.0 -- zlib 1.2.11  // zlib 版本可能会有所不同
 
 这个 `main.cpp` 文件虽然简单，但它代表了一个使用了外部库的基本程序结构，而这种结构是我们在逆向工程中经常遇到的。理解这种结构以及如何使用 Frida 来分析它的行为是逆向工程的重要基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/6 object library no dep/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -236,8 +236,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stdlib.h>
 #include <iostream>
 #include "libA.hpp"
@@ -249,7 +251,4 @@ int main(void) {
   cout << getLibStr() << " -- " << getZlibVers() << endl;
   return EXIT_SUCCESS;
 }
-
-"""
-
 ```

@@ -129,7 +129,7 @@ const myString = "This is a string";
 
 `v8/src/heap/object-stats.cc` (特别是 `ObjectStatsCollectorImpl`) 负责在 V8 引擎的堆中收集各种对象的详细统计信息。这些信息对于理解 JavaScript 代码的内存使用模式、诊断内存泄漏、识别性能瓶颈以及深入了解 V8 引擎的内部工作原理至关重要。它通过区分不同类型的对象、跟踪虚拟对象和外部资源，并根据对象的生命周期和状态进行分类，提供了对堆内存的全面视图。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/object-stats.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/object-stats.cc以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ats::kYes) {
         field_stats_collector_.RecordStats(obj);
       }
@@ -494,8 +496,4 @@ void ObjectStatsCollector::Collect() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

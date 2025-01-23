@@ -249,7 +249,7 @@ int main() {
 
 总而言之，`bionic/libm/upstream-freebsd/lib/msun/src/s_cexp.c` 文件是 Android 系统中复数指数函数的核心实现，它被 Android Framework 和 NDK 应用广泛使用。理解其功能和实现细节对于进行相关的开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_cexp.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -357,7 +359,4 @@ cexp(double complex z)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(cexp, cexpl);
 #endif
-
-"""
-
 ```

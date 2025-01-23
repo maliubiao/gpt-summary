@@ -197,15 +197,17 @@ fetch('https://example.com')
 
 总而言之，`QpackProgressiveDecoder` 是 QUIC 协议中处理 HTTP/3 头部压缩的关键组件，它负责将服务器发送的编码后的头部信息解码成浏览器可以理解的格式，最终影响着网页的加载和 JavaScript 可以访问的 HTTP 头部信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_progressive_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -614,7 +616,4 @@ bool QpackProgressiveDecoder::DeltaBaseToBase(bool sign, uint64_t delta_base,
 }
 
 }  // namespace quic
-
-"""
-
 ```

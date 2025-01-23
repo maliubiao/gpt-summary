@@ -191,15 +191,17 @@ My thinking process for summarizing the provided code snippet went through these
 
 这部分 `ResourceFetcherTest` 重点测试了 `ResourceFetcher` 在处理各种预加载场景下的行为，包括 Link 预加载和推测性预加载。 它验证了预加载的合并、优先级管理、与缓存的交互，以及在不同 browsing context 下的隔离性。 此外，还涵盖了对特定 URL 类型（如 data: 和 cid:）以及 HTTP 缓存策略（如 stale-while-revalidate）的处理。 这些测试确保了 `ResourceFetcher` 能够高效、正确地管理资源的获取，从而提升网页加载性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alResource(const WebString& url) {
     url_test_helpers::RegisterMockedURLLoad(
         KURL(url), test::PlatformTestDataPath(kTestResourceFilename),
@@ -971,7 +973,4 @@ TEST_F(ResourceFetcherTest, DuplicatePreloadAllowsPriorityChange) {
             resource1->GetResourceRequest().Priority());
 
   platform_->GetURLLoaderMockFactory()->ServeAsynchronousReques
-"""
-
-
 ```

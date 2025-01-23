@@ -136,15 +136,17 @@ Origin Trials 是一种允许开发者在正式标准发布之前，在生产环
 
 `trial_token_unittest.cc` 的主要功能是全面测试 `blink::TrialToken` 类在解析、验证和处理 Origin Trial Token 方面的各种能力，确保该类能够正确可靠地工作，从而保证了 Chromium 浏览器对 Origin Trials 功能的正确支持。 这对于 Web 开发者测试和使用实验性 Web 平台特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/trial_token_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -699,7 +701,4 @@ const char kLargeValidToken[] =
     "eHg1Z2UyMmJndnVrenl2eThqbHk2NmwwaWdwODFvZXI2d2t1bjh5NnljdGR5bnRqZGtsZnF6NH"
     "dqeG14eWduY3RnaGtneDF2eXJmeHlqcTAwNXprdnVkaDBxZnZqc2JyYmo0bng1bTd2Zm1rdnV6"
     "b2k5a2Znb2djMnFhZ294eGFzb3J
-"""
-
-
 ```

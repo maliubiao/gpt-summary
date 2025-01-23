@@ -121,14 +121,16 @@ By following these steps, iteratively refining understanding, and connecting the
 
 `input_event_prediction_unittest.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎的输入事件预测功能能够正常工作，提供平滑的用户交互体验。它测试了各种输入场景、预测算法和 feature flag 配置，以保证该功能的稳定性和可靠性。理解这个文件的功能有助于深入了解浏览器如何优化用户输入处理，以及这些优化如何影响最终的 Web 应用体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/input_event_prediction_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -583,7 +585,4 @@ TEST_F(InputEventPredictionTest, TouchPointStates) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

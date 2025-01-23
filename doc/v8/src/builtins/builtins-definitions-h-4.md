@@ -124,7 +124,7 @@ console.log(yearMonth.daysInMonth); // 输出 31 (十月份的天数)
 
 这部分 `builtins-definitions.h` 文件主要负责声明 **Temporal API** 中 `Temporal.Duration`、`Temporal.Instant`、`Temporal.PlainYearMonth` 和 `Temporal.PlainMonthDay` 及其原型对象上的各种方法（构造函数、`from`、`compare`、`add`、`subtract`、`toString` 等）的内置函数。它定义了 V8 引擎中实现这些 JavaScript 时间日期功能的底层 C++ 函数入口点。 这些定义是 V8 引擎将 JavaScript 代码翻译成高效机器码的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -132,8 +132,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ralZonedDateTimePrototypeWithCalendar, kDontAdaptArgumentsSentinel) \
   /* Temporal #sec-temporal.zoneddatetime.prototype.add */                     \
   CPP(TemporalZonedDateTimePrototypeAdd, kDontAdaptArgumentsSentinel)          \
@@ -543,7 +545,4 @@ ralZonedDateTimePrototypeWithCalendar, kDontAdaptArgumentsSentinel) \
   CPP(LocalePrototypeGetCollations, kDontAdaptArgumentsSentinel)               \
   /* ecma402 #sec-Intl.Locale.prototype.getHourCycles */                       \
   CPP(LocalePrototypeGetHourCycles, kDontAd
-"""
-
-
 ```

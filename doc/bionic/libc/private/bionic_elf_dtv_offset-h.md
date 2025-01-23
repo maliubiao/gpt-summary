@@ -220,7 +220,7 @@ except Exception as e:
 
 `bionic_elf_dtv_offset.handroid.h` 虽然是一个小文件，但它定义了一个重要的常量 `TLS_DTV_OFFSET`，该常量在 Android 的动态链接器中用于计算 TLS 数据的偏移量。这个常量的值可能是架构相关的，例如在 RISC-V 架构下有一个非零的偏移量。理解这个文件的作用有助于深入理解 Android 如何管理多线程和动态链接库。虽然开发者通常不会直接操作这个常量，但了解其背后的原理对于调试和理解 Android 系统的底层机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_elf_dtv_offset.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,8 +231,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -277,7 +279,4 @@ Prompt:
 #else
 #define TLS_DTV_OFFSET 0
 #endif
-
-"""
-
 ```

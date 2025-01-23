@@ -161,15 +161,17 @@ The provided code snippet does not accept or process any command-line arguments.
 
 **In summary, the `go/test/sigchld.go` code is a simple test to verify that a Go program doesn't crash when it receives a `SIGCHLD` signal. It highlights Go's default behavior regarding this signal.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/sigchld.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 //go:build !plan9 && !windows && !wasip1
@@ -188,9 +190,4 @@ func main() {
 	syscall.Kill(syscall.Getpid(), syscall.SIGCHLD)
 	println("survived SIGCHLD")
 }
-
-"""
-
-
-
 ```

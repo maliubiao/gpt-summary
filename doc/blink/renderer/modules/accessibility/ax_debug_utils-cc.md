@@ -188,15 +188,17 @@ By following this systematic approach, we can effectively analyze the C++ code a
 
 `ax_debug_utils.cc` 文件是 Chromium Blink 引擎中一个关键的调试辅助工具集，专注于可访问性领域。它提供了将可访问性树结构转换为字符串、检查树一致性以及转储布局碎片信息等功能。这些功能对于理解可访问性树的构建过程、排查可访问性问题以及调试布局相关的 Bug 非常有用。它与 HTML、CSS 和 JavaScript 紧密相关，因为这三者共同决定了最终的 DOM 结构、布局和可访问性树的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_debug_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -473,7 +475,4 @@ void DumpBlockFragmentationData(const FragmentItems* fragment_items,
 #endif  // DCHECK_IS_ON()
 
 }  // namespace blink
-
-"""
-
 ```

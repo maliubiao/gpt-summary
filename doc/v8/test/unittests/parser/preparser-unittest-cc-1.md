@@ -126,7 +126,7 @@ By following this structured approach, combining code examination with an unders
 
 `v8/test/unittests/parser/preparser-unittest.cc` 的这一部分着重测试了预解析器在处理特定 JavaScript 语法结构（如包含特定作用域规则的变量声明和各种形式的顶级箭头函数）时的鲁棒性和正确性。此外，它还深入测试了预解析器用于存储和恢复其分析结果的底层字节数据处理机制，这对于理解 V8 如何优化解析过程至关重要。这些测试确保了预解析器能够在各种场景下正常工作，并且不会因为特定的代码模式而崩溃，同时也验证了其数据序列化和反序列化功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/preparser-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/preparser-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 gned == PreciseMaybeAssigned::YES);
     }
   }
@@ -378,8 +380,4 @@ TEST_F(PreParserTest, ProducingAndConsumingByteData) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

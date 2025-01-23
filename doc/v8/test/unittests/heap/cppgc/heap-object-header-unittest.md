@@ -91,11 +91,13 @@ const obj = { a: 1, b: 'hello' };
 
 `heap-object-header-unittest.cc` 文件通过详尽的单元测试，确保了 `HeapObjectHeader` 类的正确性和稳定性。这对于 V8 引擎的健壮性和性能至关重要，因为它直接关系到 JavaScript 对象的内存管理和垃圾回收。  理解 `HeapObjectHeader` 的功能是理解 V8 内部工作原理的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/heap-object-header-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ TEST(HeapObjectHeaderDeathTest, ConstructorTooLargeGCInfoIndex) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

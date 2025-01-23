@@ -265,7 +265,7 @@ Section Headers (描述各个节，如 .text, .data, .symtab, .rel.dyn, .rel.plt
 
 `bionic/libm/upstream-freebsd/lib/msun/ld128/s_expl.c` 文件是 Android 系统中用于高精度指数运算的关键组成部分。理解其功能和实现细节对于开发高性能、高精度的 Android 应用至关重要。在调试过程中，需要结合 NDK、Framework 和动态链接器的知识，才能有效地定位到这些底层的数学函数调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/s_expl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -596,7 +598,4 @@ expm1l(long double x)
 		t = SUM2P(tbl[n2].hi - twomk, tbl[n2].lo + t * (q + r1));
 	RETURNI(t * twopk);
 }
-
-"""
-
 ```

@@ -194,7 +194,7 @@ By following these steps, combining code analysis with domain knowledge, and ite
 
 这段代码片段是 Frida 构建系统中用于定义和管理构建目标的核心部分。它负责处理构建目标的各种属性、源文件、依赖关系、链接选项和安装设置。这段代码是 Meson 构建系统如何理解和执行开发者在 `meson.build` 文件中定义的构建意图的关键。它为创建可执行文件、共享库等构建产物提供了基础框架和逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 elf.objects: T.List[ObjectTypes] = []
         self.structured_sources = structured_sources
         self.external_deps: T.List[dependencies.Dependency] = []
@@ -867,8 +869,4 @@ elf.objects: T.List[ObjectTypes] = []
         for t in targets:
             if not isinstance(t, (Target, CustomTargetIndex)):
                 if isinstance(t, dependencies.ExternalLibrary):
-                   
-"""
-
-
 ```

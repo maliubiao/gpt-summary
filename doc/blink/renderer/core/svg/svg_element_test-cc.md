@@ -173,15 +173,17 @@ Finally, organizing the information logically with clear headings and examples m
 
 总而言之，`blink/renderer/core/svg/svg_element_test.cc` 是一个用于验证 Blink 引擎中 `SVGElement` 类功能的重要测试文件，它涵盖了 SVG 元素在容器查询和 SMIL 动画等场景下的样式计算行为，对于确保 Chromium 渲染引擎的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -281,7 +283,4 @@ TEST_F(SVGElementTest, ContainerUnitContext) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

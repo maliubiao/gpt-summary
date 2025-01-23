@@ -168,15 +168,17 @@ function processData(data) {
 
 `v8/src/objects/debug-objects-inl.h` 是 V8 引擎中至关重要的一个文件，它定义了用于支持 JavaScript 调试功能的各种数据结构和操作。理解这个文件的内容可以帮助我们更深入地了解 V8 的内部机制，以及 JavaScript 调试的工作原理。它与 Torque 的集成表明了 V8 在工程实践中对代码生成和对象布局的精细控制。避免在生产环境中使用调试相关的语句是良好的编程实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/debug-objects-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/debug-objects-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ DEF_GETTER(ErrorStackData, call_site_infos, Tagged<FixedArray>) {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_DEBUG_OBJECTS_INL_H_
-
-"""
-
 ```

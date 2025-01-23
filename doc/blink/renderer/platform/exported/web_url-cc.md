@@ -134,14 +134,16 @@ Finally, organize the findings into a clear and structured answer, covering the 
 
 `blink::WebURL` 是 Blink 引擎中表示和操作 URL 的核心类。它封装了 URL 字符串和解析后的信息，并提供了方便的方法来获取 URL 的各个组成部分和进行比较。它在整个渲染过程中扮演着至关重要的角色，与 JavaScript, HTML, CSS 的功能都有着紧密的联系，是实现网页资源加载和交互的基础。理解 `WebURL` 的功能和原理有助于更好地理解 Blink 引擎的工作方式以及避免与 URL 相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_url.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -204,7 +206,4 @@ WebURL::operator KURL() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

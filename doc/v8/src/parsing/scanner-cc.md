@@ -223,7 +223,7 @@ function myFunction(param1, param2) {
 
 `v8/src/parsing/scanner.cc` 的主要功能是作为 V8 引擎中 JavaScript 源代码的 **词法分析器 (Lexer)**。它负责读取源代码字符流，识别并生成构成 JavaScript 语法结构的 **词法单元 (Tokens)**。这个过程是 JavaScript 代码编译和执行的第一步，为后续的语法分析和语义分析提供了基础。它涉及到识别关键字、标识符、字面量、运算符、分隔符、注释等，并处理 Unicode 转义、数字格式、模板字面量和正则表达式等复杂情况。同时，它还负责错误检测，报告词法分析阶段遇到的不符合语法规则的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/scanner.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/scanner.cc以.tq结尾，那它是个v8 torque源代码，
@@ -231,8 +231,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1300,7 +1302,4 @@ const AstRawString* Scanner::NextSymbol(
 }
 
 const AstRawString* Scanne
-"""
-
-
 ```

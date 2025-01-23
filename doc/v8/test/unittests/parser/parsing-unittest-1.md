@@ -260,11 +260,14 @@ In essence, this test file is crucial for ensuring that the V8 engine correctly 
 
 总而言之，这部分单元测试确保了 V8 引擎的 JavaScript 解析器能够准确无误地理解和处理各种 JavaScript 代码，符合 ECMAScript 规范的要求，并且能够正确地识别和报告语法错误。这对于 V8 引擎的稳定性和性能至关重要。
 
-Prompt: ```
+### 提示词
+```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ffixByteLen;
     base::ScopedVector<char> program(kProgramByteSize + 1);
     base::SNPrintF(program, "%s%s%s", source_data[i].outer_prefix,
@@ -1965,7 +1968,4 @@ TEST_F(ParsingTest, InnerAssignment) {
       {"var x; eval('');", true, false, false},
       {"'use strict'; let x; eval('');", true, false, false},
       {"try {} catch(x) {
-"""
-
-
 ```

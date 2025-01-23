@@ -93,11 +93,13 @@ myObject = null; // 将引用置为 null，让垃圾回收器知道可以回收�
 
 `v8/src/heap/zapping.cc` 文件定义了在 V8 引擎的调试模式下，用于填充已释放内存块的函数。这有助于在开发和调试过程中更容易地发现内存相关的错误。虽然 JavaScript 代码本身没有直接的 "zapping" 功能，但 V8 引擎内部的这个机制与 JavaScript 的垃圾回收和错误检测密切相关。  将 JavaScript 变量设置为 `null` 或 `undefined` 可以被视为一个更高层次的、概念上的类比，表示该对象不再被使用，可以被回收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/zapping.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -133,7 +135,4 @@ void ZapBlock(Address start, size_t size, uintptr_t zap_value) {
 }
 
 }  // namespace v8::internal::heap
-
-"""
-
 ```

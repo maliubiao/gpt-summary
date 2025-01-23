@@ -180,14 +180,16 @@ console.log(resultEmpty); // 输出: false
 
 这段 Torque 代码的核心在于实现 `some` 方法的逻辑，包括遍历、调用回调、以及处理 TypedArray 可能被分离的情况，并且确保参数的有效性，这与 JavaScript 中 `TypedArray.prototype.some()` 的行为完全一致。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-some.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ transitioning javascript builtin TypedArrayPrototypeSome(
   }
 }
 }
-
-"""
-
 ```

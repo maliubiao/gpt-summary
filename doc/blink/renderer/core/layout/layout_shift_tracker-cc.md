@@ -120,15 +120,17 @@ By following these steps, I can dissect the provided code snippet and provide a 
 
 `blink/renderer/core/layout/layout_shift_tracker.cc` 文件的核心功能是**监控和量化页面布局偏移**，以便识别和优化不稳定的布局行为。它通过监听布局对象的位置变化，计算布局偏移分数，并考虑用户输入的影响。该跟踪器与 HTML、CSS 和 JavaScript 都有密切关系，因为这些技术都是导致布局偏移的潜在因素。 它可以帮助开发者发现由于缺少尺寸声明、字体加载、动态内容插入等常见错误导致的布局不稳定性，并为提升用户体验提供数据支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_shift_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1009,7 +1011,4 @@ void ReattachHookScope::NotifyDetach(const Node& node) {
 
   // Save the visual rect for restoration on future reattachment.
   const auto& box = To<LayoutBox
-"""
-
-
 ```

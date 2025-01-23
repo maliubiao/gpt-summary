@@ -131,7 +131,7 @@ While this C++ code *implements* the regex engine, it's influenced by and design
 
 This part of the V8 regular expression compiler is responsible for **transforming a high-level representation of a regular expression into a lower-level, executable graph of `RegExpNode` objects.** This involves handling various regular expression components, including literal text, character classes (with special attention to Unicode and case folding), Unicode property escapes and set operations, and optimizations for disjunctions. It bridges the gap between the parsed regular expression and the actual matching process within the V8 engine. It ensures that JavaScript regular expressions, including those with advanced Unicode features, are compiled into an efficient and correct internal representation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler-tonode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler-tonode.cc以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1002,8 +1004,5 @@ void RegExpDisjunction::RationalizeConsecutiveAtoms(RegExpCompiler* compiler) {
       icu::UnicodeString new_prefix(alt_atom->data().at(0));
       if (!Equals(ignore_case, new_prefix, common_prefix)) break;
 #else
-      unibrow::uchar new_prefix 
-"""
-
-
+      unibrow::uchar new_prefix
 ```

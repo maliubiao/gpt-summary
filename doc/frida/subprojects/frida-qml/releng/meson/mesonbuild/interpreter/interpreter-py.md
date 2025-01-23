@@ -196,7 +196,7 @@ some_dep = dependency('some_library')
 
 这部分 `interpreter.py` 代码的核心功能是 **Meson 构建系统的解释器**。它负责读取和理解 `meson.build` 文件中的声明性构建指令，从而定义 Frida 项目及其子项目的结构、构建目标（可执行文件、库等）、依赖关系、编译选项等。它将高级的构建描述转换为 Meson 内部的表示，为后续的构建系统生成阶段（例如生成 Ninja 构建文件）奠定基础。简单来说，它是将人类可读的构建脚本转化为机器可理解的构建配置的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -916,8 +918,5 @@ class Interpreter(InterpreterBase, HoldableObject):
         srcdir = Path(self.environment.source_dir)
         # convert variables which refer to an -uninstalled.pc style datadir
         for k, v in variables.items():
-            if 
-"""
-
-
+            if
 ```

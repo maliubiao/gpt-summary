@@ -204,7 +204,7 @@ Now I can synthesize the response.
 
 这部分 `internals.cc` 代码主要提供了用于测试 Blink 渲染引擎内部状态和行为的接口，涵盖了样式布局信息、hit-testing、资源加载状态、DOM 树和 Shadow DOM 操作、动画控制、浏览器控件状态、滚动、表单和历史记录、弹窗、文本选择、元素边界以及 Document Marker 等多个方面。 这些接口主要服务于自动化测试框架，帮助开发者验证浏览器的行为是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/internals.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -212,9 +212,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-                                "No context document is available.");
+### 源代码
+```cpp
+"No context document is available.");
     return 0;
   }
 
@@ -1130,7 +1132,4 @@ void Internals::addSuggestionMarker(
       range->OwnerDocument().Markers();
   AddStyleableMarkerHelper(
       ra
-"""
-
-
 ```

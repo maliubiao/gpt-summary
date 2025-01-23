@@ -170,14 +170,16 @@ CSS 与 IndexedDB 没有直接关系。CSS 用于控制网页的样式和布局�
 
 总而言之，`blink/common/indexeddb/indexeddb_metadata.cc` 文件定义了 Blink 引擎用于管理 IndexedDB 模式信息的关键数据结构，这些结构直接映射到开发者在 JavaScript 中使用的 IndexedDB API 概念，并参与到错误处理和数据完整性检查等逻辑中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/indexeddb/indexeddb_metadata.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ bool IndexedDBDatabaseMetadata::operator==(
 }
 
 }  // namespace blink
-
-"""
-
 ```

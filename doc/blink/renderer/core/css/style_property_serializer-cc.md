@@ -77,7 +77,7 @@ color: blue; font-size: 16px; margin: 10px 20px 0 0;
 
 总而言之，`style_property_serializer.cc` 是 Blink 引擎中一个关键的组成部分，它负责将内部的 CSS 属性值表示转换为人类可读的字符串形式，这对于开发者工具、JavaScript 访问样式以及其他需要 CSS 文本表示的场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_property_serializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Apple Inc. All
@@ -961,7 +963,4 @@ CSSValue* TimelineValueItem(wtf_size_t index,
                             const CSSValueList& name_list,
                             const CSSValueList& axis_list,
                             const CSSValueList*
-"""
-
-
 ```

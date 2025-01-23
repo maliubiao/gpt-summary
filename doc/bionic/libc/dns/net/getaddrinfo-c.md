@@ -130,7 +130,7 @@ By following this systematic approach, breaking down the problem into smaller, m
 
 总而言之，`bionic/libc/dns/net/getaddrinfo.c` 是 Android 系统中网络地址解析的核心组件，它为应用程序提供了将人类可读的主机名和服务名转换为计算机可用的网络地址的能力，是构建网络应用程序的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/net/getaddrinfo.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -142,8 +142,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: getaddrinfo.c,v 1.82 2006/03/25 12:09:40 rpaulo Exp $	*/
 /*	$KAME: getaddrinfo.c,v 1.29 2000/08/31 17:26:57 itojun Exp $	*/
 
@@ -1430,7 +1432,4 @@ ip6_str2scopeid(char *scope, struct sockaddr_in6 *sin6, u_int32_t *scopeid)
 	lscopeid = strtoul(scope, &ep, 10);
 	*scopeid = (u_int32_t)(lscopeid & 0xffffffffUL);
 	if (errno == 0 && ep && *ep == '\0' && *scope
-"""
-
-
 ```

@@ -273,7 +273,7 @@ By following this structured approach, combining code analysis with conceptual k
 
 总而言之，`guminterceptor-arm.c` 是 Frida 在 ARM 架构上实现动态 instrumentation 的关键组成部分，它负责生成和管理 Trampoline，处理代码重定位，以及实现进入和离开 Frida 处理逻辑的机制。理解这个文件的功能对于深入理解 Frida 的工作原理和解决相关的调试问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm/guminterceptor-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -281,8 +281,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1271,7 +1273,4 @@ gum_emit_thumb_epilog (GumThumbWriter * tw)
       ARM_REG_R3, ARM_REG_R4, ARM_REG_R5,
       ARM_REG_R6, ARM_REG_R7, ARM_REG_PC);
 }
-
-"""
-
 ```

@@ -144,15 +144,17 @@ var result: MyInteger = Add(10, 5);
 
 `v8/src/torque/server-data.cc` 是 V8 引擎中 Torque 语言工具链的关键组成部分，它通过管理标识符的定义信息，为语言服务器提供了核心功能，从而提升了 Torque 开发的效率和体验。虽然它本身是 C++ 代码，但它服务于 Torque 语言，而 Torque 又用于生成 V8 引擎的 C++ 代码，最终影响 JavaScript 的执行。其提供的 "转到定义" 等功能可以帮助开发者更好地理解和维护 Torque 代码，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/server-data.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/server-data.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ void LanguageServerData::PrepareAllDeclarableSymbols() {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

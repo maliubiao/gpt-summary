@@ -218,7 +218,7 @@ console.log(0 in arrLike); // "拦截器被调用，查询索引 0" true
 
 作为第 6 部分（也是最后一部分），可以归纳出 `v8/src/ic/ic.cc` 的核心功能是 **处理 JavaScript 中对象属性访问的运行时 "miss" 情况，特别是当涉及到索引属性和对象拦截器时**。它包含了在 IC 未能直接处理属性访问时，如何调用拦截器、查询属性是否存在以及进行进一步查找的逻辑。这些运行时函数是 V8 优化属性访问的关键组成部分，确保了 JavaScript 代码的高效执行。此部分的代码着重于处理较为复杂和特殊的情况，例如存在拦截器时的属性访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/ic.cc以.tq结尾，那它是个v8 torque源代码，
@@ -226,8 +226,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 thInterceptor) {
   // TODO(verwaest): This should probably get the holder and receiver as input.
   HandleScope scope(isolate);
@@ -322,8 +324,4 @@ RUNTIME_FUNCTION(Runtime_HasElementWithInterceptor) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

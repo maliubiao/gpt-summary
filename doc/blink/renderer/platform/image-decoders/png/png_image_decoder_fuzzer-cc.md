@@ -139,14 +139,16 @@ Fuzzer 的核心逻辑是**变异**和**执行**。它会基于一些初始的�
 
 `png_image_decoder_fuzzer.cc` 是一个至关重要的工具，用于确保 Chromium 浏览器能够安全可靠地处理 PNG 图片。它通过自动化地生成大量测试用例，帮助开发者发现和修复 PNG 解码器中潜在的 bug 和安全漏洞，从而提升用户的浏览体验和安全性。它与 JavaScript、HTML 和 CSS 的交互都体现在对网页上 PNG 图片的处理上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/png/png_image_decoder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

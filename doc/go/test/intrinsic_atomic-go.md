@@ -151,15 +151,17 @@ func main() {
 
 总结来说，这段 `intrinsic_atomic.go` 代码是 Go 编译器为了保证其在特定架构上能够正确地将 `sync/atomic` 包中的原子操作函数替换为高效的内联指令而设计的测试用例。它通过 `errorcheck` 指令和特定的编译器调试 flag 来断言内联替换的发生。理解这段代码有助于理解 Go 编译器如何优化并发相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/intrinsic_atomic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/intrinsics/debug
 
 //go:build amd64 || arm64 || loong64 || mips || mipsle || mips64 || mips64le || ppc64 || ppc64le || riscv64 || s390x
@@ -181,9 +183,4 @@ func atomics() {
 	atomic.SwapUint32(&x, 1)              // ERROR "intrinsic substitution for SwapUint32"
 	atomic.CompareAndSwapUint32(&x, 1, 2) // ERROR "intrinsic substitution for CompareAndSwapUint32"
 }
-
-"""
-
-
-
 ```

@@ -167,14 +167,16 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 `layout_block.cc` 文件中的 `LayoutBlock` 类是 Blink 渲染引擎中一个至关重要的组件，它负责表示和管理块级布局对象，并与 CSS 样式紧密相关。理解其功能有助于深入理解浏览器如何将 HTML、CSS 和 JavaScript 代码转化为用户可见的网页。开发者虽然不直接操作 `LayoutBlock` 对象，但他们编写的代码会直接影响这些对象的创建、属性和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_block.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -978,7 +980,4 @@ void LayoutBlock::RecalcVisualOverflow() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

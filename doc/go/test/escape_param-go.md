@@ -155,15 +155,17 @@ go/test/escape_param.go:36:6: moved to heap: i$
 
 这段测试代码通过各种场景，帮助 Go 语言的开发者和编译器维护者理解和验证逃逸分析的正确性和有效性，并帮助开发者避免常见的导致不必要堆分配的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_param.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -605,9 +607,4 @@ func param14a(x [4]*int) interface{} { // ERROR "leaking param: x$"
 func param14b(x *int) interface{} { // ERROR "leaking param: x to result ~r0 level=0"
 	return x
 }
-
-"""
-
-
-
 ```

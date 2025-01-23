@@ -86,7 +86,7 @@ executable('my_tool', 'main.cpp', dependencies: some_dep)
 
 `interpreter.py` 文件的第一部分主要负责 **Meson 构建系统的核心解释功能**。它初始化了解释器，加载和解析 `meson.build` 文件，处理项目级的配置和信息，并为后续构建目标的定义和依赖管理奠定基础。它通过解释 `meson.build` 文件中的声明性指令，将用户的构建意图转化为 Meson 内部的构建表示，是 Frida 构建流程的入口和核心驱动力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,8 +95,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -806,8 +808,5 @@ class Interpreter(InterpreterBase, HoldableObject):
         srcdir = Path(self.environment.source_dir)
         # convert variables which refer to an -uninstalled.pc style datadir
         for k, v in variables.items():
-            if 
-"""
-
-
+            if
 ```

@@ -136,14 +136,16 @@ function getVideoDimensions(videoId) {
 
 `EmptyWebMediaPlayer` 是 Blink 渲染引擎中一个关键的测试工具。它提供了一个轻量级、不依赖于实际媒体资源的虚拟媒体播放器，用于测试与媒体播放相关的 JavaScript 代码、HTML 结构和 CSS 样式，以及验证其他组件与媒体播放器的交互逻辑。它通过提供可预测的空行为，帮助开发者识别和修复代码中与媒体播放相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/empty_web_media_player.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ std::optional<media::VideoFrame::ID> EmptyWebMediaPlayer::CurrentFrameId()
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -145,13 +145,15 @@ WebAssembly.instantiateStreaming(fetch('my_module.wasm'))
 
 在这个 JavaScript 示例中，`WebAssembly.compile()` 和 `WebAssembly.instantiateStreaming()` 的底层实现会调用这段 C++ 代码来完成 WebAssembly 模块的编译和实例化过程。`CompilationStateImpl` 负责管理编译的状态，确保编译的顺利进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- (cached_native_module_) {
+### 源代码
+```
+(cached_native_module_) {
       job->native_module_ = cached_native_module_;
     }
     // Then finalize and publish the generated module.
@@ -1378,8 +1380,4 @@ WasmCode* CompileImportWrapperForTest(Isolate* isolate,
 #undef TRACE_COMPILE
 #undef TRACE_STREAMING
 #undef TRACE_LAZY
-
-"""
-
-
 ```

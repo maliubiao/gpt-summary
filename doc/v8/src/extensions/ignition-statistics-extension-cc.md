@@ -134,15 +134,17 @@ for (const bytecodeName in dispatchCounters) {
 
 `v8/src/extensions/ignition-statistics-extension.cc` 的主要功能是提供一种机制，让 JavaScript 代码能够访问 V8 内部 Ignition 解释器的字节码调度统计信息。这对于深入了解 JavaScript 代码的执行行为和进行底层的性能分析非常有用。虽然用户直接使用这个扩展时不易出错，但理解返回的统计信息的含义需要一定的 V8 内部知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/ignition-statistics-extension.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/extensions/ignition-statistics-extension.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ void IgnitionStatisticsExtension::GetIgnitionDispatchCounters(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

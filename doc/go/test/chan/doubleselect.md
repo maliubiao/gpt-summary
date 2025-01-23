@@ -149,15 +149,17 @@ go run doubleselect.go -n 50000
 
 总而言之，这段代码是一个精心设计的压力测试，用于检测 Go 语言 `select` 语句在并发场景下的正确性。它通过模拟多个 channel 同时准备好发送的场景，来验证 `select` 是否会错误地执行多个 `case`。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/doubleselect.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -245,9 +247,4 @@ func main() {
 	// end up panicking with: "throw: bad g->status in ready".
 	recver(cmux)
 }
-
-"""
-
-
-
 ```

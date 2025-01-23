@@ -160,7 +160,7 @@ This systematic approach ensures a comprehensive and informative explanation.
 
 `frida/subprojects/frida-node/releng/meson/test cases/common/161 not-found dependency/testlib.c` 是一个用于测试 Frida 功能的简单共享库。它的主要功能是根据输入字符串返回预定义的字符串。虽然代码本身很简单，但它在逆向工程、底层知识和调试方面具有重要的意义，特别是在动态分析和处理依赖项问题时。理解这样的测试用例有助于开发者和逆向工程师更好地理解 Frida 的工作原理以及如何诊断相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/161 not-found dependency/testlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,9 +168,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

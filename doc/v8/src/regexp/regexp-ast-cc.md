@@ -227,15 +227,17 @@ bool RegExpAlternative::IsAnchoredAtStart() {
 
 理解 `v8/src/regexp/regexp-ast.cc` 中的 AST 结构有助于开发者更深入地理解正则表达式的内部工作原理，从而避免一些常见的编程错误，并能写出更高效、更准确的正则表达式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-ast.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-ast.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -681,7 +683,4 @@ RegExpClassSetExpression* RegExpClassSetExpression::Empty(Zone* zone,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

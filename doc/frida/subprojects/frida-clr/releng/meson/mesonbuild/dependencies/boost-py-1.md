@@ -113,7 +113,7 @@ Boost库在逆向工程中非常有用，Frida作为一款动态插桩工具，�
 
 综合以上分析，这个 `boost.py` 文件的核心功能是**作为 Frida CLR 子项目构建过程中的一个配置文件，用于声明和配置需要链接的 Boost C++ 库及其链接方式和编译选项。** 它确保了 Frida CLR 组件能够正确地链接所需的 Boost 库，从而利用 Boost 提供的各种功能来实现其动态插桩的目标。这个文件是 Frida 构建系统的重要组成部分，直接影响着最终生成的可执行文件或库的依赖关系和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/dependencies/boost.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,9 +122,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        name='boost_exception',
+### 源代码
+```python
+name='boost_exception',
         shared=[],
         static=[],
         single=[],
@@ -379,8 +381,4 @@ Prompt:
 
 #                                           #
 ####       ---- END GENERATED ----       ####
-
-"""
-
-
 ```

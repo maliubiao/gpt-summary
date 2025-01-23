@@ -200,7 +200,7 @@ func someFunction(table projLookupTable) {
 
 总结来说，这段测试代码的核心在于验证 Edwards25519 算法中用于加速标量乘法的查找表的正确性。它通过选择预计算的值并进行椭圆曲线点运算，来检查查找表是否按预期工作。这些查找表是底层优化的关键部分，使用者通常不需要直接操作它们。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/tables_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -329,9 +331,4 @@ func TestNafLookupTable8(t *testing.T) {
 		t.Errorf("Consistency check on nafLookupTable8 failed")
 	}
 }
-
-"""
-
-
-
 ```

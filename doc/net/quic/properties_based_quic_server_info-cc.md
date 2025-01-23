@@ -148,15 +148,17 @@ Let's break down the thought process for analyzing this C++ Chromium source code
 
 总而言之，`properties_based_quic_server_info.cc` 在 Chromium 的 QUIC 实现中扮演着关键的角色，它负责将重要的 QUIC 服务器信息持久化存储，以便在后续连接中复用，从而提高连接速度和效率。它的正确运作对于流畅的网络体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/properties_based_quic_server_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ void PropertiesBasedQuicServerInfo::Persist() {
 }
 
 }  // namespace net
-
-"""
-
 ```

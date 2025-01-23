@@ -121,11 +121,13 @@ console.log("主线程代码");
 
 `v8/src/builtins/builtins-microtask-queue-gen.cc` 文件是 V8 引擎中实现 JavaScript 微任务机制的关键部分。它提供了底层的 C++ 函数，用于管理微任务队列、添加微任务和执行微任务，并且与 Promise 的实现紧密相关。JavaScript 开发者通过 `queueMicrotask` API 和 Promise 等语法来间接使用这里实现的底层功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-microtask-queue-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -757,7 +759,4 @@ TF_BUILTIN(RunMicrotasks, MicrotaskQueueBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

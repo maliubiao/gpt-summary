@@ -155,14 +155,16 @@ export function myFunction() {
 
 总之，`worker_module_tree_client.cc` 是 Blink 引擎中负责处理 Web Worker 中 JavaScript 模块加载结果的关键组件。它确保了当模块加载成功时，worker 可以继续执行，而当加载失败时，能够正确地报告错误并终止 worker。它直接关联到 JavaScript 模块的使用，并通过 HTML 中声明的 worker 类型来触发其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/worker_module_tree_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ void WorkerModuleTreeClient::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

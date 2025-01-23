@@ -336,7 +336,7 @@ sys.stdin.read()
 
 通过这些 Frida Hook 示例，你可以观察到 Android Framework 或 NDK 调用这些 Bionic 函数时的具体参数和返回值，从而更好地理解它们的工作方式和调用流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/net_if_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -347,8 +347,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -422,7 +424,4 @@ TEST(net_if, if_freenameindex_nullptr) {
   if_freenameindex(nullptr);
 #endif
 }
-
-"""
-
 ```

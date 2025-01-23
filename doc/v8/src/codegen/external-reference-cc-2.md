@@ -181,7 +181,7 @@ ta[0] = 20; // 错误：可能与线程 1 的操作冲突
 
 `v8/src/codegen/external-reference.cc` 是 V8 代码生成器的关键组成部分，它定义了一种安全且结构化的方式来引用 V8 运行时或其他外部 C++ 函数。这不仅包括简单的函数调用，还涵盖了原子操作、线程安全支持、上下文管理以及与 JavaScript 特定功能（如 `FinalizationRegistry`）的集成。该文件通过 `FUNCTION_REFERENCE` 宏建立起生成的机器码和 V8 内部实现之间的桥梁，对于 V8 的正常运行和 JavaScript 功能的实现至关重要。 理解这个文件有助于深入了解 V8 的代码生成机制以及 JavaScript 底层的实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference.cc以.tq结尾，那它是个v8 torque源代码，
@@ -189,9 +189,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                            int old_value_high,
+### 源代码
+```cpp
+int old_value_high,
                                              int new_value_low,
                                              int new_value_high) {
   uint64_t old_value = static_cast<uint64_t>(old_value_high) << 32 |
@@ -409,8 +411,4 @@ void abort_with_reason(int reason) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

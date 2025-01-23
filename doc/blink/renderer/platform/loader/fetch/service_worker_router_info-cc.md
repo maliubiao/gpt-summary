@@ -122,14 +122,16 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`service_worker_router_info.cc` 是 Blink 引擎中一个重要的幕后组件，它负责记录 Service Worker 如何处理网络请求。虽然开发者不会直接操作这个文件，但它记录的信息对于理解和调试 Service Worker 的行为至关重要，尤其是在处理复杂的路由逻辑和缓存策略时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/service_worker_router_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ ServiceWorkerRouterInfo::ToMojo() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

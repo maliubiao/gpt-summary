@@ -102,7 +102,7 @@ Strategizing complete. I will now generate the response based on these steps.
 
 作为 `quic_connection_test.cc` 的第 23 部分，本部分主要集中在测试 `QuicConnection` 类在处理服务端首选地址和连接迁移场景下的行为，包括路径验证、连接ID管理、以及与多端口连接相关的逻辑。 此外，还包括对 ECN 标记处理的测试。 这部分测试确保了 QUIC 连接在网络拓扑变化和服务端地址迁移时，能够保持连接的可靠性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第23部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nnection_.SetDefaultEncryptionLevel(ENCRYPTION_FORWARD_SECURE);
   EXPECT_CALL(visitor_, GetHandshakeState())
       .WillRepeatedly(Return(HANDSHAKE_CONFIRMED));
@@ -801,7 +803,4 @@ TEST_P(QuicConnectionTest, EcnMarksUndecryptableCoalescedPacket) {
         *constructed_packet, buffer, kMaxOutgoingPacketSize);
     QUICHE_DCHECK_LE(coalesced_size + encrypted_length, kMaxOutgoingPacketSize);
     memcpy(coalesced_buffer + coalesce
-"""
-
-
 ```

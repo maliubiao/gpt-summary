@@ -126,7 +126,7 @@ A user would typically encounter this file when involved in the development, tes
 
 In summary, while the `__init__.py` file itself is empty and has a simple function in this case, its existence is crucial for organizing and structuring the test cases within the Frida project. The tests within this package will directly exercise Frida's core reverse engineering capabilities and often interact with low-level system components. Understanding the purpose of `__init__.py` is essential for navigating and understanding Python projects, especially complex ones like Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python/1 basic/gluon/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,9 +134,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

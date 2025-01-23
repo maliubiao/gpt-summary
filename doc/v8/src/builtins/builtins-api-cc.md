@@ -157,15 +157,17 @@ Let's consider the `GetCompatibleReceiver` function with a simplified scenario:
 
 `v8/src/builtins/builtins-api.cc` is a fundamental component of V8 that enables seamless interaction between JavaScript and native C++ code. It handles the intricacies of function calls, constructor invocations, receiver validation, and access control, ensuring a robust and secure bridge between the two worlds. While the example is in C++, understanding its role helps in comprehending how native modules and API interactions function within JavaScript environments powered by V8.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-api.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -439,7 +441,4 @@ BUILTIN(HandleApiCallAsConstructorDelegate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -194,7 +194,7 @@ func main() {
 
 这段 `proc_runtime_test.go` 中的代码主要用于测试 Go 运行时工作窃取调度器中用于生成伪随机窃取顺序的 `randomOrder` 类型的正确性。它通过模拟不同数量的处理器，并检查生成的窃取顺序是否符合预期，来确保调度器的效率和公平性。 普通 Go 开发者不需要直接使用这段代码，但理解其背后的原理有助于理解 Go 语言并发模型的优势。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/proc_runtime_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -202,8 +202,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -254,9 +256,4 @@ func RunStealOrderTest() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

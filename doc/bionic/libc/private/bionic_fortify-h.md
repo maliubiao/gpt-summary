@@ -283,7 +283,7 @@ sys.stdin.read()
 
 通过 Frida hook 这些函数，你可以动态地观察 Android 系统或应用在运行时是否触发了这些安全增强机制，以及触发的原因，从而帮助你调试和理解代码行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_fortify.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -381,7 +383,4 @@ static inline void __check_buffer_access(const char* fn, const char* action,
     __fortify_fatal("%s: prevented %zu-byte %s %zu-byte buffer", fn, claim, action, actual);
   }
 }
-
-"""
-
 ```

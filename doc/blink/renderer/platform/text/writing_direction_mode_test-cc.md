@@ -143,14 +143,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总之，`writing_direction_mode_test.cc` 这个文件通过一系列的单元测试，确保了 Chromium Blink 引擎能够正确地处理各种文本书写模式和方向，这对于开发者构建国际化的、支持多种语言的网页至关重要。  理解这个测试文件及其背后的逻辑，可以帮助开发者更好地理解 CSS 的 `writing-mode` 和 `direction` 属性，并避免在使用中出现常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/writing_direction_mode_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ TEST(WritingDirectionModeTest, IsFlippedXY) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

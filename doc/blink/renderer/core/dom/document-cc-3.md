@@ -112,7 +112,7 @@ By following these steps, I could systematically analyze the code snippet and ge
 
 这部分 `document.cc` 代码专注于**文档样式和布局的更新管理**。它负责决定何时、如何以及为什么需要重新计算样式和更新布局树，是 Blink 渲染引擎中至关重要的组成部分，直接关系到网页的正确呈现和性能表现。它与 JavaScript、HTML 和 CSS 紧密相连，响应用户操作、脚本操作和浏览器事件，确保网页内容能够以最新的样式和布局展示给用户。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -120,10 +120,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共11部分，请归纳一下它的功能
+```
 
-"""
-
-    }
+### 源代码
+```cpp
+}
     // If we insert <object> elements into display:none subtrees, we might not
     // need a layout tree update, but need to make sure they are not blocking
     // the load event.
@@ -1041,7 +1042,4 @@ void Document::RemoveAXContext(AXContext* context) {
 void Document::ClearAXObjectCache() {
   DCHECK(IsMainThread());
   DCHECK_EQ(&A
-"""
-
-
 ```

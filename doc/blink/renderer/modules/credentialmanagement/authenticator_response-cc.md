@@ -178,15 +178,17 @@ By following this thought process, breaking down the code, and connecting it to 
 * 检查调用 `navigator.credentials.get()` 或 `navigator.credentials.create()` 的 JavaScript 代码，确保传递的参数正确，并且对返回的 `AuthenticatorResponse` 对象进行了正确的处理。
 * 使用浏览器的开发者工具 (例如 Chrome DevTools) 的 "Application" 面板或 "Security" 面板，可以查看与 Web Authentication 相关的请求和响应信息，有助于理解数据是如何在浏览器和网站之间流动的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/authenticator_response.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ void AuthenticatorResponse::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

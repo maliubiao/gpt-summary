@@ -127,15 +127,17 @@ By following this thought process, iteratively refining understanding, and focus
 
 `reporting_garbage_collector.cc` 是 Chromium 网络栈中 Reporting API 的重要组成部分，负责清理过期和失败的报告，维护缓存的健康状态。虽然用户不会直接与这个 C++ 文件交互，但它的行为直接影响着 Reporting API 的可靠性和资源利用率。开发者在调试 Reporting API 相关问题时，理解垃圾回收机制的工作原理有助于定位问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_garbage_collector.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ std::unique_ptr<ReportingGarbageCollector> ReportingGarbageCollector::Create(
 ReportingGarbageCollector::~ReportingGarbageCollector() = default;
 
 }  // namespace net
-
-"""
-
 ```

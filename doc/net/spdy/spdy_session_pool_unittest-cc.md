@@ -123,7 +123,7 @@ Strategizing complete. Proceeding with response generation.
 
 这部分代码建立了对 `SpdySessionPool` 基本功能和 IP pooling 机制正确性的信心。后续的部分很可能会测试更复杂的场景，例如会话的逐出、连接错误处理、性能优化等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_pool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -965,7 +967,4 @@ TEST_F(SpdySessionPoolTest, IPPoolingNetLog) {
   // Open SpdySession to the first host.
   base::WeakPtr<SpdySession> session0 = CreateSpdySession(
       http_session_.get(), test_hosts[0].key, NetLogWithS
-"""
-
-
 ```

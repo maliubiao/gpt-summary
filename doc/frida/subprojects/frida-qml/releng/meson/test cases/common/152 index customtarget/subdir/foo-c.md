@@ -142,7 +142,7 @@ Interceptor.attach(Module.findExportByName(null, "intToString"), {
 
 **因此，这个文件主要是 Frida 开发和测试过程的一部分，用于验证 Frida 的功能是否按预期工作。 普通用户通常不会直接接触到这些测试用例的源代码。** 开发者可能会通过查看这些测试用例来理解 Frida 的某些特定功能是如何被测试的，或者在贡献代码时参考这些测试用例的编写方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/152 index customtarget/subdir/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -174,7 +176,4 @@ int main(void) {
     stringify(10, buf);
     return 0;
 }
-
-"""
-
 ```

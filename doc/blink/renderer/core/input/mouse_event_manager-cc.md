@@ -195,7 +195,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 `MouseEventManager` 的主要功能是**接收、处理和分发底层产生的鼠标事件，将其转换为 Blink 引擎可以使用的 `MouseEvent` 或 `PointerEvent` 对象，并最终传递给相应的 DOM 元素进行处理。**  它负责维护鼠标状态、处理点击和拖拽等交互，并与 JavaScript、HTML 和 CSS 的事件模型紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/mouse_event_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1003,8 +1005,4 @@ bool MouseEventManager::HandleDragDropIfPossible(
       WebInputEvent::Type::kMouseMove, gesture_event,
       WebPointerProperties::Button::kLeft, 1,
       modifiers | WebInputEvent::Modifiers::kLeftButtonDown |
-      
-"""
-
-
 ```

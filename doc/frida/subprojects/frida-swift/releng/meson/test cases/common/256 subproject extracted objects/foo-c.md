@@ -150,7 +150,7 @@ extern "C" int cppfunc() {
 
 通过以上步骤，开发者可以利用 Frida 提供的动态插桩能力，从高层次的函数调用追踪到具体的源代码实现，从而理解程序的行为和内部机制。这个 `foo.c` 文件作为 Frida 的测试用例，其目的正是为了验证 Frida 在处理这类跨语言调用和动态链接场景下的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/256 subproject extracted objects/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -171,7 +173,4 @@ int DLL_IMPORT cppfunc(void);
 int otherfunc(void) {
     return cppfunc() != 42;
 }
-
-"""
-
 ```

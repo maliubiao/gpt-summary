@@ -704,7 +704,7 @@ void DeclarationScope::HoistSloppyBlockFunctions(AstNodeFactory* factory) {
       bool was_added;
       Variable* var = DeclareVariableName(name, VariableMode::kVar, &was_added);
       if (sloppy_block_function->init() == Token::kAssign
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/scopes.cc以.tq结尾，那它是个v8 torque源代码，
@@ -712,8 +712,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1582,7 +1584,4 @@ Scope* Scope::FinalizeBlockScope() {
     Scope* scope = inner_scope_;
     scope->outer_scope_ = outer_scope();
     whi
-"""
-
-
 ```

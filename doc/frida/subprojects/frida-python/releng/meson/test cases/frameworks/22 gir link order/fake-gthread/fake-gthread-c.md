@@ -127,7 +127,7 @@ By following this detailed thought process, considering the context, and iterati
 
 总而言之，`fake-gthread.c` 虽然代码简单，但在 Frida 的测试体系中扮演着重要的角色，用于验证 Frida 在处理共享库和函数替换方面的能力，特别是在涉及到类似 `gthread` 这样的线程抽象库时。它也是逆向工程师在模拟和隔离目标程序行为时常用的一种技术手段的体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/22 gir link order/fake-gthread/fake-gthread.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,15 +135,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "fake-gthread.h"
 
 int fake_gthread_fake_function (void)
 {
   return 7;
 }
-
-"""
-
 ```

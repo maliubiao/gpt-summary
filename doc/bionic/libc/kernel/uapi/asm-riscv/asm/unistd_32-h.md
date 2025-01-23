@@ -394,7 +394,7 @@ if (Process.arch === 'riscv32') {
 
 总结来说，无论是通过 Android Framework 的高层 API 还是 NDK 的 C/C++ 代码，涉及到文件、网络、进程管理等底层操作时，最终都会通过 Bionic C 库的封装，使用这里定义的系统调用号来请求内核服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/unistd_32.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -405,8 +405,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -725,7 +727,4 @@ Prompt:
 #define __NR_lsm_list_modules 461
 #define __NR_mseal 462
 #endif
-
-"""
-
 ```

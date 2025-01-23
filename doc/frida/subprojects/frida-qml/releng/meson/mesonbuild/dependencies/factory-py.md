@@ -176,7 +176,7 @@ By following this detailed thought process, breaking down the code into smaller 
 
 通过分析这些信息，可以定位到 `DependencyFactory` 在哪个环节查找失败，从而进一步排查问题，例如是依赖项名称错误、查找路径配置不当，还是系统中确实缺少该依赖项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/factory.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -332,7 +334,4 @@ def factory_methods(methods: T.Set[DependencyMethods]) -> T.Callable[['FactoryFu
         return wrapped
 
     return inner
-
-"""
-
 ```

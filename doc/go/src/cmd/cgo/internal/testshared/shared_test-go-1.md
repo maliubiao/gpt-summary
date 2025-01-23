@@ -84,7 +84,7 @@ This systematic approach, starting from understanding the context, analyzing ind
 
 总而言之，这部分 `shared_test.go` 代码主要关注在使用 `-linkshared` 构建模式时，Go 语言在各种复杂场景下的正确性和稳定性。它涵盖了链接器行为、运行时类型系统、内存管理、代码生成、包依赖处理等多个方面，并且包含了一些针对特定 bug 的回归测试。这些测试用例共同确保了 Go 语言在使用共享库功能时的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testshared/shared_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -93,9 +93,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- rather than fetching it from the shared library. The
+### 源代码
+```go
+rather than fetching it from the shared library. The
 // link still succeeds and the executable still runs though.
 func TestImplicitInclusion(t *testing.T) {
 	globalSkip(t)
@@ -205,10 +207,4 @@ func TestStd(t *testing.T) {
 	runWithEnv(t, "testing issue #58966", []string{"GOROOT=" + oldGOROOT},
 		filepath.Join(oldGOROOT, "bin", "go"), "run", "-linkshared", "-pkgdir="+tmpDir, "./issue58966/main.go")
 }
-
-"""
-
-
-
-
 ```

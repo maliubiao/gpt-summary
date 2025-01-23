@@ -98,11 +98,13 @@ test(5);
 
 `test-concurrent-shared-function-info.cc` 这个测试文件的目的是确保 V8 引擎在并发执行 JavaScript 代码并进行优化的同时，能够正确处理对函数元数据 (`SharedFunctionInfo`) 的修改，特别是与调试相关的状态变化。这对于保证 V8 引擎在复杂并发场景下的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-concurrent-shared-function-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ TEST(TestConcurrentSharedFunctionInfo) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

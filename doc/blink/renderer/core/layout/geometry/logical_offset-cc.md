@@ -138,14 +138,16 @@ By following this thought process, we can systematically analyze the code snippe
 
 总而言之，`LogicalOffset` 类是 Blink 渲染引擎处理布局计算中偏移量的重要组成部分，它抽象了物理像素偏移的概念，使得布局计算能够更好地适应不同的书写模式，为实现国际化的 Web 页面提供了基础。理解其功能有助于开发者更好地理解浏览器如何渲染网页，并避免一些常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/logical_offset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ std::ostream& operator<<(std::ostream& os, const LogicalOffset& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

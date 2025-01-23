@@ -87,7 +87,7 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`frida/releng/meson/mesonbuild/cargo/cfg.py` 是 Frida 构建系统中一个关键的组件，它负责理解 Rust 项目的编译配置，确保 Frida 能够正确地构建和与目标 Rust 进程进行交互。它的功能与逆向工程息息相关，因为 `cfg()` 表达式揭示了目标程序在不同环境下的编译状态和特性。理解这个文件的功能有助于理解 Frida 如何处理 Rust 代码，以及如何利用 `cfg()` 信息进行更深入的逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/cargo/cfg.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,8 +95,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -371,7 +373,4 @@ def _(ir: All, build: builder.Builder) -> mparser.BaseNode:
     for a in args:
         cur = build.and_(ir_to_meson(a, build), cur)
     return cur
-
-"""
-
 ```

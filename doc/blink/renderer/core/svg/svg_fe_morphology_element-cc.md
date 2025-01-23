@@ -204,15 +204,17 @@ By following these steps, focusing on the code structure, its purpose, and its i
 
 总而言之，`svg_fe_morphology_element.cc` 文件是 Blink 渲染引擎中实现 SVG 形态学滤镜功能的核心 C++ 代码，它负责解析 HTML 标签，管理属性，并与底层的滤镜效果对象交互，最终影响页面的渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_morphology_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
  *
@@ -360,7 +362,4 @@ void SVGFEMorphologyElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

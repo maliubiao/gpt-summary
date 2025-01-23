@@ -219,15 +219,17 @@ By following these steps, we can systematically analyze the C++ code and provide
 
 总而言之，`host_resolver_internal_result.cc` 文件是 Chromium 网络栈中一个核心的数据结构定义文件，它为主机名解析的结果提供了一种结构化的表示方式，方便内部模块之间传递和处理 DNS 信息。 虽然 JavaScript 代码不会直接操作这些类，但它们是浏览器处理网络请求的基础，并且与 JavaScript 的网络 API 功能紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_internal_result.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -865,7 +867,4 @@ HostResolverInternalAliasResult::HostResolverInternalAliasResult(
       alias_target_(MaybeCanonicalizeName(std::move(alias_target))) {}
 
 }  // namespace net
-
-"""
-
 ```

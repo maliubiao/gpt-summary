@@ -195,7 +195,7 @@ document = ... (加载中的 Document 对象)
 
 总而言之，`preload_helper.cc` 的这部分代码是 Blink 引擎中处理 HTTP `Link` 头部，实现资源预加载和预获取的关键组成部分，它直接影响着网页的加载性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/preload_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ResourceLoaderOptions options(
       document.GetExecutionContext()->GetCurrentWorld());
   options.initiator_info.name = fetch_initiator_type_names::kLink;
@@ -463,8 +465,4 @@ Resource* PreloadHelper::StartPreload(ResourceType type,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

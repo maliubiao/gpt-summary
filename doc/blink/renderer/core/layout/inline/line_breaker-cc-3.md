@@ -125,15 +125,17 @@ Applying these steps to the provided code snippet leads to a summary that covers
 
 这部分代码在 Blink 渲染引擎的行布局过程中扮演着至关重要的角色，它负责处理行尾的各种特殊情况，确保文本能够按照 CSS 规则正确地断行和排列。它涉及到对空白字符的处理、强制换行的实现、内联级别块元素的布局以及复杂排版特性如 Ruby 注释的支持。理解这部分代码的功能有助于理解浏览器如何将 HTML、CSS 转化为最终的视觉呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_breaker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e have a trailing collapsible space. Remove it.
   InlineItemResult* item_result = &trailing_collapsible_space_->ItemResult();
   bool position_was_saturated = position_ == LayoutUnit::Max();
@@ -905,7 +907,4 @@ bool LineBreaker::HandleRuby(LineInfo* line_info, LayoutUnit retry_size) {
   AnnotationOverhang overhang =
       GetOverhang(ruby_size, base_line_info, annotation_line_list);
   if (!CanApp
-"""
-
-
 ```

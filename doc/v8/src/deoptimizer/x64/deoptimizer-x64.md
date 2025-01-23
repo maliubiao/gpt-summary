@@ -97,11 +97,13 @@ add("hello", "world");
 
 `v8/src/deoptimizer/x64/deoptimizer-x64.cc` 是 V8 引擎在 x64 架构上实现反优化的关键组成部分。它负责在运行时，当优化后的代码无法继续执行时，将程序的执行流程安全地回退到未优化的状态，并保证程序能够正确地继续运行。它涉及到修改代码、保存和恢复寄存器状态、以及管理调用栈信息等底层操作，是 V8 引擎保证 JavaScript 代码健壮性和性能的重要机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/x64/deoptimizer-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
 ```

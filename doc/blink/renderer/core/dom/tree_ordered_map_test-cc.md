@@ -156,15 +156,17 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`tree_ordered_map_test.cc` 是一个测试文件，用于验证 Blink 引擎中用于管理和查找 DOM 树中特定命名元素的 `TreeOrderedMap` 类的功能，这个类与 HTML 的 `<slot>` 元素和 JavaScript 的 Shadow DOM 操作密切相关。 它的存在是为了确保 Blink 引擎能够正确高效地处理 Web Components 和 Shadow DOM 的相关逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/tree_ordered_map_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ TEST_F(TreeOrderedMapTest, RemovedDuplicateKeys) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

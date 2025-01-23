@@ -59,7 +59,7 @@ To summarize the functionality, I need to:
 
 **总结来说，这部分代码的功能是实现 Go 语言代码的格式化输出，它定义了如何遍历 AST 节点、处理注释、进行基本的输出清理以及通过配置选项来控制最终的格式。** 它与第一部分代码共同完成了从 AST 到格式化源代码的转换过程。第一部分主要负责 `printer` 结构体的定义、状态管理以及一些辅助方法，而第二部分则专注于实际的节点打印和输出处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/printer/printer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -68,8 +68,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ec:
 		return n.Comment
 	case *ast.TypeSpec:
@@ -429,10 +431,4 @@ func (cfg *Config) Fprint(output io.Writer, fset *token.FileSet, node any) error
 func Fprint(output io.Writer, fset *token.FileSet, node any) error {
 	return (&Config{Tabwidth: 8}).Fprint(output, fset, node)
 }
-
-"""
-
-
-
-
 ```

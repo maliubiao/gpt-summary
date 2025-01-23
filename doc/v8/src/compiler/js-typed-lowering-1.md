@@ -152,12 +152,14 @@ const num = parseInt("123", 10); // 将字符串转换为整数
 
 `v8/src/compiler/js-typed-lowering.cc` 的第二部分延续了其核心职责，即利用类型信息将 JavaScript 代码降低到更底层的表示，以便进行更有效的机器代码生成和执行。它覆盖了 JavaScript 语言的多种关键特性，并通过针对性的优化，显著提升了 JavaScript 代码的运行效率。这部分代码与 JavaScript 的关系非常紧密，它的工作直接决定了 JavaScript 代码最终的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-typed-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 text);
   }
 
@@ -1423,8 +1425,4 @@ SimplifiedOperatorBuilder* JSTypedLowering::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

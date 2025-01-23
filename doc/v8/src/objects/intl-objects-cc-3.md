@@ -189,7 +189,7 @@ for (const segment of segments) {
 
 `v8/src/objects/intl-objects.cc` 是 V8 引擎中实现 ECMAScript 国际化 API 核心功能的关键 C++ 文件。它处理本地化协商、文本规范化、时区管理、数字和日期/时间格式化等多种国际化相关的任务，为 JavaScript 开发者提供了强大的跨语言和文化支持。 虽然您提到以 `.tq` 结尾，但根据您提供的代码内容来看，它实际上是一个标准的 `.cc` 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/intl-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/intl-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CU to do all the string manipulations that the spec
 // peforms.
 //
@@ -881,8 +883,4 @@ int64_t Intl::GetTimeZoneOffsetNanoseconds(Isolate* isolate,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

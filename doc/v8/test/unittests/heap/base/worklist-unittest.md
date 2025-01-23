@@ -135,11 +135,13 @@ globalThis.root = objC;
 
 `worklist-unittest.cc` 测试的 `Worklist` 数据结构是 V8 引擎中一个基础且重要的组件，它为管理待处理的任务或对象提供了一种高效的方式。在 JavaScript 的垃圾回收过程中，`Worklist` 或类似的结构被用来跟踪和处理需要访问的对象，以实现有效的内存管理。这个测试文件确保了 `Worklist` 的各种操作的正确性，这对 V8 引擎的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/base/worklist-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -474,7 +476,4 @@ TEST(WorkListTest, MergeGlobalPool) {
 
 }  // namespace base
 }  // namespace heap
-
-"""
-
 ```

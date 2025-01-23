@@ -162,7 +162,7 @@ By following these steps, we can generate a comprehensive and informative explan
 
 总而言之，这部分 `css_parsing_utils.cc` 文件的核心职责是提供一组用于安全可靠地解析各种 CSS 值的工具函数，它是 Blink 引擎理解和应用 CSS 样式的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kWebkitGradient:
     case CSSValueID::kWebkitCrossFade:
     case CSSValueID::kPaint:
@@ -1071,7 +1073,4 @@ static bool ConsumeColorInterpolationSpace(
       if (ConsumeIdent<CSSValueID::kShorter>(stream)) {
         read_hue = Color::HueInterpolationMethod::kShorter;
       } else if (ConsumeIdent<CSSValueID::kLonger>
-"""
-
-
 ```

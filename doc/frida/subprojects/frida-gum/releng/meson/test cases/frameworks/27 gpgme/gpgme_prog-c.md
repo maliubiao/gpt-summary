@@ -158,7 +158,7 @@ Initially, I might focus too much on the simplicity of the code itself. However,
 
 因此，`gpgme_prog.c` 在 Frida 的上下文中，更多的是作为一个测试和验证 Frida 功能的工具，而不是一个需要被逆向分析的复杂程序。它简洁明了地展示了如何使用 GPGME 库，方便开发者验证 Frida 是否能够正确地与这类使用了外部库的程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/27 gpgme/gpgme_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <gpgme.h>
 
 int
@@ -176,7 +178,4 @@ main()
     printf("gpgme-v%s", gpgme_check_version(NULL));
     return 0;
 }
-
-"""
-
 ```

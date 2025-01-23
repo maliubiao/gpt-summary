@@ -82,7 +82,7 @@ args = ['-I/path/a', '-DDEBUG', '-I/path/b', '-lfoo', '-L/path/lib', '-I/path/a'
 
 `CLikeCompilerArgs` 类的主要功能是**规范化和优化传递给 C-like 编译器的命令行参数**，包括去除重复参数、处理静态库的循环依赖、以及移除不必要的默认包含路径。这有助于提高构建过程的健壮性和效率，并减少由于参数配置错误导致的编译或链接失败的可能性。该类是 Meson 构建系统在处理 C 和 C++ 项目时的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -91,8 +91,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -820,8 +822,4 @@ class CLikeCompiler(Compiler):
         main = '''
         int main(void) {{
           return {func} ();
-    
-"""
-
-
 ```

@@ -92,12 +92,14 @@ b[3] = value; // Store to a specific lane
 
 In essence, this C++ code is a critical part of the V8 compilation pipeline, responsible for translating the abstract operations of JavaScript into the concrete instructions that the underlying hardware can execute efficiently. It handles a wide range of common JavaScript operations involving memory, integers, and bit manipulation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 4InsertI128, 1, &dst, 3, inputs);
 }
 #endif  // V8_TARGET_ARCH_X64
@@ -1842,8 +1844,4 @@ bool InstructionSelectorT<TurbofanAdapter>::ZeroExtendsWord32ToWord64NoPhis(
     case IrOpcode::kWord32Rol:
     case IrOpcode::kWord32Ror:
     case IrOpcode::kWord32Equal:
-  
-"""
-
-
 ```

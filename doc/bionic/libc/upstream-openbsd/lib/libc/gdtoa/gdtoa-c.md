@@ -283,7 +283,7 @@ Section Headers:
 
 `gdtoa.c` 文件在 Android 系统中扮演着关键的角色，负责将浮点数转换为人类可读的字符串。它是 Bionic C 库的基础组件，被广泛用于各种场景，从简单的打印输出到复杂的系统服务。理解其功能和实现细节有助于深入理解 Android 系统的底层工作原理。 通过 Frida Hook 这样的工具，我们可以动态地观察和调试这个函数的行为，从而更好地理解和排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gdtoa/gdtoa.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /****************************************************************
 
 The author of this software is David M. Gay.
@@ -1126,7 +1128,4 @@ gdtoa
 	return s0;
 	}
 DEF_STRONG(gdtoa);
-
-"""
-
 ```

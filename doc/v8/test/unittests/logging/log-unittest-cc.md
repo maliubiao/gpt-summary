@@ -98,7 +98,7 @@ code-creation,Callback,-2,0x12345678,1,method1
 
 `v8/test/unittests/logging/log-unittest.cc` 的第一部分主要关注于 **基础的日志记录功能测试**。它涵盖了多种基本类型的日志事件，例如代码创建、回调函数、访问器回调等，并验证了在不同场景下日志记录的正确性。  核心是确保 V8 能够记录关键的执行信息，这对于性能分析、调试和理解 V8 的内部运作至关重要。  它还包含了一些针对特定问题的测试用例，例如处理外部字符串资源，以及初步测试了外部日志监听器的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/logging/log-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/logging/log-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -106,8 +106,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2009 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1014,7 +1016,4 @@ void ValidateMapDetailsLogging(v8::Isolate* isolate,
                                ScopedLoggerInitializer* logger) {
   // map-create might have duplicates if a Map address is reused after a gc.
   std::unordered_set<uintpt
-"""
-
-
 ```

@@ -242,15 +242,17 @@ MyData::Deserialize(&state_optional, &data_optional);
 
 理解 `protocol_core.h` 中的这些概念对于开发和维护 V8 的 CRDP 相关功能至关重要。它提供了一个结构化的方法来处理跨进程或跨系统的数据交换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/protocol_core.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/protocol_core.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -669,7 +671,4 @@ bool ConvertProtocolValue(const F& from, T* to) {
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_PROTOCOL_CORE_H_
-
-"""
-
 ```

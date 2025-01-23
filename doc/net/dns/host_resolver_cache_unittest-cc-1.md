@@ -114,7 +114,7 @@ By following this structured approach, I can effectively analyze the C++ unit te
 
 这部分代码着重测试了 `HostResolverCache` 的核心查询功能，涵盖了过期处理、stale 状态、网络匿名化密钥、以及在通配符查找场景下的结果选择策略。这些测试确保了 `HostResolverCache` 能够高效且正确地管理 DNS 解析结果，对于提升 Chromium 的网络性能和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 HostResolverInternalResult::Source::kDns,
                   Optional(tick_clock_.NowTicks() + kTtl),
                   Optional(clock_.Now() + kTtl), kAliasTarget3)));
@@ -826,7 +828,4 @@ TEST_F(HostResolverCacheTest, LookupStalePrefersLeastStaleByGeneration) {
   auto more_stale_result = std::make_unique<HostResolverInternalDataResult>(
       kName, DnsQueryType::AAAA, tick_clock_.NowTicks() + base::Seconds(4),
       clock_.Now() + base::Seconds(4), HostResolverInternalR
-"""
-
-
 ```

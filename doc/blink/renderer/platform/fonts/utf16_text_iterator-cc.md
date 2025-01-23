@@ -146,14 +146,16 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`utf16_text_iterator.cc` 中的 `UTF16TextIterator` 类是 Blink 引擎中处理 UTF-16 编码文本的关键组件，它确保了在遍历和操作文本时能够正确处理代理对，从而保证了对 Unicode 字符的正确理解和表示。 这对于实现 JavaScript 字符串操作、HTML 内容解析和渲染、以及 CSS 样式应用等功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/utf16_text_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2003, 2006, 2008, 2009, 2010, 2011 Apple Inc. All rights
  * reserved.
@@ -218,7 +220,4 @@ bool UTF16TextIterator::ConsumeSurrogatePair(UChar32& character) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

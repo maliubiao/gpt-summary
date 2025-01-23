@@ -363,7 +363,7 @@ TEST_F(DisasmMips64Test, Type0) {
   COMPARE(sllv(a0, a1, a2), "00c52004       sllv    a0, a1, a2");
   COMPARE(sllv(s0, s1, s2), "02518004       sllv    s0, s1, s2");
   COMPARE(sllv(a6, a7, t0), "018b50
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-mips64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-mips64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -371,8 +371,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -995,7 +997,4 @@ TEST_F(DisasmMips64Test, Type1) {
     COMPARE(selnez(a0, a1, a2), "00a62037       selnez    a0, a1, a2");
 
     COMPARE(seleqz(D, f3, f4, f5), "462520d4       seleqz.d
-"""
-
-
 ```

@@ -154,15 +154,17 @@ While these primitive values behave as if they are the same object (especially w
 
 In summary, `v8/src/roots/roots.cc` is a foundational file in V8, responsible for managing and providing access to essential, immutable objects that form the bedrock of the JavaScript language and the V8 engine's internal workings. It ensures consistency and efficiency by centralizing and pre-allocating these core values.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/roots/roots.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/roots/roots.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ void ReadOnlyRoots::InitFromStaticRootsTable(Address cage_base) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

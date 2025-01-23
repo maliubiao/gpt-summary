@@ -128,11 +128,13 @@ processArray([1, 2, 3, 4, 5]);
 
 总而言之，`MaglevCompilationInfo` 是 Maglev 编译器进行 JavaScript 代码优化的基础，它负责收集、存储和管理编译过程中的关键信息，最终影响 JavaScript 代码的执行效率。它本身不直接在 JavaScript 代码中体现，而是 V8 引擎内部用于优化 JavaScript 代码执行的机制的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-compilation-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ MaglevCompilationInfo::DetachCanonicalHandles() {
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

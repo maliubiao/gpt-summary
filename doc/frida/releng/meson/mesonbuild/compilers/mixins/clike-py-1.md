@@ -104,7 +104,7 @@ Here's a plan to address the request:
 
 这部分 `CLikeCompiler` mixin 类的核心功能是提供了一套用于检测 C-like 编译器和目标环境各种特性的工具。这些检测功能对于构建系统（如 Meson）来说至关重要，因为它们允许构建系统根据具体情况生成正确的编译和链接指令，确保项目能够成功构建。在 Frida 的场景下，这些功能帮助 Frida 的构建系统正确地找到并链接到目标进程可能依赖的各种库和 Framework，从而保证 Frida 脚本能够顺利地进行动态插桩。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,9 +113,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    }}'''
+### 源代码
+```python
+}}'''
         return head, main
 
     @staticmethod
@@ -718,8 +720,4 @@ Prompt:
             self.preprocessor.mode = 'PREPROCESSOR'
             self.modes.append(self.preprocessor)
         return self.preprocessor
-
-"""
-
-
 ```

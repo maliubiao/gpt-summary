@@ -177,7 +177,7 @@ JavaScript 代码: `element.classList.replace('old-class', 'new-class');`
 
 这段代码是 Blink 渲染引擎中负责核心样式管理和计算的关键部分。它处理了从 CSS 规则的解析和存储，到元素样式的计算和失效，以及对特定 CSS 特性（如字体、视口单位、`:has()` 伪类等）的特殊处理。其功能直接关系到网页的最终呈现效果和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -185,9 +185,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                const ComputedStyle& font_style,
+### 源代码
+```cpp
+const ComputedStyle& font_style,
                               const CSSPropertyValueSet& font_properties) {
   UpdateActiveStyle();
   return GetStyleResolver().ComputeFont(element, font_style, font_properties);
@@ -1134,7 +1136,4 @@ void StyleEngine::IdChangedForElement(const AtomicString& old_id,
          rule_invalidation_data.NeedsHasInvalidationForId(old_id)) ||
         (!new_id.empty() &&
          rule_invalidat
-"""
-
-
 ```

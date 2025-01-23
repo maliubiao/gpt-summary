@@ -127,7 +127,7 @@ The tests cover both parsing incoming packets and building outgoing packets with
 
 第 6 部分的测试用例集中验证了 `QuicFramer` 对多种关键 QUIC 帧和数据包的处理能力，包括：流控制、保持连接、握手完成、确认频率、流重置、应用层消息、无状态重置、版本协商和重试机制。此外，还测试了构建包含填充帧和流数据帧的数据包的功能，以及对不同长度数据包序列号的处理。这部分测试是确保 `QuicFramer` 能够正确处理 QUIC 协议中各种关键交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 at off
   PacketFragments packet = {
       // type (short header, 4 byte packet number)
@@ -1143,7 +1145,4 @@ TEST_P(QuicFramerTest, BuildStreamFramePacket) {
   }
 
   QuicStreamFrame stream_frame(kStr
-"""
-
-
 ```

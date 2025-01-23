@@ -193,7 +193,7 @@ console.log(element);
 
 这段代码片段集中展示了如何处理与 **复合类型（结构体和数组）、引用类型、以及字符串操作** 相关的 WebAssembly 指令，并将其转化为图构建器可以操作的节点。这部分功能是构建完整 WebAssembly 执行图的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/graph-builder-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/graph-builder-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -201,8 +201,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mmediate& field, bool is_signed, Value* result) {
     SetAndTypeNode(result, builder_->StructGet(struct_object.node,
                                                field.struct_imm.struct_type,
@@ -924,7 +926,4 @@ mmediate& field, bool is_signed, Value* result) {
   //   can handle a loop body which connects directly to the graph's end.
   //   However, we need to emit them anyway for nodes that may be rewired to
   //   different nodes during inlining. The
-"""
-
-
 ```

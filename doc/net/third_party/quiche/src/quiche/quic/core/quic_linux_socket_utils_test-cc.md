@@ -132,15 +132,17 @@ Let's break down the thought process for analyzing this C++ test file and genera
 
 总而言之，`quic_linux_socket_utils_test.cc` 文件是 Chromium QUIC 实现中至关重要的组成部分，它通过全面的测试确保了底层套接字操作的正确性和可靠性，这对于保证基于 QUIC 的网络连接的稳定性和性能至关重要。虽然它本身与 JavaScript 没有直接的联系，但它为 JavaScript 在浏览器中进行高效的网络通信提供了基础支撑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_linux_socket_utils_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -469,7 +471,4 @@ TEST_F(QuicLinuxSocketUtilsTest, WriteMultiplePackets_WriteSuccess) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

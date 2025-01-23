@@ -140,15 +140,17 @@ By following this systematic approach, I can effectively analyze the code and pr
 
 总而言之，`registration_fetcher.cc` 在 Chromium 的设备绑定会话机制中扮演着关键的角色，它负责与服务器进行注册流程的交互，利用本地密钥进行身份验证，并最终获取用于后续会话的凭据。它虽然不直接被 JavaScript 调用，但其功能是响应 Web 内容发起的请求，是 Web 安全特性的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/registration_fetcher.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -605,7 +607,4 @@ void RegistrationFetcher::CreateTokenAsyncForTesting(
 }
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

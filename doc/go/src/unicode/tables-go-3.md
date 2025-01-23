@@ -69,7 +69,7 @@ func main() {
 
 这部分 `go/src/unicode/tables.go` 代码的主要功能是**声明和初始化了大量 Go 语言变量，每个变量都是一个指向 `RangeTable` 结构体的指针，用于存储特定 Unicode 脚本的字符码点范围。 这些数据结构是 `unicode` 包实现字符属性判断等功能的基础。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unicode/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -78,8 +78,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 0, 1},
 		{0x09b2, 0x09b6, 4},
 		{0x09b7, 0x09b9, 1},
@@ -1830,10 +1832,5 @@ var (
 	Canadian_Aboriginal    = _Canadian_Aboriginal    // Canadian_Aboriginal is the set of Unicode characters in script Canadian_Aboriginal.
 	Carian                 = _Carian                 // Carian is the set of Unicode characters in script Carian.
 	Caucasian_Albanian     = _Caucasian_Albanian     // Caucasian_Albanian is the set of Unicode characters in script Caucasian_Albanian.
-	Chakma                 = _Chakma          
-"""
-
-
-
-
+	Chakma                 = _Chakma
 ```

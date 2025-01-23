@@ -154,15 +154,17 @@ By following these steps, I can create a comprehensive and informative answer th
 
 总而言之，`scrollbar_theme.cc` 是 Blink 渲染引擎中负责滚动条外观和交互的核心模块，它连接了底层的绘制功能和上层的用户交互，并受到 HTML 结构、CSS 样式和 JavaScript 脚本的影响。理解这个文件的功能对于调试滚动条相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollbar_theme.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All Rights Reserved.
  *
@@ -506,7 +508,4 @@ void ScrollbarTheme::PaintTrackAndButtons(GraphicsContext& context,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -200,7 +200,7 @@ func main() {
 
 这段代码示例非常清晰地展示了如何在 Go 中实现灵活的自定义排序，是理解 Go 语言接口和函数类型强大功能的良好案例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/sort/example_keys_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -306,9 +308,4 @@ func Example_sortKeys() {
 	// By distance: [{Mercury 0.055 0.4} {Venus 0.815 0.7} {Earth 1 1} {Mars 0.107 1.5}]
 	// By decreasing distance: [{Mars 0.107 1.5} {Earth 1 1} {Venus 0.815 0.7} {Mercury 0.055 0.4}]
 }
-
-"""
-
-
-
 ```

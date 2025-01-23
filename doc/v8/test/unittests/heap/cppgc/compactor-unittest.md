@@ -100,11 +100,13 @@ console.log(obj3.moreRef.data); // 仍然能正常访问
 
 `compactor-unittest.cc` 这个 C++ 文件是 V8 引擎内部测试代码的一部分，专门用于测试其 C++ 垃圾回收器的内存压缩功能。虽然 JavaScript 开发者无法直接操作这些底层细节，但理解其原理有助于理解 JavaScript 垃圾回收的工作方式，并编写出更高效、避免内存泄漏的 JavaScript 代码。V8 引擎通过类似 `cppgc` 这样的组件，保证了 JavaScript 内存管理的自动化和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/compactor-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ TEST_F(CompactorTest, OnStackSlotShouldBeFiltered) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -167,15 +167,17 @@ By following these steps, you can systematically analyze the code and provide a 
 
 总而言之，`AXInlineTextBox.cc` 文件中的 `AXInlineTextBox` 类是 Blink 渲染引擎中 Accessibility 模块的重要组成部分，它负责将底层的内联文本布局信息转化为辅助技术可以理解的抽象表示，从而实现网页内容的可访问性。理解其功能和与前端技术的关系，对于开发可访问的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_inline_text_box.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013, Google Inc. All rights reserved.
  *
@@ -601,7 +603,4 @@ void AXInlineTextBox::ClearChildren() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

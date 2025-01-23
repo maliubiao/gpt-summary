@@ -173,7 +173,7 @@ const anotherObject = jsObject; // 引用传递
 
 作为解码器的第七部分，这个代码片段专注于处理 WebAssembly 规范中与 **垃圾回收机制引入的对象 (数组和引用)** 和 **字符串操作** 相关的指令。  在整个解码流程中，这一部分负责将这些高级的、与内存管理和数据结构相关的操作从字节码形式转换为内部表示，以便后续的编译和执行。之前的或后续的部分可能负责处理例如控制流、算术运算、内存访问等其他类型的指令。这部分的处理标志着解码器开始处理更复杂的、面向对象的 WebAssembly 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/function-body-decoder-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/function-body-decoder-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 n opcode_length + array_imm.length + data_segment.length;
       }
       case kExprArrayInitElem: {
@@ -899,7 +901,4 @@ n opcode_length + array_imm.length + data_segment.length;
         MemoryIndexImmediate imm(this, this->pc_ + opcode_length, validate);
         if (!this->Validate(this->pc_ + opcode_length, imm)) return 0;
         ValueTy
-"""
-
-
 ```

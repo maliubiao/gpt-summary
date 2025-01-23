@@ -108,14 +108,16 @@ By following these steps, we can systematically analyze the unit test file and u
 
 总而言之，`thread_load_tracker_unittest.cc` 通过一系列精心设计的测试用例，确保了 `ThreadLoadTracker` 能够准确地跟踪线程负载，这对于理解和优化 Chromium 浏览器的性能至关重要，最终影响用户浏览网页的流畅度和响应速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/thread_load_tracker_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/platform/scheduler/common/thread_load_tracker.h"
 
 #include "base/functional/bind.h"
@@ -266,7 +268,4 @@ TEST(ThreadLoadTrackerTest, Reset) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

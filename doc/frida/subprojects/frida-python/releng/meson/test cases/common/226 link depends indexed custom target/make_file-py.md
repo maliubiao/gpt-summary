@@ -139,7 +139,7 @@ python make_file.py output_file1.txt output_file2.lib
 
 作为调试线索，如果构建或测试过程中涉及到依赖于特定文件的步骤，而这些文件看起来没有任何实际内容，那么可以查看是否是由类似的脚本生成的。如果构建或测试失败，并且涉及到文件创建或依赖关系的问题，那么这个脚本可能是一个需要关注的点，检查其参数是否正确，以及是否成功创建了所需的文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/226 link depends indexed custom target/make_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
@@ -157,7 +159,4 @@ with open(sys.argv[1], 'w') as f:
 
 with open(sys.argv[2], 'w') as f:
     print('# this file does nothing', file=f)
-
-"""
-
 ```

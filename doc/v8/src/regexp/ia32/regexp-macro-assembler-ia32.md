@@ -108,11 +108,13 @@ while ((match = regex.exec(text)) !== null) {
 
 总而言之， `regexp-macro-assembler-ia32.cc` 是一个底层的、与硬件架构紧密相关的组件，它确保了 JavaScript 正则表达式在 IA-32 架构上的高效执行。它将高级的正则表达式概念转化为实际的机器指令，是 V8 引擎性能的关键因素之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1528,7 +1530,4 @@ void RegExpMacroAssemblerIA32::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
 ```

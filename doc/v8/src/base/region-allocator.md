@@ -97,11 +97,13 @@ myObject = null; // 使得之前的对象可以被垃圾回收。
 
 `v8/src/base/region-allocator.cc` 中的 `RegionAllocator` 是 V8 引擎的核心内存管理组件。它提供了一套高效的机制来分配、释放和管理堆内存，这对于 JavaScript 代码的执行至关重要。虽然 JavaScript 开发者无法直接操作它，但它的设计和实现直接影响着 JavaScript 程序的性能和内存使用效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/region-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -485,7 +487,4 @@ void RegionAllocator::Print(std::ostream& os) const {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

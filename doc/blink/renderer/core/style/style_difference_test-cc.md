@@ -132,14 +132,16 @@ myDiv.classList.add('fade-out');
 
 总而言之，`blink/renderer/core/style/style_difference_test.cc` 是一个用于验证 `StyleDifference` 类功能正确性的测试文件。 `StyleDifference` 类在 Blink 引擎中扮演着关键的角色，它帮助引擎高效地跟踪和处理样式变化，从而优化渲染性能。理解 `StyleDifference` 的功能有助于理解 Blink 引擎如何响应 web 页面中 HTML、CSS 和 JavaScript 引起的样式变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_difference_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ TEST(StyleDifferenceTest, StreamOutputSetAllProperties) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

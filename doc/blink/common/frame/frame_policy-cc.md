@@ -154,14 +154,16 @@ Document-Policy: force-load-at-top=true
 
 `FramePolicy` 类是 Blink 引擎中一个核心的组成部分，它负责管理和传递应用于 HTML 框架的安全和行为策略。它与 JavaScript、HTML 和 CSS 都有密切的关系，通过沙箱、权限策略和文档策略来控制框架的功能和安全性。理解 `FramePolicy` 的作用对于开发安全可靠的 Web 应用至关重要。开发者需要正确配置 HTML 属性和 HTTP 响应头，以确保框架按照预期的方式运行，同时避免安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/frame_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ bool operator!=(const FramePolicy& lhs, const FramePolicy& rhs) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -119,15 +119,17 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`blink/renderer/platform/network/http_parsers.cc` (第一部分) 的主要功能是**实现各种 HTTP 头部字段的解析逻辑，并将解析结果转换为 Blink 引擎内部使用的数据结构**。这对于浏览器正确理解和处理来自服务器的 HTTP 响应至关重要，直接影响到网页的渲染、资源加载、安全策略执行以及各种 Web API 的行为。 它充当了网络层和 Blink 渲染引擎之间的桥梁，负责将网络数据转化为 Blink 可以理解和操作的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/http_parsers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Alexey Proskuryakov (ap@webkit.org)
  * Copyright (C) 2006, 2007, 2008, 2009 Apple Inc. All rights reserved.
@@ -999,8 +1001,5 @@ bool ParseMultipartHeadersFromBody(base::span<const uint8_t> bytes,
 bool ParseMultipartFormHeadersFromBody(base::span<const uint8_t> bytes,
                                        HTTPHeaderMap* header_fields,
                                        wtf_size_t* end) {
-  DCHECK_EQ(0u, 
-"""
-
-
+  DCHECK_EQ(0u,
 ```

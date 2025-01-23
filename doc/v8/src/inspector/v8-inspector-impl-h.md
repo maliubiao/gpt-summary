@@ -171,15 +171,17 @@ Let's consider the `contextCreated` method.
 
 In summary, `v8/src/inspector/v8-inspector-impl.h` is a crucial header file defining the core implementation of the V8 Inspector, enabling powerful debugging and profiling capabilities for JavaScript developers. It acts as the central hub for managing inspector sessions, contexts, and communication with debugging clients.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-inspector-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-inspector-impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (c) 2010, Google Inc. All rights reserved.
  *
@@ -381,7 +383,4 @@ class V8InspectorImpl : public V8Inspector {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_INSPECTOR_IMPL_H_
-
-"""
-
 ```

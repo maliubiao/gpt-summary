@@ -191,7 +191,7 @@ input()
 
 总而言之，`tomlkit._compat.py` 中的 `decode` 函数是为了在处理可能具有不同编码的字节数据时提供更健壮的解码方案，这在 Frida 动态 Instrumentation 工具中处理各种来源的数据时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/_compat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import contextlib
@@ -223,7 +225,4 @@ def decode(string: Any, encodings: list[str] | None = None):
             return string.decode(encoding)
 
     return string.decode(encodings[0], errors="ignore")
-
-"""
-
 ```

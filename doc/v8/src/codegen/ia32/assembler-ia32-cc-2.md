@@ -123,7 +123,7 @@ const sum = vectorAdd(arr1, arr2); // [6, 8, 10, 12]
 
 如果 `v8/src/codegen/ia32/assembler-ia32.cc` 以 `.tq` 结尾，那么它将是一个 **V8 Torque 源代码** 文件。Torque 是 V8 开发的一种领域特定语言 (DSL)，用于更安全、更易于维护的方式来编写 V8 的内置函数和运行时代码。  `.cc` 后缀表明它是 C++ 源代码。因此，`v8/src/codegen/ia32/assembler-ia32.cc` 是一个 **C++** 文件，而不是 Torque 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/assembler-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/assembler-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d src, uint8_t shuffle) {
   EnsureSpace ensure_space(this);
   EMIT(0xF2);
@@ -915,8 +917,4 @@ void Assembler::RecordRelocInfo(RelocInfo::Mode rmode, intptr_t data) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

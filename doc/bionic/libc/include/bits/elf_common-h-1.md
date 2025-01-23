@@ -103,7 +103,7 @@ By following these steps, I can construct a comprehensive and informative answer
 
 总而言之，这个文件就像一本 ELF 文件格式的 "词汇表"，让 Bionic 能够正确地解析、加载和链接 Android 系统上的可执行文件和共享库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/elf_common.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -115,8 +115,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 #define	DF_STATIC_TLS	0x0010	/* Indicates that the shared object or
 				   executable contains code using a static
 				   thread-local storage scheme. */
@@ -861,8 +863,4 @@ Prompt:
 #define	ELF_BSDF_VMNOOVERCOMMIT	0x0002
 
 #endif /* !_SYS_ELF_COMMON_H_ */
-
-"""
-
-
 ```

@@ -114,7 +114,7 @@ The user wants a summary of the functionality of the `box_fragment_painter.cc` f
 
 `BoxFragmentPainter` 的第 3 部分主要关注**内联内容的绘制、多列布局的渲染以及更细粒度的绘制任务处理**。它包含了绘制列规则、背景、内联元素及其子元素、行盒以及处理强制颜色模式下的背板绘制等关键功能。 此外，还涉及到了命中测试的初步处理，为用户交互提供基础。 这部分的代码深入到了文本和内联元素的渲染细节，是 Blink 渲染引擎中负责页面视觉呈现的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/box_fragment_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -122,9 +122,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                                  ->ComputeLogicalScrollbars()
+### 源代码
+```cpp
+->ComputeLogicalScrollbars()
                                                   .block_end;
           rule_length = column_box_right - previous_column.offset.left;
         } else {
@@ -926,7 +928,4 @@ bool BoxFragmentPainter::HitTestLineBoxFragment(
   //  * Outside of children
   //  * In child without no foreground descendant, e.g. block with size.
   if (cursor.Current()->LineBoxFragment()->
-"""
-
-
 ```

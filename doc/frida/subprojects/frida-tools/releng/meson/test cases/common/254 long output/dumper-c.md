@@ -142,7 +142,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`dumper.c` 作为一个简单的 C 程序，其核心功能是生成大量的标准输出和标准错误输出，这使得它成为 Frida 项目中测试处理大量输出能力的理想测试用例。它的存在也暗示了 Frida 及其相关工具需要具备处理各种规模程序输出的能力，这在动态分析和逆向工程中是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/254 long output/dumper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(void)
@@ -168,8 +170,4 @@ int main(void)
 
     return 0;
 }
-
-
-"""
-
 ```

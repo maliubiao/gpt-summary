@@ -106,7 +106,7 @@ let z = x + y; // JavaScript 中允许，但底层实现会涉及到类型转换
 
 这部分代码主要负责将 IR 指令转换为 ARM64 架构下的算术运算、位运算、位移操作、数据移动、符号扩展、位域操作、栈操作、比较操作、浮点运算（包括单精度和双精度）、整数和浮点数之间的转换、浮点数的位操作、基本的内存加载和存储操作，以及一些原子操作和内存屏障指令的生成。 涵盖了处理器指令集中相当一部分的基础运算和数据处理功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/code-generator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm64/code-generator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -114,8 +114,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 m64Eor:
       __ Eor(i.OutputRegister(), i.InputOrZeroRegister64(0),
              i.InputOperand2_64(1));
@@ -942,7 +944,4 @@ m64Eor:
 #define SIMD_CM_L_CASE(Op, ImmOp)                                      \
   case Op: {                                                           \
     VectorFormat f = VectorFormatFillQ(
-"""
-
-
 ```

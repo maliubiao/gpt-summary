@@ -124,7 +124,7 @@ fetch('/data')
 
 这部分代码主要功能是**通过大量的测试用例，全面验证 Chromium 网络栈中结构化头部解析器对各种合法和非法的字符串以及 token 的解析能力，确保其符合结构化头部规范。**  它涵盖了字符编码、转义、基本格式、边界情况和错误情况的测试，旨在提高解析器的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {Item(" 9 "), {}}}, nullptr},
     {"0x3a in string", "\" : \"", 5, {{Item(" : "), {}}}, nullptr},
     {"0x3b in string", "\" ; \"", 5, {{Item(" ; "), {}}}, nullptr},
@@ -734,8 +736,4 @@ Prompt:
      "fa",
      2,
      {{Item("fa", Item::kTokenType), {}}},
-    
-"""
-
-
 ```

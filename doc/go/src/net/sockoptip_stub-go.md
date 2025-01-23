@@ -169,7 +169,7 @@ func main() {
 
 `go/src/net/sockoptip_stub.go` 的主要作用是在特定的平台 (JavaScript 和 WASI) 上禁用 IP 组播相关的 socket 选项，并为这些功能提供返回 "协议选项不支持" 错误的占位符实现。 这确保了 `net` 包的 API 在不同平台上的统一性，但使用者需要注意目标平台的功能限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sockoptip_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ func setIPv6MulticastLoopback(fd *netFD, v bool) error {
 func joinIPv6Group(fd *netFD, ifi *Interface, ip IP) error {
 	return syscall.ENOPROTOOPT
 }
-
-"""
-
-
-
 ```

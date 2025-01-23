@@ -159,12 +159,14 @@ console.log("Before checkpoint");
 
 总而言之，这个代码片段是 V8 引擎 C++ API 功能的详细测试，涵盖了代码生成、回调、微任务、对象属性、上下文、JSON 处理、安全性和并发控制等多个核心方面。 通过这些测试，可以确保 V8 API 的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第12部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 wed);
   CHECK(!context->IsCodeGenerationFromStringsAllowed());
   CheckCodeGenerationAllowed();
@@ -1941,7 +1943,4 @@ class RequestInterruptTestBaseWithSimpleInterrupt
     static void OnInterrupt(v8::Isolate* isolate, void* data) {
       reinterpret_cast<RequestInterruptTestBase*>(data)->
           should_con
-"""
-
-
 ```

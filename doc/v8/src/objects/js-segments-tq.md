@@ -179,15 +179,17 @@ for (const segment of segments) {
 
 `v8/src/objects/js-segments.tq` 定义了 V8 内部用于支持 JavaScript 文本分段功能的 `JSSegments` 对象结构。它封装了要分段的字符串、ICU 的 `BreakIterator` 对象以及分段相关的标志。这个内部对象是实现 `Intl.Segmenter` API 的基础，使得 JavaScript 开发者能够以国际化的方式对文本进行分割。理解这个文件有助于深入了解 V8 如何处理文本和国际化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segments.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-segments.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ extern class JSSegments extends JSObject {
   unicode_string: Foreign;  // Managed<icu::UnicodeString>
   flags: SmiTagged<JSSegmentsFlags>;
 }
-
-"""
-
 ```

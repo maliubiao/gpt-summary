@@ -108,11 +108,13 @@ while (!result.done) {
 
 `js-segment-iterator.cc` 是 V8 引擎中实现 JavaScript `Intl.Segmenter` 迭代器的关键部分。它利用 ICU 库提供的强大的文本分割能力，并将其桥接到 JavaScript 环境，使得 JavaScript 开发者可以方便地按照不同的粒度遍历字符串的片段。 其中的 `JSSegmentIterator::Next` 方法是迭代的核心，负责驱动分词过程并返回包含片段信息的 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segment-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -274,7 +276,4 @@ MaybeHandle<JSReceiver> JSSegmentIterator::Next(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

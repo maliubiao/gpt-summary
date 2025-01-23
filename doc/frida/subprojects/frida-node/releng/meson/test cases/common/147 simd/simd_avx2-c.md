@@ -139,7 +139,7 @@ Here's a breakdown of the thinking process to analyze the C code and address the
 
 总而言之，`simd_avx2.c` 是 Frida 项目中的一个测试用例，它展示了如何检测 AVX2 指令集的支持以及如何使用 AVX2 指令进行简单的数值计算。对于逆向工程师来说，理解这样的代码可以帮助他们分析目标程序中使用了 SIMD 优化的部分，并利用 Frida 进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/147 simd/simd_avx2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 #include<stdint.h>
@@ -191,7 +193,4 @@ void increment_avx2(float arr[4]) {
     arr[2] = (float)darr[2];
     arr[3] = (float)darr[3];
 }
-
-"""
-
 ```

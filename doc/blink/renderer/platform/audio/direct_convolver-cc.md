@@ -124,14 +124,16 @@ By following these steps, we can systematically analyze the code and extract the
 
 `blink/renderer/platform/audio/direct_convolver.cc` 是 Blink 引擎中一个关键的音频处理组件，负责实现音频信号的直接卷积。它与 Web Audio API 的 `ConvolverNode` 紧密相关，使得开发者能够在浏览器中实现各种音频效果。理解其功能和限制对于正确使用 Web Audio API 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/direct_convolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Intel Inc. All rights reserved.
  *
@@ -230,7 +232,4 @@ void DirectConvolver::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

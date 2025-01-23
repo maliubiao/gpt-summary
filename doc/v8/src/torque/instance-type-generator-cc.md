@@ -171,15 +171,17 @@ class C extends A {};
 
 总而言之，`v8/src/torque/instance-type-generator.cc` 是 Torque 编译过程中的一个关键组件，负责生成 V8 运行时所需的实例类型信息，这些信息对于 V8 的对象模型和类型系统至关重要。虽然开发者不直接修改这个文件，但理解其功能有助于理解 Torque 代码如何影响 V8 的内部表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/instance-type-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/instance-type-generator.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -689,7 +691,4 @@ void ImplementationVisitor::GenerateInstanceTypes(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

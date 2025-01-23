@@ -115,15 +115,17 @@ type Resolver struct {
 
 `go/test/fixedbugs/issue49143.dir/p.go` 这段代码是一个针对特定bug (issue49143) 的测试用例，其核心功能是验证 Go 编译器能否正确处理相对路径导入并引用子包中定义的类型。它通过创建一个对子包中类型的零值指针并将其赋值给空白标识符来实现编译时的检查。 理解这种测试代码有助于开发者更好地理解 Go 的包管理和类型引用机制，从而避免在自己的项目中犯类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue49143.dir/p.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -135,9 +137,4 @@ import (
 )
 
 var _ = &c.Resolver{}
-
-"""
-
-
-
 ```

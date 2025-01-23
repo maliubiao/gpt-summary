@@ -160,15 +160,17 @@ Essentially, the process was a combination of:
 
 总而言之，`blink/renderer/core/dom/slot_assignment_test.cc` 是 Blink 引擎中用于确保 Shadow DOM 中 slot 分配机制正确工作的关键测试文件，它直接关联到 Web 标准中的 Shadow DOM 特性，并服务于开发者对这一特性的正确使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/slot_assignment_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ TEST_F(SlotAssignmentTest, ScheduleVisualUpdate) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

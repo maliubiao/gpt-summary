@@ -187,7 +187,7 @@ Here's a breakdown of the thought process to address each of the user's requests
 
 * **功能归纳 (第 9 部分)：**  作为代码生成器的第 9 部分，这个文件主要负责将编译器的中间表示翻译成具体的 x64 汇编指令，涵盖了程序执行的控制流（分支、跳转、switch）、函数调用的栈帧管理（构建、返回）以及数据的移动操作。它是生成高效机器码的关键环节，连接了高级的中间表示和底层的机器指令。它确保了 JavaScript 代码能够在 x64 架构上正确且尽可能高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/code-generator-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -195,8 +195,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 es branches after this instruction.
 void CodeGenerator::AssembleArchBranch(Instruction* instr, BranchInfo* branch) {
   Label::Distance flabel_distance =
@@ -1047,7 +1049,4 @@ void CodeGenerator::AssembleMove(InstructionOperand* source,
         DCHECK(destination->IsRegister());
         if (Use32BitMove(source, destination)) {
           __ movl(g.ToRegister(desti
-"""
-
-
 ```

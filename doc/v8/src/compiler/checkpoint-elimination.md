@@ -99,11 +99,13 @@ outer(10);
 
 `checkpoint-elimination.cc` 是 V8 编译器的一个优化组件，它通过分析 IR 图中的效果链和帧状态信息，识别并移除冗余的检查点。这有助于减少编译器生成的代码大小，并可能提升运行时性能，因为它减少了不必要的上下文保存和恢复的开销，尤其是在去优化场景中。 虽然用户不能直接控制检查点的插入和消除，但理解其背后的原理有助于理解 V8 编译器如何优化 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/checkpoint-elimination.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ Reduction CheckpointElimination::Reduce(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

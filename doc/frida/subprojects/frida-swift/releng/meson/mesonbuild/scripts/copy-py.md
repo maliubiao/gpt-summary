@@ -122,7 +122,7 @@ By following this thought process, including self-correction and contextualizati
 
 总而言之，`copy.py` 是 Frida 构建过程中一个简单但重要的辅助脚本，负责在构建时可靠地复制文件。它的功能虽小，但涉及到文件系统操作、权限管理等基础概念，并且在构建复杂的软件系统（如 Frida）中发挥着不可或缺的作用。当构建过程出现与文件复制相关的错误时，开发者会沿着构建流程反向追踪，最终可能会定位到这个脚本的执行情况和参数配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/copy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021-2023 Intel Corporation
 from __future__ import annotations
@@ -151,7 +153,4 @@ def run(args: T.List[str]) -> int:
     except Exception:
         return 1
     return 0
-
-"""
-
 ```

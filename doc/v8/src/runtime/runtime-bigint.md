@@ -130,11 +130,13 @@ console.log(counter); // 5n
 
 `runtime-bigint.cc` 文件是 V8 引擎中负责实现 JavaScript `BigInt` 类型核心功能的关键组成部分。它提供了一组底层的运行时函数，处理 `BigInt` 的比较、类型转换以及算术和位运算，使得 JavaScript 能够有效地操作任意精度的整数。当你编写使用 `BigInt` 的 JavaScript 代码时，引擎会在幕后调用这些 C++ 函数来执行相应的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-bigint.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ RUNTIME_FUNCTION(Runtime_BigIntUnaryOp) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

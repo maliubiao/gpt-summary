@@ -148,15 +148,17 @@ transition MyTransition() {
 
 `v8/src/torque/global-context.h` 定义了 `GlobalContext` 类，它是 Torque 编译器的核心上下文，负责管理 AST、声明、编译选项、输出流等全局信息。它与 JavaScript 的关系在于，Torque 代码用于实现 V8 的内部机制，直接影响 JavaScript 的执行。 理解 `GlobalContext` 的作用有助于理解 V8 内部的工作原理以及 Torque 编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/global-context.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/global-context.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -342,7 +344,4 @@ class TargetArchitecture : public base::ContextualClass<TargetArchitecture> {
 }  // namespace v8
 
 #endif  // V8_TORQUE_GLOBAL_CONTEXT_H_
-
-"""
-
 ```

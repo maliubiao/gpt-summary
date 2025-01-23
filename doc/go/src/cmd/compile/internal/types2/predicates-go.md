@@ -260,15 +260,17 @@ func main() {
 
 **易犯错的点：**  使用者可能会错误地认为 `isInteger(tpar)` 会检查类型参数的约束中是否包含整数类型。实际上，`isX` 函数只检查给定类型本身是否符合条件，而 `allX` 函数用于检查类型参数的类型集是否都满足条件。理解这种区别对于正确处理泛型类型非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/predicates.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -847,9 +849,4 @@ func isValidName(s string) bool {
 	}
 	return true
 }
-
-"""
-
-
-
 ```

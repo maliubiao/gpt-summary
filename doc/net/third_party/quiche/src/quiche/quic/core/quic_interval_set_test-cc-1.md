@@ -134,7 +134,7 @@ console.log(buffer.contains(12)); // 输出 false
 
 总而言之，这部分测试用例旨在确保 `QuicIntervalSet` 在各种常见的操作场景下都能正常工作，特别是涉及到对象的生命周期管理（通过 swap）、输出以及初始化和赋值等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_interval_set_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0);
   b.Add(500, 600);
   std::swap(a, b);
@@ -224,8 +226,4 @@ TEST_F(QuicIntervalSetInitTest, BracedInitThenBracedAssign) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

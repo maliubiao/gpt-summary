@@ -100,11 +100,13 @@ getProperty({ x: 9, b: 10, c: 11, d: 12 });
 
 C++ 的单元测试通过模拟并发场景来验证在多线程环境下，对 `FeedbackVector` 的状态进行读取和修改是否是安全的，并且确保状态转换的逻辑是正确的。这对于保证 V8 引擎在多线程 JavaScript 应用中的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/concurrent-feedback-vector-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -377,7 +379,4 @@ TEST_F(ConcurrentFeedbackVectorTest, CheckLoadICStates) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

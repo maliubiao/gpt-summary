@@ -198,7 +198,7 @@ func main() {
 
 总而言之，这段代码提供了一种在 Go 语言中使用 ML-KEM 1024 位变体进行安全密钥协商的基础工具。正确理解和使用这些 API，并注意潜在的安全风险，对于构建安全的通信系统至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/mlkem/mlkem1024.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -304,9 +306,4 @@ func (ek *EncapsulationKey1024) Bytes() []byte {
 func (ek *EncapsulationKey1024) Encapsulate() (ciphertext, sharedKey []byte) {
 	return ek.key.Encapsulate()
 }
-
-"""
-
-
-
 ```

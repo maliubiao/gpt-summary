@@ -164,7 +164,7 @@ CALL_FN_W_WW(result, { .nraddr = (void*)add_ptr }, 5, 3);
 
 这段代码的核心功能是为 V8 引擎提供一种与 Valgrind 工具集成的机制，用于在 x86 和 amd64 架构的 Linux 和 macOS 系统上安全且可监控地调用 C++ 函数。它定义了一系列宏，通过内联汇编精确控制函数调用过程，使得 Valgrind 能够拦截并分析这些调用，从而帮助 V8 开发者检测和修复内存管理相关的错误，最终提升 JavaScript 运行时的稳定性和性能。它是 V8 内部用于调试和质量保证的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/valgrind/valgrind.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/valgrind/valgrind.h以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 nk,fnptr,arg1,arg2); } while (0)
 
 #define CALL_FN_v_WWW(fnptr, arg1,arg2,arg3)                      \
@@ -724,8 +726,5 @@ nk,fnptr,arg1,arg2); } while (0)
          : /*out*/   "=a" (_res)                                  \
          : /*in*/    "a" (&_argvec[0]) __FRAME_POINTER            \
          : /*trash*/ "cc", "memory", __CALLER_SAVED_REGS, "r15"   \
-      );             
-"""
-
-
+      );
 ```

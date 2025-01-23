@@ -144,7 +144,7 @@ During the thought process, one might initially focus too much on the simplicity
 
 作为调试线索，这个简单的 `lib1.c` 可以帮助开发者验证 Frida 的 Hook 功能是否正常工作，理解函数调用的基本流程，以及排查由于链接、符号导出等问题导致的错误。例如，如果在 Frida 脚本中无法找到 `func1`，那么很可能是在编译 `lib1.c` 时没有正确导出符号，或者目标库的名称不正确。如果在 Hook 点没有打印任何信息，可能是 `func1` 根本没有被调用，或者 Frida 连接的进程不正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/13 pch/linkwhole/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,13 +152,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void func1() {
     printf("Calling func2.");
     func2();
 }
-
-"""
-
 ```

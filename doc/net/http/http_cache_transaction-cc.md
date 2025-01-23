@@ -159,7 +159,7 @@ This iterative process of scanning, analyzing, inferring, and organizing allowed
 
 代码的**第一部分**主要定义了 `HttpCache::Transaction` 类的基本结构、构造函数、析构函数，以及一些核心的启动和状态管理方法，例如 `Start`、`RestartIgnoringLastError`、`RestartWithCertificate`、`RestartWithAuth`。它也包含了 `Read` 方法的初步实现，用于开始读取响应数据。此外，它还定义了一些辅助函数和常量，用于缓存决策和请求头处理。  这部分为整个缓存事务的管理奠定了基础，并开始处理请求的初始化和缓存查找流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_transaction.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1166,7 +1168,4 @@ int HttpCache::Transaction::DoLoop(int result) {
       case STATE_CACHE_WRITE_RESPONSE:
         DCHECK_EQ(OK, rv);
         rv = DoCacheWriteRes
-"""
-
-
 ```

@@ -162,7 +162,7 @@ This systematic approach, starting with a high-level understanding and progressi
 
 希望以上分析能够帮助你理解这个 Python 脚本的功能、它与相关领域的联系以及可能的使用场景和调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/49 custom target/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -194,7 +196,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(args[2].split('=')[1], 'w') as ofile:
         ofile.write('This is a binary output file.\n')
-
-"""
-
 ```

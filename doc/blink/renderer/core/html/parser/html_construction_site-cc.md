@@ -373,15 +373,17 @@ It's important to note that developers don't directly interact with `HTMLConstru
 
 The first part of `html_construction_site.cc` focuses on the foundational aspects of building the DOM tree during HTML parsing. It handles the creation and insertion of basic DOM nodes (elements and text), attribute assignment, and the management of the parser's state related to open elements. It lays the groundwork for processing various HTML constructs and interacts with other Blink components to create the correct DOM representation of the HTML document. It also includes logic for handling text efficiently and setting the document's compatibility mode based on the DOCTYPE.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_construction_site.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google, Inc. All Rights Reserved.
  * Copyright (C) 2011 Apple Inc. All rights reserved.
@@ -1170,7 +1172,4 @@ void HTMLConstructionSite::InsertDoctype(AtomicHTMLToken* token) {
       StringImpl::Create8BitIfPossible(token->PublicIdentifier());
   const String& system_id =
       Strin
-"""
-
-
 ```

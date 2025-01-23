@@ -255,7 +255,7 @@ except Exception as e:
 
 这个 Frida 示例可以帮助你调试哪些 Android 组件正在与 "CUDA" 组件进行交互，以及它们是如何使用这些定义的常量进行通信的。通过 hook 不同的 `CUDA_` 常量，你可以逐步了解 "CUDA" 组件的完整功能和使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/cuda.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -296,7 +298,4 @@ Prompt:
 #define CUDA_GET_DEVICE_LIST 0x1a
 #define CUDA_GET_SET_IIC 0x22
 #endif
-
-"""
-
 ```

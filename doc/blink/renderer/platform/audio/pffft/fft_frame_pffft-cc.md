@@ -137,14 +137,16 @@ By following these steps, I can systematically analyze the C++ code, understand 
 
 总而言之，`fft_frame_pffft.cc` 是 Blink 引擎音频处理的核心组成部分，它利用高效的 PFFFT 库为 Web Audio API 提供了强大的 FFT 功能，使得网页能够进行复杂的音频分析和处理。开发者通过 Web Audio API 与其间接交互，而底层的 C++ 实现保证了性能和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/pffft/fft_frame_pffft.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -394,7 +396,4 @@ void FFTFrame::DoInverseFFT(float* data) {
 }  // namespace blink
 
 #endif  // #if defined(WTF_USE_WEBAUDIO_PFFFT)
-
-"""
-
 ```

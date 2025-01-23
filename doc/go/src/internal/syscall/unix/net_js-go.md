@@ -187,7 +187,7 @@ func main() {
 
 这段 `net_js.go` 文件的作用是明确指出在 Go 编译到 JavaScript/WebAssembly 时，底层的网络系统调用是被禁用的。开发者应该使用 Go 标准库 `net` 包提供的更高级别的抽象，它会在底层根据运行环境选择合适的网络通信机制（例如，在浏览器中使用 Web API）。避免直接使用 `syscall` 包进行网络操作是避免在 JavaScript 环境中出错的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/net_js.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -241,9 +243,4 @@ func RecvmsgInet4(fd int, p, oob []byte, flags int, from *syscall.SockaddrInet4)
 func RecvmsgInet6(fd int, p, oob []byte, flags int, from *syscall.SockaddrInet6) (n, oobn int, recvflags int, err error) {
 	return 0, 0, 0, syscall.ENOSYS
 }
-
-"""
-
-
-
 ```

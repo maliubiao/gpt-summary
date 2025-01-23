@@ -180,15 +180,17 @@ While the `StringsStorage` is an internal V8 component, its principles relate to
 
 In summary, `v8/test/unittests/profiler/strings-storage-unittest.cc` tests the functionality of a string storage and de-duplication mechanism used within V8's profiler. It aims for efficiency by sharing memory for identical strings and provides ways to obtain string representations of various V8 objects and primitive types. The concepts it tests relate to important aspects of string management in programming, including memory efficiency and correct string comparison.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/profiler/strings-storage-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/profiler/strings-storage-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ TEST_F(StringsStorageWithIsolate, CopyAndConsShareStorage) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

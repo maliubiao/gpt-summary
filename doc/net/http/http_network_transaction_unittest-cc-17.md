@@ -83,7 +83,7 @@ fetch('https://www.example.org/')
 
 总而言之，`net/http/http_network_transaction_unittest.cc` 文件通过各种测试用例，确保 `HttpNetworkTransaction` 类在不同的网络场景下能够正确地处理请求、错误和认证等，是保证 Chromium 网络栈稳定性和可靠性的重要组成部分。 虽然它本身是测试代码，但它所测试的逻辑直接影响着浏览器处理网络请求的行为，并间接地与 JavaScript 发起的网络操作相关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -91,8 +91,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第18部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etup some state (which we expect ResetStateForRestart() will clear).
   trans.read_buf_ = base::MakeRefCounted<IOBufferWithSize>(15);
   trans.read_buf_len_ = 15;
@@ -947,7 +949,4 @@ TEST_P(HttpNetworkTransactionTest, BuildRequest_UserAgentOverTunnel) {
       }
       request.traffic_annotation =
           MutableNetworkTrafficAnnotationTag(
-"""
-
-
 ```

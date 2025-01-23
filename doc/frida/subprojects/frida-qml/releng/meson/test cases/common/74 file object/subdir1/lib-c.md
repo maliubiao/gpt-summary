@@ -120,7 +120,7 @@ By following this iterative process of analysis, brainstorming, connecting conce
 
 尽管 `lib.c` 中的 `func` 函数非常简单，但它在 Frida 的测试用例中可能扮演着重要的角色，例如作为测试 Frida hook 功能的基础示例。对于逆向工程师来说，理解即使是最简单的函数也是理解更复杂系统行为的基础。通过 Frida，用户可以观察、修改和分析这样的函数，从而深入了解程序的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/74 file object/subdir1/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,12 +128,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 1;
 }
-
-"""
-
 ```

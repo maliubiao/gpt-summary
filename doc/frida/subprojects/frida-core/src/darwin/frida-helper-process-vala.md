@@ -141,7 +141,7 @@ spawn_debugger(1234)
    - 如果过程中发生错误（如进程崩溃、权限不足），Frida 会捕获并抛出相应的异常，用户可以根据异常信息进行调试。
 
 通过以上步骤，用户可以逐步跟踪 Frida 的操作，并通过调试工具（如 LLDB）定位问题所在。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/frida-helper-process.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class DarwinHelperProcess : Object, DarwinHelper {
 		public uint pid {
@@ -714,7 +716,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

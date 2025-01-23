@@ -107,7 +107,7 @@ Let's break down the thought process to generate the analysis of the provided C+
 
 虽然 `main.cpp` 文件本身非常简单，但它在 Frida 项目的上下文中扮演着测试用例的角色。理解其功能、与逆向的关联、底层知识以及可能的用户错误，有助于理解 Frida 的开发、测试和调试流程。用户通常不会直接与这个文件交互，而是通过 Frida 的构建系统或测试框架间接地接触到它。这个文件是确保 Frida 功能正确性的一个组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/207 warning level 0/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 #define PROJECT_NAME "demo"
@@ -129,7 +131,4 @@ int main(int argc, char **argv) {
     std::cout << "This is project " << PROJECT_NAME << ".\n";
     return 0;
 }
-
-"""
-
 ```

@@ -135,7 +135,7 @@ Initially, one might focus too much on the runtime behavior of the `main` functi
 
 `prog.cc` 文件本身是一个简单的 C++ 文件，但它的作用是在 Frida 的构建系统中作为一个测试用例，用于验证全局参数是否被正确传递给编译器。它的存在有助于确保 Frida 的构建配置正确，从而间接地保证了 Frida 作为动态插桩工具的可靠性和功能完整性。开发者在遇到与全局参数相关的构建问题时，可以追踪到这个测试用例，从而找到问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/native/2 global arg/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef MYTHING
 #error "Wrong global argument set"
 #endif
@@ -160,7 +162,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

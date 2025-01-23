@@ -148,7 +148,7 @@ By following these steps, including actively considering the context and potenti
 
 因此，当开发者在构建 Frida 时遇到与文件复制相关的错误，他们可能会查看这个 `copy.py` 脚本，以了解文件复制的具体执行方式，并根据错误信息来排查构建配置或环境问题。脚本的简单性使得排查这类问题相对直接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/copy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021-2023 Intel Corporation
 from __future__ import annotations
@@ -177,7 +179,4 @@ def run(args: T.List[str]) -> int:
     except Exception:
         return 1
     return 0
-
-"""
-
 ```

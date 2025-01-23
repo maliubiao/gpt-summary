@@ -144,7 +144,7 @@ By following this thought process, starting with the code itself, moving to the 
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/frameworks/4 qt/qtinterface.cpp` 文件是一个 Frida 测试套件中用于验证其与 Qt 框架交互能力的简单示例。它定义了一个基础的 Qt 类，作为 Frida 脚本的目标，用于测试 hook、对象操作等功能。 理解这个文件的功能，需要结合 Frida 的动态插桩原理、Qt 框架的特性以及软件测试的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/4 qt/qtinterface.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QGraphicsLayout>
 
 class Foo : public QGraphicsLayout
@@ -162,7 +164,4 @@ class Foo : public QGraphicsLayout
 };
 
 #include "qtinterface.moc"
-
-"""
-
 ```

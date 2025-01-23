@@ -138,7 +138,7 @@ By following this detailed thought process, combining code analysis with knowled
 
 作为第 3 部分，这段代码主要负责定义和实现两种特定的 CSS 渐变值类型：圆锥渐变和常量渐变。它包含了存储这些渐变类型所需的数据，以及创建实际渲染对象、比较和跟踪这些值的逻辑。常量渐变在这里被实现为一种特殊的线性渐变，其起始和结束颜色相同。这段代码是 Blink 引擎处理 CSS 渐变功能的核心组成部分，连接了 CSS 解析的结果和最终的渲染过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_gradient_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ssvalue::IsUsingContainerRelativeUnits(y_.Get());
 }
 
@@ -211,8 +213,4 @@ CSSConstantGradientValue* CSSConstantGradientValue::ComputedCSSValue(
 }
 
 }  // namespace blink::cssvalue
-
-"""
-
-
 ```

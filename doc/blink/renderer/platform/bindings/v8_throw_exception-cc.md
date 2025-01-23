@@ -139,14 +139,16 @@ Blink 引擎在执行这段代码时，会检测到 `myUndefinedVariable` 没有
 
 `v8_throw_exception.cc` 是 Blink 引擎中一个至关重要的组件，它负责将 C++ 代码中发生的错误转化为 JavaScript 异常，使得 JavaScript 代码能够捕获和处理这些错误，从而提供更健壮和友好的用户体验。它直接关系到 JavaScript 运行时的错误处理机制，并且间接地与 HTML 和 CSS 的操作相关，因为许多 JavaScript 错误都源于对 DOM 或 CSSOM 的不当操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_throw_exception.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -209,7 +211,4 @@ DEFINE_CREATE_AND_THROW_ERROR_FUNC(WasmRuntimeError,
 #undef DEFINE_CREATE_AND_THROW_ERROR_FUNC
 
 }  // namespace blink
-
-"""
-
 ```

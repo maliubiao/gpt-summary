@@ -148,15 +148,17 @@ By following these steps, I can provide a comprehensive and helpful answer that 
 
 总而言之，`ScopedMediaStreamTracer` 作为一个底层的跟踪工具，虽然不直接与 Web 技术交互，但它为理解和调试 MediaStream API 的实现提供了宝贵的线索，帮助开发者解决用户在使用媒体功能时遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/scoped_media_stream_tracer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ void ScopedMediaStreamTracer::End() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

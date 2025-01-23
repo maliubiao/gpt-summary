@@ -214,7 +214,7 @@ This iterative process of scanning, categorizing, relating to web techs, inferri
 
 总的来说，`blink/renderer/core/dom/document.cc` 的第 3 部分主要负责处理文档对象的核心生命周期管理、DOM 结构操作（特别是跨文档操作）、元数据维护以及与用户交互相关的基本功能。它提供了支撑 JavaScript 和 CSS 与 HTML 文档交互的基础设施。 这部分的功能对于构建动态和可交互的网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -222,8 +222,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 explicitly importable.  Either they are
     // imported along with their host node, or created implicitly.
     exception_state.ThrowDOMException(
@@ -1155,7 +1157,4 @@ void Document::UpdateStyleAndLayoutTreeForThisDocument() {
       // StyleClean because style is actually clean now.
       lifecycle.AdvanceTo(DocumentLifecycle::kInStyleRecalc);
       lifecycle.AdvanceTo(DocumentLifecycle::kStyleClean);
-"""
-
-
 ```

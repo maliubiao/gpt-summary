@@ -171,7 +171,7 @@ A developer might encounter this code during debugging in the following scenario
 
 **In summary,** while this specific Python code focuses on a seemingly simple task of copying data files, it's a crucial component in the larger build process of Frida. It ensures that necessary resources are available in the correct locations during the build, which is indirectly related to the functionality of Frida as a dynamic instrumentation tool and its interaction with lower-level system components. Understanding this code is important for developers who need to debug build issues, customize Frida builds, or contribute to the project.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/mesondata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -219,7 +221,4 @@ class DataFile:
         out_file.parent.mkdir(exist_ok=True)
         self.write_once(out_file)
         return out_file
-
-"""
-
 ```

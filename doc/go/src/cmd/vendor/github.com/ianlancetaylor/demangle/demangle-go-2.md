@@ -165,7 +165,7 @@ func main() {
 
 这段 Go 代码是 C++ 符号解密器中负责解析 C++ 表达式的核心部分。它通过分析 mangled 字符串的结构，识别不同的表达式类型，并构建出相应的抽象语法树，从而将编译器生成的晦涩符号名转换回易于理解的形式。它处理了包括函数参数引用、指针转换、各种运算符、初始化列表、requires 表达式等多种 C++ 表达式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/ianlancetaylor/demangle/demangle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 isDigit(st.str[2]) {
 		st.advance(2)
 		// We don't include the scope count in the demangled string.
@@ -1326,10 +1328,4 @@ func (st *state) findArgumentPack(a AST) *ArgumentPack {
 	})
 	return ret
 }
-
-"""
-
-
-
-
 ```

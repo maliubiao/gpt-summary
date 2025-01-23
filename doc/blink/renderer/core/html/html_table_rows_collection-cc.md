@@ -213,14 +213,16 @@ By following these steps, one can effectively analyze the C++ code and explain i
 
 总而言之，`html_table_rows_collection.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它负责维护和管理 HTML 表格元素的行集合，并确保 JavaScript 和浏览器内部能够按照 HTML 规范定义的规则来访问和操作这些行。理解其动态特性和行排序规则对于开发健壮的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_table_rows_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2011, 2012, 2014 Apple Inc. All rights reserved.
  *
@@ -379,7 +381,4 @@ Element* HTMLTableRowsCollection::VirtualItemAfter(Element* previous) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

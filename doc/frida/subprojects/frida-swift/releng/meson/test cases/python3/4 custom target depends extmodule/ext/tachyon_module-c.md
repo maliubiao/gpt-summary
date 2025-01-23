@@ -219,7 +219,7 @@ sys.stdin.read()
 
 总而言之，`tachyon_module.c` 提供了一个简单的 Python 扩展模块，其核心功能是比较一个输入的字符串和一个预定义的字符串。它在逆向工程中作为一个可分析的目标，可以用于演示 Frida 的基本 hook 功能。理解其底层实现涉及到 Python C API、编译链接、动态加载等方面的知识。用户在调试过程中可能会通过枚举模块、hook 函数、阅读源代码等步骤到达这里。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python3/4 custom target depends extmodule/ext/tachyon_module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -227,8 +227,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
   Copyright 2016 The Meson development team
 
@@ -280,7 +282,4 @@ static struct PyModuleDef tachyonmodule = {
 PyMODINIT_FUNC PyInit_tachyon(void) {
     return PyModule_Create(&tachyonmodule);
 }
-
-"""
-
 ```

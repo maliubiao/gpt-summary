@@ -189,7 +189,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`web_media_player_impl_unittest.cc` 是理解和调试 Chromium 浏览器中媒体播放功能的重要资源。通过分析这些测试用例，开发者可以深入了解 `WebMediaPlayerImpl` 的工作原理，并找到潜在的 bug 和性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_media_player_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nProgressClearsStale) {
   InitializeWebMediaPlayerImpl();
   SetMetadata(true, true);
@@ -679,8 +681,4 @@ INSTANTIATE_TEST_SUITE_P(
         ::testing::Bool()));
 
 }  // namespace blink
-
-"""
-
-
 ```

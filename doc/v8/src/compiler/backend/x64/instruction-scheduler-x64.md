@@ -123,11 +123,13 @@ const sum = arr[0] + arr[1];
 
 总而言之，`instruction-scheduler-x64.cc` 是 V8 引擎中一个非常底层的组件，它负责对生成的 x64 机器码进行优化，以确保 JavaScript 代码能够高效地在 x64 架构的 CPU 上运行。虽然 JavaScript 开发者通常不需要直接关注这些细节，但指令调度的优化对于提升 JavaScript 应用的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-scheduler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -641,7 +643,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

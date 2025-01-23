@@ -207,15 +207,17 @@ After merging run2: map[GOARCH:amd64 GOOS:linux]
 
 例如，如果一个工具依赖 `ArgsSummary` 中的 `argv` 信息来重建完整的命令，并假设所有合并的运行都使用了相同的参数，那么在参数不一致的情况下，重建的命令可能是错误的。工具应该意识到，当 `argc` 为空时，不应该依赖 `argv` 信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/covdata/argsmerge.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -272,9 +274,4 @@ func (a *argstate) ArgsSummary() map[string]string {
 	}
 	return m
 }
-
-"""
-
-
-
 ```

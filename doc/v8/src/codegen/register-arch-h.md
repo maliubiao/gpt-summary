@@ -131,15 +131,17 @@ Let's say an instruction needs a specific temporary register, and the definition
 
 **In summary, `v8/src/codegen/register-arch.h` is a crucial infrastructure file in V8 that provides a clean and maintainable way to manage architecture-specific register definitions, enabling V8 to generate correct and efficient machine code for various platforms.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/register-arch.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/register-arch.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ Prompt:
 #endif
 
 #endif  // V8_CODEGEN_REGISTER_ARCH_H_
-
-"""
-
 ```

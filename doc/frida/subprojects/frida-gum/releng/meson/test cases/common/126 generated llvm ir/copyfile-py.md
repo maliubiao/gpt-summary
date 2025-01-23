@@ -184,7 +184,7 @@ python copyfile.py input.txt output.txt
 
 总而言之，`copyfile.py` 是一个简单但实用的文件复制工具，在软件开发、测试和逆向工程等领域都有其应用场景。 它的简单性也意味着理解其功能和潜在的错误场景相对容易。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/126 generated llvm ir/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,15 +192,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import shutil
 
 shutil.copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

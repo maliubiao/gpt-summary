@@ -238,15 +238,17 @@ By following these steps, we can systematically analyze the provided Go code sni
 
 `go/src/cmd/link/internal/ld/link.go` 中的 `Link` 结构体是 Go 链接器的核心数据结构，它维护了链接过程中的各种状态和信息，并参与处理包管理、共享库链接、CGO 支持、DWARF 调试信息生成等关键 Go 语言功能。理解 `Link` 结构体的作用有助于深入理解 Go 语言的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/link.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/l.h and related files.
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/l.h
 //
@@ -432,9 +434,4 @@ func (ctxt *Link) createGeneratorSymbol(name string, version int, t sym.SymKind,
 	ctxt.generatorSyms[s] = gen
 	return s
 }
-
-"""
-
-
-
 ```

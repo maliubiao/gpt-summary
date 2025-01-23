@@ -157,7 +157,7 @@ After carry propagation: 0 1 1 0
 
 这段 `fe_arm64_noasm.go` 文件中的 `carryPropagate` 方法是 Edwards25519 椭圆曲线有限域算术中一个关键的步骤，负责将运算结果归一化。它在不使用汇编优化的 `arm64` 环境或指定 `purego` 构建标签时被使用，回退到通用的 Go 实现。使用者需要注意不要直接依赖这个非优化版本进行性能关键的操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/field/fe_arm64_noasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ package field
 func (v *Element) carryPropagate() *Element {
 	return v.carryPropagateGeneric()
 }
-
-"""
-
-
-
 ```

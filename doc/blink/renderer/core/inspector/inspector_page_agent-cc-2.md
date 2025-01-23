@@ -138,15 +138,17 @@ This iterative process of scanning, grouping, analyzing, connecting, and refinin
 
 希望这个更全面的总结能够帮助你理解 `InspectorPageAgent` 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_page_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 evice pixels" coming from Blink are also unscaled by
   // pinch-zoom.
   float css_to_physical = main_frame->LayoutZoomFactor();
@@ -524,8 +526,4 @@ protocol::Response InspectorPageAgent::getOriginTrials(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

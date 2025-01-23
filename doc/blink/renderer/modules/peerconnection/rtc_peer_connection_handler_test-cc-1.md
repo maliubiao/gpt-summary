@@ -168,7 +168,7 @@ CSS 通常不直接与这些底层 WebRTC 功能交互，但 CSS 的渲染性能
 
 总而言之，这部分测试代码确保了 `RTCPeerConnectionHandler` 能够正确地处理 WebRTC 连接的各个关键环节，并与底层的 WebRTC 实现以及上层的 JavaScript API 正确交互。 它可以帮助开发者理解当 JavaScript 调用 WebRTC API 时，Blink 引擎内部发生了什么，并为调试 WebRTC 相关问题提供了线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_peer_connection_handler_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ->AddIceCandidate(request, candidate);
   RunMessageLoopsUntilIdle();
   EXPECT_TRUE(request->was_called());
@@ -513,8 +515,4 @@ TEST_F(RTCPeerConnectionHandlerTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

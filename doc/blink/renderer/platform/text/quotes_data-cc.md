@@ -136,14 +136,16 @@ quotes_data->AddPair(std::make_pair(String::FromUTF8("'"), String::FromUTF8("'")
 
 总而言之，`blink/renderer/platform/text/quotes_data.cc` 文件定义了一个用于管理引号数据的核心结构，它在 Blink 渲染引擎中扮演着关键角色，确保浏览器能够正确地渲染 HTML 元素中以及通过 CSS `quotes` 属性定义的引号。 虽然开发者不能直接操作这个 C++ 类，但理解它的功能有助于更好地理解浏览器如何处理文本中的引号，从而避免在编写 HTML、CSS 和 JavaScript 代码时出现与引号相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/quotes_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /**
  * Copyright (C) 2011 Nokia Inc.  All rights reserved.
  * Copyright (C) 2012 Google Inc. All rights reserved.
@@ -204,7 +206,4 @@ const String QuotesData::GetCloseQuote(int index) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

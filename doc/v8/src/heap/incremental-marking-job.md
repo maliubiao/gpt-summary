@@ -88,11 +88,13 @@ console.timeEnd("With Incremental Marking (Simulated Shorter Pauses)");
 
 `incremental-marking-job.cc` 中定义的机制是 V8 引擎实现高效垃圾回收的关键部分。它通过在后台异步执行标记任务，减少了垃圾回收对主 JavaScript 线程的阻塞，从而提升了 JavaScript 应用的性能和响应性。虽然 JavaScript 开发者不直接操作这个文件中的代码，但他们能切身体会到增量标记带来的好处，例如更流畅的动画、更少的卡顿等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/incremental-marking-job.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ std::optional<v8::base::TimeDelta> IncrementalMarkingJob::AverageTimeToTask()
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

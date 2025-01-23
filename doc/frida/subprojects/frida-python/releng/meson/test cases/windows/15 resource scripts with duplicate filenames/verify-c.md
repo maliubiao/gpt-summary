@@ -139,7 +139,7 @@ Finally, the information needs to be organized clearly, addressing each of the u
 
 这个 `verify.c` 文件本身是一个很好的调试工具，可以用来验证特定资源是否存在和内容是否正确。用户可以修改这个文件，例如打印资源内容，来帮助理解资源加载的细节。 结合 Frida 的动态插桩能力，用户可以进一步观察目标进程在运行时如何加载和使用资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/15 resource scripts with duplicate filenames/verify.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <windows.h>
 
@@ -174,7 +176,4 @@ int main(int argc, char *argv[])
 
   return 0;
 }
-
-"""
-
 ```

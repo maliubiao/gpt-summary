@@ -149,7 +149,7 @@ __ St1(v1.V16B(), MemOperand(x17)); // 可能会覆盖之前存储的数据，�
 
 这部分 `v8/test/cctest/test-assembler-arm64.cc` 代码是 V8 引擎中用于测试 ARM64 汇编器功能的关键组成部分，专注于验证 NEON 存储指令和加载/存储对指令在不同场景下的正确性，这对于确保 V8 在 ARM64 架构上高效且稳定地执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,9 +157,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共15部分，请归纳一下它的功能
+```
 
-"""
- __ Mov(x19, -32);
+### 源代码
+```cpp
+__ Mov(x19, -32);
   __ Mov(x20, -48);
   __ Mov(x21, -64);
   __ Ldr(q0, MemOperand(x17, 16, PostIndex));
@@ -1194,7 +1196,4 @@ TEST(ldp_stp_preindex_wide) {
   CHECK_EQUAL_64(0xFFEEDDCCBBAA9988UL, x5);
   CHECK_EQUAL_64(0x0011223344556677UL, x6);
   CHECK_EQUAL_64(0x889
-"""
-
-
 ```

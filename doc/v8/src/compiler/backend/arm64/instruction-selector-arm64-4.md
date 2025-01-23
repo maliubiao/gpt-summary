@@ -89,13 +89,15 @@ let c4 = Float32x4.mul(a4, b4); // 对应 VisitF32x4Mul
 
 作为第六部分之前的第五部分，可以推断，这个文件负责处理一部分指令的选择工作，剩下的指令选择工作将在第六部分中完成。 不同的部分可能负责处理不同类型的 IR 节点或优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/instruction-selector-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-    Node* right_of_left = left->InputAt(1);
+### 源代码
+```
+Node* right_of_left = left->InputAt(1);
       Emit(kArm64Bfi, g.DefineSameAsFirst(left), g.UseRegister(right),
            g.UseRegister(right_of_left), g.TempImmediate(32),
            g.TempImmediate(32));
@@ -1614,7 +1616,4 @@ void InstructionSelectorT<Adapter>::VisitI8x16RelaxedLaneSelect(node_t node) {
 
 template <typename Adapter>
 vo
-"""
-
-
 ```

@@ -141,7 +141,7 @@ Finally, we organize the refined thoughts into a clear and structured answer, en
 
 虽然 `lib.c` 文件本身的代码非常简单，但它在 Frida 项目的上下文中扮演着测试关键功能（例如字符串转换和内存操作）的角色。通过分析这个文件，我们可以了解到 Frida 在进行动态插桩时涉及的一些核心概念和潜在的风险，并理解开发者是如何通过测试来保证工具的质量和正确性的。这个简单的例子也反映了逆向工程中数据观察这一基本但至关重要的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/152 index customtarget/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -171,7 +173,4 @@ Prompt:
 void func(char * buffer) {
     stringify(1, buffer);
 }
-
-"""
-
 ```

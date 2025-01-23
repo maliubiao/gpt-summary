@@ -133,14 +133,16 @@ By following these steps, we arrive at a comprehensive analysis that addresses a
 
 `LayoutSVGResourcePaintServer.cc` 文件是 Blink 渲染引擎中一个关键的组件，它负责管理 SVG paint server 资源的生命周期和渲染状态。它通过响应样式变化并管理缓存，确保 SVG 图形能根据 HTML、CSS 和 JavaScript 的指示被正确高效地渲染出来。虽然开发者不会直接与这个 C++ 文件交互，但理解其背后的机制有助于避免一些常见的性能问题和渲染错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_resource_paint_server.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ void LayoutSVGResourcePaintServer::StyleDidChange(
 }
 
 }  // namespace blink
-
-"""
-
 ```

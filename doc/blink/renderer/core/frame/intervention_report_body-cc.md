@@ -130,14 +130,16 @@ By following these steps, the comprehensive and informative explanation provided
 
 `intervention_report_body.cc` 文件在 Blink 渲染引擎中扮演着关键角色，它负责生成关于浏览器采取的干预措施的结构化信息（JSON）。这些报告对于网站开发者来说非常重要，因为它们可以帮助开发者了解并解决网站中可能存在的兼容性、性能或安全问题，最终提升用户体验。 虽然这个文件本身是 C++ 代码，但它与 JavaScript、HTML 和 CSS 的交互是紧密的，因为它报告的干预措施通常与浏览器处理这些 Web 技术的方式有关，并且这些报告最终可以通过 JavaScript 被捕获和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/intervention_report_body.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ void InterventionReportBody::BuildJSONValue(V8ObjectBuilder& builder) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

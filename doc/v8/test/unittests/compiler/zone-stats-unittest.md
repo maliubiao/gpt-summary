@@ -95,11 +95,13 @@ console.log("Function finished");
 
 `zone-stats-unittest.cc` 是 V8 引擎内部用于测试内存管理机制的关键部分。 虽然 JavaScript 开发者不直接接触这些底层细节，但理解这些机制有助于理解 JavaScript 的内存管理和性能优化原理。  `ZoneStats` 帮助 V8 开发者监控和优化内存分配，从而最终提升 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/zone-stats-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ TEST_F(ZoneStatsTest, SimpleAllocationLoop) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

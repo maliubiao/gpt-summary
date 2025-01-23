@@ -111,7 +111,7 @@ p.To.Reg = REG_AX    // 目标寄存器为 AX
 
 这段 `asm6.go` 代码是 Go 语言 x86 架构汇编器的核心部分，负责将中间表示的指令转换为实际的机器码。它处理各种操作数类型和寻址模式，并针对不同的指令和架构特性进行编码。虽然开发者不直接操作这段代码，但了解其功能有助于理解 Go 语言的编译过程和编写正确的 Go 汇编代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/asm6.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -120,8 +120,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 F,
 			obj.NAME_STATIC:
 			if !useAbs(ctxt, a.Sym) && ctxt.Arch.Family == sys.AMD64 {
@@ -1236,9 +1238,4 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LSym, p *obj.Prog) {
 			case Ziq_rp:
 				var rel obj.Reloc
 				v := vaddr(ctxt, p, &p.Fr
-"""
-
-
-
-
 ```

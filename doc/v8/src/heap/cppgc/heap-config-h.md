@@ -148,15 +148,17 @@ let processedData = processData(largeData);
 
 `v8/src/heap/cppgc/heap-config.h` 是 `cppgc` 组件的核心配置文件，它定义了垃圾回收器的各种行为。虽然用户不能直接修改这个文件，但理解其内容有助于理解 V8 的内存管理机制，并避免编写可能导致垃圾回收性能问题的 JavaScript 代码。如果该文件以 `.tq` 结尾，则它是 Torque 源代码，用于生成相关的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-config.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/heap-config.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ struct GCConfig {
 }  // namespace cppgc::internal
 
 #endif  // V8_HEAP_CPPGC_HEAP_CONFIG_H_
-
-"""
-
 ```

@@ -216,7 +216,7 @@ func setDefaultMulticastSockopts(s syscall.Handle) error {
 
 总而言之，`go/src/net/sockopt_windows.go` 文件是 Go 语言网络库在 Windows 平台上进行底层 Socket 配置的关键部分，它负责设置合理的默认选项，以确保网络连接的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sockopt_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -224,8 +224,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -266,9 +268,4 @@ func setDefaultMulticastSockopts(s syscall.Handle) error {
 	// concurrently across multiple listeners.
 	return os.NewSyscallError("setsockopt", syscall.SetsockoptInt(s, syscall.SOL_SOCKET, syscall.SO_REUSEADDR, 1))
 }
-
-"""
-
-
-
 ```

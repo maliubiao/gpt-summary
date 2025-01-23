@@ -215,15 +215,17 @@ Date: Tue, 15 Jun 2024 12:30:45 GMT
 
 总而言之，`QuicheUtcDateTimeToUnixSecondsImpl` 函数在 Chromium 的网络栈中扮演着关键的角色，负责将 UTC 时间转换为 Unix 时间戳，这对于诸如 TLS 证书验证等许多网络操作至关重要。尽管 JavaScript 代码本身不直接调用此函数，但其功能是 Web 浏览器正常运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/default/quiche_platform_impl/quiche_time_utils_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ std::optional<int64_t> QuicheUtcDateTimeToUnixSecondsImpl(int year, int month,
 }
 
 }  // namespace quiche
-
-"""
-
 ```

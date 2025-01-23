@@ -141,7 +141,7 @@ function f(arg) {
 
 总而言之，`v8/test/unittests/parser/parsing-unittest.cc` 是一个关键的测试文件，它细致地检验了 V8 JavaScript 引擎解析器的核心功能，特别是关于变量赋值分析的准确性，这对于引擎的正确运行和代码优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,9 +149,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共15部分，请归纳一下它的功能
+```
 
-"""
- eval(''); }", true, false, false},
+### 源代码
+```cpp
+eval(''); }", true, false, false},
       {"function x() { eval(''); }", true, false, false},
       {"(function(x) { eval(''); })", true, false, false},
   };
@@ -743,7 +745,4 @@ TEST_F(ParsingTest, MaybeAssignedInsideLoop) {
       {true, "while (j) { [foo] = [j] }", top},
       {true, "while (j) { [[foo]=[42]] = [] }", top},
       {true, "while (j) { var foo = j }", top},
-"""
-
-
 ```

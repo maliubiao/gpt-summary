@@ -145,7 +145,7 @@ go test -test.bench "."
 
 总而言之，这部分代码通过大量的测试用例，覆盖了 DES 和 Triple DES 算法的各种场景，确保 Go 语言实现的 `crypto/des` 包的正确性和性能符合预期。它使用了 Go 语言的 testing 框架，并参考了权威的密码学标准 (NIST SP 800-20) 来构建测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/des/des_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -154,8 +154,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 il,
 		[]byte{0x86, 0x9e, 0xfd, 0x7f, 0x9f, 0x26, 0x5a, 0x09}},
 }
@@ -870,10 +872,4 @@ func BenchmarkTDESDecrypt(b *testing.B) {
 		c.Decrypt(out, tt.out)
 	}
 }
-
-"""
-
-
-
-
 ```

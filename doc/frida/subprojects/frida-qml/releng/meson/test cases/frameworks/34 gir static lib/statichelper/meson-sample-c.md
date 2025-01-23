@@ -202,7 +202,7 @@ Message: Hello, Frida!
 
 总而言之，`meson-sample.c` 提供了一个简单但具有代表性的 GObject 示例，它可以帮助开发者理解如何在基于 GLib 的应用程序中使用对象和属性，以及如何使用 Frida 来动态地观察和修改这些对象的状态，这对于逆向分析和动态调试是非常有用的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/34 gir static lib/statichelper/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 typedef struct _MesonSamplePrivate
@@ -338,7 +340,4 @@ meson_sample_print_message (MesonSample *self)
 
   g_print ("Message: %s\n", priv->msg);
 }
-
-"""
-
 ```

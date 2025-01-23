@@ -353,7 +353,7 @@ if (ioctlPtr) {
 
 请注意，实际的库名称、函数名称、`ioctl` 命令值以及结构体偏移量需要根据具体的 Android 版本、RDMA 库实现以及反汇编分析来确定。 这些 Frida 示例提供了调试 RDMA 相关代码的基本思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/rdma_user_rxe.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -364,8 +364,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -529,7 +531,4 @@ struct rxe_queue_buf {
   __u8 data[];
 };
 #endif
-
-"""
-
 ```

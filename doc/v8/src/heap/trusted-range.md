@@ -135,11 +135,13 @@ console.log("Hello from JavaScript!");
 
 `trusted-range.cc` 的主要功能是在 V8 引擎内部创建一个受保护的内存区域，用于存放对安全至关重要的内部数据。这个机制增强了 V8 的安全性，特别是在沙箱环境中，间接地保障了 JavaScript 代码执行的安全性和稳定性。JavaScript 代码本身无法直接访问或操作这个受信任的区域，但它受益于 V8 引擎提供的这一层安全保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/trusted-range.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +232,4 @@ TrustedRange* TrustedRange::GetProcessWideTrustedRange() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

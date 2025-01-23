@@ -142,7 +142,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`simpletest.c` 是一个非常基础但重要的测试用例，用于验证一个名为 `subfunc` 的函数是否按预期返回了特定的值。它体现了动态插桩的核心思想，并可以作为理解 Frida 在底层如何工作的一个入口点。用户到达这里通常是为了学习、调试或扩展 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/42 subproject/subprojects/sublib/simpletest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,14 +150,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<subdefs.h>
 
 int main(void) {
     return subfunc() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

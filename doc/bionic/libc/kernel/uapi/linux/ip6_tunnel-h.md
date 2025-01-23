@@ -282,7 +282,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，并在 VPN 应用尝试创建 IPv6 隧道时，你可以在 Frida 的输出中看到 `ioctl` 系统调用被触发，以及传递的请求和 `ifreq` 结构体的相关信息，从而帮助你调试 Android Framework 或 NDK 如何与内核进行交互来配置 IPv6 隧道。 请注意，这只是一个基本的示例，实际调试可能需要更复杂的逻辑来解析 `ifreq` 结构体中的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ip6_tunnel.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -293,8 +293,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -342,7 +344,4 @@ struct ip6_tnl_parm2 {
   __be32 o_key;
 };
 #endif
-
-"""
-
 ```

@@ -183,7 +183,7 @@ By following this systematic approach, I was able to dissect the provided code s
 
 这部分 `linuxliketests.py` 文件主要负责测试 Frida Core 在 Linux 类似环境下使用 Meson 构建系统时的 **编译选项处理、安装过程正确性、依赖管理（特别是与 `pkg-config` 的集成）、运行时链接行为（RPATH）以及与外部库的交互**。它通过各种测试用例覆盖了构建和安装过程中的关键环节，确保 Frida Core 能够在 Linux 平台上正确构建、安装和运行。这些测试对于保证 Frida 功能的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,9 +192,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    def test_cpp_std_override(self):
+### 源代码
+```python
+def test_cpp_std_override(self):
         testdir = os.path.join(self.unit_test_dir, '6 std override')
         self.init(testdir)
         compdb = self.get_compdb()
@@ -899,7 +901,4 @@ Prompt:
 
     @skipIfNoPkgconfigDep('gmodule-2.0')
     def test_ldflag_dedup(se
-"""
-
-
 ```

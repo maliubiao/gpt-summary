@@ -264,7 +264,7 @@ if (ioctlPtr) {
 
 这个 Frida 脚本会拦截所有对 `ioctl` 的调用，并尝试识别与 virtgpu DRM 相关的调用，然后打印出相关的参数信息，帮助你调试和理解 Android 图形栈的工作原理。你需要根据你要调试的具体场景，扩展脚本以解析更多的 ioctl 命令和结构体。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/virtgpu_drm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -446,7 +448,4 @@ struct drm_virtgpu_context_init {
 }
 #endif
 #endif
-
-"""
-
 ```

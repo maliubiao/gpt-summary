@@ -147,7 +147,7 @@ int pkgdep() {
 
 `pkguser.c` 是一个简单的 C 程序，用于测试 Frida 构建系统中关于 `pkgconfig` 依赖处理的逻辑。它通过调用 `pkgdep()` 函数来模拟依赖项检查，并根据返回值判断依赖项的状态。这个程序在逆向工程中提供了一个理解依赖项管理机制的示例，并突出了正确配置依赖环境的重要性。在底层，它涉及到操作系统加载器、动态链接以及 `pkgconfig` 工具的使用。常见的错误包括缺少依赖项、`pkg-config` 配置错误和链接错误。用户通常是通过 Frida 的构建过程或运行单元测试来接触到这个程序的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/27 pkgconfig usage/dependee/pkguser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,15 +155,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<pkgdep.h>
 
 int main(int argc, char **argv) {
     int res = pkgdep();
     return res != 99;
 }
-
-"""
-
 ```

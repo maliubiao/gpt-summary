@@ -138,7 +138,7 @@ Initially, one might be tempted to overanalyze the `main.c` itself. However, the
 
 总而言之，这个简单的 `main.c` 文件本身的功能很基础，但它在 Frida 项目的测试套件中扮演着重要的角色，用于验证依赖文件生成功能的正确性。它的存在和运行涉及到对二进制底层、操作系统原理和构建系统的理解。 当测试失败时，开发者可能会从这个最简单的示例入手，逐步排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/124 dependency file generation/main .c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,12 +146,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

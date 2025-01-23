@@ -287,7 +287,7 @@ try {
 
 作为整个 `code-stub-assembler.cc` 的一部分，并且是接近尾声的部分，这部分代码主要负责实现 **JavaScript 语言的核心运算符、内置函数以及与内存管理相关的底层操作**。它提供了用于处理数值运算、类型检查（如 `instanceof`）、位运算、迭代器和 Promise 等关键特性的基本构建块。尤其关注 `ArrayBuffer` 和 `TypedArray` 的处理，暗示了对内存安全和性能的高度重视。  `CodeStubArguments` 类的存在表明这部分代码与 V8 执行代码片段（code stubs）的机制紧密相关。  考虑到这是第 20 部分，可以推断之前的章节可能已经定义了更基础的工具函数和数据结构，而接下来的章节可能会涉及更高级的代码生成或与特定平台架构相关的细节。 总之，这一部分是 V8 代码生成器中至关重要的一环，它将高级的 JavaScript 语义转化为可以高效执行的底层操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -295,9 +295,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第20部分，共23部分，请归纳一下它的功能
+```
 
-"""
-  GotoIfNot(IsCallable(CAST(callable)), &if_notcallable);
+### 源代码
+```cpp
+GotoIfNot(IsCallable(CAST(callable)), &if_notcallable);
 
     // Use the OrdinaryHasInstance algorithm.
     var_result = CAST(
@@ -1175,8 +1177,4 @@ TNode<BoolT> CodeStubAssembler::IsHoleyFastElementsKindForRead(
   static_assert(HOLEY_ELEMENTS == (PACKED_ELEMENTS | 1));
   static_assert(HOLEY_DOUBLE_ELEMENTS == (PACKED_DOUBLE_ELEMENTS | 1));
   static_assert(HOLEY_NONEXTENSIBLE_ELEMENTS ==
-         
-"""
-
-
 ```

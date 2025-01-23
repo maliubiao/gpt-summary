@@ -81,7 +81,7 @@ Let's break down the thought process to analyze this seemingly simple C file wit
 
 在这种调试场景下，`emptyfile.c` 作为一个测试用例的一部分，为理解构建系统的行为和定位问题提供了线索。它的存在是为了确保在各种情况下，包括存在空源文件的情况下，构建系统都能正确处理头文件的包含关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/130 include order/ctsub/emptyfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,9 +89,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

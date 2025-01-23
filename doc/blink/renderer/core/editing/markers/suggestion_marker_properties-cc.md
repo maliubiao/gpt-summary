@@ -180,15 +180,17 @@ SuggestionMarkerProperties properties =
 
 总而言之，`suggestion_marker_properties.cc` 文件定义了一个用于描述建议标记属性的关键数据结构，它在 Blink 引擎内部用于控制用户在网页上看到的文本建议的外观和行为。虽然它本身是 C++ 代码，但其最终目的是为了增强用户与网页的交互体验，因此与 JavaScript、HTML 和 CSS 有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/suggestion_marker_properties.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ SuggestionMarkerProperties::Builder::SetTextColor(Color text_color) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

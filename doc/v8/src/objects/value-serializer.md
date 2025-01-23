@@ -86,12 +86,14 @@ worker.postMessage(obj);
 
 总而言之，`v8/src/objects/value-serializer.cc` 文件中的代码是 V8 引擎实现 JavaScript 值序列化功能的核心部分，它直接支撑着 JavaScript 中 `structuredClone()` 和其他需要序列化操作的 API 的正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/value-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1871,7 +1873,4 @@ MaybeHandle<JSObject> ValueDeserializer::ReadJSObject() {
 
 MaybeHandle<JSArray> ValueDeserializer::ReadSparseJSArray() {
   // If we are at the end of the stack, abort. This function may r
-"""
-
-
 ```

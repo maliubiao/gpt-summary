@@ -103,11 +103,13 @@ proc Add(a: Int32, b: Int32): Int32 {
 
 `torque.cc` 是 Torque 语言的编译器，Torque 语言是 V8 引擎用来定义其内部实现细节的一种工具。通过使用 Torque，V8 开发者可以用一种更结构化、类型安全的方式来编写和维护引擎的底层代码，这些底层代码最终负责执行我们编写的 JavaScript 代码。  `torque.cc` 的作用就是将这些 Torque 的 "蓝图" 转换成 V8 能够理解和执行的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ int WrappedMain(int argc, const char** argv) {
 int main(int argc, const char** argv) {
   return v8::internal::torque::WrappedMain(argc, argv);
 }
-
-"""
-
 ```

@@ -76,13 +76,15 @@ console.log(f32Array); // 输出模拟的 f32x4 结果
 
 总结来说，这段 C++ 代码是 V8 引擎中用于测试 WebAssembly SIMD 功能的一部分，它专注于验证整数类型扩展转换为浮点数类型的指令的正确性，确保 JavaScript 中使用这些 WebAssembly 功能时能够得到预期的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-                 \
+### 源代码
+```
+\
       /* Only lane0 to lane7 are processed*/                                   \
       for (uint32_t j = 0; j < 7; j++) {                                       \
         float expected = static_cast<float>(static_cast<convert_type>(         \
@@ -174,8 +176,4 @@ RunExtendIntToF32x4RevecTest(I16x8, , kExprF32SConvertI32, S, int16_t,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

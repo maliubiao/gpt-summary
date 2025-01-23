@@ -69,15 +69,17 @@ The user wants to understand the functionality of the `local_dom_window.cc` file
 
 总而言之，`blink/renderer/core/frame/local_dom_window.cc` 的这部分代码定义了 `LocalDOMWindow` 类，它是 Blink 渲染引擎中代表浏览器窗口的核心组件。它负责管理脚本执行环境、处理窗口生命周期和事件、提供对浏览器功能的访问、管理安全策略以及提供性能监控接口。 它与 Javascript、HTML 和 CSS 紧密相关，是前端开发中 `window` 对象的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_dom_window.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)
@@ -828,7 +830,4 @@ LocalDOMWindow::GetAgentGroupSchedulerCompositorTaskRunner() {
 
 void LocalDOMWindow::AddInspectorIssue(AuditsIssue issue) {
   if (Ge
-"""
-
-
 ```

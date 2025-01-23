@@ -127,15 +127,17 @@ fetch('https://example.com/data')
 
 **因此，`quic_simple_client_test.cc` 虽然只是一个简单的单元测试，但它是保证 `QuicSimpleClient` 基本功能正确性的重要一环。当用户遇到 QUIC 相关问题时，开发者可能会通过运行此类测试来辅助定位问题。** 调试线索会从用户的具体操作（例如访问特定网站）开始，逐步深入到浏览器内部的网络组件，最终可能需要分析像 `QuicSimpleClient` 这样的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/quic/quic_simple_client_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ TEST(QuicSimpleClientTest, Initialize) {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

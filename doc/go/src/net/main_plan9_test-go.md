@@ -153,7 +153,7 @@ func TestSomethingWithNetwork(t *testing.T) {
 
 这段代码是 Go 语言 `net` 包在 Plan 9 平台上进行网络测试的基础设施。它定义了一些钩子函数，用于控制测试环境，特别是 socket 连接的行为。尽管在 Plan 9 版本中这些函数目前是空的，但在其他平台上可能存在实际的实现。使用者需要注意这些函数是专门为测试设计的，并且不同平台的实现可能不同。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/main_plan9_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ func forceCloseSockets() {}
 func enableSocketConnect() {}
 
 func disableSocketConnect(network string) {}
-
-"""
-
-
-
 ```

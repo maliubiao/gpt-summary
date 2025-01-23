@@ -121,7 +121,7 @@ Here's a thinking process to arrive at the analysis of the provided Python file 
 
 因此，`three.py` 作为一个测试用例，是 Frida 开发流程中的一部分，旨在提前捕获用户可能遇到的由于安装路径问题导致的错误，从而提高 Frida 的稳定性和易用性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python/7 install path/structured/alpha/three.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,9 +129,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

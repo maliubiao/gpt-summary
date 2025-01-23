@@ -216,7 +216,7 @@ Runner is loaded at 0x<计算出的runner_base>
 
 总而言之，这个 `run.py` 脚本是一个专注于自动化测试 Frida 对 Swift API 符号解析能力的工具，它利用 Frida 的动态 instrumentation 特性，连接到目标进程，注入代码，并验证符号解析的准确性。 理解其功能和背后的原理对于使用 Frida 进行逆向工程和动态分析是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/swiftapiresolver/run.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import frida
 from frida_tools.application import Reactor
 from pathlib import Path
@@ -306,7 +308,4 @@ class Controller:
 
 controller = Controller()
 controller.run()
-
-"""
-
 ```

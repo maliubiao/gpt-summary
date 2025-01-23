@@ -114,7 +114,7 @@ func main() {
 
 `go/src/strconv/bytealg_bootstrap.go` 中的 `index` 函数是一个为 Go 编译器自举过程提供的基础字节查找工具。它的存在是为了在早期编译阶段，当一些优化过的库不可用时，提供必要的功能。 普通的 Go 开发者不应该直接使用这个函数，而是应该使用 `strings` 包中提供的更完善的字符串操作函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strconv/bytealg_bootstrap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -122,8 +122,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -141,9 +143,4 @@ func index(s string, c byte) int {
 	}
 	return -1
 }
-
-"""
-
-
-
 ```

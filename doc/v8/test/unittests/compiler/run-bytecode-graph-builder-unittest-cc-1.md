@@ -209,7 +209,7 @@ Now I need to summarize these functionalities concisely.
 
 总而言之，这部分代码的功能是全面地测试 V8 引擎中字节码图构建器的正确性，涵盖了 JavaScript 语言中常见的运算符、语句和作用域规则，确保 JavaScript 代码能被准确地转换为高效的字节码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/run-bytecode-graph-builder-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/run-bytecode-graph-builder-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -217,8 +217,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r<char> script(1024);
     SNPrintF(script, "function %s(p1) { %s }\n%s({});", kFunctionName,
              snippets[i].code_snippet, kFunctionName);
@@ -1054,7 +1056,4 @@ TEST_F(RunBytecodeGraphBuilderTest, BytecodeGraphBuilderLoadContext) {
       {"function testOuter(outerArg) {"
        " var outerVar = outerArg * 2;"
        " this.testi
-"""
-
-
 ```

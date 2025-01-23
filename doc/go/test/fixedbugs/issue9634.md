@@ -121,15 +121,17 @@ func main() {
 
 `go/test/fixedbugs/issue9634.go` 这个代码片段是一个用于验证 Go 编译器正确性的测试用例。它检查了当错误地将结构体作为 `append` 函数的第一个参数时，编译器是否能按预期报告类型错误。 这确保了 Go 语言的类型安全和 `append` 函数的正确使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue9634.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -148,9 +150,4 @@ func main() {
 	}{}
 	_ = append(s, 0) // ERROR "must be a slice|must be slice|not a slice"
 }
-
-"""
-
-
-
 ```

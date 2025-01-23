@@ -180,7 +180,7 @@ fetch('https://example.com/image.png')
 
 这段代码主要负责 `HttpCache` 中缓存条目的**生命周期管理**和**并发访问控制**。它提供了创建、打开、失效缓存条目的机制，并管理与这些条目相关的网络请求（事务）。通过维护活跃条目和待处理操作的队列，它确保了在多请求并发的情况下，对同一缓存条目的操作能够正确、有序地执行，避免数据竞争和不一致性。同时，它与底层的磁盘缓存模块紧密合作，实现数据的持久化存储。这部分代码是 HTTP 缓存功能的核心组成部分，直接影响着浏览器加载网页和资源的性能和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oomEntry(*key, nullptr);
   } else {
     AsyncDoomEntry(*key, nullptr);
@@ -934,8 +936,4 @@ void HttpCache::OnBackendCreated(int result, PendingOp* pending_op) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

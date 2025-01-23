@@ -191,11 +191,13 @@ for (let i = 0; i < 1000; i++) {
 
 `trace-writer.cc` 是 V8 引擎中负责将内部发生的事件信息转换为结构化（通常是 JSON）格式的关键组件。它本身不执行 JavaScript 代码，但它记录了 JavaScript 代码执行过程中发生的各种事件，使得开发者能够理解 V8 引擎的内部运作和 JavaScript 代码的性能特征。  开发者通常不会直接与 `trace-writer.cc` 交互，而是通过浏览器开发者工具或其他性能分析工具来查看由它生成的跟踪数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/trace-writer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -418,7 +420,4 @@ TraceWriter* TraceWriter::CreateSystemInstrumentationTraceWriter() {
 }  // namespace tracing
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

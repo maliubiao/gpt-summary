@@ -245,7 +245,7 @@ By following these steps, the comprehensive analysis addressing all aspects of t
 
 总而言之，这个测试用例虽然看似简单，但它精确地验证了 Frida Swift 组件中处理包含反斜杠的字符串的能力，这对于保证 Frida 工具在处理文件路径和其他相关数据时的正确性至关重要。测试失败通常意味着 `comparer.h` 中 `DEF_WITH_BACKSLASH` 的定义不符合预期，需要开发者进行修正。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/107 spaces backslash/comparer-end-notstring.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -253,8 +253,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "comparer.h"
 
 #ifndef COMPARER_INCLUDED
@@ -275,7 +277,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

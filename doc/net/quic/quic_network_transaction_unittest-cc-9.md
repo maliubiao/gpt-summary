@@ -114,7 +114,7 @@ Now, I can formulate the response based on these observations.
 
 **作为第 10 部分，共 13 部分，可以推测该测试文件的整体结构是按照不同的网络场景进行划分的，这部分专注于测试 QUIC 代理连接的各种情况。**  后续部分可能涉及其他 QUIC 特性、错误处理、性能测试等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -122,9 +122,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
-     .Sync();
+### 源代码
+```cpp
+.Sync();
 
   socket_data
       .AddRead("endpoint-response",
@@ -933,7 +935,4 @@ TEST_P(QuicNetworkTransactionTest, QuicProxyConnectBadCertificate) {
   request_.url = GURL("https://mail.example.org/");
   HttpNetworkTransaction trans(DEFAULT_PRIORITY, session_.get());
   TestCompletionCallbac
-"""
-
-
 ```

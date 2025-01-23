@@ -144,14 +144,16 @@ Organize the findings into clear categories:
 
 总而言之，`html_link_element_test.cc` 文件通过各种测试用例，细致地验证了 Blink 引擎中 `HTMLLinkElement` 类的行为，确保了 `<link>` 元素在各种场景下的功能符合 Web 标准和预期，从而保障了基于 HTML、CSS 和 JavaScript 的网页功能的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_link_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ TEST_F(HTMLLinkElementTest, PaymentCounter) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

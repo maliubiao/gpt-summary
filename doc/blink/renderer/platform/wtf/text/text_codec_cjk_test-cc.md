@@ -89,14 +89,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `text_codec_cjk_test.cc` 文件虽然是一个底层的测试文件，但它所测试的 `TextCodecCJK::IsSupported` 功能对于浏览器正确处理包含 CJK 字符的网页至关重要。它直接影响到 HTML 页面的渲染、JavaScript 文本处理以及 CSS 样式中 CJK 字符的显示。开发者理解字符编码的重要性，避免使用不支持的编码，并正确声明编码方式，是确保网页内容正确呈现的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_cjk_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -120,7 +122,4 @@ TEST(TextCodecCJK, IsSupported) {
 
 }  // namespace
 }  // namespace WTF
-
-"""
-
 ```

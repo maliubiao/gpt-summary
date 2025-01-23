@@ -110,11 +110,13 @@ obj1 = null;
 
 在这个例子中，`unified-heap-marking-verifier.cc` 的作用是确保 V8 的垃圾回收器能够正确地识别哪些对象应该被标记为存活（例如，当 `obj1` 仍然被 `obj2.ref` 引用时），以及哪些对象可以被标记为可回收（例如，当 `obj1` 不再被任何变量引用时）。 它的存在增强了 V8 引擎的健壮性和可靠性，确保 JavaScript 代码的内存管理是安全和正确的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/unified-heap-marking-verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ UnifiedHeapMarkingVerifier::UnifiedHeapMarkingVerifier(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

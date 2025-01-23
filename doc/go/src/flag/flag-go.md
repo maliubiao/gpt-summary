@@ -160,7 +160,7 @@ go run main.go -age 30  李四
 
 这部分 `flag` 包代码的核心功能是提供了一套机制，用于在 Go 语言程序中**定义、解析和访问命令行参数**。它支持多种数据类型的标志，并提供了方便的方法来生成帮助信息和处理解析错误。它的目标是简化 Go 程序处理命令行输入的过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/flag/flag.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1150,9 +1152,4 @@ func TextVar(p encoding.TextUnmarshaler, name string, value encoding.TextMarshal
 // Each time the flag is seen, fn is called with the value of the flag.
 // If fn returns a non-nil error, it will be treated as a flag value parsing error.
 func (f *FlagSet) Func(name, usage string, fn func(str
-"""
-
-
-
-
 ```

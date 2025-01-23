@@ -261,7 +261,7 @@ console.log(obj[0]); // 输出 undefined (因为没有默认的 getter，也没�
 
 总而言之，这部分测试旨在确保 V8 的索引属性拦截器功能稳定可靠，能够处理各种复杂的场景，并与引擎的其他部分良好地协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -269,8 +269,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 DoubleWithIndexedAccessor) {
   v8::Isolate* isolate = CcTest::isolate();
   v8::HandleScope scope(isolate);
@@ -1188,7 +1190,4 @@ v8::Intercepted InterceptorCallICGetter5(
   v8::Isolate* isolate = info.GetIsolate();
   if (v8_str("x")->Equals(isolate->GetCurrentContext(), name).FromJust()) {
     info.GetReturnValue().Se
-"""
-
-
 ```

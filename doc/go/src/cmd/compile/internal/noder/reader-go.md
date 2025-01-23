@@ -150,7 +150,7 @@ func main() {
 
 这段代码实现了 Go 编译器后端中读取统一 IR 导出数据的核心功能。它定义了读取器结构体和方法，用于从字节流中反序列化包、类型、对象和部分语句表达式的信息，是 Go 语言包导入和泛型实现的关键组成部分。它通过延迟加载和索引机制高效地读取编译产物，为后续的编译阶段提供必要的信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/reader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -158,8 +158,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2599,9 +2601,4 @@ func (r *reader) expr() (res ir.Node) {
 		var offset int64
 		for i := r.Len(); i >= 0; i-- {
 			field := typ.Fi
-"""
-
-
-
-
 ```

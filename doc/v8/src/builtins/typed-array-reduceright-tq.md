@@ -185,14 +185,16 @@ console.log("Reduce right on empty array with initial value:", initialValueForEm
 
 理解这些常见的错误可以帮助开发者更有效地使用 `reduceRight` 方法，并避免潜在的运行时问题。这段 Torque 代码的实现也通过类型检查和错误处理机制，在 V8 引擎层面确保了 `reduceRight` 的正确行为和异常处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-reduceright.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ transitioning javascript builtin TypedArrayPrototypeReduceRight(
   }
 }
 }
-
-"""
-
 ```

@@ -170,7 +170,7 @@ FORTRAN gave us this number: 0.000000.
 
 这个 `main.c` 文件虽然功能简单，但在 Frida 的上下文中，它是一个重要的测试用例，用于验证 Frida 对跨语言函数调用的 instrumentation 能力。理解其功能以及它与逆向工程、底层原理的联系，可以帮助我们更好地理解 Frida 的工作机制和应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/fortran/9 cpp/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 double fortran(void);
@@ -188,7 +190,4 @@ int main(void) {
     printf("FORTRAN gave us this number: %lf.\n", fortran());
     return 0;
 }
-
-"""
-
 ```

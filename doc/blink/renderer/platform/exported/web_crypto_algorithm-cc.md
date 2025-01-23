@@ -137,14 +137,16 @@ This iterative process of scanning, identifying key structures, connecting to we
 
 `web_crypto_algorithm.cc` 文件是 Blink 引擎中定义和管理 Web Crypto API 支持的加密算法的关键部分。它通过一个静态数据结构来维护算法的元信息，并提供查找和访问这些信息的接口。这使得 Blink 引擎能够正确地处理来自 JavaScript 的 Web Crypto API 请求，并根据指定的算法和参数执行相应的加密操作。 开发者在使用 Web Crypto API 时需要仔细参考支持的算法名称和参数要求，避免常见的拼写错误、参数缺失或操作类型不匹配等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_crypto_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -736,7 +738,4 @@ void WebCryptoAlgorithm::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

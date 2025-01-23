@@ -133,7 +133,7 @@ Frida 是一个动态插桩工具，常用于逆向工程。这个脚本很可�
 
 通过以上步骤，开发者可以逐步排查测试失败的原因，最终修复 `gluon` 模块中的错误或调整测试用例的预期行为。这个 `subprog.py` 文件就成为了他们调试过程中的一个关键线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python/1 basic/subdir/subprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # In order to run this program, PYTHONPATH must be set to
@@ -154,7 +156,4 @@ print('Running mainprog from subdir.')
 
 if gluonator.gluoninate() != 42:
     raise ValueError("!= 42")
-
-"""
-
 ```

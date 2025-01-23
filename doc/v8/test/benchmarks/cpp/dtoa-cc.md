@@ -107,7 +107,7 @@ While this code primarily benchmarks an internal V8 function, it highlights pote
 
 The `v8/test/benchmarks/cpp/dtoa.cc` file is a C++ source file within the V8 project that serves as a performance benchmark for V8's internal `fast_dtoa` algorithm. This algorithm is responsible for converting double-precision floating-point numbers to their string representations, a fundamental operation when dealing with numbers in JavaScript. The benchmark uses the Google Benchmark library and a large array of representative `double` values (including some that are known to be challenging for dtoa algorithms) to measure the efficiency of V8's implementation. It is not a Torque file and directly relates to how JavaScript numbers are converted to strings.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/benchmarks/cpp/dtoa.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/benchmarks/cpp/dtoa.cc以.tq结尾，那它是个v8 torque源代码，
@@ -115,8 +115,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -608,7 +610,4 @@ constexpr const double kTestDoubles[4096] = {
     191.0337664066, 137.4560796890, 522.6319190513, 202.9777711829,
     177.7567476824, 790.1770104507, 269.3972528234, 471.7426143450,
     260.4208609575, 718.
-"""
-
-
 ```

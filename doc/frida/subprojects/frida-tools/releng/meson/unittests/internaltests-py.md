@@ -64,7 +64,7 @@ Now, I will formulate the summary based on these observations.
 
 这个代码片段主要测试了 Meson 构建系统在处理版本号、文件权限、编译器和链接器参数以及字符串模板替换等方面的内部逻辑。这些功能是 Frida 工具能够成功构建和部署到不同目标平台的基础。这些测试覆盖了底层操作系统、编译器和链接器的行为，并考虑了用户可能遇到的常见错误情况。它确保了 Meson 在 Frida 构建过程中能够正确地处理各种配置和参数，从而生成可靠的 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -737,7 +739,4 @@ class InternalTests(unittest.TestCase):
                     for link_arg in link_args:
                         for lib in ('pthread', 'm', 'c', 'dl', 'rt'):
                             self.assertNotIn(f'lib{lib}.a', link_arg, msg=lin
-"""
-
-
 ```

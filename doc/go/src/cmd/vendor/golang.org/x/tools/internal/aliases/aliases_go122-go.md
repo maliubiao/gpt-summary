@@ -149,15 +149,17 @@ func main() {
 
 总的来说，`aliases_go122.go` 这个文件是 `golang.org/x/tools` 为了在 Go 1.22 环境下也能处理类型别名相关操作而提供的兼容性层。开发者在使用 `golang.org/x/tools` 工具集时，无需直接与这个文件交互，工具集内部会根据 Go 的版本选择合适的实现。理解这个文件的作用有助于理解 Go 类型别名功能在不同版本之间的差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/aliases/aliases_go122.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -238,9 +240,4 @@ func Enabled() bool {
 	_, enabled := pkg.Scope().Lookup("A").Type().(*types.Alias)
 	return enabled
 }
-
-"""
-
-
-
 ```

@@ -208,7 +208,7 @@ Finally, I organize the information into the requested categories, providing cle
 
 总而言之，这个 `main.c` 文件虽然是一个测试用例，但它简洁地演示了操作系统处理 Shebang 的基本流程，对于理解 Frida 等工具如何与外部脚本交互，以及排查相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/native/8 external program shebang parsing/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,8 +216,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -290,7 +292,4 @@ err:
   fclose (f);
   return 1;
 }
-
-"""
-
 ```

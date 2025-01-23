@@ -185,15 +185,17 @@ By following these steps, I could systematically dissect the `create_window.cc` 
 
 通过以上分析，我们可以深入了解 `blink/renderer/core/page/create_window.cc` 文件的功能、它与 Web 技术的关系，并掌握一些调试技巧，以便在遇到与新窗口创建相关的问题时能够进行有效地排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/create_window.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies)
@@ -574,7 +576,4 @@ Frame* CreateNewWindow(LocalFrame& opener_frame,
 }
 
 }  // namespace blink
-
-"""
-
 ```

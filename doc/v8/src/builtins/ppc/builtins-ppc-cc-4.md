@@ -132,7 +132,7 @@ processValue("abc"); // 错误：乘法运算符不适用于字符串
 
 `v8/src/builtins/ppc/builtins-ppc.cc` 文件是 V8 引擎在 PPC64 架构上的核心组成部分。它提供了关键的底层功能实现，包括数字类型转换、JavaScript API 的调用机制、以及代码优化的回退机制（反优化）。这些内置函数是 JavaScript 代码高效执行的基础，并且与 JavaScript 的多种核心特性紧密相关。虽然开发者通常不会直接接触到这些内置函数的实现细节，但他们的行为会受到这些底层机制的影响，例如性能和类型一致性。这个文件不是 Torque 源文件，而是使用汇编语言编写的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ppc/builtins-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -140,9 +140,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- bits, 32 uncoded bits),
+### 源代码
+```cpp
+bits, 32 uncoded bits),
   // the result is 0.
   // Compare exponent with 84 (compare exponent - 1 with 83).
   __ cmpi(scratch, Operand(83));
@@ -771,8 +773,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
-
 ```

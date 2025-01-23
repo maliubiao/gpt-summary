@@ -91,12 +91,14 @@ const child = Object.create(parent); // 触发 Map 相关的原型链管理机�
 
 总而言之，`v8/src/objects/map.cc` 的这部分代码是V8引擎中至关重要的组成部分，它直接影响着JavaScript对象的内存布局、属性访问性能以及原型继承的实现。理解这部分代码的功能有助于深入理解V8引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 sition_symbol);
   if (!maybe_transition.is_null()) {
     return maybe_transition.ToHandleChecked();
@@ -905,8 +907,4 @@ void NormalizedMapCache::Set(Isolate* isolate, DirectHandle<Map> fast_map,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

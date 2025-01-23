@@ -161,15 +161,17 @@ fetch('https://test.example.com/')
 
 **作为调试线索：** 如果用户在访问某个 HTTPS 网站时遇到问题（例如连接超时、页面加载缓慢、连接被重置等），网络工程师或开发人员可以使用 Chromium 的网络日志工具 (chrome://net-export/) 捕获网络事件。分析这些日志可以查看是否尝试建立了 QUIC 连接，握手过程是否成功，是否存在丢包或重传等情况。  `quic_end_to_end_unittest.cc` 中的测试用例覆盖了这些关键环节，可以帮助开发人员理解和调试 QUIC 协议在各种场景下的行为。 例如，如果用户报告某个网站使用 QUIC 时经常连接失败，开发人员可能会参考 `MLKEMDisabled` 这类测试用例，检查是否是客户端和服务端密码套件不匹配的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_end_to_end_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -520,7 +522,4 @@ TEST_F(QuicEndToEndTest, MLKEMDisabled) {
 
 }  // namespace test
 }  // namespace net
-
-"""
-
 ```

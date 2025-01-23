@@ -96,11 +96,13 @@ console.log(doubleToString(Infinity)); // 输出: "null" (JSON 中 Infinity 表�
 
 `json_platform_v8.cc` 文件中的 `StrToD` 和 `DToStr` 函数是 V8 引擎内部用于在 C++ 层面上进行字符串和双精度浮点数之间转换的关键工具，尤其在需要与外部系统交换符合 JSON 格式的数据时。 JavaScript 通过 V8 引擎执行，其数字类型的处理与这两个函数的功能密切相关。 上述 JavaScript 示例演示了在 JavaScript 中如何进行类似的转换，并展示了 JavaScript 中 `NaN` 和 `Infinity` 在 JSON 序列化中的处理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The V8 Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -133,7 +135,4 @@ std::string DToStr(double value) {
 }  // namespace platform
 }  // namespace json
 }  // namespace v8_crdtp
-
-"""
-
 ```
