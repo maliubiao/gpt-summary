@@ -3,6 +3,7 @@ import argparse
 import pdb
 import asyncio
 from gpt_lsp import AsyncOpenAIClient, add_arguments
+from markdown_syntax_map import get_language_identifier
 
 def read_prompt_template(prompt_template_path):
     """读取提示词模板文件"""
@@ -52,8 +53,7 @@ async def stream_response(prompt, output_file_path):
             reasoning += token
         else:
             response_text += token
-        logger.info(f"Test response token: {token}")
-    markdown_content = f"Response:\n```\n{reasoning}\n```\n{response_text}\nPrompt: \n```\n{prompt}\n```"
+    markdown_content = f"Response:\n```\n{reasoning}\n```{type}\n{response_text}\nPrompt: \n```\n{prompt}\n```"
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
     with open(output_file_path, 'w', encoding='utf-8') as f:
         f.write(markdown_content)
