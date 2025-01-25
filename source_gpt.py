@@ -40,23 +40,45 @@ def process_file_content(file_path, directory, chunk_size=32*1024):
         return [(modified_relative_path, "", file_content, "", 0)]
 
 def generate_output_path(output_dir, filepath, idx, file_suffix):
-    """生成输出文件路径"""
-    base_path = os.path.join(output_dir, os.path.splitext(filepath)[0] + f"-{file_suffix}")
-    return f"{base_path}.md" if idx == 0 else f"{base_path}-{idx}.md"
+    """优化后的路径生成"""
+    base_name = os.path.splitext(os.path.basename(filepath))[0]
+    output_base = os.path.join(output_dir, os.path.dirname(filepath), base_name)
+    return f"{output_base}-{file_suffix}-{idx}.md" if idx > 0 else f"{output_base}-{file_suffix}.md"
 
-async def stream_response(prompt, output_file_path):
-    """流式处理响应并保存结果"""
+async def handle_streaming_response(prompt, output_file_path=None):
+    """通用流式响应处理函数"""
     reasoning = ""
     response_text = ""
+    
     async for tp, token in openai_client.ask_stream(prompt):
         if tp == openai_client.type_reasoning:
             reasoning += token
         else:
             response_text += token
-    markdown_content = f"Response:\n```\n{reasoning}\n```{type}\n{response_text}\nPrompt: \n```\n{prompt}\n```"
+    
+    markdown_content = generate_markdown_content(reasoning, response_text, prompt)
+    
+    if output_file_path:
+        save_markdown_file(output_file_path, markdown_content)
+    
+    return markdown_content
+
+def generate_markdown_content(reasoning, response_text, prompt):
+    """生成Markdown内容"""
+    return (
+        f"Response:\n```\n{reasoning}\n```\n{response_text}\n"
+        f"Prompt: \n```\n{prompt}\n```"
+    )
+
+def save_markdown_file(output_file_path, content):
+    """保存Markdown文件"""
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
     with open(output_file_path, 'w', encoding='utf-8') as f:
-        f.write(markdown_content)
+        f.write(content)
+
+async def stream_response(prompt, output_file_path):
+    """流式处理响应并保存结果（调用公共函数）"""
+    await handle_streaming_response(prompt, output_file_path)
 
 def process_single_file(file_info, prompt_template, output_dir):
     """处理单个文件"""
@@ -116,16 +138,8 @@ async def main():
         args.gemini_token,
         args.gemini_model
     )
-    reasoning = ""
-    content = ""
-    async for tp, token in openai_client.ask_stream("hello"):
-        if tp == openai_client.type_reasoning:
-            reasoning += token
-        else:
-            content += token
-        logger.info(f"Test response token: {token}")
-    markdown_content = f"Response:\n```\n{reasoning}\n```\n{content}\nPrompt: \n```\nhello\n```"
-    print(markdown_content)
+    test_markdown = await handle_streaming_response("hello")
+    print(test_markdown)
     generate_file_list_and_content(args.dir, args.prompt_template, args.output_dir, args.file_suffixes, args.exclude)
 
 if __name__ == "__main__":
