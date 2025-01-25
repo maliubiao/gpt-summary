@@ -56,7 +56,7 @@ async def handle_streaming_response(prompt, output_file_path=None):
         else:
             response_text += token
     
-    markdown_content = generate_markdown_content(reasoning, response_text, prompt)
+    markdown_content = generate_markdown_content(reasoning, response_text, prompt, output_file_path)
     
     if output_file_path:
         save_markdown_file(output_file_path, markdown_content)
@@ -65,9 +65,10 @@ async def handle_streaming_response(prompt, output_file_path=None):
 
 def generate_markdown_content(reasoning, response_text, prompt):
     """生成Markdown内容"""
+    # Get file extension and use it to determine language identifier
     return (
-        f"Response:\n```\n{reasoning}\n```\n{response_text}\n"
-        f"Prompt: \n```\n{prompt}\n```"
+        f"响应:\n```\n{reasoning}\n```\n{response_text}\n"
+        f"提示器: \n{prompt}\n"
     )
 
 def save_markdown_file(output_file_path, content):
@@ -84,11 +85,13 @@ def process_single_file(file_info, prompt_template, output_dir):
     """处理单个文件"""
     filepath, prefix, file_content, suffix, idx = file_info
     file_suffix = os.path.splitext(filepath)[1].strip(".")
+    ext = os.path.splitext(filepath)[1]
     prompt = prompt_template.format(
         filepath=filepath,
         prefix=prefix,
         file_content=file_content,
-        suffix=suffix
+        suffix=suffix,
+        lang=get_language_identifier(ext)
     )
     output_file_path = generate_output_path(output_dir, filepath, idx, file_suffix)
     print(output_file_path)
