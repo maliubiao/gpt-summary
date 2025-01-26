@@ -3,7 +3,7 @@ import argparse
 import pdb
 import asyncio
 from gpt_lsp import AsyncOpenAIClient, add_arguments
-from markdown_syntax_map import get_language_identifier
+from markdown_syntax_map import get_language_identifier,syntax_map
 
 def read_prompt_template(prompt_template_path):
     """读取提示词模板文件"""
@@ -56,7 +56,7 @@ async def handle_streaming_response(prompt, output_file_path=None):
         else:
             response_text += token
     
-    markdown_content = generate_markdown_content(reasoning, response_text, prompt, output_file_path)
+    markdown_content = generate_markdown_content(reasoning, response_text, prompt)
     
     if output_file_path:
         save_markdown_file(output_file_path, markdown_content)
@@ -67,8 +67,8 @@ def generate_markdown_content(reasoning, response_text, prompt):
     """生成Markdown内容"""
     # Get file extension and use it to determine language identifier
     return (
-        f"响应:\n```\n{reasoning}\n```\n{response_text}\n"
-        f"提示器: \n{prompt}\n"
+        f"响应:\n\n```\n{reasoning}\n```\n{response_text}\n"
+        f"提示器:\n\n{prompt}\n"
     )
 
 def save_markdown_file(output_file_path, content):
@@ -81,7 +81,7 @@ async def stream_response(prompt, output_file_path):
     """流式处理响应并保存结果（调用公共函数）"""
     await handle_streaming_response(prompt, output_file_path)
 
-def process_single_file(file_info, prompt_template, output_dir):
+async def process_single_file(file_info, prompt_template, output_dir):
     """处理单个文件"""
     filepath, prefix, file_content, suffix, idx = file_info
     file_suffix = os.path.splitext(filepath)[1].strip(".")
@@ -100,11 +100,11 @@ def process_single_file(file_info, prompt_template, output_dir):
         return
 
     try:
-        asyncio.run(stream_response(prompt, output_file_path))
+        await stream_response(prompt, output_file_path)
     except ValueError:
         pass
 
-def generate_file_list_and_content(directory, prompt_template_path, output_dir, file_suffixes, exclude_dirs):
+async def generate_file_list_and_content(directory, prompt_template_path, output_dir, file_suffixes, exclude_dirs):
     """主函数：生成文件列表并处理内容"""
     prompt_template = read_prompt_template(prompt_template_path)
 
@@ -116,7 +116,7 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
 
             file_infos = process_file_content(file_path, directory)
             for file_info in file_infos:
-                process_single_file(file_info, prompt_template, output_dir)
+                await process_single_file(file_info, prompt_template, output_dir)
 
 async def main():
     global openai_client,logger
@@ -143,7 +143,7 @@ async def main():
     )
     test_markdown = await handle_streaming_response("hello")
     print(test_markdown)
-    generate_file_list_and_content(args.dir, args.prompt_template, args.output_dir, args.file_suffixes, args.exclude)
+    await generate_file_list_and_content(args.dir, args.prompt_template, args.output_dir, args.file_suffixes, args.exclude)
 
 if __name__ == "__main__":
     asyncio.run(main())

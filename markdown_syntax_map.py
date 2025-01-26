@@ -136,7 +136,7 @@ syntax_map  ={
 
 def get_language_identifier(file_ext):
     """根据文件扩展名获取对应的Markdown语法标识符"""
-    for mapping in syntax_map:
+    for mapping in syntax_map["syntax_mapping"]:
         if file_ext.lower() == mapping['extension']:
             if isinstance(mapping['markdown_identifier'], list):
                 return mapping['markdown_identifier'][0]  # 使用第一个别名
