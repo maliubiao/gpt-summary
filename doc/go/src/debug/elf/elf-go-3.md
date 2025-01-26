@@ -1,0 +1,1005 @@
+Response:
+这段代码是 Go 语言实现的 ELF（Executable and Linkable Format）文件解析库的一部分，主要用于处理 ELF 文件中的重定位类型（Relocation Types）。ELF 是一种常见的二进制文件格式，用于可执行文件、目标文件、共享库等。重定位类型是 ELF 文件中的一个重要概念，用于描述在链接或加载时如何修改代码或数据中的地址。
+
+### 功能归纳
+
+1. **定义重定位类型**：
+   - 代码中定义了多种处理器的重定位类型，包括 PowerPC（`R_PPC`）、PowerPC64（`R_PPC64`）、RISC-V（`R_RISCV`）、s390x（`R_390`）和 SPARC（`R_SPARC`）。
+   - 每种处理器的重定位类型都有对应的常量定义，例如 `R_PPC_ADDR32`、`R_PPC64_ADDR32`、`R_RISCV_32` 等。
+
+2. **重定位类型的字符串表示**：
+   - 每个重定位类型都有一个对应的字符串表示，例如 `R_PPC_ADDR32` 对应的字符串是 `"R_PPC_ADDR32"`。
+   - 通过 `String()` 和 `GoString()` 方法可以将重定位类型的枚举值转换为字符串，方便调试和日志输出。
+
+3. **ELF 文件头的定义**：
+   - 代码片段末尾定义了 ELF32 文件头的结构体 `Header32`，包含了 ELF 文件的基本信息，如文件类型、机器架构、入口点地址等。
+
+### 代码推理与示例
+
+假设我们有一个 ELF 文件，并且需要解析其中的重定位类型。我们可以使用这些定义来识别和处理重定位类型。
+
+#### 示例代码
+
+```go
+package main
+
+import (
+	"fmt"
+	"debug/elf"
+)
+
+func main() {
+	// 假设我们有一个 ELF 文件
+	file, err := elf.Open("example.elf")
+	if err != nil {
+		fmt.Println("Failed to open ELF file:", err)
+		return
+	}
+	defer file.Close()
+
+	// 获取重定位节
+	relocSections := file.SectionsByType(elf.SHT_REL)
+	for _, section := range relocSections {
+		relocations, err := section.Relocations()
+		if err != nil {
+			fmt.Println("Failed to get relocations:", err)
+			continue
+		}
+
+		// 遍历重定位条目
+		for _, reloc := range relocations {
+			// 打印重定位类型
+			fmt.Printf("Relocation type: %s\n", reloc.Type)
+		}
+	}
+}
+```
+
+#### 假设的输入与输出
+
+假设 `example.elf` 文件中包含以下重定位条目：
+
+- `R_PPC_ADDR32`
+- `R_PPC64_ADDR32`
+- `R_RISCV_32`
+
+运行上述代码后，输出可能如下：
+
+```
+Relocation type: R_PPC_ADDR32
+Relocation type: R_PPC64_ADDR32
+Relocation type: R_RISCV_32
+```
+
+### 命令行参数处理
+
+这段代码本身并不涉及命令行参数的处理。如果需要处理命令行参数，可以使用 Go 的 `flag` 包或 `os.Args` 来解析命令行参数。
+
+### 使用者易犯错的点
+
+1. **重定位类型的混淆**：
+   - 不同处理器的重定位类型可能具有相同的值，但含义不同。例如，`R_PPC_ADDR32` 和 `R_PPC64_ADDR32` 的值都是 1，但它们分别用于 32 位和 64 位的 PowerPC 架构。使用时要确保选择正确的重定位类型。
+
+2. **ELF 文件头的解析**：
+   - 在解析 ELF 文件头时，需要注意字节序（Endianness）的问题。不同的架构可能使用不同的字节序（大端或小端），解析时需要根据实际情况进行处理。
+
+3. **重定位节的处理**：
+   - 重定位节（`.rel` 或 `.rela`）的处理需要仔细检查节类型和节大小，确保正确解析每个重定位条目。
+
+### 总结
+
+这段代码的主要功能是定义和处理 ELF 文件中的重定位类型，并为每种处理器架构提供了相应的枚举值和字符串表示。通过这段代码，可以方便地解析和识别 ELF 文件中的重定位信息，适用于二进制文件分析、链接器开发等场景。
+Prompt: 
+```
+这是路径为go/src/debug/elf/elf.go的go语言实现的一部分， 请列举一下它的功能, 　
+如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
+如果涉及代码推理，需要带上假设的输入与输出，
+如果涉及命令行参数的具体处理，请详细介绍一下，
+如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+请用中文回答。
+这是第4部分，共5部分，请归纳一下它的功能
+
+"""
+evant
+// shared relocations have been renamed with the prefix R_PPC_.
+// The original name follows the value in a comment.
+type R_PPC int
+
+const (
+	R_PPC_NONE            R_PPC = 0  // R_POWERPC_NONE
+	R_PPC_ADDR32          R_PPC = 1  // R_POWERPC_ADDR32
+	R_PPC_ADDR24          R_PPC = 2  // R_POWERPC_ADDR24
+	R_PPC_ADDR16          R_PPC = 3  // R_POWERPC_ADDR16
+	R_PPC_ADDR16_LO       R_PPC = 4  // R_POWERPC_ADDR16_LO
+	R_PPC_ADDR16_HI       R_PPC = 5  // R_POWERPC_ADDR16_HI
+	R_PPC_ADDR16_HA       R_PPC = 6  // R_POWERPC_ADDR16_HA
+	R_PPC_ADDR14          R_PPC = 7  // R_POWERPC_ADDR14
+	R_PPC_ADDR14_BRTAKEN  R_PPC = 8  // R_POWERPC_ADDR14_BRTAKEN
+	R_PPC_ADDR14_BRNTAKEN R_PPC = 9  // R_POWERPC_ADDR14_BRNTAKEN
+	R_PPC_REL24           R_PPC = 10 // R_POWERPC_REL24
+	R_PPC_REL14           R_PPC = 11 // R_POWERPC_REL14
+	R_PPC_REL14_BRTAKEN   R_PPC = 12 // R_POWERPC_REL14_BRTAKEN
+	R_PPC_REL14_BRNTAKEN  R_PPC = 13 // R_POWERPC_REL14_BRNTAKEN
+	R_PPC_GOT16           R_PPC = 14 // R_POWERPC_GOT16
+	R_PPC_GOT16_LO        R_PPC = 15 // R_POWERPC_GOT16_LO
+	R_PPC_GOT16_HI        R_PPC = 16 // R_POWERPC_GOT16_HI
+	R_PPC_GOT16_HA        R_PPC = 17 // R_POWERPC_GOT16_HA
+	R_PPC_PLTREL24        R_PPC = 18
+	R_PPC_COPY            R_PPC = 19 // R_POWERPC_COPY
+	R_PPC_GLOB_DAT        R_PPC = 20 // R_POWERPC_GLOB_DAT
+	R_PPC_JMP_SLOT        R_PPC = 21 // R_POWERPC_JMP_SLOT
+	R_PPC_RELATIVE        R_PPC = 22 // R_POWERPC_RELATIVE
+	R_PPC_LOCAL24PC       R_PPC = 23
+	R_PPC_UADDR32         R_PPC = 24 // R_POWERPC_UADDR32
+	R_PPC_UADDR16         R_PPC = 25 // R_POWERPC_UADDR16
+	R_PPC_REL32           R_PPC = 26 // R_POWERPC_REL32
+	R_PPC_PLT32           R_PPC = 27 // R_POWERPC_PLT32
+	R_PPC_PLTREL32        R_PPC = 28 // R_POWERPC_PLTREL32
+	R_PPC_PLT16_LO        R_PPC = 29 // R_POWERPC_PLT16_LO
+	R_PPC_PLT16_HI        R_PPC = 30 // R_POWERPC_PLT16_HI
+	R_PPC_PLT16_HA        R_PPC = 31 // R_POWERPC_PLT16_HA
+	R_PPC_SDAREL16        R_PPC = 32
+	R_PPC_SECTOFF         R_PPC = 33 // R_POWERPC_SECTOFF
+	R_PPC_SECTOFF_LO      R_PPC = 34 // R_POWERPC_SECTOFF_LO
+	R_PPC_SECTOFF_HI      R_PPC = 35 // R_POWERPC_SECTOFF_HI
+	R_PPC_SECTOFF_HA      R_PPC = 36 // R_POWERPC_SECTOFF_HA
+	R_PPC_TLS             R_PPC = 67 // R_POWERPC_TLS
+	R_PPC_DTPMOD32        R_PPC = 68 // R_POWERPC_DTPMOD32
+	R_PPC_TPREL16         R_PPC = 69 // R_POWERPC_TPREL16
+	R_PPC_TPREL16_LO      R_PPC = 70 // R_POWERPC_TPREL16_LO
+	R_PPC_TPREL16_HI      R_PPC = 71 // R_POWERPC_TPREL16_HI
+	R_PPC_TPREL16_HA      R_PPC = 72 // R_POWERPC_TPREL16_HA
+	R_PPC_TPREL32         R_PPC = 73 // R_POWERPC_TPREL32
+	R_PPC_DTPREL16        R_PPC = 74 // R_POWERPC_DTPREL16
+	R_PPC_DTPREL16_LO     R_PPC = 75 // R_POWERPC_DTPREL16_LO
+	R_PPC_DTPREL16_HI     R_PPC = 76 // R_POWERPC_DTPREL16_HI
+	R_PPC_DTPREL16_HA     R_PPC = 77 // R_POWERPC_DTPREL16_HA
+	R_PPC_DTPREL32        R_PPC = 78 // R_POWERPC_DTPREL32
+	R_PPC_GOT_TLSGD16     R_PPC = 79 // R_POWERPC_GOT_TLSGD16
+	R_PPC_GOT_TLSGD16_LO  R_PPC = 80 // R_POWERPC_GOT_TLSGD16_LO
+	R_PPC_GOT_TLSGD16_HI  R_PPC = 81 // R_POWERPC_GOT_TLSGD16_HI
+	R_PPC_GOT_TLSGD16_HA  R_PPC = 82 // R_POWERPC_GOT_TLSGD16_HA
+	R_PPC_GOT_TLSLD16     R_PPC = 83 // R_POWERPC_GOT_TLSLD16
+	R_PPC_GOT_TLSLD16_LO  R_PPC = 84 // R_POWERPC_GOT_TLSLD16_LO
+	R_PPC_GOT_TLSLD16_HI  R_PPC = 85 // R_POWERPC_GOT_TLSLD16_HI
+	R_PPC_GOT_TLSLD16_HA  R_PPC = 86 // R_POWERPC_GOT_TLSLD16_HA
+	R_PPC_GOT_TPREL16     R_PPC = 87 // R_POWERPC_GOT_TPREL16
+	R_PPC_GOT_TPREL16_LO  R_PPC = 88 // R_POWERPC_GOT_TPREL16_LO
+	R_PPC_GOT_TPREL16_HI  R_PPC = 89 // R_POWERPC_GOT_TPREL16_HI
+	R_PPC_GOT_TPREL16_HA  R_PPC = 90 // R_POWERPC_GOT_TPREL16_HA
+	R_PPC_EMB_NADDR32     R_PPC = 101
+	R_PPC_EMB_NADDR16     R_PPC = 102
+	R_PPC_EMB_NADDR16_LO  R_PPC = 103
+	R_PPC_EMB_NADDR16_HI  R_PPC = 104
+	R_PPC_EMB_NADDR16_HA  R_PPC = 105
+	R_PPC_EMB_SDAI16      R_PPC = 106
+	R_PPC_EMB_SDA2I16     R_PPC = 107
+	R_PPC_EMB_SDA2REL     R_PPC = 108
+	R_PPC_EMB_SDA21       R_PPC = 109
+	R_PPC_EMB_MRKREF      R_PPC = 110
+	R_PPC_EMB_RELSEC16    R_PPC = 111
+	R_PPC_EMB_RELST_LO    R_PPC = 112
+	R_PPC_EMB_RELST_HI    R_PPC = 113
+	R_PPC_EMB_RELST_HA    R_PPC = 114
+	R_PPC_EMB_BIT_FLD     R_PPC = 115
+	R_PPC_EMB_RELSDA      R_PPC = 116
+)
+
+var rppcStrings = []intName{
+	{0, "R_PPC_NONE"},
+	{1, "R_PPC_ADDR32"},
+	{2, "R_PPC_ADDR24"},
+	{3, "R_PPC_ADDR16"},
+	{4, "R_PPC_ADDR16_LO"},
+	{5, "R_PPC_ADDR16_HI"},
+	{6, "R_PPC_ADDR16_HA"},
+	{7, "R_PPC_ADDR14"},
+	{8, "R_PPC_ADDR14_BRTAKEN"},
+	{9, "R_PPC_ADDR14_BRNTAKEN"},
+	{10, "R_PPC_REL24"},
+	{11, "R_PPC_REL14"},
+	{12, "R_PPC_REL14_BRTAKEN"},
+	{13, "R_PPC_REL14_BRNTAKEN"},
+	{14, "R_PPC_GOT16"},
+	{15, "R_PPC_GOT16_LO"},
+	{16, "R_PPC_GOT16_HI"},
+	{17, "R_PPC_GOT16_HA"},
+	{18, "R_PPC_PLTREL24"},
+	{19, "R_PPC_COPY"},
+	{20, "R_PPC_GLOB_DAT"},
+	{21, "R_PPC_JMP_SLOT"},
+	{22, "R_PPC_RELATIVE"},
+	{23, "R_PPC_LOCAL24PC"},
+	{24, "R_PPC_UADDR32"},
+	{25, "R_PPC_UADDR16"},
+	{26, "R_PPC_REL32"},
+	{27, "R_PPC_PLT32"},
+	{28, "R_PPC_PLTREL32"},
+	{29, "R_PPC_PLT16_LO"},
+	{30, "R_PPC_PLT16_HI"},
+	{31, "R_PPC_PLT16_HA"},
+	{32, "R_PPC_SDAREL16"},
+	{33, "R_PPC_SECTOFF"},
+	{34, "R_PPC_SECTOFF_LO"},
+	{35, "R_PPC_SECTOFF_HI"},
+	{36, "R_PPC_SECTOFF_HA"},
+	{67, "R_PPC_TLS"},
+	{68, "R_PPC_DTPMOD32"},
+	{69, "R_PPC_TPREL16"},
+	{70, "R_PPC_TPREL16_LO"},
+	{71, "R_PPC_TPREL16_HI"},
+	{72, "R_PPC_TPREL16_HA"},
+	{73, "R_PPC_TPREL32"},
+	{74, "R_PPC_DTPREL16"},
+	{75, "R_PPC_DTPREL16_LO"},
+	{76, "R_PPC_DTPREL16_HI"},
+	{77, "R_PPC_DTPREL16_HA"},
+	{78, "R_PPC_DTPREL32"},
+	{79, "R_PPC_GOT_TLSGD16"},
+	{80, "R_PPC_GOT_TLSGD16_LO"},
+	{81, "R_PPC_GOT_TLSGD16_HI"},
+	{82, "R_PPC_GOT_TLSGD16_HA"},
+	{83, "R_PPC_GOT_TLSLD16"},
+	{84, "R_PPC_GOT_TLSLD16_LO"},
+	{85, "R_PPC_GOT_TLSLD16_HI"},
+	{86, "R_PPC_GOT_TLSLD16_HA"},
+	{87, "R_PPC_GOT_TPREL16"},
+	{88, "R_PPC_GOT_TPREL16_LO"},
+	{89, "R_PPC_GOT_TPREL16_HI"},
+	{90, "R_PPC_GOT_TPREL16_HA"},
+	{101, "R_PPC_EMB_NADDR32"},
+	{102, "R_PPC_EMB_NADDR16"},
+	{103, "R_PPC_EMB_NADDR16_LO"},
+	{104, "R_PPC_EMB_NADDR16_HI"},
+	{105, "R_PPC_EMB_NADDR16_HA"},
+	{106, "R_PPC_EMB_SDAI16"},
+	{107, "R_PPC_EMB_SDA2I16"},
+	{108, "R_PPC_EMB_SDA2REL"},
+	{109, "R_PPC_EMB_SDA21"},
+	{110, "R_PPC_EMB_MRKREF"},
+	{111, "R_PPC_EMB_RELSEC16"},
+	{112, "R_PPC_EMB_RELST_LO"},
+	{113, "R_PPC_EMB_RELST_HI"},
+	{114, "R_PPC_EMB_RELST_HA"},
+	{115, "R_PPC_EMB_BIT_FLD"},
+	{116, "R_PPC_EMB_RELSDA"},
+}
+
+func (i R_PPC) String() string   { return stringName(uint32(i), rppcStrings, false) }
+func (i R_PPC) GoString() string { return stringName(uint32(i), rppcStrings, true) }
+
+// Relocation types for 64-bit PowerPC or Power Architecture processors.
+//
+// Values that are shared by both R_PPC and R_PPC64 are prefixed with
+// R_POWERPC_ in the ELF standard. For the R_PPC64 type, the relevant
+// shared relocations have been renamed with the prefix R_PPC64_.
+// The original name follows the value in a comment.
+type R_PPC64 int
+
+const (
+	R_PPC64_NONE               R_PPC64 = 0  // R_POWERPC_NONE
+	R_PPC64_ADDR32             R_PPC64 = 1  // R_POWERPC_ADDR32
+	R_PPC64_ADDR24             R_PPC64 = 2  // R_POWERPC_ADDR24
+	R_PPC64_ADDR16             R_PPC64 = 3  // R_POWERPC_ADDR16
+	R_PPC64_ADDR16_LO          R_PPC64 = 4  // R_POWERPC_ADDR16_LO
+	R_PPC64_ADDR16_HI          R_PPC64 = 5  // R_POWERPC_ADDR16_HI
+	R_PPC64_ADDR16_HA          R_PPC64 = 6  // R_POWERPC_ADDR16_HA
+	R_PPC64_ADDR14             R_PPC64 = 7  // R_POWERPC_ADDR14
+	R_PPC64_ADDR14_BRTAKEN     R_PPC64 = 8  // R_POWERPC_ADDR14_BRTAKEN
+	R_PPC64_ADDR14_BRNTAKEN    R_PPC64 = 9  // R_POWERPC_ADDR14_BRNTAKEN
+	R_PPC64_REL24              R_PPC64 = 10 // R_POWERPC_REL24
+	R_PPC64_REL14              R_PPC64 = 11 // R_POWERPC_REL14
+	R_PPC64_REL14_BRTAKEN      R_PPC64 = 12 // R_POWERPC_REL14_BRTAKEN
+	R_PPC64_REL14_BRNTAKEN     R_PPC64 = 13 // R_POWERPC_REL14_BRNTAKEN
+	R_PPC64_GOT16              R_PPC64 = 14 // R_POWERPC_GOT16
+	R_PPC64_GOT16_LO           R_PPC64 = 15 // R_POWERPC_GOT16_LO
+	R_PPC64_GOT16_HI           R_PPC64 = 16 // R_POWERPC_GOT16_HI
+	R_PPC64_GOT16_HA           R_PPC64 = 17 // R_POWERPC_GOT16_HA
+	R_PPC64_COPY               R_PPC64 = 19 // R_POWERPC_COPY
+	R_PPC64_GLOB_DAT           R_PPC64 = 20 // R_POWERPC_GLOB_DAT
+	R_PPC64_JMP_SLOT           R_PPC64 = 21 // R_POWERPC_JMP_SLOT
+	R_PPC64_RELATIVE           R_PPC64 = 22 // R_POWERPC_RELATIVE
+	R_PPC64_UADDR32            R_PPC64 = 24 // R_POWERPC_UADDR32
+	R_PPC64_UADDR16            R_PPC64 = 25 // R_POWERPC_UADDR16
+	R_PPC64_REL32              R_PPC64 = 26 // R_POWERPC_REL32
+	R_PPC64_PLT32              R_PPC64 = 27 // R_POWERPC_PLT32
+	R_PPC64_PLTREL32           R_PPC64 = 28 // R_POWERPC_PLTREL32
+	R_PPC64_PLT16_LO           R_PPC64 = 29 // R_POWERPC_PLT16_LO
+	R_PPC64_PLT16_HI           R_PPC64 = 30 // R_POWERPC_PLT16_HI
+	R_PPC64_PLT16_HA           R_PPC64 = 31 // R_POWERPC_PLT16_HA
+	R_PPC64_SECTOFF            R_PPC64 = 33 // R_POWERPC_SECTOFF
+	R_PPC64_SECTOFF_LO         R_PPC64 = 34 // R_POWERPC_SECTOFF_LO
+	R_PPC64_SECTOFF_HI         R_PPC64 = 35 // R_POWERPC_SECTOFF_HI
+	R_PPC64_SECTOFF_HA         R_PPC64 = 36 // R_POWERPC_SECTOFF_HA
+	R_PPC64_REL30              R_PPC64 = 37 // R_POWERPC_ADDR30
+	R_PPC64_ADDR64             R_PPC64 = 38
+	R_PPC64_ADDR16_HIGHER      R_PPC64 = 39
+	R_PPC64_ADDR16_HIGHERA     R_PPC64 = 40
+	R_PPC64_ADDR16_HIGHEST     R_PPC64 = 41
+	R_PPC64_ADDR16_HIGHESTA    R_PPC64 = 42
+	R_PPC64_UADDR64            R_PPC64 = 43
+	R_PPC64_REL64              R_PPC64 = 44
+	R_PPC64_PLT64              R_PPC64 = 45
+	R_PPC64_PLTREL64           R_PPC64 = 46
+	R_PPC64_TOC16              R_PPC64 = 47
+	R_PPC64_TOC16_LO           R_PPC64 = 48
+	R_PPC64_TOC16_HI           R_PPC64 = 49
+	R_PPC64_TOC16_HA           R_PPC64 = 50
+	R_PPC64_TOC                R_PPC64 = 51
+	R_PPC64_PLTGOT16           R_PPC64 = 52
+	R_PPC64_PLTGOT16_LO        R_PPC64 = 53
+	R_PPC64_PLTGOT16_HI        R_PPC64 = 54
+	R_PPC64_PLTGOT16_HA        R_PPC64 = 55
+	R_PPC64_ADDR16_DS          R_PPC64 = 56
+	R_PPC64_ADDR16_LO_DS       R_PPC64 = 57
+	R_PPC64_GOT16_DS           R_PPC64 = 58
+	R_PPC64_GOT16_LO_DS        R_PPC64 = 59
+	R_PPC64_PLT16_LO_DS        R_PPC64 = 60
+	R_PPC64_SECTOFF_DS         R_PPC64 = 61
+	R_PPC64_SECTOFF_LO_DS      R_PPC64 = 62
+	R_PPC64_TOC16_DS           R_PPC64 = 63
+	R_PPC64_TOC16_LO_DS        R_PPC64 = 64
+	R_PPC64_PLTGOT16_DS        R_PPC64 = 65
+	R_PPC64_PLTGOT_LO_DS       R_PPC64 = 66
+	R_PPC64_TLS                R_PPC64 = 67 // R_POWERPC_TLS
+	R_PPC64_DTPMOD64           R_PPC64 = 68 // R_POWERPC_DTPMOD64
+	R_PPC64_TPREL16            R_PPC64 = 69 // R_POWERPC_TPREL16
+	R_PPC64_TPREL16_LO         R_PPC64 = 70 // R_POWERPC_TPREL16_LO
+	R_PPC64_TPREL16_HI         R_PPC64 = 71 // R_POWERPC_TPREL16_HI
+	R_PPC64_TPREL16_HA         R_PPC64 = 72 // R_POWERPC_TPREL16_HA
+	R_PPC64_TPREL64            R_PPC64 = 73 // R_POWERPC_TPREL64
+	R_PPC64_DTPREL16           R_PPC64 = 74 // R_POWERPC_DTPREL16
+	R_PPC64_DTPREL16_LO        R_PPC64 = 75 // R_POWERPC_DTPREL16_LO
+	R_PPC64_DTPREL16_HI        R_PPC64 = 76 // R_POWERPC_DTPREL16_HI
+	R_PPC64_DTPREL16_HA        R_PPC64 = 77 // R_POWERPC_DTPREL16_HA
+	R_PPC64_DTPREL64           R_PPC64 = 78 // R_POWERPC_DTPREL64
+	R_PPC64_GOT_TLSGD16        R_PPC64 = 79 // R_POWERPC_GOT_TLSGD16
+	R_PPC64_GOT_TLSGD16_LO     R_PPC64 = 80 // R_POWERPC_GOT_TLSGD16_LO
+	R_PPC64_GOT_TLSGD16_HI     R_PPC64 = 81 // R_POWERPC_GOT_TLSGD16_HI
+	R_PPC64_GOT_TLSGD16_HA     R_PPC64 = 82 // R_POWERPC_GOT_TLSGD16_HA
+	R_PPC64_GOT_TLSLD16        R_PPC64 = 83 // R_POWERPC_GOT_TLSLD16
+	R_PPC64_GOT_TLSLD16_LO     R_PPC64 = 84 // R_POWERPC_GOT_TLSLD16_LO
+	R_PPC64_GOT_TLSLD16_HI     R_PPC64 = 85 // R_POWERPC_GOT_TLSLD16_HI
+	R_PPC64_GOT_TLSLD16_HA     R_PPC64 = 86 // R_POWERPC_GOT_TLSLD16_HA
+	R_PPC64_GOT_TPREL16_DS     R_PPC64 = 87 // R_POWERPC_GOT_TPREL16_DS
+	R_PPC64_GOT_TPREL16_LO_DS  R_PPC64 = 88 // R_POWERPC_GOT_TPREL16_LO_DS
+	R_PPC64_GOT_TPREL16_HI     R_PPC64 = 89 // R_POWERPC_GOT_TPREL16_HI
+	R_PPC64_GOT_TPREL16_HA     R_PPC64 = 90 // R_POWERPC_GOT_TPREL16_HA
+	R_PPC64_GOT_DTPREL16_DS    R_PPC64 = 91 // R_POWERPC_GOT_DTPREL16_DS
+	R_PPC64_GOT_DTPREL16_LO_DS R_PPC64 = 92 // R_POWERPC_GOT_DTPREL16_LO_DS
+	R_PPC64_GOT_DTPREL16_HI    R_PPC64 = 93 // R_POWERPC_GOT_DTPREL16_HI
+	R_PPC64_GOT_DTPREL16_HA    R_PPC64 = 94 // R_POWERPC_GOT_DTPREL16_HA
+	R_PPC64_TPREL16_DS         R_PPC64 = 95
+	R_PPC64_TPREL16_LO_DS      R_PPC64 = 96
+	R_PPC64_TPREL16_HIGHER     R_PPC64 = 97
+	R_PPC64_TPREL16_HIGHERA    R_PPC64 = 98
+	R_PPC64_TPREL16_HIGHEST    R_PPC64 = 99
+	R_PPC64_TPREL16_HIGHESTA   R_PPC64 = 100
+	R_PPC64_DTPREL16_DS        R_PPC64 = 101
+	R_PPC64_DTPREL16_LO_DS     R_PPC64 = 102
+	R_PPC64_DTPREL16_HIGHER    R_PPC64 = 103
+	R_PPC64_DTPREL16_HIGHERA   R_PPC64 = 104
+	R_PPC64_DTPREL16_HIGHEST   R_PPC64 = 105
+	R_PPC64_DTPREL16_HIGHESTA  R_PPC64 = 106
+	R_PPC64_TLSGD              R_PPC64 = 107
+	R_PPC64_TLSLD              R_PPC64 = 108
+	R_PPC64_TOCSAVE            R_PPC64 = 109
+	R_PPC64_ADDR16_HIGH        R_PPC64 = 110
+	R_PPC64_ADDR16_HIGHA       R_PPC64 = 111
+	R_PPC64_TPREL16_HIGH       R_PPC64 = 112
+	R_PPC64_TPREL16_HIGHA      R_PPC64 = 113
+	R_PPC64_DTPREL16_HIGH      R_PPC64 = 114
+	R_PPC64_DTPREL16_HIGHA     R_PPC64 = 115
+	R_PPC64_REL24_NOTOC        R_PPC64 = 116
+	R_PPC64_ADDR64_LOCAL       R_PPC64 = 117
+	R_PPC64_ENTRY              R_PPC64 = 118
+	R_PPC64_PLTSEQ             R_PPC64 = 119
+	R_PPC64_PLTCALL            R_PPC64 = 120
+	R_PPC64_PLTSEQ_NOTOC       R_PPC64 = 121
+	R_PPC64_PLTCALL_NOTOC      R_PPC64 = 122
+	R_PPC64_PCREL_OPT          R_PPC64 = 123
+	R_PPC64_REL24_P9NOTOC      R_PPC64 = 124
+	R_PPC64_D34                R_PPC64 = 128
+	R_PPC64_D34_LO             R_PPC64 = 129
+	R_PPC64_D34_HI30           R_PPC64 = 130
+	R_PPC64_D34_HA30           R_PPC64 = 131
+	R_PPC64_PCREL34            R_PPC64 = 132
+	R_PPC64_GOT_PCREL34        R_PPC64 = 133
+	R_PPC64_PLT_PCREL34        R_PPC64 = 134
+	R_PPC64_PLT_PCREL34_NOTOC  R_PPC64 = 135
+	R_PPC64_ADDR16_HIGHER34    R_PPC64 = 136
+	R_PPC64_ADDR16_HIGHERA34   R_PPC64 = 137
+	R_PPC64_ADDR16_HIGHEST34   R_PPC64 = 138
+	R_PPC64_ADDR16_HIGHESTA34  R_PPC64 = 139
+	R_PPC64_REL16_HIGHER34     R_PPC64 = 140
+	R_PPC64_REL16_HIGHERA34    R_PPC64 = 141
+	R_PPC64_REL16_HIGHEST34    R_PPC64 = 142
+	R_PPC64_REL16_HIGHESTA34   R_PPC64 = 143
+	R_PPC64_D28                R_PPC64 = 144
+	R_PPC64_PCREL28            R_PPC64 = 145
+	R_PPC64_TPREL34            R_PPC64 = 146
+	R_PPC64_DTPREL34           R_PPC64 = 147
+	R_PPC64_GOT_TLSGD_PCREL34  R_PPC64 = 148
+	R_PPC64_GOT_TLSLD_PCREL34  R_PPC64 = 149
+	R_PPC64_GOT_TPREL_PCREL34  R_PPC64 = 150
+	R_PPC64_GOT_DTPREL_PCREL34 R_PPC64 = 151
+	R_PPC64_REL16_HIGH         R_PPC64 = 240
+	R_PPC64_REL16_HIGHA        R_PPC64 = 241
+	R_PPC64_REL16_HIGHER       R_PPC64 = 242
+	R_PPC64_REL16_HIGHERA      R_PPC64 = 243
+	R_PPC64_REL16_HIGHEST      R_PPC64 = 244
+	R_PPC64_REL16_HIGHESTA     R_PPC64 = 245
+	R_PPC64_REL16DX_HA         R_PPC64 = 246 // R_POWERPC_REL16DX_HA
+	R_PPC64_JMP_IREL           R_PPC64 = 247
+	R_PPC64_IRELATIVE          R_PPC64 = 248 // R_POWERPC_IRELATIVE
+	R_PPC64_REL16              R_PPC64 = 249 // R_POWERPC_REL16
+	R_PPC64_REL16_LO           R_PPC64 = 250 // R_POWERPC_REL16_LO
+	R_PPC64_REL16_HI           R_PPC64 = 251 // R_POWERPC_REL16_HI
+	R_PPC64_REL16_HA           R_PPC64 = 252 // R_POWERPC_REL16_HA
+	R_PPC64_GNU_VTINHERIT      R_PPC64 = 253
+	R_PPC64_GNU_VTENTRY        R_PPC64 = 254
+)
+
+var rppc64Strings = []intName{
+	{0, "R_PPC64_NONE"},
+	{1, "R_PPC64_ADDR32"},
+	{2, "R_PPC64_ADDR24"},
+	{3, "R_PPC64_ADDR16"},
+	{4, "R_PPC64_ADDR16_LO"},
+	{5, "R_PPC64_ADDR16_HI"},
+	{6, "R_PPC64_ADDR16_HA"},
+	{7, "R_PPC64_ADDR14"},
+	{8, "R_PPC64_ADDR14_BRTAKEN"},
+	{9, "R_PPC64_ADDR14_BRNTAKEN"},
+	{10, "R_PPC64_REL24"},
+	{11, "R_PPC64_REL14"},
+	{12, "R_PPC64_REL14_BRTAKEN"},
+	{13, "R_PPC64_REL14_BRNTAKEN"},
+	{14, "R_PPC64_GOT16"},
+	{15, "R_PPC64_GOT16_LO"},
+	{16, "R_PPC64_GOT16_HI"},
+	{17, "R_PPC64_GOT16_HA"},
+	{19, "R_PPC64_COPY"},
+	{20, "R_PPC64_GLOB_DAT"},
+	{21, "R_PPC64_JMP_SLOT"},
+	{22, "R_PPC64_RELATIVE"},
+	{24, "R_PPC64_UADDR32"},
+	{25, "R_PPC64_UADDR16"},
+	{26, "R_PPC64_REL32"},
+	{27, "R_PPC64_PLT32"},
+	{28, "R_PPC64_PLTREL32"},
+	{29, "R_PPC64_PLT16_LO"},
+	{30, "R_PPC64_PLT16_HI"},
+	{31, "R_PPC64_PLT16_HA"},
+	{33, "R_PPC64_SECTOFF"},
+	{34, "R_PPC64_SECTOFF_LO"},
+	{35, "R_PPC64_SECTOFF_HI"},
+	{36, "R_PPC64_SECTOFF_HA"},
+	{37, "R_PPC64_REL30"},
+	{38, "R_PPC64_ADDR64"},
+	{39, "R_PPC64_ADDR16_HIGHER"},
+	{40, "R_PPC64_ADDR16_HIGHERA"},
+	{41, "R_PPC64_ADDR16_HIGHEST"},
+	{42, "R_PPC64_ADDR16_HIGHESTA"},
+	{43, "R_PPC64_UADDR64"},
+	{44, "R_PPC64_REL64"},
+	{45, "R_PPC64_PLT64"},
+	{46, "R_PPC64_PLTREL64"},
+	{47, "R_PPC64_TOC16"},
+	{48, "R_PPC64_TOC16_LO"},
+	{49, "R_PPC64_TOC16_HI"},
+	{50, "R_PPC64_TOC16_HA"},
+	{51, "R_PPC64_TOC"},
+	{52, "R_PPC64_PLTGOT16"},
+	{53, "R_PPC64_PLTGOT16_LO"},
+	{54, "R_PPC64_PLTGOT16_HI"},
+	{55, "R_PPC64_PLTGOT16_HA"},
+	{56, "R_PPC64_ADDR16_DS"},
+	{57, "R_PPC64_ADDR16_LO_DS"},
+	{58, "R_PPC64_GOT16_DS"},
+	{59, "R_PPC64_GOT16_LO_DS"},
+	{60, "R_PPC64_PLT16_LO_DS"},
+	{61, "R_PPC64_SECTOFF_DS"},
+	{62, "R_PPC64_SECTOFF_LO_DS"},
+	{63, "R_PPC64_TOC16_DS"},
+	{64, "R_PPC64_TOC16_LO_DS"},
+	{65, "R_PPC64_PLTGOT16_DS"},
+	{66, "R_PPC64_PLTGOT_LO_DS"},
+	{67, "R_PPC64_TLS"},
+	{68, "R_PPC64_DTPMOD64"},
+	{69, "R_PPC64_TPREL16"},
+	{70, "R_PPC64_TPREL16_LO"},
+	{71, "R_PPC64_TPREL16_HI"},
+	{72, "R_PPC64_TPREL16_HA"},
+	{73, "R_PPC64_TPREL64"},
+	{74, "R_PPC64_DTPREL16"},
+	{75, "R_PPC64_DTPREL16_LO"},
+	{76, "R_PPC64_DTPREL16_HI"},
+	{77, "R_PPC64_DTPREL16_HA"},
+	{78, "R_PPC64_DTPREL64"},
+	{79, "R_PPC64_GOT_TLSGD16"},
+	{80, "R_PPC64_GOT_TLSGD16_LO"},
+	{81, "R_PPC64_GOT_TLSGD16_HI"},
+	{82, "R_PPC64_GOT_TLSGD16_HA"},
+	{83, "R_PPC64_GOT_TLSLD16"},
+	{84, "R_PPC64_GOT_TLSLD16_LO"},
+	{85, "R_PPC64_GOT_TLSLD16_HI"},
+	{86, "R_PPC64_GOT_TLSLD16_HA"},
+	{87, "R_PPC64_GOT_TPREL16_DS"},
+	{88, "R_PPC64_GOT_TPREL16_LO_DS"},
+	{89, "R_PPC64_GOT_TPREL16_HI"},
+	{90, "R_PPC64_GOT_TPREL16_HA"},
+	{91, "R_PPC64_GOT_DTPREL16_DS"},
+	{92, "R_PPC64_GOT_DTPREL16_LO_DS"},
+	{93, "R_PPC64_GOT_DTPREL16_HI"},
+	{94, "R_PPC64_GOT_DTPREL16_HA"},
+	{95, "R_PPC64_TPREL16_DS"},
+	{96, "R_PPC64_TPREL16_LO_DS"},
+	{97, "R_PPC64_TPREL16_HIGHER"},
+	{98, "R_PPC64_TPREL16_HIGHERA"},
+	{99, "R_PPC64_TPREL16_HIGHEST"},
+	{100, "R_PPC64_TPREL16_HIGHESTA"},
+	{101, "R_PPC64_DTPREL16_DS"},
+	{102, "R_PPC64_DTPREL16_LO_DS"},
+	{103, "R_PPC64_DTPREL16_HIGHER"},
+	{104, "R_PPC64_DTPREL16_HIGHERA"},
+	{105, "R_PPC64_DTPREL16_HIGHEST"},
+	{106, "R_PPC64_DTPREL16_HIGHESTA"},
+	{107, "R_PPC64_TLSGD"},
+	{108, "R_PPC64_TLSLD"},
+	{109, "R_PPC64_TOCSAVE"},
+	{110, "R_PPC64_ADDR16_HIGH"},
+	{111, "R_PPC64_ADDR16_HIGHA"},
+	{112, "R_PPC64_TPREL16_HIGH"},
+	{113, "R_PPC64_TPREL16_HIGHA"},
+	{114, "R_PPC64_DTPREL16_HIGH"},
+	{115, "R_PPC64_DTPREL16_HIGHA"},
+	{116, "R_PPC64_REL24_NOTOC"},
+	{117, "R_PPC64_ADDR64_LOCAL"},
+	{118, "R_PPC64_ENTRY"},
+	{119, "R_PPC64_PLTSEQ"},
+	{120, "R_PPC64_PLTCALL"},
+	{121, "R_PPC64_PLTSEQ_NOTOC"},
+	{122, "R_PPC64_PLTCALL_NOTOC"},
+	{123, "R_PPC64_PCREL_OPT"},
+	{124, "R_PPC64_REL24_P9NOTOC"},
+	{128, "R_PPC64_D34"},
+	{129, "R_PPC64_D34_LO"},
+	{130, "R_PPC64_D34_HI30"},
+	{131, "R_PPC64_D34_HA30"},
+	{132, "R_PPC64_PCREL34"},
+	{133, "R_PPC64_GOT_PCREL34"},
+	{134, "R_PPC64_PLT_PCREL34"},
+	{135, "R_PPC64_PLT_PCREL34_NOTOC"},
+	{136, "R_PPC64_ADDR16_HIGHER34"},
+	{137, "R_PPC64_ADDR16_HIGHERA34"},
+	{138, "R_PPC64_ADDR16_HIGHEST34"},
+	{139, "R_PPC64_ADDR16_HIGHESTA34"},
+	{140, "R_PPC64_REL16_HIGHER34"},
+	{141, "R_PPC64_REL16_HIGHERA34"},
+	{142, "R_PPC64_REL16_HIGHEST34"},
+	{143, "R_PPC64_REL16_HIGHESTA34"},
+	{144, "R_PPC64_D28"},
+	{145, "R_PPC64_PCREL28"},
+	{146, "R_PPC64_TPREL34"},
+	{147, "R_PPC64_DTPREL34"},
+	{148, "R_PPC64_GOT_TLSGD_PCREL34"},
+	{149, "R_PPC64_GOT_TLSLD_PCREL34"},
+	{150, "R_PPC64_GOT_TPREL_PCREL34"},
+	{151, "R_PPC64_GOT_DTPREL_PCREL34"},
+	{240, "R_PPC64_REL16_HIGH"},
+	{241, "R_PPC64_REL16_HIGHA"},
+	{242, "R_PPC64_REL16_HIGHER"},
+	{243, "R_PPC64_REL16_HIGHERA"},
+	{244, "R_PPC64_REL16_HIGHEST"},
+	{245, "R_PPC64_REL16_HIGHESTA"},
+	{246, "R_PPC64_REL16DX_HA"},
+	{247, "R_PPC64_JMP_IREL"},
+	{248, "R_PPC64_IRELATIVE"},
+	{249, "R_PPC64_REL16"},
+	{250, "R_PPC64_REL16_LO"},
+	{251, "R_PPC64_REL16_HI"},
+	{252, "R_PPC64_REL16_HA"},
+	{253, "R_PPC64_GNU_VTINHERIT"},
+	{254, "R_PPC64_GNU_VTENTRY"},
+}
+
+func (i R_PPC64) String() string   { return stringName(uint32(i), rppc64Strings, false) }
+func (i R_PPC64) GoString() string { return stringName(uint32(i), rppc64Strings, true) }
+
+// Relocation types for RISC-V processors.
+type R_RISCV int
+
+const (
+	R_RISCV_NONE          R_RISCV = 0  /* No relocation. */
+	R_RISCV_32            R_RISCV = 1  /* Add 32 bit zero extended symbol value */
+	R_RISCV_64            R_RISCV = 2  /* Add 64 bit symbol value. */
+	R_RISCV_RELATIVE      R_RISCV = 3  /* Add load address of shared object. */
+	R_RISCV_COPY          R_RISCV = 4  /* Copy data from shared object. */
+	R_RISCV_JUMP_SLOT     R_RISCV = 5  /* Set GOT entry to code address. */
+	R_RISCV_TLS_DTPMOD32  R_RISCV = 6  /* 32 bit ID of module containing symbol */
+	R_RISCV_TLS_DTPMOD64  R_RISCV = 7  /* ID of module containing symbol */
+	R_RISCV_TLS_DTPREL32  R_RISCV = 8  /* 32 bit relative offset in TLS block */
+	R_RISCV_TLS_DTPREL64  R_RISCV = 9  /* Relative offset in TLS block */
+	R_RISCV_TLS_TPREL32   R_RISCV = 10 /* 32 bit relative offset in static TLS block */
+	R_RISCV_TLS_TPREL64   R_RISCV = 11 /* Relative offset in static TLS block */
+	R_RISCV_BRANCH        R_RISCV = 16 /* PC-relative branch */
+	R_RISCV_JAL           R_RISCV = 17 /* PC-relative jump */
+	R_RISCV_CALL          R_RISCV = 18 /* PC-relative call */
+	R_RISCV_CALL_PLT      R_RISCV = 19 /* PC-relative call (PLT) */
+	R_RISCV_GOT_HI20      R_RISCV = 20 /* PC-relative GOT reference */
+	R_RISCV_TLS_GOT_HI20  R_RISCV = 21 /* PC-relative TLS IE GOT offset */
+	R_RISCV_TLS_GD_HI20   R_RISCV = 22 /* PC-relative TLS GD reference */
+	R_RISCV_PCREL_HI20    R_RISCV = 23 /* PC-relative reference */
+	R_RISCV_PCREL_LO12_I  R_RISCV = 24 /* PC-relative reference */
+	R_RISCV_PCREL_LO12_S  R_RISCV = 25 /* PC-relative reference */
+	R_RISCV_HI20          R_RISCV = 26 /* Absolute address */
+	R_RISCV_LO12_I        R_RISCV = 27 /* Absolute address */
+	R_RISCV_LO12_S        R_RISCV = 28 /* Absolute address */
+	R_RISCV_TPREL_HI20    R_RISCV = 29 /* TLS LE thread offset */
+	R_RISCV_TPREL_LO12_I  R_RISCV = 30 /* TLS LE thread offset */
+	R_RISCV_TPREL_LO12_S  R_RISCV = 31 /* TLS LE thread offset */
+	R_RISCV_TPREL_ADD     R_RISCV = 32 /* TLS LE thread usage */
+	R_RISCV_ADD8          R_RISCV = 33 /* 8-bit label addition */
+	R_RISCV_ADD16         R_RISCV = 34 /* 16-bit label addition */
+	R_RISCV_ADD32         R_RISCV = 35 /* 32-bit label addition */
+	R_RISCV_ADD64         R_RISCV = 36 /* 64-bit label addition */
+	R_RISCV_SUB8          R_RISCV = 37 /* 8-bit label subtraction */
+	R_RISCV_SUB16         R_RISCV = 38 /* 16-bit label subtraction */
+	R_RISCV_SUB32         R_RISCV = 39 /* 32-bit label subtraction */
+	R_RISCV_SUB64         R_RISCV = 40 /* 64-bit label subtraction */
+	R_RISCV_GNU_VTINHERIT R_RISCV = 41 /* GNU C++ vtable hierarchy */
+	R_RISCV_GNU_VTENTRY   R_RISCV = 42 /* GNU C++ vtable member usage */
+	R_RISCV_ALIGN         R_RISCV = 43 /* Alignment statement */
+	R_RISCV_RVC_BRANCH    R_RISCV = 44 /* PC-relative branch offset */
+	R_RISCV_RVC_JUMP      R_RISCV = 45 /* PC-relative jump offset */
+	R_RISCV_RVC_LUI       R_RISCV = 46 /* Absolute address */
+	R_RISCV_GPREL_I       R_RISCV = 47 /* GP-relative reference */
+	R_RISCV_GPREL_S       R_RISCV = 48 /* GP-relative reference */
+	R_RISCV_TPREL_I       R_RISCV = 49 /* TP-relative TLS LE load */
+	R_RISCV_TPREL_S       R_RISCV = 50 /* TP-relative TLS LE store */
+	R_RISCV_RELAX         R_RISCV = 51 /* Instruction pair can be relaxed */
+	R_RISCV_SUB6          R_RISCV = 52 /* Local label subtraction */
+	R_RISCV_SET6          R_RISCV = 53 /* Local label subtraction */
+	R_RISCV_SET8          R_RISCV = 54 /* Local label subtraction */
+	R_RISCV_SET16         R_RISCV = 55 /* Local label subtraction */
+	R_RISCV_SET32         R_RISCV = 56 /* Local label subtraction */
+	R_RISCV_32_PCREL      R_RISCV = 57 /* 32-bit PC relative */
+)
+
+var rriscvStrings = []intName{
+	{0, "R_RISCV_NONE"},
+	{1, "R_RISCV_32"},
+	{2, "R_RISCV_64"},
+	{3, "R_RISCV_RELATIVE"},
+	{4, "R_RISCV_COPY"},
+	{5, "R_RISCV_JUMP_SLOT"},
+	{6, "R_RISCV_TLS_DTPMOD32"},
+	{7, "R_RISCV_TLS_DTPMOD64"},
+	{8, "R_RISCV_TLS_DTPREL32"},
+	{9, "R_RISCV_TLS_DTPREL64"},
+	{10, "R_RISCV_TLS_TPREL32"},
+	{11, "R_RISCV_TLS_TPREL64"},
+	{16, "R_RISCV_BRANCH"},
+	{17, "R_RISCV_JAL"},
+	{18, "R_RISCV_CALL"},
+	{19, "R_RISCV_CALL_PLT"},
+	{20, "R_RISCV_GOT_HI20"},
+	{21, "R_RISCV_TLS_GOT_HI20"},
+	{22, "R_RISCV_TLS_GD_HI20"},
+	{23, "R_RISCV_PCREL_HI20"},
+	{24, "R_RISCV_PCREL_LO12_I"},
+	{25, "R_RISCV_PCREL_LO12_S"},
+	{26, "R_RISCV_HI20"},
+	{27, "R_RISCV_LO12_I"},
+	{28, "R_RISCV_LO12_S"},
+	{29, "R_RISCV_TPREL_HI20"},
+	{30, "R_RISCV_TPREL_LO12_I"},
+	{31, "R_RISCV_TPREL_LO12_S"},
+	{32, "R_RISCV_TPREL_ADD"},
+	{33, "R_RISCV_ADD8"},
+	{34, "R_RISCV_ADD16"},
+	{35, "R_RISCV_ADD32"},
+	{36, "R_RISCV_ADD64"},
+	{37, "R_RISCV_SUB8"},
+	{38, "R_RISCV_SUB16"},
+	{39, "R_RISCV_SUB32"},
+	{40, "R_RISCV_SUB64"},
+	{41, "R_RISCV_GNU_VTINHERIT"},
+	{42, "R_RISCV_GNU_VTENTRY"},
+	{43, "R_RISCV_ALIGN"},
+	{44, "R_RISCV_RVC_BRANCH"},
+	{45, "R_RISCV_RVC_JUMP"},
+	{46, "R_RISCV_RVC_LUI"},
+	{47, "R_RISCV_GPREL_I"},
+	{48, "R_RISCV_GPREL_S"},
+	{49, "R_RISCV_TPREL_I"},
+	{50, "R_RISCV_TPREL_S"},
+	{51, "R_RISCV_RELAX"},
+	{52, "R_RISCV_SUB6"},
+	{53, "R_RISCV_SET6"},
+	{54, "R_RISCV_SET8"},
+	{55, "R_RISCV_SET16"},
+	{56, "R_RISCV_SET32"},
+	{57, "R_RISCV_32_PCREL"},
+}
+
+func (i R_RISCV) String() string   { return stringName(uint32(i), rriscvStrings, false) }
+func (i R_RISCV) GoString() string { return stringName(uint32(i), rriscvStrings, true) }
+
+// Relocation types for s390x processors.
+type R_390 int
+
+const (
+	R_390_NONE        R_390 = 0
+	R_390_8           R_390 = 1
+	R_390_12          R_390 = 2
+	R_390_16          R_390 = 3
+	R_390_32          R_390 = 4
+	R_390_PC32        R_390 = 5
+	R_390_GOT12       R_390 = 6
+	R_390_GOT32       R_390 = 7
+	R_390_PLT32       R_390 = 8
+	R_390_COPY        R_390 = 9
+	R_390_GLOB_DAT    R_390 = 10
+	R_390_JMP_SLOT    R_390 = 11
+	R_390_RELATIVE    R_390 = 12
+	R_390_GOTOFF      R_390 = 13
+	R_390_GOTPC       R_390 = 14
+	R_390_GOT16       R_390 = 15
+	R_390_PC16        R_390 = 16
+	R_390_PC16DBL     R_390 = 17
+	R_390_PLT16DBL    R_390 = 18
+	R_390_PC32DBL     R_390 = 19
+	R_390_PLT32DBL    R_390 = 20
+	R_390_GOTPCDBL    R_390 = 21
+	R_390_64          R_390 = 22
+	R_390_PC64        R_390 = 23
+	R_390_GOT64       R_390 = 24
+	R_390_PLT64       R_390 = 25
+	R_390_GOTENT      R_390 = 26
+	R_390_GOTOFF16    R_390 = 27
+	R_390_GOTOFF64    R_390 = 28
+	R_390_GOTPLT12    R_390 = 29
+	R_390_GOTPLT16    R_390 = 30
+	R_390_GOTPLT32    R_390 = 31
+	R_390_GOTPLT64    R_390 = 32
+	R_390_GOTPLTENT   R_390 = 33
+	R_390_GOTPLTOFF16 R_390 = 34
+	R_390_GOTPLTOFF32 R_390 = 35
+	R_390_GOTPLTOFF64 R_390 = 36
+	R_390_TLS_LOAD    R_390 = 37
+	R_390_TLS_GDCALL  R_390 = 38
+	R_390_TLS_LDCALL  R_390 = 39
+	R_390_TLS_GD32    R_390 = 40
+	R_390_TLS_GD64    R_390 = 41
+	R_390_TLS_GOTIE12 R_390 = 42
+	R_390_TLS_GOTIE32 R_390 = 43
+	R_390_TLS_GOTIE64 R_390 = 44
+	R_390_TLS_LDM32   R_390 = 45
+	R_390_TLS_LDM64   R_390 = 46
+	R_390_TLS_IE32    R_390 = 47
+	R_390_TLS_IE64    R_390 = 48
+	R_390_TLS_IEENT   R_390 = 49
+	R_390_TLS_LE32    R_390 = 50
+	R_390_TLS_LE64    R_390 = 51
+	R_390_TLS_LDO32   R_390 = 52
+	R_390_TLS_LDO64   R_390 = 53
+	R_390_TLS_DTPMOD  R_390 = 54
+	R_390_TLS_DTPOFF  R_390 = 55
+	R_390_TLS_TPOFF   R_390 = 56
+	R_390_20          R_390 = 57
+	R_390_GOT20       R_390 = 58
+	R_390_GOTPLT20    R_390 = 59
+	R_390_TLS_GOTIE20 R_390 = 60
+)
+
+var r390Strings = []intName{
+	{0, "R_390_NONE"},
+	{1, "R_390_8"},
+	{2, "R_390_12"},
+	{3, "R_390_16"},
+	{4, "R_390_32"},
+	{5, "R_390_PC32"},
+	{6, "R_390_GOT12"},
+	{7, "R_390_GOT32"},
+	{8, "R_390_PLT32"},
+	{9, "R_390_COPY"},
+	{10, "R_390_GLOB_DAT"},
+	{11, "R_390_JMP_SLOT"},
+	{12, "R_390_RELATIVE"},
+	{13, "R_390_GOTOFF"},
+	{14, "R_390_GOTPC"},
+	{15, "R_390_GOT16"},
+	{16, "R_390_PC16"},
+	{17, "R_390_PC16DBL"},
+	{18, "R_390_PLT16DBL"},
+	{19, "R_390_PC32DBL"},
+	{20, "R_390_PLT32DBL"},
+	{21, "R_390_GOTPCDBL"},
+	{22, "R_390_64"},
+	{23, "R_390_PC64"},
+	{24, "R_390_GOT64"},
+	{25, "R_390_PLT64"},
+	{26, "R_390_GOTENT"},
+	{27, "R_390_GOTOFF16"},
+	{28, "R_390_GOTOFF64"},
+	{29, "R_390_GOTPLT12"},
+	{30, "R_390_GOTPLT16"},
+	{31, "R_390_GOTPLT32"},
+	{32, "R_390_GOTPLT64"},
+	{33, "R_390_GOTPLTENT"},
+	{34, "R_390_GOTPLTOFF16"},
+	{35, "R_390_GOTPLTOFF32"},
+	{36, "R_390_GOTPLTOFF64"},
+	{37, "R_390_TLS_LOAD"},
+	{38, "R_390_TLS_GDCALL"},
+	{39, "R_390_TLS_LDCALL"},
+	{40, "R_390_TLS_GD32"},
+	{41, "R_390_TLS_GD64"},
+	{42, "R_390_TLS_GOTIE12"},
+	{43, "R_390_TLS_GOTIE32"},
+	{44, "R_390_TLS_GOTIE64"},
+	{45, "R_390_TLS_LDM32"},
+	{46, "R_390_TLS_LDM64"},
+	{47, "R_390_TLS_IE32"},
+	{48, "R_390_TLS_IE64"},
+	{49, "R_390_TLS_IEENT"},
+	{50, "R_390_TLS_LE32"},
+	{51, "R_390_TLS_LE64"},
+	{52, "R_390_TLS_LDO32"},
+	{53, "R_390_TLS_LDO64"},
+	{54, "R_390_TLS_DTPMOD"},
+	{55, "R_390_TLS_DTPOFF"},
+	{56, "R_390_TLS_TPOFF"},
+	{57, "R_390_20"},
+	{58, "R_390_GOT20"},
+	{59, "R_390_GOTPLT20"},
+	{60, "R_390_TLS_GOTIE20"},
+}
+
+func (i R_390) String() string   { return stringName(uint32(i), r390Strings, false) }
+func (i R_390) GoString() string { return stringName(uint32(i), r390Strings, true) }
+
+// Relocation types for SPARC.
+type R_SPARC int
+
+const (
+	R_SPARC_NONE     R_SPARC = 0
+	R_SPARC_8        R_SPARC = 1
+	R_SPARC_16       R_SPARC = 2
+	R_SPARC_32       R_SPARC = 3
+	R_SPARC_DISP8    R_SPARC = 4
+	R_SPARC_DISP16   R_SPARC = 5
+	R_SPARC_DISP32   R_SPARC = 6
+	R_SPARC_WDISP30  R_SPARC = 7
+	R_SPARC_WDISP22  R_SPARC = 8
+	R_SPARC_HI22     R_SPARC = 9
+	R_SPARC_22       R_SPARC = 10
+	R_SPARC_13       R_SPARC = 11
+	R_SPARC_LO10     R_SPARC = 12
+	R_SPARC_GOT10    R_SPARC = 13
+	R_SPARC_GOT13    R_SPARC = 14
+	R_SPARC_GOT22    R_SPARC = 15
+	R_SPARC_PC10     R_SPARC = 16
+	R_SPARC_PC22     R_SPARC = 17
+	R_SPARC_WPLT30   R_SPARC = 18
+	R_SPARC_COPY     R_SPARC = 19
+	R_SPARC_GLOB_DAT R_SPARC = 20
+	R_SPARC_JMP_SLOT R_SPARC = 21
+	R_SPARC_RELATIVE R_SPARC = 22
+	R_SPARC_UA32     R_SPARC = 23
+	R_SPARC_PLT32    R_SPARC = 24
+	R_SPARC_HIPLT22  R_SPARC = 25
+	R_SPARC_LOPLT10  R_SPARC = 26
+	R_SPARC_PCPLT32  R_SPARC = 27
+	R_SPARC_PCPLT22  R_SPARC = 28
+	R_SPARC_PCPLT10  R_SPARC = 29
+	R_SPARC_10       R_SPARC = 30
+	R_SPARC_11       R_SPARC = 31
+	R_SPARC_64       R_SPARC = 32
+	R_SPARC_OLO10    R_SPARC = 33
+	R_SPARC_HH22     R_SPARC = 34
+	R_SPARC_HM10     R_SPARC = 35
+	R_SPARC_LM22     R_SPARC = 36
+	R_SPARC_PC_HH22  R_SPARC = 37
+	R_SPARC_PC_HM10  R_SPARC = 38
+	R_SPARC_PC_LM22  R_SPARC = 39
+	R_SPARC_WDISP16  R_SPARC = 40
+	R_SPARC_WDISP19  R_SPARC = 41
+	R_SPARC_GLOB_JMP R_SPARC = 42
+	R_SPARC_7        R_SPARC = 43
+	R_SPARC_5        R_SPARC = 44
+	R_SPARC_6        R_SPARC = 45
+	R_SPARC_DISP64   R_SPARC = 46
+	R_SPARC_PLT64    R_SPARC = 47
+	R_SPARC_HIX22    R_SPARC = 48
+	R_SPARC_LOX10    R_SPARC = 49
+	R_SPARC_H44      R_SPARC = 50
+	R_SPARC_M44      R_SPARC = 51
+	R_SPARC_L44      R_SPARC = 52
+	R_SPARC_REGISTER R_SPARC = 53
+	R_SPARC_UA64     R_SPARC = 54
+	R_SPARC_UA16     R_SPARC = 55
+)
+
+var rsparcStrings = []intName{
+	{0, "R_SPARC_NONE"},
+	{1, "R_SPARC_8"},
+	{2, "R_SPARC_16"},
+	{3, "R_SPARC_32"},
+	{4, "R_SPARC_DISP8"},
+	{5, "R_SPARC_DISP16"},
+	{6, "R_SPARC_DISP32"},
+	{7, "R_SPARC_WDISP30"},
+	{8, "R_SPARC_WDISP22"},
+	{9, "R_SPARC_HI22"},
+	{10, "R_SPARC_22"},
+	{11, "R_SPARC_13"},
+	{12, "R_SPARC_LO10"},
+	{13, "R_SPARC_GOT10"},
+	{14, "R_SPARC_GOT13"},
+	{15, "R_SPARC_GOT22"},
+	{16, "R_SPARC_PC10"},
+	{17, "R_SPARC_PC22"},
+	{18, "R_SPARC_WPLT30"},
+	{19, "R_SPARC_COPY"},
+	{20, "R_SPARC_GLOB_DAT"},
+	{21, "R_SPARC_JMP_SLOT"},
+	{22, "R_SPARC_RELATIVE"},
+	{23, "R_SPARC_UA32"},
+	{24, "R_SPARC_PLT32"},
+	{25, "R_SPARC_HIPLT22"},
+	{26, "R_SPARC_LOPLT10"},
+	{27, "R_SPARC_PCPLT32"},
+	{28, "R_SPARC_PCPLT22"},
+	{29, "R_SPARC_PCPLT10"},
+	{30, "R_SPARC_10"},
+	{31, "R_SPARC_11"},
+	{32, "R_SPARC_64"},
+	{33, "R_SPARC_OLO10"},
+	{34, "R_SPARC_HH22"},
+	{35, "R_SPARC_HM10"},
+	{36, "R_SPARC_LM22"},
+	{37, "R_SPARC_PC_HH22"},
+	{38, "R_SPARC_PC_HM10"},
+	{39, "R_SPARC_PC_LM22"},
+	{40, "R_SPARC_WDISP16"},
+	{41, "R_SPARC_WDISP19"},
+	{42, "R_SPARC_GLOB_JMP"},
+	{43, "R_SPARC_7"},
+	{44, "R_SPARC_5"},
+	{45, "R_SPARC_6"},
+	{46, "R_SPARC_DISP64"},
+	{47, "R_SPARC_PLT64"},
+	{48, "R_SPARC_HIX22"},
+	{49, "R_SPARC_LOX10"},
+	{50, "R_SPARC_H44"},
+	{51, "R_SPARC_M44"},
+	{52, "R_SPARC_L44"},
+	{53, "R_SPARC_REGISTER"},
+	{54, "R_SPARC_UA64"},
+	{55, "R_SPARC_UA16"},
+}
+
+func (i R_SPARC) String() string   { return stringName(uint32(i), rsparcStrings, false) }
+func (i R_SPARC) GoString() string { return stringName(uint32(i), rsparcStrings, true) }
+
+// Magic number for the elf trampoline, chosen wisely to be an immediate value.
+const ARM_MAGIC_TRAMP_NUMBER = 0x5c000003
+
+// ELF32 File header.
+type Header32 struct {
+	Ident     [EI_NIDENT]byte /* File identification. */
+	Type      uint16          /* File type. */
+	Machine   uint16          /* Machine architecture. */
+	Version   uint32          /* ELF format version. */
+	Entry     uint32          /* Entry point. */
+	Phoff     uint32          /* Program header file offset. */
+	Shoff     uint32          /* Section header file of
+"""
+
+
+
+
+```

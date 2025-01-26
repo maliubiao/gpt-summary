@@ -1,0 +1,710 @@
+Response:
+The user wants a summary of the functionality of the provided Go code snippet. This is the second part of a two-part response. Therefore, I need to summarize the functionalities presented in this specific code block, assuming the previous part has already covered other functionalities.
+
+The code defines Go functions that directly interface with OpenBSD system calls on the ARM64 architecture. Each Go function calls a corresponding C library function using `rawSyscall` or `syscall`. The names of these C library functions are dynamically linked using `//go:cgo_import_dynamic`.
+
+Let's go through the functions and categorize their functionality:
+
+* **Process Management:** `Setegid`, `Seteuid`, `Setgid`, `Setlogin`, `Setpgid`, `Setpriority`, `Setregid`, `Setreuid`, `Setsid`, `Setuid`, `fork`, `execve`, `exit`, `ptrace`
+* **File System Operations:** `Stat`, `Statfs`, `Symlink`, `Sync`, `Truncate`, `Umask`, `Unlink`, `Unmount`, `write`, `writev`, `mmap`, `munmap`, `getfsstat`, `utimensat`, `Seek`, `getcwd`, `fstatat`, `unlinkat`, `openat`
+* **Time Management:** `Settimeofday`
+* **Networking:** `Select` (Although it's a general multiplexing system call, it's often used for network operations.)
+* **System Information:** `sysctl`
+
+Considering this is the second part, I should focus on summarizing *these specific* functions.
+这是提供的Go语言代码片段（第2部分）的功能归纳：
+
+这个代码片段定义了一系列Go函数，这些函数是对OpenBSD操作系统在ARM64架构下的系统调用的封装。它使用了 `syscall` 和 `rawSyscall` 包来直接调用底层的C库函数，实现了与操作系统内核的交互。
+
+具体来说，这些函数涵盖了以下几个方面的系统功能：
+
+**1. 进程和用户/组管理:**
+
+* **`Setegid(egid int) error`**: 设置当前进程的有效组ID (effective GID)。
+* **`Seteuid(euid int) error`**: 设置当前进程的有效用户ID (effective UID)。
+* **`Setgid(gid int) error`**: 设置当前进程的真实组ID (real GID) 和有效组ID (effective GID)。
+* **`Setlogin(name string) error`**: 设置登录名。
+* **`Setpgid(pid int, pgid int) error`**: 设置进程的进程组ID (PGID)。
+* **`Setpriority(which int, who int, prio int) error`**: 设置进程或进程组的优先级。
+* **`Setregid(rgid int, egid int) error`**: 设置当前进程的真实组ID (real GID) 和有效组ID (effective GID)。
+* **`Setreuid(ruid int, euid int) error`**: 设置当前进程的真实用户ID (real UID) 和有效用户ID (effective UID)。
+* **`Setsid() (pid int, error)`**: 创建一个新的会话并设置调用进程为新会话的领头进程和新进程组的领头进程。
+* **`Setuid(uid int) error`**: 设置当前进程的真实用户ID (real UID)，有效用户ID (effective UID) 和保存设置用户ID (saved set-user-ID)。
+* **`fork() (pid int, error)`**: 创建一个新的进程（子进程）。
+* **`execve(path *byte, argv **byte, envp **byte) error`**: 执行一个新的程序，替换当前进程。
+* **`exit(res int) error`**: 终止当前进程。
+* **`ptrace(request int, pid int, addr uintptr, data uintptr) error`**: 提供进程跟踪和调试功能。
+
+**2. 文件系统操作:**
+
+* **`Stat(path string, stat *Stat_t) error`**: 获取指定路径文件的状态信息。
+* **`Statfs(path string, stat *Statfs_t) error`**: 获取指定路径文件所在文件系统的状态信息。
+* **`Symlink(path string, link string) error`**: 创建一个符号链接。
+* **`Sync() error`**: 将所有修改过的文件系统元数据和文件数据写入磁盘。
+* **`Truncate(path string, length int64) error`**: 将指定路径的文件截断到指定的长度。
+* **`Umask(newmask int) (oldmask int)`**: 设置进程的文件模式创建屏蔽字。
+* **`Unlink(path string) error`**: 删除指定路径的文件。
+* **`Unmount(path string, flags int) error`**: 卸载指定路径的文件系统。
+* **`write(fd int, p []byte) (n int, error)`**: 向文件描述符写入数据。
+* **`writev(fd int, iovecs []Iovec) (n uintptr, error)`**:  使用分散/聚集 I/O 向文件描述符写入数据。
+* **`mmap(addr uintptr, length uintptr, prot int, flag int, fd int, pos int64) (ret uintptr, error)`**: 将文件或设备映射到内存中。
+* **`munmap(addr uintptr, length uintptr) error`**: 取消文件或设备到内存的映射。
+* **`getfsstat(stat *Statfs_t, bufsize uintptr, flags int) (n int, error)`**: 获取所有已挂载文件系统的状态信息。
+* **`utimensat(dirfd int, path string, times *[2]Timespec, flag int) error`**: 以纳秒精度设置文件的访问和修改时间，可以相对于目录文件描述符。
+* **`Seek(fd int, offset int64, whence int) (newoffset int64, error)`**: 改变打开文件的偏移量。
+* **`getcwd(buf []byte) (n int, error)`**: 获取当前工作目录。
+* **`fstatat(fd int, path string, stat *Stat_t, flags int) error`**: 获取相对于目录文件描述符的文件的状态信息。
+* **`unlinkat(fd int, path string, flags int) error`**: 删除相对于目录文件描述符的文件。
+* **`openat(fd int, path string, flags int, perm uint32) (fdret int, error)`**: 相对于目录文件描述符打开文件。
+
+**3. 时间管理:**
+
+* **`Settimeofday(tp *Timeval) error`**: 设置系统的当前时间。
+
+**4. 网络相关 (虽然 `select` 不仅限于网络):**
+
+* **`Select(n int, r *FdSet, w *FdSet, e *FdSet, timeout *Timeval) error`**:  I/O 多路复用系统调用，允许程序等待多个文件描述符中的任何一个变为就绪状态。
+
+**5. 系统信息获取:**
+
+* **`sysctl(mib []_C_int, old *byte, oldlen *uintptr, new *byte, newlen uintptr) error`**: 获取或设置内核参数。
+
+**总结:**
+
+总的来说，这部分代码是 Go 语言 `syscall` 包的一部分，专门针对 OpenBSD 操作系统在 ARM64 架构下提供了一系列底层的系统调用接口。这些函数允许 Go 程序执行诸如进程管理、文件系统操作、时间管理、网络 I/O 以及获取系统信息等操作。 它们是构建更高级别抽象的基础，使得 Go 语言能够与操作系统内核进行交互。
+
+Prompt: 
+```
+这是路径为go/src/syscall/zsyscall_openbsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
+如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
+如果涉及代码推理，需要带上假设的输入与输出，
+如果涉及命令行参数的具体处理，请详细介绍一下，
+如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+请用中文回答。
+这是第2部分，共2部分，请归纳一下它的功能
+
+"""
+nter(w)), uintptr(unsafe.Pointer(e)), uintptr(unsafe.Pointer(timeout)), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_select_trampoline()
+
+//go:cgo_import_dynamic libc_select select "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setegid(egid int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setegid_trampoline), uintptr(egid), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setegid_trampoline()
+
+//go:cgo_import_dynamic libc_setegid setegid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Seteuid(euid int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_seteuid_trampoline), uintptr(euid), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_seteuid_trampoline()
+
+//go:cgo_import_dynamic libc_seteuid seteuid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setgid(gid int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setgid_trampoline), uintptr(gid), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setgid_trampoline()
+
+//go:cgo_import_dynamic libc_setgid setgid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setlogin(name string) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(name)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_setlogin_trampoline), uintptr(unsafe.Pointer(_p0)), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setlogin_trampoline()
+
+//go:cgo_import_dynamic libc_setlogin setlogin "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setpgid(pid int, pgid int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setpgid_trampoline), uintptr(pid), uintptr(pgid), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setpgid_trampoline()
+
+//go:cgo_import_dynamic libc_setpgid setpgid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setpriority(which int, who int, prio int) (err error) {
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_setpriority_trampoline), uintptr(which), uintptr(who), uintptr(prio))
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setpriority_trampoline()
+
+//go:cgo_import_dynamic libc_setpriority setpriority "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setregid(rgid int, egid int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setregid_trampoline), uintptr(rgid), uintptr(egid), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setregid_trampoline()
+
+//go:cgo_import_dynamic libc_setregid setregid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setreuid(ruid int, euid int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setreuid_trampoline), uintptr(ruid), uintptr(euid), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setreuid_trampoline()
+
+//go:cgo_import_dynamic libc_setreuid setreuid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func setrlimit(which int, lim *Rlimit) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setrlimit_trampoline), uintptr(which), uintptr(unsafe.Pointer(lim)), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setrlimit_trampoline()
+
+//go:cgo_import_dynamic libc_setrlimit setrlimit "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setsid() (pid int, err error) {
+	r0, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setsid_trampoline), 0, 0, 0)
+	pid = int(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setsid_trampoline()
+
+//go:cgo_import_dynamic libc_setsid setsid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Settimeofday(tp *Timeval) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_settimeofday_trampoline), uintptr(unsafe.Pointer(tp)), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_settimeofday_trampoline()
+
+//go:cgo_import_dynamic libc_settimeofday settimeofday "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Setuid(uid int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_setuid_trampoline), uintptr(uid), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_setuid_trampoline()
+
+//go:cgo_import_dynamic libc_setuid setuid "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Stat(path string, stat *Stat_t) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_stat_trampoline), uintptr(unsafe.Pointer(_p0)), uintptr(unsafe.Pointer(stat)), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_stat_trampoline()
+
+//go:cgo_import_dynamic libc_stat stat "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Statfs(path string, stat *Statfs_t) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_statfs_trampoline), uintptr(unsafe.Pointer(_p0)), uintptr(unsafe.Pointer(stat)), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_statfs_trampoline()
+
+//go:cgo_import_dynamic libc_statfs statfs "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Symlink(path string, link string) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	var _p1 *byte
+	_p1, err = BytePtrFromString(link)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_symlink_trampoline), uintptr(unsafe.Pointer(_p0)), uintptr(unsafe.Pointer(_p1)), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_symlink_trampoline()
+
+//go:cgo_import_dynamic libc_symlink symlink "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Sync() (err error) {
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_sync_trampoline), 0, 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_sync_trampoline()
+
+//go:cgo_import_dynamic libc_sync sync "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Truncate(path string, length int64) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_truncate_trampoline), uintptr(unsafe.Pointer(_p0)), uintptr(length), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_truncate_trampoline()
+
+//go:cgo_import_dynamic libc_truncate truncate "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Umask(newmask int) (oldmask int) {
+	r0, _, _ := syscall(abi.FuncPCABI0(libc_umask_trampoline), uintptr(newmask), 0, 0)
+	oldmask = int(r0)
+	return
+}
+
+func libc_umask_trampoline()
+
+//go:cgo_import_dynamic libc_umask umask "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Unlink(path string) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_unlink_trampoline), uintptr(unsafe.Pointer(_p0)), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_unlink_trampoline()
+
+//go:cgo_import_dynamic libc_unlink unlink "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Unmount(path string, flags int) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_unmount_trampoline), uintptr(unsafe.Pointer(_p0)), uintptr(flags), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_unmount_trampoline()
+
+//go:cgo_import_dynamic libc_unmount unmount "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func write(fd int, p []byte) (n int, err error) {
+	var _p0 unsafe.Pointer
+	if len(p) > 0 {
+		_p0 = unsafe.Pointer(&p[0])
+	} else {
+		_p0 = unsafe.Pointer(&_zero)
+	}
+	r0, _, e1 := syscall(abi.FuncPCABI0(libc_write_trampoline), uintptr(fd), uintptr(_p0), uintptr(len(p)))
+	n = int(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_write_trampoline()
+
+//go:cgo_import_dynamic libc_write write "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func writev(fd int, iovecs []Iovec) (n uintptr, err error) {
+	var _p0 unsafe.Pointer
+	if len(iovecs) > 0 {
+		_p0 = unsafe.Pointer(&iovecs[0])
+	} else {
+		_p0 = unsafe.Pointer(&_zero)
+	}
+	r0, _, e1 := syscallX(abi.FuncPCABI0(libc_writev_trampoline), uintptr(fd), uintptr(_p0), uintptr(len(iovecs)))
+	n = uintptr(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_writev_trampoline()
+
+//go:cgo_import_dynamic libc_writev writev "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func mmap(addr uintptr, length uintptr, prot int, flag int, fd int, pos int64) (ret uintptr, err error) {
+	r0, _, e1 := syscall6X(abi.FuncPCABI0(libc_mmap_trampoline), uintptr(addr), uintptr(length), uintptr(prot), uintptr(flag), uintptr(fd), uintptr(pos))
+	ret = uintptr(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_mmap_trampoline()
+
+//go:cgo_import_dynamic libc_mmap mmap "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func munmap(addr uintptr, length uintptr) (err error) {
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_munmap_trampoline), uintptr(addr), uintptr(length), 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_munmap_trampoline()
+
+//go:cgo_import_dynamic libc_munmap munmap "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func getfsstat(stat *Statfs_t, bufsize uintptr, flags int) (n int, err error) {
+	r0, _, e1 := syscall(abi.FuncPCABI0(libc_getfsstat_trampoline), uintptr(unsafe.Pointer(stat)), uintptr(bufsize), uintptr(flags))
+	n = int(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_getfsstat_trampoline()
+
+//go:cgo_import_dynamic libc_getfsstat getfsstat "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func utimensat(dirfd int, path string, times *[2]Timespec, flag int) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall6(abi.FuncPCABI0(libc_utimensat_trampoline), uintptr(dirfd), uintptr(unsafe.Pointer(_p0)), uintptr(unsafe.Pointer(times)), uintptr(flag), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_utimensat_trampoline()
+
+//go:cgo_import_dynamic libc_utimensat utimensat "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func readlen(fd int, buf *byte, nbuf int) (n int, err error) {
+	r0, _, e1 := syscall(abi.FuncPCABI0(libc_read_trampoline), uintptr(fd), uintptr(unsafe.Pointer(buf)), uintptr(nbuf))
+	n = int(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func Seek(fd int, offset int64, whence int) (newoffset int64, err error) {
+	r0, _, e1 := syscallX(abi.FuncPCABI0(libc_lseek_trampoline), uintptr(fd), uintptr(offset), uintptr(whence))
+	newoffset = int64(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_lseek_trampoline()
+
+//go:cgo_import_dynamic libc_lseek lseek "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func getcwd(buf []byte) (n int, err error) {
+	var _p0 unsafe.Pointer
+	if len(buf) > 0 {
+		_p0 = unsafe.Pointer(&buf[0])
+	} else {
+		_p0 = unsafe.Pointer(&_zero)
+	}
+	r0, _, e1 := syscall(abi.FuncPCABI0(libc_getcwd_trampoline), uintptr(_p0), uintptr(len(buf)), 0)
+	n = int(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_getcwd_trampoline()
+
+//go:cgo_import_dynamic libc_getcwd getcwd "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func sysctl(mib []_C_int, old *byte, oldlen *uintptr, new *byte, newlen uintptr) (err error) {
+	var _p0 unsafe.Pointer
+	if len(mib) > 0 {
+		_p0 = unsafe.Pointer(&mib[0])
+	} else {
+		_p0 = unsafe.Pointer(&_zero)
+	}
+	_, _, e1 := syscall6(abi.FuncPCABI0(libc_sysctl_trampoline), uintptr(_p0), uintptr(len(mib)), uintptr(unsafe.Pointer(old)), uintptr(unsafe.Pointer(oldlen)), uintptr(unsafe.Pointer(new)), uintptr(newlen))
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_sysctl_trampoline()
+
+//go:cgo_import_dynamic libc_sysctl sysctl "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func fork() (pid int, err error) {
+	r0, _, e1 := rawSyscall(abi.FuncPCABI0(libc_fork_trampoline), 0, 0, 0)
+	pid = int(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_fork_trampoline()
+
+//go:cgo_import_dynamic libc_fork fork "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func execve(path *byte, argv **byte, envp **byte) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_execve_trampoline), uintptr(unsafe.Pointer(path)), uintptr(unsafe.Pointer(argv)), uintptr(unsafe.Pointer(envp)))
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_execve_trampoline()
+
+//go:cgo_import_dynamic libc_execve execve "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func exit(res int) (err error) {
+	_, _, e1 := rawSyscall(abi.FuncPCABI0(libc_exit_trampoline), uintptr(res), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_exit_trampoline()
+
+//go:cgo_import_dynamic libc_exit exit "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+//go:nosplit
+func ptrace(request int, pid int, addr uintptr, data uintptr) (err error) {
+	_, _, e1 := syscall6(abi.FuncPCABI0(libc_ptrace_trampoline), uintptr(request), uintptr(pid), uintptr(addr), uintptr(data), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_ptrace_trampoline()
+
+//go:cgo_import_dynamic libc_ptrace ptrace "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func fstatat(fd int, path string, stat *Stat_t, flags int) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall6(abi.FuncPCABI0(libc_fstatat_trampoline), uintptr(fd), uintptr(unsafe.Pointer(_p0)), uintptr(unsafe.Pointer(stat)), uintptr(flags), 0, 0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_fstatat_trampoline()
+
+//go:cgo_import_dynamic libc_fstatat fstatat "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func unlinkat(fd int, path string, flags int) (err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	_, _, e1 := syscall(abi.FuncPCABI0(libc_unlinkat_trampoline), uintptr(fd), uintptr(unsafe.Pointer(_p0)), uintptr(flags))
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_unlinkat_trampoline()
+
+//go:cgo_import_dynamic libc_unlinkat unlinkat "libc.so"
+
+// THIS FILE IS GENERATED BY THE COMMAND AT THE TOP; DO NOT EDIT
+
+func openat(fd int, path string, flags int, perm uint32) (fdret int, err error) {
+	var _p0 *byte
+	_p0, err = BytePtrFromString(path)
+	if err != nil {
+		return
+	}
+	r0, _, e1 := syscall6(abi.FuncPCABI0(libc_openat_trampoline), uintptr(fd), uintptr(unsafe.Pointer(_p0)), uintptr(flags), uintptr(perm), 0, 0)
+	fdret = int(r0)
+	if e1 != 0 {
+		err = errnoErr(e1)
+	}
+	return
+}
+
+func libc_openat_trampoline()
+
+//go:cgo_import_dynamic libc_openat openat "libc.so"
+
+"""
+
+
+
+
+```
